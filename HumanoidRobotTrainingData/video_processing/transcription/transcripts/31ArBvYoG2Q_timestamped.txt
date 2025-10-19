@@ -1,0 +1,735 @@
+31ArBvYoG2Q
+https://www.youtube.com/watch?v=31ArBvYoG2Q
+Unknown Category
+
+[00:00:00.000 → 00:00:03.000] When I popped off, then you go gave me...
+[00:00:03.000 → 00:00:15.660] So in this video, we're going to be building the Tyro 69 kit.
+[00:00:15.720 → 00:00:20.200] Now, this will be a beginner's guide into how to build it, solder it, and what are good techniques to use,
+[00:00:20.520 → 00:00:23.440] and some of the issues you might come up against and how to solve them.
+[00:00:23.580 → 00:00:28.420] So we're going to do this together as fast, efficient, yet full of detail as possible.
+[00:00:28.420 → 00:00:33.320] So PCBWay is one of the leading PCB manufacturers that I even use on a daily basis,
+[00:00:33.460 → 00:00:37.820] not only to do my projects, but also some of the products that I've designed that's currently in the market,
+[00:00:37.980 → 00:00:41.880] like the Drone Mesh VUSB, and I'm constantly using them for prototyping,
+[00:00:42.000 → 00:00:47.340] and I'm also using their assembly services, and they also do have flashing services for specific hardware requirements.
+[00:00:47.340 → 00:00:51.100] So it's a really great place to have your PCB manufactured or prototyped.
+[00:00:51.200 → 00:00:54.740] All right, so let's talk about some of the tools we're going to need, because we're not going to really need much,
+[00:00:54.740 → 00:00:59.120] and also some tools I'd highly recommend, which have dropped in price pretty insane.
+[00:00:59.520 → 00:01:02.600] So this right here is a soldering iron. This is a portable soldering iron.
+[00:01:02.960 → 00:01:08.520] This thing used to go for $80, $90. That's when I got mine, and right now it's like $40 or $50.
+[00:01:08.900 → 00:01:11.400] This is the thing that I carry with me to the field always.
+[00:01:11.400 → 00:01:19.180] I replaced big motors, big XC60, and I'd highly recommend this little tool, and it can run as your main driver.
+[00:01:19.280 → 00:01:25.840] I've had this running as my main driver before, because it is just a well-built beast, and anybody would tell you that.
+[00:01:25.920 → 00:01:29.220] So for this build, we're actually going to be using this to show you how good it actually is,
+[00:01:29.300 → 00:01:34.540] and we're using this flat tip that it comes with. This will be really good, especially for this small stuff right here.
+[00:01:34.700 → 00:01:37.480] Also, something that's not included in the kit is the tools.
+[00:01:37.840 → 00:01:40.940] I do highly recommend this tool right here. I've been using it for quite a while.
+[00:01:40.940 → 00:01:42.300] You'll probably see it in a couple of my videos.
+[00:01:42.840 → 00:01:46.960] If you are thinking of getting into drones, this is a must-have tool, because this is titanium-coated,
+[00:01:47.460 → 00:01:53.540] and these are hex drivers, and every single size you're going to need, which is 1.5mm all the way up to 3mm.
+[00:01:53.700 → 00:01:58.200] Usually, all micros are 1.5mm, and that's the only thing we're going to be using for this whole build.
+[00:01:58.360 → 00:02:02.420] So we're just going to stick this one on and take it out, and especially in the field, this is very useful,
+[00:02:02.480 → 00:02:06.380] because it takes less space, so you just carry those and then just put them in here.
+[00:02:06.540 → 00:02:09.540] Next thing that we're going to need, which they don't provide, is a receiver.
+[00:02:09.540 → 00:02:12.160] Now, I'm going to be using the XM Plus radio here.
+[00:02:12.260 → 00:02:14.880] If you're using FlySky, then they have other receivers.
+[00:02:15.040 → 00:02:19.560] However, I'll have some iBus receivers, which are FlySky receivers linked down below,
+[00:02:19.740 → 00:02:23.540] and I'll also have some FRSky receivers for the FRSky system.
+[00:02:24.480 → 00:02:25.780] So again, I'm using XM Plus.
+[00:02:25.880 → 00:02:26.620] They're super cheap.
+[00:02:26.720 → 00:02:29.900] They get great distance and really great to use overall.
+[00:02:30.200 → 00:02:33.300] All right, so now let's take a closer look at what the package actually gives you.
+[00:02:33.440 → 00:02:36.520] It gives you a bunch of propellers, which is something you're going to need,
+[00:02:36.520 → 00:02:39.720] and that's quite a lot, which is really nice, and they've also labeled them for you.
+[00:02:39.740 → 00:02:40.680] So this would be the R.
+[00:02:40.860 → 00:02:43.720] This would be the normal, and we'll get into how to place these in a bit.
+[00:02:44.240 → 00:02:48.420] Now, they provide you with the four motors, almost cut to the exact length you'll need,
+[00:02:48.480 → 00:02:50.740] but I'm going to show you a nice trick to keep it super clean
+[00:02:50.740 → 00:02:55.360] and reduces your chance of actually ruining something when soldering these motors.
+[00:02:55.780 → 00:02:56.620] So they give you the motors.
+[00:02:56.620 → 00:02:59.380] They're 1105, 8,500 kV.
+[00:02:59.500 → 00:03:02.100] Sorry, 1104, 8,500 kV.
+[00:03:02.240 → 00:03:06.380] And the 8,500 kV is what I consider the sweet spot for these types of builds
+[00:03:06.380 → 00:03:12.040] because you can run either a 2SHV or a 3SHV and still enjoy and get a bunch of efficiency.
+[00:03:12.540 → 00:03:15.900] I will also have these motors tested on my benchmark in a later video
+[00:03:15.900 → 00:03:18.160] so we can compare it to the other motors in the market.
+[00:03:18.340 → 00:03:20.620] Now, they will give you every single connector you're going to need,
+[00:03:20.680 → 00:03:23.260] and what's really nice about this, you're not going to have to solder much.
+[00:03:23.260 → 00:03:30.040] All you're going to have to solder is your receiver, the XT30, and the motors, and that's about it.
+[00:03:30.120 → 00:03:34.540] So here we have three wires, five, so with the two here, so that's five wires.
+[00:03:34.760 → 00:03:38.700] And then here we have three times three, which is, oh, sorry, three times four, which is 12.
+[00:03:39.180 → 00:03:43.900] So we have a total of 17 things to solder, and everything else is using connectors.
+[00:03:44.180 → 00:03:48.300] So also something really nice with the kit is they give you the camera already pre-soldered and ready
+[00:03:48.300 → 00:03:50.400] with just the connectors here, and I'll show you where those go.
+[00:03:50.480 → 00:03:51.620] Those will go on the flight controller.
+[00:03:51.620 → 00:03:55.800] All we have to do is connect them, insert it into the 3D printed part to hold it in place,
+[00:03:55.900 → 00:03:59.320] and we'll be done with the camera in VTX, which makes our life really, really easy.
+[00:03:59.800 → 00:04:03.200] Also, the ESC they're using is actually a pretty good ESC.
+[00:04:03.320 → 00:04:05.360] I'm quite surprised at the ESC they're using.
+[00:04:05.880 → 00:04:10.180] I'm pretty sure you'll probably break the thing before you ever burn this ESC.
+[00:04:10.520 → 00:04:11.720] But then again, this is all theoretical.
+[00:04:11.880 → 00:04:15.020] Just because the filtration is really good, especially for something of this size,
+[00:04:15.120 → 00:04:19.720] and the fact that they even provide you with an installed 150 microfarad low ESR capacitor here.
+[00:04:19.720 → 00:04:21.620] And it is a Rubicon, which is pretty insane.
+[00:04:21.740 → 00:04:22.940] That's a well-known brand.
+[00:04:23.000 → 00:04:23.940] It's a pretty good brand here.
+[00:04:24.560 → 00:04:26.800] However, we're going to have to shorten these leads,
+[00:04:26.900 → 00:04:31.100] or you're more than likely to actually ruin this thing if these two touch the carbon fiber frame
+[00:04:31.100 → 00:04:32.940] because it's going to be sitting solo to the frame.
+[00:04:33.340 → 00:04:35.980] So once we get into that step, we'll take a closer look at that.
+[00:04:36.060 → 00:04:38.600] Now, for the flight controller, they're providing us with an F4 flight controller,
+[00:04:38.700 → 00:04:39.480] which is really great.
+[00:04:39.780 → 00:04:40.740] And it has all the features.
+[00:04:40.840 → 00:04:41.760] We have the OSD here.
+[00:04:41.820 → 00:04:44.540] We have, I think, an MPU 6000 gyro, USB.
+[00:04:44.780 → 00:04:46.080] Obviously, everything has USB.
+[00:04:46.080 → 00:04:48.020] And connectors for everything you're going to need.
+[00:04:48.340 → 00:04:51.220] So usually, I'd recommend we start with the flight controller here.
+[00:04:51.320 → 00:04:53.860] But the flight controller doesn't need anything soldered onto it.
+[00:04:53.880 → 00:04:54.660] And it's just connectors.
+[00:04:54.800 → 00:04:55.880] So we're going to keep it for later.
+[00:04:56.040 → 00:04:58.940] So for this ESC, it does matter which way you place it,
+[00:04:58.980 → 00:05:00.940] or else you have a nightmare and you won't know why.
+[00:05:01.020 → 00:05:04.640] With the arrow here pointing forward, this should be on top.
+[00:05:04.680 → 00:05:06.980] Because if it's not on top, it'll never fly.
+[00:05:07.060 → 00:05:09.520] Because the motor ordering will be completely different.
+[00:05:09.840 → 00:05:10.780] So keep that in mind.
+[00:05:11.200 → 00:05:15.140] Now, when I mentioned earlier that the motor wires were almost perfect length.
+[00:05:15.140 → 00:05:18.900] So instead of cutting them and making ourselves a bit more time,
+[00:05:18.980 → 00:05:20.420] and just making it more time consuming,
+[00:05:20.620 → 00:05:24.640] we can do a nice little trick that'll make it look like a professional's job.
+[00:05:25.720 → 00:05:26.160] All right.
+[00:05:26.200 → 00:05:29.100] So the first thing now I want to do is I want to just apply power.
+[00:05:29.220 → 00:05:32.040] I have this little cheap wool adapter that actually fits here,
+[00:05:32.100 → 00:05:32.760] and it's 12 volts.
+[00:05:33.300 → 00:05:35.640] And we can go ahead and start this guy up.
+[00:05:36.040 → 00:05:37.740] I just want to see what temperature I have it set to,
+[00:05:37.860 → 00:05:38.480] because I don't know.
+[00:05:38.880 → 00:05:40.080] 400, which is maximum.
+[00:05:40.220 → 00:05:42.400] This comes with different crazy firmwares that you can set up.
+[00:05:42.400 → 00:05:43.660] I just left it on default.
+[00:05:44.340 → 00:05:45.960] And we can watch how quickly it heats up.
+[00:05:46.280 → 00:05:48.860] It depends on the power supply that you're using for it.
+[00:05:48.920 → 00:05:50.720] It just dictates how fast it heats up.
+[00:05:51.000 → 00:05:52.380] So we'll just let that heat up real quick.
+[00:05:53.040 → 00:05:55.180] Now, something you should always be aware of here.
+[00:05:55.220 → 00:05:57.340] If you're going to set your temperature slightly higher than,
+[00:05:57.460 → 00:05:59.080] let's say, 350 degrees Celsius,
+[00:05:59.600 → 00:06:00.880] you want to add solder.
+[00:06:01.340 → 00:06:03.320] Keep adding solder onto this every, you know,
+[00:06:03.360 → 00:06:04.840] like a couple minutes or so,
+[00:06:05.160 → 00:06:06.020] and cleaning it off.
+[00:06:06.100 → 00:06:07.720] Because before you start soldering,
+[00:06:07.780 → 00:06:09.280] you always want it to look like this.
+[00:06:09.280 → 00:06:11.680] You want it to look super shiny and super clean.
+[00:06:12.120 → 00:06:13.980] And that means that the heat's going to transfer very quickly.
+[00:06:14.320 → 00:06:15.820] And you're not going to hold it there for half an hour.
+[00:06:15.920 → 00:06:16.600] Nothing happens.
+[00:06:16.740 → 00:06:18.380] And that is a usual case why, for example,
+[00:06:18.820 → 00:06:21.020] the wire would not stick to the pad.
+[00:06:21.460 → 00:06:22.860] And another thing to take note of here
+[00:06:22.860 → 00:06:25.360] is you don't want to hit it with the tip just like this.
+[00:06:25.400 → 00:06:28.540] You want to actually kind of get as much of a flat area as possible
+[00:06:28.540 → 00:06:29.640] to land on it.
+[00:06:29.660 → 00:06:30.960] So if it's not really melting,
+[00:06:31.300 → 00:06:33.360] then kind of just do this little twisting motion
+[00:06:33.360 → 00:06:35.560] and it'll push that wire right into place.
+[00:06:35.860 → 00:06:37.620] Now, I did hire a new assistant
+[00:06:37.620 → 00:06:40.380] and I've actually noticed a couple things he was doing wrong,
+[00:06:40.540 → 00:06:42.780] which I was really hoping that I'm going to come here
+[00:06:42.780 → 00:06:43.520] and show you today.
+[00:06:43.640 → 00:06:45.280] And I'm very happy that that's going to happen.
+[00:06:45.760 → 00:06:47.700] So for the ESC, what we want to do first,
+[00:06:47.740 → 00:06:49.200] we want to add the solder to the pads.
+[00:06:49.440 → 00:06:50.580] This is the top here.
+[00:06:50.640 → 00:06:52.860] But the trick here is we're going to add them to the bottom.
+[00:06:53.040 → 00:06:54.040] And why is that?
+[00:06:54.100 → 00:06:56.320] It's so we can make the motor wires really nice and clean.
+[00:06:56.700 → 00:06:59.380] So we're going to start adding solder to the pads.
+[00:06:59.480 → 00:07:01.100] Now, take a note of where I'm starting.
+[00:07:01.140 → 00:07:02.080] I'm starting from the left here,
+[00:07:02.080 → 00:07:03.160] but this is really dangerous
+[00:07:03.160 → 00:07:05.960] because I can have some solder come to here
+[00:07:05.960 → 00:07:07.740] and burn a component off.
+[00:07:08.120 → 00:07:09.660] So instead, I'm just going to go here
+[00:07:09.660 → 00:07:12.900] because I have less risk of actually burning anything
+[00:07:12.900 → 00:07:14.400] coming down to the right.
+[00:07:14.540 → 00:07:17.280] What I like to do first always is touch the pad
+[00:07:17.280 → 00:07:20.160] and then add the solder to both the pad
+[00:07:20.160 → 00:07:21.920] and the soldering tip.
+[00:07:22.020 → 00:07:22.340] And there we go.
+[00:07:22.380 → 00:07:24.040] We have our first little solder blob thingy.
+[00:07:24.400 → 00:07:27.820] Now, again, I'm touching half of the pad here
+[00:07:27.900 → 00:07:30.980] and I'm going to come and just add the solder on the pad.
+[00:07:30.980 → 00:07:32.160] And there we go.
+[00:07:32.960 → 00:07:33.600] Now, as you can tell,
+[00:07:33.680 → 00:07:36.860] my soldering iron tip is getting pretty full and dirty.
+[00:07:36.960 → 00:07:38.840] So I'm just going to clean it slightly.
+[00:07:39.260 → 00:07:40.340] Now, if you are using water,
+[00:07:40.840 → 00:07:42.480] the temperature will drop slightly.
+[00:07:42.580 → 00:07:43.940] So you'd want to just wait a tiny bit
+[00:07:43.940 → 00:07:46.220] and make sure the tip is back up to temperature here.
+[00:07:46.260 → 00:07:48.780] But we're soldering at 400 degrees right now.
+[00:07:48.920 → 00:07:50.100] So it should be pretty good.
+[00:07:50.760 → 00:07:52.220] And you can kind of see the technique.
+[00:07:52.360 → 00:07:53.880] Try to understand what I'm doing here.
+[00:07:54.300 → 00:07:57.720] And don't be scared of keeping the tip on for too long.
+[00:07:58.360 → 00:08:00.600] I mean, don't keep it on for like 30 seconds.
+[00:08:00.980 → 00:08:03.820] But it's fine if you keep it there for five seconds.
+[00:08:03.820 → 00:08:04.620] That's totally fine.
+[00:08:04.680 → 00:08:05.740] I'll even show you that right now.
+[00:08:05.840 → 00:08:07.040] So I have the tip.
+[00:08:07.380 → 00:08:13.860] One, two, three, four, five, six, seven, eight, nine.
+[00:08:14.420 → 00:08:15.100] Nothing happened.
+[00:08:15.200 → 00:08:15.680] You see that?
+[00:08:16.300 → 00:08:17.680] And did you see how it flicked?
+[00:08:17.680 → 00:08:18.620] That's very dangerous
+[00:08:18.620 → 00:08:20.460] because this little solder blob right there
+[00:08:20.460 → 00:08:21.840] could have landed somewhere here
+[00:08:21.840 → 00:08:22.720] and I couldn't see it.
+[00:08:23.000 → 00:08:24.340] And once I applied the battery,
+[00:08:24.480 → 00:08:26.900] then the whole ESC could short circuit.
+[00:08:27.540 → 00:08:29.240] And then people start complaining,
+[00:08:29.240 → 00:08:31.280] oh, this is the worst product on the planet.
+[00:08:32.080 → 00:08:34.660] And that usually does happen actually quite a lot.
+[00:08:34.880 → 00:08:36.180] So we'll just add a little bit more here
+[00:08:36.180 → 00:08:38.200] and add a little bit more here.
+[00:08:38.280 → 00:08:39.860] You want to see them really shiny.
+[00:08:40.500 → 00:08:41.560] So that's really good.
+[00:08:42.320 → 00:08:42.900] There we go.
+[00:08:43.720 → 00:08:45.120] See, this last one wasn't really great.
+[00:08:45.200 → 00:08:47.240] So how would you fix one that's sticking up like this?
+[00:08:47.680 → 00:08:48.560] You kind of see that.
+[00:08:48.900 → 00:08:50.740] You just come in just really flat
+[00:08:50.740 → 00:08:51.760] and then just push out.
+[00:08:52.740 → 00:08:53.680] And that looks really great.
+[00:08:53.980 → 00:08:54.960] So now we've added that.
+[00:08:55.500 → 00:08:56.780] Now, what's really great with these wires
+[00:08:56.780 → 00:08:58.660] is they have some solder on them.
+[00:08:58.960 → 00:09:00.600] So it's just going to make our life a little bit easier.
+[00:09:00.940 → 00:09:02.280] Now, if they didn't, you'd want to strip them,
+[00:09:02.460 → 00:09:03.520] twist them and add solder
+[00:09:03.520 → 00:09:05.160] before you solder to the pads here.
+[00:09:05.420 → 00:09:06.640] So and again, keep in mind,
+[00:09:06.880 → 00:09:09.160] this is the bottom side right now.
+[00:09:09.960 → 00:09:10.900] And we're going to do something
+[00:09:10.900 → 00:09:11.780] a little bit different here.
+[00:09:12.220 → 00:09:13.320] So what I'm going to do is
+[00:09:13.320 → 00:09:14.540] I'm going to straighten out the wires
+[00:09:14.540 → 00:09:15.940] just like that.
+[00:09:16.320 → 00:09:18.340] And I'm actually going to install them like this.
+[00:09:18.540 → 00:09:20.320] So I'm going to do again,
+[00:09:20.380 → 00:09:21.200] start from this side
+[00:09:21.200 → 00:09:23.100] so I don't risk damaging a component here.
+[00:09:23.100 → 00:09:25.560] So I'm going to come like this
+[00:09:25.560 → 00:09:27.840] and then install that right there.
+[00:09:28.200 → 00:09:30.080] Now, a really nice technique to do this
+[00:09:30.080 → 00:09:31.620] is to heat up the pad first,
+[00:09:31.820 → 00:09:33.040] just slightly,
+[00:09:33.040 → 00:09:34.520] and then come in with the wire.
+[00:09:35.480 → 00:09:36.940] And you don't have to be in a hurry.
+[00:09:37.000 → 00:09:37.760] Just take your time
+[00:09:37.760 → 00:09:39.420] and put that into place.
+[00:09:39.660 → 00:09:40.980] Now, we didn't have much solder
+[00:09:40.980 → 00:09:42.260] on the pad already,
+[00:09:42.440 → 00:09:44.180] but we'll come back and fix that later.
+[00:09:44.520 → 00:09:46.140] Let's move on to the second one here.
+[00:09:47.380 → 00:09:48.240] So there we go.
+[00:09:48.520 → 00:09:49.360] So here's the other one.
+[00:09:49.440 → 00:09:51.420] We're going to add some heat,
+[00:09:51.860 → 00:09:52.540] melt the pad,
+[00:09:52.540 → 00:09:55.640] and then come back on top of the wire here.
+[00:09:56.980 → 00:09:57.700] There we go.
+[00:09:59.580 → 00:10:01.520] And we're going to do the same thing to this one.
+[00:10:02.660 → 00:10:03.660] You could trim these off.
+[00:10:03.720 → 00:10:04.880] I'd highly recommend you trim them off
+[00:10:04.880 → 00:10:06.340] before you start soldering.
+[00:10:07.200 → 00:10:08.120] So there we go.
+[00:10:08.480 → 00:10:09.700] And be careful touching the ESE.
+[00:10:09.800 → 00:10:10.980] It's actually toasty right now.
+[00:10:11.040 → 00:10:11.900] Really, really toasty.
+[00:10:12.460 → 00:10:14.960] So the whole idea of why I did it this way
+[00:10:14.960 → 00:10:16.940] is because when we flip it over,
+[00:10:17.240 → 00:10:19.540] it's going to look really nice once you install it.
+[00:10:19.540 → 00:10:22.500] So these motor wires will just go in like this
+[00:10:22.500 → 00:10:24.160] and they'll be really flat
+[00:10:24.160 → 00:10:25.280] and it'll just be perfect.
+[00:10:25.580 → 00:10:28.020] It's not going to have any bends or creases or anything
+[00:10:28.020 → 00:10:30.060] that's sticking out of the quadcopter
+[00:10:30.060 → 00:10:31.180] for it to catch on anything.
+[00:10:31.520 → 00:10:32.180] But as you can tell,
+[00:10:32.240 → 00:10:34.540] these were slightly longer than we'd like them to be.
+[00:10:34.820 → 00:10:36.400] And I'll come back and fix this later.
+[00:10:36.760 → 00:10:38.120] And here we're going to do one more together.
+[00:10:38.320 → 00:10:39.560] Now, if you're going to cut wire,
+[00:10:39.700 → 00:10:42.080] never cut wires on top of any component
+[00:10:42.080 → 00:10:44.600] because it could also create a pretty big nightmare.
+[00:10:44.600 → 00:10:46.560] So I'm going to trim these slightly a bit here
+[00:10:46.560 → 00:10:47.700] and I'm going to do the same thing.
+[00:10:47.800 → 00:10:49.640] And again, taking I am on the bottom again,
+[00:10:49.680 → 00:10:50.580] there is no arrow here.
+[00:10:50.780 → 00:10:54.320] Now, the motor wire order doesn't really matter right now.
+[00:10:54.580 → 00:10:57.040] So because the whole idea here is
+[00:10:57.040 → 00:10:58.380] you can always anytime
+[00:10:58.380 → 00:11:00.360] if the motor is not spinning in the correct direction,
+[00:11:00.540 → 00:11:02.500] just flip any two wires
+[00:11:02.500 → 00:11:04.500] and it'll spin in the right direction.
+[00:11:04.900 → 00:11:07.780] So don't stress that part too much right now.
+[00:11:09.660 → 00:11:10.520] There we go.
+[00:11:10.520 → 00:11:13.860] And right now I'm not really heating up the pad
+[00:11:13.860 → 00:11:16.680] because it's a really small pad
+[00:11:16.680 → 00:11:19.960] and the heat is going to transfer really well.
+[00:11:21.040 → 00:11:22.180] So here, I just want to...
+[00:11:22.180 → 00:11:22.680] There we go.
+[00:11:24.200 → 00:11:24.840] All right.
+[00:11:25.920 → 00:11:27.720] So this is on 400 right now.
+[00:11:27.760 → 00:11:29.900] So you're going to have the same exact experience as me
+[00:11:29.900 → 00:11:31.020] while you're soldering.
+[00:11:31.700 → 00:11:33.200] Just make sure you're comfortable.
+[00:11:33.300 → 00:11:35.020] That's one of the most important things
+[00:11:35.020 → 00:11:36.780] when you're soldering, in my opinion,
+[00:11:36.880 → 00:11:37.820] is you're comfortable.
+[00:11:38.720 → 00:11:38.960] Okay.
+[00:11:39.180 → 00:11:39.980] Nothing is touching.
+[00:11:39.980 → 00:11:41.700] They're very well-placed paths.
+[00:11:41.780 → 00:11:43.200] They're very far apart from each other.
+[00:11:43.660 → 00:11:44.420] And this one, again,
+[00:11:44.460 → 00:11:47.400] I'm going to come back and fix up later on.
+[00:11:47.780 → 00:11:47.940] All right.
+[00:11:47.960 → 00:11:49.540] So I'm going to skip the rest of the motors
+[00:11:49.540 → 00:11:51.460] and then we'll see what is the next step.
+[00:11:51.600 → 00:11:51.800] All right.
+[00:11:51.840 → 00:11:52.680] So now when we're done,
+[00:11:52.720 → 00:11:54.380] we should have something that looks like this.
+[00:11:54.720 → 00:11:55.620] Now, the next thing I want to do
+[00:11:55.620 → 00:11:58.240] is actually remove this low ESR capacitor.
+[00:11:58.660 → 00:11:59.760] And it's going to be a little bit tricky
+[00:11:59.760 → 00:12:01.440] because we're going to have to heat up this side
+[00:12:01.440 → 00:12:03.240] because it's actually sticking in
+[00:12:03.240 → 00:12:04.620] through the hole right here.
+[00:12:04.760 → 00:12:07.020] Or we can do something just a lot easier
+[00:12:07.020 → 00:12:08.800] and we can actually just cut it.
+[00:12:08.800 → 00:12:10.880] I mean, that'll just work really great.
+[00:12:10.980 → 00:12:11.320] There we go.
+[00:12:11.360 → 00:12:12.440] We don't really have to worry about these
+[00:12:12.440 → 00:12:13.420] and they can even stay in there.
+[00:12:13.480 → 00:12:14.460] It's not really a big problem.
+[00:12:14.680 → 00:12:14.840] All right.
+[00:12:14.880 → 00:12:17.460] So now once the capacitor is removed or cut off,
+[00:12:17.540 → 00:12:18.800] we're left with shorter leads
+[00:12:18.800 → 00:12:20.460] and this is exactly what we want.
+[00:12:20.600 → 00:12:22.300] However, what we also want to do is
+[00:12:22.300 → 00:12:23.860] since it was on the bottom side,
+[00:12:23.900 → 00:12:25.880] we actually want to put it on the upper side.
+[00:12:26.020 → 00:12:27.460] However, we're going to leave this step for now
+[00:12:27.460 → 00:12:28.960] and bring in our XT30
+[00:12:28.960 → 00:12:30.800] where our battery will be connected,
+[00:12:30.960 → 00:12:33.420] supplying power to the whole micro quadcopter here.
+[00:12:33.420 → 00:12:35.940] Now I want to install this on the bottom side
+[00:12:35.940 → 00:12:37.540] and you'll see why
+[00:12:37.540 → 00:12:39.240] once we actually start putting this together,
+[00:12:39.240 → 00:12:42.700] it reduces the chances of the positive and negative
+[00:12:42.700 → 00:12:44.580] touching the carbon fiber frame
+[00:12:44.580 → 00:12:45.820] because it is conductive
+[00:12:45.820 → 00:12:47.460] so we don't have a short circuit
+[00:12:47.460 → 00:12:48.620] and blow the whole thing up.
+[00:12:48.880 → 00:12:50.020] So I'm going to come in
+[00:12:50.020 → 00:12:51.700] and I'm just going to add solder to the pad.
+[00:12:51.780 → 00:12:53.180] Same thing we did with the motor wires.
+[00:12:53.600 → 00:12:54.380] Same thing here.
+[00:12:54.640 → 00:12:56.420] Now, if you have the same soldering iron,
+[00:12:56.600 → 00:12:58.040] you need to take something into consideration.
+[00:12:58.040 → 00:12:59.580] If you leave it for a while,
+[00:12:59.720 → 00:13:01.920] then it'll just go into sleep mode
+[00:13:01.920 → 00:13:03.340] and drop the temperature.
+[00:13:03.880 → 00:13:04.780] So you might just have to wait
+[00:13:04.780 → 00:13:06.380] just a tiny bit for it to come back.
+[00:13:06.440 → 00:13:07.600] It won't drop it all the way to zero
+[00:13:07.600 → 00:13:11.480] and it'll quickly gain its temperature back.
+[00:13:11.620 → 00:13:12.860] So now we've added solder to that.
+[00:13:12.940 → 00:13:14.140] Now, here's a really nice technique.
+[00:13:14.240 → 00:13:15.460] I usually like to bring my solder
+[00:13:15.460 → 00:13:17.560] and just stand it up straight,
+[00:13:18.140 → 00:13:19.760] even though these have solder on it,
+[00:13:19.780 → 00:13:21.380] but I don't know how old it is.
+[00:13:21.700 → 00:13:22.900] So I stand it up straight
+[00:13:22.900 → 00:13:24.220] and then I would come in,
+[00:13:24.220 → 00:13:27.940] add solder to the bottom of my soldering iron,
+[00:13:28.040 → 00:13:28.300] tip,
+[00:13:28.500 → 00:13:30.300] and then start following along
+[00:13:30.300 → 00:13:32.520] just like this while holding the wire.
+[00:13:33.160 → 00:13:35.960] And now I have a really nice solder on the wire.
+[00:13:36.280 → 00:13:38.080] However, you need to take something into consideration.
+[00:13:38.580 → 00:13:40.360] The wire will get really hot
+[00:13:40.360 → 00:13:43.080] and it's actually really toasty right now.
+[00:13:43.100 → 00:13:43.740] So as you can tell,
+[00:13:43.760 → 00:13:44.640] I'm not holding it anymore.
+[00:13:45.220 → 00:13:46.400] So keep that in mind also.
+[00:13:46.960 → 00:13:47.700] Heat is real,
+[00:13:47.820 → 00:13:48.840] especially when you're soldering.
+[00:13:49.000 → 00:13:50.200] It might not look like there's no heat,
+[00:13:50.240 → 00:13:51.080] but there's a ton of heat.
+[00:13:51.400 → 00:13:52.400] And if it touches you,
+[00:13:52.400 → 00:13:53.280] you're going to burn yourself.
+[00:13:54.340 → 00:13:54.460] All right.
+[00:13:54.500 → 00:13:56.300] So now we're going to install the battery
+[00:13:56.300 → 00:13:58.120] into place here or the XT60.
+[00:13:58.220 → 00:13:58.500] And again,
+[00:13:58.880 → 00:13:59.120] look,
+[00:13:59.200 → 00:14:01.100] we are on the bottom side of the board.
+[00:14:01.180 → 00:14:02.140] So I'm going to heat up the pad
+[00:14:02.140 → 00:14:03.100] because these are bigger pads.
+[00:14:03.360 → 00:14:04.840] And then I'm going to come in
+[00:14:04.840 → 00:14:07.560] with the soldering iron on top of the wire.
+[00:14:07.940 → 00:14:11.140] And that should give us a really nice connection.
+[00:14:11.720 → 00:14:15.200] And that wire got really hot very fast.
+[00:14:15.460 → 00:14:16.020] So here we go.
+[00:14:16.140 → 00:14:16.520] And again,
+[00:14:16.880 → 00:14:19.460] make sure the plus is the red wire
+[00:14:19.760 → 00:14:22.740] and the minus or the negative is the black wire.
+[00:14:22.740 → 00:14:24.380] And there we go.
+[00:14:26.340 → 00:14:27.500] Try to resist the heat
+[00:14:27.500 → 00:14:28.400] and keep it into place
+[00:14:28.400 → 00:14:29.640] after you move the soldering iron
+[00:14:29.640 → 00:14:30.860] for everything to cool.
+[00:14:31.180 → 00:14:32.240] So now we're basically almost done.
+[00:14:32.500 → 00:14:33.780] All we need to solder here now
+[00:14:33.780 → 00:14:36.620] is the low ESR capacitor back into place.
+[00:14:36.720 → 00:14:38.080] And how does this go back into place?
+[00:14:38.440 → 00:14:38.600] Well,
+[00:14:38.660 → 00:14:40.000] wherever these dash signs are,
+[00:14:40.080 → 00:14:40.880] this will go to the ground,
+[00:14:40.920 → 00:14:41.620] which is the negative.
+[00:14:41.880 → 00:14:42.940] And then the other side
+[00:14:42.940 → 00:14:43.960] is just going to go to the positive.
+[00:14:44.520 → 00:14:44.900] And here,
+[00:14:44.960 → 00:14:46.740] since we know we put these in the correct way,
+[00:14:46.740 → 00:14:49.380] so we just put the negative side to the black here
+[00:14:49.380 → 00:14:51.460] and then the other side to the red.
+[00:14:51.460 → 00:14:53.120] So let's do this together here.
+[00:14:53.560 → 00:14:53.740] Now,
+[00:14:53.800 → 00:14:55.760] it's also really nice to add solder onto this.
+[00:14:56.320 → 00:14:58.920] It'll help slightly transfer the heat a little bit better.
+[00:14:59.420 → 00:14:59.680] And again,
+[00:14:59.680 → 00:15:01.600] I'm just going to stand up my solder
+[00:15:01.600 → 00:15:04.220] and just touch it here.
+[00:15:04.960 → 00:15:06.440] Just add on this.
+[00:15:06.520 → 00:15:07.480] Sometimes it won't stick.
+[00:15:07.740 → 00:15:08.820] It might not look like anything,
+[00:15:09.060 → 00:15:10.940] but it'll help in the long run here.
+[00:15:11.800 → 00:15:12.220] All right.
+[00:15:12.580 → 00:15:15.380] And this side where it has the dashes,
+[00:15:15.540 → 00:15:16.480] as you can tell,
+[00:15:16.560 → 00:15:17.860] is going to go to the ground.
+[00:15:18.160 → 00:15:19.620] But I'm going to start with the positive
+[00:15:19.620 → 00:15:21.540] because I think it'll be a little bit easier for me.
+[00:15:21.960 → 00:15:23.040] So I'm going to push this one
+[00:15:23.040 → 00:15:24.440] a little bit out of the way for now.
+[00:15:25.200 → 00:15:26.840] We could always bring it back into place.
+[00:15:27.240 → 00:15:28.280] So I'm going to heat up the pad.
+[00:15:28.380 → 00:15:30.920] Now we're on top of the ESC here.
+[00:15:31.420 → 00:15:32.760] So I'm going to heat up the pad here.
+[00:15:33.880 → 00:15:36.440] And then I'm going to bring in this guy into place.
+[00:15:37.400 → 00:15:38.920] You don't want to heat up the pad too much
+[00:15:38.920 → 00:15:40.580] because it might desolder the bottom one.
+[00:15:40.900 → 00:15:41.900] So keep that in mind.
+[00:15:41.900 → 00:15:44.800] All right.
+[00:15:44.840 → 00:15:46.540] Now I'm going to do the same thing here.
+[00:15:46.820 → 00:15:48.100] I'm going to heat up the pad.
+[00:15:49.840 → 00:15:51.720] Try not to touch anything like I did.
+[00:15:53.940 → 00:15:54.340] Okay.
+[00:15:54.560 → 00:15:55.220] There we go.
+[00:15:56.080 → 00:15:58.320] And that should not be touching anytime soon
+[00:15:58.320 → 00:15:59.880] because now the frame,
+[00:15:59.980 → 00:16:01.460] the carbon fiber is on the bottom here.
+[00:16:01.640 → 00:16:02.980] Even if this were to bend,
+[00:16:03.180 → 00:16:04.820] it's not going to touch the frame
+[00:16:04.820 → 00:16:06.520] because this is acting as an insulator
+[00:16:06.520 → 00:16:07.600] because it's pushing it away.
+[00:16:07.600 → 00:16:10.500] However, if this twists and these two touch together,
+[00:16:10.500 → 00:16:12.120] then you'll have a really big problem.
+[00:16:12.860 → 00:16:13.880] This will probably pop,
+[00:16:14.260 → 00:16:15.520] but it's not really high voltage,
+[00:16:15.680 → 00:16:17.840] but you know, just, yeah, just be careful.
+[00:16:18.180 → 00:16:20.040] So now the ESC is basically done
+[00:16:20.040 → 00:16:21.920] and it looks like a moving spider here.
+[00:16:22.320 → 00:16:23.080] Look at this.
+[00:16:24.460 → 00:16:24.940] Wait.
+[00:16:25.220 → 00:16:25.520] All right.
+[00:16:25.540 → 00:16:27.820] So now we have the frame into place
+[00:16:27.820 → 00:16:30.360] and you want to bring in the longest screws
+[00:16:30.360 → 00:16:32.020] and there's only four of these guys.
+[00:16:32.380 → 00:16:34.120] So let's bring those into place.
+[00:16:34.280 → 00:16:35.840] We're just going to install them
+[00:16:35.840 → 00:16:37.120] and keeping them standing.
+[00:16:37.600 → 00:16:38.220] Up for now.
+[00:16:38.780 → 00:16:40.520] This is the easiest way to do it.
+[00:16:40.800 → 00:16:42.140] So right now they're just standing into place.
+[00:16:42.420 → 00:16:43.520] I'm going to lift this up.
+[00:16:43.580 → 00:16:44.520] They're going to go right in,
+[00:16:45.080 → 00:16:47.340] flip it over and then put it down.
+[00:16:47.680 → 00:16:49.260] So now the screws are all standing up here.
+[00:16:49.660 → 00:16:51.440] We're going to get any four of these,
+[00:16:51.520 → 00:16:54.420] you know, these little dampeners here.
+[00:16:54.540 → 00:16:56.180] I'm just going to install them into the frame.
+[00:16:56.440 → 00:16:58.220] So now we have one on each screw here.
+[00:16:58.380 → 00:16:59.500] So the thing is,
+[00:16:59.520 → 00:17:00.260] I don't want to lift it up
+[00:17:00.260 → 00:17:01.100] because they're all going to come down
+[00:17:01.100 → 00:17:02.100] unless I hold it like this.
+[00:17:02.520 → 00:17:02.940] There you go.
+[00:17:02.960 → 00:17:04.080] You can kind of see that now.
+[00:17:04.320 → 00:17:06.720] So the next step is obviously insert the ESC,
+[00:17:06.720 → 00:17:08.820] but it does matter how you insert the ESC.
+[00:17:09.260 → 00:17:11.480] You want the holes to be on the side
+[00:17:11.480 → 00:17:12.920] so the battery will hold like this
+[00:17:12.920 → 00:17:14.220] unless you want the battery in another way.
+[00:17:14.280 → 00:17:14.920] That's your decision.
+[00:17:15.340 → 00:17:18.320] But usually the battery is forward and back.
+[00:17:18.520 → 00:17:20.280] So you want these to be on the sides,
+[00:17:20.380 → 00:17:21.380] the holes to be on the side.
+[00:17:21.540 → 00:17:23.540] And then we're going to figure out where's the front.
+[00:17:23.620 → 00:17:24.760] We're going to call that the front.
+[00:17:24.920 → 00:17:26.800] So we want to make sure that the arrow is on top
+[00:17:26.800 → 00:17:27.640] so we can see it
+[00:17:27.640 → 00:17:28.960] and that it's pointing forward.
+[00:17:29.060 → 00:17:30.000] And that is perfect.
+[00:17:30.160 → 00:17:32.340] And we're just going to slide this guy right in.
+[00:17:32.340 → 00:17:34.280] And now we're going to install the motor screws,
+[00:17:34.380 → 00:17:35.240] which I'll skip over.
+[00:17:35.360 → 00:17:37.580] However, the screw is going to be this one
+[00:17:37.580 → 00:17:39.260] and it's not going to be very hard to find it
+[00:17:39.260 → 00:17:40.960] because you only get four long screws
+[00:17:40.960 → 00:17:42.400] and a bunch of these little ones
+[00:17:42.400 → 00:17:43.780] that are exactly the same size.
+[00:17:44.020 → 00:17:45.000] And those are for your motors.
+[00:17:45.180 → 00:17:47.400] So I'm going to go ahead and start doing that.
+[00:17:47.500 → 00:17:47.620] All right.
+[00:17:47.640 → 00:17:48.740] So once the motors are installed,
+[00:17:48.760 → 00:17:49.920] it's going to look something like this.
+[00:17:50.260 → 00:17:51.580] Now what you want to take note of is
+[00:17:51.580 → 00:17:53.240] it's going to kind of act like a spring
+[00:17:53.240 → 00:17:54.600] because of the motor wire.
+[00:17:54.600 → 00:17:56.460] So what you want to do is push kind of hard,
+[00:17:56.540 → 00:17:58.700] just allow them to bend into place here.
+[00:17:58.700 → 00:18:01.960] Make sure all the motor wires are going from the inside part
+[00:18:01.960 → 00:18:03.360] to make your life a little bit easier.
+[00:18:03.500 → 00:18:06.680] So the next step is to add more of these little rubber ones
+[00:18:06.680 → 00:18:07.760] and they're all the same size.
+[00:18:07.860 → 00:18:10.000] They're actually, it seemed like it used to be like a tube
+[00:18:10.000 → 00:18:12.940] and they just had one guy cutting it piece by piece.
+[00:18:13.100 → 00:18:14.600] So they're not all cut perfect,
+[00:18:14.740 → 00:18:17.100] but I mean, what do you expect for 70 bucks or something?
+[00:18:17.500 → 00:18:18.900] So here's the arrow pointing forward.
+[00:18:18.980 → 00:18:20.180] Now this is very important also.
+[00:18:20.280 → 00:18:21.440] So the arrow is pointing forward.
+[00:18:21.840 → 00:18:24.020] You want to find the arrow also on the flight controller,
+[00:18:24.240 → 00:18:25.380] which is right there.
+[00:18:25.440 → 00:18:27.120] It's right in the middle right there.
+[00:18:27.120 → 00:18:27.980] It's saying this way.
+[00:18:27.980 → 00:18:30.880] So I'm going to install the quadcopter like this
+[00:18:30.880 → 00:18:31.920] and that's the arrow.
+[00:18:32.080 → 00:18:34.180] And then I have my four rubbers here.
+[00:18:34.500 → 00:18:35.820] So there we go.
+[00:18:35.920 → 00:18:36.860] My arrows forward.
+[00:18:37.780 → 00:18:38.220] Awesome.
+[00:18:38.640 → 00:18:41.240] So now we have those set into place.
+[00:18:41.400 → 00:18:43.460] Now I'm going to bring in some more rubbers
+[00:18:43.460 → 00:18:44.580] right on top of this.
+[00:18:45.460 → 00:18:50.260] They provide you with a total of 12, 12, no, nine, no 12.
+[00:18:50.440 → 00:18:52.060] So they give you a total of 12 here
+[00:18:52.060 → 00:18:54.280] and we have those set into place.
+[00:18:54.280 → 00:18:56.480] And I'm just going to give you an example here
+[00:18:56.480 → 00:18:58.080] without having to lose these.
+[00:18:58.440 → 00:19:00.020] So you can kind of see how it is.
+[00:19:00.060 → 00:19:02.060] We have one rubber, two rubber, three rubber here.
+[00:19:02.340 → 00:19:02.580] All right.
+[00:19:02.600 → 00:19:04.880] So now let's connect the electronic speed controller
+[00:19:04.880 → 00:19:06.780] or the ESC to the flight controller.
+[00:19:06.980 → 00:19:08.820] And it's done with this connector right here.
+[00:19:08.840 → 00:19:10.320] It's the biggest and shortest one.
+[00:19:10.320 → 00:19:13.820] So this connector is going to connect right into the big connector
+[00:19:13.820 → 00:19:16.220] up in front of the flight controller, which is the arrow.
+[00:19:16.400 → 00:19:17.800] That's going to go straight down.
+[00:19:18.000 → 00:19:20.860] Now, if it's not going in, then you want to flip the connector
+[00:19:20.860 → 00:19:22.460] and just be careful.
+[00:19:22.620 → 00:19:23.680] Don't force it in.
+[00:19:24.340 → 00:19:28.020] It'll go in very nicely if it's in the correct orientation.
+[00:19:28.580 → 00:19:29.080] There we go.
+[00:19:29.400 → 00:19:30.060] That's really nice.
+[00:19:30.120 → 00:19:31.380] We're going to bend this slightly here
+[00:19:31.380 → 00:19:33.340] because we don't want this hanging out later on
+[00:19:33.340 → 00:19:35.040] and getting caught with a propeller.
+[00:19:35.240 → 00:19:36.960] So now the ESC is actually connected.
+[00:19:36.960 → 00:19:40.500] So if we actually gave this power right now, the motors would light up
+[00:19:40.500 → 00:19:43.660] and the flight controller will light up and just about everything.
+[00:19:43.980 → 00:19:47.520] All we're missing are the camera and the receiver.
+[00:19:47.720 → 00:19:49.140] So let's go ahead and prepare the receiver
+[00:19:49.140 → 00:19:51.040] and I'll show you how this will actually work.
+[00:19:51.420 → 00:19:55.140] So I'm going to just cut these off just like that.
+[00:19:55.700 → 00:19:58.920] And these are not silicone for some reason or some sort of...
+[00:19:58.920 → 00:20:00.480] So stripping these might be a bit difficult
+[00:20:00.480 → 00:20:01.940] if you don't have the correct tools
+[00:20:01.940 → 00:20:04.200] or you don't have the experience to do it.
+[00:20:04.580 → 00:20:06.120] So I just did it with a little cutter right here.
+[00:20:06.960 → 00:20:07.340] All right.
+[00:20:07.360 → 00:20:10.260] So now I've gone ahead and twisted the wires up top here.
+[00:20:10.260 → 00:20:13.480] Once I stripped them, I'm just going to add some solder to these
+[00:20:13.480 → 00:20:15.900] because these are going to go into our receiver here.
+[00:20:16.120 → 00:20:18.280] And the other side where the white connector is,
+[00:20:18.340 → 00:20:21.240] is going to go into the flight controller.
+[00:20:21.500 → 00:20:23.720] So I'm going to trim these wires because they're a bit too long.
+[00:20:23.780 → 00:20:28.040] And again, don't cut or solder on top of any electrical component
+[00:20:28.040 → 00:20:29.840] nor the motors themselves.
+[00:20:29.840 → 00:20:31.080] So keep that in mind.
+[00:20:31.320 → 00:20:33.320] So here I have my XM plus radio
+[00:20:33.320 → 00:20:36.420] and I'm going to go ahead and solder onto it.
+[00:20:36.420 → 00:20:38.460] Now, if I remember correctly, this is SBUS.
+[00:20:38.880 → 00:20:40.880] And then I think it's 5 volt, then it's ground.
+[00:20:42.460 → 00:20:43.680] But I could be wrong.
+[00:20:44.120 → 00:20:46.920] I'll double check later, but I'm going to install them like that right now.
+[00:20:47.020 → 00:20:51.300] So if you had IBUS, then the yellow wire would be your signal, your IBUS.
+[00:20:52.400 → 00:20:56.240] And if you had SBUS, then the yellow wire would be your SBUS.
+[00:20:56.240 → 00:21:01.800] However, we do need to make a modification on the flight controller for the receiver to actually work,
+[00:21:01.900 → 00:21:07.220] which is choosing if it's going to be IBUS or if it's going to be an SBUS.
+[00:21:07.440 → 00:21:09.740] And this is very important that you know the difference
+[00:21:09.740 → 00:21:13.900] and know what your transmitter could broadcast that.
+[00:21:14.280 → 00:21:14.420] All right.
+[00:21:14.420 → 00:21:15.840] So now we have the receiver here.
+[00:21:16.000 → 00:21:19.260] So the modification we're going to have to do to the flight controller
+[00:21:19.260 → 00:21:24.280] is going to be somewhere pretty, pretty tiny, which is these three pads right here.
+[00:21:24.380 → 00:21:27.860] Now, if you're going to be using SBUS, these three pads here,
+[00:21:27.940 → 00:21:31.540] the middle one is going to have to be bridged with the left one.
+[00:21:31.660 → 00:21:37.420] If you're using IBUS or PPM, then the middle one is going to have to be bridged with the right one.
+[00:21:37.420 → 00:21:38.680] Don't bridge all of them together.
+[00:21:39.540 → 00:21:42.100] So let's try to attempt this together here.
+[00:21:43.760 → 00:21:48.820] This is really nice, but I wish these pads were slightly larger to help new people
+[00:21:48.820 → 00:21:51.080] because it can be pretty hard.
+[00:21:51.440 → 00:21:53.740] See, like right now, you see how difficult it is for me to solder?
+[00:21:54.160 → 00:21:57.800] That's because it went to sleep mode and then the temperature now is just coming back up.
+[00:21:58.420 → 00:21:58.580] All right.
+[00:21:58.600 → 00:21:59.400] So now they're bridging.
+[00:21:59.500 → 00:22:00.260] I do apologize.
+[00:22:00.260 → 00:22:02.640] I just looked up and it turns out I had it off camera
+[00:22:02.640 → 00:22:04.140] because I had to bring it closer to me.
+[00:22:04.640 → 00:22:07.800] And you can see now the middle one is bridged with the left one here
+[00:22:07.800 → 00:22:08.800] because I'm using SBUS.
+[00:22:09.320 → 00:22:11.660] And again, if you're IBUS, you bridge the middle one with the right one.
+[00:22:12.240 → 00:22:13.300] And that's what we did here.
+[00:22:13.380 → 00:22:16.600] So now our receiver is ready and we're basically done.
+[00:22:16.680 → 00:22:18.440] So we just got to connect everything up together.
+[00:22:18.640 → 00:22:19.020] All right, guys.
+[00:22:19.040 → 00:22:22.040] So next we want to install the camera into the little canopy here.
+[00:22:22.480 → 00:22:26.960] Now, I'd highly recommend you add some like double-sided tape behind the VTX.
+[00:22:27.100 → 00:22:30.220] Now, it's very important that you see the solder is coming up from this side.
+[00:22:30.420 → 00:22:32.660] And also you have this little extra piece taken out.
+[00:22:32.760 → 00:22:34.680] It's telling you, oh, the antenna is going to go on this side.
+[00:22:34.680 → 00:22:37.300] So it has the hole for the button here.
+[00:22:37.660 → 00:22:39.040] Now, this will go into sideways.
+[00:22:39.200 → 00:22:41.680] If you have it the other way, it'll just it just won't fit.
+[00:22:41.740 → 00:22:43.240] So you have to put it in the correct way.
+[00:22:43.440 → 00:22:47.880] And the wires, I've routed them through the back of the VTX down this hole.
+[00:22:48.020 → 00:22:49.900] So now to know where these actually connect.
+[00:22:50.000 → 00:22:50.880] Well, let's take a closer look.
+[00:22:50.960 → 00:22:51.740] So here's the arrow.
+[00:22:52.260 → 00:22:56.640] The VTX is going to go here or the four pin connector is going to go here
+[00:22:56.640 → 00:22:58.620] because it's a four and a three pin connector.
+[00:22:58.620 → 00:23:02.440] So this is the VTX here and that's in.
+[00:23:02.700 → 00:23:05.100] And then the other one is the front one here.
+[00:23:05.180 → 00:23:06.240] So again, here's the arrow.
+[00:23:06.340 → 00:23:07.440] The USB is on the left.
+[00:23:07.620 → 00:23:09.860] So this one here is where the camera would go in.
+[00:23:10.240 → 00:23:12.800] And if you actually take a closer look at your board, if you do have this,
+[00:23:13.100 → 00:23:17.000] you'll see the word cam right in between the big connector and the little connector.
+[00:23:17.740 → 00:23:19.180] So now we have that in place.
+[00:23:19.360 → 00:23:22.240] And obviously, we want the camera to point forward.
+[00:23:22.700 → 00:23:26.280] So now once you put the nuts in place, don't think you have to tighten it from up here.
+[00:23:26.280 → 00:23:29.720] So what we're going to do is we're going to have something holding up from the top
+[00:23:29.720 → 00:23:34.540] and then we'll just use the screw driver from the bottom or the hex driver from the bottom
+[00:23:34.540 → 00:23:36.180] to actually tighten it as we please.
+[00:23:36.680 → 00:23:40.860] Now, try not to bend the VTX antenna so much because it'll probably end up breaking.
+[00:23:41.160 → 00:23:42.660] And that goes for a lot of wires.
+[00:23:43.240 → 00:23:45.480] So that goes even for motor wires as well.
+[00:23:45.580 → 00:23:46.460] So keep that in mind.
+[00:23:46.920 → 00:23:50.760] Try not to keep hitting it by mistake because soldering one of those back into place
+[00:23:50.760 → 00:23:53.500] is much more difficult, especially if you're new.
+[00:23:53.500 → 00:23:54.540] All right.
+[00:23:54.600 → 00:23:57.160] So right now we're just tightening everything here.
+[00:23:58.140 → 00:24:01.360] And like I mentioned before, you don't have to keep it.
+[00:24:01.360 → 00:24:02.860] Just get the nut to grip.
+[00:24:03.580 → 00:24:05.260] And then that's what she said.
+[00:24:05.420 → 00:24:05.640] Yeah.
+[00:24:05.660 → 00:24:06.980] So just get the nut to grip.
+[00:24:07.460 → 00:24:10.860] And that should be good in that perspective.
+[00:24:11.020 → 00:24:14.700] I had to redo this part a bunch of times because that's what she said.
+[00:24:17.240 → 00:24:17.960] All right.
+[00:24:18.200 → 00:24:18.580] All right.
+[00:24:18.580 → 00:24:21.140] And this is how it's supposed to look like when it's complete.
+[00:24:21.240 → 00:24:21.800] Really nice.
+[00:24:21.880 → 00:24:22.420] Really simple.
+[00:24:22.420 → 00:24:25.740] The guts are kind of sticking out, but that was the whole idea here.
+[00:24:25.800 → 00:24:30.420] It's supposed to be all exposed, super light, 20 by 20 stack, which is actually pretty good
+[00:24:30.420 → 00:24:31.760] that it's using a 20 by 20 stack.
+[00:24:31.880 → 00:24:34.980] And again, if you take a look at the low ESR capacitor, this is the reason why I told
+[00:24:34.980 → 00:24:38.060] you you want to solder it on top of the ESC instead of the bottom.
+[00:24:38.240 → 00:24:42.840] So the battery wires here will not allow it to bend any further and touch this carbon
+[00:24:42.840 → 00:24:44.340] fiber because it was also pretty long.
+[00:24:44.400 → 00:24:47.920] So it would easily touch the carbon fiber, short circuited the whole thing.
+[00:24:48.020 → 00:24:49.020] So keep that in mind.
+[00:24:49.060 → 00:24:50.020] That's something really important.
+[00:24:50.020 → 00:24:54.880] Also, if you're new, I actually don't recommend you add your motor wires to the bottom of the
+[00:24:54.880 → 00:24:55.200] ESC.
+[00:24:55.300 → 00:24:56.900] I'd probably do it on top of the ESC.
+[00:24:56.980 → 00:25:00.920] It'd probably be a little bit easier and keep the extra slack and do something else with
+[00:25:00.920 → 00:25:01.120] it.
+[00:25:01.500 → 00:25:03.260] But if you just push it, it'll be fine.
+[00:25:03.680 → 00:25:06.960] But it might be a bit fiddly for you if you don't have much experience.
+[00:25:06.960 → 00:25:14.340] Also, the VTX here, it seems pretty stable, but I would definitely add some sort of something
+[00:25:14.340 → 00:25:15.520] to hold it in place.
+[00:25:15.700 → 00:25:20.380] I wouldn't add a zip tie because zip ties usually will tend to rip off components from
+[00:25:20.380 → 00:25:20.620] here.
+[00:25:20.780 → 00:25:23.640] So I'd probably add some double sided tape right below here.
+[00:25:24.080 → 00:25:27.700] Hot glue won't work because if you add hot glue, it'll just basically melt because these
+[00:25:27.700 → 00:25:28.740] do get pretty toasty.
+[00:25:28.740 → 00:25:35.720] And for this antenna here, I'd want to secure it with possibly some sort of a zip tie that's
+[00:25:35.720 → 00:25:38.300] going to go through here to here and just stick out like that.
+[00:25:38.420 → 00:25:41.000] And then I'll just heat shrink something on top of it.
+[00:25:41.140 → 00:25:43.040] And I'll actually do that.
+[00:25:43.260 → 00:25:43.380] All right.
+[00:25:43.420 → 00:25:46.300] So what I've done here is I should have actually left the zip tie slightly longer.
+[00:25:46.460 → 00:25:49.780] But what I've done is obviously I brought a little fatter heat shrink, put it on top,
+[00:25:49.840 → 00:25:51.740] and now it's holding the VTX with the heat shrink.
+[00:25:52.060 → 00:25:53.300] And that's not going anywhere.
+[00:25:53.360 → 00:25:54.280] It's just going to stay there.
+[00:25:54.280 → 00:25:57.860] And you don't want this to keep playing because it'll eventually break off the solder like
+[00:25:57.860 → 00:25:58.880] with any other wire.
+[00:25:59.720 → 00:26:03.260] And it's looking pretty nice to be honest.
+[00:26:03.300 → 00:26:04.600] I really like that yellow on there.
+[00:26:05.080 → 00:26:07.280] Now what you'll be left with is the receiver.
+[00:26:07.500 → 00:26:12.580] Right now it's like one in the morning and I really am tired and I just not going to have
+[00:26:12.580 → 00:26:15.040] a nice solution for this just yet.
+[00:26:15.320 → 00:26:16.580] But you can get creative.
+[00:26:16.740 → 00:26:21.920] Like what I'm thinking of doing is probably putting it somewhere here on the side because
+[00:26:21.920 → 00:26:22.680] there are some holes.
+[00:26:22.680 → 00:26:27.800] Put a heat shrink around this and then use double-sided tape to hold it into place.
+[00:26:28.380 → 00:26:32.620] I wouldn't put this on top of the flight controller because this is loose.
+[00:26:32.820 → 00:26:36.420] And then these little touches will touch the gyro and make it do weird stuff.
+[00:26:36.580 → 00:26:40.100] So you'll just not have a really pleasant experience and you won't know why.
+[00:26:40.700 → 00:26:45.780] So the best thing overall to do is to put it somewhere here on the side just like this.
+[00:26:46.240 → 00:26:48.160] And I'll figure that out in a later video.
+[00:26:48.160 → 00:26:52.820] Or I might even design and 3D print something else for this quadcopter and I'll share it
+[00:26:52.820 → 00:26:53.420] with you guys.
+[00:26:53.540 → 00:26:57.120] So I'll be flying this within the next two days once the rain clears up because now we're
+[00:26:57.120 → 00:26:58.280] starting to rain here.
+[00:26:58.780 → 00:27:03.740] And I'll show you the final result of how I got it to be and share everything else with
+[00:27:03.740 → 00:27:04.000] you guys.
+[00:27:04.080 → 00:27:05.120] But this is how you build it.
+[00:27:05.220 → 00:27:07.240] All you need to do is find a placement for your receiver.
+[00:27:07.240 → 00:27:11.120] And it's 1 in the morning right now so I'm really tired and I can't really think of anything
+[00:27:11.120 → 00:27:11.900] to do for that.
+[00:27:12.360 → 00:27:13.800] And again, all the links are down below.
+[00:27:13.880 → 00:27:15.700] If you could check them out, it does really support the channel.
+[00:27:16.040 → 00:27:18.060] I'll have links to the batteries to use for this.
+[00:27:18.140 → 00:27:22.460] I'll also have the links for the heat shrinks, the tools I use, and that soldering iron that
+[00:27:22.460 → 00:27:24.140] we just used for this whole build here.
+[00:27:24.340 → 00:27:26.040] And I'll see you in the next one.
+[00:27:27.080 → 00:27:27.700] Peace out.

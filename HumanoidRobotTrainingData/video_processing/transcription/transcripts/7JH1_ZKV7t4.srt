@@ -1,0 +1,576 @@
+1
+00:00:00,240 --> 00:00:04,800
+This might look like just a regular old tricopter drone, but unlike a typical tricopter, all
+
+2
+00:00:04,800 --> 00:00:11,440
+of the motors tilt with a single servo so it can spin at extreme speeds.
+
+3
+00:00:11,440 --> 00:00:13,320
+Why would I want it to spin so darn fast?
+
+4
+00:00:13,320 --> 00:00:17,000
+Well, when fitted with some wings on the arms, and when the tilt angle of all of them is
+
+5
+00:00:17,000 --> 00:00:21,560
+just right, it actually requires substantially less power to hover than if the three motors
+
+6
+00:00:21,560 --> 00:00:25,420
+were just oriented vertically like a regular tricopter drone.
+
+7
+00:00:25,420 --> 00:00:26,640
+This seems very counterintuitive.
+
+8
+00:00:26,640 --> 00:00:31,780
+If we tilt the motors to enable this spinning, a substantial fraction of their upwards thrust
+
+9
+00:00:31,780 --> 00:00:33,400
+force is lost.
+
+10
+00:00:33,400 --> 00:00:38,540
+If they tilt to 45 degrees for example, that's half of the total thrust now pushing sideways
+
+11
+00:00:38,540 --> 00:00:40,100
+and not up.
+
+12
+00:00:40,100 --> 00:00:44,060
+This means that the drone will fall if throttle isn't increased.
+
+13
+00:00:44,060 --> 00:00:48,240
+Using our intuition of a regular drone without additional airfoils fitted to it, this would
+
+14
+00:00:48,240 --> 00:00:52,180
+mean that to hover with the motors at this angle, they would basically need to double their
+
+15
+00:00:52,180 --> 00:00:56,480
+power to match the vertical thrust component with the downward weight of the vehicle, enabling
+
+16
+00:00:56,480 --> 00:00:57,480
+a steady state hover.
+
+17
+00:00:57,480 --> 00:01:02,660
+But when we add these wings and make it spin by tilting the motors, the power required to
+
+18
+00:01:02,660 --> 00:01:04,800
+hover actually goes down.
+
+19
+00:01:04,800 --> 00:01:05,800
+Way down.
+
+20
+00:01:05,800 --> 00:01:08,200
+This almost seems like a paradox.
+
+21
+00:01:08,200 --> 00:01:12,920
+We lose a lot of upwards thrust by tilting the motors, but somehow reduce power required
+
+22
+00:01:12,920 --> 00:01:14,320
+to fly.
+
+23
+00:01:14,320 --> 00:01:18,540
+In this video, I'll explain why this is, and show off this cool new VTOL platform I've
+
+24
+00:01:18,540 --> 00:01:21,720
+been developing.
+
+25
+00:01:21,720 --> 00:01:24,740
+This was a fairly basic drone build with a few exceptions.
+
+26
+00:01:24,740 --> 00:01:28,260
+The center hub is 3D printed with bearings pressed fit into the arm mounts to allow them
+
+27
+00:01:28,260 --> 00:01:29,840
+to rotate freely.
+
+28
+00:01:29,840 --> 00:01:33,900
+A single standard sized servo at the center with a bevel gear actuates all three tilting
+
+29
+00:01:33,900 --> 00:01:35,440
+arms at once.
+
+30
+00:01:35,440 --> 00:01:40,340
+Out at the end of the arms, I have some regular old mini quad motors with 5 inch propellers.
+
+31
+00:01:40,340 --> 00:01:43,920
+All of the parts and print files I used for this build are linked in the description if
+
+32
+00:01:43,920 --> 00:01:47,640
+for whatever reason you want to build one of these flying abominations yourself.
+
+33
+00:01:47,640 --> 00:01:51,680
+As always with my builds, I'm using my open source Arduino based flight controller DreamFlight
+
+34
+00:01:51,680 --> 00:01:53,820
+to do the flight stabilization.
+
+35
+00:01:53,820 --> 00:01:58,820
+I've added an SD logger and current sensor so we can gather power data while in flight,
+
+36
+00:01:58,820 --> 00:02:01,800
+and a lidar distance sensor for altitude hold.
+
+37
+00:02:01,800 --> 00:02:05,580
+And this is my best attempt at squeezing all these electronics on the center hub.
+
+38
+00:02:05,580 --> 00:02:08,080
+Not bad, but not great.
+
+39
+00:02:08,080 --> 00:02:11,980
+So with all of this assembled, it flies fine just like any other tricopter, and there's
+
+40
+00:02:11,980 --> 00:02:14,120
+definitely no shortage of yaw control.
+
+41
+00:02:14,120 --> 00:02:18,100
+I've actually configured the flight controller so that as it spins faster, the tricopter
+
+42
+00:02:18,100 --> 00:02:20,760
+stabilization fades out completely.
+
+43
+00:02:20,760 --> 00:02:24,220
+It's actually passively stable at these high speeds, though I still don't have any
+
+44
+00:02:24,220 --> 00:02:25,220
+directional control.
+
+45
+00:02:25,220 --> 00:02:29,240
+We'll save that problem for another video, so all of the spinny flights in this video
+
+46
+00:02:29,240 --> 00:02:33,000
+are limited in length by how far the thing drifts around in the wind.
+
+47
+00:02:33,000 --> 00:02:37,160
+With stability taken care of, there's still a small problem that needs to be addressed.
+
+48
+00:02:37,160 --> 00:02:41,400
+If we want to measure and compare power consumption at different angular speeds, we need a way to
+
+49
+00:02:41,400 --> 00:02:45,080
+hover at a fixed altitude much better than I can do manually.
+
+50
+00:02:45,080 --> 00:02:48,780
+For reference, here I'm trying to hold a hover with the wings on, and you can see that
+
+51
+00:02:48,780 --> 00:02:51,460
+it's difficult to keep a constant altitude.
+
+52
+00:02:51,460 --> 00:02:55,480
+My bad throttle management would lead to spikes in the power draw, giving us less reliable
+
+53
+00:02:55,480 --> 00:02:57,820
+data to look at later.
+
+54
+00:02:57,820 --> 00:03:01,440
+So I ended up borrowing the lidar sensor and some code from my last video where we built
+
+55
+00:03:01,440 --> 00:03:05,500
+a ground effect vehicle that needed to fly a few inches off the ground.
+
+56
+00:03:05,500 --> 00:03:09,760
+Mounting this to the side facing down gives a good altitude reading that is used in a simple
+
+57
+00:03:09,760 --> 00:03:14,520
+PID controller to increase or decrease throttle depending on if the vehicle is below or above
+
+58
+00:03:14,520 --> 00:03:18,240
+the desired altitude of about 4 feet from my tests.
+
+59
+00:03:18,240 --> 00:03:21,940
+I spent some time tuning the controller in my living room with the wings off.
+
+60
+00:03:21,940 --> 00:03:26,320
+I was pretty happy with how well it held altitude, so I used it as a good opportunity to sharpen
+
+61
+00:03:26,320 --> 00:03:28,860
+my basketball skills.
+
+62
+00:03:28,860 --> 00:03:32,600
+But note to self, don't put your hand over the lidar sensor that it's using to measure
+
+63
+00:03:32,600 --> 00:03:36,760
+distance to the ground.
+
+64
+00:03:36,760 --> 00:03:40,840
+Since it now holds altitude on its own, that means when we start spinning and there is any
+
+65
+00:03:40,840 --> 00:03:45,520
+change in required throttle, it will automatically adjust how much throttle is commanded to the
+
+66
+00:03:45,520 --> 00:03:46,520
+motors.
+
+67
+00:03:46,520 --> 00:03:50,520
+This will give us much more consistent power draw data for our comparisons with wings on
+
+68
+00:03:50,520 --> 00:03:53,160
+and off.
+
+69
+00:03:53,160 --> 00:03:57,380
+Speaking of data, let's look at the power data for the no wings case first.
+
+70
+00:03:57,380 --> 00:04:01,280
+As we can see, it takes about 83 watts to hover without spinning.
+
+71
+00:04:01,280 --> 00:04:05,640
+Then as we increase our angular speed, we see the power increase as we would expect from our
+
+72
+00:04:05,640 --> 00:04:08,520
+intuition about the thrust vector components.
+
+73
+00:04:08,520 --> 00:04:12,340
+But then, the power seems to dip a little bit before increasing some more.
+
+74
+00:04:12,340 --> 00:04:13,400
+What's going on there?
+
+75
+00:04:13,400 --> 00:04:18,920
+Well, this is our first clue at why it is more efficient to spin very fast in hover.
+
+76
+00:04:18,920 --> 00:04:23,780
+Propeller efficiency actually changes as a function of incoming airspeed, or inflow.
+
+77
+00:04:23,780 --> 00:04:27,820
+For a fixed pitch propeller, the efficiency will increase with inflow until a certain point
+
+78
+00:04:27,820 --> 00:04:30,040
+where it drops off dramatically.
+
+79
+00:04:30,040 --> 00:04:34,280
+This drop off in efficiency is caused by the incoming air basically being too fast for
+
+80
+00:04:34,280 --> 00:04:37,800
+the prop to keep a positive angle of attack while it spins.
+
+81
+00:04:37,800 --> 00:04:42,160
+This is why airplane propellers will generally have a higher pitch than flatter looking multi-rotor
+
+82
+00:04:42,160 --> 00:04:43,760
+propellers.
+
+83
+00:04:43,760 --> 00:04:48,300
+So in the power data, this slight dip is actually the propeller becoming slightly more efficient
+
+84
+00:04:48,300 --> 00:04:50,220
+at generating thrust.
+
+85
+00:04:50,220 --> 00:04:54,820
+At this angular speed, the inflow to the prop is about 25 miles per hour.
+
+86
+00:04:54,820 --> 00:04:57,160
+Beyond this, the power increases again.
+
+87
+00:04:57,160 --> 00:05:01,040
+This is the drag from the arms coming into play, which is not too surprising as they
+
+88
+00:05:01,040 --> 00:05:06,940
+whip around at 25 miles per hour at the tip.
+
+89
+00:05:06,940 --> 00:05:10,000
+So let's get the wings on and take a look at the power data now.
+
+90
+00:05:10,000 --> 00:05:11,620
+But first a quick note about my lawn.
+
+91
+00:05:11,620 --> 00:05:13,620
+Yes, I'm aware it needs to be mowed.
+
+92
+00:05:13,620 --> 00:05:15,040
+No, I won't mow it.
+
+93
+00:05:15,040 --> 00:05:25,700
+It actually helps cushion crashes, which I had plenty of when testing my first prototype.
+
+94
+00:05:25,700 --> 00:05:28,580
+But the grass does introduce a problem to our power data collection.
+
+95
+00:05:28,580 --> 00:05:33,460
+The rough surface of the grass confuses the altitude hold we implemented earlier, making
+
+96
+00:05:33,460 --> 00:05:35,480
+it not as smooth as it could be.
+
+97
+00:05:35,480 --> 00:05:40,960
+So as a preface to the data I'm showing you, all of it was collected flying over flat pavement.
+
+98
+00:05:40,960 --> 00:05:48,780
+And this is your friendly reminder to tighten your props.
+
+99
+00:05:48,780 --> 00:05:51,500
+Now we can finally look at the wings on data.
+
+100
+00:05:51,500 --> 00:05:53,400
+Just look at how incredible that is.
+
+101
+00:05:53,400 --> 00:05:56,900
+The regular hover power without spinning has gone up because of the added weight of the
+
+102
+00:05:56,900 --> 00:05:57,980
+wings.
+
+103
+00:05:57,980 --> 00:06:01,860
+But as we start spinning, the power required goes way down.
+
+104
+00:06:01,860 --> 00:06:05,380
+You can even hear the motor start to spool down as the altitude controller lowers the
+
+105
+00:06:05,380 --> 00:06:07,780
+throttle to maintain altitude.
+
+106
+00:06:07,780 --> 00:06:16,140
+The most amazing part of this is that the power reduction isn't just a small amount.
+
+107
+00:06:16,140 --> 00:06:18,660
+It's reduced by a factor of three.
+
+108
+00:06:18,660 --> 00:06:23,080
+That means that this platform can do a loitering hover for three times as long as its regular
+
+109
+00:06:23,080 --> 00:06:25,300
+multirotor counterpart.
+
+110
+00:06:25,300 --> 00:06:28,940
+Another way to think of it is that it can freely climb to altitude and use no more power
+
+111
+00:06:28,940 --> 00:06:31,780
+than the multirotor uses in a regular hover.
+
+112
+00:06:31,780 --> 00:06:40,280
+I think it's just so cool how it looks like it's screwing itself upward into the air.
+
+113
+00:06:40,280 --> 00:06:44,300
+So why did we get such a large efficiency increase simply by adding wings and spinning?
+
+114
+00:06:44,300 --> 00:06:48,180
+Well, it all comes down to energy and momentum.
+
+115
+00:06:48,180 --> 00:06:52,880
+Propeller thrust is proportional to the change in momentum of the airflow through the propeller.
+
+116
+00:06:52,880 --> 00:06:57,140
+Drag on the propeller is directly proportional to kinetic energy of the air, keeping in mind
+
+117
+00:06:57,140 --> 00:07:00,340
+that drag directly relates to power required.
+
+118
+00:07:00,340 --> 00:07:05,120
+Take a mental note that the power is proportional to velocity squared, while momentum is proportional
+
+119
+00:07:05,120 --> 00:07:07,400
+to only velocity.
+
+120
+00:07:07,400 --> 00:07:11,500
+If you have two props, one twice as big as the other, this relation tells us that the
+
+121
+00:07:11,500 --> 00:07:16,440
+smaller one would need to move the air twice as fast to generate the same thrust.
+
+122
+00:07:16,440 --> 00:07:21,680
+Spinning faster to move the air faster substantially increases the power required, due to that pesky
+
+123
+00:07:21,680 --> 00:07:23,500
+airspeed squared term.
+
+124
+00:07:23,500 --> 00:07:28,500
+It is simply more efficient to have a larger propeller that spins slower.
+
+125
+00:07:28,500 --> 00:07:31,160
+No spinning drone paradox here.
+
+126
+00:07:31,160 --> 00:07:35,220
+In our case, we sort of have a hybrid where small, inefficient propellers are doing the
+
+127
+00:07:35,220 --> 00:07:39,460
+spinning while a larger, efficient propeller does the heavy lifting.
+
+128
+00:07:39,460 --> 00:07:40,920
+Kind of like an airplane.
+
+129
+00:07:40,920 --> 00:07:45,040
+By putting the propellers farther out, we increase their moment arm, meaning they need to generate
+
+130
+00:07:45,040 --> 00:07:49,340
+much less thrust to overcome the lesser drag of the larger propeller.
+
+131
+00:07:49,340 --> 00:07:53,400
+If all of this is too hard to follow, just imagine we took an airplane with less thrust
+
+132
+00:07:53,400 --> 00:07:57,760
+than weight, made it fly around in circles, and called it a hover.
+
+133
+00:07:57,760 --> 00:08:00,300
+That's the magic of this vehicle's design.
+
+134
+00:08:00,300 --> 00:08:03,960
+What's cool is that we now have small drone propellers operating much more efficiently
+
+135
+00:08:03,960 --> 00:08:07,860
+in hover on this vehicle with high inflow as we discussed earlier.
+
+136
+00:08:07,860 --> 00:08:11,360
+In other words, we don't need two different propeller designs for hover and forward flight
+
+137
+00:08:11,360 --> 00:08:13,480
+like many other VTOLs do.
+
+138
+00:08:13,480 --> 00:08:18,800
+We can use the same propeller design for both flight modes and get the same propulsive efficiency.
+
+139
+00:08:18,800 --> 00:08:23,080
+In the next video, we'll take a look at power consumption in forward flight for this vehicle,
+
+140
+00:08:23,080 --> 00:08:27,040
+and maybe even touch on some new control methods so we can get intuitive directional control
+
+141
+00:08:27,040 --> 00:08:28,040
+while it's spinning.
+
+142
+00:08:28,040 --> 00:08:31,880
+I've got some tricks up my sleeve for that, so make sure to subscribe so you don't miss
+
+143
+00:08:31,880 --> 00:08:32,880
+it.
+
+144
+00:08:32,880 --> 00:08:32,940
+Cheers!
+

@@ -1,0 +1,840 @@
+1
+00:00:00,000 --> 00:00:07,000
+Hey guys, going to take a look at the ubiquitous LM386 audio amplifier IC.
+
+2
+00:00:07,000 --> 00:00:11,000
+Going to do some power measurements, talk about layout issues.
+
+3
+00:00:11,000 --> 00:00:18,000
+You know, a lot of people build these things and they pop and buzz and they get distortion and things.
+
+4
+00:00:18,000 --> 00:00:24,000
+And it's really not a problem with the chip, it's the layout of the circuit.
+
+5
+00:00:24,000 --> 00:00:29,000
+You really have to do it right and we'll experiment with that.
+
+6
+00:00:29,000 --> 00:00:33,000
+And like I say, we'll do power measurements and all that.
+
+7
+00:00:33,000 --> 00:00:37,000
+I'm shooting on a new camera I bought.
+
+8
+00:00:37,000 --> 00:00:42,000
+Canon PowerShot ELF or ELPH, whatever they call it.
+
+9
+00:00:42,000 --> 00:00:45,000
+115IS.
+
+10
+00:00:45,000 --> 00:00:48,000
+Practically brand new.
+
+11
+00:00:48,000 --> 00:00:51,000
+I got at one of those check and cash places.
+
+12
+00:00:51,000 --> 00:00:58,000
+I guess somebody got it as a gift maybe and they needed quick cash and they turned it in for their drugs.
+
+13
+00:00:58,000 --> 00:01:01,000
+Or maybe they had a rent payment or something.
+
+14
+00:01:01,000 --> 00:01:04,000
+They usually don't give you any money for these things.
+
+15
+00:01:04,000 --> 00:01:06,000
+Maybe 20, 30 bucks.
+
+16
+00:01:06,000 --> 00:01:10,000
+But I saw it in there and got it for 40 bucks.
+
+17
+00:01:10,000 --> 00:01:12,000
+You can buy these things new.
+
+18
+00:01:12,000 --> 00:01:16,000
+You know, they're an old model for 80 dollars now.
+
+19
+00:01:16,000 --> 00:01:19,000
+Really happy with the audio quality of it.
+
+20
+00:01:19,000 --> 00:01:24,000
+But I don't want to get off on a tangent here.
+
+21
+00:01:24,000 --> 00:01:28,000
+So let's talk about the LM386.
+
+22
+00:01:28,000 --> 00:01:32,000
+Well, my first experience with this chip was probably 30 years ago.
+
+23
+00:01:32,000 --> 00:01:38,000
+I was getting into electronics and audio and things like that.
+
+24
+00:01:38,000 --> 00:01:46,000
+And as a teenager, I really needed something to play with.
+
+25
+00:01:46,000 --> 00:01:50,000
+And of course, Radio Shack down the road.
+
+26
+00:01:50,000 --> 00:01:52,000
+And they sold, they've been selling these things.
+
+27
+00:01:52,000 --> 00:01:54,000
+And they still sell these chips.
+
+28
+00:01:54,000 --> 00:01:55,000
+Even today.
+
+29
+00:01:55,000 --> 00:02:01,000
+And I think they started carrying them back in the 70's.
+
+30
+00:02:01,000 --> 00:02:07,000
+This is a national semiconductor product.
+
+31
+00:02:07,000 --> 00:02:12,000
+Though I think other companies have produced it.
+
+32
+00:02:12,000 --> 00:02:16,000
+It's a, uh...
+
+33
+00:02:16,000 --> 00:02:21,000
+Like I say, it's a good little chip for building small amplifiers.
+
+34
+00:02:21,000 --> 00:02:25,000
+Maybe one of some Bill Jones computer speakers.
+
+35
+00:02:25,000 --> 00:02:28,000
+It'd work for doing that.
+
+36
+00:02:28,000 --> 00:02:30,000
+But it does have its limitations though.
+
+37
+00:02:30,000 --> 00:02:32,000
+And we'll talk about that as well.
+
+38
+00:02:32,000 --> 00:02:40,000
+Well, as far as distortion, it's actually pretty close to HiFi.
+
+39
+00:02:40,000 --> 00:02:42,000
+But it doesn't quite make it.
+
+40
+00:02:42,000 --> 00:02:45,000
+You know, my criteria for HiFi...
+
+41
+00:02:45,000 --> 00:02:47,000
+Excuse me.
+
+42
+00:02:47,000 --> 00:02:54,000
+The amplifier total harmonic distortion across the power band and frequency band
+
+43
+00:02:54,000 --> 00:03:01,000
+must be under 0.1% or one tenth of a percent of total harmonic distortion.
+
+44
+00:03:01,000 --> 00:03:03,000
+This chip...
+
+45
+00:03:03,000 --> 00:03:07,000
+Across its power band, it's well under one percent.
+
+46
+00:03:07,000 --> 00:03:12,000
+And it's just scraping the bottom in probably the most audible range.
+
+47
+00:03:12,000 --> 00:03:18,000
+So, it's not bad, but it doesn't quite make it.
+
+48
+00:03:18,000 --> 00:03:20,000
+Here's the frequency band.
+
+49
+00:03:20,000 --> 00:03:23,000
+And these measurements are at six volts.
+
+50
+00:03:23,000 --> 00:03:25,000
+Might do better at nine volts.
+
+51
+00:03:25,000 --> 00:03:27,000
+But, uh...
+
+52
+00:03:27,000 --> 00:03:30,000
+You know, up here is the one percent line.
+
+53
+00:03:30,000 --> 00:03:36,000
+So, in much of the audible band, it's well under one percent.
+
+54
+00:03:36,000 --> 00:03:40,000
+And I really question if you can hear distortion.
+
+55
+00:03:40,000 --> 00:03:43,000
+That's so low under one percent.
+
+56
+00:03:43,000 --> 00:03:44,000
+You know...
+
+57
+00:03:44,000 --> 00:03:46,000
+I don't know.
+
+58
+00:03:46,000 --> 00:03:53,000
+It depends on the music as well.
+
+59
+00:03:53,000 --> 00:03:57,000
+Most music, it would take well over one percent.
+
+60
+00:03:57,000 --> 00:03:59,000
+Maybe one, two percent.
+
+61
+00:03:59,000 --> 00:04:02,000
+But some music with piano or flute...
+
+62
+00:04:02,000 --> 00:04:04,000
+Um...
+
+63
+00:04:04,000 --> 00:04:05,000
+It's...
+
+64
+00:04:05,000 --> 00:04:08,000
+You might be able to detect it at lower levels.
+
+65
+00:04:08,000 --> 00:04:12,000
+But at this level, I still doubt it.
+
+66
+00:04:12,000 --> 00:04:17,000
+Now, the one limitation of this amplifier...
+
+67
+00:04:17,000 --> 00:04:19,000
+You really shouldn't use it with four ohm loads.
+
+68
+00:04:19,000 --> 00:04:21,000
+And you can see that right here.
+
+69
+00:04:21,000 --> 00:04:26,000
+As you increase the power supply voltage...
+
+70
+00:04:26,000 --> 00:04:30,000
+The output power should go up quite a bit.
+
+71
+00:04:30,000 --> 00:04:33,000
+And we're getting some shadows from the kitty.
+
+72
+00:04:33,000 --> 00:04:35,000
+The Snickers.
+
+73
+00:04:35,000 --> 00:04:38,000
+Take a look outside.
+
+74
+00:04:38,000 --> 00:04:44,000
+But, as you see here, it doesn't really go up at all.
+
+75
+00:04:44,000 --> 00:04:47,000
+I mean, just a sliver.
+
+76
+00:04:47,000 --> 00:04:52,000
+But, that tells you right there that the amplifier cannot handle four ohm loads.
+
+77
+00:04:52,000 --> 00:04:55,000
+Don't even monkey with four ohm loads.
+
+78
+00:04:55,000 --> 00:04:57,000
+And here...
+
+79
+00:04:57,000 --> 00:04:59,000
+Eight ohm loads.
+
+80
+00:04:59,000 --> 00:05:03,000
+You're good up until nine volts.
+
+81
+00:05:03,000 --> 00:05:05,000
+There's a bit of increase at 12 volts.
+
+82
+00:05:05,000 --> 00:05:09,000
+But, the chip's gotta dissipate quite a bit of power.
+
+83
+00:05:09,000 --> 00:05:13,000
+And it's not really a power dissipating type design.
+
+84
+00:05:13,000 --> 00:05:17,000
+So, uh...
+
+85
+00:05:17,000 --> 00:05:20,000
+Nine volts, eight ohms, and you're golden.
+
+86
+00:05:20,000 --> 00:05:24,000
+That's where you probably should use this chip to get the most power.
+
+87
+00:05:24,000 --> 00:05:26,000
+What?
+
+88
+00:05:26,000 --> 00:05:29,000
+What do you want?
+
+89
+00:05:29,000 --> 00:05:34,000
+Okay, well...
+
+90
+00:05:34,000 --> 00:05:38,000
+Nine volts, eight ohms.
+
+91
+00:05:38,000 --> 00:05:41,000
+We'll do some power measurements there.
+
+92
+00:05:41,000 --> 00:05:43,000
+Give it a quick listening test.
+
+93
+00:05:43,000 --> 00:05:45,000
+And we'll talk about layout.
+
+94
+00:05:45,000 --> 00:05:46,000
+So...
+
+95
+00:05:46,000 --> 00:05:48,000
+Come right back.
+
+96
+00:05:48,000 --> 00:05:53,000
+Okay, I have it all breadboarded and everything.
+
+97
+00:05:53,000 --> 00:05:54,000
+We'll do some of the power measurements here.
+
+98
+00:05:54,000 --> 00:05:55,000
+And, uh...
+
+99
+00:05:55,000 --> 00:06:00,000
+I got the power supplied decoupling capacitor right close to the pins.
+
+100
+00:06:00,000 --> 00:06:01,000
+And, uh...
+
+101
+00:06:01,000 --> 00:06:02,000
+Everything looks pretty good.
+
+102
+00:06:02,000 --> 00:06:03,000
+So, uh...
+
+103
+00:06:03,000 --> 00:06:04,000
+Let's give it a listen.
+
+104
+00:06:04,000 --> 00:06:05,000
+Ooh, nasty.
+
+105
+00:06:05,000 --> 00:06:07,000
+I don't know if the camera picks that up or not.
+
+106
+00:06:07,000 --> 00:06:08,000
+But there's kind of a fuzzy distortion sound.
+
+107
+00:06:08,000 --> 00:06:24,000
+What is the problem?
+
+108
+00:06:24,000 --> 00:06:38,000
+Well, I purposely neglected my signal in power grounds.
+
+109
+00:06:38,000 --> 00:06:41,000
+And I see a lot of people doing that.
+
+110
+00:06:41,000 --> 00:06:42,000
+And, um...
+
+111
+00:06:42,000 --> 00:06:48,000
+In some cases, the thing is so bad it oscillates.
+
+112
+00:06:48,000 --> 00:06:50,000
+It sounds really crappy.
+
+113
+00:06:50,000 --> 00:06:51,000
+But, uh...
+
+114
+00:06:51,000 --> 00:06:52,000
+This one...
+
+115
+00:06:52,000 --> 00:06:53,000
+Wasn't as bad.
+
+116
+00:06:53,000 --> 00:06:56,000
+But it still sounds fuzzy and nasty to me.
+
+117
+00:06:56,000 --> 00:07:06,000
+I don't want any output or power supply ground signals flowing in the same path that a signal ground flows in.
+
+118
+00:07:06,000 --> 00:07:11,000
+Because that's gonna cause distortion and even oscillations.
+
+119
+00:07:11,000 --> 00:07:17,000
+Okay, so I'll rewire this thing and come back and see what we get.
+
+120
+00:07:17,000 --> 00:07:20,000
+Okay, so here's what I've done.
+
+121
+00:07:20,000 --> 00:07:24,000
+At pin 4, which is the ground pin on the IC,
+
+122
+00:07:24,000 --> 00:07:26,000
+Right at that point.
+
+123
+00:07:26,000 --> 00:07:30,000
+I mean, no wires going a distance.
+
+124
+00:07:30,000 --> 00:07:36,000
+But right at that point, I split the grounds off into separate zones.
+
+125
+00:07:36,000 --> 00:07:40,000
+Here's the decoupling... power supply decoupling capacitor.
+
+126
+00:07:40,000 --> 00:07:42,000
+It comes in at its own point.
+
+127
+00:07:42,000 --> 00:07:45,000
+Here is the power ground.
+
+128
+00:07:45,000 --> 00:07:49,000
+For the output and the power supply, it has its own point.
+
+129
+00:07:49,000 --> 00:07:55,000
+And, most importantly, the input comes off at its own zone.
+
+130
+00:07:55,000 --> 00:07:57,000
+Own grounding zone.
+
+131
+00:07:57,000 --> 00:08:03,000
+So, the bypass capacitor, which is part of the input circuit.
+
+132
+00:08:03,000 --> 00:08:07,000
+If you look at the amplifier's internal schematic.
+
+133
+00:08:07,000 --> 00:08:14,000
+The negative feedback is just connected to ground in this chip.
+
+134
+00:08:14,000 --> 00:08:22,000
+And, also, the input ground comes through this same grounding zone.
+
+135
+00:08:22,000 --> 00:08:31,000
+So, what that does is keep the input ground signals separate from the power ground signals.
+
+136
+00:08:31,000 --> 00:08:36,000
+So, you don't have any of those power grounds conducting in the input ground.
+
+137
+00:08:36,000 --> 00:08:45,000
+So, if you connected your input over here, you also have the output flowing in that same ground.
+
+138
+00:08:45,000 --> 00:08:55,000
+And, that little bit of resistance in the conductor will mean that that's going to raise a point here.
+
+139
+00:08:55,000 --> 00:08:57,000
+The voltage at this point.
+
+140
+00:08:57,000 --> 00:08:59,000
+And, it's going to cause distortion.
+
+141
+00:08:59,000 --> 00:09:12,000
+So, doing this will keep the amplifier from sputtering, oscillating, or just having that fuzzy distortion.
+
+142
+00:09:12,000 --> 00:09:14,000
+And, you can use it to its full capability.
+
+143
+00:09:14,000 --> 00:09:16,000
+Okay.
+
+144
+00:09:16,000 --> 00:09:18,000
+Well, it's really hard to see.
+
+145
+00:09:18,000 --> 00:09:20,000
+But, here's pin 4.
+
+146
+00:09:20,000 --> 00:09:22,000
+There's the decoupling cap.
+
+147
+00:09:22,000 --> 00:09:25,000
+This is the ground for the power supply.
+
+148
+00:09:25,000 --> 00:09:27,000
+It's going off in its own direction.
+
+149
+00:09:27,000 --> 00:09:32,000
+And, here is the grounds for the signal.
+
+150
+00:09:32,000 --> 00:09:35,000
+So, it goes off in its own direction.
+
+151
+00:09:35,000 --> 00:09:37,000
+And, that just goes over to the bypass cap.
+
+152
+00:09:37,000 --> 00:09:38,000
+Alright.
+
+153
+00:09:38,000 --> 00:09:40,000
+Let's give it a listen.
+
+154
+00:09:40,000 --> 00:09:41,000
+Perfect.
+
+155
+00:09:41,000 --> 00:09:43,000
+No buzzing.
+
+156
+00:09:43,000 --> 00:10:01,000
+Perfect clear signal.
+
+157
+00:10:01,000 --> 00:10:03,000
+Much better.
+
+158
+00:10:03,000 --> 00:10:05,000
+See how important that is?
+
+159
+00:10:05,000 --> 00:10:15,000
+Because, if you can get one of these LM386's to sound nice and clean with the proper grounding, you're set for moving on to other amplifiers.
+
+160
+00:10:15,000 --> 00:10:18,000
+Because, this chip is pretty sensitive to crappy grounding.
+
+161
+00:10:18,000 --> 00:10:19,000
+Alright.
+
+162
+00:10:19,000 --> 00:10:22,000
+Well, I'm going to move on to the power test now.
+
+163
+00:10:26,000 --> 00:10:27,000
+Okay.
+
+164
+00:10:27,000 --> 00:10:30,000
+I put on the non-inductive 8 ohm resistor.
+
+165
+00:10:30,000 --> 00:10:34,000
+Connected that to where the speaker was connected.
+
+166
+00:10:34,000 --> 00:10:39,000
+I set the power supply to be exactly 9 volts.
+
+167
+00:10:39,000 --> 00:10:43,000
+And, got the scope connected to the resistor.
+
+168
+00:10:43,000 --> 00:10:46,000
+So, we can measure the output.
+
+169
+00:10:46,000 --> 00:10:47,000
+Okay.
+
+170
+00:10:47,000 --> 00:10:51,000
+At 1 kHz, I turn it up.
+
+171
+00:10:51,000 --> 00:10:53,000
+And, it's starting to clip.
+
+172
+00:10:53,000 --> 00:10:56,000
+Turn it back down.
+
+173
+00:10:56,000 --> 00:11:00,000
+Now, you can see there's a fairly large step.
+
+174
+00:11:00,000 --> 00:11:06,000
+Because, the way the volume controls on these, they step in discrete levels.
+
+175
+00:11:06,000 --> 00:11:10,000
+It would be better if I didn't have to deal with that.
+
+176
+00:11:10,000 --> 00:11:12,000
+Like, add a potentiometer or something.
+
+177
+00:11:12,000 --> 00:11:14,000
+But, eh.
+
+178
+00:11:14,000 --> 00:11:16,000
+For now, this will work.
+
+179
+00:11:16,000 --> 00:11:17,000
+Okay.
+
+180
+00:11:17,000 --> 00:11:19,000
+So, what are we getting here?
+
+181
+00:11:19,000 --> 00:11:22,000
+1.9...
+
+182
+00:11:22,000 --> 00:11:23,000
+Yeah.
+
+183
+00:11:23,000 --> 00:11:26,000
+1.92 volts RMS.
+
+184
+00:11:26,000 --> 00:11:27,000
+Okay.
+
+185
+00:11:27,000 --> 00:11:31,000
+So, I'll punch that in.
+
+186
+00:11:31,000 --> 00:11:32,000
+1.92.
+
+187
+00:11:32,000 --> 00:11:35,000
+You have to square that.
+
+188
+00:11:35,000 --> 00:11:40,000
+Divided by our load impedance of 8 ohms.
+
+189
+00:11:40,000 --> 00:11:45,000
+And, we're getting .46 watts.
+
+190
+00:11:45,000 --> 00:11:46,000
+Not too bad.
+
+191
+00:11:46,000 --> 00:11:50,000
+Now, if I could better measure this.
+
+192
+00:11:50,000 --> 00:11:54,000
+You know, these boards have a little bit of resistance.
+
+193
+00:11:54,000 --> 00:12:01,000
+And, um, get something where I can, you know, home it in closer to the pre-clipping level.
+
+194
+00:12:01,000 --> 00:12:09,000
+I probably can get, um, somewhere between .6 and .7 watts out of this thing.
+
+195
+00:12:09,000 --> 00:12:11,000
+9 volt supply 8 ohm load.
+
+196
+00:12:11,000 --> 00:12:14,000
+In fact, I measured it before.
+
+197
+00:12:14,000 --> 00:12:23,000
+You know, a few years ago when I was getting, like, .66 or .67 or something like that.
+
+198
+00:12:23,000 --> 00:12:25,000
+Watts of output.
+
+199
+00:12:25,000 --> 00:12:27,000
+So, yeah.
+
+200
+00:12:27,000 --> 00:12:28,000
+It's not too bad.
+
+201
+00:12:28,000 --> 00:12:30,000
+I mean, it's not going to be screaming loud.
+
+202
+00:12:30,000 --> 00:12:36,000
+But, you know, how the logarithmic nature of hearing is.
+
+203
+00:12:36,000 --> 00:12:43,000
+You know, around a watt is going to, depending on the efficiency of your speaker, you know,
+
+204
+00:12:43,000 --> 00:12:46,000
+you can get a decent amount of decibels.
+
+205
+00:12:46,000 --> 00:12:51,000
+So, and I guess that wraps this video up.
+
+206
+00:12:51,000 --> 00:12:57,000
+Just wanted to show you, uh, the ubiquitous old LM386.
+
+207
+00:12:57,000 --> 00:12:59,000
+How to lay it out properly.
+
+208
+00:12:59,000 --> 00:13:04,000
+You know, pretty much applies to any electronic circuit, including digital.
+
+209
+00:13:04,000 --> 00:13:07,000
+And, uh, see what kind of power this thing could make.
+
+210
+00:13:07,000 --> 00:13:09,000
+Thanks for watching.
+

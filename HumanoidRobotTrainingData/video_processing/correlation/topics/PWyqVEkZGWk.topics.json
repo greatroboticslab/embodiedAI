@@ -1,0 +1,172 @@
+{
+  "video_id": "PWyqVEkZGWk",
+  "title": "PWyqVEkZGWk",
+  "url": "https://www.youtube.com/watch?v=PWyqVEkZGWk",
+  "created_at": "2025-10-09T17:32:32.523061+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction",
+      "description": "Initial setup and background information.",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 4
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.0,
+          "end_s": 29.02
+        }
+      ],
+      "coverage_text": "Hey everybody, welcome back to RC with Adam. My name is Adam. In this video, you're going to\nlearn about how to set up your quadcopter motors, specifically in Betaflight. And you might be\nwondering, set up the motors, what does that even mean? Like, why would I have to set up the motors?\nWell, there are a few reasons why. Because you see, the flight controller, the brain of the\nquadcopter, needs to know which motor to spin up at which time. And it needs to know where that",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Step 1: Verify Motor Spins",
+      "description": "Check if the motors are spinning in the correct direction.",
+      "coverage_ranges": [
+        {
+          "start_idx": 5,
+          "end_idx": 14
+        }
+      ],
+      "coverage_segments": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "coverage_times": [
+        {
+          "start_s": 29.02,
+          "end_s": 85.72
+        }
+      ],
+      "coverage_text": "motor is. Or basically, that motor has to be in the right spot. And we need to make sure that our\nmotors are spinning in the correct direction. So those are the two main things. Now in this video,\nwe're going to cover how to set up the ESC protocol, which is not very hard. We're going to cover motor\norder, or used to be called motor mapping, and motor direction. And that's going to be how it spins.\nAnd then what you need to do if you want to spin props out, which is how I like to have my propellers\nspin. And I'm going to show you how to do all of that. The bad news is it can be kind of a complicated,\nor just not complicated, it can be confusing. And and maybe that's why your quadcopter isn't flying.\nAnd maybe it's not working, and you're frustrated. And I totally get that. The good news is Betaflight\nhas made it much easier. But either way, I'm going to walk you through it. And we're going to do this\ntogether. But first, I need to tell you that this video is sponsored by PCBWay. They make custom",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Step 2: Change Motor Spin Direction",
+      "description": "Change the spin direction of each motor to match your desired setup.",
+      "coverage_ranges": [
+        {
+          "start_idx": 15,
+          "end_idx": 28
+        }
+      ],
+      "coverage_segments": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "coverage_times": [
+        {
+          "start_s": 85.72,
+          "end_s": 169.39999999999998
+        }
+      ],
+      "coverage_text": "printed circuit boards. That's what PCB stands for. And if you are into that, you can send them a file\nof your own design of your own circuit board. And they can assemble that they have 1000s of components,\nand they can actually put all of them on the board so that it works and is ready to rock and roll when\nit comes to your door. So that's a pretty cool service. If you're not into PCBs, they also offer rapid\nprototyping services. So you could get something injection molded or 3d printed or sheet metal\nbended or even CNC'd out of various materials. So if that sounds interesting to you, check the link\ndown in the description of this video and tell them that I sent you if you want, but it probably won't\nmake a difference. Okay, now what we have what we're using today is this seven inch FPV drone that I\nbought secondhand. So it's kind of one of those things where like, you don't know exactly how it's\nbuilt or what's been going on. And this could be a situation where the motors aren't working,\nand it really is confusing to you. All right, step one, we need to determine what we're working with.\nSo in this case, we have a four in one ESC board, and it's mounted in the center of our quadcopter.\nThat's very common, like four in one ESCs are very, very common. Now spoiler alert, this time,\nit's actually been flipped over, it's been it's been rotated in a roll orientation, and it's been",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Step 3: Verify Motor Spins Again",
+      "description": "Verify that all motors are spinning in the correct direction after changes.",
+      "coverage_ranges": [
+        {
+          "start_idx": 29,
+          "end_idx": 36
+        }
+      ],
+      "coverage_segments": [
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "coverage_times": [
+        {
+          "start_s": 169.4,
+          "end_s": 215.57999999999998
+        }
+      ],
+      "coverage_text": "flipped. And that is why these motors are not spinning in the correct direction. And I'll,\nI'll demonstrate that once we get this connected to beta flight. So we're going to connect our flight\ncontroller, and everything's like hooked up to everything else. Like the flight controller is\nconnected to the ESC, we're going to connect our flight controller to beta flight, we're going to\nget into beta flight. Now, if you are setting this up from a brand new profile, it's going to ask you\nsome other questions, like if you want to enable default settings, and you want to say yes, and then\nit will come up with a prompt that says, hey, your ESC protocol has not been set. And so to do that,\nyou want to go to the motors tab on the left hand side. And then you'll see this right here where it says",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Conclusion and Next Steps",
+      "description": "Wrap-up of the video, with next steps for quadcopter setup and configuration.",
+      "coverage_ranges": [
+        {
+          "start_idx": 37,
+          "end_idx": 40
+        }
+      ],
+      "coverage_segments": [
+        37,
+        38,
+        39,
+        40
+      ],
+      "coverage_times": [
+        {
+          "start_s": 215.57999999999998,
+          "end_s": 244.72
+        }
+      ],
+      "coverage_text": "motor ESC features, it'll probably say disabled at first. And then you want to select the one that you\nwant the protocol that you want. In this case, we're doing D shot 600. And I found that information\nby going to the T motor, the manufacturer's website for this stack. And so basically look at the manual\nor the manufacturer website, and that should give you that information. Once you do that, go and click",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the table of contents in the required format:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"Initial setup and background information.\",\n    \"coverage\": [{\"start_idx\": 0, \"end_idx\": 4}]\n  },\n  {\n    \"title\": \"Step 1: Verify Motor Spins\",\n    \"description\": \"Check if the motors are spinning in the correct direction.\",\n    \"coverage\": [{\"start_idx\": 5, \"end_idx\": 14}]\n  },\n  {\n    \"title\": \"Step 2: Change Motor Spin Direction\",\n    \"description\": \"Change the spin direction of each motor to match your desired setup.\",\n    \"coverage\": [{\"start_idx\": 15, \"end_idx\": 28}]\n  },\n  {\n    \"title\": \"Step 3: Verify Motor Spins Again\",\n    \"description\": \"Verify that all motors are spinning in the correct direction after changes.\",\n    \"coverage\": [{\"start_idx\": 29, \"end_idx\": 36}]\n  },\n  {\n    \"title\": \"Conclusion and Next Steps\",\n    \"description\": \"Wrap-up of the video, with next steps for quadcopter setup and configuration.\",\n    \"coverage\": [{\"start_idx\": 37, \"end_idx\": 40}]\n  }\n]\n```"
+    ]
+  }
+}

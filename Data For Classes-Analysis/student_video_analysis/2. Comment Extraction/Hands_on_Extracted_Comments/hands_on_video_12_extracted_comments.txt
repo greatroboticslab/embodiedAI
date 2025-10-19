@@ -1,0 +1,206 @@
+Ahora la directas
+
+What a useful video series and design! Thank you for sharing, this is outstanding
+
+i cannot thank you enough for your effort in explaining such difficult concepts with ease a sense of assurance that one can easily learn if taught properly . thank you for being a good member  of the fellow robotics community .
+
+You are best
+
+How does the diagram represent that the arms will move in a straight line?
+
+Another great video like the first arm you built. I will probably steal your code as you've done all the hard work already. Thanks for sharing the math involved in this project.
+
+I have a generic question. When applying FK/IK do you require that the motors have some sort of rotation sensor or a "zero point" so that all calculations have a reference starting point? My question relates to simple Lego technics motors which I can control through an Arduino,but since they are simple DC motors I'm not sure if I can use FK/IK in my designs.
+
+Thank you.
+
+Oh my god this is amazing
+
+Hello friend, hey, in your printed module with 4 buttons with 1 encoder, what types of buttons do you use and what type of encoder do you use in specific?
+
+Loved your video, Thank you for the tutorial
+
+Hi. great work.  Can you possible add STEP and STL files to your updated design like you did in the original.  I'd like to try the build with bearings as you have done.
+
+Truly amazing!
+
+Thank you so much for the explanation!!!
+
+thanks for making this video i have been wanting to understand the kinematics of such an arm and this is the first video that has got me close to it. there is one thing i still dont quite understand perhaps you can help. forgetting rotation of the base it seems we figure out the angles the links are at and that is what we set. we need to command the angle of the servo though. does that translate to the link angle directly? my understanding: when we move the first link though either it changes the shape of the parrallelogram (the one that is on the first link but moves the second), this would change the postion we are moving the other servo from, or we have to adjust the other servo that moves the top link to keep the shape of the parrallelogram the same.
+
+It's not obvious to me why a2 = fi - theta
+
+Thank you very much for sharing.❤
+
+I have a question, the arduino when u changes the x-value, y-value, the program give you the value of the angles??
+
+Do you have a wire diagram for the inverse kinematics arm?
+
+Thank you very much for this tutorial! I'm just building a small robot arm, just like your's. Your video is by far the best t explanation I've seen so far. I'm just wondering if there is a difference between a robot arm with parallel kinematics like your's and one with servos attached directly to the arms.
+
+No difference at all! Good luck!
+
+@roTechnic  Thank you! I will give my best :D
+
+Just wondering why you used cheap servos? There are very small stepper motors.
+
+Thank you so much! So many other tutorials make this so difficult lol. :D
+
+Genius!!!!!!!
+
+Wow, thank you. I will consider to build my this project and use this to dig into kinematics and Ros!
+
+Good example of how being experienced in a field, makes it difficult to see how foreign certain concepts can be for people who aren't. None of this is "simple" or "easy" for some :o
+
+Excellent tutorial !
+
+Excellent tutorial !
+
+May I ask for the liberary for the encoder on the kinematic inverse?
+
+Hello, can anyone please explain why in arduino code the arc functions are used ? For example except atan2, I mean acos and atan for obtaining phi and theta. Since in the mathematical formulas written on paper, there are used normal functions like cos and tan ?
+
+Great explanation! But one thing still haven't clicked in my brain. Why is the a2 = phi - theta? I'm missing something here
+
+Dude, have you ever thought of teaching in high school or something. You would make a huge difference in the flat earth believers. amazing. Keep it up.
+
+Mind blown. I'll consider writing my own source code for a scara robot now.
+
+Love the video, you are great at explaining! But I cannot really figure out how many ball bearings you have used, anyone have a number?
+
+Hey can you please share the dimensions for the hex nuts and screws?
+
+great explnation, world class
+
+Great explanation! Just putting together the parts that I've printed. How many bearings are there ,16? Not sure if they are all in the model?
+
+@3:44 since all sides are equal, it’s actually a rhombus ;) Love your explanation.
+
+Really easy inverse kinematics for robots- As maker I have implemented these guidelines and equations sending coordinates  by bluetooth, from a python code, and  let me say it works awesome. You developed all this stuff  as easy as possible. Thanks a lot,  if I have time I will explain this in spanish. Please do not stop to work in new ideas and videos, we need people as you as subject matter expert, but simplyfing the knowledge.
+
+Hello, thank you for your video ! :)  Still hard to understand for me :/ Something is not clear in your code please. You create "void moveToPos(double x, double y, double z)" with 3 parameters but you call it like this : "moveToPos(x,y,z,gripAngle)" with 4 parameters !? Can you help to understand why please ?
+
+So like... where is Denait-Hartenberg? Why don't you need to se up the transformation matrix from base frame to tool frame to target frame, and solve for angles of each motor?
+
+The source code is linked in the video description
+
+acos is just the inverse of cos, so if x=cos(theta) then theta=acos(x)
+
+Theta is half of the angle of one corner of the parallelogram (the dashed line bisects the angle, so the angle on either side of it is theta - I've only labelled one side of it at 4:38).  Once you get your head round that bit, you can see that phi is basically a2 plus theta.
+
+@roTechnic  Just modeled the system in Rhinoceros + Grasshopper, now it clicked in my head finally
+
+@roTechnic  but the diagonal of a parallelogram only bisects the angles of the corners if the sides of the parallelogram are all the same. What can you do if the arms are different lengths?
+
+​ @roTechnic sir,I am getting negative value for a2?I am moving the links by potentiometer. How to tune negative angle for the second arm
+
+@bkcganeshblogs  same man, cant figure it out
+
+Thank you - I think it's 14 bearings!
+
+they are all m3. varying lengths, but you can measure the distances
+
+Ok, ok. You’ve got me there :D
+
+Good catch! It's a mistake in the code :) I've uploaded a new version to github with the mistake fixed. The gripangle variable sets the position of the hand on the end of the robot arm. you can ignore it for the inverse kinematics, it's only there so the arm can pick things up.
+
+Because he deliberately chose a robot so simple that there's barely any inter-dependency between the axes, so almost everything is zeroes/cancels out, except what you see. Any actual real-life robot with a few more rotation axes requires the real deal, which compares in "simplicity" to what's shown here about the same as a nuke compares to grenade. I once wrote a graphic IK simulation for a modest Puma 560, and it left me traumatized to this day - 578 lines of matrix math and bare metal 3D graphics, in Turbo Pascal (yes, it was so damn long ago). Actual IK is only "simple" when a math lib is doing it FOR you.
+
+​ @AttilaAsztalos  Hahahahaha I died laughing at that. I have coded finite difference on variable grid size and some other optimization schemes that also made my head explode, so I know the feeling.
+
+Thank you so much, this helped a lot!
+
+Great explanation sir 👍
+
+Thanks for the tutorial! For those wondering how to solve for arms with different lengths, you can use Law of Cosines to find the angles with only the sides of the triangles. Just thought of sharing this here because I faced the same problem too😄
+
+Wow! I thought I had to open my linear algebra books and do some Jacobians!
+
+Best video about inverse kinematics I have seen so far, very simple explanation and straight to a point
+
+Man you made this look soo simple, its awesome! I had to write up a self investigation for a topic I was interested in while I was in year 10, and I investigated inverse kinematics and I dove right into all the matrices & stuff and I was only able to get a 2D one working. Awesome stuff!
+
+Hanzhen harmonic drive gear , strain wave reducer ,   robot  joint , over 30 years experience
+
+Thank you for this video, I am a computer science student, starting my second year soon, and I have discovered my love for math the past year and a half (I also studied math before the degree , to get to the level needed for calculus, linear algebra and discrete mathematics) And I also took an interest in robotics, this simple explanation gave me a glimpse of how math is used to program a robot's movement.  I am thinking of going down the route of robotics later on, would you advise getting masters in robotics in order to get into this field of software development for robots?
+
+3:10 You didn't explain how to get the angle between both 75mm arms
+
+Sir you are genius
+
+What about the cases when len(arm1) != len(arm2)
+
+How did he make the triangle in 2:34
+
+Hello sir, and thank you for the knowlage you've shared! I am trying to learn robatics (mostly inverse kinematics), can you point me to the right direction? do you know a course or a book that would take me from beginner to where I will be able to give a robot manupulator x,y,z coordanates to control the end effector position and orientation. Perhaps you do one on one tuturing? I would really appritate any help you can give me. Thank you so much!
+
+I finally understand SOHCAHTOA for the first time since I left school some 20 plus years ago o.O
+
+Subscribed
+
+Thank you very much. I am planning on making a 4 leg Arduino spider bot with 8 servos. This will help me a lot. need to brush up basics of Trigonometry though I hated it in school but seems interesting now as I have a purpose to learn it. Thanks a lot after hours of watching YouTube i got to know this thing is called as kinematics and after few hours I got your video.☺️
+
+Hi I'm using the LewanSoul digital servos, They don't seem to home or zero their position at the beginning of the code so whatever position they turn on at seems to be the one they set as zero. Is there any way to set them up to calibrate or home at the beginning of the code?
+
+I love this. You're a genius at explaining inverse kinematics. If this was my first time, I would have absorbed your lesson instantly. Nicely done!
+
+Excellent project!  Could you export  STL files of robotic arm too as not everyone can have fusion 360 access?
+
+Thank you so much for this video, it's the best inverse kinematic video explanation that I've seen, thanks to you I've understand :)
+
+Thank you!
+
+what would that look like in code? newbie here, thanks!
+
+omg i found david!!!
+
+@alslaboratory570  LOL we both went to the same video when we were looking at inverse kinematics
+
+@djay10101  fr
+
+I'm a HS senior, also an aspiring comp sci student and I'd like to hear your opinion on the workload in your STEM classes. I'm doing Robotics currently, through FIRST.
+
+Hi, the solution I found was to use Law of Cosines 😄
+
+The triangle is just one line from the previous triangle, and then the other 2 lines just represent the 2 parts of the robot arm. If the length of those lines are the same as the length of the parts of the arm, then you can only make one triangle.
+
+HAHAHA!
+
+Good luck! Always happy to help if it get complicated :)
+
+I've never used them myself, but it looks like you need to read the position and then use that as an offset. Are you using the lx16a-servo arduino library? if so, the examples for that show how to use the pos_read function.
+
+Thank you very much!
+
+Since you asked so nicely I've added the STLs as a single plate - depending on the size of your bed, you may have to split them up. I've also added the CAD as a STEP file so you can open it in your CAD of choice.
+
+You completely lost me. How is that easy? Perhaps for a mathematician it would be easy. I mean why do you need so many triangles. Mathematics is not my strong suit. Barely got through Calculus. I have a life-size humanoid robot and need to bring the hands to specific x, y, z coordinates. Can you help?
+
+I loved how you explained the trigonometry! Honestly, no matter that may master's degree is in Robotics, i really enjoyed how you explained all the stuff here! Good Job!
+
+excellent. for simple robots/arms with no object collision or difficult to address hierarchy,  i guess you need nothing more than this.
+
+Excellent video, very well explained. Your a genius, I wish I had a math teacher with this kind of skills when I was younger...
+
+Excellent explanation! Your channel deserves a lot more subscribers.
+
+Very well explained 👍🏼 Have been thinking for a small robotics arm for desktop videos and this has inspired me to get going. Thanks for sharing 👍🏼
+
+Great explanation.
+
+Thanks, you expalined it so well +1 subscriber
+
+Very nicely done. Easy to follow and understand.  Great job.
+
+Sorry you didn't understand it. I'm happy to answer any questions you have.
+
+Wow, thank you!
+
+Thank you! Let me know how your arm project progresses!
+
+Thank you
+
+Thank you - I'm glad you liked it
+
+Thank you 😎
+

@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:07,940
+One of the most common feedback control algorithms is proportional integral derivative control, or PID control for short.
+
+2
+00:00:08,540 --> 00:00:14,720
+It's called a feedback control algorithm because sensor feedback is used to help determine the control signal.
+
+3
+00:00:15,320 --> 00:00:22,860
+As an example, let's say that I'm trying to control the angle of my arm, and my control is the torque that I apply at the shoulder.
+
+4
+00:00:23,420 --> 00:00:28,520
+Maybe I want to hold the arm at 90 degrees, and it's currently sitting at 45 degrees.
+
+5
+00:00:28,520 --> 00:00:35,900
+So then I would define the error as being 90 degrees minus 45 degrees, or 45 degrees of error.
+
+6
+00:00:36,280 --> 00:00:39,000
+So let's give variables to those.
+
+7
+00:00:39,360 --> 00:00:44,920
+We'll call U the control signal, or the torque to the motor.
+
+8
+00:00:46,640 --> 00:00:56,700
+And the error is called E, and that's just the desired output value minus the actual.
+
+9
+00:00:58,520 --> 00:00:59,200
+Okay.
+
+10
+00:01:00,000 --> 00:01:12,720
+So with these definitions of variables, we can write the PID controller as simply U is equal to, the control is equal to, KP times E.
+
+11
+00:01:12,720 --> 00:01:38,340
+So KP is the proportional gain times the error, plus the integral gain, KI, times the integral of the error as a function of time, plus KD, which is the derivative gain, times the derivative of error as a function of time.
+
+12
+00:01:38,340 --> 00:01:39,340
+Okay.
+
+13
+00:01:39,340 --> 00:01:44,600
+So the KP times E term, that's actually acting like a spring.
+
+14
+00:01:44,600 --> 00:01:55,960
+So if there's an error of 45 degrees from where I actually am to where I want to be, we multiply that by the proportional constant, KP, and that gives us a torque.
+
+15
+00:01:56,200 --> 00:01:57,800
+So it's acting just like a spring.
+
+16
+00:01:57,940 --> 00:02:00,960
+It acts on position error to try to reduce it.
+
+17
+00:02:00,960 --> 00:02:05,580
+This term here, K sub D, acts like a damper.
+
+18
+00:02:05,740 --> 00:02:12,680
+So if the error is increasing, then it tries to create a force to make that rate of error decrease.
+
+19
+00:02:13,120 --> 00:02:18,620
+And if the error is decreasing, then it's going to act to slow down the rate of decrease.
+
+20
+00:02:18,620 --> 00:02:22,280
+So we get to error equals zero without overshooting.
+
+21
+00:02:22,280 --> 00:02:25,100
+So this is acting like a mechanical spring.
+
+22
+00:02:25,260 --> 00:02:28,200
+This is acting like a mechanical damper in terms of error.
+
+23
+00:02:29,140 --> 00:02:33,420
+And this integral term is a little bit harder to come up with a mechanical analog for.
+
+24
+00:02:33,780 --> 00:02:35,200
+But here's the basic idea.
+
+25
+00:02:35,320 --> 00:02:48,260
+If the arm has been sitting here with an error from the desired angle for some time, then this error is going to be integrating up over time, creating a larger and larger torque that tries to push the arm upward.
+
+26
+00:02:48,260 --> 00:02:53,160
+So this integral term here is to try to get rid of steady state error.
+
+27
+00:02:53,480 --> 00:02:55,600
+And we'll see that more in examples later.
+
+28
+00:02:56,040 --> 00:03:04,660
+This is called a linear control law because the control value U is linear in the error, the integral of the error, and the derivative of the error.
+
+29
+00:03:05,360 --> 00:03:10,240
+If we want to implement that in a computer, we can look at pseudocode.
+
+30
+00:03:11,620 --> 00:03:15,800
+So first we initialize the value of the integral of the error.
+
+31
+00:03:15,920 --> 00:03:17,020
+We initialize it to zero.
+
+32
+00:03:17,020 --> 00:03:22,940
+And we're going to differentiate numerically the error currently from the previous error.
+
+33
+00:03:23,060 --> 00:03:26,500
+So we're going to initialize the previous error as zero.
+
+34
+00:03:27,200 --> 00:03:31,180
+And now we go into this control loop that gets executed every dt seconds.
+
+35
+00:03:31,820 --> 00:03:35,940
+So typically for motor control, that might be every one millisecond, for example.
+
+36
+00:03:36,620 --> 00:03:43,980
+So every one millisecond, we're going to go in and calculate the error, which is the desired position minus the position that we read from a sensor.
+
+37
+00:03:43,980 --> 00:03:52,760
+Then we can calculate the derivative of the error by taking the current error, subtracting the previous error, and dividing by the time step.
+
+38
+00:03:53,220 --> 00:03:54,660
+So now we've got E dot.
+
+39
+00:03:55,340 --> 00:04:03,760
+And to calculate the integral of the error, we just take the previous integral of the error and add to it the current error times the time step dt.
+
+40
+00:04:03,760 --> 00:04:08,760
+So this is a simple numerical integration scheme, simple numerical differentiation scheme.
+
+41
+00:04:08,760 --> 00:04:15,040
+And then finally down here, we calculate u according to the control law that we just gave.
+
+42
+00:04:15,940 --> 00:04:21,440
+Then, so the next time we can get the right numerical derivative, we set E previous equal to the current error.
+
+43
+00:04:21,440 --> 00:04:27,040
+And then we send the control output, for example, the torque to the motor.
+
+44
+00:04:27,040 --> 00:04:28,040
+Then we make the right numericalynamic generator.
+
+45
+00:04:28,040 --> 00:04:30,340
+So let's go ahead and manage the error.
+
+46
+00:04:30,860 --> 00:04:32,600
+So this is the way we are currently able to activate the error.
+
+47
+00:04:33,320 --> 00:04:35,760
+If there is a follow up button, if there is mandate E, the capacity or use the rpm, the drift method here is called the drive priority for example.
+
+48
+00:04:36,480 --> 00:04:37,420
+So, it might be helpful.
+
+49
+00:04:37,420 --> 00:04:39,540
+If you may be helpful.
+
+50
+00:04:40,180 --> 00:04:43,580
+So let's jump in and keep at the error when youELTS andilimium Valdeus sidebar
+
+51
+00:04:43,580 --> 00:04:45,720
+and request for ultimation ranges with Morgan Chang»—
+
+52
+00:04:46,520 --> 00:04:48,080
+We'llell this to two-hourly.
+
+53
+00:04:48,400 --> 00:04:49,760
+A court 있�owment forторi—
+
+54
+00:04:49,760 --> 00:04:51,660
+So let's think there's a metaphor before.
+
+55
+00:04:51,660 --> 00:04:51,920
+If there is a ear beside didn't use other admirers again catalogs and it says—
+
+56
+00:04:52,060 --> 00:04:52,840
+whatever because you sometimes don't specify the curb Victor?
+
+57
+00:04:52,840 --> 00:04:53,940
+Ass써 if there has aưới venture irm—
+
+58
+00:04:53,940 --> 00:04:54,460
+OUILITY Christian KOLV羅,
+

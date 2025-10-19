@@ -1,0 +1,532 @@
+1
+00:00:00,000 --> 00:00:10,000
+Hello guys and welcome back to my channel. Today in this video I'm going to show you how to connect
+
+2
+00:00:10,000 --> 00:00:15,520
+a GPS unit to a flight controller, explain how to configure it using Bitaflight, and address
+
+3
+00:00:15,520 --> 00:00:20,880
+common issues that you might encounter. First of all, this video is kindly sponsored by VONT,
+
+4
+00:00:20,880 --> 00:00:26,480
+a company that manufactures and sells high-quality but yet budget-friendly LED headlamps.
+
+5
+00:00:26,480 --> 00:00:32,640
+The VONT Spark LED headlamp comes inside a twin pack, so you are getting two LED headlamps for $14.
+
+6
+00:00:33,680 --> 00:00:39,280
+The device is powered using three AAA batteries which are not included, and according to VONT,
+
+7
+00:00:39,280 --> 00:00:44,640
+they can provide you with up to 90 hours of continuous use. In addition, the headlamp is
+
+8
+00:00:44,640 --> 00:00:50,880
+waterproof, as far as I can tell the lamp is very powerful, and it features seven different light
+
+9
+00:00:50,880 --> 00:00:57,920
+modes. Now after the sponsored part, let's get back to the main topic. The first question that you might
+
+10
+00:00:57,920 --> 00:01:03,280
+ask yourself is why should you even better adding a GPS unit to your quadcopter? And for that question
+
+11
+00:01:03,280 --> 00:01:09,520
+there are a couple of answers. For a long range system such as this one, using a GPS is very crucial,
+
+12
+00:01:09,520 --> 00:01:13,920
+since it enables you to monitor the direction and distance to the home point where you took off,
+
+13
+00:01:13,920 --> 00:01:19,520
+so for example, in case you lose orientation, you can use this data. It also enables you to see the
+
+14
+00:01:19,520 --> 00:01:25,600
+GPS coordinates on the OSD and also on your radio controller in case it supports telemetry,
+
+15
+00:01:25,600 --> 00:01:30,640
+so in case you lose the quadcopter, you can use these coordinates in order to retrieve the quadcopter,
+
+16
+00:01:30,640 --> 00:01:36,480
+and finally, in case you lose connectivity with the radio controller or in case you lost orientation and
+
+17
+00:01:36,480 --> 00:01:41,360
+you don't know where to go, you can enable the GPS rescue feature, and the quadcopter is going to
+
+18
+00:01:41,360 --> 00:01:45,520
+return to the home point using the settings on Bitaflight, which I'm going to show you shortly.
+
+19
+00:01:46,240 --> 00:01:52,160
+As for freestyle and racing drones, using a GPS unit will enable you to monitor the speed of the drone,
+
+20
+00:01:52,160 --> 00:01:56,400
+which is something that you might want to know. Of course, you can still use it for the purposes that
+
+21
+00:01:56,400 --> 00:02:01,440
+I mentioned before, but in case you're not going to get very far, it's not going to make a lot of sense.
+
+22
+00:02:02,320 --> 00:02:07,760
+In order to set up the GPS rescue feature, you need to obtain a GPS unit. There are many available
+
+23
+00:02:07,760 --> 00:02:12,720
+options in the market, and most if not all are going to be compatible with your flight controller.
+
+24
+00:02:13,360 --> 00:02:17,920
+Out of my personal experience, I can tell you that so far the GPS that worked best for me,
+
+25
+00:02:17,920 --> 00:02:24,160
+and I had zero issues with, is the Matic M8Q, however this is a very pricey GPS that costs about
+
+26
+00:02:24,160 --> 00:02:30,080
+$32, so if you're looking for a more budget-friendly but yet reliable solution, I recommend to go with the
+
+27
+00:02:30,080 --> 00:02:38,720
+AJRC M80, which costs only $11. You should note that some GPS units like the AJRC M81 feature a built-in
+
+28
+00:02:38,720 --> 00:02:44,240
+compass, but this feature is not required for Bitaflight in order to use the GPS rescue feature.
+
+29
+00:02:45,040 --> 00:02:49,920
+In addition, in case you're going to use a Batien GPS, which is a very popular and budget-friendly
+
+30
+00:02:49,920 --> 00:02:55,920
+option, I recommend to power the unit using 3.3V, as it is going to reduce the generated heat
+
+31
+00:02:55,920 --> 00:03:01,120
+and extend its lifespan. The next thing that we need to do is to wire the GPS to the flight
+
+32
+00:03:01,120 --> 00:03:07,360
+controller, and even though most of the GPS units are using a 4-pins GST connector, their pinout is
+
+33
+00:03:07,360 --> 00:03:12,480
+not necessarily identical, so I recommend to refer to the user manual of the product that you have,
+
+34
+00:03:12,480 --> 00:03:18,640
+in order to avoid any potential mistake. The GPS unit is going to be connected to a 3U-out port on the
+
+35
+00:03:18,640 --> 00:03:24,160
+flight controller, and most likely be powered using 5V, and even though the soft serial option is
+
+36
+00:03:24,160 --> 00:03:28,640
+supported, I recommend to avoid it if possible due to the high data transfer rates.
+
+37
+00:03:29,520 --> 00:03:34,800
+Now I've got the 4-pins GST connector soldered to the flight controller. Pay attention that the
+
+38
+00:03:34,800 --> 00:03:40,800
+soldering pads are well separated, you are not mixing the ground and plus 5V pads, you are using
+
+39
+00:03:40,800 --> 00:03:47,520
+the same U-out port on the flight controller, and the RX port on the GPS is wired to the TX pad on the
+
+40
+00:03:47,520 --> 00:03:53,120
+flight controller and vice versa, as otherwise the GPS is not going to be able to communicate with the
+
+41
+00:03:53,120 --> 00:03:58,800
+flight controller. Now you can go ahead and connect the GPS unit, and pay attention when installing it
+
+42
+00:03:58,800 --> 00:04:03,840
+that the antenna is facing the top side and it is not being blocked by any of the carbon fiber parts.
+
+43
+00:04:04,640 --> 00:04:09,760
+Now let's go over the configuration procedure in Betaflight and the relevant settings. First,
+
+44
+00:04:09,760 --> 00:04:14,320
+connect the flight controller to your computer, open up Betaflight, and connect it to your flight
+
+45
+00:04:14,320 --> 00:04:20,560
+controller. Under the port section, you need to configure the GPS under sensor inputs on the U-out that
+
+46
+00:04:20,560 --> 00:04:27,600
+you connected. I'm using U-out 6, so I'm going to choose the GPS option, and in addition, since I'm
+
+47
+00:04:27,600 --> 00:04:35,040
+using the older batch of the AGLRC M80 GPS, I also need to select this baud rate, as otherwise the GPS
+
+48
+00:04:35,040 --> 00:04:40,080
+is not going to function properly. Now we need to hit save and reboot in order to save the options.
+
+49
+00:04:41,280 --> 00:04:46,240
+Head over to the configuration tab, enable the GPS switch, and set its protocol.
+
+50
+00:04:46,240 --> 00:04:52,160
+In case you're not sure which protocol your GPS unit is using, I recommend to start with U-blocks,
+
+51
+00:04:52,160 --> 00:04:58,480
+and in case the GPS is going to be configured properly after hitting save and reboot, the GPS
+
+52
+00:04:58,480 --> 00:05:04,480
+icon on the top is going to be highlighted. So in case it's not working for you, I would start by
+
+53
+00:05:04,480 --> 00:05:09,440
+checking that the protocol is configured properly, and then I would double check that the port is
+
+54
+00:05:09,440 --> 00:05:15,280
+configured properly, and also RX is wired to TX on the flight controller and vice versa.
+
+55
+00:05:15,280 --> 00:05:20,960
+And of course, you also need to make sure that the GPS is turned on, as on some flight controllers,
+
+56
+00:05:20,960 --> 00:05:27,440
+the GPS is going to be powered also when the flight controllers is connected via USB, and on some cases,
+
+57
+00:05:27,440 --> 00:05:33,280
+you will need to power it using an external battery. Pay attention that in case the GPS unit is only going
+
+58
+00:05:33,280 --> 00:05:38,400
+to be powered when connecting an external battery, that the propellers are off, and preferably disconnect
+
+59
+00:05:38,400 --> 00:05:43,600
+the video transmitter, or at least set it to pit mode, in order to prevent it from overheating on the bench.
+
+60
+00:05:44,560 --> 00:05:50,960
+Now let's go over the different Betaflight GPS-related options. First of all, in order to access the GPS
+
+61
+00:05:50,960 --> 00:05:57,520
+and fail-safe tabs on Betaflight, enable Expert mode. Then under the GPS tab, you'll be able to monitor
+
+62
+00:05:57,520 --> 00:06:03,760
+the status of the GPS and the acquired satellites, and under the fail-safe tab, configure the GPS rescue
+
+63
+00:06:03,760 --> 00:06:09,600
+feature. The default fail-safe procedure when entering fail-safe mode, either when the quadcopter
+
+64
+00:06:09,600 --> 00:06:14,800
+is going to lose connectivity with the radio controller, or by flipping an auxiliary switch which is assigned
+
+65
+00:06:14,800 --> 00:06:20,560
+to the fail-safe mode, is dropped, so the quadcopter is just going to fall out of the sky. You can also
+
+66
+00:06:20,560 --> 00:06:25,760
+set it to land, and then the quadcopter hopefully is going to land slowly, and the relevant option to this
+
+67
+00:06:25,760 --> 00:06:32,080
+video is the GPS rescue option. The relevant values which you can configure are the angle of the drone
+
+68
+00:06:32,080 --> 00:06:38,000
+when it is heading back to you, the initial attitude in meters, which is relative to the home point,
+
+69
+00:06:38,000 --> 00:06:43,600
+so when GPS rescue is going to be enabled, your drone is going to first climb to this attitude
+
+70
+00:06:43,600 --> 00:06:49,920
+before heading back to you. The next option is the descent distance in meters, so when the drone is going
+
+71
+00:06:49,920 --> 00:06:55,680
+to reach this distance from the home point, it is going to start descending. Next you can adjust
+
+72
+00:06:55,680 --> 00:07:01,920
+the ground speed in meters per second, adjust the throttle values, and in my experience the default
+
+73
+00:07:01,920 --> 00:07:08,720
+settings work pretty well, set the ascend and descend rates in meters per second, adjust the number of
+
+74
+00:07:08,720 --> 00:07:14,000
+minimum satellites which are required for the GPS rescue option to be enabled. Normally I would suggest
+
+75
+00:07:14,000 --> 00:07:20,560
+leaving it on 8 in case you are not having any GPS issues, as the GPS is going to be more accurate,
+
+76
+00:07:20,560 --> 00:07:26,320
+but in case you encounter difficulties and you don't have this amount of satellites during most of the
+
+77
+00:07:26,320 --> 00:07:32,720
+flight, you can also reduce this number to 5, as it in my experience works well as well. The next
+
+78
+00:07:32,720 --> 00:07:37,600
+related option is going to enable you to arm your drone, even when the minimum number of satellites
+
+79
+00:07:37,600 --> 00:07:44,320
+requirement is not going to be met, but pay attention that in case you are going to take off without a GPS fix,
+
+80
+00:07:44,320 --> 00:07:51,440
+the GPS rescue feature is not going to be available during your flight. The next option is attitude mode,
+
+81
+00:07:51,440 --> 00:07:56,800
+in case you are going to set it to maximum attitude, your drone is going to climb to the maximum attitude
+
+82
+00:07:56,800 --> 00:08:02,320
+that you reached during your flight, plus 15 meters. In case you are going to set it to fixed attitude,
+
+83
+00:08:02,320 --> 00:08:08,160
+it's going to climb to the value that we previously set, and again it is relative to the home point, and in
+
+84
+00:08:08,160 --> 00:08:12,640
+case you would like to maintain the current attitude of the drone when entering fail safe mode,
+
+85
+00:08:12,640 --> 00:08:19,600
+set the option to current attitude. Finally, the GPS rescue sanity checks can be turned off,
+
+86
+00:08:19,600 --> 00:08:25,920
+and then the GPS rescue feature is going to be enabled regardless of the minimum satellites,
+
+87
+00:08:25,920 --> 00:08:32,960
+and even when you took off without a GPS fix, and pay attention that in case you are going to turn it off,
+
+88
+00:08:32,960 --> 00:08:38,160
+and enter fail safe mode, you might lose your drone, as the GPS is not going to be accurate,
+
+89
+00:08:38,160 --> 00:08:43,520
+and it is just going to fly away. You can also set this option to fail safe only, which is probably
+
+90
+00:08:43,520 --> 00:08:50,400
+the recommended option, as the sanity checks are going to take place when entering fail safe mode,
+
+91
+00:08:50,400 --> 00:08:55,440
+and they are only going to be overridden when triggering the GPS rescue feature using an auxiliary
+
+92
+00:08:55,440 --> 00:09:02,320
+switch, which is good because otherwise, in case you are going to set the sanity checks to on,
+
+93
+00:09:02,320 --> 00:09:09,120
+and trigger the GPS rescue feature using an auxiliary switch, the drone is just going to disarm itself,
+
+94
+00:09:09,120 --> 00:09:13,840
+and fall out of the sky, in case one of the sanity checks requirement is not met.
+
+95
+00:09:14,800 --> 00:09:20,240
+In addition, you should note that under stage 2 settings, you can adjust the amount of time that
+
+96
+00:09:20,240 --> 00:09:26,720
+is going to pass when the signal loss is going to occur, so for example the default settings is far,
+
+97
+00:09:26,720 --> 00:09:33,200
+so it means that after 0.4 seconds the fail safe procedure is going to take place, so in case you
+
+98
+00:09:33,200 --> 00:09:38,240
+would like to make sure that the GPS rescue feature is going to be enabled right away, you can either
+
+99
+00:09:38,240 --> 00:09:44,000
+set this value to 0, or adjust the channel fallback settings, which are the values that are going to be
+
+100
+00:09:44,000 --> 00:09:49,120
+used during guard time, so that the GPS rescue feature is going to be triggered immediately.
+
+101
+00:09:49,760 --> 00:09:55,040
+Now by the way, another thing that you should pay attention to, is that the accelerometer is turned on,
+
+102
+00:09:55,040 --> 00:10:00,240
+and the gyro board is calibrated, and in case you would like the attitude values to be much more
+
+103
+00:10:00,240 --> 00:10:06,240
+accurate, I recommend to use a flight controller with a built-in barometer. Finally, the last step
+
+104
+00:10:06,240 --> 00:10:12,160
+is to configure the relevant OSD elements. The supported elements are the home distance, the home
+
+105
+00:10:12,160 --> 00:10:20,160
+direction, the drone speed, the GPS coordinates, the attitude, and the number of satellites. The GPS
+
+106
+00:10:20,160 --> 00:10:24,560
+coordinates are going to help you to find your drone in case of a crash,
+
+107
+00:10:24,560 --> 00:10:30,800
+so you can use Google Maps in order to find it, and I also recommend that in case your radio
+
+108
+00:10:30,800 --> 00:10:36,880
+receiver supports telemetry, to enable the telemetry option, and then your GPS coordinates can also be
+
+109
+00:10:36,880 --> 00:10:42,320
+recorded on your radio transmitter. Your next step in order to make sure that everything is configured
+
+110
+00:10:42,320 --> 00:10:48,720
+properly, is to head outdoors with your drone and radio controller. After getting a GPS fix, arm it,
+
+111
+00:10:48,720 --> 00:10:55,920
+walk for 100 meters with the drone and radio controller in your hands, and by the way, 100 meters is the
+
+112
+00:10:55,920 --> 00:11:02,240
+default minimum distance to home value, so in case a fail-safe is going to occur, or you are going to
+
+113
+00:11:02,240 --> 00:11:08,560
+activate the GPS rescue feature when the drone is less than 100 meters from you, the drone is just going to
+
+114
+00:11:08,560 --> 00:11:15,440
+disarm itself, and this value can be adjusted using the Betaflight CLI to 50 meters, but I recommend to
+
+115
+00:11:15,440 --> 00:11:22,640
+leave it on the default value of 100 meters. After you reach 100 meters, just simply turn off your radio
+
+116
+00:11:22,640 --> 00:11:28,480
+controller, and if everything is configured properly, the motors are going to start spinning faster,
+
+117
+00:11:28,480 --> 00:11:34,960
+indicating that the drone is trying to return to the home point. After that, again, in order to make sure that
+
+118
+00:11:34,960 --> 00:11:40,240
+everything is configured and working properly, I recommend to test the rescue feature using an
+
+119
+00:11:40,240 --> 00:11:45,840
+auxiliary switch, and as you can see, after flipping it, the drone is starting to get back to the home
+
+120
+00:11:45,840 --> 00:11:53,040
+point. Finally, before wrapping up this video, remember that the GPS rescue feature is not working
+
+121
+00:11:53,040 --> 00:12:00,400
+like a DJI drone, so once you regain connectivity with your radio controller, or in case, for example,
+
+122
+00:12:00,400 --> 00:12:06,720
+you lost video signal, and the drone is getting back to you, and you can see it, regain control, and land
+
+123
+00:12:06,720 --> 00:12:12,400
+it safely. Now, by the way, you should note that when you are going to use the GPS unit for the first
+
+124
+00:12:12,400 --> 00:12:19,360
+time, it might take a while until you are going to get a GPS lock, so if possible, power it using the 5V
+
+125
+00:12:19,360 --> 00:12:27,760
+USB port, leave it outside for maybe 10-15 minutes, and next time that you are going to use the GPS unit,
+
+126
+00:12:27,760 --> 00:12:34,560
+the GPS lock is going to be much quicker. Anyway, that's going to be it for my Betaflight GPS rescue
+
+127
+00:12:34,560 --> 00:12:39,760
+guide, I hope it was informative enough, but of course, if you have any questions or issues that
+
+128
+00:12:39,760 --> 00:12:45,280
+you encounter, let me know down below, and I will do my best to help you out. I would like to thank
+
+129
+00:12:45,280 --> 00:12:52,080
+Vaunt for sponsoring this video, and I wish you all happy flying. See you on my next videos, and goodbye.
+
+130
+00:12:58,000 --> 00:13:09,540
+K
+
+131
+00:13:09,540 --> 00:13:14,540
+K
+
+132
+00:13:14,580 --> 00:13:19,560
+,
+
+133
+00:13:19,560 --> 00:13:19,760
+.
+

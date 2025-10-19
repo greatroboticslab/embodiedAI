@@ -1,0 +1,320 @@
+1
+00:00:00,240 --> 00:00:02,760
+Hi, welcome to Elonix.
+
+2
+00:00:02,760 --> 00:00:08,240
+In this episode, we'll see how to make a clap switch or sound triggered LED while simultaneously
+
+3
+00:00:08,240 --> 00:00:16,760
+learning how it works.
+
+4
+00:00:16,760 --> 00:00:30,600
+This circuit detected claps upto a distance of about 15 feet.
+
+5
+00:00:30,600 --> 00:00:37,560
+And if you are near, the LED turns on even with finger snaps.
+
+6
+00:00:37,560 --> 00:00:41,960
+You can also change the sensitivity so that it turns on the LED only when you clap near
+
+7
+00:00:41,960 --> 00:00:49,080
+the circuit.
+
+8
+00:00:49,080 --> 00:00:55,240
+We'll be using a condenser or elaterate microphone as the sensing element and its capacitance
+
+9
+00:00:55,240 --> 00:00:58,520
+changes in response to ambient sound.
+
+10
+00:00:58,520 --> 00:01:03,680
+So we'll start with the condenser microphone and a resistor in series so that the change
+
+11
+00:01:03,680 --> 00:01:09,840
+in capacitance of the microphone is translated to change in voltage at this point.
+
+12
+00:01:09,840 --> 00:01:15,780
+One terminal of the 3.3kohm resistor is connected to negative rail and the other terminal is
+
+13
+00:01:15,780 --> 00:01:21,360
+connected to negative of condenser microphone which is the pin connected to outer casing.
+
+14
+00:01:21,360 --> 00:01:25,720
+And the positive terminal of the microphone is connected to the positive rail.
+
+15
+00:01:25,720 --> 00:01:30,720
+The voltage at this point is normally near positive voltage but it drops whenever there
+
+16
+00:01:30,720 --> 00:01:32,960
+is a sudden loud sound around the microphone.
+
+17
+00:01:32,960 --> 00:01:39,520
+We'll try to amplify this response by using BC547 and NPN transistor.
+
+18
+00:01:39,520 --> 00:01:45,360
+So connect this point to the base of BC547 which is at pin 2 and the emitter which is at pin
+
+19
+00:01:45,360 --> 00:01:49,120
+3 should be connected to negative rail.
+
+20
+00:01:49,120 --> 00:01:53,260
+Connect a resistor between positive rail and the collector of transistor.
+
+21
+00:01:53,260 --> 00:01:57,380
+This resistor acts as a dummy load which keeps the collector base junction in reverse
+
+22
+00:01:57,380 --> 00:02:02,740
+bias and that's required for making the transistor amplify the input signal.
+
+23
+00:02:02,740 --> 00:02:08,420
+And because this resistance determines the voltage at the output, its value determines the sensitivity
+
+24
+00:02:08,420 --> 00:02:10,820
+and is dependent on the supply voltage.
+
+25
+00:02:10,820 --> 00:02:15,740
+So if you are using a 5 or 6 volts of power supply, use a 270 ohm resistor.
+
+26
+00:02:15,740 --> 00:02:21,540
+470 ohm for 9 volts and 1 kilo ohm for 12 volts of power supply.
+
+27
+00:02:21,540 --> 00:02:25,300
+Increasing this resistance value reduces the sensitivity.
+
+28
+00:02:25,300 --> 00:02:30,460
+Now this is not required but if you place an LED between the output and negative rail, the
+
+29
+00:02:30,460 --> 00:02:34,860
+LED glows when you tap or blow air on the microphone.
+
+30
+00:02:34,860 --> 00:02:38,300
+But the output is not high enough to detect claps.
+
+31
+00:02:38,300 --> 00:02:43,720
+So we will use another NPN transistor and connect the output of the first transistor to the base
+
+32
+00:02:43,720 --> 00:02:46,720
+of the second transistor BC547.
+
+33
+00:02:46,720 --> 00:02:50,800
+Like you did for the first transistor, connect the emitter of the second transistor to negative
+
+34
+00:02:50,800 --> 00:02:55,280
+rail and the collector to load.
+
+35
+00:02:55,280 --> 00:02:59,220
+At this moment we will be using an LED as a load to test the circuit.
+
+36
+00:02:59,220 --> 00:03:03,720
+So I have connected the collector of second transistor to negative terminal of the LED and
+
+37
+00:03:03,720 --> 00:03:08,480
+the positive of LED connects to positive rail via a 270 ohm resistor.
+
+38
+00:03:08,480 --> 00:03:13,440
+This resistor should be 470 ohms for 9 or 12 volts of power supply.
+
+39
+00:03:13,440 --> 00:03:14,760
+Now turn on the power supply.
+
+40
+00:03:14,760 --> 00:03:19,780
+Normally the LED should stay off and it should turn on when you clap or do finger snaps near
+
+41
+00:03:19,780 --> 00:03:22,240
+the condenser microphone.
+
+42
+00:03:22,240 --> 00:03:25,420
+Or even if you tap or blow air on it.
+
+43
+00:03:25,420 --> 00:03:28,160
+Don't panic if the LED always stays on.
+
+44
+00:03:28,160 --> 00:03:33,280
+All you need to do is increase the load resistance of the first transistor.
+
+45
+00:03:33,280 --> 00:03:38,400
+For example if you are using a 270 ohm resistor, replace it with a higher one, say 330 ohm resistor
+
+46
+00:03:38,400 --> 00:03:42,960
+and keep increasing until the LED just turns off.
+
+47
+00:03:42,960 --> 00:03:47,220
+I advise you to purchase at least 3 resistors and start from the minimum.
+
+48
+00:03:47,220 --> 00:03:52,600
+If the LED stays on, you will use the next resistor and so on.
+
+49
+00:03:52,600 --> 00:03:57,900
+Coming back to the main circuit, even though it turns on LED with a clap, it stays on only
+
+50
+00:03:57,900 --> 00:04:02,720
+for a moment and normally we would want to increase that duration.
+
+51
+00:04:02,720 --> 00:04:07,880
+And obviously a 555 timer in mono stable mode is the best candidate for doing that.
+
+52
+00:04:07,880 --> 00:04:13,820
+What this arrangement does is, whenever the trigger pin detects a drop in voltage, the
+
+53
+00:04:13,820 --> 00:04:19,340
+555 timer turns on the output for a duration determined by the value of capacitor and resistor.
+
+54
+00:04:19,340 --> 00:04:24,540
+We will first build this mono stable circuit and then couple the trigger pin with the output
+
+55
+00:04:24,540 --> 00:04:27,240
+of a primary circuit.
+
+56
+00:04:27,240 --> 00:04:30,580
+So let's place the 555 timer IC on the breadboard.
+
+57
+00:04:30,580 --> 00:04:34,880
+Connect the pins 6 and 7 and pins 4 and 8.
+
+58
+00:04:34,880 --> 00:04:39,820
+Now connect a 100k ohm resistor between the pins 7 and 8.
+
+59
+00:04:39,820 --> 00:04:44,980
+Next goes the capacitor with its positive terminal connected to pin 6 and its negative terminal
+
+60
+00:04:44,980 --> 00:04:47,600
+connected to negative rail.
+
+61
+00:04:47,600 --> 00:04:51,600
+You can choose the capacitor's value depending on the amount of time you require the LED to
+
+62
+00:04:51,600 --> 00:04:53,380
+stay on.
+
+63
+00:04:53,380 --> 00:04:59,320
+Now connect the output of 555 timer which is at pin 3 to the positive of the LED and the
+
+64
+00:04:59,320 --> 00:05:03,840
+negative of the LED to negative rail via a 270 ohm resistor.
+
+65
+00:05:03,840 --> 00:05:07,380
+Connect pin 1 to negative rail and pin 4 to positive rail.
+
+66
+00:05:07,380 --> 00:05:12,380
+You can now test this mono stable circuit by applying 0V at the trigger pin.
+
+67
+00:05:12,380 --> 00:05:22,320
+Now it's time to couple output of a primary circuit with the trigger pin of this mono stable circuit.
+
+68
+00:05:22,320 --> 00:05:27,240
+As we don't require LED at the output of a primary circuit, I am removing it along with
+
+69
+00:05:27,240 --> 00:05:31,920
+its series resistor.
+
+70
+00:05:31,920 --> 00:05:37,040
+Place a 1k ohm resistor between the collector of second transistor and positive rail.
+
+71
+00:05:37,040 --> 00:05:42,600
+This resistor acts as a load for the second transistor as well as keeps the output high when the
+
+72
+00:05:42,600 --> 00:05:44,700
+transistor is not turned on.
+
+73
+00:05:44,700 --> 00:05:50,600
+After this, use a 100nF capacitor to couple the output of the second transistor to the trigger
+
+74
+00:05:50,600 --> 00:05:53,120
+pin of 555 timer ILC.
+
+75
+00:05:53,120 --> 00:05:58,160
+The capacitor acts as a filter and prevents continuous loud sounds from triggering the monostable
+
+76
+00:05:58,160 --> 00:05:59,200
+circuit.
+
+77
+00:05:59,200 --> 00:06:04,200
+So normally the voltage at the trigger pin will be near to positive voltage and it drops whenever
+
+78
+00:06:04,200 --> 00:06:09,500
+you clap which triggers the monostable circuit and so the LED should glow.
+
+79
+00:06:09,500 --> 00:06:18,820
+Finally connect the power supply and here you go, the clap switch or sound triggered LED.
+
+80
+00:06:18,820 --> 00:06:21,520
+Thanks for your time, do subscribe and have fun.
+

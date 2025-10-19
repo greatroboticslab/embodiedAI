@@ -1,0 +1,392 @@
+1
+00:00:00,000 --> 00:00:05,000
+In this tutorial I'm going to talk about passive low-pass RC filter circuits.
+
+2
+00:00:05,000 --> 00:00:08,000
+So at a very basic level, what are filters?
+
+3
+00:00:08,000 --> 00:00:12,000
+Filters are used to change the frequency content of signals.
+
+4
+00:00:12,000 --> 00:00:17,000
+You can experiment with this in software by playing with the graphical equalizer settings in your MP3 player.
+
+5
+00:00:17,000 --> 00:00:20,000
+Here's a normal unfiltered sound clip.
+
+6
+00:00:30,000 --> 00:00:37,000
+Now if you decrease the low frequencies and allow the higher frequencies to pass through unchanged, you create a high-pass filter.
+
+7
+00:00:37,000 --> 00:00:39,000
+It sounds like this.
+
+8
+00:00:49,000 --> 00:00:54,000
+You can hear that there is much less bass and only the higher frequencies remain untouched.
+
+9
+00:00:54,000 --> 00:01:00,000
+Now if you decrease the high frequencies and allow the low frequencies to pass through unchanged, you get a low-pass filter.
+
+10
+00:01:00,000 --> 00:01:02,000
+And that sounds like this.
+
+11
+00:01:13,000 --> 00:01:16,000
+You can hear all the bass, but the high-frequency sounds are much quieter.
+
+12
+00:01:16,000 --> 00:01:23,000
+Now I'm going to show you how to do this in hardware, and you'll be able to do this with any signal, whether it be audio, video signals, radio frequencies, etc.
+
+13
+00:01:24,000 --> 00:01:28,000
+Let's start with RC low-pass filters because they're easy.
+
+14
+00:01:28,000 --> 00:01:32,000
+An RC filter is just a filter made out of a resistor and a capacitor.
+
+15
+00:01:32,000 --> 00:01:35,000
+The original signal goes in and the filtered signal comes out.
+
+16
+00:01:35,000 --> 00:01:40,000
+The reason why this works is that the voltage on a capacitor cannot instantaneously change.
+
+17
+00:01:40,000 --> 00:01:48,000
+When you have a resistor that slows the charging of the capacitor, your output voltage might not be able to follow the sudden changes in the input voltage.
+
+18
+00:01:48,000 --> 00:01:51,000
+As a result, higher frequencies get filtered out.
+
+19
+00:01:51,000 --> 00:01:59,000
+I'm going to build a low-pass filter with a 10 nF capacitor and a 10 kOhm resistor, and show you how it affects different frequency signals.
+
+20
+00:01:59,000 --> 00:02:02,000
+There's no particular reason why I'm using these values.
+
+21
+00:02:02,000 --> 00:02:06,000
+It's just for the sake of an example, and I'll do more examples later.
+
+22
+00:02:06,000 --> 00:02:08,000
+So this is a very important equation.
+
+23
+00:02:08,000 --> 00:02:12,000
+This is the equation that is used to determine the cutoff frequency of the filter.
+
+24
+00:02:12,000 --> 00:02:21,000
+If I plug in my chosen values of 10 kOhms and 10 nF, I get a cutoff frequency of 1592 Hz.
+
+25
+00:02:21,000 --> 00:02:24,000
+And I'm going to round that up to 1600 Hz.
+
+26
+00:02:24,000 --> 00:02:28,000
+Okay, so this low-pass filter has a cutoff frequency of 1600 Hz.
+
+27
+00:02:28,000 --> 00:02:30,000
+But what does that mean?
+
+28
+00:02:30,000 --> 00:02:35,000
+This means that at frequencies below 1600 Hz, the signal passes through unchanged.
+
+29
+00:02:35,000 --> 00:02:42,000
+If I feed in sine waves of different frequencies, you can see that from 45 to 200 Hz, the output is the same as the input.
+
+30
+00:02:42,000 --> 00:02:48,000
+10 volts peak to peak.
+
+31
+00:02:48,000 --> 00:03:00,000
+Now at frequencies approaching 1600 Hz, the amplitude is slowly dropping on the output.
+
+32
+00:03:00,000 --> 00:03:06,000
+By the time we reach the 1600 Hz cutoff frequency, we've got a reduction of about 30%.
+
+33
+00:03:06,000 --> 00:03:10,000
+The cutoff frequency is the point where the filtering effect really starts kicking in.
+
+34
+00:03:10,000 --> 00:03:14,000
+And another thing you'll notice is that the two sine waves no longer line up.
+
+35
+00:03:14,000 --> 00:03:16,000
+There's been a shift in phase.
+
+36
+00:03:16,000 --> 00:03:20,000
+That's because the filter is introducing a small delay in the signal.
+
+37
+00:03:20,000 --> 00:03:24,000
+Most of the time you won't care, but it is something you should be aware of.
+
+38
+00:03:24,000 --> 00:03:27,000
+Now let's increase the frequency way beyond the cutoff point.
+
+39
+00:03:27,000 --> 00:03:31,000
+At 15 kHz, there's a massive reduction in amplitude.
+
+40
+00:03:31,000 --> 00:03:37,000
+And as we get into higher frequencies like 50 kHz and beyond, there's almost nothing left of the signal.
+
+41
+00:03:37,000 --> 00:03:45,000
+Now the oscilloscope example was just a visual introduction to the concept of a low-pass filter,
+
+42
+00:03:45,000 --> 00:03:48,000
+and how it affects voltages in your circuits.
+
+43
+00:03:48,000 --> 00:03:53,000
+Normally what engineers do is describe the filter characteristics with a graph called a Bode plot.
+
+44
+00:03:53,000 --> 00:03:58,000
+Earlier I mentioned that the cutoff frequency is the point at which the filter starts kicking in.
+
+45
+00:03:58,000 --> 00:04:02,000
+Well you should know that in the real world, you will never get a filter like this,
+
+46
+00:04:02,000 --> 00:04:06,000
+where as soon as you hit the cutoff frequency, all the higher frequencies get reduced to zero.
+
+47
+00:04:06,000 --> 00:04:09,000
+Here's a more realistic Bode plot.
+
+48
+00:04:09,000 --> 00:04:15,000
+In realistic filters, what happens is that for low frequencies, you get this flat response where the amplitude doesn't change.
+
+49
+00:04:15,000 --> 00:04:20,000
+Then as you slowly approach the cutoff frequency, things start to decay a little.
+
+50
+00:04:20,000 --> 00:04:26,000
+At the exact cutoff frequency, the amplitude is reduced by 3 decibels, or even simpler than that,
+
+51
+00:04:26,000 --> 00:04:31,000
+at the cutoff frequency, the amplitude is reduced by 29%.
+
+52
+00:04:31,000 --> 00:04:38,000
+Now a little bit after you've hit the cutoff point, the filter keeps reducing the amplitude by 20 decibels per decade.
+
+53
+00:04:38,000 --> 00:04:45,000
+That means that for every time the frequency increases by a factor of 10, the amplitude decays by a factor of 10.
+
+54
+00:04:45,000 --> 00:04:51,000
+Bode plots like this are great ways to predict how your filter will perform at a wide range of frequencies,
+
+55
+00:04:51,000 --> 00:04:54,000
+and in a future video I'll show you how to make them.
+
+56
+00:04:54,000 --> 00:04:57,000
+For now, let's get some practice creating some more low pass filters.
+
+57
+00:04:57,000 --> 00:05:02,000
+Let's say I want a low pass filter that goes before a subwoofer's amplifier,
+
+58
+00:05:02,000 --> 00:05:06,000
+to make sure that the woofer is only outputting really low bass frequencies.
+
+59
+00:05:06,000 --> 00:05:10,000
+Let's say I want a cutoff frequency of about 150 Hz.
+
+60
+00:05:10,000 --> 00:05:13,000
+Here's the equation again to calculate the cutoff frequency.
+
+61
+00:05:13,000 --> 00:05:19,000
+Now, I can play around with random values of R and C to get the cutoff value of 150 Hz,
+
+62
+00:05:19,000 --> 00:05:25,000
+but from experience I know that I should choose R and then let the equation determine the value of C.
+
+63
+00:05:25,000 --> 00:05:30,000
+I'm going to choose a 1 kOhm resistor because I don't want to overload the audio source.
+
+64
+00:05:30,000 --> 00:05:32,000
+In this case it's an MP3 player.
+
+65
+00:05:32,000 --> 00:05:37,000
+So here I've rearranged the equation to give me a way of calculating the capacitance needed for the filter
+
+66
+00:05:37,000 --> 00:05:39,000
+based on a chosen resistance value.
+
+67
+00:05:39,000 --> 00:05:43,000
+And it turns out that the value I need is 1.06 microfarads.
+
+68
+00:05:43,000 --> 00:05:46,000
+Let's round that down to 1 microfarad.
+
+69
+00:05:46,000 --> 00:05:50,000
+So here's the 150 Hz low pass filter as a schematic.
+
+70
+00:05:50,000 --> 00:05:52,000
+And here it is on the breadboard.
+
+71
+00:05:52,000 --> 00:05:54,000
+Now I'm going to play two sound clips.
+
+72
+00:05:54,000 --> 00:05:56,000
+The first one has no filtering.
+
+73
+00:05:56,000 --> 00:06:00,000
+The second one has been filtered by our low pass filter and amplified a little.
+
+74
+00:06:00,000 --> 00:06:10,000
+You can hear that the bass is clearly there, but most of the rest of the music is missing.
+
+75
+00:06:10,000 --> 00:06:16,000
+Okay, that was an audio example, but I want to show you how low pass filters can be used with much more than just sine waves.
+
+76
+00:06:16,000 --> 00:06:20,000
+Let's say you've got a microcontroller that's outputting a pulse width modulated square wave.
+
+77
+00:06:20,000 --> 00:06:24,000
+Now let's say you want to convert that to a smooth continuous voltage that is an average of the sine waves.
+
+78
+00:06:24,000 --> 00:06:30,000
+Essentially we want to filter out all high frequencies and be left with DC.
+
+79
+00:06:30,000 --> 00:06:36,000
+So let's take our handy cutoff equation and make the cutoff a very low value of 1 Hz.
+
+80
+00:06:36,000 --> 00:06:40,620
+say you want to convert that to a smooth continuous voltage that is an average of the square wave's
+
+81
+00:06:40,620 --> 00:06:45,540
+voltage. Essentially we want to filter out all high frequencies and be left with DC.
+
+82
+00:06:45,540 --> 00:06:51,420
+So let's take our handy cutoff equation and make the cutoff a very low value of 1 Hertz.
+
+83
+00:06:51,420 --> 00:06:57,000
+I'm going to choose a resistor value of 100 ohms so that this filter can still power something
+
+84
+00:06:57,000 --> 00:07:02,100
+useful like an LED. You should always think about what resistor value will work best with
+
+85
+00:07:02,100 --> 00:07:08,100
+your source signal and your chosen load. So with R equals 100 ohms and reusing the same equation,
+
+86
+00:07:08,100 --> 00:07:15,900
+we get a capacitance of 1592 microfarads. Some extra capacitance won't hurt in this case because we
+
+87
+00:07:15,900 --> 00:07:21,660
+want as much filtering as possible, so let's round that up to 2000 microfarads. Now let's see how this
+
+88
+00:07:21,660 --> 00:07:28,500
+heavy filtering affects the square wave. Okay, here I have a 54 Hertz PWM signal and the average voltage
+
+89
+00:07:28,500 --> 00:07:35,100
+is 4.24 volts. At the output of the filter it looks like we've got almost pure DC with an average voltage
+
+90
+00:07:35,100 --> 00:07:41,580
+of 4.16 volts. That's pretty close. Now I've lowered the duty cycle of the signal and on the input the
+
+91
+00:07:41,580 --> 00:07:48,120
+average voltage is 1.68 volts. After the filter it looks like we're very close to clean DC with an
+
+92
+00:07:48,120 --> 00:07:54,420
+average voltage of 1.44 volts. Again that's pretty close and as you've probably figured out real world
+
+93
+00:07:54,420 --> 00:08:00,420
+filters aren't 100% efficient, so you'll always lose a little energy as heat. Now you might be wondering,
+
+94
+00:08:00,420 --> 00:08:06,420
+can you put filters back to back in series for an even heavier filtering effect? And the answer is yes.
+
+95
+00:08:06,420 --> 00:08:12,420
+However, since each filter puts a load on the previous filter, the math behind calculating the cutoff frequencies
+
+96
+00:08:12,420 --> 00:08:18,420
+gets really complicated. That's the point where I bust out a circuit simulator like LTSpice and let it do the hard work
+
+97
+00:08:18,420 --> 00:08:25,420
+for me. I'll make a tutorial on filter simulation with LTSpice in another video. In the meantime, check out my video
+
+98
+00:08:25,420 --> 00:08:31,420
+on passive RC high pass filters. The good news is they're almost exactly the same as low pass filters.
+

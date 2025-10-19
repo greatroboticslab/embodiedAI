@@ -1,0 +1,2682 @@
+Hola, todavia se esta usando esta libreria?, veo que el video es de hace 3 años
+
+3 years ago....
+
+Kann ich ein tbs crossfire tx lite mit einem Nano rx binden
+
+how did he send the command to the drone ? he didnt really go into detains on this topic just show the drone taking off and land ?
+
+Thank you very much sir. let me know Can I you use another drone , sir?
+
+Heads up: this video is perfectly paced for classroom setting, and we will try it with our robotics students (two public schools, Newark NJ)
+
+Gr8 work bro , u r very inspiring
+
+Muestra un dron en movimiento 😊
+
+I need to do a project where I connect a gpt with nlp (in local) with the drone tello with ROS2 iron, what do you recomend? I have not seen videos about that nowere, please help
+
+very Great Video!
+
+Exciting stuff! 💡 This Drone Programming with Python course sounds like the perfect blend of theory and hands-on practice! At JetSoftPro, a software service, we actively work with drone software and predict that candidates who watch this video will have more chances to join our team!
+
+Nice video.
+
+Do I have to use a tello?
+
+nice so perphict prpject
+
+Watching and learning 3 years later! Impeccable content!  May I suggest a review of the derivation of the equations on coordinate measurement in project 2 mapping.   We've correctly assumed, the distance in unit time, in our case is 10m, however in the equations, y=10xsin(45), we juxtapose displacement with Distance. 10 m in a second is the distance, the length of the curved path, or the section of the circumference of a circle with radius R= V/w (where V is 10m/s in our case, and w the rotational velocity, 45 deg/s) in our case.  Here's an excerpt answer from ChatGPT when asked to evaluate position of a drone moving at a constant velocity of 10 m/s, rotational speed of 45 deg/s after x amount of time:  "To analyze the motion of the drone and determine its coordinate position after a certain amount of time, we can break the problem into two main parts: linear motion (forward velocity) and rotational motion (clockwise rotation). The drone's path will trace a circular arc due to its constant rotation while moving forward. Let's denote:  - V as the forward velocity of the drone, which is 10 m/s in this case. - W as the angular velocity of the drone, which is \(45\) degrees per second. However, for calculation purposes, we need to convert this to radians per second. \(1\) degree = \(\frac{\pi}{180}\) radians. So, \(\omega = 45 \times \frac{\pi}{180} = pi/4 radians per second.  ### Position Calculation  Assuming the drone starts at the origin \((0, 0)\) of a coordinate system at time \(t = 0\), and its initial heading is along the positive x-axis, we can calculate its position after time \(t\) seconds due to its circular motion. The radius \(R\) of the circle traced by the drone's motion can be found using the relationship between linear velocity (\(V\)), and angular velocity (\(\omega\)), where \(R = \frac{V}{\omega}\).  #### Equations  1. **Radius of Circular Path**: \(R = \frac{V}{\omega}\) 2. **Angular Displacement**: \(\theta = \omega \times t\), where \(t\) is the time in seconds. 3. **X and Y Coordinates**: The drone's position \((x, y)\) on the circle after time \(t\) can be determined from the circular motion equations:    - \(x = R \cdot \sin(\theta)\)    - \(y = R \cdot \cos(\theta)\)  Note that these equations assume the drone's path is a circle centered at the origin with the drone starting at the point \((R, 0)\) and moving in a clockwise direction. However, due to the clockwise rotation, we may need to adjust the signs in our final equations based on the direction of motion.  Let's plug in the values and compute the position of the drone after a given time \(t\).  After \(10\) seconds, the drone's position, assuming it started from the origin and moved in a clockwise direction with a constant forward velocity of \(10\) m/s and a uniform clockwise rotation of \(45\) degrees per second, would be approximately \((12.73, 0)\) in the coordinate system. The \(y\) value is very close to \(0\), indicating the drone has moved almost exactly along the x-axis from its starting point, which is due to the nature of circular motion and the specific time chosen for this calculation.  This result indicates that after \(10\) seconds, the drone has essentially moved in a circular path and returned very close to its original horizontal position due to the combination of its forward speed and rotational speed.   To determine the drone's position after any amount of time \(x\), you can use the equations: R = V/W x= R.sin(W.t) y = R.cos(W.t)  where t is the time in seconds, V is the forward velocity, and W is the angular velocity in radians per second."
+
+That was an amazing video! Well done!👍
+
+Excellent, many thanks!  Made me searching and buying a second hand Tello after 20 minutes of the tuto ^^
+
+hello brothers
+
+Thank you！
+
+Hello there, I have an avoidance k101 max and cannot seem to find the way to program them. Could you please help on this? Thank you
+
+i need 3d model of 3:25:15 clip please help
+
+Hi Murtaza, I found your course very well explained. I have been following your course using OpenCV 4.9.00 and Python 3.11. I have encountered an issue where the webcam does not display the contours in black and white on the A4 paper as expected. Instead, it shows an error at this line of code: _, img = cap.read(). Could you please advise if this issue might be related to the versions of OpenCV and Python that I am using? Any guidance you could provide would be greatly appreciated. Thank you.
+
+❤
+
+https://youtu.be/UVdcqK_NjNM?si=VQBCkEZKk9L095-o
+
+Thanks Murtaza  I can't recall such a comprehensive and professional presentation as you provide here.  Excellent job ! Well done !
+
+What's the average salary of a drone Programmer?
+
+Good job, and thanks for sharing
+
+O meu só funciona o laser, os outros botões não funcionam. O que pode ser?
+
+hi bro can u send me codes
+
+nice
+
+Hi, this is a great video ever and tahnks for sharing the video. I will try this and share to my kids. Thanks mate!!
+
+Hello, I am facing a challenge during the image capture project and hoping that you or someone with the knowledge may be able to help me. I keep getting the following error. I have tried rebooting, and reconnecting and also have tried on 3 different Tello edu drones. However, I get the exact same error code with all the 3 drones. I am directly connected to the Tello drone through its own wifi hotspot, also My Windows Defender firewall is turned off and I do not have any other antivirus software installed. I do not understand. Please guide. I am attaching my code first and then the outcome/error message. P.S: I also tried to remove the resize command code and still, I get the same error.  CODE: from djitellopy import tello from time import sleep import cv2  drone = tello.Tello() drone.connect() print(drone.get_battery())  drone.streamoff() sleep(1) drone.streamon()  while True:     img = drone.get_frame_read().frame     img = cv2.resize(img, (640, 480))     cv2.imshow("frame", img)     cv2.waitKey(5)  RESULT: C:\Users\joshi\PycharmProjects\OpencvPython\TellDrone\.venv\Scripts\python.exe C:\Users\joshi\PycharmProjects\OpencvPython\TellDrone\ImageCapture.py  Send command: command Response: b'ok' Send command: battery? Response: b'90\r\n' 90  Send command: streamon Response: b'ok' Traceback (most recent call last):   File "C:\Users\joshi\PycharmProjects\OpencvPython\TellDrone\ImageCapture.py", line 15, in <module>     img = cv2.resize(img, (640, 480)) cv2.error: OpenCV(4.4.0) C:\Users\appveyor\AppData\Local\Temp\1\pip-req-build-6sxsq0tp\opencv\modules\imgproc\src\resize.cpp:3929: error: (-215:Assertion failed) !ssize.empty() in function 'cv::resize'   Process finished with exit code 1
+
+He'll sir Thank you so much for sharing information  Can you send this PPT?
+
+Is it applicable to all drones
+
+can we do this on Dji Mavic drones?
+
+Im on windows 11 and dont see the dial settings menu :-( in the devices list it just show it, no option
+
+import KeyPressModule as kp ModuleNotFoundError: No module named 'KeyPressModule'  How can I fix this ?
+
+I don't even own a drone, and really have no plans on buying one.  That being said, I'm on my third episode...lol.
+
+Me broo 😭😭😭
+
+wonderful  quiz
+
+UPDATE:  I was able to solve the problem. Apparently, the issue was with the network adapter on my machine. So I used the following solution.  1) Take a wifi extender and configure it to connect to the Tello drone wifi address. 2) Connect the laptop via LAN cable to the wifi extender. 3) Connect to the Tello.  I was able to solve my problem with this method. The problem was not in the code, however, it was in the hardware and I used a different method to connect to the Tello.
+
+Lol. I wonder what is keeping you onboard 🤔
+
+hey can I do this with any drone supporting wifi? Please answer
+
+https://youtu.be/CpityuXYuVA?si=f2FByvDQBRkHxNmP
+
+᲼
+
+᲼
+
+https://www.youtube.com/@nitsuhfetlework5346
+
+hi
+
+can we just run these codes as simuation without the actual drone
+
+You mentioned 80% of this is applicable to other drones. So would the same Tello python packages you use work on other programmable drones?
+
+Is this project?
+
+I seriously started crying when Brian got the jersey for Bosley 😢 and of course happy Birthday to Brian and Happy Thanksgiving everybody
+
+Thank you so much  TEACHER for this course !  Is it okay if I build it on a model to use for firefighting purposes?
+
+I think so far, my cheapest e88 drone is far more efficient while moving with better control, meanwhile all my expensive brushless drones have limited control movement.
+
+Bruh, i had this on while I was sleeping 😂
+
+Thank you sir, how about the hardware assembling and soldering
+
+I found this course really helpful, but I have a doubt  How did you load your code to the Drone??
+
+bro i was just sleeping now,how did i get here
+
+Sir Pls tell me where your country and place....
+
+very nice mate
+
+Arduino or respbaryy code ?
+
+You said this course would be for all drones, but you use the telo libraries...
+
+this is a robotic mind thanks friend
+
+Where can I get a copy of the instruction manual?
+
+can i program the DJI mini 3 the same way as you do with tello or the mini 3 isn't programmable?
+
+Respect.. You are the best 형은 최고야
+
+Nawh i gotta stop autoplay 🗿
+
+Can I use any drone? I was thinking about a Xiaomi Motors drone that has better hardware
+
+Is this drone available in India and which other drone can we use?
+
+Thank you so much for this course
+
+I don't have a drone can i start this course and is there any simulation alternative to a drone.
+
+You need to enlarge yours letters to size 20 for everyone.   Also make your mouse larger and a bright color
+
+3.76 does not exist anymore
+
+Jamás podré superar como no dura 30seg más el vídeo
+
+Just Outstanding.
+
+If you want to learn how to spy on women in their hotel rooms/apartments, THIS VIDEO IS FOR YOU!       ...lol
+
+Hi murtaza bhai ❤❤❤😂😂😂
+
+Dear Murtaza, first of all I'd like to "thank you" for this viedo instruction for coding using Python for Tello. I have a problem regarding the "image capture" section.  I did exactly follow your instruction until the section of the image capture. I can NOT see a video from Tello camera although the image frame poped up. Did I missed any liberaries to import or steps (bring Tello camera's images, UDP)? FYI: I have an operating system of Windows 11. I'd appreciate it if you could give me a solution or other way to bring videos from the Tello camera. Thanks in advance.
+
+6:45
+
+A 'drone' is an unthinking functionary
+
+top
+
+thank you for this amazing course sir:)  can I use on the code that I wrote in this course on the mavic air 2 of dji?
+
+Any one can help, can i do this in a simulator??
+
+No one cared about drones nerd
+
+Hello, how are you? I have a doubt about use this project with other drone model. Can you help me, please?
+
+A question from my side:- What parts of the code can be used for autonomous drones and not only tello drones as I am planning to make a drone myself ? I hope I get a reply for this !!
+
+Can u teach in c++
+
+Hi Murtaza,  I request you to let me know if I can use the djitellopy library in any drone or can I use it only in this tello drone?  Thanks, Sufiyan.
+
+Can we use any drone because i can't effort that cost
+
+Sir, which flight controller is used here. Can you specify the name please
+
+Which flight controller are you using?
+
+Hi. Thank you so much for your video. Can I ask what we have to change in the code if we use another model of Drone??
+
+Drone guard patrol incoming
+
+Nice workshop, on a side note your probably shouldn't use sleep in your controls. As Sleep will block the thread.
+
+Hi thank you for the nice information but I’d want to ask how I can connect JUST speakers to a very modern television
+
+Dear @Murtaza, As always great video. At the beginning of the video you mention 80% of what we learn is applicable to other drones. That statement is not accurate.  The statement should be some thing like: 80% of What you will learn i s applicable to "programmable drone".  Any suggestion/recommendation of "programmable drone"?
+
+Thank you
+
+Sir I use area value if grater than 6800 then print move backward and elif area value lesser than 6200 then move forward but it always printing only move backward what to do?
+
+Your definition of drone is wrong.
+
+Can I use the library with arduino Mega or other arduino products
+
+Mee
+
+bro how did i get here...
+
+Wow, this is an amazing tutorial, you will become in my Python/CV2/drone mentor. Thanks a lot for sharing this, cheers from Mexico.
+
+Prerequisite for this course???
+
+Bro i woke up and it was this video playing
+
+I just remembered Michael Reeves 😂😂🤣
+
+finalmente vou conseguir invadir a russia
+
+nao gostei asmei
+
+Yeah me..I'm just interested in Python but this is a whole new rabbit hole.. 🕳️ 🐇
+
+I found a magical desktop with a smart central control screen, just turn the knob to control lights, curtains and other electronic equipment, very practical: https://youtu.be/CVyQB1cvhWo
+
+The video was fun and informative.I don't have the 14 but I am anticipating behind 15 pro Max so any information I get on the latest Apple phones is information that prepares. Me for what is to come. At the same time. I learned little.  Nicknames that help me get around my phand even allows me to sound like. I have a little technical knowledge lol. Now. If I could just figure out why it keeps spelling out the word. Instead of just putting one there? You are greatly appreciated and have a friend. In Columbus, Ohio!
+
+This really helps a lot. I never got any good tutorials for this. I want my drone to fly the path of importet Images. Such like a plotter software would search the edges of a picture and then create code fpr the plotter to cut along this edges. I want to put a RGB LED on my drone for long exposure photography. To fly logos etc.
+
+why import cv2 no work
+
+Great Video , i really happy for find it. will be useful for my career Project.
+
+Hey bro I want to contact with u
+
+Can i use DJI Mini 2 SE and do the same python programing then DJI TELLO ??????
+
+Hi 🤠 you have created a wonderful learning environment! * Question: I decided to to learn Python programming and I wish  there were a "Python Drone Virtual environment" to be able to add more sensors and situations to have full creativity freedom that could be implemeted in hardware latter. Long time ago there used to be a  sophisticated robot programming environment with very basics graphics called "PYRO".
+
+how to make these programs operate via remote of mobile app !!
+
+what shortcut key did you use to manage the spacing in 33:42.
+
+Why can't I use the move left move right command while recording a video?
+
+I want to learn more about drones swarm, do u have a course related to this topic ?
+
+That's next level just loved it
+
+I found a magical desktop with a smart central control screen. Just turn the knob to control the lights, curtains and other electronic devices at home. It is very practical: https://youtu.be/CVyQB1cvhWo
+
+Sir ak Hindi mein video banao ham Jaise logon Ko sikhane ke liye,, ..❤
+
+How connect one time multiple drone connect is coding base simple
+
+Is there any way to make the drone recognize the side or the back of your head
+
+stop calling them drones ffs
+
+Thanks for the education. In the Keyboard section, i copied you word for word but my drone only takes off with e and nothing else.  Please help.
+
+Lol I checked your subscribers and views and figured you probably wouldn’t be getting back in touch with me.  I would say good luck but I’m nervous you would get the few crumbs of success you left. 😂 GODBLESS. MY GUT TELLS ME YOUR A DECENT MAN.
+
+Is this course compatible with dji mavic mini?
+
+Wow, quite an amazing explanation! Thank you
+
+I have a mini drone and i a biginer
+
+Absolutely amazing! Thank you!
+
+Hello, Is it possible to have a version using C or C++
+
+Thank you sir Mr Murtaza Hassan
+
+First learn project, then teach it. Don't waist our time.
+
+Can change color track not only white track for line follower project? How to change it if want track color black or color what we want(example color red)
+
+You just made my remote killdozer wet dreams a reality.
+
+I wish you would show how one programs any other drone. Most drones don't seem to be receptive to user programming.
+
+My images are not being saved. I have tried everything I can try, Please Help 😭
+
+To try these projects just have the Tello drone and the computer? or you have to buy other tools?
+
+15:52  Python 3.7.6 is it still stable till now  Or i should new version?
+
+મુર્તઝા ભાઈ ... ઘણું સારું શીખવાડી રહ્યા છો આપ ...👌👏🤲
+
+U don't need to write ur code in c or cpp because in this case u just need  to write a commands that can let u contrôle the drone and to that it is prefer to write the shortest code and the most readable also python has more lib can be implemented enlese if u are writing the firmware so here u will need cpp or c
+
+Am enjoying your video, is that a dji mini? I have a 10 year old granddaughter, a year ago I bought her an ImagiCharm and she picked up the phython programming quickly. Was her first experience with programming. She got bored with that after a while. Do you think programming the drone would be a good next step in her learning? Or  would you recommend something easier as her next step? I asked whether your drone was a dji mini because that would be all I can afford to buy her. Thanks
+
+You've done a great job explaining all this & I always related the word DRONE to our politicians intelligence as virtually none of them actually work for the people.
+
+brave effort, ut you confuse early on by referring to HDMI input on laptop.when you mean HDMI output- youcould overlay a correction graphic.  nav  of vid a good idea-  I'd like new vid re adding bluetooth c<pability to wirelessly stream video and sound via bluetoothfrom my macbook to my non-smart TV, using ineypensive plug-in  HDMI bluetooth adapter-  or is such streaming only by using appleplay through an apple adapter? nothing I found on net is conclusive one way or the other. of course, more people will be inTerested in wirelessly streaming from a PC to TV. I TI think earlier bluetooth standard only audio-capable, nt for video- is that so, video and audio now supported over bluetooth? anyone reding this acheived mac to non-smart tv streaming of video with audio, using inexpensive hHDMI bluetooth adapter on the TV?
+
+I'm buying all your courses
+
+I LOVE THIS CHANNEL
+
+Thanks for helping with my school project! Awesome video
+
+how to get the positioning with gps and see the position in google map
+
+Excellent. Thank you very much for completing such a thoroughly explained video. Invaluable.
+
+Awesome, you always have some of the best video
+
+I have a drone of PIONEER and i don't know how to connect it to my laptop so how can i code it ..Please Replay
+
+Thanks sir for your hardwork
+
+Hi Paul, Have you been down the path of Arduinos and 3 Aspect signals that are is Series, as Signal 1 is Red, signal 2 is Yellow, Signal 3 is Green, with this in mind is there anything around that will able this to happen with out all the wires that I seem tp have got on my Breadboard. I would like to have a HO scale Cabinet somewhere behind the 3 Aspect Signal away from the Track area. To me this should be similar to have a Series of Points  on a layout that get their power via the Buss Wire, could this happen to the Arduino and 3 Aspect Signals. I think could save a heap of wires around the layout. I have been able to make an Arduino, Breadboard, Wire and Leds to work. I am not sure just how many signals can be on the one Arduino to work a series of 3 Aspect Signals, to change each from 1 color to the next when the track is clear. THANKS for your time Graeme
+
+20:20 Is the DJI Tello library specific to only Tello drones?  Are there other libraries for controlling other DJI drones?
+
+crazy course so inspiring thank you so much
+
+Thanks a lot Murtaza! You gave me the motivation to move forward trying a learning more about drones. I just sent my order on Amazone to purchase the Tello drone used in your presentation. Thanks once again for sharing.
+
+Can we make clothes recognise drone
+
+Hello Murtaza, thanks for your detailed tutorial. I'm having trouble at part "Image Capture" (starting from 31:16), the terminal in PyCharm said "Cannot get first frame". I believe this happened not just in my system and programming environment. After trying to set every dependency the same as yours, this error still exists. Some other people are also facing this problem, submitting the issue on GitHub, and it seems they didn't find solution either.  Could you please have a look at this "Image Capture" part? Maybe something has changed, so your code here may also need a little change?  I'm looking forward to your response! :)
+
+https://www.youtube.com/watch?v=-23CnQizdbU&list=PLr-3vuw7I7GAle-4skfxVQVKqjtvcA6w_
+
+at time 8:30, https://youtu.be/LmEcyQnfpDA?t=510, I guess you mixed rotations or is it correct, because if you decrease speed of clockwise and increase speed of anticlockwise motors then drone must turn anticlockwise, right? @murtazasworkshop
+
+is that nornal when my drone is on the battery is hot?
+
+Have fun!
+
+@murtazasworkshop  Please tell me what s the difference with this video and the courses pack to pay?
+
+did you solve it?
+
+@everysimotv3837  Sadly no
+
+hey!!! how did you do face tracking?? it's detecting my face but not tracking it :(
+
+Same here using Tello
+
+you said the process is same for 80% of the drones, however there's no libraries to connect example DJI Mini 1 , Mini 2 or Mini 3 , are any other Mavic for example, which is crucial to connect to the drone in order to do any of this stuff. Tellos are a hard find nowadays
+
+Thats great! question: how can you integrate 4 drones?
+
+anyone else having odd errors where it sometimes just lifts off and goes in random directions instead of following the rc commands?
+
+Does the non-edu one support python programming. I think it doesn't? But the white drone seems like the normal one.
+
+How would this work with a different drone
+
+I used to create Database using Access. It's been a few years (2010). I just realized what you were doing.  I've been a computer user since 89, took my first basic programming class.  Later specialized in Dbase I II III IV.  Then C++ and cobol 1995.  Ms Access started 1997.  I stopped the video at 59:34 to tell you I'm going to love this.  I'm planning on getting kids in school interested.
+
+Im learning this tutorial with hopes my son picks it up. Im not able to get the image and the key stroke screens. Im sure something simple but where can I learn more about this troubleshootings? Is this just an option not turned on with Open CV Python ? Again very basic user here. Thanks for this video..
+
+good teaching skills:goodvibes::goodvibes::goodvibes:👏👏👏
+
+عاشت ايدك استاذ مرتضى
+
+Hey i have a v coptr falcon and my controllers antennas have come undone and the drone will only fly barley off the ground and not far at all. This thing flys 7000 m and i cant fly it anywhere can you please help me to get my controller going again?
+
+thank you for sharing your work.
+
+Thank sir😊😊
+
+does it work with pixhawk drones
+
+best lessons, I was able to improve the movement along the line, the drone can turn even 90 (vertical split + angle while the top point will not be in the center), sorry for my eng xd.
+
+Most people in North America will not buy your course because they CANNOT get the drone to connect to the Tello app. Maybe you get some buyers of your Advanced Course but most people are angry they cannot get the drone to connect to the Tello app.
+
+Any recommendation for Drones for outdoor application?  Also, How will python talk to other (non Tello) drones?   is that only wifi connectivity ?
+
+Lovely course dear Sir even though I'm an illiterate boy but I wanna learn python programming language bcs I love it. And your hard works is really great. Keep it up.
+
+Sir..... Lean English sir. Oh? realy he was sir?
+
+Python no good, limited adruino memory... 😳
+
+You could not teach us, but you are more than that.  Thank you so much.  And God bless you
+
+According to the video, they don't have difference at coding mentioned in this video.
+
+@alexanderyang126  True, I bought both. Both support python. But the non-edu one is extremely unstable. It cannot even hover stably. I believe it's a defect. Will return it.
+
+Guess you need a third-party library for your access to programming other drones.
+
+It's just a helicopter
+
+Nice but i want telugu
+
+Hi I hope you'll see this.  I am trying the image capture with a tello drone but the display is super slow. How can I make it much faster?
+
+Glad you made the announcement about safety.  The most important is eye safety.  Don’t use unless all present have safety glasses.
+
+I woke up from watching Blooms videos to this, what the hell💀
+
+Hey Sir!! Thank you for the tutorial but, I have a question. I admit I have not watched the full tutorial yet, but you are using the Tello library to code the drone, but my friends and I are trying to create a drone from scratch, and I am assigned to code it.  So, I guess I will have to create my own libraries (which is a big hassle) but IDK how to show that output on the drone itself. Does Tello have a transistor or device that I can apply to the drone and act as the midway communicator to process the program? ik there are a lot of questions, but I would really appreciate any help from anyone. Thanks!!!!
+
+A drone is something that is fully automated. You are using a quadcopter.
+
+What kind of drones that is programmable?
+
+llllllllllllllllllllllllllllllllllllllllllllll:?--
+
+The name "Drone" does not come from the sound they make.  The name evolved from the male bee called a drone.
+
+wow
+
+I’m here at 2 am without any knowledge of python or owning a drone
+
+V
+
+The irritating glider consistently suspend because date preferentially call qua a symptomatic cherries. debonair, complex christopher
+
+I really just woke up to find gold playing on my laptop.
+
+Shoulda made it 30 seconds longer
+
+I woke up here...
+
+One lazy evening I watched youtube and fell asleep after a few time. When I woke up watched on my screen and saw this tutorial. The vide was at 25 minutes and i was too lazy to change it so I watched some time. I have no drone or else after but i understood everything you explained. I wasnt really interested what i need(cause like I said before I have no drone) to do but i was highly intrested in your video. Your calm way to explain things is brilliant.This in the best tutorial i have ever seen so thank you for entertain me and creating such a wondeful part of the internet
+
+How much can load 100 killos ?
+
+Thank you for your amazing video. I am 75 YO retired Telecom Engineer and my hobby is IoT and Aeromodelling. I really learned a lot of skills from your meticulous explanatory videos.  I have a doubt that is: If I program the Tello to Take off and fly forward for 10 feet, then stop and reverse for 10 feet, stop and land, it is not landing at the place from where it took off due to change in battery condition etc.,  Is it possible to program the Tello to fly to a specific distance and come back, using it's accelerometer data or is there any other Drone model which can only, do this for me. Please advice. Thanks again with GREAT regards.
+
+Other than Tello drones can you suggest any other drone to buy, where this coding will work ?
+
+Excellent video sir. Wonderfully produced, information dense and extremely watchable. I'm so glad there are people like you out there,
+
+Goood work :)
+
+Apparently I want to watch this
+
+I think "drone" in this instance is not about the sound but about the follower definition. A worker bee is also known as a drone.
+
+Much needed course for me.. i have similar thoughts to learn but dont have proper guide.. somehow i stumbled upon this video .. thanks to you and youtube algorithm for listening to my voice
+
+What other drones does this program support??
+
+I woke up and this was playing.   I don't have a drone nor do i know how to code. Thanks youtube
+
+I have a no-name Drone. How can I quickly find out if compatible with the libraries used in your video?
+
+This guy sounds like the indian version of pooh bear. So relaxing, i fell asleep watching.
+
+Highly appreciated ..
+
+Thank you for your job! I'm interesting in drones for now, possible do you know how drone can detect distance to concrete object? How several drones could be fly together for dancing for example?
+
+You can hear you're just reading it when you talk it's not your own knowledge
+
+Lile
+
+please tell why waitkey is used? and does img store every frame?
+
+I dont know code ora have a drone but why i am here, i dont know too, good nice vid sir
+
+I wish my students know just one percent of your knowledge. Please keep going...
+
+12:00 app from the Play Store simply not working. Fortunately they have up to date APK on their website.
+
+👑🏆💰🧑‍✈️💰🏆👑
+
+@54:48  - getKeyboardInput() could "return lr,fb.ud,yv" and then use it as: "me.send_rc_control(getKeyboardInput())". Otherwise, you can use "vals[:]" to list out the content of vals instead of "vals[0],vals[1],vals[2],vals[3]"
+
+Thank you, I will
+
+thank you for easy to understand accent
+
+what about 3.8.10 ?
+
+Really good class for a newbies .thanks a lot .
+
+Bro, god bless you and your wise mind🙏
+
+Hi please bro in my country I can't buy a drone if there is any thing else can u tell me
+
+Thank You My Friend
+
+Has OpenCV changed since you did this video or is there something missing that is needed to use OpenCV? I tried following along but none of the image capture stuff works, none of the functions you used for the OpenCV parts are being recognized and I downloaded the same library you did and just imported cv2 just as you did but pycahrm throws an error any time I try to use any of the cv2.whatever functions
+
+Thanks for your effort in this video it is a really nice decent tutorial. Regarding the drone itself, you have mentioned that ''  80% of the material covered in this course can be used with any drone. ". So can I apply the same python library(Tellopy) to another drone and will it work? or it only fits Tello drones?. for example drones like (REDPAWZ R020).
+
+Useless. Please make better videos and not waste people's time. Thanks. I'll watch PewDiePie. Yalgaar Hai
+
+Very useful. Thx.
+
+Hai,  Can someone help me with the Mapping program, my green spot and red line is not visible on my screen, only when I use the arrows on my PC I see the green spot , and the red line moves, but disappear when I stop pressing My wifi is on and my tello is on too What have I typed wrong or forgotten in the program Please help  mvg Erwin
+
+I really enjoy watching this tutorial. It’s very clear and ez to follow. Thank u. P/S: #Dji should sponsor u since I’m gonna buy a Tello to do it myself. And i bet everyone watching it will do the same. 😁
+
+Fantastic tutorial, there should be more like this I'm really glad I found this one, and thank you for sharing it with us My Tello loves it too
+
+Watch Dogs in real life:
+
+Python3 Programmer Certification: Get Certified, Get Ahead Link: https://www.udemy.com/course/python3-programmer-certification-exam-test-your-skills/?referralCode=FE1245A2C0E131C769A2
+
+Hi, buddy. Is there a way to use computer mouse to control  the JR module? I m studying on a keyboard mouse method to fly FPV drone. The keyboard is very special designed by me with range. I test it on liftoff. With 0 experience and only 25 hours practice I break in world 23 on a track. So I really wanna apply this range keyboard + mouse method on real Drone. I just need the mouse output to the JR module now.
+
+👎
+
+My friend introduced me to this -- I am ready to take this course! He bought the Boost Combo Ryze Tech Tello Boost Combo - Mini Drone with 5MP Camera, RC Quadcopter with 720p HD Video, 13min Flight Time, Powered by DJI for about $150 before our tax.  Although it does seem to not like high heat/humidity - we are in the 90s today and had to fly if starting from a shady spot - it was quiet and responded well to commands from his cell phone and from the computer. The video was quite good from my perspective, yeah.
+
+Wow....I have things to learn from you... you don't go around with trifles friend hahaha...thanks ¡! 😆😉😊🤐
+
+Bro iam from India. Can you help me out to get this drone because it is not available in Amazon for our country.
+
+Thank you
+
+Just to be clear here, I have added the OpenCV Python library in the settings, done import cv2, and everything from cv2.resize() to cv2.imshow() gives an unrecognized function error and cause the code to fail to run.
+
+I found a magical desktop with a smart central control screen. Just turn the knob to control the lights, curtains and other electronic devices at home. It is very practical: https://youtu.be/CVyQB1cvhWo
+
+Hi, thanks... this is great course.  By the way, is there any other drone that can be programming like this Tello ?
+
+How to get SDK free
+
+The whole "FaceTracking" code isnt working for me if "waitkey" at the end isnt with capital K like "waitKey". The frames arent passed and the recording isnt working, i was looking for this error for days because i couldnt find anything wrong in the code. For the people with the problem, just change to "waitKey".
+
+I left YouTube on and woke up to this
+
+I want to learn the programming of flight controller using Arduino for drone.
+
+So nice thanks
+
+46:38
+
+Nice video
+
+I'm so exciting about your course and i want to control multi drones at the same time !! Does it possible and how can i do it
+
+Hello Murtaza,     I experienced a very strange issue.     I ran the Tello drone using my iphone as controller,  the continuous hoover time is more than 12 min and is very satifatory. However, when I switch to computer and using a python program ( see below) to control the drone, the hover time is only 10-15 second. I am using the djotellopy API and the python script is as follows:  #------------------------  from djitellopy import tello from time import sleep import cv2   me = tello.Tello() me.connect()   print (me.get_battery())   #------------------------   me.takeoff()   while True:     print ( str(me.get_battery()) + ' ' + str( me.get_temperature()) )     sleep(1)   #..........................   me.land()    Is there something hidden that control the flight time ?  please advise what to do to fixed the issue.  THX  Larry
+
+Code is not visible
+
+Amazing
+
+Super video!
+
+Super Content
+
+This course is very helpful for beginner to get started with drones and write code.
+
+Amazing and thx for sharing
+
+sorry but what is the arduino used for?
+
+This course is only suitable for programming the Tello drone and is not applicable to other drones.
+
+Just seeing camelcase in python makes it obvious it's not worth watching
+
+Hello, how works the send_rc_control() method in djitellopy? When i run the method, how long is it working? Or how many times it send the command? I just know it sets velocity in one direction. When the command is sent, how long is the velocity increased or decreased?
+
+So how it is supposed to work with other drones if it is using the library of Tello?
+
+is there any way that I can program drones virtually?  I mean in the absence of physical drones can't I get a simulation of a drone reacting to my code?  I'm asking because I think it will really save me a lot time and resources. pls if anyone has an answer  i trully will appreciate it thanks in advance
+
+This is so great, I have a question, Can I do this with a DJI SPARK?
+
+Amazing teaching skill and techniques. Your teaching is anyone can understand. Kudos to you. After watching this video, wondering if we could enable drone to cut small tree branches, pluck coconuts, etc.,  As I am a python programmer, I can handle the programming side but don’t know about getting right drone for this purpose . My initial thinking is if we can attach small saw/blade to Drone that can be activated remotely once drone is in position to cut. I wanted to help farmers mainly for plucking coconuts.  Any tips and thoughts greatly be appreciated.
+
+Thank you so very much for all the effort you put into making this video!  I am not through the entire video yet, but when you use 'sleep' to avoid taking multiple images at 1:08:01, you are taking away all control over the drone for that time. There must be a better option imho.  Anyway, good that you exist and do what you do!
+
+9:00
+
+Do all Tello Drone work with this program? "4DV4 Drone with 1080P Camera for Adults,HD FPV Live Video RC Quadcopter Helicopter for Beginners Kids Toys Gifts,2 Batteries and Carrying Case,Altitude Hold,Waypoints,3D Flip,Headless Mode,Black"
+
+Very nice man!!!
+
+hey bro, its great tutorial but i wanna try this on dji mini SE , what package should i use? and if i wanna create after that my own drone, how can i now that it will br peogramable with python? or can you recommend me some drone flight controlers? thanks
+
+FANTASTIC Video !!! I love it.    😁😁😁😁 Thank You so Much !!!!
+
+I have the drone and I am trying to follow along but you left out major steps in the setup process, I connected the drone but could not disconnect and reconnect to wifi after that step? How do you upload the software, why did the drone stop broadcasting to my cellphone? Help
+
+Nice work man
+
+Which is the lowest cost drone available in India we can do python programming
+
+i am studying electronic engineering.So i need to learn coding for 6th semester project on Autonomous thing.So can you please upload tutorial vedio on autonomous coding?It is actually  basically on robotics.
+
+GRAVITY
+
+?ffgccvvi
+
+Wonderful vedio.
+
+One Question how I write code in drone. I write code on my laptop but how I complie on drone
+
+I have been wanting to do this project for a long time and I was finally able to do it. Thank you for your   effort. The video was very helpful.
+
+hi guys how can i buy the drone
+
+I think. The sleep mode means "stand-by". It still maintains position through a local control loop. Interesting question!
+
+1:15:00 What is this program? Please say to me the program's name.
+
+This is exactly what I have been looking for. 👌
+
+We Focus on the  educational robotics building,Raspberry Pi 4B kits programmable robotics kits.Now i am begining to learn the pi.Thanks for your video,help me to learn more information.
+
+Can any dji drone like the dji mini accept python  code?
+
+Does this work on other programmable drones like the Pluto X - Programmable drone?
+
+Jesus man, drones aren't called that because of the sound, they're called it because of the bee.
+
+in face tracking what about up/down problem?
+
+hie bro wonderfull work . i have a question does it work on mavic pro .?
+
+fellow-excellet - 🥸
+
+Well
+
+Why program in Python? C++ is a more efficient and powerful language.
+
+so... I fell asleep in my chair hours ago listening to music... and then in my dream some random guy started teaching me about an AI turning right and left and stopping when it needed to instead of overshooting. Those few sentence slowly turned into go left go right go left go right then something clicked and I woke up to a 3 hour python course..... thanks for being a part of my dream and teaching me drones in my sleep. who knows maybe Ill become a drone expert now :P
+
+why don't you join elon musk??
+
+I lost 3 eyes while manipulating this drone. Now I only rely on sounds to feel where it is.
+
+P
+
+Very nice video!  Does anyone know if there exist python API wrappers (like DJItelloPy library mentioned in the video) for a larger drone that can carry 150 gram?
+
+It's a good thing I already know all the basic concepts, bc when you were going thru them, your made a few errors. As I write this, I stopped right after to you described how the drone increases speed in various motors, while decreasing speed in other motors, in order to move in a particular direction. I hope you don't make too many more mistakes in the rest of the video, lol. It could be confusing to someone who is just learning! I'm here to get tips on programming drones.
+
+Did someone find a library to do that with Mavic Mini?
+
+Amazing material !
+
+your contents deserved my subs
+
+I believe is for the click rate who can't programme with python?
+
+The biggest open source for drone programming is ardupilot. It is base on Cpp, but i think it support python as well. however It is not easy to learn
+
+14:56 AL SALHIA BAG ON THE FLOOR ,IS IT A DESSERT OR CLOTHING SHOP ?😄♥
+
+thank you so much
+
+Amazing!!   Grreat content!!! Please keep doing more videos 🙏¡¡
+
+i wonder if i can code the tello like the way we xml those planes in simpleplanes
+
+Will this library work with other drones?
+
+excellent bro...
+
+There is no such course on YouTube. Kudos to your hardwork🙂
+
+Excuxme sir, how to make drone follow our hands?  same like tracking our face in this video. Thank you sir🙏🏻
+
+Thank you for this beautiful video!!! Hope to see more
+
+Sir kindly please tell the whole expense of making the drone ?
+
+can we program controller like apm, pixhawk by python?
+
+hii, may i ask? why the rectangle not apperance in my pycharm? my coding is following as you create.. thanks before
+
+Can I use drone kit on python for coding of autonomous VTOL with only 2 rotors ?
+
+Thank you for this course , you are genius ! I like it ! Continue to do what you doing  ! My respect to you.
+
+For the face tracking code, how would you then add controls for the altitude of the drone based on the position of the face?
+
+Thank you
+
+VERY VERY INTERESTING AND   THANKS   MR.MURTAZA  .......I USED TO BE A PROGRAMMER BACK IN 1970 TO 1976 ......I GAVE UP PROGRAMMING  AND  I BECAME  MORE COMMUNIST TO PROTECT THE JOBS IN ACCOUNTING AND WORKER IN CAR MANUFACTURING INDUSTRY ...... WAR IN SOUTH EAST ASIA......  ,................NOW AT AGE OF 72 I AM FINDING YOU TEACHING A VERY EASY TO UNDERSTAND AND INSPIRING...SINGH
+
+Can I use pixhawk ?
+
+can you use this if you dont have a tello?
+
+28:56
+
+hello sir !! i want to know how to record videos with tello !! now i learnt to take photos with this but how to record videoes in tello using python !!  pls can u help me sir.
+
+Just became the big fan of yours  by watching this as my first video tutorials on drone programing ❤️❤️❤️ keep it up and do make more videos like this 🙏 sir
+
+Didn't got bored even 1 sec arround the whole course amazing tutorial ♥️🤘🤟
+
+Hi Murtaza. at 1:21:34 i think it should be "fSpeed = 150/10  #Forward Speed in cm/s (15cm/s)" And your video is great ;)
+
+can this course be used with dji mavic mini  2
+
+Excellent course, could you please add crowd counting using drone and also facial recognition or ANPR if possible.
+
+Thank you for this.
+
+Hello Murtaza and thank you for this amazing tutorial! I have a simple question: Do you know if I can work with ROS with this drone?
+
+awesome tutorial dude, wanna ask what other drones are capable for the procedure you followed and if we wanna build our own then can we,? please tell us
+
+Hi Murtaza, you created an amazing tutorial on how to program the Tello drones, but I have one issue, in the keyboard control program the drone takeoff, but it is not accepting any other keyboard, and it land after 7 seconds. I cannot mow right or left or yaw the drone. I have the following errors: Traceback (most recent call last):   File "C:/Users/alzam/PycharmProjects/Tello_Course/KeyboardControl.py", line 34, in <module>     me.send_rc_control(vals[0], vals[1], vals[2], vals[3])   File "C:\Users\alzam\PycharmProjects\Tello_Course\venv\lib\site-packages\djitellopy\enforce_types.py", line 53, in wrapper     check_types(spec, *args, **kwargs)   File "C:\Users\alzam\PycharmProjects\Tello_Course\venv\lib\site-packages\djitellopy\enforce_types.py", line 46, in check_types     .format(name, type_hint, type(value))) TypeError: Unexpected type for 'yaw_velocity' (expected <class 'int'> but found <class 'NoneType'>) [INFO] tello.py - 437 - Send command: 'land' [WARNING] tello.py - 447 - Aborting command 'land'. Did not receive a response after 7 seconds [INFO] tello.py - 437 - Send command: 'land' [WARNING] tello.py - 447 - Aborting command 'land'. Did not receive a response after 7 seconds [INFO] tello.py - 437 - Send command: 'land' [WARNING] tello.py - 447 - Aborting command 'land'. Did not receive a response after 7 seconds Exception ignored in: <function Tello._del_ at 0x000001C74282AC18> Traceback (most recent call last):   File "C:\Users\alzam\PycharmProjects\Tello_Course\venv\lib\site-packages\djitellopy\enforce_types.py", line 54, in wrapper   File "C:\Users\alzam\PycharmProjects\Tello_Course\venv\lib\site-packages\djitellopy\tello.py", line 1019, in _del_   File "C:\Users\alzam\PycharmProjects\Tello_Course\venv\lib\site-packages\djitellopy\enforce_types.py", line 54, in wrapper   File "C:\Users\alzam\PycharmProjects\Tello_Course\venv\lib\site-packages\djitellopy\tello.py", line 1006, in end   File "C:\Users\alzam\PycharmProjects\Tello_Course\venv\lib\site-packages\djitellopy\enforce_types.py", line 54, in wrapper   File "C:\Users\alzam\PycharmProjects\Tello_Course\venv\lib\site-packages\djitellopy\tello.py", line 579, in land   File "C:\Users\alzam\PycharmProjects\Tello_Course\venv\lib\site-packages\djitellopy\enforce_types.py", line 54, in wrapper   File "C:\Users\alzam\PycharmProjects\Tello_Course\venv\lib\site-packages\djitellopy\tello.py", line 486, in send_control_command   File "C:\Users\alzam\PycharmProjects\Tello_Course\venv\lib\site-packages\djitellopy\enforce_types.py", line 54, in wrapper   File "C:\Users\alzam\PycharmProjects\Tello_Course\venv\lib\site-packages\djitellopy\tello.py", line 529, in raise_result_error Exception: Command 'land' was unsuccessful for 4 tries. Latest response:	'Aborting command 'land'. Did not receive a response after 7 seconds'  Process finished with exit code 1
+
+hi sir, this is a nice video. You can say me how to creat file xml in project face tracking. tks u very much
+
+950
+
+Does it support DJI mini?
+
+He good
+
+really nice video
+
+Sir May i know what IDE you are using for writing the programes and explain me why it is better way of writing when compared to the other IDE Environments Thank you Sir.
+
+Can I ask something? How can I connect python with another drone that can't communicate with the tello library?
+
+Thanks you good to watch that
+
+Your Video Helped me alot of Understanding Phyton !
+
+I must say this is awesome. I subscribed
+
+no
+
+he says around 16:00 that he is using the PyCharm IDE.
+
+Would have been helpful to share out to add the file into pycharm as an xml. thanks tho
+
+Best channel for ai
+
+.
+
+And if I want to know z axis position? where z axis is a height of drone. 1:18:43, anybody can you help me with the formule? Thanks!!
+
+Hello! How to find connection diagram? There is on video or not? Because I didn't see to connection diagram
+
+I want to talk you sir
+
+Hi...Very nice workshop.. I used DJI Tello EDU version, i want to stream video from Tello EDU using above code "31:16 Image Capture", but it did not work. Would you like to tell me how to stream video from DJI Tello EDU ? Thank you very much
+
+Now i am going to build a awesome helicopter.
+
+Hi Murtanza,   First of all, thank you for this amazing tutorial, it was really helpful for my final degree project so I want to coment you an error I found at the Mapping activity.  If you are pressing for example LEFT and UP at the same time, the tello is moving in diagonal but the mapping not. Thats because it only takes one value of "a", 180 or 90.  The function getKEyboardInput() should be like that:     def getKeyboardInput():    lr, fb, ud, yv = 0, 0, 0, 0    aspeed = 50     speed = 15      global x, y, yaw, a    d = 0    if kp.getKey("LEFT") and kp.getKey("UP"):        a = 135        fb = speed        lr = -speed        d = dInterval    elif kp.getKey("RIGHT") and kp.getKey("UP"):        a = 45        fb = speed        lr = speed        d = dInterval    elif kp.getKey("LEFT") and kp.getKey("DOWN"):        a = 225        fb = -speed        lr = -speed        d = dInterval    elif kp.getKey("RIGHT") and kp.getKey("DOWN"):        a = 315        fb = -speed        lr = speed        d = dInterval    else:        if kp.getKey("LEFT"):            lr = -speed            d = dInterval            a = 180        elif kp.getKey("RIGHT"):            lr = speed            d = dInterval            a = 360        if kp.getKey("UP"):            fb = speed            d = dInterval            a = 90        elif kp.getKey("DOWN"):            fb = -speed            d = dInterval            a = 270    if kp.getKey("w"):        ud = speed    elif kp.getKey("s"):        ud = -speed    if kp.getKey("a"):        yv = -aspeed        yaw += aInterval    elif kp.getKey("d"):        yv = aspeed        yaw -= aInterval    if kp.getKey("q"): me.land()    if kp.getKey("e"): me.takeoff()    sleep(interval)     a += yaw    x += int(d * math.cos(math.radians(a)))    y += int(-1* d * math.sin(math.radians(a)))     return[lr, fb, ud, yv, x, y]  Thank you for your amazing work, i hope my comment could help you or others to get a more robust application.
+
+At the moment,  best tutorial ever.  You're a great teacher Sir.  Really hope to see more of this kind of tutorials!  I  love it
+
+ctrl c, ctrl v
+
+SKIP TO 2:31:14 for the face tracking
+
+Can I use Mavic mini instead of Tello?
+
+How to purchase it from pakistan?
+
+Ur voice seems like "code with harry"😁
+
+Softwaricans! Did you reach here?
+
+Ya Ali
+
+Pls how can I get a tello drone in Nigeria
+
+Love it most detailed YouTube video
+
+How we can start a school in my small city in india as for robotics and how much will be the invesetment
+
+Great course!!! Thank you! Question: i get 2 errors:  1.if area > fbRange[0] and area < fbRange[1]:  TypeError: '>' not supported between instances of 'list' and 'int' 2.pError = trackFace(info, w, pid, pError) Does anyone have a solution for that? Thank you....
+
+can I turn off the drone through python programming?
+
+Check out my implemnetation of  a drone (Tello) powered by computer vision https://www.youtube.com/watch?v=a5ddyfV1hxk
+
+Nice video
+
+Good night, how are you? I live in Brazil and I find it difficult to speak English. Lol, I'm subscribed to your channel and I found your content amazing and very rich, I'm studying Python, I would like your help, I want to make an application, from the employees' point where they can check the time by cell phone, anywhere, with easy confirmation and digital, so there is no fraud, its content explained in this course is similar, if possible I would greatly appreciate it and my applause from Brazil!
+
+Agricultural Drone I am most familiar with😅
+
+Hi, can you help only to remove the 15 m restriction from DJI fly app permanently because I don't want to use 3rd party apps
+
+Fantastic! I love how you explain all of your steps :) <3
+
+Sir, i'm your new subscriber. Thanks, i really like this channel a lot
+
+can we use DJI drone ?
+
+Doing Good work
+
+O palestino saudades do taliba 🤣😎💞💞💞😘
+
+Just like to say, you could have made the video 30/31 seconds longer!! 3:33:33 lol
+
+how much the budget to preapere all componenet??
+
+cheers mate you ledgit saved my science fair
+
+I have a question. What happens when there are more than one faces. I understand how the drone can track a face, but with multiple people there would be too much inputs and the program will certainly crash. Can you please make a free video on how to lock on a particular face/object. Other than that thank you very much for making such amazing videos and speeding free quality educational content to the world, we need more people like you❤❤❤❤
+
+I am from India 🇮🇳
+
+May I know the algorithm that was used for your above programs?
+
+What the hell man! Such an amazing Course!
+
+this course is great! just going through it now.. is it ok to have python 3.10 rather than 3.7.6?   Also when I am installing the packages, you have gone through the PyCharm UI, is it still the same as installing it through terminal on my virtual environment? is that not just the same thing?
+
+Thanks and welcome
+
+@murtazasworkshop  Sir, can u tell me, why u like to use Python than the other programming language?
+
+You can use any drone which has a python sdk. Most DJI drone don't have it.
+
+ok so its just the same as doing pip install djitellopy or pip install opencv-python  [20:08 - 22:18] You can still go through the settings method to double check your installations ..loving this course can't wait to learn more !
+
+You are amazing. Post more enlightening one please. Thanks
+
+What are the capabilities that a drone must have (specifications) to be compatible with this course? How can we find out if brand X model Y has these capabilities in advance of purchase?
+
+you are so smart.
+
+Awesome video 👏 thank you for sharing
+
+Does this work with the mavic mini?
+
+murtaza^s ? abi sen Türk müsün?
+
+Is this course good for beginner? or you need to know programming.  I don't know programming can I start learning about drone programming
+
+Help!! When I run the file Basic_Movements I get a self.raise_result_error(command, response) error.  Any suggestions?
+
+This is an excellent course for learning to program a drone. It has some great projects that teach you how to control a drone programmatically as well enhancing your Python skills. Thanks for the course I really enjoyed.
+
+THANK YOU
+
+There is no such course on YouTube. Kudos to your hardwork
+
+Very good
+
+Can I used this code for my dji manvic mini ?
+
+Thank you sir for your knowledge
+
+love it, many thanks
+
+Je n'arrives pas à trouver les mots pour vous remercier, vraiment c'est très impressionnant et la video est très instructive. Thank you very much Sir🙏🙏🙏
+
+I cannot do basic movement program, I get the error "Did not receive a state packet from the Tello" ... I have shut off my firewall and I have updated the firmware.  Still no luck and I am using windows 10 and python 3.7 ... has anyone else seen this error?
+
+Hi could this be implement for DJI Mini 2 / Mavic Air 2? Appreciate your feedback!
+
+Thanks dude, Better than our teachers at school ;-;
+
+LOOOOOOOOOOOOOOOOOOOOOOOOOOL n1 cool stuff, especially with this moment where the drones follow you!!!
+
+have question - Ryze Tech Tello vs Dji Tello - is it the same that we can use for this course?  please advise
+
+Mais tantos filmes que estou asistindo nao consigo receber nada na minha conta. Je suis en train de suivre plusieurs films, mais je ne reçois plus de bonus sur mon conte banqué
+
+It's so good thankyou you helped alot🙏
+
+HELP  Traceback (most recent call last):   File "C:/Users/NAJEEB AHMED/PycharmProjects/open cv python/image rec without tello.py", line 60, in <module>     img, info = findFace(img) TypeError: cannot unpack non-iterable NoneType object
+
+thanksssssssssssssssss
+
+Great tutorials! but, is line follower code is finished yet? i don't think so :(
+
+So clear and inspiring ! It's great to learn something cool so fast. Please continue making videos, we need more amazing teachers like you.
+
+this is excellent
+
+Great video! Which one do you recommend? The Tello boost combo or Tello edu?
+
+Price of the drone??
+
+U are realy legend i always share and like ur videos
+
+Just wondering if it can be integrated along with ROS?
+
+Tuyệt vời quá ...
+
+A lot of the materials listed in the description are no longer available - is there a chance you could help with an updated list of available parts?
+
+Can i use c++ programming???
+
+Thank you for this wonderful video, can you inform about interfacing of tello with matlab simulink?
+
+Superb stuff! Just wondering if this could work with the DJI Spark. Any ideas?
+
+Can you suggest any other cheap drone which can be used?
+
+assalamualaikum, I'm using AR Drone 2.0 for my final year project. Is it same with tello? I couldn't find the library...
+
+Gracias !!!
+
+Accidentally found an amazing video please continue making such videos
+
+Sorry Sir, for project 3 is face tracking. May I ask you how about the coding for avoiding the moving face? What I mean is when the face moving to the right the drone move to the left.
+
+best keep it up make more
+
+What level of python coding skill is required for this course??
+
+YouTube recommended this vid and I'm here for it😎💯🔥🔥
+
+When I start the Python program youtube-dl on a 4-core CPU, it takes 6 seconds just to print the usage information (basically the program doesn't do anything, just print one string). I can't imagine how one can control flying objects with a language so ridiculously slow. With machine code, assembler, C or C++ I can imagine.
+
+Hi - We have a Job opening for Drone programmer in Chennai , India- Anyone interested ?
+
+Excellent
+
+how do u upload the code to drone? using usb? but how does the microcontroller compile that? pycharm only makes the file. edit: does it communicate over wifi?
+
+Drones are gaining popularity because people are getting lazier. They wanna own and handle something they dont really understand. Unless you are a drone engineeer or enthusiasts or as a hobby, where definitely you know some minor technical repairing or even programing it. So for those who are here, congratulations my fellow pilots
+
+Hard to find any drawback of this video. Good quality, intresting, simple, pleasing to ear.
+
+Language in Hindi please
+
+"Drone" isn't a reference to the sound definition, but instead a reference to role structure as like insects (i.e., worker bees gathering honey or tending chores are the queen's drones)
+
+What is the minimum educational requirements  for this ? Please tell me , I want to learn this.
+
+i cant take off with e and land with q. why?
+
+đỉnh vậy ạ
+
+Thanks a lot for the content. Meanwhile, is there any cheaper drones that can be programmed as well?
+
+Fantastic course. Demystified a lot of things in drone programming. Thanks a lot
+
+I WANT TO KOREAN
+
+Is it possible to control a hhubsan 501m with this code. It doesn't work for me
+
+hey!!! how did you do face tracking?? it's detecting my face but not tracking it :(
+
+Can I control a hubsan 501m
+
+How to control a hubsan501m drone using python
+
+Awesome video. One question can it track the same face in a crowd/ many faces if not how can we select and have it track the face?. Thanks once again.
+
+Hello, excellent video  Could you occupy the dji mavic mini?
+
+Which laptop you are using mention the specs, kindly paste the link
+
+Stumbled upon your channel somehow! It's amazing!
+
+Will this work for any drone?. Do you meed to kno maths to do this? Because I hate maths iv never been good at it
+
+Me after printing "hello world" ; YouTube: wanna see python programming for drone of 3 hours  Me : ok
+
+when I run the command I am not getting ok response, when I run on Laptop. If I run UDP client on Mobile then the SDK commands are running fine. I tried disable Windows Firewall temporarily as well, but not working.
+
+Hai sir need make a agriculture  drone for FARMAR , please make one VIDEO for FARMAR
+
+Hanzhen harmonic drive gear ,  robot arm gear , automtion joint gear,     over 30 years experience
+
+For macOS users on M1 silicon: First program failed for me wasn't sure why. Partner had to help me out (they are a software engineer). Anyway, if you have the same issue you need to do 'brew install ffmpeg' takes a while to install but now it's working. Thought I'd share :)
+
+Excellent sir,
+
+Excellent way of teaching and practically demonstrating!
+
+Great work!  Thank you!
+
+dude they're not called drones because of the droning sound they make.  they're called drones because they're like bees in hives they're the worker bees aka drones.
+
+for accuracy ,best to get realtime GPS coordinates instead of trail n error location
+
+how can see count say no of cars at a dump yard ?thx
+
+Thank you man.. thank you.
+
+This is the only one things what YouTube  recommended me for useful in life.Thanks for this tutorial Brother ❤️🇧🇩
+
+Glad you think so!
+
+Cool Desktop BkGnd
+
+Ok
+
+How much this drone cost , I want to make surveillance drone
+
+Are you using a normal Tello drone or Tello EDU?
+
+@Murtaza's Workshop - Robotics and AI  Is the normal tello drone also support python?
+
+Dude. The is Incredible!! 😳😳
+
+You should put it in Linkedin Learning
+
+Can you share your email and contact .. need to discuss with you on possible joint project
+
+Awesome instructions)) anyway you can make sure you don't have the blinding white transition slides?)) Thanks alot!
+
+Sir plese teach us that how to make drones from basic to advances.
+
+subscribed already brother!!!! amazing content!
+
+This is absolutely amazing. Keep up the good work.
+
+If I buy your course, will this aircraft be given me away? If I buy your course, will this aircraft be given me away? ( aircraft included ?)
+
+Thank God I cant even use the remote done scratched up my drone already about to paint her tan or cream too
+
+Daamia Fueneetis. Yes.
+
+Amzing job Mr. Murtaza!
+
+Loved your way of teaching! Seriously needed these classes! Love from India!🇮🇳
+
+Hi, nice video, thanks very much. It really helped me alot. How can I do this with other drone?
+
+One of the best drones videos so far. Good Job!
+
+19:30 Installation Complete 31:30 Capture image
+
+In the course a normal Tello drone is used but you can use both.
+
+@murtazasworkshop  Thank you Brother
+
+You can use the same python code but you will need the library for the other drone to control its movements.
+
+How did you do your fake comments?
+
+Dron Pratap
+
+This is AMAZING!! Can't wait until winter when I have nothing outside to do!
+
+Finally sat down and watched and this is some amazing high quality content! Can't wait to watch your other videos and start working on my computer vision skills which have never been that good haha.
+
+Dear knowledge senpai although i adore your knowledge i actually am infuriated by the behavior and lack of non US support of Amazon to the level that it makes me gag ..
+
+can I program this with xiaomi drone?
+
+Hi Murtaza! I really love all of your content, but I got scared of the bad reviews the Tello drone has! People say its hard to callibrate, it loses connection quickly, the app is out of date and it often comes with manufacturing issues! Can you tell us about your experience with it so far?
+
+in macOS after takeoff the drone don't respond to the commands
+
+amazing video. i have one question. if i want to control 2 tello separately in the same program, is possible?
+
+Hi and thanks for the share. This is really great, however the format is not really appropriate in my opinion, I  would have preferred a split in multiple short videos rather than a huge one.
+
+Is this work for dji mavic pro?
+
+hello i have a problem dji mavic air is not activated can you help me i tried every way i couldn't fly
+
+Wow, I've had this on my watch list for awhile. Finally sat down and watched and this is some amazing high quality content! Can't wait to watch your other videos and start working on my computer vision skills which have never been that good haha.
+
+YouTube is made for this type of videos. 💯💯💯
+
+Someone know about alternative drone ti tello with sdk access to the camera? I want a bigger drone with moving camera for this project..
+
+Don't share this ! https://youtu.be/vaZZx3UIvao
+
+library line follower please
+
+Hello bro can we use this rapper to code pixhawk?
+
+Can you reprogram dji mini 1 i dont have tello but i want to enhance my dji mini same as what you did in tello <3 anyways kudos to this kind of work and on the github contributors
+
+u r cool
+
+How much will u copy comment?
+
+Definitely has English as a second language though.... doesn't seem to know the other definitions of the world "drone."
+
+if there is a European hardware manufacturer of drones like this then i would surly buy a squad  of them
+
+Is it possible to pick the drone up walk around  with it and it sends path data to a file?
+
+Excellent tutorial thanks
+
+Best ever ❤️ great teaching ❤️
+
+👌
+
+@Murtaza's Workshop - Robotics and AI Is there any way to provide the information that was explained in the video in writing, like do you have any website that has subtitles of the video? It would be a great help. I am currently writing a paper on drones and I will be providing your video or website as a work cited.
+
+wow! i am korean. can you upload a video about coding drone with c++??
+
+Hello Sir, i have a question to the Drone. I use a diffrent drone that doesnt works with the djitello. Does that mean it cant be programmed?
+
+rhank you so much for posting this, this is an excellent biz idea here in America. have a drone that can take pictures of intruders and such,,,,what is the max distance for up and parallel
+
+Is this possible in a DJI MAVIC AIR 2?
+
+Bro I did like 👍 00:03😅 ur impressive
+
+Excellent explanation! Thank you!
+
+Can try with dji phantom
+
+will it work for the Dji Spark 4?
+
+Hi and thanks for this video, how if we want to take video instead of image?
+
+Don't know who you are.but  if you were my teacher at any place of my educational history,I would be  at a better place in my life.
+
+great course but very messy code
+
+Plz tell us how you learnt ai
+
+I'm watching your video on an international train right now and after the first 15 minutes I have already decided to purchase this drone and delve into Python programming again. Thanks a lot for this great tutorial!
+
+Can I use vs code
+
+sir where can get a drone  and how I will connect by my pc and are you selling drone too pl an sir
+
+It can, you need to code yourself all the fonctions tho like forward backwards ect
+
+@filipodainic3174  do i need to do reverse Engineering
+
+@shadowcraft2799  yup, it will be complex tho
+
+@filipodainic3174  ok thank you for information
+
+I received this error:   C:\Users\User\PycharmProjects\OpenCVpython\venv\Scripts\python.exe C:/Users/User/PycharmProjects/OpenCVpython/BasicMovements.py [INFO] tello.py - 107 - Tello instance was initialized. Host: '192.168.10.1'. Port: '8889'. [INFO] tello.py - 422 - Send command: 'command' [INFO] tello.py - 446 - Response command: 'ok' Traceback (most recent call last):   File "C:/Users/User/PycharmProjects/OpenCVpython/BasicMovements.py", line 5, in <module>     me.connect()   File "C:\Users\User\PycharmProjects\OpenCVpython\venv\lib\site-packages\djitellopy\enforce_types.py", line 54, in wrapper     return func(*args, **kwargs)   File "C:\Users\User\PycharmProjects\OpenCVpython\venv\lib\site-packages\djitellopy\tello.py", line 531, in connect     raise Exception('Did not receive a state packet from the Tello') Exception: Did not receive a state packet from the Tello  Process finished with exit code 1     any assistance here?
+
+Hello Murtaza I'm trying to use the basic movements code on SG800 drone. It appears that code is not able to connect with my drone. Could you please help?
+
+How is the condition of the drone landing?
+
+Hello from Latam, starting to explore your channel. And eager to learn. Blessings my brother and thank you for this great effort.
+
+The quality of the content and explanations is really top notch.  When I think of how fantastic the internet is, people like you are at the forefront of my mind.  To take the time to produce something like this for the world is really worth a pause.  Thank you so much for improving the landscape of the internet!
+
+Great tutorial. Can i program a NAZA controller drone?
+
+Sir, if I programmed my Tello to do something and if I want to fly it normal, I mean the flight which I did before programmed it, does it fly like normal ? please give me an answer🙂
+
+Thanks for sharing, it made me decide to buy a DJITello.
+
+👍👍👍
+
+The word drone is not derived from the sound. It is a reference to worker bees that fly around and perform mundane service tasks. And it has six degrees of freedom, not four. It can rotate around three axes, not one. This is how it is able to move sideways.
+
+sir can we use other drones like normal drone not dji drone's
+
+I'm finding it difficult to understand why you gave a description of the sound (to)  drone or droning and not a description of (a) drone? If you're struggling to understand the difference then Google it.
+
+This is a really amazing tutorial! quick question: Is this programming tutorial applicable to other Tello drones(or other brands)? Thank you!
+
+Thanks excellent job
+
+Tnx!
+
+adını murtaza görünce geldim ama başka murtazaymış bu,
+
+Nice work on the million viewers
+
+so i don’t have to purchase the edu version to carry through the course, right?
+
+Sir but I have don't have such material then what should i do ?
+
+Thank YOU for this wonderful video, it helped a lot. Can you extend it and make a video on how can it autonomously move from 1 coordinate to another, taking the shortest path, or how can we implement algorithms like PSO or Fuzzy in this .
+
+Thank you for your kind words.
+
+You deserve every word and more. Thank you for putting in the effort. I was telling a group of friends about it last night. I explained that you could know nothing about any of it, and you walk us through every step, clearly and efficiently, with great graphics, and demos. Really excellent work!
+
+G😅 😊m❤m
+
+Yes
+
+Good luck
+
+I wonder too
+
+I can’t thank WAPTECS  enough for spying ôn my ex girlfriend and gave me proof via phone that she was cheating...
+
+Nice video, thanks for your effort puttin this together. Does it work with any drone, are there any specifications for the drones this will work. Its obvious it will need wifi connectivity; is there any other requirement or specification that can be checked with other drones.
+
+nvm, I have figured it out.
+
+great work. Thank you !
+
+Nice video
+
+There are elaborate self driving cars and vehicles course, but this drones tech course is a fabulous initiative. When you bring battery tech, web3 tech, Swarm Robotic tech and programming the world will be a different place. Glad to see the tech being shared widely.
+
+This is even better than college courses
+
+I need help.  I am trying to connect my PC Wi-Fi to the Tello Drone and I keep having this message saying No internet, open.
+
+When we write, what happend to already program firmware. Is it going to flush?
+
+Is it really translation and not rotation? Because when flying forwards, the drone is roatetd forward and the the translation is upwards and forwards.  So isn't it just one translation and 3 rotations?
+
+Can you provide the link to buy from India, can I buy any drone or specific is required, please confirm it
+
+Man I stopped python like 4/5 months and now ut got me to try python again over opencv.
+
+For anyone having an assertion error with the image capture section. The only solution I have found is to disable your firewall.
+
+Hello I want to ask you that can I implement deep learning tasks on this drone please help me yaar?
+
+Well explained with a clear vision
+
+Great thanks for your hard work it's useful for us
+
+The master of all !!
+
+❤️
+
+I really want to thank you so much for this video which is so nice for i am a fan and lover of python
+
+Thank you sir for this course ! Sir please SLAM ( Simultaneous localization and mapping ) with Tello Drone.
+
+Wd love to get some details or pointers from anyone in the community or the author.
+
+I found a magical desktop with a smart central control screen. Just turn the knob to control the lights, curtains and other electronic devices at home. It is very practical: https://youtu.be/CVyQB1cvhWo
+
+Lol . Good Luck
+
+Haha, I did promise not to go back to python because I'm working on my JavaScript Stack but Python really feels different.
+
+Noted
+
+OMG, Thank you dear man.
+
+Nice video, thanks :)
+
+This channel is so awesome, thankyou. Such powerful knowledge, everybody should learn this stuff in school.
+
+For the mapping project, shouldn't the Y-axis be positive when you start out moving in the forward direction?
+
+감사합니다. 한국 드론교육계에서도 큰 도움이 되었습니다. ☯
+
+LOVE YOU DUDE YOUR AWESOME. AND ONE THING YOUTUBE DID GOOD THAT RECOMMENDED YOUR VIDEO.
+
+Best content channel i have ever seen nailed it bro😱💪
+
+شكرااااا
+
+Made my first programmed flight and I am only 31 minutes into 3+ hours. Thank you so much.
+
+AWESOME
+
+Wonderful. Thank You so much.👍👍
+
+Can we use Anaconda instead of pycharm? Will it have the same/similar coding? Please answer
+
+Can you please speak on how to make. My own esp Drone receiver? I researched and found that it uses PWM signal to transmit data to the FC . It will be a great help if you could help me with it
+
+Swear to God when I go to file there is no "settings" option when I click file lol -- what do I do? I'm on a Macbook Pro 2019
+
+Hi, thank you for your hard work, you are the only youturber that i can understand; please can you make a video like that about ardupilot and raspberry  I apprecieted a lot you video...bye
+
+Good video man
+
+Wow such a good video I was so interested about it after watching indian army's swarm drones well done bro
+
+MashAllah brother! this is the best video for my project, Thanks allot...
+
+where can I find "Resources haarCascada",  please?
+
+80% of drones cannot support O-Source. Tello is fine, perhaps. My experience.
+
+my program doesn't run not connecting to UDP port likely
+
+You could use any IDE that runs Python. Anaconda is not an IDE, but is instead a distribution of Python (basically, its the Python language + some other libraries that are used for scientific computing). Anaconda does come with Spyder, which is a Python IDE. You could use that. Best of luck!
+
+@chriswhitmire4167  thank you for the information, really appreciated it.
+
+for pixhawk where can i find library ??, how to deal with drone without library ?/ explain that also and help us create our onw library
+
+Thanks for doing the course. What software are you using to do the animated slides?
+
+this is can apply any drone?
+
+Many thanks for that video! Do you know any more advanced  drones with an open python sdk? I looked at Mavic etc but they don't seem to be programable in python.
+
+I had a doubt since tello is a bit fragile I was thinking to make a drone from scratch which flight controller do you recommend and also is there a way I attach my rasberry pi 3b+ as a camera which sends appropriate signals to flight controller
+
+5:06 "the receiver or the Bluetooth", perhaps not Bluetooth, more likely a WiFi transceiver (since WiFi is never unidirectional). In the case of the Tello it appears to be Wifi 802.11n specifically.
+
+End of statement expected help pls happens with image bit
+
+Hi, at 39:40 i have exactly the same code, but i don't see a window popup..... or it is to fast for my eyes. I'm running it on a Mac with BigSur. I now see in my docking a little icon. When i hover it says Python, but no window ( pygame 2.0.1 (SDL 2.0.14, Python 3.9.5)
+
+Thank you!
+
+When I was running the image capture . It is giving an error size.width>0 and size.height >0 in imshow. What should I do
+
+Very nicely done and easy to understand course. Thank you
+
+Fantastic work, Great Explanation!!!
+
+Hey, I like the video but I have problems with the Image, I just cant see the video of the drone, I did like 5 times just like you and it just isnt working. Is it maybe because of a new Version of pycharm (I use 3.7 Python) or a new firmware update of the drone (I checked my version of the firmware its the newest). I just dont know what to do, do you know the problem? If I use the drone on my mobile i see the video. But in pycharm the window just isnt there
+
+MSH ❤️❤️❤️
+
+Thanks youtube for recommending this wonder ♥️
+
+Clear my doubt , i have built a face recognition drone let's neglect the fly time, after doing everything now i am ready to run my drone, after disconnecting and restarting the should i connect the wifi to run my program or my program will run as a primary code.....hope u understood my doubt
+
+can we use drone diploy with tello? if yes, can you please make a video on that. to make a drone fly within a selected region
+
+Hi, is it possible to make your own drone from scratch, the hardware part
+
+I have never seen a drone from near .. never laid my hands on it , but still then .. " I SHALL LEARN IT ' ...HA HA HA HA HA
+
+The best recommended video i have ever seen
+
+cringe
+
+Brushless and brushes cost pretty much the same nowadays (unless you buy DJI)
+
+i have a problem, mapping doesn't show turnings of dron, if you go forward, then turn 90 degree and resume fly forward, the mep shows only 1 straight line, can you pleas help me to solve it?(i am using same Tello and same code from video) : P.S. TY
+
+what's the advantage of the EDU version vs the regular version?
+
+Thanks  bro~ you're the best!! you're always more than enough!! Thank you!
+
+Hi, Thanks for the video, I have few questions: - is there any drone I can connect to my wifi AP? What I need is to be able to access the drone from the routed network instead of only have access by direct connection. - Can I apply live face recognition analysis to the captured video and then stream it to other users? Thanks in advance for your answer.
+
+Sir I don't have drone , still can I work on program ?
+
+does the tello library work on different drones????
+
+i was here when u had 4k subs good to see ur growth, u really make good content
+
+I don't have a Tello but really want to learn the code. Is there any way ?
+
+How will I write how many centimeters the drone will go ?
+
+what if I want to add GPS or other components? this looks very interesting, but I think having a programmable drone which cannot be moduled and upgraded is not enough for me still, nice video!
+
+How to learn robotics make a vedio on ot
+
+can I do this as a college final year project?
+
+great video. thanks
+
+[h264 @ 0000019ab6699b40] non-existing PPS 0 referenced [h264 @ 0000019ab6699b40] decode_slice_header error [h264 @ 0000019ab6699b40] no frame! [h264 @ 0000019ab8394b00] non-existing PPS 0 referenced [h264 @ 0000019ab66ab040] non-existing PPS 0 referenced [h264 @ 0000019ab8394b00] decode_slice_header error [h264 @ 0000019ab8394b00] no frame! [h264 @ 0000019ab8394b00] error while decoding MB 31 40, bytestream -10
+
+Big thanks for this tutorial !!!
+
+Hi Those who are following murtaza workshop , and unable to get the video stream and Image frames, Use Open CV library version 4.4.0.46, and python interpreter 3.9.0. Try to make sure you use the above specified versions. Hope it helps.  Share
+
+💜💜💜ty
+
+I have question. When I run image capture it start giving me lots of errors. And then it crash with something like: First frame not captured
+
+pygame window not opening up , whats the right pygame version for py charm 3.7.6
+
+plz reply
+
+Congratulations man!
+
+This has to be one of the best channels on youtube! The BasicMovements work fine, I have an issue with the live stream of the tello. At 35:07, I tried to also run the ImageCapture.py file, and it returned the battery level fine, but then it came up with lots of errors even though I commented out line 10 and the live stream did not appear. These are the errors:  Traceback (most recent call last):   File "C:/Users/Ssaif/PycharmProjects/Tello_Course/ImageCapture.py", line 12, in <module>     cv2.imshow("Image", img) cv2.error: OpenCV(4.5.2) C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-dn5w5exm\opencv\modules\highgui\src\window.cpp:404: error: (-215:Assertion failed) size.width>0 && size.height>0 in function 'cv::imshow'  [h264 @ 0000026cd22bd680] non-existing PPS 0 referenced [h264 @ 0000026cd22bd680] non-existing PPS 0 referenced [h264 @ 0000026cd22bd680] decode_slice_header error [h264 @ 0000026cd22bd680] no frame! [h264 @ 0000026cd22bd680] non-existing PPS 0 referenced [h264 @ 0000026cd22bd680] non-existing PPS 0 referenced [h264 @ 0000026cd22bd680] decode_slice_header error [h264 @ 0000026cd22bd680] no frame! [h264 @ 0000026cd22bd680] non-existing PPS 0 referenced [h264 @ 0000026cd22bd680] non-existing PPS 0 referenced [h264 @ 0000026cd22bd680] decode_slice_header error [h264 @ 0000026cd22bd680] no frame! [h264 @ 0000026cd22bd680] non-existing PPS 0 referenced [h264 @ 0000026cd22bd680] non-existing PPS 0 referenced [h264 @ 0000026cd22bd680] decode_slice_header error [h264 @ 0000026cd22bd680] no frame! [h264 @ 0000026cd22bd680] non-existing PPS 0 referenced [h264 @ 0000026cd22bd680] non-existing PPS 0 referenced [h264 @ 0000026cd22bd680] decode_slice_header error [h264 @ 0000026cd22bd680] no frame! [h264 @ 0000026cd22bd680] non-existing PPS 0 referenced [h264 @ 0000026cd22bd680] non-existing PPS 0 referenced [h264 @ 0000026cd22bd680] decode_slice_header error [h264 @ 0000026cd22bd680] no frame! [h264 @ 0000026cd22bd680] non-existing PPS 0 referenced [h264 @ 0000026cd22bd680] non-existing PPS 0 referenced [h264 @ 0000026cd22bd680] decode_slice_header error [h264 @ 0000026cd22bd680] no frame! [h264 @ 0000026cd22bd680] non-existing PPS 0 referenced [h264 @ 0000026cd22bd680] non-existing PPS 0 referenced [h264 @ 0000026cd22bd680] decode_slice_header error [h264 @ 0000026cd22bd680] no frame! [h264 @ 0000026cd2323140] non-existing PPS 0 referenced [h264 @ 0000026cd2323140] decode_slice_header error [h264 @ 0000026cd2323140] no frame! [h264 @ 0000026cd2d46400] non-existing PPS 0 referenced [h264 @ 0000026cd2d46400] decode_slice_header error [h264 @ 0000026cd2d46400] no frame! [h264 @ 0000026cd2ccce80] non-existing PPS 0 referenced [h264 @ 0000026cd2ccce80] decode_slice_header error [h264 @ 0000026cd2ccce80] no frame! [h264 @ 0000026cd2a8b200] non-existing PPS 0 referenced [h264 @ 0000026cd2a8b200] decode_slice_header error [h264 @ 0000026cd2a8b200] no frame!  Process finished with exit code 1  I have tried everything I can think of, but I am unable to fix this issue. I have reinstalled python to version 3.7 as you have done, reset pycharm, and checked for various errors but it will not work. Please give me some advice as to how to fix this.
+
+It's a wooow course. Thanks for your hard work.
+
+Kindly let me know about tello drone model you used ? I mean how can I buy it same drone , any number and name?
+
+Great presentation, really knowledgeable
+
+I don't understand how you calculate the position of circle in mapping Why the position of the circle after 1s is distance*angle?
+
+Amazing video!! Thanks for sharing know-how with us! By the way, I'm interested if it is possible to do all that is shown in video in Java language? :) :)
+
+Hola! Me podría ayudar a encontrar una librería par aun drone con la controladora de vuelo mamba F405?
+
+is anyone getting an assertion error?
+
+I wrote the image capture line by line but a window does not pop out to show the stream
+
+I heard python is slow, is that right?
+
+thank u so much this video is what i need rn
+
+Bro can u plzz make a drone with raspberry Pi.?? And Thanks for this one...
+
+Murtaza bhai thanx
+
+Superb
+
+Excellent presentation. But sure there are longer lasting and drones with greater load carrying machines.
+
+Can i use this for realtime simulation like inside webot....
+
+I want to install djtello in anaconda spyder but i don not how to doit  help me please
+
+ปิยพงษ์.ธรรมเจริญ.สงเข้าบันชี
+
+Thankyou for your teaching about this kind of technology ideas. This video helps me to improve my drone project that I can develop for my thesis subject. Thank you so much sir.
+
+I’ve been having the same issue and no solution has worked for me so far!
+
+I am having the same problem so let me know if you figure it out
+
+The error is saying that there is no image being captured, and because of that there is nothing to show on cv2.imshow. Usually you have to just change the index to correctly initialize your camera, it might change from each PC. But i'd have to see the full code
+
+you can find the link in the description of the same drone.
+
+I have the same problem. Let me know if you figured it out
+
+You are the best of the best.... Thanks a million buddy
+
+Hi, I'm running pycharm on  ubuntu, but when I tried to use cv2.imshow() cv2.waitkey(1), the exact same code like you did in the video. There is no window pop up. Do you know how to fix it? Thank you!
+
+Can we do these task with normal homemade drone?
+
+Superb chanell on whole utube love from india 🇮🇳🇮🇳🇮🇳
+
+You are amazing thank you
+
+Very nice projects! Can I do a HUD over video in real time in Python? Thx!
+
+Why am I thinking of that first flight on Mars? Nice tutorial;)
+
+how to do it with a normal drone please help me i have a drone from propel company no library for python with such name plz help. Please
+
+This program is also used for s167 drone?
+
+This program also used for s167 drones also
+
+hello..i want to learn something from u..can u give me your email?
+
+Great work .. Thanks Bro
+
+Can I use this with my self made brushed drone it uses f3 evo as flight controller and nod mcu as reciever
+
+Hey pls tutorial python + opencv on boot
+
+Assalamualaikum
+
+Man you are God
+
+Immediately subbed. It's the content I've been DREAMING of! I'm stoked. About to dive in this weekend.
+
+Loved it ! Thanks so much
+
+Love from Turkey
+
+Would this drone be able to track a moving car ?
+
+Reply bro
+
+Waalaikumsalam
+
+WHY AM I 3 MONTHS LATE
+
+bruhh if i am not using tello can i use ardino as the processing board if not what board can  i use to store the code and make the drone work???? plzz help me im confused
+
+Can we use that drone to stop on certain location given in latitude longitude. If yes can you help me with it🙏
+
+Great job! Now I need to find out how to recognize multiple objects on a 8×8 matrix, e.g. chessboard. Is this possible?
+
+Amazing content! Thanks for sharing!
+
+Thank you for such a video.
+
+You won my heart
+
+Can I use this code if I choose my flight controller as arduino nano..?
+
+Just want to ask if i can import python tello code to other drone and if yes do i need to re-program the drone chip
+
+My respect, you sound so clear!
+
+That is awesome Murtaza's! I have a drone similar to the Tello drone with the manufactured controller. Can it be overwritten by the custom python code that is executed by wifi on my computer? Thanks!
+
+Do subscribe guys underrated channel but content is ❤️🔥
+
+Wow,   Absolutely amazing work on this tutorial mate!   I had to hit sub and bell.   Keep it up please, and thank you.
+
+Hello, You said that this course is 80% valid for other drones. What do I have to do to be able to apply this code to others drones???
+
+Great video very informative .
+
+Does the library in Github mean that one does not have to get the Tello EDU in order to program the Tello with Python?
+
+i am buying a  pyrone drone
+
+Thank you so much for your hard work😊 you tutorials are amazingly easy to follow and understand!! I just wanted to ask you a question do the same scripts work with other dpi drones such as Mavic 2 pro or phantom??
+
+How can I do 24:02 on a Mac?
+
+Prerequisite for following this video
+
+If possible arduino chip
+
+I wonder too
+
+great.....
+
+Hello Murtaza, Enrolled in your website for this course but some videos contents and scripts are different. For instance the facial tracking course and codes...  Which one is supposed to be followed? Thank you 😊
+
+Nice tutorial! Just a question though are you using Tello or Tello EDU?
+
+you  r best Hats Off.bro
+
+Congratulations on the video. I have a question, I am learning With the Tello drone (not tello edu), can I program in python? Or should I program in scratch?
+
+Can Jetson Nano be used as flight control board, where the motors are connected to nano via l298N and sensors via GPIO
+
+Dear teacher, when it runs to 35 minutes，“ img = me.get_frame_read().frame” ，No return, no image can be read, I can confirm that there is no error in the above code, and the battery level of printing can be displayed normally, which proves that the connection with the host is correct. Can you help me and how to solve it。 import cv2 from djitellopy import tello  me = tello.Tello() me.connect() print(me.get_battery())  me.streamon()  while True:     img = me.get_frame_read().frame     cv2.imshow("Image",img)     cv2.waitKey(1)
+
+Hello! thank you for this tutorial, the only issue that I had was that when I updated the drone, It bricked. Is there a fix for this?
+
+i love this so much, thank´s and please delete it before organizated crimme has a look to this ;)
+
+V. good course  !!
+
+Great tutorial, thx.
+
+I'm going to build a drone swarm
+
+Amazing!
+
+Thank U Sir 👍
+
+Very very cool.  Awesome even.  Many thanks.  (you are good at knowledge-transfer - the natural, relaxed narrative is spot-on, Sensei ;-)
+
+Thanks. Now i'm going to code my drone. But there is an issue. I don't have a drone.
+
+I  am getting failed to load jvm dll error while starting and something like java home variable,can i use 3.8 coz its already installed in my pc when i was learning python.. and is there any cheap drone for this course and what will be the command difference?
+
+I seemed to have missed how to get the dgiTellopy file installed on my computer. I am using windows 10 and was never able to get pip setup on my computer. Can you tell me how to get this file.
+
+I think I heard you say you can apply this to all drones so I like it . I get the Tello flying around the living room snapping pictures of me and everything else with ("z") (: ... So my question is this . I have big drone I build for a few years now , and new system is Jetson Nano , and Pixhawk . How can I use the Tello [Project-KeyboardControl_imgCapture.py] File to make my big Camera drone to fly ?
+
+Can you say ai
+
+I am having the same problem so let me know if you figured it out
+
+Glad you enjoyed it!
+
+If you couldn't set up pip why are you learning how to fly a drone bro
+
+Very cool video. Maybe in the future you should split such a long video into smaller videos
+
+I can't thank you enough for all that you have done for me long live genius MAN
+
+Great stuff! But in the mapping exercise, how did you arrive at the values for “a” (angle) as -180 for left, 180 for right, 270 for forward and -90 for reverse? I cant seem to find an explanation for this.
+
+👀😎✨🕶🥇🤷‍♀️👍
+
+Great programming course. Thanks for sharing!
+
+is this a tello course?!... first it seemed nice but now , i has becomed something else . from coding a drone into playing with tello
+
+Hi Murtaza, I love this course so much. But please I have a question. Can the DJI SDK work with another drone?  I do not really like the Tello drone, I prefer ANAFI cos it has 4k video shooting and a 4km range. But I'm not so sure if the DJI SDK would work for this drone. That's why I've decided to ask before I purchase the ANAFI drone.  Please if you have any other recommendations apart from the Tello drone, please do well by listing them in the  comments here or you can make a video for it 😃.   I would be so Grateful sir🙏
+
+I found at that there might be some assertion error failed when getting stream on when I tried this out. For those who encountered this error, you have to set the up settings on your fire wall to the udp of the drone.
+
+i have my own drone can i apply this code on my drone? what changes should i do for that kindly guide
+
+Be tryimg
+
+This is so cool!
+
+I'm getting a "Timeout exceed on command takeoff" error and the drone is not completing even simple move forward commands. Do you have an idea of why that is happening?
+
+i see that 99% of drones are not able to do this kind of programming. i fly racing drones and those are way different than WiFi 's and even. most of them arent like you suggest. PixHawk/ArduinoPilot ?! may you publish a list, which one are suggested to do it than this realy crapy and over priced ones?
+
+Thank you!  This video is great!  Can you tell me an app that will allow me to do this coding and connect to the drone on an iPad or Android device?
+
+my i know how to connect 2 or more tello drone to do a swarming action
+
+jaja alchile que nose como llege aqui
+
+WWWOWWWWW..... SHOOWWWW.. ITS GREAT. THANKS BROWWWW!!!!!!
+
+Great Video, many thanks Bro.
+
+Drone can translate in 3 directions and rotate in 3 directions too. So degree of freedom should be 6dof instead of 4 dof shouldn't it?
+
+Yes Brother 👍 https://youtu.be/lQKU6-PGjh0
+
+I would guess a rotation of 180 degrees in both directions, so that it can fully spin around. And then 90 degrees and 270 (-90 degrees) room to tilt the drone
+
+Mr Murtaza, I've been waiting for your reply since 2 days now
+
+Could you explain how you did it? Do I need to allow inbound role for the drone udp port? Help much appreciated, thanks!
+
+@junqima5127  let me know if you figured it out. I am having this problem
+
+Indoor flight? Possible not enough light. Also try adding more time on timeout on the djitellopy library.
+
+fine,i'm a fly controlling system and cv developer.
+
+I brought a Tello because of this tutorial. Not kidding.
+
+drone: a male bee
+
+Hello, DJI has a active track parallel mode drone, Do you know where could I find this code so I try to run it on my drone ? any assist is appreciated guys, thanks in advance
+
+I just subscribed now. I am waiting for such fantastic programme with best explanation.
+
+awesome guy!
+
+.....e.e
+
+Wow, I am ready to buy a Tello to have a try!
+
+Where to buy the drone which is required for this tutorial?....Im residing in India ...Any Indians ...pls reply me with buying link.
+
+Thanks you so much ❤️❤️❤️❤️❤️❤️❤️
+
+i cant execute this command "import cv2.aruco as aruco" - it can't download aruco. i am using py3.7
+
+subscribed even before watching the video
+
+Great!!! Your course is awesome!! I bought the drone and I am doing the course and making my own improvements in the codes! I even put a Yolo to run in the Image capture project!! HAHA
+
+yea me to me to man
+
+Hi there my love for the first time I was just a quick question about my life I don't have a vacancy for android developer remote control and at least a portion to
+
+DÜZƏLDƏCƏM ALA BLƏTT
+
+Why your drone is more stable than mine? Mine keeps going backwards, Ps. The battery is full did you change the time of sleep for example ?
+
+Nothing like a boatload of commercials to interrupt ones concentration. Well done with the distractions.
+
+https://youtu.be/yumpahaE4uQ
+
+You start your video out incorrectly describing all remote controlled vehicles as drones. A drone is capable of autonomous movement and is fitted with instrumentation allowing it to be operated far from line of site by a human or computer assigned controller. Please learn your facts before sharing false information. The rest of your video was well researched. Its a real pity that you missed the main point of what you are explaining
+
+clean, clear, excellent explanation. Good job and i love it
+
+the best tutorial!
+
+can i use any drone
+
+can you control the 4 motors individually?
+
+Una maravilla, gracias
+
+Ok
+
+Excellent!
+
+Good...👍👍👍
+
+perfect recommendation by youtube ... best explanation even a layman can do it.
+
+Great Murtaza, i would love to see you dedicating your time for urdu speaking communities <3,  thanks buddy great course so far  Jazak Allah
+
+great tutorial to learn the basics of drone programming..... can u make a video tutorial with tensor flow its usage and projects it would be great
+
+Hey I can tello drone please me more drone which can do the same programming in this video
+
+I wanted this !! Thank you very much sir , I am an Electronics Engineering Student and I really don't like coding but because of you I am really enjoying these things .
+
+I cannot afford tello so please tell me more drones which can be programmed with this video
+
+Hey Murtaza or anyone that is able to reach out and assist. Every time I try to activate the take off function or any throttle in the matter I get a command error. I'm using pretty much your exact code. Any possible solutions?
+
+Thanks for making this bro!!
+
+Hello! I have tried. But...  Send command: command Response: b'ok' Send command: battery? Response: b'55\r\n' 55  Send command: takeoff Response: b'error' Command takeoff was unsuccessful. Message: error Send command (no expect response): rc 0 50 0 0 Send command (no expect response): rc 0 0 0 0 Send command: land Response: b'error' Command land was unsuccessful. Message: error  What could it be?
+
+Thank you for doing it everything for free and with quality
+
+absolutely great tutorial. thank you!!  do you know node-red? is it possible to creat a node-red dashboard und execute these comments by clicking buttons in the dashboard?
+
+Having issues with the Keypress module.  I keep getting an error on lines 4 and 26 regarding init(). it says attribute error: module 'pygame' has no attribute 'init'.  SO close to nailing, need a push.
+
+Glad you liked it!
+
+Cannot afford tello (Binod)
+
+Give more drone names with low price 😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭🙏🙏🙏🙏🙏🙏🙏❤️❤️❤️❤️❤️❤️
+
+I know it's 2 months past. Have you found solution on this? If not, you can add wait time on command or takeoff timeout on the djitello library. Also other solution is add more light if testing indoors
+
+Your a great guy, your indeed a great guy please add more
+
+Hands down one of the best recommendations, apart from cat videos, I ever received on YT!
+
+this tutorial is superb
+
+this is exactly what i was looking for thanks
+
+Can I use this to code other drones or is it applicable only for tello drones?
+
+Hi murtaza, I stacked at beginning because my stream is not working properly. I wrote exactly the same code as you did but my window with video hasnt open. Do you have any idea whats going on?
+
+Batt
+
+ℹ️✅📌👍💯
+
+Im watching the tutor too. I need some help because the image is not showing. There is no error also.
+
+Best video ever on YouTube
+
+sir how can i find gps coordinate near me that define by me
+
+such amazing youtube and im so appreciate what your hardowrk.
+
+Nice man
+
+My drone is broken
+
+Thanks for this great tutorial !!  It works also with DJI Mavic?
+
+Wonderful just Wonderful !!! I love this Chanes !!!
+
+worth the skill. Thank youuuu
+
+Note: On Mojave v 10.14, your system may crash when using pycharm. Run the script in terminal instead and you should be fine.
+
+Best course YEY !
+
+?????????????????????????
+
+Running the example code, but no image was shown. There were no errors.  from djitellopy import tello import cv2  me = tello.Tello() me.connect() print(me.get_battery())  me.streamon()  while True:     img = me.get_frame_read().frame     img = cv2.resize(img, (360, 240))     cv2.imshow("Image", img)     cv2.waitKey(1)
+
+most probably you will have to use it with the android or ios sdk
+
+after following this channel and this guys website for some time, i can only conclude this is the most valuable channel/site that i know of. both for coding and implementation of ai . for beginners as well as for old farts. please keep this up !
+
+The Drone name comes from the old AirForce name for pilotless target planes used for Anti-Aircraft gunfire training (Ack-Ack or Flak), since 1916 or thereabouts. These drones were originally silent, stripped-out and unpowered, towed (a long way) behind a towplane. Drone targets were remote-controlled as soon as radio electronics had progressed far enough, because of towplane losses! The DRONE name came from short-lived flying ants and male bees that have only one purpose (mating) but can't feed or do housekeeping functions. The fact that e-drones make a droning noise is a coincidence, but cute nonetheless!
+
+I don't program in Python and I don't have a drone. I still watched the video.
+
+Become ur big fan bro after watching this 😍
+
+Is it possible to use a PID controller not only a PD and how it could be programmed?
+
+sir in my case it is not showing python 3.7 automatically by itself what should i do ?
+
+you are one of my favourite teachers on youtube.God bless you
+
+Wanna be frieds?
+
+Hello, I need to implement a code that makes the fourier transform of a digital image bank. At the end of the process, the time spent must be informed. I don't know where to start ...
+
+Subscribed
+
+I really enjoyed the video you helped me a lot and you literally telling us each and every function and its code . hat 's  of you brother 😘😘😘😘😍😍
+
+Dude! I bought a tello drone and did this last year for an independent study! Time to break out the kit and try again to learn from your methodology. Thanks for sharing this!
+
+yashassasasasasassasasasasasasassassasasasasas
+
+Hi Murtaza. Excellent truly excellent work. Bt for your information they are called 'Drones' not because of the low humming sound but because of the 'Drone' bees in a bee hive.
+
+I enjoy your tutorials very much. Why did you not create a downloadable file of the code ? I hate to cut and paste from sites.
+
+This is a really great tutorial Murtaza, I have learned a lot, thank you for sharing your knowledge. However I have run into an error during the coding of Project 3 - Face Tracking.   import cv2 import numpy as np   cap = cv2.VideoCapture(1)  while True:     _, img = cap.read()     cv2.imshow("Output", img)     cv2.waitKey(1)  Exception has occurred: error OpenCV(4.5.1) C:\Users\appveyor\AppData\Local\Temp\1\pip-req-build-kh7iq4w7\opencv\modules\highgui\src\window.cpp:376: error: (-215:Assertion failed) size.width>0 && size.height>0 in function 'cv::imshow' line 8, in <module> cv2.imshow("Output", img)  Thank you also for your Discord channel, I have also posted this question on discord.
+
+Awesome
+
+Thank you for the videos you are making we are learning a lot from you, could you please program a parallel mode drone ?  I need this for a project I am doing now in my university, it might be also helpful for others as well. Thank you in advance
+
+can this be implemented on different platforms such as AGV?
+
+I don’t even know how to code but this is so fascinating!!
+
+Great to hear that.  Thank you for your feedback.
+
+Good luck
+
+Looks like cv2.VideoCapture(0) opens my web cam, I am not sure how you tell other than trial and error.
+
+Noted
+
+@murtazasworkshop  Thank you a lot, I'll be waiting it😊
+
+@murtazasworkshop  Also in the parallel mode drone, I mean so it can fly parallel to the street and film the street, not only a certain object like a car for example but a straight line to whatever is on the street. it would be great if you can program it with python as I learnt python from you. Thank you in advance.
+
+2:32:13. What if there is 2 faces ? or does the drone get confuse with the mirror ?
+
+Amazing tutorial, really man, hats off. This was simply perfect. Excellent explanations, straight to the point, and covers several projects that build on previous work. This was EXACTLY what I was looking for: a cheap drone, an exposed, easy to use API, and a tutorial that covers writing control code as well as opencv for image processing. It's incredible how quickly I could get things to run. Thank you so much!  Also, regarding you Mapping part of the tutorial. Wouldn't it have been better to use the get_speed and get_acceleration functions offered by djitellopy to accurately calculate the motion of the drone? That would yield very good results as opposed to relying on the speed value you make the drone fly with. I have not tried it yet, but should probs work well. Cheers!
+
+Tello is toooo expensive. qav250 with inav and pi4  would be a good alternative.
+
+Super job Murtaza. Appreciate your practical guidance.  Best. Milind.
+
+Quick question Murtaza: where did you get the intro song from or what Is the name of it??
+
+Hello sir, I m huge fan of you from india. I had completed my BE in mechanical engineering and from 2 years working as a Machine learning engineer.How can i build my career in robotics and AI. If possible can you give me the career roadmap and useful resources for it. Thanks in advance ,sir.
+
+I really like your video, but in the facetrack project, isn't a PID, is just a PD controller. There are significative difference between this types of control laws. For hobbyist approximate a PID using a PD is good but for engennieers or scientist this implication is relevant.  Despite this, I think that's a good course to introduce poeple for the programming this kind of technologies.   Congratulations
+
+Sir, I have made a VR headset and it's hand controller. But I am so so so much confused that how can I make a game for it.  Sir, can you please make a video over it?  Whatever your answer may be, but please do reply sir
+
+WoW,,, great to see - setting new targets....
+
+U R Da Best
+
+Can it be done using JavaScript ?
+
+Murtaza. amazing stuff man. Very informative and precise. Frankly impressed by only seeing the first 15 mins. Have a query, I have a DJI Tello. Can I do programming for it thru this or i need to have the Tello EDU.  Will see the balance video accordingly.
+
+Fantastic video. Thank you for sharing your knowledge with us.
+
+What can i do to get the best quality from image capture?, i get the video with bad resolution
+
+Please can you do the detection and tracking a person car ??
+
+selam , i have a question about processing photos using python script . where can i send it ? thank you very much
+
+20:13 I clicked project interpreter ,there's no plus sign to add.  why? Could u help me bro,please
+
+#Murtaza's Workshop - Robotics and AI Thanks for posting this. It looks like it's going to be a great video.  In the start, 1:03 when you looked at the word "drone," it made me curious why we use that word.  I researched a bit, and pilotless planes that were built to be used as naval target practice were originally called drones in the 1930s because (1) honeybee "drones" basically serve one purpose, to fly once and mate with a queen and then die, much like target planes that are flown once, at which time they're shot down, and (2) a couple of the earliest such planes were built upon the designs of the "de Havilland Queen Bee" andd the "Airspeed Queen Wasp."   Centuries ago, usless people who sat around doing nothing were called drones, like the male drone bees who did nothing most of their lives until their flight to mate with a queen, and the word "drone" then also started to be used for low hums, as in a lot of male drone honeybees together buzzing their wings.  I didn't know any of this except drone honeybees half an hour ago, but I find it all interersting and fascinating now (and hopefully you do too), thanks to your highlighting the word.
+
+Please how can i also reach him too
+
+Can you show us coding a rover??  Well very nice video...  Got to know many things
+
+BTW this is an awesome video
+
+Yes
+
+Both types work with this tutorial
+
+Hi , sir can these be applied on autonomous vehicle?
+
+Thank you so much
+
+Man! Seeing that little drone fly and follow that paper blew my mind!  How does one learn to code like that?  There are so many languages I don't know what to learn. I've been trying arduino the passed year and recently micropython.  Awesome projects!
+
+good video..wiyadi sarpan channel
+
+great vid
+
+How can we get that bracket and mirror please? Can you make it? Can we purchase from you? Thanks
+
+you are really amazing
+
+i have been having this issue with basic movements with the drone flight, I get the error "no controller" when attempting to run a command such as move forward (python, pycharm).. I have been trying to solve this issue for ages.. I have updated and calibrated the drone multiple times and the code is also correct so i can't seem to find a fix.. also side note my drone light flashes pink and I have never seen anyone else have this light code and also couldn't find any reference to it any where if you know anything about this let me know. thanks.
+
+Hi Murtaza, any textbooks you can recommend for this project?
+
+What great benefit we have of Passionate People like you. Man, I'am so impressed! Thank you so much for putting in the magnificient work, the knowledge, the passion! Wow! All the best!
+
+Damnnn where has this channel been all my life <3
+
+who else is watching even though they don't have a drone?
+
+I love it!!
+
+you are awesome
+
+Thanks for your excellent work. I have a question, in the video introduction, you said 80% of the topic in the course was relevant to most drone and only 20% to the DJI tello Drone. How do I know if my drone is programmable (I am using a cheap one DroneX Pro from http://official-dronexpro.com). Do the python wrapper also work on this drone? Thanks in advance.
+
+Hi sir ur videos are really amazing i need ur suggestion which will really help me i just want to do my phd but i am totally confused abt my area of interest like deep learning or machine learning or iot or artificoal intelligence etc how to choose the best topic with latest technology and i am frm ece background i completed my mtech project also based on ur face recognition using opencv video which helped me alot and this time i am gud suggestions frm u pls do rply sir tq
+
+But I am 12 years and know how to make drones
+
+I got this recommended and I also love drones 1 year ago
+
++1 subscriber for your effort
+
+Do subscribe him please, he give too much knowledge to us
+
+One does not learn to code, one codes.
+
+Thank you for your kind words.
+
+me.yeah_me_too()
+
+@prawnydagrate  you just made a function
+
+Yes Me
+
+I am interested in drones in general and I think I'm going to buy this Tello drone and make some cool stuff
+
+Si, I'll make a drone with my mixers' motor 😁😁
+
+Me too
+
+me too, so sad
+
+me
+
+@prawnydagrate  you ryou r ya rrrr t r try r
+
+Me
+
+@prawnydagrate  ile
+
+Çok yi
+
+this is old
+
+@prawnydagrate  9o999999oo
+
+Me😅
+
+It was me 2 days ago. But yesterday after watching this course, i bought a tello 😁
+
+If me = yes, then ☹️ Output: ☹️
+
+@prawnydagrate  I will
+
+Me
+
+@yusriplanner4666  how much it cost?
+
+@supremeleader5516  usd112
+
+@yusriplanner4666  oh, ok
+
+I am seeing but don't have drone !!!
+
+Yeah
+
+@prawnydagrate  l
+
+@prawnydagrate  9tt
+
+I don't even want to build a drone
+
+Get out of my head!
+
+Me🎉🏆🎊 I tell folks you can learn about anything without having it so when you do get it you can really appreciate what you have
+
+N  n                @prawnydagrate               0
+
+Me
+
+@coast2coastsurfingdesigner970  sz zz zzzz sesz to zzszszzs ezz z zz I szz szsz szzz zzzszs to zzeseesz the appointment zz I ssz to be zz zzzz eee get szz szsz esz sz zzzz see see s to sz zszessz ss z zsz zs ss ss s and a good old one see the see the same zszessz and zzeseesz zszessz zszessz and see zzszszzs and s zz z I will send it may szeezeez sszzz z z and the szss zz sz szsz sz se the zs zzzsszzsz sz sz zesz sszz s and a half sz zz I szz e szz SS s z and z to the zzeszz e s to szszzszs the appointment on Friday s see see SS see the zz zzzsszzsz zzzsszzsz zzzsszzsz sz sz zzszszzs and zzzsszzsz zzzsszzsz zzzsszzsz zzzsszzsz zsesz z s and zz zzz sz szz zz seszsz sszzs szz z z I s to eezszsz the z ss szez z s szss zz I have zz zzszszzs ze zs zz zzzz eee e s szsz ss ss ss zszessz zszessz zszessz zszessz zszessz and zszessz zszessz zszessz zszessz asz zz I have nd on my way to get a good old ßz zszessz zszessz zszessz zszessz zszessz zszessz zszessz zszessz see zsz on SS SS s z SS see ezz see you see zze and z s s and a s and zz see see se and zz see the see the zz zzzz zzzsszzsz
+
+@fartsonbasketball9206  yyyyyyyyyyy
+
+Nope I found this on my watch history because I fell asleep watching a different video 💀
+
+@Darius0000  '
+
+@Tony-rl2fr  'oop'ooo'pp@o'iiop'@@p'@io
+
+@Tony-rl2fr  'oop'ooo'pp@o'iiop'@@p'@io?
+
+@CliveGregory  'ppi?o'u'?&'
+
+@fizaashiq7278  @o@(o(oo?o'သငသဂဂရဏရဂရဥဏဥသရ
+
+@prawnydagrate  သဝရရဂဂသစ
+
+@tangituru3556  သရဏစငဂငငဂသစသရဂသစသစစငငငစဥစကသဂသငဝစသကဥဂရစသစသဥစသဝရဂကသငဂစစက
+
+I fell asleep to this last night. Woke up and was offered a job.
+
+I have one
+
+Me too
+
+Me🤣
+
+@samjut3718  u
+
+Nah, I was asleep and this turned on
+
+@cheetogangstas  same lol, work up to it
+
+@ikea7980  I slept through the entire thing lol
+
+🤣🤣  🤫🤫   😵  🤣
+
+I built my my own mini drone 😅
+
+Am too
+
+I do!
+
+Boob tube autoplay is on fire today!
+
+Me 😂😂😂
+
+me
+
+Nope, I actually own a flying Ferrari.
+
+​ @prawnydagrate def yeah_me_too():                                      While Im_broke_as_fuck:                                              Print("I need to find a way out of this shit. ")
+
+Here
+
+Me😂
+
+Me (i want a drone)
+
+Me😥
+
+I do, 😂😂😂
+
+@prawnydagrate 😢 en dan 😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😂😢😢😂😢😢😢😂😢😂😢😢😢😂😢😢😢😢😢😢😂😢😢😢😢😢😢😢😂😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😂😢😢😂😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😂😢😢😢😢😢😢😂😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😂😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😂😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😂😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😂😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😂😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😂😢😂😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😂😢😢😢😢😢😢😢😢😂😢😢iu
+
+I just woke up and this is on my phone?
+
+😂
+
+@prawnydagrate o😮😮😮😮of 😮a a 😮
+
+@ayseyagan4580 oiii😮oi😮  Oooo😮I
+
+@fizaashiq7278 ip
+
+@ayseyagan4580 p
+
+😂😂😂
+
+​ @wiemrachman4788 😊😊😊
+
+Meee
+
+😂😂
+
+😂😂😂
+
+Me❤😂
+
+​ 1:07:03
+
+Here is a PhD subject:  a navigating drone without the GPS, instead of L-band RF, using optical transmitters to determine the Position Navigation and Timing (PNT) signal of a drone, similar to GPS ranging signals. Need a minimum of 4 optical ranging signal to determin the drone position. Hope you found what you needed😄
+
+Does anyone know what cheaper drone is usable for this tutorial?
+
+Thank you for sharing.
+
+Best video presentation. Great training and inspiring video. Thank you very much. I liked your video.
+
+Assalamu alaikum brother.  Thank you so much for all your python courses. Specially this one!! I need a help. Can you please tell us how to export all these projects as executable files so that we can run them outside the ide. it would be better if you create a separate video for this. I wish you keep on doing good works and grow more.  Thank you again. Regards
+
+Great  video! Prompt and  you nothing  do not know, about the program  EnotGlobal they say it can bring sites to the TOP . thanks for the answer
+
+Sir Did we need any hardware to code  a tello drone(like RaspberryPi etc)?
+
+thanks for this
+
+This is the best time to learn AI and Robotics because few years to come Robots will take over our jobs. Thanks to  Murtaza's Workshop for that detailed tutorial
+
+Maybe someone knows where EnotGlobal can download  cracked?
+
+maja agaya bhai
+
+Thank you so much for this course. It is exactly what I needed to learn and get started with drones. Thumbs up and I only wish I could do it more than once :)
+
+you are amazing pro
+
+There, the EnotGlobal team raises the lamas at the output of sites to the top, and here you push everything to the mainstream ..
+
+Heard  there is  excellent software EnotGlobal for PF cheating, can someone here   used ?
+
+Do you have any promotional experience with EnotGlobal?
+
+Some weeks ago some men took over 13BTC from me which lead me to a point of frustration as it was my savings. I'm glad I came across daddyjoeabby2 on !G through a friend in weeks and he helped me recover it with just 1Btc ☺️ He hacks well,he's well recommended
+
+if ( drone.goingToCrash() ) {    dont(); }
+
+Is it possible to use this course programming normal assemble drones
+
+awesome video thank you sir from S.Korean.
+
+V.nice 😎
+
+Well said
+
+Thank you for your kind words
+
+Does TELLO support Dronekit? If you program Tello with python, how useful is that code if you want to use another Drone that can be programmed with dronekit?
+
+Nice recomendation and a course in python thats good
+
+Amazing! can it be done with dji mavic 2 enterprise?
+
+You just hit 50K now alrweady at 70? Wow
+
+thanks!!!!
+
+TypeError: 'bool' object is not callable   in my image capture
+
+The fluttering branch hisologically beg because beetle obviously wash unto a coherent lead. dynamic, rare traffic
+
+Anybody from Drone Prathap University???
+
+Sounds like you're whispering, are your walls really thin?
+
+This is a truly great and easy to follow from the ground up. I enjoyed this a lot. Please let me know if the move for certain cm functions in Python can work indoor. How does the drone know how many cm it is flying without GPS? If I tell the drone to go forward but there is an obstacle can it detect something and report that instead of collide with the object?
+
+brutal, very thanks for the video!!!!!!
+
+0:09 Component 2:40 Component 8:49 Tello Drone
+
+36:30 Keyboard Control
+
+👍
+
+Murtaza Türkmüsün knk senin ismin Türkiyede çok var
+
+❤️
+
+thanks for video
+
+k
+
+I will use this knowledge to build myself an immortal flying pet pig 🐖
+
+Wow. This is beautiful. Thank you What gear do you use?😄
+
+Thanks to you guyz...
+
+@murtazasworkshop  NP
+
+stack overflow
+
+@jrohit1110  hahaha already fixed it... got type 1 character wrong...
+
+@jrohit1110  like i was stock there for almost 45  min  hahaha
+
+The whole video or any specific part ?
+
+@murtazasworkshop   Definitely not the whole thing, but certain parts.
+
+lol. good luck
+
+you can find the list here https://www.murtazahassan.com/products/
+
+Hi, this is Rahul Rao. I really liked this video. It was very informative and well presented. I'm an English language trainer who wants to make free videos to learn English for underprivileged Urdu and Telugu speakers. Can you please tell me which software was used to add graphics and text to your video ?
+
+this is cool thanks for sharing meyn.. can i ask what devices / hardware or tools in development to sync  a weighing scale  and android application.. thanks meyn.
+
+Girls' power 😀
+
+cool as usual 😀
+
+This is brilliant! Thank you so much for proving this information Murtaza.  Also, out of interest what whiteboard software do you use for your intro "what is a drone" video?
+
+Very good info thanks
+
+A...mazing course. Thanks for creating it!
+
+Thank you very much, that is very interesting, please continue with such amazing courses
+
+Loved ur effort and hardwork to bring this video for us bro. Can we use these drones powered by AI and armed with weightless weapons to use it in the army?
+
+nice... tnx for sharing...
+
+I don't think it's even available on paid platforms  THANK YOU FOR THIS VIDEO
+
+im so hyped up, just finished my first semester of computer science and i got 3 weeks of holidays to learn some fun stuff !!!
+
+cool
+
+Does the djitellopy library work with other dji drones? like the dji spark drone?
+
+Hello. Thank you for sharing the video.  Can I use the same principles and codes for parrot mambo?
+
+Bravo. I hope to follow your directions and improve my python skills. Way more fun when drones are involved. Thanks for all the videos
+
+I have a project at school to build a drone that will capture land area for survey purposes. How can you guide me, please?
+
+WOW!!! Thanks, bro
+
+very good  explanation
+
+This explains everything about drones. I have learnt so much since this video. :o
+
+I use divinci resolve for editing. For Animation explanation  I just record the screen while using canva.com. Good luck
+
+Thanks. I use toonly
+
+Glad it was helpful!
+
+Thank you, I will
+
+You are Welcome
+
+Good luck
+
+WTF dude hahaha after i finish the semester i'm gonna take a breakkkkkkkkkkkkkkk from "learning"
+
+@Zidanes7  quit, means u are not like it..
+
+@DeViLTh0rn  makes no sense! Even sportsmen who loves their job and make millions take a big vacations to rest their mind and chill so chill
+
+@Zidanes7  hahahaha
+
+@Zidanes7  Wiktionary Scriptoria and wordreference kotobank aedict leddit my house of tata-bhasa dept. then again with ivanlanin this is all humaniora just brain no brawn but brawl with grosser kuerfuerst
+
+@murtazasworkshop   so i don’t have to purchase the edu version to carry through the course, right?
+
+@jonathansu6097  with edu edition I THINK you can use more programming languages and also it's m
+
+yeaah meehn😅😅🔥🔥
+
+Good luck
+
+A have a question any idea about to how to save Tello's video into mp4 file as official Tello app?
+
+Thank you so much for the tutorial. It was very interesting and so clear.
+
+Grate!!. i'm an RPA pilot and presently learning Phyton. Soo, you make me happy with this work.  Please...  Where to find more?. How to develop for other drones than tello.. ? Thanks
+
+Thank you for sharing these kinds of videos.
+
+best episode, thank you.
+
+Your code is ugly and unreadable man.
+
+Hay lắm
+
+You r great sir.. God blessyou
+
+nice sharing, nice to meet you here on youtube
+
+Great recommendation
+
+Sir, Can I buy this drone to code all your amazing stuff...."WRAPGRADE Mono Skin Compatible with Tello (Black Bumpy Camo Salamander Edition)"
+
+is this for 10 years old
+
+очень полезно, благодарю!! столько времени ждал чего то подобного и вот оно. в этом видео все мои ожидания оправдались!!! продолжайте, у вас талант!
+
+cool
+
+Very nice work  👍🏻... May Allah bless you 😊
+
+amazing
+
+بالتوفيق
+
+Thank you so much. I can wait to have a bit of time to start tinkering with this amazing technology
+
+https://youtu.be/psInv4-YWno
+
+Awesome !  I will buy a Tello and start programing as soon as possible, thank you for this video.
+
+Welcome
+
+<3
+
+Hei ! What outdoor drone to you recommend that could be easily used for programming like this one? Thanks. Great course!
+
+Very top! Congrat bro!
+
+Literally just what I needed. Thankyou
+
+HOW TO CLEAR CA IN FIRST ATTEMPT    @L_JU   HOW TO CLEAR CA IN FIRST ATTEMPT      @L_JU  HOW TO CLEAR CA IN FIRST ATTEMPT      @L_JU  HOW TO CLEAR CA IN FIRST ATTEMPT      @L_JU  HOW TO CLEAR CA IN FIRST ATTEMPT      @L_JU
+
+I have been looking for this kinda content on YouTube for the past 2 years... thank you for this
+
+Me: Watchs The Video Me: 1 Hours Later R.I.P 2005-2021 Video: Video is Not Long
+
+Thanks for sharing your knowledge, I really appreciate it!
+
+Great Great Presentation and course
+
+The best
+
+Could you please do something with other drones not just DJI? For example some with FC based on  BetaFlight?
+
+Thank you so so much dude!
+
+Very nice
+
+I landed here by recommendation of YouTube: BEST EVER!
+
+Hello, thank you for the great tutorial. However, when I test a simple takeoff/land command I get this:   "Send command: takeoff Timeout exceed on command takeoff Command takeoff was unsuccessful. Message: False Send command: land Timeout exceed on command land Command land was unsuccessful. Message: False"  The drone takes off, hovers for some seconds and than lands. The hover time doesn't change when I change the program.   Can you help me solving this issue?
+
+best video ever
+
+Free course? this is one we need. talking about DRONES!
+
+I love it. Very informative. Thanks for this i really look for this.
+
+Amazing really amazing simple and great , thats the thing with learned they make complex things very simple
+
+damn. nice strong start for 2021
+
+Glad you liked it
+
+Hey! You can start learning programming here. Don't forget to share with your friends.➤ https://www.youtube.com/channel/UChc8lo6K1HPM4_WDjsMSH6g?sub_confirmation=1
+
+quadrotors are 6  DOF and not 4 ;) ... its underactuated system, as we have 4 control inputs for 6 DOF
+
+Bravo .. Thank You
+
+Hi and thanks for a great video, I'm looking to learn python and wanted to play with Tello, Don't I need the EDU version to do Python? is something missing on the non EDU version that I can do with the EDU version?
+
+Thank you very much for the video and great amount of work. If I may make a suggestion about a video topic - programming a robotic arm.
+
+Im currently making a fyp involving key box control system by using a face recognition technique. In your opinion, what programming language that fit the best to be use for this project? Im kinda interested to do this project because I know how to do face recognition by using a mobile camera using opencv but I kinda lost on how to connect the face recognition process with the key box system? Can I know does it require iot?
+
+Thanks, Murtaza! This was a great course!
+
+It's very very helpful for me , thanks a loads  for making such content , seems this is the first tutorial on YouTube on this topic in a full stack manner on a beginner's level
+
+Insane
+
+Your tutorial is the gold Standard for leearing .. Watching and learning  ur video from last 6 months ..
+
+Jesus Christ this man is awsome this man deserves 1 million subs. Thank u very much plz do some more coding on robot hand
+
+Hi Murtaza, nice job indeed. Unfortunately I just sold my Tello to buy Mavic Mini: any info about programming it? I suppose for the Mavic Mini, that the remote controller should be connected to PC first using its usb connector.I know somebody has Telneted over this plug. Any suggestion is appreciated!   tnx br Bob Italy
+
+can anyone suggest me from india to buy cheap drone to complete this project. please suggest me my budget is 5k
+
+Cool. Thanks for awesome course
+
+Hindi me
+
+I started a few hours ago, and I already have project 1 working on the jetson nano.  I got the DJITelloPy library installed on it, to get your last tutorial with the drone working. This time I had to build pygame. Thank you very much for doing these videos!  Considering the greatness of this tutorial... Have you ever considered a computer vision tutorial using one of the STEM "6 axis" robotic arms to interact with objects it sees? There isn't much, or anything on that subject here on YT. It would be very awesome to identify an object, move to it, and grab it. Maybe depth camera, or a camera and other depth sensing.   Just some Ideas.
+
+This is really nice!. Gonna code-along as soon I have the level. Great video and channel also. Subscribed. Saludos 🤙🏼
+
+Thanks! This s a perfect video.
+
+How does me.connect() work? What happens if there are multiple drones in the same place?
+
+where you was when i was  making a drone pricy drone  😭😭
+
+I've been waiting on a tutorial like this for years.
+
+With the EDU version you can control up to 4 drones at the same time and use mission pads
+
+LOVED THIS! Gracias man!
+
+Hello Brother. I found your channel and I am feeling proud of you for being a Pakistani. Thank you so much. I will watch all of your videos. Thank you and love a lot.
+
+💎💎💎💎💎💎💎💎💎
+
+Tnx for a great video bro, but how i connect the python code with my tello dorne i dont understand it maby you can help me?
+
+The problem which type of drone should I buy  or all drones Suitable for programming ?
+
+Best video ever in youtube,There is no other youtube channels is better than you ,love  u bro ,Best wishes for ur success
+
+Do you think that it's possible for me to build the entire drone by myself instead of using a pre designed kit? I know how to program stm32 MCUs and some basic electronics but i think i will use the help of a mechanical engineer to  buy the correct engine since i have 0 idea about aerodynamics and do not have time to learn either. I wrote this comment after watching the first 3 minutes so sorry if you have explained it in the course somewhere
+
+Salam Brother... Very informative video 👍
+
+How do we do the project with a different drone?
+
+Cool stuff. Keep it up, brother.
+
+Thank you sooooooooooooo much 😘😘😘😘😘
+
+Thank u soo much sir, u r giving this course for free. I m trying to find some course like this on internet and they are charging money but u r giving ur knowledge and time for free. Thank u soo much sir. ❤️❤️
+
+Check point (don't mind me) 8/1/21 59:20
+
+Thank you my friend, I truly learn from you
+
+Is there another programming language. I am highly allergic to Scratch.  Python or C perhaps?
+
+Great
+
+I am student a of Aerospace Engineering and only covered one course in programming by our institute, which was more than enough to make you run away from it but this video seriously is best to continue with it with aroused curiosity👍
+
+Murtaza Bhai well done, subbed within 5 seconds
+
+Jazakallahu khairan
+
+WOW, finally a clean and useful video is out on Youtube 😊😊, I have one question, is this DJITelloPy library works with other drones?
+
+IST?
+
+@abdulmoeiz2672  No
+
+same question of mine, did you find this answer?
+
+I appreciate it. Thank you.
+
+Best programing video ever 🔥🔥
+
+Very informative video indeed.. Thumbs Up sir... Sir if possible, please make a tutorial video on gates detection for drone racing using DJI tello drone. Thank you
+
+Drone pratap wants to know your location
+
+Sir u have done a great job but sir can u tell a bit about arduino how can one should write code on arduino to make it fly ?
+
+Thanks for such a great video
+
+1:19:14 ehh. why not just say you want go (2.0,2.0) in 2 sec facing 90 dehree and calculate speed and angular angle LOL its not perfect anyway its drone using props in air. why need calculate where drone is. dont it have sensors lol like compass.why need calculate where it is facing ehh
+
+10:00
+
+If I could like the video twice then i would. Great Video!
+
+Thanx to u bro for bringing up this amazing channel.
+
+U put up real hard work... Great content... Thanks a lot.
+
+I would like to say thank you so much for this insightful, meaningful, all the kinds word in this world to you...have a nice day and keep contribute.. :)
+
+You are just amazing🤩🤩🤩🤩
+
+thank you sir,  this a great project that's can i learn. btw can you make another idea on how to drone track the object and follow it, for example drone follow my car while driving
+
+انت مبدع استمر للامام
+
+Thank you for this. For a next course recommendation, myself and I'm sure others would love a tutorial on programming flight plans, flight paths via python and also obstacle avoidance would be very beneficial.
+
+Really amazing content never saw something like this on YouTube ,
+
+First time I am seeing such code . I am.a developer for 15 plus years
+
+Thank you much sir Jazak Allah...
+
+Getting error as time out exceed on command . Pls help
+
+Thank you for your kind words
+
+Щоулнпгмопл@
+
+I was looking for such a course for the past 6 months but they were all very difficult
+
+I've their notification on.
+
+Thanks! very nice video
+
+Excellent  I want to make, can you help me please  Thanks
+
+excellent course. going to check out the rest of the courses!
+
+everybody gangsta until a clown with green nose pulls up
+
+No words only LOVE <3 <3
+
+At the moment,  best tutorial ever.  You're a great teacher Sir.  Really hope to see more of this kind of tutorials!  I  love it
+
+Subscribed!
+
+Thank you for the classes, they are awesome and very good. It is possible to generate a point cloud with Open CV, if not, you may teach how to do it with Point Cloud Library PCL
+
+Great 🙏🙏
+
+Tello has just increased the price up to 10 Dollars. Its not a good gesture. They should have been decreasing so that more people could access it and have fun
+
+how to connect to other type of drone?
+
+very good tutorial ... nicely structured packed with information. WE NEED MORE SUCH tutorials with robotics and python
+
+Zabardast maa shaa Allah
+
+Great video!
+
+Hi, Can you please let me know from where I can purchase all the components, if possible can you please share the purchase links. Thanks..
+
+Amazing video 😊
+
+until now I didn't know that one can write assembly code to the flash memory of the drone by air (WiFi) ✔👍
+
+Great.. Intersting.
+
+You will have to use their sdk.
+
+Glad you liked it
+
+😢🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉😢😊
+
+Glad you enjoyed it
+
+Check description
+
+Glad you liked it
+
+Lol wth is that
+
+SIR brilliant...  first course of its kind keep producing you are gem for computer vision learners
+
+very good tutorial
+
+Great job!!!!
+
+Boi I need this
+
+is  this possible to do with Javascript  instead of Python?
+
+In 5 years I'll be a software engineer ♥️
+
+How many programmers are watching 👏👏👏
+
+there's no one noticing the 3:33:03  why don't you make it 3:33:33😭
+
+Amazing workshop. Thanks a lot dear.
+
+Even though I'm never going to do this, have to appreciate your hardwork
+
+Love that you included some systems and aerodynamic concepts! Really well done 👌
+
+How can you implement this to a custom made drone?
+
+Thank you master! Another masterpiece of yours!
+
+❤️❤️
+
+Really good content! Which software did you use for creating the presentation?
+
+Drone is also a word for a male bee that exists for a specific purpose.
+
+You are an amazing man never seen a course on drone programming
+
+Is the information processed on the drone or remotely via wifi to a laptop?
+
+Best recommendation by YouTube ever
+
+Sure https://www.npmjs.com/package/tello-drone However, it will be hard to use any AI or image processing
+
+Did you mean Synchronicity?
+
+I wish there were more drone companies on the stock market, so I can invest and make videos about it.
+
+Samre bro
+
+... Or termites or ants. It's the term for a male hive creature, flying  through the air, in a solitary search of a queen.
+
+I agree....
+
+100%
+
+Indeed... I'm downloading the IDE now :)
+
+True!
+
+@symphony9646  to,
+
+@nikhilkherajani6061  77
+
+Yes
+
+He won't "kill him self " suddenly, I hope.
+
+Right?!
+
+100% agree
+
+NO 🖕🏻
+
+Oh,wow! Though I don't have a drone,i was interested about this for a good amount of time. Finally,found one! Mashallah,brother! Thanks for sharing this
+
+This is amazing bro quick question do you know how to connect more than 1 drone to the same computer and individually code them??  For example like the drone shows from intel??
+
+One of the best channel, I have discovered in 2021 !!!
+
+No words to describe this material! Congratulations and thanks!
+
+Didn't you showed how to build the drone
+
+your subscribe count must be more than 1M. Thanks !
+
+Great Course Thank You so much 🔥🔥
+
+First time I have seen this great tutorial on YouTube
+
+thank you sur... can I use another drone  ( ex: I build a drone from scratch)
+
+You Rox bro
+
+I have a drone but it does not have a camera so what should I do
+
+This is the video I was looking for Thank you sir for making this video❤️
+
+I am glad i found this channel ☺️☺️
+
+Great
+
+Thankyou
+
+Kudos 🔥🔥👍
+
+5 star info, keep it up with your work.
+
+Awesome work dude, hope it will encourage a lot people to start programming.  Good work, good quality.
+
+I had tello and was looking for this video thanks
+
+Hey I'm your new subscriber and i found out that your channel Is awesome keep it up
+
+well, as long as you can send it commands from a computer...yes. All the image processing and program actually runs on his computer, the only thing the drone does is recieve the corresponding movement commands and act accordingly. So, if you build a drone, you need a way to send all that movement command information to it - either through having a wifi chip on board the drone and connecting that to your computer (easiest option imo) or through radio, although that is a bit more complex. Personally, I would use wifi for the data transfer, as it is very easy to use with microcontrollers and other open source hardware and software (e..g Arduino, raspberry pi)
+
+@Mahar4ja  thank you for the information ♥️
+
+😆  Omimosas mom M   Mom 👵 I mooo m  common mmm mmm o momma mom ok i mom 😆 and I’ll loop koi mom mom l on mom ummm mom l PLO l  on o o Im mom o m oooo
+
+You Looo only ooooo mmm ooooo polo ooo
+
+Moo 🐮 said that you can see you soon 😘 and that
+
+I want to be a ethical hacker. How python will help me?
+
+You are awsome and you are my teacher in cputervision and drone technology
+
+Great Video Murthuza .....Keep it up Could u pls share you email id... Thanks in Adcance
+
+what happened to the jetson car?
+
+Absolutely Wonderful Murtaza. I was looking for something like this but never saw anything like this.
+
+Sir I have a humble request for you. It would be great if you divide this complete course into parts like you did for opencv and self driving car. Really appreciate your hard work and I learned a lot of things from your courses.
+
+There is a remix of the mirror mount called "Tello Mirror Mount Sexier" which is stronger than the original.
+
+Thanks, I'll follow along.
+
+Great 😃🤘
+
+thanks  a lot   for this course
+
+You are an absolute legend
+
+You are awesome ❤️❤️ Love from India
+
+🙏🏻 Hi, I have a question about ML.  I am pursuing ML course by Andrew Ng, I am unable to do programming assignments, but i am fully understanding the mechanism of algorithms and how they work, do you think writing your own algorithms is necessary while we have such  vast libraries in python? Or is it a problem if i am unable to implement algorithms from scratch Plz answer 🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻
+
+This is awesome. I do not have Tello drone but I have Holy Stone drone, in that case what library I should use? does dronekit works for all drones? Please advice
+
+We are really appreciate your efforts... but how we can increase the time of flight as 13 minutes are not enough to implement such drone... isn’t it?
+
+Great explanation!
+
+The quality you produce at this speed is incredible.
+
+I like your course, but wish it was broken down into smaller video topics.
+
+Just amazing. Kudos to you 🙏🙏. Thanks a lot
+
+You are a Brilliant person, inshallah one day I will work just like elon musk... Soon and very soon
+
+There are already so many ML libraries available my friend, no need to learn those algorithms  ex:OpenCV, tensorflow, Pytorch, etc
+
+Thank you . Glad I could help.
+
+@murtazasworkshop  I Didnt Skip Ads to Thank you Man😆
+
+Thank you
+
+Thank you. Insallah
+
+How to control with pid?
+
+Great bro
+
+Awesome channel ,best prize I had for 2021
+
+thanxs brother
+
+I wish you can read my comment sir. I AM UR BIG FAN SIR. I RESPECT YOUR WORK AND DEDICATION  . U ALWAYS TEACHES US A LOT OF NEW THINGS IN A DETAILED WAY . THANKS A LOT SIR
+
+Murtaza's Workshop - Robotics and AI awesome!!  a some more a little more and you will do "SKYNET" ))
+
+Kindly suggest a drone, available on Amazon India. Thanks in advance!
+
+#Brazilhere your contents is amazing!
+
+There is no such course on YouTube. Kudos to your hardwork🙂
+
+cool i will make it , can u please mention the components which are available in the Indian amazon site
+
+Kindly Provide more videos on dones
+
+Murtaza brother. You are great  But unfortunately can't afford drone. Now.
+
+Thank you for your kind words.
+
+I believe Tello should be available in India as well.
+
+@murtazasworkshop  Sir its currently not available in India...I've a question "Can only tello drones be programmed??" Because I can get other drones at a cheap price..I can't afford tello drone..its so cosly...
+
+@murtazasworkshop  It is not available. Please suggest a one, available in India
+
+@dark_techyy  same issue
+
+Thank you. good to hear that.
+
+I don't think it's even available on paid platforms
+
+wise guy  what
+
+@murtazasworkshop  7
+
+Hi there could you please let me know do you use raspberry pi here? And how to make this drone ?
+
+@dilshankasthuriarachchi4737  the drone in this video is a tello/ tello edu which you need to buy it to get one.
+
+@murtazasworkshop  פפפ
+
+גשו8נ1ל11 1
+
+@murtazasworkshop  I want to learn drone courses, which course should I buy? Is the course difficult?
+
+Your country and Place..Pls...
+
+@murtazasworkshop  Hello can you support 1 more drone like Xiaomi or other while Tello drone is no longer production.
+

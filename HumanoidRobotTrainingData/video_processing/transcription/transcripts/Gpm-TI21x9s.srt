@@ -1,0 +1,632 @@
+1
+00:00:00,240 --> 00:00:06,240
+Hey guys, so this is a balancing robot. And yes, yes, I know there are already a lot of balancing
+
+2
+00:00:06,240 --> 00:00:11,920
+robots projects on the internet, but I wanted to make one for myself for a long time. And actually
+
+3
+00:00:11,920 --> 00:00:17,520
+I wanted to make something special and make a mini balancing robot using this tiny PCB here.
+
+4
+00:00:17,520 --> 00:00:21,520
+But I kind of failed with the stepper motors and I will explain that problem in the video,
+
+5
+00:00:21,520 --> 00:00:26,480
+so stay tuned for that. So what I've done in the end is to use the same PCB that I've prepared for
+
+6
+00:00:26,480 --> 00:00:32,240
+the mini balancing robot, design a small 3D printed body and use bigger stepper motors and like that
+
+7
+00:00:32,240 --> 00:00:37,440
+be able to finish my idea. For now, this robot is pretty much stable even if you push it around.
+
+8
+00:00:38,000 --> 00:00:42,720
+And I had a very hard time getting the good PID values so it would be more and more stable,
+
+9
+00:00:42,720 --> 00:00:48,400
+but I'm not yet 100% happy with these results. Anyway, the robot should also get information
+
+10
+00:00:48,400 --> 00:00:53,440
+from a homemade remote with a Bluetooth connection and like that we could move around. But internally,
+
+11
+00:00:53,440 --> 00:00:59,120
+it should also get information from this IMU module here and calculate a PID value for the angle so it
+
+12
+00:00:59,120 --> 00:01:03,920
+will never fall and always try to stay horizontal. That's pretty interesting and I think you will
+
+13
+00:01:03,920 --> 00:01:09,040
+learn a lot with this video because I will explain step by step the circuit and also the code. So what
+
+14
+00:01:09,040 --> 00:01:23,280
+do you think? Will this work? Stay tuned to find out. So guys, let's get started.
+
+15
+00:01:23,440 --> 00:01:34,320
+These PCBs were manufactured by PCBWay and the finish quality is very good, especially with these gold
+
+16
+00:01:34,320 --> 00:01:41,200
+plated pads. If you want to finish your product faster, you could also ask PCBWay to make a panelized
+
+17
+00:01:41,200 --> 00:01:47,760
+order where you receive multiple PCBs on a single panel. Together with this, you can also order the
+
+18
+00:01:47,760 --> 00:01:54,320
+SMD stencil from PCBWay and use it to add solder paste and solder all the components at once and by
+
+19
+00:01:54,320 --> 00:02:00,320
+that you save time and effort. All the orders are high quality and you could select a lot of settings,
+
+20
+00:02:00,320 --> 00:02:07,840
+such as the thickness, flexible PCBs, the color of the solder mask, the amount of layers, the material,
+
+21
+00:02:07,840 --> 00:02:15,040
+the surface finish and more. So upload the Gerber files directly on PCBWay.com and make the order in just a couple of minutes.
+
+22
+00:02:15,040 --> 00:02:22,720
+What's up my friends, welcome back. This here is the PCB that I've made for this project.
+
+23
+00:02:23,840 --> 00:02:30,800
+And my plan was to use this PCB with this kind of stepper motors. I have this from some old DVD
+
+24
+00:02:30,800 --> 00:02:37,520
+writers and I thought it would work great connected to this PCB. It's very easy to control them with some
+
+25
+00:02:37,520 --> 00:02:44,800
+stepper drivers so that's not the problem. The problem was mechanical. You see these motors have
+
+26
+00:02:44,800 --> 00:02:51,600
+the shaft connected to the magnets inside. This shaft is supported on both sides, here and here.
+
+27
+00:02:53,760 --> 00:02:59,680
+So if I want to add a wheel to this shaft, I had to cut it smaller and in that way we have support only
+
+28
+00:02:59,680 --> 00:03:06,480
+on one side. That's the problem. Without support on both sides, this shaft will move around and
+
+29
+00:03:06,480 --> 00:03:12,800
+automatically break all the small coils and magnets inside. I've also tried gluing a bearing at the
+
+30
+00:03:12,800 --> 00:03:20,480
+output but without success. Inside the shaft is kept in the center by a metal ball and once you move
+
+31
+00:03:20,480 --> 00:03:27,040
+that, you can say goodbye to the whole motor. I've ordered these motors here which are smaller,
+
+32
+00:03:27,040 --> 00:03:33,440
+but this time they are too small. They don't have enough torque and guess what? Their shaft is also
+
+33
+00:03:33,440 --> 00:03:39,840
+weak and it will break very easy just as the other ones. So I had no other option but to use the NEMA 17
+
+34
+00:03:39,840 --> 00:03:49,280
+motors. These are one of the smaller NEMA 17 steppers. On the side of that PCB I've also designed this support.
+
+35
+00:03:50,800 --> 00:03:55,920
+And like this we can attach the motors below. The battery in the middle and the PCB will be kept
+
+36
+00:03:55,920 --> 00:04:03,040
+in place with some plastic supports. So this is not a mini robot anymore but anyway, let's make this
+
+37
+00:04:03,040 --> 00:04:08,000
+robot and you will definitely learn something new. So let's see what we have on the PCB.
+
+38
+00:04:09,280 --> 00:04:15,760
+If you want the same PCB, you can get the Gerber files from below and go to PCBway.com. You click the
+
+39
+00:04:15,760 --> 00:04:21,840
+Code Now button and select your settings such as the thickness, the amount of PCBs, the materials and the
+
+40
+00:04:21,840 --> 00:04:28,480
+solar mask color. In my case I've selected the black one but you can select any other one as for example
+
+41
+00:04:28,480 --> 00:04:35,040
+purple or the matte black which look amazing. On the next page you can upload the Gerber files
+
+42
+00:04:35,040 --> 00:04:42,240
+and order the PCBs. I've received my ports to Spain in around 8 days so let's check them out.
+
+43
+00:04:44,160 --> 00:04:47,520
+On the front part we have some spaces for two stepper motor drivers.
+
+44
+00:04:47,520 --> 00:04:56,640
+On the front part you can use the basic A4988 drivers or even better you can use the TMC2225 drivers
+
+45
+00:04:56,640 --> 00:05:03,680
+for better and silent movement. Below that we have these 4 pins which are used to connect a
+
+46
+00:05:03,680 --> 00:05:10,240
+buck converter for 5V. Because I want to use a 2S or maybe a 3S battery and because the digital
+
+47
+00:05:10,240 --> 00:05:15,680
+part will work at 5V, I will connect a buck converter here to these pins and have that voltage.
+
+48
+00:05:18,080 --> 00:05:23,200
+On the bottom side we have the output for the 2 stepper motors. This is the place where I wanted
+
+49
+00:05:23,200 --> 00:05:29,120
+to solder those tiny motors but unfortunately they break too easy. If you manage to use them,
+
+50
+00:05:29,120 --> 00:05:35,280
+just solder the motor and use a zip tie like this one and keep them in place. It would be a lot cooler
+
+51
+00:05:35,280 --> 00:05:43,600
+to have a mini robot but anyway. What more do we have on the PCB? These 4 pins here are for the IMU module
+
+52
+00:05:43,600 --> 00:05:52,080
+and I will use the MPU 6050 as always. We use this module to measure the angle. On the top part we
+
+53
+00:05:52,080 --> 00:05:59,600
+have 4 more pins for the Bluetooth module and I will use the HC05. On side of that we have these 4 more
+
+54
+00:05:59,600 --> 00:06:06,880
+pins for the I2C for an OLED display. I might add this as well so we can draw faces for the robot and give it
+
+55
+00:06:06,880 --> 00:06:14,800
+more personality. I've also placed an SMD buzzer here for some notifications. On the bottom of the
+
+56
+00:06:14,800 --> 00:06:20,160
+PCB we have some LEDs to make the robot look cooler and also the input from the battery.
+
+57
+00:06:21,920 --> 00:06:27,440
+So now let's take a look on the back of the PCB. Actually the Bluetooth module will go here
+
+58
+00:06:27,440 --> 00:06:35,120
+because the other side will be full of components. Below here we have the Atmega 328 microcontroller
+
+59
+00:06:35,120 --> 00:06:41,760
+and the needed components in order to work. It's very difficult to see but we have 3 pairs of pads
+
+60
+00:06:41,760 --> 00:06:46,400
+for each stepper driver and by soldering this here we can select the microstepping amount.
+
+61
+00:06:47,360 --> 00:06:55,440
+That's it for the PCB, that's all we need. The PCB, the stepper drivers as well, the back converter module
+
+62
+00:06:55,440 --> 00:07:03,360
+for 5V, the HC05 Bluetooth module, the NPU6050 sensor and two NEMA17 stepper motors.
+
+63
+00:07:05,040 --> 00:07:11,040
+If you want you can also add an OLED screen like this one. As for the tiny components we need the
+
+64
+00:07:11,040 --> 00:07:18,480
+buzzer, also some SMD capacitors, some LEDs and resistors and yet mega cheap together with the 60MHz
+
+65
+00:07:18,480 --> 00:07:25,360
+resonator. As for the battery, you can use a 3S LiPo battery like this one. But in my case,
+
+66
+00:07:25,360 --> 00:07:30,160
+because I have a lot of batteries from cell phones, I want to connect 2 of these iPhone batteries in
+
+67
+00:07:30,160 --> 00:07:39,040
+series and get 12V. These are very flat and will occupy less space. As for the body, just download
+
+68
+00:07:39,040 --> 00:07:46,960
+the STL files from below and print them using PLA material. I've used a 0.2 mm layer height and a 0.4 mm
+
+69
+00:07:46,960 --> 00:07:54,960
+nozzle with 3 perimeters and 20% infill. As for the wheels, the inner part is made out of PLA but the
+
+70
+00:07:54,960 --> 00:08:00,720
+exterior is made out of flexible material and this must be printed at very low speeds. Like that we
+
+71
+00:08:00,720 --> 00:08:07,360
+can have more grip. The wheels have this hole so we can pass a screwdriver and tie the screw here.
+
+72
+00:08:08,480 --> 00:08:13,520
+So we have to add a screw nut inside and then insert the shaft on the motor and tie the screw.
+
+73
+00:08:14,320 --> 00:08:20,640
+And like that it will stay in place. Once we tie the screw, we can add this rubber part on top.
+
+74
+00:08:22,240 --> 00:08:26,880
+So these are all the parts that we need for this robot, more or less. You have the full part
+
+75
+00:08:26,880 --> 00:08:32,960
+list below on electronoops.com. So let's assemble it. It should end up something like this, like this
+
+76
+00:08:32,960 --> 00:08:40,640
+3D design example. So I get the main 3D printed part and add the stepper motors. You just have to
+
+77
+00:08:40,640 --> 00:08:47,840
+apply a little bit of force and it will snap into place. Then we add some screws and washers and tie the
+
+78
+00:08:47,840 --> 00:08:56,480
+motor. Also make sure that the motor connector is on the back side of the robot. Now get the plastic
+
+79
+00:08:56,480 --> 00:09:04,880
+wheels and add a small nut inside of this hole. We also add a screw. Now we can add a wheel to each
+
+80
+00:09:04,880 --> 00:09:13,600
+motor. We tie that screw so it will stay tight on the motor shaft. Now this part was printed in flexible
+
+81
+00:09:13,600 --> 00:09:21,040
+filament. So we can now add this part on top of the wheels. First I wanted the battery to go here above
+
+82
+00:09:21,040 --> 00:09:27,600
+the motors but you will see later that I will change the position. Now let's assemble the PCB so download
+
+83
+00:09:27,600 --> 00:09:34,080
+this schematic from below and have it in front of you. I first solder these SMD capacitors.
+
+84
+00:09:36,160 --> 00:09:40,320
+And then we add some female pins for the drivers so we can remove it when we want.
+
+85
+00:09:42,080 --> 00:09:46,480
+Now I get one of these small buck converters and solder the 5V connection on the back.
+
+86
+00:09:46,480 --> 00:09:54,960
+I also connect it to 12V and test if the output is around 5V. Now we can solder this on the PCB but
+
+87
+00:09:54,960 --> 00:10:01,760
+we will do that later. Now solder that buzzer here on top and the LEDs on the bottom of the PCB.
+
+88
+00:10:03,600 --> 00:10:08,160
+On the other side we can solder the Atmega microcontroller, the crystal resonator and the
+
+89
+00:10:08,160 --> 00:10:15,040
+small resistors and capacitors. Now at this point I connect my FTDI programmer and test the connection to
+
+90
+00:10:15,040 --> 00:10:25,040
+make sure it works. If the chip works, on the front side I solder the MPU6050. On the back I also add
+
+91
+00:10:25,040 --> 00:10:32,160
+some female pins for the Bluetooth module. Now that the Atmega chip is in place and it works, I can now
+
+92
+00:10:32,160 --> 00:10:39,280
+solder the buck converter on top so we can supply the PCB with the battery. I might also add the OLED screen
+
+93
+00:10:39,280 --> 00:10:45,360
+later when everything works. So please check this full schematic below for all the connection if you
+
+94
+00:10:45,360 --> 00:10:51,840
+are trying to make the same project. Also remember to solder together the pads for the MS2 on the back
+
+95
+00:10:51,840 --> 00:10:57,760
+in order to enable the quarter micro stepping. At this point you can download the code from below
+
+96
+00:10:57,760 --> 00:11:04,160
+and upload it to the PCB using the FTDI programmer connected to the wired port. Now we have to connect
+
+97
+00:11:04,160 --> 00:11:10,640
+the PCB to the motors and the battery. For the battery I've soldered together in series three of these
+
+98
+00:11:10,640 --> 00:11:16,800
+iPhone batteries. Like that I will have around 12V and I can also have a very thin battery.
+
+99
+00:11:18,640 --> 00:11:24,720
+Now get this plastic printed leg and screw it on one arm of the PCB. Do the same with the other side
+
+100
+00:11:24,720 --> 00:11:31,520
+but don't tie the screws yet. Now place the PCB over the main body and we glue in place these small
+
+101
+00:11:31,520 --> 00:11:39,360
+plastic arms. Now we can tie the screws and the PCB will be fixed in place. So solder the wires from
+
+102
+00:11:39,360 --> 00:11:46,640
+the stepper motors to the PCB on these pins here. Between the battery and the PCB I add a switch so
+
+103
+00:11:46,640 --> 00:11:52,800
+we can turn the robot on and off. But guys, before we go over the code, I have to say that with this
+
+104
+00:11:52,800 --> 00:11:59,600
+shape, this robot won't be stable. Why is that? Well, because this type of balancing robot will need some
+
+105
+00:11:59,600 --> 00:12:04,960
+weight on the upper part in order to have some inertia. But at this moment all the weight is on
+
+106
+00:12:04,960 --> 00:12:08,720
+the bottom side of the robot as you can see and is very difficult to balance.
+
+107
+00:12:12,480 --> 00:12:16,400
+This robot will work exactly the same as trying to balance a stick in your hand.
+
+108
+00:12:17,680 --> 00:12:20,240
+If the stick is too short, it will be impossible.
+
+109
+00:12:20,240 --> 00:12:27,600
+When the stick is large enough, you can move your hand in the same direction as the tilt and you can
+
+110
+00:12:27,600 --> 00:12:35,120
+stabilize it. That's why I've placed some threaded rods on top of the robot. On top I have a plywood
+
+111
+00:12:35,120 --> 00:12:42,400
+part and here I can place the battery. Like this we can have more inertia when moving. This is a crucial
+
+112
+00:12:42,400 --> 00:12:49,360
+part for this project. With the same code before, I now got better results but as you can see the robot is
+
+113
+00:12:49,360 --> 00:12:54,640
+still wobbling around. That's because we can still have to adjust the PID values in the code.
+
+114
+00:12:55,680 --> 00:13:01,120
+And this was the longest part of this project. I had to manually go and change the PID values
+
+115
+00:13:01,120 --> 00:13:05,680
+till I got better and better but even so I am not quite happy with the final results.
+
+116
+00:13:06,880 --> 00:13:12,000
+So for example, if you start only with the P values and the I and the D are zero, you get this kind of
+
+117
+00:13:12,000 --> 00:13:17,440
+oscillations where the wheels are rotating in the same direction as the tilt of the robot according to the
+
+118
+00:13:17,440 --> 00:13:26,960
+angle. But then we add some D values and this will react to the speed of changing of the angle and it
+
+119
+00:13:26,960 --> 00:13:32,320
+will try to stop the oscillations. But that's not enough, especially when the error is very small.
+
+120
+00:13:33,600 --> 00:13:39,040
+So finally, to fine adjust the position, we can add the I and that will increase and decrease slowly
+
+121
+00:13:39,040 --> 00:13:45,600
+when the error is very small. So after more than 30 tries, I got more or less good results and the
+
+122
+00:13:45,600 --> 00:13:51,840
+robot is quite stable but I am not entirely happy yet. So at this point I've decided to make a second
+
+123
+00:13:51,840 --> 00:13:57,760
+part for this project where I will show you how to tune the PID values. So till then I will try to get
+
+124
+00:13:57,760 --> 00:14:02,960
+better results and in that video I will explore the mathematics and physics behind this kind of project,
+
+125
+00:14:02,960 --> 00:14:10,000
+including the IMU position, the center of gravity, the inertia of the robot, the motor speed and the PID algorithm.
+
+126
+00:14:14,560 --> 00:14:19,680
+Before I end this video, let's take a look at the code. These here are the variables that you could
+
+127
+00:14:19,680 --> 00:14:25,920
+change in order to tune the PID controller. This is the same that we had for the brushless PID controller
+
+128
+00:14:25,920 --> 00:14:32,800
+or the ping pong ball controller but this time we use stepper motors. To create the step pulses applied
+
+129
+00:14:32,800 --> 00:14:39,280
+to the stepper drivers, we use a timer, timer 2 in this case. So by setting these registers, we can
+
+130
+00:14:39,280 --> 00:14:46,160
+make that timer to click every 20 microseconds. Next, with these lines here in the code, we read the raw data
+
+131
+00:14:46,160 --> 00:14:53,600
+from the gyro and the accelerometer. To overcome the gyro offset, we make around 500 reads from the IMU module
+
+132
+00:14:53,600 --> 00:14:59,360
+and we save this data as an offset and subtract that later in the main loop. Then we calculate the
+
+133
+00:14:59,360 --> 00:15:05,680
+angle each loop, which is said to be around 4000 microseconds. Using this gyro angle variable,
+
+134
+00:15:05,680 --> 00:15:11,600
+we can calculate the PID values. As always, we first find the PID error which is the difference between
+
+135
+00:15:11,600 --> 00:15:16,560
+the real angle of the robot and the desired angle, which in this case should be zero so the robot will
+
+136
+00:15:16,560 --> 00:15:23,360
+stay horizontal. Finally, inside of the timer routine, depending on the PID output, we calculate the
+
+137
+00:15:23,360 --> 00:15:28,880
+speed of the motors by creating more or less, faster or slower pulses applied to the stepper motors.
+
+138
+00:15:30,000 --> 00:15:35,360
+And to make the code faster, instead of using a digital write function, we use register control,
+
+139
+00:15:35,360 --> 00:15:39,680
+where this line here for example is the same as setting the digital pin D3 to high.
+
+140
+00:15:40,560 --> 00:15:45,200
+And for more about this, you can take a look at my Arduino register control video and the links are
+
+141
+00:15:45,200 --> 00:15:52,240
+below. So using this code, the robot should be able to stay horizontal. When I lift the code,
+
+142
+00:15:52,240 --> 00:15:58,080
+it will detect the angle and starts the PID code. When it detects a tilt on the front side,
+
+143
+00:15:58,080 --> 00:16:02,880
+it will accelerate the wheels so it will get horizontal once again and do the same process
+
+144
+00:16:02,880 --> 00:16:08,560
+backwards if the tilt is on the other side. If you do this fast enough with the PID control,
+
+145
+00:16:08,560 --> 00:16:14,880
+you get a stable horizontal robot. So this is not yet perfect. I will make it better in the second
+
+146
+00:16:14,880 --> 00:16:21,760
+part of this project. Without a remote, we can control it. I will also add that in the second part.
+
+147
+00:16:22,480 --> 00:16:27,280
+I want to use this Wii console nunchuck and get the movement from this joystick and we can send the
+
+148
+00:16:27,280 --> 00:16:34,000
+data using a Bluetooth module. This actually has an accuracy communication so I might use that to read
+
+149
+00:16:34,000 --> 00:16:39,760
+the values from the joystick. The schematic would be something like this with the battery and also a
+
+150
+00:16:39,760 --> 00:16:46,240
+switch, the Arduino, the joystick analog outputs and the Bluetooth module. Stay tuned for more.
+
+151
+00:16:47,040 --> 00:16:53,040
+So guys, that's how a balanced robot works and how you can make one. You have my PCB below for download,
+
+152
+00:16:53,040 --> 00:16:58,400
+you also have the schematic for the robot and controller, the part list and the codes and everything
+
+153
+00:16:58,400 --> 00:17:03,200
+is below in the description. If you have learned something new, consider giving me a like or comment
+
+154
+00:17:03,200 --> 00:17:09,600
+below. Thanks again and see you later guys. Hey, so one more video that ends, I hope that you like it.
+
+155
+00:17:09,600 --> 00:17:14,080
+Okay, so listen, if you want to buy my merch, my t-shirts, you have the links below for my shop
+
+156
+00:17:14,080 --> 00:17:18,720
+and I promise that I will make more designs. Also, maybe you would comment below which one you like
+
+157
+00:17:18,720 --> 00:17:22,960
+more and what more designs you would like to see because in that way I could start designing them
+
+158
+00:17:22,960 --> 00:17:40,160
+and post my new t-shirts. So thank you for all the support and I'll see you in the next video.
+

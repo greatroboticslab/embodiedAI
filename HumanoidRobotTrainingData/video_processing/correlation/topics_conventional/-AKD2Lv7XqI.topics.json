@@ -1,0 +1,153 @@
+{
+  "video_id": "-AKD2Lv7XqI",
+  "title": "-AKD2Lv7XqI",
+  "url": "https://www.youtube.com/watch?v=-AKD2Lv7XqI",
+  "created_at": "2025-09-17T11:53:29.671560+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction to Band Pass Filters",
+      "description": "An overview of band pass filters and their applications",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 6
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.64,
+          "end_s": 49.92
+        }
+      ],
+      "coverage_text": "Hey, what's up guys? We're back talking about filters again. We've already done high pass\nand low pass, so today we're going to talk about band pass filters. And a band pass filter very\nsimply passes frequencies within a certain frequency range and rejects frequencies that\nare outside of that range. That's about as simple as it gets. So what are its applications? Well,\nit's used in transmitting and receiving circuits to keep the transmitted or received signal within\nthe allocated frequency bandwidth. They're also used in atmospheric studies and audio applications.\nSo you'll see them a lot there. Now, the way we find our frequencies is the same as we did",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "How Band Pass Filters Work",
+      "description": "A detailed explanation of the frequency response of band pass filters",
+      "coverage_ranges": [
+        {
+          "start_idx": 7,
+          "end_idx": 12
+        }
+      ],
+      "coverage_segments": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "coverage_times": [
+        {
+          "start_s": 50.56,
+          "end_s": 92.48
+        }
+      ],
+      "coverage_text": "for our low pass and high pass filters, and we'll come to that in a minute. So first of all,\nlet's look at our high pass filter. It consists of a sine or, you know, whatever our wave input is\ngoing through a capacitor to the output with a parallel resistor going to ground.\nAnd the frequency response of our high pass filter looks like this.\nAnything below this line here is going to be attenuated. Anything above it is going to be passed.\nThen our low pass filter, here we have our input with the resistor and then a parallel capacitor going",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Building a Second-Order Band Pass Filter",
+      "description": "A step-by-step guide to building and analyzing a second-order band pass filter",
+      "coverage_ranges": [
+        {
+          "start_idx": 13,
+          "end_idx": 31
+        }
+      ],
+      "coverage_segments": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "coverage_times": [
+        {
+          "start_s": 92.48,
+          "end_s": 264.88
+        }
+      ],
+      "coverage_text": "to ground. And it simply looks like the opposite. Anything above here is going to be attenuated,\nand everything down here is going to be passed. So that is our high frequency mark, and there is our\nlow frequency mark. And to find that, our frequency cutoff equals 1 over 2 pi r c times the hertz times\nthe frequency. And it works the same for the band pass filter. Because when we make our band pass filter,\nwhat we're doing is here's our input. We're going to have a capacitor, and then a resistor that goes to ground.\nI forgot to draw my resistor in there. And then we're going to have another resistor.\nThere's our output, there's our ground. And then we're going to have the parallel capacitor here.\nSo what you see here is simply a combination of the high pass and the low pass, and therefore we have\nthe band pass. So if we take our two Bode plots here of these two filters, the low pass\nand the high pass. So here is our high pass, and here is our low pass, and then here is our low cutoff,\nhere is our high cutoff, and this area right here\nis the band that we're going to pass. Voila! A band pass filter. So let's put one together on the breadboard.\nAll right, so I've got our band pass filter laid out here, and here's the nuts and bolts of it. This\nis called a second order band pass, because we have two separate filters here. And the band that's going\nto pass is between 1k and 30k. Now you can use that formula I showed you on the other page to figure\nout how to do that. But here's the layout of our filter. And it matches exactly what you see here.\nThis first capacitor is 15 nanofarads, and then this first resistor is 10k. The second resistor is also\n10k. And the second capacitor is 560 picofarad. So we can zoom in here and take a better look.\nThis is the input, this is where our signal is coming in, and this is the output being read",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Testing the Band Pass Filter",
+      "description": "Using an oscilloscope to test and analyze the frequency response of the band pass filter",
+      "coverage_ranges": [
+        {
+          "start_idx": 32,
+          "end_idx": 43
+        }
+      ],
+      "coverage_segments": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43
+      ],
+      "coverage_times": [
+        {
+          "start_s": 264.88,
+          "end_s": 380.08
+        }
+      ],
+      "coverage_text": "by the oscilloscope. So let's rotate up here. Have a look at the oscilloscope. Now if you look down at the\nbottom of the screen here, or you can just look up there, you can see our frequency is 5.4, so dot dot dot\nkilohertz. It's a sine wave. And if you look at the peak to peak where the red triangle is there,\nyou can see we're getting 8.8, 8.9 volts, because that frequency is within our band. Now if we drop down\nbelow that, our frequency is now 530 hertz, and our peak to peak has dropped to 3.68 volts. So we've got\nlike a 50 percent attenuation. We go back to our 5.43 kilohertz, and you can see we're right back into it.\nAnd then if we jump above it, we're now at 55 kilohertz.\nYou can see again we're at 3.68 volts, and it has simply attenuated back out of it. And as our\nfrequency increases, you can see that our amplitude decreases. So look, we're at 100, or 300,\nare we at 300, or where the hell are we at?\nOkay, 320 or so kilohertz, and our peak to peak is 740 millivolts.\nSo there you have it. The band pass filter. A combination of the low pass and the high pass.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the video-level outline in JSON format:\n\n[\n  {\n    \"title\": \"Introduction to Band Pass Filters\",\n    \"description\": \"An overview of band pass filters and their applications\",\n    \"coverage\": [{\"start_idx\": 0, \"end_idx\": 6}]\n  },\n  {\n    \"title\": \"How Band Pass Filters Work\",\n    \"description\": \"A detailed explanation of the frequency response of band pass filters\",\n    \"coverage\": [{\"start_idx\": 7, \"end_idx\": 12}]\n  },\n  {\n    \"title\": \"Building a Second-Order Band Pass Filter\",\n    \"description\": \"A step-by-step guide to building and analyzing a second-order band pass filter\",\n    \"coverage\": [{\"start_idx\": 13, \"end_idx\": 31}]\n  },\n  {\n    \"title\": \"Testing the Band Pass Filter\",\n    \"description\": \"Using an oscilloscope to test and analyze the frequency response of the band pass filter\",\n    \"coverage\": [{\"start_idx\": 32, \"end_idx\": 43}]\n  }\n]\n\nNote: The `start_idx` and `end_idx` values are inclusive, referring to the corresponding transcript line numbers."
+    ]
+  }
+}

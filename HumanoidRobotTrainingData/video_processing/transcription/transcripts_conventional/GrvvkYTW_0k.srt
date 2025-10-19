@@ -1,0 +1,436 @@
+1
+00:00:00,000 --> 00:00:08,040
+Hi, I'm James, the Bald Engineer. Both of these are transistors. One is a BJT and the other is a
+
+2
+00:00:08,040 --> 00:00:13,220
+MOSFET. Can you tell the difference? If not, that's okay, because in this Atoms video, we're going to
+
+3
+00:00:13,220 --> 00:00:18,180
+take a look at MOSFETs, how they work, and how you can use them in your circuits. So let's get going.
+
+4
+00:00:30,000 --> 00:00:34,960
+This video is part of a two-part series on transistors. The previous one covered bipolar
+
+5
+00:00:34,960 --> 00:00:43,200
+junction transistors, BJTs, while this video covers metal oxide semiconductor field effect
+
+6
+00:00:43,200 --> 00:00:51,700
+transistors, known as MOSFETs. Generally, you'll use a BJT for small loads, say less than 1 amp of
+
+7
+00:00:51,700 --> 00:00:56,440
+current, while MOSFETs are well suited for applications with much higher current. For the
+
+8
+00:00:56,440 --> 00:01:02,800
+video on BJTs, see atoms.com slash ep10. For now, let's move on to MOSFETs.
+
+9
+00:01:04,180 --> 00:01:09,280
+MOS is a flowerless plant that typically grows 1 to 10 centimeters. Some mosses grow up to 50
+
+10
+00:01:09,280 --> 00:01:16,840
+centimeters and can be commonly found on trees. Wait a minute, this is the wrong script. Hold on,
+
+11
+00:01:17,400 --> 00:01:22,520
+the tree sounds right. Okay, here's the other stuff. Okay, let's try this again.
+
+12
+00:01:22,520 --> 00:01:31,120
+MOSFETs belong to a family tree of field effect transistors, or known as FETs. There are JFETs,
+
+13
+00:01:31,420 --> 00:01:37,820
+MOSFETs, and IGBTs. JFETs actually work a little bit like a BJT, which we've already talked about.
+
+14
+00:01:38,760 --> 00:01:44,560
+For this video, we're focused on the MOSFET, which has two types of modes, called depletion and
+
+15
+00:01:44,560 --> 00:01:52,160
+enhancement. A depletion mode MOSFET works like a normally closed switch. Current can flow
+
+16
+00:01:52,160 --> 00:01:59,880
+when no voltage is applied. Applying a negative voltage actually causes the current flow to stop.
+
+17
+00:02:00,960 --> 00:02:07,380
+An enhancement mode FET works like a variable resistor. They come in N-channel and P-channel types.
+
+18
+00:02:09,000 --> 00:02:14,480
+Enhancement mode FETs are by far the most common transistor used today, so let's focus in on them.
+
+19
+00:02:14,480 --> 00:02:23,560
+Here's the symbol for an N-channel enhancement mode MOSFET, and here's a TO220 style transistor.
+
+20
+00:02:24,760 --> 00:02:30,140
+The pins of a MOSFET are identified as the gate, the drain, and the source.
+
+21
+00:02:31,220 --> 00:02:39,200
+The field effect part of their name suggests they work by voltage, compared to a BJT, which works by current.
+
+22
+00:02:39,200 --> 00:02:49,120
+When voltage is applied between the gate and the source, current is allowed to flow between the drain and the source.
+
+23
+00:02:51,280 --> 00:02:57,200
+Here's the really cool thing about MOSFETs. They are variable resistors controlled by voltage,
+
+24
+00:02:58,060 --> 00:03:01,180
+which means depending on the voltage applied between the gate and source,
+
+25
+00:03:01,560 --> 00:03:04,260
+the resistance between the drain and source will vary.
+
+26
+00:03:04,260 --> 00:03:10,420
+With a low voltage at the gate, the resistance from the drain to source is very high.
+
+27
+00:03:11,040 --> 00:03:12,640
+It's kind of like an open switch.
+
+28
+00:03:14,320 --> 00:03:18,500
+As we increase the voltage at the gate, we pass a threshold voltage,
+
+29
+00:03:19,000 --> 00:03:24,320
+and then the resistance from the drain to the source drops, and it drops very quickly.
+
+30
+00:03:25,320 --> 00:03:31,720
+The key difference between a MOSFET and a BJT is that the output current isn't a multiplier of the input,
+
+31
+00:03:31,720 --> 00:03:35,940
+because MOSFETs are all about voltage.
+
+32
+00:03:38,180 --> 00:03:43,020
+Since the resistance is between the drain and source, it is known as RDS-ON,
+
+33
+00:03:43,560 --> 00:03:46,280
+and can always be found in the MOSFETs datasheet.
+
+34
+00:03:47,120 --> 00:03:52,300
+For example, this is a FQP30N06L.
+
+35
+00:03:52,860 --> 00:03:55,540
+Let's take a look at its datasheet from Fairchild.
+
+36
+00:03:55,540 --> 00:04:00,760
+We can see that RDS is given when there are two different voltages from gate to source.
+
+37
+00:04:01,440 --> 00:04:05,220
+At 10 volts, the on resistance will be about 27 milliohms,
+
+38
+00:04:05,800 --> 00:04:10,560
+and while at 5 volts, the on resistance is only about 35 milliohms.
+
+39
+00:04:11,200 --> 00:04:12,820
+That's pretty small when you think about it.
+
+40
+00:04:14,180 --> 00:04:16,880
+We picked this MOSFET on purpose.
+
+41
+00:04:16,880 --> 00:04:20,080
+It is known as a logic-level MOSFET,
+
+42
+00:04:20,780 --> 00:04:25,460
+because the voltage from gate to source, VGS, is lower than 5 volts.
+
+43
+00:04:26,360 --> 00:04:31,960
+In other words, the threshold to turn the MOSFET on is low enough to be used by an Arduino or Raspberry Pi.
+
+44
+00:04:32,940 --> 00:04:35,540
+Not all MOSFETs are logic-level compatible,
+
+45
+00:04:35,960 --> 00:04:41,400
+so it is very important to check to see what the VGS threshold is before using it in your circuit.
+
+46
+00:04:41,400 --> 00:04:45,780
+Since you will probably use a MOSFET in high-current applications,
+
+47
+00:04:46,060 --> 00:04:48,860
+it is important to check how hot it is going to get.
+
+48
+00:04:49,580 --> 00:04:52,160
+Here's how we calculate if we need a heatsink or not.
+
+49
+00:04:53,200 --> 00:04:59,240
+The formula to determine how much power the MOSFET dissipates is resistance times current squared.
+
+50
+00:05:00,360 --> 00:05:03,380
+In this case, the resistance is RDS on,
+
+51
+00:05:03,680 --> 00:05:06,120
+and the current is whatever your load will draw.
+
+52
+00:05:07,020 --> 00:05:10,220
+Let's use an example of a motor that draws 1 amp of current.
+
+53
+00:05:11,400 --> 00:05:17,300
+This means we multiply 35 milliohms by 1 amp squared to get 35 milliwatts.
+
+54
+00:05:18,080 --> 00:05:20,900
+Okay, now we need a few more things from the datasheet.
+
+55
+00:05:22,020 --> 00:05:26,480
+First, we need the junction to ambient coefficient, which is R theta J A,
+
+56
+00:05:26,940 --> 00:05:30,540
+and in this case is 62.5 degrees C per watt.
+
+57
+00:05:31,460 --> 00:05:34,380
+We also need the maximum junction temperature,
+
+58
+00:05:34,380 --> 00:05:37,680
+which in this case is 175 degrees C.
+
+59
+00:05:37,680 --> 00:05:43,760
+Using this formula, we can calculate the maximum power the transistor can dissipate
+
+60
+00:05:43,760 --> 00:05:46,240
+without using a heatsink.
+
+61
+00:05:47,240 --> 00:05:51,260
+We take the maximum junction temperature minus the ambient temperature,
+
+62
+00:05:51,580 --> 00:05:53,420
+which is going to be 25 degrees C,
+
+63
+00:05:53,900 --> 00:05:55,600
+and divide by the thermal resistance.
+
+64
+00:05:56,360 --> 00:05:59,980
+This gives a maximum dissipation of 2.4 watts.
+
+65
+00:05:59,980 --> 00:06:04,160
+In our example, we are only dissipating 35 milliwatts,
+
+66
+00:06:04,160 --> 00:06:06,460
+so we're safe to operate without a heatsink.
+
+67
+00:06:08,360 --> 00:06:09,960
+Now, you might be wondering,
+
+68
+00:06:10,180 --> 00:06:13,240
+how can the number we calculate be 2.4 watts,
+
+69
+00:06:13,600 --> 00:06:16,400
+when the datasheet clearly said 79 watts?
+
+70
+00:06:16,940 --> 00:06:18,400
+And that's a really great point.
+
+71
+00:06:18,400 --> 00:06:26,400
+The 79 watts is if we had the ability to cool the transistor's case to 25 degrees C,
+
+72
+00:06:26,960 --> 00:06:30,160
+which means you have to be using some kind of heatsink.
+
+73
+00:06:30,740 --> 00:06:33,220
+But we're going to cover more on that in a later video.
+
+74
+00:06:34,280 --> 00:06:37,520
+Let's review what you need to know to use a MOSFET as a switch.
+
+75
+00:06:38,000 --> 00:06:41,180
+Number one, find out which pin is the gate, drain, and source.
+
+76
+00:06:41,820 --> 00:06:45,700
+Number two, look at the datasheet to determine the threshold voltage,
+
+77
+00:06:45,700 --> 00:06:49,140
+which is going to be shown as VGS or VTH.
+
+78
+00:06:50,340 --> 00:06:53,920
+Find the drain-to-source resistance or RDS on.
+
+79
+00:06:54,580 --> 00:06:57,160
+Number four, look at R theta, JA,
+
+80
+00:06:57,740 --> 00:07:01,940
+and the maximum junction temperature to calculate how hot the MOSFET will get.
+
+81
+00:07:03,100 --> 00:07:07,440
+Visit addohms.com slash MOSFET dash guide, all lowercase,
+
+82
+00:07:07,640 --> 00:07:11,520
+to download a simple PDF form you can use to calculate these parameters.
+
+83
+00:07:11,520 --> 00:07:16,840
+MOSFETs are cool little devices, but they're also a little bit complex,
+
+84
+00:07:17,260 --> 00:07:19,600
+so we'll cover them in more detail in future videos.
+
+85
+00:07:20,080 --> 00:07:24,760
+Make sure you follow us or subscribe to know when new video tutorials are released.
+
+86
+00:07:25,180 --> 00:07:28,800
+If you visit addohms.com, you can also get show notes for this episode,
+
+87
+00:07:28,960 --> 00:07:30,980
+as well as other addohms videos.
+
+88
+00:07:31,740 --> 00:07:35,220
+If you have any questions about MOSFETs or ideas for future videos,
+
+89
+00:07:35,560 --> 00:07:36,980
+send them our way and keep watching.
+
+90
+00:07:37,240 --> 00:07:38,680
+Maybe we'll cover them in a future video.
+
+91
+00:07:38,680 --> 00:07:39,700
+much more
+
+92
+00:07:39,700 --> 00:07:40,000
+a PDF because it's on those one.
+
+93
+00:07:40,760 --> 00:07:41,320
+Matter of times,
+
+94
+00:07:41,740 --> 00:07:44,060
+you don't have a computer
+
+95
+00:07:44,520 --> 00:07:45,240
+or you don't have a computer.
+
+96
+00:07:45,620 --> 00:07:46,640
+Maybe you haven't read it.
+
+97
+00:07:46,640 --> 00:07:48,200
+Well, you don't understand it.
+
+98
+00:07:48,340 --> 00:07:49,280
+Whetherüney came here.
+
+99
+00:07:49,560 --> 00:07:50,400
+It's very important.
+
+100
+00:07:50,400 --> 00:07:51,400
+Yes, sir?
+
+101
+00:07:51,700 --> 00:07:52,820
+pluisuqua
+
+102
+00:07:53,080 --> 00:07:54,880
+So a tool called lumida
+
+103
+00:07:55,440 --> 00:07:57,040
+PlusAlex
+
+104
+00:07:57,280 --> 00:08:00,240
+The app we use
+
+105
+00:08:00,460 --> 00:08:01,020
+a system.
+
+106
+00:08:01,220 --> 00:08:02,520
+It's so kys reunion
+
+107
+00:08:03,520 --> 00:08:04,520
+when it's gone
+
+108
+00:08:05,300 --> 00:08:06,200
+and if it rattled
+
+109
+00:08:06,820 --> 00:08:07,260
+that way
+

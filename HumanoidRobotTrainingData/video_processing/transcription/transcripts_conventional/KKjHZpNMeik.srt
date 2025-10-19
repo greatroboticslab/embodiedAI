@@ -1,0 +1,408 @@
+1
+00:00:00,000 --> 00:00:02,200
+Hey guys, welcome once again.
+
+2
+00:00:03,080 --> 00:00:06,040
+This time we are going to check on bypass capacitors.
+
+3
+00:00:06,580 --> 00:00:11,240
+In this video, we'll see why do we need bypass capacitors,
+
+4
+00:00:12,020 --> 00:00:14,180
+how does a bypass capacitor work,
+
+5
+00:00:14,860 --> 00:00:17,520
+which capacitors are best for this application,
+
+6
+00:00:18,520 --> 00:00:19,920
+and how to select them.
+
+7
+00:00:21,340 --> 00:00:24,920
+So buckle up guys, let's go for a ride.
+
+8
+00:00:30,000 --> 00:00:36,600
+We use integrated circuits in electronic system,
+
+9
+00:00:37,160 --> 00:00:39,320
+and they run on DC power supply.
+
+10
+00:00:40,520 --> 00:00:46,760
+The performance of the ICs degrades if the input supply has some ripple or noise.
+
+11
+00:00:47,320 --> 00:00:49,140
+If there is a digital IC,
+
+12
+00:00:50,000 --> 00:00:52,640
+then the noise increases the clock jitter.
+
+13
+00:00:53,680 --> 00:00:55,800
+In high-performance digital ICs,
+
+14
+00:00:56,060 --> 00:00:58,720
+such as microprocessors and FPGAs,
+
+15
+00:00:58,720 --> 00:01:01,220
+if this noise is present,
+
+16
+00:01:01,640 --> 00:01:04,500
+then those will have very difficulties while working.
+
+17
+00:01:05,380 --> 00:01:10,780
+Well, the traditional way to specify the sensitivity of an analog IC
+
+18
+00:01:10,780 --> 00:01:15,020
+to power supply variation is the power supply rejection ratio.
+
+19
+00:01:16,220 --> 00:01:17,720
+For an amplifier,
+
+20
+00:01:18,180 --> 00:01:22,780
+power supply rejection ratio is the ratio of the change in output voltage
+
+21
+00:01:22,780 --> 00:01:24,700
+to the change in power supply.
+
+22
+00:01:24,700 --> 00:01:30,660
+Therefore, it is necessary to keep the high-frequency noise away from the chip.
+
+23
+00:01:31,480 --> 00:01:37,360
+This is generally done with a combination of electrolytic capacitors and ceramic capacitors.
+
+24
+00:01:37,360 --> 00:01:42,480
+Well, where does this noise come from?
+
+25
+00:01:44,020 --> 00:01:44,860
+We already know,
+
+26
+00:01:45,340 --> 00:01:48,760
+the electricity is nothing but the flow of electrons.
+
+27
+00:01:49,480 --> 00:01:52,960
+These electrons flow all over the circuit through the ground plane.
+
+28
+00:01:53,740 --> 00:01:54,360
+Unfortunately,
+
+29
+00:01:54,960 --> 00:01:57,420
+this flow of electrons is not constant
+
+30
+00:01:57,420 --> 00:01:59,640
+because of the PCB traces,
+
+31
+00:02:00,120 --> 00:02:00,660
+wires,
+
+32
+00:02:01,060 --> 00:02:01,980
+component pins,
+
+33
+00:02:02,400 --> 00:02:02,880
+connectors,
+
+34
+00:02:02,880 --> 00:02:04,140
+and cabling
+
+35
+00:02:04,140 --> 00:02:06,820
+on which the electronic circuit works.
+
+36
+00:02:08,200 --> 00:02:12,360
+These all things possess some parasitic inductance and resistance.
+
+37
+00:02:12,360 --> 00:02:15,740
+The value of this is very small,
+
+38
+00:02:15,740 --> 00:02:17,640
+but if we add it up all,
+
+39
+00:02:18,300 --> 00:02:21,340
+this value is big enough to affect the flow of current.
+
+40
+00:02:22,160 --> 00:02:25,020
+Inductors resist the change in the current flow,
+
+41
+00:02:25,520 --> 00:02:29,640
+so this gets worse as the frequency of a signal increases.
+
+42
+00:02:31,080 --> 00:02:34,880
+The microcontroller unit provides the signal to various loads.
+
+43
+00:02:34,880 --> 00:02:38,440
+These loads consume power dynamically,
+
+44
+00:02:39,160 --> 00:02:41,120
+which give rise to current spikes.
+
+45
+00:02:41,540 --> 00:02:41,700
+So,
+
+46
+00:02:41,840 --> 00:02:47,440
+these factors affect the power supply line and generate spikes even in DC power supply.
+
+47
+00:02:47,920 --> 00:02:50,240
+And it is called as electrical noise.
+
+48
+00:02:51,520 --> 00:02:52,540
+But in this case,
+
+49
+00:02:52,760 --> 00:02:56,220
+we have considered only the electronic system itself.
+
+50
+00:02:56,560 --> 00:02:57,540
+But in real world,
+
+51
+00:02:57,920 --> 00:03:03,200
+there are tons of other devices which work simultaneously with the electronic system.
+
+52
+00:03:03,200 --> 00:03:03,960
+So,
+
+53
+00:03:03,960 --> 00:03:10,560
+the electrical noise is also radiated from magnetically induced currents from other systems,
+
+54
+00:03:11,360 --> 00:03:13,760
+also from nearby mechanical vibrations,
+
+55
+00:03:14,400 --> 00:03:16,160
+and there are so many factors.
+
+56
+00:03:16,960 --> 00:03:20,320
+These noise can be very devastating for digital ICs.
+
+57
+00:03:22,640 --> 00:03:22,880
+Now,
+
+58
+00:03:22,880 --> 00:03:24,160
+next question comes,
+
+59
+00:03:24,720 --> 00:03:27,200
+how does a small capacitor solve this problem?
+
+60
+00:03:29,040 --> 00:03:32,880
+The noise which is affecting the power supply is in AC form.
+
+61
+00:03:33,200 --> 00:03:37,760
+A capacitor behaves like an open circuit at DC voltages,
+
+62
+00:03:38,160 --> 00:03:42,400
+and if there is an AC component in the signals traveling in the circuit,
+
+63
+00:03:42,880 --> 00:03:48,720
+capacitors begin to act like a short circuit and don't let this noise enter in the digital device.
+
+64
+00:03:49,840 --> 00:03:50,800
+At the same time,
+
+65
+00:03:51,040 --> 00:03:53,360
+it charges up to its maximum level.
+
+66
+00:03:53,360 --> 00:03:58,560
+When the digital IC is switching and providing some signals to the loads,
+
+67
+00:03:59,120 --> 00:04:02,400
+then it needs remarkable amount of current immediately.
+
+68
+00:04:02,640 --> 00:04:06,160
+So, the capacitor provides that reserved energy right away.
+
+69
+00:04:07,360 --> 00:04:12,560
+A capacitor is placed in the circuit where it will suppress or bypass signals.
+
+70
+00:04:12,560 --> 00:04:17,280
+So, these capacitors are connected in parallel with the ICs.
+
+71
+00:04:17,920 --> 00:04:22,880
+The bypass capacitors are also known as decoupling capacitors.
+
+72
+00:04:23,760 --> 00:04:26,240
+They act as a frequency-dependent resistor.
+
+73
+00:04:27,040 --> 00:04:32,960
+Noise through the power lines is completely unpredictable and changes in nature every time.
+
+74
+00:04:32,960 --> 00:04:39,520
+The capacitors should be placed as close as possible to the ICs.
+
+75
+00:04:40,320 --> 00:04:45,920
+If these are placed farther away from the power or crown pins of the IC,
+
+76
+00:04:45,920 --> 00:04:50,800
+then it will also result in unwanted inductance and resistance in the path.
+
+77
+00:04:50,800 --> 00:04:59,440
+The closer to the load a capacitor is placed, the more amount of noise is bypassed by this capacitor.
+
+78
+00:05:00,160 --> 00:05:10,160
+If the frequency of the noise is less than 50 MHz, then a capacitor of value around 0.1uF or 10uF is
+
+79
+00:05:10,160 --> 00:05:17,520
+sufficient. At frequencies approaching above 50 MHz, we may need multiple bypass capacitors.
+
+80
+00:05:17,520 --> 00:05:27,440
+But, this frequency of the noise is very unpredictable. So, connecting multiple capacitors in parallel is the best practice.
+
+81
+00:05:29,280 --> 00:05:33,600
+But, which capacitors are best suited for bypassing the noise?
+
+82
+00:05:34,400 --> 00:05:39,360
+There are so many guidelines to consider while selecting a bypass capacitor.
+
+83
+00:05:40,160 --> 00:05:44,880
+A large electrolytic capacitor can be used if there is low frequency noise.
+
+84
+00:05:44,880 --> 00:06:03,120
+The capacitors will need to provide current very quickly.
+
+85
+00:06:04,160 --> 00:06:11,280
+The first and most important aspect is to choose capacitors which has low equivalent series resistance.
+
+86
+00:06:11,280 --> 00:06:16,080
+The ceramic capacitors have low ESR.
+
+87
+00:06:17,120 --> 00:06:24,800
+So, typically, ceramic capacitors are used for decoupling application due to their wide temperature
+
+88
+00:06:24,800 --> 00:06:32,720
+tolerance, ability to withstand wide voltage ranges, low ESR, good stability and reliability.
+
+89
+00:06:32,720 --> 00:06:42,560
+So, the package and size of the capacitor also plays a very important role while selecting a bypass capacitor.
+
+90
+00:06:43,760 --> 00:06:50,560
+Because, when you see a capacitor, it has little inductance and resistance which are known as equivalent
+
+91
+00:06:50,560 --> 00:06:59,440
+series resistance and equivalent series inductance. So, overall, a capacitor has an impedance of XE,
+
+92
+00:06:59,440 --> 00:07:04,560
+XE, and resistance. And these impedances are like this.
+
+93
+00:07:07,280 --> 00:07:14,800
+So, as the frequency increases, the XE of the capacitor decreases. So, total impedance of the capacitor
+
+94
+00:07:14,800 --> 00:07:23,200
+decreases. And as frequency increases, the XE increases. Hence, total impedance also increases.
+
+95
+00:07:23,200 --> 00:07:31,840
+But there is a region where the impedance of the capacitor is very low. And that frequency is known as
+
+96
+00:07:31,840 --> 00:07:39,040
+resonance frequency. A small impedance is present due to equivalent series resistance of the capacitor.
+
+97
+00:07:40,240 --> 00:07:46,400
+This resonance frequency can be different for different packages of the same capacitor value as well.
+
+98
+00:07:46,400 --> 00:07:54,640
+So, generally, the engineers put different size and different values. So, we should select a capacitor
+
+99
+00:07:55,280 --> 00:08:02,960
+which will have lower impedance at the frequency of the noise. Well, it's a tedious process. But we get
+
+100
+00:08:02,960 --> 00:08:10,880
+precise noise suppression out of the decoupling capacitor. So, now you can select a decoupling capacitor for your
+
+101
+00:08:10,880 --> 00:08:22,800
+ices. And that's it for now. If you have any questions, let me know in the comment section. Hit the like button if you like this video,
+
+102
+00:08:23,200 --> 00:08:27,760
+subscribe to my channel and finally, thanks for watching.
+

@@ -1,0 +1,356 @@
+1
+00:00:00,000 --> 00:00:07,400
+Let's imagine you got a microcontroller board like this ESP32 and you just recorded
+
+2
+00:00:07,400 --> 00:00:11,100
+an awesome sound clip which sounds like this.
+
+3
+00:00:11,100 --> 00:00:13,040
+Stay creative!
+
+4
+00:00:13,040 --> 00:00:19,260
+Now of course you want to playback this sound with the help of the ESP32 so what do you
+
+5
+00:00:19,260 --> 00:00:20,260
+do?
+
+6
+00:00:20,260 --> 00:00:24,360
+Well, the input side is pretty straight forward.
+
+7
+00:00:24,360 --> 00:00:32,400
+By simply adding a microSD card breakout board to the ESP32 through its SPI interface.
+
+8
+00:00:32,400 --> 00:00:37,780
+Due to this fast data line all the bits of the original audio file can be read by the
+
+9
+00:00:37,780 --> 00:00:42,860
+ESP32 without losing any audio quality.
+
+10
+00:00:42,860 --> 00:00:49,360
+That means we still got the original resolution of 16 bits which describes in how many steps
+
+11
+00:00:49,360 --> 00:00:54,900
+our original analog audio signal was digitally converted.
+
+12
+00:00:54,900 --> 00:01:01,800
+As a rule of thumb the more bits we got the closer we are to the original analog signal.
+
+13
+00:01:01,800 --> 00:01:09,180
+Also the sampling rate of 44.1kHz is kept intact which describes how often the voltage of the
+
+14
+00:01:09,180 --> 00:01:11,840
+analog signal got sampled.
+
+15
+00:01:11,840 --> 00:01:16,700
+In this case around every 22.7 microseconds.
+
+16
+00:01:16,700 --> 00:01:22,800
+And once again the higher the sampling rate the closer we get to the real analog signal.
+
+17
+00:01:22,800 --> 00:01:29,800
+But let me tell you that 16 bits and 44.1kHz sounds pretty good.
+
+18
+00:01:29,800 --> 00:01:36,860
+So the input side is done and for the output side we could use the internal DAC aka digital
+
+19
+00:01:36,860 --> 00:01:43,920
+to analog converter of the ESP32 to create the analog audio signal.
+
+20
+00:01:43,920 --> 00:01:50,100
+But sadly it only comes with a resolution of 8 bits which would act as a bottleneck for
+
+21
+00:01:50,100 --> 00:01:52,680
+our audio quality.
+
+22
+00:01:52,680 --> 00:02:03,220
+Instead I wanted to use this MAX98357A amplifier breakout board which uses I2S to communicate.
+
+23
+00:02:03,220 --> 00:02:09,700
+So in this video we will find out what I2S is and why it is pretty handy to use.
+
+24
+00:02:09,700 --> 00:02:16,000
+And along the way we will not only learn working with the I2S amplifier board but also with
+
+25
+00:02:16,000 --> 00:02:19,260
+an I2S microphone board.
+
+26
+00:02:19,260 --> 00:02:33,060
+Let's get started!
+
+27
+00:02:33,060 --> 00:02:41,440
+This video is sponsored by JLCPCB who produce high quality PCBs for a very affordable price.
+
+28
+00:02:41,440 --> 00:02:46,580
+After over 3 years of using their service I can still highly recommend it.
+
+29
+00:02:46,580 --> 00:02:55,440
+So why not upload your Gerber files today and receive your PCBs sometimes even within a week.
+
+30
+00:02:55,440 --> 00:03:03,300
+First off I want to say that we are not forced to use an I2S DAC amplifier board on the output.
+
+31
+00:03:03,300 --> 00:03:12,740
+We could also build up a 16-bit R2R DAC but that would require 16 pins of the ESP32 and thus
+
+32
+00:03:12,740 --> 00:03:15,500
+is not practically usable.
+
+33
+00:03:15,500 --> 00:03:23,500
+Or we could simply get a 16-bit DAC IC which we could hook up to the ESP32 through for example
+
+34
+00:03:23,500 --> 00:03:25,660
+I2C.
+
+35
+00:03:25,660 --> 00:03:33,000
+But then again if we already use a communication protocol why not use I2S which was specifically
+
+36
+00:03:33,000 --> 00:03:36,200
+designed for audio applications.
+
+37
+00:03:36,200 --> 00:03:45,320
+I2S stands for Inter-IC Sound and it is an electrical serial bus interface used for obviously connecting
+
+38
+00:03:45,320 --> 00:03:48,240
+digital audio devices.
+
+39
+00:03:48,240 --> 00:03:55,700
+It communicates PCM audio data which stands for Pulse Code Modulation and that is a method
+
+40
+00:03:55,700 --> 00:04:03,460
+to digitally represent sampled analog signals which is for example used by our .Wave sound
+
+41
+00:04:03,460 --> 00:04:05,060
+file.
+
+42
+00:04:05,060 --> 00:04:11,680
+It basically stores the binary values of all the sampled analog voltage values in it and
+
+43
+00:04:11,680 --> 00:04:16,580
+that is basically what we want to send around with I2S.
+
+44
+00:04:16,580 --> 00:04:22,480
+For first practical example however let's not start off with the amplifier board but instead
+
+45
+00:04:22,480 --> 00:04:28,240
+with this INMP441 microphone breakout board.
+
+46
+00:04:28,240 --> 00:04:32,860
+With it the I2S concept will be easier to understand.
+
+47
+00:04:32,860 --> 00:04:43,480
+Since we only have to read in data with the microphone while we would have to read in data and send out data with the microSD card and the amplifier board.
+
+48
+00:04:43,480 --> 00:04:48,040
+But anyway the microphone features 6 pins.
+
+49
+00:04:48,040 --> 00:04:56,660
+Of which 2 are for power, 3 are for the I2S interface and 1 is kind of a bonus to select whether the microphone
+
+50
+00:04:56,660 --> 00:04:59,560
+outputs its data on the left or right channel.
+
+51
+00:04:59,560 --> 00:05:09,180
+The 3 pins required for the I2S are called World Select, Serial Clock and Serial Data.
+
+52
+00:05:09,180 --> 00:05:16,180
+In the case of the amplifier board later on they feature slightly different names but still mean the same thing.
+
+53
+00:05:16,180 --> 00:05:26,800
+So as a first test I soldered wires to the 5 important pins and continued by having a look at the ESP32 pinout diagram.
+
+54
+00:05:26,800 --> 00:05:34,800
+In order to find out where to connect the I2S pins and to my surprise there were no specific pins mentioned.
+
+55
+00:05:34,800 --> 00:05:44,800
+As it turns out the ESP32 comes with 2 I2S peripherals but you can select the pins for them by yourself.
+
+56
+00:05:44,800 --> 00:05:53,480
+So I decided on the pins 15, 2 and 4 according to this wiring diagram.
+
+57
+00:05:53,480 --> 00:06:02,680
+And after connecting a microUSB cable I had a quick look at the I2S programming guide page for the ESP32.
+
+58
+00:06:02,680 --> 00:06:12,760
+I simply copied a bit of the shown codes in order to not only set the resolution to 16 bits and the sampling rates to 44.1kHz
+
+59
+00:06:12,760 --> 00:06:18,000
+but also to initialize and start the I2S communication.
+
+60
+00:06:18,000 --> 00:06:24,920
+All I had to add were a couple of lines to output the received data through the Serial Monitor.
+
+61
+00:06:24,920 --> 00:06:34,620
+And after uploading the code and opening the Serial Monitor we can see that by whistling into the microphone or tapping it
+
+62
+00:06:34,620 --> 00:06:41,180
+the Serial Monitor or even better the Serial Plotter seems to react accordingly.
+
+63
+00:06:41,180 --> 00:06:42,180
+Awesome!
+
+64
+00:06:42,180 --> 00:06:51,420
+That means everything works fine and it was time to have a look at the three I2S pins on the oscilloscope.
+
+65
+00:06:51,420 --> 00:06:58,300
+First off we can see that the word select line constantly alters between high and low.
+
+66
+00:06:58,300 --> 00:07:10,180
+The reason is that this bus transmits stereo audio and so the low state of the word select line indicates the left channel and the high state stands for the right channel.
+
+67
+00:07:10,180 --> 00:07:19,420
+By the way in this example we only got data on the left channel because the unconnected LR pin defines that.
+
+68
+00:07:19,420 --> 00:07:30,660
+Then we got the Serial Clock generated by the ESP32 at whose rising edge the data of the Serial Data gets sampled.
+
+69
+00:07:30,660 --> 00:07:39,900
+This way the audio data bits sent out by the microphone can be read by the ESP32 which is pretty standard
+
+70
+00:07:39,900 --> 00:07:42,140
+communication interface knowledge.
+
+71
+00:07:42,140 --> 00:07:48,140
+You should know from my SPI, I2C or for example CAN video.
+
+72
+00:07:48,140 --> 00:07:54,580
+But what is special about this communication is the frequency of the clock signal.
+
+73
+00:07:54,580 --> 00:08:03,820
+It is actually adjustable and depends on the sampling rate, bit resolution and whether you want to transmit mono or stereo.
+
+74
+00:08:03,820 --> 00:08:23,820
+In our microphone example we selected 44.1kHz with 16 bits and stereo which means we have to multiply 44.1kHz by 16 by 2 which equals 1.411MHz which is also the frequency we are measuring.
+
+75
+00:08:23,820 --> 00:08:35,060
+Now of course at this point we could alter the received microphone data to for example create a voice changer or even a pretty scientific sound level meter.
+
+76
+00:08:35,060 --> 00:08:39,060
+But that was not the goal of this video.
+
+77
+00:08:39,060 --> 00:08:52,060
+Instead I soldered wires to my I2S amplifier board as well as the microSD card board and hooked it all up to the ESP32 according to this wiring diagram.
+
+78
+00:08:52,060 --> 00:09:00,060
+This time though the coding was not only about the I2S write part but also about SPI.
+
+79
+00:09:00,060 --> 00:09:15,060
+Which is why instead of writing all of the code by myself which could have taken months, I decided to use the available ESP8266 audio library and some code bits from SparkFun.
+
+80
+00:09:15,060 --> 00:09:22,060
+But in the code we can still see that the I2S part is pretty straightforward to implement.
+
+81
+00:09:22,060 --> 00:09:32,060
+And after uploading the code, connecting a speaker and inserting the microSD card with the sound file we can hear this.
+
+82
+00:09:32,060 --> 00:09:34,060
+Stay creative!
+
+83
+00:09:34,060 --> 00:09:35,060
+Awesome!
+
+84
+00:09:35,060 --> 00:09:40,060
+And just like that you are now familiar with the I2S basics.
+
+85
+00:09:40,060 --> 00:09:53,060
+And all in all I can say that it is a pretty easy to implement and handy to use communication interface when it comes to receiving and sending digital audio.
+
+86
+00:09:53,060 --> 00:10:06,060
+And if you are interested in a more advanced video about the topic then I would highly recommend checking out Bitlooney's video about creating a sound driver for the ULP of the ESP32.
+
+87
+00:10:06,060 --> 00:10:12,060
+But anyway I hope you enjoyed this video and learned something new.
+
+88
+00:10:12,060 --> 00:10:18,060
+If so don't forget to like, share, subscribe and hit the notification bell.
+
+89
+00:10:18,060 --> 00:10:22,060
+Stay creative and I will see you next time!
+

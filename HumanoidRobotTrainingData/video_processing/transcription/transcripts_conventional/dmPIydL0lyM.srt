@@ -1,0 +1,816 @@
+1
+00:00:00,000 --> 00:00:22,400
+Hey friends, welcome to the YouTube channel all about electronics.
+
+2
+00:00:22,400 --> 00:00:27,160
+So, in this video, we will learn about the bandpass and the penstop filter.
+
+3
+00:00:27,160 --> 00:00:31,380
+So in the last couple of videos, we had seen that how to design the active as well as the
+
+4
+00:00:31,380 --> 00:00:36,720
+passive low pass and the high pass filter using the resistor and the capacitor.
+
+5
+00:00:36,720 --> 00:00:41,040
+And we had seen that this low pass filter passes the low frequency components from the
+
+6
+00:00:41,040 --> 00:00:46,200
+input signal while the high pass filter passes the high frequency components from the input
+
+7
+00:00:46,200 --> 00:00:47,500
+signal.
+
+8
+00:00:47,500 --> 00:00:53,540
+But sometimes in some applications, we are only interested in the particular band of frequencies.
+
+9
+00:00:53,540 --> 00:00:57,820
+So, for such applications, we can use this bandpass filter.
+
+10
+00:00:57,820 --> 00:01:03,280
+So as you can see, this bandpass filter passes only certain band of frequencies.
+
+11
+00:01:03,280 --> 00:01:07,280
+And it rejects all the frequencies which is outside of this band.
+
+12
+00:01:07,280 --> 00:01:11,360
+So now there are many ways in which we can design this bandpass filter.
+
+13
+00:01:11,360 --> 00:01:16,240
+And one of the way is to design this bandpass filter using the series RLC circuit.
+
+14
+00:01:16,240 --> 00:01:21,960
+And particularly, when you take the output across this resistor, then the response of this circuit
+
+15
+00:01:21,960 --> 00:01:25,560
+will be very similar to the response of this bandpass filter.
+
+16
+00:01:25,560 --> 00:01:31,240
+And we have already seen this in the earlier videos of a series resonance in the RLC circuit.
+
+17
+00:01:31,240 --> 00:01:34,340
+So for more information, you can check that video.
+
+18
+00:01:34,340 --> 00:01:39,260
+But in this video, we will learn how to design this bandpass filter just by using this high
+
+19
+00:01:39,260 --> 00:01:41,240
+pass and the low pass filter.
+
+20
+00:01:41,240 --> 00:01:46,600
+So, just by cascading this high pass filter and the low pass filter, we can design this
+
+21
+00:01:46,600 --> 00:01:48,220
+bandpass filter.
+
+22
+00:01:48,220 --> 00:01:52,920
+So now let's understand how this combination will act as a bandpass filter.
+
+23
+00:01:52,920 --> 00:01:57,360
+So let's say, we have one low pass filter which is having a cutoff frequency let's say
+
+24
+00:01:57,360 --> 00:01:58,360
+FC1.
+
+25
+00:01:58,360 --> 00:02:05,280
+And let's say we have one high pass filter which is having a cutoff frequency of FC2.
+
+26
+00:02:05,280 --> 00:02:10,300
+Now whenever we cascade this high pass and the low pass filter, then we will get an overlapping
+
+27
+00:02:10,300 --> 00:02:15,400
+region between the individual responses of this high pass and the low pass filter.
+
+28
+00:02:15,400 --> 00:02:19,960
+And this overlapping region will act as a bandpass filter.
+
+29
+00:02:19,960 --> 00:02:24,580
+So in this way, just by cascading this high pass and the low pass filter, we can design
+
+30
+00:02:24,580 --> 00:02:26,680
+this bandpass filter.
+
+31
+00:02:26,680 --> 00:02:31,560
+So now if you see the frequency response of this bandpass filter, you will immediately notice
+
+32
+00:02:31,560 --> 00:02:35,280
+that this filter will have two cutoff frequencies.
+
+33
+00:02:35,280 --> 00:02:40,200
+The one is known as the lower cutoff frequency and the other frequency is known as the higher
+
+34
+00:02:40,200 --> 00:02:42,160
+cutoff frequency.
+
+35
+00:02:42,160 --> 00:02:47,380
+And beyond these cutoff frequencies, the roll-off will be at the rate of 20 dB per decade.
+
+36
+00:02:47,380 --> 00:02:52,660
+And that is particularly true when you design this bandpass filter just by cascading the first
+
+37
+00:02:52,660 --> 00:02:55,240
+order high pass and the low pass filter.
+
+38
+00:02:55,240 --> 00:03:00,360
+Now, the frequency difference between this cutoff frequency is known as the bandwidth of
+
+39
+00:03:00,360 --> 00:03:02,220
+this bandpass filter.
+
+40
+00:03:02,220 --> 00:03:07,020
+So now let's see some of the parameters which defines this bandpass filter.
+
+41
+00:03:07,020 --> 00:03:11,800
+So as I said earlier, the difference between the two cutoff frequencies is known as the
+
+42
+00:03:11,800 --> 00:03:13,820
+bandwidth of this filter.
+
+43
+00:03:13,820 --> 00:03:19,120
+And the geometric mean of these two cutoff frequencies is known as the center frequency of this bandpass
+
+44
+00:03:19,120 --> 00:03:20,120
+filter.
+
+45
+00:03:20,120 --> 00:03:25,880
+So, for this frequency response, the center frequency will be somewhere around here.
+
+46
+00:03:25,880 --> 00:03:29,720
+So that will be the center frequency of this bandpass filter.
+
+47
+00:03:29,720 --> 00:03:34,520
+And if we see the phase response of this bandpass filter, then the phase response will look
+
+48
+00:03:34,520 --> 00:03:36,240
+like this.
+
+49
+00:03:36,240 --> 00:03:42,620
+So as you can see, at zero frequency, the output will lead the input by a 90 degree.
+
+50
+00:03:42,620 --> 00:03:48,400
+And as we move toward the center frequency, the phase difference will gradually reduce.
+
+51
+00:03:48,400 --> 00:03:54,060
+So now, when we start moving away from this center frequency, then the output will start
+
+52
+00:03:54,060 --> 00:03:56,600
+lagging the input signal.
+
+53
+00:03:56,600 --> 00:04:02,680
+And at f is equal to infinity, the output will lag the input by a 90 degree.
+
+54
+00:04:02,680 --> 00:04:07,700
+Alright, so now as we have seen the phase and the frequency response of this bandpass filter,
+
+55
+00:04:07,700 --> 00:04:11,180
+so let's take one example based on this bandpass filter.
+
+56
+00:04:11,180 --> 00:04:16,500
+So in this example, we have given this filter and we have been asked to find the bandwidth of
+
+57
+00:04:16,500 --> 00:04:18,300
+this given filter.
+
+58
+00:04:18,300 --> 00:04:23,900
+So as you can see in this example, the high pass filter and the low pass filter are cascaded.
+
+59
+00:04:23,900 --> 00:04:27,500
+And using this cascade connection, the bandpass filter has been designed.
+
+60
+00:04:27,500 --> 00:04:32,460
+So, to find the bandwidth of this filter, first of all let's find the cutoff frequency of
+
+61
+00:04:32,460 --> 00:04:35,500
+this individual high pass and the low pass filter.
+
+62
+00:04:35,500 --> 00:04:40,000
+So, let's first of all find the cutoff frequency of this high pass filter.
+
+63
+00:04:40,000 --> 00:04:45,040
+And let's assume that the cutoff frequency of this high pass filter is fc1 and the cutoff
+
+64
+00:04:45,040 --> 00:04:47,400
+frequency of this low pass filter is fc2.
+
+65
+00:04:47,400 --> 00:04:53,000
+Now, we know that the cutoff frequency of this high pass filter can be given by the equation
+
+66
+00:04:53,000 --> 00:04:57,380
+1dr by 2π into RC.
+
+67
+00:04:57,380 --> 00:05:03,400
+So now, if we put the value of this resistor and capacitor, then we will find the cutoff frequency
+
+68
+00:05:03,400 --> 00:05:04,400
+of this low pass filter.
+
+69
+00:05:04,400 --> 00:05:09,880
+So, let's see, the cutoff frequency of this low pass filter will be around 10.61 kHz.
+
+70
+00:05:09,880 --> 00:05:17,440
+So in this way, we have found this cutoff frequency of this high pass filter as 10.61 kHz.
+
+71
+00:05:17,440 --> 00:05:21,920
+So similarly, now let's find the cutoff frequency of this low pass filter.
+
+72
+00:05:21,920 --> 00:05:26,960
+So again, the cutoff frequency of this low pass filter can be given by the equation 1dr by
+
+73
+00:05:26,960 --> 00:05:29,000
+2π into RC.
+
+74
+00:05:29,000 --> 00:05:34,160
+And if we put the value of this resistor and capacitor, then the cutoff frequency of this
+
+75
+00:05:34,160 --> 00:05:40,020
+low pass filter will be 106.1 kHz.
+
+76
+00:05:40,020 --> 00:05:49,060
+So in this way, we have found the cutoff frequency of this low pass filter as 106.1 kHz.
+
+77
+00:05:49,060 --> 00:05:54,960
+So now, the bandwidth of this band pass filter can be defined as the difference between these
+
+78
+00:05:54,960 --> 00:05:57,120
+two cutoff frequencies.
+
+79
+00:05:57,120 --> 00:06:09,060
+So the bandwidth of this band pass filter will be FC2-FC1 that is equal to 106.1-10.61 kHz.
+
+80
+00:06:09,060 --> 00:06:13,940
+And that is nothing but 95.5 kHz.
+
+81
+00:06:13,940 --> 00:06:19,500
+So roughly we can say that this band pass filter having a bandwidth of 100 kHz.
+
+82
+00:06:19,500 --> 00:06:24,180
+So in this example, now if you see here, we have designed this band pass filter just by
+
+83
+00:06:24,180 --> 00:06:28,280
+cascading this passive, high pass and the low pass filter.
+
+84
+00:06:28,280 --> 00:06:33,820
+And as this filter is designed using this passive components, so the actual values of this cutoff
+
+85
+00:06:33,820 --> 00:06:37,620
+frequencies will be slightly different from the designed values.
+
+86
+00:06:37,620 --> 00:06:42,460
+And the reason is that the input impedance of this high pass filter will affect the cutoff
+
+87
+00:06:42,460 --> 00:06:45,120
+frequency of this low pass filter.
+
+88
+00:06:45,120 --> 00:06:58,060
+So, in this way, because of this cascade connection of this passive filters, the design frequencies
+
+89
+00:06:58,060 --> 00:07:01,060
+and the actual cutoff frequencies will be slightly different.
+
+90
+00:07:01,060 --> 00:07:05,280
+And to avoid that, we can isolate the two stages by using the buffer.
+
+91
+00:07:05,280 --> 00:07:10,520
+So, in the last video, we have already seen that, by using this op-amp as a buffer, we
+
+92
+00:07:10,520 --> 00:07:13,340
+can isolate the different stages of this filter.
+
+93
+00:07:13,340 --> 00:07:17,580
+So instead of using this passive low pass and the high pass filter, we can use this active
+
+94
+00:07:17,580 --> 00:07:19,980
+low pass and the high pass filter.
+
+95
+00:07:19,980 --> 00:07:24,240
+And just by cascading these two active low pass and the high pass filter, we can design
+
+96
+00:07:24,240 --> 00:07:25,780
+this band pass filter.
+
+97
+00:07:25,780 --> 00:07:31,220
+And by using this op-amp as a buffer, we can isolate the two different stages as well.
+
+98
+00:07:31,220 --> 00:07:36,340
+And suppose if we want the gain from this active filter, then we can configure this op-amp either
+
+99
+00:07:36,340 --> 00:07:39,620
+in a inverting or a non-inverting configuration.
+
+100
+00:07:39,620 --> 00:07:44,400
+So in this way, not only we can isolate the two different stages, but we can also achieve
+
+101
+00:07:44,400 --> 00:07:46,540
+the gain out of this filter.
+
+102
+00:07:46,540 --> 00:07:52,180
+So now like we have seen this band pass filter, let's see one more filter whose response is
+
+103
+00:07:52,180 --> 00:07:55,320
+exactly opposite to that of this band pass filter.
+
+104
+00:07:55,320 --> 00:08:00,080
+So this filter is known as the band stop filter or a band reject filter.
+
+105
+00:08:00,080 --> 00:08:05,700
+So this band stop or a band reject filter rejects certain band of frequencies and it passes
+
+106
+00:08:05,700 --> 00:08:09,620
+all other frequencies which is out of this particular band.
+
+107
+00:08:09,620 --> 00:08:14,840
+And if we see the frequency response of this band stop filter, it will look like this.
+
+108
+00:08:14,840 --> 00:08:20,320
+So like as you can see here, this band stop filter rejects a particular band of frequencies
+
+109
+00:08:20,320 --> 00:08:25,060
+and it passes all other frequencies which is beyond this particular band.
+
+110
+00:08:25,060 --> 00:08:29,600
+So now in the earlier video of resonance in the parallel RLC circuit, we have already seen
+
+111
+00:08:29,600 --> 00:08:34,740
+that by connecting this resistor, capacitor and inductor in a parallel, we can design this
+
+112
+00:08:34,740 --> 00:08:36,160
+band stop filter.
+
+113
+00:08:36,160 --> 00:08:41,060
+And particularly when we take the output across this resistor, then the response of this parallel
+
+114
+00:08:41,060 --> 00:08:45,560
+RLC circuit will be very similar to the response of this band stop filter.
+
+115
+00:08:45,560 --> 00:08:50,480
+So for more information, you can check that video on a resonance in the parallel RLC circuit.
+
+116
+00:08:50,480 --> 00:08:55,480
+But in this video, we will see that how we can design this band stop filter by using this
+
+117
+00:08:55,480 --> 00:08:57,560
+low pass and the high pass filter.
+
+118
+00:08:57,560 --> 00:09:01,860
+So before we see that, first of all let us carefully see once again the response of this
+
+119
+00:09:01,860 --> 00:09:03,880
+band stop filter.
+
+120
+00:09:03,880 --> 00:09:10,000
+So now if you see the response, particularly this portion, this is nothing but the response
+
+121
+00:09:10,000 --> 00:09:12,980
+of the low pass filter.
+
+122
+00:09:12,980 --> 00:09:25,380
+So, in this way, just by adding the responses of this low pass filter and the high pass filter,
+
+123
+00:09:25,380 --> 00:09:28,360
+we can design this band stop filter.
+
+124
+00:09:28,360 --> 00:09:32,920
+So now what we can do, we can provide the same input to this both low pass as well as
+
+125
+00:09:32,920 --> 00:09:34,640
+the high pass filter.
+
+126
+00:09:34,640 --> 00:09:40,760
+And just by adding their individual responses, we can get this response of a band stop filter.
+
+127
+00:09:40,760 --> 00:09:45,160
+And we can easily achieve this response by using this op-amp circuit.
+
+128
+00:09:45,160 --> 00:09:50,240
+So as you can see here, this portion is nothing but the high pass filter.
+
+129
+00:09:50,240 --> 00:09:53,700
+And the lower portion is nothing but the low pass filter.
+
+130
+00:09:53,700 --> 00:09:58,640
+So as you can see here, we have given the same input to this low pass as well as the high
+
+131
+00:09:58,640 --> 00:10:00,380
+pass filter.
+
+132
+00:10:00,380 --> 00:10:05,920
+And just by adding their individual responses by summer circuit, we can design this band stop
+
+133
+00:10:05,920 --> 00:10:06,920
+filter.
+
+134
+00:10:06,920 --> 00:10:11,800
+So now to get more idea about this band stop filter, let's take one example.
+
+135
+00:10:11,800 --> 00:10:17,120
+So in this example, we have been given the design of this active band stop filter.
+
+136
+00:10:17,120 --> 00:10:22,840
+And in this example, we have been asked to find the stop band of this band stop filter.
+
+137
+00:10:22,840 --> 00:10:27,680
+So the stop band is nothing but the frequency band which is being rejected by this band stop
+
+138
+00:10:27,680 --> 00:10:28,680
+filter.
+
+139
+00:10:28,680 --> 00:10:33,360
+And to find that, first of all let's find the cutoff frequency of these individual filters.
+
+140
+00:10:33,360 --> 00:10:38,080
+Let's say the cutoff frequency of this high pass filter is let's say FC1 and the cutoff
+
+141
+00:10:38,080 --> 00:10:41,820
+frequency of this low pass filter is let's say FC2.
+
+142
+00:10:41,820 --> 00:10:46,960
+And as we know, the cutoff frequency for this high pass filter can be given by the expression
+
+143
+00:10:46,960 --> 00:10:50,340
+1 divided by 2π into RC.
+
+144
+00:10:50,340 --> 00:10:55,300
+And if we put all the values of this resistor and capacitor, then the value of this cutoff frequency
+
+145
+00:10:55,300 --> 00:10:56,300
+will be 994Hz.
+
+146
+00:10:56,300 --> 00:11:00,020
+So, in this way, we have found the cutoff frequency of this high pass filter is 1.59kHz.
+
+147
+00:11:00,020 --> 00:11:04,760
+Similarly, now let's find the cutoff frequency of this low pass filter.
+
+148
+00:11:04,760 --> 00:11:09,960
+So, the cutoff frequency of this low pass filter can be given by the expression 1 divided by 2.2
+
+149
+00:11:09,960 --> 00:11:11,500
+RC.
+
+150
+00:11:11,500 --> 00:11:16,440
+And if we put all the values of this resistor and capacitor, then we will get this cutoff frequency
+
+151
+00:11:16,440 --> 00:11:17,440
+as 994Hz.
+
+152
+00:11:17,440 --> 00:11:25,440
+So, in this way, we have found the cutoff frequency of this high pass filter is 1.59kHz.
+
+153
+00:11:25,440 --> 00:11:30,980
+And the cutoff frequency of this low pass filter is 994Hz.
+
+154
+00:11:30,980 --> 00:11:37,440
+So, the stop band can be given by FC2-FC1 that is,
+
+155
+00:11:37,440 --> 00:11:43,600
+1590Hz-994Hz.
+
+156
+00:11:43,600 --> 00:11:47,860
+That is nothing but 596Hz.
+
+157
+00:11:47,860 --> 00:11:54,160
+So we can say that this band stop filter rejects the band of frequencies starting from roughly
+
+158
+00:11:54,160 --> 00:11:58,820
+around 1kHz and up to 1.6kHz.
+
+159
+00:11:58,820 --> 00:12:05,580
+So this filter rejects around 600Hz of frequencies between these two cutoff frequencies.
+
+160
+00:12:05,580 --> 00:12:08,980
+And it passes all the frequencies which is beyond these cutoff frequencies.
+
+161
+00:12:08,980 --> 00:12:14,200
+So, now so far, this band pass and the band stop filters which we have discussed are the
+
+162
+00:12:14,200 --> 00:12:16,040
+second order filters.
+
+163
+00:12:16,040 --> 00:12:19,740
+Because if you see the transfer function of these two filters, they will have two number
+
+164
+00:12:19,740 --> 00:12:21,940
+of poles in the denominator.
+
+165
+00:12:21,940 --> 00:12:27,220
+And in another way if you see, these two filters had two number of reactive components in their
+
+166
+00:12:27,220 --> 00:12:28,220
+circuitry.
+
+167
+00:12:28,220 --> 00:12:32,820
+So in that sense also, we can say that these two filters were the second order filters.
+
+168
+00:12:32,820 --> 00:12:38,000
+So now, if you want the sharp cutoff, then we can go for the higher order filters.
+
+169
+00:12:38,000 --> 00:12:42,980
+So I hope in this video you understood about this band pass as well as the band stop filter.
+
+170
+00:12:42,980 --> 00:12:47,220
+So if you have any question or suggestion, please let me know in the comment section below.
+
+171
+00:12:47,220 --> 00:12:51,820
+If you like this video, hit the like button and subscribe to the channel for more such videos.
+
+172
+00:12:51,820 --> 00:12:54,840
+That's good.
+
+173
+00:12:54,840 --> 00:12:56,000
+I will see you playing here.
+
+174
+00:12:56,000 --> 00:12:57,640
+Bye.
+
+175
+00:12:57,640 --> 00:12:58,220
+Cool.
+
+176
+00:12:58,220 --> 00:13:00,260
+Bye.
+
+177
+00:13:00,980 --> 00:13:02,460
+Bye.
+
+178
+00:13:02,460 --> 00:13:03,600
+Forward.
+
+179
+00:13:04,920 --> 00:13:05,420
+Bye.
+
+180
+00:13:05,420 --> 00:13:07,200
+Bye.
+
+181
+00:13:07,340 --> 00:13:07,500
+Bye.
+
+182
+00:13:07,500 --> 00:13:07,660
+Bye.
+
+183
+00:13:08,100 --> 00:13:08,800
+Bye.
+
+184
+00:13:08,800 --> 00:13:09,980
+Bye.
+
+185
+00:13:09,980 --> 00:13:10,140
+Bye.
+
+186
+00:13:10,140 --> 00:13:10,500
+Bye.
+
+187
+00:13:10,500 --> 00:13:10,740
+Bye.
+
+188
+00:13:11,020 --> 00:13:11,840
+Bye.
+
+189
+00:13:11,840 --> 00:13:12,720
+Bye.
+
+190
+00:13:12,720 --> 00:13:13,320
+Bye.
+
+191
+00:13:13,320 --> 00:13:13,780
+Bye.
+
+192
+00:13:13,780 --> 00:13:14,060
+Bye.
+
+193
+00:13:14,060 --> 00:13:14,380
+Bye.
+
+194
+00:13:14,560 --> 00:13:15,080
+Bye.
+
+195
+00:13:15,080 --> 00:13:15,560
+Bye.
+
+196
+00:13:15,560 --> 00:13:15,900
+Bye.
+
+197
+00:13:15,900 --> 00:13:17,000
+Bye.
+
+198
+00:13:17,000 --> 00:13:17,520
+Bye.
+
+199
+00:13:17,540 --> 00:13:17,840
+Bye.
+
+200
+00:13:17,840 --> 00:13:19,480
+Bye.
+
+201
+00:13:19,480 --> 00:13:20,060
+Bye.
+
+202
+00:13:20,140 --> 00:13:20,180
+Bye.
+
+203
+00:13:20,300 --> 00:13:20,820
+Bye.
+
+204
+00:13:20,900 --> 00:13:21,800
+Bye.
+

@@ -1,0 +1,64 @@
+{
+  "video_id": "HWMq1WjvgfE",
+  "title": "HWMq1WjvgfE",
+  "url": "https://www.youtube.com/watch?v=HWMq1WjvgfE",
+  "created_at": "2025-10-09T17:31:46.777049+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Channel Maintenance and Support",
+      "description": "The speaker thanks the audience for watching and encourages support through Patreon and Amazon shop",
+      "evidence_quotes": [
+        "Thank you very much for all your support of learn electronics.",
+        "Please feel free to check out the patreon page dollar month is all I ask."
+      ],
+      "start_s": 2585.98,
+      "end_s": 2601.8199999999997,
+      "id": "T1"
+    },
+    {
+      "title": "LM386 Audio Amplifier Setup",
+      "description": "The setup process for the LM386 audio amplifier",
+      "evidence_quotes": [
+        "I'm going to take you out of here so you can see.",
+        "Let's flip on the power supply again."
+      ],
+      "start_s": 2465.8199999999997,
+      "end_s": 2467.6,
+      "id": "T2"
+    },
+    {
+      "title": "Troubleshooting Issues",
+      "description": "The speaker encounters issues with the LM386 audio amplifier, but eventually gets it to work",
+      "evidence_quotes": [
+        "I don't get it.",
+        "But whatever."
+      ],
+      "start_s": 2529.74,
+      "end_s": 2553.06,
+      "id": "T3"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here are the extracted topics with their corresponding quotes and time ranges:\n\n```\n[\n  {\n    \"title\": \"Using Three-Foot Long Leads\",\n    \"description\": null,\n    \"evidence_quotes\": [\"one reason to have three foot long leads so we'll just trim them a little bit\", \"my fingers are far too large\"],\n    \"time_range\": \"00:11:52.100–00:12:03.060\"\n  },\n  {\n    \"title\": \"Choosing Capacitors\",\n    \"description\": null,\n    \"evidence_quotes\": [\"large capacitor we're going to use an electrolytic 250 microfaradays\", \"let's go 330 when you're doing capacitors you should always err on the size caution\"],\n    \"time_range\": \"00:12:33.060–00:12:40.260\"\n  },\n  {\n    \"title\": \"Connecting Pin Two\",\n    \"description\": null,\n    \"evidence_quotes\": [\"pin two which is our inverting input also needs to go to ground\", \"come on my fingers are far too large\"],\n    \"time_range\": \"00:13:42.660–00:14:16.100\"\n  },\n  {\n    \"title\": \"Mistake with Pin Eight\",\n    \"description\": null,\n    \"evidence_quotes\": [\"okay there's our first mistake that's pin eight our output is in fact pin five\", \"you put it in the wrong hole not like i haven't heard that before\"],\n    \"time_range\": \"00:14:25.140–00:14:41.300\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here are the coherent topics extracted from the transcript segment:\n\n```\n[\n  {\n    \"title\": \"LM386 Audio Amplifier Setup\",\n    \"description\": \"The setup process for the LM386 audio amplifier\",\n    \"evidence_quotes\": [\"I'm going to take you out of here so you can see.\", \"Let's flip on the power supply again.\"],\n    \"time_range\": \"00:26:02.040–00:26:03.820\"\n  },\n  {\n    \"title\": \"Troubleshooting Issues\",\n    \"description\": \"The speaker encounters issues with the LM386 audio amplifier, but eventually gets it to work\",\n    \"evidence_quotes\": [\"I don't get it.\", \"But whatever.\"],\n    \"time_range\": \"00:27:05.960–00:27:29.280\"\n  },\n  {\n    \"title\": \"Channel Maintenance and Support\",\n    \"description\": \"The speaker thanks the audience for watching and encourages support through Patreon and Amazon shop\",\n    \"evidence_quotes\": [\"Thank you very much for all your support of learn electronics.\", \"Please feel free to check out the patreon page dollar month is all I ask.\"],\n    \"time_range\": \"00:28:02.200–00:28:18.040\"\n  }\n]\n```\n\nLet me know if this meets your requirements!"
+        ]
+      }
+    ]
+  }
+}

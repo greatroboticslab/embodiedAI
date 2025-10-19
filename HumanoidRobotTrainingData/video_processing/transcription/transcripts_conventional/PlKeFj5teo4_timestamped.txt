@@ -1,0 +1,104 @@
+PlKeFj5teo4
+https://www.youtube.com/watch?v=PlKeFj5teo4
+Unknown Category
+
+[00:00:00.000 → 00:00:06.440] There's two very critical pieces of hardware on a drone that allows it to fly autonomously.
+[00:00:07.060 → 00:00:11.140] Today we're going to cover what the difference is between a flight controller and a flight computer
+[00:00:11.140 → 00:00:16.460] in the context of an autonomous drone, and why you might want to keep them separate for your particular project.
+[00:00:17.380 → 00:00:21.440] There's two key levels of control that are going on behind the scenes in an autonomous drone.
+[00:00:22.500 → 00:00:26.340] Of course, much more complex systems have many levels with specific functionality,
+[00:00:26.340 → 00:00:31.440] but I want to focus on the bare minimum in order to have a drone do something useful entirely on its own.
+[00:00:32.360 → 00:00:37.900] The interloop controller is what stabilizes the vehicle either at a specified angle or vehicle body rate.
+[00:00:39.120 → 00:00:40.200] Drones are inherently unstable.
+[00:00:40.580 → 00:00:43.520] They require active stabilization to the motors to keep it in the air at all.
+[00:00:44.380 → 00:00:48.320] Without this, even the most skilled of pilots could not keep them in the air for more than a few seconds.
+[00:00:49.480 → 00:00:54.560] The outerloop controller can be thought of as a simulated pilot that is generating pilot commands.
+[00:00:54.560 → 00:00:59.720] It does this in response to various sensor data used to figure out where the drone is in space
+[00:00:59.720 → 00:01:02.220] to get it from point A to B without crashing.
+[00:01:03.040 → 00:01:06.240] We call the board that handles interloop control the flight controller.
+[00:01:06.940 → 00:01:11.080] This is the heart of the drone that allows a pilot to talk to it with a requested vehicle state
+[00:01:11.080 → 00:01:14.500] and output stabilized commands to the motors to achieve that state.
+[00:01:15.400 → 00:01:18.700] A flight computer is what is used to conduct all outerloop control
+[00:01:18.700 → 00:01:22.460] and requests a vehicle state from the flight controller just like a pilot does.
+[00:01:22.460 → 00:01:27.300] The flight computer is the decision-making brain of a drone that makes this request
+[00:01:27.300 → 00:01:32.840] as it is informed by various onboard sensor data combined with what specific task it should be carrying out.
+[00:01:33.660 → 00:01:37.680] For example, GPS data tells the flight computer where it is in space.
+[00:01:38.300 → 00:01:40.420] If the mission is to travel from point A to B,
+[00:01:40.820 → 00:01:44.100] then the flight computer must generate the required commands to the flight controller
+[00:01:44.100 → 00:01:45.900] to navigate the drone accordingly.
+[00:01:45.900 → 00:01:50.620] Let's take a look at what processes are occurring in the flight controller or interloop.
+[00:01:51.280 → 00:01:55.860] First, accelerometer and gyro data is pulled from the flight controller's inertial measurement unit.
+[00:01:56.540 → 00:02:00.800] This data must be processed with some sort of filter in order to estimate the drone's orientation,
+[00:02:01.160 → 00:02:04.640] as individual accelerometer or gyro data cannot do this alone.
+[00:02:05.200 → 00:02:09.240] The simplest and least accurate filtering technique is called a complementary filter.
+[00:02:09.240 → 00:02:15.040] The most accurate filter may be a Kalman-type filter, though it is very computationally costly.
+[00:02:16.160 → 00:02:18.620] A magic filter is a good compromise between the other two.
+[00:02:19.740 → 00:02:22.700] Next, the flight controller needs to know the desired vehicle state,
+[00:02:23.080 → 00:02:25.580] or setpoint, commanded by the pilot or flight computer.
+[00:02:26.380 → 00:02:31.420] This setpoint is used to compute the error in the drone's current orientation from where it is desired to be.
+[00:02:31.420 → 00:02:35.680] A PID controller is used to generate stabilized signals based on this error.
+[00:02:36.440 → 00:02:40.320] These signals for each vehicle axis of rotation can be applied to the drone's motors
+[00:02:40.320 → 00:02:43.040] according to the dynamic configuration in the control mixer.
+[00:02:43.800 → 00:02:49.540] For example, to stabilize pitch, the forward motors and rear motors must receive opposite stabilized signals.
+[00:02:50.340 → 00:02:54.320] We then write these signals out to the motors, which in turn generates a vehicle response.
+[00:02:54.820 → 00:02:58.840] This response is again measured by the IMU, and we have created a feedback loop.
+[00:02:58.840 → 00:03:03.660] Typically on a flight controller, this process runs at 1000 or more cycles per second.
+[00:03:04.220 → 00:03:08.520] So now that we can see all of the challenges that must be solved in order to complete this loop,
+[00:03:08.940 → 00:03:10.440] let's see what this looks like in action.
+[00:03:12.340 → 00:03:16.420] The previous flight controller loop diagram can be supplemented with additional filtering,
+[00:03:16.720 → 00:03:18.320] control techniques, or safety measures.
+[00:03:18.900 → 00:03:23.260] With a properly designed and tuned controller, a very fast and accurate response is possible.
+[00:03:24.820 → 00:03:27.280] Next, we will look at the operation of the flight computer.
+[00:03:27.280 → 00:03:31.040] This is a very broad overview of what could be happening on board,
+[00:03:31.420 → 00:03:33.540] though the specifics vary based on the application.
+[00:03:34.400 → 00:03:37.360] Because there is so much going on, it is not necessarily a loop either,
+[00:03:37.640 → 00:03:40.420] but a continuously updated stream of input and output data.
+[00:03:41.220 → 00:03:45.380] The flight computer needs an interrupt handler to process sensor data as it becomes available.
+[00:03:46.240 → 00:03:48.420] The popular system used is ROS,
+[00:03:49.000 → 00:03:53.320] which allows for easy access across multiple sensors, computations, and outputs.
+[00:03:53.320 → 00:03:58.780] An autonomous drone might have a combination of cameras, LIDAR, or GPS on board.
+[00:03:59.340 → 00:04:02.380] This sensor data is used to estimate the drone's position in space
+[00:04:02.380 → 00:04:06.500] from information about its surroundings or movement, which is known as odometry.
+[00:04:07.280 → 00:04:11.680] Once the drone knows where it is, a mission planner can be used to decide where to go next.
+[00:04:11.680 → 00:04:14.600] A typical mission planner might look something like this.
+[00:04:15.400 → 00:04:18.900] It must first decide what the current task is, for example, flying through a window.
+[00:04:19.800 → 00:04:22.740] Next, the mission planner may request that the drone search for the target
+[00:04:22.740 → 00:04:24.740] by either flying forward or turning around.
+[00:04:25.360 → 00:04:27.040] Then once the target is identified,
+[00:04:27.420 → 00:04:31.540] it must converge on it to ensure that it has actually found the target and not something else.
+[00:04:32.260 → 00:04:35.340] Finally, the desired maneuver for that target can be executed.
+[00:04:36.120 → 00:04:39.000] Once this is complete, the mission planner decides what to do next.
+[00:04:39.000 → 00:04:44.480] The mission planner conducts its operations and in the process requests that the drone moves around.
+[00:04:45.180 → 00:04:48.420] A controller is used to generate requested vehicle state set points
+[00:04:48.420 → 00:04:50.820] based on where the mission planner wants the drone to be
+[00:04:50.820 → 00:04:53.240] and where the odometry thinks the drone is.
+[00:04:53.960 → 00:04:58.820] These requests are then sent to the flight controller at a rate of about 50 to 100 times per second.
+[00:04:59.720 → 00:05:04.260] Here we can see that full and complicated process in action in a simple autonomous landing demo.
+[00:05:05.000 → 00:05:07.360] The mission planner's goal here is to land on the target.
+[00:05:07.360 → 00:05:13.320] It first performs a forward search and then once the target is identified by a downward-facing camera,
+[00:05:13.760 → 00:05:18.300] requests that the vehicle begins to descend as the detection algorithm converges on the target.
+[00:05:18.300 → 00:05:31.680] You might rightfully be asking,
+[00:05:32.020 → 00:05:33.800] why not just do everything on the flight computer?
+[00:05:34.480 → 00:05:36.520] My answer to that is you certainly can,
+[00:05:37.200 → 00:05:41.300] and many companies such as DJI do that with their custom boards to save power and weight,
+[00:05:41.300 → 00:05:44.820] but if you are assembling your own system, you may run into some problems.
+[00:05:45.700 → 00:05:48.380] First, the flight computer speed is not guaranteed constant,
+[00:05:48.820 → 00:05:53.860] which is a problem for stabilizing a vehicle which requires constant, high-speed operation to stay in the air.
+[00:05:54.580 → 00:06:00.500] A flight computer's CPU may become overloaded if excessive computations are being demanded from computer vision algorithms,
+[00:06:00.900 → 00:06:03.780] which slow down the whole system or even crash it entirely.
+[00:06:03.780 → 00:06:09.800] So generally speaking, it is best to have a dedicated single-task microcontroller for stabilization
+[00:06:09.800 → 00:06:14.120] that guarantees the vehicle will be stabilized regardless of the health of the flight computer.
+[00:06:14.960 → 00:06:17.240] In the event that the flight computer encounters an error,
+[00:06:17.660 → 00:06:20.880] you can always switch back to the pilot transmitter to safely land the vehicle.
+[00:06:20.880 → 00:06:23.680] So to answer our original question,
+[00:06:24.180 → 00:06:27.660] the flight controller is a dedicated board to simply stabilize the vehicle,
+[00:06:27.940 → 00:06:32.640] whereas the flight computer performs all the onboard decision-making and sensing, much like a pilot.
+[00:06:33.260 → 00:06:37.060] Both are very important for safe and reliable autonomous drone operation.
+[00:06:38.660 → 00:06:43.300] This was a very broad overview of some of the things going on inside an autonomous drone,
+[00:06:43.520 → 00:06:45.000] and is by no means comprehensive.
+[00:06:45.680 → 00:06:46.720] I hope you've learned something,
+[00:06:46.980 → 00:06:50.280] and you now have a better understanding of some of the topics that need to be addressed
+[00:06:50.280 → 00:06:51.880] to create a fully autonomous drone.
+[00:06:52.460 → 00:06:54.520] If you're interested in some more of the nitty-gritty,
+[00:06:54.920 → 00:06:58.480] check out my other video on a fully autonomous drone completing an obstacle course,
+[00:06:58.760 → 00:06:59.400] and how we did it.

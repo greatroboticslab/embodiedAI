@@ -1,0 +1,281 @@
+{
+  "video_id": "ZOuZWE_tfgQ",
+  "title": "ZOuZWE_tfgQ",
+  "url": "https://www.youtube.com/watch?v=ZOuZWE_tfgQ",
+  "created_at": "2025-10-09T17:33:12.926704+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction",
+      "description": "Introduction to the audio circuit",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 5
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.0,
+          "end_s": 39.0
+        }
+      ],
+      "coverage_text": "The LM386 is a really cool little IC. It's the heart of a lot of little audio amplifiers.\nAnd it's amazing because all you need is a couple of capacitors and a resistor, a speaker, and some power.\nAnd you're all set to make a really nice sounding audio amplifier.\nAnd in this tutorial I'm going to show you first of all how to build a really basic amplifier with the minimal parts, one resistor and two capacitors.\nNow I'm going to show you how to make a better sounding amplifier.\nAnd that's going to take some more capacitors but it's pretty easy.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Building the First Circuit",
+      "description": "Building the first simple audio circuit",
+      "coverage_ranges": [
+        {
+          "start_idx": 6,
+          "end_idx": 99
+        }
+      ],
+      "coverage_segments": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99
+      ],
+      "coverage_times": [
+        {
+          "start_s": 39.0,
+          "end_s": 607.3199999999999
+        }
+      ],
+      "coverage_text": "And we're also going to add a bass boost control. So follow along and we'll get going here.\nI've got the LM386 inserted into my breadboard with pin 1 in the upper left hand corner.\nNow I'm going to bridge the power rails. So connect the positive rails on both sides and the negative rails on both sides.\nNow take a jumper wire from pin 2 of the LM386 and connect it to ground.\nNow insert a 10K potentiometer somewhere into the breadboard.\nAnd connect the jumper wire from the middle pin of the potentiometer up to pin 3 of the LM386.\nNow connect pin 4 to ground.\nAnd one side of the potentiometer. Connect that to ground.\nNow we're going to put a 10 ohm resistor from pin 5 of the LM386. Bring that to another rail in the breadboard.\nAnd you want to put a 0.1 microfarad capacitor from that resistor into the positive rail.\nAnd then take the positive terminal of a 1000 microfarad electrolytic capacitor and insert it in between the resistor and the capacitor.\nNow you want to take the positive wire from your speaker and connect it to the negative terminal of that electrolytic capacitor.\nAnd then take the negative line of your speaker and connect it anywhere into the ground rail.\nNow we have to connect pin 6 of the LM386 to the positive rail.\nAlright now we're ready to connect the input for the amplifier circuit.\nI've cut into an old pair of headphones from my iPhone to use the 3.5mm audio jack.\nAnd I have another blog post about this on the website. Just look for it under the circuit section.\nSo you want to connect the left or right audio channel into the third pin of the 10K potentiometer.\nAnd then the ground of the headphones into the ground rail of the circuit.\nAnd you can check my blog post on this tutorial. It'll have a better diagram.\nIt's a lot easier to see what to do there.\nSo now I'm going to connect this up to my iPhone.\nPlay this little song I mixed up a while ago.\nAnd there's our volume control.\nAnd you can see it sounds pretty quiet.\nWe don't have pin 1 or pin 8 bridged together in the circuit.\nSo the gain with this setup is only 20.\nNow if we want to make it a little louder we can connect a wire between pin 1 and pin 8.\nAnd that'll make the gain 200.\nNow you can see it's a lot louder. It's a little too loud. It's got some distortion.\nThere it is.\nThat'll be a little bit more thousand.\nThere you are.\nThere use a hundred pounds.\nDo that many of the spots.\nPlease take the zoom on.\nYes.\nI'm not scrolling on.\nNow I'm scrolling on.\nOh damn, raise your hand.\nI'm literally flying off the Trim.\nBut there's mostly aint fres se.\nAnd I think more nails.\nHowever, fits the most of thekalif x type.\nAlright, well that does it for the really basic audio amplifier.\nLet's try making one that sounds a lot better.\nSo I'm starting out with an empty breadboard here.\nI just have the power, the 9-volt battery, connected up to one side of the breadboard.\nSo I'm going to bridge the two power rails and connect positive to positive and negative\nto negative.\nNow I'm going to insert the LM386 in there.\nI've got pin 1 in the upper left hand side.\nNow you want to connect pin 1 down to another rail somewhere in the breadboard.\nWe're going to add our gain potentiometer to this.\nYou want to connect that to the middle pin of the potentiometer.\nThis is a 10K potentiometer.\nNow connect pin 2 of the LM386 to ground.\nPin 3 goes to another rail in the breadboard.\nWe're going to want to put a 740 pF capacitor from that rail into ground.\nThis is a decoupling capacitor.\nYou can read more about that on the blog post.\nNow you want to take that same rail and then bring it down to another rail on the breadboard.\nThis is where our volume control is going to go.\nThis is another 10K potentiometer.\nSo connect that to the middle pin of the potentiometer.\nAnd then take one of the outside pins of the potentiometer and wire it to ground.\nNow completing our gain control, we want to insert a 10uF electrolytic capacitor from pin\n8 of the LM386 up to another rail.\nAnd the negative side of the capacitor goes to the pin of the LM386.\nThe positive side goes up to the other rail.\nNow take another jumper wire from that rail and connect it to one of the outside pins of\nyour gain potentiometer.\nSo now you want to insert a 10k ohm resistor from pin 7 of LM386 and bring that down to\nanother rail of the breadboard.\nNow we want to insert another capacitor from the end of that resistor into ground with the\nnegative side of the capacitor going to the ground side.\nThe positive side going to the resistor side.\nNow we need to wire pin 6 of the LM386 to the positive rail.\nAnd then we need to insert a 0.1uF capacitor between pin 4 and pin 6.\nKind of hard to get in here.\nWith all these capacitors and wires it's best to get them as close to the chip as possible\nto minimize noise and interference from radios and other stuff.\nNow insert a jumper from pin 5 down to another rail of the breadboard.\nAnd then from there insert a 10 ohm resistor.\nNow insert a 0.1uF capacitor at the end of that resistor into ground.\nNow take a 1000uF capacitor and insert the positive side into that rail with the resistor and the\nother capacitor.\nAnd the negative side into another rail.\nNow we're going to add some decoupling capacitors for the power supply.\nSo insert a 0.1uF capacitor between the positive and negative power rails.\nAnd then insert another capacitor.\nThis one's 100uF in between the positive and negative power rails.\nAnd make sure the polarity is correct for these capacitors.\nI had a tantalum capacitor explode on me the other day.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Adding a Gain Control and Volume Control",
+      "description": "Adding gain control and volume control to the circuit",
+      "coverage_ranges": [
+        {
+          "start_idx": 100,
+          "end_idx": 147
+        }
+      ],
+      "coverage_segments": [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147
+      ],
+      "coverage_times": [
+        {
+          "start_s": 607.3199999999999,
+          "end_s": 979.76
+        }
+      ],
+      "coverage_text": "That was not fun.\nI might make another video about that.\nI actually inserted it backwards and the thing blew up between my fingers and I got burned\nkind of bad.\nSo try to avoid that if possible.\nNow we want to insert a jumper wire from pin 4 into ground.\nNow we're ready to connect our speakers.\nSo grab the positive wire of your speaker and insert it into that negative side of your\n1000uF capacitor.\nAnd then take the negative wire and insert that anywhere into the ground rail.\nNow that we have that we're ready for the input.\nNow take either the left or right channel and wire it up to the remaining pin of your\nvolume potentiometer.\nAnd then take the ground wire and connect it anywhere into the ground rail.\nNow we're ready to test it out.\nSo I'll connect up my iPhone.\nAnd you can hear it's got a lot better sound than that first circuit we built.\nPlus we have a gain control and a volume control.\nI still have some distortion but we can balance it out with the gain and the volume.\nSo I'll connect it to the bottom rail.\nNow let's add some bass control.\nI have another little mini breadboard over here with a 10k potentiometer inserted.\nSo you want to connect a jumper wire from pin 1 of the LM386 up to an outer pin of the potentiometer.\nNow take the middle pin of the potentiometer and bring it down to another rail of the breadboard.\nAnd insert a 0.033 microfarad capacitor from the end of that connection down to another rail\nof the breadboard.\nAnd then connect the other end of that capacitor over to pin 5 of the LM386.\nSo I'll connect the other end of that capacitor.\nAnd then connect the other end of that capacitor.\nSo I'll connect the other end of that capacitor.\nSo I'll connect the other end of that capacitor.\nSo I will connect the other end of that capacitor.\nSo I'll connect the other end of that capacitor.\nReally?\nThank you.\nThank you.\nThank you.\nThank you.\nWell, that's about it.\nI hope you enjoyed that.\nDon't forget to subscribe to keep updated on more videos coming out soon.\nDefinitely going to be doing some more of these audio circuits.\nMight try a distortion, maybe like a tube amplifier sometime in the future.\nSo keep updated with that.\nAnd have a good day.\nBye-bye.\nBye-bye.\nBye-bye.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Adding Bass Control",
+      "description": "Adding bass control to the circuit",
+      "coverage_ranges": [
+        {
+          "start_idx": 147,
+          "end_idx": 147
+        }
+      ],
+      "coverage_segments": [
+        147
+      ],
+      "coverage_times": [
+        {
+          "start_s": 978.68,
+          "end_s": 979.76
+        }
+      ],
+      "coverage_text": "Bye-bye.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Conclusion and Future Plans",
+      "description": "Conclusion of the video and future plans for more audio circuits",
+      "coverage_ranges": [
+        {
+          "start_idx": 147,
+          "end_idx": 147
+        }
+      ],
+      "coverage_segments": [
+        147
+      ],
+      "coverage_times": [
+        {
+          "start_s": 978.68,
+          "end_s": 979.76
+        }
+      ],
+      "coverage_text": "Bye-bye.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the high-level table of contents for the video:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"Introduction to the audio circuit\",\n    \"coverage\": [{\"start_idx\": 0, \"end_idx\": 5}]\n  },\n  {\n    \"title\": \"Building the First Circuit\",\n    \"description\": \"Building the first simple audio circuit\",\n    \"coverage\": [{\"start_idx\": 6, \"end_idx\": 99}]\n  },\n  {\n    \"title\": \"Adding a Gain Control and Volume Control\",\n    \"description\": \"Adding gain control and volume control to the circuit\",\n    \"coverage\": [{\"start_idx\": 100, \"end_idx\": 173}]\n  },\n  {\n    \"title\": \"Adding Bass Control\",\n    \"description\": \"Adding bass control to the circuit\",\n    \"coverage\": [{\"start_idx\": 174, \"end_idx\": 243}]\n  },\n  {\n    \"title\": \"Conclusion and Future Plans\",\n    \"description\": \"Conclusion of the video and future plans for more audio circuits\",\n    \"coverage\": [{\"start_idx\": 244, \"end_idx\": 253}]\n  }\n]\n```"
+    ]
+  }
+}

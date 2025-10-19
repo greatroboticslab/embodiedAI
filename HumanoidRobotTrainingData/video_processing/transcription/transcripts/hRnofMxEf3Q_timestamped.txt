@@ -1,0 +1,346 @@
+hRnofMxEf3Q
+https://www.youtube.com/watch?v=hRnofMxEf3Q
+Unknown Category
+
+[00:00:00.000 → 00:00:02.800] Ah, the inverted pendulum.
+[00:00:02.800 → 00:00:09.400] Getting one of these to work is a little bit of a rite of passage if you're studying engineering or more specifically control theory.
+[00:00:09.400 → 00:00:11.800] The concept is fairly straightforward.
+[00:00:11.800 → 00:00:17.100] We have a weight or in this case a simple metal rod that can move freely about an axis.
+[00:00:17.100 → 00:00:23.800] And as you can see here, once the program stopped, it just freely fell over because it's in an unstable position when it's upright.
+[00:00:23.800 → 00:00:35.200] But our job is to create a controller that takes in encoder values that is the angle in which this rod is pointing and then controls the stepper motor so that it stays upright.
+[00:00:35.200 → 00:00:38.400] We won't try to do the swing up where it gets it into that position.
+[00:00:38.400 → 00:00:41.900] We'll just assume that it starts in the upright position in our controller.
+[00:00:41.900 → 00:00:43.600] We'll need to keep it there.
+[00:00:43.600 → 00:00:48.200] The Arduino in this case is just going to act as an interface for us.
+[00:00:48.200 → 00:00:53.400] It's going to read in values from the encoder and then send commands to control the stepper motor.
+[00:00:53.400 → 00:01:01.200] All of our coding will be done in Python for the controller so that we can make pretty graphs and it will help us tune the controller more easily.
+[00:01:01.200 → 00:01:03.800] So with that in mind, let's get started.
+[00:01:09.900 → 00:01:18.700] A PID controller is an instrument device or code that uses feedback from a sensor to regulate a process or system.
+[00:01:18.700 → 00:01:29.500] PID stands for proportional integral derivative, which describes how the feedback information is used to create a control signal for the process.
+[00:01:29.500 → 00:01:36.700] If you would like to dive more into the theory behind PID controllers, I highly recommend checking out my previous video.
+[00:01:36.700 → 00:01:45.700] In our system, we want our pendulum to sit upright, which we're going to call 180 degrees, and we'll use a PID controller to make that happen.
+[00:01:45.700 → 00:01:55.700] The input to the controller is the error term, which is the difference between our desired set point and the actual sensor value or feedback.
+[00:01:55.700 → 00:02:01.700] The output of the controller is used as the input signal to our process or plant.
+[00:02:01.700 → 00:02:06.700] In this case, it will be how many degrees we want to move our stepper motor by.
+[00:02:06.700 → 00:02:10.700] The process gives us some kind of value to measure.
+[00:02:10.700 → 00:02:17.700] In this case, it is an encoder angle, which is used in the feedback loop to compute the error term.
+[00:02:17.700 → 00:02:21.700] In some cases, we can mathematically model the process.
+[00:02:21.700 → 00:02:26.700] Many inverted pendulums can be modeled if you know the weight, size and so on.
+[00:02:26.700 → 00:02:34.700] However, in many real world situations, it is very difficult or impossible to model the system we want to control.
+[00:02:34.700 → 00:02:38.700] So we turn to manual tuning methods for our controller.
+[00:02:38.700 → 00:02:42.700] While there are several tuning methods, we'll stick with the most basic.
+[00:02:42.700 → 00:02:51.700] First, we'll set the integral and derivative constants to zero and guess at some value for the proportional constant.
+[00:02:51.700 → 00:02:56.700] With a Kp too low, we won't get anywhere near our set point.
+[00:02:56.700 → 00:03:03.700] We then adjust it so that our output gets close to the set point with maybe some oscillations.
+[00:03:03.700 → 00:03:10.700] From there, we tune Ki so that we oscillate around the set point without causing the system to become unstable.
+[00:03:10.700 → 00:03:14.700] In many cases, a Pi controller is enough.
+[00:03:14.700 → 00:03:20.700] However, we can often tune the Kd term to remove some of that overshoot.
+[00:03:20.700 → 00:03:25.700] With Kp, Ki, and Kd set, we have a fully tuned system.
+[00:03:25.700 → 00:03:30.700] Here, the output quickly approaches the set point without overshooting.
+[00:03:30.700 → 00:03:32.700] We'll run some code on the Arduino.
+[00:03:32.700 → 00:03:36.700] Remember that the Arduino is simply acting as an interface for us.
+[00:03:36.700 → 00:03:39.700] It's not doing any of the actual control code for us.
+[00:03:39.700 → 00:03:46.700] It's going to read in values from the encoder and send out information necessary to control the stepper motor.
+[00:03:46.700 → 00:03:52.700] If we scroll down to the top here of our code, we are using the L6474.
+[00:03:52.700 → 00:03:55.700] That's an STMicroelectronics code.
+[00:03:55.700 → 00:03:59.700] That's a library for our Arduino that allows us to control the stepper motor.
+[00:03:59.700 → 00:04:05.700] We're also using a library called rotary encoder that just gives us angle information from that coder.
+[00:04:05.700 → 00:04:10.700] If we click over to the control comms interface file, scroll down a little bit.
+[00:04:10.700 → 00:04:15.700] You can see we have an object here control comms and there should be two basic functions.
+[00:04:15.700 → 00:04:18.700] Well, we have our constructor and our unit.
+[00:04:18.700 → 00:04:24.700] We also have send observation, which sends information back to the PC.
+[00:04:24.700 → 00:04:28.700] In our case, it's just the angle of the encoder as well as the angle of the stepper motor.
+[00:04:28.700 → 00:04:30.700] In addition, we have receive action.
+[00:04:30.700 → 00:04:34.700] This just waits for an action to come from the PC that says what to do.
+[00:04:34.700 → 00:04:46.700] We're going to put in this our angle that we want to move the stepper motor by, say, for example, move by three degrees or negative three degrees in the opposite direction.
+[00:04:46.700 → 00:04:53.700] So if we go to our main interface program here, scroll down to where we see setup, we configure everything.
+[00:04:53.700 → 00:05:00.700] And then in loop, we simply wait for those actions to show up for us from the PC side.
+[00:05:00.700 → 00:05:05.700] We move the stepper as requested, say, by a certain number of degrees.
+[00:05:05.700 → 00:05:08.700] We get the encoder and stepper angles.
+[00:05:08.700 → 00:05:14.700] We put those into an array and then we send that observation back to the PC.
+[00:05:14.700 → 00:05:22.700] And that is our entire loop and how we're going to control our inverted pendulum on the Python or the PC side of things.
+[00:05:22.700 → 00:05:24.700] We have our control comms interface.
+[00:05:24.700 → 00:05:29.700] This is the PC version of that control comms HPP file that we looked at.
+[00:05:29.700 → 00:05:32.700] In this case, we have a similar object called control comms.
+[00:05:32.700 → 00:05:37.700] We can get a list of serial ports, which helps us figure out what we need to connect to.
+[00:05:37.700 → 00:05:42.700] We can connect to our serial port, which opens up a connection to the Arduino board.
+[00:05:42.700 → 00:05:45.700] We can close that connection.
+[00:05:45.700 → 00:05:50.700] And then the important thing here is this step function for us.
+[00:05:50.700 → 00:06:01.700] We give it an action and some sort of command, say, move by or move to or reset, which says to make whatever position the stepper motor is in home.
+[00:06:01.700 → 00:06:03.700] That information gets sent to the Arduino.
+[00:06:03.700 → 00:06:09.700] The Arduino performs that action and then returns an observation to us, which is a status.
+[00:06:09.700 → 00:06:13.700] In this case, it's just some user defined code that we're not going to use very much.
+[00:06:13.700 → 00:06:19.700] A timestamp, which is useful to see how long it takes to compute some things, whether it's terminated.
+[00:06:19.700 → 00:06:20.700] Once again, we're not really using that here.
+[00:06:20.700 → 00:06:21.700] And an observation.
+[00:06:21.700 → 00:06:26.700] In this case, it's going to be the angle of the encoder and the angle of the stepper motor.
+[00:06:26.700 → 00:06:31.700] You can see that code here where we send out the command along with the action.
+[00:06:31.700 → 00:06:32.700] We wait for a response.
+[00:06:32.700 → 00:06:37.700] We decode that in JSON format and then we return with those results.
+[00:06:37.700 → 00:06:41.700] Here's the status timestamp terminated and our observation array.
+[00:06:41.700 → 00:06:44.700] And this is just for testing down here.
+[00:06:44.700 → 00:06:47.700] Now let's look at the actual PID controller code.
+[00:06:47.700 → 00:06:49.700] This is the part we care about.
+[00:06:49.700 → 00:07:02.700] I'm going to execute these cells, but I won't get into the code very much because I want to spend more time on tuning the controller where we fiddle with the constants in order to make the inverted pendulum work.
+[00:07:02.700 → 00:07:05.700] So from the top here, we're just going to import some libraries.
+[00:07:05.700 → 00:07:06.700] We're going to set our constants.
+[00:07:06.700 → 00:07:09.700] In this case, my Arduino is connected to com six.
+[00:07:09.700 → 00:07:19.700] I'm using a baud rate of 500 K and I have assigned a timeout of one second in case something doesn't work where I can't communicate with that Arduino board.
+[00:07:19.700 → 00:07:26.700] I also set my debug level here so that I can get some information from my control comms Python library that I've created.
+[00:07:26.700 → 00:07:32.700] We've got some communication constants that we will be using.
+[00:07:32.700 → 00:07:36.700] In this case, we're going to be using stepper mode eight, which is eight divisions per step.
+[00:07:36.700 → 00:07:43.700] And we have some commands we can send out, such as setting home, move to move by and setting our stepper mode.
+[00:07:43.700 → 00:07:45.700] I'm going to close that connection to the Arduino.
+[00:07:45.700 → 00:07:46.700] That's just a safety thing.
+[00:07:46.700 → 00:07:50.700] Make sure it is actually closed and then I'm going to reopen that connection.
+[00:07:50.700 → 00:07:53.700] So now I can talk to the Arduino board.
+[00:07:53.700 → 00:08:01.700] First, I'm going to test the control to make sure that it actually moves.
+[00:08:01.700 → 00:08:13.700] The idea here is that the stepper motor should be able to move fast enough such that it can recover from a, say, plus or minus 10 degree offset from being vertical.
+[00:08:13.700 → 00:08:20.700] If we go back to our Arduino code here, you can see the configuration that I set up for the stepper motor.
+[00:08:20.700 → 00:08:29.700] I'm using the ST microelectronics L6474 library, and I've set the acceleration to very high.
+[00:08:29.700 → 00:08:32.700] It should get up to max speed very quickly.
+[00:08:32.700 → 00:08:37.700] I've set the maximum speed to 5000, which is about half of their maximum.
+[00:08:37.700 → 00:08:49.700] That seems to be a good compromise between giving me a very high speed that it can correct for a 10 degree offset from vertical while not being very jittery in its motion.
+[00:08:49.700 → 00:08:50.700] So you want to find that balance.
+[00:08:50.700 → 00:08:54.700] So I played with these parameters to find a good balance.
+[00:08:54.700 → 00:08:56.700] Note that this can take some time.
+[00:08:56.700 → 00:09:03.700] And I was just doing this by feel before moving on and tuning the PID controller.
+[00:09:03.700 → 00:09:09.700] Once we verified that this control works, it's time to tune the controller.
+[00:09:09.700 → 00:09:12.700] Here I've set up my K constants.
+[00:09:12.700 → 00:09:13.700] Here's PID.
+[00:09:13.700 → 00:09:19.700] Sometimes you will need a bias, which we just add to our output of the controller.
+[00:09:19.700 → 00:09:24.700] In many cases, a P controller is fine and you just need a simple bias and this will do it.
+[00:09:24.700 → 00:09:28.700] Sometimes you'll find that even with PID, there's a little bit of an offset.
+[00:09:28.700 → 00:09:30.700] So you add a bias term.
+[00:09:30.700 → 00:09:34.700] We may not need that for this particular project, but just keep that in mind.
+[00:09:34.700 → 00:09:38.700] There are other constants that you should keep in mind.
+[00:09:38.700 → 00:09:40.700] Our set point is 180.
+[00:09:40.700 → 00:09:41.700] That's 180 degrees.
+[00:09:41.700 → 00:09:43.700] That's the rod facing up.
+[00:09:43.700 → 00:09:47.700] We're going to run this for, let's say, 5000 steps.
+[00:09:47.700 → 00:09:50.700] That's a good indication of whether this is working or not.
+[00:09:50.700 → 00:09:53.700] We have guard degrees here.
+[00:09:53.700 → 00:09:56.700] So we want the rod at 180 degrees.
+[00:09:56.700 → 00:10:03.700] At 160 degrees or 200 degrees, we assume that the rod has fell over far enough and it's a lost cause.
+[00:10:03.700 → 00:10:08.700] And the program or in this case, this particular cell will just stop.
+[00:10:08.700 → 00:10:11.700] We're going to do eight divisions per step.
+[00:10:11.700 → 00:10:20.700] That seems to be, once again, a good balance between having the stepper motor move quickly while still giving us enough control without having a lot of jitter.
+[00:10:20.700 → 00:10:25.700] We're going to store the metrics so that we can plot them later.
+[00:10:25.700 → 00:10:30.700] The first thing we're going to do is set the stepper mode to those eight divisions per step.
+[00:10:30.700 → 00:10:34.700] And then we're going to set home wherever the stepper motor is facing.
+[00:10:34.700 → 00:10:36.700] We're going to call that zero degrees.
+[00:10:36.700 → 00:10:39.700] We're going to send that out and get our first time step.
+[00:10:39.700 → 00:10:42.700] Then we'll try to keep the pendulum in the upright position.
+[00:10:42.700 → 00:10:44.700] This is the actual PID controller.
+[00:10:44.700 → 00:10:47.700] We'll first take a step and get that observation.
+[00:10:47.700 → 00:10:51.700] So we take a step by telling the stepper motor to move by some amount.
+[00:10:51.700 → 00:10:56.700] This move degree starts off as zero and that's what gets updated as the output of our controller.
+[00:10:56.700 → 00:11:05.700] When we get our response, we're going to unpack that response to get status, time step terminated and our observation, which is an array.
+[00:11:05.700 → 00:11:07.700] We unpack that array here.
+[00:11:07.700 → 00:11:12.700] The first element of that array is the encoder degrees, and that's what we really care about.
+[00:11:12.700 → 00:11:14.700] The second is our stepper degrees.
+[00:11:14.700 → 00:11:27.700] Note that you could create a dual PID controller here, whether that's an inner and outer or side by side controllers, where you can then try to keep your stepper motor in the same spot rather than rotating.
+[00:11:27.700 → 00:11:32.700] But instead of doing two controllers, we're going to keep it very simple and just do our one controller.
+[00:11:32.700 → 00:11:34.700] Consider that a challenge for you.
+[00:11:34.700 → 00:11:42.700] If you want to take this further, try to keep the stepper motor in more or less one position rather than having it spin around that axis.
+[00:11:42.700 → 00:11:49.700] We're going to calculate the time between this step and the previous to get our interval, which we need in some of our calculations.
+[00:11:49.700 → 00:11:55.700] And then we're going to record the previous time step so that we can use it on the next iteration of this loop.
+[00:11:55.700 → 00:11:57.700] Then we're going to calculate our PID terms.
+[00:11:57.700 → 00:12:05.700] We'll first find the error, which is the difference between our set point and the current encoder degrees, which we got from the observation.
+[00:12:05.700 → 00:12:13.700] This error term is going to be used in our proportional calculations where we just multiply it by K P.
+[00:12:13.700 → 00:12:19.700] Next up, we get the integral term, which takes the integral term from last time.
+[00:12:19.700 → 00:12:25.700] This starts at zero and we accumulate that value with the error times our interval.
+[00:12:25.700 → 00:12:33.700] From there, we get our derivative term, which is the previous error subtracted from the current error and divided by our time interval.
+[00:12:33.700 → 00:12:40.700] We then sum all of these terms up after we've multiplied them individually by their K constant.
+[00:12:40.700 → 00:12:46.700] So integral gets multiplied by K I, derivative gets multiplied by K D.
+[00:12:46.700 → 00:12:50.700] And as we saw earlier, error gets multiplied by K P or the proportional term.
+[00:12:50.700 → 00:12:52.700] We also add this bias term.
+[00:12:52.700 → 00:12:55.700] I would leave this at zero unless you absolutely need it.
+[00:12:55.700 → 00:12:57.700] Try to solve everything else and get that working.
+[00:12:57.700 → 00:13:00.700] If you still need that bias term, go ahead and add it.
+[00:13:00.700 → 00:13:04.700] Finally, we save the error term for the next iteration.
+[00:13:04.700 → 00:13:08.700] So we have that previous ready to go for our derivative calculation.
+[00:13:08.700 → 00:13:12.700] Next, we're going to store these metrics in arrays so that we can plot them.
+[00:13:12.700 → 00:13:18.700] And we're going to check if the encoder goes past one of our set guard angles.
+[00:13:18.700 → 00:13:23.700] So if it's less than 160 or greater than what was it 200, I think.
+[00:13:23.700 → 00:13:24.700] Yeah, 200.
+[00:13:24.700 → 00:13:28.700] It's just going to stop the whole episode and break out of this loop.
+[00:13:28.700 → 00:13:33.700] Finally, we're going to use matplotlib to plot a whole bunch of stuff for us.
+[00:13:33.700 → 00:13:36.700] And we will take a look at that when we tune our controller.
+[00:13:36.700 → 00:13:40.700] Before we tune, I'd like to show you where you can go to get this code.
+[00:13:40.700 → 00:13:46.700] Head to github.com slash Sean email slash pendulum dash PID.
+[00:13:46.700 → 00:13:49.700] All of the code that I'm showing you is in here.
+[00:13:49.700 → 00:13:57.700] If you would like to try out your own version of this PID controller to control the inverted pendulum kit from ST micro electronics.
+[00:13:57.700 → 00:14:01.700] Now, let's get to tuning our actual controller.
+[00:14:01.700 → 00:14:11.700] As I mentioned earlier, the first thing we want to do is make sure that our stepper motor can recover from about plus or minus 10 degrees.
+[00:14:11.700 → 00:14:18.700] So when I run this cell here, I'm going to offset this by about five or six degrees.
+[00:14:18.700 → 00:14:21.700] See, oops, wrong way.
+[00:14:21.700 → 00:14:22.700] Let's try that again.
+[00:14:22.700 → 00:14:25.700] So it's moving at negative 90.
+[00:14:25.700 → 00:14:26.700] So I'm going to hold it about here.
+[00:14:26.700 → 00:14:28.700] Yes, it goes the other way.
+[00:14:28.700 → 00:14:34.700] So that means the stepper motor is capable of correcting from that amount.
+[00:14:34.700 → 00:14:35.700] Now let's get to tuning.
+[00:14:35.700 → 00:14:41.700] I'm going to start off with one for the proportional and zero for the others.
+[00:14:41.700 → 00:14:46.700] I'm just going to guess at one and let's see where that gets us.
+[00:14:46.700 → 00:14:51.700] So I'm just going to hold this here and say go.
+[00:14:51.700 → 00:14:52.700] Okay.
+[00:14:52.700 → 00:14:57.700] So it looks like it's jittering a lot and then it's struggling to keep up at the.
+[00:14:57.700 → 00:14:58.700] And there.
+[00:14:58.700 → 00:15:00.700] Let's take a look at our output.
+[00:15:00.700 → 00:15:09.700] Sure enough, there's a lot of oscillations, which means that our value for KP is a little too high.
+[00:15:09.700 → 00:15:10.700] Let's try adjusting it.
+[00:15:10.700 → 00:15:12.700] So we're going to go up here.
+[00:15:12.700 → 00:15:18.700] Let's move it to 0.1 and let's try again.
+[00:15:18.700 → 00:15:19.700] Okay.
+[00:15:19.700 → 00:15:28.700] So there weren't as many oscillations there, but you could see it struggling to keep up.
+[00:15:28.700 → 00:15:33.700] And if we look at our plot, sure enough, it never quite reaches our set point and it just
+[00:15:33.700 → 00:15:35.700] kind of struggles to keep up.
+[00:15:35.700 → 00:15:39.700] That means KP is too low.
+[00:15:39.700 → 00:15:43.700] Let's try 0.5 about halfway in between.
+[00:15:43.700 → 00:15:47.700] We'll run this again.
+[00:15:47.700 → 00:15:48.700] Okay.
+[00:15:48.700 → 00:15:49.700] Not bad.
+[00:15:49.700 → 00:15:51.700] There's some oscillations.
+[00:15:51.700 → 00:15:53.700] And in fact, I want to run this again.
+[00:15:53.700 → 00:15:56.700] Be prepared to run some of these cells multiple times.
+[00:15:56.700 → 00:15:57.700] Okay.
+[00:15:57.700 → 00:16:00.700] Still some oscillations.
+[00:16:00.700 → 00:16:04.700] It's oscillating around that 180 point.
+[00:16:04.700 → 00:16:06.700] So it means it's a little too high.
+[00:16:06.700 → 00:16:10.700] Still let's bring it down just a notch.
+[00:16:10.700 → 00:16:12.700] We're going to take it to 0.3.
+[00:16:12.700 → 00:16:13.700] Let's see what happens.
+[00:16:13.700 → 00:16:18.700] Oh, that's really good.
+[00:16:18.700 → 00:16:21.700] That keeps it for a while.
+[00:16:21.700 → 00:16:26.700] Not much on the oscillations and it's just struggling to keep up.
+[00:16:26.700 → 00:16:28.700] This is what we want.
+[00:16:28.700 → 00:16:30.700] We want the integral term to make up this difference.
+[00:16:30.700 → 00:16:36.700] This is that steady state offset between where the set point is and where it's trying
+[00:16:36.700 → 00:16:39.700] to get to or as best as it can get.
+[00:16:39.700 → 00:16:45.700] So we're going to keep it at 0.3 and see if we can get to KI, our integral term, to make
+[00:16:45.700 → 00:16:47.700] up that difference.
+[00:16:47.700 → 00:16:50.700] I'm going to guess at 0.1.
+[00:16:50.700 → 00:16:52.700] It usually starts much lower than KP.
+[00:16:52.700 → 00:16:55.700] So let's try that and see what happens.
+[00:16:55.700 → 00:16:59.700] Oh, what just happened there?
+[00:16:59.700 → 00:17:02.700] Let's try that again.
+[00:17:02.700 → 00:17:07.700] Oh, it's oscillating badly and then it whips around.
+[00:17:07.700 → 00:17:10.700] Let's go take a look at our plot.
+[00:17:10.700 → 00:17:13.700] And here we go.
+[00:17:13.700 → 00:17:14.700] Sure enough, it's unstable.
+[00:17:14.700 → 00:17:19.700] You can see it bouncing back and forth and getting larger and larger before it loses control.
+[00:17:19.700 → 00:17:20.700] That's unstable.
+[00:17:20.700 → 00:17:27.700] That means that KI is definitely too large.
+[00:17:27.700 → 00:17:29.700] Let's move exponentially here.
+[00:17:29.700 → 00:17:39.700] So rather than say having this, let's go to 0.01 and see what happens.
+[00:17:39.700 → 00:17:40.700] Oh wow.
+[00:17:40.700 → 00:17:41.700] That's really good.
+[00:17:41.700 → 00:17:42.700] Actually.
+[00:17:42.700 → 00:17:46.700] That's almost where we want it.
+[00:17:46.700 → 00:17:50.700] Still look like it's oscillating some.
+[00:17:50.700 → 00:17:52.700] So let's stop that.
+[00:17:52.700 → 00:17:54.700] Go take a look at our code.
+[00:17:54.700 → 00:17:56.700] Yeah, there's still some oscillations here.
+[00:17:56.700 → 00:18:00.700] I don't see it hitting up too high in the beginning and then it's oscillating a bit.
+[00:18:00.700 → 00:18:04.700] Let's see if we can bring that down just a little bit.
+[00:18:04.700 → 00:18:09.700] And in fact, let's go probably too low and see what happens.
+[00:18:09.700 → 00:18:10.700] Start it here.
+[00:18:10.700 → 00:18:20.700] That's not bad at all.
+[00:18:20.700 → 00:18:23.700] Oh, it's losing it here.
+[00:18:23.700 → 00:18:24.700] Okay.
+[00:18:24.700 → 00:18:36.700] So something between 0.01, excuse me, 0.001 and 0.1 looks to be ideal.
+[00:18:36.700 → 00:18:43.700] So let's say 0.005 for the sake of argument and try that.
+[00:18:43.700 → 00:18:44.700] Oh, that's yes.
+[00:18:44.700 → 00:18:46.700] This is what we're looking for.
+[00:18:46.700 → 00:18:52.700] It's barely moving and it's keeping it upright and I can touch it and it corrects.
+[00:18:52.700 → 00:18:54.700] And let's see if it recovers from that.
+[00:18:54.700 → 00:18:58.700] Oh, I got to touch the other way before that gets too wound up around that axle.
+[00:18:58.700 → 00:19:00.700] And then it goes the other way.
+[00:19:00.700 → 00:19:04.700] So there's some larger level oscillations going on in here, but this should be okay.
+[00:19:04.700 → 00:19:06.700] Let's scroll up.
+[00:19:06.700 → 00:19:09.700] Yeah, 0.005 seems to be really good.
+[00:19:09.700 → 00:19:21.700] Now we can take some time and really tune these, but I think with a KP of 0.3 and a KI of 0.005, gonna be good enough for now and our demonstration.
+[00:19:21.700 → 00:19:25.700] As you can see, this PI controller pretty much does the job for us.
+[00:19:25.700 → 00:19:32.700] We probably don't even need a derivative term in here, but let's just play with it and see what happens.
+[00:19:32.700 → 00:19:35.700] We started with zero, which is a good place to start.
+[00:19:35.700 → 00:19:39.700] I'm gonna guess 0.1 just to see what happens.
+[00:19:39.700 → 00:19:43.700] Once again, this is usually lower than the KP term.
+[00:19:43.700 → 00:19:44.700] So let's try this.
+[00:19:44.700 → 00:19:50.700] This is actually not too bad.
+[00:19:50.700 → 00:19:51.700] Okay.
+[00:19:51.700 → 00:19:56.700] Let's take this down.
+[00:19:56.700 → 00:20:11.700] And take a look at our graph here.
+[00:20:11.700 → 00:20:13.700] It's looking pretty good.
+[00:20:13.700 → 00:20:19.700] And just for argument, what if we take it to 0.5?
+[00:20:19.700 → 00:20:20.700] What happens?
+[00:20:20.700 → 00:20:25.700] This thing's still a beast.
+[00:20:25.700 → 00:20:27.700] It's still going.
+[00:20:27.700 → 00:20:30.700] Looks like it's a little unstable.
+[00:20:30.700 → 00:20:37.700] We're getting some of those oscillations, which is probably fine for this.
+[00:20:37.700 → 00:20:38.700] Okay.
+[00:20:38.700 → 00:20:39.700] That's fine.
+[00:20:41.700 → 00:20:47.700] And just so you can see what happens when we really crank this up, let's take it to five and really try to make this too high.
+[00:20:48.700 → 00:20:49.700] Yeah, there we go.
+[00:20:49.700 → 00:20:52.700] We're getting too many of the oscillations and it's pretty unstable.
+[00:20:52.700 → 00:20:53.700] It can't control it.
+[00:20:53.700 → 00:20:59.700] So that means we are suppressing KI and KP a little too much.
+[00:20:59.700 → 00:21:03.700] And sure enough, you can see it with this encoder angle.
+[00:21:03.700 → 00:21:04.700] It's struggling here.
+[00:21:04.700 → 00:21:05.700] Okay.
+[00:21:05.700 → 00:21:08.700] So we know we got to be less than five.
+[00:21:09.700 → 00:21:15.700] And what happens if we take it really low like point zero zero one?
+[00:21:20.700 → 00:21:21.700] Once again, it's pretty good.
+[00:21:21.700 → 00:21:23.700] We can't really go too low with this.
+[00:21:23.700 → 00:21:25.700] I'm going to stop it there.
+[00:21:25.700 → 00:21:26.700] We can't really go too low.
+[00:21:26.700 → 00:21:27.700] We can't really go too low.
+[00:21:27.700 → 00:21:32.700] All we're trying to do is suppress this peak here or any of the peaks where it overshoots our set point.
+[00:21:33.700 → 00:21:38.700] And in this particular system, an inverted pendulum, we don't mind a little bit of overshoot.
+[00:21:38.700 → 00:21:41.700] Sometimes you can't have this overshoot.
+[00:21:41.700 → 00:21:44.700] So you need KD to suppress that.
+[00:21:44.700 → 00:21:54.700] But for our system, it looks like anything between like zero and one is probably fine for your KD.
+[00:21:54.700 → 00:21:58.700] So I'm going to maybe make it a little higher.
+[00:21:58.700 → 00:22:04.700] I'm going to make it a little higher as we saw with one is not too bad.
+[00:22:04.700 → 00:22:05.700] Five was too high.
+[00:22:05.700 → 00:22:07.700] Let's see what happens with one.
+[00:22:07.700 → 00:22:12.700] Yeah, that's pretty good.
+[00:22:12.700 → 00:22:14.700] There's still a little bit of jitter happening here.
+[00:22:14.700 → 00:22:18.700] But once again, I don't think that's because of the KD term.
+[00:22:20.700 → 00:22:21.700] Yeah, this is really good.
+[00:22:21.700 → 00:22:22.700] It's moving back and forth.
+[00:22:22.700 → 00:22:26.700] It's accomplishing its purpose of keeping the pendulum upright.
+[00:22:26.700 → 00:22:35.700] And from that, I think we can safely assume we have a fully tuned PID controller for our inverted pendulum.
+[00:22:35.700 → 00:22:42.700] If we go and look at our plots, you can see the encoder angle stayed pretty static the whole time.
+[00:22:42.700 → 00:22:49.700] There's a little bit of an overshoot by about two and a half degrees on that first one, but it's really not bad.
+[00:22:49.700 → 00:22:54.700] And you can see the stepper slowly oscillating back and forth.
+[00:22:54.700 → 00:23:01.700] That's something that can be corrected with a dual or nested PID controller, but not something we're going to get into right now.
+[00:23:01.700 → 00:23:06.700] Just so you see what happens, we're going to leave bias at zero.
+[00:23:06.700 → 00:23:08.700] It actually works very well.
+[00:23:08.700 → 00:23:11.700] Let's try 10 for the bias term and see what happens.
+[00:23:11.700 → 00:23:12.700] So I'm going to.
+[00:23:12.700 → 00:23:13.700] Yeah, exactly.
+[00:23:13.700 → 00:23:14.700] Nothing.
+[00:23:14.700 → 00:23:15.700] It's trying to overcorrect for something.
+[00:23:15.700 → 00:23:17.700] That's not even a problem.
+[00:23:17.700 → 00:23:20.700] We might be able to bring this down.
+[00:23:22.700 → 00:23:23.700] Let's say five.
+[00:23:23.700 → 00:23:24.700] Okay.
+[00:23:24.700 → 00:23:25.700] It's still working.
+[00:23:25.700 → 00:23:27.700] It's not particularly great.
+[00:23:27.700 → 00:23:30.700] As you saw, there's no real need for this bias term in this.
+[00:23:30.700 → 00:23:34.700] So I'm just going to leave this at zero.
+[00:23:34.700 → 00:23:40.700] Let's put this bias term back at zero and we're going to call this pretty tuned for our needs.
+[00:23:40.700 → 00:23:44.700] As you can see, it works pretty much most of the time.
+[00:23:44.700 → 00:23:47.700] It will move back and forth a little bit.
+[00:23:47.700 → 00:23:50.700] And that's something that could be corrected with additional control schemes.
+[00:23:50.700 → 00:23:53.700] But for now, I'm going to call this good enough.
+[00:23:53.700 → 00:23:57.700] I think we can say we have a fully tuned system.
+[00:23:57.700 → 00:24:01.700] There's obviously some other tweaks, but let's go with that for now.
+[00:24:03.700 → 00:24:12.700] I hope this helps you get started creating your own PID controllers and then tuning them for things like inverted pendulums or self-balancing robots.
+[00:24:12.700 → 00:24:20.700] Obviously there are more complex control schemes out there, such as linear quadratic regulators and model predictive control.
+[00:24:20.700 → 00:24:24.700] But PID controllers are a great introduction into control theory.
+[00:24:24.700 → 00:24:27.700] If this is something you would like to tinker with.
+[00:24:27.700 → 00:24:29.700] Good luck and happy hacking.
+[00:24:29.700 → 00:24:31.700] Beep!
+[00:24:31.700 → 00:24:32.700] Boop!

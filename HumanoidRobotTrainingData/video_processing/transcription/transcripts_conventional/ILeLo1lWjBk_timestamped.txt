@@ -1,0 +1,465 @@
+ILeLo1lWjBk
+https://www.youtube.com/watch?v=ILeLo1lWjBk
+Unknown Category
+
+[00:00:00.000 → 00:00:03.440] This video is sponsored by Brilliant.org. More about them later.
+[00:00:04.200 → 00:00:08.400] Hi there everyone. Today we're going to be talking about Betaflight's angle mode.
+[00:00:09.040 → 00:00:15.160] And for those of you that fly both acro and angle mode, you'll know that Betaflight's acro mode is
+[00:00:15.160 → 00:00:21.100] fantastic. It's a joy to fly. It's very responsive, it's very precise, and it's very stable in the
+[00:00:21.100 → 00:00:28.060] air. And you might also know that Betaflight's angle mode is kind of none of those things.
+[00:00:28.060 → 00:00:33.940] It's pretty wobbly, it's kind of imprecise, and it's very slow in comparison to acro mode.
+[00:00:34.780 → 00:00:39.020] I noticed this while I was flying Tiny Whoops over Christmas, and I decided to put some time
+[00:00:39.020 → 00:00:44.120] into figuring out what was going on with Betaflight's angle mode. And I think I've worked it out,
+[00:00:44.200 → 00:00:48.480] and I'm excited to share that with you today. So in this video, we're going to be looking at
+[00:00:48.480 → 00:00:54.140] the problems with angle mode that Betaflight has currently, and some of the solutions that we can
+[00:00:54.140 → 00:00:58.660] implement to fix it. And at the end of the video, I'm going to be showing you how you can test those
+[00:00:58.660 → 00:01:05.180] fixes for yourself, and enjoy a sneak peek of what Betaflight angle mode might be like in the future.
+[00:01:05.900 → 00:01:09.880] It's a lot to cover in one video, so let's not waste any more time. Let's dive right into it.
+[00:01:10.480 → 00:01:15.080] If you fly Betaflight angle mode, I'd love to know how you think it compares to acro mode
+[00:01:15.080 → 00:01:19.400] and other firmwares like silverware. Please let me know what you think down in the comments.
+[00:01:19.400 → 00:01:25.560] The first problem I noticed was one of speed and responsiveness in angle mode compared to acro.
+[00:01:25.920 → 00:01:29.160] Let me show you some flight footage so you can see exactly what I mean.
+[00:01:29.940 → 00:01:34.900] To make the comparison, let's start by looking at some sharp stick inputs in acro mode.
+[00:01:35.520 → 00:01:39.480] And this is showing what Betaflight is capable of in terms of responsiveness.
+[00:01:40.000 → 00:01:45.140] You can see that the quad is snapping left and right instantly in response to my stick inputs,
+[00:01:45.340 → 00:01:48.980] and it's very precise as well. It's stopping dead at the end of each of the movements.
+[00:01:50.020 → 00:01:54.300] If I switch to angle mode now, you can see that the character is totally different.
+[00:01:54.800 → 00:02:00.120] The quad is much slower and much softer to respond, and a lot less precise.
+[00:02:00.960 → 00:02:05.920] Each of the moves takes a lot longer, and I'm moving the sticks just as fast on the radio,
+[00:02:06.340 → 00:02:09.200] it's just the quad is much slower to respond.
+[00:02:09.920 → 00:02:14.900] If we switch back to acro again, immediately that snappy response is back.
+[00:02:14.900 → 00:02:19.460] So there's a big gap in flight performance between acro and angle mode.
+[00:02:19.460 → 00:02:26.660] So why is Betaflight's angle mode so much slower and less responsive than acro mode?
+[00:02:27.380 → 00:02:32.820] Well, to explain, we're going to have to look in detail at how the Betaflight angle controller actually works.
+[00:02:32.820 → 00:02:39.040] In the blue line, we have the stick input from your controller, which is the requested angle of the quad.
+[00:02:39.040 → 00:02:45.140] And here it starts at centre, I move it over to the right hand side, and then back to centre again.
+[00:02:45.140 → 00:02:49.340] The green line shows the angle the quad is actually at.
+[00:02:49.340 → 00:02:56.860] And the way the angle mode controller works is it looks at the difference between the requested angle and the actual angle,
+[00:02:57.560 → 00:03:01.140] multiplies that by a factor, and that creates the gyro setpoint,
+[00:03:01.540 → 00:03:06.100] which tells the quad how fast to rotate towards the requested angle.
+[00:03:07.200 → 00:03:09.060] So you might be able to see the problem here.
+[00:03:09.760 → 00:03:15.720] Initially, we don't have much error between the requested angle and the actual angle of the quad.
+[00:03:16.120 → 00:03:19.040] So nothing much happens, the quad doesn't start to rotate.
+[00:03:19.040 → 00:03:23.280] Only once we have built up a lot of error,
+[00:03:24.000 → 00:03:28.000] is there enough push to get the quad to rotate quickly towards the new angle.
+[00:03:29.520 → 00:03:34.880] But things get worse because once my stick stops moving, the error starts to reduce again.
+[00:03:35.440 → 00:03:41.000] And so the quad slows down and takes a really long time to reach the requested angle.
+[00:03:42.800 → 00:03:45.760] This whole process takes hundreds of milliseconds.
+[00:03:45.760 → 00:03:50.480] It's about 10 times as long as the typical latency of a video or controlling.
+[00:03:50.480 → 00:03:55.900] So what can we do about angle mode being so slow?
+[00:03:56.800 → 00:04:01.480] Well, it turns out that Betaflight had already solved this problem in acro mode.
+[00:04:02.160 → 00:04:09.360] In acro mode, there's an extra term in the controller called feedforward that is designed to reduce this delay.
+[00:04:09.360 → 00:04:15.200] And the way feedforward works is it looks at the movement of your sticks, how fast you're moving your sticks,
+[00:04:15.200 → 00:04:18.740] and pushes the quad in that direction right away.
+[00:04:19.120 → 00:04:23.000] So let's take a look at what this chart looks like if we add feedforward in.
+[00:04:24.320 → 00:04:26.680] Here's the same chart with feedforward in the mix.
+[00:04:26.680 → 00:04:33.860] You can see that immediately as we move the sticks, there's a big strong push here from feedforward,
+[00:04:34.100 → 00:04:39.720] which gets the quad moving in the right direction right away before any error has built up.
+[00:04:41.560 → 00:04:45.340] Once the stick stops moving, that feedforward push stops as well.
+[00:04:45.680 → 00:04:52.400] But by that point, we have a lot less error and the quad is much closer to the requested angle than it was before.
+[00:04:52.400 → 00:04:56.440] And so the end of the move finishes off nice and quickly.
+[00:04:58.200 → 00:05:03.220] Overall, this is so much faster and more responsive than what we had without feedforward.
+[00:05:04.180 → 00:05:08.800] I found that adding feedforward into angle mode made the biggest difference for me personally
+[00:05:08.800 → 00:05:12.100] when flying tiny loops around indoors in tight spaces.
+[00:05:12.720 → 00:05:16.720] The reduction in effective latency of tens or even hundreds of milliseconds
+[00:05:16.720 → 00:05:20.200] from when you move the stick to when the quad responds in the air
+[00:05:20.200 → 00:05:23.900] just allows you to avoid obstacles so much more easily
+[00:05:23.900 → 00:05:26.900] and fly through tight gaps with a lot more precision.
+[00:05:27.860 → 00:05:33.240] I think the tiny races in particular are going to get a lot of value out of this new feature
+[00:05:33.240 → 00:05:35.820] and it's going to make them a lot faster around the track.
+[00:05:36.680 → 00:05:39.360] One of the challenges we faced with adding feedforward
+[00:05:39.360 → 00:05:43.280] is that it makes the quad very responsive to small stick inputs,
+[00:05:43.500 → 00:05:46.340] which can make the quad feel a bit jittery, a bit on edge.
+[00:05:46.340 → 00:05:50.200] Fortunately, Chris Thompson came up with a great fix for this,
+[00:05:50.420 → 00:05:52.400] which is feedforward smoothing.
+[00:05:52.780 → 00:05:56.360] So this spreads out the push of feedforward in time
+[00:05:56.360 → 00:05:59.760] and makes it less responsive to small stick inputs.
+[00:06:00.560 → 00:06:03.280] The result is that you can adjust the feedforward gain
+[00:06:03.280 → 00:06:07.220] to get the push you need to make the quad nice and responsive in angle mode.
+[00:06:07.640 → 00:06:10.300] And then separately, you can adjust the smoothing factor
+[00:06:10.300 → 00:06:13.480] so that it doesn't feel too jittery and on edge
+[00:06:13.480 → 00:06:15.420] in response to small stick inputs.
+[00:06:16.260 → 00:06:19.920] But that wasn't the only issue that I identified with angle mode.
+[00:06:20.620 → 00:06:22.840] The second issue is one of wobbliness.
+[00:06:23.140 → 00:06:28.020] So let's take a look at what makes angle mode so wobbly in comparison to Acro.
+[00:06:29.920 → 00:06:31.180] To show you what I mean,
+[00:06:31.500 → 00:06:33.300] here's some flight footage in angle mode
+[00:06:33.300 → 00:06:35.920] where I'm just making sharp your inputs.
+[00:06:36.480 → 00:06:38.860] I'm not doing anything else, just sharp your inputs.
+[00:06:38.860 → 00:06:43.740] And can you see how much the quad is wobbling around on pitch and roll as a result?
+[00:06:44.160 → 00:06:48.220] That's really counterproductive for flying precisely in tight spaces.
+[00:06:49.900 → 00:06:51.860] If you're enjoying this video so far,
+[00:06:52.020 → 00:06:54.820] please hit the like button to help other people find it on YouTube.
+[00:06:55.160 → 00:06:57.420] And if you haven't already, consider subscribing
+[00:06:57.420 → 00:06:58.960] so you don't miss out on future videos.
+[00:06:59.680 → 00:07:01.060] So what's going on here?
+[00:07:01.160 → 00:07:04.880] What's causing that really bad wobble on sharp your moves?
+[00:07:04.880 → 00:07:09.120] Well, I have here a little quad to show you what is happening.
+[00:07:10.180 → 00:07:14.080] So here we have the quad and I'm just going to be flying forward
+[00:07:14.080 → 00:07:17.020] so the quad is pitched forward like that,
+[00:07:17.440 → 00:07:20.280] but absolutely flat, just pitched forward.
+[00:07:20.760 → 00:07:24.260] Now I'm going to yaw the quad by 90 degrees.
+[00:07:24.260 → 00:07:30.500] Can you see that now the quad is no longer pitched forward at all?
+[00:07:30.920 → 00:07:32.480] It's rolled to the right.
+[00:07:33.200 → 00:07:40.460] That yaw move has converted the pitch that we used to have into roll.
+[00:07:41.840 → 00:07:45.720] Now, once that happens, the angle controller freaks out a bit and goes,
+[00:07:45.940 → 00:07:47.280] I shouldn't have any roll.
+[00:07:47.280 → 00:07:48.420] I should just have pitch.
+[00:07:48.560 → 00:07:54.200] And so it then tries to correct to get the quad back on track.
+[00:07:54.840 → 00:07:57.920] And that happens very slowly because it's all error-based
+[00:07:57.920 → 00:08:00.380] and it creates a big wobble after the move.
+[00:08:01.760 → 00:08:04.620] What's causing this problem and what can we do to fix it?
+[00:08:05.080 → 00:08:07.020] Well, the problem is being caused by the fact
+[00:08:07.020 → 00:08:09.860] we have two different coordinate systems at play here.
+[00:08:10.260 → 00:08:12.560] The first is the angle mode coordinate system,
+[00:08:12.680 → 00:08:13.800] which is earth referenced.
+[00:08:13.800 → 00:08:16.740] And that means that the roll and the pitch axes
+[00:08:16.740 → 00:08:18.560] are always level with the horizon
+[00:08:18.560 → 00:08:21.000] and yaw is vertically up and down.
+[00:08:22.300 → 00:08:26.320] We also have a control coordinate system,
+[00:08:26.520 → 00:08:27.820] which is quad referenced.
+[00:08:28.400 → 00:08:29.680] It moves with the quad.
+[00:08:30.440 → 00:08:33.720] So the yaw axis for the control of the quad
+[00:08:33.720 → 00:08:37.380] is always vertically up and down on the quad.
+[00:08:37.580 → 00:08:39.080] And when the quad pitches forward,
+[00:08:39.400 → 00:08:40.680] the yaw axis pitches forward.
+[00:08:40.680 → 00:08:45.120] Whenever these two coordinate systems are not aligned,
+[00:08:45.360 → 00:08:47.340] so whenever the quad coordinate system
+[00:08:47.340 → 00:08:50.180] is not aligned with the angle mode coordinate system,
+[00:08:50.680 → 00:08:52.120] we get error building up.
+[00:08:52.380 → 00:08:55.760] And that causes wobbles in the video feed that you see.
+[00:08:56.440 → 00:08:57.800] So how can we fix it?
+[00:08:57.900 → 00:09:00.960] Well, again, we have to think and look at acro mode.
+[00:09:01.200 → 00:09:02.820] When we're flying in acro mode,
+[00:09:03.440 → 00:09:06.660] we automatically coordinate a little bit of roll
+[00:09:06.660 → 00:09:08.680] in with our yaw turns to make sure
+[00:09:08.680 → 00:09:10.580] that the quad stays nice and level
+[00:09:10.580 → 00:09:11.580] through the yaw move.
+[00:09:12.420 → 00:09:14.060] And this is exactly the same thing
+[00:09:14.060 → 00:09:15.400] that we need to do in angle mode.
+[00:09:15.960 → 00:09:17.780] Unfortunately, it's a little bit more difficult
+[00:09:17.780 → 00:09:18.400] in angle mode.
+[00:09:19.020 → 00:09:20.240] To coordinate a turn,
+[00:09:20.420 → 00:09:23.440] we really need both the yaw and the roll sticks
+[00:09:23.440 → 00:09:25.000] to be rates of rotation.
+[00:09:25.760 → 00:09:27.260] And in angle mode, they're not.
+[00:09:27.380 → 00:09:28.960] The yaw stick is a rate of rotation,
+[00:09:28.960 → 00:09:32.080] but the roll stick is a requested angle.
+[00:09:32.080 → 00:09:35.540] So we can't really coordinate the turn in the same way.
+[00:09:36.340 → 00:09:38.440] Fortunately, we can write some code
+[00:09:38.440 → 00:09:39.700] into the angle controller
+[00:09:39.700 → 00:09:41.840] to coordinate the turn for us
+[00:09:41.840 → 00:09:44.660] so that when we do a pure yaw move,
+[00:09:45.240 → 00:09:46.880] the angle controller adds in
+[00:09:46.880 → 00:09:48.400] just the right amount of roll
+[00:09:48.400 → 00:09:51.860] for the quad to do a pure yaw move
+[00:09:51.860 → 00:09:53.860] in the earth reference coordinate system.
+[00:09:54.420 → 00:09:55.300] And when that happens,
+[00:09:55.440 → 00:09:58.760] we don't see any error build up on pitch or roll
+[00:09:58.760 → 00:10:00.060] during the fast yaw move.
+[00:10:00.060 → 00:10:02.340] And if there's no error, there's no wobble.
+[00:10:03.060 → 00:10:04.640] Let's look at some flight footage now
+[00:10:04.640 → 00:10:07.220] to see how that affects the behavior of the quad.
+[00:10:07.980 → 00:10:09.060] Here's some flight footage
+[00:10:09.060 → 00:10:11.660] where we're doing sharp yaw moves as before,
+[00:10:11.940 → 00:10:13.420] but the code in the angle controller
+[00:10:13.420 → 00:10:15.140] is coordinating the turn for us.
+[00:10:15.840 → 00:10:17.240] Sorry for the water on the lens.
+[00:10:17.520 → 00:10:19.600] That's an occupational hazard of flying in the UK.
+[00:10:20.300 → 00:10:22.900] We can see that the quad is much flatter
+[00:10:22.900 → 00:10:23.920] on those yaw turns
+[00:10:23.920 → 00:10:25.620] and it's not wobbling around
+[00:10:25.620 → 00:10:27.920] after the yaw move anywhere near as much.
+[00:10:27.920 → 00:10:30.760] One of the things that I really noticed
+[00:10:30.760 → 00:10:32.880] when flying this yaw coordination code
+[00:10:32.880 → 00:10:36.360] was how much less drift there was in the quad
+[00:10:36.360 → 00:10:39.120] and how much more precise it was at flying tight lines.
+[00:10:40.120 → 00:10:42.140] Before, when I was flying along
+[00:10:42.140 → 00:10:43.220] and I yawed sharply,
+[00:10:44.060 → 00:10:45.320] the quad would keep drifting
+[00:10:45.320 → 00:10:47.360] in the direction that it was going in
+[00:10:47.360 → 00:10:49.860] until the angle controller kind of sorted everything out
+[00:10:49.860 → 00:10:51.260] and got it flying in the right direction,
+[00:10:51.260 → 00:10:53.140] which took a few hundred milliseconds.
+[00:10:53.140 → 00:10:56.020] With the yaw coordination code,
+[00:10:56.300 → 00:10:57.660] when the quad's flying along
+[00:10:57.660 → 00:10:58.820] and you yaw,
+[00:10:59.820 → 00:11:02.900] there's no component of thrust
+[00:11:02.900 → 00:11:04.440] in the direction you were going in.
+[00:11:04.780 → 00:11:07.760] So the quad just flies straight forward
+[00:11:07.760 → 00:11:10.020] with a lot less sideways drift.
+[00:11:10.540 → 00:11:12.120] And that really does make it feel
+[00:11:12.120 → 00:11:13.800] a lot more precise in my opinion.
+[00:11:14.320 → 00:11:16.060] Now that we've talked through the problems
+[00:11:16.060 → 00:11:16.720] with angle mode
+[00:11:16.720 → 00:11:18.220] and how we've addressed them,
+[00:11:18.220 → 00:11:19.480] I want to show you
+[00:11:19.480 → 00:11:21.660] how you can test this code out for yourself
+[00:11:21.660 → 00:11:23.400] and put it on your Tiny Whoops
+[00:11:23.400 → 00:11:24.740] to fly around today.
+[00:11:25.260 → 00:11:27.400] Before we start testing any new code,
+[00:11:27.540 → 00:11:28.180] it's very important
+[00:11:28.180 → 00:11:29.920] that we fully back up our configuration.
+[00:11:30.480 → 00:11:32.260] So go into Betaflight Configurator,
+[00:11:32.900 → 00:11:34.300] go into the CLI
+[00:11:34.300 → 00:11:36.300] and type dump.
+[00:11:37.480 → 00:11:39.580] That will dump out your entire config
+[00:11:39.580 → 00:11:41.860] so that if you need to restore it later,
+[00:11:42.260 → 00:11:43.860] you've got everything that you need.
+[00:11:44.500 → 00:11:46.380] Make sure you save that to a file
+[00:11:46.380 → 00:11:47.860] in a place where you'll remember it
+[00:11:47.860 → 00:11:50.360] and call it something suitable.
+[00:11:50.560 → 00:11:52.560] I'm calling this AOS 3.5 dump.
+[00:11:54.700 → 00:11:56.040] Once you've got the dump,
+[00:11:56.300 → 00:11:57.400] clear your output history
+[00:11:57.400 → 00:11:58.820] and type diff.
+[00:11:59.940 → 00:12:01.940] That will give you the difference
+[00:12:01.940 → 00:12:03.220] between your configuration
+[00:12:03.220 → 00:12:05.200] and Betaflight defaults.
+[00:12:05.620 → 00:12:06.980] And save that to another file.
+[00:12:07.660 → 00:12:10.680] Call that one something memorable as well.
+[00:12:12.780 → 00:12:14.940] Once you've got those two files saved,
+[00:12:14.940 → 00:12:16.260] if you have any issues
+[00:12:16.260 → 00:12:17.360] and you want to go back
+[00:12:17.360 → 00:12:18.420] to your old configuration,
+[00:12:18.960 → 00:12:19.940] all you'll need to do
+[00:12:19.940 → 00:12:22.780] is to reflash the same version of Betaflight
+[00:12:22.780 → 00:12:24.040] that you currently have
+[00:12:24.040 → 00:12:26.580] and then just paste in your dump,
+[00:12:26.960 → 00:12:28.300] type save and hit enter.
+[00:12:28.620 → 00:12:30.560] And that will completely restore your config
+[00:12:30.560 → 00:12:32.260] to exactly what it is now.
+[00:12:32.640 → 00:12:33.700] That's really important
+[00:12:33.700 → 00:12:35.440] because you don't want to get into a situation
+[00:12:35.440 → 00:12:37.720] where stuff isn't working
+[00:12:37.720 → 00:12:39.160] and you can't get back
+[00:12:39.160 → 00:12:40.960] to a good working configuration.
+[00:12:40.960 → 00:12:43.280] So now that everything's backed up,
+[00:12:43.560 → 00:12:45.320] let's go and try out the test code.
+[00:12:46.440 → 00:12:47.560] Because this test code
+[00:12:47.560 → 00:12:49.840] is based on Betaflight 4.4,
+[00:12:50.060 → 00:12:51.200] you're going to need
+[00:12:51.200 → 00:12:53.320] at least version 10.9
+[00:12:53.320 → 00:12:54.280] of the configurator.
+[00:12:55.060 → 00:12:56.460] At the time of recording,
+[00:12:56.700 → 00:12:57.700] that isn't released yet.
+[00:12:57.840 → 00:12:59.140] So I'm going to be using
+[00:12:59.140 → 00:13:00.140] a nightly build
+[00:13:00.140 → 00:13:01.920] from this releases page
+[00:13:01.920 → 00:13:02.900] and I'll put a link to it
+[00:13:02.900 → 00:13:03.780] down in the video description.
+[00:13:04.560 → 00:13:06.500] If when you're looking at this video,
+[00:13:06.980 → 00:13:08.580] Betaflight Configurator 10.9
+[00:13:08.580 → 00:13:09.520] has been released,
+[00:13:09.520 → 00:13:10.920] you can just use the release build.
+[00:13:12.700 → 00:13:13.600] Once you have
+[00:13:13.600 → 00:13:15.240] Betaflight Configurator 10.9,
+[00:13:15.340 → 00:13:15.840] you're going to need
+[00:13:15.840 → 00:13:16.960] to get hold of the test code.
+[00:13:17.380 → 00:13:18.400] And the easiest way
+[00:13:18.400 → 00:13:19.800] is to go to the PR,
+[00:13:19.980 → 00:13:21.240] which is PR 12067.
+[00:13:21.540 → 00:13:21.980] There'll be a link
+[00:13:21.980 → 00:13:22.880] down in the video description.
+[00:13:23.980 → 00:13:24.820] Scroll down
+[00:13:24.820 → 00:13:27.500] and find the most recent
+[00:13:27.500 → 00:13:29.780] do you want to test this code?
+[00:13:30.040 → 00:13:30.500] Here you have
+[00:13:30.500 → 00:13:32.100] an automated build comment.
+[00:13:33.100 → 00:13:34.000] And inside there
+[00:13:34.000 → 00:13:35.220] is going to be
+[00:13:35.220 → 00:13:36.340] a bunch of assets
+[00:13:36.340 → 00:13:38.540] and you can download them.
+[00:13:38.540 → 00:13:40.640] Once you've downloaded
+[00:13:40.640 → 00:13:41.860] the assets zip folder,
+[00:13:42.020 → 00:13:43.200] you can just extract it.
+[00:13:44.140 → 00:13:44.760] And inside,
+[00:13:44.920 → 00:13:46.120] you'll find a whole bunch
+[00:13:46.120 → 00:13:46.740] of hex files.
+[00:13:47.180 → 00:13:47.960] And each of these
+[00:13:47.960 → 00:13:49.400] is for a different target
+[00:13:49.400 → 00:13:49.960] of Betaflight.
+[00:13:50.600 → 00:13:51.880] What you'll need to know
+[00:13:51.880 → 00:13:53.560] is exactly what chip
+[00:13:53.560 → 00:13:54.680] your flight controller has.
+[00:13:55.220 → 00:13:56.600] Does it have an F722?
+[00:13:56.960 → 00:13:57.420] In which case,
+[00:13:57.460 → 00:13:59.480] you'll use this F7X2 hex file.
+[00:14:00.140 → 00:14:01.600] If you've got an F405,
+[00:14:01.720 → 00:14:04.020] it will be the F405 hex file.
+[00:14:04.360 → 00:14:05.040] You get the idea.
+[00:14:05.040 → 00:14:06.220] You need to match
+[00:14:06.220 → 00:14:07.240] the exact chip.
+[00:14:07.660 → 00:14:08.540] So you need to know
+[00:14:08.540 → 00:14:09.200] more than just
+[00:14:09.200 → 00:14:10.720] is it an F4 or an F7.
+[00:14:10.900 → 00:14:11.740] You need to know
+[00:14:11.740 → 00:14:13.100] exactly what chip it is
+[00:14:13.100 → 00:14:14.080] and then pick
+[00:14:14.080 → 00:14:15.180] the right hex file
+[00:14:15.180 → 00:14:15.880] from this list.
+[00:14:16.160 → 00:14:17.000] Otherwise, it won't work.
+[00:14:17.620 → 00:14:18.400] When you know
+[00:14:18.400 → 00:14:19.440] exactly what hex file
+[00:14:19.440 → 00:14:19.860] you need,
+[00:14:19.980 → 00:14:20.880] you can jump into
+[00:14:20.880 → 00:14:21.840] Update Firmware
+[00:14:21.840 → 00:14:23.440] and then you're going
+[00:14:23.440 → 00:14:24.520] to want to select
+[00:14:24.520 → 00:14:25.240] your target.
+[00:14:25.680 → 00:14:26.460] So I'm just going
+[00:14:26.460 → 00:14:27.340] to hit Auto Detect
+[00:14:27.340 → 00:14:28.280] and it will find
+[00:14:28.280 → 00:14:29.000] the right target.
+[00:14:29.320 → 00:14:29.780] You can see
+[00:14:29.780 → 00:14:31.620] I've got an F745 here.
+[00:14:31.820 → 00:14:33.020] So I'm going to be using
+[00:14:33.020 → 00:14:34.580] the F745 hex file.
+[00:14:36.020 → 00:14:36.900] Load firmware
+[00:14:36.900 → 00:14:38.740] from your local drive
+[00:14:38.740 → 00:14:41.600] and in this test code,
+[00:14:41.760 → 00:14:42.540] you're going to select
+[00:14:42.540 → 00:14:43.560] the right hex file.
+[00:14:43.680 → 00:14:44.160] So for me,
+[00:14:44.260 → 00:14:45.200] that's F745
+[00:14:45.200 → 00:14:49.240] and then hit Flash Firmware.
+[00:14:50.240 → 00:14:51.780] If you have any problems
+[00:14:51.780 → 00:14:53.080] during the flashing stage,
+[00:14:53.480 → 00:14:54.460] I find the best thing
+[00:14:54.460 → 00:14:55.360] to try first
+[00:14:55.360 → 00:14:57.500] is ImpulseRC Driver Fixer
+[00:14:57.500 → 00:14:59.400] because most of the time
+[00:14:59.400 → 00:15:00.060] that's going to be
+[00:15:00.060 → 00:15:00.860] the cause of the problem.
+[00:15:01.560 → 00:15:02.220] I'll put a link
+[00:15:02.220 → 00:15:02.980] to that down in the video
+[00:15:02.980 → 00:15:03.700] description as well.
+[00:15:04.840 → 00:15:05.840] Once you've flashed
+[00:15:05.840 → 00:15:06.220] the firmware,
+[00:15:06.500 → 00:15:07.440] you can hit Connect
+[00:15:07.440 → 00:15:09.000] and you'll be asked
+[00:15:09.000 → 00:15:09.660] if you want to apply
+[00:15:09.660 → 00:15:10.640] custom defaults.
+[00:15:10.780 → 00:15:11.660] Always select Yes.
+[00:15:12.900 → 00:15:13.880] The flight controller
+[00:15:13.880 → 00:15:14.580] will reboot
+[00:15:14.580 → 00:15:15.420] and then you can hit
+[00:15:15.420 → 00:15:16.100] Connect again
+[00:15:16.100 → 00:15:17.900] and go back into the CLI.
+[00:15:19.140 → 00:15:20.320] Now we're going to paste
+[00:15:20.320 → 00:15:21.260] in the diff
+[00:15:21.260 → 00:15:22.520] that we saved before.
+[00:15:22.880 → 00:15:24.280] So we can load from file,
+[00:15:24.820 → 00:15:25.600] select the diff,
+[00:15:26.600 → 00:15:27.780] hit Execute
+[00:15:27.780 → 00:15:29.700] and all of that
+[00:15:29.700 → 00:15:30.360] will be executed.
+[00:15:30.360 → 00:15:31.640] You may get
+[00:15:31.640 → 00:15:32.600] some invalid names
+[00:15:32.600 → 00:15:33.560] depending on
+[00:15:33.560 → 00:15:34.860] whether you're updating
+[00:15:34.860 → 00:15:36.420] from a different version
+[00:15:36.420 → 00:15:36.980] of Betaflight.
+[00:15:38.960 → 00:15:40.160] It's not usually a problem.
+[00:15:40.380 → 00:15:41.340] You can type Save
+[00:15:41.340 → 00:15:42.360] and then hit Enter.
+[00:15:43.780 → 00:15:44.620] At this point,
+[00:15:44.680 → 00:15:45.340] it's a good idea
+[00:15:45.340 → 00:15:46.200] just to check through
+[00:15:46.200 → 00:15:46.760] your config
+[00:15:46.760 → 00:15:47.700] to make sure everything's
+[00:15:47.700 → 00:15:48.640] set up as you want it.
+[00:15:52.180 → 00:15:53.420] If everything looks good,
+[00:15:53.540 → 00:15:54.840] you can jump to the CLI
+[00:15:54.840 → 00:15:58.180] and type Get Angle
+[00:15:58.180 → 00:16:01.380] and you should see
+[00:16:01.380 → 00:16:02.680] Angle P Gain,
+[00:16:02.840 → 00:16:03.720] Angle Feed Forward,
+[00:16:04.040 → 00:16:05.340] Angle Feed Forward Smoothing
+[00:16:05.340 → 00:16:07.400] and Angle Earth Ref
+[00:16:07.400 → 00:16:09.520] as new settings
+[00:16:09.520 → 00:16:10.420] which you can adjust.
+[00:16:11.400 → 00:16:13.060] And for more information
+[00:16:13.060 → 00:16:13.780] on tuning,
+[00:16:14.400 → 00:16:15.260] I'll let you read
+[00:16:15.260 → 00:16:17.100] the full PR 12067
+[00:16:17.100 → 00:16:18.640] and that will tell you
+[00:16:18.640 → 00:16:19.960] what all of these terms do
+[00:16:19.960 → 00:16:21.020] and how you should go
+[00:16:21.020 → 00:16:21.680] about tuning them.
+[00:16:22.360 → 00:16:23.240] I hope that those
+[00:16:23.240 → 00:16:23.980] short instructions
+[00:16:23.980 → 00:16:25.000] give you what you need
+[00:16:25.000 → 00:16:25.760] to get started
+[00:16:25.760 → 00:16:26.980] trying out these new features.
+[00:16:27.460 → 00:16:28.220] If you're thinking
+[00:16:28.220 → 00:16:29.000] of playing around
+[00:16:29.000 → 00:16:30.080] with Betaflight test code,
+[00:16:30.240 → 00:16:31.360] you should definitely know
+[00:16:31.360 → 00:16:33.140] about the Betaflight Discord server.
+[00:16:33.480 → 00:16:34.360] I'll put a link to that
+[00:16:34.360 → 00:16:35.320] down in the video description.
+[00:16:35.660 → 00:16:36.480] It's a great place
+[00:16:36.480 → 00:16:37.920] to get help and support
+[00:16:37.920 → 00:16:38.660] if you need it
+[00:16:38.660 → 00:16:40.120] and also to leave
+[00:16:40.120 → 00:16:40.740] your comments
+[00:16:40.740 → 00:16:41.340] and feedback
+[00:16:41.340 → 00:16:42.280] on these new features
+[00:16:42.280 → 00:16:43.520] to help inform
+[00:16:43.520 → 00:16:44.820] the further development of them.
+[00:16:45.280 → 00:16:46.140] Now it's time
+[00:16:46.140 → 00:16:46.660] for a word
+[00:16:46.660 → 00:16:47.420] from our sponsor,
+[00:16:47.660 → 00:16:48.420] Brilliant.org.
+[00:16:48.800 → 00:16:49.880] If you're like me,
+[00:16:50.100 → 00:16:50.920] the FPV hobby
+[00:16:50.920 → 00:16:52.400] represents a fun
+[00:16:52.400 → 00:16:53.440] and exciting way
+[00:16:53.440 → 00:16:54.600] to apply maths,
+[00:16:54.860 → 00:16:56.340] science and engineering skills.
+[00:16:56.860 → 00:16:57.540] And whether you're
+[00:16:57.540 → 00:16:58.240] a young professional
+[00:16:58.240 → 00:16:59.600] looking to upskill
+[00:16:59.600 → 00:17:00.780] as you grow into your career
+[00:17:00.780 → 00:17:01.840] or you're someone
+[00:17:01.840 → 00:17:02.620] who just loves
+[00:17:02.620 → 00:17:03.560] finding new hobbies
+[00:17:03.560 → 00:17:04.900] and exploring new ideas,
+[00:17:05.560 → 00:17:06.460] Brilliant offers
+[00:17:06.460 → 00:17:07.880] thousands of classes
+[00:17:07.880 → 00:17:08.660] on maths,
+[00:17:08.960 → 00:17:10.420] science and computer science
+[00:17:10.420 → 00:17:11.460] with new ones
+[00:17:11.460 → 00:17:12.920] being added every single month.
+[00:17:13.600 → 00:17:14.320] If you're interested
+[00:17:14.320 → 00:17:15.440] in computer science
+[00:17:15.440 → 00:17:16.920] and maybe even looking forward
+[00:17:16.920 → 00:17:17.680] to contributing
+[00:17:17.680 → 00:17:19.060] to an open source project
+[00:17:19.060 → 00:17:19.800] like Betaflight
+[00:17:19.800 → 00:17:20.380] in the future,
+[00:17:20.920 → 00:17:22.000] then courses like this
+[00:17:22.000 → 00:17:23.320] on algorithm fundamentals
+[00:17:23.320 → 00:17:24.600] are a great place
+[00:17:24.600 → 00:17:25.480] to start building
+[00:17:25.480 → 00:17:26.520] the skills that you'll need.
+[00:17:27.200 → 00:17:28.420] To get started for free,
+[00:17:28.640 → 00:17:29.920] visit brilliant.org
+[00:17:29.920 → 00:17:31.120] slash ChrisRossa
+[00:17:31.120 → 00:17:32.040] or click the link
+[00:17:32.040 → 00:17:32.820] in the video description.
+[00:17:33.320 → 00:17:34.740] The first 200 people
+[00:17:34.740 → 00:17:35.260] to do so
+[00:17:35.260 → 00:17:37.240] will also get 20% off
+[00:17:37.240 → 00:17:38.700] an annual premium subscription
+[00:17:38.700 → 00:17:39.180] with Brilliant
+[00:17:39.180 → 00:17:40.300] so you can reach
+[00:17:40.300 → 00:17:41.000] your learning goals
+[00:17:41.000 → 00:17:41.920] and save a little bit
+[00:17:41.920 → 00:17:42.920] of money at the same time.
+[00:17:44.660 → 00:17:45.520] That's all I have
+[00:17:45.520 → 00:17:46.160] for you for today.
+[00:17:46.380 → 00:17:47.260] So until next time,
+[00:17:47.260 → 00:17:48.040] I wish you all
+[00:17:48.040 → 00:17:49.220] very, very happy flying.

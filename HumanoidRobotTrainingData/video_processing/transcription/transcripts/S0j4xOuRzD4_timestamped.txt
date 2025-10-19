@@ -1,0 +1,98 @@
+S0j4xOuRzD4
+https://www.youtube.com/watch?v=S0j4xOuRzD4
+Unknown Category
+
+[00:00:00.000 → 00:00:07.780] This little component right here is a full bridge rectifier which converts our AC mains voltage we
+[00:00:07.780 → 00:00:14.700] get from our outlets into a rather bumpy DC voltage. This might sound unspectacular but
+[00:00:14.700 → 00:00:20.980] if we add a capacitor to the rectifier's output we get a smooth DC voltage that is basically
+[00:00:20.980 → 00:00:27.320] required for every modern power supply to work. So yes, full bridge rectifiers are a big deal
+[00:00:27.320 → 00:00:34.520] and make our modern electronics world possible. But that doesn't mean they are perfect. They in fact
+[00:00:34.520 → 00:00:40.880] come with a noticeable voltage drop which multiplies with the flowing current equals the power loss that
+[00:00:40.880 → 00:00:47.440] the rectifier dissipates in the form of heat. Needless to say we want to keep this power loss as small as
+[00:00:47.440 → 00:00:54.880] possible to increase efficiency and that is why I was super excited to find this active rectifier board
+[00:00:54.880 → 00:01:00.700] on the internet which apparently replaces the old school diodes of a full bridge rectifier
+[00:01:00.700 → 00:01:06.760] with MOSFETs in order to decrease the voltage drop and thus power losses.
+[00:01:06.760 → 00:01:12.980] So in this video we will not only put this pre-made active rectifier board to the test but also
+[00:01:12.980 → 00:01:20.160] try to create our own DIY version in order to find out whether they are the future of rectification
+[00:01:20.160 → 00:01:25.440] or whether we should stick with the old school solution instead. Let's get started!
+[00:01:34.080 → 00:01:39.920] This video is sponsored by Altium. Now you might already be familiar with the Altium Designer for
+[00:01:39.920 → 00:01:47.120] creating schematics and PCBs since I mentioned it once or twice before. But today I want to tell you about
+[00:01:47.120 → 00:01:54.240] Altium 365 which is already integrated into the designer software and lets you easily share your
+[00:01:54.240 → 00:02:00.640] designs not only with your colleagues but basically the entire world. This way you can get feedback
+[00:02:00.640 → 00:02:07.120] easily and speed up your design process. So why not give it a try for free by clicking the link in the
+[00:02:07.120 → 00:02:14.080] description. First off we need to understand how a traditional full bridge rectifier functions.
+[00:02:14.080 → 00:02:20.720] As you can see in this schematic it only consists of 4 diodes positioned in a particular arrangement
+[00:02:21.360 → 00:02:26.800] which I personally like to draw like this because this way it is easier to understand.
+[00:02:27.760 → 00:02:33.840] And let's imagine we got a resistive load on the output across which we should later get the bumpy
+[00:02:33.840 → 00:02:41.600] DC voltage we saw before and on the input we got the mains AC voltage. So how exactly do we go from
+[00:02:41.600 → 00:02:49.680] this to this is the question? Well the answer lies in the behavior of a diode which lets current flow in
+[00:02:49.680 → 00:02:56.720] only one direction and not the other. That means that when AC mains voltage is in the positive region
+[00:02:56.720 → 00:03:02.960] we got a voltage potential here which lets current flow this way. And when the AC mains voltage is in
+[00:03:02.960 → 00:03:09.040] the negative region we got the opposite voltage potential here which this time lets current flow this way.
+[00:03:10.000 → 00:03:16.880] So in both cases a current flow through the load was possible and what is remarkable is that the current
+[00:03:16.880 → 00:03:24.880] direction was always the same which basically means we folded over one half of the AC voltage and thus created DC.
+[00:03:25.840 → 00:03:32.000] Pretty straightforward if you ask me but the bad news is that every diode comes with a certain voltage drop
+[00:03:32.000 → 00:03:38.880] which causes the power loss I talked about at the beginning. The AC rectifier idea wants to change
+[00:03:38.880 → 00:03:46.000] that by replacing the diodes with MOSFET switches that come with super low resistances and thus should
+[00:03:46.000 → 00:03:53.680] decrease the power losses. Only problem is that MOSFETs are not exactly diodes even though they come with a
+[00:03:53.680 → 00:04:00.960] body diode that also only allows one current path direction. But using the body diode is not the goal
+[00:04:00.960 → 00:04:07.520] of the voltage voltage drop. Since its voltage drop is also rather high. No, we want to apply a DC voltage
+[00:04:07.520 → 00:04:14.640] to the MOSFETs gate in order to properly turn it on. So for full bridge rectifier we would need some
+[00:04:14.640 → 00:04:21.280] kind of circuitry that detects when the AC voltage is either positive or negative and depending on that
+[00:04:21.280 → 00:04:27.600] only turns on the two MOSFETs diagonally to one another to mimic the functionality of a full bridge
+[00:04:27.600 → 00:04:35.600] rectifier. Good timing is also key here because if just one additional MOSFET is on at any point
+[00:04:35.600 → 00:04:42.320] we basically got a short circuit. And that is exactly why I was rather happy that I didn't have to design
+[00:04:42.320 → 00:04:52.320] such a circuit myself because I found the TEA2206 and TEA2208IC on the internet. They are active bridge
+[00:04:52.320 → 00:04:59.280] rectifier controllers and can do what I just described by utilizing their built in comparators and MOSFET
+[00:04:59.280 → 00:05:05.840] drivers. So according to their typical application schematic there is not much I have to add to the
+[00:05:05.840 → 00:05:12.880] ICs to create an active rectifier, just some MOSFETs and capacitors. And in case you are wondering the
+[00:05:12.880 → 00:05:21.920] 2206 one only replaces the lower side diodes with MOSFETs while the 2208 one replaces them all which
+[00:05:21.920 → 00:05:28.640] begs the question why I even got the 2206 version if it only does half the job of lowering the power
+[00:05:28.640 → 00:05:35.840] losses. Well, the reason is that I got my hands on a development board around it which I can use to
+[00:05:35.840 → 00:05:43.760] get my feet wet since it should be functional right? To safely try it out I utilized my small auto
+[00:05:43.760 → 00:05:51.760] transformer to decrease the mains voltage to 25V ACRMS which I directly hooked up to the active rectifier.
+[00:05:52.560 → 00:05:57.440] And as you can see on the oscilloscope it does seem to work just fine, awesome!
+[00:05:58.560 → 00:06:04.640] That means it was time for the first efficiency tests slash comparisons which I performed by adding
+[00:06:04.640 → 00:06:11.440] a capacitor bank to the rectifier's output as well as a constant load and then drawing varying constant
+[00:06:11.440 → 00:06:18.160] current with it while measuring how much input power that required. Of course to get accurate values on
+[00:06:18.160 → 00:06:25.040] the output side I also utilized my multimeter to precisely measure the current and my oscilloscope
+[00:06:25.040 → 00:06:31.840] to get the RMS voltage value. After that was done I replaced the active rectifier with a normal full
+[00:06:31.840 → 00:06:38.480] bridge rectifier and basically repeated this test in order to find out that the average efficiency was
+[00:06:38.480 → 00:06:44.800] bumped up around 2 to 4% with the active version. Not bad!
+[00:06:44.800 → 00:06:49.760] But of course next I wanted to replace all the diodes to increase the efficiency even more.
+[00:06:50.480 → 00:06:58.480] To do that I soldered the TEA2208IC to a breakout board and afterwards to a perf board to which I
+[00:06:58.480 → 00:07:05.120] then added the 4 MOSFETs and some capacitors pretty much like the typical application schematic recommended
+[00:07:05.120 → 00:07:12.560] me to do. The result didn't look half bad but I was still very nervous while doing the first test with
+[00:07:12.560 → 00:07:18.640] lowered mains voltage. But as you can see on the oscilloscope this active rectifier also seems to
+[00:07:18.640 → 00:07:25.600] work just fine at least with resistive loads. Because while trying to charge up the capacitor bank for
+[00:07:25.600 → 00:07:30.800] the power test there appeared to be some sort of short circuit problem with the rectifier.
+[00:07:31.680 → 00:07:39.680] Not sure if my design with the low cost high resistance MOSFETs is the problem or whether the topology and IC can
+[00:07:39.680 → 00:07:45.920] generally not handle capacitive loads because the datasheet also states that a boost type power
+[00:07:45.920 → 00:07:52.240] factor circuit must follow the application which more or less prevents current surges from capacitors.
+[00:07:53.120 → 00:07:57.760] The circuit does however work just fine with like I said resistive loads.
+[00:07:58.560 → 00:08:04.080] But due to obvious safety concerns I really didn't want to include it in the next mains voltage power
+[00:08:04.080 → 00:08:10.320] supply test in which I basically measured the efficiency of a common switch mode power supply
+[00:08:10.320 → 00:08:17.360] before and after implementing an active rectifier. The only thing though that held me back once again
+[00:08:17.360 → 00:08:26.400] was a familiar sentence in the TEA2206 datasheet that states that it is intended for applications followed by a PFC.
+[00:08:27.520 → 00:08:33.040] And since such a power factor circuit got mentioned twice now, let me tell you that it basically
+[00:08:33.040 → 00:08:38.080] prevents that mains current only gets drawn near the peak of the AC mains voltage.
+[00:08:39.040 → 00:08:45.280] Instead it distributes the current draw evenly across the whole sinusoidal voltage but more about
+[00:08:45.280 → 00:08:51.680] that topic in another video. The only problem was that pretty much all of my power supplies didn't
+[00:08:51.680 → 00:08:59.440] come with this feature except of course one that I need to charge my newest laptop. And I decided to
+[00:08:59.440 → 00:09:06.160] not sacrifice it for this video which is why I pushed my luck and tried it with this a bit nicer power
+[00:09:06.160 → 00:09:12.080] supply that not only comes with less sharp current surges but also some filters on its inputs.
+[00:09:13.120 → 00:09:19.760] So after doing the usual power measurement test with it, I desoldered its original full bridge rectifier
+[00:09:19.760 → 00:09:23.600] and simply replaced it with the leads of the active rectifier boards.
+[00:09:23.600 → 00:09:28.160] So I did not get the same thing as I did. And luckily nothing exploded after the power up and
+[00:09:28.160 → 00:09:32.320] everything worked perfectly fine so that I could do all the measurements.
+[00:09:33.200 → 00:09:39.760] Now the final results tell us that the active rectifier is once again more efficient but this time
+[00:09:39.760 → 00:09:48.240] only with a difference of around 0.2 to a maximum of 0.9%. The reason is that due to the higher mains
+[00:09:48.240 → 00:09:55.120] voltage level of 230V that gets transformed down, there is only a small current flowing through the
+[00:09:55.120 → 00:10:01.760] rectifier which does not create that big of a power loss and thus is not that important for the efficiency.
+[00:10:02.800 → 00:10:08.640] But if we got a low voltage high current system without transformation then a better rectifier
+[00:10:08.640 → 00:10:13.120] is definitely recommended as we proved in test 1 of this video.
+[00:10:13.120 → 00:10:20.000] So in conclusion the old school full bridge rectifier is definitely good enough for most of the mains
+[00:10:20.000 → 00:10:25.840] voltage rectification because it is cheap, rigid and efficient enough for this task.
+[00:10:26.720 → 00:10:31.920] With that being said I hope you learned something new through this video and now understand the
+[00:10:31.920 → 00:10:39.040] advantages and disadvantages of active rectifiers. If so consider supporting me through Patreon.
+[00:10:39.040 → 00:10:57.760] Don't forget to like, share, subscribe and hit the notification bell. Stay creative and I will see you next time!

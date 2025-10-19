@@ -1,0 +1,462 @@
+hi when i try to traing the model i get this error [INFO] [1715365625.676300703] [rviz2]: Message Filter dropping message: frame 'front_laser' at time 0.212 for reason 'Unknown'
+
+hello Robot mania i have a problem whe trying to run the training simultaion  ros2 launch td3 training_simulation.launch.py Package 'td3' not found: "package 'td3' not found, searching: ['/opt/ros/foxy']"
+
+I can't find the setup folder, just found the src
+
+great video mate! how to apply this to a real robot?
+
+First and foremost amazing video and thank you for it I tried to run colcon build but I'm getting the error  Starting >>> velodyne_description --- stderr: velodyne_description CMake Error at CMakeLists.txt:4 (find_package):   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project   has asked CMake to find a package configuration file provided by   "ament_cmake", but CMake did not find one.    Could not find a package configuration file provided by "ament_cmake" with   any of the following names:      ament_cmakeConfig.cmake     ament_cmake-config.cmake    Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set   "ament_cmake_DIR" to a directory containing one of the above files.  If   "ament_cmake" provides a separate development package or SDK, be sure it   has been installed.   --- Failed   <<< velodyne_description [0.06s, exited with code 1]  Summary: 0 packages finished [0.37s]   1 package failed: velodyne_description   1 package had stderr output: velodyne_description   3 packages not processed   what could be the problem  ?
+
+thanks for this video  i have probleme whene i launch the project the gol pointe dont appear in rviz reprisantation and the robot stay in his pose init
+
+thanks a lot for this video your do a grait work please i wont to now wich files you modify to  transform the project of ROS1 to ROS2
+
+can you give us the packages for ros2 please , i had a problem i cant open the page from ros index ,the page not loaded
+
+When building the project from scratch, what steps did you take? Create a workspace with the src folder inside it, then inside the source folder you create the algorithm package ex (TD3)and next to it you clone the simulation package from veldyne_simulation ? please state the steps
+
+How long is the training required? I did training for half an hour, but during the test it still crashes? Should I change its location and repeat the test?
+
+Thank you for your video. I have a question now. My /cmd_vel topic doesn't seem to have any output. When I use the 'rostopic info' command, it shows that there are no publishers. What could be the reason for this?
+
+When I brought veldyne_simulation package, what steps did you take to build the project? Are there any steps? I am trying to build my own project from the beginning, I brought the pack in the source file, but when I do (colcon build) he refuses and requests catkin, can you clarify the steps?
+
+Can this work without nvidai gpu ?
+
+my man is the real hero
+
+this can work in iron ? i cant make it working ? what should i do?
+
+Hello Sir, thanks for the video. I tried to do this simulation (test_simulation.launch.py) in my ros2 humble. Gazebo is working fine but there is no camera visual and in rviz it shows robot model error (status error). In terminal it shows:   [ERROR] [test_velodyne_node.py-3]: process has died [pid 4267, exit code 1, cmd '/home/woops/DRL_robot_navigation_ros2/install/td3/lib/td3/test_velodyne_node.py --ros-args']. [rviz2-5] [INFO] [1711357500.563694057] [rviz2]: Stereo is NOT SUPPORTED [rviz2-5] [INFO] [1711357500.564159690] [rviz2]: OpenGl version: 3.3 (GLSL 3.3) [rviz2-5] [INFO] [1711357500.916516468] [rviz2]: Stereo is NOT SUPPORTED [rviz2-5] [INFO] [1711357502.687828427] [rviz2]: Stereo is NOT SUPPORTED [gzclient-2] context mismatch in svga_surface_destroy [gzclient-2] context mismatch in svga_surface_destroy C[gzserver-1] [INFO] [1711357555.259258199] [camera_controller]: Publishing camera info to [/camera1/camera_info] [gzserver-1] [INFO] [1711357555.782993244] [gazebo_ros_laser_controller]: Velodyne laser plugin missing <min_intensity>, defaults to no clipping [ERROR] [gzserver-1]: process has died [pid 4263, exit code -11, cmd 'gzserver /home/woops/DRL_robot_navigation_ros2/install/td3/share/td3/worlds/td3.world -slibgazebo_ros_init.so -slibgazebo_ros_factory.so -slibgazebo_ros_force_system.so'].   What can i do to solve this? Can you please help me?
+
+Hello, your video was really informative. But I watched the video and followed it, but the rviz didn't run [ERROR] [gzclient   -2]: process has died [pid 27482, exit code -15, cmd 'gzclient   ']. [ERROR] [gzclient   -2]: process[gzclient   -2] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM' [gzclient   -2] ** (gzclient:27484): WARNING **: 23:08:13.716: AT-SPI: Could not obtain desktop path or name I only get these errors. I succeeded in colcon build and completed setup bash, but nothing changed.
+
+Hey, I am running the simulation with Turtlebot in Ros1. Even after multiple epochs the q value is very low:  .............................................. Average Reward over 10 Evaluation Episodes, Epoch 50: -82.233841, 0.900000 .............................................. Validating .............................................. Average Reward over 10 Evaluation Episodes, Epoch 51: -102.065395, 1.000000 .............................................. Validating .............................................. Average Reward over 10 Evaluation Episodes, Epoch 52: -101.944601, 1.000000 .............................................. Validating .............................................. Average Reward over 10 Evaluation Episodes, Epoch 53: -102.618242, 1.000000 .............................................. Validating .............................................. Average Reward over 10 Evaluation Episodes, Epoch 54: -103.212100, 1.000000 .............................................. Validating .............................................. Average Reward over 10 Evaluation Episodes, Epoch 55: -102.101910, 1.000000 .............
+
+Hi, I'm trying to run the simulation with the turtlebot3_burger model but when the robot collides with a object it doesn't reset and just do flips. Do you know how to fix this?
+
+hello sr, im really really grateful for this content, i've been reading all de docs you mention en it works absolutely fine after i create my own ws and changing the roots while i reorganized the packages. Also, i've been doing my part of the investigation within the files and i'm still struggling to figure it how it works the load results after execute test_simulation. What i means is that i need to be sure that the test is working with my training and not yours. i undesrstand the exec train simulation.py save the results in the file /scripts/results TD3_velodyne.npy (besides the writing at the tensorboard) but once i see the properties of the .npy it tracks the access just at the exact time i launch training_simulation and not test_simulation. Also i wanted to see whats inside the file .npy if the data is  changing with everytime i launch training so i created a code and execute in a new terminal with: python3 import_test.py  after i launch test_simulation for the first time and then after the second one and both have the same metric data of the TD3, so its not working with my training data?  (Im using humble btw) Im sorry for the extension of my text, hope you understand me. thanks a lot.
+
+and i get this to [gzclient   -2] context mismatch in svga_surface_destroy [gzclient   -2] context mismatch in svga_surface_destroy
+
+and i get one new error  [rviz2]: Message Filter dropping message: frame 'front_laser' at time 63.962 for reason 'Unknown'
+
+Hi Robert Vlasan! Thanks for watching my video! That is not an error since it shows “INFO”. It should not have any negative effect for training.
+
+@robotmania8896  helllo well my robot dosen t move thats the problem i left ifor around 8 h and it didn t move
+
+if you have the time can we get in  meet and could you help me ?
+
+and recently iget this warning  Warning: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist [rviz2-5]          at line 133 in /tmp/binarydeb/ros-foxy-tf2-0.13.14/src/buffer_core.cpp
+
+Hi Robiti! Thanks for watching my video! Did you execute the “source” command as I explained in the video from 7:50?
+
+Hi hammouda! Thanks for watching my video! Please execute the “colcon build” command in the project directory.
+
+Hy BetaHex! Thanks for watching my video! Other than real velodyne sensor, you also need motor drivers and electric motors to rotate wheels.
+
+Hi Adil Ali! Thanks for watching my video! I think it is a problem with your environment set up. Please refer to this links. https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html#environment-setup https://stackoverflow.com/questions/56837562/colcon-build-failure-could-not-find-a-package-configuration-file-provided-by
+
+@robotmania8896  I have the same problem eventhough I followed all the steps in the tutorial carefully. Can you give me any advice?
+
+​ @anlehoang7030  Hi An Le Hoang! Thanks for watching my video! I think it is a problem of ROS setting. Add to the “.bashrc” file the next line:  source /opt/ros/humble/setup.bash
+
+@robotmania8896  I tried it but still not helping
+
+@anlehoang7030  Did you reboot your computer?
+
+@robotmania8896  I did, but it didn't work either
+
+@anlehoang7030  In that case I have no idea what may cause the error above.
+
+@robotmania8896  Thank you for your time and replies!
+
+Hi BOUKERMOUCHE Mohammed！ Are there any errors in the terminal?
+
+@robotmania8896  when I do colcon build i have this warning
+
+@robotmania8896  Starting >>> velodyne_description Starting >>> velodyne_gazebo_plugins Starting >>> td3 Finished <<< velodyne_description [0.21s]                                   Finished <<< td3 [0.22s] Finished <<< velodyne_gazebo_plugins [0.26s] Starting >>> velodyne_simulator Finished <<< velodyne_simulator [0.15s]                    Summary: 4 packages finished [0.75s] mohammed@mohammed-HP-EliteBook-840-G6:~/DRL_robot_navigation_ros2$ colcon build Starting >>> velodyne_description Starting >>> velodyne_gazebo_plugins Starting >>> td3 Finished <<< td3 [1.14s]                                                  --- stderr: velodyne_description                                            CMake Warning (dev) at /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:438 (message):   The package name passed to `find_package_handle_standard_args` (PkgConfig)   does not match the name of the calling package (gazebo).  This can lead to   problems in calling code that expects `find_package` result variables   (e.g., `_FOUND`) to follow a certain pattern. Call Stack (most recent call first):   /usr/share/cmake-3.22/Modules/FindPkgConfig.cmake:99 (find_package_handle_standard_args)   /usr/lib/x86_64-linux-gnu/cmake/gazebo/gazebo-config.cmake:72 (include)   CMakeLists.txt:5 (find_package) This warning is for project developers.  Use -Wno-dev to suppress it.  --- Finished <<< velodyne_description [2.22s] --- stderr: velodyne_gazebo_plugins                                 In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,                  from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,                  from /opt/ros/humble/include/gazebo_ros/node.hpp:18,                  from /home/mohammed/DRL_robot_navigation_ros2/src/velodyne_simulator/velodyne_gazebo_plugins/include/velodyne_gazebo_plugins/GazeboRosVelodyneLaser.h:53,                  from /home/mohammed/DRL_robot_navigation_ros2/src/velodyne_simulator/velodyne_gazebo_plugins/src/GazeboRosVelodyneLaser.cpp:35: /home/mohammed/DRL_robot_navigation_ros2/src/velodyne_simulator/velodyne_gazebo_plugins/src/GazeboRosVelodyneLaser.cpp: In member function ‘virtual void gazebo::GazeboRosVelodyneLaser::Load(gazebo::sensors::SensorPtr, sdf::v9::ElementPtr)’: /home/mohammed/DRL_robot_navigation_ros2/src/velodyne_simulator/velodyne_gazebo_plugins/src/GazeboRosVelodyneLaser.cpp:295:40: warning: format ‘%s’ expects a matching ‘char*’ argument [-Wformat=]   295 |   RCLCPP_INFO(ros_node_->get_logger(), "Velodyne %slaser plugin ready");       |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ /home/mohammed/DRL_robot_navigation_ros2/src/velodyne_simulator/velodyne_gazebo_plugins/src/GazeboRosVelodyneLaser.cpp:295:51: note: format string is defined here   295 |   RCLCPP_INFO(ros_node_->get_logger(), "Velodyne %slaser plugin ready");       |                                                  ~^       |                                                   |       |                                                   char* --- Finished <<< velodyne_gazebo_plugins [23.3s] Starting >>> velodyne_simulator Finished <<< velodyne_simulator [0.67s]                   Summary: 4 packages finished [24.3s]   2 packages had stderr output: velodyne_description velodyne_gazebo_plugins
+
+@robotmania8896  and when I launch  the project with ros2
+
+@robotmania8896  I have this error
+
+@robotmania8896  [train_velodyne_node.py-3] Traceback (most recent call last): [train_velodyne_node.py-3]   File "/home/mohammed/DRL_robot_navigation_ros2/install/td3/lib/td3/train_velodyne_node.py", line 6, in <module> [train_velodyne_node.py-3]     import torch [train_velodyne_node.py-3] ModuleNotFoundError: No module named 'torch' [ERROR] [train_velodyne_node.py-3]: process has died [pid 79496, exit code 1, cmd '/home/mohammed/DRL_robot_navigation_ros2/install/td3/lib/td3/train_velodyne_node.py --ros-args'].
+
+This error says that pytorch hasn’t been installed. Please install pytorch using this command. $ pip3 install torch
+
+@robotmania8896  thank it work for me
+
+Hi BOUKERMOUCHE Mohammed！ Thanks for watching my video! As far as I remember, I have modified most of the files in the “/src/td3” directory. I think the only file that I haven’t modified is “replay_buffer.py”.
+
+@robotmania8896  I think also the meshes files
+
+Can you open this page? https://github.com/RobotnikAutomation/velodyne_simulator/tree/ros2-devel You can clone this repository with ROS2 branch using this command $ git clone https://github.com/RobotnikAutomation/velodyne_simulator.git -b ros2-devel
+
+Yes, I did exactly as you have described.
+
+@robotmania8896  there is a problem , i cant reach the repo for veldyne_simulator for ros2 ? in ros index i see it but the page never opens, can you send me the package please?
+
+Hi Ahmed Aljbry! Thanks for watching my video! You should do training until loss and Q values converge. I don’t remember how long it took in my case, but much longer than half an hour.
+
+Hi 李一铎! Thanks for watching my video! Since this is ROS2, can you please try “ros2 topic info” command?
+
+Hi Ahmed Aljbry! Thanks for watching my video! These are veldyne_simulation packages for ROS1 and ROS2. You probably have brought ROS1 version. So, please use ROS2 version of veldyne_simulation package.
+
+@robotmania8896  thanks for your answer , last one....can you state all libraries  you use it here ?
+
+Do you mean libraries or packages that were installed using apt? If so, I am not remembering all libraries but regarding this particular tutorial there were no special ROS packages.
+
+Can you give me the link of veldyne_simulation for ROS2? I just found one don’t specific if it for ros1 or Ros2?
+
+@ahmedaljbry1160  Originally, I used this repository. https://github.com/ToyotaResearchInstitute/velodyne_simulator But it seems that this repository also has a ROS2 branch. https://github.com/RobotnikAutomation/velodyne_simulator
+
+@ahmedaljbry1160  Originally, I used this repository. https://github.com/ToyotaResearchInstitute/velodyne_simulator But it seems that this repository also has a ROS2 branch. https://github.com/RobotnikAutomation/velodyne_simulator
+
+@ahmedaljbry1160  I think this link is for velodyne with ROS2. It says “ROS2-devel”. https://github.com/RobotnikAutomation/velodyne_simulator/tree/ros2-devel
+
+Yes, this program will work without GPU.
+
+Hi Victor LI! Thanks for watching my video! It is my pleasure if this video has helped you!
+
+import numpy as np import torch import torch.nn as nn import torch.nn.functional as F from squaternion import Quaternion            Do i have to download the mentioned libraries?
+
+Hi Ahmed Aljbry! Thanks for watching my video! Yes, you have to install those libraries. I have not tried to run this simulation using ROS Iron, but I think it will run with small modifications or even may run as it is.
+
+@robotmania8896  Thank you for your answer .....if i want to modifiy the current model that contains many obstachles? what should i do ? There are many model files such as model inside TD3 , model inside velodyne_description? I should to modify both?
+
+To modify fixed obstacles, you should alter the “td3/worlds/td3.world” file.
+
+Hi achayante aradhakan! Thanks for watching my video! Were there any errors prior to those you have pasted?
+
+Hi 길요한! Thanks for watching my video! Were there any errors prior to those you have pasted? Also, on which machine and ROS version are you executing the program?
+
+There was no problem with pasting. I'm using 20.04 ros2 foxy now
+
+and also does it work on the lds-02 lidar that comes standard?
+
+@user-dk9mf7by4s  It is possible to use this algorithm if lidar publishes a PointCloud2 type message. But still, you have to do some modifications in the code, since lidar specification is different.
+
+Hi Awesome Robotics And Tech! Can you run the training code several times? Maybe optimization converges to local minima.
+
+Hi shoottz! Thanks for watching my video! Collision calculation is done in the “observe_collision” function. Calculation is done based on data obtained from velodyne lidar. Please check whether your robot publishes PointCloud data correctly.
+
+@robotmania8896  Thank you so much I got it work now! I want to know how you made a dataset? I want to make a new dataset for an environment I made. I'm new to all of this.
+
+@robotmania8896  Thank you so much I got it work now! I want to know how you made a dataset in Tensorflow/Tensorboard? I want to make a new dataset for the environment. I'm new to all of this.
+
+Thank you so much I got it work now! I want to know how you made a dataset in Tensorflow/Tensorboard? I want to make a new dataset for my environment. I'm new to all of this.
+
+@shoottz  What do you mean by “dataset”? Do you want to create a new gazebo environment?
+
+@robotmania8896  I already have created a new gazebo environment. What I mean by "dataset" is the graph in the tensorboard session with a different folder at 8:48
+
+@shoottz To specify a different folder, alter the directory in line 133 in the “train_velodyne_node.py” script. Log data will be generated there. If you are using a VS code editor, it includes tensor board support plugin. So, by using it you can show the graph very easily.
+
+​ @robotmania8896  I have an issue with the burger bot constantly spinning in the test file. I've trained it for over 20+ hours. Any ideas on how to fix this?
+
+Hi Annett Cortés！ Thanks for watching my video! Since this is a simulation, if the seed of the random number is the same, I think simulation results will be exactly the same. So, change the seed and results should be different.
+
+Thank you so much for your help, wish you the best
+
+Hi can you please tell me from which file the results are generated as from testing python file I am not able to figure it out?
+
+Hello Robot Mania….what’s the best way to change the robot to a different model
+
+Its a really good Tutorial  Can you please instruct me that in which folder the main algorithm is? and how can I reduce my training time   Thanks in advance
+
+Hello thank you for this video and for sharing your results. I was trying to train it but the boxes are not changing location even though there is a block of code in your code to change the box's locations. Could you tell me why it may happen and if your network was trained with boxes that are changing location in the environment? Also, how could we generate a map while running the test file?
+
+hello robot....is there a way for the test simulation to goto a specific place every time..can you help with that
+
+robot mania....I've downloaded the file from and built it. i have the model trained and can run the test_simulation as well. Could you please tell me how to have the trained model go to a specific goal every time vs going to a random goal point. where in the script do i make the adjustments without breaking the code...thank you again
+
+Thank you for the video. I am having a problem with the test simulation script. It does not run after the model parameters are created. I get the error when launching the test simulation launch file saying. Parameters have failed to load, and the parent directory doesn't exist.  [test_velodyne_node.py-3]     raise ValueError("Could not load the stored model parameters") [test_velodyne_node.py-3] ValueError: Could not load the stored model parameters
+
+Hello. I wanted to ask besides installing PyTorch, Tensorflow, ros2, and gazebo. What else needs to be installed because when launching test. It does not work
+
+Thank you for the video. One of my last questions is after the model is trained to a point were you are satisfied with its performance, is there anything else that has to be done to run the tester. When I run the tester I get the error saying that it is failing to load the parameters from the .pth files.
+
+thank you for the video, the src folder , contines two folders "td3" and "velodyne_simulator", what does the "velodyne_simulator" package contain that is essential for the DRL navigation and ROS environment to work? i deleted the package and built the workspace, and it built without errors , the "ros2 launch td3 training_simulation.launch.py" still works.  does deketing the "velodyne_simulator" folder and consequently the package cause any hidden problems ? also gazebo keeps pausing at the 200 millisecond mark, I have to manually unpause it, this could cause the launch to fail since the odom doesn't start publishing without modifying the vanilla code, did anyone run into this, and if so, any help is appreciated.
+
+Hello, Good job again. I am following you for my project but i can't understand something which is i don't know how to do this. I have a good path planning algorithm for one track with mission. But i don't know where am i. In local localisation i am starting in (0,0) location in world. This is okey but how can i know my location while i am moving. Imu, Vlp-16 these are good but not stabilized. For example i am moving 0.5 meters but in gazebo it moves 0.38 meters and this is not good for my path planning algorithm. I need really good local Localisation. I thinked about sensor fusion and Kalman Filter but so hard to understand or apply it. I have ZED2 stereo, VLP16, Here3 gps etc. for your video, while the car moving it draws path. And it is so stabilised just for an example. So if you have any idea about my project please teach me. Thank you for the video and helps.
+
+Thank you for the video robot mania. I had a few questions, do you recommend running this on a dedicated linux machine or will a virtual machine suffice to run the scripts you demonstrated?
+
+Thank you for the video robot mania! I had a question for you. When running the training script, after about an hour of training the robot tends to stop training and errors out and proceeds to drive in circles. The error seen is posted below:  [train_velodyne_node.py-3] Traceback (most recent call last): [train_velodyne_node.py-3]   File "/home/edit/kj_maze/install/td3/lib/td3/train_velodyne_node.py", line 784, in <module> [train_velodyne_node.py-3]     network.save(file_name, directory="./DRL_robot_navigation_ros2/src/td3/scripts/pytorch_models") [train_velodyne_node.py-3]   File "/home/edit/kj_maze/install/td3/lib/td3/train_velodyne_node.py", line 237, in save [train_velodyne_node.py-3]     torch.save(self.actor.state_dict(), "%s/%s_actor.pth" % (directory, filename)) [train_velodyne_node.py-3]   File "/home/edit/.local/lib/python3.8/site-packages/torch/serialization.py", line 618, in save [train_velodyne_node.py-3]     with _open_zipfile_writer(f) as opened_zipfile: [train_velodyne_node.py-3]   File "/home/edit/.local/lib/python3.8/site-packages/torch/serialization.py", line 492, in _open_zipfile_writer [train_velodyne_node.py-3]     return container(name_or_buffer) [train_velodyne_node.py-3]   File "/home/edit/.local/lib/python3.8/site-packages/torch/serialization.py", line 463, in _init_ [train_velodyne_node.py-3]     super().__init__(torch._C.PyTorchFileWriter(self.name)) [train_velodyne_node.py-3] RuntimeError: Parent directory ./DRL_robot_navigation_ros2/src/td3/scripts/pytorch_models does not exist. [ERROR] [train_velodyne_node.py-3]: process has died [pid 20095, exit code 1, cmd '/home/edit/kj_maze/install/td3/lib/td3/train_velodyne_node.py --ros-args'].  Do you have a idea on why this happens?
+
+After the model is trained what is the next task that must be performed in order for the testing script to move. Currently on launch it is not moving
+
+Great video, thank you for the video. I had a question I trained the model but when I launch the tester the model doesn't move.
+
+amazing video robot mania!!!! could you tell me how could change the starting point of the robot  for example if I wanted the robot to start in the square just right of the triangle where would I have goto to change that? and can I add any map /world for this or does it need specific measurements i.e 10x10 or 11x11...thank you again and great tutorial video
+
+Just curious. Did you use Nav2 framework in implementing this?
+
+Thank you for the video. I have a question about tensorboard. After i start the training and then going to vscode to launch tensorboard, it keeps showing up as inactive and there is no event running. What has to be done to fix this?
+
+Thank you for the video…I’ve installed everything and it runs however I don’t see the launch tensorboard session in vscode train_velodyne_node…please help and thank you again
+
+Hello, thanks for the video and the code sharing, I have the similar issue of robot not moving, and there is no “cmd_vel_nav” topic published, only following three topic published /default/td_robot/base_link/camera1/image /default/td_robot/base_link/camera2/image /introspection/mljibz/items_update  Any suggestion?
+
+Hi Adam Crux! Thanks for watching my video! The model is generated by running the “train_velodyne_node.py” script.
+
+Hi chance macarra! Thanks for watching my video! To change robot model, please modify “rs_robot.sdf” file which is inside the “/src/td3/models/td_robot/” directory.
+
+@robotmania8896  …thank you again
+
+Hi Adam Crux! Thanks for watching my video! The network is described by 3 classes: “Actor”, “Critic” and “td3”. You can find them all in the “train_velodyne_node.py” script. Reducing training time is difficult. You have to come up with better learning method to do that.
+
+@robotmania8896   after the training and testing is complete how one can view the results can you please tell me the process?
+
+What do you mean by “results”? Q values and loss are printed in the tensor board during training.
+
+Hi Perla Sammour! Thanks for watching my video! As far as I remember, the model is trained with boxes that are changing location. It is difficult to answer why in your case boxes are not moving. Is “gazebo/set_model_state” topic published? If you need to generate a map, you can do it using “slam-toolbox”.
+
+@robotmania8896  thank you so much do you have any tips on how to use this tool box because i tried but the map topic is publishing empty  messages probably because i should connect it somehow to the robot but I m a beginner. If you have any tutorial or tips to follow, I would be grateful.
+
+@perlasammour892  Here is a tutorial for slam toolbox. https://navigation.ros.org/tutorials/docs/navigation2_with_slam.html I hope it will help you. You also may use cartographer. I am using cartographer in this tutorial. https://www.youtube.com/watch?v=hcsS-9OIer4
+
+@robotmania8896  Thank you so much!
+
+Hi dakota tudor! Thanks for watching my video! If you would like to set specific goal in the test simulation, please set x and y to constant values in lines 252, 253 in the “test_velodyne_node.py” script.
+
+thank you... @robotmania8896
+
+@user-fx8nk6ew4s You have to modify the “change_goal” function. Set the “self.goal_x” and the “self.goal_y” to constant values. But note there will be an error if goal points overlap with obstacles, so you have to avoid this situation.
+
+Hi Ming Tseng! Thanks for watching my video! I have downloaded my code from google drive and executed it. It seems to me that it runs fine. At least in my environment. What version of pytorch are you using? I am using pytorch 2.1.2 with python3.8.10 .
+
+That may have been the issue it is now fully functioning. Thank you. A additional question I have is how do I modify the testing node script so that the goal is only spawned at a single location rather than randomly changing? I tried modifying the change_goal function by removing the random points and specifying a single point however, I received several errors or the robot will not move.  @robotmania8896
+
+@MingTseng-ev3tn What kind of errors did you have? I think you are thinking in a the right direction. But note that if the goal is set to the point where obstacles are placed, it will cause an error. So, you should fix not only the goal but obstacles as well.
+
+@robotmania8896  Thank you for the response. I seem to have solve the errors and it is performing great. My next question is were in the train_velodyne_node.py script are the goal_points being generated. I wanted to experiment whether having multiple instances of targets on the map at once will increase learning. I found several instances in which the goal might be generated but not sure what needs to be changed to spawn more goal points.
+
+@MingTseng-ev3tn  In this script there is only one goal node and it is generated in “train_velodyne_node.py” scripts at lines 297, 298. The goal position is changed every episode. This is done in the “change_goal” function (line 505). So, if you want to create several goal points, probably you have to create an array of goal nodes.
+
+Hi, I encountered the same issue. Could you please tell me how you resolved it?[test_velodyne_node.py-3]     raise ValueError("Could not load the stored model parameters") [test_velodyne_node.py-3] ValueError: Could not load the stored model parameters
+
+@liuzeliu5267  Hi liuze liu! Which version of pytorch are you using?
+
+thank you for your reply.My Python version is 3.10.12, and the PyTorch version is 2.2.0+cu121.   [test_velodyne_node.py-3]  [test_velodyne_node.py-3] During handling of the above exception, another exception occurred: [test_velodyne_node.py-3]  [test_velodyne_node.py-3] Traceback (most recent call last): [test_velodyne_node.py-3]   File "/home/fishros/DRL_robot_navigation_ros2/install/td3/lib/td3/test_velodyne_node.py", line 523, in <module> [test_velodyne_node.py-3]     raise ValueError("Could not load the stored model parameters") [test_velodyne_node.py-3] ValueError: Could not load the stored model parameters [ERROR] [test_velodyne_node.py-3]: process has died [pid 36344, exit code 1, cmd '/home/fishros/DRL_robot_navigation_ros2/install/td3/lib/td3/test_velodyne_node.py --ros-args'].
+
+@robotmania8896  [test_velodyne_node.py-3]     super().__init__(open(name, mode)) [test_velodyne_node.py-3] FileNotFoundError: [Errno 2] No such file or directory: './DRL_robot_navigation_ros2/src/td3/scripts/pytorch_models/td3_velodyne_actor.pth'
+
+@MingTseng-ev3tn   can you please share how you solved the  problem i having the same issue  " raise ValueError("Could not load the stored model parameters")"
+
+Hi chance macarra! Thanks for watching my video! How exactly the simulation doesn’t work? Are there any error messages?
+
+Hi kamren james! Sorry for the late response. Have you run the script using “ros2 launch” command? If you run the script directly from “td3/scripts” directory, python will not be able to find “pth” file unless you change the code.
+
+@robotmania8896   Thank you for the response,  I used the command: ros2 launch td3 test_simulation.launch.py to launch the testing script. However, I still get the error:  [test_velodyne_node.py-3]     raise ValueError("Could not load the stored model parameters") [test_velodyne_node.py-3] ValueError: Could not load the stored model parameters
+
+I have downloaded my code from google drive and executed it. It seems to me that it runs fine. At least in my environment. What version of pytorch are you using? I am using pytorch 2.1.2 with python3.8.10 .
+
+Hi ali sulyman! Thanks for watching my video! "velodyne_simulator" package contains plugins for gazebo. So if you delete that package, no lidar data will be generated.
+
+@robotmania8896    thank you for the reply. but have you checked that? because I did delete it and build the work space and run "ros2 launch td3 training_simulation.launch.py", then in a second terminal i echo the topics /velodyne_points and /front_laser/scan, which i assume are the lidar data, and they seem to be working (there is data). another quetion I have is where are the cameras,sensors(lidars), and the tf frames defined to be loaded with the robot in the simulation ?I have been looking in all URDF files and couldn't find them. edit: I found them in the td_robot.sdf file, I thoght they should be defined in a URDF file, according to the tutorails that I have went through, does the sdf get converted to URDF at run time? and I am not sure how this works because the sdf file is not even called in launch file edit2: the sensors are in the td_robot.sdf file which is loaded in the td3.world file.
+
+@alisulyman7824  Yse, SDF files are loaded in the world file. In my understanding, URDF files are used for ROS, and SDF files are used for Gazebo. I manually converted URDF to SDF file. But I am planning to use another method in my future tutorials since every time I make some changes to XACRO file, I have to manually generate URDF and SDF. All sensors are defined in SDF file which is in the “models” folder. You have to add a “gazebo_model_path” statement in XML file so that Gazebo can read SDF file.
+
+​ @robotmania8896   what still confuses me is why is the td_robot.urdf is launched in robot_state_publisher.launch.py, if the td_robot.sdf is called in the td3.world?  to me it seems redundent to use the td_robot.sdf if we can just use the td_robot.urdf, then why are they both launched in the project? is it necessary or is it convenient in some way?  and also if you could answer me if you have checked if the projects works normally if we delete  "velodyne_simulator" package , because it seems to works fine with out it but I am not sure if there are some hidden issues. thank you again for the response.
+
+I had issues with reading mesh from URDF file, so I have used SDF to visualize a model in gazebo and URDF for state publisher. But it seems there is a better way, so I am planning to quit using this method.
+
+Hi Erim Onay! Thanks for watching my video! Are you talking about real robot or gazebo simulation? In case of gazebo simulation, you can get link positions which are 100% accurate in the gazebo world.
+
+​ @robotmania8896  Hi In gazebo with your simulation pack, yes i can take nearly %100 accuracy in my project but when i try to communucate with ros2 and take the path topic in Lio-SAM, it gives error about QoS compatible i am still searching for it. By the way after the simulate it, i have to move my project in real life. If you have anything about sensor fusion or whatever to improve localisation in real life, it will be good video. There is no good video  in internet about it. Thank you again for your effort to answer anybody!
+
+@user-sl5ob1ji6s I personally recommend using RTK-GNSS at open environment and switching to methods with point cloud in places where GPS signal is not reaching. But still, it is very challenging to get accurate self-position in any environment.
+
+Hi kamren james! Thanks for watching my video! If you have a dedicated linux machine with GPU, it is the best. But this simulation will run with virtual machine too.
+
+Does the type of Gpu matter? Would an intel gpu or Nvidia gpu be better in this case?
+
+And I also had another question. I installed this repository on a jetson nano, and I installed all the dependencies(tensorflow, tensorrt, pytorch, etc..) and I keep getting the flowing errors  [rviz2-5] [INFO] [1703747640.905973404] [rviz2]: Message Filter dropping message: frame 'front_laser' at time 0,200 for reason 'Unknown' [rviz2-5] [INFO] [1703747640.906650187] [rviz2]: Message Filter dropping message: frame 'front_laser' at time 0,210 for reason 'Unknown' [rviz2-5] [INFO] [1703747640.906892743] [rviz2]: Message Filter dropping message: frame 'velodyne' at time 0,200 for reason 'Unknown'  Im not too sure why, by chance do you have a possible solution to why this is happening?
+
+@kamrenjames2862  This error is generated by rviz. So, in my opinion, it should not have negative effects on the simulation. I often see people asking about this kind of error on the forums, but I am not sure how to eliminate it.
+
+@kamrenjames2862  I think nvidia GPUs are used most often for ML. So, if you have nvidia GPU, use it.
+
+Hi Kamren James! Thanks for watching my video! This error says that directory “./DRL_robot_navigation_ros2/src/td3/scripts/pytorch_models” does not exist. Have you modified package structure? I think that in the zip file I have provided there should be this directory.
+
+Hi chance macarra! Thanks for watching my video! The test script should work right after the model is generated and no additional steps are required. Do you have any errors in the terminal?
+
+@robotmania8896 ..I have no errors at all and the test launch doesn’t move at all….any suggestions
+
+Hi James! Thanks for watching my video! Please check if “a_in”(line 560) in “test_velodyne_node.py” contains values other than 0. Also, please check if topic “cmd_vel” contains values other than 0.
+
+​ @robotmania8896  Thank you for the response but, I keep getting the error in terminal when running the tester,  failed to load stored model parameters, rviz and gazebo continue to load however the model doesn't move.
+
+@user-ks5el3mc9g  What is the error exactly? Is it failing to load the trained model?
+
+@robotmania8896   Yes, it is failing to load the model. The error message that I see in terminal is the following: [test_velodyne_node.py-3] ValueError: Could not load the stored model parameters After which it continues to load Rviz and Gazebo with no errors. However the robot doesn't move.   The only other error I see is the following: [test_velodyne_node.py-3] FileNotFoundError: [Errno 2] No such file or directory: './DRL_robot_navigation_ros2/src/td3/scripts/pytorch_models/td3_velodyne_actor.pth'
+
+Hi brad carpenter! Thanks for watching my video! If you want to change the starting point of the robot, you should edit “pose” of “td_robot” model in the “td3.world” file. It is line 2175. Also, you have to alter the “td3.world” file if you want to change the world. You don’t need any specific measurements.
+
+Hi Peera Tienthong! Thanks for watching my video! No, I have not used Nav2 framework. The robot is operated only by learned policy.
+
+Hi kamren james! Thanks for watching my video! It is difficult to say, but as a first measure, can you update your visual studio code to the latest version?
+
+I got it working, I wasn’t in the correct director. I had another question what code would I change if I just wanted to change the goal position in the testing script? I wanted to perform test to see performance every 100 iterations or so. Im still kind of new to programming, so I thought I would ask
+
+@kamrenjames2862  The goal coordinates are changed in the “change_goal” function. So, if you want to change goal coordinates, you have to modify this function.
+
+@robotmania8896  I see, what if I wanted to change the start position of the robot in the testing script as well? And if I wanted to change the world that spawns in?
+
+@kamrenjames2862  If you want to change the starting point of the robot, you should edit “pose” of “td_robot” model in the “td3.world” file. It is line 2175. Also, you have to alter the “td3.world” file if you want to change the world.
+
+Hi chance macarra! Thanks for watching my video! If you have installed the tensorboard correctly, “Launch TensorBoard Session” message should appear just above the “from torch.utils.tensorboard import SummaryWriter” line. Please check your installation.
+
+@robotmania8896  I also wanted to ask where does the training data get stored to. And is there additional configuration needed to view the tensor board data it currently tells me it is inactive.  And lastly after the model is trained how would you add this to a physical robot of similar type
+
+@bestofchance  The training data is stored in “runs” and “results” folders under “scripts” directory. After the robot is trained you can use trained model just as I did in “test_velodyne_node.py” script.
+
+@robotmania8896  ….one last question about the tensor flow is there anything additional that needs to be written? And what what would you do if you wanted to add a different map to this project. Thank you again for your help
+
+@bestofchance  No, you don’t have to do any additional settings. Just install tensorboard using pip. If you want to do simulation using different map, you have to alter “tsds3.world” file inside “worlds” directory.
+
+Hi Dong Wang! Thanks for watching my video! Yes, there is no “cmd_vel_nav” topic, the “cmd_vel” topic is the correct one. There should be around 23 topics in total. In this case it seems that this is not an issue with training process, but with ROS environment. Were there any errors while you were launching the simulation?
+
+I just upgrade typing-extensions and the robot is moving now! Thank you!😀
+
+@dongwang2226 …hello could you tell me what you upgraded and what extensions used to get things moving
+
+@dongwang2226  I have a question now. My /cmd_vel topic doesn't seem to have any output. When I use the 'rostopic info' command, it shows that there are no publishers. What could be the reason for this?
+
+Hello, I'm getting this type of error while trying to run that .py file:  [gazebo-1] process has died [pid 96281, exit code 255, cmd /opt/ros/noetic/lib/gazebo_ros/gzserver -e ode TD3.world __name:=gazebo __log:=/home/sxe67da/.ros/log/e58570c8-894b-11ee-b75e-8d3ba1ea14b9/gazebo-1.log]. log file: /home/sxe67da/.ros/log/e58570c8-894b-11ee-b75e-8d3ba1ea14b9/gazebo-1*.log   Any ideas on how I might fix this?
+
+Hi, when i use colcon build to compile, i found a lot of errors occur from one of the folder inside the velodyne_simulator. I use ros2 iron in ubuntu 22.04 with gazebo 11.0. Can you give any advice about this issue? Like what version do you use?
+
+Hi I would like to ask you about this autonomous navigation implementation, is it global path planning, combined with deep reinforcement learning for local path planning, is the global path planning algorithm using teb?
+
+Hello, awesome video. I am trying to develop my self world and attach to the program but when i replaces td3 world, and run the training the robot not enter in the program, the program stucked and no appear the robot, do you have any recommendation to do this..!!! and train in my world? thanks for all.
+
+Hello, thanks for the video. I would like to ask how to fix the start and end points when training. There is also a small question, whether this obstacle avoidance relies on the map, is it no map obstacle avoidance.
+
+[rviz2-5] Warning: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist [rviz2-5]          at line 133 in /tmp/binarydeb/ros-foxy-tf2-0.13.14/src/buffer_core.cpp  I keep getting this error... How do I fix it?
+
+Hello, thanks for the video. The reset() function randomly initializes the state of the gazebo environment by initializing robot position, orientation, obstacle position and goal position after each episode. The problem is that this function has no effect: it only changes the goal position, while the others (the obstacles and the robot) initialize at the same position. Even though the data is published in the '/set_model_state' topic, I don't know where the problem lies. Can you help me?
+
+hello, thank you for the video. I followed the steps and launched the training file. However the mobile robot does not move in both gazebo and rviz to show the training and testing outcome, do you have any idea on this?
+
+Can i implement it in omni wheel robot? How to connect it with any robots in order to navigate it i am new in robotics and a litllle bit lost
+
+Hello, thanks for the video. I had ros1 so i used the code from github and followed the instructions there. I ran the training but the model didn't learn. I ran it for 1700 episodes, average q value flat lined to -120. I noticed that the robot was turning only in one direction. Before this I used this reference to write my own setup, there also I noticed the same thing, robot turning in only one direction going in circles, but there reward function qas different. So I thought of testing this one first, and it is also not learning, I made no changes to the code. What might be happening?
+
+I encounter the following error in the Rviz, Fixed frame Frame [odom] does not exist, what shall i do?
+
+HI,  thanks for your video!  I have ROS2 Humble on Ubuntu 22.04. can I try your project with out version conflict or something else to do?
+
+Très belle vidéo 😊
+
+Thanks you so much for your tutorial. Could you please give me more detail about how run the setup.bash . I already install ROS2 and Pytorch also downloaded your project file.
+
+nice video!🤩
+
+Hi,I had tried something similar a few months ago with PPO,it did worked, however training takes a lot of time since we have to wait for the next state,if we take the next state at very high frequency then current state and next state will be very much similar. Any workaround for this?
+
+I also want to make something like this,help me
+
+Awesome tutorial ❤
+
+Hi Shaobo Yang! Thanks for watching my video! I have used ROS2 Foxy for this project. Errors occur probably because “velodyne_simulator” package is not suitable for ROS Iron. Please go to “velodyne_simulator” repository and clone proper version.
+
+Hi 陈易圣! Thanks for watching my video! I would say it is only local path planning. I think the technique described in this video is suitable for local path planning. It is not meant to be used for long distances.
+
+Hi megasonec! Thanks for watching my video! In this case, replace step by step small components in td3 world with your new components and see at which point the problem will occur.
+
+Hi user-wp3gg2so4w! Thanks for watching my video! Are you talking about start and end points of the robot? In that case, starting point of the robot is already (0, 0). And you cannot fix the end (goal) point of the robot since robot will not learn the right policy if the goal always will be in the same place. No, this obstacle avoidance is not relying on the map.
+
+@robotmania8896  Hello, thank you for your help, I still have a few questions about reinforcement learning I would like to ask you, when the trained model is imported, how do we set the target point for the robot to go to, I see you said this example he is not dependent on the map, in the test model code I see that it is written as a random target place, there is no map then how does the robot know where the target point is, then if I want to set the target point.is it set through rviz If I want to set the target point, do I set it through rviz, or can I only set it through the code.
+
+@user-wp3gg2so4w  In this simulation we assume that the robot knows goal coordinates. And it moves according to the policy that it have learned during training. The action is decided depending on the distance between the robot and the goal (test_velodyne_node.py lines 197~199).
+
+Hi h01042266056! Thanks for watching my video! I did a little research, but could not find any valuable information to solve this problem. Often it is just a startup sequencing issue that resolves itself in steady state. Here are some similar issues I have found https://github.com/cra-ros-pkg/robot_localization/issues/660 [ROS2] TF2 can't find existing frame inside a node - ROS Answers: Open Source Q&A Forum
+
+Hi user-zy6iw9jp3k! Thanks for watching my video! I haven’t looked deeply into this problem yet, but does this problem occur only with my ROS2 code or this problem persists with original ROS1 code too?
+
+​ @robotmania8896   Thank you for your quick response. I haven't tried the ROS1 version yet. But with this ROS2 version I've noticed that the data for the environment reset is indeed published in the 'set_model_state' topic, but I don't think this data reaches the environment to take effect. the command "ros2 topic echo gazebo/set_model_state" returns : model_name: r1 pose:   position:     x: -0.7638727065138555     y: 0.17986490957978774     z: 0.0   orientation:     x: 0.0     y: 0.0     z: 0.5171582388341937     w: 0.8558898036581083 twist:   linear:     x: 0.0     y: 0.0     z: 0.0   angular:     x: 0.0     y: 0.0     z: 0.0 reference_frame: '' --- model_name: cardboard_box_0 pose:   position:     x: -3.116492159638     y: 3.1576827630575153     z: 0.0   orientation:     x: 0.0     y: 0.0     z: 0.0     w: 1.0 twist:   linear:     x: 0.0     y: 0.0     z: 0.0   angular:     x: 0.0     y: 0.0     z: 0.0 reference_frame: '' --- model_name: cardboard_box_1 pose:   position:     x: 3.9417658862142186     y: 4.232268068907231     z: 0.0   orientation:     x: 0.0     y: 0.0     z: 0.0     w: 1.0 twist:   linear:     x: 0.0     y: 0.0     z: 0.0   angular:     x: 0.0     y: 0.0     z: 0.0 reference_frame: '' --- model_name: cardboard_box_2 pose:   position:     x: 0.7901411450245304     y: -0.9571975623281563     z: 0.0   orientation:     x: 0.0     y: 0.0     z: 0.0     w: 1.0 twist:   linear:     x: 0.0     y: 0.0     z: 0.0   angular:     x: 0.0     y: 0.0     z: 0.0 reference_frame: '' --- model_name: cardboard_box_3 pose:   position:     x: 3.238458176028665     y: 4.19627851705426     z: 0.0   orientation:     x: 0.0     y: 0.0     z: 0.0     w: 1.0 twist:   linear:     x: 0.0     y: 0.0     z: 0.0   angular:     x: 0.0     y: 0.0     z: 0.0 reference_frame: '' --- model_name: r1 pose:   position:     x: -4.45708460012157     y: -1.7893097247111696     z: 0.0   orientation:     x: 0.0     y: 0.0     z: -0.9968902750214566     w: 0.07880215458757854 twist:   linear:     x: 0.0     y: 0.0     z: 0.0   angular:     x: 0.0     y: 0.0     z: 0.0 reference_frame: '' --- model_name: cardboard_box_0 pose:   position:     x: -0.07471123903843502     y: -3.1570772973051486     z: 0.0   orientation:     x: 0.0     y: 0.0     z: 0.0     w: 1.0 twist:   linear:     x: 0.0     y: 0.0     z: 0.0   angular:     x: 0.0     y: 0.0     z: 0.0 reference_frame: '' --- model_name: cardboard_box_1 pose:   position:     x: 4.217072119106872     y: 3.3806770395690293     z: 0.0   orientation:     x: 0.0     y: 0.0     z: 0.0     w: 1.0 twist:   linear:     x: 0.0     y: 0.0     z: 0.0   angular:     x: 0.0     y: 0.0     z: 0.0 reference_frame: '' --- model_name: cardboard_box_2 pose:   position:     x: 2.6348969729394085     y: 3.918223589929326     z: 0.0   orientation:     x: 0.0     y: 0.0     z: 0.0     w: 1.0 twist:   linear:     x: 0.0     y: 0.0     z: 0.0   angular:     x: 0.0     y: 0.0     z: 0.0 reference_frame: '' --- model_name: cardboard_box_3 pose:   position:     x: 1.757266708766977     y: -3.766887224290775     z: 0.0   orientation:     x: 0.0     y: 0.0     z: 0.0     w: 1.0 twist:   linear:     x: 0.0     y: 0.0     z: 0.0   angular:     x: 0.0     y: 0.0     z: 0.0 reference_frame: '' ---
+
+The log is: [rviz2-5] [INFO] [1689653675.176403766] [rviz2]: Message Filter dropping message: frame 'velodyne' at time 0.200 for reason 'the timestamp on the message is earlier than all the data in the transform cache' [rviz2-5] [INFO] [1689653675.176581294] [rviz2]: Message Filter dropping message: frame 'front_laser' at time 0.210 for reason 'the timestamp on the message is earlier than all the data in the transform cache' [rviz2-5] [INFO] [1689653675.176650750] [rviz2]: Message Filter dropping message: frame 'front_laser' at time 0.200 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+
+Hi yuxincai5409! Thanks for watching my video! In the log you attached, I don’t see any errors. If the robot doesn’t move, there should be another reason. Is “cmd_vel_nav” topic published and does it have values?
+
+@robot mania, it's a very nice video and thank you for sharing the code, I run into the same issue, and there is no “cmd_vel_nav” topic published, any suggestion?
+
+Hi huseynhaydarov5887! Thanks for watching my video! Yes, you can implement it in omni wheel robot. You have to create an omni wheel robot model. You can use the model I have used in my another tutorial.  https://www.youtube.com/watch?v=hcsS-9OIer4
+
+Hi ramanjeetsingh8684! Thanks for watching my video! I can only guess, but since learning at the first steps is largely stochastic, maybe something there went wrong and the agent started to learn a wrong policy. Can you try the simulation several more times and see whether the results will be the same?
+
+Hello  @robotmania8896 , I am also facing the same issue. My robot is moving in circles and not learning any policy. Its reward after 3000 episodes is -160. Please tell me the way to solve it.
+
+@vamsivamsi2903  Hi vamsi vamsi! Thanks for watching my video! I think the robot has learned a wrong policy. Unfortunately, I don’t have enough time to look into this problem more closely. Can you do the simulation several times and see whether the robot learns properly?
+
+@robotmania8896  sure I will try once.Thankyou for the reply
+
+@vamsivamsi2903 were you able to figure it out?
+
+Hi farhadhamidi7260! Thanks for watching my video! This error may occur in the beginning when you launch the simulation, but it should go away eventually.
+
+@robotmania8896  Okay, but it's not going away eventually. I also changed the fixed frame to base_link, but it's not completely fixed. Could you please give me your email address so that I can send you error images?
+
+@robotmania8896  I try again but it's not fixed, can you give me your email address?
+
+Hi aarontilahun4248! Thanks for watching my video! Yes, I think you should be able to execute this simulation with the Humble without any code modifications.
+
+@robotmania8896  I've tried your code using ros2 foxy but when I start the training simulation, robot doesn't move in Rviz and gazebo. can you help me please?
+
+here is the last log: [rviz2-5] [INFO] [1692221912.671674966] [rviz2]: Message Filter dropping message: frame 'front_laser' at time 0.210 for reason 'Unknown'
+
+@aarontilahun4248  This error is happening at RVIZ, so I think it should not have negative impact on learning process.
+
+Hi Kevin Tchangang! Thanks for watching my video! It is my pleasure if this video has helped you.
+
+in the project file only have src folder no have install folder
+
+Hi To Xuan Dung! Thanks for watching my video! Please download the file from the google drive. Then move to the project folder and execute the “colcon build” command. After that, you should be able to execute the commands I explained in the tutorial.
+
+@robotmania8896  thanks you so much for the sharing. I wish you all the best and keep forward
+
+Hi Simon Lopez! Thanks for watching my video! It is my pleasure if this video has helped you!
+
+Hi anuj patel! Thanks for watching my video! In this case, I think the way to reduce learning time is to set sampling frequency appropriate for the problem you are trying to solve. For example, if your robot is moving only 0.1 m/s, there is no reason to sample every 1ms because robot will move only 0.1mm each time step.
+
+Hi HANG! Thanks for watching my video! What kind of problem exactly do you have?
+
+@robotmania8896  hello, thank you for your tutorial, I'm getting error when I'm launching training_simulation. What should I do?
+
+@robotmania8896  the error is: [ERROR] [gzclient   -2]: process[gzclient   -2] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM' [ERROR] [gzserver-1]: process[gzserver-1] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM' [INFO] [gzclient   -2]: sending signal 'SIGTERM' to process[gzclient   -2] [INFO] [gzserver-1]: sending signal 'SIGTERM' to process[gzserver-1] [ERROR] [gzclient   -2]: process has died [pid 5208, exit code -15, cmd 'gzclient   ']. [ERROR] [gzserver-1]: process has died [pid 5205, exit code -15, cmd 'gzserver /home/korkyt/colcon_ws/install/td3/share/td3/worlds/td3.world                                                                      -s libgazebo_ros_init.so   -s libgazebo_ros_factory.so   -s libgazebo_ros_force_system.so       '].
+
+@robotmania8896  I can give more detailed error message
+
+@robotmania8896  do you have discord or something like that?
+
+@Nomercy777wth  Hi Nomercy! I don’t have a discord. I am not sure what may cause this error. Do these errors appear suddenly? Maybe there is another error prior to these errors.
+
+@robotmania8896  yeah, I have log
+
+@robotmania8896  Full log
+
+@robotmania8896  I used chmod 755 command, everything work fine now, thank you again for your tutorial
+
+@Nomercy777wth  I am glad that the program has worked for you!
+
+@robotmania8896  hello again, when I'm training robot, goal point appeared right beside robot's spawn point, and because of that robot is just spinning around goal point, is there any way to skip step?
+
+@Nomercy777wth  The episode should automatically end when it reaches maximum number of steps, so you don’t have to do anything.
+
+@robotmania8896  I waited 10 minutes, it didn't end
+
+@Nomercy777wth  That is strange. Can you insert logger and print “episode_timesteps” values to see whether it is reset when reaches “max_ep” value?
+
+@robotmania8896  I'm trying to send error message but youtube is deleting it
+
+@robotmania8896  [train_velodyne_node py-3] [env]: Validating [train_velodyne_node py-3] [env]: evaluating episode 0 [rviz2-5] [rviz2]: Message Filter dropping message: frame 'base_link' at time 967.732 for reason 'Unknown' [train_velodyne_node py-3] [env]: action : [1. 1.] I deleted some parts of it
+
+@Nomercy777wth  I don’t see anything that could cause a problem. Considering the number of views of this video, if there was an error in the code, there should be other people with the same problem. Maybe you can run this simulation on another PC?
+
+Hi MohitKS! Thanks for watching my video! It is my pleasure if this video has helped you!
+

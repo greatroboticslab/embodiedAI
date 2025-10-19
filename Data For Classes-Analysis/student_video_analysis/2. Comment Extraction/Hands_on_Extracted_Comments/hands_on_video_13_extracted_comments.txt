@@ -1,0 +1,108 @@
+How did you run RVIZ in your raspberry so fast? I cant run RVIZ in my raspberry because is so slow...Great Video
+
+nice job!
+
+Thank you for being helpful about slam software
+
+It's a free download, isn't it?
+
+Great video, makes the responsibility question easy to understand
+
+im trying to use slam with an array of phototransistors close to the ground which would pick up white lines on the playing field for robocup soccer. this would also let it autonomously navigate. do you think its possible? how difficult would it be to set that up? i have around 5 months deadline
+
+Can you please make a human following car using this hardware
+
+Awesome bro...,👍👍👍
+
+Awesome I learned something new
+
+Thanks for the video. I run a small nonprofit theatre. I'm looking to navigate small wheeled scenery pieces with an electric motor on and off stage. To drive themselves from point A to point B and back again. (they don't need to move fast)  What you are doing seems similar, I just want to do it with wheeled platforms.  Any thoughts on a model I could emulate to accomplish this?
+
+Good evening sir 😊 I was wondering if you could make a video about integrating hector slam with the navigation stack ?
+
+hi you said in the video that hector slam can be used to publish odometry to be later used in the navigation stack  can you make a video or tell  the guidelines how to  integrate hector slam with the navigation stack  thank you in advance (i finished hector slam controlling the robot using commands from the keyboard) side note:it is for a graduation project
+
+Visual slam using ORB-SLAM was performed completely on raspberry pi or on a seperate master PC??
+
+Can you plz make a video on step by step implementation of this SLAM technique
+
+Awesome!!! Thank you!
+
+Thanks for this! I'm looking into implementing vision/pov into movement so your explanations help a lot
+
+Hi bro first of all nice work!  Can i use  Ubuntu MATE 20.04.1 LTS? Also, could u make a step by step video on install and usage? Thanks
+
+thanks for sharing the results.
+
+That's a really small lidar! Where can I look that up?  5:40 mark, for later
+
+Very good 👍
+
+I think it mentioned in either video or the article that I don't run RVIZ on Raspberry Pi? It's not recommended to do that. Instead you run one ROS node with image / LIDAR/ robot driver on the robot itself and another ROS node with RVIZ on your PC.
+
+@Hardwareai  Is it posible to do this communication between Raspberry and PC using docker in both?
+
+@MemoxCid  yes, here is the link http://wiki.ros.org/docker/Tutorials/Docker
+
+Thank you! Cheers!
+
+Glad it was helpful!
+
+can we use this SLAM in VOXL with the help of ROS in it
+
+what is?
+
+Glad you enjoyed it
+
+Okay, considering that was 9 month ago (sorry, was busy with my MSc at that time, replying to all old comments now).... That would be a very interesting task - but you will need a highly custom algorithm for that. Are you okay with using a cheap camera module(s) instead>
+
+You mean Bittle?? It's not a car though xD
+
+Thanks ✌️
+
+Glad to hear it!
+
+Model? I don't think a neural network model is necessary for that. Wheeled navigation will be a bit easier, just get LIDAR + motors with encoders. ROS packages are available for making Navigation work with this stack.
+
+@Hardwareai  Thanks.  Forgive me, what is an ROS package?
+
+Good morning :) I could, but aren't there existing videos for this topic already? I made this particular one because 1) I wanted to try LIDAR and camera on Bittle 2) not so much information on the internet about V-SLAM for ROS
+
+I would be very thankful if you send me one of these videos about this topic. Actually, you were the only one who made this kind of videos. Anyway, thank you sir for replying 😊
+
+Right. Well, this video actually turned out to be more popular than I expected, so a continuation is a possibility indeed. Unfortunately I am super busy at the moment and probably will finish TinyML series first, despite that one wasn't very popular.
+
+@Hardwareai  if you aren't able at the moment to make a video  if you know the main steps how to integrate them both it would be extremely helpful  to just tell me the main steps
+
+What a coincidence ... it will be something great as it’s for my graduation project too.
+
+The answer is in the video ;) but yes, it is performed completely on R Pi - that's why I'm using newer Raspberry Pi 4 for ORB-SLAM.
+
+Will it work on Ubuntu 20.04?
+
+I have published a supplementary article for more details. Is there something that needs more detailed explanation?
+
+You're welcome!
+
+You're very welcome!
+
+Thank you! Well, is there any reason to use 20.04 instead of 18.04 currently? 18.04 is more stable and from running it on Raspberry Pi has almost the same features. I understand it is newer, but unless it has features that you require and are not present in previous version, newer is not always "better" :)
+
+Did it work for you ?
+
+​ @osaydhussein258  can we use this SLAM in VOXL with the help of ROS in it pls help
+
+My pleasure!
+
+You can get it here https://www.seeedstudio.com/RPLiDAR-A1M8-360-Degree-Laser-Scanner-Kit-12M-Range.html
+
+Thank you! Cheers!
+
+@Hardwareai  can we use this SLAM in VOXL with the help of ROS in it pls help
+
+Thanks for your efforts on testing those components in the wild. Always good to see real world perf vs marketing videos bs. Keep up the good work!
+
+Thank you for the feedback! Real world performance wise, Bittle actually exceeded my expectations - I didn't think it would be able to even start with LIDAR and Pi 3 connected, because of the current draw, let alone walk/crawl and even (do not try this at home) jump. Hector SLAM performance was adequate. ORB-SLAM2 didn't not perform well - in the video you can see Path messages are mostly correct, but occupancy map doesn't make any sense. That can be issue about settings/camera height, but even if these issues are resolved, the camera still moves way too much during walking, so I don't think monocular SLAM is an option for Bittle. Would be interesting to try stereo.
+
+@Hardwareai  usually blur is a killer for feature matching. Fyi I am using a zed camera @ 100fps and it supports pretty fast movements, provided there is enough light (it does have an IMU to help track very fast/short rotation type of movements too). I did not experience with Lidar but your testing is cool, and I appreciate that achieving something with a rpi is quite something.
+

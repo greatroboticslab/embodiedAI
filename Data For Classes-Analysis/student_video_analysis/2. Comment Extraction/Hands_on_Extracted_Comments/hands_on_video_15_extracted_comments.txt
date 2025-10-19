@@ -1,0 +1,180 @@
+can we run a 40kg servo motor with this technique sir ?
+
+could i use a seperate power supply to power a high power servo, 7.4 volts, and the rpi4 but still send signals from the rpi4 to control the servo? i want to use my body power to power the servo, i got this human vein to usb attachment on amazon, i think my body puts out about 12 volts
+
+Code worked the first time now it doesn’t 👍
+
+so I'll put your bloody python code into my board, install it into the car as another control unit, and it will run 3x slower than it would in a compiled(arduino/c) version... what's the point? and Y R U promoting such stupidity to others???
+
+Tells me to use pigpio 😢
+
+how can we control servos from Bluetooth (on rpi), and make it execute set of voice commands?
+
+Can you link the code for controlling a 360 degree servo?
+
+Do you need a special servo to make this a closed loop?
+
+Do you have any tutorial recommendations for if I am wanting to use a button to switch a servo between to positions? Kinda of like in an iron man helmet!!
+
+what would interest me is how do i get rotary movement slower say from 90 to -90 in 1 min . Great video :)
+
+More tutorials need to be like this, short and straight to the point, too many channels add a bunch of unnecessary info
+
+how are stepper motors different than servos?
+
+I am working on a projekt where i need 7 servos in total but there are always a maximum of 2 working on the same time (most of the time just 1), do i need an external power supply?
+
+Thank you for making this video :)  Does anybody know how many servos I can control at the same time?
+
+Why not get 5V power from Raspberry Pi but have to power the servo separately?
+
+This helped me finish a project I had been working with for a while. Just wanted to say, Thank you!
+
+thanks a lot for the explanation. how can we control also the speed of the servo?
+
+Can you do a tutorial on a 16 servo hat with external power tutorial
+
+Cool Video, really helps me! But which DC power jack did you use?
+
+4 amps bruh i have 2 max
+
+Yes, as long as you use the correct power supply that can provide enough current, you should be able to!
+
+Hey Ayaka, Whilst we don't have a tutorial on that specifically it is not too hard to of a task. You would need to have a variable to count the state, here is what the psuedo code would look like. (in the set up) state = 0  (in the main loop section)  if button pressed      if state = 0           (set the first servo position you want)           state = 1       if state = 1           (set the other servo position you want)           state = 0  And with a single button the state will change between these 2 variables. If you need any more help feel free to ask on our forums: http://coreelec.io/forum  Good Luck!
+
+Hey Siebarth! This is a very common code often called a "servo sweep". You could use a loop to steadily increase the position of the servo a little bit at a time. If you want the servo to rotate 180 degrees in 60 seconds, every second it would need to rotate 3 degrees.  So you could create a loop that starts at 90 degrees, then every second decreases that number by 3 degrees till you get to -90 degrees in 60 seconds. You can make it even more smoother by decreasing the update time (changing the angle to 1 degree every 1/3 of a second).  Here is a link to some example code: https://core-electronics.com.au/guides/getting-started-with-servos-examples-with-raspberry-pi-pico/#example-1  This does use 0 to 180 degrees though, but the logic is the same.  If you have any other questions or need any more help, feel free to ask us on our forums: coreelec.io/forum  Cheers mate!
+
+Great to see a content creator that gives in depth, helpful replies!
+
+Stepper motors you control with “steps” so for example; move 10 steps to the left
+
+yes Rpi board 5V pin is not able to give sufficient current to servo motor
+
+Based on the video, it sounds like the black and red wires just give power, and the yellow wire determines angle because it's connected to the GPIO on the Raspberry Pi. Since the yellow wire controls the angle, the speed of the servo would be controlled from the code-side by changing the angle at slower or faster rates. I'm new to this, but that's my understanding of it.
+
+We already did 😀 https://core-electronics.com.au/guides/raspberry-pi/servo-hat-raspberry-pi/
+
+@Core-Electronics  y'all are the best
+
+4 amps is kind of conservative. If the servo isn't holding high torque or stalling you're probably fine. If you use a micro servo then 1amp is sufficient.
+
+Thank you for this very helpful walkthrough with servo motors, I have a question if it is necessary to add the gpio.cleanup for this kind of coding.
+
+Anyway I can do this in c?
+
+nice short totorial. Is there also a way to adjust how fast the servo spins?
+
+If the servo I want to use requires higher voltage to operate and I need to power it via a 8.4V power supply, is it safe to connect it's ground to the Pi? or is it going to fry it?
+
+Hi, this was a great video and I've used the same wiring except for a Micro Servo SG90 from tower pro. It didn't even move unlike the other problems in the comment section, is this kind of servo not compatible? Thanks! (also it's a stepper servo)
+
+Your  Explanation is very very nice.Thank you so so much sir.
+
+Hello! I am getting this error when doing the large servo "PWMSoftwareFallback: To reduce servo jitter, use pigpio pin factory." with a link to the gpiozero docs is there a fix? thanks!
+
+Can i connect 2 large servos in a raspberrypi 4 model b?
+
+Hello! I tried your code with a MG90S but my servo isn't moving. Any clue?
+
+Where do I get the library for the code?
+
+Hi it was a really good video but I am facing a problem that my servo jitters very violently due to which it is not able to go full 90 degrees. I hope you can help me solve it.
+
+Can you tell me if I can connect directly Emax ES08MA II to raspberry pi zero? Ty
+
+Hi could you do a video on Auduino and raspiberry pi zero and flysky controller and reciver to contol 2 servos.
+
+exactly what i was looking for
+
+Hi love your videos, if you don't mind, which program are you using for your schematic circuit??
+
+How can I connect a 6- 8,4V Servo with a Rasberry or PWM? Please help
+
+if we use PI 3
+
+5V and GND at the Pinout can handle currents of 1000mA?
+
+how can i stop the jitter of the servo?
+
+You clearly deserve 10k likes man
+
+If you are using Continuous Servos you can. Otherwise if you are using a Normal Servo you can get it to step multiple times, with delays between each subsequent movement, instead of a single snap to direction request, which would mimic a slower rotation.
+
+@Core-Electronics  alright ty that works, do you know if it is bad for a servo to change the spin directionn very frequently like every 0.1 seconds or does it not harm it?
+
+Don't power the raspberry pi with the 8.4V but you can totally connect up the ground pins 😊 It is important that they share the same grounds
+
+It should still be compatible. Perhaps adjusting the | min_pulse_width | and | max_pulse_width | to max it work. Determine a servos limits carefully by experiment, so adjust those default settings by small increments.
+
+Alright thanks for the quick response! I'll try it today
+
+You are most welcome!
+
+That is just the system telling you a method to lower Servo Jitter. Is the servo moving at all when you run the script? Feel free to open up a forum post as well best be able to help you there - https://forum.core-electronics.com.au/
+
+@Core-Electronics  I have the same error code. Im using python idle, I am going to try running it as a shell. Nope, Same error, thonny has the same error as well.
+
+Does the error impact the correct function of the Servo? If not don't stress. If it is causing a very jittery response the solution to not seeing the message any more and a smoother servo can be found here - https://forums.raspberrypi.com/viewtopic.php?t=313651
+
+Expanding on the method I used here 😊 absolutely.
+
+I am surprised that it doesn't work at all! The specifications for MG90S that you likely need to update into the script are the Pulse Cycle: 20 ms and the Pulse Width: 400-2400 µs.  Update the script with that information and your servo should jump to life 😊
+
+Check the bottom of the full written up article for any scripts I have utilised in this guide 😊 https://core-electronics.com.au/guides/control-servo-raspberry-pi/#Down  No extra packages or external Python libraries are required to get this system running.
+
+Thank you
+
+Heyya mate 😊 thanks for your kinds words. If you do not get full rotation out of your 180 Degree Servo adjust the min pulse width and max pulse width values by 0.0001 increments until you do. Adjusting these numbers till they are good will also calm down the servo jittering as well.
+
+@Core-Electronics  Thanks a lot
+
+Absolutely! That servo should work perfectly.
+
+Heyya mate, this guide here will give you the run down on controlling hardware attached to a Raspberry Pi using an RC Controller - https://github.com/samfok/remote_receiver_tutorial  I reckon that will be a proper help 😊
+
+I have been using this online Photoshop like program for all my image editing/schematic creations - https://pixlr.com/x/  However there are totally programs made for the job, I just found it easier and more fun creating my own assets.
+
+@Core-Electronics  Thank you so much
+
+For higher voltages than 5V you will need to use a I2C Motor/Servo Driver Board. Just be careful when you are hooking up power as you do not want to fry the Raspberry Pi. The Raspberry Pi will break if more than 5 Volts are sent through it.  This would do the job well -  https://core-electronics.com.au/catalog/product/view/sku/SS105020093
+
+@Core-Electronics  perfekt I would try it. Could you make a video how to code a "Flight simulator Joystick" Trustmaster  For steering servos? Does I need to code every 0-1 ° for low sensitivity or is there any programs?
+
+I can see you have a very focused problem, hit this fellow up as he seems to be working right in your alley - https://www.youtube.com/watch?v=TNUACvk1sto
+
+Should function exactly the same 😊
+
+This is all for a Raspberry Pi 4 Model B -   For the Power rails:  -  The 5 V rail appears to passed straight through from the USB and the current is therefore limited to whatever the USB port can supply minus the current being drawn by the board. - The 3.3 V rail can supply a maximum of 50 mA  For the GPIO: - The max current you should draw from a single pin is 16mA - The max current you should draw from all the pins collectively should be below 50mA   Hope that answers all your questions 😊
+
+@Core-Electronics  The 5V Pins at the GPIO bar are called Power rails? I use the Raspberry PoE+ HAT (802.3at). So I have ~ 5V and 4A available. Lets say I connect a 3Ohm resistor, so that a current of 1.6A would flow. Will it damage the Pi?
+
+3 Ohm connected to GND and 5V (Pin number 2 and 6)
+
+That's a function of the RPi's soft-PWM. To completely remove the jitter, the RPi needs a hardware servo driver, like this one: https://youtu.be/bB-xymRI8BY
+
+(If sticking with the same set-up, finding the perfect | min_pulse_width | and | max_pulse_width | should also prevent much of the jitter.)
+
+With the direct connection examples you can alleviate jitter by using a different library (rpi_hardware_pwm).  Coupled with a one line config.txt change this library enables direct hardware timed communication for (up to) two servos when plugged into the right gpio pins.  While pin factories like pigpio definitely help reduce jitter, they do not alleviate it 100%.  Playing with pulse widths / etc do nothing to solve it.  I'm guessing someone is experiencing a placebo effect.
+
+<3
+
+Great video! I was just wondering, would it be possible to use a 5V DC 3A power supply instead of 4A? I'm struggling to find one in any European shops.
+
+Great video, I especially liked the code walkthrough.
+
+gpiozero, nice
+
+Long time Subscribed , bell icon clicked but this video does not appear at all in my feed ! Thanks YouTube!!!  A good , easy to understand guide !
+
+Cool video ! Straight to the point ,Clearly explained and easy to understand - I like that !
+
+Yes, absolutely
+
+@Core-Electronics  Can i use a 5V 1A
+
+Glad you liked it!
+
+Same here , I only spotted it because it came up on my home  section , probably appear in a few days time .
+
+I second this! Editing and prevention is more important than the information itself, I guess that’s subjective but this video format was very well done!
+

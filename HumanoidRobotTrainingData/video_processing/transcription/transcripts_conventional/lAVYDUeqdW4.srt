@@ -1,0 +1,184 @@
+1
+00:00:00,000 --> 00:00:07,000
+Now back to the quadrotor dynamics. The equations at the bottom tell us the net force and the
+
+2
+00:00:08,000 --> 00:00:15,000
+net moment. If we combine the net force and the net moment with the Newton-Euler equations,
+
+3
+00:00:16,000 --> 00:00:23,000
+we get these two sets of equations. On the right side, you see the total thrust, which
+
+4
+00:00:23,000 --> 00:00:32,000
+is U1, and remember this thrust vector is known in the body fixed frame. The matrix R is rotating
+
+5
+00:00:33,000 --> 00:00:41,000
+this thrust vector to an inertial frame. At the bottom, you see the net moment, also known
+
+6
+00:00:42,000 --> 00:00:49,000
+in the body fixed frame. But the equations, as they've been written, have components in the
+
+7
+00:00:49,000 --> 00:00:56,000
+inertial frame on the top and in a body fixed frame at the bottom. These are the Newton-Euler
+
+8
+00:00:57,000 --> 00:01:04,000
+equations, and these are the equations we'll use to develop controllers and planners for our vehicles.
+
+9
+00:01:07,000 --> 00:01:14,000
+One question you can ask is how we actually calculate these parameters? Or in an online setting,
+
+10
+00:01:14,000 --> 00:01:24,000
+how do we estimate these parameters? If you think carefully, the parameters you really need to know are those
+
+11
+00:01:25,000 --> 00:01:33,000
+corresponding to the geometry, the length L, for example, and those corresponding to the physical properties,
+
+12
+00:01:33,000 --> 00:01:44,000
+the mass M and the inertia I. You can also see that these parameters appear linearly in these equations.
+
+13
+00:01:47,000 --> 00:01:52,000
+So if you had a system that allowed you to measure positions, velocities, and accelerations,
+
+14
+00:01:53,000 --> 00:01:58,000
+it's actually not too hard to estimate the lengths, the masses, and the inertias.
+
+15
+00:01:58,000 --> 00:02:05,000
+You should also verify that it's quite easy to calculate the angular velocity in the body fixed frame.
+
+16
+00:02:06,000 --> 00:02:13,000
+If you know the pitch, roll, and yaw angles, and you know the rate of change of the pitch, roll, and yaw angles on the right side,
+
+17
+00:02:14,000 --> 00:02:21,000
+a simple transformation yields the angular velocity components p, q, and r along b1, b2, and b3.
+
+18
+00:02:21,000 --> 00:02:30,000
+So this model is quite complicated. It involves three components of position, velocity, and acceleration,
+
+19
+00:02:31,000 --> 00:02:36,000
+three components of rotations, angular velocities, and angular accelerations.
+
+20
+00:02:37,000 --> 00:02:45,000
+To get a feel for the control problem, I'd like to first look at the planar version of this model.
+
+21
+00:02:45,000 --> 00:02:56,000
+So we'll look at the equations of motion in the yz plane. We will assume that the robot cannot move out of this plane.
+
+22
+00:02:57,000 --> 00:03:06,000
+In other words, there's no motion in the x direction. And we'll also assume there is no yaw or pitch motions.
+
+23
+00:03:06,000 --> 00:03:20,000
+As a result, we come up with the three equations that you see here. Equations that describe the rates of change of velocity in the y and the z direction,
+
+24
+00:03:21,000 --> 00:03:26,000
+and the rate of change of the angular velocity in the roll direction.
+
+25
+00:03:26,000 --> 00:03:35,000
+So we'll look at the same equation. To describe these kinds of systems, it is useful to define a state vector.
+
+26
+00:03:36,000 --> 00:03:41,000
+In the three-dimensional case, we have six variables that describe the configuration of a robot,
+
+27
+00:03:42,000 --> 00:03:46,000
+and a state vector includes the configuration and its derivative.
+
+28
+00:03:46,000 --> 00:03:51,000
+the configuration vector is a state vector. So if q is the six-dimensional configuration vector,
+
+29
+00:03:52,000 --> 00:03:56,000
+q and q dot constitute a 12-dimensional description of the state.
+
+30
+00:03:57,000 --> 00:04:02,000
+The space of all such state vectors is called a state space.
+
+31
+00:04:03,000 --> 00:04:07,000
+If you look at the equilibrium configuration,
+
+32
+00:04:07,000 --> 00:04:16,000
+and that configuration is defined by the position x0, y0, and z0,
+
+33
+00:04:17,000 --> 00:04:24,000
+the configuration by definition also has a zero roll angle and a zero pitch angle.
+
+34
+00:04:25,000 --> 00:04:28,000
+It could, of course, have any yaw angle.
+
+35
+00:04:29,000 --> 00:04:35,000
+The equilibrium configuration must also correspond to zero velocity.
+
+36
+00:04:35,000 --> 00:04:39,000
+If I write it down in terms of a state space vector,
+
+37
+00:04:40,000 --> 00:04:44,000
+you have the equilibrium configuration q sub e,
+
+38
+00:04:45,000 --> 00:04:47,000
+and you have a zero velocity vector,
+
+39
+00:04:48,000 --> 00:04:53,000
+and that gives you a 12-dimensional vector where the bottom six elements are all zero.
+
+40
+00:04:54,000 --> 00:04:57,000
+Similarly, for planar quadrotors,
+
+41
+00:04:58,000 --> 00:05:00,000
+you have a three-dimensional configuration space,
+
+42
+00:05:01,000 --> 00:05:02,000
+a six-dimensional state space,
+
+43
+00:05:02,000 --> 00:05:09,000
+and an equilibrium configuration and an equilibrium state that can be similarly defined.
+
+44
+00:05:09,000 --> 00:05:15,000
+thaticionад quadrotors,
+
+45
+00:05:16,000 --> 00:05:28,000
+you have one city called the tests and the president's
+
+46
+00:05:29,000 --> 00:05:30,000
+as federally defined.
+

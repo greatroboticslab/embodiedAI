@@ -1,0 +1,300 @@
+HWMq1WjvgfE
+https://www.youtube.com/watch?v=HWMq1WjvgfE
+Unknown Category
+
+[00:00:00.000 → 00:00:11.680] I swear I'll spend more time looking for the parts I need than actually building anything.
+[00:00:18.400 → 00:00:28.180] Hey what's happening guys in our last video we used an op amp TLO72 as a gain stage in an
+[00:00:28.180 → 00:00:37.820] oscillator. Today we're going to use a different op amp the LM386 as what it's intended for an audio
+[00:00:37.820 → 00:00:45.600] amp. So I don't know if this exactly fits into the classic circuits you should know mold but we're
+[00:00:45.600 → 00:00:52.980] going to show you how to set up an LM386 super easy using its internal gain to make yourself a basic
+[00:00:52.980 → 00:00:59.940] little audio amplifier. So the first thing we need to do to do that is we need an audio source.
+[00:01:00.980 → 00:01:08.420] I got all kinds of options for audio sources but I like to keep things simple and if you've been
+[00:01:08.420 → 00:01:17.460] watching the channel for a while you know my favorite IC of all time is the 555 timer. So I have set up
+[00:01:17.460 → 00:01:28.740] here a simple bi-stable 555 timer I'm sorry a stable 555 timer and it is oscillating at about a kilohertz
+[00:01:29.540 → 00:01:37.940] which we can take a look at here. The 555 timer as you know outputs a square wave but square waves
+[00:01:37.940 → 00:01:41.300] don't sound good you know frankly they're not good for speakers they're not really audio
+[00:01:41.300 → 00:01:51.940] they're actually digital. But what I've done here is I simply set up a low pass filter these are 150
+[00:01:52.580 → 00:02:00.100] ohm resistors one microfarad capacitors three stages should give us an approximation of a sine wave.
+[00:02:00.100 → 00:02:04.500] No we're not going to look at it on the scope because you know what very few people actually have scopes
+[00:02:04.500 → 00:02:11.220] and I want everybody to be to know that they can do these kinds of projects and experiments at home
+[00:02:11.220 → 00:02:20.820] you don't have to have a scope there's other ways so we're going to use this cheap Zotec ZT-M0
+[00:02:21.540 → 00:02:25.220] auto manual meter in frequency mode
+[00:02:25.220 → 00:02:41.540] and if we come up here and we put her on pin three you see we get 1.075 kilohertz close enough to
+[00:02:41.540 → 00:02:45.460] one kilohertz for government work and after our filter
+[00:02:48.500 → 00:02:52.020] well that's showing 16 hertz but that's not true that's just because the voltage is so low
+[00:02:52.020 → 00:02:55.460] so you're not getting anything there at all
+[00:02:57.780 → 00:03:01.940] yeah don't worry we're still getting it and I'll show you that as well
+[00:03:03.620 → 00:03:09.300] again without the use of a scope all we need is a speaker
+[00:03:12.660 → 00:03:20.180] so we'll plug the negative lead of the speaker into our negative rail and we'll touch its pin three
+[00:03:22.020 → 00:03:26.820] and you can hear the one kilohertz tone we'll touch it here after the first stage
+[00:03:29.780 → 00:03:32.340] it's much quieter more of a sawtooth
+[00:03:34.820 → 00:03:39.780] smoother it's a triangle wave there and now this is going to be extremely quiet
+[00:03:40.820 → 00:03:43.780] I don't know if you're gonna be able to hear it or not but there is sound there
+[00:03:43.780 → 00:03:52.740] so listen carefully and you should be able to barely hear the sine wave try and get this up
+[00:03:54.180 → 00:04:00.260] as close to the camera as I can here we go
+[00:04:00.260 → 00:04:14.260] there we go so that's our sine wave but the amplitude has been limited by our low pass filter
+[00:04:14.260 → 00:04:21.620] so what we want to do is we want to amplify it we're going to use an lm386 audio amplifier let's
+[00:04:21.620 → 00:04:24.980] be bop over to the computer and have a look at the data sheet
+[00:04:24.980 → 00:04:34.580] all right so here is the data sheet for our lm386 low voltage audio power amplifier
+[00:04:36.020 → 00:04:41.540] and we have it in the 8 pin dip package and there's some information tells you works on battery
+[00:04:42.180 → 00:04:49.460] operation with minimum external parts and that's the truth and a supply voltage of 4 to 12 volts which is
+[00:04:49.460 → 00:04:54.660] excellent we're going to be using that it has low quiescent current drain that means when it's not
+[00:04:54.660 → 00:05:02.900] active that's your your gain now your voltage gain here from 20 to 200 ours is going to be 20 which is
+[00:05:02.900 → 00:05:08.580] the built-in internal gain okay and then we have some applications here
+[00:05:11.220 → 00:05:18.740] what's ours going to be portable tape tv sound line drivers yeah just a small audio amplifier i guess they
+[00:05:18.740 → 00:05:24.820] don't list that here you can see the schematic of how it's built and if you take a look here
+[00:05:28.820 → 00:05:30.340] i mean what is it made up of
+[00:05:38.580 → 00:05:43.380] i know you're all yelling it's made up of transistors i know but check out how many transistors
+[00:05:43.380 → 00:05:52.020] are in here if i get them all one two three four five six seven eight nine ten transistors
+[00:05:54.740 → 00:06:13.060] one two possibly three diodes is that a diode that's strange one two three four five six seven resistors
+[00:06:13.940 → 00:06:18.340] so i mean that's pretty cool there's a lot of stuff there
+[00:06:21.780 → 00:06:25.460] come down here and you get your basic information there is our pin out
+[00:06:27.300 → 00:06:32.340] input minus input plus ground bypass blah blah blah
+[00:06:34.740 → 00:06:39.460] tells you what your pins are here inverting input non-inverting input
+[00:06:39.460 → 00:06:42.820] absolute maximum but we're going to roll on down here
+[00:06:44.900 → 00:06:51.620] to the application circuit typical application this is the lm 386 with an internal gain of 20
+[00:06:52.500 → 00:07:00.580] and this is what we are going to set up here today just super simple we're going to put it together and
+[00:07:00.580 → 00:07:08.100] we are going to make it work now you see this will be a non-inverting amplifier because the inverting pin
+[00:07:09.300 → 00:07:14.980] is grounded we have a volume control here on the non-inverting pin
+[00:07:14.980 → 00:07:24.820] other than that we have a nice big dc blocking capacitor going to our speaker a little filtering going
+[00:07:24.820 → 00:07:30.180] on here and that's all she wrote let's do it
+[00:07:30.180 → 00:07:41.700] okay i think we're ready to go and get started you can see we have our circuit diagram here and
+[00:07:41.700 → 00:07:46.180] there are three pins we will not be connecting one eight and seven one and eight are where you can
+[00:07:46.180 → 00:07:52.740] connect i believe it's a capacitor for uh external gain and then seven is a bypass that we're not going
+[00:07:52.740 → 00:07:58.420] to be using either so we shall bring in our circuit
+[00:08:02.020 → 00:08:10.980] and avail ourselves a lovely lm 386 who will it be who will be who wants to come out and play you okay
+[00:08:14.500 → 00:08:16.500] so you know ic's always have splayed legs
+[00:08:16.500 → 00:08:24.420] they make tools for this but hey we don't like tools just put them on your bench give them a little
+[00:08:25.540 → 00:08:28.580] bendy bendino and you're good
+[00:08:30.980 → 00:08:32.260] we'll put him way over here
+[00:08:34.420 → 00:08:43.460] all right so let's start by hooking up our power supply that's the pix that's the pittsburgh way to
+[00:08:43.460 → 00:08:54.580] say power power like former steelers coach bill cower car we have some nice breadboard jumpers the reds are too
+[00:08:54.580 → 00:08:59.140] long so we'll go with an orange
+[00:09:02.820 → 00:09:11.540] and that's pin six one two three four five this is pin six right here so pin six goes to power
+[00:09:13.460 → 00:09:23.300] the pin four is our ground
+[00:09:27.460 → 00:09:28.660] we use gray for ground
+[00:09:33.860 → 00:09:38.020] i just want to make sure that you're hooking your pins up correctly
+[00:09:38.020 → 00:09:43.380] that's why an old guy like me has one of these doohickeys on his head
+[00:09:47.460 → 00:09:51.220] okay so that's pin four that's that pin eight
+[00:09:53.300 → 00:09:57.380] is our output so let's grab a longish
+[00:09:59.860 → 00:10:00.580] connector
+[00:10:00.580 → 00:10:04.340] and go from pin eight
+[00:10:07.380 → 00:10:08.180] over to here
+[00:10:10.420 → 00:10:16.660] then we need a 0.05 microfarad why would you say 0.05 microfarad why would you do that
+[00:10:18.740 → 00:10:21.060] because now you got to make me do internal head math
+[00:10:22.420 → 00:10:28.740] it's 50 nanofarads i think i'm sure somebody will correct me if i'm wrong i don't probably don't have
+[00:10:28.740 → 00:10:33.140] 50 nanofarad but i probably have 47 nanofarad
+[00:10:37.140 → 00:10:41.060] and you know what they say close enough for government work
+[00:10:47.060 → 00:10:49.620] unless of course you work for nasa in which case you should probably use
+[00:10:50.820 → 00:10:52.740] the specified value there's no reason
+[00:10:52.740 → 00:10:59.380] that i'm going to this way you could go that way it'll be just fine and now it says we need a
+[00:10:59.380 → 00:11:07.460] resistor to ground 10 10 what well since they put a k over here let's assume that's 10 ohms
+[00:11:09.620 → 00:11:13.060] so let's see if we got a 10 ohm
+[00:11:13.060 → 00:11:20.180] 15
+[00:11:26.980 → 00:11:29.780] there's one we could twist 10 of them together if nothing else happens
+[00:11:31.860 → 00:11:35.700] 100 10 r yeah
+[00:11:35.700 → 00:11:48.580] enough for government work
+[00:11:52.100 → 00:11:53.060] get that guy out of there
+[00:11:53.060 → 00:12:05.060] one reason to have three foot long leads so we'll just trim them a little bit
+[00:12:11.300 → 00:12:12.820] and there is our 10 ohm
+[00:12:17.700 → 00:12:19.300] resistor to ground
+[00:12:23.060 → 00:12:31.700] get in there come on all right 10 ohm resistor to ground next we need a large
+[00:12:33.060 → 00:12:37.940] capacitor we're going to use an electrolytic 250
+[00:12:40.260 → 00:12:41.700] microfaradays
+[00:12:43.700 → 00:12:44.580] i got 220
+[00:12:44.580 → 00:12:49.060] 220 or 330
+[00:12:50.820 → 00:12:55.780] let's go 330 when you're doing capacitors you should always err on the size
+[00:12:58.260 → 00:12:59.940] caution 330
+[00:13:04.580 → 00:13:06.260] capacitors of course long leg positive
+[00:13:08.500 → 00:13:12.980] but i like to trim mine to the same length because that's how i roll
+[00:13:14.580 → 00:13:18.340] the same length so i'm going to go
+[00:13:18.340 → 00:13:18.420] and that guy
+[00:13:20.820 → 00:13:22.740] go there like that
+[00:13:25.060 → 00:13:26.260] yeah nice
+[00:13:30.340 → 00:13:31.780] okay pin two
+[00:13:34.260 → 00:13:36.420] which is our inverting input
+[00:13:36.420 → 00:13:41.060] also needs to go to ground
+[00:13:42.660 → 00:13:43.540] i'm looking for another
+[00:13:46.020 → 00:13:46.820] gray one here
+[00:13:50.980 → 00:13:51.460] come on
+[00:13:53.540 → 00:13:55.140] my fingers are far too large
+[00:13:56.980 → 00:13:59.620] to reach in there without some manner of assistance
+[00:13:59.620 → 00:14:03.780] so pin two
+[00:14:12.420 → 00:14:14.340] one two two and four
+[00:14:16.100 → 00:14:18.180] four two both going to ground
+[00:14:19.700 → 00:14:20.100] okay
+[00:14:20.100 → 00:14:25.140] okay
+[00:14:25.140 → 00:14:30.100] okay there's our first mistake that's pin eight our output is in fact pin five
+[00:14:35.780 → 00:14:38.260] i know some of you guys are sitting there screaming at me
+[00:14:40.100 → 00:14:41.300] you put it in the wrong hole
+[00:14:41.300 → 00:14:47.460] not like i haven't heard that before
+[00:14:53.140 → 00:14:54.340] only one golfing of course
+[00:15:03.780 → 00:15:05.460] okay let's try this again here
+[00:15:11.300 → 00:15:14.260] pin five that's much better
+[00:15:18.580 → 00:15:21.460] and make sure yep going the right direction there
+[00:15:22.180 → 00:15:27.700] so next we need a 10k pot i have a 10k pot right here
+[00:15:27.700 → 00:15:38.020] get her to plug in nice and neat like
+[00:15:43.620 → 00:15:45.700] yeah success
+[00:15:48.420 → 00:15:48.980] that is
+[00:15:48.980 → 00:15:53.300] okay that is fully on
+[00:15:54.980 → 00:15:55.620] that's off
+[00:15:57.540 → 00:15:59.460] hopefully we'll put it about
+[00:16:01.380 → 00:16:02.660] halfway to start out with
+[00:16:04.100 → 00:16:08.420] so the middle pin our wiper needs to go to pin tree
+[00:16:16.340 → 00:16:17.860] one two three oh look at that
+[00:16:18.980 → 00:16:22.820] i almost got it right
+[00:16:25.220 → 00:16:26.180] story of my life
+[00:16:28.660 → 00:16:28.900] okay
+[00:16:31.380 → 00:16:33.380] and this one needs to go to ground
+[00:16:34.020 → 00:16:37.620] hey caramba i gotta find another gray ground pin in here
+[00:16:38.820 → 00:16:39.700] hey we got lucky
+[00:16:39.700 → 00:16:49.780] these cheap bread boards sometimes just require a little
+[00:16:51.620 → 00:16:53.460] massaging to get them to go in right
+[00:16:54.660 → 00:16:56.820] definitely want to make sure you have them seated properly
+[00:16:56.820 → 00:16:57.620] okay
+[00:16:58.580 → 00:17:00.900] and then this one is our connection
+[00:17:03.060 → 00:17:03.460] over
+[00:17:08.820 → 00:17:09.140] so
+[00:17:10.980 → 00:17:12.020] trying to see if i have
+[00:17:13.460 → 00:17:15.140] something of the proper length
+[00:17:15.140 → 00:17:22.580] not really
+[00:17:22.580 → 00:17:22.660] not really
+[00:17:25.460 → 00:17:26.020] what we'll do
+[00:17:26.020 → 00:17:29.860] we'll take one of these
+[00:17:32.260 → 00:17:33.700] longer gray ones here
+[00:17:36.100 → 00:17:37.780] and we'll just give it the old bendaroonie
+[00:17:41.620 → 00:17:42.340] just like that
+[00:17:43.780 → 00:17:44.100] now
+[00:17:45.460 → 00:17:47.940] assuming that i put everything together properly
+[00:17:47.940 → 00:17:52.180] we should be good to go
+[00:17:54.100 → 00:17:54.340] oh
+[00:17:55.300 → 00:17:56.580] we must hook up our sprecker
+[00:17:58.340 → 00:18:09.620] spreckens the electronics
+[00:18:09.620 → 00:18:19.300] the negative
+[00:18:21.940 → 00:18:22.420] positive
+[00:18:26.260 → 00:18:26.580] and
+[00:18:27.460 → 00:18:28.020] the power
+[00:18:28.980 → 00:18:31.220] i'm putting about 5.5 volts in from my
+[00:18:31.940 → 00:18:33.300] bench power supply what do you think
+[00:18:33.300 → 00:18:36.420] will she make noise or will she go kablooey
+[00:18:39.140 → 00:18:40.100] one way to find out
+[00:18:41.460 → 00:18:43.940] okay seven eight and one are not connected
+[00:18:44.820 → 00:18:54.100] everything else is connected
+[00:18:54.100 → 00:19:01.460] and we have no sound
+[00:19:04.660 → 00:19:04.980] hmm
+[00:19:08.820 → 00:19:10.340] wiper pin three
+[00:19:12.820 → 00:19:14.260] pin six is positive
+[00:19:15.780 → 00:19:16.740] not getting warm
+[00:19:16.740 → 00:19:21.620] like this there
+[00:19:26.100 → 00:19:26.980] all right let's uh
+[00:19:28.500 → 00:19:37.620] make sure we are still oscillating
+[00:19:46.740 → 00:19:47.540] okay
+[00:19:48.100 → 00:19:49.860] you know why is that showing me 50 hertz
+[00:19:54.100 → 00:19:55.220] that hold on or something
+[00:20:05.700 → 00:20:06.900] what is going on here
+[00:20:07.860 → 00:20:09.220] well first problem was
+[00:20:09.940 → 00:20:11.700] i had it on square wave out
+[00:20:12.980 → 00:20:14.340] and not hertz in
+[00:20:16.740 → 00:20:23.140] so yeah we are still getting
+[00:20:24.740 → 00:20:25.620] our oscillation
+[00:20:29.220 → 00:20:29.460] good
+[00:20:33.140 → 00:20:33.780] but why
+[00:20:35.140 → 00:20:36.260] are we not getting
+[00:20:41.940 → 00:20:42.660] an output
+[00:20:42.660 → 00:20:55.380] to the speaker
+[00:20:59.300 → 00:21:00.740] what have we done wrong
+[00:21:00.740 → 00:21:09.540] hmm
+[00:21:13.700 → 00:21:15.060] all right i'm gonna shut off the power here
+[00:21:17.700 → 00:21:18.420] shut that off
+[00:21:20.500 → 00:21:21.940] all right let's have a think
+[00:21:21.940 → 00:21:26.820] all right pin one
+[00:21:28.500 → 00:21:29.300] not connected
+[00:21:29.940 → 00:21:30.580] pin two
+[00:21:31.460 → 00:21:32.420] connected to ground
+[00:21:33.300 → 00:21:35.380] pin three to the wiper
+[00:21:36.660 → 00:21:37.860] one two three
+[00:21:39.700 → 00:21:42.580] pin four one two three four to ground
+[00:21:44.260 → 00:21:46.020] pin five is our output
+[00:21:46.020 → 00:21:49.860] which goes to our blocking cap
+[00:21:50.500 → 00:21:51.300] and also
+[00:21:52.500 → 00:21:53.380] to this filter
+[00:21:55.460 → 00:21:58.500] pin six is our voltage supply
+[00:22:02.020 → 00:22:04.100] seven is not connected
+[00:22:05.060 → 00:22:06.580] eight is not connected
+[00:22:06.580 → 00:22:10.500] all right turn the power back on
+[00:22:17.300 → 00:22:18.660] i'm gonna put this guy over here
+[00:22:21.460 → 00:22:23.060] set for six volts dc
+[00:22:23.060 → 00:22:26.820] let's see
+[00:22:28.660 → 00:22:30.260] we are getting at the pins
+[00:22:33.460 → 00:22:35.860] five point two five point six two
+[00:22:35.860 → 00:22:38.660] and our power supply is showing five point sixty so that's good
+[00:22:40.820 → 00:22:43.140] all right let's look at six volts ac
+[00:22:43.140 → 00:22:46.820] and see what we're getting out
+[00:22:56.340 → 00:22:57.940] yeah we're getting oscillation out
+[00:23:00.260 → 00:23:01.060] as you can see
+[00:23:04.740 → 00:23:08.900] hard to do and not block the camera at the same time
+[00:23:08.900 → 00:23:15.140] well we were getting it or we're not getting it now
+[00:23:19.780 → 00:23:21.780] try and put it here
+[00:23:23.620 → 00:23:24.180] and here
+[00:23:26.580 → 00:23:26.820] no
+[00:23:31.700 → 00:23:33.140] now let's just connect the speaker
+[00:23:33.140 → 00:23:37.860] here
+[00:23:41.620 → 00:23:42.020] now you see
+[00:23:43.620 → 00:23:44.740] we're getting dc out
+[00:23:45.780 → 00:23:47.940] this should actually be blocking dc so
+[00:23:49.620 → 00:23:51.300] shouldn't get anything at all here
+[00:23:58.980 → 00:24:01.620] we've got an offset here because this is actually
+[00:24:03.140 → 00:24:06.340] the dc
+[00:24:07.460 → 00:24:07.700] all right
+[00:24:08.900 → 00:24:10.820] just for um s and g's
+[00:24:12.100 → 00:24:12.740] let's take out
+[00:24:14.020 → 00:24:15.460] our blocking capacitor
+[00:24:21.460 → 00:24:22.980] yeah if it's blocking
+[00:24:24.740 → 00:24:27.140] all of the dc we're not going to hear anything
+[00:24:29.700 → 00:24:31.780] so let's see what we get now if we turn it on
+[00:24:33.140 → 00:24:38.260] okay
+[00:24:43.380 → 00:24:44.020] still nothing
+[00:24:52.180 → 00:24:52.980] have a look here
+[00:24:52.980 → 00:24:58.340] yeah i'm seeing two and a half
+[00:25:07.540 → 00:25:07.860] hmm
+[00:25:09.380 → 00:25:10.580] to the data sheet robin
+[00:25:12.580 → 00:25:14.900] so unfortunately the data sheet didn't give me any clues
+[00:25:14.900 → 00:25:17.620] i guess it's not on right now
+[00:25:19.380 → 00:25:20.580] unless that pot's bad
+[00:25:24.020 → 00:25:27.140] uh resistance resistance resistance
+[00:25:28.740 → 00:25:30.340] 10k pots we'll put it on
+[00:25:32.420 → 00:25:32.900] 60
+[00:25:32.900 → 00:25:40.020] we'll be
+[00:25:42.180 → 00:25:43.060] reading zero
+[00:25:45.460 → 00:25:46.180] reading eight
+[00:25:46.180 → 00:25:49.320] close enough for government work.
+[00:25:59.040 → 00:26:00.840] Let's flip on the power supply again.
+[00:26:02.040 → 00:26:03.820] I'm going to take you out of here so you can see.
+[00:26:09.660 → 00:26:10.080] Oh.
+[00:26:12.380 → 00:26:13.240] Did you hear that?
+[00:26:15.320 → 00:26:16.100] Did you hear it?
+[00:26:16.180 → 00:26:21.100] It appears to be working.
+[00:26:22.640 → 00:26:23.460] Turn it up.
+[00:26:42.340 → 00:26:43.740] Well, ain't that a miracle.
+[00:26:43.740 → 00:26:48.460] All right, boys and girls.
+[00:26:48.560 → 00:26:55.320] I have no explanation of why it didn't work before, but now it works.
+[00:26:55.320 → 00:27:05.960] Anyway, the whole point of this was to show you how to set up the LM386 audio amplifier.
+[00:27:05.960 → 00:27:14.920] We set it up as prescribed in the manual for the internal 20x gain.
+[00:27:14.920 → 00:27:27.560] And after, I don't know, I just, I don't get it.
+[00:27:27.560 → 00:27:29.200] I don't get it.
+[00:27:29.200 → 00:27:29.280] I don't get it.
+[00:27:29.280 → 00:27:34.620] But whatever.
+[00:27:34.620 → 00:27:36.140] Sure works.
+[00:27:36.140 → 00:27:36.780] I don't get it.
+[00:27:36.780 → 00:27:37.140] I don't get it.
+[00:27:37.140 → 00:27:37.780] I don't get it.
+[00:27:37.780 → 00:27:38.780] I don't get it.
+[00:27:38.780 → 00:27:39.380] I don't get it.
+[00:27:39.380 → 00:27:40.240] I don't get it.
+[00:27:40.240 → 00:27:42.400] I don't get it.
+[00:27:42.400 → 00:27:48.880] give me a thumbs up give me two thumbs up sometimes life's just a mystery that's it I'm out
+[00:27:48.880 → 00:27:56.500] peace I want to thank you all for watching and spending time with me today the community like
+[00:27:56.500 → 00:28:02.200] this is something that we can all be very proud of so again thank you very much for all your
+[00:28:02.200 → 00:28:07.420] support of learn electronics please feel free to check out the patreon page dollar month is all I
+[00:28:07.420 → 00:28:13.900] ask and really helps keep the channel alive we also have an Amazon shop where you can buy most
+[00:28:13.900 → 00:28:18.040] of the items that you see on here and there's a link to it down below

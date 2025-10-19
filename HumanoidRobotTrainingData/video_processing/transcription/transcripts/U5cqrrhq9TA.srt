@@ -1,0 +1,368 @@
+1
+00:00:00,000 --> 00:00:10,560
+This heat gun is pure perfection while this LED strip is straight up garbage.
+
+2
+00:00:10,560 --> 00:00:17,880
+Wait, what? The reason why I am saying this is because when looking at the current consumption
+
+3
+00:00:17,880 --> 00:00:24,540
+of those two loads we can see a remarkable difference. First off the heat gun which draws
+
+4
+00:00:24,540 --> 00:00:31,300
+current exactly in phase with our mains voltage and its shape also almost looks like it aka
+
+5
+00:00:31,300 --> 00:00:39,840
+sinusoidal. Lovely. But next we got the terrible LED strip which draws current abruptly and
+
+6
+00:00:39,840 --> 00:00:45,040
+only for a short amount of time near the peak of our mains voltage.
+
+7
+00:00:45,040 --> 00:00:52,300
+Okay so what is the problem here? I mean both devices seem to work perfectly fine.
+
+8
+00:00:52,300 --> 00:00:58,880
+Well the problem is that the LED strip with its AC to DC power supply draws a lot of apparent
+
+9
+00:00:58,880 --> 00:01:05,720
+power from the power grid because of the weird current waveform while the real power it actually
+
+10
+00:01:05,720 --> 00:01:11,980
+requires to do its job of lighting up LEDs is rather small in comparison.
+
+11
+00:01:11,980 --> 00:01:18,800
+That is a huge problem because nowadays we got tons of AC to DC power supplies in our homes
+
+12
+00:01:18,800 --> 00:01:23,940
+and if they would all perform this bad then our power grids will have to face some big
+
+13
+00:01:23,940 --> 00:01:30,500
+challenges in the future. But it doesn't have to be this way and that is why such power factor
+
+14
+00:01:30,500 --> 00:01:38,240
+correction circuits or PFC for short do exist. And in this video I will show you what they can do,
+
+15
+00:01:38,240 --> 00:01:45,680
+how we can make them and why they are super important for our electrical future. Let's get started!
+
+16
+00:01:48,800 --> 00:02:00,080
+This video is sponsored by Mauser Electronics who not only offer a huge selection of electronics
+
+17
+00:02:00,080 --> 00:02:07,120
+components but also development boards. And I am not talking about microcontroller boards or similar
+
+18
+00:02:07,120 --> 00:02:14,400
+even though they also have them. No, I am talking about development boards built around the newest ICs
+
+19
+00:02:14,400 --> 00:02:22,880
+and technologies which also includes functional PFCs that you will see later. If you are curious for more
+
+20
+00:02:22,880 --> 00:02:27,600
+then head over to Mauser Electronics or check the link in the video description.
+
+21
+00:02:29,280 --> 00:02:37,600
+Now let's start off with a popular analogy which is the foam to drink ratio. You see the liquid alone
+
+22
+00:02:37,600 --> 00:02:45,280
+represents our real power aka the power that actually gets used to light things up, heat things up or
+
+23
+00:02:45,280 --> 00:02:52,400
+for example charge your phone's battery. But as you can see that is not all in our glass which in total
+
+24
+00:02:52,400 --> 00:02:59,280
+represents our apparent power and that is the power your energy provider actually has to deal with in its grid
+
+25
+00:02:59,280 --> 00:03:07,280
+so that you can get your desired real power. No, we still got the foam which is our reactive power
+
+26
+00:03:07,920 --> 00:03:15,840
+and truth be told completely useless because it only oscillates between the energy provider and hooked up loads.
+
+27
+00:03:16,880 --> 00:03:21,920
+Due to it more current flows through the grid than what we actually need for the real power demand
+
+28
+00:03:21,920 --> 00:03:29,600
+and as you might know for bigger current flow we need thicker wires so that things do not get terribly
+
+29
+00:03:29,600 --> 00:03:37,920
+inefficient and hot and that of course costs lots of money. So keeping the reactive power close to zero
+
+30
+00:03:37,920 --> 00:03:45,760
+is our goal here meaning that apparent power should equal the real power. And in the heat gun example we
+
+31
+00:03:45,760 --> 00:03:52,960
+started with we can actually see such a behaviour that real power equals apparent power meaning it is
+
+32
+00:03:52,960 --> 00:03:58,800
+definitely possible. Which brings us to the question how such reactive power comes to be.
+
+33
+00:04:00,000 --> 00:04:06,320
+The most popular examples for that are simply a motor and a capacitive power supply that you can
+
+34
+00:04:06,320 --> 00:04:14,080
+sometimes find in LED lights. Both of them create quite a bit of reactive power in comparison to their real power
+
+35
+00:04:14,080 --> 00:04:20,640
+power and the root of all evil for that is like I teased at the beginning their current flow.
+
+36
+00:04:21,600 --> 00:04:28,640
+The power supply ones leads in comparison to the mains voltage and the one from the motor lacks in comparison.
+
+37
+00:04:29,520 --> 00:04:34,640
+The reason for that are of course the electrical properties of the capacitor for the power supply
+
+38
+00:04:35,200 --> 00:04:42,160
+and the inductance for the motor coils. But feel free to watch my previous videos about those topics here
+
+39
+00:04:42,160 --> 00:04:49,120
+so that I can keep the rest of this video short and sweet. Because in a nutshell such phase shifts
+
+40
+00:04:49,120 --> 00:04:56,480
+do create reactive power. And the simple fix here is to add inductance to the capacitance and vice versa
+
+41
+00:04:56,480 --> 00:05:03,680
+capacitance to the inductance to get rid of the phase shifts and thus reduce the reactive power
+
+42
+00:05:03,680 --> 00:05:11,440
+and get a power factor of almost 1. By the way the power factor is simply the real power divided by the
+
+43
+00:05:11,440 --> 00:05:18,400
+apparent power and thus 1 means real power equals apparent power which is what we are after.
+
+44
+00:05:19,440 --> 00:05:25,760
+Now like I said one solution is adding capacitance or inductance to the power grid to decrease the
+
+45
+00:05:25,760 --> 00:05:33,520
+phase shifts and that is actually the first type of a power factor correction circuit and it is called a
+
+46
+00:05:33,520 --> 00:05:40,560
+passive one. Of course there is also an active one that I already presented to you at the start.
+
+47
+00:05:41,440 --> 00:05:47,920
+And to understand why we need it let's go back to the current draw of a common power supply I found in my shelf.
+
+48
+00:05:48,960 --> 00:05:55,440
+As you can see the more DC current I draw from its output the bigger the current pulse on the input
+
+49
+00:05:55,440 --> 00:06:02,640
+near the peak of the mains voltage gets. And by doing my usual measurements next we can see that this
+
+50
+00:06:02,640 --> 00:06:09,760
+current draw creates kind of a lot of reactive power which is easily noticeable through the low power factor.
+
+51
+00:06:10,640 --> 00:06:18,480
+But there is no phase shift so how does that work? Well the problem here is that this current waveform
+
+52
+00:06:18,480 --> 00:06:23,200
+can be depicted as a sum of lots of current waveforms with different frequencies.
+
+53
+00:06:24,240 --> 00:06:31,920
+Most importantly of course is the 50Hz fundamental frequency which is our mains voltage frequency and
+
+54
+00:06:31,920 --> 00:06:42,640
+it obviously does not feature a phase shift. But then there are also 150Hz, 250Hz, 350Hz and so on parts
+
+55
+00:06:43,200 --> 00:06:50,800
+which are called 3rd, 5th, 7th and so on current harmonics and they do kind of feature a phase shift
+
+56
+00:06:50,800 --> 00:06:58,160
+that creates the reactive power. By using my oscilloscope we can actually see how much they matter in comparison
+
+57
+00:06:58,160 --> 00:07:05,280
+to the fundamental 50Hz frequency and let's just say that they are pretty dominant on the screen here.
+
+58
+00:07:06,320 --> 00:07:13,360
+So what we can do to fix this problem is basically convert this small current pulse to an even sinusoidal
+
+59
+00:07:13,360 --> 00:07:21,680
+one. And like I said before a circuit that can do that is an active PFC for which I looked for on Mauser
+
+60
+00:07:21,680 --> 00:07:28,880
+electronics and I found a promising looking IC that only requires a few external components to function.
+
+61
+00:07:29,920 --> 00:07:36,720
+But before creating a whole PCB for it which requires lots of time I firstly wanted to do some
+
+62
+00:07:36,720 --> 00:07:42,640
+initial tests with a similar IC for which Mauser luckily offered a development board.
+
+63
+00:07:42,640 --> 00:07:49,760
+After powering its low voltage side with my lab bench power supply I next prepared a proper mains
+
+64
+00:07:49,760 --> 00:07:56,560
+voltage wire for it and this break might be a good opportunity to state that working with all the
+
+65
+00:07:56,560 --> 00:08:03,600
+mains voltage shown in this video can be dangerous and you should only do that if you are professional.
+
+66
+00:08:04,640 --> 00:08:11,680
+Okay with that out of the way I plugged the circuit into mains voltage and was very happy to find out
+
+67
+00:08:11,680 --> 00:08:20,800
+that nothing exploded. On its output I measured a voltage of around 400VDC which means the circuit works correctly.
+
+68
+00:08:21,920 --> 00:08:27,520
+And before I start explaining here why this high voltage and how it is made and what not,
+
+69
+00:08:28,160 --> 00:08:34,560
+let's rather keep it practical and crack open the power supply that came with the horrible current draw.
+
+70
+00:08:35,600 --> 00:08:41,360
+After removing its full bridge rectifier, I simply connected the output of the PFC
+
+71
+00:08:41,360 --> 00:08:48,880
+to the input of the power supply and by once again plugging in mains voltage nothing blew up and the
+
+72
+00:08:48,880 --> 00:08:55,760
+power supply seems to work correctly as well. This time though the input current does follow the mains
+
+73
+00:08:55,760 --> 00:09:02,720
+voltage shape a lot more when drawing more current on the outputs. That not only means that the current
+
+74
+00:09:02,720 --> 00:09:09,920
+harmonics are mostly gone but also that the reactive power of the system decreased while the power factor
+
+75
+00:09:09,920 --> 00:09:18,000
+increased. Awesome! I think you can see the difference with and without a PFC pretty clearly in this chart here.
+
+76
+00:09:18,720 --> 00:09:23,040
+Which now brings us to the question how such an active PFC pulls this off?
+
+77
+00:09:24,160 --> 00:09:30,720
+Well in a nutshell it does so by increasing the changing mains input voltage into a constant higher
+
+78
+00:09:30,720 --> 00:09:39,520
+DC voltage voltage that the power supply then uses. Because yes, an active PFC is basically just a glorified
+
+79
+00:09:39,520 --> 00:09:47,520
+boost converter. You see the problem of normal AC to DC power supplies is that they only draw current near
+
+80
+00:09:47,520 --> 00:09:54,000
+the voltage peak of the mains voltage because that is when the utilized capacitor's voltage drops beneath
+
+81
+00:09:54,000 --> 00:10:02,320
+the input voltage and thus can get charged up again. But by supplying a constant boosted voltage this problem
+
+82
+00:10:02,320 --> 00:10:09,920
+basically disappears. Of course creating such a stable boosted DC voltage from a varying input voltage
+
+83
+00:10:09,920 --> 00:10:17,200
+is not that easy because you need to monitor the input and output voltage as well as the flowing current
+
+84
+00:10:17,200 --> 00:10:23,920
+current and then turn on or off the boost converter MOSFET switch accordingly so that always the right
+
+85
+00:10:23,920 --> 00:10:31,520
+amount of energy gets transferred to the output. When having a look at our practical example then the MOSFET
+
+86
+00:10:31,520 --> 00:10:38,560
+switching pattern looks something like this with a bigger duty cycle at low input voltages and a smaller
+
+87
+00:10:38,560 --> 00:10:47,120
+duty cycle at higher input voltages which corresponds with the theory. So all in all such active PFC
+
+88
+00:10:47,120 --> 00:10:54,880
+are pretty awesome. And considering that there are already regulations in place that limit the created current
+
+89
+00:10:54,880 --> 00:11:02,960
+harmonics from appliances they will sooner or later become mandatory. So if you are shopping for a new beefy power supply
+
+90
+00:11:03,600 --> 00:11:11,200
+maybe next time consider getting one with a built in PFC. With that being said I hope you enjoyed this video
+
+91
+00:11:11,200 --> 00:11:18,880
+and learn something new. As always don't forget to like, share, subscribe and hit the notification bell.
+
+92
+00:11:19,920 --> 00:11:24,880
+Stay creative and I will see you next time!
+

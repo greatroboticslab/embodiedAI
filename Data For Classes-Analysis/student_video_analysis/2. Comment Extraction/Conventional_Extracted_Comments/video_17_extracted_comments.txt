@@ -1,0 +1,84 @@
+Why do you use the previous action to calculate the reward and not the current action?
+
+how do i play the trained network
+
+7:07 I get an arror that says "Unrecognized function or variable 'numObs'." when I run "createDDPGNetowks.m" How can I solve this problem?
+
+Is there any new version of this for matlab 2020b?
+
+How can this demo be opened? The walkingRobotRL2D command does not seem to work. Thanks!
+
+making a video showing something ready is very good. But it would be better still one or more videos, or even a course on how to apply neural networks in control systems with examples that start from scratch. Because I've been trying without success to apply a controller made of neural networks to any transfer function.
+
+Great work, thank you, I will try to implement an agent that makes MPPT for PV arrays based on this.
+
+thank you for this helpful video. I just have a question. How did you plot the robot during training? I need to see how my model act during training. I appreciate any reply.
+
+dear sir i want to implement to mobile balancer robot. how to modelling and convert to RL until robot balance? and at maltlab just simulation? and how to actual to robot balancer mobile?
+
+Hey, I want to implement clipped double deep Q-learning for task allocation in cloud resources (VMs).  Is it possible to use MATLAB and Simulink for network simulation?
+
+How to set initial conditions
+
+Can you train me for using RL in Wireless communication? aminiwon@gmail.con
+
+Hi @Sebastian Castro I am working on DRL algorithms to grasp objects with a robotic arm with gripper. So, do you have any recommendations for me?    Thanks in advance,
+
+3:33 is not accurate. The actor is backproped by policy gradient while critic is backproped by TD
+
+Hi Sebastian, great video! I have a question, when i try to use pretrained agent from the example i run into an error, could you help me with that please? The error is:    MATLAB System block 'walkingRobotRL3D/RL Agent/AgentWrapper' error occurred when invoking 'outputImpl' method of 'AgentWrapper'. The error was thrown from '  'M:\matlab_2019b\toolbox\rl\rl\+rl\+agent\AbstractPolicy.m' at line 133  'M:\matlab_2019b\toolbox\rl\rl\simulink\libs\AgentWrapper.m' at line 113'.  Invalid observation type or size.  Invalid observation type or size.  Dot indexing is not supported for variables of this type.     Thanks in advance!
+
+Can I use Reinforcement Learning in Matlab withtout this toolbox, only with simulink and script?
+
+Great short tutorial!! I wanna implement Q learning algorithm in the Agent. Do RL toolbox has Q learning algorithm? If you can make another such tutorial on Q learning implementation, that would be great. Thanks in Advance!!
+
+Do I have to buy the Reinforcement Learning Toolbox? Why is that not directly included in my Matlab-License.......
+
+Great video. I’ll do a project in my University to control continuous process with reinforcement learning, do you some advice to give me?
+
+Do you use genetic algorithm?
+
+And please send it to me. we can start coapration.
+
+Don't use the parallel function. You could try to comment the last if block in createDDPGOptions.m from line 27 to 30.
+
+they used simscape multi body
+
+Thanks -- this was an oversimplification of the general gist of DDPG for beginners.  Indeed, the critic loss is found using temporal differencing (TD) using target networks to make this a little less unstable during training! And the actor loss is simply the negative critic estimate (negative because you want to maximize Q-value, or minimize negative Q-value). However, in both cases, this loss is then backpropagated through the respective actor/critic networks to update their parameters.
+
+I noticed this too with the 3D example as I tested some updates in MATLAB R2019b. So, I generated some new walking agents but have not published them yet. Email us at roboticsarena@mathworks.com and I can send you an agent file that works.
+
+Not unless you implement a lot of the functionality yourself. Neural network representations, RL algorithms, etc.
+
+Yes, the toolbox has Q learning and Deep-Q Network (DQN) algorithms. I picked DDPG since I wanted a continuous action space vs. the discrete options provided by those other algorithms.
+
+Thanks! But I couldn't find the Q learning algorithm in MATLAB 2018b. Is Q learning algorithm available only in 2019a/b?
+
+@AtriyaBiswas Reinforcement Learning Toolbox is new in R2019a, so that would make sense.
+
+Thanks!!  @roboticseabass   I have to get it installed.
+
+Hi @Sebastian Castro. I want to build an agent with three action variables and the action variables are discrete. Suppose action variable 'A' has 4 discrete values A = [0, 650, 1500, 4500]; action variable 'B' has 6 discrete values B = [0, 25, 50, 75, 100, 125]; and action variable 'C' has 7 discrete values C = [-25, -12, -5, 0, 5, 12, 25];  Should I write the code for "actInfo = rlFiniteSetSpec([0, 650, 1500, 4500];[0, 25, 50, 75, 100, 125];[-25, -12, -5, 0, 5, 12, 25])" ?? I couldn't find any matlab example showing how to write the code for actInfo when using more than one discrete action variable.
+
+@AtriyaBiswas  I think you have to do this as a set of all possible combinations of [A,B,C]. See here:  https://www.mathworks.com/matlabcentral/answers/460576-how-can-i-have-several-actions-for-a-dqn-in-the-reinforcement-learning-toolbox
+
+@roboticseabass  Sir, Every-time I am simulating your code from this video for walking robot in Matlab; i receive an error  'Caused by:     Undefined function 'legInvKin' for input arguments of type 'double'.'  would you please help me out on this.
+
+@arnabbanerjee2508  Did you run the startupWalkingRobot.m script to set the MATLAB path?
+
+@roboticseabass   I have the same issue, I want the action to be a switching time sequence  (10,20,30,40) and i could not be able to do that..I need tutorial for that point please
+
+Can you share this code with me? If you implemented this. I'm working on a similar thing.
+
+Yes, Reinforcement Learning Toolbox is one of the requirements for this example. The list of required products is shown in the File Exchange/GitHub links.
+
+I know that this is required. Was more a question of why and if there is no way to use the code without buying?
+
+Based on my experience, my #1 tip is: Create a good reward function that penalizes jumping around the upper/lower limits of your possible action space. Otherwise, you just get an on-off controller.
+
+No, this is the Deep Deterministic Policy Gradient (DDPG) reinforcement learning algorithm.   If you want, there's an earlier video in our series that shows Genetic Algorithms for joint waypoint optimization: https://www.youtube.com/watch?v=-dEX1SZOZEY&list=PLn8PRpmsu08oLufaYWEvcuez8Rq7q4O7D&index=7
+
+Very good Job keep a head
+
+Very useful
+

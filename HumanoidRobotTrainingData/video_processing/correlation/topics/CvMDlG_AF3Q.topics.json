@@ -1,0 +1,37 @@
+{
+  "video_id": "CvMDlG_AF3Q",
+  "title": "CvMDlG_AF3Q",
+  "url": "https://www.youtube.com/watch?v=CvMDlG_AF3Q",
+  "created_at": "2025-10-09T17:30:53.802836+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Repetition of Let's Go",
+      "description": "The speaker repeatedly says 'Let's go' without any further context or explanation.",
+      "evidence_quotes": [
+        "Let's go.",
+        "Let's go."
+      ],
+      "start_s": 0.0,
+      "end_s": 569.86,
+      "id": "T1"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topics in the provided transcript segment:\n\n[\n  {\n    \"title\": \"Repeating Phrases\",\n    \"description\": The speaker repeats the phrase \"Let's go\" multiple times without any variation or context.\",\n    \"evidence_quotes\": [\"Let's go.\", \"Let's go.\"],\n    \"time_range\": \"00:00:00.000–00:09:29.900\"\n  }\n]",
+          "Here is the extracted topics:\n\n[\n  {\n    \"title\": \"Repetition of Let's Go\",\n    \"description\": \"The speaker repeatedly says 'Let's go' without any further context or explanation.\",\n    \"evidence_quotes\": [\"Let's go.\", \"Let's go.\"],\n    \"time_range\": \"00:00:00.000–00:09:29.860\"\n  }\n]"
+        ]
+      }
+    ]
+  }
+}

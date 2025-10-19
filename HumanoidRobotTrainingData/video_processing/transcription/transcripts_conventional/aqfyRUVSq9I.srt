@@ -1,0 +1,604 @@
+1
+00:00:00,000 --> 00:00:03,280
+Hi guys, thanks for joining me. So this time we're going to build this.
+
+2
+00:00:08,420 --> 00:00:14,160
+A really gnarly sounding active filter that only takes one chip, one capacitor and a handful of
+
+3
+00:00:14,160 --> 00:00:18,600
+resistors. So stay tuned. Hi folks, welcome back. So how are we going to do that? Well in previous
+
+4
+00:00:18,600 --> 00:00:22,880
+videos we've taken resistors and capacitors and used them together to make filters. Now we're
+
+5
+00:00:22,880 --> 00:00:26,940
+going to take resistors and capacitors again, only this time we're going to use them with active
+
+6
+00:00:26,940 --> 00:00:31,940
+circuitry which is going to boost the gain of the signal after it's been filtered. How we're going
+
+7
+00:00:31,940 --> 00:00:36,340
+to do that is with a little circuit called an op-amp. And an op-amp, or an operational amplifier,
+
+8
+00:00:36,340 --> 00:00:42,380
+is a type of configurable high-gain amplifier where you can set clever feedback networks with
+
+9
+00:00:42,380 --> 00:00:47,540
+simple components like resistors and capacitors that can change the gain of the circuit depending
+
+10
+00:00:47,540 --> 00:00:52,440
+on what's going on. We're going to start with the most basic op-amp circuit that you can get. So let
+
+11
+00:00:52,440 --> 00:00:57,340
+me just explain this very quickly. This is an op-amp circuit symbol. So we've got two inputs,
+
+12
+00:00:57,340 --> 00:01:02,200
+we call this the non-inverting input, this is the inverting input, and this is the output. Okay,
+
+13
+00:01:02,200 --> 00:01:07,200
+so this is called a follower. And the really important thing about this, that's the number
+
+14
+00:01:07,200 --> 00:01:11,640
+one rule that you need to remember, when we have negative feedback, which is when the output is
+
+15
+00:01:11,640 --> 00:01:18,180
+connected back to the inverting input, that the op-amp will then do whatever it can to try and make
+
+16
+00:01:18,180 --> 00:01:24,880
+these two inputs equal. Okay, so why don't I put a input in here, and we'll have a look at what we're
+
+17
+00:01:24,880 --> 00:01:29,580
+going to see in the output. We'll put a sine wave in. Rule number one, do we have negative feedback?
+
+18
+00:01:29,580 --> 00:01:35,280
+Yes, we do. Okay, so it's going to try and make these two inputs equal. If we've got positive feedback,
+
+19
+00:01:35,280 --> 00:01:39,120
+that makes things a little bit more complicated, and we'll do that in further videos. But for now,
+
+20
+00:01:39,120 --> 00:01:44,320
+only looking at negative feedback will get us a long way. So the output will do whatever it can to
+
+21
+00:01:44,320 --> 00:01:51,020
+make these two inputs equal. And what that means is, let's say this is one volt at the top and at the bottom.
+
+22
+00:01:51,020 --> 00:01:57,440
+So this is zero volts. That's why we call this a follower, because if you follow, if you think the
+
+23
+00:01:57,440 --> 00:02:02,700
+circuit through, if this is one volt, this wants to be one volt, there's no circuitry here, so the output
+
+24
+00:02:02,700 --> 00:02:08,080
+just needs to be one volt. So minus one volt, if this is minus one volt here, what does this one want to be?
+
+25
+00:02:08,080 --> 00:02:15,780
+It's going to be minus one volt. So very easy to see that the output just looks exactly the same as the input.
+
+26
+00:02:15,780 --> 00:02:22,780
+Easy peasy. So this is called a follower, and this is essentially what we can think of as a buffer.
+
+27
+00:02:22,780 --> 00:02:27,380
+Okay, so that's all well and good. I'm sure you can see how that's useful, but it doesn't really do anything.
+
+28
+00:02:27,380 --> 00:02:31,480
+You just get the outputs the same as the input. How do we get up-amp circuits that do stuff?
+
+29
+00:02:31,480 --> 00:02:35,380
+Well, let's have a look what happens when we put some stuff in this feedback path.
+
+30
+00:02:35,380 --> 00:02:42,280
+Okay, so by putting two resistors in the feedback circuit, I think you can probably imagine that I've
+
+31
+00:02:42,280 --> 00:02:51,480
+changed how this circuit is going to work quite a lot. This is now a non-inverting amplifier. And we can
+
+32
+00:02:51,480 --> 00:02:56,880
+imagine that the output is still going to look something like this input. Obviously I've already
+
+33
+00:02:56,880 --> 00:03:03,380
+given it away and told you that it's non-inverting. So how do we tell what the relationship is between
+
+34
+00:03:03,380 --> 00:03:07,680
+the output and the input? Well, we can see down here that what we've essentially done is we've made a voltage
+
+35
+00:03:07,680 --> 00:03:14,480
+divider from the output down to ground. I just put output, that's this point here, and this point here is
+
+36
+00:03:14,480 --> 00:03:22,480
+this point here. So the output of our voltage divider, this goes to our inverting input. Then we can see that
+
+37
+00:03:22,480 --> 00:03:28,880
+the ratio of these two resistors is going to set the voltage at this point, which is then going to be
+
+38
+00:03:28,880 --> 00:03:34,880
+what's fed back into here. So the output is going to do what it can to make sure that the voltage at this
+
+39
+00:03:34,880 --> 00:03:41,280
+point here is the same as this point here. Remember our golden rule from before. And so what it needs to
+
+40
+00:03:41,280 --> 00:03:49,840
+do is drop enough voltage across this whole voltage divider to make this point the same as this point.
+
+41
+00:03:49,840 --> 00:03:58,080
+Input is at one volt. Let's say this is 100 kilo ohms, this is R2, and let's say that R1 is one kilo ohm.
+
+42
+00:03:58,080 --> 00:04:08,080
+To cut a long story short, this circuit has to output 101 volts at the output to make this part here
+
+43
+00:04:08,720 --> 00:04:14,560
+one volt, because there's a 100 to one ratio here, so there's going to be a hundred times more voltage
+
+44
+00:04:14,560 --> 00:04:20,320
+dropped across this one than this one, so we need 101 to get that equal split.
+
+45
+00:04:22,080 --> 00:04:26,400
+How that's represented in terms of gain is we say that this circuit has a gain,
+
+46
+00:04:27,200 --> 00:04:37,680
+this configuration always has a gain of 1 plus R2 over R1. So if this was 100k, this was 1k, the k's
+
+47
+00:04:37,680 --> 00:04:46,160
+cancel out, so we've essentially got 100 over 1, which is 100 plus 1, 101. Okay, so if this were 10k, then this output would have to be
+
+48
+00:04:46,720 --> 00:04:53,840
+11 volts to get 1 volt here. And so we can see that, let's just leave it like this, that we're going to get an output
+
+49
+00:04:54,400 --> 00:05:00,160
+that is much bigger. We're going to have an output that's 10 times bigger than our input. That's how you make a
+
+50
+00:05:00,160 --> 00:05:05,520
+non-inverting amplifier. So there's one more variation that I want to show you before we go on to building our active filter.
+
+51
+00:05:06,320 --> 00:05:12,720
+Okay, so this is a slightly more interesting configuration. Now this time we've still got negative feedback, see, so
+
+52
+00:05:12,720 --> 00:05:18,560
+we can still use our first golden rule, but we're applying the input signal to the same input that we're
+
+53
+00:05:18,560 --> 00:05:20,960
+feeding back. So our feedback is going to kind of be
+
+54
+00:05:21,600 --> 00:05:28,160
+mixed with our input signal, which is going to be giving us some very interesting results. The second really interesting thing,
+
+55
+00:05:28,160 --> 00:05:33,200
+now we've got this non-inverting input connected to ground. So what does that do with our circuit?
+
+56
+00:05:33,200 --> 00:05:39,600
+So if we now think about this point here, if this point here is connected to ground, we've got negative feedback,
+
+57
+00:05:39,600 --> 00:05:45,040
+so remember our rule number one, the op-amp will now try and make these two inputs the same.
+
+58
+00:05:45,040 --> 00:05:51,280
+So that means that it's going to try and make this input ground. This is a really special part of op-amp analysis,
+
+59
+00:05:51,280 --> 00:05:57,520
+which is that this point is now called virtual ground, which means that this point will act
+
+60
+00:05:57,520 --> 00:06:04,480
+for all intents and purposes, like a second ground. If we have our input here and ground here,
+
+61
+00:06:04,480 --> 00:06:10,000
+then our entire input signal is across this resistor. That makes it really easy to analyze, doesn't it?
+
+62
+00:06:10,000 --> 00:06:14,640
+Because now we know, let's say this is one volt peak to peak again, so we've got one milliamp
+
+63
+00:06:14,640 --> 00:06:21,680
+through this resistor. So now we need our second magical rule that no current flows in or out
+
+64
+00:06:22,320 --> 00:06:28,480
+of these terminals. So we've got this one milliamp current that flows this way.
+
+65
+00:06:29,120 --> 00:06:34,400
+So what happens to it? Well, I've just told you that it can't go in here, so we know it has to go this way.
+
+66
+00:06:34,400 --> 00:06:39,040
+And now if we've got current flowing this way, we've got a positive voltage drop in this direction,
+
+67
+00:06:39,040 --> 00:06:45,520
+and one milliamp times 10k is 10 volts. So now we've got, as far as the output is concerned,
+
+68
+00:06:45,520 --> 00:06:50,880
+so if this point is ground, and there's then a 10 volts voltage drop across this resistor,
+
+69
+00:06:50,880 --> 00:06:55,680
+then that means that this point is 10 volts lower than this point. Now this is ground, so that's zero,
+
+70
+00:06:55,680 --> 00:07:01,680
+so this must be minus 10 volts. And then when this is negative, this is minus 1 volts, well this all
+
+71
+00:07:01,680 --> 00:07:09,360
+gets flipped around. This is minus 1 milliamps now. So now remember this is ground, we've got minus 10 volts,
+
+72
+00:07:09,360 --> 00:07:17,760
+so this place must be plus 10. So this time the gain is minus R2 over R1. This is R2, this is R1,
+
+73
+00:07:17,760 --> 00:07:24,720
+and this minus just shows us, just telling us mathematically that it's inverted. So this inverting
+
+74
+00:07:24,720 --> 00:07:30,880
+amplifier configuration is the one that we're going to use to make our active filter. So we've taken the
+
+75
+00:07:30,880 --> 00:07:35,520
+inverting op-amp configuration from before, and we just put a capacitor in parallel with the feedback
+
+76
+00:07:35,520 --> 00:07:40,720
+resistor. So how is that going to affect how this circuit works? In a sentence, a capacitor can be
+
+77
+00:07:40,720 --> 00:07:45,120
+viewed as a resistor that's able to change its resistance depending on the frequency of the
+
+78
+00:07:45,120 --> 00:07:49,840
+signal across it. Watch my circuits one-on-one video if you want the whole story, but essentially
+
+79
+00:07:49,840 --> 00:07:55,360
+what's going to happen is that this capacitor is going to look like a very big or very small resistance
+
+80
+00:07:55,360 --> 00:07:59,520
+depending on what frequency we're looking at. So how is that going to change the behavior of the
+
+81
+00:07:59,520 --> 00:08:05,440
+circuit? Well let's have a look at this circuit in terms of the voltages instead of before how I looked at
+
+82
+00:08:05,440 --> 00:08:10,000
+it with the currents. So for a second let's pretend that capacitor wasn't there, and let's see what
+
+83
+00:08:10,000 --> 00:08:15,760
+happens when you apply one volt at the input. If we assume that the output begins at zero volts,
+
+84
+00:08:15,760 --> 00:08:20,800
+what we're doing is we're applying one volt to a voltage divider that looks like this. So let's say
+
+85
+00:08:20,800 --> 00:08:27,040
+that the output is ground, zero volts, so we've got one volt across 1k and then 10k, so we're going to
+
+86
+00:08:27,040 --> 00:08:32,480
+see about 0.9 volts at this inverting input. The op-amp now is going to try and make these two inputs
+
+87
+00:08:32,480 --> 00:08:36,880
+equal because this inputs at ground remember. This is exactly the same as what we've just done.
+
+88
+00:08:36,880 --> 00:08:43,440
+So now what does the output of the op-amp have to do to make this point zero? Well the op-amp
+
+89
+00:08:43,440 --> 00:08:51,040
+has to put minus 0.9 volts here, because if there's 0.9 volts here the op-amp wants to kind of oppose
+
+90
+00:08:51,040 --> 00:08:58,800
+that. Okay so we know we want about minus 0.9 volts at this point because then minus 0.9 plus 0.9
+
+91
+00:08:58,800 --> 00:09:04,880
+will make this point zero. So what does the output have to do in order to do that? And to get about
+
+92
+00:09:04,880 --> 00:09:13,280
+minus 0.9 volts here, the output needs to push minus 10 volts this way. So either we've got a current
+
+93
+00:09:13,280 --> 00:09:20,960
+coming this way that drops voltage here and voltage here, or we can think about this as a kind of
+
+94
+00:09:21,520 --> 00:09:28,480
+balancing act of these two resistances and the output opposing the input to make this point zero.
+
+95
+00:09:28,480 --> 00:09:32,800
+If we think of it in terms of those voltages and we put this capacitor back in, what we're essentially
+
+96
+00:09:32,800 --> 00:09:38,320
+saying is that when at very low frequencies, when the capacitor looks like essentially an open circuit,
+
+97
+00:09:38,880 --> 00:09:44,560
+you've got that behaviour that we were just talking about. This just acts like an inverting amplifier.
+
+98
+00:09:44,560 --> 00:09:50,640
+But when we have the capacitor in and we think about the high frequencies, well that short circuits
+
+99
+00:09:50,640 --> 00:09:58,880
+this, and the op-amp output can bypass this resistor and oppose the input with almost no effort. So what
+
+100
+00:09:58,880 --> 00:10:03,680
+we're saying is that at high frequencies, the output can bypass this resistor because this capacitor looks
+
+101
+00:10:03,680 --> 00:10:09,760
+like a short circuit at high frequencies, and at low frequencies it behaves like an ordinary amplifier.
+
+102
+00:10:09,760 --> 00:10:16,240
+So we essentially get discrimination between low frequencies and high frequencies by simply just
+
+103
+00:10:16,240 --> 00:10:21,440
+adding a capacitor in here. So in this context we're just thinking of this capacitor as a frequency
+
+104
+00:10:21,440 --> 00:10:28,640
+dependent resistor, and it's the frequency at which this resistance becomes comparable to this resistance
+
+105
+00:10:28,640 --> 00:10:34,800
+that is going to set the point at which it starts to filter. And we call that point the 3dB point, and again I'm not
+
+106
+00:10:34,800 --> 00:10:38,640
+going to go into it now because I've done my circuits 101 video where I go through all of this stuff.
+
+107
+00:10:38,640 --> 00:10:44,240
+The point I'm trying to make is that if you vary this resistor, you can change the point at which those two resistances become
+
+108
+00:10:44,240 --> 00:10:51,840
+comparable, and that sets the threshold for the filter. Now if you're eagle-eyed you would have seen there's a huge problem with that,
+
+109
+00:10:51,840 --> 00:10:59,040
+because if we change this resistance at low frequencies, remember, let's just ignore this because it's an open circuit,
+
+110
+00:10:59,040 --> 00:11:04,640
+now we've got a inverting amplifier, but it's these two resistances that sets the gain.
+
+111
+00:11:04,640 --> 00:11:09,920
+So we're simultaneously changing the cutoff frequency and the gain at the same time, and we don't want to do that.
+
+112
+00:11:09,920 --> 00:11:16,560
+So all we're going to do is replace these two resistances with a linked stereo potentiometer,
+
+113
+00:11:16,560 --> 00:11:22,880
+which is basically a potentiometer where you turn one dial and it wipes two separate potentiometers at
+
+114
+00:11:22,880 --> 00:11:29,840
+the same time. So you can always keep these two resistances to be exactly equal, so the gain is always one.
+
+115
+00:11:29,840 --> 00:11:37,040
+Okay, so now the last consideration we have to make, this is setting our midpoint. Usually you see an op-amp
+
+116
+00:11:37,040 --> 00:11:42,080
+like this, but this is plus V and this is minus V if we have a split supply, but we've been using batteries.
+
+117
+00:11:42,080 --> 00:11:47,360
+So this is going to be ground, the negative supply is going to be ground, this is going to be 9 volts.
+
+118
+00:11:47,360 --> 00:11:52,880
+So if we connect a disk to ground as well, our output circuit, our output signal sorry, would look like this.
+
+119
+00:11:52,880 --> 00:11:59,360
+Because we can't go below ground, we need to set this point here to 4.5 volts, we want our output signal
+
+120
+00:11:59,360 --> 00:12:04,320
+to look like this, to be centred around the centre so there's no clipping at the top or at the bottom.
+
+121
+00:12:04,320 --> 00:12:08,880
+There's a couple of ways we could do this. Okay, so we could set up a circuit like this if we wanted to.
+
+122
+00:12:08,880 --> 00:12:13,760
+This is our low pass filter that we just looked at, remember this is a stereo potentiometer here,
+
+123
+00:12:13,760 --> 00:12:20,960
+and then this is just a unity gain inverting amplifier, just as a buffer, and then you take the output out here.
+
+124
+00:12:20,960 --> 00:12:28,960
+We could also just do what we've been doing all along, which is to take advantage of our CMOS chips ability
+
+125
+00:12:28,960 --> 00:12:38,800
+to do all this stuff for us. This CD4069UB is an inverting amplifier with the midway point threshold
+
+126
+00:12:38,800 --> 00:12:45,280
+set internally to the chip. Take rid of this stuff, get rid of this stuff. So these two inputs obviously
+
+127
+00:12:45,280 --> 00:12:51,280
+still exist, but they're internal to the chip and they're setting that threshold for us. So with one,
+
+128
+00:12:51,280 --> 00:12:57,280
+two, three, four components and one chip, we can make ourselves a stable active filter. Right,
+
+129
+00:12:57,280 --> 00:13:02,080
+hello folks. What we're going to do now is we're going to build the circuit out. A bit of a 4106
+
+130
+00:13:02,080 --> 00:13:05,840
+oscillator as a sound source, you can use any sound source you want. Okay, so now we're going to take
+
+131
+00:13:05,840 --> 00:13:12,720
+this and we're going to put it into our 4069, but we're going to do it via this stereo potentiometer.
+
+132
+00:13:12,720 --> 00:13:17,680
+So we're going to take one output of the 4106, and I'm going to feed it to one leg of the stereo
+
+133
+00:13:17,680 --> 00:13:23,280
+potentiometer. So this is a potentiometer with two potentiometers with only one wiper, and I'm putting it on
+
+134
+00:13:23,280 --> 00:13:27,680
+either side of the track like this so they're electrically isolated from one another. And then
+
+135
+00:13:27,680 --> 00:13:32,720
+I'm going to use them as two separate potentiometers. So I'm using this one as my input potentiometer.
+
+136
+00:13:32,720 --> 00:13:39,520
+It goes through this right hand side first, and then to the 4069. And it's also serving as my feedback resistor.
+
+137
+00:13:39,520 --> 00:13:54,240
+Okay, so that should be a unity gain inverting amplifier now. And as I vary the potentiometer,
+
+138
+00:13:54,240 --> 00:14:02,320
+the gain shouldn't change. Good. Okay, so now what I'm going to do is I'm going to put a capacitor,
+
+139
+00:14:02,320 --> 00:14:12,720
+a small capacitor. I'm going to use a 0.033 microfarad capacitor in parallel with this. So one leg at the
+
+140
+00:14:12,720 --> 00:14:18,160
+output of the op-amp and the other leg at the input. That's the input signal where it's just an ordinary
+
+141
+00:14:18,160 --> 00:14:22,720
+square wave, you know, it looks exactly the same as the input. And then as we filter it,
+
+142
+00:14:22,720 --> 00:14:34,720
+it becomes more like a triangle wave. Those high frequencies are filtered out. You can see on the
+
+143
+00:14:34,720 --> 00:14:45,040
+scope that the amplitude isn't changing. Okay, and then finally, I've just added another inverting buffer
+
+144
+00:14:45,040 --> 00:14:52,400
+with just 100k, which is this resistor here, and then 100k feeding back. So that's just buffered the output.
+
+145
+00:14:52,720 --> 00:14:53,920
+So that we can't load it down.
+
+146
+00:15:01,360 --> 00:15:04,880
+Okay, so that's it for this one guys. Thanks for joining me today. We looked over
+
+147
+00:15:04,880 --> 00:15:10,320
+three super simple op-amp circuits. We learned how to analyze op-amp circuits in general, and we built
+
+148
+00:15:10,320 --> 00:15:14,880
+ourselves this awesome sounding active filter. Thanks for watching. Make sure you like, share,
+
+149
+00:15:14,880 --> 00:15:20,320
+subscribe, do all that stuff. Ring the bell. Find me on social media on Facebook, Twitter,
+
+150
+00:15:20,320 --> 00:15:25,920
+Instagram, watch more of my videos here, some over here, and I'll see you all next time. Take care.
+
+151
+00:15:25,920 --> 00:15:27,920
+Amen.
+

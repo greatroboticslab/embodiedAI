@@ -1,0 +1,940 @@
+1
+00:00:00,400 --> 00:00:16,000
+Hey friends, welcome to the YouTube channel all about electronics.
+
+2
+00:00:16,000 --> 00:00:20,600
+So in this video and the subsequent videos, we will learn about the diode.
+
+3
+00:00:20,600 --> 00:00:24,880
+And these are the following topics that we will cover in the series of videos.
+
+4
+00:00:24,880 --> 00:00:29,760
+And in this particular video, we will learn that what is diode and how the VI characteristic
+
+5
+00:00:29,760 --> 00:00:31,980
+of the diode will look like.
+
+6
+00:00:31,980 --> 00:00:35,440
+And we will also see the equivalent circuit for this diode.
+
+7
+00:00:35,440 --> 00:00:39,120
+And in the subsequent videos, we will learn about the device physics of this diode.
+
+8
+00:00:39,120 --> 00:00:42,260
+And we will also see the different applications of the diode.
+
+9
+00:00:42,260 --> 00:00:44,620
+So now the question is, what is diode?
+
+10
+00:00:44,620 --> 00:00:46,720
+Now we all know about the resistor.
+
+11
+00:00:46,720 --> 00:00:50,060
+It is the most widely used type of passive circuit element.
+
+12
+00:00:50,060 --> 00:00:53,000
+And it allows the flow of current in both directions.
+
+13
+00:00:53,000 --> 00:00:58,360
+Similarly, this diode is a two-terminal semiconductor device which allows the flow of current only
+
+14
+00:00:58,360 --> 00:01:00,200
+in one direction.
+
+15
+00:01:00,200 --> 00:01:04,100
+And if you see the symbol of the diode, then it looks like this.
+
+16
+00:01:04,100 --> 00:01:09,540
+So here, this arrow indicates the direction in which this diode allows the flow of current.
+
+17
+00:01:09,540 --> 00:01:12,500
+Now the one terminal of this diode is known as the anode.
+
+18
+00:01:12,500 --> 00:01:15,800
+And the second terminal of the diode is known as the cathode.
+
+19
+00:01:15,800 --> 00:01:20,100
+Now whether this diode will allow the flow of current or not, it depends upon the polarity
+
+20
+00:01:20,100 --> 00:01:23,720
+of the voltage that is applied between this anode and cathode.
+
+21
+00:01:23,720 --> 00:01:28,440
+So, if the voltage that is applied between this anode and cathode is positive, then in
+
+22
+00:01:28,440 --> 00:01:32,600
+general we can say that this diode will allow the flow of current in one direction.
+
+23
+00:01:32,600 --> 00:01:37,300
+While the voltage that is applied between this anode and cathode is negative, then it will
+
+24
+00:01:37,300 --> 00:01:39,480
+not allow the flow of current.
+
+25
+00:01:39,480 --> 00:01:44,420
+So now when this diode is connected in particular circuit, and if you want to analyze that circuit,
+
+26
+00:01:44,420 --> 00:01:48,740
+then the circuit can be analyzed by knowing the voltage and current that is flowing through
+
+27
+00:01:48,740 --> 00:01:49,740
+this diode.
+
+28
+00:01:49,740 --> 00:01:54,020
+And that can be found using the VI characteristic of the diode.
+
+29
+00:01:54,020 --> 00:01:57,720
+Now for the resistor, we know that it is a linear element and the relationship between
+
+30
+00:01:57,720 --> 00:02:00,040
+the voltage and current is linear.
+
+31
+00:02:00,040 --> 00:02:05,300
+So using the Ohm's law, we can easily find the voltage and current through this resistor.
+
+32
+00:02:05,300 --> 00:02:09,240
+But unlike the case of resistor, the diode is a nonlinear element.
+
+33
+00:02:09,240 --> 00:02:13,780
+So the relationship between the voltage and current for the diode is nonlinear.
+
+34
+00:02:13,780 --> 00:02:18,700
+And moreover that, this diode allows the flow of current only in one direction.
+
+35
+00:02:18,700 --> 00:02:22,220
+And it almost blocks the current in the reverse direction.
+
+36
+00:02:22,220 --> 00:02:28,220
+Now if you look this graph, then it looks like the graph is symmetrical in both directions.
+
+37
+00:02:28,220 --> 00:02:30,880
+But don't get confused by the symmetricity.
+
+38
+00:02:30,880 --> 00:02:34,980
+Because here in this graph, both the positive and the negative axis have a different scale.
+
+39
+00:02:34,980 --> 00:02:40,760
+For example, on the positive y-axis, we have a scale in mA, while on the negative y-axis,
+
+40
+00:02:40,760 --> 00:02:42,980
+we have a scale in µA.
+
+41
+00:02:42,980 --> 00:02:48,680
+Similarly on the positive x-axis, if you see, the voltage varies like 0.5V, 1V, and 1.5V.
+
+42
+00:02:48,680 --> 00:02:56,360
+While if you observe on the negative x-axis, the voltage scale varies like –10V, 20V,
+
+43
+00:02:56,360 --> 00:02:58,360
+and –30V.
+
+44
+00:02:58,360 --> 00:03:03,160
+So because of the different scale, this characteristic looks symmetrical on both axes.
+
+45
+00:03:03,160 --> 00:03:07,240
+But if we keep the same scale on both axes, then the diode characteristic will look like
+
+46
+00:03:07,240 --> 00:03:08,240
+this.
+
+47
+00:03:08,240 --> 00:03:11,320
+So as you can see, in the reverse direction, the current that is flowing through the diode
+
+48
+00:03:11,320 --> 00:03:12,680
+is almost negligible.
+
+49
+00:03:12,680 --> 00:03:17,040
+So, using this VI characteristic of the diode, we can easily find the voltage and current
+
+50
+00:03:17,040 --> 00:03:18,860
+that is flowing through the diode.
+
+51
+00:03:18,860 --> 00:03:23,880
+And using this, we can easily analyze any circuit which contains these diodes.
+
+52
+00:03:23,880 --> 00:03:28,020
+But because of the nonlinear characteristic of this diode curve, it is a bit difficult
+
+53
+00:03:28,020 --> 00:03:30,360
+to find the voltage and current very easily.
+
+54
+00:03:30,360 --> 00:03:35,620
+So, what we can do, we can approximate this diode characteristic and using this, we can analyze
+
+55
+00:03:35,620 --> 00:03:36,680
+the circuits.
+
+56
+00:03:36,680 --> 00:03:41,500
+So, first of all, what we will do, we will consider this diode as an ideal diode.
+
+57
+00:03:41,500 --> 00:03:44,960
+And for this ideal diode, we will see the VI characteristic.
+
+58
+00:03:44,960 --> 00:03:48,500
+And also we will see the equivalent circuit for this ideal diode.
+
+59
+00:03:48,500 --> 00:03:53,540
+And step by step, we will introduce few more parameters to this ideal diode.
+
+60
+00:03:53,540 --> 00:03:57,900
+And using this, we will approximate the diode characteristic curve.
+
+61
+00:03:57,900 --> 00:04:01,900
+So for the ideal diode, whenever the voltage that is applied between the anode and cathode
+
+62
+00:04:01,900 --> 00:04:05,980
+is positive, then simply it will act as a closed switch.
+
+63
+00:04:05,980 --> 00:04:10,420
+On the other hand, if the voltage that is applied between this anode and cathode is negative,
+
+64
+00:04:10,420 --> 00:04:13,600
+in that case, simply it will act as an open switch.
+
+65
+00:04:13,600 --> 00:04:16,780
+So now let's see the VI characteristic for this ideal diode.
+
+66
+00:04:16,780 --> 00:04:21,900
+So, in the case 1, when the applied voltage is positive, on the VI characteristic, we will
+
+67
+00:04:21,900 --> 00:04:24,020
+get the vertical line.
+
+68
+00:04:24,020 --> 00:04:28,520
+And for the case 2, when the applied voltage is negative, then for that case, we will get
+
+69
+00:04:28,520 --> 00:04:32,180
+the horizontal line on the negative x direction.
+
+70
+00:04:32,180 --> 00:04:34,960
+So this is the VI characteristic for the ideal diode.
+
+71
+00:04:34,960 --> 00:04:39,740
+So now whenever the positive voltage is applied to this diode, then it can be said that the
+
+72
+00:04:39,740 --> 00:04:41,280
+diode has been forward biased.
+
+73
+00:04:41,280 --> 00:04:43,280
+And it will allow the flow of current.
+
+74
+00:04:43,280 --> 00:04:47,900
+While on the other hand, whenever the negative voltage is applied to this diode, then it will
+
+75
+00:04:47,900 --> 00:04:49,640
+not allow the flow of current.
+
+76
+00:04:49,640 --> 00:04:52,500
+And simply we can say that it has been reverse biased.
+
+77
+00:04:52,500 --> 00:04:56,760
+So we will talk more about this forward and reverse bias at the later part of the video.
+
+78
+00:04:56,760 --> 00:05:01,680
+So now let's take one simple example in which the diode is connected in series with the voltage
+
+79
+00:05:01,680 --> 00:05:03,600
+source and the resistor.
+
+80
+00:05:03,600 --> 00:05:06,980
+Now here we are assuming that the diode is an ideal diode.
+
+81
+00:05:06,980 --> 00:05:11,000
+It means that whenever the voltage that is appearing across the anode and cathode of
+
+82
+00:05:11,000 --> 00:05:15,600
+the diode is positive, then simply it can be represented by the closed switch.
+
+83
+00:05:15,600 --> 00:05:19,640
+And as you can see over here, the applied voltage across the diode is 10V.
+
+84
+00:05:19,640 --> 00:05:23,200
+So, simply it can be represented by the closed switch.
+
+85
+00:05:23,200 --> 00:05:27,200
+And the current that is flowing through this 100Ω resistor will be equal to 10V divided
+
+86
+00:05:27,200 --> 00:05:28,200
+by 100Ω.
+
+87
+00:05:28,200 --> 00:05:30,040
+That is equal to 0.1A.
+
+88
+00:05:30,040 --> 00:05:35,760
+While on the other hand, if we apply the minus 10V in this circuit, then the applied voltage
+
+89
+00:05:35,760 --> 00:05:38,460
+across the diode will be minus 10V.
+
+90
+00:05:38,460 --> 00:05:40,200
+And it will not allow any flow of current.
+
+91
+00:05:40,200 --> 00:05:42,600
+So, simply it will act as an open switch.
+
+92
+00:05:42,600 --> 00:05:46,380
+And the current that is flowing through the circuit will be equal to 0A.
+
+93
+00:05:46,380 --> 00:05:51,540
+Now some of you might have a question that how to find the voltage across this diode.
+
+94
+00:05:51,540 --> 00:05:57,020
+So, that can be found by finding the Thevenin's equivalent voltage between these two terminals.
+
+95
+00:05:57,020 --> 00:06:00,780
+So, simply you need to remove this diode from the circuit and you need to find the Thevenin's
+
+96
+00:06:00,780 --> 00:06:03,420
+equivalent voltage between these two terminals.
+
+97
+00:06:03,420 --> 00:06:07,660
+So, if you remove this diode, then the Thevenin's equivalent voltage which appears between this
+
+98
+00:06:07,660 --> 00:06:11,540
+anode and the cathode in this particular case will be equal to minus 10V.
+
+99
+00:06:11,540 --> 00:06:15,720
+And because of that, the diode will be non-conducting.
+
+100
+00:06:15,720 --> 00:06:20,840
+On the other hand, whenever the 10V is appearing between these two terminals, then the diode simply
+
+101
+00:06:20,840 --> 00:06:23,040
+will act as a closed switch.
+
+102
+00:06:23,040 --> 00:06:27,900
+Now, if you see the VI characteristic of this ideal diode, then you can observe that even
+
+103
+00:06:27,900 --> 00:06:32,480
+if we apply very small positive voltage between this anode and cathode, then also this diode
+
+104
+00:06:32,480 --> 00:06:33,720
+will start conducting.
+
+105
+00:06:33,720 --> 00:06:39,880
+So, let's say even if we apply the positive 0.1V between this anode and cathode, then also
+
+106
+00:06:39,880 --> 00:06:42,720
+this ideal diode should start conducting.
+
+107
+00:06:42,720 --> 00:06:47,700
+But if you see the actual diode, it will start conducting only after the applied voltage cross
+
+108
+00:06:47,700 --> 00:06:49,500
+some threshold voltage.
+
+109
+00:06:49,500 --> 00:06:52,220
+And if you see the VI characteristic, then it will look like this.
+
+110
+00:06:52,220 --> 00:06:56,960
+So, up to certain threshold voltage, the diode will not allow any flow of current.
+
+111
+00:06:56,960 --> 00:07:00,440
+And whenever the applied voltage crosses this threshold voltage, then only the diode will
+
+112
+00:07:00,440 --> 00:07:01,960
+allow the flow of current.
+
+113
+00:07:01,960 --> 00:07:07,560
+So, this voltage is known as the threshold voltage or the cutting voltage for the diode.
+
+114
+00:07:07,560 --> 00:07:11,400
+Now, like I said before, this diode is a semiconductor device.
+
+115
+00:07:11,400 --> 00:07:14,920
+And usually it is made up of either silicon or germanium.
+
+116
+00:07:14,920 --> 00:07:19,280
+So, for silicon, this threshold voltage used to be in the range of 0.6 to 0.7V.
+
+117
+00:07:19,280 --> 00:07:23,700
+While for germanium, usually it is around 0.3V.
+
+118
+00:07:23,700 --> 00:07:28,400
+So, actually the diode will start conducting once the applied voltage crosses this threshold
+
+119
+00:07:28,400 --> 00:07:29,400
+voltage.
+
+120
+00:07:29,400 --> 00:07:32,860
+And before that, it will not allow any flow of current.
+
+121
+00:07:32,860 --> 00:07:36,140
+So, this is the first approximation for the diode curve.
+
+122
+00:07:36,140 --> 00:07:40,400
+So, here in this approximation, we are considering this diode as an ideal diode.
+
+123
+00:07:40,400 --> 00:07:45,260
+But it will only allow the flow of current once the applied voltage crosses this threshold
+
+124
+00:07:45,260 --> 00:07:46,260
+voltage.
+
+125
+00:07:46,260 --> 00:07:49,080
+And the equivalent circuit will look like this.
+
+126
+00:07:49,080 --> 00:07:54,080
+So, in case of reverse bias, it will simply act as an open switch.
+
+127
+00:07:54,080 --> 00:07:58,780
+But whenever the applied voltage crosses this threshold voltage, then only it will allow the
+
+128
+00:07:58,780 --> 00:07:59,900
+flow of current.
+
+129
+00:07:59,900 --> 00:08:06,540
+So, now let's take the same example that we have taken earlier.
+
+130
+00:08:06,540 --> 00:08:12,140
+So, in this approximation, we are considering this diode as an ideal diode except the fact
+
+131
+00:08:12,140 --> 00:08:17,180
+that it will allow the flow of current only after the applied voltage crosses the threshold
+
+132
+00:08:17,180 --> 00:08:18,240
+voltage.
+
+133
+00:08:18,240 --> 00:08:23,080
+And here we are assuming that the diode that is used is the silicon diode.
+
+134
+00:08:23,080 --> 00:08:26,840
+So, it has a threshold voltage of 0.7V.
+
+135
+00:08:26,840 --> 00:08:31,760
+So, once the applied voltage crosses this 0.7V barrier, then only it will allow the flow
+
+136
+00:08:31,760 --> 00:08:32,760
+of current.
+
+137
+00:08:32,760 --> 00:08:39,280
+Now, here as the applied voltage is 10V, so simply this diode will allow the flow of current.
+
+138
+00:08:39,280 --> 00:08:41,540
+And the equivalent circuit will look like this.
+
+139
+00:08:41,540 --> 00:08:46,640
+So, now if you find the current that is flowing through this 100Ω resistor, it will be equal
+
+140
+00:08:46,640 --> 00:08:50,600
+to 10V minus 0.7V divided by 100Ω.
+
+141
+00:08:50,600 --> 00:08:53,400
+That is equal to 0.093A.
+
+142
+00:08:53,400 --> 00:08:59,600
+While on the earlier case, when we have considered this diode as an ideal diode, at that time,
+
+143
+00:08:59,600 --> 00:09:03,440
+we found the value of this current as 0.1A.
+
+144
+00:09:03,440 --> 00:09:07,360
+So, using this approximation, we can find the more accurate values of voltage and current
+
+145
+00:09:07,360 --> 00:09:09,040
+in the circuit.
+
+146
+00:09:09,040 --> 00:09:14,360
+Now in the same approximation, suppose if we apply the minus 10V, then in that case, the
+
+147
+00:09:14,360 --> 00:09:17,200
+current will simply act as an open switch.
+
+148
+00:09:17,200 --> 00:09:19,320
+And it will not allow any flow of current.
+
+149
+00:09:19,320 --> 00:09:23,600
+So, the current that is flowing through this resistor will be equal to 0A.
+
+150
+00:09:23,600 --> 00:09:30,680
+Now, in this first approximation also, we have considered that the diode has a 0 resistance.
+
+151
+00:09:30,680 --> 00:09:34,480
+And that can be also visible from the VI characteristic of this diode.
+
+152
+00:09:34,480 --> 00:09:40,340
+Because if you observe over here, once the applied voltage crosses this threshold voltage,
+
+153
+00:09:40,340 --> 00:09:44,780
+then the voltage that appears across the diode will remain constant.
+
+154
+00:09:44,780 --> 00:09:46,780
+And only current will increase.
+
+155
+00:09:46,780 --> 00:09:49,880
+It means that the diode offers the 0 resistance.
+
+156
+00:09:49,880 --> 00:09:54,860
+But in actual case, every device has some finite resistance, which will limit the current
+
+157
+00:09:54,860 --> 00:09:56,900
+that is flowing through that particular device.
+
+158
+00:09:56,900 --> 00:10:02,760
+So, now let's consider the second approximation, where we are also considering that the diode has
+
+159
+00:10:02,760 --> 00:10:04,660
+some finite resistance.
+
+160
+00:10:04,660 --> 00:10:09,780
+And in that case, if you see the VI characteristic, then it will look like this.
+
+161
+00:10:09,780 --> 00:10:14,360
+So, up to the threshold voltage, the diode will offer infinite resistance or simply it will
+
+162
+00:10:14,360 --> 00:10:16,300
+act as an open switch.
+
+163
+00:10:16,300 --> 00:10:19,620
+And then after, it will provide some finite resistance.
+
+164
+00:10:19,620 --> 00:10:23,100
+And that resistance can be found from the slope of this curve.
+
+165
+00:10:23,100 --> 00:10:27,900
+So, this resistance is also known as the bulk resistance or the body resistance.
+
+166
+00:10:27,900 --> 00:10:32,660
+So, this resistance is the resistance that is offered by the semiconductor device out of
+
+167
+00:10:32,660 --> 00:10:35,100
+which this diode has been made.
+
+168
+00:10:35,100 --> 00:10:39,540
+So, now let's see the equivalent circuit for this second approximation.
+
+169
+00:10:39,540 --> 00:10:44,940
+So, whenever the diode is reversed biased, in that case simply it will offer the infinite
+
+170
+00:10:44,940 --> 00:10:49,480
+resistance or we can say that it will act as an open switch.
+
+171
+00:10:49,480 --> 00:10:54,800
+But whenever the applied voltage crosses this threshold voltage, in that case, now it will
+
+172
+00:10:54,800 --> 00:10:57,440
+offer some finite resistance of Rb.
+
+173
+00:10:57,440 --> 00:10:59,540
+That is the bulk resistance of this diode.
+
+174
+00:10:59,540 --> 00:11:03,980
+So, this is the equivalent circuit in case of the second approximation.
+
+175
+00:11:03,980 --> 00:11:09,100
+Now, apart from this bulk resistance, diode has one more resistance.
+
+176
+00:11:09,100 --> 00:11:12,720
+And this resistance is present in the diode because of its internal structure.
+
+177
+00:11:12,720 --> 00:11:16,980
+So, we will talk more about this diode resistance in the separate video.
+
+178
+00:11:16,980 --> 00:11:20,700
+Now, typically the value of this resistance used to be a few ohms.
+
+179
+00:11:20,700 --> 00:11:26,440
+So, in the circuit, if the Thevenin's equivalent resistance which appears across the diode is much
+
+180
+00:11:26,440 --> 00:11:31,880
+more than the diode resistance, in that case, the diode resistance can be neglected.
+
+181
+00:11:31,880 --> 00:11:37,280
+But if the Thevenin's equivalent resistance which appears across the diode is comparable
+
+182
+00:11:37,280 --> 00:11:42,000
+to the diode resistance, in that case, we also need to consider this diode resistance.
+
+183
+00:11:42,000 --> 00:11:48,440
+So, for example, in this case, let us assume that the diode has a resistance of 25 ohms.
+
+184
+00:11:48,440 --> 00:11:52,000
+Now, this resistor is comparable to this 100 ohm resistor.
+
+185
+00:11:52,000 --> 00:11:54,880
+So, we need to consider this diode resistance.
+
+186
+00:11:54,880 --> 00:12:00,440
+So, if we consider this diode resistance, then the current that is flowing through this 100
+
+187
+00:12:00,440 --> 00:12:07,880
+ohm resistor will be equal to 10V-0.7V divided by 125 ohm.
+
+188
+00:12:07,880 --> 00:12:13,440
+And if you see the current, it will be equal to 0.074 ampere.
+
+189
+00:12:13,440 --> 00:12:18,480
+So, because of this diode resistance, if you see, now the actual current that is flowing
+
+190
+00:12:18,480 --> 00:12:21,240
+through this 100 ohm resistor will change.
+
+191
+00:12:21,240 --> 00:12:25,440
+So, using this second approximation, we can find the more accurate value of the current and
+
+192
+00:12:25,440 --> 00:12:28,840
+voltage that is flowing through the circuit.
+
+193
+00:12:28,840 --> 00:12:33,320
+But in most of the circuits, the Thevenin's equivalent resistance which appears across the
+
+194
+00:12:33,320 --> 00:12:37,200
+diode used to be much larger than this diode resistance.
+
+195
+00:12:37,200 --> 00:12:40,440
+And simply we can neglect this diode resistance.
+
+196
+00:12:40,440 --> 00:12:47,320
+So, in this second approximation of this diode, we have assumed that the diode is non-conducting
+
+197
+00:12:47,320 --> 00:12:51,200
+till the point the applied voltage crosses the threshold voltage.
+
+198
+00:12:51,200 --> 00:12:53,940
+And then after it offers some finite resistance.
+
+199
+00:12:53,940 --> 00:13:00,820
+So, if you see this type of characteristic, then it is known as the piecewise linear characteristic.
+
+200
+00:13:00,820 --> 00:13:05,260
+Because what we have done, we have segmented the actual characteristic of this diode into
+
+201
+00:13:05,260 --> 00:13:07,320
+the piecewise linear characteristic.
+
+202
+00:13:07,320 --> 00:13:13,000
+So, up to the threshold voltage, we have assumed that the diode is non-conducting.
+
+203
+00:13:13,000 --> 00:13:17,080
+And after the threshold voltage, it will offer some finite resistance.
+
+204
+00:13:17,080 --> 00:13:21,480
+Okay, so now let's talk about the actual curve of this diode.
+
+205
+00:13:21,480 --> 00:13:27,280
+So, in this diode curve, like I said before, this region is known as the forward region.
+
+206
+00:13:27,280 --> 00:13:32,660
+Because once the applied voltage crosses the threshold voltage, then the diode starts conducting.
+
+207
+00:13:32,660 --> 00:13:37,400
+And whenever the applied voltage is less than the threshold voltage, in that case, the current
+
+208
+00:13:37,400 --> 00:13:40,340
+that is flowing through the diode is almost negligible.
+
+209
+00:13:40,340 --> 00:13:45,340
+Now, whenever we apply the reverse voltage to this diode, then that region of operation
+
+210
+00:13:45,340 --> 00:13:48,220
+is known as the reverse region of operation.
+
+211
+00:13:48,220 --> 00:13:53,340
+And in this region, the current that is flowing through the diode used to be very small.
+
+212
+00:13:53,340 --> 00:13:59,020
+And this current is known as the reverse saturation current of the diode.
+
+213
+00:13:59,020 --> 00:14:05,420
+So, as you can see from the graph, even if we increase this reverse voltage across the diode,
+
+214
+00:14:05,420 --> 00:14:09,880
+then also the current will only increase by marginal amount.
+
+215
+00:14:09,880 --> 00:14:13,540
+But we cannot increase this reverse voltage indefinitely.
+
+216
+00:14:13,540 --> 00:14:19,700
+Because if we go beyond certain voltage, then the diode will come into the breakdown region.
+
+217
+00:14:19,700 --> 00:14:22,940
+So, this region of operation is known as the breakdown region.
+
+218
+00:14:22,940 --> 00:14:25,720
+And this region of operation should be avoided.
+
+219
+00:14:25,720 --> 00:14:31,980
+Now, some diodes are specifically made to pretend this particular breakdown region.
+
+220
+00:14:31,980 --> 00:14:35,200
+And this type of diodes are known as the Zener diode.
+
+221
+00:14:35,200 --> 00:14:39,300
+So we will talk more about this Zener diode in the separate video.
+
+222
+00:14:39,300 --> 00:14:45,240
+But for any normal signal diodes, this region of operation should be avoided.
+
+223
+00:14:45,240 --> 00:14:50,460
+So if you see the datasheet, you will find that the maximum breakdown voltage for the diode
+
+224
+00:14:50,460 --> 00:14:52,080
+has been mentioned.
+
+225
+00:14:52,080 --> 00:14:56,680
+So the applied reverse voltage should be less than this breakdown voltage.
+
+226
+00:14:56,680 --> 00:15:01,960
+Now in the forward region of this diode characteristic curve, if you observe, as the voltage across
+
+227
+00:15:01,960 --> 00:15:07,760
+the diode increases, the current that is flowing through the diode will increase exponentially.
+
+228
+00:15:07,760 --> 00:15:13,200
+So in datasheets, you will also find one more parameter that is known as the maximum allowable
+
+229
+00:15:13,200 --> 00:15:14,640
+forward current.
+
+230
+00:15:14,640 --> 00:15:19,300
+So diode current should be less than this maximum allowable forward current.
+
+231
+00:15:19,300 --> 00:15:24,440
+So here are the few parameters that we will find in the datasheet of any diode.
+
+232
+00:15:24,440 --> 00:15:28,540
+So now in the next video, we will talk more about the diode resistance.
+
+233
+00:15:28,540 --> 00:15:34,240
+So I hope in this video you understood what is diode and the Vi characteristic of the diode.
+
+234
+00:15:34,240 --> 00:15:37,680
+So if you have any question or suggestion, do let me know in the comment section below.
+
+235
+00:15:37,680 --> 00:15:41,240
+If you like this video, hit the like button and subscribe to the channel for more such videos.
+

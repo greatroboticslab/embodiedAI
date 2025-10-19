@@ -1,0 +1,756 @@
+1
+00:00:00,440 --> 00:00:04,620
+There are two really important questions in control systems engineering.
+
+2
+00:00:05,220 --> 00:00:08,040
+Is your system controllable, and is it observable?
+
+3
+00:00:08,720 --> 00:00:11,180
+Now, assuming you have a good linear model of your system,
+
+4
+00:00:11,380 --> 00:00:14,840
+you can answer both of those questions using some simple matrix operations
+
+5
+00:00:14,840 --> 00:00:18,280
+and the A, B, and C matrices of your state space model.
+
+6
+00:00:19,300 --> 00:00:21,960
+My experience, though, is in the aerospace industry,
+
+7
+00:00:22,200 --> 00:00:26,740
+and I'll be honest, I've never actually used these equations at my job to analyze my system.
+
+8
+00:00:26,740 --> 00:00:31,580
+Now, I'm not saying other industries or other systems within aerospace won't use them.
+
+9
+00:00:31,820 --> 00:00:33,620
+It's just for the projects I've worked on,
+
+10
+00:00:33,780 --> 00:00:36,840
+we've relied mostly on just having a good understanding of the system
+
+11
+00:00:36,840 --> 00:00:41,840
+and then reasoning through the design to determine whether it was controllable or observable.
+
+12
+00:00:42,760 --> 00:00:46,280
+But with that being said, in order to develop that intuition,
+
+13
+00:00:46,620 --> 00:00:50,200
+you have to have an understanding of the concept of controllability and observability.
+
+14
+00:00:50,460 --> 00:00:54,520
+And part of gaining that understanding comes from studying these equations.
+
+15
+00:00:54,520 --> 00:00:57,160
+So they're worth spending some time on.
+
+16
+00:00:57,980 --> 00:00:59,780
+Just not in this video.
+
+17
+00:01:00,160 --> 00:01:03,120
+We're not going to cover them at all, and I think with good reason.
+
+18
+00:01:03,680 --> 00:01:07,880
+I feel that Steve Brunton already has done a fantastic job describing the math
+
+19
+00:01:07,880 --> 00:01:11,780
+behind these equations in his Control Bootcamp series that I've linked to below.
+
+20
+00:01:12,100 --> 00:01:14,360
+And rather than just duplicate what he's already done,
+
+21
+00:01:14,620 --> 00:01:18,440
+I want to approach this topic from a more intuitive and conceptual direction.
+
+22
+00:01:18,440 --> 00:01:23,820
+That way, combined with the math, you'll have a deeper understanding of controllability and observability
+
+23
+00:01:23,820 --> 00:01:26,860
+that I think will help you be a better control systems engineer.
+
+24
+00:01:27,520 --> 00:01:29,640
+I'm Brian, and welcome to a MATLAB Tech Talk.
+
+25
+00:01:30,700 --> 00:01:35,780
+To begin, let's look at what control system design requires at a very high level.
+
+26
+00:01:36,160 --> 00:01:38,240
+It starts with the system that you want to control.
+
+27
+00:01:38,880 --> 00:01:44,260
+And you're able to poke and prod the system with actuators that impart control forces and energy.
+
+28
+00:01:44,260 --> 00:01:48,900
+And then you can measure specific states of the system, like voltage, position, and temperature,
+
+29
+00:01:49,240 --> 00:01:52,060
+with sensors that produce the output of the system.
+
+30
+00:01:52,980 --> 00:01:56,240
+And controller design comes down to figuring out how to use the sensor data,
+
+31
+00:01:56,720 --> 00:01:59,620
+along with a reference signal or some kind of command,
+
+32
+00:01:59,980 --> 00:02:02,280
+to generate the correct actuator commands.
+
+33
+00:02:02,760 --> 00:02:04,800
+And that's essentially all we're trying to do.
+
+34
+00:02:05,460 --> 00:02:10,420
+However, your controller design is bound to fail if your system doesn't have the appropriate actuators
+
+35
+00:02:10,420 --> 00:02:12,420
+that can affect the right parts of the system,
+
+36
+00:02:12,780 --> 00:02:16,640
+or if you don't have the appropriate sensors in place that can measure the right states.
+
+37
+00:02:17,300 --> 00:02:21,000
+Without both of those, you won't be able to adequately influence the system.
+
+38
+00:02:21,300 --> 00:02:22,560
+It won't be controllable.
+
+39
+00:02:22,960 --> 00:02:24,940
+Or you won't know how the system is changing.
+
+40
+00:02:25,400 --> 00:02:26,660
+It won't be observable.
+
+41
+00:02:27,620 --> 00:02:33,600
+In this way, controllability and observability are conditions of how the system works with the actuators
+
+42
+00:02:33,600 --> 00:02:38,700
+and sensors, and it's not tied to a specific control technique like PID or pole placement.
+
+43
+00:02:39,140 --> 00:02:43,800
+If it's uncontrollable, you have to address that problem by changing the system or the actuators.
+
+44
+00:02:44,140 --> 00:02:46,800
+And the same goes for observability and the sensors.
+
+45
+00:02:48,400 --> 00:02:51,480
+Let's look at sort of a formal written definition of the two.
+
+46
+00:02:52,300 --> 00:02:57,280
+Controllability means that there exist control signals which allows the system to reach any state
+
+47
+00:02:57,280 --> 00:02:58,640
+in a finite amount of time.
+
+48
+00:02:59,100 --> 00:03:00,960
+This is also called reachability.
+
+49
+00:03:00,960 --> 00:03:06,520
+Now, an important thing to realize is that controllability does not mean that the state
+
+50
+00:03:06,520 --> 00:03:10,300
+must be maintained or held at that condition, just that it can be reached.
+
+51
+00:03:10,920 --> 00:03:15,900
+Now, to understand what this means, let's look at a nicely constrained problem like a monorail.
+
+52
+00:03:16,380 --> 00:03:19,420
+There are two states, position and velocity.
+
+53
+00:03:19,920 --> 00:03:23,860
+And we'll assume that the monorail is controllable, so by accelerating and braking,
+
+54
+00:03:24,000 --> 00:03:26,360
+the monorail can get to any position on the track,
+
+55
+00:03:26,360 --> 00:03:30,080
+and it can speed up to any velocity within the state space.
+
+56
+00:03:30,960 --> 00:03:32,440
+Here's the key about reachability.
+
+57
+00:03:32,920 --> 00:03:35,740
+Not only can each state variable be achieved individually,
+
+58
+00:03:36,120 --> 00:03:38,540
+each combination of variables can also be achieved.
+
+59
+00:03:39,020 --> 00:03:43,300
+For example, we could accelerate in a way that could get us to a position of 1 kilometer
+
+60
+00:03:43,300 --> 00:03:45,180
+at 50 kilometers per hour.
+
+61
+00:03:45,640 --> 00:03:47,760
+Hence, it can reach that state in the state space.
+
+62
+00:03:48,060 --> 00:03:51,660
+However, it should be obvious that it's physically impossible to maintain that state.
+
+63
+00:03:51,800 --> 00:03:56,400
+This is why controllability requires the system to be able to reach a state,
+
+64
+00:03:56,400 --> 00:03:58,260
+but not necessarily maintain it.
+
+65
+00:04:00,140 --> 00:04:02,260
+Okay, let's move on to observability.
+
+66
+00:04:03,220 --> 00:04:06,680
+Observability means that all states can be known from the outputs of the system.
+
+67
+00:04:07,300 --> 00:04:10,060
+That is, we can know the value of every state in the system
+
+68
+00:04:10,060 --> 00:04:13,220
+by using an appropriate selection of sensors and sensor locations.
+
+69
+00:04:14,040 --> 00:04:15,840
+Now, a quick side note about this, though.
+
+70
+00:04:16,180 --> 00:04:18,260
+As I mentioned in the last video on pole placement,
+
+71
+00:04:18,260 --> 00:04:22,260
+it's impractical to impose the requirement that you know every state in a system.
+
+72
+00:04:22,680 --> 00:04:26,960
+There's just too many, and most don't impact the system in any meaningful way.
+
+73
+00:04:27,540 --> 00:04:30,500
+For example, the temperature of the monorail is a state,
+
+74
+00:04:30,720 --> 00:04:34,480
+but knowing it is not necessary for controlling the position and velocity.
+
+75
+00:04:35,160 --> 00:04:38,420
+So when I say states, I'm really referring to all critical states.
+
+76
+00:04:38,920 --> 00:04:42,680
+And often the critical states are the ones that are in the state vector of your model,
+
+77
+00:04:42,980 --> 00:04:46,720
+since your goal in modeling is usually to include only the relevant dynamics
+
+78
+00:04:46,720 --> 00:04:48,140
+and leave out the rest.
+
+79
+00:04:48,680 --> 00:04:52,740
+Therefore, for observability, we want to know every state in our state vector.
+
+80
+00:04:53,980 --> 00:04:56,300
+Okay, with these definitions out of the way,
+
+81
+00:04:56,460 --> 00:04:59,960
+let's see if we can make more sense of these concepts by looking at a few examples.
+
+82
+00:05:00,560 --> 00:05:03,540
+For now, let's ditch the constrained monorail problem
+
+83
+00:05:03,540 --> 00:05:06,340
+and look at the higher dimensional state space of a car.
+
+84
+00:05:06,920 --> 00:05:09,360
+We'll say the states we care about are the xy position,
+
+85
+00:05:09,640 --> 00:05:12,480
+the xy velocity, and the yaw angle and yaw rate.
+
+86
+00:05:12,960 --> 00:05:16,060
+And let's say for our sensors, we have a speedometer to measure velocity,
+
+87
+00:05:16,060 --> 00:05:19,240
+and our eyes to assess pretty much everything else.
+
+88
+00:05:19,840 --> 00:05:23,440
+The actuators are the steering wheel and the gas and brake pedals.
+
+89
+00:05:24,040 --> 00:05:27,640
+It's essentially the actuators and sensors that you're using when you drive your car,
+
+90
+00:05:27,800 --> 00:05:29,860
+and we can reason that with this setup,
+
+91
+00:05:30,100 --> 00:05:32,440
+we'd be able to control the car to a specific position,
+
+92
+00:05:32,600 --> 00:05:34,720
+at a given velocity and yaw angle.
+
+93
+00:05:35,700 --> 00:05:38,320
+Let's look at the concept of observability first
+
+94
+00:05:38,320 --> 00:05:41,300
+and start with an extreme example to help illustrate its importance.
+
+95
+00:05:41,900 --> 00:05:45,000
+We remove all sensor information by closing our eyes.
+
+96
+00:05:45,000 --> 00:05:47,800
+This has the effect of zeroing out the C matrix,
+
+97
+00:05:48,100 --> 00:05:51,180
+and basically we have no way of knowing any of the states.
+
+98
+00:05:51,680 --> 00:05:54,820
+You don't know where you are, what speed you're going, or the direction you're facing.
+
+99
+00:05:55,400 --> 00:05:59,960
+And let's assume for this example that you can't feel acceleration or hear the engine or anything.
+
+100
+00:06:00,680 --> 00:06:02,240
+Now, you can still control the car.
+
+101
+00:06:02,520 --> 00:06:06,760
+This hasn't been impacted since you're able to move the steering wheel and press on the pedals.
+
+102
+00:06:06,760 --> 00:06:12,660
+So, in this way, lack of observability made it so you can't control the car
+
+103
+00:06:12,660 --> 00:06:15,300
+in the sense that you can't drive it safely to a destination.
+
+104
+00:06:15,940 --> 00:06:19,980
+However, the car is controllable within the definition that we said earlier.
+
+105
+00:06:20,360 --> 00:06:24,520
+So, that's something to keep in mind when you're talking about control and controllability.
+
+106
+00:06:25,300 --> 00:06:27,440
+Now, let's imagine the opposite situation.
+
+107
+00:06:27,860 --> 00:06:30,080
+We remove the steering wheel and the pedals,
+
+108
+00:06:30,280 --> 00:06:32,640
+which has the effect of zeroing out the B matrix.
+
+109
+00:06:32,640 --> 00:06:36,080
+You can imagine how this could happen if you hit a large icy patch
+
+110
+00:06:36,080 --> 00:06:39,700
+and the car skids along with no effect from steering or braking.
+
+111
+00:06:40,600 --> 00:06:43,220
+Even though you can't affect the state of the car,
+
+112
+00:06:43,720 --> 00:06:46,740
+this system is still observable since you can watch the speedometer
+
+113
+00:06:46,740 --> 00:06:49,220
+and you can track your position by looking outside.
+
+114
+00:06:50,140 --> 00:06:55,340
+So, you can see how it's necessary to have a system that is capable of being observed and controlled.
+
+115
+00:06:55,740 --> 00:06:56,720
+They work together.
+
+116
+00:06:56,720 --> 00:07:02,820
+I mean, it should be pretty obvious that without any actuators or without any sensors,
+
+117
+00:07:03,080 --> 00:07:04,540
+your system is doomed to fail.
+
+118
+00:07:04,900 --> 00:07:09,980
+But what might not be obvious at first is that even a system that is partially uncontrollable
+
+119
+00:07:09,980 --> 00:07:12,300
+or unobservable is still troublesome.
+
+120
+00:07:13,000 --> 00:07:15,720
+Imagine trying to drive your car with the steering wheel detached.
+
+121
+00:07:16,180 --> 00:07:18,600
+Even though you can still change its speed with the pedals,
+
+122
+00:07:19,000 --> 00:07:23,480
+I bet you'd consider that an uncontrollable car since you'd have no way to change the yaw state.
+
+123
+00:07:23,480 --> 00:07:27,280
+And this is a common sentiment with all control systems.
+
+124
+00:07:27,840 --> 00:07:33,100
+If any one critical state is uncontrollable, then the entire system is deemed to be uncontrollable.
+
+125
+00:07:33,560 --> 00:07:38,420
+And if any one critical state is unobservable, then the entire system is deemed to be unobservable.
+
+126
+00:07:39,620 --> 00:07:43,580
+Okay, let's now focus on what it means to observe a state.
+
+127
+00:07:44,140 --> 00:07:47,260
+Clearly, directly measuring a state is one way of knowing it.
+
+128
+00:07:47,720 --> 00:07:51,340
+However, we don't have to measure every state to infer its value.
+
+129
+00:07:51,340 --> 00:07:57,180
+Being able to estimate a state using available information is good enough to claim that the system is observable.
+
+130
+00:07:57,760 --> 00:08:04,640
+For example, with the monorail, we wouldn't have to install a speedometer and a position sensor in order to know both of those states.
+
+131
+00:08:05,340 --> 00:08:11,520
+Velocity can be estimated by differentiating position, and position can be estimated by integrating velocity.
+
+132
+00:08:12,120 --> 00:08:15,360
+So you'd only need to measure one of those states and you can infer the other.
+
+133
+00:08:15,360 --> 00:08:21,200
+This is why a system can still be observable even if the output y isn't full state.
+
+134
+00:08:21,660 --> 00:08:25,440
+That is, it doesn't contain a direct measurement of every state variable.
+
+135
+00:08:26,860 --> 00:08:30,660
+Estimating states is a good way to reduce the hardware complexity of your system.
+
+136
+00:08:31,340 --> 00:08:38,100
+Strategically measure only the necessary states with sensors, and then just estimate the rest using an observer, like a Kalman filter.
+
+137
+00:08:38,100 --> 00:08:46,260
+With that being said, even if you can estimate a state, some states could be highly sensitive to modeling and measurement errors.
+
+138
+00:08:46,780 --> 00:08:51,820
+For example, differentiating a noisy position creates an even noisier velocity.
+
+139
+00:08:52,280 --> 00:08:56,960
+Or a small bias in velocity measurement would cause an ever-growing error in position.
+
+140
+00:08:57,540 --> 00:08:58,940
+So we have this trade-off.
+
+141
+00:08:58,940 --> 00:09:10,200
+Observations can be sensitive to errors, but adding additional sensors all over your system can be expensive in cost, or weight, or complexity, or whatever metric it is that's important to your design.
+
+142
+00:09:10,900 --> 00:09:13,460
+So we need to find a way to balance that trade-off.
+
+143
+00:09:13,980 --> 00:09:17,580
+Which states should we measure, and which states should we estimate?
+
+144
+00:09:17,580 --> 00:09:28,920
+Now if your system is difficult to reason through, the observability equations provide a methodical way to assess whether the states can be observed from the given outputs, and a measure of their effectiveness.
+
+145
+00:09:29,540 --> 00:09:33,600
+So you do have a way of determining whether you have the right sensors in the right places.
+
+146
+00:09:34,740 --> 00:09:40,480
+There are a few more things that I want to cover here, and to do so let's consider a flexible cantilevered beam.
+
+147
+00:09:40,480 --> 00:09:48,540
+If you imagine pulling down on the end of the beam and letting it flick back up, it'll vibrate in some way that's governed by the mechanical properties of the beam.
+
+148
+00:09:48,920 --> 00:09:52,500
+And it'll eventually come to rest on its own after all of the energy has been damped out.
+
+149
+00:09:53,280 --> 00:09:58,320
+Now your job is to develop an active damping system that will stop the vibration faster.
+
+150
+00:09:58,940 --> 00:10:06,140
+You have access to accelerometers to measure the motion, and actuators that move a countermass with a damper to remove energy from the system.
+
+151
+00:10:06,140 --> 00:10:13,020
+And for simplicity, we'll say that a sensor and actuator comes in a single package, so they have to be placed in the same location.
+
+152
+00:10:13,460 --> 00:10:16,460
+But where you place them along the beam is up to you.
+
+153
+00:10:17,140 --> 00:10:22,820
+Well, with the exception that you can't place it at the tip of the beam due to other engineering constraints.
+
+154
+00:10:23,500 --> 00:10:28,460
+So the question is, where should you place it, and how does that placement affect controllability and observability?
+
+155
+00:10:29,120 --> 00:10:33,720
+Well, we might reason that the beam motion will be larger the closer we get to the tip of the beam.
+
+156
+00:10:33,720 --> 00:10:39,040
+So if we place our hardware as close as we can to the end, it would produce the most motion for the sensor.
+
+157
+00:10:39,440 --> 00:10:43,500
+So it'll be easier to sense and allow the actuator to damp more energy.
+
+158
+00:10:44,240 --> 00:10:46,160
+And visually, this looks like it might work.
+
+159
+00:10:47,460 --> 00:10:52,160
+However, the motion of the beam consists of contributions from a number of distinct bending modes.
+
+160
+00:10:52,560 --> 00:10:55,760
+The first bending mode waves up and down, maybe like you'd expect.
+
+161
+00:10:56,100 --> 00:10:59,780
+And then the second and third modes have slightly more complicated mode shapes.
+
+162
+00:10:59,780 --> 00:11:07,100
+But the thing to notice is that our sensor and actuator location is placed directly at a node for the second bending mode.
+
+163
+00:11:08,000 --> 00:11:13,180
+In this case, our original ideal placement is fantastic for the first and third bending modes,
+
+164
+00:11:13,400 --> 00:11:18,380
+but makes the second bending mode both unobservable, since the sensor wouldn't measure any motion,
+
+165
+00:11:18,760 --> 00:11:22,520
+and uncontrollable, since the actuator would have no impact on this mode.
+
+166
+00:11:22,520 --> 00:11:30,800
+If we designed a controller with this hardware location, we'd find that no matter how hard we tuned the controller or came up with fancy mathematics,
+
+167
+00:11:31,280 --> 00:11:33,980
+the beam would still vibrate at the second bending mode.
+
+168
+00:11:34,840 --> 00:11:40,220
+So rather than adding a second sensor and actuator at a location that's ideal for the second mode,
+
+169
+00:11:40,680 --> 00:11:47,780
+a cheaper alternative might be to just move the sensor and actuator to a place that can observe and control all of the critical bending modes.
+
+170
+00:11:47,780 --> 00:11:55,080
+In doing this, however, we've reduced our ability to control the first mode and increased the cost of actuation,
+
+171
+00:11:55,460 --> 00:12:00,240
+since the beam doesn't physically move as much at this new location for the first bending mode.
+
+172
+00:12:00,700 --> 00:12:05,860
+That is, it takes more effort for our actuator to dump the first mode from this location than it would the other.
+
+173
+00:12:06,320 --> 00:12:11,120
+So we get the benefit of handling the first three bending modes, but at the expense of effectiveness.
+
+174
+00:12:11,780 --> 00:12:13,860
+Perhaps that's a good compromise, though.
+
+175
+00:12:13,860 --> 00:12:22,880
+Okay, hopefully you now have a better understanding of why controllability and observability are concepts that you need to understand and consider
+
+176
+00:12:22,880 --> 00:12:26,920
+when analyzing your system and your actuators and your sensors.
+
+177
+00:12:27,540 --> 00:12:32,620
+Now, the equations I showed earlier provide a systematic way of assessing everything I just talked about.
+
+178
+00:12:33,040 --> 00:12:34,860
+They can check for observability and controllability.
+
+179
+00:12:35,880 --> 00:12:39,980
+They can help you think about the most effective places to add sensors and actuators,
+
+180
+00:12:39,980 --> 00:12:44,320
+and to determine which states you should measure and which you should just estimate.
+
+181
+00:12:45,020 --> 00:12:51,000
+And again, I do think it's important to understand these equations in detail and how you can perform these analyses in MATLAB,
+
+182
+00:12:51,220 --> 00:12:56,760
+because even if you don't use them, it will be a good foundation on which you can build your intuition.
+
+183
+00:12:57,760 --> 00:13:03,000
+MathWorks has put together a page with links to videos and other resources showing how to analyze controllability
+
+184
+00:13:03,560 --> 00:13:06,140
+and, in general, work with states-based models.
+
+185
+00:13:06,140 --> 00:13:12,740
+And if you want to learn more about why these equations work, definitely check out Steve Brunton's Control Boot Camp videos.
+
+186
+00:13:13,120 --> 00:13:16,040
+Links are in the description for everything I just talked about.
+
+187
+00:13:16,660 --> 00:13:20,380
+Now, if you don't want to miss the next Tech Talk video, don't forget to subscribe to this channel.
+
+188
+00:13:20,860 --> 00:13:26,040
+Also, if you want to check out my channel, Control System Lectures, I cover more control theory topics there as well.
+
+189
+00:13:26,040 --> 00:13:28,380
+Thanks for watching, and I'll see you next time.
+

@@ -1,0 +1,1960 @@
+In the error shows in the detector line sir how to clear it
+
+Pycharm me madiapip me error occor  plz find  version of pycharm
+
+Thanks for this useful video. I tried it myself too, and I'm wondering how I can run mediapipe on a GPU.
+
+I could just go inspect every single funtion to check what it reutrns and what it does, but a detailed explanation would be much appreciated
+
+can't install autopy on my mac.... why is that?
+
+my cursor is not moving. what I should have to do
+
+I can't install dlib and face recognition. What should I do?
+
+Hi Sir, I got no error in the code but the code can't able to run properly. It shows  Traceback (most recent call last): Please help me
+
+Brother, "" AttributeError: module 'HandTrackingModule' has no attribute 'handDetector'  "" what can i do?
+
+import cv2 import mediapipe as mp import time  cap=cv2.VideoCapture(0) mphand=mp.solutions.hands hands=mphand.Hands() mpDraw = mp.solutions.drawing_utils  pTime=0 cTime=0   while True:     success,img=cap.read()     imgRGB=cv2.cvtColor(img,cv2.COLOR_RGB2BGR)     results=hands.process(imgRGB)     # print(result.multi_hand_landmarks)     if results.multi_hand_landmarks:         for handLms in results.multi_hand_landmarks:             for id, lm in enumerate(handLms.landmark):                 # print(id,lm)                 h, w, c = img.shape                 cx, cy = int(lm.x*w),int(lm.y*h)                 print(id,cx,cy)                 # if id ==4:                 cv2.circle(img, (cx,cy),15,(255,0,255),cv2.FILLED)             mpDraw.draw_landmarks(img,handLms,mphand.HAND_CONNECTIONS)      cTime=time.time()     fps=1/(cTime-pTime)     pTime=cTime      cv2.putText(img,str(int(fps)),(10,70),cv2.FONT_HERSHEY_PLAIN,3,(255,0,255),3)      cv2.imshow("image",img)     cv2.waitKey(1)    thie code gives error
+
+Your code NOT working! Please fix it
+
+Hello, I really appreciate your tutorials, they helped me a lot. I have one problem, I'm faced with the fact that it gives out little fps. I read articles that say it depends on the system, but I have a 3060, i5 10400f and 16 ram. Is this really not enough? If not, what else could be the problem?
+
+Respected Murtaza, I have "List index Out of Range", I wrote all your Code and working properly, but this one error, I am not understanding. Error: File "C:\Users\Gul Rukh Khan\PycharmProjects\MMPOSE\Drawing.py", line 36, in <module>     fingers = detector.fingersUp()   File "C:\Users\Gul Rukh Khan\PycharmProjects\MMPOSE\HandTrackingModule.py", line 58, in fingersUp     if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]: IndexError: list index out of range ---------------------------------------------------------------------------------------------------------------- and the Function FINGERSUP() is given below:     def fingersUp(self):         fingers = []         #Thumb         if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]:             fingers.append(1)         else:             fingers.append(0)          # Fingers         for id in range(1, 5):             if self.lmList[self.tipIds[id]][2] < self.lmList[self.tipIds[id] - 2][2]:                 fingers.append(1)             else:                 fingers.append(0)         # totalFinger = fingers.count(1)         return fingers  Please, guide me, as i am in the mid of the project, I tried alot,  thanks best regards
+
+if some needs the HandTrackingModule.py, You can copy from here, i Paste here. ########################### import math import cv2     # OpenCV uses BGR import time import mediapipe as mp  # MediaPipe used RGB  class handDetector():     def __init__(self, mode=False, maxHands=2, detectionCon=0.5, trackCon=0.5):         self.mode = mode         self.maxHands = maxHands         self.detectionCon = detectionCon         self.trackCon = trackCon          self.mpHands = mp.solutions.hands         self.hands = self.mpHands.Hands(self.mode, self.maxHands, self.detectionCon, self.trackCon)          self.mpDraw = mp.solutions.drawing_utils         self.tipIds = [4, 8, 12, 16, 20]      def findHands(self, img, draw=True):         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)          self.results = self.hands.process(imgRGB)          if self.results.multi_hand_landmarks:             for handLms in self.results.multi_hand_landmarks:                 if draw:                     self.mpDraw.draw_landmarks(img, handLms, self.mpHands.HAND_CONNECTIONS)         return img  #***************************************************************     def findPosition(self, img, handNo=0, draw=True):         xList = []         yList = []         bbox = []         self.lmList = []         if self.results.multi_hand_landmarks:             myHand = self.results.multi_hand_landmarks[handNo]             for id, lm in enumerate(myHand.landmark):                 # print (id, lm)                 h, w, c = img.shape                 cx, cy = int(lm.x * w), int(lm.y * h)                 xList.append(cx)                 yList.append(cy)                 # print(id, cx, cy)                 self.lmList.append([id, cx, cy])                 if draw:                     cv2.circle(img, (cx, cy), 5, (255, 0, 255), cv2.FILLED)             xmin, xmax = min(xList), max(xList)             ymin,ymax = min(yList), max(yList)             bbox = xmin, ymin, xmax, ymax             if draw:                 cv2.rectangle(img, (xmin - 20, ymin - 20), (xmax + 20, ymax+20), (0, 255, 0), 2)         return self.lmList, bbox      def fingersUp(self):         fingers = []         #Thumb         if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]:             fingers.append(1)         else:             fingers.append(0)          # Fingers         for id in range(1, 5):             if self.lmList[self.tipIds[id]][2] < self.lmList[self.tipIds[id] - 2][2]:                 fingers.append(1)             else:                 fingers.append(0)         # totalFinger = fingers.count(1)         return fingers      def findDistance(self, p1, p2, img, draw=True, r=15, t=3):         x1, y1 = self.lmList[p1][1:]         x2, y2 = self.lmList[p2][1:]         cx, cy = (x1+x2)//2, (y1+y2) // 2          if draw:             cv2.line(img, (x1, y1), (x2, y2), (255, 0, 255), t)             cv2.circle(img, (x1, y1), r, (255, 0, 255), cv2.FILLED)             cv2.circle(img, (x2, y2), r, (255, 0, 255), cv2.FILLED)             cv2.circle(img, (cx, cy), r, (0, 0, 255), cv2.FILLED)         length = math.hypot(x2 - x1, y2 - y1)         return length, img, [x1, y1, x2, y2, cx, cy] def main():     pTime = 0     cTime = 0     cap = cv2.VideoCapture(0)     detector = handDetector()     while True:         success, img = cap.read()         img = detector.findHands(img)         lmlist, bbox = detector.findPosition(img)         if len(lmlist) != 0:             print(lmlist[4])         cTime = time.time()         fps = 1/(cTime - pTime)         pTime = cTime         cv2.putText(img, str(int(fps)), (10, 70), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 3, (255,0,255), 3)         cv2.imshow("Image", img)         cv2.waitKey(1)  if _name_ == '__main__':     main() ###########################
+
+Can we do all this using cmd?
+
+module 'HandTrackingModule' has no attribute 'handDetector' .Im getting this error. someone please tell me how to resolve this
+
+Which version is use to run this code and which version of packages are install
+
+Data set values for this project???
+
+Hey can someone tell how, in the beginning of video,  the cursor area is higlighted in circle and other screen area is darken
+
+Bro which version of Python are you using in this video??
+
+use python 3.8 v
+
+Put in same file folder
+
+Which IDE you have used?
+
+how did u install autopy??
+
+where did you created fingerup method it was not given in the video
+
+mediapipe not install in pycharm can you help for fix
+
+Can you please give an abstract on this project
+
+module 'HandTrackingModule' has no attribute 'handDetector'  please tell me how to solve? I am stucked over here. anyone please
+
+All workshops are not working
+
+Not able to find the distance between the two finger in detection mode
+
+Hi Guys. Does this project works on a Mac aswell?
+
+sir where can i find your previous projects
+
+Traceback (most recent call last):   File "D:\edge\virtual mouse\AiVirtualMouseProject.py", line 20, in <module>     detector = htm.handDetector(maxHands=1)   File "D:\edge\virtual mouse\HandTrackingModule.py", line 16, in _init_     self.hands = self.mpHands.Hands(self.mode, self.maxHands,self.detectionCon, self.trackCon)   File "D:\edge\virtual mouse\mousescripts\lib\site-packages\mediapipe\python\solutions\hands.py", line 129, in _init_     'multi_handedness'   File "D:\edge\virtual mouse\mousescripts\lib\site-packages\mediapipe\python\solution_base.py", line 276, in _init_     for name, data in (side_inputs or {}).items()   File "D:\edge\virtual mouse\mousescripts\lib\site-packages\mediapipe\python\solution_base.py", line 276, in <dictcomp>     for name, data in (side_inputs or {}).items()   File "D:\edge\virtual mouse\mousescripts\lib\site-packages\mediapipe\python\solution_base.py", line 533, in _make_packet     return getattr(packet_creator, 'create_' + packet_data_type.value)(data) TypeError: create_int(): incompatible function arguments. The following argument types are supported:     1. (arg0: int) -> mediapipe.python._framework_bindings.packet.Packet
+
+TypeError: create_int(): incompatible function arguments. The following argument types are supported:     1. (arg0: int) -> mediapipe.python._framework_bindings.packet.Packet
+
+Does the mouse have right and left click operations
+
+Which version cvzone version
+
+❤❤❤❤ dont have words to say about him. Love you bro.
+
+How and where should I do the codings?
+
+I'm one of the 7 people who are not bots here
+
+Traceback (most recent call last):   File "C:/Users/Lenovo/PycharmProjects/AI Virtual Mouse 2/AiVirtualMouseProject.py", line 20, in <module>     detector = htm.handDetector(maxHands=1)  solution please
+
+what is the name of the development software being used?
+
+help!!!
+
+Yes, I also couldn't able to install aytopy.As it is showing me the below error:  note: This error originates from a subprocess, and is likely not a problem with pip.   ERROR: Failed building wheel for autopy   Running setup.py clean for autopy Failed to build autopy ERROR: Could not build wheels for autopy, which is required to install pyproject.toml-based projects python setup.py bdist_wheel did not run successfully. Would it work for python 3.10. ??
+
+@555chaithanyakrishna8  Autopy works on python 3.8 and not working on python 3.9 and up
+
+urgent help needed @murtazasworkshop
+
+please urgent need of help @murtazasworkshop
+
+same error
+
+have you resolved the problem?
+
+The curser is not moving as when i only up the index finger webcam is automatically closing. If you know please help me out
+
+same problem
+
+have you solved it
+
+Did U Solve It?
+
+I'm unable to install auto pip
+
+Bro interpreter version cheppu
+
+Incredible
+
+'handDetector' object has no attribute 'tipIds' ------ getting this error even with the source code of  HandTrackingModule, anyone got any ideas?
+
+Hi, the autopy lib doesn't install in my system. I tried all the ways. Is there any alternative to autopy?
+
+Hi there  If I want to make a 3d model to float over a picture what should I do
+
+in which videos do you write the hand tracking module?
+
+Please tell me which coding application sir was using. Please.
+
+can someone pls reply to this comment with the link  of the video where he teaches the fingers up nd down method
+
+can you help me i cant install autopy
+
+Attribute error... HandDetector is not an attribute of handtrackingmodule..
+
+That is a shit project. Your code doesn't work at all
+
+To prevent the error when your finger exits the rectangle, add the following code just above autopy.mouse.move  x3_flip = min(screen_width - x3, screen_width - 0.01) y3 = min(y3, screen_height - 0.01)  and replace autopy.mouse.move(screen_width - x3, y3) with autopy.mouse.move(x3_flip, y3)
+
+God tussi great ho, thank you dear.
+
+Please help sir Which python version will support both mediapipe and autopy
+
+Toooooo cooooooooooooooooooooo.....
+
+Can I use this code at the Visual Studio?
+
+Which is the minimum system requirements for the project
+
+why doesnt mediapipe get installed anymore?
+
+Where AI is used here
+
+downgrade python to 3.8 should work fine
+
+Pycharm
+
+Works for me. Just copy-pasting won't work, need to do a lot of changes
+
+@user-nz1qs8ik1l  i need your help
+
+The curser is not moving as when i only up the index finger webcam is automatically closing. If you know please help me out
+
+3.8
+
+Hey! I'm having troubles installing autopy. Any help?
+
+Unable to install Autopy  Tried many times
+
+Please give me the link of that video in which u have written hand tracking module
+
+xmin, xmax = min(xList), max(xList) ValueError: min() arg is an empty sequence  im getting this error can somebody pls help me fix it
+
+Bad, Bad, and Bad there are many problems.' 0 ZERO STAR FOR THIS REALLY BAD
+
+Hi, may i ask is it possible to use Kinect v2 as a camera? Thank you
+
+img = detector.findHands(img) AttributeError: 'NoneType' object has no attribute 'findHands' please help me
+
+How do I install autopy package?  Error occurred when installing autopy package
+
+Hi Murtaza, may I ask something? Where I can get mediapipe module? I have search but not found😅
+
+Hey it's giving me an error can anyone help me with it or fix it I will be very grateful thankyou. Here's the error.  Traceback (most recent call last):   File "C:\AIproject\virtMouse.py", line 27, in <module>     lmlist, bbox = detector.findPosition(img)           # Getting position of hand ValueError: not enough values to unpack (expected 2, got 0)  Process finished with exit code 1
+
+i can not get package of autopy it is giving error while installing what to do ?
+
+i have a few question.  what is ploc x and cloc x ?
+
+Please demonstrate the result in the final of the video
+
+lmList, bbox = detector.findPosition(img) ValueError: too many values to unpack (expected 2)   Pls help with this problem on 14:20
+
+Code not working
+
+Can you provide the link for the first part of this project where you wrote the first part of the code? Thanks
+
+Software name please
+
+Sir, i have promblem in ‘lmList, bbox value error: not enough values to unpack (expected 2, got 0) please help sir🙏🏼
+
+imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) cv2.error: OpenCV(4.6.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\color.cpp:182: error: (-215:Assertion failed) !_src.empty() in function 'cv::cvtColor why is it showing me this error
+
+Hi, I need help, how to install autopy for Mac
+
+def findPosition(self, frame, num_hand = 0, draw=True):         xList = []         yList = []         bbox = []         self.lmList = []         if self.results.multi_hand_landmarks:             myHand = self.results.multi_hand_landmarks[num_hand]             for id, lm in enumerate(myHand.landmark):                 h, w, c = frame.shape                 cx, cy = int(lm.x * w), int(lm.y * h)                 xList.append(cx)                 yList.append(cy)                 self.lmList.append([id, cx, cy]).sort()                                  if draw:                     cv2.circle(frame, (cx, cy), 10, (255, 0, 255), cv2.FILLED)              xmin, xmax = min(xList), max(xList)             ymin, ymax = min(yList), max(yList)             bbox = xmin, ymin, xmax, ymax              if draw:                 cv2.rectangle(frame, (xmin - 20, ymin - 20), (xmax + 20, ymax + 20),                               (0, 255, 0), 2)                  return self.lmList, bbox  add this  function within class hand detector
+
+How were you able to install mediapipe and autopy, I’m getting error
+
+def findPosition(self, frame, num_hand = 0, draw=True):         xList = []         yList = []         bbox = []         self.lmList = []         if self.results.multi_hand_landmarks:             myHand = self.results.multi_hand_landmarks[num_hand]             for id, lm in enumerate(myHand.landmark):                 h, w, c = frame.shape                 cx, cy = int(lm.x * w), int(lm.y * h)                 xList.append(cx)                 yList.append(cy)                 self.lmList.append([id, cx, cy]).sort()                                  if draw:                     cv2.circle(frame, (cx, cy), 10, (255, 0, 255), cv2.FILLED)              xmin, xmax = min(xList), max(xList)             ymin, ymax = min(yList), max(yList)             bbox = xmin, ymin, xmax, ymax              if draw:                 cv2.rectangle(frame, (xmin - 20, ymin - 20), (xmax + 20, ymax + 20),                               (0, 255, 0), 2)                  return self.lmList, bbox  replace the findPosition( ) function with this code, in the HandsTrackingModule
+
+You might be getting error in autopy try to install python 3.7 media pipe of 0.8.8 version autopy 4.0.0 portbuf 3.20.1 version try these versions it will work
+
+@priyanshumishra372  Thanks bro
+
+@priyanshumishra372  still didn't work
+
+change cv2.videoCapture(1) to cv2.videoCapture(2) or vice versa
+
+Hello dude! you're awesome, i have a question, may anyone help me please? How can I fix the problem that the program crashes when your index finger goes out of the rectangle?
+
+why 7 for the smoothening? do you already have the science explanation?
+
+in 2022  1.  anybody using python 3.8 or more might not be able to use autopy library,     istead use mouse library work same as autopy. 2. facing index out of bound in AiVirualMouse.py       error ==" if self.lmList[self.tipIds[0]][1] < self.lmList[self.tipIds[0] - 1][1]:                      IndexError: list index out of range"       why this error occures? - because intially hand is not detected 'finger = [ ]' list stay  empty            you can do this -       surrond this code in if else block like this --       if len(finger):           fingers = detector.fingersUp()                ----------------------------------           ----------------------------------           all the lines up until            mouse.click() // or autopy.mouse.click()      else:           fingers = [0, 0, 0,0, 0, 0]           print(fingers)
+
+Sir,  autopy is not install
+
+Sir do you have the project synopsis
+
+Hello Murtaza.I can't install autopy on pycharm. Can you help me?
+
+Exception has occurred: TypeError create_int(): incompatible function arguments. The following argument types are supported:     1. (arg0: int) -> mediapipe.python._framework_bindings.packet.Packet  Invoked with: 0.5   File "C:\GitHub\00learning\AiVirtualMouse\HandTrackingModule.py", line 23, in _init_     self.hands = self.mpHands.Hands(self.mode, self.maxHands,   File "C:\GitHub\00learning\AiVirtualMouse\AiVirtualMouseProject.py", line 23, in <module>     detector = htm.handDetector(maxHands=1)  I copy pasted the script from your website. What am I doing wrong?
+
+I am unable to install autopy
+
+Hello! Everthing is great except autopy, just like you had I also have error and I cant get rid of it. Could you try to help me? Are there any alternatives for autopy?
+
+31:00
+
+Autopy error not solved. please help.
+
+lmList, box = detector.findposition(img) I got this error help me
+
+What if i want the written letter in air to be detected as whichever alphabet it is?
+
+When I try to import all 5 libraries, some libraries all of the sudden hide and program comes up with the issue of not defined.  Can anyone let me know how to figure it out.
+
+Not working in Mac. What should i do?
+
+Installion Error :  autopy is not installing
+
+Thanks a lot for sharing bro. it works! Who ever faces problem while executing, install pycharm and make sure that the python version is 3.7, mediapipe 0.8.10 and autopy 4.0.0 . It worked for me.
+
+import HandTrackingModule as htm file no  nononononononoo??????
+
+detector = htm.handDetector(maxHands=1) TypeError:handDetector() takes no argument  I have occured this error pls help me
+
+Got error for handtrackingmodule, mediapipe & autopy
+
+How were you able to run the program, I mean the editor you used and which version of library you used? I’m not able to install Mediapipe and autopy
+
+How were you able to run the program, I mean the editor you used and which version of library you used? I’m not able to install Mediapipe and autopy
+
+@priyanshumishra372  try python 3.7
+
+I tried python 3.7 but mediapipe is not getting installed
+
+I’m using pycharm IDE
+
+@priyanshumishra372  i think it doesn't matter what IDE you've used, i've using Visual Studio Code for now
+
+@priyanshumishra372  whats the error ?
+
+@budiandraym8451  it was a problem with versions of library, now it is running
+
+did the code work? I'm getting this error from the HandsTrackingModule ---- 'handDetector' object has no attribute 'tipIds'
+
+Thanks bro, this helped a lot
+
+@priyanshumishra372  np bro, it took me 2  hours to find this bug so thought I should comment this
+
+@muhanishchouhan9501  Bro Thank You! it is 3:44 am here, and I was looking for a solution. Let me try this one. Hopefully it will work.... appreciated!
+
+media pipe doesn't support python 3 try other versions
+
+for autopy to be installed try this -- install python 3.7 media pipe of 0.8.8 version  autopy 4.0.0 portbuf 3.20.1 version  try these versions  it will work
+
+@sreevanijalagari3863  is your worked?I have errors,can u pls help?
+
+for autopy to be installed try this -- install python 3.7 media pipe of 0.8.8 version  autopy 4.0.0 portbuf 3.20.1 version  try these versions  it will work
+
+@sreevanijalagari3863  Sure thanks
+
+Thanks for helping
+
+if u r unable to install autopy degrade the version of mediapupe to 0.8.8 and python to 3.7 it will work check it out
+
+portbuf of 3.20.1 version
+
+works perfect mine is Mac too initially I faced many issues but tried solving one by one by copy pasting errors in google and solving accordingly , now this perfect works fine in my Mac book
+
+Hello Bro... Please Help Me I Got Some Error
+
+exactly 3.7 or above 3.7?
+
+@DosawadaAdithya  exactly 3.7
+
+There is no 0.8.10 in mediapipe it shows only 0.8.11  What can I do?
+
+Can you please share your code?
+
+Plss tell me bro
+
+How will i corecct my  No module named'autopy' error bro ?
+
+why is detector = handDetector() giving an error?
+
+For anyone trying to do this project now, don't. The current code that he's using is outdated and does not work with the new framework of mediapipe, even if you roll back your interpreter to an older one, such as in this video it still won't work so you are wasting your time here. I spent 2h trying to figure out why the code doesn't work just to find a bunch of one year old messages on Stack Overflow that this way of writing code is outdated and is no longer supported or valid.
+
+sir isi code me aagr drag and drop ka function add krna ho to kesy kry gy, me ny try ki ha par error aa rhy ha
+
+error C:\Users\91836\PycharmProjects\pythonProject3\venv\Scripts\python.exe C:/Users/91836/PycharmProjects/pythonProject3/main.py Traceback (most recent call last):   File "C:/Users/91836/PycharmProjects/pythonProject3/main.py", line 20, in <module>     detector = htm.handDetector(maxHands=1)   File "C:\Users\91836\PycharmProjects\pythonProject3\HandTrackingModule.py", line 23, in _init_     self.hands = self.mpHands.Hands(self.mode, self.maxHands,   File "C:\Users\91836\PycharmProjects\pythonProject3\venv\lib\site-packages\mediapipe\python\solutions\hands.py", line 114, in _init_     super().__init__(   File "C:\Users\91836\PycharmProjects\pythonProject3\venv\lib\site-packages\mediapipe\python\solution_base.py", line 274, in _init_     self._input_side_packets = {   File "C:\Users\91836\PycharmProjects\pythonProject3\venv\lib\site-packages\mediapipe\python\solution_base.py", line 275, in <dictcomp>     name: self._make_packet(self._side_input_type_info[name], data)   File "C:\Users\91836\PycharmProjects\pythonProject3\venv\lib\site-packages\mediapipe\python\solution_base.py", line 533, in _make_packet     return getattr(packet_creator, 'create_' + packet_data_type.value)(data) TypeError: create_int(): incompatible function arguments. The following argument types are supported:     1. (arg0: int) -> mediapipe.python._framework_bindings.packet.Packet  Invoked with: 0.5 [ WARN:0@3.692] global D:\a\opencv-python\opencv-python\opencv\modules\videoio\src\cap_msmf.cpp (539) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback  Process finished with exit code 1
+
+IT's just awesome. THank you!
+
+hey I am a complete begginer and I want to make this Project. Can Any one suggest me what all I have to watch before going for this project?
+
+Use old version of pycharm and old python to install libraries
+
+That's so cool
+
+Just wanted it ❤️
+
+Created TensorFlow Lite XNNPACK delegate for CPU.     how can i fixed that error
+
+Thank you sir and sir This code is not working in my system can you Please suggest me what i have to do??
+
+why cant i intall autopy? it always error whenever i tried it and i cant install it using terminal can someone help me please?
+
+why this error is coming  IndexError: list index out of range
+
+detector = htm.handDetector(maxHands=1) AttributeError: module 'HandTrackingModule' has no attribute 'handDetector'
+
+I’m not able to install autopy
+
+AWSOME
+
+Sir....autopy package is showing error when I tried to install that package.What I want to do for it sir??
+
+So Cool Bro..... Nicely Coded its very useful for me.....But just a query Please Make a video about how to export this code or project into software or .exe (executable) format..... Please bro
+
+Yeah
+
+but ya found any other ways around, it works well until a certain point
+
+True.
+
+did this work for you ?
+
+@anakinvader521  yes
+
+@SK-qf2sb  can you mention your versions ? For python and pycharm
+
+@anakinvader521  I didn't remember versions just pause his video in beginning u will find out
+
+Did you got the solution for this
+
+use python version 3.7.6 then both mediapipe and autopy would successfully install
+
+i got the same error ,what should i do now??
+
+Try older project
+
+@Yourwelcome176  what does that mean?
+
+Same problem 🙄
+
+How did u solve that ??
+
+use python version 3.7.6 then both mediapipe and autopy would successfully install
+
+How to add right and middle button feature ?
+
+Sir I am using both project of yours keyboard and mouse but in mouse i am getting error of handdetector is not found!! Can you resolve it?
+
+sir, how to implement algorithm in this project ?
+
+Autopy is not installing in my system any suggestion sir even if i try many times
+
+Hey how to install mediapipe in windows
+
+Everything is running very very slow. My computer is pretty powerful, but I think the problem is the camera. Would love to know what I should do.
+
+autopy is not installing ... so which other library can I use instead ?
+
+sir, autopy is not getting installed, please make video on it to install it
+
+An error shown "htm is no attribute handDetector"
+
+Can I have your email / I just want to ask something inbox thank you!
+
+first thank u very much u are the better second how solve install autopy library problem ???
+
+how to solve error during autopy package installing
+
+can someone please help? My webcam is running only on 15 fps and when im using the cursor it locks on 5 fps. Anything will help
+
+being  honest with you for me its is now like taking 6-7 hours to resolve the errors and still it is not working. I watched most of your videos but i dont know where the hell you made that module. in every video you are saying we made the module earlier. whole waste of time shit. there are only errors in your code nothing works literally. I made Id on your website and enrolled fot thr code but even than not working, literally frustrated right now.
+
+Hi men, thanks for your video, please can yuo help me with a problem.  Traceback (most recent call last):   File "D:\ESPOL\OneDrive - Escuela Superior Politécnica del Litoral\documentosTonny\personalprojects\python\mousevir.py", line 20, in <module>     detector = htm.handDetector(maxHands=1) .. . . . . Invoked with: 0.5
+
+there are errors with "&#91;1:]" in example code :)
+
+sir, what app you using?
+
+Sir You can help me.......autopy can not install in my pycharm........please help me
+
+Hallo I'm from Indonesia. I have a question Sir What algorithm did you use to make this project? I need a theoretical basis for my report.
+
+Thanks for your sharing a lot! I’ve subscribed your channel immediately, I feel very fortunately to watch it right now. It’s very clear and easy to understand! Hope you can continually update, Wish you have good luck in everything!
+
+Waiting for your response sir
+
+We are also dealing with the same problem can you give us solution
+
+Try to use python 3.7.6
+
+@murtazasworkshop    try it but dont work  can u explain the way ? and thanks
+
+here sir uses hand landmark detection and hand gesture recognition .Hand landmark using mediapipe(knn algorithm -21 key points) and hand gesture recognition using convolution neural network .When your gesture is recognised it performs the operation.  I am not sure,but this is the best of my knowledge.
+
+hello guys i have some difficult whit handTraking module who can help me ?
+
+i cant install autopy. its filed install
+
+Sir, In which version of python 3.7 version you run this project currently now I'm in 3.9.7 version and I am facing issue during installation of autopy module on python 3.9.7 version. if anyone has a solution tell me Waiting for your kind reply
+
+Sir whenever i am watching your tutorial, one or two modules are always updated and then exact source code doesn't work. Now that becomes a bit difficult to track the chhange in the module. if the module is updated, can you please inform us about the new code as that would be helpful.
+
+How this is turn into an app
+
+Not able to install autopy package, if anyone knows help me....
+
+Wow Thank you so much for this video, what a great help. It works perfectly. My windows is activated now. LIKED AND SUBSCRIBED
+
+how to fix this issue ? if fingers [1] == 1 and fingers [2] == 0: TypeError: 'method' object is not subscriptable
+
+I can't download autopy there are always some problem and can somebody help me? please
+
+what is the compiler that you used
+
+can you do this for eyes Murtaza?
+
+My mouse is going only in one direction
+
+Pycharm which version sir
+
+Use white theme for YouTube video....A small suggestion
+
+line 31     x1, y1 = lmList &   91;8]&#91;1:]                             ^ SyntaxError: unmatched ']'
+
+New Window named "Image" is not opening at my end when I run the code. o/p : hi,pycharm. What to do..?
+
+i am getting and error trace error how to fix it please tell
+
+I'm having this error: Traceback (most recent call last): File "....", line 35, in <module>     img = detector.findHands(img) AttributeError: 'NoneType' object has no attribute 'findHands'
+
+I am unable to install mediapipe. It's getting error like could not find a version that satisfies the requirement mediapipe. What should I do now.
+
+work in vs code?//
+
+Bro it works on any python version of 3.7. Just try with python 3.7.8
+
+​ @aswingopinathan2516  Yeah bro I will try by the way Thanks
+
+Yeah bro the code doesn't works
+
+@aswingopinathan2516  i mean it works, but that thing is that some module fucntions get updated and figuring out the updated syntax of the new module is a bigger challenge.
+
+Did you find out the solution?
+
+Same problem
+
+Did u fixed it?
+
+my pip install autopy showing error bro please help[ me>>
+
+I click like with my fingers!   Thanks for the knowledge.  Greeting from Portugal
+
+I found that  error  "if self.lmList[self.tipIds[0]][1] < self.lmList[self.tipIds[0] - 1][1]: IndexError: list index out of range"  fires when it can't find fingers (maybe hand out of camera), so lmList is empty.  I wrapped code in fingersUp  if len(self.lmList):       ...... else:      fingers=[0,0,0,0,0]  Or just place code #3-10 in main file under `if len(lmList) != 0:`
+
+sir can you kindly explain scroll in virtual mouse
+
+Unable to install mediapipe
+
+Why showing handtrackingmodule indexerror in fingerUp list out of range
+
+excellent TOTURIAL my friend indeed. ball saq.
+
+Which algorithm used in this project
+
+Tq sir🖤
+
+Sir autopy isn't installing on my pc what shall I do? I did install Rust...
+
+I keep getting error on HandTrackingModule . >>AttributeError: module 'HandTrackingModule' has no attribute 'handDetector' <<  Please help me
+
+After running this file "AIVirtualMouse", the screen is not holding. When a finger is detected, it shows 'process finished with exit code 1'. Can you pls explain this error.
+
+Please what version of python did you use for this project
+
+hi there, i have problem when import HandTrackingModule, the error is ModuleNotFoundError: No module named 'HandTrackingModule', can someone help me with this problem?
+
+what algorithme you used for this project
+
+What is domain of this project?
+
+invalid syntax
+
+Traceback (most recent call last):   File "D:/PycharmProjects/pythonProject/v.py", line 36, in <module>     fingers = detector.fingersUp()   File "D:\PycharmProjects\pythonProject\main.py", line 65, in fingersUp     if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]: IndexError: list index out of range   Can some body help me
+
+Excusme sir.. i want ask, what software r u using for that's coding?
+
+bagi codenya
+
+'handDetector has no attribute 'tipIds' - I'm having this error, what to do?
+
+Try to use an earlier version of python
+
+You got the answer tell me because autopy and mediapipe library not support at once in my Python version
+
+pycharm
+
+sir i get this error Traceback (most recent call last):   File "c:/Users/Asus/Documents/projek python/Coding/AImouse.py", line 20, in <module>     detector = htm.handDetector(maxHands=1)         File "c:\Users\Asus\Documents\projek python\Coding\HandTrackingModule.py", line 24, in _init_      self.detectionCon, self.trackCon)  what should i do to fix it ?
+
+Hello Cannot install autopy now....says error while installing Please help me out. Thanks
+
+I don’t get a setting option
+
+When I launch python it looks different from this
+
+For those getting "indexerror: list index out of range" when your hand is off camera. Try adding a Try:   Except: to the if statements in the fingersup function and put fingers.append(0) in the except
+
+I hope you would get in future billions of subscribers.
+
+Its really amazing but its painful
+
+Its good, but if we move hand everyday like this it will more pain full then keyboard and mouse
+
+Magina jogar guitar hero kkkkkkk Maluko siririca 9999CPS
+
+help, is it just me or anybody else here getting bad FPS when moving the cursor but not when idling(index and middle finger up but far)? is there a way to get good FPS?
+
+amp error(
+
+when i following your project i couldn't download autopy in pycharm because an error occured. what's the solution? my Python version is 3.9.7
+
+I got this error AttributeError: module 'HandTrackingModule' has no attribute 'handDetector' . Please say how to overcome it
+
+if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]: IndexError: list index out of range  can any one please tell me how to solve this....literally trying from an hour
+
+Helal olsun hocam elinize sağlık sizin gibi insanlara ihtiyacımız var 👏
+
+I have an Error can anyone help me with this   cv2.error: OpenCV(4.5.3) C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-u4kjpz2z\opencv\modules\imgproc\src\color.cpp:182: error: (-215:Assertion failed) !_src.empty() in function 'cv::cvtColor'
+
+I have some problem when i run: Traceback (most recent call last):   File "C:\Users\bin12\Documents\Code\2.py", line 27, in <module>     img = detector.findHands(img)   File "C:\Users\bin12\Documents\Code\HandTrackingModule.py", line 29, in findHands     imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) cv2.error: OpenCV(4.5.3) C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-_xlv4eex\opencv\modules\imgproc\src\color.cpp:182: error: (-215:Assertion failed) !_src.empty() in function 'cv::cvtColor'
+
+A LOT OF THANKS! You have made possible one of my dreams when I started with computers. Regards!
+
+i can't add "autopy" on pycharm :(((
+
+Why is it tough to download the code. In fact its seems like no option to download the code. Its like a trik🙄
+
+Bro same error have you find the solution?
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+should i just replace " if to try: " and " else to except"
+
+Thanks a lot everyone should be like you how caring you are nice 👍👍
+
+Same problm m facing bro , BUT i didnt understand what to put in "try" and what to put in "except" statement.
+
+can you please tell me how you solve this error can't understand what you are trying to say
+
+@azanemuhammad2055  there's an mis-indentation in original source code he posted on his website. try indent some lines fo code
+
+Nevermind, i fixed it by using autopy. I got bad fps because i use pyautogui package :) so autopy is better in fps i think
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+maybe the file is showing an error, once check my video in my channel I have also done a video on how to make a hand tracking module and I have also given the sources code and also a video on how to access the source code, Thank you 😊
+
+hey did you solve it?
+
+Tr
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+do you want my ai virtual mouse sources code check this out: https://youtu.be/hLjX2rOuots
+
+cant install autopy
+
+what software he is using??
+
+hello i am having this error:  File "D:\py programs\AI_mini_PROJECT\mouse\HandTrackingModule.py", line 65, in fingersUp     if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]: IndexError: list index out of range.  Does anybody know how to solve it?
+
+Interresting but sorry the code doesn't work :      => The webcam is not initiate and obtain this error :              color.cpp:182: error: (-215:Assertion failed) !_src.empty() in function 'cv::cvtColor'
+
+Can we add more functions to this project like scrolling, dragging, right click,  can you help us with that.
+
+how to make this virtual mouse to click with it in saome tabs to close everything that mouse do
+
+hellow Murtaza i love your videos but i have a problem i am not able to install autopy. Everytime i install it its showing me an error please help.
+
+bro can you make a video on "How to download mediapipe and autopy" please because I can't install it
+
+Someone please help me ....Error occurred  when installing package 'autopy'
+
+Error installing autopy
+
+I am not able to download autopy please help me :(
+
+Project  is really cool but on installing AutoPy it give error how to Install AutoPy. Help
+
+Can anyone help with Installing autopy for Python 3.9? , or is there any other way I can get this to work?
+
+Type error : Video capture takes no arguments What is the solution
+
+excuse me, but i cant install autopy from Pycharm. Can you help? It always says "error occurred when installing autopy"
+
+Sir, ImportError: DLL load failed: The specified module could not be found  show kar rha hai
+
+Sir the handDetector function is not present in the hand tracking module. I am receiving an attribute error.
+
+what I learned in the video-how to open your camera without showing your face
+
+I don't know coding language but wanna use this on my PC. However I'm tech savvy. Can i use it on person PC. If yes, how??
+
+I tried many ways but just cannot install autopy
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+@Chronicsco  thanks it was an issue of python 3.9 i just rolled back to 3.7 and its solved
+
+DO you got the solution ? @rajeev k
+
+def fingersUp(self):         fingers = []         if len(self.lmList):             if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0]-1][1]:                 fingers.append(1)             else:                 fingers.append(0)              for id in range(1,5):                 if self.lmList[self.tipIds[id]][2]< self.lmList[self.tipIds[id]-2][2]:                     fingers.append(1)                 else:                     fingers.append(0)         else:             fingers = [0,0,0,0,0]         return fingers
+
+same problem here. Any solutions?
+
+What about hardware and software requirements...  Can you please tell me?
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+try using python version 3.7.9
+
+use python 3.8.0 only this version of python can install mediapipe and autopy easily
+
+@Chronicsco  It worked thx
+
+@NotOm32  Same ur idea worked too thx
+
+@1-minutesanimation853  my pleasure 😊
+
+yeah same here
+
+@sidearth103  to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+Use Python 3.7 or older, Autopy is working.Don't know the exact reason but working after downgrading.
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+@Chronicsco  i have installed succesfully, but thanks you much anyway
+
+@longvu2475  not a problem brother
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+same error
+
+same error give me solution @mesostonks
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+Thank you for your project.
+
+still getting error installing autopy sir
+
+Sir couldn't able to install autopy
+
+Sir please tell me why i am getting error handDetector object has no attribute 'findPosition' What is solution for this , is there any issue of version?
+
+Hei Mister Genius, i got a problem... I have follow all your step for this Project. there's no error' in my Code and I thing i gonna finished this Project. When i run it, i got an ImportError: DLL load failed: The specified module could not be found . Please give me a solution until i can run this Project. Help me Mr. Genius.
+
+is anyone getting this error??   if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]: IndexError: list index out of range  Help much appreciated
+
+Sir I got error on installing autopy. How to remove ??what you had did?? . I wouldn't find sol.Plz sir give sol. anyone plzz help me
+
+Actually I have a doubt, the height which you have set in this algorithm whether it is predefined or else you chose it by yourself?
+
+Hii sir Thanks for the videos I am not able to install autopy in my pycharm I have tried with a lot of things like updating pip, rustup tec. But i am still not able to install the package. Kindly help.
+
+why is autopy giving an error on installation
+
+I'm not able to install autopy library , it's getting error , I have installed rust  too , but auto py is not installing  can u please help me .
+
+why i cant install autopy?? any help please.
+
+The autopy error is not resolving can u fix this.
+
+Thank you for it buddy🥲😭mil gyaa mujhe
+
+Which is that application you are using
+
+Nice video, thanks :)
+
+sir i m not able to install autopy can anyone help
+
+For anyone have problem with open the webcam, just change the number in func "cv2.VideoCapture(1)" to "cv2.VideoCapture(0)". 'cause the device number might be 0 or 1 depending on the device and the webcam.
+
+Hello Murtaza, Need help from you.  global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-u4kjpz2z\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback Traceback (most recent call last): line 20, in <module>     detector = htm.handDetector(maxHands=1) AttributeError: module 'HandTrackingModule' has no attribute 'handDetector'  Getting this error. Please help me to solve this 👈.
+
+if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]: IndexError: list index out of range
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+me
+
+To fix this downgrade python version to 3.8
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+chose it by himself,you can change the value yourself
+
+me too
+
+Make sure that your python version is 3.7 not above it
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+did u get the solution?
+
+@ishitagoyal1631  nope, but u can use another package called pyautogui , which is more efficient than autopy
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+@ishitagoyal1631  to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+my problem is autopy. I can't install it
+
+@ramdomapplication  whats your python version? I can install in python 3.8
+
+@iampalop4228  I have version 3.10
+
+@ramdomapplication  install python 3.8 version uninstall python 3.10 restart use command pip install in terminal and always select python 3.8.0(64 bit) inteprator  if using mediapipe
+
+@sourcecloud6061  how you installed opencv in python 3.8.0
+
+Still it is not opening
+
+What can I do for DLL error for importing _framework_bindings
+
+​ @ramdomapplication install older version of python 3.8.10
+
+​ @hritikchand5013 use commands  in terminal
+
+What can I do for  Traceback (most recent call last):
+
+did you get the solution?
+
+autopy error how to fix that , i cant install autopy
+
+can we add more functionalities to this project like adding the right and left clicks of mouse , scrolling , etc ... can u give some ideas for that ????
+
+Here are some fixes for common errors:  1. Can't install autopy: Update python OR Instead install pyautogui and change the following in AIVirtualMouseProject: autopy.screen.size() to pyautogui.size() autopy.mouse.move to pyautogui.moveTo pyauto.mouse.click() to pyautogui.leftClick()  2. cv2.cvtColor error: change VideoCapture(1) to VideoCapture(0) or to where your webcam input actually is. Both in HandTrackingModule and AiVirtualMouseProject.  3. Out of Bounds error in "self.lmList" and error in "fingers.detector.fingersUp()" In HandTrackingModule before line 73: check if lmList is actually filled with values by adding "if self.lmList:" before everything. Don't forget the indents, but leave return as is. In AiVirtualMouseProject: after "fingers = detector.fingersUp()" make a two-liner with "if not fingers: continue" so it will try to find your hand again and again, but doesn't return an error if your hand leaves the screen, is moved too fast, or simply not recognized.  Hope that helps!
+
+Please tell autopy is not installing
+
+Can anyone tell me where to start after learning python for these things as a beginner
+
+Hello sir please help me I'm unable to install autopy in latest version of python so I switched to older version 3.7.9 then it worked but mediapipe wasn't installing.... Mediapipe is working in newer version only and autopy is working in older version only  Plz give me a solution plz
+
+Hi bro,thanks for the video.  I have an issiue; I cant install the autopy, What can ı do for that.  thank you again.
+
+very good video, you are really my idol. In the video, I saw you having a problem installing autopy but you fixed it. Can you tell me how you fixed it? Thank you very much.
+
+I have an error (-255:assertion failed() !_SRC.empty() in function CV::cvcolor
+
+Hello there I'm getting error it says "cv2.imshow("Image", img)" means no camera mode on:( , though my handTrackingModule is working properly also I imported all packages as per requirement. Can anyone help me out please ?
+
+Hello Murtaza, awesome video man!   I'm having a issue:  I can't install the Autopy library, seems it's not work on Python 3.9+, have any other librery that replaces this one?
+
+Excuse me sir   I am getting a problem in smoothenig part . The mouse is not working properly then
+
+That's a intresting and cool project sir. Sir I need hand tracking module for my project please provide that one. Please sir
+
+Can anyone help me
+
+Showing findHands has no attribute error
+
+Can anybody help me to install autopy I'm getting error while installing it with pip
+
+if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]:  IndexError: list index out of range Can you please solve this error
+
+sir my autopy module is not installing please help
+
+sir im getting a error in install the autopy module
+
+You are a legend
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+yes you can, just check the documentation of the autopy. but in this case I use pyautogui instead of autopy
+
+@farlanded5179  can you send me the code to your program
+
+I hope you go to heaven :)
+
+Nel can u help
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+Just think of a creative project and work upon it to turn it into a reality. BEST OF LUCK
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+@Chronicsco  I already completed my project, thanks!
+
+@mdhuzaifapatel  congrats brother
+
+Which version of python you have used to complete your project. Please help me. I am unable to install Mediapipe on my pc with python 3.7.9.
+
+@bivasmajumdar7612   I don't remember, but mostly it was 3.7.9 What error are you facing?
+
+The same error occurred to me but don't worry You may be using Python 2.9 or above version but autopy supports till Python 3.8 version you can see on the pypi website. I resolved the issue by downloading version 3.7.9  Hey, don't worry about older versions you can install both the versions on your pc to use them just switch the path of your compiler. You can follow tutorials to install older versions. Best of LUCK.
+
+@shreyanshmalviya4968  thanks bro
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+Plz solve the error
+
+same here. Any solutions?
+
+same issues which i am facing
+
+The same error occurred to me but don't worry You may be using Python 2.9 or above version but autopy supports till Python 3.8 version. I resolved the issue by downloading version 3.7.9  Hey, don't worry about older versions you can install both the versions on your pc to use them just switch the path of your compiler. You can follow tutorials to install older versions. Best of LUCK.
+
+Please help sir
+
+The same error occurred to me but don't worry You may be using Python 2.9 or above version but autopy supports till Python 3.8 version you can see on the pypi website. I resolved the issue by downloading version 3.7.9  Hey, don't worry about older versions you can install both the versions on your pc to use them just switch the path of your compiler. You can follow tutorials to install older versions. Best of LUCK.
+
+@shreyanshmalviya4968   i got some doubts . Can u share ur instagram or mail?
+
+Getting same issue!!
+
+to install autopy and mediapipe watch this video:  https://youtu.be/xb5Xe8eE_Jw
+
+Pakai translate untuk orang negara lain bisa mengerti
+
+Thank you so much for your sharing. I have a question relating to installing autopy. How could you solved the problem with error when installing autopy as your first tried. Thank you so much in advance
+
+can we make a virtual keyboard sir?
+
+Thanks Murtaza
+
+i cant install autopy extension :(
+
+How did you install autopy? It gives me the same error you recieved the first time, but it's not going to be fixed just by clicking another time. I've searched both stack and github for a solution, but apparently nobody knows how to fix this.
+
+Sir I am getting this error -  Traceback (most recent call last):   File "H:/Pyhton Projects/OpenCv/main.py", line 36, in <module>     fingers = detector.fingersUp()   File "H:\Pyhton Projects\OpenCv\HandTrackingModules.py", line 65, in fingersUp     if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]: IndexError: list index out of range    Please help!
+
+I got an error. Can somebody help me? AttributeError: module 'HandTrackingModule' has no attribute 'handDetector'
+
+HandTrackingModule.py", line 73, in fingersUp     print(self.lmList[self.tipIds[0]][1]) IndexError: list index out of range  Why does this error occurred every time?
+
+I can't install autopy in python 3.9 please help
+
+It shows me some kind of errors
+
+I'm unable to install mediapipe package.... Can somebody help me to install this  package
+
+Can anyone help me? I Can't Install Autopy. And I Can't Connect My DroidCam With This Project. I hope your Helps 🙏. Thanks 😊 You can Contact Me Via Gmail too.
+
+Getting this error,  Traceback (most recent call last):   File "C:/Users/sumup/PycharmProjects/AIVirtualMouse/AiVirtualMouseProject.py", line 44, in <module>     fingers = detector.fingersUp()   File "C:\Users\sumup\PycharmProjects\AIVirtualMouse\HandTrackingModule.py", line 72, in fingersUp     if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]: IndexError: list index out of range
+
+I have signed up on your site, and was following this AI Virtual Mouse. however, i'm not being able to install "autopy", it's keep giving error. tried to follow instruction from autopy site, but no luck. can u advise any workaround please. thanks in advance
+
+I have difficulty to install AutoPy, it tells: import AutoPy.bitmap when I install it, I use a MacOS Catalina, I need your help cause I like control gestures.
+
+an error is throwing while installing autopy how can i rectify it?
+
+where do i find finger up tutorial abd bbox
+
+AttributeError: module 'HandTrackingModule' has no attribute 'handDetector' plz help me
+
+I am getting AttributeError module HandTrackingModule has no attribute handDetector(maxHands=1)    Pls help....
+
+It's better that you use a different module like pyautogui or pynput
+
+@krishnaagarwal895  Thank you so much!!!
+
+i am also having problem installing auto py
+
+The same error occurred to me but don't worry You may be using Python 2.9 or above version but autopy supports till Python 3.8 version you can see on the pypi website. I resolved the issue by downloading version 3.7.9  Hey, don't worry about older versions you can install both the versions on your pc to use them just switch the path of your compiler. You can follow tutorials to install older versions. Best of LUCK.
+
+I got the same error bro. But he says there're a lot of module, and he use the "Autopy". Finally I Looked for the other module, and I got "pyautogui". It has the same function with "Autopy", but the command are different. So, better if you read the instructions command in pyautogui website.  Hope this help you bro 😁
+
+fingers = detector.fingersUp() keep inside if loop
+
+I'm having the same problem. couldn't find the solution. if anyone can help with this?
+
+It has been solved by installing new module called "HandTrack" instead of "HandTrackingModule"~.
+
+That also works:  Go to the link: https://www.computervision.zone/courses/ai-virtual-mouse/  (it is in the video description itself)  Since this is the platform where these courses are held, if you subscribe (for free) you can access the codes, including this one that is giving you a problem.  Just copy and paste the 2nd code (HandTrackingModule.py) into your own HandTrackingModule.py file and everything will work as it should.  I was having the same problem just now.
+
+@ddtdilireba  please elaborate how to solve this error!!!
+
+Finally, I finished my First AI Project in 2 days 😁. But, I had a low fps issue. I tried to solve this with some  Metho, one of them is With CUDA. But, My GPU is AMD Radeon RX 570. Any one know the other method(to increase fps/to use opencv with GPU) ? Hope your Helps 🙏. Thanks
+
+You got solution?
+
+The same error occurred to me but don't worry You may be using Python 2.9 or above version but autopy supports till Python 3.8 version you can see on the pypi website. I resolved the issue by downloading version 3.7.9  Hey, don't worry about older versions you can install both the versions on your pc to use them just switch the path of your compiler. You can follow tutorials to install older versions. Best of LUCK.
+
+It occurred to me too and I solved it by installing Python 3.7.9 version. Have you solved it?
+
+unistall cvzone and down grade it's version to 1.4.1 then the program should work just fine, handDetector attribute has been removed frrom HandTrackingModule in later versions of cvzone 🤓
+
+python -u "d:\AiVirtualMouseProject.py" INFO: Created TensorFlow Lite XNNPACK delegate for CPU. Traceback (most recent call last): File "d:\AiVirtualMouseProject.py", line 21, in img = detector.findHands(img) AttributeError: 'handDetector' object has no attribute 'findHands'  I'm getting this error can anyone help me to solve this error
+
+lmList, bbox = detector.findPosition(a) TypeError: cannot unpack non-iterable NoneType object  - > I need your help
+
+Great video dude,  I want u to have million of subscribers one day! Love from india❣
+
+which library can we use other than autopy in the without changing the rest of the code?? please reply if any of the viewers or the source know.
+
+please help, i couldn't install autopy it is giving error, if somebody now, please help, i need it right now
+
+Brown munde rocks 🤟
+
+sir getting errors while installing autopy from powershell
+
+Great tutorial!!! Great job!!!  I have an issue with the HandDetectorModule.fingersUp(), when i don't have a hand in the screen, i have this error : if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]: IndexError: list index out of range  Any idea.... Thanks in advance
+
+sir the autopy is not installing can u help me out
+
+Sir autopy install nhi ho raha h
+
+how to fix autopy install error
+
+i am getting list error -----  if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]: IndexError: list index out of range
+
+how can i download autopy, i am getting errors regarding that .....how can i solve that ? please help me regarding this !!
+
+if self.lmList[self.tipIds[0]][1] < self.lmList[self.tipIds[0] - 1][1]: IndexError: list index out of range  can anyone please solve this error
+
+Hello Murtaza Thank You For The Amazing Cv Lessons, Your Explaining Is So Good I'd Love To Learn Python In The First Place Because Of Your Explaining & I'll Be Happy If There Is Any Courses For Python Basics From You That I Can Watch Or Buy
+
+Is to possible to add "Double click" & "scrolling" functionalities. Please let me know.
+
+bro how to install auto py as its giving me a error while installation
+
+1366.0 768.0 INFO: Created TensorFlow Lite XNNPACK delegate for CPU. Traceback (most recent call last):   File "/vmouse/main.py", line 28, in <module>     lmList, bbox = detector.findPosition(img)   File "/vmouse/extra.py", line 39, in findPosition     if self.results.multi_hand_land_marks: AttributeError: type object 'SolutionOutputs' has no attribute 'multi_hand_land_marks'  help me bro my codes are the same with you
+
+I'm gonna use this to play osu
+
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU. Traceback (most recent call last):   File "C:/Users/HP/PycharmProjects/AIVMouse/main.py", line 23, in <module>     lmlist, bbox = detector.findPosition(img) ValueError: not enough values to unpack (expected 2, got 0) [ WARN:1] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-_8k9tw8n\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback- bro this error is comming. what should I do?
+
+same has it been solved?
+
+replace "cap = cv2.VideoCapture(1) " by " cap = cv2.VideoCapture(0)"
+
+The same error occurred to me but don't worry You may be using Python 2.9 or above version but autopy supports till Python 3.8 version you can see on the pypi website. I resolved the issue by downloading version 3.7.9  Hey, don't worry about older versions you can install both the versions on your pc to use them just switch the path of your compiler. You can follow tutorials to install older versions. Best of LUCK.
+
+@shreyanshmalviya4968  I quitted opencv as I couldn't find more resources on it. And I know that by conda I can install multiple environments
+
+@shreyanshmalviya4968  but do u know any further resources
+
+​ @Ary0n  The whole internet can be used as a resource all you need to do is to learn to properly use a web browser and discover what you are passionate about.  Set goals with determination so that you have a goal to work upon with your interest.  I'm learning OpenCV because I want to convert the ironman hologram into reality I have been working on it for around 3 days before that I only knew c++ and today I have decent knowledge about python. I learnt everything from the internet.  BEST Of Luck.
+
+@shreyanshmalviya4968  buddy there is a difference between more common thing's like python whose courses who can find in abundance. But niche topics like opencv they have only a 3 hour tutorial with some project
+
+@Ary0n , You are right bro OpenCV has limited support but it isn't that less, you can read many documentations that are a lot better than tutorials. Python also has a PyPI website to support modules. stack overflow is always available for our errors .opencv. org is a lot better than tutorials. I think we don't have good resources to learn Opencv but we can just start making our projects directly using the OpenCV .org website. these resources are still enough as we have many examples like Murtaza who utilized these resources to become better. I hope you got my point.
+
+It needs an if statement to check if the hand is available. You can check out the latest version of the cvzone package it contains the fix of this bug.
+
+@murtazasworkshop  you solve ? i have same problem
+
+It is enough to put try except in the parts that give error.
+
+The same error occurred to me but don't worry You may be using Python 2.9 or above version but autopy supports till Python 3.8 version you can see on the pypi website. I resolved the issue by downloading version 3.7.9  Hey, don't worry about older versions you can install both the versions on your pc to use them just switch the path of your compiler. You can follow tutorials to install older versions. Best of LUCK.
+
+@shreyanshmalviya4968  TNX bro to inform me
+
+Any solution?
+
+I am also getting the same issue bro!! Have you got solution??
+
+Any solution for this error?
+
+Hi i need help
+
+You can use pyautogui to instead it
+
+Sir I have a problem to install autopy please tell me how to solve it
+
+sir auto py  not install every time i got the error.
+
+has anyone got any issue because of using it in kali in virtual box?
+
+After 24:50, and all the commands, my mouse is not moving, like its clicking and changing forms but at the same position, what could be the possible reason?
+
+I am having problem in installing autopy sir please can I get help🥺
+
+Hey! I got an error in this. I have been working on this for quite long now and it isn't solving. While running AiVirtualMouseProject.py,  it gave an error in " if self.lmList[self.tipIds[0]][1] < self.lmList[self.tipIds[0] - 1][1]: IndexError: list index out of range" I understand its meaning, but somehow i am not able to sort this out. If someone could tell me how to correct it, or connect somewhere to clarify, that would be great.  Thakyou ❤️
+
+Hey guys, so most of u facing issues with autopy and i also faces this issue. All u need to do is install python 3.7 and select that interpreter in project and then it will be installed. I am using PyCharm for this :) Let me know if u have nay doubts :)
+
+I do not know it is not working
+
+Does it use an algorithm?
+
+Can someone please help me with installing autopy? ... i have install rust.. now it says it cannot find rust compiler "error: can't find Rust compiler"
+
+Can you share code of showed in the video?
+
+Does this work in MacOS. I mean all libraries used are available for Mac?
+
+how to solve this   imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) cv2.error: OpenCV(4.5.2) C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-k1ohfcms\opencv\modules\imgproc\src\color.cpp:182: error: (-215:Assertion failed) !_src.empty() in function 'cv::cvtColor'
+
+Whatever India vs Pakistan... You're from Pakistan and I'm from India. You're the best and changing lives.🔥🤗 Loved your tutorials. If I'm able to choose a teacher. Definitely I will choose you.🌟🌟
+
+Whic IDE Or Twxt Editor You are Using
+
+Autopy cant install ?
+
+Sir there is an error in the code plz help
+
+Greetings from Peru excellent video you are a great programmer I wish you many successes in your career Thank you for the explanatory video
+
+I can't install the autopy library
+
+Please help I got stuck in list index error for fingersup function...🙏🙏🙏🙏🙏
+
+Have you got the solution?
+
+I have the same problem
+
+I am getting the same error, have you solved the issue??
+
+@batulbohra4431   have u find the solution? Please tell me
+
+@Urmila Singh do you got any solution please post it would be really helpful..
+
+I found that this error fires when it can't find fingers (maybe hand out of camera), so lmList is empty.  I wrapped code in fingersUp  if len(self.lmList):       ...... else:      fingers=[0,0,0,0,0]
+
+@Sherevv  Bro, did the problem get resolved after wrapping up with what you commented. I am facing the same issue, Could be great if you help
+
+def fingersUp(self):         fingers = []         if len(self.lmList):             if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0]-1][1]:                 fingers.append(1)             else:                 fingers.append(0)              for id in range(1,5):                 if self.lmList[self.tipIds[id]][2]< self.lmList[self.tipIds[id]-2][2]:                     fingers.append(1)                 else:                     fingers.append(0)         else:             fingers = [0,0,0,0,0]         return fingers
+
+@Sherevv  could you explain it how did you resolve this issue
+
+Take from..."fingers = detector.fingersUp()" .... to ...." autopy.mouse.click() " under if condition
+
+I  have same problem.Could this problem be related to access on macos?
+
+Just install python 3.7, it worked for me. I am using PyCharm I hope it will help you too :)
+
+@nbjayson1947   i am using python 3.7
+
+@alladayeshwanth9340  so what is the problem u r facing?
+
+Follow the link in the description
+
+cap = cv2.VideoCapture(1) change the 1 to 0
+
+Incase you get this error  "x1, y1 = lmList[8][1:] ValueError: not enough values to unpack (expected 2, got 1)"  Solution check you HandTrackingModule file and update this line of code   self.lmList.append([ px, py]) to    self.lmList.append([ id,px, py]) Hope this helps someone
+
+lmList, bbox = detector.findPosition(img,handNo=0)  ValueError: not enough values to unpack (expected 2, got 0)  Can someone help me to fix this error?
+
+bro can help me how to install autopy it is not installing
+
+which ide you are using?
+
+the module dosent work it says FindHand has no atribute ;-;
+
+I am getting "code not accessible" Pylance error in the hand tracking module.Someone please help me
+
+'HandTrackingModule' could not be resolved I am getting this error please help me out.
+
+Hi  I found some error  Traceback (most recent call last):   File "AIVirtualMouseProject.py", line 28, in <module>     img = detector.findHands(img) AttributeError: 'handDetector' object has no attribute 'findHands' WARNING: Logging before InitGoogleLogging() is written to STDERR W20210616 03:44:14.494143 191762432 tflite_model_loader.cc:32] Trying to resolve path manually as GetResourceContents failed: ; Can't find file: mediapipe/modules/palm_detection/palm_detection.tflite INFO: Created TensorFlow Lite XNNPACK delegate for CPU. W20210616 03:44:14.509647 191762432 tflite_model_loader.cc:32] Trying to resolve path manually as GetResourceContents failed: ; Can't find file: mediapipe/modules/hand_landmark/hand_landmark.tflite How to solve it? because in HandTrackingModule.py still have def  findHands()
+
+The project is so great anyways i am getting some errors in the code please help:-  xmin, xmax = min(xList), max(xList) ValueError: min() arg is an empty sequence   getting this error code in findPosition ()
+
+hello sir i did same as you but im getting this erorr could you please help me [ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-k1ohfcms\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback WARNING: Logging before InitGoogleLogging() is written to STDERR W20210615 22:45:06.535995 13104 tflite_model_loader.cc:32] Trying to resolve path manually as GetResourceContents failed: ; Can't find file: mediapipe/modules/palm_detection/palm_detection.tflite Traceback (most recent call last):   File "C:/Users/Nawaz/PycharmProjects/handmouse/handmouse.py", line 27, in <module>     img = detector.findHands(img)   File "C:\Users\Nawaz\PycharmProjects\handmouse\Handtrackingmodue.py", line 21, in findHands     imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) cv2.error: OpenCV(4.5.2) C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-k1ohfcms\opencv\modules\imgproc\src\color.cpp:182: error: (-215:Assertion failed) !_src.empty() in function 'cv::cvtColor'  INFO: Created TensorFlow Lite XNNPACK delegate for CPU. W20210615 22:45:06.559932 23396 tflite_model_loader.cc:32] Trying to resolve path manually as GetResourceContents failed: ; Can't find file: mediapipe/modules/hand_landmark/hand_landmark.tflite  Process finished with exit code 1
+
+I am using vs code as platform. But I am not able to install autopy package. Please  help me out.
+
+AI virtual mouse is not working with the latest hand module,can u plz provide the new code file .
+
+Can the hand tracking module be directly installed?
+
+bro please help autopy is not installing. error is there. what did you fix when you got the error?
+
+how to solve? Traceback (most recent call last):   File "D:/ml projects/AiVirtualMouseProject.py", line 27, in <module>     lmList, bbox = detector.findPosition(img)   File "D:\ml projects\HandTrackingModule.py", line 49, in findPosition     xmin, xmax = min(xList ), max(xList) ValueError: min() arg is an empty sequence
+
+can anyone please help me out  🙏 🙏 🙏    line 64, in fingersUp     if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]: IndexError: list index out of range [ WARN:0] global C:\Users\appveyor\AppData\Local\Temp\1\pip-req-build-oduouqig\opencv\modules\videoio\src\cap_msmf.cpp (434) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+
+Is the hand tracking module pip installable
+
+Can u plz share me the tutorial link where u create #HandTrankingModule.py from scratch.
+
+autopy not installing any other library that i can use instead of this???
+
+I am getting this error in handtrackingmodule  Traceback (most recent call last):   File "C:\Users\hp\Desktop\python\HandTrackingModule.py", line 117, in <module>     main()   File "C:\Users\hp\Desktop\python\HandTrackingModule.py", line 101, in main     img = detector.findHands(img2)   File "C:\Users\hp\Desktop\python\HandTrackingModule.py", line 21, in findHands     imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) cv2.error: OpenCV(4.5.2) C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-i3ohmhl0\opencv\modules\imgproc\src\color.cpp:182: error: (-215:Assertion failed) !_src.empty() in function 'cv::cvtColor'    please give me a solution for this error
+
+I am getting the same error..
+
+@mansisuryawanshi8840  me to
+
+Try this:  Go to the link: https://www.computervision.zone/courses/ai-virtual-mouse/  (it is in the video description itself)  Since this is the platform where these courses are held, if you subscribe (for free) you can access the codes, including this one that is giving you a problem.  Just copy and paste the 2nd code (HandTrackingModule.py) into your own HandTrackingModule.py file and everything will work as it should.  I hope I helped.
+
+I got the same error in VS Code, write the code again but with autocomplete. It worked for me :)
+
+Traceback (most recent call last):   File "C:/Users/HP/PycharmProjects/VirtualPaintCV/Count Finger.py", line 36, in <module>     fingers = detector.fingersUp()   File "C:\Users\HP\PycharmProjects\VirtualPaintCV\HandTrackingModule.py", line 72, in fingersUp     if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]: IndexError: list index out of range [ WARN:1] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-_8k9tw8n\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback - Bro this error is coming
+
+@nojoreduniya  U have written the code again with auto complete?
+
+@nbjayson1947  Yes bro
+
+cap = cv2.VideoCapture(1) change the 1 to 0
+
+You can install cvzone for the the latest version of the Handtracking module
+
+@murtazasworkshop  thanks i will try that and btw poved your video keep making more like this
+
+@murtazasworkshop    File ".\AI MOUSE.py", line 20, in <module>     detector = htm.handDetector(maxHands=1) AttributeError: module 'HandTrackingModule' has no attribute 'handDetector'
+
+Try using python 3.7.6
+
+Ok thanks. I am trying. I was using python 3.9
+
+@murtazasworkshop  Thanks bro it helped
+
+Same error...Were you able to solve it?
+
+Will u solved this?
+
+Please help sir
+
+You can pip install cvzone
+
+@murtazasworkshop  i am unable to install autopy..."error: can't find Rust compiler" i am trying pip install autopy
+
+https://youtu.be/NZde8Xt78Iw
+
+Which software u r using...
+
+Starting only it's coming attribute error module cv2 has no attribute'videocapture'
+
+i have a error its saying : line58, in findPosition xmin, xmax = min(xList), max(xList) ValueError: min() arg is an empty sequence
+
+I'm getting error installing autopy, somebody please help!
+
+Hello sir is thanks for this video! its really very helpful! is there a video covering the explanation handtrackingmodule.py
+
+I am unable to install autopy
+
+I'm facing issue in installing autopy ....please help me
+
+I am getting error at tip id for list index out of range what to do
+
+Not able to download the code
+
+this is the kind of stufff i dreamed to do when i started codin..... thanks for this amazing video.... deserves a sub <3
+
+Very few people in the world can create , innovate and you are one of them.
+
+for those facing problem with autopy or mediapipe installation i creat a developement environnement with anaconda, and install all what i need. than i use this env as interpretor , and when i need new dependencies, i just go to anaconda prompt, conda activate nameOfMyEnv and than pip install whatINeed  my env use python 3.8 and everything works, but i see peoples resolving this with changing to python 3.7
+
+hi great video ^^ i have this error : autopy.mouse.move(wScr - clocX, hScr) ValueError: Point out of bounds  is it possible that is due to different configuration of my laptop ? i mean maybe i have to change or reverse both of w and h
+
+Hey, please someone help me I m not able to install the autopy library🙏🙏🙏
+
+Hi Sir, Not able to register to your website, looks like an issue , please help in registering
+
+Help me to solve this problem please...    [ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-kuwfz3h3\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback Traceback (most recent call last):   File "C:/Users/ABY/PycharmProjects/VM/HandTrackingModule.py", line 120, in <module>     main()   File "C:/Users/ABY/PycharmProjects/VM/HandTrackingModule.py", line 103, in main     img = detector.findHands(img)   File "C:/Users/ABY/PycharmProjects/VM/HandTrackingModule.py", line 22, in findHands     imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) cv2.error: OpenCV(4.5.2) C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-kuwfz3h3\opencv\modules\imgproc\src\color.cpp:182: error: (-215:Assertion failed) !_src.empty() in function 'cv::cvtColor'
+
+I get an error while installing autopy
+
+Hello, please help me out. The autopy interpreter is giving me error every time
+
+thanks...
+
+i dont know but my autopy is not installing can someone please help me
+
+did you get it fixed?
+
+Just install python 3.7, it worked for me. I am using PyCharm I hope it will help you :)
+
+Plzzz help
+
+Can you please share your code ?
+
+bro, same error occurred
+
+Not sure if it helps now but I had the same error. It happens because, for example, if your screen is 1280x720p you can't move the mouse to the point (1280, 720), the "maximum" point that it accepts it's actually (screenWidth - 1, screenHeight - 1) or (1279, 719)p in this case.  So to solve the problem you just have to redefine wScreen and hScreen as [wScreen = (wScreen - 1)] and [hScreen = (hScreen - 1)]. I hope that helps, it was actually kind of hard for me to explain it in english.
+
+i creat a developement environnement with anaconda, and install all what i need. than i use this env as interpretor , and when i need new dependencies, i just go to anaconda prompt, conda activate nameOfMyEnv and than pip install whatINeed  my env use python 3.8 and everything works, but i see peoples resolving this with changing to python 3.7
+
+@hichem1123  if possible could you send your any social media I'd..I m facing so many problems...🙏🙏 please
+
+Just install python 3.7, it worked for me. I am using PyCharm I hope it will help you too :)
+
+@nbjayson1947  Ok i will try.
+
+I'm facing this problem.  if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]:  IndexError: list index out of range  Kindly someone help me out here. Thank you so much
+
+Bro Basic ma kia kia learn Karna parega es trah Project banany me
+
+Great idea.
+
+I have a problem in Install autopy. Please help me
+
+Hello, I'm pretty interested in this project since I'm doing the same one and I have a question, is it possible to combine this project with background subtraction method to make the program detect the hand in outdoors area or complex background easier?
+
+hey there i m stuck into a error   [ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-vi271kac\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback Traceback (most recent call last): INFO: Created TensorFlow Lite XNNPACK delegate for CPU.   File "c:/Users/Hp/Desktop/python/main.py", line 27, in <module> INFO: Replacing 117 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 2 partitions.     img = detector.findHands(img) INFO: Replacing 64 node(s) with delegate (TfLiteXNNPackDelegate) node, yielding 1 partitions. AttributeError: 'handDetector' object has no attribute 'findHands'  if anyone could help me out thanks
+
+Bro i am also getting and error in autopy pls help
+
+You are amazing bro
+
+Bro make a video on gesture media control
+
+which python version your are using
+
+@Murtaza's Workshop - Robotics and AI   Please  Help, here are appearing this:  File "C:/Users/RESERVA/PycharmProjects/pythonProject/openCVtest/venv/AiVirtualMouseProject.py", line 28, in <module>     lmList, bbox = detector.findPosition(img) ValueError: not enough values to unpack (expected 2, got 0)
+
+if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]: IndexError: list index out of range  I'm having with this problem. Please help, I greatly appreciate your help. I love your courses!
+
+bro what i can use instead of autopy
+
+ValueError: min() arg is an empty sequence
+
+The guy from the future
+
+I am getting attribute error handetector object has no attribute 'findhands'
+
+1536.0 864.0 this is my screen resolutions and im getting  Traceback (most recent call last):   File "C:/Users/jadin/pose estimator/virtual mouse/virtual_mouse_cv.py", line 50, in <module>     autopy.mouse.move((wscreen - cur_loc_x),cur_loc_y) ValueError: Point out of bounds [ WARN:1] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-kuwfz3h3\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback    can some one find what am i doing wrong code is same but when i run it , running for sometime and then automatically stops
+
+I can't install autopy. I always become the error  ERROR: Could not find a version that satisfies the requirement autopy (from versions: 0.5, 0.51, 1.0.0, 1.0.1, 1.1.0, 1.1.1, 2.0.0, 2.1.0, 3.0.0, 3.0.1, 3.1.0, 4.0.0) ERROR: No matching distribution found for autopy  Do anybody have any idea?
+
+getting error handtrackingmodule has no attribute name handdetector
+
+HandTracikingModule is not working broh///
+
+me toooooo. Did you fix that?
+
+@zhongjiarui6329  Not yet   But we have declared lmList as follows  self.lmList=[] but we are passing elements as if it's 2D array. So I guess that's why we're facing an issue
+
+Me too Please inform if you fixed it
+
+I am also getting the same error..can anyone please help me.
+
+Same issue
+
+Nope. No luck guys
+
+Any solution?
+
+I'm also getting the same issue
+
+Why does PyCharm not see the module "HandTrackingModule" ? I have installed all libraries. Please help
+
+@Lui_trisha   we are also dealing with the same problem had you find the solution for this in problem please give and help us
+
+@Lui_trisha  have you installed in the same folder?
+
+@lechihieu2606  No, I recorded the tracker myself. The author has a site where you can find a lesson where a link is given to the text "HandTrackingModule" It remains only to copy the text and transfer it to PyCharm
+
+​ @thirugnanas4605  The author has a site where you can find a lesson where a link is given to the text "HandTrackingModule" It remains only to copy the text and transfer it to PyCharm
+
+Try python 3.7.9 it solves the prob
+
+He's using 3.7.9
+
+@jyothipanthula4923  thx
+
+I got the same error, i rewrite the code with autocomplete. It worked for me :)
+
+I am facing the same issues. Kindly provide with the solution in this chat. Thank you so much
+
+Hey.... Have you got solution for it, i am getting the same problem
+
+@HemantsahaykEC  Nope
+
+@ahmedayman-vv6td  I have fixed the module file. E-mail me I will send you the file khoanguyendaica@gmail.com
+
+@ahmedayman-vv6td  Hey, could you please share how you fixed it. Would really appreciate it.
+
+@ahmedayman-vv6td  What's up could you send me the link too pls
+
+@ahmedayman-vv6td  bro what happen?
+
+@ahmedayman-vv6td  ok bro, no problem i got it
+
+You can use pyautogui to instead it
+
+Hey... Do you get any solution for this...i am getting the same error
+
+@HemantsahaykEC  yes there was an error at this part of code            "xmin, xmax = min(xList), max(xList)             ymin, ymax = min(yList), max(yList)             bbox = xmin, ymin, xmax, ymax",  just an indentation error which was not appending the xList and yList
+
+can you share you code please
+
+@rohitmaharjan6137  sure
+
+@robtechcrew2158  did you encountred     File "HandTrackingModule.py", line 62, in fingersUp     if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]: IndexError: list index out of range
+
+Please help ASAP😭
+
+Get the latest version of the hand tracking module from the website
+
+@murtazasworkshop  in Pycharm i am unable to install mediapipe it says not suitable version and i have 3.8 python
+
+Maybe you have showned 2 hands thats why this error is coming you have two options You have to show only one hand or put your maxHands to 2
+
+Same error
+
+exactly same error with me
+
+same error. If you have found the solution , kindly suggest it.
+
+just use python version 7
+
+@rahulkumar-jf8qu  It doesn't work either for me.I installed Pyhon 3.7 and when I type "pip install autopy" than there came lots of errors.
+
+Had same prob. Worked like a charm in python 3.7.9
+
+@nomad4253  So it worked for you in python 3.7.9 and than you haven't any errors anymore?
+
+Sorry to say that I am not able to install autopy library on windows 10x64
+
+I am unable to install autopy it gives an error each time, I have also gone through the website but the instruction couldn't resolve my error. Pls help, how can I install autopy, would really appreciate your help.
+
+Keep up the good work!!
+
+autopy is not installing please help
+
+how do get autopy?, im struggling on that. someone pls help.
+
+Thank you for your  amazing videos  it made a big difference on my life and  i hope you get a million subscribers to but unlike entertainment videos most educational videos don't get that much support  :(
+
+Thanks For The Tutorial. But There is a Request that Please Update The Code in The website so that it is properly indented so that it is easy to read and understand or you can give a Link To Code such as Google Drive Link. Thanks For These amazing Tutorials
+
+Sir valueerror  : not enogh values to unpack (expected 2, got 0)this coming when 2nd step over (lmlist, bbox = detector.findPosition(img)
+
+the second you have given is not properly intended the hand one can you please update that 👋🏼
+
+How did u can download autopy I can't do it
+
+Sir plz help autopy not installing
+
+AUTOPY NOT INSTALLING I've tried rust , wheel , pip everything Nothing works Python version 3.9.5 Pip version 2.1.2 Nothing working CAN NOT INSTALL  PLEASE HELP
+
+3:45 giving same error
+
+You are amazing buddy.. I love your content. have referred your channel to several others
+
+Sir HandTrackingModule showing an error. Please tell what to do?
+
+Bro media pupe is not installing please help me
+
+How to create exe file with mediapipe
+
+Its showing me no attribute called tip ids.....can you please provide me with the source code of the module of hand tracking
+
+bro the autopy library is not working
+
+Can you make a video on how to detect specific mouse movement patterns ? such as detecting if I make the pattern of a number 4 or whatever.
+
+It installs on Python 3.7.9
+
+@nomad4253  Thank you, but I found its alternate (pyautogui)
+
+Download python 3.7.9, install it, and select that exe file as the interpreter in pycharm settings. Then install all necessary packages
+
+@nomad4253  that doesn't help as i have to manually install packages through cmd
+
+@yuvrajjadhav8270  No u don't have to. I think you are selecting interpreter 3.9 but use 3.7 let me know if it works :)
+
+@nomad4253  Thanks a lot bro... It actually worked for me
+
+Just install python 3.7, it worked for me. I am using PyCharm I hope it will help you :)
+
+Plz reply
+
+Install an older version of python, recommended is 3.8. Use py -3.8 to choose the version.
+
+@tigerz777  thanks bro
+
+same with me, does it installed for you yet??
+
+You can use pyautogui library instead of autopy
+
+@lakshitrustagi8531  does it have the same functionality and objects of autopy?
+
+Yes
+
+This guy uses pretrained  models
+
+Training models is a bit hard. You can train the neural net to do almost anything using tensor flow . Honestly u learn almost nothing from here if u are an intermediate coder
+
+I am unable to install mediapipe. at which version of python mediapipe works?
+
+bro autopy is not installing for me
+
+Hi! How can I contact you?
+
+😍😍
+
+How do I get to the library HandleTrakingemodule thank you.
+
+i can't install autopy, anybody else?
+
+But how to do right click or scroll through something?
+
+Wow
+
+points out of the bound 😶
+
+I'm big fan
+
+😎 cool work keep it up..  U got a sub..
+
+help me sir please \HandTracking\__init__.py in findHands(self, img, draw)      18       19     def findHands(self, img, draw=True): ---> 20         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)      21         self.results = self.hands.process(imgRGB)      22         # print(results.multi_hand_landmarks)  error: OpenCV(4.5.2)  error: (-215:Assertion failed) !_src.empty() in function 'cv::cvtColor
+
+Bro please give me a topic for final year MSc project in open cv python
+
+I have solved all problem now if u not then text me !
+
+Which program have you used?
+
+hello Sir! I can't install the package autopy  ? how to solve!!
+
+File "C:/Users/Krishna/PycharmProjects/pythonProject/AIVirtuaalMouseProject.py", line 32, in <module>     fingers = detector.fingersUp()   File "C:\Users\Krishna\PycharmProjects\pythonProject\HTM.py", line 72, in fingersUp     if self.lmList[self.tipIds[id][2] < self.lmList[self.tipIds[id] - 2][2]]: TypeError: 'int' object is not subscriptable  Process finished with exit code 1  how to solve this error
+
+Nice
+
+In my pycharm editor mediapipe is not getting installed Can some help me out Error is error: could not find a version that satisfies the requirement mediapipe (from versions: none)
+
+was the previous project before this mouse was it the VIRTUAL PAINTER??? cuz I don't remember seeing the findDistance function
+
+I have used 3.7.6
+
+@murtazasworkshop    ERROR: Could not find a version that satisfies the requirement mediapipe (from versions: none) ERROR: No matching distribution found for mediapipe  even on 3.7.6 it is showing this error
+
+Use python 3.7.9
+
+cv2.imshow("Image", img) doesn't work
+
+@TAY WEI CHENG -  did not succeed friend, I've changed from cap = cv2. VideoCapture(1) to cap = cv2. VideoCapture(0) but still error
+
+@TAY WEI CHENG -  ValueError                                Traceback (most recent call last) <ipython-input-1-12cef0d11d64> in <module>      14     success, img = cap.read()      15     img = detector.findHands(img) ---> 16     lmList, bbox = detector.findPosition(img)      17       18     #11  ValueError: not enough values to unpack (expected 2, got 0)
+
+@TAY WEI CHENG -  yes my operating system is windows, I have changed all the files, in the HandTrackingModule.py file it runs fine but in the AiMouse.py file there is an error like that, I am very confused
+
+In order to create this
+
+can anyone help me out for installing package autopy i can't  please?
+
+Install using python 3.7.9
+
+Just install python 3.7, it worked for me. I am using PyCharm I hope it will help you :)
+
+@nomad4253  yes ty
+
+@nbjayson1947  ty so much
+
+@ahmedayman-vv6td  Have you fixed it?
+
+same problem i have
+
+One step closer to Minority Report.
+
+The code i got was not in usable form. There is no option to download.
+
+Hey love your vids, but on your website the full handtrackingmodule isnt with the tabs so idk where some function are exactly
+
+Hello, excuse me. how they solved the problem of installing autopy in pycharm
+
+How to get an exe file of this program? I tried using pyinstaller, but i am facing an error when i launch it. Any other ideas?
+
+same problem with autopy during installation pls suggest a way
+
+Sup 69
+
+I can't install autopy in my computer  Any solution for it  Plz  tell anyone....
+
+How to install Autopy as the Error occurred when installing packing 'autopy'? 3:32
+
+Why don't you put github link?
+
+its only PCharm editor only we can use or we can use any editor of our choice sir?
+
+please do something for HandTrackingModule.py
+
+You are great ❤️ man ...
+
+Its showing no module named as handmodule  please hel0
+
+I can't install mediapipe it shows error
+
+I am one of the future million subscribers who has benefited from this module. The the hardest choice is what course to buy...
+
+You are an amazing guy! This is so helpful. Thankyou very much!!
+
+Please reupload HandtrackingModule.py in your course with proper indentation... Please
+
+You are incredibly awesome....
+
+What is the name of this compiler?
+
+I solved itself thx for such a nice vid
+
+@forestcat512  how did you solve it
+
+@AyushMo  i made the tabs by myself and then replaced all " and - symbols because they have a weird font and python wasn't recognising them
+
+@forestcat512  ah that makes sense, thank you :)
+
+@AyushMo  no problem :)
+
+how did you install autopy ?
+
+@Satyam Shashank Karan hi, I installed auntopy from the console, in my corresponding env. and I also did it in the conventional way the pycharm, as it does in the video. is rare. Anyway, I solved it by working on another ide, and I could also change that library in pycharm for another that does the same.
+
+@cristianmorilla8631  i tried using pycharm as well.. and also with cmd but still I cannot install. can you help me out
+
+​ @satyamshashankkaran5886  Last week this did not work for me, I am in exam period but I send the same code without the implementation of savisado and using the library as a class within the same notebook, the comments are in Spanish I think
+
+Please send me out
+
+Just install python 3.7, it worked for me. I am using PyCharm I hope it will help you :)
+
+​ @satyamshashankkaran5886  Just install python 3.7, it worked for me. I am using PyCharm I hope it will help you too :)
+
+anaconda -> create an env -> insall what you need pip install ..... -> use this new env as interpretor  PS : im using pycharm and python 3.8
+
+Just install python 3.7, it worked for me. I am using PyCharm I hope it will help you too :)
+
+Facing the same problem
+
+It didn't work
+
+@mohammadkanaan3043  Just install python 3.7, it worked for me. I am using PyCharm I hope it will help you :)
+
+what you want, but pycharm is the best, i think really is the best, all the jetbrain suit is the best for coding, but you have to pay licence
+
+does  HandTrackingModule.py works fine???
+
+Yes plz
+
+agree
+
+yes do it soon!!
+
+The IDE is Pycharm.
+
+@murtazasworkshop  And Sir the language is pytorch?
+
+or tensor or keras sir?
+
+Please also show how to convert the Python file to an exe.
+
+Hello, what do you think about Sipeed Maixduino Kit for RISC-V AI + IoT
+
+amazing project . the website source handtrackingmodule.py file no format...
+
+Bro it is again and again showing autopy error what to do
+
+is their any function in autoPy that make a right click? and  anybody have a idea of how to make a left click and draw something like in paint we can't draw something because (autopy.mouse.click() ) this make a single left click only..
+
+I got a error in handTrackerModule.py file in line no. 15 please anyone tell me!
+
+Dude, you are the exactly best in the world!
+
+Safemoon coin buyy
+
+With mediapipe library, this is a peace of cake!
+
+which version of python do you use
+
+error lmList, tuple out of the range  i did this also  if len(lmList)!=0:     print(lmList[4])   but same error  what i can do?
+
+Can we make an app out of it?
+
+I have a problem with installing  mediapipe : ERROR: Could not find a version that satisfies the requirement mediapipe (from versions: none) ERROR: No matching distribution found for mediapipe what to do?
+
+can send me handtrackingmodule.py. i have some intent error
+
+Awesome 💥✌
+
+I found the reason that I had made some typing error & got that resolved. But the file HandTrackingModule.py is not indented one. Does any one has the proper indented HandTrackingModule.py file? Could you please share the same? I am not sure if this is soem issue with my browser only. Please shaer the file.
+
+autopy is not getting installed
+
+Just Awesome, Awesome 👍👏👍👏
+
+Good Explanation Great Project sir  Can i get this code?  I can't find it in the below provided link
+
+please help me with a error  cv2.error: OpenCV(4.5.1) C:\Users\appveyor\AppData\Local\Temp\1\pip-req-build-r2ue8w6k\opencv\modules\highgui\src\window.cpp:376: error: (-215:Assertion failed) size.width>0 && size.height>0 in function 'cv::imshow'
+
+How?
+
+read the DOCUMENTATION, its in, you have a parametre button and you have the 3 button of the mouse inside : Holds down or releases the given mouse button in the current position. Button can be LEFT, RIGHT, MIDDLE, or None to default to the left button.  autopy.mouse.click(button: Button=None, delay: float=None)
+
+I also got this error. It is because the file is not idented! Then, it is impossible to use this module =(
+
+Yes you r right then how to fixed it... Anyone🙏
+
+@savvyprogrammer  Man I am trying to fix it but I can't figure it out! Someone please help us 🤣🤣
+
+😅 let's mention our sir😅
+
+how to resolve autopy installation error?
+
+@dhruvsharma2k  in my PC, autopy installed without any problem. I think it has to go with your python version. Mine is python 3.7.9
+
+@antonioneto3690  and what abt HandTrackerModule ?
+
+@dhruvsharma2k  that one is not working for me. I am waiting for someone's answer 😅😅
+
+@dhruvsharma2k  have you done this error??
+
+@savvyprogrammer  I have code entire hmt from scratch.
+
+For autopy u need 3.7
+
+facing the same error
+
+@pup-arazzisworld3469   if len(lmList)!=0 and bbox!=0 :  it will work moslty
+
+@yogeswarrsathish7502  thanks it did work
+
+I am havin the exact same problem. I cannot use the file HandTrackingModule.py because it is not indented on Mr's Hassan website. He could answer us about this problem, come on
+
+Facing same problem
+
+Same problem here to!
+
+U can find it in his website
+
+Set videocapture(0) not as videocapture(1)
+
+Awesome 👍😊
+
+Sir i need a help in project please help    I need to show if someone is holding railings walking on stairs or not holding
+
+hi bro, i did exactly what u did(copy the code) so i can try it, the file names are exactly like yours and the 2 files are in the same position, but when i run the program it doesnt turn on my camera(keep it black) and the FPS are 0, my computer is not trying to turn off my camera, so why i cant use it?
+
+thank you man really thank you you are a real hero for persons like me cause you are providing this stuff for free while others are not. btw, can you make a video on a ai assistant like google like controlling phone
+
+What language do u use for IOS and Android cv course? Flutter?
+
+Will it work in droid cam tht is external ip cam
+
+Great minds think alike, I guess! xD https://www.youtube.com/watch?v=QIKZbYP_9p8  Obviously, your video is way higher quality.
+
+img = detector.findHands(img) error in AiVirtualMouse.py imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) error in HandTrackingModule.py  sir, piease help to remove this error😪😪
+
+Sir I like the code plz give me
+
+Hey, amazing video, I have an error when I run it though, it is : File "AiVirtualMouseProject.py", line 67, in <module>     fps = 1 / (cTime - pTime) ZeroDivisionError: float division by zero   Any solution
+
+I want to add extra like when I snap my finger it will close every program in computer which is running how can I add that
+
+Hey there, why don't you have a discord server. We are facing little bit of problems which can be solved there. By the with nice tutorials:).🙂
+
+Which editor is this?
+
+Hey man love your videos. If possible make a video on "playing gta or any other game using hand tracking"
+
+Sir do you work on laptop or use desktop for opencv? as i've desktop computer and dont know how to use opencv using usb cam/webcam. Kindly help me in this.
+
+I didn't see any one getting this issue which I am getting. I installed mediapipe & still getting the error ModuleNotFoundError: No module named 'HandTrackingModule'. No Idea why this is coming.
+
+HELP!  Error occured  when installing package 'autopy' on PyCharm and Terminal installation
+
+Hello! Can you help me? I have some problems The program return error File "C:/Users/shkry/PycharmProjects/MouseAi/main.py", line 28, in <module>     lmList, bbox = detector.findPosition(img) ValueError: too many values to unpack (expected 2)
+
+Hello Murtaza! First of all, thank you for sharing these wonderful projects with us. How can we determine if a circle is inside a rectangle? (both circle and rectangle were created by us). I would be very happy if you answer.
+
+elon musk and YOU with MIC   haha
+
+@NoMiceHere oh right is detecting a camera that doesnt exist
+
+How to resolve autopy installation error... occuring again n again ?
+
+@dhruvsharma2k  Just install python 3.7, it worked for me. I am using PyCharm I hope it will help you :)
+
+@NoMiceHere my webcam is already enabled
+
+I too got the same erors. Please help me anyone
+
+cap = cv2.VideoCapture(1) change 1 to 0
+
+I also get this error.
+
+Above while True: mention pTime=0
+
+https://discord.gg/bFVMkzf​ . Also given in the description section of this video.
+
+Yes I am  Also Facing the same issue
+
+if you are using jupyter , then a ipynb file is created and those cannot be called directly .First install ipynb , then : import ipynb ; import <File Name>
+
+Use the 3.8 Python version, the autopy doesn't support 3.9
+
+@dimitarcukovski8704  yes it is. I rolled back the python version . It's work :) Thx
+
+Maxwell Pi  I've tried this already. It did not help.
+
+Hi  There are some changes in HandTracking Module, make changes in that code after that your code will execute.
+
+@lepsygoyal283 How can I download the source code? Tabulation is broken on the site.  Everything worked out, thank you very much
+
+@Lepsy Goyal  could you share those changes in code of HandTrackingModule.py Pls bro! I'm worried from 2days,🙂
+
+@NoMiceHere no, i mean how do we determine if a circle which is created by cv2.circle() function is in a rectangle which is created by cv2.rectangle() function? Thanks for answering by the way ^^
+
+you project ideas excites me!! thanks :)
+
+Next make a virtual keyboard
+
+Can anyone help with autopy installation. I can't download it because I have an error.
+
+I have done it few days back...
+
+I wanted this yaar thx
+
+His would be very useful in AR desktop applications.
+
+- - DOUBT - -  First of all your videos are really awesome and informative. When I wrote the 'AiVirualMouseTracking.py' file for that file I had to install 'autopy' but even after every method of installation it still somehow seems that autopy is unable to download in my visual code studios and I think the error everytime comes when the "building wheel" starts. I tried using 'pip install autopy' and download the .whl file from the pypi.org and tried github sources and their zip files but nothing seems to work. Can you please tell what the problem might be or if there is some other module that we could use for instead of the autopy module ?  - - DOUBT - -
+
+Can ypu make a video on controlling raspberry Pi gpios with hand movements using opencv so that appliances can be controlled using hand gestures
+
+I don't have any knowledge of OpenCV & AI .. can you please suggest me your video where I start my learning..... please Reply
+
+I was thinking of same after watching hand tracking videos...
+
+brother it is humble request  to create a course on  advance c++ course on YT 🙏
+
+Do I have to install open CV in every new project?
+
+THE BEST YOUTUBE CHANNEL!!!!
+
+like a magic
+
+I know python language... Please let me know... To creating projects just like you what I have to learn now??  Please 🙏
+
+Can somebody get this man a million subscribers.
+
+Please make similar video sir but with flight stick instead of mouse
+
+Hello !! Instead of the distance between two fingers to click function how can I code for if colour detected for more than 3sec.
+
+can you please type your resource book to learn more about  opencv. thanks again for your help
+
+Sir koi hand gesture se game banaiye
+
+same
+
+Use python 3.7.9
+
+dude just change your python version to  3.7.9   it worked for me
+
+@shethridham23  youre a savior man. I too had the same issue. But this version of intrepretor works like a charm. Thank you
+
+creat your own developement env and than install in what you need i did that with anaconda, i just go in my env with anaconda "conda activate nameOfEnv than pip install what you need  use this env as entrepretor for all your python project
+
+@shethridham23  bro if I change to 3.7.9 I'm unable to install mediapipe and when I switch to 3.9 I'm unable to install autopy  Plz help
+
+If you are using virtual env. then you have to install it for every new project. Or you can install opencv on you system once and use it in any project by importing it.
+
+Thank you
+
+Go though the "Learn Opencv in 3 Hours" Course to get started with Computer Vision.
+
+Thank you for your kind words. With you solid support it does not feel far away.
+
+how did your autopy worked ? I am getting problem in installing it.
+
+@visheshmalhotra4448  you can go to your command prompt and write pip install autopy, or terminal if you use Mac
+
+@moking8646  not install dude
+
+Just write HandDetector instead of handDetector(H is capital) also install cvzone 1.4.1 for resolving any further errors
+
+I will be listing down some books on my website very soon .
+
+@murtazasworkshop  thanks for all
+
+this comment before 2 month and u dont type anything
+
+Good Idea. Noted.
+
+Where can I get the code? The link in the description doesn't give me the code?
+
+Please make a video how to store image in postgresql
+
+Thank you bro! you are amaizing... more Murtaza's in the world, please...
+
+Sir plz make corse with c++ plz
+
+Bro how fast your brain works? You are really amazing. You are getting on a maximum level in AI
+
+How to implement these things in the Andriod app.
+
+How to make an android app with pose detection and hand detection module.
+
+Really man this is amazing !!! 🤞
+
+Sir, I can't find the files. Where are those?
+
+Almost working on same thing...you are always ahead of me..great job and sharing👍
+
+Sir, make a object tracking with openCV and C++
+
+I really love your teaching
+
+Was wondering if you could show how to see the methods inside of a package like mediapipe so we know some of the options  that are available. Thanks.
+
+Thanks man for making this video
+
+I did it before you but it was very slow and noisy  Thanks it is very helpful video
+
+You are so amazing.. teaching all the complex things super simply.. i have learned a lot from you.. thank you..
+
+Super tutorial sir but how to see the code as the link does not gives the code for anything pls do help
+
+It was an awesome video. Your ideas are brilliant. I am expecting some more videos on object detection, tracking, objectron from the mediapipe library. Keep up the good work.
+
+Sir/brdr, you'll not believe I was thinking how could I develop hand tracking to mouse hovering, since past few days, and I just opened YouTube, and there you were  Come on!! You read my mind
+
+Sir, I have been following, you really changed my taste (in terms of CS domain😂)
+
+Will add soon
+
+@murtazasworkshop  thanks for replying
+
+Lol Thank you
+
+Bro am facing problem in installing autopy, how to fix it  .
+
+@bhavanap1140  same here
+
+If you are facing a problem with installing autopy,  then use python 3.6.  Or you can use an alternative of it. Like Pyautogui. It works like a charm when I first tried.
+
+Noted
+
+Lol thank you
+
+@murtazasworkshop   Sir the code you given is not working completely even after I set video capture(0) please help.
+
+@murtazasworkshop  I have a question, how to learn "IA"?
+
+@murtazasworkshop   pycharm . Which version sir
+
+Wil try to make a tutorial on that soon.
+
+Really intrested and Waiting for that.
+
+Thank you
+
+Will upload soon.
+
+Would love to see your results.
+
+Hey have you done this Ai virtual Mouse ?
+
+@savvyprogrammer  I have different project which is more ar then virtual mouse
+
+@ManojChoudhury99  how about that let me see please??🙏
+
+@savvyprogrammer  sure when it's complete will post here the link
+
+@ManojChoudhury99  sure 🙏 I'm waiting for your reply
+
+Thank you! 😃
+
+Yes I am too having the same problem
+
+I got a error in handTrackerModule.py file in line no. 15 please tell me if u didn't get any error!
+
+@savvyprogrammer  ohkay, I'd like to see your code
+
+@rishabhpant1828  how??
+
+@savvyprogrammer  we can have connect in comment section in your channel's only video
+
+@rishabhpant1828  sure please🙏
+
+Feels like superpower!
+
+Wow
+
+Sir, you are legend. I learnt a lot from you. Make more videos like this. ❤️
+
+Please make a video on Unity and OpenCV integration.
+
+Really Awesome Video.
+
+ufff,  excelent!!!!
+
+I was literally thinking about it after seeing your hand tracking video
+
+Congratulation on 100k ❤️ 👍👍👍👍👍
+
+It's amazing
+
+6th commenter
+
+please give us all courses free
+
+Thanks for providing this awesome video.
+
+Excellent
+
+Can you make a video on how to use them in websites
+
+Love your stuff
+
+Yess
+
+Me too🙏
+
+I made the similar project using pynput  but couldn't smooth out the motion as he did.
+
+@shubhammodanwal6713  maybe it's laptops camera problem
+
+@rushangkasundra3956  I am using my phone as external wifi webcam
+
+Same, I was wanting to do it, than this guy post a tutorial on how to make it, I think he's reading our mind xD
+
+@theaypisamfpv  I was thinking how can we do both with one hand
+

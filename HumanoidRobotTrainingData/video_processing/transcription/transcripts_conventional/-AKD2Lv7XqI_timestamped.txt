@@ -1,0 +1,61 @@
+-AKD2Lv7XqI
+https://www.youtube.com/watch?v=-AKD2Lv7XqI
+Unknown Category
+
+[00:00:00.640 → 00:00:05.920] Hey, what's up guys? We're back talking about filters again. We've already done high pass
+[00:00:05.920 → 00:00:13.120] and low pass, so today we're going to talk about band pass filters. And a band pass filter very
+[00:00:13.120 → 00:00:21.520] simply passes frequencies within a certain frequency range and rejects frequencies that
+[00:00:21.520 → 00:00:28.320] are outside of that range. That's about as simple as it gets. So what are its applications? Well,
+[00:00:28.320 → 00:00:34.320] it's used in transmitting and receiving circuits to keep the transmitted or received signal within
+[00:00:34.320 → 00:00:41.440] the allocated frequency bandwidth. They're also used in atmospheric studies and audio applications.
+[00:00:42.480 → 00:00:49.920] So you'll see them a lot there. Now, the way we find our frequencies is the same as we did
+[00:00:50.560 → 00:00:55.440] for our low pass and high pass filters, and we'll come to that in a minute. So first of all,
+[00:00:55.440 → 00:01:03.360] let's look at our high pass filter. It consists of a sine or, you know, whatever our wave input is
+[00:01:04.240 → 00:01:10.400] going through a capacitor to the output with a parallel resistor going to ground.
+[00:01:11.440 → 00:01:15.840] And the frequency response of our high pass filter looks like this.
+[00:01:15.840 → 00:01:24.480] Anything below this line here is going to be attenuated. Anything above it is going to be passed.
+[00:01:25.840 → 00:01:32.480] Then our low pass filter, here we have our input with the resistor and then a parallel capacitor going
+[00:01:32.480 → 00:01:40.640] to ground. And it simply looks like the opposite. Anything above here is going to be attenuated,
+[00:01:40.640 → 00:01:46.640] and everything down here is going to be passed. So that is our high frequency mark, and there is our
+[00:01:46.640 → 00:01:58.640] low frequency mark. And to find that, our frequency cutoff equals 1 over 2 pi r c times the hertz times
+[00:01:58.640 → 00:02:06.960] the frequency. And it works the same for the band pass filter. Because when we make our band pass filter,
+[00:02:06.960 → 00:02:24.400] what we're doing is here's our input. We're going to have a capacitor, and then a resistor that goes to ground.
+[00:02:24.400 → 00:02:30.320] I forgot to draw my resistor in there. And then we're going to have another resistor.
+[00:02:30.320 → 00:02:38.560] There's our output, there's our ground. And then we're going to have the parallel capacitor here.
+[00:02:40.000 → 00:02:46.160] So what you see here is simply a combination of the high pass and the low pass, and therefore we have
+[00:02:46.160 → 00:02:56.000] the band pass. So if we take our two Bode plots here of these two filters, the low pass
+[00:02:56.000 → 00:03:11.360] and the high pass. So here is our high pass, and here is our low pass, and then here is our low cutoff,
+[00:03:13.040 → 00:03:19.120] here is our high cutoff, and this area right here
+[00:03:19.120 → 00:03:31.600] is the band that we're going to pass. Voila! A band pass filter. So let's put one together on the breadboard.
+[00:03:31.600 → 00:03:37.920] All right, so I've got our band pass filter laid out here, and here's the nuts and bolts of it. This
+[00:03:37.920 → 00:03:43.120] is called a second order band pass, because we have two separate filters here. And the band that's going
+[00:03:43.120 → 00:03:49.680] to pass is between 1k and 30k. Now you can use that formula I showed you on the other page to figure
+[00:03:49.680 → 00:03:56.080] out how to do that. But here's the layout of our filter. And it matches exactly what you see here.
+[00:03:56.640 → 00:04:05.360] This first capacitor is 15 nanofarads, and then this first resistor is 10k. The second resistor is also
+[00:04:05.360 → 00:04:15.040] 10k. And the second capacitor is 560 picofarad. So we can zoom in here and take a better look.
+[00:04:19.440 → 00:04:24.880] This is the input, this is where our signal is coming in, and this is the output being read
+[00:04:24.880 → 00:04:38.880] by the oscilloscope. So let's rotate up here. Have a look at the oscilloscope. Now if you look down at the
+[00:04:38.880 → 00:04:48.160] bottom of the screen here, or you can just look up there, you can see our frequency is 5.4, so dot dot dot
+[00:04:48.880 → 00:04:54.560] kilohertz. It's a sine wave. And if you look at the peak to peak where the red triangle is there,
+[00:04:55.600 → 00:05:05.440] you can see we're getting 8.8, 8.9 volts, because that frequency is within our band. Now if we drop down
+[00:05:05.440 → 00:05:19.360] below that, our frequency is now 530 hertz, and our peak to peak has dropped to 3.68 volts. So we've got
+[00:05:19.360 → 00:05:28.560] like a 50 percent attenuation. We go back to our 5.43 kilohertz, and you can see we're right back into it.
+[00:05:29.600 → 00:05:34.560] And then if we jump above it, we're now at 55 kilohertz.
+[00:05:34.560 → 00:05:45.520] You can see again we're at 3.68 volts, and it has simply attenuated back out of it. And as our
+[00:05:45.520 → 00:05:55.280] frequency increases, you can see that our amplitude decreases. So look, we're at 100, or 300,
+[00:05:55.280 → 00:05:57.360] are we at 300, or where the hell are we at?
+[00:06:01.760 → 00:06:08.000] Okay, 320 or so kilohertz, and our peak to peak is 740 millivolts.
+[00:06:08.000 → 00:06:20.080] So there you have it. The band pass filter. A combination of the low pass and the high pass.
+[00:06:20.080 → 00:06:26.160] A little bit of math, and you can select whichever band you want to let through,
+[00:06:26.880 → 00:06:32.080] and which bands you don't want to let through. I hope you guys enjoyed this. If you did,
+[00:06:33.040 → 00:06:37.680] give me a thumbs up. Feel free to comment, share, and don't forget to subscribe.
+[00:06:38.720 → 00:06:45.200] Big thanks to all the patrons. That's it. I'm out. Peace.
+[00:06:50.800 → 00:06:55.200] No, no, we're locked.
+[00:06:56.240 → 00:07:00.240] I'm out.
+[00:07:03.040 → 00:07:03.700] Nope.
+[00:07:05.360 → 00:07:06.640] Love it.
+[00:07:07.200 → 00:07:08.000] Love it.
+[00:07:09.440 → 00:07:11.120] Love it.
+[00:07:12.040 → 00:07:15.280] Love it.
+[00:07:17.600 → 00:07:18.720] Bye.
+[00:07:18.720 → 00:07:19.280] That's it.

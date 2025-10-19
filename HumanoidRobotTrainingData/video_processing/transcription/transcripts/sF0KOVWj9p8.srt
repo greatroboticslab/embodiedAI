@@ -1,0 +1,536 @@
+1
+00:00:00,000 --> 00:00:11,380
+Sometimes when building circuits mistakes can happen, which can be a reverse voltage,
+
+2
+00:00:11,380 --> 00:00:17,800
+a voltage applied to the wrong pin, components failing due to their age or wrong usage or
+
+3
+00:00:17,800 --> 00:00:20,820
+you simply accidentally short something.
+
+4
+00:00:20,820 --> 00:00:26,520
+No matter the cause, the now appearing overcurrent is the root of all evil that needs to get
+
+5
+00:00:26,520 --> 00:00:31,360
+stopped so that nothing explodes or burns down completely.
+
+6
+00:00:31,360 --> 00:00:37,340
+To do that I think pretty much everyone is familiar with such glass fuses that you just
+
+7
+00:00:37,340 --> 00:00:43,040
+put in series to your circuit and as soon as too much current is flowing the thin metal
+
+8
+00:00:43,040 --> 00:00:47,500
+inside of it melts and thus interrupts the current flow.
+
+9
+00:00:47,500 --> 00:00:51,780
+Only problem is that replacing such fuses can be cumbersome.
+
+10
+00:00:51,780 --> 00:00:57,900
+It can get expensive if you are testing stuff and constantly destroy them and in case of
+
+11
+00:00:57,900 --> 00:01:04,700
+enclosed electronics like your smartphone there is simply no way to replace such a fuse.
+
+12
+00:01:04,700 --> 00:01:11,620
+The solution to all these problems though are resettable fuses like these ones which I often
+
+13
+00:01:11,620 --> 00:01:14,940
+feel like not many people know about.
+
+14
+00:01:14,940 --> 00:01:20,340
+So in this video I will show you exactly how to use them and with what limitations they
+
+15
+00:01:20,340 --> 00:01:21,780
+come with.
+
+16
+00:01:21,780 --> 00:01:28,100
+Because even though they are resettable and thus reusable they are certainly not perfect.
+
+17
+00:01:28,100 --> 00:01:38,520
+Let's get started!
+
+18
+00:01:38,520 --> 00:01:42,020
+This video is sponsored by Mauser Electronics.
+
+19
+00:01:42,020 --> 00:01:47,900
+Now truth be told I've been searching for fitting resettable fuses for a while on the internet.
+
+20
+00:01:47,900 --> 00:01:53,860
+Mauser was the only seller that not only came with a big selection of them but most of them
+
+21
+00:01:53,860 --> 00:02:00,040
+were also in stock, I could easily filter for preferences and best of all they sell to
+
+22
+00:02:00,040 --> 00:02:04,660
+private people like you and me and not just companies.
+
+23
+00:02:04,660 --> 00:02:10,980
+I have been ordering my components from them since 2018 and I can tell you for sure that they
+
+24
+00:02:10,980 --> 00:02:14,100
+have all the components you could ever need.
+
+25
+00:02:14,100 --> 00:02:19,780
+And you usually receive them within 3 or sometimes even only 2 days.
+
+26
+00:02:19,780 --> 00:02:25,420
+So feel free to check out Mauser Electronics if I piqued your interest.
+
+27
+00:02:25,420 --> 00:02:30,660
+Now first off if you want to use resettable fuses then you always have the choice between the
+
+28
+00:02:30,660 --> 00:02:37,740
+through hole ones that I feel like are easier to use and small SMD ones which you probably
+
+29
+00:02:37,740 --> 00:02:42,400
+already have seen on devices like the Raspberry Pi.
+
+30
+00:02:42,400 --> 00:02:48,880
+Sometimes resettable fuses are also known as a multi fuse, poly fuse or poly switch but
+
+31
+00:02:48,880 --> 00:02:54,780
+if we want to be technically correct then they are actually called PPTC which stands for
+
+32
+00:02:54,780 --> 00:03:02,660
+Polymeric Positive Temperature Coefficient device and wait a minute PTCs are actually quite
+
+33
+00:03:02,660 --> 00:03:04,360
+popular.
+
+34
+00:03:04,360 --> 00:03:09,320
+What they do and what their name basically implies is that they increase their resistance when
+
+35
+00:03:09,320 --> 00:03:11,160
+they get hotter.
+
+36
+00:03:11,160 --> 00:03:17,460
+You can actually find their relative the NTC aka Negative Temperature Coefficient on lots
+
+37
+00:03:17,460 --> 00:03:24,040
+of 3D printers because they decrease their resistance when their temperature rises and thus they both
+
+38
+00:03:24,040 --> 00:03:26,820
+can be used to measure temperature.
+
+39
+00:03:26,820 --> 00:03:31,740
+But back to the resettable fuse which does in fact increase its resistance when temperature
+
+40
+00:03:31,740 --> 00:03:38,960
+rises but it still features lots of differences to normal PTCs or NTCs.
+
+41
+00:03:38,960 --> 00:03:44,580
+So as a practical example let's say I got a circuit that normally draws around 500mA at
+
+42
+00:03:44,580 --> 00:03:51,820
+12V like this RGB LED strip right here and I want to protect it from shorts so that the
+
+43
+00:03:51,820 --> 00:03:55,260
+fitting power supply does not get damaged.
+
+44
+00:03:55,260 --> 00:04:01,440
+Now to choose a suitable resettable fuse we only have to worry about 4 crucial properties
+
+45
+00:04:01,440 --> 00:04:08,000
+and those are the maximum voltage and current as well as the hold current and trip current.
+
+46
+00:04:08,000 --> 00:04:13,580
+And I think the maximum voltage and current is pretty self explanatory meaning that if you
+
+47
+00:04:13,580 --> 00:04:18,220
+exceed them you basically risk damaging your fuse.
+
+48
+00:04:18,220 --> 00:04:25,340
+The hold and trip current is a tiny bit more complicated but still pretty easy to understand.
+
+49
+00:04:25,340 --> 00:04:30,700
+The hold current basically stands for the current that can flow continuously without having to
+
+50
+00:04:30,700 --> 00:04:34,440
+worry about that the fuse will ever trip.
+
+51
+00:04:34,440 --> 00:04:40,480
+And the trip current of course is the current that needs to flow so that the fuse will activate
+
+52
+00:04:40,480 --> 00:04:43,540
+and thus interrupt the over current.
+
+53
+00:04:43,540 --> 00:04:45,140
+Pretty simple.
+
+54
+00:04:45,140 --> 00:04:51,320
+So with these 4 rough values in mind for my circuit I went on to a search on Mauser Electronics
+
+55
+00:04:51,320 --> 00:05:00,900
+and decided on this PPTC that can do 60V and 40A max and comes with a hold current of 0.5A and
+
+56
+00:05:00,900 --> 00:05:03,620
+a trip current of 1A.
+
+57
+00:05:03,620 --> 00:05:08,780
+And if you are asking yourself right now why not use a fuse with slightly higher ratings for
+
+58
+00:05:08,780 --> 00:05:15,000
+a bit of wiggle room then just wait a few more minutes for a little revelation.
+
+59
+00:05:15,000 --> 00:05:21,500
+Because first off it was time for a small experiment in which I simulated my to be protected circuit
+
+60
+00:05:21,500 --> 00:05:27,680
+with a constant load to which I of course added my resettable fuse in series and powered it
+
+61
+00:05:27,680 --> 00:05:30,220
+all with 12V.
+
+62
+00:05:30,220 --> 00:05:35,560
+Now by slowly increasing the current flow through my fuse I also directly measured and wrote
+
+63
+00:05:35,560 --> 00:05:38,220
+down the voltage drop across it.
+
+64
+00:05:38,220 --> 00:05:44,060
+Because those electrical values give us insight about the power the fuse wastes which directly
+
+65
+00:05:44,060 --> 00:05:50,440
+determines its temperature and also what resistance it currently possesses.
+
+66
+00:05:50,440 --> 00:05:57,100
+So first big stop was the hold current of 500mA at which point only a small voltage drop across
+
+67
+00:05:57,100 --> 00:06:03,720
+the fuse occurred that at some point also did not increase anymore meaning the temperature
+
+68
+00:06:03,720 --> 00:06:09,600
+of the fuse was stable and thus it would never trip at this point.
+
+69
+00:06:09,600 --> 00:06:16,160
+Next was the trip current of 1A and here the voltage drop did in fact increase over time until
+
+70
+00:06:16,160 --> 00:06:22,100
+the fuse ultimately reached its high resistance state in which my constant load could no longer
+
+71
+00:06:22,100 --> 00:06:25,880
+draw 1A and thus turned off.
+
+72
+00:06:25,880 --> 00:06:31,560
+Now you might be thinking that these 22-6 seconds it took for the fuse to activate are way too
+
+73
+00:06:31,560 --> 00:06:40,580
+long but as a comparison let's see how a 1A rated glass fuse would react to 1A of current.
+
+74
+00:06:40,580 --> 00:06:47,320
+And yes we could sit here forever because the glass fuse would never trip and even at 2A it
+
+75
+00:06:47,320 --> 00:06:53,880
+still took way longer to activate once again in direct comparison to the resettable fuse.
+
+76
+00:06:53,880 --> 00:07:00,440
+So yeah PPTCs are a bit slow but traditional fuses are even slower.
+
+77
+00:07:00,440 --> 00:07:06,440
+But getting back to topic because next to truly investigate the trip occurrence I added a big
+
+78
+00:07:06,440 --> 00:07:12,500
+power resistor as a load that would normally draw around 1.2A.
+
+79
+00:07:12,500 --> 00:07:18,820
+And by the way these 3 components I added in parallel to the fuse are just a trip indicator
+
+80
+00:07:18,820 --> 00:07:24,060
+which lights up as soon as the fuse enters its high resistance state.
+
+81
+00:07:24,060 --> 00:07:30,260
+Ok so now with the resettable fuse in place the big current the resistor normally draws got
+
+82
+00:07:30,260 --> 00:07:35,560
+quickly limited to only around 103mA.
+
+83
+00:07:35,560 --> 00:07:41,260
+But wait a minute shouldn't a fuse cut down the flowing current to nothing like a normal
+
+84
+00:07:41,260 --> 00:07:43,560
+glass fuse would do?
+
+85
+00:07:43,560 --> 00:07:49,940
+Well such PPTCs cannot do that because they are basically just resistors whose resistance
+
+86
+00:07:49,940 --> 00:07:55,760
+increases drastically at the trip current because of the rising temperature.
+
+87
+00:07:55,760 --> 00:08:01,040
+That does not mean they are useless though because such a drastic current reduction can definitely
+
+88
+00:08:01,040 --> 00:08:07,580
+prevent exploding capacitors, smoking transistors or even save battery packs when things go
+
+89
+00:08:07,580 --> 00:08:09,960
+accidentally wrong.
+
+90
+00:08:09,960 --> 00:08:15,840
+And speaking of battery packs PPTCs also often get used with them since they drip when they
+
+91
+00:08:15,840 --> 00:08:22,980
+get hot and battery packs definitely love to get hot when they are not handled correctly.
+
+92
+00:08:22,980 --> 00:08:29,100
+But getting back to the trip event at which point a so called leakage current keeps flowing
+
+93
+00:08:29,100 --> 00:08:35,420
+that basically keeps the fuse hot enough so that it stays in its high resistance state.
+
+94
+00:08:35,420 --> 00:08:40,900
+I also did some additional measurements in this state to find out that no matter what input
+
+95
+00:08:40,900 --> 00:08:48,880
+voltage gets applied the resettable fuse basically creates a power loss of around 1.2W which is
+
+96
+00:08:48,880 --> 00:08:52,720
+quite a bit more than what the datasheet claims.
+
+97
+00:08:52,720 --> 00:08:58,860
+And speaking of datasheet this is a good time to try out a PPTC with slightly higher ratings.
+
+98
+00:08:58,860 --> 00:09:06,440
+Like this one that holds at 0.9A and triggers at 1.8A.
+
+99
+00:09:06,440 --> 00:09:10,740
+I pretty much did the same tests and measurements as before.
+
+100
+00:09:10,740 --> 00:09:17,260
+And the differences are that the bigger fuse features less power losses during normal operation
+
+101
+00:09:17,260 --> 00:09:20,900
+but wastes more power when it got tripped.
+
+102
+00:09:20,900 --> 00:09:25,400
+So the choice is up to you what is more important for you.
+
+103
+00:09:25,400 --> 00:09:31,280
+Now the last thing we have to take a look at is the area between the hold and trip current.
+
+104
+00:09:31,280 --> 00:09:36,900
+And here the resettable fuse can trigger but does not have to.
+
+105
+00:09:36,900 --> 00:09:44,520
+For example at 700mA the voltage drop and thus temperature only increases very slowly.
+
+106
+00:09:44,520 --> 00:09:50,900
+Meaning eventually this fuse might drip if the ambient temperature is also high.
+
+107
+00:09:50,900 --> 00:09:57,720
+But at 900mA the voltage and temperature increases way faster and thus the fuse tripped in my
+
+108
+00:09:57,720 --> 00:10:02,800
+case after around 1 minute and 42 seconds.
+
+109
+00:10:02,800 --> 00:10:08,420
+This typical time to trip diagram given by the datasheet can also help you out a lot regarding
+
+110
+00:10:08,420 --> 00:10:10,660
+those questions.
+
+111
+00:10:10,660 --> 00:10:16,980
+And by the way the PPTC also becomes rather quickly conductive again as soon as the current
+
+112
+00:10:16,980 --> 00:10:18,660
+decreases.
+
+113
+00:10:18,660 --> 00:10:24,460
+But after tripping once its resistance will take quite a long time until it will reach
+
+114
+00:10:24,460 --> 00:10:27,460
+its initial value once again.
+
+115
+00:10:27,460 --> 00:10:32,020
+And with that being said you should now be familiar with most of the basics when it comes
+
+116
+00:10:32,020 --> 00:10:34,340
+to resettable fuses.
+
+117
+00:10:34,340 --> 00:10:40,260
+And yes they are definitely a good fit for the LED strip example we started with and they
+
+118
+00:10:40,260 --> 00:10:45,280
+are also a standard when it comes to many other protection tasks.
+
+119
+00:10:45,280 --> 00:10:52,400
+Of course traditional fuses are a bit more efficient, meaning they produce less power losses.
+
+120
+00:10:52,400 --> 00:10:58,220
+But then again E-fuses which I presented you in a previous video pretty much come with the
+
+121
+00:10:58,220 --> 00:11:02,100
+same low power losses as traditional fuses.
+
+122
+00:11:02,100 --> 00:11:08,080
+And even better they do trip in a way more precise and fast way, since they do not rely
+
+123
+00:11:08,080 --> 00:11:14,080
+on a rising temperature that burns a metal or increases a resistance.
+
+124
+00:11:14,080 --> 00:11:21,220
+But then again such an E-fuse is a bit more complicated to set up, it is more expensive and also not
+
+125
+00:11:21,220 --> 00:11:23,780
+resettable by itself.
+
+126
+00:11:23,780 --> 00:11:29,720
+They can also only be used for limited voltage and current range, while the resettable fuses
+
+127
+00:11:29,720 --> 00:11:36,160
+can handle quite a bit more and traditional fuses are beasts in that regard.
+
+128
+00:11:36,160 --> 00:11:41,520
+What I am trying to say here is that each one of these fuse types is tailored to a specific
+
+129
+00:11:41,520 --> 00:11:47,400
+application and I feel like with this video coming to an end you should now have a very
+
+130
+00:11:47,400 --> 00:11:50,760
+good idea when to use which one.
+
+131
+00:11:50,760 --> 00:11:54,380
+I hope you enjoyed it and learned something new.
+
+132
+00:11:54,380 --> 00:11:59,340
+If so consider supporting me through Patreon to keep the show going.
+
+133
+00:11:59,340 --> 00:12:05,940
+As always don't forget to like, share, subscribe and hit the notification bell.
+
+134
+00:12:05,940 --> 00:12:09,880
+Stay creative and I will see you next time!
+

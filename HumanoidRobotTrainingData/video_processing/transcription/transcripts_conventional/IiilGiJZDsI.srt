@@ -1,0 +1,420 @@
+1
+00:00:00,000 --> 00:00:10,800
+The classes that we are going to talk about in this course are not only used in power amplifiers,
+
+2
+00:00:10,800 --> 00:00:17,280
+but also used in audio amplifier circuits. The first class that we are going to examine is
+
+3
+00:00:17,280 --> 00:00:22,800
+Class A Amplifier. This amplifier circuit must look familiar to you because this configuration
+
+4
+00:00:22,800 --> 00:00:27,240
+is nothing else but the common emitter circuit amplifier. So we already talked about this
+
+5
+00:00:27,240 --> 00:00:34,200
+circuit and we have also seen how to design one. So let's just point out some facts about this configuration.
+
+6
+00:00:35,080 --> 00:00:41,640
+Okay, so Class A Amplifier is a high gain amplifier with high linearity. In case of Class A Amplifier,
+
+7
+00:00:41,640 --> 00:00:50,120
+the conduction angle is 360 degree. As I explained in the previous course, a 360 degree conduction angle
+
+8
+00:00:50,120 --> 00:00:56,520
+means that the amplifier device remains active for the entire time and use complete input signal.
+
+9
+00:00:57,480 --> 00:01:02,920
+As we can see in this image, there is only one active element which is nothing else but the transistor.
+
+10
+00:01:02,920 --> 00:01:09,160
+So the bias of the transistor remains on all the time, right? Due to this never turn off feature,
+
+11
+00:01:09,160 --> 00:01:14,120
+Class A Amplifier provides better high frequency and feedback loop stability.
+
+12
+00:01:15,160 --> 00:01:21,480
+Other than disadvantages, Class A Amplifier is easy to construct with a single device component
+
+13
+00:01:21,480 --> 00:01:30,040
+and minimum parts count. Despite the advantages and high linearity, certainly it has many limitations.
+
+14
+00:01:30,040 --> 00:01:35,800
+Due to continuous conduction nature, the Class A Amplifier introduce high power loss.
+
+15
+00:01:36,520 --> 00:01:44,520
+Also due to high linearity, Class A Amplifier provides distortion and noises. The power supply and the BIOS
+
+16
+00:01:44,520 --> 00:01:51,400
+construction needs careful component selection to avoid unwanted noise and to minimize the distortion.
+
+17
+00:01:52,680 --> 00:01:57,560
+So we mentioned that Class A Amplifier has high power loss, right? This means that it emits
+
+18
+00:01:57,560 --> 00:02:02,280
+heat and requires heat sink space, which sometimes is not available.
+
+19
+00:02:03,240 --> 00:02:10,120
+The efficiency is very poor in Class A Amplifiers. Theoretically, the efficiency varies between 25%
+
+20
+00:02:10,120 --> 00:02:17,880
+to 30% if used with the usual configuration. The efficiency can be improved using inductively coupled
+
+21
+00:02:17,880 --> 00:02:25,800
+configuration but the efficiency in such case is not more than 40% or 50% due to it is only suitable for
+
+22
+00:02:25,800 --> 00:02:33,320
+low signal or low power level amplification purposes. Now that we highlighted some important facts about
+
+23
+00:02:33,320 --> 00:02:35,960
+this class, let's move to Class B.
+
+24
+00:02:35,960 --> 00:02:44,280
+The Class B Amplifier is a bit different from the Class A as you can see here. It is created using two
+
+25
+00:02:44,280 --> 00:02:51,720
+active devices which conduct half of the actual cycle, in other words they conduct 180 degree of the cycle.
+
+26
+00:02:52,840 --> 00:02:59,000
+So two devices provide combined current drive for the load. If the circuit is used to provide audio
+
+27
+00:02:59,000 --> 00:03:05,240
+signal amplification, then the load is nothing else but a speaker, right? You might wonder how are these
+
+28
+00:03:05,240 --> 00:03:11,080
+transistors biased? Well, the bias is provided by the input signal, which means that the input signal
+
+29
+00:03:11,080 --> 00:03:19,080
+has to be higher than 0.6V and also the input signal has to go negative in order to bias the PMP
+
+30
+00:03:19,080 --> 00:03:24,520
+transistor. Don't worry if you don't understand how this circuit works because in the next course we
+
+31
+00:03:24,520 --> 00:03:31,800
+try to simulate some of the classes so that you get a better understanding of how they work. Now let's just
+
+32
+00:03:31,800 --> 00:03:37,240
+concentrate on theory a little bit and don't bother yourself if you don't understand exactly how the
+
+33
+00:03:37,240 --> 00:03:45,320
+circuit works. So this Class B amplifier consists of two active devices which get biased one by one
+
+34
+00:03:45,320 --> 00:03:52,280
+during the positive and negative half cycle of the sinusoidal wave and thus the signal gets pushed or
+
+35
+00:03:52,280 --> 00:03:59,560
+pulled to the amplified level from both positive and negative side. And by combining the result we get
+
+36
+00:03:59,560 --> 00:04:07,400
+complete cycle across the output. Because these two active devices are turned on one after another and
+
+37
+00:04:07,400 --> 00:04:14,040
+because they conduct only half cycle the efficiency gets improved. Compared to the efficiency of a Class A
+
+38
+00:04:14,040 --> 00:04:23,240
+amplifier which is 25 to 30 percent, the Class B amplifier can have an efficiency more than 60 percent. Also,
+
+39
+00:04:23,240 --> 00:04:30,040
+the heat dissipation is minimized in this class providing a low heat sink space. But this Class also
+
+40
+00:04:30,040 --> 00:04:37,320
+have limitations. A very profound limitation of this Class is the crossover distortion. As two devices
+
+41
+00:04:37,320 --> 00:04:43,800
+provides each half of the sinusoidal waves which are combined and joined across the output, there's a
+
+42
+00:04:43,800 --> 00:04:51,240
+mismatch, in other words crossover in the region where two halves are combined. This is because when one
+
+43
+00:04:51,240 --> 00:04:57,320
+device completes the half cycle, the other one needs to provide the same power almost at the same time
+
+44
+00:04:57,320 --> 00:05:04,120
+when other one finishes the job. It is difficult to fix this error in a Class B amplifier as during the
+
+45
+00:05:04,120 --> 00:05:10,680
+active device the other device remains completely inactive. The error provides a distortion in the
+
+46
+00:05:10,680 --> 00:05:17,960
+output signal and due to this limitation it is a major fail for precision audio amplifier applications.
+
+47
+00:05:17,960 --> 00:05:29,480
+An alternate approach to overcome the crossover distortion is to use the AB amplifier. Class AB
+
+48
+00:05:29,480 --> 00:05:36,440
+amplifier uses intermediate conduction angle of both Classes A and B, thus we can see the property of
+
+49
+00:05:36,440 --> 00:05:44,200
+both Class A and Class B amplifier in this AB class of amplifier topology. Same as Class B, it has the same
+
+50
+00:05:44,200 --> 00:05:51,240
+configuration with two active devices which conducts during half of the cycles individually, but each
+
+51
+00:05:51,240 --> 00:05:59,000
+device bias differently so they do not get completely off during the unusable moment or the crossover moment.
+
+52
+00:05:59,960 --> 00:06:06,680
+Each device does not leave the conduction immediately after completing the half of the sinusoidal waveform,
+
+53
+00:06:06,680 --> 00:06:12,840
+instead they conduct a small amount of input on another half cycle. Using this biasing technique,
+
+54
+00:06:12,840 --> 00:06:20,200
+the crossover mismatch during the dead zone is dramatically reduced. But in this configuration,
+
+55
+00:06:20,200 --> 00:06:26,840
+efficiency is reduced as the linearity of the devices is compromised. The efficiency remains more
+
+56
+00:06:26,840 --> 00:06:32,200
+than the efficiency of typical Class A amplifier, but it is less than the Class B amplifier system.
+
+57
+00:06:33,080 --> 00:06:39,800
+Also, the diodes need to be carefully chosen with the exact same rating and need to be placed as close
+
+58
+00:06:39,800 --> 00:06:46,440
+as possible to the output device. In some circuit construction, designers tend to add small value
+
+59
+00:06:46,440 --> 00:06:52,760
+resistors to provide stable quiescent current across the device to minimize the distortion across the output.
+
+60
+00:06:54,840 --> 00:07:03,720
+Apart from the Class A, B and AB amplifier, there is another amplifier called Class C. It's a traditional
+
+61
+00:07:03,720 --> 00:07:07,640
+amplifier which works differently than the other amplifier's classes.
+
+62
+00:07:07,640 --> 00:07:14,600
+Class C amplifier is a tuned amplifier which works in two different operation modes, tuned or untuned.
+
+63
+00:07:15,560 --> 00:07:25,320
+The efficiency of Class C amplifier is much more than the A, B and AB, so a maximum 80% efficiency can be achieved in
+
+64
+00:07:25,320 --> 00:07:33,800
+radio-frequency related operations. The interesting thing here is that Class C amplifier uses less than 180 degree
+
+65
+00:07:33,800 --> 00:07:43,320
+conduction angle. And during the untuned mode, the Class C amplifier unfortunately gives huge distortion across the output.
+
+66
+00:07:44,440 --> 00:07:51,080
+But in typical uses, Class C amplifier gives 60 to 70% efficiency.
+
+67
+00:07:51,080 --> 00:08:01,720
+The output amplitude is a non-linear function of the input, so Class C amplifier is not used for linear amplification.
+
+68
+00:08:01,720 --> 00:08:10,920
+They are generally used in radio-frequency applications including circuits such as oscillators that have a constant output amplitude
+
+69
+00:08:10,920 --> 00:08:16,200
+and modulators where a high-frequency signal is controlled by a low-frequency signal.
+
+70
+00:08:17,240 --> 00:08:24,920
+So, it works fine with a simple sinusoidal waveform, but may have unacceptable distortion with complex waveform,
+
+71
+00:08:24,920 --> 00:08:31,560
+as the Class C amplifier the transistor conducts for less than 180 degree of the input signal.
+
+72
+00:08:31,560 --> 00:08:38,760
+So, on the other hand, Class D amplifiers are way more popular and wider spread as Class C amplifiers.
+
+73
+00:08:38,760 --> 00:08:45,960
+It's one of my favorite in terms of functionality, and we will also try to simulate this circuit in our simulator in the next course.
+
+74
+00:08:46,600 --> 00:08:55,880
+While Class A, B and AB are classified as analog designs, Class D amplifiers are classified as switching designs.
+
+75
+00:08:55,880 --> 00:08:59,080
+As you can see, the circuit is very different from the others.
+
+76
+00:08:59,080 --> 00:09:06,840
+This is just a semi-block diagram of a Class D amplifier, but in the next course we will see a full functional circuit.
+
+77
+00:09:07,880 --> 00:09:13,080
+So, Class D amplifier is a switching amplifier which uses pulse-width modulation.
+
+78
+00:09:13,800 --> 00:09:18,600
+If you are wondering what pulse-width modulation is, I advise you to look that up on the internet
+
+79
+00:09:18,600 --> 00:09:21,240
+because it's a very important technique used in electronics.
+
+80
+00:09:21,800 --> 00:09:29,000
+Basically, pulse-width modulation, or PVM, is a technique for getting analog results with digital
+
+81
+00:09:29,000 --> 00:09:29,720
+signal means.
+
+82
+00:09:29,720 --> 00:09:36,760
+So, digital control is used to create a square wave, which is a signal switched between ON and OFF, right?
+
+83
+00:09:37,240 --> 00:09:45,800
+As the name implies, the width of the square waves are modified in order to vary the amount of current that flows to a device.
+
+84
+00:09:47,000 --> 00:09:55,160
+Alright, so the conduction angle is not a factor in such case as the direct input signal is changed with a variable pulse-width.
+
+85
+00:09:55,880 --> 00:10:02,440
+In this class D amplifier system, the linear gain is not accepted as they work just like a typical switch,
+
+86
+00:10:02,440 --> 00:10:05,720
+which have only two operations, ON or OFF.
+
+87
+00:10:06,840 --> 00:10:13,000
+Before processing the input signal, the analog signal is converted into a pulse stream by various modulation
+
+88
+00:10:13,000 --> 00:10:17,080
+techniques, and then it is applied to the amplifier system.
+
+89
+00:10:17,080 --> 00:10:26,360
+As the pulse's duration is related with the analog signal, it is again reconstructed using low-pass filter across the output.
+
+90
+00:10:27,080 --> 00:10:31,640
+Remember that class D amplifier is the highest power-efficient amplifier class.
+
+91
+00:10:32,200 --> 00:10:37,080
+So, it has smaller heat dissipation, so small heat sink is needed.
+
+92
+00:10:37,080 --> 00:10:43,880
+The circuit requires various switching components like MOSFETs, which has low ON resistance.
+
+93
+00:10:44,600 --> 00:10:50,120
+It is widely used apology in digital audio players or controlling the motors as well.
+
+94
+00:10:50,680 --> 00:10:54,920
+But we should keep in mind that it is not a digital converter.
+
+95
+00:10:54,920 --> 00:10:57,640
+Mix in impeachment.
+
+96
+00:10:57,640 --> 00:11:00,920
+I would say that it is not only about 100% of its product, but there are two- cheer cases still
+
+97
+00:11:01,640 --> 00:11:04,360
+in the past, you can easily control it too!
+
+98
+00:11:05,040 --> 00:11:08,600
+That theieron powders will not occur
+
+99
+00:11:08,600 --> 00:11:12,100
+So over time Pharaoh is verified, that as theず quasi-dرب of the associate and trabal parades of the
+
+100
+00:11:12,100 --> 00:11:13,720
+ature, etmude the other than the level.
+
+101
+00:11:13,720 --> 00:11:15,720
+Then because the definitivian describes a different has to be destroyed.
+
+102
+00:11:15,720 --> 00:11:17,840
+But then they do have a good sense of the pressure of the clairement track track.
+
+103
+00:11:17,840 --> 00:11:18,900
+And while we learn so that the faktor, let's go back and further colonize from everywhere I wouldn't
+
+104
+00:11:18,900 --> 00:11:19,960
+happen.
+
+105
+00:11:19,960 --> 00:11:20,400
+And while they approach this pewter, this thing that pops up
+

@@ -1,0 +1,836 @@
+1
+00:00:00,000 --> 00:00:08,100
+Hey guys! Welcome to Allotronics! I'm Gregory and in this video we are going to take a look on an IF amplifier with variable gain.
+
+2
+00:00:08,240 --> 00:00:13,780
+I designed this IF amplifier for an SSB transceiver where the gain can be controlled.
+
+3
+00:00:13,980 --> 00:00:19,580
+We are going to see it working here on the bench and we're going to go to the whiteboard to understand how it works.
+
+4
+00:00:19,680 --> 00:00:21,540
+Take your coffee and come with me.
+
+5
+00:00:22,720 --> 00:00:26,420
+So guys, here we have the prototype. I'm going to show it later.
+
+6
+00:00:26,420 --> 00:00:31,340
+And I'm using the tracking generator of the spectrum analyzer to plot here the gain.
+
+7
+00:00:31,340 --> 00:00:36,080
+So this trace here over frequency is the gain of the amplifier.
+
+8
+00:00:36,080 --> 00:00:43,460
+And you can see that if I change the control voltage, we can change the gain of the amplifier.
+
+9
+00:00:44,060 --> 00:00:48,020
+If I change the control voltage, we change the gain.
+
+10
+00:00:48,560 --> 00:00:50,780
+Let's go to the maximum gain here.
+
+11
+00:00:51,500 --> 00:00:53,660
+Around 28 dB.
+
+12
+00:00:53,660 --> 00:00:58,580
+And if we go down, we can reduce the gain.
+
+13
+00:00:58,580 --> 00:01:01,380
+Even having a gain lower than 0 dB.
+
+14
+00:01:01,380 --> 00:01:05,780
+So this amplifier can actually work as an attenuator also.
+
+15
+00:01:07,140 --> 00:01:08,000
+Look at this.
+
+16
+00:01:08,500 --> 00:01:14,420
+Here you can see the prototype using my favorite technique, the SPIDER technique, as I called.
+
+17
+00:01:14,420 --> 00:01:19,560
+We have the input signal here on this connector where we connected the tracking generator.
+
+18
+00:01:19,560 --> 00:01:26,560
+And this is the output connector where we are measuring the output power, plotting the gain on the spectrum analyzer.
+
+19
+00:01:26,640 --> 00:01:27,980
+Construction is very simple.
+
+20
+00:01:28,100 --> 00:01:32,260
+Using a single transistor, a BJT transistor, a BC547 here.
+
+21
+00:01:32,260 --> 00:01:39,100
+And what is important for this design is that we are using a diode as a variable resistor to control the gain.
+
+22
+00:01:39,100 --> 00:01:47,400
+This mouse signal resistance of the diode is being used as this mouse signal emitter resistor of the transistor.
+
+23
+00:01:47,400 --> 00:01:58,320
+And we can control this mouse signal resistance, changing the voltage over this 10k resistor here, generating an almost constant current on the diode.
+
+24
+00:01:58,320 --> 00:02:10,640
+And the other important thing of this design is the auto transformer on the output that is converting the fifth ohm impedance of the output to a much higher impedance to the collector of the transistor.
+
+25
+00:02:10,640 --> 00:02:14,200
+So we can get the maximum gain of this stage.
+
+26
+00:02:14,360 --> 00:02:18,540
+And guys, to plot the gain of this stage here, it's very easy.
+
+27
+00:02:18,660 --> 00:02:23,320
+We only need to go to the amplitude menu of the spectrum analyzer.
+
+28
+00:02:23,580 --> 00:02:32,300
+And we need to generate a reference offset of the same value as the power we are using on the tracking generator.
+
+29
+00:02:32,300 --> 00:02:44,460
+So if we are using negative 20 dB as the input power and we are offsetting the line 20 dB, we are actually plotting here the gain of this stage.
+
+30
+00:02:44,620 --> 00:02:48,700
+My cable setup here has 0.8 dB of attenuation.
+
+31
+00:02:49,500 --> 00:02:51,080
+So we can add it there.
+
+32
+00:02:51,220 --> 00:02:56,900
+And we're gonna have a little higher trace here because now we are compensating for the losses of the cable.
+
+33
+00:02:56,900 --> 00:03:03,300
+The assumption that the diode is working with a constant current only works for very high control voltage.
+
+34
+00:03:03,300 --> 00:03:08,740
+If the control voltage is very low, now the voltage drop over the diode becomes significant.
+
+35
+00:03:08,740 --> 00:03:16,740
+And of course, if we have changes in the diode temperature, we are going to have changes on the current and on the gain of this stage.
+
+36
+00:03:16,740 --> 00:03:20,260
+Here I configure this stage for a very low gain, 5 dB.
+
+37
+00:03:20,260 --> 00:03:23,860
+And take a look at what happens if I touch the diode hitting it.
+
+38
+00:03:23,860 --> 00:03:28,580
+Take a look at the gain increasing.
+
+39
+00:03:30,980 --> 00:03:36,580
+So for controlling the gain of this stage with precision, we need a constant current source.
+
+40
+00:03:36,820 --> 00:03:44,100
+Using this, I will have very precise gain control, so I can grab some data of the amplifier to show you in the next video.
+
+41
+00:03:44,100 --> 00:03:47,940
+I wanna plot the third order intercept, the 1 dB compression point.
+
+42
+00:03:47,940 --> 00:03:55,060
+And for this, we need to have very well controlled current to stabilize the gain in a precise level of the measurement.
+
+43
+00:03:55,060 --> 00:03:59,700
+And you can see that I thermocoupled the three transistors of the current source.
+
+44
+00:03:59,700 --> 00:04:02,820
+And this approach here worked very well.
+
+45
+00:04:02,820 --> 00:04:03,940
+Very well. Very nice.
+
+46
+00:04:03,940 --> 00:04:07,060
+So guys, let's understand how the circuit works.
+
+47
+00:04:07,060 --> 00:04:10,500
+And as we can see here, it's a very simple circuit.
+
+48
+00:04:10,500 --> 00:04:14,180
+A single BJT amplifier, common emitter amplifier.
+
+49
+00:04:14,180 --> 00:04:21,700
+But I played some tricks here to have its gain controlled by a voltage or actually by a current.
+
+50
+00:04:21,700 --> 00:04:27,380
+As we are using this mouse signal resistance of the diode as a variable resistor,
+
+51
+00:04:27,380 --> 00:04:30,820
+actually the gain here is controlled by current.
+
+52
+00:04:30,820 --> 00:04:32,020
+Very interesting.
+
+53
+00:04:32,020 --> 00:04:38,740
+Because the resistance, the mouse signal resistance of the diode is proportional to current.
+
+54
+00:04:38,740 --> 00:04:40,260
+Actually, it is inverted.
+
+55
+00:04:40,260 --> 00:04:45,060
+As the current increases, the mouse signal resistance decreases.
+
+56
+00:04:45,060 --> 00:04:47,380
+We see that we have a very simple circuit.
+
+57
+00:04:47,380 --> 00:04:54,260
+We have the 5th ohm output here being transformed to a higher impedance to the collector.
+
+58
+00:04:54,260 --> 00:05:00,100
+We are going to understand why I did this and how the turn ratio of this auto transformer was
+
+59
+00:05:00,100 --> 00:05:00,660
+chosen.
+
+60
+00:05:00,660 --> 00:05:08,180
+And we have common biasing of the transistor here with a voltage divider generating a constant voltage
+
+61
+00:05:08,180 --> 00:05:13,060
+over the base, generating an almost constant voltage on the emitter.
+
+62
+00:05:13,060 --> 00:05:19,140
+So we can control the current of the amplifier using an emitter resistor.
+
+63
+00:05:19,140 --> 00:05:26,740
+This resistance here is controlling the stage current that I'm using here, 12 milliamps.
+
+64
+00:05:26,740 --> 00:05:30,740
+So we know that here we have 12 milliamps.
+
+65
+00:05:30,740 --> 00:05:32,900
+And why 12 milliamps guys?
+
+66
+00:05:32,900 --> 00:05:39,940
+This comes a little more from experience because I have developed a lot of amplifiers like this one.
+
+67
+00:05:39,940 --> 00:05:46,340
+And I know really by experience by going to the bench that it works very very well with 12 milliamps.
+
+68
+00:05:46,340 --> 00:05:53,620
+Actually something between 10 and 12 milliamps works very well for this kind of transistor here.
+
+69
+00:05:53,620 --> 00:05:58,900
+And guys, before we proceed, do you know why a transistor amplifier like this one amplifies?
+
+70
+00:05:59,540 --> 00:06:02,260
+It's actually very very easy to understand.
+
+71
+00:06:02,260 --> 00:06:08,580
+We know that by the working principle, the working behavior of the transistor, the BJT transistor,
+
+72
+00:06:08,580 --> 00:06:14,420
+is to have a very similar current on the emitter and on the collector.
+
+73
+00:06:14,420 --> 00:06:20,020
+We know that any current that flows into the collector will flow into the emitter.
+
+74
+00:06:20,020 --> 00:06:24,580
+So any current entering the collector will go out on the emitter.
+
+75
+00:06:24,580 --> 00:06:27,380
+And we have very little current on the base.
+
+76
+00:06:27,380 --> 00:06:35,140
+So we can assume here that any current flowing here on the emitter will be flowing here on the collector.
+
+77
+00:06:35,140 --> 00:06:41,700
+And knowing this first order behavior, it's very easy to see that this setup here will amplify
+
+78
+00:06:41,700 --> 00:06:47,060
+if we place different impedance on the emitter and on the collector.
+
+79
+00:06:47,060 --> 00:06:50,020
+Because the same current will flow on both.
+
+80
+00:06:50,020 --> 00:06:54,740
+So if we have here 39 ohms, let's say we don't have this inductor here.
+
+81
+00:06:54,740 --> 00:06:57,380
+We have here 39 ohms on the emitter.
+
+82
+00:06:57,380 --> 00:07:05,060
+Any voltage fluctuation here will generate a current fluctuation on this resistor here.
+
+83
+00:07:05,060 --> 00:07:08,660
+And this current here will flow on the collector.
+
+84
+00:07:08,660 --> 00:07:16,420
+So if I place a 10 times higher resistor here, I'm gonna have 10 times higher voltage here.
+
+85
+00:07:16,420 --> 00:07:20,900
+Because the resistor here is transforming the current on voltage.
+
+86
+00:07:20,900 --> 00:07:24,740
+And we have the same current on the collector than in the emitter.
+
+87
+00:07:24,740 --> 00:07:31,940
+So it becomes very clear that an approximation for the gain of any common emitter amplifier
+
+88
+00:07:31,940 --> 00:07:37,620
+is the ratio between the collector impedance and the emitter impedance.
+
+89
+00:07:37,620 --> 00:07:45,460
+The emitter impedance will set the current flowing here by the fluctuation in voltage on the base.
+
+90
+00:07:45,460 --> 00:07:49,140
+Imagine the signal changing here the voltage of the base.
+
+91
+00:07:49,140 --> 00:07:55,300
+Changing in voltage of the base will appear here as a changing in voltage of the emitter.
+
+92
+00:07:55,300 --> 00:07:56,100
+Okay?
+
+93
+00:07:56,100 --> 00:08:02,420
+Because we have a constant voltage drop, this fluctuation here of voltage will generate
+
+94
+00:08:02,420 --> 00:08:07,140
+a current fluctuation here on the impedance of the emitter.
+
+95
+00:08:07,140 --> 00:08:11,620
+And the same current fluctuation will happen here on the collector.
+
+96
+00:08:11,620 --> 00:08:18,740
+So if the impedance are different, of course the voltage here can be higher than the input voltage.
+
+97
+00:08:18,740 --> 00:08:19,380
+Very nice.
+
+98
+00:08:19,940 --> 00:08:23,860
+Understanding this behavior, it becomes very clear what I did here.
+
+99
+00:08:23,860 --> 00:08:28,900
+I first placed an inductor in series with this resistor here.
+
+100
+00:08:28,900 --> 00:08:36,180
+So now any AC fluctuation of voltage will see a very high impedance here.
+
+101
+00:08:36,180 --> 00:08:38,260
+Much more than 10 kilo ohms.
+
+102
+00:08:38,260 --> 00:08:43,460
+Because this inductor here for AC will have very high impedance.
+
+103
+00:08:43,460 --> 00:08:46,500
+So this transistor will not work as an amplifier.
+
+104
+00:08:46,500 --> 00:08:52,340
+Because any AC voltage here will not generate fluctuations of current here,
+
+105
+00:08:52,340 --> 00:08:54,580
+because the impedance is very high.
+
+106
+00:08:54,580 --> 00:09:00,580
+So we don't have any fluctuation of current here on the collector and we have no amplification.
+
+107
+00:09:00,580 --> 00:09:08,260
+But now we can AC couple a diode here only in the AC path using a capacitor here.
+
+108
+00:09:08,260 --> 00:09:13,300
+So voltage fluctuation on the base generates voltage fluctuation on the emitter.
+
+109
+00:09:13,300 --> 00:09:21,540
+And now this voltage fluctuation can generate an AC current flowing through the diode.
+
+110
+00:09:21,540 --> 00:09:22,660
+Very, very nice.
+
+111
+00:09:22,660 --> 00:09:28,820
+And remember, as we are biasing this diode here with a constant current,
+
+112
+00:09:28,820 --> 00:09:33,460
+I gain control, IGC, I gain control.
+
+113
+00:09:33,460 --> 00:09:39,060
+This diode here is being biased, so it behaves like a resistor.
+
+114
+00:09:39,060 --> 00:09:44,900
+The small signal resistance of the diode, we're gonna call it here, AirD.
+
+115
+00:09:44,900 --> 00:09:47,060
+Small signal resistance of the diode.
+
+116
+00:09:47,060 --> 00:09:51,060
+Any fluctuation here in the base generates fluctuation in the emitter,
+
+117
+00:09:51,060 --> 00:09:56,340
+and generates AC current on the small signal resistance of the diode.
+
+118
+00:09:56,340 --> 00:10:01,060
+And this fluctuation of current here is reflected back to the collector,
+
+119
+00:10:01,060 --> 00:10:03,860
+and generates a signal here on the collector.
+
+120
+00:10:03,860 --> 00:10:11,540
+So using this arrangement here, the gain of the stage now is controlled by the resistance of the diode,
+
+121
+00:10:11,540 --> 00:10:17,700
+that is controlled by the current flowing in the diode.
+
+122
+00:10:17,700 --> 00:10:19,700
+The DC current flowing in the diode.
+
+123
+00:10:19,700 --> 00:10:25,700
+So changing the voltage here, gain control, we change the biasing current of the diode,
+
+124
+00:10:25,700 --> 00:10:29,700
+and we change the gain of the stage.
+
+125
+00:10:29,700 --> 00:10:36,180
+Before we understand the auto transformer here, let's think we have a constant resistance here.
+
+126
+00:10:36,180 --> 00:10:41,460
+It becomes very easy to see that the collector current pumped to the resistor here,
+
+127
+00:10:41,460 --> 00:10:44,180
+will generate a voltage here on the collector.
+
+128
+00:10:44,180 --> 00:10:50,420
+So it's important to see that here is the impedance that matters to the collector.
+
+129
+00:10:50,420 --> 00:10:55,540
+The impedance at this node here is what matters for the collector of the transistor.
+
+130
+00:10:55,540 --> 00:11:04,100
+The gain of the stage here will be proportional to this impedance over the small signal resistance of the diode.
+
+131
+00:11:04,100 --> 00:11:11,860
+So the gain of the stage will be approximated by a constant, a non-ideality constant here,
+
+132
+00:11:11,860 --> 00:11:18,420
+times the impedance of the collector over the small signal resistance of the diode.
+
+133
+00:11:18,420 --> 00:11:22,820
+That is a value proportional to the IGC.
+
+134
+00:11:22,820 --> 00:11:28,100
+If we change the current, we change the small signal resistance and we change the gain of the stage.
+
+135
+00:11:28,100 --> 00:11:32,820
+This is the gain from the base to the collector, from a signal applied here on the base,
+
+136
+00:11:32,820 --> 00:11:35,380
+to this node here of the transistor.
+
+137
+00:11:35,380 --> 00:11:40,100
+Now let's understand why I placed here an auto transformer.
+
+138
+00:11:40,100 --> 00:11:48,740
+We can see that this capacitor here is shorting this node, so this node here actually is an AC ground, okay?
+
+139
+00:11:49,700 --> 00:11:57,780
+And we have less turns here on the upper winding of the auto transformer than here on the bottom winding of the auto transformer.
+
+140
+00:11:57,780 --> 00:12:09,140
+So as we're gonna connect here in that side a load that has 5th ON, we have the 5th ON connected to the lower part of the auto transformer.
+
+141
+00:12:09,140 --> 00:12:11,780
+We call this the cold side.
+
+142
+00:12:11,780 --> 00:12:15,300
+Cold side because it is connected to the GND, to the ground.
+
+143
+00:12:15,300 --> 00:12:18,420
+Here on the collector we have a higher impedance.
+
+144
+00:12:18,420 --> 00:12:23,140
+So here on the collector we have a higher impedance than 5th ON.
+
+145
+00:12:23,140 --> 00:12:24,980
+And this will make sense now.
+
+146
+00:12:24,980 --> 00:12:30,980
+To bias the transistor to 12mA, I choose here to have 0.5V here,
+
+147
+00:12:30,980 --> 00:12:34,980
+500mV of drop from the 8V supply here,
+
+148
+00:12:34,980 --> 00:12:36,980
+and also to have here 0.5V.
+
+149
+00:12:36,980 --> 00:12:40,980
+So the voltage available here on the collector is 7V.
+
+150
+00:12:40,980 --> 00:12:47,140
+This voltage here is 7.5V.
+
+151
+00:12:47,140 --> 00:12:53,060
+The biasing voltage is the average of voltage, the DC level.
+
+152
+00:12:53,060 --> 00:12:57,780
+We have 7.5V here on the collector, 0.5V here on the emitter.
+
+153
+00:12:57,780 --> 00:13:02,100
+So we see that the voltage excursion here can be around 7V.
+
+154
+00:13:02,100 --> 00:13:07,380
+The transistor here can have its collector changed by 7V.
+
+155
+00:13:07,380 --> 00:13:11,460
+And we know that the biasing current is 12mA.
+
+156
+00:13:11,460 --> 00:13:15,940
+And for linearity reasons, I don't want the current to go to 0.
+
+157
+00:13:15,940 --> 00:13:22,420
+I want at least 2mA of current always flowing on the transistor.
+
+158
+00:13:22,420 --> 00:13:27,860
+So we can have 7V of variation and 10mA of variation.
+
+159
+00:13:27,860 --> 00:13:34,180
+Because from 12, the minimum current possible here can be only 2mA.
+
+160
+00:13:34,180 --> 00:13:38,420
+And of course guys, understanding the maximum current and voltage
+
+161
+00:13:38,420 --> 00:13:41,380
+we can have here on the collector of the transistor,
+
+162
+00:13:41,380 --> 00:13:46,980
+we can calculate the ideal load impedance that the collector needs to see.
+
+163
+00:13:46,980 --> 00:13:50,340
+And of course, it is the voltage over the current.
+
+164
+00:13:50,340 --> 00:13:58,100
+So the ideal Z collector will be 7V over 10mA.
+
+165
+00:13:58,100 --> 00:14:00,980
+And of course, this is 700 ohms.
+
+166
+00:14:00,980 --> 00:14:02,180
+Very interesting guys.
+
+167
+00:14:02,180 --> 00:14:06,500
+In the case of connecting 5Ω directly to the collector of the transistor,
+
+168
+00:14:06,500 --> 00:14:09,780
+we would be saturating the transistor much earlier.
+
+169
+00:14:09,780 --> 00:14:13,620
+Because the biasing condition will not have current enough
+
+170
+00:14:13,620 --> 00:14:18,260
+to generate the maximum possible voltage drop here on the collector,
+
+171
+00:14:18,260 --> 00:14:20,500
+to have the maximum output power.
+
+172
+00:14:20,500 --> 00:14:21,380
+Very interesting.
+
+173
+00:14:21,380 --> 00:14:25,060
+So using the proper impedance here on the collector,
+
+174
+00:14:25,060 --> 00:14:28,260
+we're gonna have the maximum power on the output,
+
+175
+00:14:28,260 --> 00:14:35,700
+because we are using all the current and all the voltage available on the biasing condition.
+
+176
+00:14:35,700 --> 00:14:37,220
+Very, very, very interesting.
+
+177
+00:14:37,220 --> 00:14:41,540
+And to have a transformation from 5Ω to 700Ω,
+
+178
+00:14:41,540 --> 00:14:46,660
+I choose here a ratio of 3 and here 7.
+
+179
+00:14:46,660 --> 00:14:49,060
+I'm not reaching exactly 700.
+
+180
+00:14:49,060 --> 00:14:53,300
+Probably we could use here 8, an N of 8.
+
+181
+00:14:53,300 --> 00:14:54,820
+But I use it 7.
+
+182
+00:14:54,820 --> 00:14:57,140
+All the other components here guys,
+
+183
+00:14:57,140 --> 00:15:01,460
+this voltage divider here is setting a constant voltage on the base
+
+184
+00:15:01,460 --> 00:15:04,100
+to have the constant voltage here on the emitter,
+
+185
+00:15:04,100 --> 00:15:06,660
+the average voltage, the biasing voltage.
+
+186
+00:15:06,660 --> 00:15:12,340
+We have this resistor here setting the 12 mA biasing current,
+
+187
+00:15:12,340 --> 00:15:18,500
+the inductor is isolating the resistor here from AC fluctuations,
+
+188
+00:15:18,500 --> 00:15:23,140
+and in this way we can deviate all the fluctuations of current in the emitter
+
+189
+00:15:23,140 --> 00:15:27,780
+directly to this mouse signal resistance of the diode here.
+
+190
+00:15:27,780 --> 00:15:28,900
+Very, very interesting.
+
+191
+00:15:28,900 --> 00:15:31,620
+And the autotransformer is transforming the impedance,
+
+192
+00:15:31,620 --> 00:15:34,660
+the low impedance output to a higher impedance here,
+
+193
+00:15:34,660 --> 00:15:38,260
+a proper impedance for the functioning of the transistor.
+
+194
+00:15:38,260 --> 00:15:41,700
+This voltage drop here, this resistance here guys,
+
+195
+00:15:41,700 --> 00:15:48,020
+the 39Ω resistor is only here to help a little more stabilizing the stage.
+
+196
+00:15:48,020 --> 00:15:54,580
+Because think with me, if the temperature here changes and the transistor tries to sink more current,
+
+197
+00:15:54,580 --> 00:16:00,260
+the voltage here will drop and the biasing voltage will also drop to compensate a little.
+
+198
+00:16:00,260 --> 00:16:10,260
+So we use this technique where we get the voltage from the biasing divider from a voltage drop here of a series resistance.
+
+199
+00:16:10,260 --> 00:16:14,260
+This needs to be a very low resistor to have very low voltage drop here,
+
+200
+00:16:14,260 --> 00:16:21,140
+so we are not losing power here, available power of the signal, of the output signal.
+
+201
+00:16:21,140 --> 00:16:28,180
+And here I use a 39 because I was already using 39 here on the emitter, so I use the same value here.
+
+202
+00:16:28,180 --> 00:16:37,700
+And this resistor also works as a filter, isolating a little fluctuations of voltage noise from the power supply into the stage,
+
+203
+00:16:37,700 --> 00:16:43,140
+and also fluctuations from this stage to the power supply.
+
+204
+00:16:43,140 --> 00:16:47,860
+So if we have a lot of these stages in cascade, as an example,
+
+205
+00:16:47,860 --> 00:16:55,060
+it's very nice to have this air-sea filter here to isolate a little more all these stages.
+
+206
+00:16:55,060 --> 00:16:57,940
+Well guys, thank you for watching the video, I hope you like it.
+
+207
+00:16:57,940 --> 00:17:00,740
+If so, subscribe to the channel, give it a thumbs up.
+
+208
+00:17:00,740 --> 00:17:05,860
+And remember you can support the channel becoming a Patreon, link here on the description.
+
+209
+00:17:05,860 --> 00:17:09,060
+I see you in the next video of Aulatronics.
+

@@ -1,0 +1,22 @@
+Potevi fissarlo meglio quel robot....
+
+https://youtu.be/L7J_9OSxGvA?t=53 : The axes of joints 4, 5, and 6, do not intersect in one point in YuMi. So how is the WCP defined then? Also how is the "arm angle" defined? We now have four of these single-arm YuMi cobots in our teaching lab (in addition to traditional ABB robots) and I don't know how to explain to my students the exact definition of the arm angle. Also, sometimes, during a linear motion, the arm angle remains constant, sometimes it changes. Is this a numerical problem with the inverse kinematics procedure or the robot is trying to avoid a singularity?
+
+Another, more nerdy, reason that the ABB is able to avoid singularities during operation is because of the use of quaternion pose mathematics.  Quaternions use a 4D space and won't have singularities.  That's why you get singularity errors during manual movements, but not during operation.  Most other robots user the homogeneous transform matrices which suffer from singularities, mathematically speaking.
+
+How much is it
+
+let's try Tinder to avoid singularity... maybe easier :D
+
+I am very disappointed at ABB.  I need to know how to wire the safety circuit on robot controller irc5. I read many manuals, searched on the web, watched videos on youtube.  But I got nothing useful. F..k. Why tell us the garbage here? And ABB put lots of videos but none of them tells me the technical details. None of them tells me how to fix the problem.  F..king stufid. On its manual about local IO module 1030, there is even no wiring diagram. A manual for electrical device never shows its electrical circuit. Then how can I use it? So f..king stufid.
+
+You are mixing the concepts of so-called representational singularities, inherent to any three-parameter representation of orientation in space, such as Euler angles, and robot singularities. The use of quaternions instead of Euler angles does not solve your problems with robot singularities.
+
+@ilianbonev5171  I should clarify, the mathematics of quaternions are free from singularities.  The physical robot has singularities, that won't change.
+
+Hi George,We are really sorry that you could not find the circuit diagram. Please have a look at this document, you will be able to find the diagrams in here, https://search.abb.com/library/Download.aspx?DocumentID=3HAC024480-011&LanguageCode=en&DocumentPartId=0&Action=Launch) Incase, you need further assistance, please contact our team at global-cobot-team@abb.com
+
+@ABBRobotics  I clicked the link. A sign-in page pops up. Why sign in? Why not to directly link to some pdf manual?
+
+​@George, If you already have a robot that you need to register it so that you can access the ABB Library, if you don't have access to it, please check within your company, somebody in your company might have already registered the robot and you can take details from them. In other case, please reach out to us through, global-cobot-team@abb.com
+
