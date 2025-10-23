@@ -1,0 +1,281 @@
+{
+  "video_id": "dmPIydL0lyM",
+  "title": "dmPIydL0lyM",
+  "url": "https://www.youtube.com/watch?v=dmPIydL0lyM",
+  "created_at": "2025-09-17T12:00:22.951284+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction to Band Stop Filter",
+      "description": "Definition and importance of band stop filters",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 13
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.0,
+          "end_s": 81.96
+        }
+      ],
+      "coverage_text": "Hey friends, welcome to the YouTube channel all about electronics.\nSo, in this video, we will learn about the bandpass and the penstop filter.\nSo in the last couple of videos, we had seen that how to design the active as well as the\npassive low pass and the high pass filter using the resistor and the capacitor.\nAnd we had seen that this low pass filter passes the low frequency components from the\ninput signal while the high pass filter passes the high frequency components from the input\nsignal.\nBut sometimes in some applications, we are only interested in the particular band of frequencies.\nSo, for such applications, we can use this bandpass filter.\nSo as you can see, this bandpass filter passes only certain band of frequencies.\nAnd it rejects all the frequencies which is outside of this band.\nSo now there are many ways in which we can design this bandpass filter.\nAnd one of the way is to design this bandpass filter using the series RLC circuit.\nAnd particularly, when you take the output across this resistor, then the response of this circuit",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Finding the Cutoff Frequency",
+      "description": "Calculating the cutoff frequency for high-pass and low-pass filters",
+      "coverage_ranges": [
+        {
+          "start_idx": 14,
+          "end_idx": 44
+        }
+      ],
+      "coverage_segments": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "coverage_times": [
+        {
+          "start_s": 81.96,
+          "end_s": 205.88
+        }
+      ],
+      "coverage_text": "will be very similar to the response of this bandpass filter.\nAnd we have already seen this in the earlier videos of a series resonance in the RLC circuit.\nSo for more information, you can check that video.\nBut in this video, we will learn how to design this bandpass filter just by using this high\npass and the low pass filter.\nSo, just by cascading this high pass filter and the low pass filter, we can design this\nbandpass filter.\nSo now let's understand how this combination will act as a bandpass filter.\nSo let's say, we have one low pass filter which is having a cutoff frequency let's say\nFC1.\nAnd let's say we have one high pass filter which is having a cutoff frequency of FC2.\nNow whenever we cascade this high pass and the low pass filter, then we will get an overlapping\nregion between the individual responses of this high pass and the low pass filter.\nAnd this overlapping region will act as a bandpass filter.\nSo in this way, just by cascading this high pass and the low pass filter, we can design\nthis bandpass filter.\nSo now if you see the frequency response of this bandpass filter, you will immediately notice\nthat this filter will have two cutoff frequencies.\nThe one is known as the lower cutoff frequency and the other frequency is known as the higher\ncutoff frequency.\nAnd beyond these cutoff frequencies, the roll-off will be at the rate of 20 dB per decade.\nAnd that is particularly true when you design this bandpass filter just by cascading the first\norder high pass and the low pass filter.\nNow, the frequency difference between this cutoff frequency is known as the bandwidth of\nthis bandpass filter.\nSo now let's see some of the parameters which defines this bandpass filter.\nSo as I said earlier, the difference between the two cutoff frequencies is known as the\nbandwidth of this filter.\nAnd the geometric mean of these two cutoff frequencies is known as the center frequency of this bandpass\nfilter.\nSo, for this frequency response, the center frequency will be somewhere around here.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Cutoff Frequency of High-Pass Filter",
+      "description": "Calculating the cutoff frequency for a specific resistor and capacitor value",
+      "coverage_ranges": [
+        {
+          "start_idx": 45,
+          "end_idx": 54
+        }
+      ],
+      "coverage_segments": [
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "coverage_times": [
+        {
+          "start_s": 205.88,
+          "end_s": 251.18
+        }
+      ],
+      "coverage_text": "So that will be the center frequency of this bandpass filter.\nAnd if we see the phase response of this bandpass filter, then the phase response will look\nlike this.\nSo as you can see, at zero frequency, the output will lead the input by a 90 degree.\nAnd as we move toward the center frequency, the phase difference will gradually reduce.\nSo now, when we start moving away from this center frequency, then the output will start\nlagging the input signal.\nAnd at f is equal to infinity, the output will lag the input by a 90 degree.\nAlright, so now as we have seen the phase and the frequency response of this bandpass filter,\nso let's take one example based on this bandpass filter.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Cutoff Frequency of Low-Pass Filter",
+      "description": "Calculating the cutoff frequency for a specific resistor and capacitor value",
+      "coverage_ranges": [
+        {
+          "start_idx": 55,
+          "end_idx": 64
+        }
+      ],
+      "coverage_segments": [
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "coverage_times": [
+        {
+          "start_s": 251.18,
+          "end_s": 293.0
+        }
+      ],
+      "coverage_text": "So in this example, we have given this filter and we have been asked to find the bandwidth of\nthis given filter.\nSo as you can see in this example, the high pass filter and the low pass filter are cascaded.\nAnd using this cascade connection, the bandpass filter has been designed.\nSo, to find the bandwidth of this filter, first of all let's find the cutoff frequency of\nthis individual high pass and the low pass filter.\nSo, let's first of all find the cutoff frequency of this high pass filter.\nAnd let's assume that the cutoff frequency of this high pass filter is fc1 and the cutoff\nfrequency of this low pass filter is fc2.\nNow, we know that the cutoff frequency of this high pass filter can be given by the equation",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Stop Band Calculation",
+      "description": "Determining the stop band for the high-pass and low-pass filters",
+      "coverage_ranges": [
+        {
+          "start_idx": 65,
+          "end_idx": 75
+        }
+      ],
+      "coverage_segments": [
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75
+      ],
+      "coverage_times": [
+        {
+          "start_s": 293.0,
+          "end_s": 349.06
+        }
+      ],
+      "coverage_text": "1dr by 2π into RC.\nSo now, if we put the value of this resistor and capacitor, then we will find the cutoff frequency\nof this low pass filter.\nSo, let's see, the cutoff frequency of this low pass filter will be around 10.61 kHz.\nSo in this way, we have found this cutoff frequency of this high pass filter as 10.61 kHz.\nSo similarly, now let's find the cutoff frequency of this low pass filter.\nSo again, the cutoff frequency of this low pass filter can be given by the equation 1dr by\n2π into RC.\nAnd if we put the value of this resistor and capacitor, then the cutoff frequency of this\nlow pass filter will be 106.1 kHz.\nSo in this way, we have found the cutoff frequency of this low pass filter as 106.1 kHz.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T6",
+      "title": "Filter Order",
+      "description": "Classifying the filter as second-order based on its transfer function",
+      "coverage_ranges": [
+        {
+          "start_idx": 76,
+          "end_idx": 87
+        }
+      ],
+      "coverage_segments": [
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87
+      ],
+      "coverage_times": [
+        {
+          "start_s": 349.06,
+          "end_s": 418.06
+        }
+      ],
+      "coverage_text": "So now, the bandwidth of this band pass filter can be defined as the difference between these\ntwo cutoff frequencies.\nSo the bandwidth of this band pass filter will be FC2-FC1 that is equal to 106.1-10.61 kHz.\nAnd that is nothing but 95.5 kHz.\nSo roughly we can say that this band pass filter having a bandwidth of 100 kHz.\nSo in this example, now if you see here, we have designed this band pass filter just by\ncascading this passive, high pass and the low pass filter.\nAnd as this filter is designed using this passive components, so the actual values of this cutoff\nfrequencies will be slightly different from the designed values.\nAnd the reason is that the input impedance of this high pass filter will affect the cutoff\nfrequency of this low pass filter.\nSo, in this way, because of this cascade connection of this passive filters, the design frequencies",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T7",
+      "title": "Conclusion and Next Steps",
+      "description": "Summarizing the video and introducing higher-order filters",
+      "coverage_ranges": [
+        {
+          "start_idx": 88,
+          "end_idx": 103
+        }
+      ],
+      "coverage_segments": [
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103
+      ],
+      "coverage_times": [
+        {
+          "start_s": 418.06,
+          "end_s": 480.08000000000004
+        }
+      ],
+      "coverage_text": "and the actual cutoff frequencies will be slightly different.\nAnd to avoid that, we can isolate the two stages by using the buffer.\nSo, in the last video, we have already seen that, by using this op-amp as a buffer, we\ncan isolate the different stages of this filter.\nSo instead of using this passive low pass and the high pass filter, we can use this active\nlow pass and the high pass filter.\nAnd just by cascading these two active low pass and the high pass filter, we can design\nthis band pass filter.\nAnd by using this op-amp as a buffer, we can isolate the two different stages as well.\nAnd suppose if we want the gain from this active filter, then we can configure this op-amp either\nin a inverting or a non-inverting configuration.\nSo in this way, not only we can isolate the two different stages, but we can also achieve\nthe gain out of this filter.\nSo now like we have seen this band pass filter, let's see one more filter whose response is\nexactly opposite to that of this band pass filter.\nSo this filter is known as the band stop filter or a band reject filter.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the high-level table of contents for the video about the [S00137] filter:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"\",\n    \"coverage\": [{\"start_idx\": 0, \"end_idx\": 2}]\n  },\n  {\n    \"title\": \"Finding the Cutoff Frequency\",\n    \"description\": \"\",\n    \"coverage\": [{\"start_idx\": 3, \"end_idx\": 7}]\n  },\n  {\n    \"title\": \"High Pass Filter Cutoff Frequency\",\n    \"description\": \"\",\n    \"coverage\": [{\"start_idx\": 8, \"end_idx\": 15}]\n  },\n  {\n    \"title\": \"Low Pass Filter Cutoff Frequency\",\n    \"description\": \"\",\n    \"coverage\": [{\"start_idx\": 16, \"end_idx\": 22}]\n  },\n  {\n    \"title\": \"Stop Band Calculation\",\n    \"description\": \"\",\n    \"coverage\": [{\"start_idx\": 23, \"end_idx\": 28}]\n  },\n  {\n    \"title\": \"Filter Order\",\n    \"description\": \"\",\n    \"coverage\": [{\"start_idx\": 29, \"end_idx\": 35}]\n  },\n  {\n    \"title\": \"Conclusion and Next Steps\",\n    \"description\": \"\",\n    \"coverage\": [{\"start_idx\": 36, \"end_idx\": 50}]\n  }\n]\n```",
+      "Here is the high-level table of contents for the video:\n\n```\n[\n  {\n    \"title\": \"Introduction to Band Stop Filter\",\n    \"description\": null,\n    \"coverage\": [{\"start_idx\": S00137, \"end_idx\": S00138}]\n  },\n  {\n    \"title\": \"Finding Cutoff Frequency of High Pass Filter\",\n    \"description\": \"Calculating cutoff frequency FC1\",\n    \"coverage\": [{\"start_idx\": S00139, \"end_idx\": S00144}]\n  },\n  {\n    \"title\": \"Cutoff Frequency of High Pass Filter\",\n    \"description\": \"FC1 = 1.59kHz\",\n    \"coverage\": [{\"start_idx\": S00145, \"end_idx\": S00151}]\n  },\n  {\n    \"title\": \"Finding Cutoff Frequency of Low Pass Filter\",\n    \"description\": \"Calculating cutoff frequency FC2\",\n    \"coverage\": [{\"start_idx\": S00146, \"end_idx\": S00150}]\n  },\n  {\n    \"title\": \"Cutoff Frequency of Low Pass Filter\",\n    \"description\": \"FC2 = 994Hz\",\n    \"coverage\": [{\"start_idx\": S00151, \"end_idx\": S00157}]\n  },\n  {\n    \"title\": \"Stop Band Calculation\",\n    \"description\": \"Band stop frequency range: 596Hz\",\n    \"coverage\": [{\"start_idx\": S00158, \"end_idx\": S00162}]\n  },\n  {\n    \"title\": \"Second-Order Filters\",\n    \"description\": \"High pass and low pass filters are second-order filters\",\n    \"coverage\": [{\"start_idx\": S00163, \"end_idx\": S00167}]\n  },\n  {\n    \"title\": \"Conclusion and Future Directions\",\n    \"description\": null,\n    \"coverage\": [{\"start_idx\": S00168, \"end_idx\": S00172}]\n  }\n]\n```",
+      "Here is the high-level table of contents for this video:\n\n```\n[\n  {\n    \"title\": \"Introduction to Band Stop Filter\",\n    \"description\": \"Definition and importance of band stop filters\",\n    \"coverage\": [{\"start_idx\": 0, \"end_idx\": 13}]\n  },\n  {\n    \"title\": \"Finding the Cutoff Frequency\",\n    \"description\": \"Calculating the cutoff frequency for high-pass and low-pass filters\",\n    \"coverage\": [{\"start_idx\": 14, \"end_idx\": 44}]\n  },\n  {\n    \"title\": \"Cutoff Frequency of High-Pass Filter\",\n    \"description\": \"Calculating the cutoff frequency for a specific resistor and capacitor value\",\n    \"coverage\": [{\"start_idx\": 45, \"end_idx\": 54}]\n  },\n  {\n    \"title\": \"Cutoff Frequency of Low-Pass Filter\",\n    \"description\": \"Calculating the cutoff frequency for a specific resistor and capacitor value\",\n    \"coverage\": [{\"start_idx\": 55, \"end_idx\": 64}]\n  },\n  {\n    \"title\": \"Stop Band Calculation\",\n    \"description\": \"Determining the stop band for the high-pass and low-pass filters\",\n    \"coverage\": [{\"start_idx\": 65, \"end_idx\": 75}]\n  },\n  {\n    \"title\": \"Filter Order\",\n    \"description\": \"Classifying the filter as second-order based on its transfer function\",\n    \"coverage\": [{\"start_idx\": 76, \"end_idx\": 87}]\n  },\n  {\n    \"title\": \"Conclusion and Next Steps\",\n    \"description\": \"Summarizing the video and introducing higher-order filters\",\n    \"coverage\": [{\"start_idx\": 88, \"end_idx\": 103}]\n  }\n]\n```"
+    ]
+  }
+}

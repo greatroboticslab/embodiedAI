@@ -1,0 +1,160 @@
+{
+  "video_id": "DQOt-m7rg80",
+  "title": "DQOt-m7rg80",
+  "url": "https://www.youtube.com/watch?v=DQOt-m7rg80",
+  "created_at": "2025-10-09T17:30:59.200969+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction to Droning",
+      "description": "The host introduces themselves and shares their experience with learning about droning.",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 3
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.0,
+          "end_s": 47.8
+        }
+      ],
+      "coverage_text": "Hello everybody out there in newbie land like I am just learning everything about droning\nI guess you would call it got my wizard here and I've been recently wanting to move away from\nswitch arming on a single switch to I think stinger swarm is a one of the youtubers that I noticed\nthat was arming on multiple switches and so I just wanted to share with everyone how to actually set",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Setting Up Aux Channels in the Transmitter",
+      "description": "The host explains how to set up aux channels in the transmitter for double switch arming.",
+      "coverage_ranges": [
+        {
+          "start_idx": 4,
+          "end_idx": 29
+        }
+      ],
+      "coverage_segments": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "coverage_times": [
+        {
+          "start_s": 47.8,
+          "end_s": 260.4
+        }
+      ],
+      "coverage_text": "that up so first of all in your transmitter you need to go in here and change your aux channels\nso on this one I actually have the upgraded firmware so it can do up to 10 channels but you may only\nhave the six channels so your first four channels are these channels you know your throttle your yaw\nand your pitch in your roll that's channel one through four so you really only have two other\nchannels to mess with on stock firmware and I only have a six channel receiver in here although I am\nusing it with iBus so I can use all 10 channels anyways I believe these are the defaults I tried\nto set this back to default because I kind of already went through all this just to make sure it would\nwork and it does so I just want to show you guys how to do it basically I want to hit both of these\nswitches to arm so that was out of focus but basically to arm the quad I want to have to hit\nboth of these switches I want both down to arm I want if only this one is down I want it to beep\nand if only this one is down nothing happens right so before I just had this to arm and I had this\nfor my modes you know I had angle and horizon and then acro you got to start by changing channel five\nand six we're just going to pretend like those are the only two channels that exist here so I want\nswitch a and b to be on channel five so to do that you go into your aux channels and you just push\nthis until it says switch a plus b switch a plus b actually before I do that let me show you this let's\ngo into the display and you can see here this is channel five this is channel six channel seven okay\nchannel eight this is nine and ten okay so you can see all that on the display you can see how it works\nthere so this switch is full off full on so the throttle value or the the value is one thousand and two\nthousand that's all you get right there so when we change it here in the aux channels what we're doing\nis saying that we want to so when we change it here in the transmitter we go into channel five and we want\nto set this to be switch a plus b okay and we want channel six to be on this switch so we're going to set that\none to switch C so there we go and we don't want switch C to also be on channel eight I mean I guess\nit doesn't matter you don't have to get rid of these but I like to just kind of get rid of these so if\nwe keep going back I can put these all here like that so those things will be controlling the switches are\nonly going to affect channel five and six that doesn't actually affect anything if we don't set\nit up in beta flight so now that we have that set up with aux five and a and b you can see here that",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Configuring Double Switch Arming in Beta Flight",
+      "description": "The host shows how to configure double switch arming in beta flight and explains its functionality.",
+      "coverage_ranges": [
+        {
+          "start_idx": 40,
+          "end_idx": 55
+        }
+      ],
+      "coverage_segments": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "coverage_times": [
+        {
+          "start_s": 356.82,
+          "end_s": 485.84000000000003
+        }
+      ],
+      "coverage_text": "powered all right so here we are in beta flight and we're just gonna connect up and you can see if\nwe go over to the receiver tab here that you'll notice that if I flip switch one see the value we're\ngetting is 1333 there and then if I flip switch to 1667 there so and then if we flip both 2000 is the\npower value so that's how we can have two switches affect one channel it's basically just four positions here we got\ntwo times two so\none thousand thirteen thirty three sixteen sixty seven and two thousand those are the all four options\nso to set this up in beta flight to do double switch arming all's we got to do is go into the modes tab\nunder arm you're going to add a range and this is channel one or ox one which is really channel five\nthat that might be confusing but that's how it works so ox one and we don't want it to arm unless we're way\nup here and we don't want it to be down here in 1667 range which we're not I don't believe yeah that's\n1500 there so we're just gonna slide up and why isn't it letting me make that smaller that's fine I guess\nthat's fine all right so save we are armed yeah we should probably unarm hello that was scary I did not\nexpect that all right so here we are unarmed and no beeper so how do we add the beeper\nwe want this range right here add range ox one there we go we want into this range but we don't really\ncare about anything else and it's down here we don't want it and of course when it's up here we don't want\nit right so save uh yeah you probably shouldn't do this with props on I'm just terrible at my job here",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Setting Up Modes in Beta Flight",
+      "description": "The host explains how to set up modes in beta flight, including adding ranges for double switch arming.",
+      "coverage_ranges": [
+        {
+          "start_idx": 56,
+          "end_idx": 60
+        }
+      ],
+      "coverage_segments": [
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "coverage_times": [
+        {
+          "start_s": 485.84000000000003,
+          "end_s": 530.2
+        }
+      ],
+      "coverage_text": "so anyways that's that's all there is to that so yeah let's go ahead and set up the um modes or the uh\nangle mode at least so we're going to put this on ox two and that's going to be right there at the\nbeginning and then horizon ox two in the middle there and then that will be angle mode so that's how\neasy that is anyways thanks for watching and I hope this uh taught you something that you didn't already\nknow",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the VIDEO-LEVEL OUTLINE in JSON format:\n\n```\n[\n  {\n    \"title\": \"Introduction to Droning\",\n    \"description\": \"The host introduces themselves and shares their experience with learning about droning.\",\n    \"coverage\": [{\"start_idx\": 0, \"end_idx\": 3}]\n  },\n  {\n    \"title\": \"Setting Up Aux Channels in the Transmitter\",\n    \"description\": \"The host explains how to set up aux channels in the transmitter for double switch arming.\",\n    \"coverage\": [{\"start_idx\": 4, \"end_idx\": 29}]\n  },\n  {\n    \"title\": \"Configuring Double Switch Arming in Beta Flight\",\n    \"description\": \"The host shows how to configure double switch arming in beta flight and explains its functionality.\",\n    \"coverage\": [{\"start_idx\": 40, \"end_idx\": 55}]\n  },\n  {\n    \"title\": \"Setting Up Modes in Beta Flight\",\n    \"description\": \"The host explains how to set up modes in beta flight, including adding ranges for double switch arming.\",\n    \"coverage\": [{\"start_idx\": 56, \"end_idx\": 60}]\n  }\n]\n```"
+    ]
+  }
+}

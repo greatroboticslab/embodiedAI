@@ -1,0 +1,91 @@
+{
+  "video_id": "E_RDCFOlJx4",
+  "title": "E_RDCFOlJx4",
+  "url": "https://www.youtube.com/watch?v=E_RDCFOlJx4",
+  "created_at": "2025-09-17T11:55:54.095432+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Control System Flexibility",
+      "description": "The speaker highlights that LQR control allows users to choose how their system behaves, based on performance weights and effort.",
+      "evidence_quotes": [
+        "So it's up to you how you want your system to behave in the end"
+      ],
+      "start_s": 2025.9,
+      "end_s": 2033.42,
+      "id": "T1"
+    },
+    {
+      "title": "Cost Function",
+      "description": "Setting up a cost function for LQR control system",
+      "evidence_quotes": [
+        "[00:05:44.060 → 00:05:48.060] We set up a cost function that adds up the weighted sum of performance and effort over all time.",
+        "[00:07:02.180 → 00:07:08.660] This has the effect of punishing larger errors disproportionately more than smaller ones."
+      ],
+      "start_s": 344.94,
+      "end_s": 464.5,
+      "id": "T2"
+    },
+    {
+      "title": "LQR Control Power",
+      "description": "The speaker emphasizes the simplicity and intuitiveness of LQR control, which returns an optimal gain matrix based on performance weights.",
+      "evidence_quotes": [
+        "LQR control is pretty powerful",
+        "it's simple to set up and relatively intuitive to tune and tweak"
+      ],
+      "start_s": 2013.9,
+      "end_s": 2025.9,
+      "id": "T3"
+    },
+    {
+      "title": "LQR Control System",
+      "description": "Designing a control system using LQR approaches",
+      "evidence_quotes": [
+        "[00:05:16.820 → 00:05:21.480] And this is exactly the same kind of reasoning we do when designing a control system.",
+        "[00:04:56.000 → 00:05:02.560] Rather than think about pole locations, we can think about and assess what is important..."
+      ],
+      "start_s": 317.7,
+      "end_s": 464.5,
+      "id": "T4"
+    },
+    {
+      "title": "Pole Placement Challenge",
+      "description": "The speaker explains that pole placement would require knowing how to move closed-loop poles, which can be tough. This highlights the complexity of pole placement.",
+      "evidence_quotes": [
+        "we would have had to know how to move these poles just like this",
+        "that would be pretty tough"
+      ],
+      "start_s": 2003.46,
+      "end_s": 2009.22,
+      "id": "T5"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here are the coherent topics extracted from the transcript segment:\n\n```\n[\n  {\n    \"title\": \"LQR Control System\",\n    \"description\": \"Designing a control system using LQR approaches\",\n    \"evidence_quotes\": [\n      \"[00:05:16.820 → 00:05:21.480] And this is exactly the same kind of reasoning we do when designing a control system.\",\n      \"[00:04:56.000 → 00:05:02.560] Rather than think about pole locations, we can think about and assess what is important...\"\n    ],\n    \"time_range\": \"00:05:16.820–00:07:43.620\"\n  },\n  {\n    \"title\": \"Cost Function\",\n    \"description\": \"Setting up a cost function for LQR control system\",\n    \"evidence_quotes\": [\n      \"[00:05:44.060 → 00:05:48.060] We set up a cost function that adds up the weighted sum of performance and effort over all time.\",\n      \"[00:07:02.180 → 00:07:08.660] This has the effect of punishing larger errors disproportionately more than smaller ones.\"\n    ],\n    \"time_range\": \"00:05:44.060–00:07:43.620\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here are the extracted topics:\n\n[\n  {\n    \"title\": \"Controller Tuning\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"Let's really save fuel now by relaxing the angle error weight a bunch.\", \"Alright, so hopefully you're starting to see how we can tweak and tune our controller...\"],\n    \"time_range\": \"00:14:16.580–00:15:04.880\"\n  },\n  {\n    \"title\": \"LQR vs Pole Placement\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"And it's pretty simple.\", \"Now, had we developed this controller using pole placement...\"],\n    \"time_range\": \"00:14:50.040–00:16:29.360\"\n  }\n]\n\nNote that I did not extract any topics related to fuel usage or actuator effort, as these were mentioned only in the context of controller tuning and LQR vs pole placement."
+        ]
+      },
+      {
+        "chunk_index": 2,
+        "attempts": [
+          "Here is the extracted topics in JSON format:\n\n[\n  {\n    \"title\": \"Pole Placement Challenge\",\n    \"description\": \"The speaker explains that pole placement would require knowing how to move closed-loop poles, which can be tough. This highlights the complexity of pole placement.\",\n    \"evidence_quotes\": [\"we would have had to know how to move these poles just like this\", \"that would be pretty tough\"],\n    \"time_range\": \"00:16:44.600–00:16:50.360\"\n  },\n  {\n    \"title\": \"LQR Control Power\",\n    \"description\": \"The speaker emphasizes the simplicity and intuitiveness of LQR control, which returns an optimal gain matrix based on performance weights.\",\n    \"evidence_quotes\": [\"LQR control is pretty powerful\", \"it's simple to set up and relatively intuitive to tune and tweak\"],\n    \"time_range\": \"00:16:55.040–00:17:07.040\"\n  },\n  {\n    \"title\": \"Control System Flexibility\",\n    \"description\": \"The speaker highlights that LQR control allows users to choose how their system behaves, based on performance weights and effort.\",\n    \"evidence_quotes\": [\"So it's up to you how you want your system to behave in the end\"],\n    \"time_range\": \"00:17:07.040–00:17:14.560\"\n  }\n]\n\nNote that I only extracted topics from this specific transcript segment, without any external knowledge or speculation."
+        ]
+      }
+    ]
+  }
+}

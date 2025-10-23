@@ -1,0 +1,255 @@
+{
+  "video_id": "YQeOmeMGpvE",
+  "title": "YQeOmeMGpvE",
+  "url": "https://www.youtube.com/watch?v=YQeOmeMGpvE",
+  "created_at": "2025-10-09T17:33:10.211737+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction to GPS Rescue Feature",
+      "description": "Overview of the GPS rescue feature in Betaflight and its importance.",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 12
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.0,
+          "end_s": 79.52
+        }
+      ],
+      "coverage_text": "Hello guys and welcome back to my channel. Today in this video I'm going to show you how to connect\na GPS unit to a flight controller, explain how to configure it using Bitaflight, and address\ncommon issues that you might encounter. First of all, this video is kindly sponsored by VONT,\na company that manufactures and sells high-quality but yet budget-friendly LED headlamps.\nThe VONT Spark LED headlamp comes inside a twin pack, so you are getting two LED headlamps for $14.\nThe device is powered using three AAA batteries which are not included, and according to VONT,\nthey can provide you with up to 90 hours of continuous use. In addition, the headlamp is\nwaterproof, as far as I can tell the lamp is very powerful, and it features seven different light\nmodes. Now after the sponsored part, let's get back to the main topic. The first question that you might\nask yourself is why should you even better adding a GPS unit to your quadcopter? And for that question\nthere are a couple of answers. For a long range system such as this one, using a GPS is very crucial,\nsince it enables you to monitor the direction and distance to the home point where you took off,\nso for example, in case you lose orientation, you can use this data. It also enables you to see the",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Configuring the GPS Unit",
+      "description": "How to configure the GPS unit for the first time and power it using the USB port.",
+      "coverage_ranges": [
+        {
+          "start_idx": 13,
+          "end_idx": 24
+        }
+      ],
+      "coverage_segments": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "coverage_times": [
+        {
+          "start_s": 79.52,
+          "end_s": 144.16
+        }
+      ],
+      "coverage_text": "GPS coordinates on the OSD and also on your radio controller in case it supports telemetry,\nso in case you lose the quadcopter, you can use these coordinates in order to retrieve the quadcopter,\nand finally, in case you lose connectivity with the radio controller or in case you lost orientation and\nyou don't know where to go, you can enable the GPS rescue feature, and the quadcopter is going to\nreturn to the home point using the settings on Bitaflight, which I'm going to show you shortly.\nAs for freestyle and racing drones, using a GPS unit will enable you to monitor the speed of the drone,\nwhich is something that you might want to know. Of course, you can still use it for the purposes that\nI mentioned before, but in case you're not going to get very far, it's not going to make a lot of sense.\nIn order to set up the GPS rescue feature, you need to obtain a GPS unit. There are many available\noptions in the market, and most if not all are going to be compatible with your flight controller.\nOut of my personal experience, I can tell you that so far the GPS that worked best for me,\nand I had zero issues with, is the Matic M8Q, however this is a very pricey GPS that costs about",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Calibrating the Gyro Board",
+      "description": "Importance of calibrating the gyro board for accurate attitude values.",
+      "coverage_ranges": [
+        {
+          "start_idx": 25,
+          "end_idx": 32
+        }
+      ],
+      "coverage_segments": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "coverage_times": [
+        {
+          "start_s": 144.16,
+          "end_s": 192.48
+        }
+      ],
+      "coverage_text": "$32, so if you're looking for a more budget-friendly but yet reliable solution, I recommend to go with the\nAJRC M80, which costs only $11. You should note that some GPS units like the AJRC M81 feature a built-in\ncompass, but this feature is not required for Bitaflight in order to use the GPS rescue feature.\nIn addition, in case you're going to use a Batien GPS, which is a very popular and budget-friendly\noption, I recommend to power the unit using 3.3V, as it is going to reduce the generated heat\nand extend its lifespan. The next thing that we need to do is to wire the GPS to the flight\ncontroller, and even though most of the GPS units are using a 4-pins GST connector, their pinout is\nnot necessarily identical, so I recommend to refer to the user manual of the product that you have,",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "OSD Elements Configuration",
+      "description": "How to configure OSD elements such as home distance, direction, and GPS coordinates.",
+      "coverage_ranges": [
+        {
+          "start_idx": 33,
+          "end_idx": 46
+        }
+      ],
+      "coverage_segments": [
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "coverage_times": [
+        {
+          "start_s": 192.48,
+          "end_s": 275.04
+        }
+      ],
+      "coverage_text": "in order to avoid any potential mistake. The GPS unit is going to be connected to a 3U-out port on the\nflight controller, and most likely be powered using 5V, and even though the soft serial option is\nsupported, I recommend to avoid it if possible due to the high data transfer rates.\nNow I've got the 4-pins GST connector soldered to the flight controller. Pay attention that the\nsoldering pads are well separated, you are not mixing the ground and plus 5V pads, you are using\nthe same U-out port on the flight controller, and the RX port on the GPS is wired to the TX pad on the\nflight controller and vice versa, as otherwise the GPS is not going to be able to communicate with the\nflight controller. Now you can go ahead and connect the GPS unit, and pay attention when installing it\nthat the antenna is facing the top side and it is not being blocked by any of the carbon fiber parts.\nNow let's go over the configuration procedure in Betaflight and the relevant settings. First,\nconnect the flight controller to your computer, open up Betaflight, and connect it to your flight\ncontroller. Under the port section, you need to configure the GPS under sensor inputs on the U-out that\nyou connected. I'm using U-out 6, so I'm going to choose the GPS option, and in addition, since I'm\nusing the older batch of the AGLRC M80 GPS, I also need to select this baud rate, as otherwise the GPS",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Testing the GPS Rescue Feature",
+      "description": "Steps to test the GPS rescue feature using an auxiliary switch.",
+      "coverage_ranges": [
+        {
+          "start_idx": 47,
+          "end_idx": 63
+        }
+      ],
+      "coverage_segments": [
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "coverage_times": [
+        {
+          "start_s": 275.04,
+          "end_s": 374.79999999999995
+        }
+      ],
+      "coverage_text": "is not going to function properly. Now we need to hit save and reboot in order to save the options.\nHead over to the configuration tab, enable the GPS switch, and set its protocol.\nIn case you're not sure which protocol your GPS unit is using, I recommend to start with U-blocks,\nand in case the GPS is going to be configured properly after hitting save and reboot, the GPS\nicon on the top is going to be highlighted. So in case it's not working for you, I would start by\nchecking that the protocol is configured properly, and then I would double check that the port is\nconfigured properly, and also RX is wired to TX on the flight controller and vice versa.\nAnd of course, you also need to make sure that the GPS is turned on, as on some flight controllers,\nthe GPS is going to be powered also when the flight controllers is connected via USB, and on some cases,\nyou will need to power it using an external battery. Pay attention that in case the GPS unit is only going\nto be powered when connecting an external battery, that the propellers are off, and preferably disconnect\nthe video transmitter, or at least set it to pit mode, in order to prevent it from overheating on the bench.\nNow let's go over the different Betaflight GPS-related options. First of all, in order to access the GPS\nand fail-safe tabs on Betaflight, enable Expert mode. Then under the GPS tab, you'll be able to monitor\nthe status of the GPS and the acquired satellites, and under the fail-safe tab, configure the GPS rescue\nfeature. The default fail-safe procedure when entering fail-safe mode, either when the quadcopter\nis going to lose connectivity with the radio controller, or by flipping an auxiliary switch which is assigned",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T6",
+      "title": "Conclusion and Best Practices",
+      "description": "Summary of the video and best practices for configuring and testing the GPS rescue feature.",
+      "coverage_ranges": [
+        {
+          "start_idx": 64,
+          "end_idx": 100
+        }
+      ],
+      "coverage_segments": [
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "coverage_times": [
+        {
+          "start_s": 374.79999999999995,
+          "end_s": 595.0400000000001
+        }
+      ],
+      "coverage_text": "to the fail-safe mode, is dropped, so the quadcopter is just going to fall out of the sky. You can also\nset it to land, and then the quadcopter hopefully is going to land slowly, and the relevant option to this\nvideo is the GPS rescue option. The relevant values which you can configure are the angle of the drone\nwhen it is heading back to you, the initial attitude in meters, which is relative to the home point,\nso when GPS rescue is going to be enabled, your drone is going to first climb to this attitude\nbefore heading back to you. The next option is the descent distance in meters, so when the drone is going\nto reach this distance from the home point, it is going to start descending. Next you can adjust\nthe ground speed in meters per second, adjust the throttle values, and in my experience the default\nsettings work pretty well, set the ascend and descend rates in meters per second, adjust the number of\nminimum satellites which are required for the GPS rescue option to be enabled. Normally I would suggest\nleaving it on 8 in case you are not having any GPS issues, as the GPS is going to be more accurate,\nbut in case you encounter difficulties and you don't have this amount of satellites during most of the\nflight, you can also reduce this number to 5, as it in my experience works well as well. The next\nrelated option is going to enable you to arm your drone, even when the minimum number of satellites\nrequirement is not going to be met, but pay attention that in case you are going to take off without a GPS fix,\nthe GPS rescue feature is not going to be available during your flight. The next option is attitude mode,\nin case you are going to set it to maximum attitude, your drone is going to climb to the maximum attitude\nthat you reached during your flight, plus 15 meters. In case you are going to set it to fixed attitude,\nit's going to climb to the value that we previously set, and again it is relative to the home point, and in\ncase you would like to maintain the current attitude of the drone when entering fail safe mode,\nset the option to current attitude. Finally, the GPS rescue sanity checks can be turned off,\nand then the GPS rescue feature is going to be enabled regardless of the minimum satellites,\nand even when you took off without a GPS fix, and pay attention that in case you are going to turn it off,\nand enter fail safe mode, you might lose your drone, as the GPS is not going to be accurate,\nand it is just going to fly away. You can also set this option to fail safe only, which is probably\nthe recommended option, as the sanity checks are going to take place when entering fail safe mode,\nand they are only going to be overridden when triggering the GPS rescue feature using an auxiliary\nswitch, which is good because otherwise, in case you are going to set the sanity checks to on,\nand trigger the GPS rescue feature using an auxiliary switch, the drone is just going to disarm itself,\nand fall out of the sky, in case one of the sanity checks requirement is not met.\nIn addition, you should note that under stage 2 settings, you can adjust the amount of time that\nis going to pass when the signal loss is going to occur, so for example the default settings is far,\nso it means that after 0.4 seconds the fail safe procedure is going to take place, so in case you\nwould like to make sure that the GPS rescue feature is going to be enabled right away, you can either\nset this value to 0, or adjust the channel fallback settings, which are the values that are going to be\nused during guard time, so that the GPS rescue feature is going to be triggered immediately.\nNow by the way, another thing that you should pay attention to, is that the accelerometer is turned on,",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the clean, high-level table of contents for the entire video:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"Overview of Betaflight GPS rescue feature and its importance.\",\n    \"coverage\": [{\"start_idx\": S00001, \"end_idx\": S00003}]\n  },\n  {\n    \"title\": \"Configuring the GPS Rescue Feature\",\n    \"description\": \"How to enable and configure the GPS rescue feature in Betaflight.\",\n    \"coverage\": [{\"start_idx\": S00004, \"end_idx\": S00094}]\n  },\n  {\n    \"title\": \"Setting Up the Stage 2 Settings\",\n    \"description\": \"Adjusting stage 2 settings for GPS rescue feature timing.\",\n    \"coverage\": [{\"start_idx\": S00095, \"end_idx\": S00099}]\n  },\n  {\n    \"title\": \"Calibrating the Gyro Board and Turning On Accelerometer\",\n    \"description\": \"Importance of gyro board calibration and accelerometer status.\",\n    \"coverage\": [{\"start_idx\": S00100, \"end_idx\": S00102}]\n  },\n  {\n    \"title\": \"Configuring OSD Elements\",\n    \"description\": \"How to set up relevant OSD elements for GPS rescue feature display.\",\n    \"coverage\": [{\"start_idx\": S00103, \"end_idx\": S00108}]\n  },\n  {\n    \"title\": \"Testing the GPS Rescue Feature\",\n    \"description\": \"Practical steps to test the GPS rescue feature using an auxiliary switch.\",\n    \"coverage\": [{\"start_idx\": S00109, \"end_idx\": S00119}]\n  },\n  {\n    \"title\": \"Conclusion and Tips\",\n    \"description\": \"Important notes on using the GPS rescue feature with Betaflight and a few tips for successful use.\",\n    \"coverage\": [{\"start_idx\": S00120, \"end_idx\": S00128}]\n  }\n]\n```",
+      "Here is the high-level table of contents for the entire video:\n\n```\n[\n  {\n    \"title\": \"Introduction to GPS Rescue Feature\",\n    \"description\": \"Overview of the GPS rescue feature in Betaflight and its importance.\",\n    \"coverage\": [{\"start_idx\": 0, \"end_idx\": 12}]\n  },\n  {\n    \"title\": \"Configuring the GPS Unit\",\n    \"description\": \"How to configure the GPS unit for the first time and power it using the USB port.\",\n    \"coverage\": [{\"start_idx\": 13, \"end_idx\": 24}]\n  },\n  {\n    \"title\": \"Calibrating the Gyro Board\",\n    \"description\": \"Importance of calibrating the gyro board for accurate attitude values.\",\n    \"coverage\": [{\"start_idx\": 25, \"end_idx\": 32}]\n  },\n  {\n    \"title\": \"OSD Elements Configuration\",\n    \"description\": \"How to configure OSD elements such as home distance, direction, and GPS coordinates.\",\n    \"coverage\": [{\"start_idx\": 33, \"end_idx\": 46}]\n  },\n  {\n    \"title\": \"Testing the GPS Rescue Feature\",\n    \"description\": \"Steps to test the GPS rescue feature using an auxiliary switch.\",\n    \"coverage\": [{\"start_idx\": 47, \"end_idx\": 63}]\n  },\n  {\n    \"title\": \"Conclusion and Best Practices\",\n    \"description\": \"Summary of the video and best practices for configuring and testing the GPS rescue feature.\",\n    \"coverage\": [{\"start_idx\": 64, \"end_idx\": 100}]\n  }\n]\n```"
+    ]
+  }
+}

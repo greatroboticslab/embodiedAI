@@ -1,0 +1,75 @@
+{
+  "video_id": "DkbfBIMSdgo",
+  "title": "DkbfBIMSdgo",
+  "url": "https://www.youtube.com/watch?v=DkbfBIMSdgo",
+  "created_at": "2025-10-09T17:31:12.643582+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Clap Switch",
+      "description": "Creating a clap switch or sound triggered LED circuit.",
+      "evidence_quotes": [
+        "So normally the voltage at the trigger pin will be near to positive voltage and it drops whenever you clap which triggers the monostable circuit and so the LED should glow."
+      ],
+      "start_s": 364.44,
+      "end_s": 379.06,
+      "id": "T1"
+    },
+    {
+      "title": "Monostable Circuit",
+      "description": "Using a 555 timer IC to create a monostable circuit.",
+      "evidence_quotes": [
+        "What this arrangement does is, whenever the trigger pin detects a drop in voltage, the 555 timer turns on the output for a duration determined by the value of capacitor and resistor."
+      ],
+      "start_s": 248.12,
+      "end_s": 254.06,
+      "id": "T2"
+    },
+    {
+      "title": "Primary Circuit",
+      "description": "The primary circuit used in the sound triggered LED application.",
+      "evidence_quotes": [
+        "As we don't require LED at the output of a primary circuit, I am removing it along with its series resistor."
+      ],
+      "start_s": 322.56,
+      "end_s": 337.28000000000003,
+      "id": "T3"
+    },
+    {
+      "title": "Secondary Circuit",
+      "description": "The secondary circuit used in the sound triggered LED application.",
+      "evidence_quotes": [
+        "This resistor acts as a load for the second transistor as well as keeps the output high when the transistor is not turned on."
+      ],
+      "start_s": 332.16,
+      "end_s": 342.84000000000003,
+      "id": "T4"
+    },
+    {
+      "title": "Trigger Pin",
+      "description": "The trigger pin and its role in the monostable circuit.",
+      "evidence_quotes": [
+        "Now it's time to couple output of a primary circuit with the trigger pin of this mono stable circuit."
+      ],
+      "start_s": 312.62,
+      "end_s": 322.56,
+      "id": "T5"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topics in JSON format:\n\n```\n[\n  {\n    \"title\": \"Monostable Circuit\",\n    \"description\": \"Using a 555 timer IC to create a monostable circuit.\",\n    \"evidence_quotes\": [\"What this arrangement does is, whenever the trigger pin detects a drop in voltage, the 555 timer turns on the output for a duration determined by the value of capacitor and resistor.\"],\n    \"time_range\": \"04:07.880–04:13.820\"\n  },\n  {\n    \"title\": \"Clap Switch\",\n    \"description\": \"Creating a clap switch or sound triggered LED circuit.\",\n    \"evidence_quotes\": [\"So normally the voltage at the trigger pin will be near to positive voltage and it drops whenever you clap which triggers the monostable circuit and so the LED should glow.\"],\n    \"time_range\": \"06:04.200–06:18.820\"\n  },\n  {\n    \"title\": \"Primary Circuit\",\n    \"description\": \"The primary circuit used in the sound triggered LED application.\",\n    \"evidence_quotes\": [\"As we don't require LED at the output of a primary circuit, I am removing it along with its series resistor.\"],\n    \"time_range\": \"05:22.320–05:37.040\"\n  },\n  {\n    \"title\": \"Trigger Pin\",\n    \"description\": \"The trigger pin and its role in the monostable circuit.\",\n    \"evidence_quotes\": [\"Now it's time to couple output of a primary circuit with the trigger pin of this mono stable circuit.\"],\n    \"time_range\": \"05:12.380–05:22.320\"\n  },\n  {\n    \"title\": \"Secondary Circuit\",\n    \"description\": \"The secondary circuit used in the sound triggered LED application.\",\n    \"evidence_quotes\": [\"This resistor acts as a load for the second transistor as well as keeps the output high when the transistor is not turned on.\"],\n    \"time_range\": \"05:31.920–05:42.600\"\n  }\n]\n```"
+        ]
+      }
+    ]
+  }
+}

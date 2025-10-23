@@ -1,0 +1,56 @@
+{
+  "video_id": "NQvVeLHzfSs",
+  "title": "NQvVeLHzfSs",
+  "url": "https://www.youtube.com/watch?v=NQvVeLHzfSs",
+  "created_at": "2025-10-09T17:32:20.147987+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "H-Bridge Circuit Schematic",
+      "description": "The speaker shares the schematic for the H-Bridge circuit, showing its components and layout.",
+      "evidence_quotes": [
+        "Here's my schematic for the H-Bridge I demonstrated at the beginning of the video"
+      ],
+      "start_s": 46.86,
+      "end_s": 67.38,
+      "id": "T1"
+    },
+    {
+      "title": "Improved H-Bridge Motor Control",
+      "description": "The speaker presents an improved version of a previously published H-Bridge motor control circuit, highlighting its enhancements.",
+      "evidence_quotes": [
+        "I'll discuss briefly what the improvements are"
+      ],
+      "start_s": 0.0,
+      "end_s": 13.68,
+      "id": "T2"
+    },
+    {
+      "title": "MOSFET Selection",
+      "description": "The speaker discusses the selection of MOSFETs used in the H-Bridge circuit, highlighting their specific characteristics.",
+      "evidence_quotes": [
+        "U1 and U3 are P-channel MOSFETs I used at IRF4905",
+        "U2 and U4 are IRFC44N"
+      ],
+      "start_s": 67.38,
+      "end_s": 94.44,
+      "id": "T3"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topics in JSON format:\n\n[\n  {\n    \"title\": \"Improved H-Bridge Motor Control\",\n    \"description\": \"The speaker presents an improved version of a previously published H-Bridge motor control circuit, highlighting its enhancements.\",\n    \"evidence_quotes\": [\"I'll discuss briefly what the improvements are\"],\n    \"time_range\": \"00:00:00.000–00:00:13.680\"\n  },\n  {\n    \"title\": \"H-Bridge Circuit Schematic\",\n    \"description\": \"The speaker shares the schematic for the H-Bridge circuit, showing its components and layout.\",\n    \"evidence_quotes\": [\"Here's my schematic for the H-Bridge I demonstrated at the beginning of the video\"],\n    \"time_range\": \"00:00:46.860–00:01:07.380\"\n  },\n  {\n    \"title\": \"MOSFET Selection\",\n    \"description\": \"The speaker discusses the selection of MOSFETs used in the H-Bridge circuit, highlighting their specific characteristics.\",\n    \"evidence_quotes\": [\"U1 and U3 are P-channel MOSFETs I used at IRF4905\", \"U2 and U4 are IRFC44N\"],\n    \"time_range\": \"00:01:07.380–00:01:34.440\"\n  }\n]\n\nNote that there may be additional topics or subtopics discussed in the transcript, but these three topics are directly extracted from the provided segment."
+        ]
+      }
+    ]
+  }
+}

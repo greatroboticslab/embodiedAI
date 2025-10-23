@@ -1,0 +1,56 @@
+{
+  "video_id": "AmlmkTPqZrk",
+  "title": "AmlmkTPqZrk",
+  "url": "https://www.youtube.com/watch?v=AmlmkTPqZrk",
+  "created_at": "2025-09-17T11:55:05.047513+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "FlySky FSIA6B Receiver Communication Protocols",
+      "description": "The FlySky FSIA6B receiver has three types of communication protocols, including PWM and two serial protocols: PPM and IBIS.",
+      "evidence_quotes": [
+        "The FlySky FSIA6B receiver has three types of communication protocols"
+      ],
+      "start_s": 0.0,
+      "end_s": 11.74,
+      "id": "T1"
+    },
+    {
+      "title": "PPM and IBIS Connection Pins",
+      "description": "The PPM connection is located in the first vertical slot of the receiver, with pins for sending information to the controller and powering the receiver. The IBIS protocol has a similar pin layout.",
+      "evidence_quotes": [
+        "The PPM connection is located in the first vertical slot",
+        "The rightmost pin is used to send information to the controller"
+      ],
+      "start_s": 40.58,
+      "end_s": 90.66,
+      "id": "T2"
+    },
+    {
+      "title": "UART Serial Ports on Flight Controllers",
+      "description": "Flight controllers have UART serial ports with separate RX and TX lines for receiving information from the radio and sending information to the radio.",
+      "evidence_quotes": [
+        "The flight controllers have so-called UART serial ports"
+      ],
+      "start_s": 19.56,
+      "end_s": 33.02,
+      "id": "T3"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topics in the given transcript segment:\n\n[\n  {\n    \"title\": \"FlySky FSIA6B Receiver Communication Protocols\",\n    \"description\": \"The FlySky FSIA6B receiver has three types of communication protocols, including PWM and two serial protocols: PPM and IBIS.\",\n    \"evidence_quotes\": [\"The FlySky FSIA6B receiver has three types of communication protocols\"],\n    \"time_range\": \"00:00:00.000–00:00:11.740\"\n  },\n  {\n    \"title\": \"UART Serial Ports on Flight Controllers\",\n    \"description\": \"Flight controllers have UART serial ports with separate RX and TX lines for receiving information from the radio and sending information to the radio.\",\n    \"evidence_quotes\": [\"The flight controllers have so-called UART serial ports\"],\n    \"time_range\": \"00:00:19.560–00:00:33.020\"\n  },\n  {\n    \"title\": \"PPM and IBIS Connection Pins\",\n    \"description\": \"The PPM connection is located in the first vertical slot of the receiver, with pins for sending information to the controller and powering the receiver. The IBIS protocol has a similar pin layout.\",\n    \"evidence_quotes\": [\"The PPM connection is located in the first vertical slot\", \"The rightmost pin is used to send information to the controller\"],\n    \"time_range\": \"00:00:40.580–00:01:30.660\"\n  }\n]"
+        ]
+      }
+    ]
+  }
+}

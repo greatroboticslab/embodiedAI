@@ -1,0 +1,57 @@
+{
+  "video_id": "dKB7uHYU-ow",
+  "title": "dKB7uHYU-ow",
+  "url": "https://www.youtube.com/watch?v=dKB7uHYU-ow",
+  "created_at": "2025-10-09T17:33:27.472568+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Filthy",
+      "description": "The speaker says something is filthy.",
+      "evidence_quotes": [
+        "Filthy"
+      ],
+      "start_s": 42.1,
+      "end_s": 72.62,
+      "id": "T1"
+    },
+    {
+      "title": "Serving or Sucking Rope",
+      "description": "The speaker talks about serving or sucking rope.",
+      "evidence_quotes": [
+        "serving",
+        "or",
+        "sucking"
+      ],
+      "start_s": 9.44,
+      "end_s": 22.42,
+      "id": "T2"
+    },
+    {
+      "title": "Termitting",
+      "description": "The speaker mentions termitting.",
+      "evidence_quotes": [
+        "Termitting"
+      ],
+      "start_s": 1.78,
+      "end_s": 3.96,
+      "id": "T3"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topics in JSON format:\n\n[\n  {\n    \"title\": \"Termitting\",\n    \"description\": \"The speaker mentions termitting.\",\n    \"evidence_quotes\": [\"Termitting\"],\n    \"time_range\": \"00:00:01.780–00:00:03.960\"\n  },\n  {\n    \"title\": \"Serving or Sucking Rope\",\n    \"description\": \"The speaker talks about serving or sucking rope.\",\n    \"evidence_quotes\": [\"serving\", \"or\", \"sucking\"],\n    \"time_range\": \"00:00:09.440–00:00:22.420\"\n  },\n  {\n    \"title\": \"Filthy\",\n    \"description\": \"The speaker says something is filthy.\",\n    \"evidence_quotes\": [\"Filthy\"],\n    \"time_range\": \"00:00:42.100–00:01:12.620\"\n  }\n]"
+        ]
+      }
+    ]
+  }
+}

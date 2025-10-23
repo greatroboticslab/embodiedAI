@@ -1,0 +1,238 @@
+{
+  "video_id": "ILeLo1lWjBk",
+  "title": "ILeLo1lWjBk",
+  "url": "https://www.youtube.com/watch?v=ILeLo1lWjBk",
+  "created_at": "2025-09-17T11:56:40.660751+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction",
+      "description": "Using the F745 hex file",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 2
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.0,
+          "end_s": 15.16
+        }
+      ],
+      "coverage_text": "This video is sponsored by Brilliant.org. More about them later.\nHi there everyone. Today we're going to be talking about Betaflight's angle mode.\nAnd for those of you that fly both acro and angle mode, you'll know that Betaflight's acro mode is",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Loading Firmware",
+      "description": "Load firmware from your local drive and select the right hex file (F745)",
+      "coverage_ranges": [
+        {
+          "start_idx": 3,
+          "end_idx": 5
+        }
+      ],
+      "coverage_segments": [
+        3,
+        4,
+        5
+      ],
+      "coverage_times": [
+        {
+          "start_s": 15.16,
+          "end_s": 33.94
+        }
+      ],
+      "coverage_text": "fantastic. It's a joy to fly. It's very responsive, it's very precise, and it's very stable in the\nair. And you might also know that Betaflight's angle mode is kind of none of those things.\nIt's pretty wobbly, it's kind of imprecise, and it's very slow in comparison to acro mode.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Flashing Firmware",
+      "description": "Flash firmware if you have any problems during flashing, try ImpulseRC Driver Fixer first",
+      "coverage_ranges": [
+        {
+          "start_idx": 6,
+          "end_idx": 10
+        }
+      ],
+      "coverage_segments": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "coverage_times": [
+        {
+          "start_s": 34.78,
+          "end_s": 58.660000000000004
+        }
+      ],
+      "coverage_text": "I noticed this while I was flying Tiny Whoops over Christmas, and I decided to put some time\ninto figuring out what was going on with Betaflight's angle mode. And I think I've worked it out,\nand I'm excited to share that with you today. So in this video, we're going to be looking at\nthe problems with angle mode that Betaflight has currently, and some of the solutions that we can\nimplement to fix it. And at the end of the video, I'm going to be showing you how you can test those",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Connecting to the CLI",
+      "description": "Connect to the CLI and apply custom defaults after flashing firmware",
+      "coverage_ranges": [
+        {
+          "start_idx": 11,
+          "end_idx": 14
+        }
+      ],
+      "coverage_segments": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "coverage_times": [
+        {
+          "start_s": 58.660000000000004,
+          "end_s": 79.4
+        }
+      ],
+      "coverage_text": "fixes for yourself, and enjoy a sneak peek of what Betaflight angle mode might be like in the future.\nIt's a lot to cover in one video, so let's not waste any more time. Let's dive right into it.\nIf you fly Betaflight angle mode, I'd love to know how you think it compares to acro mode\nand other firmwares like silverware. Please let me know what you think down in the comments.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Executing Code",
+      "description": "Paste in the diff file and execute code after connecting to the CLI",
+      "coverage_ranges": [
+        {
+          "start_idx": 15,
+          "end_idx": 19
+        }
+      ],
+      "coverage_segments": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "coverage_times": [
+        {
+          "start_s": 79.4,
+          "end_s": 105.14000000000001
+        }
+      ],
+      "coverage_text": "The first problem I noticed was one of speed and responsiveness in angle mode compared to acro.\nLet me show you some flight footage so you can see exactly what I mean.\nTo make the comparison, let's start by looking at some sharp stick inputs in acro mode.\nAnd this is showing what Betaflight is capable of in terms of responsiveness.\nYou can see that the quad is snapping left and right instantly in response to my stick inputs,",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T6",
+      "title": "Checking Config",
+      "description": "Check through your config to make sure everything's set up as you want it",
+      "coverage_ranges": [
+        {
+          "start_idx": 20,
+          "end_idx": 24
+        }
+      ],
+      "coverage_segments": [
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "coverage_times": [
+        {
+          "start_s": 105.34,
+          "end_s": 129.20000000000002
+        }
+      ],
+      "coverage_text": "and it's very precise as well. It's stopping dead at the end of each of the movements.\nIf I switch to angle mode now, you can see that the character is totally different.\nThe quad is much slower and much softer to respond, and a lot less precise.\nEach of the moves takes a lot longer, and I'm moving the sticks just as fast on the radio,\nit's just the quad is much slower to respond.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T7",
+      "title": "Tuning Settings",
+      "description": "Adjust Angle P Gain, Angle Feed Forward, etc. after checking config",
+      "coverage_ranges": [
+        {
+          "start_idx": 25,
+          "end_idx": 30
+        }
+      ],
+      "coverage_segments": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "coverage_times": [
+        {
+          "start_s": 129.92000000000002,
+          "end_s": 165.14
+        }
+      ],
+      "coverage_text": "If we switch back to acro again, immediately that snappy response is back.\nSo there's a big gap in flight performance between acro and angle mode.\nSo why is Betaflight's angle mode so much slower and less responsive than acro mode?\nWell, to explain, we're going to have to look in detail at how the Betaflight angle controller actually works.\nIn the blue line, we have the stick input from your controller, which is the requested angle of the quad.\nAnd here it starts at centre, I move it over to the right hand side, and then back to centre again.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T8",
+      "title": "Conclusion and Next Steps",
+      "description": "Get started with Betaflight test code, explore Brilliant.org for learning resources",
+      "coverage_ranges": [
+        {
+          "start_idx": 31,
+          "end_idx": 38
+        }
+      ],
+      "coverage_segments": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ],
+      "coverage_times": [
+        {
+          "start_s": 165.14,
+          "end_s": 203.28
+        }
+      ],
+      "coverage_text": "The green line shows the angle the quad is actually at.\nAnd the way the angle mode controller works is it looks at the difference between the requested angle and the actual angle,\nmultiplies that by a factor, and that creates the gyro setpoint,\nwhich tells the quad how fast to rotate towards the requested angle.\nSo you might be able to see the problem here.\nInitially, we don't have much error between the requested angle and the actual angle of the quad.\nSo nothing much happens, the quad doesn't start to rotate.\nOnly once we have built up a lot of error,",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the table of contents in the required format:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"So I'm going to be using the F745 hex file.\",\n    \"coverage\": [{\"start_idx\": S00311, \"end_idx\": S00320}]\n  },\n  {\n    \"title\": \"Loading Firmware\",\n    \"description\": \"Load firmware from your local drive and in this test code, you're going to select the right hex file.\",\n    \"coverage\": [{\"start_idx\": S00313, \"end_idx\": S00330}]\n  },\n  {\n    \"title\": \"Flashing Firmware\",\n    \"description\": \"Once you've flashed the firmware, you can hit Connect and you'll be asked if you want to apply custom defaults.\",\n    \"coverage\": [{\"start_idx\": S00332, \"end_idx\": S00440}]\n  },\n  {\n    \"title\": \"Tuning Configuration\",\n    \"description\": \"Now we're going to paste in the diff that we saved before. So we can load from file, select the diff, hit Execute and all of that will be executed.\",\n    \"coverage\": [{\"start_idx\": S00444, \"end_idx\": S00884}]\n  },\n  {\n    \"title\": \"Conclusion\",\n    \"description\": \"That's all I have for you for today. So until next time, I wish you all very, very happy flying.\",\n    \"coverage\": [{\"start_idx\": S00946, \"end_idx\": S01059}]\n  }\n]\n```",
+      "Here is the high-level table of contents for the I've got an F745 here video:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"Using the F745 hex file and loading firmware\",\n    \"coverage\": [\n      {\"start_idx\": 0, \"end_idx\": S00311}\n    ]\n  },\n  {\n    \"title\": \"Flashing Firmware\",\n    \"description\": \"Selecting the right hex file and flashing firmware\",\n    \"coverage\": [\n      {\"start_idx\": S00312, \"end_idx\": S00320},\n      {\"start_idx\": S00332, \"end_idx\": S00340}\n    ]\n  },\n  {\n    \"title\": \"Applying Custom Defaults\",\n    \"description\": \"Rebooting and connecting to apply custom defaults\",\n    \"coverage\": [\n      {\"start_idx\": S00341, \"end_idx\": S00342},\n      {\"start_idx\": S00444, \"end_idx\": S00445}\n    ]\n  },\n  {\n    \"title\": \"Executing Test Code\",\n    \"description\": \"Loading and executing test code\",\n    \"coverage\": [\n      {\"start_idx\": S00446, \"end_idx\": S00550}\n    ]\n  },\n  {\n    \"title\": \"Tuning Config\",\n    \"description\": \"Checking config and adjusting settings\",\n    \"coverage\": [\n      {\"start_idx\": S00561, \"end_idx\": S00574},\n      {\"start_idx\": S00611, \"end_idx\": S00612}\n    ]\n  },\n  {\n    \"title\": \"Conclusion and Future Development\",\n    \"description\": \"Conclusion and future development plans\",\n    \"coverage\": [\n      {\"start_idx\": S00705, \"end_idx\": S00801}\n    ]\n  }\n]\n```",
+      "Here is the table of contents in the required format:\n\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"Using the F745 hex file\",\n    \"coverage\": [\n      {\"start_idx\": 0, \"end_idx\": 2}\n    ]\n  },\n  {\n    \"title\": \"Loading Firmware\",\n    \"description\": \"Load firmware from your local drive and select the right hex file (F745)\",\n    \"coverage\": [\n      {\"start_idx\": 3, \"end_idx\": 5}\n    ]\n  },\n  {\n    \"title\": \"Flashing Firmware\",\n    \"description\": \"Flash firmware if you have any problems during flashing, try ImpulseRC Driver Fixer first\",\n    \"coverage\": [\n      {\"start_idx\": 6, \"end_idx\": 10}\n    ]\n  },\n  {\n    \"title\": \"Connecting to the CLI\",\n    \"description\": \"Connect to the CLI and apply custom defaults after flashing firmware\",\n    \"coverage\": [\n      {\"start_idx\": 11, \"end_idx\": 14}\n    ]\n  },\n  {\n    \"title\": \"Executing Code\",\n    \"description\": \"Paste in the diff file and execute code after connecting to the CLI\",\n    \"coverage\": [\n      {\"start_idx\": 15, \"end_idx\": 19}\n    ]\n  },\n  {\n    \"title\": \"Checking Config\",\n    \"description\": \"Check through your config to make sure everything's set up as you want it\",\n    \"coverage\": [\n      {\"start_idx\": 20, \"end_idx\": 24}\n    ]\n  },\n  {\n    \"title\": \"Tuning Settings\",\n    \"description\": \"Adjust Angle P Gain, Angle Feed Forward, etc. after checking config\",\n    \"coverage\": [\n      {\"start_idx\": 25, \"end_idx\": 30}\n    ]\n  },\n  {\n    \"title\": \"Conclusion and Next Steps\",\n    \"description\": \"Get started with Betaflight test code, explore Brilliant.org for learning resources\",\n    \"coverage\": [\n      {\"start_idx\": 31, \"end_idx\": 38}\n    ]\n  }\n]"
+    ]
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "video_id": "zt7YAna-Qcc",
+  "title": "zt7YAna-Qcc",
+  "url": "https://www.youtube.com/watch?v=zt7YAna-Qcc",
+  "created_at": "2025-09-17T12:04:15.493707+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction",
+      "description": "The narrator explains that there's something strange on their scope and they're not sure what it is.",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 64
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.0,
+          "end_s": 642.3599999999999
+        }
+      ],
+      "coverage_text": "Today's project is a little kit from the usual sources and it's the LM1875T. Now this isn't a\nnew chip from by any stretch of the imagination it's been around since 2011. It's actually a pretty\ngood chip. It produces about 20 watts per channel or a little bit more into 4 ohms. Now I don't want\nto give away what I've found on this but it's worth watching till the end of the video because\nthere's a few surprises in store. So let's get on with the tests. It's on the bench now and we're\nconnected to a positive and negative supply of 25 volts. This shows the quiescent conditions.\nThere's no signal going in at present and it's consuming half a watt of power from both supplies.\nThis is the negative supply and this is the positive supply. Now the first test I'm going to do is to\npower it up and see the maximum power that we can get done in my usual way just prior to clipping\nwith one kilohertz going in. There is only one channel because it's mono. I haven't built the other\none yet. So we'll see what power we get. Now bearing in mind this is a stabilized supply so the power will\nremain at 25 volts no matter how much power I draw. Obviously if you built this using a standard\nanalog supply for want of a better word you may well start off with 25 volts but that will sag down to 22 23\ndepending on the power supply you build. So obviously you will not get the maximum power\npower under those conditions. So whatever we measure now is with a stabilized supply of 25 volts.\nNow clearly this little heat sink is not going to provide adequate cooling. Probably on music it might be okay\nbut I'm going to use this little fan because I don't really want it to go bang. I'm sure that's going to be adequate for the job in question.\nRight we're going to wind up the input now until we just\nour below clip\nand that's there and we're looking at the 30 volt scale which is this one\nwhich means we've got 14 volts RMS. 14 volts times 14 volts equals divided by 8 because we've got an 8 ohm load\nthat's 24.5 watts. Well I started to do the same test into 4 ohms and it doesn't like 4 ohms. Look\nit starts to do some horrible things. I'm going to reduce the voltage down to 20 volts\nand see if it's happier. Let's have a look.\nYes it is.\nSo it doesn't like there's the maximum power and we've got 9 volts. Yes 20 watts. It doesn't really like 4 ohms.\nWell we have a bit of a dilemma now.\nThe rating of this amplifier if you look at the official specifications is 20 watts into 4 ohms\nand 25 watts into 8 ohms. So clearly it has a bit of an issue with lower impedances.\nIt says that's both with 25 volts and you can operate it at up to plus and minus 30 volts\nand you can operate it at up to plus and minus 30 volts. What I'm going to do is I suspect you'll be\nsurprised to hear this but we may well have a fake chip. I know what you're saying you find that so hard to\nbelieve but I think it could be the case. So I'm going to pause the video here now and pop down to\nJ-Car and purchase a proper one and the one that I've still got to build here which I've actually built\nbut I haven't put the chip on it yet so I'm going to pop out now and buy a proper chip put that on there\nand see if it makes any difference and if I find that the chip is fake I should be looking for a refund.\nWell I've returned from shopping at J-Car and here we have the fake maybe and here we have\nthe genuine maybe you can see they do look different this one the supposedly good one has just got a little\nround circle etched into it and the fake maybe has the sides beveled again from the rear they do look\nnoticeably different. Now sadly the fakes don't always come with a red or in this case a black blob\non them but that's just so if I drop them on the floor or can't remember which one's which this one\nis the one that came with the kit. If only all the fakes came with a blob of some colour on there that\nwould make life easier wouldn't it. Even the leads have a different pitch slightly to the potentially\ngood one. Anyway that's enough waffle I'm going to assemble this good one into the board and we'll see\nif there's any difference at all. I have exactly the same setup that I did for the original chip except\nI've mounted it on a bigger heat sink purely so I don't have to have a fan running on it. Other\nthan that the setup is the same I've got a couple of extra capacitors here purely because my leads are\na couple of feet long in reality I don't think it's going to make any difference but I wanted the test to\nbe identical to the previous tests. The first thing we notice is that the quiescent current is now\n30 milliamps and instead of 20 milliamps and the conditions are otherwise the same. Voltage is the same\n25 volts plus and minus. Right we have our 8 ohm load connected and you can see on the scope we're\nactually running this at 100 hertz and the reason for doing that is because when I did the previous\ntests on the original chip I also had it set to 100 hertz not 1 kilohertz as I said so to keep things\nsimilar it won't make any difference in reality and I've already checked this and the power is the same\nat 100 ohms at 100 hertz as it is at 1 kilohertz. So we'll wind up the power now look at the top of the\nwaveform and there's clipping there there so we take it down to there if we look at the meter on this scale\nwe have 15 volts now according to my Olivetti meter that gives us 28.1 we'll call it 13 watts which is\nalready 4 watts more than the previous chip under exactly the same circumstances so we'll do the same\ntest now into 4 ohms. So there we have clean power and the heat sink is getting really toasty let's look at the\npower we've got 12 volts into 4 ohms. 12 volts into 4 ohms gives 36 watts which is a bit of an improvement\nfrom the previous which gave us 19 watts so I think we can categorically say that the chips supplied with the kit\nare fake\nthis is our square wave at 1 kilohertz it really is 1 kilohertz now not 100 and as you can see it's pretty\nrespectable let's um open it up a bit not bad at all not bad at all this is 10 kilohertz again as i've\nmentioned before excuse all the muck on here it's coming from some something in this room and i don't",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Testing the Amplifier at 10 kHz",
+      "description": "The narrator tests the amplifier at 10 kHz and shows that there's an issue with noise or crossover artifacts.",
+      "coverage_ranges": [
+        {
+          "start_idx": 65,
+          "end_idx": 76
+        }
+      ],
+      "coverage_segments": [
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76
+      ],
+      "coverage_times": [
+        {
+          "start_s": 642.3599999999999,
+          "end_s": 738.2399999999999
+        }
+      ],
+      "coverage_text": "know what it is because even if i leave the scope unconnected i get that and it's definitely not coming\nfrom the amplifier itself i don't propose to spend hours going through graphs and things i should\ngive you some figures shortly but we'll just go up a little bit to 20 kilohertz and see what the square\nwave looks like and there we are 20 kilohertz\nwave. Not bad not bad at all in fact it puts the waveforms of the quad which i'd previously tested to shame\nI'm embarrassed to say but it it really does! Here we are looking at a sign wave obviously and I just\nwant you to see how clean it looks there's no crossover artifacts or anything\nnasty and but that corresponds to a hundred milliwatts output but at 50\nkilohertz can you believe pretty impressive by any standards I think we\ncan categorically say without any fear of contradiction that the chips supplied\nwith the original kits are fakes faulty not good the kits themselves were very\neasy to put together and all the components other than the chips which is",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Testing the Amplifier at 20 kHz",
+      "description": "The narrator tests the amplifier at 20 kHz and shows a clean signal with no crossover artifacts.",
+      "coverage_ranges": [
+        {
+          "start_idx": 77,
+          "end_idx": 92
+        }
+      ],
+      "coverage_segments": [
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92
+      ],
+      "coverage_times": [
+        {
+          "start_s": 738.2399999999999,
+          "end_s": 879.1
+        }
+      ],
+      "coverage_text": "sad because that's the main part of it are fine printed circuit board has good\nearthing planes and it is good one of the kits were missing to 15 pq\nwas it 15 I can't remember but we're missing two small ceramic capacitors\nshould you buy it well if you buy it and use it as is it's sort of okay into 8\nohms and you get a reasonable power but bearing in mind that if you buy a genuine\nchip and this should be the giveaway you can expect to pay about 11 New Zealand\ndollars per chip which is more than the price of the kit but that's the price you\npay if you want something genuine which is actually a pretty good amplifier I have\nto say it it really does sound good and if you want a 25 watt or more into 4 ohms then this this is a pretty good\nlittle kit even if you throw the chip away and you couldn't make the printed circuit board or buy the extra components for what you pay so I guess that's what you have to consider\nbuy the kits throw the chip away and go to your do a proper electronic\ndistributor RS components Farnell or other ones which are probably more\nprominent to you in your country and you do get a very nice little amplifier but\nthese are the figures on the proper chip half DB down okay 10 Hertz and on the\nhigh side 55 kilohertz but if you want to really slum it and have 1 DB down pretty\ndreadful 7 Hertz and 105 kilohertz so not not a bad spec I think you'll agree the low end of course does have a 1 microfarad",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Discussion of the Chip Quality",
+      "description": "The narrator discusses the quality of the chips supplied with the kit and compares them to genuine chips.",
+      "coverage_ranges": [
+        {
+          "start_idx": 93,
+          "end_idx": 104
+        }
+      ],
+      "coverage_segments": [
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104
+      ],
+      "coverage_times": [
+        {
+          "start_s": 879.1,
+          "end_s": 946.86
+        }
+      ],
+      "coverage_text": "capacitor on the input electrolytic and you could argue that you'd be better off replacing that with a polyester or something like that but\nand if you put the component to a 2.2 microfarad you will go down even lower but in all honesty\num 10 Hertz half a DB down it's not tacky is it I mean it would shame many valve well all am all valve amplifiers\nso I wouldn't I wouldn't mess with it it is what it is and for what you pay even if you go out and purchase\ntwo proper genuine chips you'll have a very nice 25 watt into 8 or 35 watts into 4 not tacky by any means\nyeah\nyeah\nyeah\nyeah\nyeah\nyeah\nyeah",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Kit Assembly and Component Issues",
+      "description": "The narrator talks about issues with the kit components, including missing capacitors.",
+      "coverage_ranges": [
+        {
+          "start_idx": 105,
+          "end_idx": 106
+        }
+      ],
+      "coverage_segments": [
+        105,
+        106
+      ],
+      "coverage_times": [
+        {
+          "start_s": 946.86,
+          "end_s": 955.02
+        }
+      ],
+      "coverage_text": "yeah\nyeah",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T6",
+      "title": "Conclusion",
+      "description": "The narrator summarizes their findings and provides advice for viewers considering buying the kit.",
+      "coverage_ranges": [
+        {
+          "start_idx": 106,
+          "end_idx": 106
+        }
+      ],
+      "coverage_segments": [
+        106
+      ],
+      "coverage_times": [
+        {
+          "start_s": 954.02,
+          "end_s": 955.02
+        }
+      ],
+      "coverage_text": "yeah",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the clean, high-level table of contents for the video:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"The speaker introduces a problem with their amplifier kit and discusses potential causes.\",\n    \"coverage\": [\n      {\"start_idx\": S00064, \"end_idx\": S00065}\n    ]\n  },\n  {\n    \"title\": \"Testing the Amplifier at 10 kHz\",\n    \"description\": \"The speaker tests the amplifier's performance at 10 kHz and notes some issues.\",\n    \"coverage\": [\n      {\"start_idx\": S00066, \"end_idx\": S00069}\n    ]\n  },\n  {\n    \"title\": \"Comparing Performance at 20 kHz\",\n    \"description\": \"The speaker compares the amplifier's performance at 20 kHz and finds it to be good.\",\n    \"coverage\": [\n      {\"start_idx\": S00070, \"end_idx\": S00073}\n    ]\n  },\n  {\n    \"title\": \"Discussion of Fake/ Faulty Chips\",\n    \"description\": \"The speaker discusses their experience with fake or faulty chips supplied with the original kits.\",\n    \"coverage\": [\n      {\"start_idx\": S00074, \"end_idx\": S00083}\n    ]\n  },\n  {\n    \"title\": \"Comparison to Genuine Chips\",\n    \"description\": \"The speaker compares the performance of genuine chips versus those supplied with the kit.\",\n    \"coverage\": [\n      {\"start_idx\": S00084, \"end_idx\": S00089}\n    ]\n  },\n  {\n    \"title\": \"Specifications for Proper Chip\",\n    \"description\": \"The speaker provides specifications for a proper chip and compares them to the fake/ faulty chips.\",\n    \"coverage\": [\n      {\"start_idx\": S00090, \"end_idx\": S00103}\n    ]\n  }\n]\n```",
+      "Here is the table of contents:\n\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"Mysterious noise and fake chips\",\n    \"coverage\": [{\"start_idx\": S00064, \"end_idx\": S00065}]\n  },\n  {\n    \"title\": \"Testing at 10 kHz\",\n    \"description\": \"Noise persists even with scope unconnected\",\n    \"coverage\": [{\"start_idx\": S00066, \"end_idx\": S00067}]\n  },\n  {\n    \"title\": \"Testing at 20 kHz\",\n    \"description\": \"Clean waveform and impressive performance\",\n    \"coverage\": [{\"start_idx\": S00069, \"end_idx\": S00072}]\n  },\n  {\n    \"title\": \"Comparing chips\",\n    \"description\": \"Original kit chips are fake or faulty\",\n    \"coverage\": [{\"start_idx\": S00073, \"end_idx\": S00076}]\n  },\n  {\n    \"title\": \"Kit issues and alternatives\",\n    \"description\": \"Missing components, genuine chip options\",\n    \"coverage\": [{\"start_idx\": S00077, \"end_idx\": S00084}]\n  },\n  {\n    \"title\": \"Specs for genuine chip\",\n    \"description\": \"Frequency response and performance\",\n    \"coverage\": [{\"start_idx\": S00091, \"end_idx\": S00093}]\n  }\n]",
+      "Here is the high-level table of contents for the video:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"The narrator explains that there's something strange on their scope and they're not sure what it is.\",\n    \"coverage\": [{\"start_idx\": 0, \"end_idx\": 64}]\n  },\n  {\n    \"title\": \"Testing the Amplifier at 10 kHz\",\n    \"description\": \"The narrator tests the amplifier at 10 kHz and shows that there's an issue with noise or crossover artifacts.\",\n    \"coverage\": [{\"start_idx\": 65, \"end_idx\": 76}]\n  },\n  {\n    \"title\": \"Testing the Amplifier at 20 kHz\",\n    \"description\": \"The narrator tests the amplifier at 20 kHz and shows a clean signal with no crossover artifacts.\",\n    \"coverage\": [{\"start_idx\": 77, \"end_idx\": 92}]\n  },\n  {\n    \"title\": \"Discussion of the Chip Quality\",\n    \"description\": \"The narrator discusses the quality of the chips supplied with the kit and compares them to genuine chips.\",\n    \"coverage\": [{\"start_idx\": 93, \"end_idx\": 104}]\n  },\n  {\n    \"title\": \"Kit Assembly and Component Issues\",\n    \"description\": \"The narrator talks about issues with the kit components, including missing capacitors.\",\n    \"coverage\": [{\"start_idx\": 105, \"end_idx\": 118}]\n  },\n  {\n    \"title\": \"Conclusion\",\n    \"description\": \"The narrator summarizes their findings and provides advice for viewers considering buying the kit.\",\n    \"coverage\": [{\"start_idx\": 119, \"end_idx\": 127}]\n  }\n]\n```"
+    ]
+  }
+}

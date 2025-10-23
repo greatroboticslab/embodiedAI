@@ -1,0 +1,55 @@
+{
+  "video_id": "lAVYDUeqdW4",
+  "title": "lAVYDUeqdW4",
+  "url": "https://www.youtube.com/watch?v=lAVYDUeqdW4",
+  "created_at": "2025-09-17T12:01:27.435839+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Defining a State Vector",
+      "description": "The speaker defines a state vector to describe the configuration and its derivative for a robot.",
+      "evidence_quotes": [
+        "So if q is the six-dimensional configuration vector, q and q dot constitute a 12-dimensional description of the state."
+      ],
+      "start_s": 206.0,
+      "end_s": 231.0,
+      "id": "T1"
+    },
+    {
+      "title": "Equilibrium Configuration",
+      "description": "The speaker discusses the equilibrium configuration for a quadrotor, including its position, velocity, and orientation.",
+      "evidence_quotes": [
+        "It could, of course, have any yaw angle."
+      ],
+      "start_s": 265.0,
+      "end_s": 293.0,
+      "id": "T2"
+    },
+    {
+      "title": "Quadrotor Dynamics",
+      "description": "The speaker discusses the equations of motion for a quadrotor, including the net force and moment. They show how to combine these with the Newton-Euler equations to develop controllers and planners.",
+      "evidence_quotes": [
+        "These two sets of equations."
+      ],
+      "start_s": 0.0,
+      "end_s": 7.0,
+      "id": "T3"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topics in the given transcript segment:\n\n[\n  {\n    \"title\": \"Quadrotor Dynamics\",\n    \"description\": \"The speaker discusses the equations of motion for a quadrotor, including the net force and moment. They show how to combine these with the Newton-Euler equations to develop controllers and planners.\",\n    \"evidence_quotes\": [\n      \"These two sets of equations.\"\n    ],\n    \"time_range\": \"00:00:00.000–00:00:07.000\"\n  },\n  {\n    \"title\": \"Defining a State Vector\",\n    \"description\": \"The speaker defines a state vector to describe the configuration and its derivative for a robot.\",\n    \"evidence_quotes\": [\n      \"So if q is the six-dimensional configuration vector, q and q dot constitute a 12-dimensional description of the state.\"\n    ],\n    \"time_range\": \"00:03:26.000–00:03:51.000\"\n  },\n  {\n    \"title\": \"Equilibrium Configuration\",\n    \"description\": \"The speaker discusses the equilibrium configuration for a quadrotor, including its position, velocity, and orientation.\",\n    \"evidence_quotes\": [\n      \"It could, of course, have any yaw angle.\"\n    ],\n    \"time_range\": \"00:04:25.000–00:04:53.000\"\n  }\n]\n\nNote that there may be some overlap between these topics, as the speaker discusses related concepts throughout the transcript."
+        ]
+      }
+    ]
+  }
+}

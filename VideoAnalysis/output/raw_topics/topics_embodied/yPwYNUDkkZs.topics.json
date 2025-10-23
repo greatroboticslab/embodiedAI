@@ -1,0 +1,137 @@
+{
+  "video_id": "yPwYNUDkkZs",
+  "title": "yPwYNUDkkZs",
+  "url": "https://www.youtube.com/watch?v=yPwYNUDkkZs",
+  "created_at": "2025-10-09T17:35:32.246666+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction to Diodes",
+      "description": "Overview of diodes and their importance in electronics.",
+      "coverage_ranges": [
+        {
+          "start_idx": 1,
+          "end_idx": 3
+        }
+      ],
+      "coverage_segments": [
+        1,
+        2,
+        3
+      ],
+      "coverage_times": [
+        {
+          "start_s": 3.84,
+          "end_s": 18.56
+        }
+      ],
+      "coverage_text": "I must say that you are completely wrong.\nIt is really unfair to think that diodes are very simple components and they can only rectify\ncurrent. In this video, I will talk about diodes and their application, not inner structure or",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Using Zener Diodes for Regulating Voltage",
+      "description": "How Zener diodes can be used to regulate voltage and protect circuits from overvoltage.",
+      "coverage_ranges": [
+        {
+          "start_idx": 10,
+          "end_idx": 18
+        }
+      ],
+      "coverage_segments": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "coverage_times": [
+        {
+          "start_s": 57.68,
+          "end_s": 129.2
+        }
+      ],
+      "coverage_text": "There is a line in the cathode side of real diodes to specify a negative or cathode side. Look here,\nthis silver line here and this one.\nThis diode specifies the cathode side by a black line.\nIf you change this line to a shape like S, first letter of Schottky, it becomes a Schottky diode\nschematic symbol like this. And if you replace this line with a shape like Z, first letter of Zener,\nit becomes a Zener diode schematic symbol. And if you surround the diode symbol with a circle,\nit becomes an LED symbol. This component will allow current to flow in this direction from its\nanode to its cathode and it will block current in opposite direction. If you put voltage to diode in\nright order, I mean positive voltage to anode pin and negative voltage to cathode pin, then your diode",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Protecting Circuits from Overvoltage with a Zener Diode",
+      "description": "A simple example of using a Zener diode to protect circuits from overvoltage.",
+      "coverage_ranges": [
+        {
+          "start_idx": 25,
+          "end_idx": 30
+        }
+      ],
+      "coverage_segments": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "coverage_times": [
+        {
+          "start_s": 177.84,
+          "end_s": 233.35999999999999
+        }
+      ],
+      "coverage_text": "and block negative part. Look at this diode carefully. If you apply this yellow signal on anode pin of this\ndiode, you will get this blue signal on the cathode pin.\nThis is a full wave rectifier. I am gonna test it.\nThis is a full wave rectifier. This is a full wave rectifier.\nAnd this is a full wave rectifier which pass either negative or positive part of waveform to output,\nand in the same time, convert negative wave to positive. A full wave rectifier works like this.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Using LEDs for Remote Communication",
+      "description": "How LEDs can be used for remote communication and controlling devices.",
+      "coverage_ranges": [
+        {
+          "start_idx": 33,
+          "end_idx": 42
+        }
+      ],
+      "coverage_segments": [
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "coverage_times": [
+        {
+          "start_s": 244.0,
+          "end_s": 310.0
+        }
+      ],
+      "coverage_text": "It seems easy, but you have to be careful in selecting proper diode. These are three important\nparameters to consider in selecting diode. All of these parameters are available in data sheet.\nIn data sheet of every diode, it is available to check how much voltage the diode will tolerant in reverse\nby a setup. For example, if you are going to rectify AC power in United States by a half wave rectifier,\nyou can use these, but you can't use these because of shortage of reverse blocking voltage.\nContrary to what most newbies think, application of diodes is not limited to rectification.\nSecond application of diodes is my favorite. Application number two.\nUsing diode for reverse polarity protection to protect or product from inverted polarity.\nThink about your product. The result of all those efforts can be lost with just a small mistake.\nIf the user connects power supply in wrong polarity, main parts of your circuit will blow up.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the table of contents in JSON format:\n\n```\n[\n  {\n    \"title\": \"Introduction to Diodes\",\n    \"description\": \"Overview of diodes and their importance in electronics.\",\n    \"coverage\": [{\"start_idx\": 1, \"end_idx\": 3}]\n  },\n  {\n    \"title\": \"Using Zener Diodes for Regulating Voltage\",\n    \"description\": \"How Zener diodes can be used to regulate voltage and protect circuits from overvoltage.\",\n    \"coverage\": [{\"start_idx\": 10, \"end_idx\": 18}]\n  },\n  {\n    \"title\": \"Protecting Circuits from Overvoltage with a Zener Diode\",\n    \"description\": \"A simple example of using a Zener diode to protect circuits from overvoltage.\",\n    \"coverage\": [{\"start_idx\": 25, \"end_idx\": 30}]\n  },\n  {\n    \"title\": \"Using LEDs for Remote Communication\",\n    \"description\": \"How LEDs can be used for remote communication and controlling devices.\",\n    \"coverage\": [{\"start_idx\": 33, \"end_idx\": 42}]\n  }\n]\n```\n\nNote that this is a high-level table of contents, and the actual indices may vary depending on the specific video."
+    ]
+  }
+}
