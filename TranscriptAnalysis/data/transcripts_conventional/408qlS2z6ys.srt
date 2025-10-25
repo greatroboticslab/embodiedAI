@@ -1,0 +1,1108 @@
+1
+00:00:00,400 --> 00:00:07,140
+Welcome to my video. The subject here is going to be optocouplers theory operation and circuits.
+
+2
+00:00:07,920 --> 00:00:15,000
+I'm your host, Lewis Laughlin. Visit my website at www.bristolwatch.com.
+
+3
+00:00:16,440 --> 00:00:26,540
+Objective to understand the basic operation of optocouplers, their types, and use in power control circuits with Arduino and PIC, etc.
+
+4
+00:00:26,540 --> 00:00:32,220
+There will be a couple of short live video clips at the end of this presentation.
+
+5
+00:00:33,920 --> 00:00:45,480
+A typical optocoupler is usually a 6-pin device that has generally an LED infrared emitter and some type of light sensor.
+
+6
+00:00:46,220 --> 00:00:50,360
+If we turn on the LED, it turns on the light sensor.
+
+7
+00:00:50,360 --> 00:00:56,060
+The light sensor can be a transistor or it can be any number of things.
+
+8
+00:00:57,380 --> 00:01:04,360
+The big advantage of optocouplers is electrical and noise isolation.
+
+9
+00:01:05,540 --> 00:01:10,120
+The isolation potential can go up into thousands of volts.
+
+10
+00:01:11,020 --> 00:01:16,180
+Some of them are rated at 7,000 or 10,000 volts electrical isolation.
+
+11
+00:01:16,180 --> 00:01:21,160
+As shown here, it can be a number of detectors.
+
+12
+00:01:22,120 --> 00:01:24,660
+It could be a light activated SCR.
+
+13
+00:01:24,800 --> 00:01:26,100
+It could be a digital output.
+
+14
+00:01:26,360 --> 00:01:28,140
+It could be a Darlington transistor.
+
+15
+00:01:28,440 --> 00:01:30,780
+There's all kinds of detectors.
+
+16
+00:01:31,500 --> 00:01:34,040
+But they all have the basic same purpose.
+
+17
+00:01:34,340 --> 00:01:37,700
+Voltage isolation between input and output.
+
+18
+00:01:37,700 --> 00:01:49,240
+For example, this part number, H11AA1, has dual back-to-back infrared emitters.
+
+19
+00:01:49,480 --> 00:01:55,840
+Quite handy for making things such as a zero crossing detector.
+
+20
+00:01:55,840 --> 00:02:08,480
+Sometimes we will use optocouplers in conjunction with secondary components to make solid-state relays.
+
+21
+00:02:08,480 --> 00:02:12,680
+What you're seeing pictured here is an input protection circuit.
+
+22
+00:02:12,960 --> 00:02:15,660
+It can work with any of these optocouplers.
+
+23
+00:02:16,340 --> 00:02:19,820
+They can have a range from 3 to 30 volts.
+
+24
+00:02:19,820 --> 00:02:29,780
+Either though the LED itself has a rating of probably 1.2 to 1.8 volts,
+
+25
+00:02:30,580 --> 00:02:39,160
+the addition of this 2-watt resistor and Q1, which is an NPN transistor like a 2N2222,
+
+26
+00:02:39,840 --> 00:02:45,480
+as the voltage increases, the current flow will increase through the LED.
+
+27
+00:02:45,480 --> 00:02:51,520
+And of course, it creates a larger voltage drop across this 47-ohm resistor,
+
+28
+00:02:52,400 --> 00:02:59,500
+cutting this transistor Q1 on and shunting the current through Q1 instead of the LED.
+
+29
+00:03:00,160 --> 00:03:02,360
+That's how your protection circuit works.
+
+30
+00:03:03,500 --> 00:03:08,220
+This is your very most basic optocoupler circuit.
+
+31
+00:03:10,220 --> 00:03:15,280
+Generally, we tie the LED through a resistor to ground.
+
+32
+00:03:15,480 --> 00:03:20,960
+And connect it to generally an I.O. pin of an Arduino, PIC, or whatever.
+
+33
+00:03:21,800 --> 00:03:26,460
+A high, of course, 5 volts or 3 or whatever you're using,
+
+34
+00:03:27,080 --> 00:03:28,760
+turns the LED on.
+
+35
+00:03:29,280 --> 00:03:33,480
+The LED light onto the base of an internal phototransistor
+
+36
+00:03:34,060 --> 00:03:38,880
+cuts on the phototransistor and completing a path to ground.
+
+37
+00:03:38,880 --> 00:03:47,580
+This circuit is fine, except it suffers from low-power handling capabilities.
+
+38
+00:03:48,000 --> 00:03:51,360
+Optocouplers are generally low-power devices.
+
+39
+00:03:52,040 --> 00:03:57,200
+So we have to look into using optocouplers to control more powerful devices
+
+40
+00:03:57,200 --> 00:04:01,740
+to really handle heavy jobs.
+
+41
+00:04:01,740 --> 00:04:06,800
+This particular one, the 4N25, is rated at 30 volts.
+
+42
+00:04:06,900 --> 00:04:12,120
+I'm referring to the detector transistor at 150 milliamps.
+
+43
+00:04:12,380 --> 00:04:13,780
+Not a lot of power.
+
+44
+00:04:13,780 --> 00:04:17,760
+All right.
+
+45
+00:04:17,880 --> 00:04:22,800
+What we have done here is here is our 4N25 optocoupler.
+
+46
+00:04:23,280 --> 00:04:26,800
+We have connected it off to 24 volts VCC.
+
+47
+00:04:28,440 --> 00:04:31,220
+And through the collector and through the emitter,
+
+48
+00:04:31,380 --> 00:04:35,780
+we've connected a 1K resistor to the base of a TIP120.
+
+49
+00:04:35,780 --> 00:04:42,160
+This is a power Darlington transistor rated, I think, at 5 amps.
+
+50
+00:04:42,740 --> 00:04:47,260
+When I have a high on the LED, it switches on.
+
+51
+00:04:47,360 --> 00:04:50,760
+It switches on the detector transistor,
+
+52
+00:04:51,440 --> 00:04:55,920
+creates a base emitter current flow through the transistor,
+
+53
+00:04:56,180 --> 00:04:58,180
+and switches on the lamp.
+
+54
+00:04:58,260 --> 00:04:59,900
+In this case, a light bulb.
+
+55
+00:04:59,900 --> 00:05:06,680
+Here is another variation of the same circuit,
+
+56
+00:05:06,780 --> 00:05:13,360
+except this time we are using a PNP Darlington transistor,
+
+57
+00:05:13,560 --> 00:05:15,340
+such as a TIP125.
+
+58
+00:05:16,620 --> 00:05:19,440
+Notice something different about this circuit
+
+59
+00:05:19,440 --> 00:05:21,340
+as opposed to the previous circuit.
+
+60
+00:05:22,800 --> 00:05:28,160
+This circuit had the same electrical ground on the microcontroller,
+
+61
+00:05:28,160 --> 00:05:32,880
+and the secondary output at the 24 volts.
+
+62
+00:05:34,000 --> 00:05:39,120
+Here, we have completely severed the secondary power supply totally
+
+63
+00:05:39,120 --> 00:05:41,060
+from the microprocessor.
+
+64
+00:05:41,260 --> 00:05:43,180
+There is no electrical connection.
+
+65
+00:05:43,340 --> 00:05:45,780
+There is only a light connection.
+
+66
+00:05:46,360 --> 00:05:49,080
+Again, I could have done this very same thing
+
+67
+00:05:49,080 --> 00:05:52,860
+with the NPN Darlington that we saw earlier.
+
+68
+00:05:53,340 --> 00:05:57,060
+A variation of this is called a solid-state relay.
+
+69
+00:05:58,160 --> 00:06:02,040
+And can use a plain old PNP transistor if you want to.
+
+70
+00:06:04,000 --> 00:06:05,960
+Here is another variation,
+
+71
+00:06:06,720 --> 00:06:10,520
+using this time an N-channel MOSFET.
+
+72
+00:06:10,980 --> 00:06:12,500
+What am I doing here?
+
+73
+00:06:12,600 --> 00:06:17,260
+I'm using the 4N25 when I switch it on
+
+74
+00:06:17,260 --> 00:06:22,300
+to apply voltage to the gate of Q1, the MOSFET.
+
+75
+00:06:22,480 --> 00:06:24,720
+It will immediately turn it on.
+
+76
+00:06:25,220 --> 00:06:28,220
+It will create a current path and light up the light bulb.
+
+77
+00:06:28,560 --> 00:06:29,380
+It's that simple.
+
+78
+00:06:30,180 --> 00:06:31,660
+Be careful, though.
+
+79
+00:06:31,940 --> 00:06:34,500
+You need to read the VGS rating,
+
+80
+00:06:34,600 --> 00:06:36,340
+that's voltage gain source,
+
+81
+00:06:36,600 --> 00:06:38,960
+in the MOSFET spec sheet.
+
+82
+00:06:39,220 --> 00:06:40,700
+Do not exceed it.
+
+83
+00:06:40,700 --> 00:06:43,500
+Most of the ones I use in my videos
+
+84
+00:06:43,500 --> 00:06:45,880
+is rated for right at 24 volts.
+
+85
+00:06:46,540 --> 00:06:48,340
+Don't run them at 24 volts
+
+86
+00:06:48,340 --> 00:06:50,740
+if you're using those particular ones.
+
+87
+00:06:50,740 --> 00:06:55,400
+Here again is,
+
+88
+00:06:56,060 --> 00:07:01,020
+we're using a P-channel power MOSFET
+
+89
+00:07:01,020 --> 00:07:02,560
+as opposed to an N-channel.
+
+90
+00:07:02,880 --> 00:07:05,200
+It's wired differently, of course.
+
+91
+00:07:05,400 --> 00:07:06,440
+What I have to do is,
+
+92
+00:07:06,520 --> 00:07:10,820
+I'm using the detector and the MOSFET,
+
+93
+00:07:10,900 --> 00:07:12,260
+and the optocoupler,
+
+94
+00:07:12,580 --> 00:07:15,760
+to drop the gate voltage to about a half a volt
+
+95
+00:07:15,760 --> 00:07:17,520
+when it switches on.
+
+96
+00:07:17,520 --> 00:07:22,740
+And this will create a difference of around 10, 11 volts
+
+97
+00:07:22,740 --> 00:07:24,160
+between gate and source.
+
+98
+00:07:24,380 --> 00:07:25,880
+It will switch on the transistor,
+
+99
+00:07:26,160 --> 00:07:27,760
+and the light bulb will light up.
+
+100
+00:07:28,240 --> 00:07:32,440
+This goes right back to your basic transistor theory.
+
+101
+00:07:36,060 --> 00:07:41,520
+Here is another variation of using an optocoupler.
+
+102
+00:07:42,320 --> 00:07:43,940
+This time we're going to use it,
+
+103
+00:07:43,940 --> 00:07:49,260
+connect the collector of the optocoupler detector
+
+104
+00:07:49,260 --> 00:07:51,660
+right to the collector of the transistor.
+
+105
+00:07:52,780 --> 00:07:53,260
+And of course,
+
+106
+00:07:53,380 --> 00:07:55,280
+the emitter through a 1K resistor
+
+107
+00:07:55,280 --> 00:07:57,980
+is going to switch on Q1.
+
+108
+00:07:59,000 --> 00:08:01,320
+This is really a solid state relay.
+
+109
+00:08:01,500 --> 00:08:02,480
+I use this
+
+110
+00:08:02,480 --> 00:08:06,340
+in several of my other projects and videos.
+
+111
+00:08:06,340 --> 00:08:10,560
+Note something with all of these circuits
+
+112
+00:08:10,560 --> 00:08:11,860
+that I've just went through.
+
+113
+00:08:12,000 --> 00:08:15,020
+Unless you've put capacitors or something in them,
+
+114
+00:08:15,360 --> 00:08:17,640
+you can pulse width modulate them.
+
+115
+00:08:18,260 --> 00:08:20,640
+So I can use this as a switch
+
+116
+00:08:20,640 --> 00:08:24,340
+in either the high side or low side of a load,
+
+117
+00:08:24,440 --> 00:08:27,240
+and I can pulse width modulated if I want to.
+
+118
+00:08:27,240 --> 00:08:35,140
+This shows you the current flow here.
+
+119
+00:08:35,280 --> 00:08:36,460
+This switches on.
+
+120
+00:08:37,360 --> 00:08:39,300
+Get the base current here.
+
+121
+00:08:39,400 --> 00:08:40,140
+Switches on.
+
+122
+00:08:40,240 --> 00:08:42,900
+I get the collector current.
+
+123
+00:08:43,080 --> 00:08:45,680
+Actually, it's IE, not IC,
+
+124
+00:08:46,180 --> 00:08:48,080
+but they're pretty much the same thing.
+
+125
+00:08:50,520 --> 00:08:52,100
+This gives you an illustration
+
+126
+00:08:52,100 --> 00:08:54,320
+of how it works in loads.
+
+127
+00:08:54,320 --> 00:08:57,640
+This could easily have been
+
+128
+00:08:57,640 --> 00:09:00,740
+a push-button switch that you see here.
+
+129
+00:09:01,280 --> 00:09:02,500
+Here is our motor.
+
+130
+00:09:03,140 --> 00:09:05,940
+Here is our common for the power supply.
+
+131
+00:09:06,880 --> 00:09:08,580
+You notice that I can place
+
+132
+00:09:08,580 --> 00:09:12,560
+the transistor collector emitter
+
+133
+00:09:12,560 --> 00:09:15,460
+from the previous circuit here.
+
+134
+00:09:16,200 --> 00:09:19,160
+I can place it on the ground side.
+
+135
+00:09:19,720 --> 00:09:22,660
+I can place it on the high or VCC side
+
+136
+00:09:22,660 --> 00:09:26,300
+as long as I observe polarity.
+
+137
+00:09:28,180 --> 00:09:31,440
+And it works just like a push-button switch,
+
+138
+00:09:31,480 --> 00:09:33,340
+and all of this is isolated
+
+139
+00:09:33,340 --> 00:09:35,340
+from your microcontroller.
+
+140
+00:09:35,900 --> 00:09:37,920
+Boy, that makes things a lot easier.
+
+141
+00:09:40,700 --> 00:09:44,300
+Here is a, I guess you could say,
+
+142
+00:09:44,440 --> 00:09:46,200
+it's a fairly well-complete
+
+143
+00:09:46,200 --> 00:09:48,700
+solid-state DC relay.
+
+144
+00:09:48,700 --> 00:09:50,520
+Here is the protection circuit
+
+145
+00:09:50,520 --> 00:09:51,800
+we talked about earlier.
+
+146
+00:09:52,160 --> 00:09:53,920
+Here is our optocoupler,
+
+147
+00:09:54,260 --> 00:09:56,380
+and here is our transistor switch.
+
+148
+00:09:57,540 --> 00:09:59,280
+These, I have built this.
+
+149
+00:09:59,360 --> 00:10:00,460
+It works just fine.
+
+150
+00:10:03,560 --> 00:10:05,700
+All right, here's another variation
+
+151
+00:10:05,700 --> 00:10:06,920
+of an optocoupler,
+
+152
+00:10:07,080 --> 00:10:09,120
+but I won't go much into these.
+
+153
+00:10:09,120 --> 00:10:13,100
+They use phototriax or photodiax,
+
+154
+00:10:13,220 --> 00:10:15,240
+and they are used with triax
+
+155
+00:10:15,240 --> 00:10:17,720
+and or SCRs
+
+156
+00:10:17,720 --> 00:10:21,260
+to create solid-state AC relays.
+
+157
+00:10:22,260 --> 00:10:24,100
+That's going to be a different video,
+
+158
+00:10:24,440 --> 00:10:26,380
+but it's pretty much the same circuit
+
+159
+00:10:26,380 --> 00:10:27,660
+on the left side,
+
+160
+00:10:28,400 --> 00:10:29,820
+and we will go over
+
+161
+00:10:29,820 --> 00:10:33,040
+how triax and SCRs work
+
+162
+00:10:33,040 --> 00:10:34,460
+in separate videos.
+
+163
+00:10:34,460 --> 00:10:39,240
+And that's this brief introduction
+
+164
+00:10:39,240 --> 00:10:41,460
+to optocouplers.
+
+165
+00:10:42,680 --> 00:10:44,460
+My website has a whole page
+
+166
+00:10:44,980 --> 00:10:46,080
+of circuit examples
+
+167
+00:10:46,080 --> 00:10:47,820
+and what we just went over.
+
+168
+00:10:48,540 --> 00:10:49,460
+And now let's watch
+
+169
+00:10:49,460 --> 00:10:51,100
+a couple of short video clips
+
+170
+00:10:51,100 --> 00:10:52,500
+that I added onto this
+
+171
+00:10:52,500 --> 00:10:54,740
+using optocouplers
+
+172
+00:10:54,740 --> 00:10:59,340
+to control lights and motors
+
+173
+00:10:59,340 --> 00:11:01,520
+and various other devices.
+
+174
+00:11:01,520 --> 00:11:06,760
+Anyway, let's give this
+
+175
+00:11:06,760 --> 00:11:07,760
+a little test run
+
+176
+00:11:07,760 --> 00:11:09,920
+just to let you see
+
+177
+00:11:09,920 --> 00:11:10,620
+what it can do.
+
+178
+00:11:11,080 --> 00:11:12,080
+Power is on.
+
+179
+00:11:12,200 --> 00:11:13,040
+You notice I got a little
+
+180
+00:11:13,040 --> 00:11:16,280
+sort of alt-UV LED down there.
+
+181
+00:11:16,420 --> 00:11:17,900
+Hey, they're useful for something.
+
+182
+00:11:18,820 --> 00:11:20,760
+This is designed to be later on
+
+183
+00:11:20,760 --> 00:11:23,320
+to operate an H-bridge,
+
+184
+00:11:23,800 --> 00:11:25,540
+but what I want to do
+
+185
+00:11:25,540 --> 00:11:27,760
+is just, if you look out here,
+
+186
+00:11:27,820 --> 00:11:29,320
+you'll see an LED come on,
+
+187
+00:11:29,320 --> 00:11:31,780
+and you'll notice
+
+188
+00:11:31,780 --> 00:11:32,660
+this lights up.
+
+189
+00:11:32,740 --> 00:11:34,420
+This is just an LED across.
+
+190
+00:11:35,180 --> 00:11:36,020
+What I'm doing
+
+191
+00:11:36,020 --> 00:11:37,300
+is reading one of the,
+
+192
+00:11:37,420 --> 00:11:40,180
+is analog input channel.
+
+193
+00:11:40,180 --> 00:11:41,120
+I'm reading the value
+
+194
+00:11:41,120 --> 00:11:41,960
+on this pot
+
+195
+00:11:41,960 --> 00:11:45,180
+to control the pulse width
+
+196
+00:11:45,180 --> 00:11:46,280
+modulation out.
+
+197
+00:11:47,820 --> 00:11:50,180
+I can control it on and off.
+
+198
+00:11:50,280 --> 00:11:51,320
+Now, the trick is
+
+199
+00:11:51,320 --> 00:11:53,220
+when I program
+
+200
+00:11:53,220 --> 00:11:55,020
+this particular PIC chip,
+
+201
+00:11:55,020 --> 00:11:56,820
+that if either,
+
+202
+00:11:57,060 --> 00:11:58,140
+I have to have
+
+203
+00:11:58,140 --> 00:12:00,600
+both,
+
+204
+00:12:01,140 --> 00:12:02,740
+either one or the other
+
+205
+00:12:02,740 --> 00:12:03,860
+outputs on.
+
+206
+00:12:03,960 --> 00:12:04,880
+You'll see it over there
+
+207
+00:12:04,880 --> 00:12:05,760
+is the green one.
+
+208
+00:12:07,220 --> 00:12:08,080
+I got to have
+
+209
+00:12:08,080 --> 00:12:09,500
+one or the other on.
+
+210
+00:12:09,960 --> 00:12:10,660
+It's programmed
+
+211
+00:12:10,660 --> 00:12:12,120
+to kill the pulse width
+
+212
+00:12:12,120 --> 00:12:13,240
+modulation out
+
+213
+00:12:13,240 --> 00:12:14,840
+if none of the other
+
+214
+00:12:14,840 --> 00:12:16,200
+two outputs are working.
+
+215
+00:12:16,340 --> 00:12:17,060
+Those will later
+
+216
+00:12:17,060 --> 00:12:18,660
+go on to an H-bridge
+
+217
+00:12:18,660 --> 00:12:19,760
+that I will demonstrate.
+
+218
+00:12:21,580 --> 00:12:22,820
+Nothing much here.
+
+219
+00:12:22,820 --> 00:12:25,920
+It works,
+
+220
+00:12:26,080 --> 00:12:27,700
+it seems quite well.
+
+221
+00:12:31,860 --> 00:12:33,480
+If you look further up,
+
+222
+00:12:33,520 --> 00:12:35,400
+it has a 12 volt power supply.
+
+223
+00:12:35,720 --> 00:12:37,320
+The important part
+
+224
+00:12:37,320 --> 00:12:38,960
+to note in this circuit
+
+225
+00:12:38,960 --> 00:12:46,580
+is the opto isolator here.
+
+226
+00:12:46,780 --> 00:12:48,120
+Everything on that side
+
+227
+00:12:48,120 --> 00:12:49,280
+of the opto isolator
+
+228
+00:12:49,280 --> 00:12:50,380
+is 5 volts.
+
+229
+00:12:50,380 --> 00:12:52,200
+Everything on this side,
+
+230
+00:12:52,340 --> 00:12:53,060
+here, here,
+
+231
+00:12:53,180 --> 00:12:54,160
+back through there,
+
+232
+00:12:54,500 --> 00:12:56,520
+is 12 volts.
+
+233
+00:12:57,640 --> 00:12:59,080
+So I can have
+
+234
+00:12:59,080 --> 00:13:00,400
+really nice control
+
+235
+00:13:00,400 --> 00:13:01,980
+of higher voltage circuits
+
+236
+00:13:01,980 --> 00:13:03,700
+by using an opto coupler.
+
+237
+00:13:05,440 --> 00:13:07,080
+Again, here is an overall
+
+238
+00:13:07,080 --> 00:13:08,560
+picture of it once again.
+
+239
+00:13:12,960 --> 00:13:14,000
+And you can see
+
+240
+00:13:14,000 --> 00:13:14,920
+the light bars
+
+241
+00:13:14,920 --> 00:13:15,980
+go on and off
+
+242
+00:13:15,980 --> 00:13:17,280
+depending on polarity.
+
+243
+00:13:17,280 --> 00:13:19,560
+The important part
+
+244
+00:13:19,560 --> 00:13:20,620
+about this is
+
+245
+00:13:20,620 --> 00:13:22,480
+is all this
+
+246
+00:13:22,480 --> 00:13:23,900
+12 volt circuitry
+
+247
+00:13:23,900 --> 00:13:24,440
+over here,
+
+248
+00:13:24,540 --> 00:13:25,040
+the motor,
+
+249
+00:13:25,560 --> 00:13:26,080
+the H-bridge
+
+250
+00:13:26,080 --> 00:13:27,140
+is only a section
+
+251
+00:13:27,140 --> 00:13:27,920
+of this board,
+
+252
+00:13:28,000 --> 00:13:28,620
+by the way.
+
+253
+00:13:29,160 --> 00:13:31,080
+The power control circuit,
+
+254
+00:13:31,580 --> 00:13:32,340
+the H-bridge,
+
+255
+00:13:32,480 --> 00:13:33,020
+the motor,
+
+256
+00:13:33,400 --> 00:13:34,480
+all of this stuff
+
+257
+00:13:34,480 --> 00:13:36,680
+is completely isolated
+
+258
+00:13:36,680 --> 00:13:38,580
+from all the 5 volt circuitry
+
+259
+00:13:38,580 --> 00:13:39,240
+on the pick
+
+260
+00:13:39,240 --> 00:13:40,040
+or Arduino
+
+261
+00:13:40,040 --> 00:13:41,500
+or whatever you're using.
+
+262
+00:13:47,280 --> 00:13:51,060
+of this
+
+263
+00:13:53,500 --> 00:13:54,380
+a little bit
+
+264
+00:13:54,380 --> 00:13:55,060
+over here.
+
+265
+00:13:55,260 --> 00:13:55,920
+Now I'll show you
+
+266
+00:13:55,920 --> 00:13:57,880
+how it plиль
+
+267
+00:13:57,920 --> 00:13:58,160
+behind to flash
+
+268
+00:13:58,160 --> 00:14:00,580
+in the end
+
+269
+00:14:00,580 --> 00:14:00,600
+here.
+
+270
+00:14:00,660 --> 00:14:02,800
+Of course,
+
+271
+00:14:02,960 --> 00:14:03,060
+the wind
+
+272
+00:14:03,060 --> 00:14:04,020
+can be
+
+273
+00:14:04,020 --> 00:14:04,440
+fen Grü
+
+274
+00:14:04,440 --> 00:14:05,760
+ow
+
+275
+00:14:05,760 --> 00:14:05,960
+아무�'t
+
+276
+00:14:05,960 --> 00:14:08,060
+how the
+
+277
+00:14:08,060 --> 00:14:09,880
+on by way.
+

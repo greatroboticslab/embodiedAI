@@ -1,0 +1,47 @@
+{
+  "video_id": "zZE4AejgDOA",
+  "title": "zZE4AejgDOA",
+  "url": "https://www.youtube.com/watch?v=zZE4AejgDOA",
+  "created_at": "2025-10-09T17:35:42.174260+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "akan",
+      "description": "The speaker mentions akan.",
+      "evidence_quotes": [
+        "akan"
+      ],
+      "start_s": 5.6,
+      "end_s": 8.04,
+      "id": "T1"
+    },
+    {
+      "title": "Statistic",
+      "description": "The speaker talks about statistics, specifically saying something.",
+      "evidence_quotes": [
+        "I'm saying",
+        "I'm saying"
+      ],
+      "start_s": 8.04,
+      "end_s": 18.22,
+      "id": "T2"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topics:\n\n[\n  {\n    \"title\": \"Unfamiliar Words or Phrases\",\n    \"description\": The speaker mentions unfamiliar words or phrases such as \"akan\", \"D увер\", and others. It seems they are struggling to understand or pronounce these terms.\n    \"evidence_quotes\": [\"I'm saying akan\"],\n    \"time_range\": \"00:00:05.600–00:00:08.040\"\n  },\n  {\n    \"title\": \"Max and Cade\",\n    \"description\": The speaker mentions the names Max and Cade, possibly as individuals or entities that are relevant to the conversation.\n    \"evidence_quotes\": [\"She sent me\", \"He'sott\"],\n    \"time_range\": \"00:00:43.020–00:00:55.080\"\n  },\n  {\n    \"title\": \"The Noêtre Plane Machine\",\n    \"description\": The speaker mentions a plane machine called the Noêtre, possibly as a topic of interest or something they are discussing.\n    \"evidence_quotes\": [\"The Noêtre is a plane machine with a awesome craft\"],\n    \"time_range\": \"00:01:25.080–00:01:28.080\"\n  }\n]",
+          "Here is the output in the required format:\n\n[\n  {\n    \"title\": \"akan\",\n    \"description\": \"The speaker mentions akan.\",\n    \"evidence_quotes\": [\"akan\"],\n    \"time_range\": \"00:00:05.600–00:00:08.040\"\n  },\n  {\n    \"title\": \"Statistic\",\n    \"description\": \"The speaker talks about statistics, specifically saying something.\",\n    \"evidence_quotes\": [\"I'm saying\", \"I'm saying\"],\n    \"time_range\": \"00:00:08.040–00:00:18.220\"\n  }\n]\n\nPlease note that the topics are limited to this segment only and do not extend beyond it."
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "video_id": "Sd6CcsCgFbg",
+  "title": "Sd6CcsCgFbg",
+  "url": "https://www.youtube.com/watch?v=Sd6CcsCgFbg",
+  "created_at": "2025-09-17T11:58:18.642890+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Removing Probe from Combined Measurement",
+      "description": "Distinguishing between what's on the right-hand side and creating a file for it.",
+      "evidence_quotes": [
+        "[00:36:18.980 → 00:36:22.980] And so what will be left is just the DUT measurement.",
+        "[00:37:14.980 → 00:37:17.980] So we remove the contribution to the probe."
+      ],
+      "start_s": 4086.96,
+      "end_s": 4222.96,
+      "id": "T1"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topics:\n\n```\n[\n  {\n    \"title\": \"R-C-L Components\",\n    \"description\": null,\n    \"evidence_quotes\": [\"[00:05:46.880 → 00:05:51.040] capacitors, and transmission lines\"],\n    \"time_range\": \"00:05:46.880–00:05:51.040\"\n  },\n  {\n    \"title\": \"Transmission Lines\",\n    \"description\": null,\n    \"evidence_quotes\": [\"[00:05:46.880 → 00:05:51.040] transmission lines\"],\n    \"time_range\": \"00:05:46.880–00:05:51.040\"\n  },\n  {\n    \"title\": \"Differential Probe\",\n    \"description\": null,\n    \"evidence_quotes\": [\"[00:08:04.800 → 00:08:11.120] differential probe\"],\n    \"time_range\": \"00:08:04.800–00:08:11.120\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here are the coherent topics extracted from the provided transcript segment:\n\n[\n  {\n    \"title\": \"Probe SITU S4P File\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\n      \"[00:16:43.980 → 00:16:50.980] So lastly, the third measure we need to do is the probe SITU S4P file.\",\n      \"[00:17:01.980 → 00:17:07.980] So we're going to make a full insertion loss and S4P measurement.\"\n    ],\n    \"time_range\": \"00:16:43.980–00:17:07.980\"\n  },\n  {\n    \"title\": \"Differential DNA\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\n      \"[00:18:23.980 → 00:18:29.980] We need a differential DNA.\",\n      \"[00:18:36.980 → 00:18:48.980] So once again, we need a four port.\"\n    ],\n    \"time_range\": \"00:18:23.980–00:18:48.980\"\n  },\n  {\n    \"title\": \"Four Port System\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\n      \"[00:19:32.980 → 00:19:45.980] That's our four port system.\",\n      \"[00:19:49.980 → 00:19:53.980] Obviously, signal integrity application being that they are differential in nature.\"\n    ],\n    \"time_range\": \"00:19:32.980–00:19:53.980\"\n  }\n]\n\nNote: The time ranges are approximate and based on the provided transcript segment only."
+        ]
+      },
+      {
+        "chunk_index": 2,
+        "attempts": [
+          "Here is the extracted topic in the required JSON format:\n\n```\n[\n  {\n    \"title\": \"Verifying Contact\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"And this is going to be our probe in situ measurement that we're going to be sending to Arno, who's going to do a live demonstration using a TIA-TECH software.\"],\n    \"time_range\": \"00:28:50.980–00:29:04.980\"\n  },\n  {\n    \"title\": \"Making S Parameter Measurement\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"And now the next thing we're going to do is we're going to make an S parameter measurement, return loss measurements.\"],\n    \"time_range\": \"00:29:04.980–00:29:11.980\"\n  },\n  {\n    \"title\": \"Probe in Situ Measurement\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"And this is going to be our probe in situ measurement that we're going to be sending to Arno, who's going to do a live demonstration using a TIA-TECH software.\"],\n    \"time_range\": \"00:29:11.980–00:29:23.980\"\n  },\n  {\n    \"title\": \"Insertion Loss Measurement\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"And this insertion loss measurement, which is the last of the three waveforms that we need, the open, the short, and now the probe in situ measurement.\"],\n    \"time_range\": \"00:29:23.980–00:29:35.980\"\n  },\n  {\n    \"title\": \"Using TIA-TECH Software\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"And for this, we're going to use a 1X open and short.\"],\n    \"time_range\": \"00:29:51.980–00:30:01.980\"\n  },\n  {\n    \"title\": \"Loading S2P Files\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"And I have that one here in the directory. And over here I have the short.\"],\n    \"time_range\": \"00:30:24.980–00:30:31.980\"\n  },\n  {\n    \"title\": \"In Situ Measurement\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"And that is S4P because it's a full differential measurement that we're taking there from the connector to the probe through the transmission line on the board.\"],\n    \"time_range\": \"00:30:47.980–00:31:02.980\"\n  },\n  {\n    \"title\": \"Auto Port Sequence Check\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"And then we perform an auto port sequence check.\"],\n    \"time_range\": \"00:31:12.980–00:31:16.980\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 3,
+        "attempts": [
+          "Here is the extracted topic in JSON format:\n\n```\n[\n  {\n    \"title\": \"Removing Probe from Combined Measurement\",\n    \"description\": \"Distinguishing between what's on the right-hand side and creating a file for it.\",\n    \"evidence_quotes\": [\n      \"[00:36:18.980 → 00:36:22.980] And so what will be left is just the DUT measurement.\",\n      \"[00:37:14.980 → 00:37:17.980] So we remove the contribution to the probe.\"\n    ],\n    \"time_range\": \"00:36:18.980–00:38:34.980\"\n  }\n]\n```"
+        ]
+      }
+    ]
+  }
+}

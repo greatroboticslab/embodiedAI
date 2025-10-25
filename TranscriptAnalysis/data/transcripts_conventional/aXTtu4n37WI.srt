@@ -1,0 +1,1092 @@
+1
+00:00:00,000 --> 00:00:10,540
+Alright, so I wanted to make this quick video just to kind of show you two of the prominent GPS systems that you can buy on Amazon if you just put in FPV GPS.
+
+2
+00:00:11,040 --> 00:00:20,680
+At first, whenever I was first getting into GPS, I really didn't know the difference between these two when it comes to size, how they perform, and things like that.
+
+3
+00:00:20,680 --> 00:00:38,200
+And so I initially bought this one. They're about the same price. So I initially bought this one, and this is like your basic, just plugs into a UART, well, a TX and an RX pad of the same UART, and then your power and ground.
+
+4
+00:00:38,200 --> 00:00:44,940
+And that's it. It has no telemetry or anything like that to it. It is just your basic GPS system.
+
+5
+00:00:45,720 --> 00:01:01,120
+But the 880 GPS, this one actually has, you can see how much thicker that one is in comparison. It's bigger and thicker. This one actually offers telemetry, has telemetry built into it.
+
+6
+00:01:01,120 --> 00:01:25,960
+And you actually plug it into your SCA or, no, SDA or SCL pads. Your RX and TX of the same UART, and your ground and power. So it's got more cords. It plugs into a UART just like this one, but it also plugs into the SCL and SDA on your board.
+
+7
+00:01:25,960 --> 00:01:33,540
+So what does this mean for you if you're trying to find GPS to fly?
+
+8
+00:01:33,740 --> 00:01:46,060
+So what a lot of people are getting into when it comes to GPS is a sub-250, and that's because of the FAA regulations and stuff that are coming down with 250 grams and trying to keep everything under 250 grams.
+
+9
+00:01:46,620 --> 00:01:52,740
+I don't have a weigh thing, but this is significantly heavier than this one. It's just got a lot more to it.
+
+10
+00:01:52,740 --> 00:01:59,980
+It's bigger, wider, and just thicker than the 220.
+
+11
+00:02:01,040 --> 00:02:05,780
+And so that's one huge difference in it if you're trying to do sub-250.
+
+12
+00:02:05,780 --> 00:02:14,300
+If you're just trying to build a big long-range GPS FPV drone, then that really doesn't matter.
+
+13
+00:02:15,240 --> 00:02:25,280
+But the main thing I think that really matters to a lot of pilots is the internal telemetry when it comes to this GPS system here.
+
+14
+00:02:25,280 --> 00:02:32,620
+I mean, maybe it's not going to matter too much to you if you're flying something like Crossfire.
+
+15
+00:02:33,280 --> 00:02:47,920
+You can see with this small one here, you can actually plug it directly to, or you can solder it directly to those pads there on your Crossfire.
+
+16
+00:02:47,920 --> 00:02:56,440
+And you can also, if you're flying with OpenTX, the TX-16S, or I think the jumper does the same thing,
+
+17
+00:02:56,860 --> 00:03:03,060
+you can actually go in and reset the pins on your Crossfire and set it up perfectly for this.
+
+18
+00:03:03,480 --> 00:03:07,040
+It uses less cord. It's a lighter GPS system and everything.
+
+19
+00:03:07,040 --> 00:03:16,500
+And your Crossfire with a Tyrannus or TX-16S or the jumper, you'll have telemetry anyway.
+
+20
+00:03:16,660 --> 00:03:19,800
+So you don't really need the extra telemetry here.
+
+21
+00:03:20,000 --> 00:03:25,720
+You can just use one of these little plug-and-plays and you can get everything out of a GPS system that you need.
+
+22
+00:03:26,680 --> 00:03:30,900
+But if you're, say, you're flying something super cheap like the FlySky,
+
+23
+00:03:30,900 --> 00:03:36,600
+FlySky, and I think they might have one receiver that offers telemetry.
+
+24
+00:03:36,680 --> 00:03:42,700
+I'm not exactly sure, but all the cheaper receivers that go with this transmitter,
+
+25
+00:03:43,620 --> 00:03:46,280
+your drone just doesn't know where it is.
+
+26
+00:03:46,320 --> 00:03:48,780
+It has no telemetry or anything with it.
+
+27
+00:03:49,220 --> 00:03:54,380
+So when you plug in, play something like this, it's going to give you your speed,
+
+28
+00:03:55,100 --> 00:03:57,900
+your distance from your home point, and it's going to give you a home point.
+
+29
+00:03:57,900 --> 00:04:02,900
+But it's really, it's going to know where you're at kind of by the GPS and stuff.
+
+30
+00:04:03,060 --> 00:04:07,700
+But when I flew around with it, my directional arrow was never correct.
+
+31
+00:04:08,080 --> 00:04:12,900
+And so I never actually tried the rescue mode with it because I think without having the telemetry,
+
+32
+00:04:13,880 --> 00:04:15,660
+I don't think it would have worked anyways.
+
+33
+00:04:15,820 --> 00:04:17,640
+Actually, no. Yeah, I did. I did it once.
+
+34
+00:04:17,700 --> 00:04:19,960
+I hit the GPS rescue and it just dropped out of the sky.
+
+35
+00:04:20,320 --> 00:04:21,700
+I forgot all about that.
+
+36
+00:04:21,700 --> 00:04:30,460
+So I wouldn't recommend using this along with a cheaper receiver and cheaper transmitter setup
+
+37
+00:04:30,460 --> 00:04:35,860
+because you're just not going to have that extra telemetry between the receiver and your drone
+
+38
+00:04:35,860 --> 00:04:42,660
+that's going to feed the information into the GPS to kind of lock everything in exactly where it needs to be.
+
+39
+00:04:42,660 --> 00:04:51,900
+But if you're running a cheaper FlySky, you can use one of these and an F7 board or F4 or F5 board or something.
+
+40
+00:04:52,120 --> 00:05:01,060
+As long as you have the SCL and SDA ports on your flight controller, which every flight controller pretty much has it.
+
+41
+00:05:01,060 --> 00:05:12,120
+I'm pretty sure, at least nowadays, I'm going to show you guys the pinup on a Zeus, an HTMLRC Zeus.
+
+42
+00:05:14,420 --> 00:05:22,440
+You can see right here it has the pinup for your GPS, which this is a different GPS.
+
+43
+00:05:22,600 --> 00:05:25,060
+It has a different pin readout and everything to it.
+
+44
+00:05:25,060 --> 00:05:30,900
+And this is why I took the original pin out.
+
+45
+00:05:31,100 --> 00:05:35,920
+That's a good thing about this one, too, that's different is this one doesn't have any soldering ports.
+
+46
+00:05:36,000 --> 00:05:43,140
+And a lot of people that build these drones know that these plug-in things like this, they don't really last very long.
+
+47
+00:05:43,260 --> 00:05:46,200
+But there's nowhere to solder directly to the GPS.
+
+48
+00:05:46,800 --> 00:05:50,020
+This one actually has little solder points down in the bottom.
+
+49
+00:05:50,300 --> 00:05:52,440
+So it makes it a whole lot easier and you don't have to use the pin.
+
+50
+00:05:52,440 --> 00:05:59,820
+So I just ran a plug here because this has no GPS on the top part of the board.
+
+51
+00:06:00,260 --> 00:06:02,680
+But it only has it at the bottom part of the board.
+
+52
+00:06:03,340 --> 00:06:05,140
+The SCL and SDA here.
+
+53
+00:06:05,840 --> 00:06:14,740
+Which I could being, I could run this to the Zeus and just put it on the top point somewhere.
+
+54
+00:06:14,740 --> 00:06:22,920
+And run a crossfire to this and it'll be fine as long as I'm using one UART that's not in use at the moment.
+
+55
+00:06:23,060 --> 00:06:28,820
+Like the three, you know, right there or something.
+
+56
+00:06:29,760 --> 00:06:36,520
+But I'm currently, my Zeus board in my actual drone, it's the only one that I'm actually running FlySky on still.
+
+57
+00:06:36,520 --> 00:06:42,440
+So, I mean, I'm using this, I'm bound with this TX-16S.
+
+58
+00:06:42,700 --> 00:06:48,480
+But I still, I'm trying to, what I want to do is make a video of the difference between the two and how they perform.
+
+59
+00:06:49,340 --> 00:06:58,200
+With an OpenTX, TX-16S transmitter and a regular cheap FlySky receiver.
+
+60
+00:06:58,200 --> 00:07:01,180
+I'm not using the actual FlySky transmitter.
+
+61
+00:07:01,380 --> 00:07:04,680
+I want to start with this one because it's got the most to it.
+
+62
+00:07:05,300 --> 00:07:08,660
+And I haven't really gotten that much testing and stuff done with this.
+
+63
+00:07:09,060 --> 00:07:13,100
+I haven't actually gotten to use it all that much because as soon as it came in, I decided not to run GPS.
+
+64
+00:07:13,920 --> 00:07:19,700
+I hooked it up like once to one of my drones and then I disconnected it and haven't used it.
+
+65
+00:07:19,760 --> 00:07:21,540
+I didn't really do any testing and stuff on it.
+
+66
+00:07:22,200 --> 00:07:26,260
+So, I made the plug to match here.
+
+67
+00:07:28,200 --> 00:07:32,260
+And then soldered directly to there.
+
+68
+00:07:32,620 --> 00:07:33,840
+And I'm going to get that one.
+
+69
+00:07:34,020 --> 00:07:35,380
+And plus, I like using these.
+
+70
+00:07:35,680 --> 00:07:37,060
+And this one's perfect for it.
+
+71
+00:07:37,200 --> 00:07:40,820
+If you just want to test the speed, get the speed of your drone.
+
+72
+00:07:41,760 --> 00:07:43,220
+A lot of people like to do that.
+
+73
+00:07:43,320 --> 00:07:44,120
+I like to do that.
+
+74
+00:07:44,200 --> 00:07:48,700
+I like to see how my motor situation is whenever I get new motors.
+
+75
+00:07:48,700 --> 00:07:59,400
+Like I got these cheap 2700 kV motors that are like $30 for a whole set that are on my drone that has the Zeus.
+
+76
+00:08:00,140 --> 00:08:08,100
+And so, I really want to get the speed of it and kind of just do some testing on that to see how fast it goes and how much power we can put through it.
+
+77
+00:08:08,100 --> 00:08:13,380
+And they're only rated up to 4S, but I already know that they can handle 5S easily.
+
+78
+00:08:13,920 --> 00:08:18,340
+So, I just want to do some testing on, you know, the speed and accuracy and things like that.
+
+79
+00:08:18,540 --> 00:08:22,560
+And having a GPS really helps you test everything.
+
+80
+00:08:23,540 --> 00:08:26,280
+So, I mean, I think this one will be fine for it.
+
+81
+00:08:26,280 --> 00:08:29,060
+And I'll probably end up hooking that one up just to at least get the speed and stuff.
+
+82
+00:08:29,060 --> 00:08:31,320
+But I'd like to get this one working on it.
+
+83
+00:08:31,900 --> 00:08:36,340
+So, yeah, that's a huge thing is the soldering directly to it.
+
+84
+00:08:36,400 --> 00:08:41,260
+And then whenever I get done with this, I can just cut that or unsolder it and make a new cord for it.
+
+85
+00:08:42,200 --> 00:08:50,620
+One of the bad things about both of these is they send you these connectors that have some nylon wrapping to them.
+
+86
+00:08:51,060 --> 00:08:56,340
+And I hate nylon because as soon as you start soldering, they melt a whole lot faster up.
+
+87
+00:08:56,340 --> 00:08:59,200
+And not only that, they're so stiff and everything.
+
+88
+00:08:59,960 --> 00:09:02,140
+And so this is my first cord that I ended up making.
+
+89
+00:09:02,600 --> 00:09:08,960
+And what I did is I spliced silicone cords with the nylon cords and put them together.
+
+90
+00:09:09,040 --> 00:09:09,940
+But I don't like doing that.
+
+91
+00:09:10,040 --> 00:09:11,300
+I like to have a direct cord.
+
+92
+00:09:11,620 --> 00:09:13,540
+I don't like to have a splice in the middle of it.
+
+93
+00:09:13,700 --> 00:09:15,860
+I've never had a problem with silicone.
+
+94
+00:09:16,800 --> 00:09:21,520
+So, I went and created new connections that are made out of silicone.
+
+95
+00:09:21,520 --> 00:09:30,400
+And I would suggest if you're using these to just throw out your nylon ones and put silicone ones on it.
+
+96
+00:09:31,360 --> 00:09:36,200
+Solder directly to this because it has a special, you can see the bumps on the top of it.
+
+97
+00:09:37,000 --> 00:09:40,340
+It has a special connection thing just like some VTXs and stuff do.
+
+98
+00:09:40,340 --> 00:09:47,440
+And I couldn't find one that replicated this exact feature in my group of stuff.
+
+99
+00:09:48,260 --> 00:09:50,180
+So, soldering directly onto it helped.
+
+100
+00:09:50,500 --> 00:09:54,140
+This one's just a basic cord, a basic connection.
+
+101
+00:09:54,580 --> 00:09:56,360
+So, it was really easy to swap that one out.
+
+102
+00:09:56,580 --> 00:09:58,240
+I'm going to show you guys on my computer.
+
+103
+00:09:59,060 --> 00:10:04,360
+Both of these have the same setup on the computer that you can do to it.
+
+104
+00:10:04,360 --> 00:10:06,840
+And I'm just going to show you my basic setup.
+
+105
+00:10:06,980 --> 00:10:14,860
+If you're looking to set these up on yours and you're kind of wondering what you need to do to get them set up and get them working.
+
+106
+00:10:15,340 --> 00:10:19,360
+I'm going to just show you guys that and you guys can just follow along and hook yours up.
+
+107
+00:10:19,900 --> 00:10:21,140
+I hope you guys enjoyed this video.
+
+108
+00:10:21,220 --> 00:10:23,440
+It's just a real quick comparison.
+
+109
+00:10:24,360 --> 00:10:27,240
+Hopefully, to just help you make some final decisions.
+
+110
+00:10:27,380 --> 00:10:29,800
+I'm not going into great detail on either one of them.
+
+111
+00:10:29,800 --> 00:10:34,800
+But they're both pretty decent GPS systems and they just have completely different...
+
+112
+00:10:35,540 --> 00:10:40,780
+They have two different purposes when it comes to GPS and hooking up GPS to your drone.
+
+113
+00:10:41,480 --> 00:10:42,920
+So, hopefully this has been helpful.
+
+114
+00:10:43,640 --> 00:10:48,360
+So, I've got the 800 hooked up to this.
+
+115
+00:10:48,820 --> 00:10:56,300
+But I'm going to show you guys the settings that I used to do this because I actually messed with it for a while and had to try to figure some things out.
+
+116
+00:10:56,300 --> 00:11:05,220
+But there's not very many videos unless you want to go through like a long video talking about GPS with Josh or something.
+
+117
+00:11:05,980 --> 00:11:08,760
+And so, I'm just going to try to make this as quick as possible.
+
+118
+00:11:08,860 --> 00:11:10,180
+These are pretty intuitive.
+
+119
+00:11:11,160 --> 00:11:19,580
+And as long as you've got, you know, the boards nowadays, it's pretty easy to plug and play these things really quick and just get the gist of it.
+
+120
+00:11:19,580 --> 00:11:25,360
+So, we're going to move over to the computer and I'm going to show you exactly the settings that I had on this.
+
+121
+00:11:25,760 --> 00:11:29,680
+Just so I can give some people out there an idea if you're trying to hook up GPS.
+
+122
+00:11:30,200 --> 00:11:31,680
+Alright, so here we are.
+
+123
+00:11:36,100 --> 00:11:37,740
+In Betaflight.
+
+124
+00:11:37,740 --> 00:11:41,360
+And the first thing you want to do is go over to ports.
+
+125
+00:11:42,400 --> 00:11:44,460
+And I've got mine hooked up to UART 2.
+
+126
+00:11:44,860 --> 00:11:48,280
+It's the only one that I can plug a GPS to apparently on this.
+
+127
+00:11:48,680 --> 00:11:49,900
+I mean, I could use a different one.
+
+128
+00:11:50,060 --> 00:11:53,680
+But I would have to splice wires and solder and things like that.
+
+129
+00:11:53,760 --> 00:11:57,400
+But it's just easier for the whole connection point to go on to.
+
+130
+00:11:57,920 --> 00:11:59,600
+You can see GPS here.
+
+131
+00:12:00,920 --> 00:12:04,340
+You just come over and it's usually on disabled.
+
+132
+00:12:04,340 --> 00:12:06,200
+But you just click on GPS.
+
+133
+00:12:06,740 --> 00:12:12,060
+And then the, uh, this right here, you can leave it on auto.
+
+134
+00:12:12,880 --> 00:12:15,880
+And what it did for me is it picked the correct one.
+
+135
+00:12:16,340 --> 00:12:21,380
+So, as soon as I saved and rebooted and went to configuration, I came back to the ports.
+
+136
+00:12:21,860 --> 00:12:22,840
+And this was here.
+
+137
+00:12:23,340 --> 00:12:26,200
+Now, I watched a video and it said to put it on this one.
+
+138
+00:12:27,680 --> 00:12:30,460
+And when I had it set on that, it didn't work.
+
+139
+00:12:31,100 --> 00:12:33,560
+So, go figure.
+
+140
+00:12:33,560 --> 00:12:35,980
+I just left it on auto and then came back to it.
+
+141
+00:12:36,060 --> 00:12:37,720
+And this was, this was here.
+
+142
+00:12:38,440 --> 00:12:41,160
+So, that is apparently the right one.
+
+143
+00:12:41,240 --> 00:12:42,840
+I don't know exactly what these are for.
+
+144
+00:12:44,060 --> 00:12:46,840
+So, my knowledge on this is a little slim.
+
+145
+00:12:47,020 --> 00:12:48,820
+So, take it for what it is.
+
+146
+00:12:48,920 --> 00:12:50,480
+I'm just showing you a basic setup.
+
+147
+00:12:50,480 --> 00:12:55,900
+I'm not trying to tell you the, the, in details of how all this stuff works.
+
+148
+00:12:55,900 --> 00:12:57,460
+I'm just trying to give you a quick thing.
+
+149
+00:12:57,460 --> 00:13:00,480
+So, you can go through and, and hook your GPS too.
+
+150
+00:13:00,600 --> 00:13:04,160
+And then, it's a little less troubleshooting for you in the end.
+
+151
+00:13:04,160 --> 00:13:07,200
+So, then you just save and reboot.
+
+152
+00:13:08,760 --> 00:13:09,940
+Go to configuration.
+
+153
+00:13:10,720 --> 00:13:14,920
+And I think I need to turn on my telemetry.
+
+154
+00:13:15,240 --> 00:13:17,860
+And I wonder if that is why my compass isn't working.
+
+155
+00:13:17,920 --> 00:13:18,680
+I'm going to turn it on.
+
+156
+00:13:18,680 --> 00:13:24,800
+But the main thing that you need to do is come down here and turn on GPS.
+
+157
+00:13:25,720 --> 00:13:26,880
+I got U-blocks.
+
+158
+00:13:26,980 --> 00:13:28,440
+U-blocks got this one to work.
+
+159
+00:13:28,600 --> 00:13:33,420
+I had any MEA because I thought that was the right protocol.
+
+160
+00:13:34,020 --> 00:13:38,120
+But for this one, for mine, U-blocks is the one that worked.
+
+161
+00:13:38,120 --> 00:13:41,840
+You can click Autobot if you want to.
+
+162
+00:13:42,240 --> 00:13:43,820
+And it will auto-generate that.
+
+163
+00:13:44,160 --> 00:13:46,900
+But you can turn that off.
+
+164
+00:13:46,960 --> 00:13:47,540
+You can turn it on.
+
+165
+00:13:47,580 --> 00:13:48,140
+It doesn't matter.
+
+166
+00:13:48,440 --> 00:13:50,500
+So, I got the Autobot on and the auto-configure.
+
+167
+00:13:52,140 --> 00:13:54,280
+The ground assist type is auto-detect.
+
+168
+00:13:54,820 --> 00:13:57,660
+And I've got this just set at zero for now until I figure.
+
+169
+00:13:58,160 --> 00:14:00,400
+I'm going to look more in-depth into this stuff here.
+
+170
+00:14:00,840 --> 00:14:04,160
+And once I figure more out, then I'm going to know the correct.
+
+171
+00:14:04,240 --> 00:14:06,160
+But this is what gets it working right now.
+
+172
+00:14:06,160 --> 00:14:08,940
+So, that's basically it.
+
+173
+00:14:09,080 --> 00:14:13,280
+And then I'm going to troubleshoot and kind of see what works and what doesn't.
+
+174
+00:14:13,480 --> 00:14:15,580
+And what makes the GPS better.
+
+175
+00:14:15,760 --> 00:14:19,880
+So, there may be a point two to this video in the future.
+
+176
+00:14:21,160 --> 00:14:23,780
+But once you get that set, you save and reboot.
+
+177
+00:14:24,560 --> 00:14:26,640
+Then you can come over to your failsafe.
+
+178
+00:14:28,320 --> 00:14:30,320
+And I'll get back to this here.
+
+179
+00:14:30,740 --> 00:14:32,080
+This GPS rescue here.
+
+180
+00:14:32,700 --> 00:14:35,820
+What you need to do is just click on GPS rescue.
+
+181
+00:14:35,820 --> 00:14:37,840
+And you can set all this stuff if you want to.
+
+182
+00:14:38,520 --> 00:14:40,040
+I'm not going to go through each one of them.
+
+183
+00:14:40,160 --> 00:14:42,160
+This is like your angle that it flies back.
+
+184
+00:14:43,000 --> 00:14:46,000
+And that kind of picks the speed.
+
+185
+00:14:46,360 --> 00:14:55,220
+So, if it's flying at an angle of like 25, in order for the horizon to be centered, it's going to have to go at a specific speed.
+
+186
+00:14:55,220 --> 00:15:00,780
+So, I mean that kind of your angle depicts the speed that it comes back.
+
+187
+00:15:00,860 --> 00:15:02,880
+So, the higher your angle, the faster it will come back.
+
+188
+00:15:03,680 --> 00:15:05,020
+I know it has your throttle.
+
+189
+00:15:06,100 --> 00:15:10,820
+Let's see your maximum throttle and your minimum throttle and your ground speed and stuff like this.
+
+190
+00:15:10,820 --> 00:15:14,580
+But in order to get that angle, it needs to go to a specific speed.
+
+191
+00:15:14,700 --> 00:15:15,460
+So, I'm imagining.
+
+192
+00:15:16,120 --> 00:15:17,400
+And you can leave a comment.
+
+193
+00:15:17,520 --> 00:15:18,320
+Correct me if I'm wrong.
+
+194
+00:15:18,440 --> 00:15:22,320
+But I'm imagining the angle determines how fast it comes back.
+
+195
+00:15:23,100 --> 00:15:26,260
+So, go through and set all these.
+
+196
+00:15:26,260 --> 00:15:29,700
+And hit save and reboot.
+
+197
+00:15:30,960 --> 00:15:32,480
+And you can come to your modes.
+
+198
+00:15:33,340 --> 00:15:35,080
+And you can set your GPS rescue.
+
+199
+00:15:35,560 --> 00:15:36,560
+I've got mine on three.
+
+200
+00:15:36,660 --> 00:15:39,020
+And this is where that fail safe thing comes in.
+
+201
+00:15:39,780 --> 00:15:42,820
+Because you've got the 1800 here and the 2000 here.
+
+202
+00:15:43,520 --> 00:15:50,960
+So, what you can do in order to get your GPS rescue to work is come back here to your fail safe.
+
+203
+00:15:52,120 --> 00:15:54,120
+And this is going to be set on hold.
+
+204
+00:15:54,120 --> 00:15:56,480
+Put it as set.
+
+205
+00:15:57,240 --> 00:16:02,180
+And put one of those numbers, 1800 or 2000 or whatever, is in the yellow that you see.
+
+206
+00:16:02,600 --> 00:16:07,200
+And as soon as it flips over and passes that mark, it will go in the GPS rescue.
+
+207
+00:16:11,140 --> 00:16:16,360
+So, once you get your GPS rescue, you just hit save.
+
+208
+00:16:17,660 --> 00:16:19,740
+And come down to GPS and check this out.
+
+209
+00:16:19,800 --> 00:16:21,420
+You can see that it's already starting to work.
+
+210
+00:16:22,160 --> 00:16:23,180
+We've got one.
+
+211
+00:16:23,180 --> 00:16:24,680
+I'm inside the house.
+
+212
+00:16:25,280 --> 00:16:28,220
+So, having one is pretty significant.
+
+213
+00:16:28,940 --> 00:16:33,620
+Your first time firing this up at any new spot or location, it's going to take a while.
+
+214
+00:16:34,180 --> 00:16:40,860
+So, the problem with this drone that I have it hooked up to right now is it has a problem overheating quickly.
+
+215
+00:16:40,860 --> 00:16:42,860
+And then it just starts resetting.
+
+216
+00:16:42,860 --> 00:16:45,820
+And I don't know why.
+
+217
+00:16:45,820 --> 00:16:54,820
+So, for right now, I have to set this outside with a cooling fan on it until it gets, if I'm in a new spot.
+
+218
+00:16:55,180 --> 00:17:00,000
+Typically, what happens is it takes a while in the first spot.
+
+219
+00:17:00,000 --> 00:17:04,900
+When you're at a brand new area, it's going to take a while to lock on.
+
+220
+00:17:04,900 --> 00:17:10,700
+But any time after that, you can plug in and it's going to lock on almost immediately.
+
+221
+00:17:10,860 --> 00:17:11,800
+It's really good at it.
+
+222
+00:17:11,800 --> 00:17:15,160
+So, it just depends on the new spot.
+
+223
+00:17:15,400 --> 00:17:26,680
+And because this one overheats, if you can leave a comment, this is the Zeus, the HGLRC Zeus board.
+
+224
+00:17:26,680 --> 00:17:35,640
+And I've got, and I don't know if it's the VTX that's overheating or if it's the Mamba 50 MPSCs.
+
+225
+00:17:35,820 --> 00:17:37,240
+It's kind of a hodgepodge.
+
+226
+00:17:37,320 --> 00:17:40,660
+I've got just mismatched stuff all on it.
+
+227
+00:17:40,980 --> 00:17:43,840
+But it just overheats and it restarts and all this.
+
+228
+00:17:44,040 --> 00:17:45,380
+It's frustrating.
+
+229
+00:17:45,560 --> 00:17:46,420
+It drives me insane.
+
+230
+00:17:46,800 --> 00:17:52,460
+So, I put a little pocket fan on it and it stays cool enough until the GPS is there.
+
+231
+00:17:52,460 --> 00:17:55,300
+And then once it gets locked on, I just remove it and start it.
+
+232
+00:17:55,300 --> 00:18:02,560
+And then while the rotors are running, it keeps it cool and it doesn't have any problems after that.
+
+233
+00:18:02,860 --> 00:18:04,760
+So, I just want to test these motors.
+
+234
+00:18:05,540 --> 00:18:11,040
+That's, you know, once you figure out your GPS, then you can come down to your OSD.
+
+235
+00:18:11,520 --> 00:18:15,400
+You can set your, you know, you've got your GPS stuff here.
+
+236
+00:18:17,220 --> 00:18:19,680
+So, you can see which one each of these are.
+
+237
+00:18:19,680 --> 00:18:24,540
+So, this is your GPS stats, your home distance, your aero.
+
+238
+00:18:25,300 --> 00:18:29,120
+And like I said, I couldn't get the aero to work correctly.
+
+239
+00:18:29,500 --> 00:18:33,840
+I don't know if just not having the telemetry off knocks the compass off or something.
+
+240
+00:18:33,960 --> 00:18:38,900
+But I'm fixing to go out there and retest it here in a second to make sure everything's working okay.
+
+241
+00:18:39,800 --> 00:18:42,700
+But then you push save and that's everything.
+
+242
+00:18:42,700 --> 00:18:57,340
+So, you've got your OSD, GPS, your modes, your receiver, or not your receiver, but your failsafe, and configuration and ports.
+
+243
+00:18:57,620 --> 00:18:58,660
+So, that's all backwards.
+
+244
+00:18:58,660 --> 00:19:05,000
+So, ports, configuration, your failsafe, modes, check your GPS.
+
+245
+00:19:05,780 --> 00:19:09,740
+And this right here, you'll know if it's working or not by plugging it in.
+
+246
+00:19:10,960 --> 00:19:16,180
+Number one, it's got, and you can't see it right now because of the light that's on it, but it's got a blue light that's on it.
+
+247
+00:19:16,180 --> 00:19:24,280
+That when it's flashing, that tells you that it's trying to pick up and transmit a signal and shows that this is working.
+
+248
+00:19:24,640 --> 00:19:29,520
+The way that you can tell that this is communicating with your board is right here.
+
+249
+00:19:30,240 --> 00:19:31,980
+That you'll start seeing numbers here.
+
+250
+00:19:31,980 --> 00:19:37,000
+So, when it's not working, all this will be at zero and nothing will be happening.
+
+251
+00:19:37,860 --> 00:19:44,420
+But, as soon as you get it working and actually sending and receiving, and you have it on the right one, and that's what was happening to me,
+
+252
+00:19:44,880 --> 00:19:50,180
+is I was in configuration and I had this one picked.
+
+253
+00:19:54,260 --> 00:19:59,100
+And when I went back to GPS, nothing was happening here.
+
+254
+00:19:59,100 --> 00:20:04,220
+So, you can obviously see that it's sending and receiving and all that stuff.
+
+255
+00:20:04,840 --> 00:20:12,820
+So, that's just a quick way to hook this up without having to dial in deep and try to explain everything and what everything is to a T.
+
+256
+00:20:12,900 --> 00:20:16,920
+I'll make a 2.0 if you guys want it, but this will at least help you get this thing set up.
+
+257
+00:20:17,340 --> 00:20:18,220
+Get it in the air.
+
+258
+00:20:18,800 --> 00:20:23,940
+And then if you want to do some different things, you can come back and troubleshoot stuff.
+
+259
+00:20:23,980 --> 00:20:26,840
+Just like I still have to troubleshoot the directional arrow.
+
+260
+00:20:26,840 --> 00:20:33,620
+And it might be, depending on the way that you put this, there's a front and a back to this.
+
+261
+00:20:33,980 --> 00:20:42,660
+But that really shouldn't matter because if you have it flip backwards, then it's just like it's flying backwards the entire time.
+
+262
+00:20:42,740 --> 00:20:44,420
+The arrow should still point to home.
+
+263
+00:20:44,420 --> 00:20:48,820
+So, I don't get how that is incorrect.
+
+264
+00:20:48,820 --> 00:20:56,600
+And I'm afraid to hit the fail safe even though as I'm flying out, you can see the distance getting bigger.
+
+265
+00:20:56,840 --> 00:20:59,900
+And as I'm coming closer, you can see the distance from home getting smaller.
+
+266
+00:21:00,020 --> 00:21:01,560
+So, it knows where the home point is.
+
+267
+00:21:02,000 --> 00:21:07,060
+I'm just afraid that it's going to go in the direction of that arrow or that's going to throw it off or something's going to happen.
+
+268
+00:21:07,060 --> 00:21:14,540
+So, I'm going to take this out and I'm going to test it and test flight and stuff and kind of see where we're at.
+
+269
+00:21:15,360 --> 00:21:17,340
+And I hope you guys enjoyed this.
+
+270
+00:21:17,760 --> 00:21:19,700
+Hope this helps you out setting up GPS.
+
+271
+00:21:20,260 --> 00:21:21,360
+My name is Bryce Michael Arcee.
+
+272
+00:21:21,700 --> 00:21:22,300
+I'll see you guys later.
+
+273
+00:21:22,340 --> 00:21:22,720
+Have a good one.
+

@@ -1,0 +1,34 @@
+{
+  "video_id": "nxMkX0wtLm4",
+  "title": "nxMkX0wtLm4",
+  "url": "https://www.youtube.com/watch?v=nxMkX0wtLm4",
+  "created_at": "2025-10-09T17:34:27.166048+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Music",
+      "description": "The speaker talks about music.",
+      "evidence_quotes": [],
+      "start_s": 0.0,
+      "end_s": 239.32,
+      "id": "T1"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topics in JSON format:\n\n[\n  {\n    \"title\": \"Repetition of Thank You\",\n    \"description\": \"The speaker repeatedly says thank you without any specific context or explanation.\",\n    \"evidence_quotes\": [\"Thank you.\", \"Thank you.\", ...],\n    \"time_range\": \"00:00:29.340–00:05:59.320\"\n  }\n]",
+          "Here is the extracted topics:\n\n[\n  {\n    \"title\": \"Music\",\n    \"description\": \"The speaker talks about music.\",\n    \"evidence_quotes\": [\"\", \"\", \"\"],\n    \"time_range\": \"00:00:00.000–00:03:59.320\"\n  }\n]"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "video_id": "h50JwrVl2nQ",
+  "title": "h50JwrVl2nQ",
+  "url": "https://www.youtube.com/watch?v=h50JwrVl2nQ",
+  "created_at": "2025-10-09T17:33:47.669110+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Durch diese...",
+      "description": "The speaker says something about 'durch diese'.",
+      "evidence_quotes": [
+        "diesen"
+      ],
+      "start_s": 0.16,
+      "end_s": 8.68,
+      "id": "T1"
+    },
+    {
+      "title": "Number of kids",
+      "description": "The speaker talks about the number of kids.",
+      "evidence_quotes": [
+        "8"
+      ],
+      "start_s": 11.4,
+      "end_s": 14.16,
+      "id": "T2"
+    },
+    {
+      "title": "Passing away",
+      "description": "The speaker says something about passing away.",
+      "evidence_quotes": [
+        "I'll pass away."
+      ],
+      "start_s": 18.159999999999997,
+      "end_s": 48.14,
+      "id": "T3"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the output:\n\n[\n  {\n    \"title\": \"Durch diese...\",\n    \"description\": \"The speaker says something about 'durch diese'.\",\n    \"evidence_quotes\": [\"diesen\"],\n    \"time_range\": \"00:00:00.080–00:00:08.600\"\n  },\n  {\n    \"title\": \"Number of kids\",\n    \"description\": \"The speaker talks about the number of kids.\",\n    \"evidence_quotes\": [\"8\"],\n    \"time_range\": \"00:00:11.320–00:00:14.080\"\n  },\n  {\n    \"title\": \"Passing away\",\n    \"description\": \"The speaker says something about passing away.\",\n    \"evidence_quotes\": [\"I'll pass away.\"],\n    \"time_range\": \"00:00:18.080–00:00:48.060\"\n  }\n]"
+        ]
+      }
+    ]
+  }
+}

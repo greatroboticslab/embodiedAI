@@ -1,0 +1,296 @@
+s0dNRe0XWJ8
+https://www.youtube.com/watch?v=s0dNRe0XWJ8
+Unknown Category
+
+[00:00:00.000 → 00:00:05.200] If you don't know who Chris Rosser is, get with the times. He is an aerospace engineer who is
+[00:00:05.200 → 00:00:10.720] tearing up the world of FPV with his information on frame resonance analysis,
+[00:00:11.140 → 00:00:15.820] PID tuning, frame design, just bringing an academic and professional engineering perspective
+[00:00:15.820 → 00:00:22.700] to a field that all too often is made up of yahoos like me who just try things and see what works
+[00:00:22.700 → 00:00:29.260] and talk about it. But he's an actual professional. And that's why I'm so excited today to be making
+[00:00:29.260 → 00:00:36.260] this video. Because he has just released two videos. One on how to tune filters in Betaflight
+[00:00:36.260 → 00:00:44.120] and then the other on the beginning of PID tuning, how to tune PD and feed forward. Chris's tutorials
+[00:00:44.120 → 00:00:52.760] have really laid out PID tuning and filter tuning in a very simple and understandable way that I
+[00:00:52.760 → 00:00:58.040] think that most everybody could follow. Well, many people could follow without necessarily having a
+[00:00:58.040 → 00:01:02.120] deep, deep understanding of PID tuning and filtering. So what we're going to do today is we're going to
+[00:01:02.120 → 00:01:07.440] go through those steps on my perfect freestyle build that I just finished building. And we're
+[00:01:07.440 → 00:01:10.960] going to see if we can work out a PID tune. I'm Joshua Bardwell and you're going to learn something today.
+[00:01:19.160 → 00:01:23.200] Before we dive into this video, you should know that some of the things Chris Rosser recommends
+[00:01:23.200 → 00:01:28.920] that you do are explicitly disagreed with by, well, Kevin Plazier, the emu flight dev specifically spoke
+[00:01:28.920 → 00:01:34.040] out against one of the decisions that Chris makes. And the other decisions Chris makes are different
+[00:01:34.040 → 00:01:39.420] from the Betaflight defaults. And the reason the Betaflight defaults are the way that they are
+[00:01:39.420 → 00:01:47.440] is that some people who don't use the defaults will have flyaways or smoked motors. So don't just dive in
+[00:01:47.440 → 00:01:53.540] and follow these steps. This is not a safe for everyone PID tuning process. You need to pay attention
+[00:01:53.540 → 00:01:59.080] to the gotchas and caveats. And if you do not meet all the qualifications of step one, do not proceed
+[00:01:59.080 → 00:02:04.640] to step two, three, four, five, six, seven, go back and stop and get step one right. This is a really
+[00:02:04.640 → 00:02:12.640] aggressive tune at the end and your quad will fly amazing if it can handle it. Enough said.
+[00:02:12.640 → 00:02:25.100] When the oneiden is working, when the
+[00:02:25.100 → 00:02:30.800] mosquitoes work together are very beautiful, I don't know how toень effect the heights of the
+[00:02:30.800 → 00:02:36.700] most ratherigiousarius. Interesting to help one is the Ter towards Bernardino,
+[00:02:36.700 → 00:02:39.780] that means this isn't something that is natural for you. And with his ProfIO,
+[00:02:39.940 → 00:02:41.780] Whoooa!
+[00:02:42.020 → 00:02:43.080] Whoooa!
+[00:02:43.080 → 00:02:45.340] Whoa!
+[00:02:47.400 → 00:02:50.400] Whoooa!
+[00:02:51.760 → 00:02:52.960] Whoooo!
+[00:02:54.660 → 00:02:55.660] Whoooa!
+[00:02:55.660 → 00:03:00.180] Whoooa!
+[00:03:00.180 → 00:03:05.900] Whoooa!
+[00:03:05.900 → 00:03:07.080] Whooooa!
+[00:03:07.080 → 00:03:07.980] Whooa!
+[00:03:07.980 → 00:03:08.420] Whoooa!
+[00:03:08.420 → 00:03:09.300] Whoooa!
+[00:03:09.300 → 00:03:20.660] That's a pretty good PID tune.
+[00:03:21.160 → 00:03:22.220] Let's see how I got there.
+[00:03:22.800 → 00:03:26.780] The very first thing Chris tells you to do in his filter tuning video, and this is the
+[00:03:26.780 → 00:03:32.740] beginning of every PID tune, is to make sure your aircraft is mechanically sound.
+[00:03:32.740 → 00:03:38.860] So often people reach out to me asking for a PID tuning solution to a mechanical issue.
+[00:03:39.300 → 00:03:43.040] And I like to say it's like trying to hike on a sprained ankle.
+[00:03:43.980 → 00:03:48.360] You could get some crutches and you could sort of limp along, but the real thing to do is
+[00:03:48.360 → 00:03:52.720] to heal up your sprained ankle and then come at it from a healthy perspective.
+[00:03:52.880 → 00:03:58.520] And if your quadcopter is not mechanically sound, then you can't really start PID tuning
+[00:03:58.520 → 00:04:02.080] effectively or you're going to be PID tuning around the problem and it's going to really
+[00:04:02.080 → 00:04:02.680] hold you back.
+[00:04:02.680 → 00:04:06.260] Now Chris has some suggestions for specific things that you want to check because when
+[00:04:06.260 → 00:04:08.940] I say mechanically sound, what does that even mean?
+[00:04:09.300 → 00:04:10.920] So you definitely want to check these things.
+[00:04:11.160 → 00:04:16.240] These are, this is a really, really excellent summary of like the top five or six things
+[00:04:16.240 → 00:04:18.640] that need to be right about your frame.
+[00:04:18.640 → 00:04:23.040] The only thing I would add to this is you want to check your frame for cracks.
+[00:04:23.440 → 00:04:26.920] Like if you have an arm that's beginning to delaminate or a bottom plate that's beginning
+[00:04:26.920 → 00:04:29.040] to crack, this could be very easy to overlook.
+[00:04:29.480 → 00:04:33.100] But when you start trying to PID tune, it can make a problem that can't be solved.
+[00:04:33.100 → 00:04:36.960] And you just got to kind of just look at it and make sure you don't have any cracks or anything.
+[00:04:36.960 → 00:04:40.760] The next thing Chris advises is to fly the quad on default PIDs and log.
+[00:04:40.900 → 00:04:42.380] And that's what we've got here.
+[00:04:42.760 → 00:04:46.420] But before we do that, let's talk about the quad itself.
+[00:04:46.800 → 00:04:52.720] You're going to want to fly your quad in the same setup, in the same situation as it'll
+[00:04:52.720 → 00:04:53.800] be flown in real life.
+[00:04:53.800 → 00:04:56.900] So if you're going to be flying in real life with a GoPro on, you're going to want
+[00:04:56.900 → 00:04:58.100] to tune with a GoPro on.
+[00:04:58.220 → 00:05:02.000] If you're going to be flying in real life with a 1300 milliamp hour pack, you're going
+[00:05:02.000 → 00:05:03.880] to want to tune with a 1300 milliamp hour pack.
+[00:05:04.300 → 00:05:06.320] Every tune will have a little bit of flexibility.
+[00:05:07.060 → 00:05:12.400] Like taking the GoPro, unless you tune to the absolute edge of performance, you'll be able
+[00:05:12.400 → 00:05:17.240] to fly the quad with a GoPro on or off or switch between a 1000 milliamp hour and a 1250
+[00:05:17.240 → 00:05:20.660] milliamp hour pack without making too many changes in the tune.
+[00:05:20.660 → 00:05:26.860] But the further you push the tune toward that nth degree of perfection, the less flexibility
+[00:05:26.860 → 00:05:28.740] you'll have to change things about the quad.
+[00:05:29.080 → 00:05:33.080] So you may want, after you get a good tune, you may want to test it out with different
+[00:05:33.080 → 00:05:35.280] batteries or with or without the GoPro.
+[00:05:35.640 → 00:05:39.860] The one thing I am going to point out to you though is you can see I am not flying brand
+[00:05:39.860 → 00:05:40.400] new props.
+[00:05:40.920 → 00:05:46.800] And I would recommend, unless you are going to be 100% scrupulous about flying on brand
+[00:05:46.800 → 00:05:50.620] new props every time, if you ever feel like you might need to turtle mode and come home
+[00:05:50.620 → 00:05:53.500] on a broken or a bent prop, fly with some beat up props.
+[00:05:53.620 → 00:05:54.560] Do your tuning that way.
+[00:05:54.820 → 00:05:57.220] And that way you will build in just a little bit of headroom.
+[00:05:57.620 → 00:06:00.440] Your quad will just fly that much better when you have clean props, new props.
+[00:06:00.680 → 00:06:04.320] But if you ever do break a prop or bend a prop, you won't immediately smoke a motor.
+[00:06:04.420 → 00:06:06.820] So let's put the quad up in the air and do our first test flight.
+[00:06:07.020 → 00:06:12.860] And Chris's video has instructions for how to set up your black box logging and for how
+[00:06:12.860 → 00:06:17.280] to get the black box logs off the quad and import them into black box viewer.
+[00:06:17.460 → 00:06:21.000] So link in the video description to Chris's video if you need instructions for how to do
+[00:06:21.000 → 00:06:21.220] that.
+[00:06:21.380 → 00:06:26.240] As we do the tuning flight, we're going to make sure that it includes a lot of full stick
+[00:06:26.240 → 00:06:33.400] 360 rolls, full stick 360 flips and yaw spins, as well as some gradual ramps from zero to full
+[00:06:33.400 → 00:06:33.840] throttle.
+[00:06:33.840 → 00:06:38.140] And we're going to want to make those ramps smooth and gradual so any resonance in the
+[00:06:38.140 → 00:06:40.020] frame gets a good chance to come out.
+[00:06:40.100 → 00:06:43.780] We're not just going to do full throttle punches and we're going to want to hold at full throttle
+[00:06:43.780 → 00:06:44.980] and ramp back down.
+[00:06:45.480 → 00:06:50.840] Now at this point, if your motors don't sound completely smooth on the stock beta flight
+[00:06:50.840 → 00:06:51.400] defaults.
+[00:06:51.400 → 00:06:53.840] Oh, that's what we're flying on, the stock beta flight defaults.
+[00:06:54.060 → 00:06:57.340] 1.0 on all the filter sliders, 1.0 on all the pin sliders.
+[00:06:57.820 → 00:07:03.480] If anything doesn't sound completely smooth, if you have any signs of vibration or gyro problems,
+[00:07:03.480 → 00:07:05.760] go back to step one, you have a mechanical issue.
+[00:07:06.060 → 00:07:09.020] At least for 5 inch mini quads and smaller.
+[00:07:09.580 → 00:07:15.420] If you're flying like a 7 inch or a 10 inch or a 13 inch frame, the default filtering from
+[00:07:15.420 → 00:07:18.700] beta flight may not be right for you and you may need to tweak it, but that's a topic for
+[00:07:18.700 → 00:07:19.240] another video.
+[00:07:19.240 → 00:07:26.000] So let's open up this black box log in black box viewer and we're using Mark Spatz's presets
+[00:07:26.000 → 00:07:29.220] for these different views, all these different views here.
+[00:07:29.220 → 00:07:33.420] They can be downloaded from theuavtech.com.
+[00:07:33.800 → 00:07:37.540] I'll put a link to that down in the video description, as well as if you need to know how to download
+[00:07:37.540 → 00:07:40.640] and open them, I'll link to a video that shows how to do that.
+[00:07:40.860 → 00:07:44.220] But what we want to see is the gyro scaled.
+[00:07:45.500 → 00:07:46.680] And we're going to click there.
+[00:07:47.220 → 00:07:48.440] And that brings up this.
+[00:07:48.620 → 00:07:50.640] We're going to just go ahead and expand that.
+[00:07:50.640 → 00:07:54.440] And we're going to change from frequency to frequency versus throttle.
+[00:07:54.860 → 00:07:57.780] And this graph looks really freaking good.
+[00:07:58.080 → 00:08:01.440] Let's just turn that up a little bit so we can see it a little better.
+[00:08:01.900 → 00:08:05.420] We have a small amount of resonance around 200 hertz.
+[00:08:05.800 → 00:08:06.560] Nothing too extreme.
+[00:08:06.640 → 00:08:09.040] A little bit of resonance here, lower than that.
+[00:08:09.040 → 00:08:13.520] But on roll, there's nothing crazy that jumps out.
+[00:08:14.520 → 00:08:17.700] On pitch, we can see a little more resonance.
+[00:08:19.840 → 00:08:21.440] But nothing too bad.
+[00:08:21.540 → 00:08:22.920] Nothing higher than about 200 hertz.
+[00:08:23.420 → 00:08:29.720] And on yaw, again, just a little bit of resonance at 200 hertz and the normal amount of motor noise.
+[00:08:29.980 → 00:08:32.340] Based on the fact that my black box log looks pretty clean,
+[00:08:32.340 → 00:08:35.900] and Chris actually looked at a black box log of a previous flight that I did,
+[00:08:36.160 → 00:08:38.260] which had similar characteristics to this.
+[00:08:38.680 → 00:08:44.300] Chris made some filter recommendations that were more or less the same as his suggestions here for clean builds.
+[00:08:44.620 → 00:08:48.540] So we're going to go ahead and implement these filter suggestions as shown here,
+[00:08:48.600 → 00:08:49.420] and then we'll move on.
+[00:08:49.660 → 00:08:51.000] We'll go to the PID tuning tab.
+[00:08:51.460 → 00:08:52.620] We'll go to Filter Settings.
+[00:08:53.260 → 00:08:55.500] Chris says to turn off the gyro low-pass filters
+[00:08:55.500 → 00:08:58.780] because if you're doing RPM filtering and dynamic filtering,
+[00:08:59.100 → 00:09:01.740] you probably can get away with not having any gyro filtering.
+[00:09:01.740 → 00:09:03.460] They will do a sufficient job.
+[00:09:03.740 → 00:09:10.560] Chris suggests 0, 250, 100, and 400 for the dynamic notch filter.
+[00:09:10.940 → 00:09:19.020] And he suggests a single static bi-quad filter at 100 hertz to help clean up the D-turn.
+[00:09:20.040 → 00:09:21.120] And we'll go ahead and save that.
+[00:09:21.580 → 00:09:25.940] But the next thing Chris has to do is to find your maximum D gain.
+[00:09:26.180 → 00:09:30.120] And this is a really great way to approach PID tuning.
+[00:09:30.120 → 00:09:33.940] A lot of times people used to approach PID tuning by finding the P gain first
+[00:09:33.940 → 00:09:36.040] and then tuning D as best they could.
+[00:09:36.280 → 00:09:42.120] But mechanical filters, D gain, then P actually makes a lot more sense
+[00:09:42.120 → 00:09:46.060] because you want your D gains to be as high as they need to be.
+[00:09:46.060 → 00:09:53.480] You'll always get a better flying quad with high D gains up to the point where you'll start to get flyaways or smoke motors.
+[00:09:53.780 → 00:09:59.620] So you want to push your D gains as high as they can be while still having acceptably cool motors
+[00:09:59.620 → 00:10:04.860] and acceptably low risk of flyaway and then find the P balance that works best for you there.
+[00:10:05.000 → 00:10:07.300] And that'll probably give you a good flying quad.
+[00:10:07.300 → 00:10:11.200] As Chris said, the more D gain you have, the hotter your motors will get,
+[00:10:11.260 → 00:10:13.760] the more likely you are to get oscillations, especially if you've been to prop.
+[00:10:14.540 → 00:10:19.020] So it is really a question of your tolerance as to how much risk you're willing to get.
+[00:10:19.300 → 00:10:21.520] A lot of racers will fly ultra-high D gains.
+[00:10:21.620 → 00:10:24.560] The quad is practically on the limit of smoking a motor at all times,
+[00:10:24.660 → 00:10:26.680] but they have a really, really sharp flying quad.
+[00:10:26.680 → 00:10:30.100] For a typical freestyle or a casual pilot,
+[00:10:30.460 → 00:10:33.560] you may want to give up just a little bit of that flight feel and performance
+[00:10:33.560 → 00:10:36.400] for less risk of damaging your equipment.
+[00:10:36.860 → 00:10:41.800] Chris gives a range of recommended D gains for people flying a 5-inch freestyle
+[00:10:41.800 → 00:10:46.060] from stock of around 30, which is really conservative,
+[00:10:46.320 → 00:10:50.360] up to 45+, which has a much higher risk of smoking motors.
+[00:10:50.680 → 00:10:54.300] I will say, these are fine guidelines, but even these may be a little conservative.
+[00:10:54.300 → 00:10:59.200] I've had, like, I've personally played around with PID tuning on this build
+[00:10:59.200 → 00:11:05.300] and had D gains at 50 or 55+, without really seeming to have much sign of smoked motors,
+[00:11:05.480 → 00:11:07.100] but everybody's build is going to be different.
+[00:11:07.280 → 00:11:09.120] But before we start doing our test flights,
+[00:11:09.300 → 00:11:11.940] we're going to go in and make this change in the CLI.
+[00:11:12.420 → 00:11:15.800] And I'm not really sure why Betaflight does this.
+[00:11:16.600 → 00:11:22.520] Betaflight, by default, limits the PID controller to 40% of its maximum authority.
+[00:11:22.520 → 00:11:26.940] And if it exceeds that, then, well, it's not allowed to exceed that.
+[00:11:27.400 → 00:11:32.220] So, we're going to set PID sum limit equals 1,000, which is 100%.
+[00:11:32.220 → 00:11:35.680] There's probably a good reason why Betaflight has you do this.
+[00:11:35.820 → 00:11:37.680] I'm sure they didn't just do it for no reason.
+[00:11:38.580 → 00:11:42.400] So, maybe something bad will happen to some people if they make this change.
+[00:11:42.660 → 00:11:44.200] But if you're trying to get a really good PID tune,
+[00:11:44.460 → 00:11:47.060] this is definitely something you should start with.
+[00:11:47.060 → 00:11:49.680] And then what we're going to do is we're going to go out and fly
+[00:11:49.680 → 00:11:52.960] and we're just going to try to make the motors as hot as possible
+[00:11:52.960 → 00:11:56.720] by doing sharp turns, by doing full throttle punches,
+[00:11:56.920 → 00:11:59.920] and we're going to listen for signs of runaway,
+[00:12:00.360 → 00:12:03.320] signs of warbling, oscillation, unsmooth motors,
+[00:12:03.720 → 00:12:06.680] or we're going to feel for hot motors at the end of each flight.
+[00:12:07.040 → 00:12:11.300] And we're going to turn up the master multiplier gradually, 0.1 to 0.2 at a time,
+[00:12:11.480 → 00:12:14.900] and try to find the point where that starts to happen, then back off.
+[00:12:14.900 → 00:12:17.840] And I'm going to do something in the interest of time.
+[00:12:18.540 → 00:12:20.840] Normally, what Chris suggests is to raise the master
+[00:12:20.840 → 00:12:23.460] in little increments of 0.1 or 0.2.
+[00:12:23.700 → 00:12:25.120] I'm going to make a bigger jump,
+[00:12:25.360 → 00:12:28.280] and then if I overshoot, I'm going to work my way back.
+[00:12:28.480 → 00:12:30.380] I don't necessarily suggest you do that.
+[00:12:31.360 → 00:12:32.500] I'm going to be a little careful here,
+[00:12:32.600 → 00:12:33.840] because if I have gone too far,
+[00:12:33.920 → 00:12:36.840] the quad could want to fly away or something dumb like that.
+[00:12:38.920 → 00:12:40.040] Motors aren't complaining.
+[00:12:40.180 → 00:12:41.960] I don't hear any signs of them complaining.
+[00:12:44.900 → 00:12:54.420] Little hitch there.
+[00:12:57.200 → 00:12:58.200] Little hitches there.
+[00:12:58.280 → 00:12:59.280] You see those little hitches?
+[00:13:02.860 → 00:13:04.480] Yeah, so that's too far.
+[00:13:05.860 → 00:13:07.140] Sorry, my mom's going.
+[00:13:07.140 → 00:13:20.220] All right, so we had little hitches there.
+[00:13:20.940 → 00:13:22.440] Motors still aren't super hot,
+[00:13:22.740 → 00:13:24.660] but that's too far.
+[00:13:25.240 → 00:13:28.420] Let's try dialing that back down a little bit.
+[00:13:28.420 → 00:13:32.960] Here on PID tuning.
+[00:13:33.660 → 00:13:35.100] We're just going to knock that down.
+[00:13:35.160 → 00:13:36.560] Oh, I need to disable D-Man.
+[00:13:36.640 → 00:13:37.440] I forgot to do that.
+[00:13:37.940 → 00:13:39.140] I don't think that...
+[00:13:39.140 → 00:13:40.320] Yeah, I need to disable D-Man.
+[00:13:40.420 → 00:13:41.180] I forgot that step.
+[00:13:41.380 → 00:13:42.020] That's also stuff.
+[00:13:42.340 → 00:13:44.060] We're going to take that down to 1.4,
+[00:13:44.060 → 00:13:46.860] and we're going to see how we do.
+[00:13:52.120 → 00:13:53.900] Let's see if 1.4 clears that up.
+[00:13:53.960 → 00:13:55.040] Also, we've disabled D-Man,
+[00:13:55.040 → 00:13:56.160] which I should have done first.
+[00:13:58.540 → 00:13:59.840] Tiny little hitch there.
+[00:14:13.840 → 00:14:14.780] Littlest of hitches
+[00:14:14.780 → 00:14:16.840] if I do extended full throttle punches.
+[00:14:17.320 → 00:14:18.700] I feel like this is a good place
+[00:14:18.700 → 00:14:19.480] for me to be, though.
+[00:14:21.620 → 00:14:23.600] Remember, we are a little bit on bed props,
+[00:14:23.600 → 00:14:25.140] so on clean props,
+[00:14:25.620 → 00:14:26.180] fresh props,
+[00:14:26.260 → 00:14:27.360] that probably would go away.
+[00:14:30.860 → 00:14:33.020] But I feel like if I just do normal flying,
+[00:14:33.460 → 00:14:34.620] none of that will come out.
+[00:14:48.800 → 00:14:49.620] No, see?
+[00:14:49.620 → 00:14:50.120] No.
+[00:14:50.120 → 00:14:50.620] See?
+[00:14:50.620 → 00:14:53.880] Already...
+[00:14:53.880 → 00:14:57.720] I feel like we're flying really good.
+[00:14:58.080 → 00:15:00.600] Even just tuning that master slider
+[00:15:00.600 → 00:15:02.880] has made a big freaking difference.
+[00:15:03.140 → 00:15:05.240] I mean, so often when I fly,
+[00:15:05.380 → 00:15:08.660] I just fly on the defaults.
+[00:15:08.720 → 00:15:09.220] I'm like, whatever.
+[00:15:09.400 → 00:15:10.180] I just want to get in the air.
+[00:15:10.820 → 00:15:12.820] Just freaking turning this up
+[00:15:12.820 → 00:15:15.440] has made such a big difference.
+[00:15:15.660 → 00:15:17.700] It's still pretty smooth.
+[00:15:17.700 → 00:15:23.120] Like, you can see that there's no hitches here.
+[00:15:24.260 → 00:15:25.540] Even if I do a big punch,
+[00:15:25.600 → 00:15:26.460] it's only if I do
+[00:15:26.460 → 00:15:29.360] a really extreme punch
+[00:15:29.360 → 00:15:31.720] that I start to see those little blips.
+[00:15:31.960 → 00:15:33.880] So I feel like this is a good place to be.
+[00:15:33.880 → 00:15:42.740] Oh, yeah.
+[00:15:42.740 → 00:15:44.100] So next,
+[00:15:44.480 → 00:15:46.860] we'll start to dial in our V-game.
+[00:15:51.140 → 00:15:51.980] Oh.
+[00:15:52.140 → 00:15:53.560] So good.
+[00:15:53.560 → 00:16:06.620] That's so good.
+[00:16:07.360 → 00:16:08.040] Damn, son.
+[00:16:09.480 → 00:16:10.280] That's so good.
+[00:16:10.280 → 00:16:13.780] Whew.
+[00:16:14.040 → 00:16:15.400] That quad's flying real good,
+[00:16:15.460 → 00:16:16.180] ain't it, folks?
+[00:16:16.320 → 00:16:17.140] Oh, man.
+[00:16:17.340 → 00:16:18.540] Boy, I bet you can't wait
+[00:16:18.540 → 00:16:20.040] to see the rest of this process.
+[00:16:21.000 → 00:16:21.360] Whew.
+[00:16:23.520 → 00:16:23.920] Yeah.
+[00:16:24.540 → 00:16:26.060] It's going to be a multi-parter.
+[00:16:26.360 → 00:16:27.260] This is part one.
+[00:16:28.040 → 00:16:29.900] I'm going to upload the rest of it
+[00:16:29.900 → 00:16:30.680] to the channel
+[00:16:30.680 → 00:16:32.420] over the subsequent days.
+[00:16:32.420 → 00:16:32.880] Don't worry.
+[00:16:32.980 → 00:16:33.540] It's all shot.
+[00:16:33.620 → 00:16:34.100] It's all done.
+[00:16:34.160 → 00:16:35.500] I just got to finish editing it.
+[00:16:35.780 → 00:16:37.560] But I wanted to give you part one today
+[00:16:37.560 → 00:16:38.340] just to get it out.
+[00:16:38.340 → 00:16:40.120] There will be links down in the video description
+[00:16:40.120 → 00:16:41.100] to part two
+[00:16:41.100 → 00:16:41.920] and if there's,
+[00:16:42.000 → 00:16:42.900] I think it's going to be two
+[00:16:42.900 → 00:16:43.760] or maybe three parts.
+[00:16:44.120 → 00:16:45.340] But there will be links down below.
+[00:16:45.480 → 00:16:46.220] Or, hey, you know,
+[00:16:46.300 → 00:16:47.120] you could get subscribed
+[00:16:47.120 → 00:16:49.220] and hit that notification bell
+[00:16:49.220 → 00:16:50.120] if you wanted to be sure
+[00:16:50.120 → 00:16:50.960] to not miss it.
+[00:16:51.020 → 00:16:51.440] I mean, you know,
+[00:16:51.460 → 00:16:52.140] it's up to you.
+[00:16:54.140 → 00:16:54.460] Yeah.
+[00:16:55.580 → 00:16:56.100] See you tomorrow.

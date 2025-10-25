@@ -1,0 +1,1400 @@
+1
+00:00:00,480 --> 00:00:07,600
+Hello and welcome to Enritsu's webinar entitled Network Extraction and De-Embedding Techniques
+
+2
+00:00:07,600 --> 00:00:14,000
+for Differential Printed Circuit Probe. My name is Arno Pettai. I'm a field applications engineer
+
+3
+00:00:14,000 --> 00:00:22,160
+at Enritsu company and my specialty is in B&As and joining me today is Brian Shoemaker, president and
+
+4
+00:00:22,160 --> 00:00:31,040
+founder of DVT Solutions, a company that makes probing systems, solutions and probes and connectors.
+
+5
+00:00:32,480 --> 00:00:40,240
+I also want to recognize Bill Rosas of Signal Microwave for supplying the verification board
+
+6
+00:00:40,240 --> 00:00:48,400
+that we're using today to perform the network extraction as well as the verification and
+
+7
+00:00:48,400 --> 00:00:57,360
+Dr. Jing Chao Wang of Atai Tech who has been so kind to allow us to use his ISD software
+
+8
+00:00:58,160 --> 00:01:01,520
+which allows us to do the network extraction of the probe.
+
+9
+00:01:03,440 --> 00:01:10,880
+So today we're going to cover first of all the basic topics of network extraction as well as
+
+10
+00:01:10,880 --> 00:01:17,040
+embedding and de-embedding. These are common terms that are used in conjunction with VNAs but not
+
+11
+00:01:17,040 --> 00:01:22,880
+very well understood. So I want to spend a few minutes explaining these important concepts.
+
+12
+00:01:24,160 --> 00:01:31,440
+After that I will turn over to Brian who will explain the DVT Solutions probing system and talk
+
+13
+00:01:31,440 --> 00:01:38,480
+about the probe in particular and some of the unique advantages and features of that. And Brian will also
+
+14
+00:01:38,480 --> 00:01:49,440
+take us through the ISD software and how we generate using that software the S4P model for a differential probe.
+
+15
+00:01:50,560 --> 00:01:56,640
+Then I will discuss Enritsu's VNA family and how we make differential measurements which is critical
+
+16
+00:01:56,640 --> 00:02:02,720
+here because we're trying to obviously get differential measurement results so we need a four port
+
+17
+00:02:02,720 --> 00:02:10,880
+VNA to do that. And at the end we'll apply and verify the probe model that we've extracted using the
+
+18
+00:02:10,880 --> 00:02:18,400
+Atai Tech software and display that on a VNA with both the embedding or de-embedding implied and de-embedding off
+
+19
+00:02:18,400 --> 00:02:24,720
+so we can actually see the difference which would be the probe loss that we're looking at. And we'll
+
+20
+00:02:24,720 --> 00:02:32,400
+summarize all that with a live demonstration at the very end. So first of all what is network extraction?
+
+21
+00:02:32,400 --> 00:02:39,360
+Well network extraction is a tool that we use to generate the S-parameters or the model for some
+
+22
+00:02:39,360 --> 00:02:48,400
+network that we want to then embed or de-embed later from a VNA test port. This model can be single-ended
+
+23
+00:02:48,400 --> 00:02:54,400
+or differential. And as I said earlier in today's presentation we're going to use the Atai Tech ISD
+
+24
+00:02:54,400 --> 00:03:02,080
+software to perform this network extraction in our example being a differential probe. But there's
+
+25
+00:03:02,080 --> 00:03:07,920
+also other uses for network extraction. We can extract portions of a circuit on a PC board. We can
+
+26
+00:03:09,440 --> 00:03:16,560
+extract the launches for a test fixture. And it's an alternative to using time domain gating. That's
+
+27
+00:03:16,560 --> 00:03:25,520
+always been a technique used in the past as well for isolating a network in time and then going back
+
+28
+00:03:25,520 --> 00:03:34,320
+to frequency domain and capturing the characteristics in an S4P or S2P format. Or doing just simple test
+
+29
+00:03:34,320 --> 00:03:41,680
+port extensions. But those of course don't always take into account loss and other characteristics.
+
+30
+00:03:41,680 --> 00:03:49,360
+So it's very important to use network extraction especially in cases where you don't have all
+
+31
+00:03:49,360 --> 00:03:53,600
+the CAL kits available at the various reference planes of interest or where you can't connect
+
+32
+00:03:53,600 --> 00:03:59,120
+it through. And in our example today we simply cannot connect two probes together because it would be the
+
+33
+00:03:59,920 --> 00:04:05,760
+chance of damaging probe tips in that case. So we are using network extraction in this case
+
+34
+00:04:05,760 --> 00:04:14,320
+to avoid having to make that type of through measurement. And what we're trying to get of
+
+35
+00:04:14,320 --> 00:04:23,200
+course is as a result is an SNP formatted file or model for the probe that we will then use in embedding
+
+36
+00:04:23,200 --> 00:04:30,080
+de-embedding. So then what is embedding de-embedding? Well much like in a circuit simulator it's useful to add or
+
+37
+00:04:30,080 --> 00:04:36,080
+remove networks from a given measured results. So we're able to look at a live measurement on a VNA
+
+38
+00:04:36,640 --> 00:04:44,640
+and actually add a network and have that measurement display that network as if the matching network was
+
+39
+00:04:44,640 --> 00:04:52,160
+present. Or in the case of de-embedding we can remove a fixture or in this case in our example a probe
+
+40
+00:04:52,720 --> 00:04:58,960
+from the measurement so that we can concentrate or or isolate a measurement to just the device
+
+41
+00:04:58,960 --> 00:05:05,040
+under test of interest. And an embedding de-embedding function is a standard feature in a VNA
+
+42
+00:05:05,680 --> 00:05:14,400
+and basically it allows us to add that network or remove that network and measure that new data live on
+
+43
+00:05:14,400 --> 00:05:20,240
+the instrument. Of course we need to have a standard VNA calibration performed first.
+
+44
+00:05:20,240 --> 00:05:27,840
+So this would be your standard SOLT or other method that you choose to use. And then we can apply this
+
+45
+00:05:27,840 --> 00:05:31,760
+embedding de-embedding to two, three, and four port devices under test.
+
+46
+00:05:34,960 --> 00:05:41,440
+Now what kind of networks can we mathematically add or remove from ports of a VNA? Well we can have
+
+47
+00:05:41,440 --> 00:05:46,880
+standard circuit elements. These would be lumped elements such as shunt and series, inductors, resistors,
+
+48
+00:05:46,880 --> 00:05:51,040
+capacitors, and transmission lines. We can put in the characteristics of a transmission line
+
+49
+00:05:51,680 --> 00:06:01,280
+and add and subtract that. We can also in our case here today use S2P and S4P models of the networks
+
+50
+00:06:01,280 --> 00:06:07,280
+that we want to add and subtract. And so these would be created in network extraction and then applied
+
+51
+00:06:07,280 --> 00:06:13,520
+here in the embedding de-embedding. Now there's also another example of a very simplified case of
+
+52
+00:06:13,520 --> 00:06:19,680
+de-embedding and this applies to optoelectronic components where you only want to de-embed in
+
+53
+00:06:19,680 --> 00:06:25,600
+this case the transmission measurement portion. So you're not concerned with reflection here.
+
+54
+00:06:25,600 --> 00:06:31,840
+So you're doing a subset of full de-embedding by just treating the transmission only so that we can
+
+55
+00:06:31,840 --> 00:06:37,200
+isolate a measurement to either an optical modulator or a photo receiver. Assuming of course you have a
+
+56
+00:06:37,200 --> 00:06:42,400
+characterization file for one or the other that you intend to de-embed to isolate the measurement
+
+57
+00:06:42,400 --> 00:06:47,520
+measurement on the device under test of choice. So this would be the same functionality as in a
+
+58
+00:06:47,520 --> 00:06:52,480
+lightweight component analyzer or something else that Enritsu offers as part of their VNAs.
+
+59
+00:06:55,760 --> 00:07:03,760
+So to summarize embedding and de-embedding, we can view results as if a different launch structure
+
+60
+00:07:03,760 --> 00:07:10,160
+was present. So we can have an embedding task where we're adding something and we want to visualize it on
+
+61
+00:07:10,160 --> 00:07:18,160
+the screen live with that launch structure present. We can also look at measurements with some matching
+
+62
+00:07:18,160 --> 00:07:24,000
+circuit applied that we've gotten from our simulator and we can view that result live with that matching
+
+63
+00:07:24,000 --> 00:07:29,840
+circuit applied or we can add a cable length or a transmission length or launch as needed. So that's
+
+64
+00:07:29,840 --> 00:07:34,240
+in the case of the embedding where you're adding some network. In the case of de-embedding which is what
+
+65
+00:07:34,240 --> 00:07:39,280
+we're demonstrating today, we're going to look at a probe but there's also other examples such as test
+
+66
+00:07:39,280 --> 00:07:47,920
+fixture or a transmission line that you may want to remove on a fixture or a matching circuit that you
+
+67
+00:07:47,920 --> 00:07:57,280
+want to remove the effects of physically in the measurement case. Okay at this point I'm going to turn it
+
+68
+00:07:57,280 --> 00:08:04,800
+over to Brian. We'll explain the probing systems. First I want to discuss what is a differential probe so
+
+69
+00:08:04,800 --> 00:08:11,120
+that it will become more relevant as to why we want to create de-embedding files and models in order to
+
+70
+00:08:11,120 --> 00:08:17,200
+remove any artifacts within the probe for the measurements. So differential probe, we developed
+
+71
+00:08:17,200 --> 00:08:24,800
+the first differential true differential probe back in Brown in 2005 when the LVDS circuits started to come
+
+72
+00:08:24,800 --> 00:08:31,120
+out from National Semiconductor and a few other companies. This changed the entire architecture
+
+73
+00:08:31,120 --> 00:08:40,080
+at that time from point to point to a dual line differential interface and it was designed so that
+
+74
+00:08:40,080 --> 00:08:46,800
+you're able to reject common mode noise so the power supply glitch if it occurred would just wipe out
+
+75
+00:08:46,800 --> 00:08:54,000
+your data and your system crashes. It also allows you to use a lower voltage to define the ones and zeros
+
+76
+00:08:54,000 --> 00:09:02,880
+so that you can move data faster down the transmission line. In this slide set here I have an example of
+
+77
+00:09:02,880 --> 00:09:08,320
+what an LVDS interface might look like. You've got your differential transmitter, your receiver. We had to
+
+78
+00:09:08,320 --> 00:09:14,240
+develop a probe to measure the impedance and the s parameters of this transmission line according to the
+
+79
+00:09:14,240 --> 00:09:25,120
+specifications of the specifications of the drivers. So in a true differential probe, as kind of describes the fields that are
+
+80
+00:09:25,120 --> 00:09:32,960
+going up and down the transmission line on the bottom of the of the slide, is that it sends a positive and negative pulse down the
+
+81
+00:09:32,960 --> 00:09:42,240
+transmission line so that it creates a virtual ground and not not have to rely upon a common mode or a physical ground. So there's coupling there that has to be
+
+82
+00:09:42,240 --> 00:09:51,120
+modeled later and I will just discuss how we do this with a software product but in order to create a good model of a
+
+83
+00:09:51,120 --> 00:09:59,120
+differential probe you have to be able to model the coupling between the two transmission lines. Next, let's discuss the model development.
+
+84
+00:09:59,120 --> 00:10:11,120
+Well, currently we have a partnership with a tie tech which is a company that makes the in situ de embedding or ISD software that allows us to create a differential probe
+
+85
+00:10:11,120 --> 00:10:30,000
+a differential probe to include the crosstalk or what we'd call if it's functional a virtual ground and it creates a S4P touchstone file that we can input into the VNA that allows us to then take this model and then de embed the probe from the model.
+
+86
+00:10:30,000 --> 00:10:48,000
+So the model contains coupling between the differential conductors. The model creates its own virtual ground so the probes do not require a ground between the signal pins. If you draw your attention to the picture at the lower right hand side, we've just introduced these differential probes.
+
+87
+00:10:48,000 --> 00:11:06,000
+These will go up to 70 gigahertz and as you can see the picture are kind of the center or a lot off to the left of the probe. There's only two signal pins. There is no ground so we're completely relying upon the coupling of the probe to carry the energy down back and forth through the probe.
+
+88
+00:11:06,000 --> 00:11:18,000
+And to model that is a really, really, really difficult thing to do. But we've been able to do that with the tie tech software that we will discuss later on and have a live model creation demonstration later.
+
+89
+00:11:18,000 --> 00:11:35,000
+Now probe the embedding process. What we do to create the model itself of the tie tech software pretty much needs three different measurements and open a short and one that's a measurement called a we call a probe in situ.
+
+90
+00:11:35,000 --> 00:11:47,000
+It's basically it's a probe differential probing a differential line that connects to a connector and these three waveforms or S parameters are imported into I attack to create the S4P to create the S4P to create the S4P to create the S4P.
+
+91
+00:11:48,000 --> 00:12:05,000
+The S4P model. By doing this, it allows us to create a more accurate embedding model to model the differential crosstalk. You get more accurate S-parameter measurements by removing the probe loss from the measurements and it sets the measurement reference plane at the probe tips.
+
+92
+00:12:05,000 --> 00:12:17,980
+Now, lastly, I need to kind of define the differences between a differential probe and what the industry really calls a dual probe. Since we define a differential probe is that you have to have the
+
+93
+00:12:17,980 --> 00:12:33,980
+transmission lines in the differential lines coupled in most probes on a marketplace that believe we're the only company DVT solutions that do have a differential probe is that they just use two coax cables in a plastic box.
+
+94
+00:12:33,980 --> 00:12:43,980
+And with the shields around the conductors, the conductors are not coupled. So that very nature and that architecture.
+
+95
+00:12:43,980 --> 00:12:53,980
+It's impossible to create a virtual ground because the conductors are not coupled and are isolated. So in a sense, these are referred to as dual probes.
+
+96
+00:12:53,980 --> 00:13:02,980
+Now, I wanted to kind of since we build probe systems, a lot of people ask, well, I just need a quotation for some probes thinking that's all you really need.
+
+97
+00:13:02,980 --> 00:13:11,980
+But it's not practical to hold in your hand probes onto a board control your instrument at the same time without creating bad data.
+
+98
+00:13:11,980 --> 00:13:18,980
+So essentially a probe system that that we put together, it's not a fixed platform.
+
+99
+00:13:18,980 --> 00:13:23,980
+They're basically components that consist of a probe positioner that you attach the probe.
+
+100
+00:13:23,980 --> 00:13:37,980
+And what that does is it it holds it in place planar to the surface of the board, which allows us to go down onto the test pads with some maybe some minor planar adjustment controls.
+
+101
+00:13:37,980 --> 00:13:44,980
+Allows the probe tips and the test pads to make contact so that you get good data coming from it.
+
+102
+00:13:44,980 --> 00:13:50,980
+Secondly, in order to see that the probe tips are making contact with the test pads, you need a camera system.
+
+103
+00:13:50,980 --> 00:13:57,980
+And that allows us to view the probe tips making contact with the test pads and also to that they're planar.
+
+104
+00:13:57,980 --> 00:14:09,980
+Lastly, you know, if you're probing a board, you're most likely going to need to have some kind of fixed PCB fixturing to keep it from moving or bowing while you're measuring your data.
+
+105
+00:14:09,980 --> 00:14:16,980
+Now here's an example of a little more elaborate probe systems that we put these together for the last 18 years.
+
+106
+00:14:16,980 --> 00:14:28,980
+The pro different dual probe system on the left just means that we've got two probes making contact and we're making a complete full full through measurement from one probe to the other.
+
+107
+00:14:28,980 --> 00:14:31,980
+And that data is is going into a full port VNA.
+
+108
+00:14:31,980 --> 00:14:37,980
+We're using two cameras, one camera per probe, and we're using two manipulators.
+
+109
+00:14:37,980 --> 00:14:49,980
+And then in cases where we're probing larger boards, we've got a probe bridge that we're setting the probe manipulator on, as you can see on the left and on the right.
+
+110
+00:14:49,980 --> 00:14:54,980
+It raises it up high enough that I could slide the board underneath.
+
+111
+00:14:54,980 --> 00:15:05,980
+That allows us to probe anywhere into that board that's necessary because primarily the length of the arm of the manipulator is about five inches.
+
+112
+00:15:05,980 --> 00:15:14,980
+So if you brought that right manipulator right up to the edge of the board, you're only going to be able to probe into it about five inches.
+
+113
+00:15:14,980 --> 00:15:25,980
+So if your board is say longer than wider than five inches or 10 inches, then you might want to take a look at getting a probe bridge to assist the probing of it.
+
+114
+00:15:25,980 --> 00:15:31,980
+Now, going back to the AtaiTech software, I mentioned earlier that it requires three different measurements.
+
+115
+00:15:31,980 --> 00:15:41,980
+So what we do initially is we set up the VNA so we have a time domain or harmonic cal that creates a time domain or like a TDR display.
+
+116
+00:15:41,980 --> 00:15:51,980
+So we'll start on the left hand side. The VNA is showing us the time domain of the probe making an open measurement.
+
+117
+00:15:51,980 --> 00:15:59,980
+And you can see at the end of that trace it goes up. So there's no contact at that point. The probes are raised.
+
+118
+00:15:59,980 --> 00:16:08,980
+And we use a copper plate that comes with the probes to allow you to make the short measurement, which is the next one on the right.
+
+119
+00:16:08,980 --> 00:16:14,980
+And you can see at the end of the trace on the vector network and I understand it goes down. So it's shorting.
+
+120
+00:16:14,980 --> 00:16:24,980
+And by putting the VNA into time domain mode, it gives us visual feedback to see that we are making contact with the short.
+
+121
+00:16:24,980 --> 00:16:36,980
+And it is making an open measurement. You can see the probe tips on the camera that's viewing the probe tips at the top of the VNA.
+
+122
+00:16:36,980 --> 00:16:43,980
+On the screen, you can see on the left, it's up, it's open, right? It's short. It's making contact across the copper pad.
+
+123
+00:16:43,980 --> 00:16:50,980
+So lastly, the third measure we need to do is the probe SITU S4P file.
+
+124
+00:16:50,980 --> 00:17:01,980
+And so this is requires a board that has a probe pad on one end of a differential line that goes down to connectors, differential connectors on the end.
+
+125
+00:17:01,980 --> 00:17:07,980
+So we're going to make a full insertion loss and S4P measurement.
+
+126
+00:17:07,980 --> 00:17:16,980
+And this is our last file that we need in order to create a S4P model using a TITEC software.
+
+127
+00:17:16,980 --> 00:17:22,980
+Here is a screenshot of the TITEC software on the left hand side.
+
+128
+00:17:22,980 --> 00:17:27,980
+So we're going to make a look at the right side. We load the open, the short, the in situ.
+
+129
+00:17:27,980 --> 00:17:32,980
+And then we select auto, which kind of verifies that our ports are correct.
+
+130
+00:17:32,980 --> 00:17:44,980
+And then ports to skip on the right, kind of the right side is on the left, meaning that it's going to be not developing a model for the left side.
+
+131
+00:17:44,980 --> 00:17:48,980
+This is going to be for the right side. The probe would be on the right side in this case.
+
+132
+00:17:48,980 --> 00:17:55,980
+Now on the right hand side is the probe model after it's completed its extraction, its model extraction.
+
+133
+00:17:55,980 --> 00:18:04,980
+And it's this is a 70 gigahertz, no ground probe model for our brand new differential probe to 70 gigahertz.
+
+134
+00:18:04,980 --> 00:18:18,980
+OK, continuing on with the DNA, which is really the measurement engine behind the measurements that Brian was talking about that are required to build up the model for the probe.
+
+135
+00:18:18,980 --> 00:18:23,980
+We need a differential DNA. Of course, for the first two steps, it's an open and a short.
+
+136
+00:18:23,980 --> 00:18:29,980
+That's a two port measurement. But we need the four port, obviously, to make the in situ measurement.
+
+137
+00:18:29,980 --> 00:18:36,980
+And then later on, when we're using the probe, of course, and de embedding it, we're talking about differential measurements.
+
+138
+00:18:36,980 --> 00:18:48,980
+So once again, we need a four port. So and it's who has a quite a wide family portfolio of VNAs, ranging from the high performance vector star, which we're talking and demonstrating today.
+
+139
+00:18:48,980 --> 00:18:54,980
+There's also a mid performance four port. It's called the shock line, and that goes up to 43 and a half gigahertz.
+
+140
+00:18:54,980 --> 00:19:00,980
+It's also has the de embedding software as standard on it as well.
+
+141
+00:19:00,980 --> 00:19:03,980
+So much the same as what what Vector star has.
+
+142
+00:19:03,980 --> 00:19:06,980
+But we're using Vector star today because we're going up to 70 gigahertz.
+
+143
+00:19:06,980 --> 00:19:15,980
+And it's also possible to extend even higher with millimeter wave extenders to 110 gigahertz, 145 and even 220.
+
+144
+00:19:15,980 --> 00:19:23,980
+We're the only company that has a single sweep vector network analyzer from 70 kilohertz all the way up to 220 gigahertz.
+
+145
+00:19:23,980 --> 00:19:28,980
+So a lot of these concepts we're talking about can be extended, of course, into higher frequencies.
+
+146
+00:19:28,980 --> 00:19:32,980
+But we're going to concentrate on the picture that's in the middle and the bottom there.
+
+147
+00:19:32,980 --> 00:19:45,980
+That's our four port system. And it consists of our two port mainframe VNA plus the multiport test set, which basically combines the two ports on the mainframe with the two ports on the test set to create a four port system.
+
+148
+00:19:45,980 --> 00:19:49,980
+So this is our vector star with the test set.
+
+149
+00:19:49,980 --> 00:19:53,980
+Obviously, signal integrity application being that they are differential in nature.
+
+150
+00:19:53,980 --> 00:19:59,980
+They need a four port VNA to make all of those measurements possible.
+
+151
+00:19:59,980 --> 00:20:02,980
+So the test set is added. We have four ports.
+
+152
+00:20:02,980 --> 00:20:10,980
+We do the single ended and we have superposition mathematics that basically transform single ended S-paramers into differential S-paramers,
+
+153
+00:20:10,980 --> 00:20:21,980
+which is what we're after because we want the differential insertion loss and differential return loss of our probe as the final result when we do the network extraction.
+
+154
+00:20:21,980 --> 00:20:26,980
+So embedding, de-embedding is a standard feature, as I said, on Enritsu VNAs.
+
+155
+00:20:26,980 --> 00:20:34,980
+And then we can also add a second source and we can add differential view in those cases where true mode differential stimulus is required.
+
+156
+00:20:34,980 --> 00:20:49,980
+In this case, since we're working with a passive device, we do not need true mode to do that since we're able to measure it with single ended and then use the mathematical transformation to get our differential results.
+
+157
+00:20:49,980 --> 00:20:52,980
+So we don't need to have multiple sources as a result.
+
+158
+00:20:52,980 --> 00:21:01,980
+The single source will allow us to make all of the necessary measurements for computing the differential S-parameter results.
+
+159
+00:21:01,980 --> 00:21:04,980
+These are the only systems that cover kilohertz to gigahertz.
+
+160
+00:21:04,980 --> 00:21:10,980
+So again, 70 kilohertz low end frequency all the way up to 70 gigahertz in the case of this VNA.
+
+161
+00:21:10,980 --> 00:21:19,980
+So superposition is what we use to take the single ended S-parameters and convert them to differential S-parameters.
+
+162
+00:21:19,980 --> 00:21:31,980
+And the way superposition works basically is we're applying a signal one at a time, an incident stimulus one at a time to each port via switch matrix that's part of the system, part of the VNA system,
+
+163
+00:21:31,980 --> 00:21:35,980
+and measuring the response from all of the ports simultaneously.
+
+164
+00:21:35,980 --> 00:21:37,980
+And then we go to the next port and do the same thing.
+
+165
+00:21:37,980 --> 00:21:45,980
+So we collect all of these measurements, all these ratio measurements to form our S4P matrix of single ended S-parameters,
+
+166
+00:21:45,980 --> 00:21:52,980
+and then mathematically generate the differential common mode and mixed mode quantities based on that.
+
+167
+00:21:52,980 --> 00:21:58,980
+So as I said, this works perfectly well for passive devices and even linear active devices.
+
+168
+00:21:58,980 --> 00:22:12,980
+It's only in the non-linear case that you would actually need a true mode differential and thus a second source and all the phase synchronization required to get a full true mode differential stimulus.
+
+169
+00:22:12,980 --> 00:22:15,980
+So this is our single ended S-parameters on the left side.
+
+170
+00:22:15,980 --> 00:22:23,980
+That's our S-4P matrix basically, and we're mathematically transforming that to the differential quantities.
+
+171
+00:22:23,980 --> 00:22:27,980
+And what matters here is basically the differential transmission.
+
+172
+00:22:27,980 --> 00:22:33,980
+So the SD2D1, the return loss, the SD1D1 or D2D2.
+
+173
+00:22:33,980 --> 00:22:36,980
+Those are the return loss of reflection terms.
+
+174
+00:22:36,980 --> 00:22:41,980
+And then there's also common to differential, differential common, what we call mixed mode.
+
+175
+00:22:41,980 --> 00:22:45,980
+Some of that's important for common mode rejection type measurements.
+
+176
+00:22:45,980 --> 00:22:50,980
+And there's also common mode, which usually no one cares about because differential is what everyone wants.
+
+177
+00:22:50,980 --> 00:22:56,980
+So it's really the 180 degree out of phase that is of interest, which is how differential is defined.
+
+178
+00:22:56,980 --> 00:23:05,980
+So we're looking at insertion loss, as I mentioned, the D2D1 and in the reverse direction, that would be D1D2.
+
+179
+00:23:05,980 --> 00:23:10,980
+Return loss at both ports, both differential ports.
+
+180
+00:23:10,980 --> 00:23:20,980
+And then the common mode rejection may be of interest in just looking at how well your design performs in a differential sense and how well it rejects the common mode.
+
+181
+00:23:20,980 --> 00:23:23,980
+Cross talk is really just single ended S-parameters.
+
+182
+00:23:23,980 --> 00:23:26,980
+We're looking at really the near end and the far end cross talk here.
+
+183
+00:23:26,980 --> 00:23:29,980
+So these are looked at in terms of single ended S-parameters.
+
+184
+00:23:29,980 --> 00:23:36,980
+These are the cross terms. These are not the direct through terms that you would have in the differential transmission.
+
+185
+00:23:36,980 --> 00:23:38,980
+That would be one to two and three to four.
+
+186
+00:23:38,980 --> 00:23:46,980
+So here we're looking at the cross terms and that would be the leakage across or the isolation.
+
+187
+00:23:46,980 --> 00:23:56,980
+And then we can use time domain and, as Brian mentioned, the low pass time domain step response to get our impedance profile.
+
+188
+00:23:56,980 --> 00:23:59,980
+And we actually see what is happening along the line.
+
+189
+00:23:59,980 --> 00:24:12,980
+And this is helpful when you're landing the probes as well to actually see the result that you expect if you're probing an open, probing a short or probing the line to make sure that you're touched down correctly and that the line impedance makes sense.
+
+190
+00:24:12,980 --> 00:24:15,980
+Remember, this is a hundred ohms because it's a differential.
+
+191
+00:24:15,980 --> 00:24:20,980
+So this is what we're looking at in our in our impedance profile.
+
+192
+00:24:20,980 --> 00:24:24,980
+So all of these measurements are possible with a four port VNA.
+
+193
+00:24:24,980 --> 00:24:28,980
+Now turning to the embedding, de-embedding menu.
+
+194
+00:24:28,980 --> 00:24:32,980
+This is after you've got your calibration and you're making measurements.
+
+195
+00:24:32,980 --> 00:24:39,980
+And now you want to input the model that we've developed or extracted using the ATITEC software for the probe.
+
+196
+00:24:39,980 --> 00:24:47,980
+And you want to actually apply it to your measurement because at the end of the day, what you want to measure is your device under test and not anything outside of that.
+
+197
+00:24:47,980 --> 00:24:55,980
+So everything else in the measurement path, including the probe, has to get removed if you want to isolate the measurement to your device under test.
+
+198
+00:24:55,980 --> 00:24:57,980
+So this is the process that we use.
+
+199
+00:24:57,980 --> 00:24:58,980
+So we load the file.
+
+200
+00:24:58,980 --> 00:25:04,980
+If it's a two port S2P file, it would be the menu on the left.
+
+201
+00:25:04,980 --> 00:25:07,980
+If it's a four port, it would be the menu on the right.
+
+202
+00:25:07,980 --> 00:25:09,980
+You would load an S4P file.
+
+203
+00:25:09,980 --> 00:25:11,980
+You would add that to your network.
+
+204
+00:25:11,980 --> 00:25:19,980
+If you have multiple layers of de-embedding that you wish to accomplish, then you would add an additional network to that table below.
+
+205
+00:25:19,980 --> 00:25:26,980
+And then when you've got everything set the way you want it, you apply it and turn the embedding on.
+
+206
+00:25:26,980 --> 00:25:29,980
+And the Enritsu VNA menu has a way of toggling on and off.
+
+207
+00:25:29,980 --> 00:25:33,980
+So you can actually see very quickly what the result is after de-embedding.
+
+208
+00:25:33,980 --> 00:25:37,980
+And you can revert back to what it was before de-embedding and actually see the difference.
+
+209
+00:25:37,980 --> 00:25:42,980
+And we'll be demonstrating that when we do the verification portion of our demonstration.
+
+210
+00:25:42,980 --> 00:25:45,980
+And this is what it looks like.
+
+211
+00:25:45,980 --> 00:25:58,980
+This is actually what I'm talking about here is where we're applying the probe model and the trace is the blue trace and the green trace is the original measurement with no probe de-embedding taking place.
+
+212
+00:25:58,980 --> 00:26:11,980
+So you can see that the insertion loss of your device under test improves as you remove the probe because the net difference between these two traces is the actual insertion loss of the probe,
+
+213
+00:26:11,980 --> 00:26:15,980
+which is about 8 dB at 70 GHz.
+
+214
+00:26:15,980 --> 00:26:23,980
+So at this point, we're going to turn to the live demonstration and we'll be back with you in just a couple of minutes.
+
+215
+00:26:23,980 --> 00:26:26,980
+Okay, now we're back for the live demo.
+
+216
+00:26:26,980 --> 00:26:33,980
+The live demo is going to consist of the systems that you see up on the slide.
+
+217
+00:26:33,980 --> 00:26:41,660
+Starting with the left, what we're going to do, those shows the port assignments, how we're connected to the probe in situ board.
+
+218
+00:26:41,980 --> 00:26:47,980
+And then in the middle is the actual devices that we're using as the probe system.
+
+219
+00:26:47,980 --> 00:26:53,980
+This is kind of the half of a dual probe system, essentially.
+
+220
+00:26:53,980 --> 00:26:59,980
+You would need the camera system and the probe and the manipulator to hold it and a board to make measurements from.
+
+221
+00:26:59,980 --> 00:27:05,980
+And then on the right side is the full system, showing you the board to set up the DNA, the display.
+
+222
+00:27:05,980 --> 00:27:11,980
+And next we're going to do is we're going to go to a live demonstration of making the probe in situ measurement.
+
+223
+00:27:11,980 --> 00:27:23,980
+All right. The picture on the left side, as you see in the camera, down at the bottom, the black thing down there is the probe positioner.
+
+224
+00:27:23,980 --> 00:27:30,980
+And as I said earlier, you want a long arm on this thing.
+
+225
+00:27:30,980 --> 00:27:33,980
+And then this is connected to the probe.
+
+226
+00:27:33,980 --> 00:27:36,980
+Now this is the true differential 70 gigahertz probe.
+
+227
+00:27:36,980 --> 00:27:41,980
+And it's controlled by these controls back here, your X, Y, and Z.
+
+228
+00:27:41,980 --> 00:27:45,980
+And this one here is your planarization control.
+
+229
+00:27:45,980 --> 00:27:50,980
+If the probe tips are not planar to the test pads, you're not going to make good measurements.
+
+230
+00:27:50,980 --> 00:28:06,980
+And in order to verify they are or not, is that we have a camera here that's showing the probe tips very, expands it on the display, as you can see here by the display on the PC.
+
+231
+00:28:06,980 --> 00:28:09,980
+So those are the two signal pins within the probe itself.
+
+232
+00:28:09,980 --> 00:28:12,980
+As you can see, there is no ground.
+
+233
+00:28:12,980 --> 00:28:19,980
+So we have no common mode path, just a differential path with crosstalk.
+
+234
+00:28:19,980 --> 00:28:25,980
+And they were making contact with the differential line, as you can see on the trace.
+
+235
+00:28:25,980 --> 00:28:41,980
+So this connection to the VNA is we have a differential port one on the left here, one and three connected to one side of the probe in situ board.
+
+236
+00:28:41,980 --> 00:28:47,980
+And then the other port, differential port two and four are connected to the probe.
+
+237
+00:28:47,980 --> 00:28:50,980
+And now that completes the path.
+
+238
+00:28:50,980 --> 00:29:04,980
+So on the display to verify and help us kind of guide that we're making good contact is the time domain display on the VNA that shows the probe's making contact through the transmission line.
+
+239
+00:29:04,980 --> 00:29:11,980
+And now the next thing we're going to do is we're going to make an S parameter measurement, return loss measurements.
+
+240
+00:29:11,980 --> 00:29:23,980
+And this is going to be our probe in situ measurement that we're going to be sending to Arno, who's going to do a live demonstration using a TIA-TECH software.
+
+241
+00:29:23,980 --> 00:29:35,980
+And this insertion loss measurement, which is the last of the three waveforms that we need, the open, the short, and now the probe in situ measurement.
+
+242
+00:29:35,980 --> 00:29:46,980
+So I'm going to pass this waveform off to Arno, who will next create the extraction that will give us our probe model.
+
+243
+00:29:46,980 --> 00:29:49,980
+We're going to use the TIA-TECH software next.
+
+244
+00:29:51,980 --> 00:29:58,980
+And for this, we're going to use a 1X open and short.
+
+245
+00:29:58,980 --> 00:30:01,980
+This is what we measured.
+
+246
+00:30:01,980 --> 00:30:05,980
+These are basically S2P files.
+
+247
+00:30:05,980 --> 00:30:10,980
+These were two port measurements we made with ports 1 and 2 of the VNA.
+
+248
+00:30:10,980 --> 00:30:13,980
+We probed the open, which was basically probes in the air.
+
+249
+00:30:13,980 --> 00:30:19,980
+And we probed the short, which is the probes touching down on the copper shorting plate.
+
+250
+00:30:19,980 --> 00:30:24,980
+And so we're going to select 1X open and 1X short.
+
+251
+00:30:24,980 --> 00:30:28,980
+And we're going to load the two S2P files.
+
+252
+00:30:28,980 --> 00:30:31,980
+So the first one is for the open.
+
+253
+00:30:31,980 --> 00:30:34,980
+And I have that one here in the directory.
+
+254
+00:30:34,980 --> 00:30:37,980
+And over here I have the short.
+
+255
+00:30:37,980 --> 00:30:39,980
+So we'll load that one.
+
+256
+00:30:39,980 --> 00:30:47,980
+And then finally, it's the measurement that Brian was just showing live, which is the in situ through measurement.
+
+257
+00:30:47,980 --> 00:31:02,980
+And that is S4P because it's a full differential measurement that we're taking there from the connector to the probe through the transmission line on the board.
+
+258
+00:31:02,980 --> 00:31:07,980
+And so that's our in situ measurement, which is the one here.
+
+259
+00:31:07,980 --> 00:31:10,980
+It's the one inch board we're using to 70 gigahertz.
+
+260
+00:31:10,980 --> 00:31:12,980
+So we'll load that measurement.
+
+261
+00:31:12,980 --> 00:31:16,980
+And then we perform an auto port sequence check.
+
+262
+00:31:16,980 --> 00:31:23,980
+This is just ensure that our through line or through connections are as we expect them to be.
+
+263
+00:31:23,980 --> 00:31:31,980
+So the port sequence for our through is one to two single ended and three to four single ended.
+
+264
+00:31:31,980 --> 00:31:40,980
+And it also shows the frequency range where we're covering with 2000 data points from 35 megahertz to 70 gigahertz.
+
+265
+00:31:40,980 --> 00:31:43,980
+And now another very important step is the port to skip.
+
+266
+00:31:43,980 --> 00:31:47,980
+Since we're not concerned about the left side, the left side is where the connectors are.
+
+267
+00:31:47,980 --> 00:31:48,980
+The probe is on the right side.
+
+268
+00:31:48,980 --> 00:31:50,980
+So we want to skip the side that has the connector.
+
+269
+00:31:50,980 --> 00:31:52,980
+So that would be the left side.
+
+270
+00:31:52,980 --> 00:32:04,980
+So we select left and then we're ready to run the ISD software to extract the S4P model for the probe.
+
+271
+00:32:04,980 --> 00:32:07,980
+So this takes just a few seconds.
+
+272
+00:32:07,980 --> 00:32:11,980
+And what you get is the single ended S parameters.
+
+273
+00:32:11,980 --> 00:32:17,980
+Well, that's not all that interesting for us because we're after the differential S parameters.
+
+274
+00:32:17,980 --> 00:32:20,980
+So we come over here to plot S parameter.
+
+275
+00:32:20,980 --> 00:32:22,980
+And we de-embed from the right.
+
+276
+00:32:22,980 --> 00:32:27,980
+And it's basically the differential view that we want to see.
+
+277
+00:32:27,980 --> 00:32:35,980
+And so if I expand that, this is the actual differential S parameters of the probe by itself.
+
+278
+00:32:35,980 --> 00:32:40,980
+So it's extracted the probe from those three measurements that we supplied.
+
+279
+00:32:40,980 --> 00:32:46,980
+And it plots out the differential return loss, both the input side and the output side.
+
+280
+00:32:46,980 --> 00:32:50,980
+So that's the blue trace over here is the input return loss.
+
+281
+00:32:50,980 --> 00:32:54,980
+The red trace over here is the output return loss.
+
+282
+00:32:54,980 --> 00:32:59,980
+And we see over here the insertion loss, the differential insertion loss of the probe itself.
+
+283
+00:32:59,980 --> 00:33:03,980
+In the forward direction is the blue.
+
+284
+00:33:03,980 --> 00:33:06,980
+In the reverse direction is the red.
+
+285
+00:33:06,980 --> 00:33:09,980
+And they're the same as we would expect.
+
+286
+00:33:09,980 --> 00:33:16,980
+Because this is a symmetric and a passive device that we're extracting a model for.
+
+287
+00:33:16,980 --> 00:33:25,980
+So once we have the model, we're ready to go over to the VNA and actually apply it to that measurement that Brian was showing just a moment ago.
+
+288
+00:33:25,980 --> 00:33:30,980
+So I'm going to go ahead and close this window and bring up the VNA menu again.
+
+289
+00:33:30,980 --> 00:33:37,980
+And look at the differential transmission.
+
+290
+00:33:37,980 --> 00:33:46,980
+And right now what we're measuring is the probe and the board all together.
+
+291
+00:33:46,980 --> 00:33:55,980
+But what we want to get to is basically just a measurement of the board and the connector on that board on the left side.
+
+292
+00:33:55,980 --> 00:33:59,980
+But we're going to remove the probe that is on the right side.
+
+293
+00:33:59,980 --> 00:34:04,980
+So the first thing I'm going to do is place this trace into memory.
+
+294
+00:34:04,980 --> 00:34:09,980
+So we have a record of what it looked like before we de-embed it.
+
+295
+00:34:09,980 --> 00:34:13,980
+So we're going to go ahead and store this trace to the memory.
+
+296
+00:34:13,980 --> 00:34:18,980
+And then we're going to put data and memory on.
+
+297
+00:34:18,980 --> 00:34:24,980
+And then we're going to go to the measurement menu, which is where we apply all our post-processing.
+
+298
+00:34:24,980 --> 00:34:34,980
+So as I mentioned earlier in the presentation, all of this assumes that you've done a standard calibration, S-O-L-T type calibration,
+
+299
+00:34:34,980 --> 00:34:37,980
+so that you're obviously measuring accurately.
+
+300
+00:34:37,980 --> 00:34:44,980
+But now what we want to do is apply that probe model and remove that probe from this combined measurement.
+
+301
+00:34:44,980 --> 00:34:47,980
+So it becomes a post-processing step.
+
+302
+00:34:47,980 --> 00:34:49,980
+And we call that de-embedding.
+
+303
+00:34:49,980 --> 00:34:54,980
+And we want to go into the edit menu for de-embedding.
+
+304
+00:34:54,980 --> 00:35:03,980
+And you'll see the menu that I showed earlier in the presentation where you can choose between embedding and de-embedding.
+
+305
+00:35:03,980 --> 00:35:05,980
+Obviously the default is de-embedding.
+
+306
+00:35:05,980 --> 00:35:08,980
+Most of the time you want to remove things rather than add things.
+
+307
+00:35:08,980 --> 00:35:09,980
+But it can go both ways.
+
+308
+00:35:09,980 --> 00:35:12,980
+We have to decide what port we want to apply it to.
+
+309
+00:35:12,980 --> 00:35:18,980
+And this is very important because you can do S-2P embedding de-embedding, which would be on a single-ended port.
+
+310
+00:35:18,980 --> 00:35:24,980
+Or you can do differential embedding de-embedding, which would be on a differential port.
+
+311
+00:35:24,980 --> 00:35:26,980
+Obviously we're here to do differential measurements.
+
+312
+00:35:26,980 --> 00:35:32,980
+So we're going to pick ports two and four because that's what's on the right-hand side.
+
+313
+00:35:32,980 --> 00:35:33,980
+That's our output.
+
+314
+00:35:33,980 --> 00:35:35,980
+That's where our probe is.
+
+315
+00:35:35,980 --> 00:35:44,980
+And as I mentioned in the presentation, we can handle discrete components.
+
+316
+00:35:44,980 --> 00:35:46,980
+We can also do transmission lines.
+
+317
+00:35:46,980 --> 00:35:53,980
+But really the most useful de-embedding network, of course, is the S-4P file itself.
+
+318
+00:35:53,980 --> 00:35:56,980
+So that's what we're going to use here.
+
+319
+00:35:56,980 --> 00:36:01,980
+And we're going to load in the S-4P file.
+
+320
+00:36:01,980 --> 00:36:11,980
+And so when the ISD software ran, it created a file in the same directory that's labeled write DUT.
+
+321
+00:36:11,980 --> 00:36:18,980
+And that is basically distinguishing that we're removing what's on the right-hand side and creating a file for it.
+
+322
+00:36:18,980 --> 00:36:22,980
+And so what will be left is just the DUT measurement.
+
+323
+00:36:22,980 --> 00:36:29,980
+So the actual probe file is this one, the one I'm pointing to that's called write DUT.
+
+324
+00:36:29,980 --> 00:36:33,980
+So this captures the probe model.
+
+325
+00:36:33,980 --> 00:36:36,980
+So we're going to go ahead and open that.
+
+326
+00:36:36,980 --> 00:36:39,980
+And we're going to apply that.
+
+327
+00:36:39,980 --> 00:36:44,980
+Sorry, we're going to apply that.
+
+328
+00:36:44,980 --> 00:36:47,980
+I had another one in there, so I'm going to remove that.
+
+329
+00:36:47,980 --> 00:36:50,980
+So now I have the file loaded in the table.
+
+330
+00:36:50,980 --> 00:36:52,980
+And we're going to apply it.
+
+331
+00:36:52,980 --> 00:36:56,980
+And we're going to close.
+
+332
+00:36:56,980 --> 00:37:01,980
+And now all that remains is to basically turn on the embedding.
+
+333
+00:37:01,980 --> 00:37:10,980
+And what you'll notice right away, the memory trace still captures the combined measurement with the probe.
+
+334
+00:37:10,980 --> 00:37:14,980
+And the measurement in blue is now the D-embedded result.
+
+335
+00:37:14,980 --> 00:37:17,980
+So we remove the contribution to the probe.
+
+336
+00:37:17,980 --> 00:37:23,980
+And that's somewhere around 6 to 8 dB, depending on where you're looking at it, frequency.
+
+337
+00:37:23,980 --> 00:37:25,980
+But that's the result.
+
+338
+00:37:25,980 --> 00:37:34,980
+So this is where we end up after the probe is basically removed from the combined measurement.
+
+339
+00:37:34,980 --> 00:37:40,980
+So that concludes our demonstration and also concludes our seminar for today.
+
+340
+00:37:40,980 --> 00:37:43,980
+We hope it's been informative.
+
+341
+00:37:43,980 --> 00:37:50,980
+We do want to mention again, this was a collaborative effort with four companies involved.
+
+342
+00:37:50,980 --> 00:37:53,980
+So we thank you today for your attention.
+
+343
+00:37:53,980 --> 00:37:59,980
+If you have any questions, feel free to reach out to any one of us.
+
+344
+00:37:59,980 --> 00:38:02,980
+I'm, of course, responsible for the V&A part.
+
+345
+00:38:02,980 --> 00:38:07,980
+Brian helped here with the probing part of it and probe systems.
+
+346
+00:38:07,980 --> 00:38:15,980
+And Bill Rosas manufactures the probes themselves as well as the verification board that we're using.
+
+347
+00:38:15,980 --> 00:38:23,980
+And Dr. Jing Chao-Wong at the TITEC for the ISD network extraction software.
+
+348
+00:38:23,980 --> 00:38:28,980
+So again, on behalf of Brian and myself, we want to thank you for your attendance today.
+
+349
+00:38:28,980 --> 00:38:32,980
+And feel free to contact us with any questions you may have.
+
+350
+00:38:32,980 --> 00:38:34,980
+Thank you and good day.
+

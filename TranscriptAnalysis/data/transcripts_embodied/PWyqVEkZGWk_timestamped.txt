@@ -1,0 +1,143 @@
+PWyqVEkZGWk
+https://www.youtube.com/watch?v=PWyqVEkZGWk
+Unknown Category
+
+[00:00:00.000 → 00:00:05.740] Hey everybody, welcome back to RC with Adam. My name is Adam. In this video, you're going to
+[00:00:05.740 → 00:00:12.400] learn about how to set up your quadcopter motors, specifically in Betaflight. And you might be
+[00:00:12.400 → 00:00:16.720] wondering, set up the motors, what does that even mean? Like, why would I have to set up the motors?
+[00:00:16.860 → 00:00:21.600] Well, there are a few reasons why. Because you see, the flight controller, the brain of the
+[00:00:21.600 → 00:00:29.020] quadcopter, needs to know which motor to spin up at which time. And it needs to know where that
+[00:00:29.020 → 00:00:35.520] motor is. Or basically, that motor has to be in the right spot. And we need to make sure that our
+[00:00:35.520 → 00:00:41.640] motors are spinning in the correct direction. So those are the two main things. Now in this video,
+[00:00:41.720 → 00:00:47.640] we're going to cover how to set up the ESC protocol, which is not very hard. We're going to cover motor
+[00:00:47.640 → 00:00:54.000] order, or used to be called motor mapping, and motor direction. And that's going to be how it spins.
+[00:00:54.000 → 00:01:00.960] And then what you need to do if you want to spin props out, which is how I like to have my propellers
+[00:01:00.960 → 00:01:06.120] spin. And I'm going to show you how to do all of that. The bad news is it can be kind of a complicated,
+[00:01:06.700 → 00:01:11.780] or just not complicated, it can be confusing. And and maybe that's why your quadcopter isn't flying.
+[00:01:11.780 → 00:01:16.300] And maybe it's not working, and you're frustrated. And I totally get that. The good news is Betaflight
+[00:01:16.300 → 00:01:20.400] has made it much easier. But either way, I'm going to walk you through it. And we're going to do this
+[00:01:20.400 → 00:01:25.720] together. But first, I need to tell you that this video is sponsored by PCBWay. They make custom
+[00:01:25.720 → 00:01:32.460] printed circuit boards. That's what PCB stands for. And if you are into that, you can send them a file
+[00:01:32.460 → 00:01:38.820] of your own design of your own circuit board. And they can assemble that they have 1000s of components,
+[00:01:38.820 → 00:01:44.200] and they can actually put all of them on the board so that it works and is ready to rock and roll when
+[00:01:44.200 → 00:01:49.520] it comes to your door. So that's a pretty cool service. If you're not into PCBs, they also offer rapid
+[00:01:49.520 → 00:01:55.820] prototyping services. So you could get something injection molded or 3d printed or sheet metal
+[00:01:55.820 → 00:02:03.260] bended or even CNC'd out of various materials. So if that sounds interesting to you, check the link
+[00:02:03.260 → 00:02:09.340] down in the description of this video and tell them that I sent you if you want, but it probably won't
+[00:02:09.340 → 00:02:14.560] make a difference. Okay, now what we have what we're using today is this seven inch FPV drone that I
+[00:02:14.560 → 00:02:19.480] bought secondhand. So it's kind of one of those things where like, you don't know exactly how it's
+[00:02:19.480 → 00:02:24.360] built or what's been going on. And this could be a situation where the motors aren't working,
+[00:02:24.360 → 00:02:29.840] and it really is confusing to you. All right, step one, we need to determine what we're working with.
+[00:02:29.840 → 00:02:37.300] So in this case, we have a four in one ESC board, and it's mounted in the center of our quadcopter.
+[00:02:37.380 → 00:02:43.540] That's very common, like four in one ESCs are very, very common. Now spoiler alert, this time,
+[00:02:43.720 → 00:02:49.400] it's actually been flipped over, it's been it's been rotated in a roll orientation, and it's been
+[00:02:49.400 → 00:02:54.660] flipped. And that is why these motors are not spinning in the correct direction. And I'll,
+[00:02:54.780 → 00:03:00.380] I'll demonstrate that once we get this connected to beta flight. So we're going to connect our flight
+[00:03:00.380 → 00:03:05.400] controller, and everything's like hooked up to everything else. Like the flight controller is
+[00:03:05.400 → 00:03:09.780] connected to the ESC, we're going to connect our flight controller to beta flight, we're going to
+[00:03:09.780 → 00:03:16.200] get into beta flight. Now, if you are setting this up from a brand new profile, it's going to ask you
+[00:03:16.200 → 00:03:20.300] some other questions, like if you want to enable default settings, and you want to say yes, and then
+[00:03:20.300 → 00:03:29.000] it will come up with a prompt that says, hey, your ESC protocol has not been set. And so to do that,
+[00:03:29.000 → 00:03:35.580] you want to go to the motors tab on the left hand side. And then you'll see this right here where it says
+[00:03:35.580 → 00:03:43.780] motor ESC features, it'll probably say disabled at first. And then you want to select the one that you
+[00:03:43.780 → 00:03:49.960] want the protocol that you want. In this case, we're doing D shot 600. And I found that information
+[00:03:49.960 → 00:03:57.760] by going to the T motor, the manufacturer's website for this stack. And so basically look at the manual
+[00:03:57.760 → 00:04:04.720] or the manufacturer website, and that should give you that information. Once you do that, go and click
+[00:04:04.720 → 00:04:11.860] save and reboot, and then come back to this page. Now, at this point, let's just kind of, you know,
+[00:04:11.860 → 00:04:17.960] see what the motors are doing. And so this next step, we've already done the ESC protocol,
+[00:04:17.960 → 00:04:23.840] that's been D shot, and then we're going to do the motor order before we change the direction of
+[00:04:23.840 → 00:04:29.500] the motors. So let's see what we're working with here. So we want to plug in a battery, make sure
+[00:04:29.500 → 00:04:36.880] your propellers are not connected to your motors, like take them off completely. Okay, because we have
+[00:04:36.880 → 00:04:42.260] to spin the motors. So with the battery plugged in, and we're still connected to beta flight,
+[00:04:42.700 → 00:04:48.700] what we want to do is go to this little motor testing box. And it's going to say motor test mode
+[00:04:48.700 → 00:04:53.360] slash arming notice, it's saying take off your propellers, because you might chop your fingers
+[00:04:53.360 → 00:04:58.700] off. And click I understand the risks. And then it's going to give us these motor sliders right here.
+[00:04:58.700 → 00:05:07.080] And we can slide the motors. And so we have motor 123 and four. Now, if we look at the in the little
+[00:05:07.080 → 00:05:13.680] section that says mixer, we have a little diagram of the quadcopter. And we see that the motors are
+[00:05:13.680 → 00:05:22.360] 123 and four. So the motors are labeled. So the goal is when we spin these motors here, I'm just going to
+[00:05:22.360 → 00:05:30.320] spin one, we want that motor to correspond with the motor in the diagram. So as it's as it's laid out.
+[00:05:30.540 → 00:05:38.480] So when I spin up motor one, we have the rear left motor is spinning. Okay, and that's not correct,
+[00:05:38.480 → 00:05:46.380] because we want motor one to be on the opposite side. Motor two is going to be the front left. And
+[00:05:46.380 → 00:05:51.360] that's incorrect. We want that to be on the other side. And then motor three is going to be the opposite.
+[00:05:51.360 → 00:05:57.760] And motor four is going to be the opposite of that it should be on the other side. And again,
+[00:05:57.760 → 00:06:03.280] we don't care about the actual spinning direction right now. And again, the reason why these two are
+[00:06:03.280 → 00:06:09.100] opposite is because the flight or the excuse me, the ESC board has been flipped, it's been rotated.
+[00:06:09.100 → 00:06:16.540] So for whatever reason, the pilot who built this decided to flip the ESC upside down. Now,
+[00:06:16.540 → 00:06:23.020] the great thing is we don't have to change the wire direction or, or undo the ESC or anything like
+[00:06:23.020 → 00:06:28.560] that, we can do this all through software. So what we're going to do is we're going to get out of the
+[00:06:28.560 → 00:06:36.920] motor testing mode. So we're going to check that I understand the risk box again. And then we're going
+[00:06:36.920 → 00:06:43.460] to go down to reorder motors, and that's going to be at the bottom right of the screen. Let's click
+[00:06:43.460 → 00:06:48.860] on that. And then it's going to say, Hey, take off your propellers again. And then here's the
+[00:06:48.860 → 00:06:52.960] information notice, it's going to say motors will spin up one by one, you will be able to select which
+[00:06:52.960 → 00:06:56.980] motor is spinning, the battery should be plugged in correct ESC protocol should be selected, which
+[00:06:56.980 → 00:07:04.680] we've already done. This utility can only rearrange currently active motors. So more complex remapping
+[00:07:04.680 → 00:07:10.960] requires a CLI resource command. And that's what I've done in the past, past, that's more complicated.
+[00:07:11.280 → 00:07:15.920] All right, so basically, we're going to click I understand the risks. Okay, and let's click start.
+[00:07:17.640 → 00:07:24.280] So you see, it says click on the spinning motor, and the spinning motor is the back left motor right now.
+[00:07:24.540 → 00:07:29.880] So we're going to click on that. Now it's spinning the front left motor, we're going to click on that one on
+[00:07:29.880 → 00:07:36.640] the diagram. And now spinning the rear right motor, we're going to click on that one. And finally, the
+[00:07:36.640 → 00:07:41.240] front right motor, and we're going to click on that one. And it helps if you have your quadcopter in the
+[00:07:41.240 → 00:07:48.220] same orientation as what you see on the screen, as shown with the arrow. So now it says ready, check the
+[00:07:48.220 → 00:07:54.640] motor spinning order by clicking on the image. So now we can see so we click on the motor, and it's going to
+[00:07:54.640 → 00:08:02.660] spin it up. And so they're all spinning correctly. So we click on that motor and spins up. So let's
+[00:08:02.660 → 00:08:10.000] click Save. Wow, that's loud. Okay, sorry about that. So it's going to it's going to restart the
+[00:08:10.000 → 00:08:17.380] aircraft and save it. And then you see, I'm getting this accelerometer warning. That's fine, because I
+[00:08:17.380 → 00:08:23.160] haven't finished setting this all up. Once I get the quad like stabilized, and the the screws tighten down,
+[00:08:23.160 → 00:08:30.500] then I'll do the accelerometer calibration. All right, let's go back into the motors tab.
+[00:08:31.400 → 00:08:38.100] And now let's check the motors again with this testing mode. So let's spin up motor one.
+[00:08:38.840 → 00:08:46.600] And it spins. All right. Motor two should be the front right and it is motor three should be the back
+[00:08:46.600 → 00:08:52.860] left and it is and motor four is the front left. All right. So congratulations.
+[00:08:53.160 → 00:08:59.960] That solved a lot of problems. Okay, so we so now we have the motor order taken care of. Let's move on
+[00:08:59.960 → 00:09:05.560] to the motor direction. Now at this point, we need to decide if we want to have our propellers spinning
+[00:09:05.560 → 00:09:12.340] in or outward. And so if you look at the front of the quad, here's some propellers here. If you want
+[00:09:12.340 → 00:09:18.300] them to spin. Well, let's see, these are right propellers. Yeah, I don't know. I don't have the right
+[00:09:18.300 → 00:09:22.680] propellers on here. But this is just for demonstration purposes. So if you want them to spin in an
+[00:09:22.680 → 00:09:28.680] outward rotation, like spinning out away from the front and out away from the back,
+[00:09:29.480 → 00:09:34.760] then that's called props out. If you want them to spin inward, like towards your camera,
+[00:09:35.320 → 00:09:42.360] or inward towards the tail of the quadcopter, that's called props in. I like to have them spin props
+[00:09:42.360 → 00:09:49.480] out, because I think it keeps junk from getting slung onto the lens of the camera.
+[00:09:49.480 → 00:09:56.280] And so and as some people have other preferences, but that's how I like to have them. So we want to
+[00:09:56.280 → 00:10:01.640] make sure that the motors are spinning in that orientation. Now this is this part is really
+[00:10:01.640 → 00:10:09.160] important. If you decide to, to use reversed props or spinning props out, you want to go over to the
+[00:10:09.160 → 00:10:14.600] motor mixer section. And right below that diagram, you'll see a little slider that says motor direction
+[00:10:14.600 → 00:10:21.000] is reversed, you want to click that. And you see how it changes the little arrows, those little
+[00:10:22.040 → 00:10:27.080] yellow arrows, it's going to change the direction. And that's going to show you like, yeah, you want
+[00:10:27.080 → 00:10:32.680] that's, that's how they should be spinning. Now clicking this box does not actually change the
+[00:10:32.680 → 00:10:39.960] motor direction. This just tells the flight controller that that is the way the motors are spinning. So it can
+[00:10:39.960 → 00:10:47.000] work its magic and fly stable stably. So we want to make sure we click that. And then let's hit save and
+[00:10:47.000 → 00:10:56.600] reboot. Man, that's loud. Okay. All right, let's get back in here. Let's go to the motors tab again.
+[00:10:57.160 → 00:11:03.000] Okay, so now we can check the motor direction, we're going to go into the testing mode, we're going to start
+[00:11:03.000 → 00:11:09.000] with motor one, we're going to spin it up. And it is spinning, I can just feel it with you know, feel
+[00:11:09.000 → 00:11:14.840] the motor bell with my finger. Don't get your finger caught in there or anything. It is spinning props
+[00:11:14.840 → 00:11:20.840] in. Or if you're looking straight down, it's spinning in a clockwise rotation, we want it to spin the
+[00:11:20.840 → 00:11:26.200] opposite direction. So what we're going to do, actually, we don't even need to do that. Sorry,
+[00:11:26.200 → 00:11:30.760] that doesn't even make any sense. All right, now that we're back in the motor tab, we're going to go down to
+[00:11:30.760 → 00:11:35.720] the button at the bottom right. And it's going to say motor direction, we're going to click on that.
+[00:11:36.680 → 00:11:42.440] It's going to give us the safety warning, and then information notice, and it gives you the instructions
+[00:11:42.440 → 00:11:48.680] on how to do that. And it says some, not all DSHOT ESDs will work with this dialogue. So just keep that in
+[00:11:48.680 → 00:11:55.400] mind, if it doesn't work for some reason, this is possibly why. All right, so we're going to say yes, I
+[00:11:55.400 → 00:12:00.440] understand the risks. And you can do a wizard thing where it's guided or you can do individually.
+[00:12:00.760 → 00:12:07.000] Let's go ahead and do the guided version. And so it's going to say, so we're going to start
+[00:12:07.000 → 00:12:13.400] spinning the motors. Okay, click on motor numbers individually to change spin direction, verify all
+[00:12:13.400 → 00:12:19.560] motors are spinning correctly. So what we can do is, let's just start with one and we'll go through
+[00:12:19.560 → 00:12:24.840] them all. So motor number one is spinning the wrong way. It's spinning clockwise, we want to change that.
+[00:12:24.840 → 00:12:31.080] So let's click on number one, it stopped the motor, and now it's spinning in the opposite direction.
+[00:12:31.080 → 00:12:36.200] So that's good. Motor number two, the front right motor, that's spinning in the correct direction,
+[00:12:36.200 → 00:12:42.280] which is clockwise, or in in how I want these props to be set up. And you and it does show this little
+[00:12:42.280 → 00:12:48.200] diagram and which way the props should be spinning, since we have it set up for reversed. Let's go to
+[00:12:48.200 → 00:12:56.200] motor three, that is spinning in the correct direction as well. And then motor four is spinning in the
+[00:12:56.200 → 00:13:01.560] wrong direction. It's spinning like props in, we want it to spin props out. So let's click on number four.
+[00:13:02.520 → 00:13:09.320] And there we go. Now it's spinning in the correct direction. Okay, so then we'll hit stop motors, and then
+[00:13:09.320 → 00:13:15.480] close. And is there can we hit save and reboot? Is that an option? All right, now let's go over to the motor test
+[00:13:16.280 → 00:13:22.120] thing right here. And we'll spin up the motor. And yeah, it's going the right way. Okay, we can click
+[00:13:22.120 → 00:13:29.960] on the slide, do the master slider and slide all of them. And check them. Yes, so they are all spinning
+[00:13:29.960 → 00:13:35.400] in the correct direction. So that's it. I think that's it. So we don't have the option to save and
+[00:13:35.400 → 00:13:41.480] reboot. So I guess it just automatically saved it. So that's great. All right, so that that's it. That's it,
+[00:13:41.480 → 00:13:47.320] actually. So congratulations, you should have your quadcopter working properly. Now, the next thing
+[00:13:47.320 → 00:13:55.880] is, we would want to check and make sure that the motor responds properly, based on our control inputs.
+[00:13:55.880 → 00:14:01.960] And that that's kind of a separate thing. Because this should be like the baseline, like the flight
+[00:14:01.960 → 00:14:09.240] controller now understands which motors are where, and that the motors are in the correct spot.
+[00:14:10.600 → 00:14:15.080] And that they're spinning in the correct direction. So this is kind of the baseline thing. That's all
+[00:14:15.080 → 00:14:19.880] we're going to do in this video. Thanks for watching. I hope this was helpful. If you have questions
+[00:14:19.880 → 00:14:24.840] about setting up your quadcopter and getting the motors right, leave a comment down below. And hopefully,
+[00:14:24.840 → 00:14:31.240] I or someone else will be able to help you. Thanks for watching. Get out there and fly something and I'll see you next time.

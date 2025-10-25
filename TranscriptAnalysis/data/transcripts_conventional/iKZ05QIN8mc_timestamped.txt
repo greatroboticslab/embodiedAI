@@ -1,0 +1,369 @@
+iKZ05QIN8mc
+https://www.youtube.com/watch?v=iKZ05QIN8mc
+Unknown Category
+
+[00:00:00.040 → 00:00:05.040] Greetings everyone and welcome back to the bench. This is your weekly dose of
+[00:00:05.040 → 00:00:14.760] AudioTech. Okay, on the bench today we have two audio amplifier ICs, the LM1875
+[00:00:14.760 → 00:00:23.400] and the TDA2050. My all-time favorite audio ICs. Really love these things.
+[00:00:23.400 → 00:00:29.680] Should be obvious. I've done videos on these before, but I want to do an in-depth
+[00:00:29.680 → 00:00:38.320] comparison of these to see which one stands on top. Well, let's start off that
+[00:00:38.320 → 00:00:43.560] they're both pretty good, but there are some differences in them, and that's what
+[00:00:43.560 → 00:00:48.640] we're going to take a look at today. But first of all, why do I like these chips so
+[00:00:48.640 → 00:00:56.200] much? Well, they're simple 5-pin T0220 type packages. They don't require a lot of
+[00:00:56.200 → 00:01:02.080] extra components to make a nice little amplifier. You know, there's no mute or
+[00:01:02.080 → 00:01:08.500] standby pins that require extra components. And you know, on some of the chips with
+[00:01:08.500 → 00:01:14.160] the mute and standby, you have to use Zener diodes that hold the voltage in a
+[00:01:14.160 → 00:01:22.420] certain range so the chip stays in play mode. Like the TDA7264 has that type of
+[00:01:22.420 → 00:01:27.420] arrangement. It's kind of annoying. But with these, there's no mute or standby pin to
+[00:01:27.420 → 00:01:33.820] worry about. They're designed to have very good audio quality, low distortion, no
+[00:01:33.820 → 00:01:39.820] stability issues. And with some of these chips, I've seen in the step response
+[00:01:39.820 → 00:01:46.640] tests, which we'll look at today, that some of them did oscillate. They were easier to
+[00:01:46.640 → 00:01:54.080] make oscillate. And, well, I still have to test the TDA2050, but the LM1875 had no
+[00:01:54.080 → 00:02:00.400] problems in that test. Like I said, I do have to test this TDA2050, and we'll
+[00:02:00.400 → 00:02:07.960] check that out today. You can set them up for single supply or dual supply operation.
+[00:02:07.960 → 00:02:15.720] In my experience, they're reliable. You know, my main listening amp has the TDA2050 in it,
+[00:02:15.720 → 00:02:23.400] and it's on constantly for 10 years straight, and no problems with it. I never turn it off.
+[00:02:23.400 → 00:02:32.100] So as long as you use a good layout and big enough heatsink, it'll be just fine. Now these are what I
+[00:02:32.100 → 00:02:40.100] call the 20 watt class amplifier ICs. I mean, you can squeak more power out of them. In one of my
+[00:02:40.100 → 00:02:49.840] videos with the LM1875, I was able to get 40 watts, actually a little over 40 watts out of it. But that
+[00:02:49.840 → 00:02:56.760] was running it at its maximum supply voltage, which I would normally not do. But still, yeah, you can get
+[00:02:56.760 → 00:03:06.100] 25, 30 watts out of these things. Okay, so I have first off the LM1875 here on these little boards.
+[00:03:06.100 → 00:03:15.420] I talked about these kits before. Have a really nice, well laid out board. Nice ground layout here.
+[00:03:15.420 → 00:03:22.720] You got the ceramic caps, bypass caps for the power supply. We're pretty much right at the
+[00:03:22.720 → 00:03:30.820] pins of the chip. And they go right into the ground plane here. And yeah, these are just excellent boards.
+[00:03:30.820 → 00:03:39.360] And because the TDA2050 has the same pin out, I can use it on the same board. Though I will have to
+[00:03:39.360 → 00:03:47.780] change the Bougereau cell components because they require a different value. We'll take a look at that
+[00:03:47.780 → 00:03:55.140] as well. I'm going to start out doing a power test. I'll measure it at three different voltages. If you
+[00:03:55.140 → 00:04:04.500] want a more comprehensive power test results, well, a few years ago, I did a test of the LM1875. I tested
+[00:04:04.500 → 00:04:12.420] it at a bunch of different load resistances and supply voltages. But I'm just going to do three
+[00:04:12.420 → 00:04:20.420] different ones here to compare the two chips. As always, I have my signal source going into the
+[00:04:20.420 → 00:04:30.180] preamp so I can control the level. That goes into the amplifier here. Non-inductive 4 ohm load on the
+[00:04:30.180 → 00:04:39.860] output. And the power supply is hooked up. I have these reservoir capacitors. You know, they're connected
+[00:04:39.860 → 00:04:49.060] here close to the chip. And the power supply is set up. And we'll run a few power tests. I'm actually
+[00:04:49.060 → 00:04:58.580] going to start out at plus or minus 12 volts. So we'll dial that in. And what I'll do here, I'll take
+[00:04:58.580 → 00:05:07.860] one measurement on camera and then I'll do the rest off camera to save time. Okay, power measurement time.
+[00:05:09.860 → 00:05:21.060] So we can dial out the clipping there. Right about there. And I have to put more waveforms on the
+[00:05:21.060 → 00:05:28.980] screen to get an accurate measurement. See, it always stays the same. But if I don't have enough
+[00:05:28.980 → 00:05:36.340] waveforms, you get a different number here. You get a higher number. So you get the wrong information.
+[00:05:36.340 → 00:05:50.180] Okay. So we have 6.61 volts RMS squared divided by 4 ohms. So 10.9 watts. That's plus or minus 12 volts.
+[00:05:50.180 → 00:05:53.780] Okay, power test.
+[00:05:58.580 → 00:06:00.740] 7.18 volts RMS.
+[00:06:00.740 → 00:06:14.020] By that by 4 is 12.8. Actually, 12.9. The 1875 was doing 10.9. And this one is doing 12.9.
+[00:06:14.020 → 00:06:22.820] So it's delivering a little more power than the LM1875 at the same supply voltage. But I'll run through
+[00:06:22.820 → 00:06:28.660] some more supply voltages and take some more measurements here and see how it stacks up at the
+[00:06:28.660 → 00:06:39.460] end. Okay, so now I'm looking at a condition called rail sticking. That's when you send the amplifier into
+[00:06:39.460 → 00:06:45.860] clipping. And you'll notice that it wants to stay stuck to the rail a little bit. You can see a little
+[00:06:45.860 → 00:06:52.100] notch there on the top and bottom, especially on the bottom. See how it's sticking to the rail a little
+[00:06:52.100 → 00:07:04.260] bit. So I'm using a 10 kilohertz signal. So we can see that clearly. And with the LM1875, you can see that
+[00:07:04.260 → 00:07:11.540] there is a little bit of rail sticking. That's because the transistors don't want to come out of
+[00:07:13.060 → 00:07:23.140] saturation or well, at least clipping. What that can do is when you do clip, that can make the clipping
+[00:07:23.140 → 00:07:31.780] sound a little bit more harsh. So the less you see it, the better. And we are running at 4 ohm load,
+[00:07:31.780 → 00:07:36.980] so it's going to be harder for the amplifier not to do that with the lower impedance load.
+[00:07:38.660 → 00:07:45.380] Okay, let's check rail sticking. This is 10 kilohertz with the 4 ohm load TDA 2050.
+[00:07:48.740 → 00:07:56.900] Oh yeah, pretty bad. Look at that rail sticking. Much worse than the LM1875.
+[00:07:56.900 → 00:08:06.420] So I'll stop that so I can turn off the amplifier. So they might be optimizing the chip to give more
+[00:08:06.420 → 00:08:13.460] output. But whenever you do stuff like that, you might be giving up something like stability or,
+[00:08:13.460 → 00:08:20.980] you know, something like this rail sticking. And it's pretty bad here. And we have Snickers here.
+[00:08:20.980 → 00:08:29.300] I'm going to pass through here. I don't know where he's going. I think he's going to lay in the corner there.
+[00:08:30.500 → 00:08:36.820] Yeah, whatever. What you're going to do? Oh, grab the camera here. He's going to knock the camera over.
+[00:08:38.740 → 00:08:39.620] He's going out.
+[00:08:39.620 → 00:08:44.100] Okay, I think we're safe now.
+[00:08:46.980 → 00:08:52.500] Okay, now I'm going to do a frequency response test. In a way, it's kind of a pointless test,
+[00:08:52.500 → 00:08:59.140] because it really depends on the external component values that you use. If I don't run the test,
+[00:08:59.140 → 00:09:05.380] people will complain about it. So anyway, we'll go ahead and run it. So we're at one kilohertz
+[00:09:05.380 → 00:09:14.100] at four volts. Normally, you test the amp at around one watt, but I'm testing four watts with the four ohm load.
+[00:09:15.060 → 00:09:24.260] We'll see what the frequency response turns out to be. I'm on the Fieldtech function generator here.
+[00:09:24.260 → 00:09:38.580] Okay, I'm at 20 hertz, and it's still completely flat. Let's take it down until it starts to roll off.
+[00:09:38.580 → 00:09:50.660] Okay, it's starting to roll off. We're at eight hertz. Okay, let's go up. That's three hertz.
+[00:09:54.260 → 00:10:02.020] Right there, we're about three dB down, and that's four hertz. I would say that's, uh,
+[00:10:02.020 → 00:10:04.980] for audio purposes, that's more than good enough.
+[00:10:13.780 → 00:10:20.580] Okay, we're at 20 kilohertz, and of course, it's flat. Like I say, just to make people happy,
+[00:10:20.580 → 00:10:27.460] we'll go higher. Okay, that's 70. 70 kilohertz.
+[00:10:32.420 → 00:10:34.100] Starting to roll off a little bit.
+[00:10:38.340 → 00:10:47.380] 100 kilohertz. Ever so slightly off, but I mean, it's flat. This amp is completely flat,
+[00:10:47.380 → 00:10:54.980] way beyond the audio spectrum. Okay, we're going to do another test. What test is this?
+[00:10:54.980 → 00:11:01.940] Ah, we're going to do a frequency sweep here, using the ol' field tech.
+[00:11:03.460 → 00:11:11.140] So we're at, again, we're at this Graticule, upper and lower is zero dB. So we'll turn this thing down.
+[00:11:11.140 → 00:11:16.580] Again, probably a pointless test. These are going to be
+[00:11:19.220 → 00:11:22.900] flat throughout the frequency response here.
+[00:11:22.900 → 00:11:30.820] Okay, that's 20 hertz, and you know, it's pretty flat. It's still there.
+[00:11:32.500 → 00:11:38.980] That's 10. It's just like the LM 1875. It has the same capacitor values on the input
+[00:11:39.780 → 00:11:44.500] and the feedback. So you're going to see the exact same result. So we'll go ahead and
+[00:11:44.500 → 00:11:54.740] sweep this up to 20 kilohertz. Turn that off a second so I can get this set.
+[00:11:58.740 → 00:12:09.380] Well, we're there already. 25! Crink it up. Crink it up to something crazy. Yeah, it's flat. I'm not
+[00:12:09.380 → 00:12:17.540] a monkey with it anymore. So now I'm going to do step response tests. I have this microcontroller
+[00:12:17.540 → 00:12:25.700] programmed to give me a 10 kilohertz square wave. The reason I'm using that, it's the fastest square
+[00:12:25.700 → 00:12:32.420] wave or the cleanest square wave I can produce here on my bench. So yeah, the microcontroller does that.
+[00:12:32.420 → 00:12:42.180] It goes into the input. And I had to rig up a little thing for the scope. Set the probe to 10,
+[00:12:43.060 → 00:12:54.260] or yeah, 10 times. And I'm plugged into here. Problem is, if I scope at the load, I get a very small ring.
+[00:12:54.260 → 00:13:00.900] You know, it's on the scope. It's only, you know, like a couple pixels tall on the scope screen there. But
+[00:13:02.420 → 00:13:09.060] when I set this up, it's a lot better. It'd be better to hold it here, but it's kind of inconvenient. So
+[00:13:09.940 → 00:13:15.300] I'm going to rig this little connection up here, and it seems to work okay.
+[00:13:17.700 → 00:13:25.780] Okay, we're looking at the square wave here. We have the 4 ohm load and a little bit of undershoot.
+[00:13:25.780 → 00:13:31.780] That could be from the microcontroller. But it's a pretty nice looking square wave.
+[00:13:32.900 → 00:13:34.740] I'm going to magnify it a little bit.
+[00:13:38.020 → 00:13:47.380] I have to test this at different signal levels. The idea is to put a capacitance across the output,
+[00:13:47.380 → 00:13:54.340] a pure capacitance, and see how the amplifier handles it. If it rings or oscillates. Of course,
+[00:13:54.340 → 00:14:00.900] it's going to ring somewhat. It's just natural. But as long as it doesn't break out into an oscillation,
+[00:14:00.900 → 00:14:08.980] we're okay. Or, you know, excessive ringing as well. So let's get on with it here.
+[00:14:11.140 → 00:14:17.620] Okay, we'll start with a 10 nanofarad cap across the output.
+[00:14:17.620 → 00:14:29.460] And I'm not really seeing anything. I probably should turn this up the other way. See, there's
+[00:14:29.460 → 00:14:37.540] clipping. I'm going to get into clipping. You can get a little bit of a wiggle there. But that's not
+[00:14:37.540 → 00:14:45.620] really caused by the capacitance. Because I take it out. It's still there. So I'll turn that down
+[00:14:46.580 → 00:14:57.060] between tests so I'm not dissipating excessive power. Next, I'll plug in this 0.1 microfarad or 100
+[00:14:57.060 → 00:15:07.700] nanofarads. See, that's causing a little bit of an overshoot on the negative side. And that's a little
+[00:15:09.780 → 00:15:15.460] little bit of a ring. Very, very light. Let's unplug that.
+[00:15:15.460 → 00:15:28.020] See, it goes away when I take it out. So let's see if I can zoom in on that a bit.
+[00:15:31.060 → 00:15:31.860] Examine that.
+[00:15:34.820 → 00:15:37.860] See, that's why you have to test at different levels. Because see, it's
+[00:15:37.860 → 00:15:43.780] not doing it there. It might be
+[00:15:46.420 → 00:15:54.420] an oscillation, considered oscillation, because it goes on long enough. But just not sure it's
+[00:15:54.420 → 00:16:02.740] enough to worry about. It could be an inductance thing too. Let me touch it right at the output
+[00:16:02.740 → 00:16:13.060] terminal. Yeah, it's still there. It's not really breaking out into an oscillation continuously.
+[00:16:15.700 → 00:16:21.380] Okay, step response test with a 220 nanofarad.
+[00:16:21.380 → 00:16:36.740] Yeah, that's somewhat bothersome. I'm seeing this oscillation here on the bottom rail.
+[00:16:39.060 → 00:16:46.820] Note they say, thou shall scope the supply rails. See if that appears there. If it does,
+[00:16:47.540 → 00:16:54.420] we're having filtering issues of the supply rail. So let's see what it looks like.
+[00:16:59.220 → 00:17:04.020] And it's not too bad, but I am seeing that. It's glitching.
+[00:17:07.300 → 00:17:15.940] You know, just my trigger thingy up there. See that's showing up on the supply rail. It's not
+[00:17:15.940 → 00:17:20.500] nearly as much as what I had it set to.
+[00:17:24.980 → 00:17:28.420] 100 millivolts per division. That's pretty significant.
+[00:17:29.620 → 00:17:35.860] I'm being let down by my supply bypass filtering.
+[00:17:35.860 → 00:17:39.700] I want to see maybe if I can fix that.
+[00:17:42.180 → 00:17:48.580] Okay, I installed 0.22 microfarad ceramic caps, X7R 100 volts.
+[00:17:49.860 → 00:17:54.740] Always use the X7R type. Always use at least double the supply voltage.
+[00:17:55.620 → 00:17:58.580] Good reason for doing that, which I won't get into here.
+[00:17:58.580 → 00:17:59.780] I'm going to see.
+[00:17:59.780 → 00:18:01.860] And it did not fix it.
+[00:18:03.540 → 00:18:04.340] Still there.
+[00:18:10.740 → 00:18:18.020] I had to go with my intuition and what you think is right, but this time I am not correct.
+[00:18:18.020 → 00:18:24.900] Apologies for the glare on the scope. That's just what it's like shooting in the daylight.
+[00:18:24.900 → 00:18:28.820] I'm going to have to throw a towel or something over this window.
+[00:18:30.820 → 00:18:32.900] I have blinds, but they're not good enough.
+[00:18:33.700 → 00:18:36.980] Well, I'm going to install what's known as a teal network.
+[00:18:37.700 → 00:18:40.740] I think the name comes from Neville Teal,
+[00:18:40.740 → 00:18:46.100] of the teal and small fame, the loudspeaker people.
+[00:18:46.820 → 00:18:48.180] I guess that's where that comes from.
+[00:18:48.820 → 00:18:52.500] What it is, it's a coil in parallel with a resistor.
+[00:18:53.380 → 00:18:59.860] It's on the output of the amplifier, and it reduces the effects of capacitive loads.
+[00:18:59.860 → 00:19:02.980] Amplifiers do not like to drive capacitive loads,
+[00:19:03.940 → 00:19:07.300] and that's one reason why we're oscillating with that capacitor.
+[00:19:07.300 → 00:19:13.300] In real life, you would probably never see that kind of capacitance on the output.
+[00:19:13.540 → 00:19:15.780] You know, pure capacitance at that level.
+[00:19:17.700 → 00:19:20.900] But still, I don't think the amplifier should be oscillating.
+[00:19:21.860 → 00:19:27.220] So I'm going to put this in series with the output and see if it does anything.
+[00:19:30.740 → 00:19:32.980] Okay, let's see what happens here.
+[00:19:32.980 → 00:19:40.420] It's still there, but it's almost diminished.
+[00:19:42.820 → 00:19:44.340] It's a lot less than it was.
+[00:19:47.940 → 00:19:53.220] So what I'm doing there, I have, I don't know, about 12 turns around that resistor.
+[00:19:53.220 → 00:20:00.500] I'm guessing that's probably like .3 microhenries of inductance on that coil.
+[00:20:01.780 → 00:20:05.700] Um, probably could use more like .7.
+[00:20:06.340 → 00:20:09.860] You really shouldn't have to go above one microhenry.
+[00:20:10.820 → 00:20:15.140] So yeah, I'm not going to monkey around with it anymore.
+[00:20:15.140 → 00:20:17.140] I can see that this is already working.
+[00:20:17.140 → 00:20:23.380] All right, for crying out loud, I'll try a bigger coil.
+[00:20:24.500 → 00:20:28.820] No one would like to see that oscillation removed as much as I would,
+[00:20:29.860 → 00:20:31.380] or at least diminished more.
+[00:20:32.980 → 00:20:36.100] And, uh, you don't have to wrap it around the resistor.
+[00:20:36.100 → 00:20:37.860] I just do that out of convenience.
+[00:20:37.860 → 00:20:41.060] It makes it more compact like a single component.
+[00:20:41.060 → 00:20:46.260] So, let me get this set up and see if it works or not.
+[00:20:47.620 → 00:20:49.380] All right, here goes nothing.
+[00:20:51.140 → 00:20:52.580] Ah, much better.
+[00:20:52.580 → 00:20:53.940] This is what you want to see.
+[00:20:53.940 → 00:20:56.900] Just a little bit of ring that diminishes to nothing.
+[00:20:59.300 → 00:21:01.460] And yeah, that cleaned it up.
+[00:21:04.100 → 00:21:05.380] A little bit of overshoot.
+[00:21:05.380 → 00:21:10.900] A little bit of ring, but it's not oscillating like it was.
+[00:21:11.940 → 00:21:13.540] So that took care of the problem.
+[00:21:16.260 → 00:21:20.980] The value of that coil is probably closer to one microhenry.
+[00:21:20.980 → 00:21:22.180] I don't think it's over that.
+[00:21:22.180 → 00:21:25.700] There's a calculator where you can measure the diameter,
+[00:21:26.260 → 00:21:28.660] number of turns, and the length of the coil.
+[00:21:29.620 → 00:21:32.020] And it will tell you how much inductance that is.
+[00:21:32.020 → 00:21:37.300] But, hey, I'm guessing it's probably around one microhenry.
+[00:21:40.100 → 00:21:41.460] Step response test.
+[00:21:42.820 → 00:21:45.540] This time it's with the TDA 2050.
+[00:21:47.300 → 00:21:49.300] I mention that so when I'm editing the video,
+[00:21:49.300 → 00:21:51.060] I get all the clips in the right place.
+[00:21:52.260 → 00:21:54.580] Okay, we don't have any capacitor.
+[00:21:54.580 → 00:21:58.500] We're getting a little bit of ring on the bottom.
+[00:21:58.500 → 00:22:00.500] A little overshoot here, a bit of ring.
+[00:22:02.020 → 00:22:05.780] So the TDA 2050 is not nearly as stable.
+[00:22:06.340 → 00:22:07.780] Well, we can't say that yet.
+[00:22:07.780 → 00:22:08.980] It's not unstable.
+[00:22:08.980 → 00:22:11.460] I mean, some ringing doesn't mean it's unstable.
+[00:22:12.740 → 00:22:15.460] Until we pop those caps in and see what happens.
+[00:22:16.500 → 00:22:17.700] So let's try that.
+[00:22:19.700 → 00:22:22.740] Okay, this is the 10 nanofarad.
+[00:22:22.900 → 00:22:25.700] And it looks like it's not going to have any effect.
+[00:22:25.940 → 00:22:27.580] No, it doesn't do anything.
+[00:22:27.580 → 00:22:29.820] It's pretty much the same.
+[00:22:29.820 → 00:22:32.140] So you unplug it here and there's no change.
+[00:22:34.220 → 00:22:36.780] Okay, we have the 100 nanofarad end.
+[00:22:38.700 → 00:22:40.540] Oh yeah, it's starting to affect it.
+[00:22:42.220 → 00:22:43.900] Getting a longer ring there.
+[00:22:43.900 → 00:22:49.740] Okay, now it's the 270 nano.
+[00:22:50.860 → 00:22:54.860] Ooh, she broke out into some mean oscillation.
+[00:22:55.980 → 00:22:57.660] Yeah, this is really...
+[00:22:58.860 → 00:23:04.060] The TDA 2050 is a lot less stable than the LM1875.
+[00:23:05.580 → 00:23:07.820] So let's see if that little coil...
+[00:23:07.820 → 00:23:09.500] You know, it's not in the circuit right now.
+[00:23:09.500 → 00:23:13.500] So I'll put it in the circuit and see if that corrects the problem.
+[00:23:16.860 → 00:23:18.860] Okay, the coil is put in.
+[00:23:20.700 → 00:23:22.140] Yeah, that makes quite a difference.
+[00:23:26.780 → 00:23:30.060] It's not completely going unstable like it was.
+[00:23:31.260 → 00:23:34.460] Yeah, it's kind of a long ring there, but it damps out.
+[00:23:34.460 → 00:23:40.860] It's not totally freaking out like it was before and oscillating.
+[00:23:42.140 → 00:23:46.060] That makes a big difference having that teal network in there on the output.
+[00:23:46.060 → 00:23:48.060] That's why you see it in audio amplifiers.
+[00:23:49.420 → 00:23:52.060] Pretty much all consumer and professional.
+[00:23:53.580 → 00:23:56.860] You really need that to keep the amplifier stable.
+[00:23:56.860 → 00:24:04.460] Now again, would the amplifier really see that much pure capacitance and everyday use?
+[00:24:04.460 → 00:24:05.660] Probably never.
+[00:24:06.460 → 00:24:11.020] But if you want to be sure your amplifier is going to be absolutely stable,
+[00:24:11.020 → 00:24:12.940] you really need to have that coil there.
+[00:24:16.060 → 00:24:19.100] Okay, I'm hooked up to the computer through an attenuator.
+[00:24:19.100 → 00:24:20.460] So, let's see if we're going to be able to see the signal.
+[00:24:20.460 → 00:24:22.060] And we're looking at the distortion.
+[00:24:22.620 → 00:24:24.220] We're at 1 kilohertz.
+[00:24:24.220 → 00:24:25.980] That's the fundamental right there.
+[00:24:26.860 → 00:24:28.380] This is my pilot signal.
+[00:24:28.380 → 00:24:32.620] It's at 4.5 kilohertz at 1%.
+[00:24:33.500 → 00:24:39.420] And if you look at the total harmonic distortion plus noise, it's exactly 1%
+[00:24:40.220 → 00:24:43.740] because that's that large node it's measuring.
+[00:24:43.740 → 00:24:51.580] It's also seeing this, but since this node is many dB higher, that's going to dominate that reading.
+[00:24:52.220 → 00:24:52.940] So, 1%.
+[00:24:54.860 → 00:25:00.380] And you see the total harmonic distortion is 0.02 something.
+[00:25:00.380 → 00:25:02.140] It's flipping around there.
+[00:25:03.260 → 00:25:10.380] But, you know, the biggest peak here is about minus 80.
+[00:25:11.180 → 00:25:14.140] Now, this is not quite at 0.00.
+[00:25:14.140 → 00:25:15.660] So, it's relative to that.
+[00:25:15.660 → 00:25:20.940] So, it's about minus 80 dB down at one peak.
+[00:25:22.220 → 00:25:23.500] That looks like a third.
+[00:25:25.100 → 00:25:27.180] So, distortion is very low.
+[00:25:27.180 → 00:25:29.260] This is the TDA2050.
+[00:25:30.300 → 00:25:31.340] I'm measuring here.
+[00:25:32.380 → 00:25:35.820] And now I want to try an intermodulation distortion test.
+[00:25:35.820 → 00:25:37.660] Okay.
+[00:25:37.660 → 00:25:43.580] I'm looking at the intermodulation distortion of the TDA2050.
+[00:25:43.580 → 00:25:47.660] I have an 18 kilohertz and 19 kilohertz signal.
+[00:25:47.660 → 00:25:51.100] And you'll see these little sideband nodes here.
+[00:25:51.100 → 00:25:55.500] Well, the highest ones are down around minus 80.
+[00:25:55.500 → 00:25:59.740] And there's really nothing else showing up in the spectrum.
+[00:25:59.740 → 00:26:02.860] So, you know, that's pretty low.
+[00:26:02.860 → 00:26:06.060] And I'm using the high frequencies.
+[00:26:06.060 → 00:26:12.060] I'm way up in the audio band because that's where solid state amplifiers will produce more distortion.
+[00:26:12.780 → 00:26:15.260] But, yeah, there's nothing to worry about here.
+[00:26:15.260 → 00:26:16.220] Okay.
+[00:26:16.220 → 00:26:22.620] We're looking at the harmonic distortion of the LM1875.
+[00:26:23.500 → 00:26:26.860] One kilohertz fundamental pilot signal.
+[00:26:28.220 → 00:26:32.140] And, well, I'm a little bit surprised here.
+[00:26:34.940 → 00:26:36.940] Look at the second order harmonic.
+[00:26:38.140 → 00:26:39.980] That's sticking up pretty high here.
+[00:26:39.980 → 00:26:45.500] 0.075.
+[00:26:46.140 → 00:26:50.380] Wasn't the TDA2050 like 0.27, I think?
+[00:26:51.020 → 00:26:52.620] So, this is quite a bit higher.
+[00:26:53.180 → 00:26:55.020] I mean, it's still under 0.1.
+[00:26:56.780 → 00:26:58.860] But it's a lot higher.
+[00:26:58.860 → 00:27:02.540] I would expect it to be better than the TDA2050.
+[00:27:02.540 → 00:27:11.500] But, at least with this chip, the one I'm using here, it has higher distortion.
+[00:27:12.860 → 00:27:14.700] So, a little bit disappointing there.
+[00:27:16.220 → 00:27:16.540] Okay.
+[00:27:16.540 → 00:27:21.980] So, now we're looking at the intermodulation distortion of the LM1875.
+[00:27:21.980 → 00:27:25.820] We have the 18 and 19 kilohertz signals.
+[00:27:25.820 → 00:27:27.500] You can see the little side bands.
+[00:27:27.500 → 00:27:32.620] But, they're below minus 80, which is very good.
+[00:27:33.660 → 00:27:34.860] However, look here.
+[00:27:34.860 → 00:27:37.580] We're getting nodes down here.
+[00:27:37.580 → 00:27:41.020] This is one at 1 kilohertz.
+[00:27:42.060 → 00:27:45.740] Remember, the TDA2050 was clean down here.
+[00:27:45.740 → 00:27:49.260] I'm starting to wonder if maybe...
+[00:27:49.980 → 00:27:51.340] Did I screw something up?
+[00:27:51.340 → 00:27:52.300] I don't think so.
+[00:27:52.300 → 00:27:53.900] I didn't really change anything.
+[00:27:54.780 → 00:27:57.180] It's just that that chip is showing more distortion.
+[00:27:59.580 → 00:28:01.740] Well, I swapped out this chip.
+[00:28:01.740 → 00:28:03.580] It's the one that came with the kit.
+[00:28:04.060 → 00:28:05.980] And, I believe them to be authentic.
+[00:28:06.780 → 00:28:11.980] But, I swapped it out with one that I know is authentic that I bought from DigiKey or Mouser.
+[00:28:11.980 → 00:28:16.060] And, same performance.
+[00:28:17.500 → 00:28:18.620] A little bit disappointed.
+[00:28:18.620 → 00:28:23.660] I thought the LM1875 would do a little better in the distortion department.
+[00:28:26.780 → 00:28:28.860] Though, like I said, it's nothing bad.
+[00:28:28.860 → 00:28:37.020] But, I guess I have newfound respect for the TDA2050 as far as distortion performance goes.
+[00:28:37.020 → 00:28:39.660] Okay.
+[00:28:39.660 → 00:28:41.980] So, let's take a look at the results here.
+[00:28:41.980 → 00:28:43.820] This is the power measurements.
+[00:28:44.620 → 00:28:46.300] Plus minus 12 volt supply.
+[00:28:47.580 → 00:28:52.620] You can see that the TDA2050 did better as we noted earlier.
+[00:28:53.420 → 00:28:57.020] But, look as we increase the supply voltage.
+[00:28:57.900 → 00:29:01.740] The TDA2050 really picked up momentum.
+[00:29:02.460 → 00:29:03.820] It does have a higher current.
+[00:29:03.820 → 00:29:12.460] I know when you get around 20 volts, the current limit of the LM1875 starts taking effect.
+[00:29:13.580 → 00:29:16.540] That's because, yeah, we are using a 4 ohm load.
+[00:29:16.540 → 00:29:18.540] I wanted to challenge the chips a bit.
+[00:29:18.540 → 00:29:19.900] Use a 4 ohm load.
+[00:29:20.940 → 00:29:25.180] So, at 20 volts, we're looking at 29.7 versus 35.2.
+[00:29:26.300 → 00:29:31.100] And, at 24, 34.2 to 43.6.
+[00:29:31.100 → 00:29:37.660] So, as far as output power goes, the TDA2050 is really doing a good job there.
+[00:29:39.900 → 00:29:47.420] As far as the rail sticking issue, the LM1875 did a lot better there.
+[00:29:48.540 → 00:29:52.780] The TDA2050 had a lot harder rail sticking issues.
+[00:29:52.780 → 00:30:01.420] That's really only an issue if you play the amp loudly and, you know, you hit clipping quite often.
+[00:30:01.420 → 00:30:06.460] You'll hear that more as a harsher type of clipping sound.
+[00:30:07.740 → 00:30:10.140] So, the 1875 did a lot better there.
+[00:30:12.300 → 00:30:14.780] Frequency response, yeah, kind of pointless.
+[00:30:14.780 → 00:30:15.820] They were all flat.
+[00:30:15.820 → 00:30:16.620] They were all flat.
+[00:30:16.620 → 00:30:17.020] They were all flat.
+[00:30:17.020 → 00:30:17.580] They were all flat.
+[00:30:17.580 → 00:30:18.220] They were all flat.
+[00:30:18.220 → 00:30:18.700] They were all flat.
+[00:30:18.700 → 00:30:19.500] They were all flat.
+[00:30:19.500 → 00:30:20.380] They were all flat.
+[00:30:20.380 → 00:30:20.700] They said, well, you know, they're all flat.
+[00:30:20.700 → 00:30:21.100] They were flat.
+[00:30:21.100 → 00:30:21.600] They were all flat.
+[00:30:21.600 → 00:30:22.140] They were flat.
+[00:30:22.140 → 00:30:26.620] The LMA1875 had a very mild oscillation.
+[00:30:26.620 → 00:30:31.420] I don't think it would be a problem in normal use.
+[00:30:32.060 → 00:30:39.900] Because, like I say, I doubt you would ever have a pure 270 nanoFarad capacitance across the output like that.
+[00:30:39.900 → 00:30:50.880] and the 2050 became really unstable and really needed that teal network on its output again the
+[00:30:50.880 → 00:31:01.020] distortion that was pretty surprising to me and that I have this written backwards hold on a second
+[00:31:01.020 → 00:31:10.780] okay so yeah the 1875 had higher distortion than the TDA 2050 which was a surprise to me
+[00:31:10.780 → 00:31:18.220] because if you look at the data sheet it looks like it would be opposite looks like the TDA 2050
+[00:31:18.220 → 00:31:26.060] would be the one with higher distortion but at least in my test the TDA 2050 did quite a bit better
+[00:31:26.060 → 00:31:33.400] but again in both cases the distortion is so low that I don't think it would be an issue
+[00:31:33.400 → 00:31:41.280] you know it's under 0.1 not an issue in either case it's just that you know just looking at these two
+[00:31:41.280 → 00:31:48.500] numbers how much better the 2050 was intermodulation distortion I'll have to see if I can set up that
+[00:31:48.500 → 00:31:56.500] software to actually measure it I was surprised again to see that the TDA 2050 was showing quite
+[00:31:56.500 → 00:32:02.660] a bit better performance there and we're seeing a lot of nodes down around one kilohertz with those
+[00:32:02.660 → 00:32:10.240] tests with the 1875 where there were none with the 2050 last but not least is issues with the built-in
+[00:32:10.240 → 00:32:19.960] current limiter circuit I've noticed with reactive loads that the TDA 2050 would make like a loud
+[00:32:19.960 → 00:32:28.060] clicking sound or a popping sound if you're using a really reactive load like a forum speaker in a
+[00:32:28.060 → 00:32:35.620] ported box and just at the right frequency where the impedance is pretty hard to drive it would cause
+[00:32:35.620 → 00:32:43.060] the TDA 2050 current limiter circuit to kick in and when those kick in with reactive loads you get a
+[00:32:43.060 → 00:32:50.200] really you know like a pop sound or a click on the kick drum beats you might notice that in older
+[00:32:50.200 → 00:32:57.700] stereos from the 70s like your various receivers when you really push them hard with forum loads you'll
+[00:32:57.700 → 00:33:04.900] sometimes get that effect that's because of the current limiter circuit that's way a lot of do-it-yourselfers
+[00:33:04.900 → 00:33:11.620] don't include current limiters in their amplifier designs because it's really hard to set those
+[00:33:11.620 → 00:33:17.740] up to protect the transistors without seriously limiting current and I don't want to get into
+[00:33:17.740 → 00:33:25.600] that much it's kind of a complex subject but the LM1875 that I never had a problem with that I noticed
+[00:33:25.600 → 00:33:33.900] that when driving transformer loads I was using it as a step-up inverter and in some cases with the 2050 I
+[00:33:33.900 → 00:33:40.620] would get that raspy sound when the current limiter kicked in you can hear the buzz in the transformer
+[00:33:40.620 → 00:33:48.300] and well the 1875 had no issue with that it has the better more complicated current limiter circuit
+[00:33:48.300 → 00:33:54.620] obviously so yeah it's kind of a back and forth battle between them you know one chip does better in
+[00:33:54.620 → 00:34:02.720] one area worse than others where the other did better in one area and worse than the area where
+[00:34:02.720 → 00:34:09.840] the other chip did better you know it wasn't a clear winner here but I was really surprised with those
+[00:34:09.840 → 00:34:17.660] distortion test figures that really surprised me you know if the LM1875 did better there I would have
+[00:34:17.660 → 00:34:25.760] declared it the winner but yeah I just can't say that now so yeah this is really interesting it's an eye
+[00:34:25.760 → 00:34:32.960] opener for me so that's going to do it for this one really appreciate you watching this was an all-day
+[00:34:32.960 → 00:34:41.300] project I mean I had these boards off and I had to swap them I had to take them off to change these
+[00:34:41.300 → 00:34:49.580] capacitors here and I had some issues with the solder joints breaking loose when I pushed down on these
+[00:34:49.580 → 00:34:59.540] connectors to screw in you know to clamp down on these these conductors here I had a solder joint break
+[00:34:59.540 → 00:35:06.800] here I had a solder joint break here that's why I do not like these blue connectors there are some the blue
+[00:35:06.800 → 00:35:14.960] ones that are better quality but these are awful the ones that came in these kits don't use them
+[00:35:14.960 → 00:35:21.800] they're awful and yeah I had to swap the chip out and test that because I was kind of curious what was
+[00:35:21.800 → 00:35:34.580] going on with my beloved 1875 which well I lost a little respect for it anyway found that 2050 you probably
+[00:35:34.580 → 00:35:43.100] should have an output teal coil on it you know the the network there with the resistor and coil but
+[00:35:43.100 → 00:35:47.180] yeah I think I said enough that'll do it for this one thanks for watching

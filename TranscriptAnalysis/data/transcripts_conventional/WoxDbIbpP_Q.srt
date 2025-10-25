@@ -1,0 +1,1284 @@
+1
+00:00:00,560 --> 00:00:07,120
+Hi everyone, this is the second in my series of videos on Betaflight filter and PID tuning.
+
+2
+00:00:07,920 --> 00:00:13,680
+In this video I'm going to take you through step by step everything you need to do and everything
+
+3
+00:00:13,680 --> 00:00:21,760
+you need to know to get the perfect PID tune on any Betaflight quad. It's quite a lot of material
+
+4
+00:00:21,760 --> 00:00:28,160
+to get through so let's not waste any time. I have to start this video with a little bit of a health
+
+5
+00:00:28,160 --> 00:00:34,320
+warning. This video presumes that you are using my recommended filter tuning approach. Now I've done
+
+6
+00:00:34,320 --> 00:00:40,320
+another video where I look at filter tuning in Betaflight. This video assumes that you've completed
+
+7
+00:00:40,320 --> 00:00:45,360
+that video and that you've now got your filters correctly tuned. Don't proceed with this video
+
+8
+00:00:45,360 --> 00:00:52,880
+until you've completed steps one to three in that other video. So the next steps are PID tuning and
+
+9
+00:00:52,880 --> 00:00:58,000
+there are three steps here that we're going to cover in this video. Finding your max D gains that
+
+10
+00:00:58,000 --> 00:01:05,120
+you're comfortable with. Then finding the right P to D balance in order to get a critically damped PID
+
+11
+00:01:05,120 --> 00:01:12,000
+response. And then the final stage tuning feed forward for set point tracking so that we get
+
+12
+00:01:12,000 --> 00:01:17,360
+really really great responsiveness of the quad, really close tracking of your stick inputs.
+
+13
+00:01:18,800 --> 00:01:24,880
+Now in order to get a really good PID tune on your quadcopter it really helps if you understand
+
+14
+00:01:24,880 --> 00:01:31,520
+all the different elements of Betaflight's PID controller and what they all do. Now Betaflight's
+
+15
+00:01:31,520 --> 00:01:38,880
+PID controller consists of four main parts. P is the proportional term of the PID controller.
+
+16
+00:01:39,600 --> 00:01:46,160
+I is the integral term of the PID controller. D is the derivative term of the PID controller.
+
+17
+00:01:46,160 --> 00:01:51,760
+And feed forward is used to push the quad into sharp moves and improve set point tracking.
+
+18
+00:01:51,760 --> 00:01:57,440
+Now don't worry if you don't understand all of these terms right away. We're going to go through
+
+19
+00:01:57,440 --> 00:02:05,040
+them all step by step and explain how they all work now. So let's look at a diagram of Betaflight's
+
+20
+00:02:05,040 --> 00:02:12,400
+PID controller. You can see that it takes two inputs. The first input is the input from the gyro which is
+
+21
+00:02:12,400 --> 00:02:18,320
+telling the PID controller what the quad is doing at this instant. And then the second input is the set
+
+22
+00:02:18,320 --> 00:02:25,200
+point. Now this is your stick positions multiplied by your rates. So it's what you are telling the quad
+
+23
+00:02:25,200 --> 00:02:32,880
+you want it to do at that instant. And these two input terms are combined in this sum here. So the
+
+24
+00:02:32,880 --> 00:02:40,720
+set point minus the gyro gives the PID error. So the PID error is the difference between what you told the
+
+25
+00:02:40,720 --> 00:02:48,080
+quad you wanted it to do and what it is actually doing. And that PID error is fed into the derivative,
+
+26
+00:02:48,080 --> 00:02:52,960
+proportional and integral terms. And they do some maths on it which we'll talk about in a second.
+
+27
+00:02:53,680 --> 00:03:00,160
+And the results of those terms are all added together along with the feed forward term which
+
+28
+00:03:00,160 --> 00:03:06,720
+is based only on the set point. They're all added together here. And this is where the PID gains that
+
+29
+00:03:06,720 --> 00:03:12,960
+you set in beta flight are applied. So if you set a really big gain for the derivative term for example
+
+30
+00:03:13,520 --> 00:03:21,040
+in this addition block here this gets multiplied by that gain. So if you double the derivative gain, the
+
+31
+00:03:21,040 --> 00:03:29,040
+D gain, then it will add twice as much into this block as before. If you halve the proportional gain, suddenly
+
+32
+00:03:29,040 --> 00:03:35,600
+this term only gets added half as much. So that's where all your PID gains live in this block here.
+
+33
+00:03:36,640 --> 00:03:42,800
+Once all of those have been added together, that gives a control signal telling the quad how to
+
+34
+00:03:42,800 --> 00:03:49,280
+change what it is doing. And that gets passed to the motor mixer. And the motor mixer determines,
+
+35
+00:03:49,280 --> 00:03:56,320
+ah well if you want me to roll left more quickly, then I need to increase the speed of the right motors
+
+36
+00:03:56,320 --> 00:04:01,840
+and decrease the speed of the left motors. So it turns the control signal that's telling the quad what
+
+37
+00:04:01,840 --> 00:04:10,640
+to do into which motors do I speed up, which do I slow down. That's what the motor mixer does. So that
+
+38
+00:04:10,640 --> 00:04:17,760
+is how the beta flight PID controller works in a very simple way. Now let's talk about the different
+
+39
+00:04:17,760 --> 00:04:22,560
+terms. And we'll start with the proportional term because I think it's easiest to understand.
+
+40
+00:04:22,560 --> 00:04:30,640
+Now the proportional term looks at the PID error. This blue line here represents zero PID error.
+
+41
+00:04:31,200 --> 00:04:37,280
+So if we have some positive PID error, then the proportional term pushes back against that and
+
+42
+00:04:37,280 --> 00:04:44,160
+tries to bring the PID error to zero. If that PID error gets bigger, the proportional term pushes harder.
+
+43
+00:04:44,160 --> 00:04:50,320
+And if it's very big like this, you can see it's pushing really hard. If the PID error goes negative,
+
+44
+00:04:51,040 --> 00:04:57,920
+then the proportional term still pushes back towards zero. So it's pushing back towards zero the whole
+
+45
+00:04:57,920 --> 00:05:04,480
+time. And the bigger the PID error, the harder it pushes back. And so whatever size the PID error is,
+
+46
+00:05:04,480 --> 00:05:09,520
+and whether it's positive or negative, that proportional term is just acting to try and reduce
+
+47
+00:05:09,520 --> 00:05:17,200
+that PID error back towards that blue line, the zero line. Now let's talk about the derivative term.
+
+48
+00:05:17,200 --> 00:05:24,400
+Now the derivative term is a little bit different. Because all the derivative term wants is for the
+
+49
+00:05:24,400 --> 00:05:31,600
+PID error to stay the same from one minute to the next. It doesn't want it to be zero. It just wants it
+
+50
+00:05:31,600 --> 00:05:38,880
+to stay the same. So if the PID error increases, the derivative term doesn't like that because it
+
+51
+00:05:38,880 --> 00:05:45,040
+wants the PID error to stay the same. So it acts to try and stop the PID error increasing.
+
+52
+00:05:45,040 --> 00:05:53,760
+But if the PID error starts to decrease, the derivative term doesn't like that either. It wants the PID error to stay the same.
+
+53
+00:05:53,760 --> 00:06:01,760
+So it's pushing back against the PID error decreasing. So this is quite a strange behavior because you can see that
+
+54
+00:06:01,760 --> 00:06:11,760
+things appear to be getting better here. The PID error is decreasing. But the derivative term just is pushing back. It wants the PID error to stay the same and not decrease.
+
+55
+00:06:11,760 --> 00:06:20,160
+So that's how the derivative term works. The integral term also has a bit of a different behavior.
+
+56
+00:06:21,280 --> 00:06:32,720
+The integral term adds up the PID error over time. So here we have some small positive PID error. And initially, the integral term pushes back a little bit.
+
+57
+00:06:32,720 --> 00:06:38,880
+But then if that error doesn't go away, the integral term says, ah, I'll push back twice as hard.
+
+58
+00:06:38,880 --> 00:06:46,720
+And then if there's another same amount of error again, three times as hard, four times as hard, five times as hard.
+
+59
+00:06:46,720 --> 00:06:55,280
+It's adding up over time, that error. And the longer that error is there, the harder the integral term pushes back.
+
+60
+00:06:55,280 --> 00:07:02,800
+But then what if the error goes negative? Well, the integral term then says, oh, okay, well, you've been negative for a bit.
+
+61
+00:07:02,800 --> 00:07:08,400
+So I guess I don't need to push as hard. Oh, you're still negative. I'm going to push even less.
+
+62
+00:07:09,120 --> 00:07:14,000
+Ah, still negative, even less. You can see it's adding up, but it's actually subtracting.
+
+63
+00:07:14,000 --> 00:07:20,080
+It's taking a little bit away from its push every time it sees that negative PID error.
+
+64
+00:07:20,640 --> 00:07:26,240
+So you can see the integral term is just counting. It's just adding up the error over time.
+
+65
+00:07:26,240 --> 00:07:34,960
+And it's pushing back towards zero, but it's pushing back based on how much error has accumulated over time.
+
+66
+00:07:36,560 --> 00:07:42,480
+And the feedforward term is completely different from the other terms in the PID controller,
+
+67
+00:07:42,480 --> 00:07:47,200
+because it does not act on the PID error. It acts on the set point.
+
+68
+00:07:47,200 --> 00:07:59,600
+And what it says is that if the set point is changing, I need to push the quad in the same direction to start it moving in the direction that the set point is changing.
+
+69
+00:07:59,600 --> 00:08:06,560
+So if the set point is increasing, then the feedforward term pushes the quad to change in that direction.
+
+70
+00:08:07,520 --> 00:08:19,280
+If the set point is decreasing, the feedforward term again pushes back to try and get the quad to move in the direction that the set point is moving in.
+
+71
+00:08:19,280 --> 00:08:23,920
+Let's say you've just commanded full stick right roll.
+
+72
+00:08:23,920 --> 00:08:25,600
+You're doing a snap roll to the right.
+
+73
+00:08:26,160 --> 00:08:32,400
+The feedforward term sees that set point change and goes, ah, I need to start rolling right right now,
+
+74
+00:08:32,400 --> 00:08:34,800
+because you've commanded a snap roll right.
+
+75
+00:08:34,800 --> 00:08:36,400
+I need to start that move now.
+
+76
+00:08:37,040 --> 00:08:40,640
+And it doesn't wait for the PID error to build up.
+
+77
+00:08:40,640 --> 00:08:42,160
+It acts immediately.
+
+78
+00:08:42,160 --> 00:08:48,320
+And this allows the feedforward term to really reduce the amount of PID error that builds up,
+
+79
+00:08:48,320 --> 00:08:52,560
+because it gets the quad moving in the right direction straight away.
+
+80
+00:08:54,560 --> 00:08:59,440
+There are three of these PID controllers in Betaflight, and they all work the same way.
+
+81
+00:08:59,440 --> 00:09:04,560
+There's one each for roll, pitch and yaw axis, and they're all separate.
+
+82
+00:09:05,200 --> 00:09:09,280
+The only difference with the yaw axis is that it doesn't have a derivative term,
+
+83
+00:09:09,840 --> 00:09:15,120
+because the nature of the yaw axis for multirotors means that a derivative term isn't required.
+
+84
+00:09:17,280 --> 00:09:22,800
+So with that said, let's jump into step four, finding your max D gains.
+
+85
+00:09:22,800 --> 00:09:27,840
+Now the foundation, in my opinion, of a good PID tune is the right D gain.
+
+86
+00:09:28,480 --> 00:09:33,520
+And the right D gain is as much as you feel comfortable that you can get away with.
+
+87
+00:09:34,160 --> 00:09:38,240
+The more D gain you have, the hotter your motors are going to get,
+
+88
+00:09:38,240 --> 00:09:43,520
+the more likely you are to get D term oscillations, especially if you bend a prop.
+
+89
+00:09:44,960 --> 00:09:53,040
+However, the more D gain you can tolerate without getting motors that are too hot or D term oscillations,
+
+90
+00:09:53,040 --> 00:09:55,280
+the better your final tune is going to be.
+
+91
+00:09:55,280 --> 00:10:02,160
+Now, before tuning D term, make sure your build is in a representative state.
+
+92
+00:10:02,160 --> 00:10:07,680
+So if you typically fly with bent props, make sure that you've got bent props on.
+
+93
+00:10:08,560 --> 00:10:13,040
+If you typically fly a very clean build, make sure that that's how it's set up.
+
+94
+00:10:13,600 --> 00:10:17,440
+If you usually fly with a GoPro, make sure that you've got a GoPro on the build.
+
+95
+00:10:17,440 --> 00:10:17,920
+All of these things.
+
+96
+00:10:17,920 --> 00:10:24,160
+Just make sure that your build is in the same state that you would normally fly it before you tune it.
+
+97
+00:10:24,160 --> 00:10:26,320
+So we have these three boxes on the right.
+
+98
+00:10:26,320 --> 00:10:32,560
+Now, if we start down here with too little D gain, we're going to have worse prop wash handling.
+
+99
+00:10:32,560 --> 00:10:35,120
+We're going to have worse set point tracking.
+
+100
+00:10:35,120 --> 00:10:37,920
+So the quad isn't going to follow the sticks as closely.
+
+101
+00:10:37,920 --> 00:10:41,440
+We're going to have a bit of a flight feel, you know, not great.
+
+102
+00:10:42,080 --> 00:10:45,360
+But the quad is going to be much more tolerant of vibrations.
+
+103
+00:10:45,360 --> 00:10:50,000
+It's going to be more tolerant of damage, more tolerant of bent props, that sort of thing.
+
+104
+00:10:51,120 --> 00:10:57,120
+If we have more D gain, we're going to have better prop wash handling, better set point tracking,
+
+105
+00:10:57,120 --> 00:11:00,160
+that more responsive feel that we all want.
+
+106
+00:11:00,160 --> 00:11:04,720
+And the quad is going to be overall less tolerant of vibration.
+
+107
+00:11:04,720 --> 00:11:08,560
+So you're more likely to get hot motors and maybe even oscillations.
+
+108
+00:11:09,200 --> 00:11:12,320
+If you damage the quad in flight, you bend a prop, something like that.
+
+109
+00:11:13,360 --> 00:11:16,160
+And then at the top here, we have too much D gain.
+
+110
+00:11:16,160 --> 00:11:22,720
+There's a real risk with too much D gain of overheating your motors, smoking motors and blowing ESCs.
+
+111
+00:11:23,760 --> 00:11:28,480
+Getting flyaways, oscillations and overall sadness.
+
+112
+00:11:28,480 --> 00:11:32,800
+So we definitely don't want too much D gain, but we also don't want too little.
+
+113
+00:11:32,800 --> 00:11:37,040
+We want to try and aim for that maximum comfortable amount of D gain.
+
+114
+00:11:38,400 --> 00:11:43,120
+So the amount of D gain that you want to run really depends on you as a pilot.
+
+115
+00:11:43,120 --> 00:11:49,360
+And so I put together this little chart of trying to show what might be the right D gain for different
+
+116
+00:11:49,360 --> 00:11:50,160
+kinds of pilots.
+
+117
+00:11:50,720 --> 00:11:56,640
+So if you're a new pilot, you've got an unproven build, or you've got a build with known vibration
+
+118
+00:11:56,640 --> 00:12:00,640
+issues, stick to stock D gains of about 30.
+
+119
+00:12:01,280 --> 00:12:02,800
+This is for a five inch freestyle.
+
+120
+00:12:03,920 --> 00:12:10,240
+If you are a bandeau basher and you know you're going to need to fly home after having a big crash,
+
+121
+00:12:11,120 --> 00:12:15,520
+or perhaps you've got a build with rough motor bearings because you've had a big crash,
+
+122
+00:12:16,160 --> 00:12:20,720
+then maybe stick with a D gain of about 35, a little bit more than stock.
+
+123
+00:12:20,720 --> 00:12:28,880
+If you're an experienced pilot who builds nice clean quads, and you know that you rarely need to
+
+124
+00:12:28,880 --> 00:12:35,520
+fly home from crashes, and more importantly, you know when you shouldn't fly home after a crash,
+
+125
+00:12:35,520 --> 00:12:40,080
+you know when a prop is badly bent enough that you shouldn't fly at home,
+
+126
+00:12:40,720 --> 00:12:44,000
+then perhaps you could tolerate a D gain of about 40.
+
+127
+00:12:44,000 --> 00:12:51,360
+If you are a very experienced pilot with a very low vibration build, for example,
+
+128
+00:12:51,360 --> 00:12:57,120
+an AOS 5 frame with PG44A mechanical damping grease applied to it,
+
+129
+00:12:57,760 --> 00:13:01,680
+you've got your filters really dialed in, and you're the kind of pilot who goes,
+
+130
+00:13:02,320 --> 00:13:06,560
+no, no, no, it's a lovely day and I'm going to go and walk and get my quad.
+
+131
+00:13:06,560 --> 00:13:09,760
+I am not going to risk flying it back with a bent prop and smoking motors.
+
+132
+00:13:09,760 --> 00:13:17,360
+And you're the kind of pilot who wants the best possible flight feel, that kind of fly-by telepathy
+
+133
+00:13:17,360 --> 00:13:26,240
+responsiveness, then you might be able to tolerate even higher D gains, 45, 50, even 55.
+
+134
+00:13:26,240 --> 00:13:34,000
+On my perfect AOS 5 build, I'm running D gains between 50 and 55. So it's doable,
+
+135
+00:13:34,000 --> 00:13:36,960
+but you do need to have the right build and the right filter tune.
+
+136
+00:13:36,960 --> 00:13:41,280
+Before starting, you need to unleash your PID controller.
+
+137
+00:13:42,320 --> 00:13:47,360
+You need to enter the following into the Betaflight CLI to increase the PID sum limit
+
+138
+00:13:47,360 --> 00:13:54,240
+to 100% of maximum. And what this allows the PID controller to do is to push even harder to try
+
+139
+00:13:54,240 --> 00:14:01,040
+and follow setpoint. So these are the commands you need to enter. Set PID sum limit equals 1000,
+
+140
+00:14:01,040 --> 00:14:09,840
+and hit enter. Set PID sum limit equals 1000, and hit enter. And then finally type save and hit enter.
+
+141
+00:14:09,840 --> 00:14:13,040
+And that will save and reboot your flight controller and store those settings.
+
+142
+00:14:14,960 --> 00:14:18,960
+So now that you know roughly what you might be aiming at in terms of D gains,
+
+143
+00:14:18,960 --> 00:14:27,200
+you need a method to find your perfect D gains. And this is my method. There are other equally good
+
+144
+00:14:27,200 --> 00:14:34,000
+methods. I know Mark Spatz at UAV Tech has another really good method, but this one's my one. So step
+
+145
+00:14:34,000 --> 00:14:40,960
+one is to turn off D-Min. So go into the Betaflight PID tuning tab and turn off D-Min.
+
+146
+00:14:42,080 --> 00:14:49,200
+The next step is to gradually turn up the master multiplier slider, 0.1 to 0.2 at a time.
+
+147
+00:14:49,920 --> 00:14:56,160
+Every time you turn it up, do a tuning flight with some full throttle punch outs, some hard pylon turns,
+
+148
+00:14:56,160 --> 00:15:03,040
+some aggressive flying, and come in and land and check for hot motors. And during the flight, listen
+
+149
+00:15:03,040 --> 00:15:10,800
+for any kind of growling oscillations or any ticks or jerks from the motors. Repeat these steps, steps
+
+150
+00:15:10,800 --> 00:15:17,920
+two to four, until you have a D gain that you're comfortable with. A D gain where you don't have motors
+
+151
+00:15:17,920 --> 00:15:25,040
+that are too hot. So really if your motors feel hot to the touch, I would say that's too hot. If your
+
+152
+00:15:25,040 --> 00:15:31,520
+motors feel just slightly warm to the touch, that's fine. And make sure that you don't have any ticks
+
+153
+00:15:31,520 --> 00:15:36,320
+or oscillations. And if both of those things are true and you're comfortable with the amount of D
+
+154
+00:15:36,320 --> 00:15:43,440
+gain you have, you've found your perfect D gains. I'd like to take a minute to try and explain why I
+
+155
+00:15:43,440 --> 00:15:49,600
+prefer to use the master slider and not the P and D gain slider when I'm starting out tuning a quad.
+
+156
+00:15:49,600 --> 00:15:56,560
+I think that for most five inch quads, the beta flight defaults have a really nice balance between
+
+157
+00:15:56,560 --> 00:16:04,800
+the P, I and D terms. Using the master slider maintains that balance because all of the terms
+
+158
+00:16:04,800 --> 00:16:10,640
+increase together, while it also increases the response to PID error, which is obviously what
+
+159
+00:16:10,640 --> 00:16:18,960
+we're wanting to do. A really well tuned quad that follows setpoint closely and has iTerm Relax enabled,
+
+160
+00:16:18,960 --> 00:16:26,080
+in my experience does not tend to suffer too badly with iTerm windup and associated overshooting.
+
+161
+00:16:27,280 --> 00:16:34,240
+I also really like the way high i gains keep the quad very stable at speed, and I don't feel I get that
+
+162
+00:16:34,240 --> 00:16:42,480
+same feel with the default level of i in beta flight. So on the AOS 5 for example with the master slider at
+
+163
+00:16:42,480 --> 00:16:48,960
+2.0, I have twice as much i gain as the default and I really like the way that feels. I know this is quite
+
+164
+00:16:48,960 --> 00:16:54,960
+a personal thing, so I'd love to hear your thoughts in the comments. What are your experiences? How much
+
+165
+00:16:54,960 --> 00:17:03,440
+i gain do you typically like to run? Once you've found your perfect D gain, which is the maximum D gain
+
+166
+00:17:03,440 --> 00:17:09,120
+that you as a pilot are comfortable with, the next step, step five, is to find your P to D balance.
+
+167
+00:17:09,680 --> 00:17:15,360
+The best way to do this is to look at logs using PID Toolbox. Don't worry if you've never used PID
+
+168
+00:17:15,360 --> 00:17:20,640
+Toolbox before, I'm going to take you through it step by step. Before that you need to do some tuning
+
+169
+00:17:20,640 --> 00:17:26,880
+flights with lots of full stick snap flips and rolls, and that's because that's what we're going to need
+
+170
+00:17:26,880 --> 00:17:32,880
+to look at the step response. So let's look at an example step response here. Now this is the type of
+
+171
+00:17:32,880 --> 00:17:39,600
+graph that we're going to see in PID Toolbox in a second. If your log looks like the green curve
+
+172
+00:17:39,600 --> 00:17:45,360
+or the purple curve here that wiggle up and down for a while, that means you have too much P gain.
+
+173
+00:17:46,160 --> 00:17:50,880
+And to fix that you're going to want to decrease your P gain. And the easiest way to do that in my
+
+174
+00:17:50,880 --> 00:17:59,280
+opinion is to use the sliders. You increase the PD balance by one or two notches, and you reduce the
+
+175
+00:17:59,280 --> 00:18:04,560
+PD gain by the exact same amount. And that's important because you want your D gain to stay
+
+176
+00:18:04,560 --> 00:18:13,040
+the same and your P gain to reduce. If however you have a log that looks more like this purple line
+
+177
+00:18:13,040 --> 00:18:20,960
+here where it's kind of very slow to reach the center, then you're going to want to increase your
+
+178
+00:18:20,960 --> 00:18:27,760
+P gain. And you do that by doing the opposite. So you reduce the PD balance by 0.1 or 0.2,
+
+179
+00:18:27,760 --> 00:18:36,640
+one or two notches. And you increase your PD gain by the exact same amount. So 0.1 or 0.2. But it's got
+
+180
+00:18:36,640 --> 00:18:43,840
+to be the exact same amount you reduce the PD balance by. And the goal in my opinion is the red line here.
+
+181
+00:18:44,480 --> 00:18:50,960
+You can see that there is just a tiny bit of overshoot, but there's no undershoot afterwards.
+
+182
+00:18:50,960 --> 00:18:56,160
+That's the key. You see that brown line, it has an overshoot and then an undershoot. That's bad.
+
+183
+00:18:56,160 --> 00:19:02,000
+We don't really want that. But that red line that just has a tiny overshoot, but gets up to the line
+
+184
+00:19:02,000 --> 00:19:07,120
+as quickly as possible is exactly what we want. So that red line is what it should look like.
+
+185
+00:19:07,120 --> 00:19:15,520
+I'm going to use this platform to make a request of the Betaflight developers now. I know Mark Spatz,
+
+186
+00:19:15,520 --> 00:19:23,200
+UAV tech has made the same request. Please change the way the PD balance slider in Betaflight works.
+
+187
+00:19:24,400 --> 00:19:30,960
+The goal with the tune is to keep D gain the same because you found your maximum D gain by now,
+
+188
+00:19:30,960 --> 00:19:34,320
+and just change your P gain to get a critically damped response.
+
+189
+00:19:35,200 --> 00:19:41,200
+To do this with the sliders currently, you need to move the PD balance and P and D gain in opposite
+
+190
+00:19:41,200 --> 00:19:49,760
+directions by the exact same amount. If the PD balance slider was adjusted so that it altered the
+
+191
+00:19:49,760 --> 00:19:55,920
+P gain rather than the D gain, you would only have one slider to move and it would be much simpler.
+
+192
+00:19:55,920 --> 00:20:00,960
+So Betaflight devs, if you're listening, please, please, please change the PD balance slider
+
+193
+00:20:00,960 --> 00:20:06,240
+to adjust P gain only and not D gain. Thanks very much.
+
+194
+00:20:08,880 --> 00:20:15,840
+Okay, now the next sections of this video all require you to have black box logging enabled on
+
+195
+00:20:15,840 --> 00:20:22,480
+your quad. Now I know that not everyone has black box logging on their quad because maybe they're flying
+
+196
+00:20:22,480 --> 00:20:29,760
+an all-in-one board or something that doesn't have black box logging. If you do not have logging on your
+
+197
+00:20:29,760 --> 00:20:37,600
+quad, you can still tune PD balance, which is what we're going to do next, by listening to the quad.
+
+198
+00:20:37,600 --> 00:20:47,120
+But this can be quite tricky. What you're listening for is the motor zipping at the start and end of a
+
+199
+00:20:47,120 --> 00:20:56,640
+snap flip or roll. So if everything is going well, when you do a snap roll, you'll hear zip, zip,
+
+200
+00:20:57,200 --> 00:21:02,560
+and that first zip will be at the start of the move, and the second zip will be at the end of the move.
+
+201
+00:21:03,680 --> 00:21:10,800
+Now decrease the PD balance by one tick and increase the PD gain by one tick and try again.
+
+202
+00:21:11,440 --> 00:21:20,400
+Again, listen to the start and the end of the roll or flip. You should again hear zip, zip, two zips,
+
+203
+00:21:20,400 --> 00:21:26,480
+one at the start of the move, one at the end of the move. Now if you keep going, if you keep decreasing
+
+204
+00:21:26,480 --> 00:21:33,680
+your PD balance and increasing your PD gain, eventually you will start to hear a double zip
+
+205
+00:21:34,320 --> 00:21:41,520
+at the start or more likely the end of the move. So you might hear something like this, zip, zip, zip.
+
+206
+00:21:42,800 --> 00:21:49,200
+If you hear a double zip at the end of the move, that means that you've started to get bounce back
+
+207
+00:21:49,200 --> 00:21:56,320
+overshoot. So you need to go back one. So what you want is to get to the lowest
+
+208
+00:21:56,320 --> 00:22:04,080
+PD balance and highest PD gain, obviously moving them together, before you hear a double zip
+
+209
+00:22:04,800 --> 00:22:10,960
+at the end of a move or the start of a move. Hopefully that's clear. If you've got any questions,
+
+210
+00:22:10,960 --> 00:22:20,720
+please ask them in the comments. Once you've done that, set your stick response gain slider equal to your
+
+211
+00:22:20,720 --> 00:22:26,640
+master multiplier that you found in the previous step. That should get you most of the way to a
+
+212
+00:22:26,640 --> 00:22:32,880
+great tune. If you want to go all the way, you'll need logging and I'll put links to some inexpensive
+
+213
+00:22:32,880 --> 00:22:41,760
+flight controllers with logging in the video description. So let's get set up with PID Toolbox.
+
+214
+00:22:41,760 --> 00:22:47,120
+If you follow the link in the video description, you'll end up here on the PID Toolbox releases page
+
+215
+00:22:47,120 --> 00:22:54,480
+in GitHub. You can see that the latest version at the time of this video is 0.42. If you scroll down,
+
+216
+00:22:54,480 --> 00:23:02,160
+you'll see the various files here. You want the underscore win.zip if you're running Windows like
+
+217
+00:23:02,160 --> 00:23:10,960
+I am. So download this folder here. See that's downloading. If we look at the folder, we can see
+
+218
+00:23:10,960 --> 00:23:18,880
+that it's a zip folder. So we extract that with any tool and you can see that inside that extracted
+
+219
+00:23:18,880 --> 00:23:25,200
+folder are two other folders. If this is the first time that you're running PID Toolbox, you will need
+
+220
+00:23:25,200 --> 00:23:30,640
+to install the runtime. So let's go into the runtime installation file. You'll see there's just one
+
+221
+00:23:30,640 --> 00:23:37,280
+file in here. Double click that, go through the installation process and then once that's finished,
+
+222
+00:23:37,280 --> 00:23:45,840
+you can come out of that folder, go into the main folder. Now you'll see that there's a file called
+
+223
+00:23:45,840 --> 00:23:54,720
+blackbox decode. Now this is the file that's needed to allow PID Toolbox to understand your blackbox log.
+
+224
+00:23:55,360 --> 00:24:02,320
+So what we need to do here is select that, copy it, control c, come out of the folder again,
+
+225
+00:24:02,320 --> 00:24:10,320
+go into our logs folder, mine is here, and just paste the blackbox decode in there.
+
+226
+00:24:11,200 --> 00:24:16,880
+Obviously I've done that before so I replace, but that's the file that you need in order to decode
+
+227
+00:24:16,880 --> 00:24:23,280
+the logs and it needs to be in the folder where your log files are. Okay, so it needs to be pasted in
+
+228
+00:24:23,280 --> 00:24:29,600
+with all your logs as I've done here. Once you've done that, you can come out of your logs folder and go
+
+229
+00:24:29,600 --> 00:24:38,320
+back into the PID Toolbox main folder and run PID Toolbox. That will open this window here,
+
+230
+00:24:38,960 --> 00:24:44,320
+a kind of blank window. If you go over onto the right hand side, there's a green select button.
+
+231
+00:24:44,320 --> 00:24:53,280
+So we click that and now we select the log file. So I'm just going to select this master 200 log here.
+
+232
+00:24:53,280 --> 00:25:02,000
+I click OK. And if everything works, you should see some converting and importing status messages pop
+
+233
+00:25:02,000 --> 00:25:09,520
+up and that will load in. Once that's loaded in, you should be able to see the log there on the screen.
+
+234
+00:25:10,880 --> 00:25:16,480
+What we're going to be using for the next part of this video is the Step Response Tool. So that's
+
+235
+00:25:16,480 --> 00:25:23,200
+again over on the right hand side. Click that blue button Step Response Tool. That opens this new blank
+
+236
+00:25:23,200 --> 00:25:29,840
+window and just click the green run button. And that will produce the step response functions for that
+
+237
+00:25:29,840 --> 00:25:36,880
+log. And that's where we're going to see if we have an underdamped, overdamped or critically damped system.
+
+238
+00:25:38,800 --> 00:25:45,520
+Okay, so now you've seen exactly how to get a step response graph for your own log. Here's one that I did
+
+239
+00:25:45,520 --> 00:25:52,800
+on the AOS 5. Now this is on the Betaflight default PD balance and all I've done in this log is turn the
+
+240
+00:25:52,800 --> 00:26:02,080
+master slider up to 2.0. And you can see that the step response is pretty much perfect on roll and pitch.
+
+241
+00:26:02,080 --> 00:26:07,040
+I'm very happy with these. I'm not going to change the PD balance at all from the Betaflight defaults
+
+242
+00:26:07,040 --> 00:26:13,440
+on this build. It looks great. And you can see that your as well is a nice straight step up and then a
+
+243
+00:26:13,440 --> 00:26:19,840
+flat line. So overall very happy with all three of these. And if your step response graphs look like
+
+244
+00:26:19,840 --> 00:26:25,120
+this, then you're done. You don't need to make any adjustments to your PD balance at all.
+
+245
+00:26:28,320 --> 00:26:33,520
+Now that we have our PIDs pretty much locked in, the next step, step six, is tuning feed forward.
+
+246
+00:26:34,640 --> 00:26:40,480
+The first thing to do is to check that feed forward transition equals zero. Once that's been set,
+
+247
+00:26:40,480 --> 00:26:47,200
+do a tuning flight with lots of full stick snap rolls and snap flips. We also need to install
+
+248
+00:26:47,200 --> 00:26:53,280
+UAV text trace templates and open the log in Blackbox Explorer and look at the flips and rolls
+
+249
+00:26:53,280 --> 00:26:57,280
+that we've done. Don't worry if you've never done this before. I'm going to take you through it again
+
+250
+00:26:57,280 --> 00:27:04,880
+step by step. Okay, so let's get set up with Blackbox Explorer so that we can check our set point
+
+251
+00:27:04,880 --> 00:27:10,960
+tracking from our logs. The first thing you'll need is Blackbox Explorer. So if you follow the link in
+
+252
+00:27:10,960 --> 00:27:16,880
+the video description, you'll end up here to the releases page of the Blackbox Log Viewer, latest version
+
+253
+00:27:16,880 --> 00:27:26,480
+3.5 as of this video. You need the underscore win32 version .exe. You're on Windows, so just click that and
+
+254
+00:27:26,480 --> 00:27:32,880
+download it. And once it's downloaded, run that file and it will install Blackbox Explorer for you.
+
+255
+00:27:33,920 --> 00:27:40,560
+Once that's done, open Blackbox Explorer. And if you see this page when you open it, then you know that
+
+256
+00:27:40,560 --> 00:27:45,680
+you've done the right thing and that everything's installed correctly. The next thing you need is
+
+257
+00:27:45,680 --> 00:27:51,920
+UAV text Blackbox Explorer trace templates. So again, if you follow the link in the video description for
+
+258
+00:27:51,920 --> 00:27:58,160
+the trace template, it'll take you to here. You can see that there are a few different versions. We want
+
+259
+00:27:58,160 --> 00:28:05,360
+3.5 version because that's the version of Blackbox Explorer that we have. So right click on that and
+
+260
+00:28:05,360 --> 00:28:13,280
+download and that will download it. Then what we're going to do is we're going to open in Blackbox Explorer,
+
+261
+00:28:15,120 --> 00:28:21,280
+go into the folder where we downloaded the trace template and simply select the trace template as a
+
+262
+00:28:21,280 --> 00:28:26,960
+file that we want to open. And it will tell us that workspaces have been loaded and that's perfect.
+
+263
+00:28:28,720 --> 00:28:35,360
+Then the next thing to do is to go into our logs folder. Again, just trying to open a log. Select a
+
+264
+00:28:35,360 --> 00:28:43,280
+log in this case. I'm going to open master 200. Let's open and you can see that that's opened there and
+
+265
+00:28:43,280 --> 00:28:49,360
+the log is, that whole log is here. Now, if we're wanting to look at stick tracking, we need to use a
+
+266
+00:28:49,360 --> 00:28:58,560
+particular trace template. So go up here to workspace and select number four, stick tracking. So that's
+
+267
+00:28:58,560 --> 00:29:06,480
+good. The next thing you'll want to do is turn off Expo in the display. So we go down here to Expo on
+
+268
+00:29:06,480 --> 00:29:16,480
+off and turn it off. And that is all there is to it. Now you can scroll through the log to your heart's
+
+269
+00:29:16,480 --> 00:29:24,560
+content and find the information that you want to look at. So here's, for example, a sharp roll one
+
+270
+00:29:24,560 --> 00:29:29,920
+way and then the other. And I'm sure a little further on I've done something similar on pitch.
+
+271
+00:29:30,560 --> 00:29:33,200
+Yeah, sharp pitch move forward and back.
+
+272
+00:29:36,000 --> 00:29:40,000
+And a full throttle punch out. You can see the motors go up. So if you're seeing all of this,
+
+273
+00:29:40,000 --> 00:29:44,960
+that means you have everything correctly configured. And now you can look at your stick tracking and let's
+
+274
+00:29:44,960 --> 00:29:49,760
+see what you should be looking for in your stick tracking to show that you have a good tune for
+
+275
+00:29:49,760 --> 00:29:58,800
+your feed forward. So now that you've got your traces open in Black Box Explorer, the next step is to
+
+276
+00:29:58,800 --> 00:30:04,880
+show you what too little feed forward looks like. So you're probably going to start off with too little
+
+277
+00:30:04,880 --> 00:30:11,280
+feed forward because the beta flight defaults are quite conservative. If you have too little feed forward,
+
+278
+00:30:11,280 --> 00:30:17,600
+you'll see that the gyro line, which is this bluish purplish line here,
+
+279
+00:30:18,800 --> 00:30:24,160
+lags behind the green line, which is a set point. And you can see it lags behind by quite a lot.
+
+280
+00:30:26,480 --> 00:30:34,160
+It's always behind. And that's because we don't have enough feed forward. You'll also see if you look
+
+281
+00:30:34,160 --> 00:30:41,520
+at the motors that the motors aren't really working that hard. They never really get up to 100% throttle.
+
+282
+00:30:41,520 --> 00:30:47,520
+And so that means that the quad is kind of being lazy. It knows that it's not doing what you've told
+
+283
+00:30:47,520 --> 00:30:53,360
+it to do because that blue line isn't on top of the green line, but it's not doing anything about it.
+
+284
+00:30:53,360 --> 00:31:00,400
+It's just kind of lazing around with the motors at a modest amount of load. So that's what we need to fix.
+
+285
+00:31:00,400 --> 00:31:09,360
+Now you might be tempted just to crank feed forward all the way up. If you do that, you might end up
+
+286
+00:31:09,360 --> 00:31:14,560
+with too much feed forward. And it's really important to know what too much feed forward looks like.
+
+287
+00:31:15,760 --> 00:31:21,120
+If we look at the start of this roll, you can see that everything looks really good. I mean, the gyro is
+
+288
+00:31:21,120 --> 00:31:27,120
+right on top of the set point the whole way and everything looks great. But if we now look at the
+
+289
+00:31:27,120 --> 00:31:35,120
+end of the roll, do you see how the gyro trace suddenly dips way below set point just here?
+
+290
+00:31:36,800 --> 00:31:45,520
+That is because feed forward is too high and the quad is actually overshooting the end of the move.
+
+291
+00:31:47,760 --> 00:31:51,200
+The other thing you'll notice is that now that we've got loads more feed forward,
+
+292
+00:31:51,200 --> 00:31:58,240
+we've actually got motor saturation. So we're hitting 100% on the motor power for one motor.
+
+293
+00:31:58,240 --> 00:32:03,840
+So the quad is working as hard as it possibly can to track set point. And you can see that the,
+
+294
+00:32:04,880 --> 00:32:08,880
+even though the gyro is lagging behind the set point in this part of the move here,
+
+295
+00:32:09,920 --> 00:32:15,200
+there's nothing we can do about that because a motor has reached 100%, it's saturated and there's
+
+296
+00:32:15,200 --> 00:32:21,440
+nothing more to do. So if you have that situation where gyro and set point aren't on top of each
+
+297
+00:32:21,440 --> 00:32:26,800
+other, but you have a motor at 100%, then there's nothing more you can do, I'm afraid. That's as good
+
+298
+00:32:26,800 --> 00:32:34,240
+as it's going to get. Finally, let's look at what I settled on for my final feed forward value for the
+
+299
+00:32:34,240 --> 00:32:41,600
+AOS 5. This is what I think is about the right amount of feed forward. So you'll notice that, you know,
+
+300
+00:32:41,600 --> 00:32:47,360
+we're not quite tracking set point perfectly at the start of the move. There's possibly some more
+
+301
+00:32:47,360 --> 00:32:53,840
+that I can do there to be fair. But for this rough tune, it's absolutely fine. And at the end of the
+
+302
+00:32:53,840 --> 00:33:01,520
+move, there's no overshooting. You can see that the gyro doesn't really overshoot like it did in the
+
+303
+00:33:01,520 --> 00:33:08,560
+last slide. So that's good too. There is just the hint of an overshoot here, which tells me that I can't
+
+304
+00:33:08,560 --> 00:33:14,480
+increase feed forward anymore. Notice that we're still hitting motor saturation at the end of the
+
+305
+00:33:14,480 --> 00:33:22,160
+move here. So there is enough feed forward to saturate the motors and have the quad working as
+
+306
+00:33:22,160 --> 00:33:26,960
+hard as it can to stay on set point. And that's really what we want to see. We want to see that
+
+307
+00:33:26,960 --> 00:33:34,080
+we have enough feed forward to make the motors max out on sharp moves. And then we know that we can do
+
+308
+00:33:34,080 --> 00:33:39,680
+no more. The motors are doing all they can. If the quad can't track set point, that's just a
+
+309
+00:33:39,680 --> 00:33:47,360
+mechanical limitation of the motors, the props, all of that kind of stuff. And we've done all we can
+
+310
+00:33:47,360 --> 00:33:54,080
+in the PID controller. I hope you found this video interesting. You'll have noticed that we didn't make
+
+311
+00:33:54,080 --> 00:34:00,240
+it to the end of my tuning process in this video. And that's because I have follow-up videos planned on
+
+312
+00:34:00,240 --> 00:34:06,320
+how to tune your rates and how to fine tune your PIDs for the ultimate in flight performance.
+
+313
+00:34:06,320 --> 00:34:11,680
+Make sure you're subscribed so you don't miss those videos when they're ready. If you like the work that
+
+314
+00:34:11,680 --> 00:34:18,160
+I'm doing, please consider joining my Patreon. For less than $5 a month, you can get early access to the
+
+315
+00:34:18,160 --> 00:34:23,200
+designs that I'm working on and have an opportunity to give feedback to make them even better.
+
+316
+00:34:23,200 --> 00:34:30,640
+If you'd like the best possible platform to start your filter and PID tune from, please consider
+
+317
+00:34:30,640 --> 00:34:35,280
+checking out my frame, the AOS 5. I'll put a link for that down in the video description as well.
+
+318
+00:34:35,280 --> 00:34:41,200
+It's been designed from the ground up to give the absolute best possible vibration and resonance
+
+319
+00:34:41,200 --> 00:34:46,160
+performance. And that's going to allow you to push your filters and PIDs further than ever before.
+
+320
+00:34:47,200 --> 00:34:52,480
+That's all I have for you for today. So until next time, all that remains is for me to wish you all
+
+321
+00:34:52,480 --> 00:34:54,480
+very, very happy flying.
+

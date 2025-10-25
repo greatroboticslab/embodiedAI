@@ -1,0 +1,131 @@
+a3wDEcORRR4
+https://www.youtube.com/watch?v=a3wDEcORRR4
+Unknown Category
+
+[00:00:00.000 → 00:00:04.460] Now let's take a look at how we can go from something like this fairly robust breadboard
+[00:00:04.460 → 00:00:08.520] with nice cleaned up wires to something even more robust, something that we can implement,
+[00:00:09.040 → 00:00:13.940] say, in a robot that's moving around or on your bicycle or in a car or an industrial application
+[00:00:13.940 → 00:00:18.880] or something, or just the fact that you want to pass it around and let people play with this
+[00:00:18.880 → 00:00:23.340] prototype, right? These wires can get loose eventually, they corrode, they make misconnections,
+[00:00:23.440 → 00:00:29.300] it's just not the best long-term solution. So what we use is PerfBoard, and PerfBoard is perforated
+[00:00:29.300 → 00:00:37.060] board that you cut to whatever size you want, and you hardwire solder all those connections in place.
+[00:00:37.460 → 00:00:41.940] There's lots of different kind. This one is like a single point PerfBoard. Some of them have
+[00:00:41.940 → 00:00:45.580] rows that are all connected, similar to like a breadboard and how that's connected.
+[00:00:45.840 → 00:00:51.320] I like these, they're one-sided, and they have individual copper pads on each hole, and I'll show
+[00:00:51.320 → 00:00:56.900] you briefly how I would use it. This video is more about some tips and techniques more than actually
+[00:00:56.900 → 00:01:01.320] building something on a PerfBoard. It's fairly straightforward, but I've got some things that
+[00:01:01.320 → 00:01:08.460] should help you build it. Number one, size. Don't necessarily want this size of a PerfBoard.
+[00:01:08.520 → 00:01:13.700] I want something smaller. Maybe I'm creating a little board that breaks out all the analog pins
+[00:01:13.700 → 00:01:17.960] here of my Arduino. It'd be just so much easier to have a PerfBoard that could plug into there,
+[00:01:18.060 → 00:01:22.720] or have breakout header pins or something. So cutting it, cutting it. You can use little nippers,
+[00:01:22.720 → 00:01:27.080] you can use some scissors. Don't bother. I see lots of people doing that. You get jagged edges.
+[00:01:27.240 → 00:01:32.560] It's not the best way. Best thing you can do, go get some really cheap tin snips. Make sure you buy
+[00:01:32.560 → 00:01:36.840] whether you buy a right-handed or left-handed version. But look at this. If I were to take
+[00:01:36.840 → 00:01:43.020] this PerfBoard, or actually I have one here cut down already, and I were to just cut a row off of this,
+[00:01:43.380 → 00:01:49.420] I mean it cuts so easily. It leaves a nice clean edge, very little sharp corners. I mean it's just,
+[00:01:49.420 → 00:01:54.120] it's really nice. And if I wanted, say, a little breakout board from my Arduino, I can actually
+[00:01:54.120 → 00:01:59.240] just cut the board like that. And look at that. I've got this great little breakout board that I
+[00:01:59.240 → 00:02:04.220] could solder some header pins in and put it on my Arduino. Couldn't really be easier. So that's
+[00:02:04.220 → 00:02:12.040] number one, cutting. Number two, soldering. So if you're going to put a integrated circuit into your
+[00:02:12.040 → 00:02:17.220] board, you can solder it right to the PerfBoard, but trust me on this. And I've done it. Sadly,
+[00:02:17.220 → 00:02:21.880] I've done it. I still actually remember one time I was making an Arduino many, many years ago. I want
+[00:02:21.880 → 00:02:28.560] to say like close to 10 years ago. And I soldered my AT Mega, I don't remember, I think it was a 168
+[00:02:28.560 → 00:02:35.820] microcontroller in there. And I fried it. And once I soldered it in, I go to unsolder it. It was a mess.
+[00:02:35.920 → 00:02:41.960] It was horrible. Don't put your microcontrollers or integrated circuits, don't solder them directly to
+[00:02:41.960 → 00:02:46.520] a board. Use something like a socket. And this is a socket. And what this allows you to do is put it
+[00:02:46.520 → 00:02:51.960] into PerfBoard, solder this in from the backside. And then I can take my microcontroller and I can
+[00:02:51.960 → 00:02:56.980] snap it into the socket. Something happens, I can pop it out. If I change my code, I can actually have
+[00:02:56.980 → 00:03:01.240] on the side a couple of different microcontrollers with different codes. It's really great for demoing.
+[00:03:01.340 → 00:03:07.220] It's great for having a backup. So that's one thing. Another thing to know is when soldering to
+[00:03:07.220 → 00:03:12.760] the PerfBoard, and I'll grab my soldering iron real quick to show you. And you know what, I'm going to
+[00:03:12.760 → 00:03:19.860] make a quick note about this soldering iron. This is my used industrial grade MetCal soldering iron.
+[00:03:20.100 → 00:03:25.980] Why do I use this? This uses these RF tips. It's basically like a radio antenna, believe it or not,
+[00:03:26.320 → 00:03:34.980] that from my understanding excites the tip of the soldering iron and heats it up extremely fast. I love
+[00:03:34.980 → 00:03:40.360] this soldering iron. They're hundreds of dollars new, but you can go to eBay and buy them used for,
+[00:03:40.360 → 00:03:44.440] I think I paid under a hundred bucks for this. And what I like about it is if I go to turn it on,
+[00:03:45.660 → 00:03:47.240] I've just turned my soldering iron on.
+[00:03:50.180 → 00:03:56.580] And let these little brass there, let's see. There you go. It's already up to temperature.
+[00:03:56.880 → 00:04:00.060] I mean, what was that? A couple of seconds? Love it. It actually cools down just as fast.
+[00:04:00.380 → 00:04:05.080] But what I wanted to show you is let's say we were going to solder this header pin in here.
+[00:04:05.080 → 00:04:08.060] I push it through from this side.
+[00:04:11.760 → 00:04:15.900] And I can get in here and get a nice little blob of solder on my soldering iron.
+[00:04:16.320 → 00:04:18.080] I can tack it in place real quick.
+[00:04:19.420 → 00:04:23.720] And now that's tacked in place, right? But this is what I wanted to get at.
+[00:04:25.220 → 00:04:28.440] When working with PerfBoard, these are incredibly valuable.
+[00:04:28.440 → 00:04:37.520] This is a rosin flux pen. And what this does is it cleans and is a facilitator for the solder to flow.
+[00:04:37.980 → 00:04:41.400] So if I'm going to go in here, you can see the PerfBoards typically are a little,
+[00:04:42.240 → 00:04:45.960] I don't want to say messy, but they're not exactly the cleanest of all things.
+[00:04:46.380 → 00:04:50.600] And with a little flux pen, it makes soldering so much easier.
+[00:04:51.620 → 00:04:53.860] Trust me on this one. You want a pen
+[00:04:53.860 → 00:04:58.320] like this. This is a
+[00:04:58.320 → 00:05:00.800] rosin flux pen by
+[00:05:00.800 → 00:05:03.720] MG Chemicals. These are really
+[00:05:03.720 → 00:05:06.580] handy to have. They're also really good when you're reworking solder joints.
+[00:05:07.320 → 00:05:09.320] Paint over it with some of the flux
+[00:05:09.320 → 00:05:11.500] and you will desolder much easier.
+[00:05:12.060 → 00:05:14.220] So there's another tip. There I got my header pins in here.
+[00:05:14.340 → 00:05:17.220] Last but not least, I want to also mention that
+[00:05:17.220 → 00:05:19.020] if you are going to
+[00:05:19.020 → 00:05:21.860] solder a bunch of things together,
+[00:05:21.860 → 00:05:25.400] like let's say you needed a whole bunch of pins connected along a bar.
+[00:05:27.500 → 00:05:30.420] I've mentioned earlier in videos, I saved these little
+[00:05:30.420 → 00:05:34.060] clips from my LEDs and I'll usually have a few on hand.
+[00:05:34.360 → 00:05:37.260] These can be very handy when soldering on a PerfBoard.
+[00:05:37.840 → 00:05:39.260] Again, I can flux this
+[00:05:39.260 → 00:05:41.960] and say I wanted to connect all these pins together.
+[00:05:41.960 → 00:05:46.000] I can quickly take my
+[00:05:46.000 → 00:05:51.520] little lead that I have here.
+[00:05:54.520 → 00:05:56.520] I can temporarily put it right there
+[00:05:56.520 → 00:06:00.160] and then I can bend it like that
+[00:06:00.160 → 00:06:03.600] and I can actually go in and connect all these points.
+[00:06:03.600 → 00:06:05.860] Sometimes you just need a lot of points connected together.
+[00:06:05.860 → 00:06:08.300] See how quickly I can flood that?
+[00:06:08.860 → 00:06:09.340] Look at that.
+[00:06:10.140 → 00:06:11.580] Beautiful bar of solder.
+[00:06:12.040 → 00:06:14.020] So, you know, imagine I had all different breakout wires
+[00:06:14.020 → 00:06:15.340] that I want to connect on the other side.
+[00:06:15.540 → 00:06:17.260] That's a really simple way of doing it.
+[00:06:18.280 → 00:06:19.680] Wires are connected the same way.
+[00:06:19.920 → 00:06:21.920] You know, I like to use these little
+[00:06:21.920 → 00:06:24.020] flush cutters.
+[00:06:24.400 → 00:06:26.120] I just put the wire in on the front.
+[00:06:26.520 → 00:06:27.780] There's my wire on the back
+[00:06:27.780 → 00:06:29.740] and I can easily just go in there
+[00:06:29.740 → 00:06:31.460] and solder it
+[00:06:31.460 → 00:06:33.880] right where it needs to be.
+[00:06:34.220 → 00:06:34.580] Done.
+[00:06:35.520 → 00:06:36.960] A little bit of a cold solder joint
+[00:06:36.960 → 00:06:38.300] but don't worry about it.
+[00:06:39.420 → 00:06:41.080] Another very useful thing
+[00:06:41.080 → 00:06:42.680] is make sure you trim these leads down.
+[00:06:42.820 → 00:06:44.160] Get them real nice and short
+[00:06:44.160 → 00:06:44.880] and close to the board.
+[00:06:45.340 → 00:06:46.700] So that's basically how you build
+[00:06:46.700 → 00:06:47.940] on a PerfBoard.
+[00:06:48.020 → 00:06:49.400] Now, there's all different kinds.
+[00:06:49.800 → 00:06:51.000] Some of them have built-in rows.
+[00:06:51.000 → 00:06:52.700] Some of them look just like breadboards
+[00:06:52.700 → 00:06:54.440] and that's the last thing I want to show you.
+[00:06:55.120 → 00:06:56.360] I'm a big fan of these.
+[00:06:56.360 → 00:06:58.740] These are called the perma-proto boards.
+[00:06:58.980 → 00:07:00.120] And what I like about these
+[00:07:00.120 → 00:07:01.320] is if you look very carefully,
+[00:07:01.860 → 00:07:04.100] each one of these holes is connected already
+[00:07:04.100 → 00:07:07.000] just like it would be on a breadboard.
+[00:07:07.380 → 00:07:08.800] And if you're building this circuit,
+[00:07:08.960 → 00:07:11.460] I can buy a perma-proto board.
+[00:07:11.680 → 00:07:12.860] That's a half-size breadboard.
+[00:07:12.980 → 00:07:14.940] This happens to be a quarter size that I have here.
+[00:07:15.120 → 00:07:17.260] But I can literally just hold this right here
+[00:07:17.260 → 00:07:18.600] and build the same circuit,
+[00:07:19.000 → 00:07:20.820] wire it up the same way as my breadboard,
+[00:07:21.180 → 00:07:22.660] flip it over, solder it together,
+[00:07:22.660 → 00:07:23.860] and it works perfectly.
+[00:07:24.380 → 00:07:26.220] These are extremely handy.
+[00:07:26.360 → 00:07:27.400] They're quite affordable.
+[00:07:27.980 → 00:07:29.200] And to be quite honest with you,
+[00:07:29.260 → 00:07:30.260] if you're building a prototype,
+[00:07:30.500 → 00:07:31.860] they're really slick looking.
+[00:07:32.500 → 00:07:35.460] So that's about it for building on a PerfBoard.
+[00:07:35.460 → 00:07:38.340] I hope those tips and tricks help you a little bit
+[00:07:38.340 → 00:07:40.620] and ease that learning curve.

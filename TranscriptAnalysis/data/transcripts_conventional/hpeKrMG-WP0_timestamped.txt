@@ -1,0 +1,229 @@
+hpeKrMG-WP0
+https://www.youtube.com/watch?v=hpeKrMG-WP0
+Unknown Category
+
+[00:00:00.960 → 00:00:05.560] In this video, I'm going to introduce state space equations, the model representation
+[00:00:05.560 → 00:00:07.560] of choice for modern control.
+[00:00:07.560 → 00:00:10.720] However, before we begin, a quick warning.
+[00:00:10.720 → 00:00:14.080] We're not going to go into depth on the mathematics of state space.
+[00:00:14.080 → 00:00:17.520] After this video, you're probably not going to be able to write out the equations for
+[00:00:17.520 → 00:00:19.560] any arbitrary system.
+[00:00:19.560 → 00:00:23.860] But what I think you will get is a good intuitive understanding of these equations, which can
+[00:00:23.860 → 00:00:27.320] be a foundation that you can build on as you learn more.
+[00:00:27.320 → 00:00:30.960] At the very least, it might clear up a few lingering questions you might have.
+[00:00:30.960 → 00:00:33.000] So with that in mind, let's get to it.
+[00:00:33.000 → 00:00:37.120] I'm Brian, and welcome to a MATLAB Tech Talk.
+[00:00:37.120 → 00:00:41.260] I think an interesting thing about dynamic systems is that they can be represented by
+[00:00:41.260 → 00:00:43.520] ordinary differential equations.
+[00:00:43.520 → 00:00:47.920] This is because they have this property that how the system is changing at any given time
+[00:00:47.920 → 00:00:50.320] is a function of its current state.
+[00:00:50.320 → 00:00:54.500] If we zip through the derivation for a spring-mass system real quick, you can see we end up with
+[00:00:54.500 → 00:00:56.440] a differential equation.
+[00:00:56.440 → 00:01:02.340] Now the way that the system is changing, acceleration, is a function of the current state, position.
+[00:01:02.340 → 00:01:06.100] If this dynamic system was initialized with some energy, it would continue to move on its
+[00:01:06.100 → 00:01:11.380] own because of this relationship between the derivative of the state and the state itself.
+[00:01:11.380 → 00:01:16.520] Think about initializing this system by stretching the spring and letting it go.
+[00:01:16.520 → 00:01:21.440] Acceleration changes velocity, which changes position, and then that changes acceleration again.
+[00:01:21.440 → 00:01:26.340] And it's going to oscillate back and forth without you having to add any external inputs.
+[00:01:26.340 → 00:01:31.100] Since there's no damping in this system, the energy is conserved, and this acceleration-velocity-position
+[00:01:31.100 → 00:01:33.840] cycle will continue forever.
+[00:01:33.840 → 00:01:38.900] For any arbitrary dynamic system, if we look at how the energy changes by analyzing the relationship
+[00:01:38.900 → 00:01:43.660] between its states and their derivatives, we can make claims about things like the stability
+[00:01:43.660 → 00:01:44.920] of the system.
+[00:01:44.920 → 00:01:47.060] Is the energy being dissipated over time?
+[00:01:47.060 → 00:01:48.620] Then the system is stable.
+[00:01:48.620 → 00:01:52.280] And the faster the energy is dissipated, the more stable it is.
+[00:01:52.280 → 00:01:57.300] If the energy is growing unbounded over time, even for just a part of it, then the system
+[00:01:57.300 → 00:01:59.880] as a whole is unstable.
+[00:01:59.880 → 00:02:03.700] Energy is an inherent property of a system simply from the way that the states and their
+[00:02:03.700 → 00:02:06.480] derivatives are connected to each other.
+[00:02:06.480 → 00:02:10.900] The way the system moves, however, can also be influenced by external energy being added
+[00:02:10.900 → 00:02:12.700] or removed over time.
+[00:02:12.700 → 00:02:17.180] So the derivatives of a dynamic system are a function of both the current state as well
+[00:02:17.180 → 00:02:19.600] as any external inputs.
+[00:02:19.600 → 00:02:24.980] In state space, representation is simply a repackaging of the high-order differential equations into
+[00:02:24.980 → 00:02:29.840] a set of first-order differential equations that focus on this relationship.
+[00:02:29.840 → 00:02:33.620] This repackaging can make the system easier to analyze because we can look at the underlying
+[00:02:33.620 → 00:02:38.400] behavior of the interconnected system as well as how the system is affected by external
+[00:02:38.400 → 00:02:44.180] inputs, even multiple external inputs, which is really powerful.
+[00:02:44.180 → 00:02:48.760] There are also a lot of control techniques that are built on state space models, like Kalman
+[00:02:48.760 → 00:02:55.100] filtering, LQR control, robust control, and model predictive control to just name a few.
+[00:02:55.100 → 00:02:59.620] There are also numerical solution benefits when simulating your system as a state space model,
+[00:02:59.620 → 00:03:04.160] since you build the vector of the derivatives first and then integrate the whole vector to
+[00:03:04.160 → 00:03:05.540] get the states.
+[00:03:05.540 → 00:03:09.340] So all in all, they're pretty awesome and worth learning.
+[00:03:09.340 → 00:03:13.440] Now let's take a moment to look at the state space equations in more detail and try to make
+[00:03:13.440 → 00:03:15.300] a little sense of them.
+[00:03:15.300 → 00:03:20.740] For this, we'll focus on the continuous form for a linear time-invariant system.
+[00:03:20.740 → 00:03:22.400] There are two equations.
+[00:03:22.400 → 00:03:26.180] The first one is the state equation, which we've already developed a little intuition
+[00:03:26.180 → 00:03:32.180] around, and the second equation is the output equation, which I'll get to in just a bit.
+[00:03:32.180 → 00:03:36.260] State space representation is built around the state vector x.
+[00:03:36.260 → 00:03:39.240] This is a vector of all of the state variables.
+[00:03:39.240 → 00:03:44.460] And how the state vector changes, or the derivative of the state vector, is a linear combination
+[00:03:44.460 → 00:03:49.100] of the current state plus a linear combination of the external inputs.
+[00:03:49.100 → 00:03:53.060] In this way, we're not trying to look at the entire dynamics of the system end-to-end like
+[00:03:53.060 → 00:03:57.820] we would with a high-order differential equation or a transfer function, but rather focus on
+[00:03:57.820 → 00:04:03.420] the dynamics of each state variable, and how those variables relate to each other.
+[00:04:03.420 → 00:04:07.520] How does the first state change as a function of all of the states and all of the inputs?
+[00:04:07.520 → 00:04:10.980] How does the second state change as a function of all of the states and inputs?
+[00:04:10.980 → 00:04:12.200] And so on.
+[00:04:12.200 → 00:04:15.980] And since we're only ever looking at the first derivative of each state, we end up with
+[00:04:15.980 → 00:04:18.760] a set of first-order differential equations.
+[00:04:18.760 → 00:04:23.600] What we're left with is a system of linear equations that we can package into matrix form.
+[00:04:23.600 → 00:04:27.660] And if linear algebra is good for anything, it's definitely solving a system of linear
+[00:04:27.660 → 00:04:28.660] equations.
+[00:04:28.660 → 00:04:34.200] It is this repackaging into matrix form that gives us access to a lot of mathematical tools
+[00:04:34.200 → 00:04:36.500] that we didn't have before.
+[00:04:36.500 → 00:04:41.720] The matrix form of the state equation has two matrices, A and B.
+[00:04:41.720 → 00:04:46.660] The A matrix describes how the internal states are all connected to each other, the underlying
+[00:04:46.660 → 00:04:48.500] dynamics of the system.
+[00:04:48.500 → 00:04:55.560] And the B matrix describes how the inputs enter into the system, which states are they affecting.
+[00:04:55.560 → 00:04:58.080] Now let's look at the output equation.
+[00:04:58.080 → 00:05:03.040] Y is a vector of the outputs of the system, or the part that you're interested in knowing.
+[00:05:03.040 → 00:05:08.160] The important thing to realize is that the outputs are not necessarily the state variables.
+[00:05:08.160 → 00:05:12.700] The C matrix describes how the states are combined to get the outputs.
+[00:05:12.700 → 00:05:17.980] And the D matrix is used to allow the inputs to bypass the system altogether and feed forward
+[00:05:17.980 → 00:05:19.440] to the output.
+[00:05:19.440 → 00:05:24.400] A real simple example of the D matrix in action would be the state space representation of a
+[00:05:24.400 → 00:05:27.740] simple multiplier, a gain block.
+[00:05:27.740 → 00:05:30.740] The output equals the input times the gain.
+[00:05:30.740 → 00:05:35.540] So in this way the A, B, and C matrices are all zero, since there are no derivatives and
+[00:05:35.540 → 00:05:36.700] no states.
+[00:05:36.700 → 00:05:40.040] And the D matrix is the value of the gain.
+[00:05:40.040 → 00:05:43.620] Now the importance of the output equation will become obvious when we start feeding back
+[00:05:43.620 → 00:05:47.260] the outputs to develop a closed loop controller for our system.
+[00:05:47.260 → 00:05:50.300] But for now it's enough to understand the structure of the equation.
+[00:05:50.300 → 00:05:53.800] And in the next video on feedback control we'll go into more depth on the relationship
+[00:05:53.800 → 00:05:57.380] between the output and state equations.
+[00:05:57.380 → 00:06:01.260] As you might have noticed, the state variables are the key to the whole thing.
+[00:06:01.260 → 00:06:05.200] They show up in three places and are the part of the representation that I think is the hardest
+[00:06:05.200 → 00:06:06.980] to conceptualize.
+[00:06:06.980 → 00:06:10.460] Therefore understanding what they are is really important.
+[00:06:10.460 → 00:06:15.960] The state variables are the minimum set of variables that fully describe the system.
+[00:06:15.960 → 00:06:20.400] Fully described means that we have enough information about the changing part of the system, or the
+[00:06:20.400 → 00:06:25.140] variable part, that we can predict the system's future behavior.
+[00:06:25.140 → 00:06:29.440] This will make more sense if we go back to the spring mass system and suss out what the
+[00:06:29.440 → 00:06:34.160] state variables are by starting with no information about the system.
+[00:06:34.160 → 00:06:38.500] If I draw the spring and mass like this and asked you to predict where the system will be
+[00:06:38.500 → 00:06:41.580] in one second, what information would you need?
+[00:06:41.580 → 00:06:46.560] Well, you'd want to know the system constants, like the spring constant and mass, and we'd want
+[00:06:46.560 → 00:06:50.560] to know what the external force is that's acting on the mass, so the inputs.
+[00:06:50.560 → 00:06:54.620] But this only tells you part of the story because you don't know what you might call the initial
+[00:06:54.620 → 00:06:58.040] conditions for the variable parts of the system.
+[00:06:58.040 → 00:06:59.960] Is the mass currently moving?
+[00:06:59.960 → 00:07:02.820] And how hard is the spring pulling on the mass?
+[00:07:02.820 → 00:07:07.500] Now if we knew these two starting conditions, along with the system constants and inputs,
+[00:07:07.500 → 00:07:11.680] then we would be able to predict where the mass would be after one second.
+[00:07:11.680 → 00:07:14.360] So let's consider the first question.
+[00:07:14.360 → 00:07:16.440] Is the mass currently moving?
+[00:07:16.440 → 00:07:19.000] We would know this from the velocity of the mass.
+[00:07:19.000 → 00:07:23.260] And velocity is variable since the mass would be oscillating back and forth, assuming there
+[00:07:23.260 → 00:07:25.380] was some energy in the system.
+[00:07:25.380 → 00:07:30.280] So we need velocity in order to predict the future position, so we can say that velocity
+[00:07:30.280 → 00:07:31.980] is a state variable.
+[00:07:31.980 → 00:07:34.160] It's necessary.
+[00:07:34.160 → 00:07:36.960] Now let's turn to the initial spring force.
+[00:07:36.960 → 00:07:40.680] Force is also a variable, but let's think about how we would derive it.
+[00:07:40.680 → 00:07:44.640] It's the spring constant times the distance that the spring is stretched.
+[00:07:44.640 → 00:07:48.800] So if we have that distance, or the position of the mass relative to the unstretched length
+[00:07:48.800 → 00:07:52.060] of spring, then we would be able to get spring force.
+[00:07:52.060 → 00:07:57.360] So the minimum number of variables we need to fully describe this system is two, position
+[00:07:57.360 → 00:07:58.960] and velocity.
+[00:07:58.960 → 00:08:02.640] And since there are two, this is a second order system.
+[00:08:02.640 → 00:08:06.360] So a natural question now might be why not more states?
+[00:08:06.360 → 00:08:07.920] Why not three?
+[00:08:07.920 → 00:08:10.740] Well to answer that, let's consider acceleration.
+[00:08:10.740 → 00:08:14.520] It's a variable since it's changing along with position and velocity.
+[00:08:14.520 → 00:08:19.820] However, we don't need to know acceleration to fully describe the system.
+[00:08:19.820 → 00:08:22.400] Acceleration is a result of force acting on a mass.
+[00:08:22.400 → 00:08:26.200] And force, in this case, is a byproduct of the position of the mass.
+[00:08:26.200 → 00:08:31.200] Therefore, we get acceleration through position, and adding acceleration to your list of state
+[00:08:31.200 → 00:08:33.860] variables is just extra information.
+[00:08:33.860 → 00:08:38.200] Now something that might seem strange at first is that if we add a damper into the system,
+[00:08:38.200 → 00:08:42.280] we're not increasing the order of the system, because we don't need any additional state
+[00:08:42.280 → 00:08:45.380] variables to account for this additional element.
+[00:08:45.380 → 00:08:49.980] The force from the damper is determined by the velocity of the mass, which, again, we already
+[00:08:49.980 → 00:08:52.140] have in our state variable list.
+[00:08:52.140 → 00:08:57.800] So both of these systems have the same number of state variables, too.
+[00:08:57.800 → 00:09:01.660] Now a way you can verify that you have the right number of states needed to describe a
+[00:09:01.660 → 00:09:05.140] system is to count the energy storage devices that your system has.
+[00:09:05.140 → 00:09:09.480] Now I'm not going to go into too much detail here, because I think Dr. Rick Hill has done
+[00:09:09.480 → 00:09:14.740] a great job of explaining it in his YouTube video that I've linked in the description below.
+[00:09:14.740 → 00:09:17.040] But the general idea is this.
+[00:09:17.040 → 00:09:20.640] A dynamic system stores energy in various ways.
+[00:09:20.640 → 00:09:24.280] In our spring mass system, there's two energy storage elements.
+[00:09:24.280 → 00:09:30.600] The spring, which stores potential energy, and the mass, which stores kinetic energy.
+[00:09:30.600 → 00:09:35.160] The dynamic system moves and changes on its own simply because the energy that exists within
+[00:09:35.160 → 00:09:39.940] the system transfers back and forth between storage elements and eventually dissipates through
+[00:09:39.940 → 00:09:43.080] heat, which is ultimately lost to the environment.
+[00:09:43.080 → 00:09:47.960] At any given time, if we know how much energy is stored in each element, then we know its state,
+[00:09:47.960 → 00:09:51.600] and have the information needed to fully understand the state of the system.
+[00:09:51.600 → 00:09:55.600] Now, the states don't represent the energy directly.
+[00:09:55.600 → 00:09:58.400] They're just needed to determine the energy.
+[00:09:58.400 → 00:10:02.600] For the spring mass system, we know the energy in the mass from the velocity of the mass.
+[00:10:02.600 → 00:10:07.600] And we know the energy in the spring from the position, or how far the spring is stretched.
+[00:10:07.600 → 00:10:12.240] And if we know how those energies are connected within the system, or another way of putting
+[00:10:12.240 → 00:10:17.940] it, how each state absorbs and loses energy based on the current state of the system, then
+[00:10:17.940 → 00:10:20.840] we fully understand the system itself.
+[00:10:20.840 → 00:10:24.240] And this is essentially what state space representation is doing for us.
+[00:10:24.240 → 00:10:28.760] It's looking at the state variables, how the energy is stored, and combining them according
+[00:10:28.760 → 00:10:33.760] to how energy is transferred between states, and adding in any additional energy from the
+[00:10:33.760 → 00:10:35.340] external sources.
+[00:10:35.340 → 00:10:40.380] And with a few special caveats that Professor Hill describes, that is why the number of energy
+[00:10:40.380 → 00:10:43.820] storage elements in your system equals the number of states.
+[00:10:43.820 → 00:10:49.340] So our spring mass damper is still a second order system, since a damper doesn't store energy,
+[00:10:49.340 → 00:10:51.240] it just dissipates it.
+[00:10:51.240 → 00:10:55.880] So, we know the order has to be 2, but why not 2 different states?
+[00:10:55.880 → 00:10:57.560] Why position and velocity?
+[00:10:57.560 → 00:11:02.420] Well, they don't have to be, and here's where things can get a little confusing.
+[00:11:02.420 → 00:11:07.180] The state variables, position and velocity, can be thought of as coordinate systems within
+[00:11:07.180 → 00:11:09.060] a state space.
+[00:11:09.060 → 00:11:13.120] Go over 5 position units, and up 3 velocity units.
+[00:11:13.120 → 00:11:18.180] This point in the state space is the current state of the system, and the state vector describes
+[00:11:18.180 → 00:11:19.880] that location.
+[00:11:19.880 → 00:11:25.520] So we can describe this location in the state space with any two linearly independent variables,
+[00:11:25.520 → 00:11:28.520] some arbitrary state 1 and state 2.
+[00:11:28.520 → 00:11:32.760] We're going to end up with the same system state in the end, it's the same energy, just
+[00:11:32.760 → 00:11:36.200] with different coordinates.
+[00:11:36.200 → 00:11:40.520] And we do this redefining of state variables all the time with state space representation.
+[00:11:40.520 → 00:11:45.560] That's what we're doing, for example, when we diagonalize the A matrix to get it into so-called
+[00:11:45.560 → 00:11:46.160] modal form.
+[00:11:46.160 → 00:11:54.800] We've just chosen a different set of coordinates, a different basis for our state vector.
+[00:11:54.800 → 00:12:00.240] So, state vector x is made up of position and velocity, and state vector z is made up
+[00:12:00.240 → 00:12:06.840] of two modal states, and these particular states change as a function of just themselves.
+[00:12:06.840 → 00:12:11.920] That is, state 1 does not rely on the current value of state 2, and vice versa.
+[00:12:11.920 → 00:12:15.980] And if we were able to write out the state's base representation directly in modal form,
+[00:12:15.980 → 00:12:17.560] then maybe we would.
+[00:12:17.560 → 00:12:21.420] There's nothing really special about position and velocity for state variables, other than
+[00:12:21.420 → 00:12:25.140] they are quantities that make intuitive sense to us.
+[00:12:25.140 → 00:12:30.180] However, since the states are no longer defined as position and velocity, the C matrix needs
+[00:12:30.180 → 00:12:34.880] to change if we want to keep the outputs position and velocity.
+[00:12:34.880 → 00:12:37.540] In this way we can see the benefit of the output equation.
+[00:12:37.540 → 00:12:42.060] We're not forced to output the states exactly as we define them, but rather have the ability
+[00:12:42.060 → 00:12:46.020] to linearly combine them into variables that we're interested in.
+[00:12:46.020 → 00:12:50.100] Okay, that's where I'm going to leave this video for now.
+[00:12:50.100 → 00:12:53.700] I hope this has helped you think about the state's base equations in a slightly different
+[00:12:53.700 → 00:12:54.700] way.
+[00:12:54.700 → 00:12:59.520] Rather than thinking of them as a set of matrices that repackage the model into arbitrary first
+[00:12:59.520 → 00:13:03.780] order differential equations, we can think about them as writing out the dynamics for
+[00:13:03.780 → 00:13:06.140] each state variable separately.
+[00:13:06.140 → 00:13:11.080] And the dynamics are tied to how energy is stored and transferred within the system.
+[00:13:11.080 → 00:13:14.700] By doing this we get the benefit of being able to understand how these internal states
+[00:13:14.700 → 00:13:16.780] change and relate to each other.
+[00:13:16.780 → 00:13:21.060] How the energy is moving around and we get to use the powerful tools in linear algebra
+[00:13:21.060 → 00:13:23.920] to analyze and solve the equations.
+[00:13:23.920 → 00:13:28.360] Now MATLAB and Simulink are great environments to work with states-based systems.
+[00:13:28.360 → 00:13:33.400] You can convert to states-based from a transfer function, manipulate the matrices, simulate them,
+[00:13:33.400 → 00:13:37.360] and design and analyze control systems using a number of built-in tools.
+[00:13:37.360 → 00:13:41.620] And I'm going to be using MATLAB to demonstrate control techniques with states-based equations for
+[00:13:41.620 → 00:13:42.780] the rest of this series.
+[00:13:42.780 → 00:13:47.420] So if you're not familiar with using states-based in MATLAB, or if you're looking for a quick
+[00:13:47.420 → 00:13:52.420] refresher, I've linked a few videos in the description that are worth checking out.
+[00:13:52.420 → 00:13:56.500] In the next video in this series, I'll go through the design of a simple feedback control
+[00:13:56.500 → 00:13:59.760] system using states-based representation.
+[00:13:59.760 → 00:14:03.020] If you don't want to miss the next Tech Talk video, don't forget to subscribe to this
+[00:14:03.020 → 00:14:04.020] channel.
+[00:14:04.020 → 00:14:07.460] Also, if you want to check out my channel, Control System Lectures, I cover more control
+[00:14:07.460 → 00:14:09.660] theory topics there as well.
+[00:14:09.660 → 00:14:11.160] Thanks for watching, and I'll see you next time.

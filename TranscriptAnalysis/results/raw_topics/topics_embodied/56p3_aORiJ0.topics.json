@@ -1,0 +1,44 @@
+{
+  "video_id": "56p3_aORiJ0",
+  "title": "56p3_aORiJ0",
+  "url": "https://www.youtube.com/watch?v=56p3_aORiJ0",
+  "created_at": "2025-10-12T22:57:30.792939+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "MOSFET Heat-up Calculation",
+      "description": "time equals charge divided by current",
+      "coverage_ranges": [],
+      "coverage_segments": [],
+      "coverage_times": [],
+      "coverage_text": "",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "MOSFET Switching Speed and Frequency",
+      "description": "time equals charge divided by current, double round trip time",
+      "coverage_ranges": [],
+      "coverage_segments": [],
+      "coverage_times": [],
+      "coverage_text": "",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is a high-level table of contents for the video:\n\n**I. Introduction**\n\n* Overview of selecting a MOSFET and designing a circuit for it\n\n**II. Heat Management**\n\n* Calculating the current draw of the load\n* Determining the maximum switching frequency\n* Calculating the heat dissipation of the MOSFET\n* Conclusion: the MOSFET is not going to overheat\n\n**III. Switching Speed**\n\n* Calculating the charge injection into the gate\n* Calculating the time it takes for the MOSFET to turn on\n* Calculating the maximum switching frequency (2 MHz)\n* Conclusion: the MOSFET can handle the switching speed required\n\n**IV. Design Considerations**\n\n* Back EMF and bulk capacitance requirements\n* Other considerations for a brushed motor driver (not specific to MOSFET selection)\n\n**V. Conclusion**\n\n* Summary of key points in selecting a MOSFET and designing a circuit for it\n* Future video suggestions and next steps\n\nNote: This is a high-level outline, and some details may have been omitted or condensed for the sake of brevity.",
+      "Here is the table of contents in JSON format:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": null,\n    \"coverage\": []\n  },\n  {\n    \"title\": \"Selecting a MOSFET\",\n    \"description\": null,\n    \"coverage\": [\"calculations for switching speed and frequency\"]\n  },\n  {\n    \"title\": \"MOSFET Heat-up Calculation\",\n    \"description\": \"time equals charge divided by current\",\n    \"coverage\": [\"heat-up calculation\", \"charge injection time\"]\n  },\n  {\n    \"title\": \"Gate Driver Current Calculation\",\n    \"description\": null,\n    \"coverage\": [\"gate driver current calculation\", \"max current for gate resistor\"]\n  },\n  {\n    \"title\": \"MOSFET Switching Speed and Frequency\",\n    \"description\": \"time equals charge divided by current, double round trip time\",\n    \"coverage\": [\"switching speed\", \"frequency calculation\", \"round trip time\"]\n  },\n  {\n    \"title\": \"Rule of Thumb\",\n    \"description\": null,\n    \"coverage\": [\"rule of thumb for switching speed and frequency\"]\n  },\n  {\n    \"title\": \"Conclusion\",\n    \"description\": null,\n    \"coverage\": [\"summary of MOSFET selection and design\"]\n  }\n]\n```"
+    ]
+  }
+}

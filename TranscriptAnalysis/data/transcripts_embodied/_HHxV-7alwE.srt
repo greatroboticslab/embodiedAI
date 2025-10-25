@@ -1,0 +1,3136 @@
+1
+00:00:00,000 --> 00:00:03,280
+Today in the workshop we're working with operational amplifiers.
+
+2
+00:00:03,840 --> 00:00:08,220
+You'll see how op amps work and how to use them in several popular configurations.
+
+3
+00:00:08,820 --> 00:00:12,860
+We'll also build a light activated switch, a dual power supply,
+
+4
+00:00:13,100 --> 00:00:15,200
+and we'll use op amps with an Arduino.
+
+5
+00:00:15,780 --> 00:00:19,380
+We're back in operation today, so welcome to the workshop.
+
+6
+00:00:30,000 --> 00:00:33,360
+Well, hello and welcome to the workshop,
+
+7
+00:00:33,660 --> 00:00:37,100
+and today we're going to be working with operational amplifiers,
+
+8
+00:00:37,280 --> 00:00:39,580
+more commonly known as op amps.
+
+9
+00:00:39,580 --> 00:00:45,180
+Now, op amps have been available in integrated circuit format for about six decades now,
+
+10
+00:00:45,280 --> 00:00:50,760
+and during that time they have been used in thousands and thousands of different analog designs.
+
+11
+00:00:51,240 --> 00:00:55,200
+One of the reasons for their popularity is because they are so versatile.
+
+12
+00:00:55,200 --> 00:01:00,140
+You can literally configure an op amp in a couple of dozen different ways,
+
+13
+00:01:00,300 --> 00:01:04,680
+and each of those configurations can be considered to be an analog building block
+
+14
+00:01:04,680 --> 00:01:07,620
+that you can use to build more complex circuitry.
+
+15
+00:01:08,100 --> 00:01:13,380
+Op amps can also be used to interface analog electronics to digital electronics.
+
+16
+00:01:13,960 --> 00:01:16,760
+Op amps are also extraordinarily inexpensive.
+
+17
+00:01:17,140 --> 00:01:22,800
+In fact, one of the op amps we're using today is a quad op amp that costs all of 40 cents,
+
+18
+00:01:22,800 --> 00:01:25,280
+so each op amp costs a dime.
+
+19
+00:01:25,800 --> 00:01:28,480
+Now, what we are going to do today is we're going to, of course,
+
+20
+00:01:28,580 --> 00:01:30,800
+start off by learning a bit about op amps,
+
+21
+00:01:30,960 --> 00:01:33,700
+and then we're going to put some of that theory into practice.
+
+22
+00:01:33,840 --> 00:01:36,980
+We're going to take an op amp, put it on a sonless breadboard,
+
+23
+00:01:37,080 --> 00:01:39,480
+and wire it in a number of different configurations.
+
+24
+00:01:40,100 --> 00:01:44,340
+After that, I'm going to show you how we can use an op amp with a microcontroller.
+
+25
+00:01:44,480 --> 00:01:46,960
+We're going to connect one to an Arduino Uno.
+
+26
+00:01:47,540 --> 00:01:49,800
+After that, we're going to build a little project,
+
+27
+00:01:49,800 --> 00:01:53,160
+a light-sensitive switch that is built with an op amp
+
+28
+00:01:53,160 --> 00:01:57,380
+and will probably cost you about $2 in components to put together.
+
+29
+00:01:57,820 --> 00:02:01,240
+And finally, many op amps need a dual power supply,
+
+30
+00:02:01,360 --> 00:02:04,280
+a supply with both a positive and a negative component,
+
+31
+00:02:04,760 --> 00:02:08,820
+while most of us have benched supplies that only are single power supplies.
+
+32
+00:02:09,040 --> 00:02:13,340
+So we're going to build a converter that converts a single supply to a dual supply,
+
+33
+00:02:13,540 --> 00:02:17,220
+and, of course, that converter is going to be built with an op amp.
+
+34
+00:02:17,220 --> 00:02:19,180
+I told you these things are versatile.
+
+35
+00:02:19,720 --> 00:02:24,840
+So let's start off by learning a bit more about operational amplifiers.
+
+36
+00:02:25,980 --> 00:02:29,880
+An op amp is a high-gain differential amplifier.
+
+37
+00:02:30,480 --> 00:02:35,500
+It has both a positive or non-inverting and negative or inverting input.
+
+38
+00:02:36,160 --> 00:02:40,520
+An op amp amplifies the differences between these two input voltages.
+
+39
+00:02:40,520 --> 00:02:45,520
+These devices are characterized by having a very high input impedance
+
+40
+00:02:45,520 --> 00:02:47,860
+and a very low output impedance.
+
+41
+00:02:48,400 --> 00:02:52,640
+Originally, operational amplifiers were developed for analog computers.
+
+42
+00:02:53,200 --> 00:02:56,700
+Analog computers used voltages to represent numbers.
+
+43
+00:02:57,360 --> 00:03:02,120
+The first operational amplifier was built with vacuum tubes in 1941.
+
+44
+00:03:02,120 --> 00:03:08,280
+The UA702 was the first integrated circuit operational amplifier,
+
+45
+00:03:08,560 --> 00:03:11,020
+and it was designed in 1963.
+
+46
+00:03:12,020 --> 00:03:15,260
+The schematic symbol for an operational amplifier
+
+47
+00:03:15,260 --> 00:03:18,960
+is chosen as a triangle with a number of connections to it.
+
+48
+00:03:19,300 --> 00:03:21,560
+On the top, we have the positive power,
+
+49
+00:03:21,960 --> 00:03:23,880
+and on the bottom, the negative power.
+
+50
+00:03:24,400 --> 00:03:28,580
+Most operational amplifiers require a bipolar power supply
+
+51
+00:03:28,580 --> 00:03:31,280
+with both positive and negative components.
+
+52
+00:03:32,040 --> 00:03:34,080
+There are two inputs in the op amp,
+
+53
+00:03:34,440 --> 00:03:38,080
+an inverting input and the non-inverting input.
+
+54
+00:03:38,740 --> 00:03:40,980
+Note that the inverting input on top
+
+55
+00:03:40,980 --> 00:03:43,860
+and the non-inverting on the bottom is not a convention,
+
+56
+00:03:44,380 --> 00:03:47,380
+and when you see op amps drawn in schematic diagrams,
+
+57
+00:03:47,780 --> 00:03:50,420
+you can see it drawn the other way around as well.
+
+58
+00:03:50,540 --> 00:03:52,680
+It just depends what looks better on the diagram.
+
+59
+00:03:53,380 --> 00:03:57,040
+Finally, the output of the op amp is at the point of the triangle.
+
+60
+00:03:58,580 --> 00:04:01,980
+In order to visualize how an operational amplifier works,
+
+61
+00:04:02,100 --> 00:04:03,880
+first we need to power it up.
+
+62
+00:04:04,200 --> 00:04:07,260
+We will use a bipolar power supply for the op amp
+
+63
+00:04:07,260 --> 00:04:09,940
+that has both a positive and a negative component.
+
+64
+00:04:10,540 --> 00:04:13,600
+Note that the power supply has a common ground point.
+
+65
+00:04:13,960 --> 00:04:16,240
+This ground point is a reference point.
+
+66
+00:04:16,980 --> 00:04:21,500
+We'll also connect two input voltages to our operational amplifier,
+
+67
+00:04:21,900 --> 00:04:24,640
+V1, which is connected to the inverting input,
+
+68
+00:04:24,640 --> 00:04:28,100
+and V2, which is connected to the non-inverting input.
+
+69
+00:04:28,600 --> 00:04:32,140
+Again, the two voltages reference the same common ground point.
+
+70
+00:04:33,100 --> 00:04:37,440
+If we apply a voltage of 4 volts to V1 and 6 volts to V2,
+
+71
+00:04:37,540 --> 00:04:40,300
+that'll create a difference of positive 2 volts.
+
+72
+00:04:40,720 --> 00:04:42,540
+Since this is a positive difference,
+
+73
+00:04:42,680 --> 00:04:44,280
+our output will be positive,
+
+74
+00:04:44,640 --> 00:04:47,700
+and the greater difference, the greater the output will be.
+
+75
+00:04:47,700 --> 00:04:50,620
+If we increase V1 to 9 volts,
+
+76
+00:04:50,820 --> 00:04:53,220
+then our difference will be negative 3 volts,
+
+77
+00:04:53,340 --> 00:04:55,000
+and so our output will go negative.
+
+78
+00:04:55,540 --> 00:04:58,120
+Again, the amplitude of the output will depend
+
+79
+00:04:58,120 --> 00:05:00,860
+on the amount of difference between the two inputs.
+
+80
+00:05:01,660 --> 00:05:05,760
+If we reduce V1 to 6 volts and keep V2 at 6 volts,
+
+81
+00:05:05,860 --> 00:05:08,140
+there'll be no difference between the two inputs.
+
+82
+00:05:08,660 --> 00:05:12,560
+Therefore, the output of the operational amplifier will be zero.
+
+83
+00:05:12,560 --> 00:05:17,700
+By itself, an operational amplifier has a great deal of gain.
+
+84
+00:05:17,820 --> 00:05:21,780
+In fact, the typical op amp has a gain of 100,000 times or more.
+
+85
+00:05:22,260 --> 00:05:24,400
+Since this is likely too much for our circuit,
+
+86
+00:05:24,520 --> 00:05:25,740
+we need to regulate it,
+
+87
+00:05:25,940 --> 00:05:28,040
+and we can do that by applying feedback,
+
+88
+00:05:28,560 --> 00:05:30,860
+which is to take the output of the op amp
+
+89
+00:05:30,860 --> 00:05:33,060
+and apply it to one of its inputs.
+
+90
+00:05:33,220 --> 00:05:36,600
+Over here, I show it being applied to the inverting input.
+
+91
+00:05:36,980 --> 00:05:40,840
+This will actually create an amplifier whose gain is only one.
+
+92
+00:05:40,840 --> 00:05:44,720
+In other words, what goes into the amplifier will be what comes out.
+
+93
+00:05:45,220 --> 00:05:47,740
+Since we might want a little bit more gain than that,
+
+94
+00:05:47,840 --> 00:05:51,280
+but not the infinite amount of gain that we get with the open loop,
+
+95
+00:05:51,540 --> 00:05:53,720
+we can apply a feedback resistor.
+
+96
+00:05:54,200 --> 00:05:57,780
+The value of the resistor will determine the gain of the amplifier,
+
+97
+00:05:58,160 --> 00:06:00,000
+and the higher the value of the resistor,
+
+98
+00:06:00,260 --> 00:06:02,280
+the higher the amplifier's gain will be.
+
+99
+00:06:03,660 --> 00:06:06,640
+A common configuration for an operational amplifier
+
+100
+00:06:06,640 --> 00:06:08,740
+is as an inverting amplifier.
+
+101
+00:06:08,740 --> 00:06:13,820
+An amplifier whose output is 180 degrees out of phase with its input.
+
+102
+00:06:14,440 --> 00:06:18,500
+The two components used with the operational amplifier in this configuration
+
+103
+00:06:18,500 --> 00:06:21,560
+are the input resistor and the feedback resistor,
+
+104
+00:06:21,920 --> 00:06:25,700
+and these two components determine the gain of the inverting amplifier.
+
+105
+00:06:25,700 --> 00:06:31,540
+Another common configuration is the non-inverting amplifier,
+
+106
+00:06:31,540 --> 00:06:35,220
+an amplifier whose output is in phase with its input.
+
+107
+00:06:35,780 --> 00:06:41,020
+Once again, the feedback and divider resistor will determine the gain of this type of amplifier.
+
+108
+00:06:42,020 --> 00:06:46,380
+A unity gain buffer is an amplifier that has a gain of 1.
+
+109
+00:06:46,380 --> 00:06:49,220
+This is also known as a voltage follower,
+
+110
+00:06:49,420 --> 00:06:52,340
+and takes advantage of the fact that the operational amplifier
+
+111
+00:06:52,340 --> 00:06:57,040
+has a very high input impedance and very low output impedance.
+
+112
+00:06:57,500 --> 00:07:01,160
+Unity gain buffers are often used throughout op-amp circuitry.
+
+113
+00:07:02,160 --> 00:07:08,400
+The voltage summing amplifier is an application from the op-amp's analog computer days.
+
+114
+00:07:08,400 --> 00:07:13,660
+The op-amp will output a sum of the three different input voltages.
+
+115
+00:07:14,260 --> 00:07:16,860
+The feedback can be used to amplify this
+
+116
+00:07:16,860 --> 00:07:20,240
+and effectively do a multiplication on the voltage.
+
+117
+00:07:22,000 --> 00:07:25,480
+Another mathematical operation that could be done with an op-amp
+
+118
+00:07:25,480 --> 00:07:27,540
+is as a differential amplifier.
+
+119
+00:07:27,540 --> 00:07:34,160
+In this case, the output of the amplifier will be the difference between V in 1 and V in 2.
+
+120
+00:07:35,820 --> 00:07:41,300
+Integration is another mathematical operation that operational amplifiers can perform,
+
+121
+00:07:41,660 --> 00:07:46,440
+and when performed upon a square wave, it can turn it into a triangle wave.
+
+122
+00:07:46,640 --> 00:07:49,900
+You can also input a triangle wave into an integrator
+
+123
+00:07:49,900 --> 00:07:53,020
+and come out with an approximation of a sine wave.
+
+124
+00:07:53,020 --> 00:08:00,460
+And the differentiating amplifier performs a differential operation on the voltage coming in.
+
+125
+00:08:00,740 --> 00:08:03,380
+You'll notice its effect on a square wave here.
+
+126
+00:08:04,780 --> 00:08:10,420
+An open-end comparator is a very common configuration for an operational amplifier.
+
+127
+00:08:10,860 --> 00:08:14,820
+A comparator has a reference voltage and an input voltage,
+
+128
+00:08:14,960 --> 00:08:17,900
+and if the input voltage exceeds the reference voltage,
+
+129
+00:08:18,240 --> 00:08:21,820
+the output voltage will go high, or to positive Vcc.
+
+130
+00:08:21,820 --> 00:08:27,680
+If it's below the reference voltage, it'll go low, or down to the ground level.
+
+131
+00:08:28,200 --> 00:08:33,640
+Comparators are often used to interface analog electronics to digital electronics.
+
+132
+00:08:34,820 --> 00:08:39,420
+A low-pass active filter is a very common application in audio.
+
+133
+00:08:39,960 --> 00:08:44,880
+A low-pass filter allows low frequencies to pass while attenuating high frequencies,
+
+134
+00:08:45,200 --> 00:08:47,720
+and it can be built as follows with an op-amp.
+
+135
+00:08:47,720 --> 00:08:52,840
+A different configuration creates a high-pass active filter,
+
+136
+00:08:53,100 --> 00:08:57,920
+a filter that allows higher frequencies to pass, but attenuates lower ones.
+
+137
+00:08:59,240 --> 00:09:05,160
+And a multivibrator is a configuration which an operational amplifier can produce a waveform.
+
+138
+00:09:05,720 --> 00:09:12,060
+In this diagram, we are producing a square wave whose frequency is determined by the value of Cx and Rx.
+
+139
+00:09:12,060 --> 00:09:18,060
+R2 and R1 can be used to determine the duty cycle and the amplitude of our square wave.
+
+140
+00:09:18,800 --> 00:09:23,840
+Now, in selecting an operational amplifier, you should go and take a look at the spec sheets,
+
+141
+00:09:23,940 --> 00:09:26,360
+as they'll give you all the information you need to know.
+
+142
+00:09:26,620 --> 00:09:29,740
+There's quite a bit of info here, and some of it may be confusing,
+
+143
+00:09:30,000 --> 00:09:33,140
+so here are some of the key specifications to look out for.
+
+144
+00:09:33,140 --> 00:09:40,840
+The open-loop gain of the operational amplifier defines the gain of the op-amp without any feedback.
+
+145
+00:09:42,120 --> 00:09:45,640
+Now, an ideal op-amp would have an infinite open-loop gain.
+
+146
+00:09:46,380 --> 00:09:52,140
+In the real world, values typically range from 20,000 to 200,000 or even more.
+
+147
+00:09:52,600 --> 00:09:57,300
+Now, keep in mind that the maximum output that your operational amplifier can give
+
+148
+00:09:57,300 --> 00:10:01,880
+is going to be limited by the power supply voltage and not the gain.
+
+149
+00:10:01,880 --> 00:10:09,780
+The input impedance of the op-amp is defined as the ratio of the input voltage to the input current.
+
+150
+00:10:10,640 --> 00:10:13,580
+Impedance is a factor that is measured in ohms.
+
+151
+00:10:14,340 --> 00:10:17,980
+An ideal op-amp would have an infinite input impedance,
+
+152
+00:10:18,460 --> 00:10:24,020
+and real-world values for op-amp input impedance are typically several megohms,
+
+153
+00:10:24,160 --> 00:10:27,540
+meaning op-amps won't load down the driving circuitry.
+
+154
+00:10:27,540 --> 00:10:33,020
+The output impedance of an op-amp is also an important specification.
+
+155
+00:10:33,680 --> 00:10:36,660
+An ideal op-amp would have a zero output impedance.
+
+156
+00:10:37,400 --> 00:10:42,140
+In the real world, the values are typically about 100 to 20,000 ohms.
+
+157
+00:10:42,140 --> 00:10:48,280
+The gain bandwidth product, or GBP, is a very important specification
+
+158
+00:10:48,280 --> 00:10:51,620
+as it refers to the frequency response of your op-amp.
+
+159
+00:10:52,240 --> 00:10:55,520
+Now, an ideal op-amp would, of course, have an infinite bandwidth.
+
+160
+00:10:56,220 --> 00:11:00,180
+The bandwidth of the op-amp is limited by the gain bandwidth product,
+
+161
+00:11:00,640 --> 00:11:05,340
+and this is defined as the bandwidth with an open-loop gain of 1.
+
+162
+00:11:05,340 --> 00:11:12,300
+In the real world, op-amps typically have values from 500 kHz to 20 MHz or more.
+
+163
+00:11:13,660 --> 00:11:19,160
+The offset voltage is the output voltage when the difference between the inputs is zero.
+
+164
+00:11:19,860 --> 00:11:23,240
+An ideal op-amp would have no offset voltage.
+
+165
+00:11:23,980 --> 00:11:28,540
+In the real world, the values typically are 1 mV to 10 mV,
+
+166
+00:11:28,720 --> 00:11:31,040
+and this is an inaccuracy in the op-amp.
+
+167
+00:11:31,040 --> 00:11:37,600
+Some operational amplifiers have an offset pin to allow adjustment of the offset voltage.
+
+168
+00:11:40,420 --> 00:11:45,460
+Op-amps are available in several different packages, including dip and surface mount.
+
+169
+00:11:46,160 --> 00:11:50,360
+You can get single, dual, or quad op-amps in the same package.
+
+170
+00:11:51,020 --> 00:11:55,800
+Op-amps are available using both single and traditional dual power supplies.
+
+171
+00:11:56,360 --> 00:11:59,360
+You also might see the term rail-to-rail designs.
+
+172
+00:11:59,360 --> 00:12:03,380
+These are op-amps whose output can go all the way to their VCC.
+
+173
+00:12:04,000 --> 00:12:07,320
+On most op-amps, the output is slightly less than VCC,
+
+174
+00:12:07,500 --> 00:12:09,820
+unless it is specified as being rail-to-rail.
+
+175
+00:12:10,480 --> 00:12:14,020
+So now let's take a look at a couple of op-amps and put them to use.
+
+176
+00:12:14,640 --> 00:12:18,060
+Now here are a number of op-amps that I got out of my parts drawer,
+
+177
+00:12:18,460 --> 00:12:21,740
+and each one of these is unique in its own right.
+
+178
+00:12:21,880 --> 00:12:25,240
+Some of them are single op-amps, some are dual, some are quad.
+
+179
+00:12:25,240 --> 00:12:31,060
+There are op-amps here that are single supply, and there are dual supply op-amps as well.
+
+180
+00:12:31,480 --> 00:12:35,040
+Now all of these are in dip or dual inline packages.
+
+181
+00:12:35,220 --> 00:12:37,400
+Of course you can get op-amps in other packages,
+
+182
+00:12:37,660 --> 00:12:40,940
+but for experimenting, the dip package is what we will use,
+
+183
+00:12:41,000 --> 00:12:42,960
+because they fit into a soddeless breadboard.
+
+184
+00:12:43,320 --> 00:12:45,240
+Now I'm sure you've probably worked with them before,
+
+185
+00:12:45,240 --> 00:12:50,060
+but if you haven't, on a dip package there is usually a notch over at the front,
+
+186
+00:12:50,360 --> 00:12:53,280
+and quite often a dot like you'll see over here,
+
+187
+00:12:53,440 --> 00:12:55,340
+and that indicates pin 1.
+
+188
+00:12:55,500 --> 00:12:58,060
+So when you're orienting things, that's the way it is.
+
+189
+00:12:58,580 --> 00:13:02,360
+And they'll be numbered 1, 2, 3, 4 down this side,
+
+190
+00:13:02,520 --> 00:13:06,460
+and then they'll go 5, 6, 7, 8 up on the other side.
+
+191
+00:13:06,540 --> 00:13:11,700
+And of course for a 14 or a 16-pin package, the number follows accordingly.
+
+192
+00:13:11,700 --> 00:13:17,540
+And so let's take a look at the characteristics of some of these operational amplifiers.
+
+193
+00:13:19,000 --> 00:13:23,940
+The LM324 is a very popular quad operational amplifier.
+
+194
+00:13:24,500 --> 00:13:29,500
+This device uses a single supply and can handle 32 volts maximum VCC.
+
+195
+00:13:30,060 --> 00:13:35,760
+The LM324 is used in a lot of equipment, especially because of its low, low price.
+
+196
+00:13:36,140 --> 00:13:39,920
+Currently this retails on DigiKey for 40 cents per unit,
+
+197
+00:13:39,920 --> 00:13:42,740
+and so when you consider you get 4 op amps in it,
+
+198
+00:13:42,980 --> 00:13:45,560
+they work out to about a dime per op amp.
+
+199
+00:13:47,880 --> 00:13:53,080
+The NE5532 is another very popular operational amplifier.
+
+200
+00:13:53,720 --> 00:13:57,520
+This is a dual op amp, and it uses a dual power supply.
+
+201
+00:13:57,860 --> 00:14:01,220
+Each power supply can have a maximum of 15 volts.
+
+202
+00:14:01,800 --> 00:14:06,660
+This is a high performance operational amplifier with very low noise and distortion,
+
+203
+00:14:06,660 --> 00:14:09,840
+so it can be used in audio equipment designs.
+
+204
+00:14:11,840 --> 00:14:16,200
+Another popular operational amplifier is the LM358.
+
+205
+00:14:16,460 --> 00:14:22,580
+It's also a dual op amp, and has essentially the same pinout as the NE5532.
+
+206
+00:14:23,060 --> 00:14:27,820
+However, the LM358 has been wired to use a single power supply.
+
+207
+00:14:27,820 --> 00:14:31,360
+This is a very common operational amplifier,
+
+208
+00:14:31,360 --> 00:14:35,160
+and as its power supply can range from 3 to 32 volts DC,
+
+209
+00:14:35,500 --> 00:14:39,580
+it can also be used to interface analog and digital circuitry.
+
+210
+00:14:41,260 --> 00:14:47,180
+The TL072 is a dual operational amplifier that uses dual power supplies.
+
+211
+00:14:47,180 --> 00:14:51,420
+This is a very popular audio amplifier for audio designs,
+
+212
+00:14:51,560 --> 00:14:55,700
+as it has a very high GBP, and a very high slew rate,
+
+213
+00:14:55,940 --> 00:14:58,640
+and very, very low noise and distortion.
+
+214
+00:15:00,700 --> 00:15:07,020
+The CA3140 is a single operational amplifier that uses a dual power supply,
+
+215
+00:15:07,240 --> 00:15:11,120
+and has a maximum GBP of 4.5 MHz.
+
+216
+00:15:11,120 --> 00:15:18,200
+The CA3240 is the same operational amplifier in a dual op amp pack.
+
+217
+00:15:19,160 --> 00:15:23,160
+These op amps are often used in automotive and industrial designs,
+
+218
+00:15:23,260 --> 00:15:26,420
+as they incorporate both MOS and bipolar transistors
+
+219
+00:15:26,420 --> 00:15:28,860
+for a very high input impedance,
+
+220
+00:15:29,220 --> 00:15:31,800
+and a very high current output capability.
+
+221
+00:15:33,080 --> 00:15:38,200
+The MCP6002 is a dual operational amplifier
+
+222
+00:15:38,200 --> 00:15:40,620
+that uses a single power supply,
+
+223
+00:15:40,620 --> 00:15:44,900
+and that power supply has a maximum of only 6 volts.
+
+224
+00:15:45,180 --> 00:15:47,520
+It has a 1 MHz GBP.
+
+225
+00:15:48,660 --> 00:15:55,020
+The MCP6022 is the same operational amplifier with a much higher GBP.
+
+226
+00:15:55,920 --> 00:15:59,280
+Because of the voltages these operational amplifiers use,
+
+227
+00:15:59,360 --> 00:16:02,060
+they have been designed to be used with logic circuits,
+
+228
+00:16:02,160 --> 00:16:05,680
+as they're perfect for both 3.3 and 5 volt logic.
+
+229
+00:16:06,100 --> 00:16:09,160
+They also use rail-to-rail input-to-output,
+
+230
+00:16:09,160 --> 00:16:12,640
+so they can swing all the way up to their power supply voltage.
+
+231
+00:16:12,940 --> 00:16:15,040
+They're very low noise and distortion,
+
+232
+00:16:15,420 --> 00:16:17,400
+and they consume very little current.
+
+233
+00:16:18,340 --> 00:16:20,460
+Okay, enough of the op amp theory.
+
+234
+00:16:20,560 --> 00:16:22,200
+Let's put some of it into practice.
+
+235
+00:16:22,440 --> 00:16:25,840
+We're going to take an op amp and put it onto a SOTELIS breadboard,
+
+236
+00:16:26,160 --> 00:16:28,980
+and wire it in a number of different configurations,
+
+237
+00:16:28,980 --> 00:16:32,200
+so we can see how these building blocks are really created.
+
+238
+00:16:32,760 --> 00:16:36,400
+Now, the op amp we're going to be using is the NE5532,
+
+239
+00:16:36,700 --> 00:16:39,360
+which is a very common operational amplifier.
+
+240
+00:16:39,800 --> 00:16:42,840
+It requires a dual power supply, but don't worry about it.
+
+241
+00:16:42,840 --> 00:16:46,120
+You can just use a couple of 9 volt batteries for these experiments.
+
+242
+00:16:46,120 --> 00:16:50,340
+So let's see how the NE5532 is wired up,
+
+243
+00:16:50,540 --> 00:16:54,280
+and then we'll proceed to use it in a number of basic configurations.
+
+244
+00:16:55,640 --> 00:17:01,580
+I'll be basing all of my experiments around an NE5532 operational amplifier.
+
+245
+00:17:01,580 --> 00:17:05,460
+This is a very inexpensive and easy to obtain device.
+
+246
+00:17:05,740 --> 00:17:07,380
+This is a dual op amp,
+
+247
+00:17:07,500 --> 00:17:11,740
+and it contains two operational amplifiers that are wired as follows.
+
+248
+00:17:12,440 --> 00:17:17,440
+Pin 3 of the device is connected to the non-inverting input on amplifier 1.
+
+249
+00:17:17,980 --> 00:17:21,780
+Pin 2 is connected to the inverting input on that amplifier,
+
+250
+00:17:22,460 --> 00:17:26,340
+and pin 1 is connected to the output of op amp 1.
+
+251
+00:17:26,340 --> 00:17:31,780
+Pin 5 is connected to the non-inverting input of amplifier 2.
+
+252
+00:17:32,460 --> 00:17:34,720
+Pin 6 is its inverting input,
+
+253
+00:17:35,160 --> 00:17:38,300
+and pin 7 is the output of op amp 2.
+
+254
+00:17:39,040 --> 00:17:43,000
+The positive end of the power supply is connected to pin 8,
+
+255
+00:17:43,380 --> 00:17:45,640
+and the negative end to pin 4.
+
+256
+00:17:46,060 --> 00:17:49,100
+Note that there is no connection on the op amp for ground.
+
+257
+00:17:50,120 --> 00:17:56,200
+The positive and negative power supply for NE5532 can be up to 15 volts,
+
+258
+00:17:56,340 --> 00:18:02,360
+and a very convenient way of powering these for our experiments is just to use two 9-volt batteries.
+
+259
+00:18:03,320 --> 00:18:08,680
+Connect the positive side of one of the 9-volt batteries to pin 8, which is the positive VCC,
+
+260
+00:18:09,220 --> 00:18:13,800
+and connect the negative side to pin 4, which is the negative VCC.
+
+261
+00:18:14,980 --> 00:18:20,140
+The remaining two battery terminals are tied together, and this is our ground point.
+
+262
+00:18:20,520 --> 00:18:24,260
+Again, there is no ground connection to the NE5532.
+
+263
+00:18:24,260 --> 00:18:30,840
+We will be using this basic circuit with all of the different configurations that I am about to show you.
+
+264
+00:18:32,400 --> 00:18:40,140
+Now the first configuration that we will examine with the NE5532 is obviously the simplest configuration there is,
+
+265
+00:18:40,400 --> 00:18:42,320
+and that is the unity gain buffer.
+
+266
+00:18:42,780 --> 00:18:48,580
+You will notice that in this configuration the output of the op amp is fed back into its inverting input,
+
+267
+00:18:48,580 --> 00:18:53,120
+and that the input to the op amp is fed into the non-inverting input.
+
+268
+00:18:53,740 --> 00:18:56,780
+Wired like this, the op amp will have a gain of 1,
+
+269
+00:18:56,900 --> 00:18:59,880
+so what goes in is exactly what will go out.
+
+270
+00:19:00,140 --> 00:19:04,160
+And you might think that this is a pretty useless circuit, but it actually is not.
+
+271
+00:19:04,700 --> 00:19:08,420
+The unity gain buffer is also called a voltage follower,
+
+272
+00:19:08,420 --> 00:19:14,680
+and it can be used to take advantage of the fact that the op amp has a very high input impedance,
+
+273
+00:19:14,680 --> 00:19:16,840
+and a low output impedance.
+
+274
+00:19:17,240 --> 00:19:19,760
+If you want to mix several signals together,
+
+275
+00:19:19,920 --> 00:19:22,840
+you can proceed each one of these with a unity gain buffer,
+
+276
+00:19:23,180 --> 00:19:25,400
+as though not to overload an input.
+
+277
+00:19:26,060 --> 00:19:31,200
+The unity gain buffer is a circuit that you will see used quite often in op amp designs.
+
+278
+00:19:31,200 --> 00:19:35,860
+And so here we have our first experiment, the voltage follower,
+
+279
+00:19:36,280 --> 00:19:39,380
+and of course the very simple circuit that it is.
+
+280
+00:19:39,740 --> 00:19:42,060
+You can take a look at how I've got it on the breadboard.
+
+281
+00:19:42,380 --> 00:19:45,560
+I've got my two batteries each going to the different rails,
+
+282
+00:19:45,560 --> 00:19:48,700
+and I've also got a jumper over here,
+
+283
+00:19:48,800 --> 00:19:54,420
+and that connects the negative of the positive supply to the positive of the negative supply,
+
+284
+00:19:54,520 --> 00:19:55,720
+if that makes sense to you.
+
+285
+00:19:55,960 --> 00:19:57,460
+And that is the common ground.
+
+286
+00:19:57,460 --> 00:20:01,120
+So just make certain that you realize that on the bottom over here,
+
+287
+00:20:01,220 --> 00:20:05,360
+the red is actually a ground, and the blue is the negative voltage.
+
+288
+00:20:05,820 --> 00:20:09,580
+Otherwise, it's a very simple circuit, just wired up with a few jumpers.
+
+289
+00:20:09,920 --> 00:20:13,280
+When you're working with analog electronics on a soddeless breadboard,
+
+290
+00:20:13,400 --> 00:20:17,660
+you will find out that the breadboard does pick up a little bit of noise, etc.
+
+291
+00:20:17,880 --> 00:20:20,600
+Now these breadboards I have on the bottom of them,
+
+292
+00:20:20,680 --> 00:20:24,500
+they have a little aluminum plate that's supposed to help shield them,
+
+293
+00:20:24,500 --> 00:20:28,740
+but since it isn't grounded, I don't know if it's working or if it's even adding to the problem.
+
+294
+00:20:29,460 --> 00:20:32,300
+But you try to keep all your leads as short as you can.
+
+295
+00:20:32,400 --> 00:20:34,260
+If you're using resistors and capacitors,
+
+296
+00:20:34,400 --> 00:20:37,660
+try to use those to make the connections without any additional jumpers,
+
+297
+00:20:38,000 --> 00:20:39,620
+just so you get a more stable circuit.
+
+298
+00:20:39,760 --> 00:20:41,580
+So if you take a look on the oscilloscope,
+
+299
+00:20:41,820 --> 00:20:43,840
+you'll see what we've got are two sine waves.
+
+300
+00:20:43,980 --> 00:20:45,980
+The yellow one on the top is the input,
+
+301
+00:20:46,340 --> 00:20:48,460
+and the blue one on the bottom is the output.
+
+302
+00:20:48,640 --> 00:20:50,280
+And of course, they're exactly the same,
+
+303
+00:20:50,560 --> 00:20:53,380
+and that's what you would expect with a voltage buffer.
+
+304
+00:20:53,380 --> 00:20:56,940
+It just has a gain of one, so what goes in is what comes out.
+
+305
+00:20:57,440 --> 00:21:02,500
+And of course, the high impedance input can be used to buffer sections within your design.
+
+306
+00:21:04,020 --> 00:21:08,040
+Probably the most common configuration that you'll see an op amp used in
+
+307
+00:21:08,040 --> 00:21:09,580
+is as an inverting amplifier.
+
+308
+00:21:10,020 --> 00:21:13,480
+You'll see this used throughout audio equipment designs, for example.
+
+309
+00:21:13,940 --> 00:21:19,040
+Now this is how we're going to wire our NE5532 up as an inverting amplifier,
+
+310
+00:21:19,040 --> 00:21:21,440
+and we'll need two additional components.
+
+311
+00:21:21,900 --> 00:21:24,520
+An input resistor that's labeled as Rn,
+
+312
+00:21:24,880 --> 00:21:27,900
+and a feedback resistor that's labeled as Rf.
+
+313
+00:21:27,980 --> 00:21:31,400
+And both of these resistors in our case are going to be 1k.
+
+314
+00:21:31,960 --> 00:21:35,280
+Now you can see from the formula here that the gain of the amplifier
+
+315
+00:21:35,280 --> 00:21:38,160
+depends upon the ratio of these two resistors.
+
+316
+00:21:38,520 --> 00:21:40,460
+So with each of them being the same value,
+
+317
+00:21:40,600 --> 00:21:42,720
+our amplifier will have a gain of one.
+
+318
+00:21:42,720 --> 00:21:45,480
+If you want to change the gain of the amplifier,
+
+319
+00:21:45,720 --> 00:21:48,720
+you can do so by altering the values of the resistors.
+
+320
+00:21:49,100 --> 00:21:52,420
+And it is common to leave the value of Rn in place
+
+321
+00:21:52,420 --> 00:21:56,020
+and change the value of the feedback resistor, Rf.
+
+322
+00:21:56,220 --> 00:22:00,820
+If you wish, you could use a potentiometer for Rf instead of a fixed resistor,
+
+323
+00:22:01,080 --> 00:22:03,460
+so you could have a variable gain amplifier.
+
+324
+00:22:03,740 --> 00:22:05,960
+So let's wire this up and test it out.
+
+325
+00:22:06,760 --> 00:22:09,220
+Now here's the demo of our inverting amplifier.
+
+326
+00:22:09,220 --> 00:22:11,940
+I'm applying a 1kHz sine wave,
+
+327
+00:22:12,420 --> 00:22:16,120
+and that is the yellow one that you see over here on my A channel.
+
+328
+00:22:16,620 --> 00:22:19,040
+And the output channel is this one over here.
+
+329
+00:22:19,400 --> 00:22:23,540
+And as we can see, the output has been inverted 180 degrees,
+
+330
+00:22:23,700 --> 00:22:25,140
+thus an inverting amplifier.
+
+331
+00:22:25,460 --> 00:22:27,120
+But otherwise, it looks very good.
+
+332
+00:22:27,180 --> 00:22:28,820
+It's a very nice sine wave.
+
+333
+00:22:29,260 --> 00:22:33,680
+And again, this is one of the most popular configurations of an amplifier
+
+334
+00:22:33,680 --> 00:22:36,140
+that you can have using an op-amp.
+
+335
+00:22:36,140 --> 00:22:42,400
+Now the opposite of the inverting amplifier would of course be the non-inverting amplifier,
+
+336
+00:22:42,600 --> 00:22:45,700
+an amplifier whose output is in phase with its input.
+
+337
+00:22:46,180 --> 00:22:51,200
+And this is how we would wire up our NE5532 as a non-inverting amplifier.
+
+338
+00:22:51,660 --> 00:22:54,020
+Note that we're using the same two components,
+
+339
+00:22:54,180 --> 00:22:57,180
+the same resistors as we did with the inverting amplifier,
+
+340
+00:22:57,540 --> 00:23:02,620
+and that once again, the gain is dependent upon the ratio of the values of these resistors.
+
+341
+00:23:02,620 --> 00:23:07,420
+As with the previous design, you could change the feedback resistor if you wish
+
+342
+00:23:07,420 --> 00:23:09,220
+to change the gain of the amplifier,
+
+343
+00:23:09,620 --> 00:23:13,380
+or you could use a potentiometer to build a variable gain amplifier.
+
+344
+00:23:14,000 --> 00:23:18,940
+I should point out that the formulas I'm giving you for gain are actually approximations
+
+345
+00:23:18,940 --> 00:23:21,580
+because true formulas for amplifier gain
+
+346
+00:23:21,580 --> 00:23:25,780
+need to include the impedance of both the input and output devices.
+
+347
+00:23:26,200 --> 00:23:29,100
+But for most cases, these formulas should work fine
+
+348
+00:23:29,100 --> 00:23:31,500
+for you to calculate the gain of your op-amps.
+
+349
+00:23:31,500 --> 00:23:35,200
+So let's wire up our non-inverting amplifier and test it out.
+
+350
+00:23:35,900 --> 00:23:39,360
+And so now we have our non-inverting amplifier demonstration,
+
+351
+00:23:39,560 --> 00:23:42,720
+and as you can see, it's pretty well the same as the inverting amplifier,
+
+352
+00:23:42,980 --> 00:23:44,400
+with one obvious difference.
+
+353
+00:23:44,520 --> 00:23:49,000
+The output signal here is in phase with the input signal,
+
+354
+00:23:49,120 --> 00:23:50,600
+so it has not been inverted.
+
+355
+00:23:51,020 --> 00:23:54,300
+And between inverting and non-inverting amplifiers,
+
+356
+00:23:54,580 --> 00:23:58,940
+you can pretty well control the phase of the signal throughout your design,
+
+357
+00:23:58,940 --> 00:24:01,980
+and it's not uncommon to use a combination of both of these
+
+358
+00:24:01,980 --> 00:24:05,920
+in an audio design or in other op-amp circuitry.
+
+359
+00:24:07,240 --> 00:24:09,240
+Now the next circuit that we're going to look at
+
+360
+00:24:09,240 --> 00:24:11,880
+is also a very commonly used audio circuit,
+
+361
+00:24:12,060 --> 00:24:14,080
+and that's the low-pass active filter.
+
+362
+00:24:14,260 --> 00:24:17,240
+This is a filter that will allow low frequencies to pass
+
+363
+00:24:17,240 --> 00:24:19,360
+while attenuating the higher frequencies.
+
+364
+00:24:19,900 --> 00:24:21,920
+And this one is a very simple filter
+
+365
+00:24:21,920 --> 00:24:25,020
+that attenuates at a rate of 3 decibels per octave.
+
+366
+00:24:25,020 --> 00:24:28,460
+We can calculate the frequency that it operates as
+
+367
+00:24:28,460 --> 00:24:30,500
+by using the formula in the corner,
+
+368
+00:24:30,920 --> 00:24:33,240
+and you'll see that with the values that we have here,
+
+369
+00:24:33,420 --> 00:24:36,680
+it'll cut off at about 1592 hertz.
+
+370
+00:24:37,200 --> 00:24:39,260
+Now you can change the frequency, of course,
+
+371
+00:24:39,340 --> 00:24:42,200
+by changing the value of both the resistor and capacitor,
+
+372
+00:24:42,440 --> 00:24:46,340
+and in practice it's easier to change the capacitor to a fixed value,
+
+373
+00:24:46,540 --> 00:24:48,980
+and then trim the value of the resistor.
+
+374
+00:24:49,320 --> 00:24:51,480
+So let's wire this one up on the breadboard,
+
+375
+00:24:51,660 --> 00:24:52,600
+and check it out.
+
+376
+00:24:52,600 --> 00:24:56,400
+And so here's our low-pass filter demonstration
+
+377
+00:24:56,400 --> 00:25:00,420
+hooked up and visualized on the oscilloscope once again.
+
+378
+00:25:00,920 --> 00:25:04,860
+Now a low-pass filter, of course, will attenuate higher frequencies.
+
+379
+00:25:05,120 --> 00:25:09,100
+So right now we have a 1 kilohertz sine wave being fed into it.
+
+380
+00:25:09,260 --> 00:25:12,020
+The top waveform, the yellow one, is the input,
+
+381
+00:25:12,260 --> 00:25:14,660
+and the blue one at the bottom is the output.
+
+382
+00:25:14,880 --> 00:25:17,000
+So let's increase the frequency up a little bit.
+
+383
+00:25:18,000 --> 00:25:19,200
+And we'll go to 2 kilohertz,
+
+384
+00:25:19,300 --> 00:25:21,600
+and you'll notice the bottom has started to attenuate.
+
+385
+00:25:21,600 --> 00:25:23,900
+And as I go higher in frequency,
+
+386
+00:25:25,060 --> 00:25:28,780
+the top stays the same, but the bottom goes down.
+
+387
+00:25:29,580 --> 00:25:32,120
+And so now we're at 10 kilohertz over here,
+
+388
+00:25:32,180 --> 00:25:36,040
+and you can see it's quite a bit less than if I back off to 1 kilohertz.
+
+389
+00:25:36,380 --> 00:25:37,920
+And so our filter is working.
+
+390
+00:25:38,060 --> 00:25:42,260
+Now a simple filter like this only attenuates at about 3 decibels per octave,
+
+391
+00:25:42,260 --> 00:25:48,280
+but you can build more advanced filters that can attenuate at a higher rate or a sharper rate
+
+392
+00:25:48,280 --> 00:25:51,880
+using the same basic circuitry that we just used over here.
+
+393
+00:25:51,880 --> 00:25:57,340
+Now if we exchange the position of the capacitor and the resistor in our filter,
+
+394
+00:25:57,340 --> 00:26:00,080
+we can turn it into a high-pass active filter,
+
+395
+00:26:00,400 --> 00:26:05,200
+a filter that allows higher frequencies to pass while attenuating lower frequencies.
+
+396
+00:26:05,700 --> 00:26:09,060
+Once again, the formula for the filter is essentially the same,
+
+397
+00:26:09,400 --> 00:26:12,480
+and ours has a crossover of 1592 hertz.
+
+398
+00:26:12,480 --> 00:26:17,440
+Now high-pass and low-pass filters can be used to build things like tone controls,
+
+399
+00:26:17,900 --> 00:26:22,460
+equalizers, crossover networks, and to eliminate noise and circuits.
+
+400
+00:26:22,460 --> 00:26:25,880
+So they're very useful things to be able to know how to construct.
+
+401
+00:26:26,240 --> 00:26:29,540
+So let's wire this one up on our breadboard and check it out.
+
+402
+00:26:29,540 --> 00:26:33,360
+And here's the demonstration of the high-pass filter,
+
+403
+00:26:33,520 --> 00:26:36,580
+which of course has the opposite effect of the low-pass filter.
+
+404
+00:26:37,020 --> 00:26:40,920
+The higher the frequency is, the more of it it will permit through,
+
+405
+00:26:41,000 --> 00:26:43,000
+and low frequencies will be attenuated.
+
+406
+00:26:43,520 --> 00:26:47,400
+Now once again for the demo, the input waveform is the top one,
+
+407
+00:26:47,480 --> 00:26:49,980
+and the bottom one, the blue one, is the output.
+
+408
+00:26:50,560 --> 00:26:52,880
+And we're at 500 hertz right now.
+
+409
+00:26:52,940 --> 00:26:56,360
+We're going to go up in increments of 100 hertz this time so that you can see it.
+
+410
+00:26:56,360 --> 00:27:00,820
+And take a look at the level on the bottom as I increase the frequency.
+
+411
+00:27:01,400 --> 00:27:03,880
+So I'm going up in frequency now.
+
+412
+00:27:05,880 --> 00:27:10,820
+And as you can see, the level is increasing the higher I go in frequency.
+
+413
+00:27:11,400 --> 00:27:14,640
+And now I'm at 5 kilohertz, and the level is quite a bit higher.
+
+414
+00:27:14,740 --> 00:27:17,820
+I'll go back down so you can watch the effect in reverse.
+
+415
+00:27:19,400 --> 00:27:23,480
+And so a high-pass filter basically just lets high frequencies through
+
+416
+00:27:23,480 --> 00:27:25,000
+and attenuates the lower one.
+
+417
+00:27:25,000 --> 00:27:28,860
+And again, this is a very simple filter, 3 decibels per octave,
+
+418
+00:27:29,100 --> 00:27:31,900
+but you can cascade these to get a sharper filter.
+
+419
+00:27:33,400 --> 00:27:35,500
+Now in our final basic experiment,
+
+420
+00:27:35,760 --> 00:27:39,540
+we're going to use both of the op-amps in the NE5532.
+
+421
+00:27:39,940 --> 00:27:43,300
+And we're going to wire the first one as a multivibrator
+
+422
+00:27:43,300 --> 00:27:45,140
+that will produce a square wave.
+
+423
+00:27:45,420 --> 00:27:48,480
+The frequency of our square wave is going to be determined
+
+424
+00:27:48,480 --> 00:27:51,980
+by capacitors CF and resistor RF.
+
+425
+00:27:51,980 --> 00:27:55,180
+And so you could use a potentiometer for RF
+
+426
+00:27:55,180 --> 00:27:57,980
+if you want to make a variable frequency oscillator.
+
+427
+00:27:58,580 --> 00:28:03,240
+Resistors R2 and R1 will determine both the pulse width
+
+428
+00:28:03,240 --> 00:28:05,800
+and the amplitude of our square wave.
+
+429
+00:28:05,800 --> 00:28:10,680
+We're going to take the second op-amp in the NE5532
+
+430
+00:28:10,680 --> 00:28:13,320
+and wire it up as an integrator.
+
+431
+00:28:13,500 --> 00:28:18,880
+As you recall, an integrator performs a mathematical integration on a waveform.
+
+432
+00:28:19,660 --> 00:28:22,900
+We'll be using the value of 10k for R3,
+
+433
+00:28:23,500 --> 00:28:25,280
+100k for R1,
+
+434
+00:28:25,460 --> 00:28:28,340
+and C1 will be using 100 nanofarads.
+
+435
+00:28:28,740 --> 00:28:30,060
+Connect everything up
+
+436
+00:28:30,060 --> 00:28:34,100
+and connect it to the square wave oscillator that we created earlier.
+
+437
+00:28:34,420 --> 00:28:36,860
+We can then monitor both the square wave
+
+438
+00:28:36,860 --> 00:28:38,640
+and the output of the integrator,
+
+439
+00:28:38,780 --> 00:28:40,580
+which should be a triangle wave.
+
+440
+00:28:41,460 --> 00:28:44,660
+And here's a quick demonstration of our waveform generator.
+
+441
+00:28:44,940 --> 00:28:48,420
+And as you can see, the top waveform is the square wave
+
+442
+00:28:48,420 --> 00:28:50,560
+and the bottom one is the triangle wave.
+
+443
+00:28:50,660 --> 00:28:52,780
+The square is tilted a little bit at the top,
+
+444
+00:28:52,920 --> 00:28:55,980
+but the triangle wave is just about perfect.
+
+445
+00:28:56,100 --> 00:28:57,620
+And actually the tilting on the square
+
+446
+00:28:57,620 --> 00:29:02,380
+could probably be fixed just by adjusting the capacitance on my scope probe.
+
+447
+00:29:02,500 --> 00:29:04,260
+That may not be exactly accurate.
+
+448
+00:29:04,840 --> 00:29:07,440
+And so it works very well as a generator.
+
+449
+00:29:07,620 --> 00:29:10,820
+It's generating a frequency now of 1.88 kHz,
+
+450
+00:29:10,940 --> 00:29:12,640
+but of course you could alter that frequency
+
+451
+00:29:12,640 --> 00:29:16,060
+by changing the resistor and capacitor values.
+
+452
+00:29:16,400 --> 00:29:18,160
+So if you need to generate a waveform,
+
+453
+00:29:18,560 --> 00:29:21,720
+an operational amplifier is actually a great way to do it.
+
+454
+00:29:22,400 --> 00:29:24,340
+Now although they are analog circuits,
+
+455
+00:29:24,340 --> 00:29:28,260
+its operational amplifiers can also be used to glue together
+
+456
+00:29:28,260 --> 00:29:30,260
+analog and digital circuitry.
+
+457
+00:29:30,360 --> 00:29:32,740
+And there's a couple of methods they can use to do this.
+
+458
+00:29:33,040 --> 00:29:37,300
+One method that we've used before is to run an op amp as a comparator
+
+459
+00:29:37,300 --> 00:29:42,280
+and use the comparator with a digital input pin on a microcontroller.
+
+460
+00:29:42,620 --> 00:29:46,360
+Another thing you can do with an op amp is to use it as an amplifier
+
+461
+00:29:46,360 --> 00:29:49,940
+to amplify the signal for the analog to digital converter.
+
+462
+00:29:49,940 --> 00:29:51,820
+And that's what we're going to do right now.
+
+463
+00:29:51,960 --> 00:29:56,340
+We're going to take an op amp and use it to amplify a very small signal
+
+464
+00:29:56,340 --> 00:30:00,100
+and read it with the A to D converter on an Arduino Uno.
+
+465
+00:30:00,300 --> 00:30:03,640
+So let's go and see how we hook that up and then we'll put it to use.
+
+466
+00:30:04,620 --> 00:30:06,820
+Now here's the circuit that we're going to be using
+
+467
+00:30:06,820 --> 00:30:09,280
+to amplify the signal for our Arduino.
+
+468
+00:30:09,580 --> 00:30:14,780
+And we're building our amplifier around an MCP6002 op amp.
+
+469
+00:30:15,120 --> 00:30:17,080
+This op amp is an excellent choice
+
+470
+00:30:17,080 --> 00:30:21,800
+when you're working with digital circuitry as it is a single supply op amp
+
+471
+00:30:21,800 --> 00:30:25,260
+and it has a maximum supply voltage of only 6 volts.
+
+472
+00:30:25,460 --> 00:30:29,420
+It works perfectly with 3.3 and 5 volt logic.
+
+473
+00:30:29,600 --> 00:30:33,080
+So again, it's ideal for working with digital circuitry.
+
+474
+00:30:33,420 --> 00:30:37,340
+Now what we have here is essentially a classic amplifier design.
+
+475
+00:30:37,560 --> 00:30:40,880
+You can see the feedback loop in the light blue up there.
+
+476
+00:30:40,880 --> 00:30:44,080
+The capacitor across the resistor is just for stability
+
+477
+00:30:44,080 --> 00:30:46,420
+and to prevent it from going into oscillation.
+
+478
+00:30:46,420 --> 00:30:51,480
+The 100k pot you can use to control the gain of the amplifier.
+
+479
+00:30:51,940 --> 00:30:54,120
+And the output of the amplifier you'll also notice
+
+480
+00:30:54,120 --> 00:30:59,660
+is a 220 pF capacitor across it just for a little bit of noise reduction.
+
+481
+00:31:00,220 --> 00:31:02,980
+Now the input has a 100 nF capacitor.
+
+482
+00:31:03,760 --> 00:31:06,000
+You can see it on the yellow on the left side.
+
+483
+00:31:06,380 --> 00:31:09,400
+If you were going to be amplifying DC voltages,
+
+484
+00:31:09,400 --> 00:31:12,600
+you can eliminate the capacitor and just connect them directly.
+
+485
+00:31:12,600 --> 00:31:15,980
+But I've got this set up so that you could use audio voltages
+
+486
+00:31:15,980 --> 00:31:19,760
+from something like, let's say, a microphone for example.
+
+487
+00:31:20,400 --> 00:31:22,920
+Otherwise, it's a fairly basic circuit.
+
+488
+00:31:23,380 --> 00:31:25,900
+Note the 2.2 microfarad capacitor
+
+489
+00:31:25,900 --> 00:31:29,460
+that sits across the 5 volt and ground line.
+
+490
+00:31:29,840 --> 00:31:35,020
+You want to get that capacitor as close as you possibly can physically to the chip.
+
+491
+00:31:35,020 --> 00:31:38,560
+Ideally, you'll straddle the chip with that capacitor.
+
+492
+00:31:38,560 --> 00:31:40,080
+And the function of that capacitor
+
+493
+00:31:40,080 --> 00:31:43,300
+is to take some of the noise that might be on the line.
+
+494
+00:31:43,480 --> 00:31:45,860
+Remember, you're sharing 5 volts with an Arduino.
+
+495
+00:31:46,420 --> 00:31:48,320
+And microcontrollers and their peripherals
+
+496
+00:31:48,320 --> 00:31:50,420
+can sometimes put noise onto the line.
+
+497
+00:31:50,940 --> 00:31:53,800
+Now after you've got this all wired up in the breadboard,
+
+498
+00:31:53,900 --> 00:31:56,120
+you'll need to hook it up, of course, to the Arduino.
+
+499
+00:31:56,300 --> 00:31:57,700
+And the hookup is very simple.
+
+500
+00:31:57,700 --> 00:32:00,640
+The power supply for the circuit, the 5 volts,
+
+501
+00:32:00,720 --> 00:32:03,140
+will connect to the Arduino's 5 volts.
+
+502
+00:32:03,720 --> 00:32:07,120
+The ground will, of course, connect to the Arduino's ground.
+
+503
+00:32:07,520 --> 00:32:11,720
+And we're going to feed the output into analog input A0.
+
+504
+00:32:12,280 --> 00:32:14,300
+And so once you've got that wired up,
+
+505
+00:32:14,480 --> 00:32:18,560
+you can feed a signal into it and run a bit of code
+
+506
+00:32:18,560 --> 00:32:19,860
+and look at it with the Arduino.
+
+507
+00:32:20,060 --> 00:32:21,380
+So let's go and do that right now.
+
+508
+00:32:21,380 --> 00:32:25,640
+Okay, here's our demonstration of the Arduino
+
+509
+00:32:25,640 --> 00:32:27,680
+with the op-amp amplifier.
+
+510
+00:32:27,960 --> 00:32:30,420
+And you'll notice I've also added a signal generator
+
+511
+00:32:30,420 --> 00:32:32,720
+and an oscilloscope to the mix right now.
+
+512
+00:32:32,940 --> 00:32:35,860
+Now the signal generator is currently giving out
+
+513
+00:32:35,860 --> 00:32:39,800
+a 2 kilohertz sine wave at half a volt.
+
+514
+00:32:40,020 --> 00:32:42,640
+And it's being amplified by the amplifier.
+
+515
+00:32:43,160 --> 00:32:45,600
+What I've got the scope set to here right now
+
+516
+00:32:45,600 --> 00:32:47,400
+is one volt per division.
+
+517
+00:32:47,840 --> 00:32:50,600
+And so I've got just about a full output over here.
+
+518
+00:32:50,600 --> 00:32:53,040
+It's amplifying just about 10 times.
+
+519
+00:32:53,420 --> 00:32:57,300
+Now I'm going to reduce the level of the input over here.
+
+520
+00:32:58,140 --> 00:33:00,180
+And now we're at 0.1 of a volt.
+
+521
+00:33:00,300 --> 00:33:04,180
+And we've still got about a 1 volt sine wave over here.
+
+522
+00:33:04,240 --> 00:33:06,660
+I'm just going to play with the gain control a bit
+
+523
+00:33:06,660 --> 00:33:08,720
+just to see the effect that has.
+
+524
+00:33:09,460 --> 00:33:12,180
+And over here, I can get it so high,
+
+525
+00:33:12,240 --> 00:33:14,960
+I can clip it right now, if you can see that.
+
+526
+00:33:15,260 --> 00:33:16,880
+And I can also adjust it down.
+
+527
+00:33:16,960 --> 00:33:19,460
+So I've got a lot of gain over here,
+
+528
+00:33:19,460 --> 00:33:20,780
+a lot of potential gain.
+
+529
+00:33:20,860 --> 00:33:24,580
+This is a 0.1 volt signal that I'm getting in here.
+
+530
+00:33:24,740 --> 00:33:28,320
+And I'm amplifying it almost to the full voltage right now.
+
+531
+00:33:28,460 --> 00:33:31,180
+Now if we take a look at the Arduino side of things,
+
+532
+00:33:31,280 --> 00:33:32,920
+the sketch is very, very simple.
+
+533
+00:33:33,120 --> 00:33:35,480
+We start off by defining the pin that we're using,
+
+534
+00:33:35,560 --> 00:33:36,780
+analog pin A0,
+
+535
+00:33:36,980 --> 00:33:39,980
+and a variable just to hold the value of that.
+
+536
+00:33:40,240 --> 00:33:42,980
+In the setup, we'll set up the serial monitor.
+
+537
+00:33:43,160 --> 00:33:44,000
+That's all we do.
+
+538
+00:33:44,000 --> 00:33:45,120
+And then in the loop,
+
+539
+00:33:45,220 --> 00:33:47,640
+we're just going to do an analog read to that pin,
+
+540
+00:33:47,740 --> 00:33:49,440
+assign the value to that variable.
+
+541
+00:33:49,840 --> 00:33:52,460
+And then we're going to do a serial print lin
+
+542
+00:33:52,460 --> 00:33:55,080
+of that variable to the display.
+
+543
+00:33:55,320 --> 00:33:58,200
+And then we're going to delay for 50 milliseconds
+
+544
+00:33:58,200 --> 00:34:00,040
+and do the whole thing over and over again.
+
+545
+00:34:00,300 --> 00:34:03,500
+And actually, it looks better running on the plotter,
+
+546
+00:34:03,580 --> 00:34:04,940
+which is what I really wrote it for.
+
+547
+00:34:05,060 --> 00:34:06,600
+So let's put the plotter on.
+
+548
+00:34:06,600 --> 00:34:08,460
+And as you can see on the plotter,
+
+549
+00:34:08,520 --> 00:34:12,540
+you can see we do have a representation of our sine wave.
+
+550
+00:34:12,740 --> 00:34:14,660
+And the level is much, much higher
+
+551
+00:34:14,660 --> 00:34:18,200
+than you would expect from a 0.1 of a volt signal.
+
+552
+00:34:18,440 --> 00:34:21,420
+So this is a really great way of amplifying
+
+553
+00:34:21,420 --> 00:34:24,040
+and extending the analog to digital converter,
+
+554
+00:34:24,380 --> 00:34:26,260
+not just in an Arduino Uno,
+
+555
+00:34:26,500 --> 00:34:28,000
+but on any microcontroller,
+
+556
+00:34:28,140 --> 00:34:32,560
+because this op amp will work fine with 3.3 volts as well.
+
+557
+00:34:33,020 --> 00:34:35,620
+It's got a very good frequency response.
+
+558
+00:34:35,620 --> 00:34:37,060
+It's audio capable,
+
+559
+00:34:37,060 --> 00:34:39,780
+so you could use it with a very high quality
+
+560
+00:34:39,780 --> 00:34:41,660
+analog to digital converter.
+
+561
+00:34:42,180 --> 00:34:45,380
+And also there are two op amps in the package,
+
+562
+00:34:45,380 --> 00:34:47,360
+so you could actually build a second circuit
+
+563
+00:34:47,360 --> 00:34:51,080
+and amplify a second one of the A to D inputs
+
+564
+00:34:51,080 --> 00:34:54,440
+and really add a lot of versatility to your projects
+
+565
+00:34:54,440 --> 00:34:57,200
+with an op amp and a microcontroller.
+
+566
+00:34:58,060 --> 00:35:00,340
+Now, if I gave you the task of designing
+
+567
+00:35:00,340 --> 00:35:01,860
+a light sensitive switch,
+
+568
+00:35:01,860 --> 00:35:04,420
+one that would turn something on or off
+
+569
+00:35:04,420 --> 00:35:07,120
+based upon the absence or presence of light,
+
+570
+00:35:07,540 --> 00:35:09,620
+chances are you would probably start thinking
+
+571
+00:35:09,620 --> 00:35:11,340
+about using a microcontroller
+
+572
+00:35:11,340 --> 00:35:14,640
+with perhaps an LDR or a photo transistor on it.
+
+573
+00:35:14,900 --> 00:35:16,480
+And while that will certainly work,
+
+574
+00:35:16,580 --> 00:35:18,920
+there is a much easier way of doing this,
+
+575
+00:35:19,020 --> 00:35:20,080
+and that is, of course,
+
+576
+00:35:20,160 --> 00:35:21,920
+to use an operational amplifier.
+
+577
+00:35:22,520 --> 00:35:25,180
+We're going to build a small light sensitive switch
+
+578
+00:35:25,180 --> 00:35:28,320
+with an op amp that's just going to control an LED,
+
+579
+00:35:28,320 --> 00:35:30,520
+but you could extend it to use a relay
+
+580
+00:35:30,520 --> 00:35:33,780
+or a power transistor to control something else.
+
+581
+00:35:34,100 --> 00:35:36,600
+The best deal is that this entire design
+
+582
+00:35:36,600 --> 00:35:39,080
+is going to take about $2 worth of parts
+
+583
+00:35:39,080 --> 00:35:41,100
+and no programming required.
+
+584
+00:35:41,340 --> 00:35:43,600
+So let's go and take a look at the hookup for that.
+
+585
+00:35:44,260 --> 00:35:47,140
+Now here's the schematic for our light activated switch,
+
+586
+00:35:47,220 --> 00:35:50,660
+and we're building this around an LM358 op amp.
+
+587
+00:35:51,020 --> 00:35:53,520
+The LM358 is a very inexpensive
+
+588
+00:35:53,520 --> 00:35:55,440
+and commonly available device,
+
+589
+00:35:55,440 --> 00:35:58,120
+and it has an advantage in that it can work off
+
+590
+00:35:58,120 --> 00:35:59,560
+of a single power supply.
+
+591
+00:35:59,740 --> 00:36:01,020
+So we're going to power everything
+
+592
+00:36:01,020 --> 00:36:02,840
+with one 9-volt battery.
+
+593
+00:36:03,500 --> 00:36:05,700
+Now the output of the LM358
+
+594
+00:36:05,700 --> 00:36:08,720
+is going to a 220-ohm dropping resistor
+
+595
+00:36:08,720 --> 00:36:10,400
+and then to an LED.
+
+596
+00:36:10,760 --> 00:36:13,380
+So we're just going to be turning an LED on and off,
+
+597
+00:36:13,680 --> 00:36:15,880
+but of course you could change this for a relay
+
+598
+00:36:15,880 --> 00:36:18,720
+or a power transistor to drive something else.
+
+599
+00:36:19,240 --> 00:36:20,900
+Now essentially what we're doing here
+
+600
+00:36:20,900 --> 00:36:22,580
+is running this as a comparator
+
+601
+00:36:22,580 --> 00:36:26,420
+with a voltage divider consisting of the two 10k resistors
+
+602
+00:36:26,420 --> 00:36:28,740
+attached to the inverting input.
+
+603
+00:36:29,060 --> 00:36:30,540
+On the non-inverting input,
+
+604
+00:36:30,700 --> 00:36:32,340
+we have another voltage divider
+
+605
+00:36:32,340 --> 00:36:34,660
+which consists of the light dependent resistor
+
+606
+00:36:34,660 --> 00:36:38,280
+or photo cell and a 20k potentiometer.
+
+607
+00:36:38,620 --> 00:36:40,540
+You can adjust a 20k pot
+
+608
+00:36:40,540 --> 00:36:42,620
+to adjust the trip point over here.
+
+609
+00:36:42,820 --> 00:36:44,660
+So this is a very simple circuit.
+
+610
+00:36:44,820 --> 00:36:46,840
+Let's wire it up and give it a test.
+
+611
+00:36:48,220 --> 00:36:50,140
+And here's our light sensitive switch.
+
+612
+00:36:50,140 --> 00:36:52,660
+You can see the LED is on right now.
+
+613
+00:36:52,800 --> 00:36:54,980
+And if I go and cover the photo cell,
+
+614
+00:36:55,240 --> 00:36:56,760
+the LED goes off.
+
+615
+00:36:57,280 --> 00:36:59,000
+And so basically it's being triggered
+
+616
+00:36:59,000 --> 00:37:00,380
+whenever it sees light.
+
+617
+00:37:00,520 --> 00:37:03,500
+Now of course the LED is just an indicator.
+
+618
+00:37:03,760 --> 00:37:06,440
+You could replace the LED with a transistor
+
+619
+00:37:06,440 --> 00:37:09,160
+and a relay to drive something if you wanted to.
+
+620
+00:37:09,500 --> 00:37:11,600
+There's also another trick you can do with this.
+
+621
+00:37:11,680 --> 00:37:12,820
+So let me show that to you.
+
+622
+00:37:12,880 --> 00:37:14,800
+Right now I'm going to disconnect my LED
+
+623
+00:37:14,800 --> 00:37:17,380
+and connect it up another way.
+
+624
+00:37:17,460 --> 00:37:19,880
+I'm going to now put the anode
+
+625
+00:37:19,880 --> 00:37:25,400
+up to the positive power supply instead.
+
+626
+00:37:26,600 --> 00:37:29,700
+And now what we've got is the LED is off.
+
+627
+00:37:29,800 --> 00:37:31,280
+If I cover the photo cell,
+
+628
+00:37:31,380 --> 00:37:32,580
+the LED goes on.
+
+629
+00:37:32,680 --> 00:37:35,340
+So we've got the opposite arrangement right now.
+
+630
+00:37:35,420 --> 00:37:37,320
+It's detecting dark instead of light.
+
+631
+00:37:37,440 --> 00:37:39,920
+So you can wire it up either way that you want to,
+
+632
+00:37:40,000 --> 00:37:41,380
+which is pretty versatile.
+
+633
+00:37:41,380 --> 00:37:44,040
+And as I said, if you want to tie a transistor
+
+634
+00:37:44,040 --> 00:37:45,580
+or a relay onto the output,
+
+635
+00:37:45,800 --> 00:37:47,200
+you could drive something else.
+
+636
+00:37:47,300 --> 00:37:50,880
+So here we have a photoelectric controlled switch
+
+637
+00:37:50,880 --> 00:37:54,700
+that is not dependent upon a microcontroller
+
+638
+00:37:54,700 --> 00:37:57,300
+and a very simple and inexpensive thing to build.
+
+639
+00:37:57,460 --> 00:37:58,840
+If you need something like this,
+
+640
+00:37:58,880 --> 00:38:00,040
+this is a great way to go.
+
+641
+00:38:01,360 --> 00:38:02,440
+Now, as you've noticed,
+
+642
+00:38:02,580 --> 00:38:06,080
+many operational amplifiers require a dual power supply,
+
+643
+00:38:06,180 --> 00:38:08,180
+a power supply that has both a positive
+
+644
+00:38:08,180 --> 00:38:10,740
+and a negative component in reference to ground.
+
+645
+00:38:10,740 --> 00:38:13,740
+And you may not own a dual power supply.
+
+646
+00:38:13,920 --> 00:38:15,760
+My workbench supply, for example,
+
+647
+00:38:16,100 --> 00:38:18,320
+is just a single output power supply.
+
+648
+00:38:18,520 --> 00:38:20,920
+But there is a converter that you can build
+
+649
+00:38:20,920 --> 00:38:23,940
+to convert a single supply into a dual supply.
+
+650
+00:38:24,180 --> 00:38:26,900
+And the converter is based around an op amp.
+
+651
+00:38:27,120 --> 00:38:30,060
+So let's go and see how easy this is to wire up
+
+652
+00:38:30,060 --> 00:38:32,120
+and convert a single power supply
+
+653
+00:38:32,120 --> 00:38:36,060
+into a power supply we can use with operational amplifiers.
+
+654
+00:38:37,200 --> 00:38:40,140
+Now here's the circuit for our power supply converter.
+
+655
+00:38:40,140 --> 00:38:44,040
+And this is being built around an NE5532 op amp.
+
+656
+00:38:44,400 --> 00:38:46,980
+You could use another op amp if you wish,
+
+657
+00:38:47,100 --> 00:38:50,460
+providing it is an op amp made for dual power supplies.
+
+658
+00:38:50,940 --> 00:38:53,420
+I'm also using two output transistors,
+
+659
+00:38:53,580 --> 00:38:56,700
+a tip 31C and a tip 32C.
+
+660
+00:38:57,100 --> 00:39:00,580
+Now you could use different output transistors if you wish.
+
+661
+00:39:00,680 --> 00:39:04,000
+The key here is to use complementary transistors,
+
+662
+00:39:04,480 --> 00:39:06,140
+an NPN and a PNP transistor
+
+663
+00:39:06,140 --> 00:39:09,300
+that have otherwise the same characteristics.
+
+664
+00:39:09,900 --> 00:39:12,660
+The tip 31C and tip 32C
+
+665
+00:39:12,660 --> 00:39:15,880
+are capable of handling three amperes of current.
+
+666
+00:39:16,020 --> 00:39:18,660
+So we can power something with up to three amps here.
+
+667
+00:39:18,980 --> 00:39:21,420
+Although if you're going to go anywhere near the current rating,
+
+668
+00:39:21,520 --> 00:39:24,120
+you should probably put a heat sink on those transistors.
+
+669
+00:39:24,620 --> 00:39:25,320
+If you wish,
+
+670
+00:39:25,400 --> 00:39:28,940
+you could substitute a tip 41C and 42C
+
+671
+00:39:28,940 --> 00:39:31,000
+and go to six amperes.
+
+672
+00:39:31,340 --> 00:39:35,400
+You'll also need a couple of 100 microfarad filter capacitors
+
+673
+00:39:35,400 --> 00:39:36,300
+for the output.
+
+674
+00:39:36,480 --> 00:39:39,320
+And these need to be rated at at least the supply voltage.
+
+675
+00:39:39,660 --> 00:39:42,620
+So I would rate these at 35 volts or more.
+
+676
+00:39:43,000 --> 00:39:44,840
+Now the operational amplifier
+
+677
+00:39:44,840 --> 00:39:47,160
+has a voltage divider on the input
+
+678
+00:39:47,160 --> 00:39:49,360
+that is made of two 10k resistors.
+
+679
+00:39:49,460 --> 00:39:52,780
+And that's being applied to the non-inverting input.
+
+680
+00:39:52,780 --> 00:39:55,760
+And the inverting input is just taking feedback
+
+681
+00:39:55,760 --> 00:39:59,060
+from our reference or ground point on the output.
+
+682
+00:39:59,420 --> 00:40:02,180
+And it will adjust the operational amplifier
+
+683
+00:40:02,180 --> 00:40:06,500
+if the op amp finds itself going at a different reference point.
+
+684
+00:40:06,620 --> 00:40:10,460
+And this will keep the voltages regulated on the output side.
+
+685
+00:40:10,700 --> 00:40:13,500
+So it's actually a pretty simple circuit to hook up.
+
+686
+00:40:13,600 --> 00:40:16,060
+Make sure you've got it all hooked up correctly though
+
+687
+00:40:16,060 --> 00:40:18,640
+because you are dealing with your power supply voltages.
+
+688
+00:40:19,060 --> 00:40:21,280
+So let's put ours onto a breadboard
+
+689
+00:40:21,280 --> 00:40:22,440
+and check it out
+
+690
+00:40:22,440 --> 00:40:25,200
+and see if we can drive another op amp circuit
+
+691
+00:40:25,200 --> 00:40:28,100
+with our single to dual power supply converter.
+
+692
+00:40:29,380 --> 00:40:32,940
+And so here's a demonstration of my power supply splitter.
+
+693
+00:40:33,060 --> 00:40:34,240
+Now I've got it connected
+
+694
+00:40:34,240 --> 00:40:38,260
+to the square and triangle wave multivibrator
+
+695
+00:40:38,260 --> 00:40:40,100
+that we created a little bit earlier.
+
+696
+00:40:40,340 --> 00:40:43,400
+So I'm driving one of our circuits with this circuit.
+
+697
+00:40:43,780 --> 00:40:45,560
+I'm using my bench power supply
+
+698
+00:40:45,560 --> 00:40:47,860
+and it's giving out 20 volts right now.
+
+699
+00:40:47,900 --> 00:40:50,320
+And it's important to note that the bench power supply
+
+700
+00:40:50,320 --> 00:40:52,040
+has a floating output.
+
+701
+00:40:52,180 --> 00:40:54,800
+In other words, the negative side of the power supply
+
+702
+00:40:54,800 --> 00:40:56,460
+is not connected to ground.
+
+703
+00:40:56,580 --> 00:40:57,800
+And that's very important.
+
+704
+00:40:58,240 --> 00:41:00,080
+If this had been connected to ground,
+
+705
+00:41:00,340 --> 00:41:02,640
+I would have literally shorted everything out
+
+706
+00:41:02,640 --> 00:41:05,100
+when I connected my oscilloscope up over here.
+
+707
+00:41:05,140 --> 00:41:06,920
+And we certainly don't want that to happen.
+
+708
+00:41:07,340 --> 00:41:08,840
+But otherwise, this is the breadboard
+
+709
+00:41:08,840 --> 00:41:09,920
+with the splitter on it.
+
+710
+00:41:09,920 --> 00:41:12,220
+I think if you look very carefully down here,
+
+711
+00:41:12,260 --> 00:41:13,900
+you'll see the two power transistors.
+
+712
+00:41:14,500 --> 00:41:16,420
+And it is powering this circuit here.
+
+713
+00:41:16,500 --> 00:41:18,020
+And as you can see from the oscilloscope,
+
+714
+00:41:18,020 --> 00:41:19,620
+it is indeed working.
+
+715
+00:41:19,740 --> 00:41:22,200
+We've got the square wave and the triangle wave.
+
+716
+00:41:22,460 --> 00:41:24,300
+Now I've got a multimeter over here
+
+717
+00:41:24,300 --> 00:41:26,380
+and we'll measure a couple of voltage points.
+
+718
+00:41:26,780 --> 00:41:30,280
+Here is the positive voltage I've got right now.
+
+719
+00:41:30,360 --> 00:41:32,220
+The multimeter is tied to ground.
+
+720
+00:41:33,500 --> 00:41:36,240
+And I've got 9.98 volts.
+
+721
+00:41:36,240 --> 00:41:37,780
+So I'm not sure if you can see that.
+
+722
+00:41:38,240 --> 00:41:42,120
+And I'm going to go over to my negative side right now.
+
+723
+00:41:43,020 --> 00:41:46,180
+And I've got negative 9.96 volts.
+
+724
+00:41:46,320 --> 00:41:48,000
+So it's regulated pretty well.
+
+725
+00:41:48,320 --> 00:41:51,060
+Now, as I said earlier, when I showed you the design,
+
+726
+00:41:51,120 --> 00:41:52,040
+if you wanted to,
+
+727
+00:41:52,040 --> 00:41:55,300
+you could also put a couple of three-pin voltage regulators
+
+728
+00:41:55,300 --> 00:41:58,020
+on the output to regulate it even further.
+
+729
+00:41:58,180 --> 00:42:00,480
+But it actually splits the supply pretty well.
+
+730
+00:42:00,480 --> 00:42:02,360
+So this is a great solution
+
+731
+00:42:02,360 --> 00:42:05,700
+if you need a dual power supply for your op amps
+
+732
+00:42:05,700 --> 00:42:06,780
+and you don't have one.
+
+733
+00:42:07,020 --> 00:42:09,980
+Just use an op amp to take a single power supply
+
+734
+00:42:09,980 --> 00:42:12,000
+and make it into a dual one.
+
+735
+00:42:12,580 --> 00:42:15,980
+And so this concludes our look at operational amplifiers.
+
+736
+00:42:16,120 --> 00:42:17,880
+I do hope that you enjoyed the video.
+
+737
+00:42:18,140 --> 00:42:19,080
+And more importantly,
+
+738
+00:42:19,240 --> 00:42:21,240
+I hope it's opened up your eyes to the fact
+
+739
+00:42:21,240 --> 00:42:23,560
+that not everything has to be built
+
+740
+00:42:23,560 --> 00:42:24,880
+around the microcontroller.
+
+741
+00:42:24,880 --> 00:42:28,220
+You can build a lot of useful circuitry and projects
+
+742
+00:42:28,220 --> 00:42:32,300
+around analog components like operational amplifiers.
+
+743
+00:42:32,840 --> 00:42:35,980
+Now, if you want to get some more information about op amps
+
+744
+00:42:35,980 --> 00:42:38,440
+or if you want to get the circuits that I used today,
+
+745
+00:42:38,520 --> 00:42:40,380
+you will find all of that on the article
+
+746
+00:42:40,380 --> 00:42:41,760
+that accompanies this video
+
+747
+00:42:41,760 --> 00:42:44,500
+on the dronebotworkshop.com website.
+
+748
+00:42:44,900 --> 00:42:47,520
+And there's a link right below the video to that article.
+
+749
+00:42:47,780 --> 00:42:50,120
+When you're on the website, if you haven't yet,
+
+750
+00:42:50,200 --> 00:42:52,220
+please consider signing up for my newsletter.
+
+751
+00:42:52,400 --> 00:42:53,340
+It's not a sales letter.
+
+752
+00:42:53,340 --> 00:42:54,920
+It's something I send out now and then
+
+753
+00:42:54,920 --> 00:42:57,880
+to let you know about things that go on in the workshop
+
+754
+00:42:57,880 --> 00:43:00,440
+because sometimes things do go on in the workshop.
+
+755
+00:43:00,560 --> 00:43:02,820
+And the newsletter, of course, is absolutely free.
+
+756
+00:43:03,300 --> 00:43:04,920
+Another thing that's absolutely free
+
+757
+00:43:04,920 --> 00:43:06,640
+is the Dronebot Workshop Forum.
+
+758
+00:43:06,780 --> 00:43:07,920
+So if you're having a problem
+
+759
+00:43:07,920 --> 00:43:10,860
+with one of your op amp designs, get on the forum.
+
+760
+00:43:10,980 --> 00:43:13,020
+There are a lot of great people on the forum
+
+761
+00:43:13,020 --> 00:43:15,660
+who can help you out with your electronics projects.
+
+762
+00:43:16,180 --> 00:43:18,180
+And finally, if you haven't yet,
+
+763
+00:43:18,300 --> 00:43:20,080
+please subscribe to the YouTube channel.
+
+764
+00:43:20,080 --> 00:43:23,320
+I make videos about electronics, microcontrollers,
+
+765
+00:43:23,340 --> 00:43:26,440
+programming, and I think you would really enjoy them.
+
+766
+00:43:26,580 --> 00:43:28,180
+And all you need to do to subscribe
+
+767
+00:43:28,180 --> 00:43:30,740
+is to hit that little red subscribe button
+
+768
+00:43:30,740 --> 00:43:32,180
+that you'll find below the video.
+
+769
+00:43:32,380 --> 00:43:34,400
+And if you also hit the bell notification,
+
+770
+00:43:34,780 --> 00:43:37,920
+you will get notified every time that I make a new video,
+
+771
+00:43:38,300 --> 00:43:40,640
+assuming, of course, you enable notifications
+
+772
+00:43:40,640 --> 00:43:41,740
+in your web browser.
+
+773
+00:43:42,180 --> 00:43:44,840
+And with that said, please take care of yourself.
+
+774
+00:43:45,000 --> 00:43:46,320
+Please stay safe out there.
+
+775
+00:43:46,320 --> 00:43:49,640
+And I will see you soon here in the Dronebot Workshop.
+
+776
+00:43:50,000 --> 00:43:50,780
+Goodbye for now.
+
+777
+00:43:50,780 --> 00:43:52,040
+lessons.
+
+778
+00:43:55,620 --> 00:43:57,140
+Life is en Summit
+
+779
+00:44:02,220 --> 00:44:03,440
+Around theal mimics
+
+780
+00:44:07,780 --> 00:44:10,300
+principles
+
+781
+00:44:10,660 --> 00:44:15,840
+the
+
+782
+00:44:16,000 --> 00:44:16,800
+the
+
+783
+00:44:16,800 --> 00:44:18,420
+Music
+
+784
+00:44:18,420 --> 00:44:19,440
+Music
+

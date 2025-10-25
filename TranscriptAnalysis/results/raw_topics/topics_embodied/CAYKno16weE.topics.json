@@ -1,0 +1,53 @@
+{
+  "video_id": "CAYKno16weE",
+  "title": "CAYKno16weE",
+  "url": "https://www.youtube.com/watch?v=CAYKno16weE",
+  "created_at": "2025-10-09T17:30:51.336335+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Consequences of Incorrect Wiring",
+      "description": "The speaker warns that getting the wiring wrong can lead to a nasty explosion and poor power supply.",
+      "evidence_quotes": [
+        "Then chances are you're going to have a nasty explosion on your hands.",
+        "But does make for a rather poor power supply."
+      ],
+      "start_s": 1240.6,
+      "end_s": 1247.74,
+      "id": "T1"
+    },
+    {
+      "title": "Importance of Correct Wiring",
+      "description": "The speaker emphasizes the importance of correct wiring when it comes to electrolytic capacitors. They are polarity sensitive, and getting it backwards can cause a nasty explosion.",
+      "evidence_quotes": [
+        "Make sure you wire them the correct way.",
+        "And if you get it backwards."
+      ],
+      "start_s": 1234.7,
+      "end_s": 1236.8000000000002,
+      "id": "T2"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here are the extracted topics:\n\n```\n[\n  {\n    \"title\": \"Calculating Capacitance\",\n    \"description\": null,\n    \"evidence_quotes\": [\"Current times half cycle time divided by acceptable voltage drop equals microfarads.\", \"So let's use this as an example.\"],\n    \"time_range\": \"08:26:00.000–09:54:00.000\"\n  },\n  {\n    \"title\": \"Choosing the Right Capacitor\",\n    \"description\": null,\n    \"evidence_quotes\": [\"The capacitor's job is to smooth out those ripples so that we get much more stable power.\", \"You might turn up an obscure number like 1,111 microfarads.\"],\n    \"time_range\": \"08:16:00.000–10:10:00.000\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here is the output:\n\n[\n  {\n    \"title\": \"Importance of Correct Wiring\",\n    \"description\": \"The speaker emphasizes the importance of correct wiring when it comes to electrolytic capacitors. They are polarity sensitive, and getting it backwards can cause a nasty explosion.\",\n    \"evidence_quotes\": [\"Make sure you wire them the correct way.\", \"And if you get it backwards.\"],\n    \"time_range\": \"00:10:20.740–00:10:22.840\"\n  },\n  {\n    \"title\": \"Consequences of Incorrect Wiring\",\n    \"description\": \"The speaker warns that getting the wiring wrong can lead to a nasty explosion and poor power supply.\",\n    \"evidence_quotes\": [\"Then chances are you're going to have a nasty explosion on your hands.\", \"But does make for a rather poor power supply.\"],\n    \"time_range\": \"00:10:26.640–00:10:33.780\"\n  }\n]\n\nNote that I've only extracted topics that are explicitly discussed in this segment, without making any assumptions or speculations."
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,209 @@
+sL0LtyfNYkM
+https://www.youtube.com/watch?v=sL0LtyfNYkM
+Unknown Category
+
+[00:00:00.000 → 00:00:10.440] In this example we are looking to determine the state space representation of this circuit.
+[00:00:10.440 → 00:00:17.000] The input here is Ia, there is a current being applied there, and the output is the voltage
+[00:00:17.000 → 00:00:19.240] VL across this inductor.
+[00:00:19.240 → 00:00:23.380] We have two inductors, a capacitor and a resistor.
+[00:00:23.380 → 00:00:28.160] For the state space representation the first question is what are the state variables?
+[00:00:28.160 → 00:00:33.920] Take a minute to determine which state variables you would choose for this specific circuit.
+[00:00:33.920 → 00:00:40.020] Again, a good first attempt is to look at elements in the circuit that can store energy.
+[00:00:40.020 → 00:00:43.720] In this particular circuit we have three elements that can store energy.
+[00:00:43.720 → 00:00:48.720] We have two inductors that will store energy in the form of a magnetic field, and that
+[00:00:48.720 → 00:00:51.400] depends on the current through these inductors.
+[00:00:51.400 → 00:00:56.740] And we have one capacitor that will store energy in the form of an electrical field.
+[00:00:56.740 → 00:01:00.920] And that energy depends on the voltage across that capacitor.
+[00:01:00.920 → 00:01:05.700] So a good choice for the state variables would be the current through these inductors and
+[00:01:05.700 → 00:01:09.640] the voltage across the capacitor.
+[00:01:09.640 → 00:01:14.700] So let's define now the current through the inductor here.
+[00:01:14.700 → 00:01:16.960] Let's call this I2.
+[00:01:16.960 → 00:01:19.740] Let's call the current through this inductor here I1.
+[00:01:19.740 → 00:01:24.800] This is L1, so I1, L2, I2.
+[00:01:24.800 → 00:01:29.700] Let's call the voltage across this capacitor Vc.
+[00:01:29.700 → 00:01:40.680] And let's define the current through the capacitor as Ic, pointing downwards.
+[00:01:40.680 → 00:01:46.260] We can now define our state variables as the current through the inductor here and there,
+[00:01:46.260 → 00:01:48.500] and the voltage across the capacitor.
+[00:01:48.500 → 00:01:52.000] So let's call our state variables X.
+[00:01:52.000 → 00:01:54.280] And you're going to call them going this way.
+[00:01:54.280 → 00:01:56.740] The first element here is I2.
+[00:01:56.740 → 00:01:59.220] The second element is Vc.
+[00:01:59.220 → 00:02:01.740] And the last element is I1.
+[00:02:01.740 → 00:02:07.600] The current across this inductor, the voltage across this capacitor, and the current across
+[00:02:07.600 → 00:02:09.160] the other inductor.
+[00:02:09.160 → 00:02:10.100] Very well.
+[00:02:10.100 → 00:02:12.000] The first step is done.
+[00:02:12.000 → 00:02:15.700] Now we need to find equations for the derivative of these states.
+[00:02:15.700 → 00:02:18.740] Remember that we're looking for the state space representation.
+[00:02:18.740 → 00:02:25.800] And this will be done in the form of X dot equals to Ax plus B times U.
+[00:02:25.800 → 00:02:30.320] is the input, which in this case is Ia.
+[00:02:30.320 → 00:02:31.320] What do we see here?
+[00:02:31.320 → 00:02:35.460] We see X dot, which is a function of X itself.
+[00:02:35.460 → 00:02:38.020] So it now needs to come up with three equations.
+[00:02:38.020 → 00:02:43.140] One for I2, one for Vc, one for I1, that will follow this format.
+[00:02:43.140 → 00:02:47.940] Where we have the derivative of I2 will be a function of all other states.
+[00:02:47.940 → 00:02:50.840] The derivative of Vc, a function of all states.
+[00:02:50.840 → 00:02:55.460] The derivative of I1, a function of all the other states.
+[00:02:55.460 → 00:02:59.980] And it is also important to note that these equations will be the derivative of these
+[00:02:59.980 → 00:03:00.980] state variables.
+[00:03:00.980 → 00:03:03.240] They only depend on the states.
+[00:03:03.240 → 00:03:06.680] They do not depend on the derivative of the states.
+[00:03:06.680 → 00:03:10.340] So we need to also ensure that the equations that are going to develop now will follow the
+[00:03:10.340 → 00:03:11.420] same format as here.
+[00:03:11.420 → 00:03:16.300] So that will make everything easier than when we have to put everything in a matrix form.
+[00:03:16.300 → 00:03:18.100] Okay, so let's start.
+[00:03:18.100 → 00:03:23.100] Now let's start by looking for a equation that gives us the derivative of the first state
+[00:03:23.100 → 00:03:27.340] I2 as a function of other states.
+[00:03:27.340 → 00:03:28.560] What can we conclude here?
+[00:03:28.560 → 00:03:33.140] Can we somehow link I2 and Vc, for example?
+[00:03:33.140 → 00:03:38.380] Or can we link I2 and I1 and Vc?
+[00:03:38.380 → 00:03:44.280] Well clearly, it would be easy here to link I2 and Vc because the voltage across the inductor
+[00:03:44.280 → 00:03:49.020] and the voltage across the capacitor are exactly the same.
+[00:03:49.020 → 00:03:51.020] What is the voltage across the inductor?
+[00:03:51.020 → 00:04:01.220] The voltage across the inductor, L2, is L2 Di2 Dt.
+[00:04:01.220 → 00:04:06.640] And the voltage across the capacitor is simply Vc.
+[00:04:06.640 → 00:04:07.960] Couldn't be easier than that.
+[00:04:07.960 → 00:04:17.440] Now we have Di2 over Dt equals to 1 over L2 times Vc.
+[00:04:17.440 → 00:04:20.460] Here we have the expression we need for I2.
+[00:04:20.460 → 00:04:26.500] The derivative of I2 is a function of other states.
+[00:04:26.500 → 00:04:33.060] If we call this vector here x1, x2, and x3.
+[00:04:33.060 → 00:04:37.680] So I2 is x1, Vc is x2, I1 is x3.
+[00:04:37.680 → 00:04:39.400] How can you rewrite this expression?
+[00:04:39.400 → 00:04:46.780] Now we have x1 dot equals to 1 over L2 times Vc.
+[00:04:46.780 → 00:04:50.200] Vc becomes x2.
+[00:04:50.200 → 00:05:01.440] And here we have the first equation needed for this manipulation.
+[00:05:01.440 → 00:05:03.100] Now let's look at Vc.
+[00:05:03.100 → 00:05:04.480] We need a similar expression.
+[00:05:04.480 → 00:05:09.080] We need the derivative of Vc equals to a function of other states.
+[00:05:09.080 → 00:05:10.560] Now let's think about this problem.
+[00:05:10.560 → 00:05:16.900] We want something that depends on the derivative of Vc because that's one of our states.
+[00:05:16.900 → 00:05:17.900] What is that?
+[00:05:17.900 → 00:05:21.560] Something that is proportional to the derivative of a voltage in a capacitor.
+[00:05:21.560 → 00:05:24.000] Well that's the current through the capacitor.
+[00:05:24.000 → 00:05:26.580] So let's now relate Ic and Vc.
+[00:05:26.580 → 00:05:28.460] Ic is not one of our states.
+[00:05:28.460 → 00:05:30.400] Vc is.
+[00:05:30.400 → 00:05:39.140] We can write that the current through this capacitor, Ic, is C times dVc dt.
+[00:05:39.140 → 00:05:40.040] Aha!
+[00:05:40.040 → 00:05:42.340] Here is the derivative of Vc.
+[00:05:42.340 → 00:05:44.660] The derivative of the second state.
+[00:05:44.660 → 00:05:47.320] Now what is Ic?
+[00:05:47.320 → 00:05:49.320] Ic is not one of our states.
+[00:05:49.320 → 00:05:51.320] We need to get rid of it.
+[00:05:51.320 → 00:05:55.100] It is an internal variable.
+[00:05:55.100 → 00:06:01.100] We can relate Ic to I2, to I1 and to the input Ia.
+[00:06:01.100 → 00:06:02.320] That's easy.
+[00:06:02.320 → 00:06:07.900] We can just look at the current at this node A here.
+[00:06:07.900 → 00:06:13.560] And do the sum of all currents at node A.
+[00:06:13.560 → 00:06:16.560] What do we have?
+[00:06:16.560 → 00:06:18.560] We have the current going in.
+[00:06:18.560 → 00:06:20.560] That is Ia.
+[00:06:20.560 → 00:06:26.560] And this is equal to all other currents coming out of that node.
+[00:06:26.560 → 00:06:33.220] That is I2 plus I1 plus Ic.
+[00:06:33.220 → 00:06:38.660] Now notice that this equation is very helpful because the only thing here that we can use
+[00:06:38.660 → 00:06:39.660] is Ic.
+[00:06:39.660 → 00:06:42.220] And this is exactly what you want to replace there.
+[00:06:42.220 → 00:06:44.220] Ia is the input.
+[00:06:44.220 → 00:06:46.220] I2 and I1 are states.
+[00:06:46.220 → 00:06:47.220] Perfect.
+[00:06:47.220 → 00:06:58.880] Now Ic is simply Ia minus I1 minus I2.
+[00:06:58.880 → 00:07:00.880] We can now replace this here.
+[00:07:00.880 → 00:07:23.440] And we will end up with dVc dt equals to 1 over c times Ic Ia minus I1 minus I2.
+[00:07:23.440 → 00:07:25.240] Good.
+[00:07:25.240 → 00:07:30.200] Now let's represent this expression using the state-space representation here.
+[00:07:30.200 → 00:07:36.200] dVc dt becomes x2 dot because Vc is x2.
+[00:07:36.200 → 00:07:40.100] So this is x.
+[00:07:40.100 → 00:07:44.600] This is x2 dot.
+[00:07:44.600 → 00:07:46.960] 1 over c is a constant.
+[00:07:46.960 → 00:07:49.300] Ia is an input.
+[00:07:49.300 → 00:07:50.300] We'll need to change it.
+[00:07:50.300 → 00:07:55.860] I1 is x3.
+[00:07:55.860 → 00:07:58.640] And I2 is x1.
+[00:07:58.640 → 00:08:08.880] And here we have the second expression for our state-space representation.
+[00:08:08.880 → 00:08:10.360] We are missing one equation.
+[00:08:10.360 → 00:08:15.640] Now we are looking for an equation for the derivative of I1 as a function of other states.
+[00:08:15.640 → 00:08:17.640] How can we do that?
+[00:08:17.640 → 00:08:22.640] Now we could apply Kirchhoff's law to this loop.
+[00:08:22.640 → 00:08:26.640] And do the sum of all voltages there.
+[00:08:26.640 → 00:08:34.360] If you do that, you will see that this voltage across here will be a function of I1 because that's the voltage across the resistor.
+[00:08:34.360 → 00:08:40.360] will be a function of Vc which is another state.
+[00:08:40.360 → 00:08:46.600] And this makes things very convenient because the voltage across the inductor is also a function of I1, a function of one of our states.
+[00:08:46.600 → 00:08:51.600] So if you now do Kirchhoff's law in this loop here, what do you have?
+[00:08:51.600 → 00:09:12.840] We have that R times I1 plus the voltage across this inductor is L1 Di1, aha, Dt minus Vc equals to 0.
+[00:09:12.840 → 00:09:17.840] Why minus Vc? Because the current through Vc is pointing down.
+[00:09:17.840 → 00:09:22.840] So when you go counterclockwise here, you are going against the current through Vc.
+[00:09:22.840 → 00:09:24.840] Hence the negative sign.
+[00:09:24.840 → 00:09:31.840] This equation is perfect because we have everything here as a function of the states.
+[00:09:31.840 → 00:09:35.840] Now we can isolate Di1, Dt.
+[00:09:35.840 → 00:09:50.840] And Di1, Dt is simply 1 over L1 times Vc minus Ri1.
+[00:09:50.840 → 00:09:55.840] Now we can write this in state space.
+[00:09:55.840 → 00:09:59.840] Di1, Dt becomes x3 dot.
+[00:09:59.840 → 00:10:03.840] 1 over L1.
+[00:10:03.840 → 00:10:11.840] So Vc is x2 minus R times I1 which is x3.
+[00:10:11.840 → 00:10:17.840] Here we have the third expression for our circuit.
+[00:10:17.840 → 00:10:22.840] Third state represented as a function.
+[00:10:22.840 → 00:10:27.840] The third state's derivative represented as a function of other states.
+[00:10:27.840 → 00:10:31.840] Alright, now we have these three expressions we need to define our output.
+[00:10:31.840 → 00:10:37.840] Our output here is VL, is the voltage across this inductor.
+[00:10:37.840 → 00:10:41.840] Now we need an expression for the output as well.
+[00:10:41.840 → 00:10:43.840] Let's write it here.
+[00:10:43.840 → 00:10:46.840] How do we find that one?
+[00:10:46.840 → 00:10:50.840] We want the output to be a function of the states.
+[00:10:50.840 → 00:10:53.840] Not the derivative of the states, just the states.
+[00:10:53.840 → 00:10:56.840] Well we can actually do the same Kirchhoff's law that we did here.
+[00:10:56.840 → 00:10:58.840] The exact same.
+[00:10:58.840 → 00:11:03.840] But instead of writing L1, Di1, Dt.
+[00:11:03.840 → 00:11:08.840] This whole thing here is in fact VL, is the output.
+[00:11:08.840 → 00:11:19.840] So we can reuse that expression and rewrite this as Ri1, the voltage across the resistor,
+[00:11:19.840 → 00:11:30.840] plus the voltage across the inductor, minus Vc, equals to zero.
+[00:11:30.840 → 00:11:38.840] So VL, the output, becomes Vc minus Ri1.
+[00:11:38.840 → 00:11:53.840] In state space, or using the state space variables, we have VL equals to Vc, x2, minus R times I1, which is xd.
+[00:11:53.840 → 00:11:54.840] And there it is.
+[00:11:54.840 → 00:11:57.840] That's the expression for the output.
+[00:11:57.840 → 00:12:04.840] Now that we have that, I'm going to erase everything, save these equations,
+[00:12:04.840 → 00:12:08.840] and you're going to represent them in a matrix format.
+[00:12:08.840 → 00:12:14.840] Very well, so here we are with all the expressions we derived before, x1 dot, x2 and x3 dot.
+[00:12:14.840 → 00:12:16.840] And VL, the output.
+[00:12:16.840 → 00:12:23.840] The output, which is VL, that is the same as Y, in the standard form for state space.
+[00:12:23.840 → 00:12:27.840] Now let's write these equations in the standard state space representation.
+[00:12:27.840 → 00:12:33.840] The first one will be x dot, equals to A times x, plus B times U.
+[00:12:33.840 → 00:12:38.840] U is the input to the system, which is IA.
+[00:12:38.840 → 00:13:02.840] X dot is x1 dot, x2 dot, x3 dot, is A times x, x1, x2, x3, plus B times U.
+[00:13:02.840 → 00:13:06.840] Which is IA.
+[00:13:06.840 → 00:13:07.840] What goes in there?
+[00:13:07.840 → 00:13:09.840] So let's look at x1 dot.
+[00:13:09.840 → 00:13:11.840] For x1 dot, we're looking at this expression here.
+[00:13:11.840 → 00:13:16.840] x1 dot only depends on x2, and it has this coefficient 1 over L2.
+[00:13:16.840 → 00:13:23.840] So this is 0, 1 over L2, and 0.
+[00:13:23.840 → 00:13:27.840] Now let's look at x2 dot.
+[00:13:27.840 → 00:13:30.840] x2 dot depends on...
+[00:13:30.840 → 00:13:36.840] The input depends on x3 and x1.
+[00:13:36.840 → 00:13:43.840] So we have for x1, we have negative 1 over C.
+[00:13:43.840 → 00:13:51.840] x2 is 0, and x3 is also negative 1 over C.
+[00:13:51.840 → 00:13:54.840] We'll do the output later.
+[00:13:54.840 → 00:13:57.840] So now let's complete the third row here.
+[00:13:57.840 → 00:14:02.840] That's for x3 dot, and this depends on x2 and x3.
+[00:14:02.840 → 00:14:05.840] So there is no x1, this is 0.
+[00:14:05.840 → 00:14:14.840] For x2 we have 1 over L1, and for x3 we have negative R over L1.
+[00:14:14.840 → 00:14:20.840] Now let's look at the input.
+[00:14:20.840 → 00:14:27.840] The input doesn't show in x1 dot, it only shows in x2 dot.
+[00:14:27.840 → 00:14:30.840] So for x1 dot we have 0.
+[00:14:30.840 → 00:14:35.840] For x2 dot we have 1 over C.
+[00:14:35.840 → 00:14:38.840] I will show here for this part of the equation.
+[00:14:38.840 → 00:14:41.840] And for x3 dot we have 0.
+[00:14:41.840 → 00:14:44.840] Okay, so this is our first equation.
+[00:14:44.840 → 00:14:46.840] Now we need an equation for the output.
+[00:14:46.840 → 00:14:53.840] The equation for the output, which is y, will be C times x plus D times U.
+[00:14:53.840 → 00:15:17.840] U is the input IA.
+[00:15:17.840 → 00:15:19.840] So what goes in these matrices now?
+[00:15:19.840 → 00:15:21.840] Now let's look at the output equation.
+[00:15:21.840 → 00:15:26.840] We have VL that depends on x2 and x3.
+[00:15:26.840 → 00:15:29.840] It doesn't depend on x1, so the first element is 0.
+[00:15:29.840 → 00:15:33.840] It depends on x2, the coefficient here is 1.
+[00:15:33.840 → 00:15:37.840] And it depends on x3, the coefficient is negative R.
+[00:15:37.840 → 00:15:43.840] We see that there is no input here, there is no IA.
+[00:15:43.840 → 00:15:47.840] So matrix D is simply 0.
+[00:15:47.840 → 00:15:52.840] And here we have the first and the second equation.
+[00:15:52.840 → 00:15:56.840] And this is the state-space model for this particular circuit.
+[00:15:56.840 → 00:16:08.840] Dual problem on x2 dot z5 dot x3.
+[00:16:08.840 → 00:16:18.840] May 6 to 5,500 let's move.

@@ -1,0 +1,138 @@
+CAYKno16weE
+https://www.youtube.com/watch?v=CAYKno16weE
+Unknown Category
+
+[00:00:00.000 → 00:00:09.360] So in this video I'm going to be talking about how you can choose the correct size capacitor and full bridge rectifier to convert AC into DC power.
+[00:00:09.360 → 00:00:31.200] So in a previous video I was discussing transformers and also I stated the fact I needed to rectify the AC power from my transformer here to DC for an up and coming project.
+[00:00:31.200 → 00:00:50.380] And that's what we're going to discuss in this video. I'm going to discuss how you can choose the correct capacitor and also full bridge rectifier and I'm going to go into a little bit of basic detail what these components do and how you can choose the correct voltage and capacitance etc for your specific application.
+[00:00:50.940 → 00:00:56.780] So let's get into the video. So the first component I'm going to talk about is the full bridge rectifier.
+[00:00:56.780 → 00:01:04.140] So what is a full bridge rectifier? Well in a nutshell its job is to convert AC to DC power.
+[00:01:04.800 → 00:01:11.560] If we look at the top of this example you can see we've got in two corners hyphen squiggle marks.
+[00:01:12.140 → 00:01:19.180] This is for the AC power input. Doesn't matter which side goes to live or neutral or the output from your transformer.
+[00:01:19.180 → 00:01:28.620] And then on the other two corners we've got a plus and minus symbol and this is for our now rectified DC power output.
+[00:01:29.260 → 00:01:37.040] So our input power would go on these two junctions here and then we'd get DC power between these two points here.
+[00:01:37.720 → 00:01:41.680] But looking at this package it's a bit confusing to see what's going on.
+[00:01:41.680 → 00:01:48.800] What's inside a full bridge rectifier like that is actually a set of diodes in this configuration.
+[00:01:49.740 → 00:01:56.480] So a full bridge rectifier is nothing more than four diodes configured to rectify AC power into DC.
+[00:01:57.340 → 00:02:08.160] So much like the package over here that's a full bridge rectifier we have two inputs for AC and then we get positive and negative on these two outputs here.
+[00:02:08.160 → 00:02:18.160] And in a nutshell a diode if you don't know what it does is a semiconductor which allows electricity to flow in one direction and then blocks it coming back from the other.
+[00:02:19.300 → 00:02:26.600] So now let's move on to how to choose the correct diode or full bridge rectifier for your application.
+[00:02:27.000 → 00:02:34.960] So this is the full bridge rectifier I chose to rectify the power output from my transformer I showed earlier for my up and coming project.
+[00:02:34.960 → 00:02:40.040] And now I want to discuss how I went about choosing this full bridge rectifier.
+[00:02:40.440 → 00:02:52.480] We need to look at how much voltage it can handle, how much current it can handle as well as how much heat is going to be generated when max current is passing through this full bridge rectifier.
+[00:02:53.020 → 00:02:59.380] So we need to find the data sheet for whatever full bridge rectifier or indeed diode you choose to use.
+[00:02:59.820 → 00:03:03.340] So now let's go have a look at the data sheet for this full bridge rectifier.
+[00:03:03.340 → 00:03:06.680] So here I have the data sheet for my full bridge rectifier.
+[00:03:06.940 → 00:03:18.060] If we scroll down we're going to take a look at the maximum reverse voltage, maximum average forward current and forward voltage drop.
+[00:03:18.380 → 00:03:19.820] And this is all the symbols for them.
+[00:03:20.080 → 00:03:24.180] VRRM, IF and also VF.
+[00:03:25.380 → 00:03:27.920] So let's start off by looking at the voltage.
+[00:03:27.920 → 00:03:37.240] So once the power has been rectified, my full bridge rectifier is going to output 70 volts DC or thereabout.
+[00:03:37.780 → 00:03:40.920] And I typically like to add around 20 to 30% headroom.
+[00:03:41.940 → 00:03:47.000] So I am looking for a full bridge rectifier that is around about 100 volts or more.
+[00:03:47.560 → 00:03:49.720] And the model I bought is a Dash 01.
+[00:03:49.720 → 00:03:54.220] So I bought a full bridge rectifier that is rated for 100 volts.
+[00:03:54.440 → 00:03:55.560] So we're all good there.
+[00:03:56.200 → 00:04:00.900] The next thing to look at is how much current we're going to need to draw from our full bridge rectifier.
+[00:04:01.460 → 00:04:05.980] Now my transformer can output 10 amps continuous.
+[00:04:06.760 → 00:04:10.960] And again I typically like to add about 20 to 30% headroom minimum.
+[00:04:10.960 → 00:04:15.060] So the model I bought is a GBPC15.
+[00:04:15.460 → 00:04:18.460] So therefore it's rated for 15 amps continuous.
+[00:04:19.160 → 00:04:20.880] So again we're all good there.
+[00:04:21.500 → 00:04:25.580] The next thing we need to look at is the forward voltage drop or VF.
+[00:04:26.380 → 00:04:29.040] Now this is rated at 1.1 volts.
+[00:04:29.200 → 00:04:30.760] Now what is a forward voltage drop?
+[00:04:31.280 → 00:04:35.980] Well any diode typically has a voltage drop across it.
+[00:04:35.980 → 00:04:42.400] So what that means is if we put power through it we're going to get slightly less power out of it.
+[00:04:42.560 → 00:04:44.000] We're going to get a voltage drop.
+[00:04:44.080 → 00:04:46.140] And in this case it's 1.1 volts.
+[00:04:46.720 → 00:04:48.680] Now why is this important to consider?
+[00:04:49.460 → 00:04:50.580] Well two things.
+[00:04:50.960 → 00:04:56.420] If you expected to put in 5 volts to your full bridge rectifier and you're going to get 5 volts out.
+[00:04:56.960 → 00:04:58.240] That's sadly not the case.
+[00:04:58.420 → 00:05:03.880] If you put 5 volts in you're going to get 3.9 volts out.
+[00:05:03.880 → 00:05:07.340] You're going to see that 1.1 volt drop.
+[00:05:08.040 → 00:05:10.000] Irrespective of the input voltage.
+[00:05:11.020 → 00:05:18.600] Also we need to look at how much heat we're going to need to dissipate from the full bridge rectifier.
+[00:05:18.840 → 00:05:20.980] We might have to consider adding a heat sink.
+[00:05:21.740 → 00:05:26.260] So we all know that voltage times current equals watts.
+[00:05:26.260 → 00:05:35.520] So what I'm going to do is calculate how many watts of heat is going to be generated if I pass the full 15 amps of current through my full bridge rectifier.
+[00:05:35.820 → 00:05:41.320] So to calculate that I'm going to first enter in my VF or forward voltage drop.
+[00:05:41.540 → 00:05:44.940] Which in this case for my full bridge rectifier is 1.1 volts.
+[00:05:45.520 → 00:05:50.080] And I'm going to times that by the maximum current of the full bridge rectifier.
+[00:05:50.200 → 00:05:51.560] In this case 15 amps.
+[00:05:51.560 → 00:05:53.060] I'm going to hit equals.
+[00:05:53.860 → 00:06:01.540] And therefore we're going to get 16.5 watts of heat generated from our full bridge rectifier at maximum current.
+[00:06:02.020 → 00:06:03.360] And this isn't to be ignored.
+[00:06:03.500 → 00:06:09.860] That is going to be quite a significant amount of heat if it's sustained for a long time at 15 amps.
+[00:06:09.940 → 00:06:13.440] So we should consider adding a heat sink to our full bridge rectifier.
+[00:06:13.440 → 00:06:19.840] We can also see that the manufacturer had in mind that this full bridge rectifier is going to generate a bit of heat.
+[00:06:19.980 → 00:06:22.700] By the fact that we've got a metal surface here.
+[00:06:23.300 → 00:06:29.740] And what we can do is get a heat sink and we can bolt this full bridge rectifier to it with a bit of thermal compound.
+[00:06:29.960 → 00:06:36.040] To help dissipate the heat generated when we're pulling the full load through this full bridge rectifier.
+[00:06:36.460 → 00:06:38.940] So now let's move on to capacitors.
+[00:06:38.940 → 00:06:48.360] So the type of capacitors we're going to be shopping for to smooth out the power from our full bridge rectifier are called electrolytic capacitors.
+[00:06:48.920 → 00:06:52.720] Now this capacitor has two ratings listed here.
+[00:06:53.180 → 00:06:56.260] 50 volts and 4700 microfarads.
+[00:06:56.760 → 00:06:58.180] So let's discuss these figures.
+[00:06:58.180 → 00:07:03.800] So 50 volts is the peak voltage this capacitor is rated to handle.
+[00:07:03.960 → 00:07:07.700] Any more than that and you risk damaging or even exploding the capacitor.
+[00:07:08.020 → 00:07:09.000] Which can be quite fun.
+[00:07:09.700 → 00:07:12.360] But not if you want a reliable power supply.
+[00:07:12.600 → 00:07:13.680] Then it's bad.
+[00:07:14.540 → 00:07:24.780] So again we're going to be looking for a capacitor that is around about 20 to 30% rated higher voltage than the voltage we're going to be running.
+[00:07:24.780 → 00:07:30.960] So in my case it makes sense to buy a capacitor that's rated for 100 volts or higher.
+[00:07:31.340 → 00:07:33.640] Next up we're going to be looking at capacity.
+[00:07:33.900 → 00:07:39.080] So 4700 microfarads is the capacitance of this capacitor I've got here.
+[00:07:39.320 → 00:07:42.640] But how do we choose what size capacitor we need?
+[00:07:43.060 → 00:07:49.100] Well this is based on the frequency of the AC power rectifying.
+[00:07:49.100 → 00:07:56.020] The amount of current we're going to be drawing as well as the acceptable voltage drop.
+[00:07:56.580 → 00:08:03.620] So when power is rectified into DC after our full bridge rectifier it's not actually smooth.
+[00:08:04.220 → 00:08:07.080] There's momentary lapses where there's no power.
+[00:08:07.840 → 00:08:11.900] And what that means is we've got power, no power, power, no power.
+[00:08:11.900 → 00:08:14.500] And we're going to not get a smooth voltage.
+[00:08:14.740 → 00:08:16.300] It's going to have ripples in it.
+[00:08:16.980 → 00:08:22.260] The capacitor's job is to smooth out those ripples so that we get much more stable power.
+[00:08:22.620 → 00:08:25.900] So let's discuss how to choose the right size capacitor.
+[00:08:26.320 → 00:08:29.460] So here is the formula for calculating our capacitance.
+[00:08:30.300 → 00:08:35.680] Current times half cycle time divided by acceptable voltage drop equals microfarads.
+[00:08:36.480 → 00:08:38.120] So let's break this down.
+[00:08:38.120 → 00:08:46.180] First off we need to establish whether our wall outlet outputs AC power at 50 or 60 hertz.
+[00:08:47.180 → 00:08:50.080] Now here in New Zealand it is 50 hertz AC.
+[00:08:50.700 → 00:08:53.960] So my half cycle time is 10 milliseconds.
+[00:08:55.320 → 00:09:00.280] Next off we need to work out what our acceptable voltage drop is going to be.
+[00:09:00.280 → 00:09:09.640] So for my application the peak voltage I'm going to get after rectification is 70.5 volts DC.
+[00:09:10.340 → 00:09:15.020] And the minimum acceptable voltage I can have is 65.
+[00:09:15.360 → 00:09:18.740] So this gives me a difference of 5.5 volts DC.
+[00:09:19.340 → 00:09:21.180] So let's break this down.
+[00:09:21.760 → 00:09:23.320] Let's use this as an example.
+[00:09:23.320 → 00:09:28.880] In this example I'm drawing 10 amps of current maximum.
+[00:09:29.560 → 00:09:31.400] So I'll put in 10 amps in my calculator.
+[00:09:32.000 → 00:09:34.500] I'm going to times that by my half cycle time.
+[00:09:34.600 → 00:09:36.760] So in this example I'm going to use 8.3.
+[00:09:37.580 → 00:09:39.480] So times it by 8.3.
+[00:09:39.600 → 00:09:40.240] Hit equals.
+[00:09:41.040 → 00:09:44.540] And then my acceptable voltage drop is 5.5.
+[00:09:44.540 → 00:09:48.020] So I'm going to divide 83 by 5.5.
+[00:09:48.820 → 00:09:54.420] And then we get a microfarad capacity of 15,090 microfarads.
+[00:09:54.880 → 00:10:01.660] So chances are the capacitance you require is not going to be found on that off-the-shelf capacitor.
+[00:10:01.960 → 00:10:06.940] You might turn up an obscure number like 1,111 microfarads.
+[00:10:07.060 → 00:10:08.880] And you're not going to find that on a capacitor.
+[00:10:09.340 → 00:10:10.200] So what do we do?
+[00:10:10.200 → 00:10:13.640] Well we buy a capacitor that's rated higher than we need.
+[00:10:13.960 → 00:10:16.840] But is closest to what we need to save on money.
+[00:10:17.220 → 00:10:20.280] When it comes to wiring your electrolytic capacitors.
+[00:10:20.740 → 00:10:22.840] Make sure you wire them the correct way.
+[00:10:22.960 → 00:10:26.000] Because most electrolytic capacitors are polarity sensitive.
+[00:10:26.640 → 00:10:27.660] And if you get it backwards.
+[00:10:28.260 → 00:10:31.660] Then chances are you're going to have a nasty explosion on your hands.
+[00:10:31.840 → 00:10:33.780] Which does add a bit of drama in your life.
+[00:10:33.880 → 00:10:36.300] But does make for a rather poor power supply.
+[00:10:37.040 → 00:10:38.020] So other than that.
+[00:10:38.120 → 00:10:39.300] Thank you very much for watching.
+[00:10:39.300 → 00:10:42.460] If you have any other questions drop them down in the comment section below.
+[00:10:42.980 → 00:10:45.720] And it would also be much appreciated if you can give the video a like.
+[00:10:46.260 → 00:10:46.540] Other than that.
+[00:10:46.620 → 00:10:47.580] Thank you very much for watching.
+[00:10:47.700 → 00:10:48.540] I'll see you in the next video.
+[00:10:48.660 → 00:10:49.140] Bye for now.

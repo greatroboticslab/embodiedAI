@@ -1,0 +1,298 @@
+RiRyzLl4Y8U
+https://www.youtube.com/watch?v=RiRyzLl4Y8U
+Unknown Category
+
+[00:00:00.000 → 00:00:03.120] This is a full wave bridge rectifier.
+[00:00:03.640 → 00:00:06.180] It's used to power electronic circuits,
+[00:00:06.740 → 00:00:10.480] so we're going to learn in detail how they work in this video.
+[00:00:11.260 → 00:00:14.440] Electricity is dangerous and can be fatal.
+[00:00:14.680 → 00:00:18.500] You must be qualified and competent to carry out any electrical work.
+[00:00:19.460 → 00:00:21.920] Full bridge rectifiers look like this.
+[00:00:22.500 → 00:00:23.940] There are many shapes and sizes,
+[00:00:24.400 → 00:00:28.600] but they essentially consist of four diodes in a certain arrangement.
+[00:00:28.600 → 00:00:32.440] They are usually aligned in a diamond configuration,
+[00:00:33.000 → 00:00:35.980] but they can be aligned in other ways such as these.
+[00:00:37.100 → 00:00:41.380] We typically find them represented on engineering drawings like this,
+[00:00:42.120 → 00:00:44.080] this being the symbol for a diode.
+[00:00:44.920 → 00:00:48.060] The arrow points in the direction of conventional current.
+[00:00:48.760 → 00:00:54.460] This shows that AC electricity is the input and DC electricity is the output.
+[00:00:54.460 → 00:01:01.860] The full bridge rectifier converts AC alternating current into DC direct current.
+[00:01:02.660 → 00:01:03.580] Why is that important?
+[00:01:04.120 → 00:01:07.680] Because the power outlets in our homes provide AC,
+[00:01:08.180 → 00:01:10.880] but our electrical devices use DC,
+[00:01:11.360 → 00:01:15.360] so we need to convert the AC into DC electricity.
+[00:01:15.360 → 00:01:20.840] For example, a laptop charger takes AC from the power outlet
+[00:01:20.840 → 00:01:24.460] and converts this to DC to power the laptop.
+[00:01:25.000 → 00:01:29.840] If you look at the power adapter for your laptop and other electronic devices,
+[00:01:30.320 → 00:01:34.420] the manufacturer's label tells you it's converting AC to DC.
+[00:01:34.420 → 00:01:41.220] In this example, it states that it needs an input of between 100 and 240 volts
+[00:01:41.220 → 00:01:43.580] with the symbol for AC electricity,
+[00:01:43.580 → 00:01:46.920] and this will draw 1.5 amps of current.
+[00:01:47.620 → 00:01:52.300] It will then output 19.5 volts of DC electricity
+[00:01:52.300 → 00:01:55.520] and 3.33 amps of current.
+[00:01:56.080 → 00:01:59.920] Notice that it also states 50 to 60 hertz.
+[00:01:59.920 → 00:02:04.480] This is the AC frequency and we'll look at that in just a moment.
+[00:02:05.480 → 00:02:10.320] In AC electricity, the voltage and current constantly change direction
+[00:02:10.320 → 00:02:12.360] between forwards and backwards.
+[00:02:13.060 → 00:02:16.880] That's because there's a magnetic field in the AC generator
+[00:02:16.880 → 00:02:21.020] which essentially pushes and pulls electrons in the wires.
+[00:02:21.860 → 00:02:26.240] This is therefore changing between positive and negative values
+[00:02:26.240 → 00:02:28.400] as it flows forwards and backwards.
+[00:02:28.400 → 00:02:31.080] The voltage is not constant
+[00:02:31.080 → 00:02:34.780] even though the multimeter will make it look like it is.
+[00:02:35.440 → 00:02:38.620] If we plotted this, we get a sine wave pattern.
+[00:02:39.640 → 00:02:44.260] The voltage changes between a peak positive and a peak negative value
+[00:02:44.260 → 00:02:47.440] as the maximum intensity of the magnetic field
+[00:02:47.440 → 00:02:51.060] passes the coils of wire inside the AC generator.
+[00:02:51.740 → 00:02:55.760] This example reaches 170 volts at its peaks.
+[00:02:55.760 → 00:02:58.000] So if we plotted these values,
+[00:02:58.440 → 00:03:02.740] we have positive and negative peaks of 170 volts.
+[00:03:03.300 → 00:03:07.560] If we took the average of these values, we would get 0 volts.
+[00:03:08.180 → 00:03:09.520] That's not very useful.
+[00:03:10.020 → 00:03:14.500] So a clever engineer decided to use the root mean squared voltage.
+[00:03:14.500 → 00:03:17.180] That is what our multimeters calculate
+[00:03:17.180 → 00:03:19.880] when we connect them to the electrical outlets.
+[00:03:20.880 → 00:03:22.240] To find the peak voltage,
+[00:03:22.640 → 00:03:25.120] we multiply the root mean squared voltage
+[00:03:25.120 → 00:03:26.940] by the square root of 2,
+[00:03:27.480 → 00:03:29.640] which is roughly 1.41.
+[00:03:30.180 → 00:03:32.300] To find the RMS voltage,
+[00:03:32.720 → 00:03:36.600] we divide the peak voltage by 0.707.
+[00:03:36.600 → 00:03:40.100] For example, here I have a North American,
+[00:03:40.640 → 00:03:43.820] British, Australian and European power outlets.
+[00:03:44.460 → 00:03:47.720] This multimeter shows basic waveforms
+[00:03:47.720 → 00:03:49.480] and when I connect to any of these
+[00:03:49.480 → 00:03:51.220] between the phase and neutral,
+[00:03:51.740 → 00:03:53.000] we see a sine wave,
+[00:03:53.540 → 00:03:56.140] which is indicating this is AC electricity.
+[00:03:56.980 → 00:04:01.200] Notice that the British and European outlets are 230 volts.
+[00:04:01.200 → 00:04:04.540] The Australian outlet is 240 volts,
+[00:04:04.920 → 00:04:08.620] but all three of these are at a frequency of 50 hertz.
+[00:04:09.380 → 00:04:13.440] However, the North American outlets read 120 volts
+[00:04:13.440 → 00:04:15.840] at a frequency of 60 hertz.
+[00:04:16.540 → 00:04:19.080] The frequency is measured in hertz,
+[00:04:19.640 → 00:04:22.000] but this just means the sine wave is repeating
+[00:04:22.000 → 00:04:26.320] 60 times per second in the North American electrical systems
+[00:04:26.320 → 00:04:29.840] and 50 times per second in the rest of the world.
+[00:04:31.420 → 00:04:34.500] The voltage is lower in the North American system
+[00:04:34.500 → 00:04:36.660] at 120 volts,
+[00:04:37.240 → 00:04:40.600] whereas it's 230 to 240 volts
+[00:04:40.600 → 00:04:41.900] in the rest of the world,
+[00:04:42.500 → 00:04:43.960] although there are some exceptions,
+[00:04:44.300 → 00:04:45.780] but we won't go into that in this video.
+[00:04:46.440 → 00:04:48.720] The peak voltage of each electrical system
+[00:04:48.720 → 00:04:50.480] is therefore as follows.
+[00:04:51.260 → 00:04:52.520] In DC electricity,
+[00:04:53.060 → 00:04:54.460] the voltage is constant
+[00:04:54.460 → 00:04:55.920] and in the positive region.
+[00:04:56.320 → 00:04:58.680] The electrons do not reverse.
+[00:04:59.020 → 00:05:01.200] They all flow in just one direction.
+[00:05:02.200 → 00:05:03.880] So if I measure this battery,
+[00:05:04.380 → 00:05:07.020] we see a flat line in the positive region
+[00:05:07.020 → 00:05:09.260] at around 1.5 volts.
+[00:05:09.900 → 00:05:11.960] So this is DC electricity.
+[00:05:12.980 → 00:05:15.420] This solar panel also produces DC.
+[00:05:16.160 → 00:05:18.800] We can see it produces a flat line
+[00:05:18.800 → 00:05:20.940] at around 4 volts on the multimeter.
+[00:05:21.700 → 00:05:25.400] We can use this adapter to measure a USB port.
+[00:05:26.320 → 00:05:29.380] We can see it's providing around 5 volts DC.
+[00:05:29.380 → 00:05:32.580] And if we plot this with the other multimeter,
+[00:05:33.200 → 00:05:36.060] we again see a constant flat line
+[00:05:36.060 → 00:05:38.700] indicating this is DC electricity.
+[00:05:39.860 → 00:05:42.400] This is a four-wave bridge rectifier.
+[00:05:42.400 → 00:05:44.360] On these input terminals,
+[00:05:44.360 → 00:05:48.000] we see around 12 volts AC with a sine wave.
+[00:05:48.960 → 00:05:50.420] And on these output terminals,
+[00:05:50.420 → 00:05:53.420] we see around 14 volts of DC.
+[00:05:54.080 → 00:05:57.780] So this device is converting AC to DC.
+[00:05:58.280 → 00:06:00.980] The voltage is slightly higher on the output
+[00:06:00.980 → 00:06:02.420] because of the capacitor.
+[00:06:02.420 → 00:06:06.020] And we'll see why that is later on in this video.
+[00:06:06.820 → 00:06:08.360] Now, you need to remember
+[00:06:08.360 → 00:06:12.240] that rectifiers will only convert AC to DC.
+[00:06:12.900 → 00:06:15.540] It cannot convert DC into AC.
+[00:06:16.100 → 00:06:18.060] For that, we would need an inverter
+[00:06:18.060 → 00:06:20.840] which uses special electronic components
+[00:06:20.840 → 00:06:22.060] to achieve that,
+[00:06:22.440 → 00:06:24.280] but we won't cover that in this video.
+[00:06:24.640 → 00:06:25.500] By the way,
+[00:06:25.500 → 00:06:27.940] we have covered how power inverters work
+[00:06:27.940 → 00:06:29.920] in detail in our previous video.
+[00:06:30.540 → 00:06:32.160] Links can be found in the video description
+[00:06:32.160 → 00:06:33.440] down below for that.
+[00:06:36.000 → 00:06:38.640] The rectifier consists of diodes.
+[00:06:39.240 → 00:06:41.400] A diode is a semiconductor device
+[00:06:41.400 → 00:06:43.580] which allows current to flow through it,
+[00:06:44.020 → 00:06:45.860] but in only one direction.
+[00:06:46.680 → 00:06:50.040] So if we connect this lamp to a DC power supply,
+[00:06:50.460 → 00:06:51.240] it will illuminate.
+[00:06:51.680 → 00:06:53.200] We can reverse the leads
+[00:06:53.200 → 00:06:54.560] and it will still illuminate.
+[00:06:55.920 → 00:06:58.480] If I place a diode on the red wire
+[00:06:58.480 → 00:07:00.220] and connect this to the positive,
+[00:07:00.880 → 00:07:02.360] it will again illuminate.
+[00:07:02.760 → 00:07:04.860] But now, when I reverse the leads,
+[00:07:05.620 → 00:07:07.560] the diode blocks the current
+[00:07:07.560 → 00:07:09.120] and the lamp remains off.
+[00:07:09.700 → 00:07:13.120] So it only allows current to flow in one direction
+[00:07:13.120 → 00:07:15.220] and we can therefore use this
+[00:07:15.220 → 00:07:17.560] to control the direction of current in a circuit
+[00:07:17.560 → 00:07:19.780] to form DC electricity.
+[00:07:20.620 → 00:07:22.000] Let's see some different ways
+[00:07:22.000 → 00:07:22.920] of how that's achieved.
+[00:07:23.200 → 00:07:27.340] If we looked at an AC supply
+[00:07:27.340 → 00:07:29.260] with a step-down transformer
+[00:07:29.260 → 00:07:32.400] which simply reduces the voltage to a safer level,
+[00:07:32.920 → 00:07:35.500] the electrons are flowing forwards and backwards.
+[00:07:36.220 → 00:07:39.940] So the load experiences an AC sine wave.
+[00:07:40.580 → 00:07:43.040] The load could be anything from a resistor,
+[00:07:43.600 → 00:07:45.640] a lamp, a motor, etc.
+[00:07:45.640 → 00:07:48.080] If we inserted a diode,
+[00:07:48.620 → 00:07:52.360] the diode will only allow current to flow in one direction.
+[00:07:53.000 → 00:07:56.780] So the load now experiences a pulsating waveform.
+[00:07:57.640 → 00:08:01.020] The negative half of the sine wave is currently being blocked.
+[00:08:01.020 → 00:08:07.080] We can reverse the diode to block the positive half and only allow the negative half.
+[00:08:07.080 → 00:08:10.140] This is therefore a half wave rectifier.
+[00:08:10.140 → 00:08:13.140] The output is technically DC
+[00:08:13.140 → 00:08:16.200] because the electrons only flow in one direction.
+[00:08:16.200 → 00:08:21.760] It's just not a very good DC output as it's not completely flat.
+[00:08:21.760 → 00:08:27.820] Here I have a resistor which is connected to a low voltage AC supply.
+[00:08:27.820 → 00:08:30.720] We see on the oscilloscope the AC sine wave.
+[00:08:30.720 → 00:08:33.960] When I connect a diode in series with this,
+[00:08:33.960 → 00:08:38.520] the oscilloscope shows a pulsating pattern in the positive region.
+[00:08:38.520 → 00:08:50.000] If I connect two lamps in parallel, one with a diode,
+[00:08:50.000 → 00:08:53.800] we see that the one without the diode is brighter
+[00:08:53.800 → 00:08:57.080] because it's using the full waveform.
+[00:08:57.080 → 00:09:01.780] The other lamp is dimmer because it's only using half of this waveform.
+[00:09:02.380 → 00:09:04.220] The diode is blocking the other half.
+[00:09:04.880 → 00:09:06.580] If we view this in slow motion,
+[00:09:06.580 → 00:09:10.580] we can see that the diode connected lamp is flickering more
+[00:09:10.580 → 00:09:12.480] because of the gaps in power.
+[00:09:13.480 → 00:09:17.580] Therefore, we can use this for simple circuits such as lighting
+[00:09:17.580 → 00:09:20.220] or perhaps charging some simple batteries.
+[00:09:20.540 → 00:09:23.220] But we can't use this for electronics
+[00:09:23.220 → 00:09:25.980] as the components need constant power.
+[00:09:26.480 → 00:09:28.200] Other ways they will not work correctly.
+[00:09:29.020 → 00:09:31.940] We can add a capacitor in parallel with the load
+[00:09:31.940 → 00:09:33.260] to improve the output.
+[00:09:33.760 → 00:09:35.740] We'll look at that later on in this video.
+[00:09:36.580 → 00:09:37.580] We can add a capacitor in parallel with the power of the transformer.
+[00:09:37.580 → 00:09:38.580] We can add a capacitor in parallel with the power of the transformer.
+[00:09:38.580 → 00:09:40.580] A better improvement is to use a full wave rectifier.
+[00:09:40.580 → 00:09:43.580] And there are two main ways to do that.
+[00:09:45.580 → 00:09:52.580] We can create a full wave rectifier simply by using a center tap transformer and two diodes.
+[00:09:52.580 → 00:09:57.700] A center tap transformer just has another wire on the secondary side
+[00:09:57.700 → 00:10:01.220] which is connected to the center of the transformer coil.
+[00:10:01.580 → 00:10:07.400] This allows us to use the full length of the transformer coil or just half of it.
+[00:10:07.400 → 00:10:12.400] Because the current constantly reverses in AC electricity
+[00:10:12.400 → 00:10:15.400] while in the positive or forward half
+[00:10:15.400 → 00:10:18.400] the current flows through diode one and into the load
+[00:10:18.400 → 00:10:22.400] and then back to the transformer via the center tapped wire.
+[00:10:22.400 → 00:10:27.400] Diode two is blocking the current so it can't return through here.
+[00:10:27.400 → 00:10:31.400] Only half the transformer coil is therefore being used.
+[00:10:31.400 → 00:10:37.400] In the reverse or negative half the current flows through diode two,
+[00:10:37.400 → 00:10:40.400] through the load and then back to the transformer.
+[00:10:40.400 → 00:10:42.400] Diode one is blocking the current.
+[00:10:42.400 → 00:10:45.400] The current flows in one direction through the load.
+[00:10:45.400 → 00:10:50.400] In either case the current flows in just one direction through the load.
+[00:10:50.400 → 00:10:53.400] So it is considered DC.
+[00:10:54.400 → 00:10:55.400] But it is not smooth.
+[00:10:55.400 → 00:10:57.400] It is still pulsating.
+[00:10:57.400 → 00:10:58.400] There are just no gaps.
+[00:10:59.400 → 00:11:03.400] The negative half has been converted into a positive half.
+[00:11:03.400 → 00:11:05.400] The waveform is not smooth.
+[00:11:05.400 → 00:11:09.400] So we need to apply some filtering such as a capacitor.
+[00:11:09.400 → 00:11:14.400] Again, we'll look in detail at that later on in this video.
+[00:11:16.400 → 00:11:20.400] The most common method used is the full wave bridge rectifier.
+[00:11:20.400 → 00:11:22.400] This uses four diodes.
+[00:11:23.400 → 00:11:27.400] The AC supply is connected between diode one and two.
+[00:11:27.400 → 00:11:30.400] With the neutral between three and four.
+[00:11:30.400 → 00:11:35.400] The DC positive output is connected between diode two and three.
+[00:11:35.400 → 00:11:38.400] And the negative between diode one and four.
+[00:11:39.400 → 00:11:42.400] In the positive half of the sine wave.
+[00:11:42.400 → 00:11:47.400] The current flows through diode two, through the load, through diode four,
+[00:11:47.400 → 00:11:49.400] and then back to the transformer.
+[00:11:50.400 → 00:11:54.400] In the negative half, the current flows through diode three,
+[00:11:54.400 → 00:11:59.400] through the load, through diode one, and then back to the transformer.
+[00:11:59.400 → 00:12:03.400] So the transformer is supplying an AC sine wave.
+[00:12:03.400 → 00:12:10.400] But the load is experiencing a rippled DC waveform because the current flows in just one direction.
+[00:12:10.400 → 00:12:16.400] In this example circuit, we can see that rectified waveform on the oscilloscope.
+[00:12:16.400 → 00:12:19.400] But this is not a flat DC output.
+[00:12:19.400 → 00:12:23.400] So we need to improve this by adding some filtering.
+[00:12:23.400 → 00:12:29.400] Using a rectifier will result in a ripple in the waveform.
+[00:12:29.400 → 00:12:33.400] To smooth this out, we need to add some filters.
+[00:12:33.400 → 00:12:39.400] The basic method is to simply add an electrolytic capacitor in parallel to the load.
+[00:12:39.400 → 00:12:45.400] The capacitor charges during the increase in voltage and stores the electrons.
+[00:12:45.400 → 00:12:48.400] It then releases these during the decrease.
+[00:12:48.400 → 00:12:51.400] This therefore reduces the ripple.
+[00:12:51.400 → 00:12:54.400] The oscilloscope will show the peaks of each pulse.
+[00:12:54.400 → 00:12:58.400] But now the voltage doesn't decrease to zero.
+[00:12:58.400 → 00:13:03.400] It slowly declines until the pulse charges the capacitor again.
+[00:13:03.400 → 00:13:10.400] We can further reduce this by using a larger capacitor or by using multiple capacitors.
+[00:13:10.400 → 00:13:17.400] In this simple example, you can see the LED turns off as soon as the power is interrupted.
+[00:13:17.400 → 00:13:29.400] But if I placed a capacitor in parallel with the LED, it remains on because now the capacitor is discharging and powering the LED during the interruptions.
+[00:13:29.400 → 00:13:33.400] In this circuit, I have a lamp connected as the load.
+[00:13:33.400 → 00:13:36.400] The oscilloscope shows the rippled waveform.
+[00:13:36.400 → 00:13:43.400] When I add a small 10 microfarad capacitor, we see that it makes very little difference to the waveform.
+[00:13:43.400 → 00:13:50.400] When I use a 100 microfarad capacitor, we see the dip is no longer down to zero volts.
+[00:13:50.400 → 00:13:54.400] At 1000 microfarads, the ripple is very small.
+[00:13:54.400 → 00:13:59.400] At 2200 microfarads, it's nearly completely smooth.
+[00:13:59.400 → 00:14:03.400] This would be fine to use for many electronic circuits.
+[00:14:03.400 → 00:14:06.400] We could use multiple capacitors also.
+[00:14:06.400 → 00:14:13.400] Here we have a 470 microfarad capacitor, which has made some difference.
+[00:14:13.400 → 00:14:19.400] But if I use two capacitors in parallel, we see the waveform is much more improved.
+[00:14:19.400 → 00:14:25.400] When using a capacitor, we need to place a bleeder resistor across the output.
+[00:14:25.400 → 00:14:32.400] This is a high value resistor, which will drain the capacitor when the circuit is off to keep us safe.
+[00:14:32.400 → 00:14:40.400] Notice with this circuit that when I switch it on, the capacitor charges quickly to over 15 volts.
+[00:14:40.400 → 00:14:47.400] But when I switch it off, the DC output is still at 15 volts because there is no load.
+[00:14:47.400 → 00:14:51.400] So the energy is still stored in the capacitor.
+[00:14:51.400 → 00:14:54.400] This could be very dangerous if the voltage is high.
+[00:14:54.400 → 00:15:00.400] In this example, I place a 4.7 kilo ohm resistor across the output.
+[00:15:00.400 → 00:15:04.400] We see the capacitor charges up to 15 volts.
+[00:15:04.400 → 00:15:07.400] And when I switch it off, the capacitor quickly discharges.
+[00:15:07.400 → 00:15:13.400] The electrons are flowing through the resistor, which discharges the capacitor.
+[00:15:13.400 → 00:15:20.400] We can also see that without a capacitor, the output voltage is lower than the input voltage
+[00:15:20.400 → 00:15:24.400] because of the voltage drop of the diodes.
+[00:15:24.400 → 00:15:28.400] Here we have a simple 4-wave bridge rectifier.
+[00:15:28.400 → 00:15:31.400] On the input, we see there is 12 volts AC.
+[00:15:31.400 → 00:15:35.400] On the output, we have 10.5 volts of DC.
+[00:15:35.400 → 00:15:40.400] The voltage on the output is lower because of the diodes.
+[00:15:40.400 → 00:15:45.400] Each diode has a voltage drop of around 0.7 volts.
+[00:15:45.400 → 00:15:48.400] If we look at this circuit with a diode and an LED,
+[00:15:48.400 → 00:15:54.400] we can measure across the diode to see a voltage drop of around 0.7 volts.
+[00:15:54.400 → 00:16:00.400] The current in our full bridge rectifier must pass through two diodes on the positive half
+[00:16:00.400 → 00:16:03.400] and two diodes on the negative half.
+[00:16:03.400 → 00:16:09.400] So the voltage drop combines and is around 1.4 to 1.5 volts.
+[00:16:09.400 → 00:16:13.400] So that is why the output will be reduced.
+[00:16:13.400 → 00:16:18.400] However, if we were to connect a capacitor across the output,
+[00:16:18.400 → 00:16:23.400] we will see that the output voltage is now higher than the input voltage.
+[00:16:23.400 → 00:16:25.400] How is that possible?
+[00:16:25.400 → 00:16:31.400] That's because the AC input is measuring the RMS voltage or the root mean squared.
+[00:16:31.400 → 00:16:33.400] This is not the peak voltage.
+[00:16:33.400 → 00:16:39.400] The peak voltage is 1.41 times higher than the RMS voltage.
+[00:16:39.400 → 00:16:45.400] The capacitors are charged up to the peak voltage and then release.
+[00:16:45.400 → 00:16:48.400] There will be a small voltage drop because of the diodes.
+[00:16:48.400 → 00:16:54.400] So the output is less than the peak input, but it will still be higher than the RMS input.
+[00:16:54.400 → 00:17:08.400] For example, if we had 12 volts RMS on the input, the peak voltage would be 12 volts multiplied by 1.41, which is 16.9 volts.
+[00:17:08.400 → 00:17:12.400] There will be a 0.7 volt drop here and here.
+[00:17:12.400 → 00:17:18.400] So 16.9 volts subtract 1.4 is 15.5 volts.
+[00:17:18.400 → 00:17:21.400] The capacitors are charged up to this voltage.
+[00:17:21.400 → 00:17:24.400] This is only the approximate answer though.
+[00:17:24.400 → 00:17:31.400] The amount of ripple and the actual voltage drop of the diodes will cause it to be slightly different in reality.
+[00:17:31.400 → 00:17:35.400] But we can see that the output is higher than the input.
+[00:17:35.400 → 00:17:42.400] Another common filter is placing two capacitors in parallel with a series inductor between these.
+[00:17:42.400 → 00:17:45.400] This is used for circuits with larger loads.
+[00:17:45.400 → 00:17:48.400] The first capacitor smooths the ripple.
+[00:17:48.400 → 00:17:53.400] The inductor opposes the change in current and tries to keep it constant.
+[00:17:53.400 → 00:17:59.400] And the second capacitor, which is much smaller, will then smooth out the final remaining ripple.
+[00:17:59.400 → 00:18:04.400] Additionally, we can also connect a voltage regulator to the output.
+[00:18:04.400 → 00:18:12.400] This is very common and allows some variation to the input, but it will provide a constant output voltage.
+[00:18:12.400 → 00:18:17.400] This again has capacitors on either side of the regulator to ensure a smooth,
+[00:18:17.400 → 00:18:18.400] DC output.
+[00:18:18.400 → 00:18:22.400] Here we can see a real version, which is connected to a 12 volt AC supply.
+[00:18:22.400 → 00:18:26.400] And we see it has an output of around 5 volts DC.
+[00:18:26.400 → 00:18:32.400] You can learn how to build your own voltage regulator in our previous tutorials.
+[00:18:32.400 → 00:18:36.400] Links for this in the video description down below.
+[00:18:36.400 → 00:18:45.400] Check out one of the videos on screen now to continue learning about electrical and electronics engineering.
+[00:18:45.400 → 00:18:47.400] As this is the end of this video.
+[00:18:47.400 → 00:18:54.400] You can follow us on Facebook, Twitter, Instagram, LinkedIn, and of course, theengineeringmindset.com.

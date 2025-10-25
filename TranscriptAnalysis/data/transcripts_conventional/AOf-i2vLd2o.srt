@@ -1,0 +1,704 @@
+1
+00:00:00,000 --> 00:00:17,880
+Welcome! The subject of this video is connecting power MOSFETs in parallel. I got an email from
+
+2
+00:00:17,880 --> 00:00:24,240
+a visitor who was having all kinds of problems using one of my circuits when he connected
+
+3
+00:00:24,240 --> 00:00:40,380
+MOSFETs in parallel. The question became with RG. RG is used with these MOSFETs to bleed off any static
+
+4
+00:00:40,380 --> 00:00:52,440
+charge and thus enabling the MOSFET to cut completely off. Using them for one MOSFET is fine. I was using
+
+5
+00:00:52,440 --> 00:01:00,060
+a value of 10k. That could of course be lowered. Here I'm going to explain the problems you're going
+
+6
+00:01:00,060 --> 00:01:09,240
+to run into when you connect MOSFETs in parallel. Let's look at a value here. This is RG. But we
+
+7
+00:01:09,240 --> 00:01:15,060
+have something else in here that's hidden that most people don't think of much. But it's in
+
+8
+00:01:15,060 --> 00:01:24,240
+the spec sheets. It's called CGS or Capacitance Gate Source. We'll look a little closer at the
+
+9
+00:01:24,240 --> 00:01:37,500
+structure of a MOSFET in a minute. But if you go to the IRF 630 spec sheet, CGS is 600 PF. On an IRF 520,
+
+10
+00:01:37,500 --> 00:01:52,920
+CGS is 350 PF. Now, when you connect these MOSFETs in parallel, you've also connected this capacitance or this
+
+11
+00:01:52,920 --> 00:02:01,580
+de facto capacitor that exists within these devices. You've connected all of those in parallel. And if you
+
+12
+00:02:01,580 --> 00:02:11,500
+remember your circuit theory, parallel connected capacitors add. Why is this like that? Let's take a look.
+
+13
+00:02:13,580 --> 00:02:20,700
+This I got from International Rectifier. And you can see it on the website. This shows an
+
+14
+00:02:20,700 --> 00:02:29,580
+in-channel MOSFET. You have an input resistance of some kind. You have a drive pulse or whatever they're
+
+15
+00:02:29,580 --> 00:02:38,220
+using. And you notice something here. You have capacitance from the gate to the drain and gate
+
+16
+00:02:38,220 --> 00:02:45,180
+to the source. And this creates all kinds of problems when you're putting in switching signals.
+
+17
+00:02:46,540 --> 00:02:55,740
+If you parallel these MOSFETs, well, you've multiplied your problem. Four of them in parallel. You've got four
+
+18
+00:02:55,740 --> 00:03:04,460
+four times the capacitance. This interferes and distorts your drive signal. How did we get to this?
+
+19
+00:03:07,100 --> 00:03:16,700
+Look at this drawing of a MOSFET from a silicon wafer point of view. The gate electrode is separated from
+
+20
+00:03:16,700 --> 00:03:27,340
+the rest of the MOSFET by a very, very thin layer of silicon dioxide. It's a non-conductor. By definition,
+
+21
+00:03:27,340 --> 00:03:37,500
+what is a capacitor? Two conductors separated by an insulator. So here you've got a capacitor formed from
+
+22
+00:03:37,500 --> 00:03:53,100
+gate to source. When you turn it on and you create a region, a conductive region from source to drain.
+
+23
+00:03:54,140 --> 00:04:01,340
+Now you've got a gate separated by an insulator, which they even come out and call a dielectric,
+
+24
+00:04:01,340 --> 00:04:11,740
+a conductive region. So there's what forms your capacitor. And that doesn't count stray inductance and
+
+25
+00:04:11,740 --> 00:04:12,620
+other problems.
+
+26
+00:04:17,580 --> 00:04:24,460
+All right, before we get into the rest of this, I need to give you a brief review on how an I.O. pin
+
+27
+00:04:24,460 --> 00:04:34,940
+in a typical microcontroller, such as Arduino or microchip pick, whatever you're using. I'm going to use a
+
+28
+00:04:34,940 --> 00:04:44,540
+7414 to illustrate this. What we're interested in is the two output transistors. They're connected between
+
+29
+00:04:44,540 --> 00:04:54,380
+VCC and ground. And how an I.O. pin works. If I want a high out, I'm going to switch on this.
+
+30
+00:04:54,620 --> 00:05:00,060
+upper transistor. And of course, there's going to be some kind of resistance through
+
+31
+00:05:01,660 --> 00:05:07,900
+through the circuit, including the transistor itself. And the output's going to go high,
+
+32
+00:05:07,900 --> 00:05:17,180
+and it should be near VCC. If I want to switch the output low, I'm going to switch on this lower
+
+33
+00:05:17,180 --> 00:05:25,020
+transistor. And it's going to tie and it's going to connect this to ground. Of course, there's going
+
+34
+00:05:25,020 --> 00:05:35,180
+to be some resistance through the transistor junctions, both high and low. And so this is not
+
+35
+00:05:36,380 --> 00:05:44,700
+perfectly zero. This is not a zero path either to ground or to VCC. There is going to be some
+
+36
+00:05:44,700 --> 00:05:53,820
+resistance. That's how a typical I.O. pin works, or transistor switch in general. So keep that in mind
+
+37
+00:05:53,820 --> 00:06:03,420
+as I explain the next part of this. When you switch that I.O. pin on and off, and you're feeding the
+
+38
+00:06:03,420 --> 00:06:13,100
+gate circuits of a bunch of MOSFETs, what you thought started out as a square wave due to capacitive
+
+39
+00:06:13,100 --> 00:06:20,060
+charge and discharge is going to look like this. It's not going to turn on in a linear fashion. It's
+
+40
+00:06:20,060 --> 00:06:29,020
+going to have a charge curve. This charge curve depends on the internal resistance of the transistors used in the
+
+41
+00:06:29,980 --> 00:06:38,700
+drive source times the value of the input capacitance. Well, the more input capacitance you got,
+
+42
+00:06:39,820 --> 00:06:48,380
+the longer and drawn out this charge curve is going to be. When you go to zero and switch on that lower
+
+43
+00:06:48,380 --> 00:06:55,100
+transistor that we discussed, it's also going to have some kind of resistance and the capacitors that
+
+44
+00:06:55,100 --> 00:07:04,780
+were charged up when it went high are going to also discharge, but not in a linear fashion. So due to all
+
+45
+00:07:04,780 --> 00:07:14,700
+this input capacitance and other issues within the microcontroller I.O. pin, you're going to produce a
+
+46
+00:07:14,700 --> 00:07:21,500
+charge curve which is going to play games with switching on the MOSFETs. Then you're going to have
+
+47
+00:07:21,500 --> 00:07:28,300
+a discharge curve that's going to play games again with the MOSFETs, and the faster you try to switch
+
+48
+00:07:28,300 --> 00:07:36,780
+it, the more problems you will have. Let's look at the chart that we're looking at now, and this is
+
+49
+00:07:36,780 --> 00:07:52,060
+RC charge and discharge curves on how this works. You have a time period, we call it T, and that's based on the resistance times the capacitance.
+
+50
+00:07:52,860 --> 00:07:59,580
+The red line shows a charge curve, and a green line shows the discharge curve.
+
+51
+00:07:59,580 --> 00:08:11,180
+And you notice here on the bottom it goes from zero to five. Because this is a non-linear curve,
+
+52
+00:08:12,700 --> 00:08:18,860
+this occurs, what you're doing is charging a capacitor essentially through a resistance,
+
+53
+00:08:18,860 --> 00:08:26,060
+and discharging a capacitor through a resistance. What happens is your greatest current flow,
+
+54
+00:08:26,060 --> 00:08:33,340
+zero, in fact about 62 percent of it, is going to be occurring during the first time period.
+
+55
+00:08:34,060 --> 00:08:41,100
+Because why? There's the greatest difference in voltage between the capacitor that started as zero,
+
+56
+00:08:42,060 --> 00:08:45,740
+and the charging voltage which started at say VCC.
+
+57
+00:08:45,740 --> 00:08:55,500
+And one time period, R times C, you're going to charge up about 62, 63 percent of the way.
+
+58
+00:08:56,700 --> 00:09:09,260
+But now the charging rate drops steeply. By the time you get into 2T, that's two time periods,
+
+59
+00:09:09,260 --> 00:09:19,340
+you've only charged up to about 80 something percent. In most electronics they teach you that it takes 5T,
+
+60
+00:09:20,460 --> 00:09:31,020
+which is 90 something 98, 99 percent, is considered fully charged. So it isn't as simple as R times C.
+
+61
+00:09:31,020 --> 00:09:43,260
+So the more T's you have the slower the charge rate. What does this mean when we're trying to turn on a collection of MOSFETs
+
+62
+00:09:43,260 --> 00:09:59,260
+that accumulated a lot of input capacitance? Let's look at what people normally use. Some Arduinos and Raspberry Pi put out, what, 3.3 volts? I'm going to call it 3 volts.
+
+63
+00:09:59,260 --> 00:10:17,260
+So in a time period of 1T, and I don't know exactly what the R and C values for a Raspberry Pi versus how many MOSFETs you are, but this is what you're dealing with.
+
+64
+00:10:17,260 --> 00:10:43,260
+For R times C to get to 3 volts. From 0 to 1T, you're going to go to 63 percent, 63.2 percent.
+
+65
+00:10:43,260 --> 00:10:58,760
+But 63.2 percent of 3 volts is 1.9 volts. When we go to 2T, that's 86.5 volts, and I've come up to 2.6 volts.
+
+66
+00:10:59,760 --> 00:11:07,260
+Are most MOSFETs really going to turn on at 1.9 or 2.6 volts? Probably not.
+
+67
+00:11:07,260 --> 00:11:17,120
+You're going to have to wait for a minimum of three time periods to get up just to 2.85 volts or 3 volts or so.
+
+68
+00:11:19,920 --> 00:11:29,800
+What is the additional problem? Maybe you have some really good MOSFETs, and they cut on somewhere around 2T right here.
+
+69
+00:11:29,800 --> 00:11:37,660
+But what if you had four MOSFETs in parallel like I showed earlier?
+
+70
+00:11:38,240 --> 00:11:44,760
+MOSFET 1 fires here. MOSFET 2 fires there. MOSFET 3 fires here.
+
+71
+00:11:45,320 --> 00:11:49,840
+And finally, they're all firing when we reach here. What's happened?
+
+72
+00:11:49,840 --> 00:12:00,580
+I've got some super heavy load on those four parallel MOSFETs, and they're not firing off close enough at the same time.
+
+73
+00:12:00,660 --> 00:12:04,500
+You might overload one or two of the MOSFETs.
+
+74
+00:12:04,560 --> 00:12:11,580
+One of the MOSFETs is conducting like crazy by the time the other three could cut in.
+
+75
+00:12:11,920 --> 00:12:14,060
+See the problem I'm talking about?
+
+76
+00:12:14,060 --> 00:12:17,520
+Let's look at this problem again.
+
+77
+00:12:18,420 --> 00:12:21,400
+But now we're going to go to 5 volts.
+
+78
+00:12:22,580 --> 00:12:28,600
+1T, 63% of 5 volts, is 3.16 volts.
+
+79
+00:12:29,260 --> 00:12:31,860
+Aha! Big difference.
+
+80
+00:12:32,780 --> 00:12:42,960
+So most of your MOSFETs, if they're designed to fire right at 3 volts, should have turned on pretty well.
+
+81
+00:12:42,960 --> 00:12:49,460
+But a lot of MOSFETs take a little higher voltage to turn completely on.
+
+82
+00:12:49,560 --> 00:12:56,400
+You could still have the danger of cutting on 2 or 3, and maybe number 4 cuts on out here.
+
+83
+00:12:57,200 --> 00:12:59,420
+See the problems? You've got noise.
+
+84
+00:12:59,540 --> 00:13:00,800
+They're not firing together.
+
+85
+00:13:01,480 --> 00:13:05,120
+Some of them might be taking more of a load than the rest of them.
+
+86
+00:13:05,580 --> 00:13:07,160
+But let's take a look at this.
+
+87
+00:13:07,160 --> 00:13:12,920
+1T, I get 3.16 volts.
+
+88
+00:13:13,420 --> 00:13:17,240
+At 2T, or two time periods, it's 4.3.
+
+89
+00:13:17,640 --> 00:13:24,860
+For the time you hit 2T, surely all the MOSFETs will be turned on by 4.3.
+
+90
+00:13:25,660 --> 00:13:31,900
+But I did find some MOSFETs when I checked them that were cutting on around 4.3.
+
+91
+00:13:31,900 --> 00:13:33,820
+Understand something.
+
+92
+00:13:34,000 --> 00:13:37,320
+You can order a bag of MOSFETs.
+
+93
+00:13:37,540 --> 00:13:38,940
+You can pull them out.
+
+94
+00:13:39,340 --> 00:13:45,280
+But that doesn't mean that they have exactly the same specs.
+
+95
+00:13:45,380 --> 00:13:50,140
+There might be a couple of tenths of a volt difference in the way they fire.
+
+96
+00:13:50,140 --> 00:13:57,040
+Of course, by three time periods, I'm up to 3.75 volts.
+
+97
+00:13:57,840 --> 00:14:01,960
+So, this is beginning to suggest a solution.
+
+98
+00:14:03,360 --> 00:14:10,060
+If you're going to do this kind of switching with parallel MOSFETs, you need to go to a higher voltage.
+
+99
+00:14:10,060 --> 00:14:21,040
+But even 5 volts on stuff that fires between 3 and 4.3 volts is still an iffy proposition.
+
+100
+00:14:21,540 --> 00:14:24,120
+And look how much time I was strung over.
+
+101
+00:14:25,220 --> 00:14:34,700
+I was strung over, even if they all fired from the end of 1T to the beginning of 2T,
+
+102
+00:14:34,800 --> 00:14:37,860
+that's still stringing it out over this time period, is it?
+
+103
+00:14:37,860 --> 00:14:38,940
+One time period.
+
+104
+00:14:38,940 --> 00:14:43,560
+Let's take another look at this problem.
+
+105
+00:14:44,980 --> 00:14:48,580
+Now, I'm driving them with 12 volts.
+
+106
+00:14:50,320 --> 00:14:56,480
+1T, that's 12 volts times 63.2% is 7.6 volts.
+
+107
+00:14:58,020 --> 00:14:58,660
+All right.
+
+108
+00:14:58,840 --> 00:15:00,440
+I have switched off.
+
+109
+00:15:00,800 --> 00:15:03,120
+They're all surely going to be switched on.
+
+110
+00:15:03,120 --> 00:15:15,020
+But the important part is, if you look here at 1T at 12 volts, they all switched on somewhere in this little steep curve here.
+
+111
+00:15:15,020 --> 00:15:17,680
+So, that's your best bet.
+
+112
+00:15:17,680 --> 00:15:19,420
+Drive these things.
+
+113
+00:15:19,640 --> 00:15:21,020
+Remember VGS.
+
+114
+00:15:21,240 --> 00:15:23,080
+Do not exceed VGS.
+
+115
+00:15:23,960 --> 00:15:30,560
+But with a higher voltage, you will switch on all of those MOSFETs very close together.
+
+116
+00:15:30,560 --> 00:15:33,600
+And they'll be switched on fully and hard.
+
+117
+00:15:34,020 --> 00:15:36,480
+Down in here at a fraction of T.
+
+118
+00:15:36,480 --> 00:15:45,100
+Or you can sit here at 3 volts and take up to 3T, three time periods, to try to switch it on.
+
+119
+00:15:45,100 --> 00:15:49,520
+It's up to you on that.
+
+120
+00:15:51,720 --> 00:15:53,480
+What about a drive circuit?
+
+121
+00:15:53,480 --> 00:16:00,280
+When you put MOSFETs in parallel, of course, the capacitance is going to add.
+
+122
+00:16:00,400 --> 00:16:02,060
+You cannot change that.
+
+123
+00:16:02,660 --> 00:16:05,500
+But you might be able to change R.
+
+124
+00:16:05,880 --> 00:16:08,340
+Go back into your drive circuit.
+
+125
+00:16:09,000 --> 00:16:15,760
+If you're wondering what this circuit is, it's half of one of my H-bridge circuits that I've had around for years.
+
+126
+00:16:16,080 --> 00:16:19,860
+But it would be excellent for this application.
+
+127
+00:16:21,280 --> 00:16:22,820
+Let's look at it this way.
+
+128
+00:16:22,820 --> 00:16:25,640
+This goes to your MOSFETs.
+
+129
+00:16:26,380 --> 00:16:28,740
+Your gates that are all connected together.
+
+130
+00:16:30,740 --> 00:16:36,780
+When there's no input on Q5, the gates of the transistors are high.
+
+131
+00:16:36,940 --> 00:16:38,220
+Q2 is turned off.
+
+132
+00:16:38,580 --> 00:16:41,160
+But Q1 is turned on hard.
+
+133
+00:16:42,100 --> 00:16:42,460
+Okay.
+
+134
+00:16:43,240 --> 00:16:52,800
+When Q2, in this case an IRF630, has a turn-on resistance of 0.4 ohm.
+
+135
+00:16:52,820 --> 00:17:04,880
+So whatever capacitance I had on those parallel gates is quickly discharged through that very, very low turn-on resistance.
+
+136
+00:17:04,880 --> 00:17:08,700
+I put a high in E.
+
+137
+00:17:08,700 --> 00:17:10,800
+I turn on Q5.
+
+138
+00:17:10,800 --> 00:17:13,380
+The gate voltage drops to 0.
+
+139
+00:17:14,160 --> 00:17:16,500
+And Q2 will switch on.
+
+140
+00:17:16,580 --> 00:17:19,000
+And it switches on hard and fast.
+
+141
+00:17:19,440 --> 00:17:22,020
+It has very little.
+
+142
+00:17:22,020 --> 00:17:28,760
+It has 0.8 ohm drain source resistance.
+
+143
+00:17:28,760 --> 00:17:32,320
+So by reducing R again.
+
+144
+00:17:32,320 --> 00:17:46,340
+By having a very low conduction resistance on Q2, I have really massively reduced T to something back here.
+
+145
+00:17:46,340 --> 00:17:55,700
+That's how I reduce T is because my turn-on and turn-off resistance are so much lower than a regular bipolar transistor.
+
+146
+00:17:55,900 --> 00:17:57,080
+So keep this in mind.
+
+147
+00:17:57,620 --> 00:17:59,340
+You can use MOSFETs.
+
+148
+00:17:59,340 --> 00:18:04,140
+RG, make it about 1 or 2K.
+
+149
+00:18:04,780 --> 00:18:13,400
+And the 1N914 serves to clean up any noise generated by RG charging and discharging.
+
+150
+00:18:13,400 --> 00:18:22,380
+Here is another variation of connecting the MOSFETs in parallel.
+
+151
+00:18:23,120 --> 00:18:26,280
+You can put this resistor in the gate circuit.
+
+152
+00:18:26,600 --> 00:18:29,540
+This would slow down the discharge surge.
+
+153
+00:18:29,540 --> 00:18:36,300
+You might even reduce it to a lower value such as 10 ohms, 22 ohms, whatever you want to.
+
+154
+00:18:36,400 --> 00:18:43,060
+You can do that to connect it to a gate or whatever.
+
+155
+00:18:44,480 --> 00:18:51,040
+The 1N914 serves the purpose again as current rushes through the 47 ohm.
+
+156
+00:18:51,140 --> 00:18:57,360
+The induced, the generated voltage spike is taken care of by the 1N914.
+
+157
+00:18:57,360 --> 00:19:01,320
+Here is another variation.
+
+158
+00:19:01,620 --> 00:19:10,340
+You can connect an individual resistor to each gate and then connect them to common.
+
+159
+00:19:11,760 --> 00:19:14,440
+You'll still have the CGS problem.
+
+160
+00:19:14,580 --> 00:19:16,540
+27 ohms might be a bit high.
+
+161
+00:19:16,640 --> 00:19:18,700
+You might want to go to 10 ohms each.
+
+162
+00:19:19,880 --> 00:19:25,760
+That serves to slow down the huge rush of discharge current.
+
+163
+00:19:25,760 --> 00:19:32,900
+On the preceding frame and this one, I highly recommend keeping in RG.
+
+164
+00:19:33,440 --> 00:19:40,940
+The reason I say do this is because when you power up, if you happen to have this,
+
+165
+00:19:41,680 --> 00:19:46,360
+for some reason, connected to a microcontroller gate or whatever,
+
+166
+00:19:46,900 --> 00:19:53,220
+and the gate is floating, you could have these turn on when they're not supposed to.
+
+167
+00:19:53,220 --> 00:20:00,260
+So with the preceding circuits, it does not hurt to leave the RG resistor in.
+
+168
+00:20:00,360 --> 00:20:04,140
+It helps assure on power up that they are turned off.
+
+169
+00:20:04,140 --> 00:20:12,540
+So these are possible solutions to look at when you are dealing with parallel MOSFETs.
+
+170
+00:20:13,580 --> 00:20:15,240
+I hope this was useful.
+
+171
+00:20:15,800 --> 00:20:16,940
+Give it a try.
+
+172
+00:20:17,060 --> 00:20:18,580
+Let me know how it works out.
+
+173
+00:20:19,240 --> 00:20:21,220
+This is your host, Lewis Laughlin.
+
+174
+00:20:21,380 --> 00:20:26,420
+Visit my website at www.bristolwatch.com.
+
+175
+00:20:26,920 --> 00:20:28,220
+Thanks for listening.
+
+176
+00:20:34,360 --> 00:20:41,380
+Thank you.
+

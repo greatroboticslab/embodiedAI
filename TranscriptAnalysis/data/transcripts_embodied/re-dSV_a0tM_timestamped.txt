@@ -1,0 +1,337 @@
+re-dSV_a0tM
+https://www.youtube.com/watch?v=re-dSV_a0tM
+Unknown Category
+
+[00:00:00.000 → 00:00:03.960] Marvin, turn on the lights.
+[00:00:06.900 → 00:00:07.300] Okay.
+[00:00:08.300 → 00:00:11.020] Marvin, turn off the bedroom.
+[00:00:13.460 → 00:00:14.340] Okay.
+[00:00:15.000 → 00:00:17.480] Marvin, turn off the kitchen.
+[00:00:21.000 → 00:00:22.120] Okay.
+[00:00:22.560 → 00:00:25.040] Marvin, tell me a joke.
+[00:00:25.040 → 00:00:30.920] What goes up and down but does not move?
+[00:00:32.340 → 00:00:32.900] Stairs.
+[00:00:34.600 → 00:00:37.220] Marvin, turn off the lights.
+[00:00:40.480 → 00:00:41.080] Okay.
+[00:00:42.400 → 00:00:42.960] Hey everyone.
+[00:00:43.900 → 00:00:49.120] So, if you've been playing along at home, you'll have known that we've been building towards something.
+[00:00:49.120 → 00:01:00.900] We've covered getting audio into the ESP32, getting audio out of the ESP32, and we've looked at getting some AI running using TensorFlow Lite.
+[00:01:01.860 → 00:01:05.620] This has all been building towards building an Alexa type system.
+[00:01:06.140 → 00:01:08.560] So what actually is an Alexa system?
+[00:01:09.120 → 00:01:12.900] What components do we need to plug together to get something working?
+[00:01:12.900 → 00:01:18.900] So, the first thing we're going to need is some kind of wake word detection system.
+[00:01:19.620 → 00:01:24.340] This will continuously listen to audio waiting for a trigger phrase or word.
+[00:01:25.140 → 00:01:33.060] When it hears this word, it will wake up the rest of the system and start recording audio to capture whatever instructions the user has.
+[00:01:34.180 → 00:01:38.420] Once the audio has been captured, it will send it off to a server to be recognised.
+[00:01:38.420 → 00:01:43.540] The server processes the audio and works out what the user is asking for.
+[00:01:44.260 → 00:01:48.420] The server may process the user's request and may trigger actions in other services.
+[00:01:48.980 → 00:01:54.020] In the system we're building, we'll just be using the server to work out what the user's intention was.
+[00:01:55.140 → 00:02:01.060] This intention is then sent back to the device and the device tries to perform what the user asked it to do.
+[00:02:02.100 → 00:02:03.620] So we need three components.
+[00:02:03.620 → 00:02:05.940] A wake word detection.
+[00:02:06.980 → 00:02:09.220] Audio capture and intent recognition.
+[00:02:09.940 → 00:02:11.540] And intent execution.
+[00:02:12.900 → 00:02:15.700] Let's start off with the wake word detection.
+[00:02:17.780 → 00:02:21.300] We're going to be using TensorFlow Lite for our wake word detection.
+[00:02:22.020 → 00:02:27.780] And as with any machine learning problem, our first port of call is to find some data to train against.
+[00:02:27.780 → 00:02:37.300] Now fortunately the good folk at Google have already done the heavy lifting for us and collated a speech commands dataset.
+[00:02:38.500 → 00:02:45.460] So this dataset contains over 100,000 audio files consisting of a set of 20 core command words such as
+[00:02:46.020 → 00:02:51.860] up, down, left, right, yes, no and a set of extra words.
+[00:02:52.740 → 00:02:54.660] Each of the samples is one second long.
+[00:02:54.660 → 00:02:59.220] There's one word in particular that looks like a good candidate for a wake word.
+[00:02:59.860 → 00:03:03.220] I've chosen to use the word Marvin as my wake word.
+[00:03:03.220 → 00:03:06.820] Oh god, I'm so depressed.
+[00:03:07.620 → 00:03:09.540] Let's have a listen to a couple of the files.
+[00:03:09.540 → 00:03:10.980] Marvin
+[00:03:10.980 → 00:03:13.780] Marvin
+[00:03:13.780 → 00:03:15.460] Marvin
+[00:03:15.460 → 00:03:17.620] Marvin
+[00:03:17.620 → 00:03:19.620] Marvin
+[00:03:19.620 → 00:03:20.500] Seven
+[00:03:20.500 → 00:03:22.580] Seven
+[00:03:22.580 → 00:03:24.500] Seven
+[00:03:24.500 → 00:03:26.900] Seven
+[00:03:26.900 → 00:03:32.740] I've also recorded a large sample of ambient background noise consisting of TV,
+[00:03:33.300 → 00:03:36.020] radio shows and general office noise.
+[00:03:37.220 → 00:03:43.060] So now we've got our training data we need to work out what features to train our neural network against.
+[00:03:43.780 → 00:03:47.700] It's not likely that feeding in raw audio samples will give us a good result.
+[00:03:48.980 → 00:03:52.660] So reading around and looking at some TensorFlow samples
+[00:03:52.660 → 00:03:58.120] A good approach seems to be to treat the problem as an image recognition problem.
+[00:03:58.120 → 00:04:02.460] We need to turn our audio samples into something that looks like an image.
+[00:04:02.460 → 00:04:07.120] To do this we can take a spectrogram of the audio sample.
+[00:04:07.120 → 00:04:12.380] To get a spectrum of an audio sample we break the sample into small sections.
+[00:04:12.380 → 00:04:17.100] We then perform a discrete Fourier transform on each of these sections.
+[00:04:17.100 → 00:04:22.000] This gives us the frequencies that are present in that slice of audio.
+[00:04:22.000 → 00:04:30.100] Putting these frequency slices together gives us a spectrogram of the sample.
+[00:04:30.100 → 00:04:35.000] Now I've created a Jupyter notebook to create the training data.
+[00:04:35.000 → 00:04:39.280] As always the first thing we do is import the libraries we're going to need and set up some
+[00:04:39.280 → 00:04:40.280] constants.
+[00:04:40.280 → 00:04:44.920] We've got a list of words in our training data along with a dummy word for the background
+[00:04:44.920 → 00:04:45.920] noise.
+[00:04:45.920 → 00:04:51.680] I've made some helper functions for getting all the files for a word and also for detecting
+[00:04:51.680 → 00:04:54.640] if the file actually contains voice data.
+[00:04:54.640 → 00:04:59.740] Some of the samples are not exactly one second long and some of them have truncated audio
+[00:04:59.740 → 00:05:01.720] data.
+[00:05:01.720 → 00:05:06.460] We then have our function for generating the spectrogram for an audio sample.
+[00:05:06.460 → 00:05:12.480] We first make sure the audio sample is normalised and then we compute the spectrogram.
+[00:05:12.480 → 00:05:16.600] We reduce the result of this by applying average pooling.
+[00:05:16.600 → 00:05:21.420] We finally take a log of the spectrogram so that we don't feed extreme values into our
+[00:05:21.420 → 00:05:25.360] neural network which might make it harder to train.
+[00:05:25.360 → 00:05:30.580] For each file we collect training data from we apply some random modifications.
+[00:05:30.580 → 00:05:34.700] We randomly shift the audio sample in its one second segment.
+[00:05:34.700 → 00:05:39.380] This makes sure that our neural network generalises around the audio position.
+[00:05:39.380 → 00:05:43.540] We also add in some random sample of background noise.
+[00:05:43.540 → 00:05:48.480] This helps our neural network work out the unique features of our target word and ignore
+[00:05:48.480 → 00:05:51.780] any background noise.
+[00:05:51.780 → 00:05:56.680] Now we need to add more samples of the Marvin word to our dataset as it would otherwise be
+[00:05:56.680 → 00:05:59.880] swamped by the other words in our training data.
+[00:05:59.880 → 00:06:02.380] So we repeat it multiple times.
+[00:06:02.380 → 00:06:06.660] This also helps our neural network generalise as there will be multiple samples of the word
+[00:06:06.660 → 00:06:13.240] different background noise and in different positions in the one second sample.
+[00:06:13.240 → 00:06:16.040] We then add in samples from our background noise.
+[00:06:16.040 → 00:06:21.080] We run through each file of background noise and chop it into one second segments.
+[00:06:21.080 → 00:06:25.780] And then we also generate some random utterances from our background noise.
+[00:06:25.780 → 00:06:32.460] Once again this should help our network distinguish between the word Marvin and random noises.
+[00:06:32.460 → 00:06:36.580] Now during my testing of the system I found that there were some particular noises that
+[00:06:36.580 → 00:06:39.780] seem to trigger false detection of the word Marvin.
+[00:06:39.780 → 00:06:45.100] These seem to consist of low frequency humming and strange scraping sounds.
+[00:06:45.100 → 00:06:51.420] So I've collected some of these sounds as more negative samples for the training process.
+[00:06:51.420 → 00:06:57.340] With all this data we end up with a reasonably sized training validation and testing dataset.
+[00:06:57.340 → 00:07:01.340] So we can save this to disk for use in our training workbook.
+[00:07:01.340 → 00:07:05.740] We can also have a look at the spectrograms for different words in our training data.
+[00:07:05.740 → 00:07:09.940] So here's some examples of Marvin.
+[00:07:09.940 → 00:07:14.280] And here's some examples of the word yes.
+[00:07:14.280 → 00:07:16.840] So that's our training data prepared.
+[00:07:16.840 → 00:07:20.940] Let's have a look at how we train our model up.
+[00:07:20.940 → 00:07:24.940] I've created another Jupyter notebook for training our model.
+[00:07:24.940 → 00:07:28.140] Once again we have to pull in the imports we need.
+[00:07:28.140 → 00:07:33.460] We also set up TensorBoard so that we can visualise the training of our model.
+[00:07:33.460 → 00:07:35.460] We've got our list of words.
+[00:07:35.460 → 00:07:40.140] It's important that this is in the same order as in the training workbook.
+[00:07:40.140 → 00:07:43.140] And we have the code to load up our training data.
+[00:07:43.140 → 00:07:50.920] If we plot a histogram of the training data you can see that we have a lot of examples
+[00:07:50.920 → 00:07:56.960] of the word at position 16 and quite a few at position 35.
+[00:07:56.960 → 00:08:02.220] Combining this with our words we can see that this matches up to the word Marvin and to our
+[00:08:02.220 → 00:08:03.340] background noise.
+[00:08:03.340 → 00:08:09.600] Now for our system we only really care about detecting the word Marvin so we'll modify
+[00:08:09.600 → 00:08:16.020] our y labels so that it contains a 1 for Marvin and a 0 for everything else.
+[00:08:16.020 → 00:08:20.020] Plotting another histogram we can see that we now have a fairly balanced set of training
+[00:08:20.020 → 00:08:24.260] data with examples of our positive and negative classes.
+[00:08:24.260 → 00:08:29.260] We can now feed our data into TensorFlow datasets.
+[00:08:29.260 → 00:08:37.920] We set up our training data to repeat forever, randomly shuffle and to come out in batches.
+[00:08:37.920 → 00:08:39.580] Now we create our model.
+[00:08:39.580 → 00:08:44.260] I've played around with a few different model architectures and ended up with this as a trade-off
+[00:08:44.260 → 00:08:48.680] between time to train, accuracy and model size.
+[00:08:48.680 → 00:08:53.680] We have a convolution layer followed by a max pooling layer.
+[00:08:53.680 → 00:08:57.240] We have a convolution layer followed by another convolution layer with a max pooling layer
+[00:08:57.240 → 00:09:04.960] and the result of this is fed into a densely connected layer and finally to our output neuron.
+[00:09:04.960 → 00:09:09.400] Looking at the summary of our model we can see how many parameters it has.
+[00:09:09.400 → 00:09:14.340] This gives us a fairly good indication of how large the model will be when we convert it
+[00:09:14.340 → 00:09:16.180] to TensorFlow Lite.
+[00:09:16.180 → 00:09:22.680] Finally, we compile our model, set up the tensorboard logging and kick off the training.
+[00:09:22.680 → 00:09:31.240] With our training completed we can now take a look at how well it has performed.
+[00:09:31.240 → 00:09:35.140] Looking at the tensorboard we can see that our training performance is pretty close to
+[00:09:35.140 → 00:09:36.240] our validation performance.
+[00:09:36.240 → 00:09:39.740] There is a bit of noise on the unsmoothed lines.
+[00:09:39.740 → 00:09:45.200] Ideally we should probably try and increase the size of our training and validation data.
+[00:09:45.200 → 00:09:47.680] Let's see how well it does on the testing dataset.
+[00:09:47.680 → 00:09:53.760] I'm going to use the best model that was found during training and work from that.
+[00:09:53.760 → 00:09:56.240] You can see that we get pretty good results.
+[00:09:56.240 → 00:10:01.480] Checking the confusion matrix we can see how many false positives and how many false negatives
+[00:10:01.480 → 00:10:02.480] we get.
+[00:10:02.480 → 00:10:04.680] These are pretty good results as well.
+[00:10:04.680 → 00:10:09.560] I would rather get more false positives than false negatives as we don't want to be randomly
+[00:10:09.560 → 00:10:11.680] waking up from background noises.
+[00:10:11.680 → 00:10:16.440] Let's try it with a higher threshold and see how that performs.
+[00:10:16.440 → 00:10:19.280] This is probably what we will go for in our code.
+[00:10:19.280 → 00:10:25.340] We will get a lot more false negatives but also far fewer false positives.
+[00:10:25.340 → 00:10:31.480] So as we don't seem to be overfitting I am happy to train the model on our complete dataset.
+[00:10:31.480 → 00:10:44.380] We will get a lot of training, validation and testing all combined into one large dataset.
+[00:10:44.380 → 00:10:47.640] Let's see how this performs on all our data.
+[00:10:47.640 → 00:10:50.300] Once again we have pretty good results.
+[00:10:50.300 → 00:10:57.020] Our next step is to convert the model to TensorFlow Lite for use on the ESP32.
+[00:10:57.020 → 00:11:00.900] So let's jump into another workbook for this.
+[00:11:00.900 → 00:11:03.860] We have our imports to bring in TensorFlow and NumPy.
+[00:11:03.860 → 00:11:06.980] We are also going to need our data.
+[00:11:06.980 → 00:11:12.440] We need this so that the converter can quantize our model accurately.
+[00:11:12.440 → 00:11:17.020] Once the model has been converted we can run a command line tool to generate the C code.
+[00:11:17.020 → 00:11:21.060] We can now compile that into our project.
+[00:11:21.060 → 00:11:26.380] We'll take a look at the wake word detection code on the ESP side of things later.
+[00:11:26.380 → 00:11:29.380] Next we need to get to another building block.
+[00:11:29.380 → 00:11:34.040] Once we've detected the wake word we need to record some audio and work out what the user
+[00:11:34.040 → 00:11:35.220] wants us to do.
+[00:11:35.220 → 00:11:41.900] We're going to need something that can understand speech.
+[00:11:41.900 → 00:11:47.580] So to do the heavy lifting of actually recognising the text we're going to be using a service
+[00:11:47.580 → 00:11:51.220] from Facebook called Wit AI.
+[00:11:51.220 → 00:11:58.480] So this is a free service that will analyse speech and work out what the intention is behind
+[00:11:58.480 → 00:11:59.860] the speech.
+[00:11:59.860 → 00:12:07.160] So we'll log in using Facebook.
+[00:12:07.160 → 00:12:12.160] And then the first thing we need to do is create a new application.
+[00:12:12.160 → 00:12:17.780] So let's just call this marty1.
+[00:12:17.780 → 00:12:20.340] We'll make it private for now.
+[00:12:20.340 → 00:12:21.780] And we'll create.
+[00:12:21.780 → 00:12:30.080] So now we need to train our application to work out what it is we're trying to do.
+[00:12:30.080 → 00:12:32.940] So let's add a few sample phrases.
+[00:12:32.940 → 00:12:39.860] So let's try turning something on.
+[00:12:39.860 → 00:12:49.140] So we need to create an intent.
+[00:12:49.140 → 00:12:53.720] And then we need to start highlighting some of the bits of text.
+[00:12:53.720 → 00:12:58.280] So let's try and pull out the device that we're trying to turn on.
+[00:12:58.280 → 00:13:01.560] So I'll create an entity.
+[00:13:01.560 → 00:13:04.200] So now we have an entity called device.
+[00:13:04.200 → 00:13:10.160] And we've highlighted bedroom as the piece of text that should correspond to that device.
+[00:13:10.160 → 00:13:13.400] And now we can add a trait for on and off.
+[00:13:13.400 → 00:13:17.640] So this is a built-in trait that's supplied by Wit.
+[00:13:17.640 → 00:13:21.180] And we want to say that this should be turned on.
+[00:13:21.180 → 00:13:24.940] So let's train this.
+[00:13:24.940 → 00:13:31.360] And now let's try adding another piece of text.
+[00:13:31.360 → 00:13:37.540] So you can see that it's worked out the device already.
+[00:13:37.540 → 00:13:40.280] And it's worked out the value should be off.
+[00:13:40.280 → 00:13:47.740] So let's add that to our turn off and on intent.
+[00:13:47.740 → 00:13:49.860] Let's try adding another one.
+[00:13:49.860 → 00:13:54.300] So let's try turn on the kitchen.
+[00:13:54.300 → 00:13:57.360] So it's worked out that it's an on-off trait.
+[00:13:57.360 → 00:13:59.480] And it's worked out on.
+[00:13:59.480 → 00:14:03.040] And then let's highlight this and tell it that's the device.
+[00:14:03.040 → 00:14:05.740] And we'll train that as well.
+[00:14:05.740 → 00:14:10.860] So let's try another one.
+[00:14:10.860 → 00:14:12.860] Turn off the kitchen.
+[00:14:12.860 → 00:14:16.300] So it's improved its understanding.
+[00:14:16.300 → 00:14:20.360] Now it can see the device is kitchen and the trait is off.
+[00:14:20.360 → 00:14:22.360] So let's try and validate that.
+[00:14:22.360 → 00:14:28.300] Now you can keep adding more utterances to improve the performance of your application.
+[00:14:28.300 → 00:14:32.740] But I think for now that should be enough for our use case.
+[00:14:32.740 → 00:14:37.180] So let's try this out with some real text.
+[00:14:37.180 → 00:14:43.680] So I've made some sample utterances and recorded them to WAV files.
+[00:14:43.680 → 00:14:49.120] So I have a turn off, a turn on, and another example turn on.
+[00:14:49.120 → 00:14:52.120] So let's have a quick listen to these files.
+[00:14:52.120 → 00:14:54.120] So turn off.
+[00:14:54.120 → 00:14:56.120] Turn off the bedroom.
+[00:14:56.120 → 00:14:59.860] So hopefully that should turn off the bedroom.
+[00:14:59.860 → 00:15:03.900] So let's try running this through wit.
+[00:15:03.900 → 00:15:15.940] So I have a curl command here that will post up the WAV file to the backend service.
+[00:15:15.940 → 00:15:21.460] So you can see it's detected that the device is bedroom.
+[00:15:21.460 → 00:15:24.560] And it's detected that we want to turn off the bedroom.
+[00:15:24.560 → 00:15:26.740] So let's try another one.
+[00:15:26.740 → 00:15:31.680] So we'll try turn on.
+[00:15:31.680 → 00:15:34.500] Turn on the light.
+[00:15:34.500 → 00:15:37.600] So this should turn on the light.
+[00:15:37.600 → 00:15:39.900] So let's try that.
+[00:15:39.900 → 00:15:46.820] So we can see once again it's detected the device.
+[00:15:46.820 → 00:15:50.080] It tells us that it's the light.
+[00:15:50.080 → 00:15:52.800] It's found the intent, turn on device.
+[00:15:52.800 → 00:15:54.800] But it says we want to turn it on.
+[00:15:54.800 → 00:15:58.420] So let's try our last sample.
+[00:15:58.420 → 00:15:59.920] So turn on two.
+[00:15:59.920 → 00:16:03.960] Turn on bedroom.
+[00:16:03.960 → 00:16:06.360] So this should turn on the bedroom as well.
+[00:16:06.360 → 00:16:07.800] So let's check that works.
+[00:16:07.800 → 00:16:08.800] So yeah.
+[00:16:08.800 → 00:16:20.300] So it's found the device and it's worked out.
+[00:16:20.300 → 00:16:21.920] We want to turn it on.
+[00:16:21.920 → 00:16:26.080] So I think this wit application should work for us.
+[00:16:26.080 → 00:16:29.500] So let's integrate it into our code.
+[00:16:29.500 → 00:16:35.020] So that's our building blocks completed.
+[00:16:35.020 → 00:16:37.120] We have something that will detect a wake word.
+[00:16:37.120 → 00:16:42.060] And we have something that will work out what the user's intention was.
+[00:16:42.060 → 00:16:47.500] Let's have a look at how this is all wired up on the ESP32 side of things.
+[00:16:47.500 → 00:16:52.300] I've created a set of libraries for the main components of the project.
+[00:16:52.300 → 00:16:58.580] We have the TFMicro library which includes everything needed to run a TensorFlow Lite model.
+[00:16:58.580 → 00:17:02.500] And we have a wrapper library to make it slightly easier to use.
+[00:17:02.500 → 00:17:06.280] Here's our trained model converted into C code.
+[00:17:06.280 → 00:17:09.620] And here are the functions that we'll use to communicate with it.
+[00:17:09.620 → 00:17:15.660] We have one to get the input buffer and another to run a prediction on the input data.
+[00:17:15.660 → 00:17:22.700] We've covered this in more detail in a previous video so I won't go into too many details on this now.
+[00:17:22.700 → 00:17:28.440] Moving on, we have a couple of helper libraries for getting audio in and out of the system.
+[00:17:28.440 → 00:17:37.520] We can support both I2S microphones directly and analogue microphones using the analogue to digital converter.
+[00:17:37.520 → 00:17:45.520] Samples from the microphone are heading to a circular buffer with room for just over 1 seconds worth of audio.
+[00:17:45.520 → 00:17:53.280] Our audio output library supports playing WAV files from SPIFs via an I2S amplifier.
+[00:17:53.280 → 00:17:56.420] We've then got our audio processing code.
+[00:17:56.420 → 00:18:01.300] This needs to recreate the same process that we used for our training data.
+[00:18:01.300 → 00:18:05.740] The first thing we need to do is work out the mean and max values of the samples so that
+[00:18:05.740 → 00:18:08.360] we can normalise the audio.
+[00:18:08.360 → 00:18:14.980] We then step through the 1 second of audio, extracting a window of samples on each step.
+[00:18:14.980 → 00:18:20.420] The input samples are normalised and copied into our FFT input buffer.
+[00:18:20.420 → 00:18:27.880] Now the input to the FFT is a power of 2 so there is a blank area that we need to zero out.
+[00:18:27.880 → 00:18:33.260] Before performing the FFT we apply a hamming window and then once we have done the FFT we
+[00:18:33.260 → 00:18:36.780] extract the energy in each frequency bin.
+[00:18:36.780 → 00:18:44.140] We follow that by the same average pooling process as in training and then finally we take the log.
+[00:18:44.140 → 00:18:50.880] This gives us the set of features that our neural network is expecting to see.
+[00:18:50.880 → 00:18:54.560] Finally we have the code for talking to WIT AI.
+[00:18:54.560 → 00:18:59.880] To avoid having to buffer the entire audio sample in memory we need to perform a chunked upload
+[00:18:59.880 → 00:19:01.980] of the data.
+[00:19:01.980 → 00:19:06.700] We create a connection to WIT AI and then upload the chunks of data until we have collected
+[00:19:06.700 → 00:19:10.580] sufficient audio to capture the user's command.
+[00:19:10.580 → 00:19:15.480] We decode the results from WIT AI and extract the pieces of information that we are interested
+[00:19:15.480 → 00:19:16.480] in.
+[00:19:16.480 → 00:19:22.060] We only care about the intent, the device and whether the user wants to turn the device
+[00:19:22.060 → 00:19:23.440] on or off.
+[00:19:23.440 → 00:19:27.660] That's all the components of our application.
+[00:19:27.660 → 00:19:30.400] Let's see how these are all coordinated.
+[00:19:30.400 → 00:19:35.320] In our setup function we do all the normal work of setting up the serial port, connecting
+[00:19:35.320 → 00:19:39.300] to WiFi and starting up SPFs.
+[00:19:39.300 → 00:19:45.920] We configure the audio input and the audio output and we set up some devices and map them onto GPIO
+[00:19:45.920 → 00:19:47.460] ports.
+[00:19:47.460 → 00:19:52.740] Finally we create a task that will delegate onto our application class before we kick
+[00:19:52.740 → 00:19:56.140] off the audio input.
+[00:19:56.140 → 00:20:01.180] Our application task is woken up every time the audio input fills up one of the sections
+[00:20:01.180 → 00:20:02.820] of the ring buffer.
+[00:20:02.820 → 00:20:08.240] Every time that happens it services the application.
+[00:20:08.240 → 00:20:11.520] Our application consists of a very simple state machine.
+[00:20:11.520 → 00:20:13.480] We can be in one of two states.
+[00:20:13.480 → 00:20:19.880] We can either be waiting for the wake word or we can be recognising a command.
+[00:20:19.880 → 00:20:23.460] Let's have a look at the detect wake word state.
+[00:20:23.460 → 00:20:27.200] The first thing we do is get hold of the ring buffer.
+[00:20:27.200 → 00:20:32.920] We rewind by one seconds worth of samples and then generate the spectrogram.
+[00:20:32.920 → 00:20:37.620] This spectrogram is fed directly into the neural network's input buffer so we can run the
+[00:20:37.620 → 00:20:39.600] prediction.
+[00:20:39.600 → 00:20:43.940] If the neural network thinks the wake word occurred then we move onto the next state.
+[00:20:43.940 → 00:20:48.560] Otherwise we stay in the current state.
+[00:20:48.560 → 00:20:50.960] For the command recognition state.
+[00:20:50.960 → 00:20:54.840] When we enter the state we make a connection to witai.
+[00:20:54.840 → 00:21:02.400] This can take up to 1.5 seconds as making an SSL connection on the ESP32 is quite slow.
+[00:21:02.400 → 00:21:05.180] We then start streaming samples to the server.
+[00:21:05.180 → 00:21:09.600] To allow for the SSL connection time we go back one second into the past so we don't miss
+[00:21:09.600 → 00:21:12.720] too much of what the user said.
+[00:21:12.720 → 00:21:18.880] Once we streamed 3 seconds of samples we ask witai what the user said.
+[00:21:18.880 → 00:21:24.080] We could be more clever here and we could wait until we think the user has stopped speaking
+[00:21:24.080 → 00:21:27.840] but that's probably work for a future version.
+[00:21:27.840 → 00:21:32.620] Witai processes the audio and tells us what the user asked.
+[00:21:32.620 → 00:21:38.300] We pass that onto our intent processor to interpret the request and move onto the next state which
+[00:21:38.300 → 00:21:42.900] will put us back into waiting for the wake word.
+[00:21:42.900 → 00:21:48.960] Our intent processor simply looks at the intent name that witai provides us and carries out
+[00:21:48.960 → 00:21:51.620] the appropriate action.
+[00:21:51.620 → 00:21:52.620] the user's intent to interpret the request and the user's intent.
+[00:21:52.620 → 00:21:56.620] Marvin, tell me about life.
+[00:21:56.620 → 00:21:57.620] LIFE.
+[00:21:57.620 → 00:21:58.620] Don't talk to me about LIFE.
+[00:21:58.620 → 00:22:00.620] So there we have it.
+[00:22:00.620 → 00:22:05.620] A DIY Alexa.
+[00:22:05.620 → 00:22:10.620] How well does it actually work?
+[00:22:10.620 → 00:22:13.620] It works reasonably well.
+[00:22:13.620 → 00:22:17.960] We have a very lightweight wake word detection system.
+[00:22:17.960 → 00:22:24.540] It runs in around 100ms and there's still room for lots of optimisation.
+[00:22:24.540 → 00:22:26.900] Accuracy on the wake word is ok.
+[00:22:26.900 → 00:22:30.600] We do need more training data to make it really robust.
+[00:22:30.600 → 00:22:36.780] You can easily trick it into activating by using similar words to Marvin such as marvellous,
+[00:22:36.780 → 00:22:39.380] Martin, Marlin.
+[00:22:39.380 → 00:22:43.740] More negative examples of words would help with this problem.
+[00:22:43.740 → 00:22:49.280] The witai system works very well and you can easily add your own intents and traits and
+[00:22:49.280 → 00:22:50.880] build a very powerful system.
+[00:22:50.880 → 00:22:56.620] There are also alternative paid versions which you can use instead.
+[00:22:56.620 → 00:23:03.340] One is available from Microsoft and Google and Amazon also have similar and equivalent services.
+[00:23:03.340 → 00:23:05.100] All the code is in GitHub.
+[00:23:05.100 → 00:23:07.380] The link is in the description.
+[00:23:07.380 → 00:23:13.520] All you actually need is a microphone to get audio data into the ESP32.
+[00:23:13.520 → 00:23:15.240] You don't necessarily need a speaker.
+[00:23:15.240 → 00:23:20.160] You can just comment out the sections that try and talk to you.
+[00:23:20.160 → 00:23:32.200] Let me know how you get on in the comments section.
+[00:23:50.160 → 00:23:53.220] that you are typing shows a 81 that it would also be making some very smart fellow
+[00:23:53.220 → 00:23:54.100] Casting it to the AVadads.
+[00:23:54.100 → 00:23:54.740] If you had that sensitivity around,aremisation is a good score.
+[00:23:54.740 → 00:23:58.960] I'm always sad that you can do längers with your neon head, which are completely incredible.
+[00:23:58.960 → 00:24:00.780] You should know how to check out the effects and the other things that have displayed all.
+[00:24:00.780 → 00:24:01.860] Lots of things they make different.
+[00:24:01.860 → 00:24:04.420] When you are goog Old and intents andendo and learning, learn about which Phi.
+[00:24:04.420 → 00:24:07.560] The most experimental應 ARgs are not medio how you can use some estuv Casey.
+[00:24:07.560 → 00:24:14.480] That skill
+[00:24:14.480 → 00:24:15.220] is particularly really important to you.

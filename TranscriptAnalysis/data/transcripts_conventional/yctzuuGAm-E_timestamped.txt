@@ -1,0 +1,469 @@
+yctzuuGAm-E
+https://www.youtube.com/watch?v=yctzuuGAm-E
+Unknown Category
+
+[00:00:00.320 → 00:00:05.920] Several radio stations are broadcasting their programs at the same time in the same area.
+[00:00:06.560 → 00:00:13.200] Why don't those signals mix? It's not just radio stations. TV channels, Bluetooth, Wi-Fi,
+[00:00:13.200 → 00:00:19.440] RF remote controllers, radio transceivers, and many other devices are sending and receiving
+[00:00:19.440 → 00:00:26.160] data on radio waves. All of them are working at the same time and place and they are fine.
+[00:00:26.160 → 00:00:31.680] Also, there are a lot of noise signals on air which are added to all those signals.
+[00:00:31.680 → 00:00:38.480] Wondering why don't those signals mix? In this video, I am going to talk about RLC filters.
+[00:00:38.480 → 00:00:44.400] After watching this video, you will find answers to many questions around this subject.
+[00:00:44.400 → 00:00:50.400] In this video, you will see one of the most beautiful and important applications of inductors
+[00:00:50.400 → 00:00:58.000] in electronics, I mean in practical circuits. And also, you will see how inductors and capacitors
+[00:00:58.000 → 00:01:04.400] make love to remove a specific noise from your circuit. Get ready for this awesome hands-on
+[00:01:04.400 → 00:01:11.200] learning. Please stay with me until the end of this video. Let's answer this question first.
+[00:01:11.200 → 00:01:18.400] Why don't those signals mix? The answer is, they are mixed actually. Some newbies may think that
+[00:01:18.400 → 00:01:26.080] those signals are placed in separate frequency bands, so they exist on air separately and independently.
+[00:01:26.080 → 00:01:32.720] But this is not completely true. They are not separated. Frequency bands are abstract concepts.
+[00:01:32.720 → 00:01:39.040] They are not truly separated. Surprisingly, all those radio stations, TV broadcastings,
+[00:01:39.680 → 00:01:46.320] Wi-Fi, Bluetooth signals, RF remote controller signals, radio transceiver signals, and many other signals
+[00:01:46.320 → 00:01:54.640] are mixed and form an integrated, blended and complicated signal. There is only one signal on air.
+[00:01:55.200 → 00:02:01.200] I know, it is confusing. I want to do a simple experiment to demonstrate what I tried to say.
+[00:02:06.640 → 00:02:12.960] I have generated these two signals using my function generator. Let's suppose that these two are radio
+[00:02:12.960 → 00:02:21.520] signals from different radio stations broadcast at different frequencies. It's obvious that the
+[00:02:21.520 → 00:02:29.440] frequency of this signal is higher than this because the cycles here are more than this in same time
+[00:02:29.440 → 00:02:35.040] period. What will happen if these two signals are released at the same time?
+[00:02:35.040 → 00:02:50.560] I have generated these two signals. This is a simple resistor-based signal mixer circuit. I am going to apply these two signals here to points A and B to see what will happen at point C.
+[00:02:50.560 → 00:03:06.400] Look here. This trace is the result at point C. When two signals exist in the same medium,
+[00:03:06.400 → 00:03:10.800] they will be added and form a new signal. Look here.
+[00:03:10.800 → 00:03:24.080] Look here. This is the signal at point A. And this is the signal at point B. And this yellow trace is the result at point C.
+[00:03:24.880 → 00:03:32.960] Two signals in previous experiments were not an exception. This is a general rule. When two or more signals share the same medium,
+[00:03:32.960 → 00:03:44.240] either the air or a wire, they will mix and form a new signal, usually very complex signal. In real-world applications, unwanted signals are added to signals too.
+[00:03:44.240 → 00:03:56.080] The radio antenna captures only one signal, which consists of all of those signals at once. Radio station signals, TV broadcasting signals, radio transceiver signals, etc.
+[00:03:56.080 → 00:04:09.600] I want to call the signal here mixed signal. I mean this yellow trace. Suppose that these two signals are radio signals and there is a radio transmitter at point C.
+[00:04:10.160 → 00:04:13.360] So we will have the mixed signal on the air.
+[00:04:16.480 → 00:04:25.440] These two radio players are capturing the mixed signal, but the first radio player has to select the first signal
+[00:04:25.440 → 00:04:28.480] and the second device has to select the second signal.
+[00:04:28.960 → 00:04:35.840] Here you may ask, how can radio players select and play the signal from the desired radio station?
+[00:04:36.320 → 00:04:37.040] Nice question.
+[00:04:37.600 → 00:04:43.840] Here we need a circuit inside the radio player to select the desired signal from a mixed signal.
+[00:04:43.840 → 00:04:52.720] Such a circuit is called a filter. A filter is actually a pathway circuit that blocks specific frequencies and allows others to pass.
+[00:04:52.720 → 00:04:56.400] So, RLC filters are one of them, actually the most simple ones.
+[00:04:59.040 → 00:05:07.920] In RLC filters, R stands for resistor, L stands for inductor, and C stands for capacitor.
+[00:05:07.920 → 00:05:12.960] So, RLC filters are made up of resistors, inductors, and capacitors.
+[00:05:12.960 → 00:05:32.160] This circuit filters high frequency and allows low frequency to pass to point E, and this circuit filters low frequency and allows high frequency to pass to point F.
+[00:05:32.160 → 00:05:34.960] The frequency of the signal at point F.
+[00:05:34.960 → 00:05:42.640] The frequency of the signal at point F is 1 kHz and the frequency of the signal at point F is 15 kHz.
+[00:05:42.640 → 00:05:49.440] I want to apply this yellow trace to input of these two filters and probe points E and F.
+[00:05:49.440 → 00:05:55.920] So, RLC filters are one of them, which is the most important ones.
+[00:05:55.920 → 00:06:09.120] Look here, when I probe the point E, this blue trace, I mean, you see the first signal is here and the second signal, the high frequency signal, is filtered.
+[00:06:09.760 → 00:06:14.800] There is only the first low frequency signal at point E.
+[00:06:14.800 → 00:06:26.880] And when I probe the point F, you see there is only the second signal here and the first signal is filtered.
+[00:06:26.880 → 00:06:39.280] I know you may have questions in mind about these circuits, I mean, this one and this one, particularly about the values of the capacitors and inductors.
+[00:06:39.580 → 00:06:42.700] Why did I use these specific values?
+[00:06:42.700 → 00:06:46.300] I will answer most of those questions later in this video.
+[00:06:46.300 → 00:06:48.700] Just let me start from basics.
+[00:06:48.700 → 00:07:01.020] I am going to explain the basics first and then I will talk about the capacitor, inductor and resistor rules in a filter circuit and discuss the effect of increasing or decreasing value of each component.
+[00:07:01.340 → 00:07:08.620] Anyway, a filter is a circuit that blocks unwanted signals like noises and allows others to pass.
+[00:07:08.620 → 00:07:13.580] A filter can be a high pass, low pass, band pass or a band stop filter.
+[00:07:13.580 → 00:07:16.780] A notch filter is another name for a band stop filter.
+[00:07:16.780 → 00:07:18.940] This is a sine wave form.
+[00:07:18.940 → 00:07:20.540] This is a cycle.
+[00:07:20.540 → 00:07:25.740] Period indicates the time it takes for the wave to complete a cycle.
+[00:07:25.740 → 00:07:31.180] So, frequency is the number of cycles in time units, usually in one second.
+[00:07:31.180 → 00:07:42.140] So, the frequency of this wave is higher than this one because it has more cycles than the first one in same amount of time.
+[00:07:42.140 → 00:07:53.260] And these two waves have same frequency but the amplitude in the first one is greater than the second.
+[00:07:53.260 → 00:07:57.740] I mean the second one is an attenuated version of the first one.
+[00:07:57.740 → 00:08:07.500] This is a sample frequency response.
+[00:08:07.500 → 00:08:12.860] This chart shows how the system will respond to incoming frequencies.
+[00:08:12.860 → 00:08:17.820] The x-axis indicates the frequency on a logarithmic scale.
+[00:08:17.820 → 00:08:21.020] The y-axis indicates the gain.
+[00:08:21.580 → 00:08:26.220] This system will multiply the frequencies in this range by one.
+[00:08:26.220 → 00:08:29.180] I mean between zero and omega one.
+[00:08:29.180 → 00:08:35.980] Which means that the system will not change or manipulate the frequencies in this range.
+[00:08:36.780 → 00:08:39.660] Here in this range the gain is zero.
+[00:08:39.660 → 00:08:44.220] Which means that the system will multiply the frequencies in this range.
+[00:08:44.220 → 00:08:48.220] I mean between omega one and omega two by zero.
+[00:08:48.220 → 00:08:52.380] I mean the system will eliminate frequencies in this range.
+[00:08:52.940 → 00:08:58.380] Here the gain is 0.5 in this range.
+[00:08:58.380 → 00:09:03.340] Which means that the system will attenuate the frequencies in this range.
+[00:09:03.340 → 00:09:06.380] I mean between omega two and omega three.
+[00:09:08.300 → 00:09:14.380] Because it is going to multiply the frequencies in this range by 0.5.
+[00:09:14.380 → 00:09:19.740] I mean the system will cut the signals in this range in half.
+[00:09:20.380 → 00:09:25.740] Finally the system will boost the signals in this frequency range.
+[00:09:25.740 → 00:09:29.020] I mean between omega three and omega four.
+[00:09:29.020 → 00:09:31.740] Because the gain here is two.
+[00:09:32.460 → 00:09:37.260] Which means that the system will multiply the signals in this range by two.
+[00:09:37.260 → 00:09:45.580] A low pass filter has a parameter called omega zero.
+[00:09:45.580 → 00:09:49.740] Which indicates a threshold frequency for the filter.
+[00:09:49.740 → 00:09:54.300] The low pass filter will allow frequencies lower than omega zero.
+[00:09:54.300 → 00:09:58.220] And block frequencies higher than omega zero.
+[00:09:58.220 → 00:09:59.180] Look here.
+[00:09:59.180 → 00:10:03.340] This is the frequency response of a low pass filter.
+[00:10:03.340 → 00:10:09.260] The low pass filter will multiply frequencies lower than omega zero by one.
+[00:10:09.260 → 00:10:11.820] Because the gain here is one.
+[00:10:11.820 → 00:10:17.580] So the frequencies lower than omega zero will pass the filter without any change.
+[00:10:17.580 → 00:10:22.940] And it will multiply frequencies higher than omega zero by zero.
+[00:10:22.940 → 00:10:25.020] Because the gain here is zero.
+[00:10:25.020 → 00:10:31.420] Which means that the frequencies higher than omega zero will be attenuated and eliminated.
+[00:10:33.340 → 00:10:39.420] The high pass filter is the opposite of a low pass filter.
+[00:10:39.420 → 00:10:45.580] I mean a high pass filter will allow frequencies higher than omega zero to pass.
+[00:10:45.580 → 00:10:49.340] And block signals with a frequency lower than omega zero.
+[00:10:53.740 → 00:10:57.340] A band pass filter has two tuning parameters.
+[00:10:57.340 → 00:10:59.100] Omega zero and omega one.
+[00:10:59.100 → 00:11:02.700] Which indicates two threshold frequencies.
+[00:11:02.700 → 00:11:08.060] The band pass filter will allow frequencies between omega zero and omega one.
+[00:11:08.620 → 00:11:14.700] To pass and block frequencies lower than omega zero or higher than omega one.
+[00:11:19.740 → 00:11:22.700] This is frequency response of a notch filter.
+[00:11:22.700 → 00:11:26.300] A notch filter is the opposite of band pass filter.
+[00:11:26.300 → 00:11:31.900] I mean a notch filter will block frequencies between omega zero and omega one.
+[00:11:31.900 → 00:11:34.060] And allow others to pass.
+[00:11:36.300 → 00:11:41.180] Suppose that we have these signals on the medium with these frequencies.
+[00:11:41.180 → 00:11:42.220] A 1 hertz.
+[00:11:42.220 → 00:11:43.260] B 5 hertz.
+[00:11:43.260 → 00:11:44.300] C 10 hertz.
+[00:11:44.300 → 00:11:45.500] D 20 hertz.
+[00:11:45.500 → 00:11:51.820] Actually this signal which is combination of signals a to d exists on the medium.
+[00:11:56.940 → 00:12:00.700] A low pass filter with omega zero equals to 3.
+[00:12:00.700 → 00:12:04.060] Will pass this one and blocks others.
+[00:12:04.060 → 00:12:08.540] Because the frequency of this signal is lower than 3 hertz.
+[00:12:08.540 → 00:12:15.020] I mean if I apply this mixed signal to this low pass filter input.
+[00:12:15.020 → 00:12:17.340] The output will be this signal.
+[00:12:21.100 → 00:12:24.860] A low pass filter with omega zero equals to 8.
+[00:12:24.860 → 00:12:28.700] Will pass a and b signals.
+[00:12:28.700 → 00:12:31.100] And block c and d signals.
+[00:12:31.100 → 00:12:38.060] So the output of the low pass filter will be combination of signals a and b.
+[00:12:38.060 → 00:12:42.860] I mean if I apply this signal to input of this filter.
+[00:12:43.420 → 00:12:46.700] The output will be something like this.
+[00:12:47.500 → 00:12:50.780] Which is combination of signals a and d.
+[00:12:50.780 → 00:12:59.020] A high pass filter is the opposite of a low pass filter.
+[00:12:59.020 → 00:13:02.620] A high pass filter with omega zero equals to 15.
+[00:13:02.620 → 00:13:04.860] Will let the signal d to pass.
+[00:13:05.420 → 00:13:06.300] This one.
+[00:13:06.300 → 00:13:07.580] And blocks others.
+[00:13:11.180 → 00:13:15.180] A band pass filter with omega zero equals to 8 hertz.
+[00:13:15.180 → 00:13:17.340] And omega one equals to 15 hertz.
+[00:13:17.340 → 00:13:22.380] And block others.
+[00:13:22.380 → 00:13:25.020] Because the frequency of the signal c.
+[00:13:25.020 → 00:13:26.300] Is 10 hertz.
+[00:13:26.300 → 00:13:30.620] Which is between 8 hertz and 15 hertz.
+[00:13:30.620 → 00:13:31.180] Remember.
+[00:13:31.740 → 00:13:35.820] These are frequency response of ideal filters.
+[00:13:35.820 → 00:13:36.700] In reality.
+[00:13:36.700 → 00:13:40.220] It is not possible to make an ideal filter.
+[00:13:40.220 → 00:13:41.900] This is why radio stations.
+[00:13:41.900 → 00:13:43.900] And in general radio transmitters.
+[00:13:43.900 → 00:13:46.140] Have to keep safe frequency distances.
+[00:13:46.140 → 00:13:49.180] Because we can't make ideal filters.
+[00:13:49.180 → 00:13:49.980] Anyway.
+[00:13:49.980 → 00:13:52.140] Inside every radio receiver.
+[00:13:52.140 → 00:13:53.580] There is a band pass filter.
+[00:13:53.580 → 00:13:56.380] With adjustable omega zero and omega one.
+[00:13:56.380 → 00:13:58.620] By turning the tuning potentiometer.
+[00:13:58.620 → 00:14:02.780] The device changes the value of omega zero and omega one.
+[00:14:02.780 → 00:14:05.260] To allow a specific radio station signal.
+[00:14:05.260 → 00:14:07.820] To pass to the amplification circuit.
+[00:14:07.820 → 00:14:08.860] It's that simple.
+[00:14:09.500 → 00:14:11.500] Now is the time for exploring.
+[00:14:11.500 → 00:14:13.100] The rule of each component.
+[00:14:13.100 → 00:14:14.300] In the filter circuit.
+[00:14:15.580 → 00:14:19.100] A capacitor will allow high frequencies to pass.
+[00:14:19.100 → 00:14:21.020] And block low frequencies.
+[00:14:21.020 → 00:14:24.300] This is why capacitors pass AC voltages.
+[00:14:24.300 → 00:14:25.500] And block DC.
+[00:14:25.500 → 00:14:27.580] Because the DC frequency is low.
+[00:14:27.580 → 00:14:28.780] Actually zero.
+[00:14:28.780 → 00:14:30.860] The capacitance of the capacitor.
+[00:14:30.860 → 00:14:32.460] Has a direct relationship.
+[00:14:32.460 → 00:14:34.140] With the frequency it can pass.
+[00:14:34.140 → 00:14:36.860] The higher the capacitance of the capacitor.
+[00:14:36.860 → 00:14:42.220] The lower the frequency it can pass.
+[00:14:42.380 → 00:14:44.700] If a capacitor is used like this.
+[00:14:44.700 → 00:14:46.300] In series with the signal.
+[00:14:46.300 → 00:14:48.700] Then it will pass the high frequencies.
+[00:14:48.700 → 00:14:50.300] And block low frequencies.
+[00:14:50.300 → 00:14:51.900] Like DC voltages.
+[00:14:51.900 → 00:14:54.940] And if the capacitor is used like this.
+[00:14:54.940 → 00:14:57.980] Then it will pass high frequencies to ground.
+[00:14:57.980 → 00:15:01.340] So it will allow low frequencies to pass.
+[00:15:01.340 → 00:15:03.340] The capacitor in this structure.
+[00:15:03.340 → 00:15:05.340] Is called coupling capacitor.
+[00:15:05.340 → 00:15:07.420] And the capacitor in this structure.
+[00:15:07.420 → 00:15:09.340] Is called a bypass capacitor.
+[00:15:12.540 → 00:15:14.620] You may have seen some capacitors.
+[00:15:14.620 → 00:15:18.060] Near VCC or VDD pins on microcontrollers.
+[00:15:18.060 → 00:15:20.300] They are bypass capacitors.
+[00:15:20.300 → 00:15:23.100] Used to filter high frequency noises.
+[00:15:23.100 → 00:15:26.300] Literally they are used as low pass filters.
+[00:15:27.980 → 00:15:32.620] There are similar things about inductors.
+[00:15:32.620 → 00:15:36.540] But inductors work exactly opposite to capacitors.
+[00:15:36.540 → 00:15:39.420] I mean inductors pass low frequencies.
+[00:15:39.420 → 00:15:41.260] And block high frequencies.
+[00:15:41.260 → 00:15:44.380] This one will act like a low pass filter.
+[00:15:44.380 → 00:15:48.620] Because high frequencies will be blocked by the inductor.
+[00:15:48.620 → 00:15:52.540] And only low frequencies will pass the inductor.
+[00:15:52.540 → 00:15:56.460] But this one will act like a high pass filter.
+[00:15:56.460 → 00:16:00.940] Because the inductor is going to pass the low frequencies to ground.
+[00:16:00.940 → 00:16:04.220] So high frequencies will reach the output.
+[00:16:04.220 → 00:16:08.220] Note that we are talking about ideal capacitors and inductors.
+[00:16:08.220 → 00:16:12.620] I will talk about real capacitor and inductor behavior later in this video.
+[00:16:12.620 → 00:16:13.420] Anyway.
+[00:16:13.420 → 00:16:16.780] To make a low pass filter or a high pass filter.
+[00:16:16.780 → 00:16:20.700] We can use either a single capacitor or a single inductor.
+[00:16:20.700 → 00:16:22.460] But before moving further.
+[00:16:22.460 → 00:16:24.940] I think it would be better to do some experiments.
+[00:16:29.980 → 00:16:32.700] This is a very simple low pass filter.
+[00:16:32.700 → 00:16:35.740] Using a single capacitor and a resistor.
+[00:16:35.740 → 00:16:38.300] It is called an RC low pass filter.
+[00:16:38.300 → 00:16:42.540] Because it consists of only a resistor and a capacitor.
+[00:16:42.540 → 00:16:45.660] I am going to apply several frequencies to its input.
+[00:16:45.660 → 00:16:47.980] And see its response on output.
+[00:16:57.500 → 00:17:00.220] This blue trace is the signal on input.
+[00:17:00.220 → 00:17:03.100] Which is generated by this function generator.
+[00:17:03.100 → 00:17:06.380] And the yellow trace is the signal at output.
+[00:17:06.380 → 00:17:11.260] I mean the response of this low pass filter to input signal.
+[00:17:11.260 → 00:17:14.860] I am going to start from 10 hertz signal on input.
+[00:17:16.940 → 00:17:22.220] The amplitude of output signal is exactly equal to amplitude of input signal.
+[00:17:22.220 → 00:17:27.260] It means that this filter is passing 10 hertz signal perfectly.
+[00:17:27.260 → 00:17:37.340] So the amplitude of this filter is 1 at 10 hertz frequency.
+[00:17:37.340 → 00:17:40.780] I am going to increase the frequency to 20 hertz.
+[00:17:42.220 → 00:17:45.740] It is still passing 20 hertz signal perfectly.
+[00:17:46.220 → 00:17:51.020] So the gain at 20 hertz is 1.
+[00:17:52.140 → 00:17:55.260] Let me increase the frequency to 100 hertz.
+[00:17:55.260 → 00:18:00.300] Still it is perfectly passing 100 hertz frequency.
+[00:18:01.580 → 00:18:03.900] I am going to increase the frequency.
+[00:18:03.900 → 00:18:08.940] Until the amplitude of output signal starts to shrink.
+[00:18:13.740 → 00:18:17.980] Now at 20 kilohertz the output signal starts to shrink.
+[00:18:19.180 → 00:18:20.860] The gain is.
+[00:18:25.260 → 00:18:33.260] The gain is 0.92 at 20 kilohertz.
+[00:18:36.860 → 00:18:39.420] Now I am going to test 30 kilohertz.
+[00:18:40.940 → 00:18:44.220] The amplitude is.
+[00:18:44.220 → 00:18:49.660] The gain is.
+[00:18:49.660 → 00:18:51.580] Is 0.86.
+[00:18:55.660 → 00:18:58.540] Let me test 40 kilohertz.
+[00:19:02.620 → 00:19:09.980] The amplitude of the filter is 0.84 at 40 kilohertz.
+[00:19:09.980 → 00:19:14.460] Now I am testing 50 kilohertz.
+[00:19:15.980 → 00:19:22.060] The gain of the filter is 0.77 at 50 kilohertz.
+[00:19:23.340 → 00:19:26.940] By increasing the frequency and calculating the gain.
+[00:19:26.940 → 00:19:31.340] I have gotten the frequency response of this simple low-pass filter.
+[00:19:31.340 → 00:19:37.180] This simple filter is passing frequencies lower than 20 kilohertz perfectly.
+[00:19:37.180 → 00:19:39.260] 20 kilohertz perfectly.
+[00:19:39.260 → 00:19:43.820] And eliminating frequencies higher than 1 megahertz completely.
+[00:19:43.820 → 00:19:49.580] But it is attenuating frequencies from 20 kilohertz to 1 megahertz.
+[00:19:49.580 → 00:19:57.500] This frequency range is called pass band.
+[00:19:57.500 → 00:19:59.580] Here is called stop band.
+[00:19:59.580 → 00:20:03.340] And the frequency range between them is called transition band.
+[00:20:03.980 → 00:20:07.420] This is frequency response of an ideal low-pass filter.
+[00:20:07.420 → 00:20:10.860] And this is frequency response of a real low-pass filter.
+[00:20:10.860 → 00:20:12.380] Are they similar?
+[00:20:13.580 → 00:20:14.860] I don't think so.
+[00:20:14.860 → 00:20:19.580] Anyway, in some cases using a single capacitor is sufficient and okay.
+[00:20:19.580 → 00:20:24.780] For instance, we always put a capacitor beside VCCP in our microcontroller.
+[00:20:24.780 → 00:20:29.420] But in some other cases, we have to make better filters.
+[00:20:29.420 → 00:20:33.660] A good filter is one that has minimal transition band.
+[00:20:33.660 → 00:20:40.140] We can use combination of resistors, capacitors, and inductors to make good enough low-pass,
+[00:20:40.140 → 00:20:42.460] high-pass, band-pass, and notch filters.
+[00:20:49.180 → 00:20:54.940] In this circuit, the mixed input signal is coming through the resistor and reaching the inductor.
+[00:20:54.940 → 00:21:01.900] The inductor will block or attenuate some high-frequency signals and pass lower frequencies to
+[00:21:01.900 → 00:21:02.860] capacitor.
+[00:21:02.860 → 00:21:08.300] And then the capacitor will pass a portion of remaining high frequencies to ground
+[00:21:08.300 → 00:21:10.700] and let low frequencies to pass.
+[00:21:11.500 → 00:21:19.180] Maybe my demonstration of the circuit is not scientific, but it is easy to remember and easy to understand.
+[00:21:19.180 → 00:21:25.340] Anyway, I'm going to test this circuit to see the impact of the inductor on this low-pass filter.
+[00:21:25.340 → 00:21:28.860] Let's see.
+[00:21:28.860 → 00:21:29.580] Look here.
+[00:21:29.580 → 00:21:35.420] At 500 kHz, the inductor is attenuating the output signal a bit.
+[00:21:36.540 → 00:21:47.020] By removing the inductor, by shorting its leads using this wire, you can see the output signal grows a bit.
+[00:21:47.020 → 00:21:50.620] At 500 kHz, this is the signal without inductor.
+[00:21:50.620 → 00:21:53.020] And this is the signal with inductor.
+[00:21:54.620 → 00:21:57.900] Let me increase the frequency to 1 MHz.
+[00:22:00.220 → 00:22:04.460] Here, the impact of the inductor is more visible.
+[00:22:04.460 → 00:22:05.900] At 2 MHz.
+[00:22:05.900 → 00:22:09.660] This is the signal, output signal without inductor.
+[00:22:09.660 → 00:22:12.220] And this is the output signal with inductor.
+[00:22:12.940 → 00:22:20.380] At 2 MHz, the impact of the inductor is more visible.
+[00:22:20.380 → 00:22:21.820] And it's really high.
+[00:22:23.020 → 00:22:26.460] This is the output signal without the inductor.
+[00:22:26.460 → 00:22:29.500] And this is the output signal with inductor.
+[00:22:30.860 → 00:22:32.060] At 2 MHz.
+[00:22:32.060 → 00:22:41.980] This is an RLC high-pass filter.
+[00:22:41.980 → 00:22:48.380] Likewise, in a high-pass filter, there is a capacitor, a resistor, and an inductor.
+[00:22:48.380 → 00:22:54.220] But this time, the capacitor is in series with the mixed signal coming through the resistor.
+[00:22:54.220 → 00:22:59.180] And the inductor is connecting the signal coming from the capacitor to the ground.
+[00:22:59.180 → 00:23:06.300] Here, the capacitor is blocking some low frequencies like DC and passing only high frequencies.
+[00:23:06.300 → 00:23:11.740] After that, the modified signal coming from the capacitor will reach the inductor.
+[00:23:11.740 → 00:23:18.620] And the inductor will pass the remaining low frequencies to the ground and not touch the high frequencies.
+[00:23:18.620 → 00:23:27.740] I want to test this circuit.
+[00:23:27.740 → 00:23:37.660] Here, the inductor is passing frequencies higher than 100 kHz
+[00:23:37.660 → 00:23:47.580] and blocking frequencies lower than 100 kHz.
+[00:23:47.580 → 00:24:07.660] This frequency response is not even similar to a frequency response of an ideal high-pass filter.
+[00:24:07.660 → 00:24:15.500] But if you look attentively here, the gain here is 0.
+[00:24:15.500 → 00:24:19.580] But here, the gain is exactly 0.
+[00:24:19.580 → 00:24:27.180] So, this filter is passing frequencies higher than 10 MHz.
+[00:24:27.180 → 00:24:29.020] And it is not 0.
+[00:24:29.020 → 00:24:31.740] Let me test it using my function generator.
+[00:24:31.740 → 00:24:33.180] Here, the frequency response is 0.
+[00:24:33.180 → 00:24:36.220] Here, the frequency is 10 MHz.
+[00:24:36.220 → 00:24:44.300] If you look here, you can see frequency is passing.
+[00:24:44.300 → 00:24:53.740] Actually, the frequency is passing the filter even in 15 MHz.
+[00:24:53.740 → 00:24:57.660] And this is 16 MHz.
+[00:24:57.660 → 00:25:04.780] So, this filter is passing frequencies higher than 100 kHz.
+[00:25:04.780 → 00:25:09.980] And it is eliminating frequencies lower than 100 kHz.
+[00:25:09.980 → 00:25:14.220] We were expecting the high-pass filter frequency response to be something like this.
+[00:25:14.860 → 00:25:16.220] But we got this.
+[00:25:17.500 → 00:25:19.660] You may ask me, why is this happening?
+[00:25:19.660 → 00:25:20.380] What is this?
+[00:25:20.380 → 00:25:23.500] This is a really difficult question.
+[00:25:23.500 → 00:25:28.540] To answer this question, I have to talk about the nature of those components.
+[00:25:28.540 → 00:25:33.500] I mean, I have to talk about the real capacitor and the real inductor.
+[00:25:36.140 → 00:25:39.500] Resistors are simple and they are almost linear.
+[00:25:39.500 → 00:25:46.780] We use resistors as an attenuator to boost the impact of capacitor and inductor filtering capabilities.
+[00:25:46.780 → 00:25:51.180] When we are filtering signals to extract data or meaningful signals.
+[00:25:55.500 → 00:25:58.700] This is what we are expecting the capacitor to be.
+[00:25:58.700 → 00:26:01.260] But this is what it is in reality.
+[00:26:01.260 → 00:26:03.180] This is an ideal capacitor.
+[00:26:03.180 → 00:26:05.660] And this is a real capacitor.
+[00:26:05.660 → 00:26:11.020] See, there is an ideal capacitor inside a real capacitor along with other stuff.
+[00:26:11.020 → 00:26:22.220] Impedance of an ideal capacitor has to decrease by increasing the frequency of the signal and reach the zero impedance after reaching a specific frequency.
+[00:26:22.220 → 00:26:31.340] But you see, there is a resistor here called ESR in series with the ideal capacitor inside the real capacitor.
+[00:26:31.340 → 00:26:36.940] So, impedance of a real capacitor will never reach zero.
+[00:26:36.940 → 00:26:40.300] In the best case, it will reach the ESR value.
+[00:26:40.300 → 00:26:44.380] On the other hand, there is an inductor here in series with the capacitor.
+[00:26:44.380 → 00:26:48.860] The impedance of this inductor will increase with increasing frequency.
+[00:26:48.860 → 00:26:55.740] It means that the total impedance of a real capacitor can't be lower than the ESR value.
+[00:26:55.740 → 00:27:05.100] And surprisingly, the total impedance will increase by exceeding a certain frequency because of this ESL inductor inside the capacitor.
+[00:27:05.100 → 00:27:12.060] So, this is frequency response of an ideal capacitor.
+[00:27:12.060 → 00:27:16.300] And the frequency response of a real capacitor will be something like this.
+[00:27:16.300 → 00:27:27.340] The frequency at this point where the impedance of the capacitor is at its minimum is called the resonant frequency of the capacitor.
+[00:27:27.340 → 00:27:43.740] At this point, this ideal capacitor and this ESL inductor are resonating, making the impedance of this path minimum at a specific frequency called the resonant frequency.
+[00:27:43.740 → 00:27:47.740] This resonant frequency differs from capacitor to capacitor.
+[00:27:47.740 → 00:27:52.700] So, you have to refer to data sheet or find it by trial and error.
+[00:27:52.700 → 00:27:57.900] There is a similar thing about inductors.
+[00:27:57.900 → 00:28:01.420] We always expect inductors to be something like this.
+[00:28:01.420 → 00:28:04.620] But a real inductor is something like this.
+[00:28:04.620 → 00:28:07.180] This one is an ideal inductor.
+[00:28:07.180 → 00:28:11.500] This is a tiny capacitance in parallel with the inductor.
+[00:28:11.500 → 00:28:15.820] And this is a tiny resistor in series with the inductor.
+[00:28:18.700 → 00:28:21.740] This is frequency response of an ideal inductor.
+[00:28:21.740 → 00:28:25.420] And this is frequency response of a real inductor.
+[00:28:25.420 → 00:28:30.780] We always expect the frequency response of an inductor to be something like this.
+[00:28:30.780 → 00:28:37.100] By increasing the frequency, we expect the impedance of the inductor to approach infinity.
+[00:28:37.100 → 00:28:43.660] But this tiny capacitance here in parallel with the inductor will surprise us.
+[00:28:44.380 → 00:28:44.940] Look here.
+[00:28:45.660 → 00:28:50.620] The impedance of the inductor will increase by increasing the frequency.
+[00:28:50.620 → 00:28:53.740] But after exceeding a specific frequency,
+[00:28:54.620 → 00:29:02.380] the effect of the parallel capacitor will come into play and it will decrease the impedance.
+[00:29:02.380 → 00:29:07.100] This specific frequency is called resonant frequency of the inductor.
+[00:29:07.100 → 00:29:19.580] This is why the frequency response of this bandpass filter is something like this,
+[00:29:19.580 → 00:29:24.780] which is not similar to ideal bandpass filter frequency response,
+[00:29:24.780 → 00:29:28.060] because these components are not ideal.
+[00:29:31.980 → 00:29:38.060] If I replace the inductor with real inductor circuit and the capacitor with real capacitor circuit,
+[00:29:38.060 → 00:29:40.300] I will have this circuit.
+[00:29:40.300 → 00:29:47.180] And this frequency response actually is frequency response of this circuit, not this.
+[00:29:47.180 → 00:29:53.980] In theory, this high-pass filter will block every signal with a frequency lower than omega 0,
+[00:29:53.980 → 00:30:00.860] and it will allow signals with a frequency higher than omega 0 to pass through the filter untouched.
+[00:30:00.860 → 00:30:05.900] But this is not happening in reality, because the components are not ideal.
+[00:30:05.900 → 00:30:10.620] Anyway, now that we are familiar with the characteristics of those components,
+[00:30:10.620 → 00:30:12.860] it's time to move on to other filters.
+[00:30:15.740 → 00:30:19.340] This is the simplest RLC bandpass filter.
+[00:30:19.340 → 00:30:22.460] This capacitor works like a high-pass filter,
+[00:30:22.460 → 00:30:26.140] and this inductor works like a low-pass filter.
+[00:30:26.140 → 00:30:28.300] Let me give you a numerical example.
+[00:30:28.300 → 00:30:38.300] If the inductor is passing frequencies lower than 3 kHz, and the capacitor is passing frequencies higher than 1 kHz,
+[00:30:38.300 → 00:30:45.900] then signals with frequencies from 1 kHz to 3 kHz will pass through the filter from input to output.
+[00:30:45.900 → 00:30:48.700] Let's consider a 2 kHz signal.
+[00:30:49.580 → 00:30:55.660] The 2 kHz signal will pass the inductor because 2 kHz is lower than 3 kHz,
+[00:30:55.660 → 00:31:00.940] and it will pass the capacitor because 2 kHz is higher than 1 kHz.
+[00:31:00.940 → 00:31:06.380] But signals with frequencies higher than 3 kHz will be blocked by this inductor,
+[00:31:06.380 → 00:31:11.180] and signals with frequencies lower than 1 kHz will be blocked by this capacitor.
+[00:31:13.260 → 00:31:14.940] I'm going to test this circuit.
+[00:31:25.660 → 00:31:41.980] This is the frequency response of this filter.
+[00:31:41.980 → 00:31:48.700] The filter is passing frequencies from 200 Hz to 10 MHz, and blocking others.
+[00:31:48.700 → 00:31:56.860] This is the simplest RLC bandstop or notch filter.
+[00:31:56.860 → 00:32:03.020] Likewise, in a notch filter, this capacitor is working as a high-pass filter,
+[00:32:03.020 → 00:32:06.220] and this inductor is working as a low-pass filter.
+[00:32:06.220 → 00:32:10.540] But this structure makes them form a notch filter.
+[00:32:10.540 → 00:32:14.700] High frequencies will pass the filter through the capacitor,
+[00:32:14.700 → 00:32:18.860] and low frequencies will pass the filter through the inductor.
+[00:32:18.860 → 00:32:22.860] But middling frequencies will be blocked by both of them.
+[00:32:22.860 → 00:32:26.940] I'm going to give you a numerical example for notch filters as well.
+[00:32:28.540 → 00:32:32.460] If the capacitor is passing frequencies higher than 3 kHz,
+[00:32:32.460 → 00:32:36.700] and the inductor is passing frequencies lower than 1 kHz,
+[00:32:36.700 → 00:32:42.940] then frequencies higher than 3 kHz will find a way to output through the capacitor,
+[00:32:42.940 → 00:32:48.140] and frequencies lower than 1 kHz will reach the output through the inductor.
+[00:32:48.140 → 00:32:55.980] But frequencies from 1 kHz to 3 kHz, like a 2 kHz sine wave, will never reach the output.
+[00:32:56.540 → 00:33:01.980] There are other forms of RLC, low-pass, high-pass, band-pass, and notch filters,
+[00:33:01.980 → 00:33:04.540] that I didn't cover them in this video.
+[00:33:04.540 → 00:33:11.740] Also, you can make more accurate filters by combining or repeating basic RLC filters.
+[00:33:11.740 → 00:33:15.820] Anyway, there are two more questions I guess you have in mind.
+[00:33:15.820 → 00:33:17.980] The first one is the resistor.
+[00:33:17.980 → 00:33:21.740] The resistor is present in all filters I introduced,
+[00:33:21.740 → 00:33:25.180] but I didn't mention the purpose of its usage.
+[00:33:25.180 → 00:33:29.420] It seems that all the work is done by capacitors and inductors.
+[00:33:29.420 → 00:33:30.940] What is the resistor good for?
+[00:33:31.500 → 00:33:32.540] Good question.
+[00:33:32.540 → 00:33:36.380] The second question is about the value of those components.
+[00:33:36.380 → 00:33:41.260] How to determine the exact values for resistors, capacitors, and inductors?
+[00:33:42.700 → 00:33:44.540] Let me start with the first question.
+[00:33:46.540 → 00:33:51.900] If the resistor is not used here, a single capacitor can't do anything.
+[00:33:51.900 → 00:33:52.860] You ask me why?
+[00:33:53.500 → 00:33:54.380] Look here.
+[00:33:54.380 → 00:34:01.580] If you apply a signal here, it will never change, because the input and output points are the same.
+[00:34:02.220 → 00:34:06.140] How can the signal here be different from the signal here?
+[00:34:06.140 → 00:34:10.460] It's impossible, because these two points are directly connected.
+[00:34:10.460 → 00:34:13.180] These two are in identical nodes.
+[00:34:13.180 → 00:34:20.220] So, we need the resistor here to separate the input and the output.
+[00:34:20.220 → 00:34:22.780] Then the capacitor can manipulate the signal.
+[00:34:25.020 → 00:34:28.220] Also, there is another hidden resistor here.
+[00:34:28.220 → 00:34:34.380] We always select zero ohm for this resistor, so it is not present in the filter circuit.
+[00:34:34.380 → 00:34:39.820] I'm going to call this resistor Ri and this resistor Ro.
+[00:34:39.820 → 00:34:45.100] The higher the resistance of Ri, the easier the capacitor will manipulate the signal.
+[00:34:45.740 → 00:34:52.220] Also, the lower the resistance of Ro, the easier the manipulated signal will reach the output.
+[00:34:52.220 → 00:34:56.700] So, we always prefer to select zero ohm for our own.
+[00:34:56.700 → 00:35:01.900] As I told you before, a single capacitor without a resistor can't do anything.
+[00:35:01.900 → 00:35:07.100] Now, you may ask, if a filter can't do anything without a resistor,
+[00:35:07.100 → 00:35:11.900] why do we put a single capacitor near the VCC pin of a microcontroller?
+[00:35:12.700 → 00:35:13.980] Nice question.
+[00:35:13.980 → 00:35:17.900] Here is where you will see the difference between theory and practice.
+[00:35:17.900 → 00:35:25.580] This is the simplest low-pass filter we are using beside any microcontroller.
+[00:35:26.140 → 00:35:27.820] Is there only a capacitor here?
+[00:35:28.620 → 00:35:30.140] Absolutely not.
+[00:35:30.140 → 00:35:32.780] There are two more hidden resistors here.
+[00:35:34.060 → 00:35:39.420] These resistors are resistance of wires or traces connecting the power supply
+[00:35:39.420 → 00:35:43.500] to VCC pin of the microcontroller through the capacitor.
+[00:35:43.500 → 00:35:51.020] That's why I always emphasize putting the bypass capacitor at the closest point to the VCC or VDD pin
+[00:35:51.020 → 00:35:52.540] of the microcontroller.
+[00:35:52.540 → 00:36:00.220] By putting the capacitor near the microcontroller, the Ri will grow and Ro will shrink.
+[00:36:00.220 → 00:36:08.860] To minimize the Ro and maximize the Ri, we have to put the capacitor as close as possible to the microcontroller.
+[00:36:08.860 → 00:36:12.140] And then the capacitor can do its job perfectly.
+[00:36:12.780 → 00:36:15.900] Now is the time to move on to the last question.
+[00:36:15.900 → 00:36:20.300] How should I select right values for resistor, capacitor, inductor?
+[00:36:20.300 → 00:36:24.380] Suppose that you need to block a specific frequency in your circuit.
+[00:36:25.020 → 00:36:28.460] For instance, when you realize there is a noise in your circuit,
+[00:36:28.460 → 00:36:32.940] you have to use your oscilloscope to measure the frequency of that noise,
+[00:36:32.940 → 00:36:38.780] and then set up a notch filter to remove that specific frequency, say 80 kHz.
+[00:36:40.460 → 00:36:42.300] This is a notch filter.
+[00:36:42.300 → 00:36:48.700] In this filter circuit, we have to select proper capacitor and inductor values to stop the frequency
+[00:36:48.700 → 00:36:50.300] we are intending to kill.
+[00:36:50.300 → 00:36:52.140] I mean 80 kHz.
+[00:36:52.140 → 00:37:01.900] By using this formula, you can select capacitors and inductors to resonate at the desired frequency
+[00:37:01.900 → 00:37:03.340] to block the noise.
+[00:37:03.340 → 00:37:09.340] Remember, at the resonant frequency, the impedance of this structure will be infinite,
+[00:37:09.340 → 00:37:13.180] and it will block the 80 kHz frequency noise.
+[00:37:13.740 → 00:37:18.780] One simple option is to select the desired value for the capacitor,
+[00:37:18.780 → 00:37:24.140] and calculate the inductor value by using this formula.
+[00:37:24.140 → 00:37:30.700] For example, if I select 1 µF for the capacitor, then by using this formula,
+[00:37:37.820 → 00:37:43.500] by choosing 1 µF for this capacitor, the value of this inductor has to be
+[00:37:43.500 → 00:37:49.100] 3.96 µF to block the noise perfectly.
+[00:37:49.100 → 00:37:55.340] 3.96 µF inductor is not a standard value, and it is not available.
+[00:37:55.340 → 00:38:04.780] You can use other values near 3.96 µF, or you can combine inductors to make something near the desired value.
+[00:38:04.780 → 00:38:18.140] 3.96 µF and 0.47 µF are standard values for inductors, and they are available in the market.
+[00:38:18.140 → 00:38:25.340] The total inductance of these two is 3.77 µF, which is near the desired inductance.
+[00:38:25.340 → 00:38:37.020] If I replace this value here, and this value here, I will get a new frequency, the resonant frequency equal to...
+[00:38:39.180 → 00:38:50.300] By using a 3.77 µH inductor along with 1 µF capacitor, the filter will block frequencies around 81.9 kHz,
+[00:38:50.300 → 00:38:56.780] which is close enough to the disturbing frequency. When an inductor and a capacitor are resonating,
+[00:38:57.660 → 00:39:05.420] actually they are making love. They are dancing. It's so beautiful. Anyway, in formulas like this,
+[00:39:05.420 → 00:39:13.420] we always suppose that the inductors and capacitors are ideal. Real inductors and real capacitors may
+[00:39:13.420 → 00:39:20.220] behave a bit different. By the way, you can find formulas like this for every type of RLC.
+[00:39:20.300 → 00:39:27.900] RL and RC filters on the internet. Also, there are online filter calculators there. You can use them.
+[00:39:28.460 → 00:39:33.100] As the last point, I'm going to talk about the impact of resistor value.
+[00:39:35.420 → 00:39:41.740] This resistor here is used to attenuate the power of the incoming signal, so the capacitor and the
+[00:39:41.740 → 00:39:48.780] inductor can do their jobs easily. By increasing the value of this resistor, the capacitors and inductor's
+[00:39:48.780 → 00:39:55.500] capabilities in filtering will be boosted, but the power of the output signal will be decreased. In
+[00:39:55.500 → 00:40:02.300] contrast, by decreasing the value of this resistor, it will be hard for the capacitor and inductor to
+[00:40:02.300 → 00:40:10.140] manipulate the incoming signal, but the output signal will remain strong. Even though RLC filters are nice,
+[00:40:10.140 → 00:40:15.740] there are other filters that are superior to RLC filters, and you have to learn about them.
+[00:40:15.740 → 00:40:21.740] Anyway, we have reached the final moments of this video. I hope you enjoyed this video and learned
+[00:40:21.740 → 00:40:27.500] something new. Thanks for watching. If you found this video helpful, please give me a thumbs up,
+[00:40:27.500 → 00:40:31.500] and if you liked this video, make sure to subscribe for more.

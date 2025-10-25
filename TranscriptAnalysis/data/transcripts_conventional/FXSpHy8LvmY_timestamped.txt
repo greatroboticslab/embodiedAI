@@ -1,0 +1,234 @@
+FXSpHy8LvmY
+https://www.youtube.com/watch?v=FXSpHy8LvmY
+Unknown Category
+
+[00:00:00.400 → 00:00:04.000] In this video, we're going to talk about a way to develop a feedback controller for
+[00:00:04.000 → 00:00:06.840] a model that's represented using state space equations.
+[00:00:06.840 → 00:00:12.320] And we're going to do that with a method called pole placement, or full state feedback.
+[00:00:12.320 → 00:00:17.020] Now my experience is that pole placement itself isn't used extensively in industry.
+[00:00:17.020 → 00:00:21.760] You might find that you're using other methods like LQR or H infinity more often.
+[00:00:21.760 → 00:00:25.380] However, pole placement is worth spending some time on because it will give you a better
+[00:00:25.380 → 00:00:30.340] understanding of the general approach to feedback control using state space equations.
+[00:00:30.340 → 00:00:33.580] And it's a stepping stone to getting to those other methods.
+[00:00:33.580 → 00:00:35.040] So I hope you stick around.
+[00:00:35.040 → 00:00:39.580] I'm Brian, and welcome to a MATLAB Tech Talk.
+[00:00:39.580 → 00:00:44.180] To start off, we have a plant with inputs U and outputs Y.
+[00:00:44.180 → 00:00:49.140] And the goal is to develop a feedback control system that drives the output to some desired
+[00:00:49.140 → 00:00:50.140] value.
+[00:00:50.140 → 00:00:54.460] A way you might be familiar with doing this is to compare the output to a reference signal
+[00:00:54.460 → 00:00:56.620] to get the control error.
+[00:00:56.620 → 00:01:01.160] Then you can develop a controller that uses that error to generate the input signals into
+[00:01:01.160 → 00:01:04.800] the plant with the goal of driving the error to zero.
+[00:01:04.800 → 00:01:09.020] This is the structure of the feedback control system that you would see if you were developing,
+[00:01:09.020 → 00:01:11.840] say, a PID controller.
+[00:01:11.840 → 00:01:16.140] But for pole placement, we're going to approach this problem in a different way.
+[00:01:16.140 → 00:01:20.920] Rather than feedback the output Y, we're going to feedback the value of every state variable
+[00:01:20.920 → 00:01:21.920] in our state vector.
+[00:01:21.920 → 00:01:25.580] Now we're going to claim that we know the value of every state, even though it's not
+[00:01:25.580 → 00:01:27.760] necessarily part of the output Y.
+[00:01:27.760 → 00:01:29.760] And we'll get to that in a bit.
+[00:01:29.760 → 00:01:33.640] But for now, assume we have access to all of these values.
+[00:01:33.640 → 00:01:37.920] We then take the state vector and multiply it by a matrix that is made up of a bunch of
+[00:01:37.920 → 00:01:39.840] different gain values.
+[00:01:39.840 → 00:01:43.720] And the result is subtracted from a scaled reference signal.
+[00:01:43.720 → 00:01:48.080] And this result is fed directly into our plant as the input.
+[00:01:48.080 → 00:01:53.240] Now, you'll notice that there isn't a block here labeled controller, like we have in the
+[00:01:53.240 → 00:01:55.160] top block diagram.
+[00:01:55.160 → 00:01:59.080] In this feedback structure, this whole section is the controller.
+[00:01:59.080 → 00:02:04.620] And pole placement is a method by which we can calculate the proper gain matrix to guarantee
+[00:02:04.620 → 00:02:06.580] system stability.
+[00:02:06.580 → 00:02:11.080] And the scaling term on the reference is used to ensure that steady state error performance
+[00:02:11.080 → 00:02:12.080] is acceptable.
+[00:02:12.080 → 00:02:15.820] I'll cover both of these in this video.
+[00:02:15.820 → 00:02:18.260] But first we need some background information.
+[00:02:18.260 → 00:02:22.960] In the last video we introduced the state equation x dot equals ax plus bu.
+[00:02:22.960 → 00:02:28.240] And we showed that the dynamics of a linear system are captured in this first part, ax.
+[00:02:28.240 → 00:02:32.900] The second part is how the system responds to inputs, but how the energy in the system
+[00:02:32.900 → 00:02:36.840] is stored and moves is captured by the ax term.
+[00:02:36.840 → 00:02:40.580] So, you might expect that there is something special about the A matrix when it comes to
+[00:02:40.580 → 00:02:42.360] controller design.
+[00:02:42.360 → 00:02:43.920] And there is.
+[00:02:43.920 → 00:02:48.080] Any feedback controller has to modify the A matrix in order to change the dynamics of
+[00:02:48.080 → 00:02:49.200] the system.
+[00:02:49.200 → 00:02:52.920] And this is especially true when it comes to stability.
+[00:02:52.920 → 00:02:56.680] The eigenvalues of the A matrix are the poles of the system.
+[00:02:56.680 → 00:03:00.600] And the location of the poles dictate stability of a linear system.
+[00:03:00.600 → 00:03:03.680] And that's the key to pole placement.
+[00:03:03.680 → 00:03:07.360] And then we can calculate the required closed loop stability by moving the poles, or the
+[00:03:07.360 → 00:03:10.460] eigenvalues, of the closed loop A matrix.
+[00:03:10.460 → 00:03:14.960] Now I want to expand a bit more on the relationship between poles and eigenvalues and stability before
+[00:03:14.960 → 00:03:19.300] we go any further, because I think it will help you understand exactly how pole placement
+[00:03:19.300 → 00:03:21.300] works.
+[00:03:21.300 → 00:03:26.540] For this example, let's just start with an arbitrary system and focus on the dynamics,
+[00:03:26.540 → 00:03:28.000] the A matrix.
+[00:03:28.000 → 00:03:32.500] We can rewrite this in non-matrix form so it's a little bit easier to see how the state derivatives
+[00:03:32.500 → 00:03:34.460] relate to the states.
+[00:03:34.460 → 00:03:38.020] In general, each state can change as a function of the other states.
+[00:03:38.020 → 00:03:39.840] And that's the case here.
+[00:03:39.840 → 00:03:46.280] x.1 changes based on x2, and x.2 changes based on both x1 and x2.
+[00:03:46.280 → 00:03:48.360] And this is perfectly acceptable.
+[00:03:48.360 → 00:03:52.440] But it makes it a little hard to visualize how eigenvalues are contributing to the overall
+[00:03:52.440 → 00:03:53.720] dynamics.
+[00:03:53.720 → 00:03:59.000] So what we can do is transform the A matrix into one that uses a different set of state
+[00:03:59.000 → 00:04:01.960] variables to describe the system.
+[00:04:01.960 → 00:04:06.940] This transformation is accomplished using a transform matrix, whose columns are the eigenvectors
+[00:04:06.940 → 00:04:08.580] of the A matrix.
+[00:04:08.580 → 00:04:14.240] And what we end up with after the transformation is a modified A matrix consisting of the complex
+[00:04:14.240 → 00:04:18.900] eigenvalues along the diagonal and zeros everywhere else.
+[00:04:18.900 → 00:04:22.740] Now, these two models represent the exact same system.
+[00:04:22.740 → 00:04:25.520] They have the same eigenvalues and the same dynamics.
+[00:04:25.520 → 00:04:30.620] It's just the second one is described using a set of state variables that change independently
+[00:04:30.620 → 00:04:32.340] of each other.
+[00:04:32.340 → 00:04:36.280] When the A matrix is written in diagonal form, it's easy to see that what we're left with
+[00:04:36.280 → 00:04:41.580] is a set of first order differential equations where the derivative of each state is only affected
+[00:04:41.580 → 00:04:44.480] by that state, and nothing else.
+[00:04:44.480 → 00:04:46.080] And here's the cool part.
+[00:04:46.080 → 00:04:51.220] The solution to a differential equation like this is in the form z equals a constant times
+[00:04:51.220 → 00:04:58.820] e to the lambda t, where lambda is the eigenvalue for that given state variable.
+[00:04:58.820 → 00:05:03.180] Okay, let's dive into this equation a little bit more.
+[00:05:03.180 → 00:05:09.100] z in shows how the state changes over time given some initial condition, c.
+[00:05:09.100 → 00:05:13.320] Or another way of thinking about this is that if you initialize the state with some energy,
+[00:05:13.320 → 00:05:18.940] or you add energy from an external input, this equation shows how that energy changes.
+[00:05:18.940 → 00:05:24.360] And by changing lambda, you can affect how the energy is dissipated, or in the case of an
+[00:05:24.360 → 00:05:27.120] unstable system, how the energy grows.
+[00:05:27.120 → 00:05:30.840] So let's go through a few different values of lambda so you can visually see how energy
+[00:05:30.840 → 00:05:35.900] changes based on the location of the eigenvalue within the complex plane.
+[00:05:35.900 → 00:05:42.120] If lambda is a negative real number, then this is a stable eigenvalue since the solution
+[00:05:42.120 → 00:05:47.400] is e raised to a negative number, and any initial energy will dissipate over time.
+[00:05:47.400 → 00:05:52.680] But if it's positive, then it's unstable because the energy will just grow over time.
+[00:05:52.680 → 00:05:57.240] And if there's a pair of imaginary eigenvalues, then the energy in this mode will oscillate,
+[00:05:57.240 → 00:06:02.020] since e raised to an imaginary number produces sines and cosines.
+[00:06:02.020 → 00:06:07.300] And any combination of the two, of real and imaginary numbers, will produce a combination
+[00:06:07.300 → 00:06:11.880] of oscillations and exponential energy dissipation.
+[00:06:11.880 → 00:06:16.360] Now I know this was all very fast, but hopefully it made enough sense that now we can state the
+[00:06:16.360 → 00:06:18.440] problem we're trying to solve.
+[00:06:18.440 → 00:06:23.640] If our plant has eigenvalues that are at undesirable locations in the complex plane, then we can use
+[00:06:23.640 → 00:06:27.220] pole placement to move them somewhere else.
+[00:06:27.220 → 00:06:31.860] Now certainly if they're in the right half plane it's undesirable since they'd be unstable,
+[00:06:31.860 → 00:06:36.280] but undesirable could also mean there's oscillations you want to get rid of, or maybe just speed
+[00:06:36.280 → 00:06:41.420] up or slow down the dissipation of energy in a particular mode.
+[00:06:41.420 → 00:06:46.460] With that behind us, we can now get into how pole placement moves the eigenvalues.
+[00:06:46.460 → 00:06:49.720] Remember the structure of the controller that we drew at the beginning?
+[00:06:49.720 → 00:06:58.220] Well this results in an input u equals rkr minus k times x, where rkr is the scaled reference,
+[00:06:58.220 → 00:07:03.080] which again we'll get to in a bit, and kx is the state vector that we're feeding back
+[00:07:03.080 → 00:07:05.400] multiplied by the gain matrix.
+[00:07:05.400 → 00:07:07.800] Now here's where the magic happens.
+[00:07:07.800 → 00:07:12.460] If we plug this control input into our state equation, we're closing the loop and we get
+[00:07:12.460 → 00:07:15.860] the following state equation.
+[00:07:15.860 → 00:07:21.220] Notice that a and minus bk both act on the state vector, so we can combine them to get
+[00:07:21.220 → 00:07:23.900] a modified a matrix.
+[00:07:23.900 → 00:07:27.900] This is the closed loop a matrix, and we have the ability to move the eigenvalues by
+[00:07:27.900 → 00:07:30.080] choosing an appropriate k.
+[00:07:30.080 → 00:07:33.400] And this is easy to do by hand for simple systems.
+[00:07:33.400 → 00:07:37.140] Let's try an example with a second order system with a single input.
+[00:07:37.140 → 00:07:43.680] We can find the eigenvalues by setting the determinant of a minus lambda i to 0, and then solve for
+[00:07:43.680 → 00:07:44.680] lambda.
+[00:07:44.680 → 00:07:48.060] And they're at minus 2 and plus 1.
+[00:07:48.060 → 00:07:52.960] One of the modes will blow up to infinity because of the presence of the positive real eigenvalue,
+[00:07:52.960 → 00:07:56.260] and so the system as a whole is unstable.
+[00:07:56.260 → 00:08:00.940] Let's use pole placement to design a feedback controller that will stabilize this system
+[00:08:00.940 → 00:08:04.720] by moving the unstable pole to the left half plane.
+[00:08:04.720 → 00:08:10.500] Our closed loop A matrix is A minus Bk, and the gain matrix k is a 1 by 2 since there's
+[00:08:10.500 → 00:08:12.700] one output in two states.
+[00:08:12.700 → 00:08:18.900] This results in minus k1, 1 minus k2, 2, and minus 1.
+[00:08:18.900 → 00:08:23.580] And we can solve for the eigenvalues of ACL like we did before, and we get this characteristic
+[00:08:23.580 → 00:08:28.080] equation that's a function of our two gain values.
+[00:08:28.080 → 00:08:32.940] Now let's say that we want our closed loop poles at minus 1 and minus 2.
+[00:08:32.940 → 00:08:37.600] In this way, the characteristic equation needs to be lambda squared plus 3 times lambda plus
+[00:08:37.600 → 00:08:40.140] 2 equals 0.
+[00:08:40.140 → 00:08:44.340] And at this point, it's straightforward to find the appropriate k1 and k2 that make
+[00:08:44.340 → 00:08:47.240] these two equations equal.
+[00:08:47.240 → 00:08:50.420] We just set the coefficients equal to each other and solve.
+[00:08:50.420 → 00:08:55.860] And we get k1 equals 2 and k2 equals 1.
+[00:08:55.860 → 00:08:57.580] And that's it.
+[00:08:57.580 → 00:09:02.260] If we place these two gains in the state feedback path of this system, it will be stabilized
+[00:09:02.260 → 00:09:06.380] with eigenvalues at minus 1 and minus 2.
+[00:09:06.380 → 00:09:10.540] Walking through an example by hand I think gives you a good understanding of pole placement
+[00:09:10.540 → 00:09:12.220] and how it works.
+[00:09:12.220 → 00:09:16.660] However, the math involved starts to become overwhelming for systems that have more than
+[00:09:16.660 → 00:09:18.020] two states.
+[00:09:18.020 → 00:09:22.620] The idea is the same, just solving the determinant becomes impractical.
+[00:09:22.620 → 00:09:27.340] But we can do this exact same thing in MATLAB with pretty much a single command.
+[00:09:27.340 → 00:09:31.520] I'll show you quickly how to use the place command in MATLAB by recreating the same system
+[00:09:31.520 → 00:09:33.200] that we just did by hand.
+[00:09:33.200 → 00:09:38.200] I'll define the four matrices, and then create the open loop state space object.
+[00:09:38.200 → 00:09:42.280] I can check the eigenvalues of the open loop A matrix just to show you that there is in
+[00:09:42.280 → 00:09:47.280] fact that positive eigenvalue that causes the system to be unstable.
+[00:09:47.280 → 00:09:48.620] And that's no good.
+[00:09:48.620 → 00:09:53.680] So let's move the eigenvalues of the system to minus 2 and minus 1.
+[00:09:53.680 → 00:09:58.520] Now solving for the gain matrix using pole placement can be done with the place command.
+[00:09:58.520 → 00:10:03.200] And we get gain values of 2 and 1 just like we expected.
+[00:10:03.200 → 00:10:07.540] Now the new closed loop A matrix is A minus BK.
+[00:10:07.540 → 00:10:12.540] And just to double check, this is what ACL looks like, and it does have eigenvalues at
+[00:10:12.540 → 00:10:15.200] minus 1 and minus 2.
+[00:10:15.200 → 00:10:16.200] OK.
+[00:10:16.200 → 00:10:20.560] I'll create the closed loop system object, and now we can compare the step responses for
+[00:10:20.560 → 00:10:21.880] both.
+[00:10:21.880 → 00:10:26.820] The step response of the open loop system is predictably unstable.
+[00:10:26.820 → 00:10:29.900] And the step response of the closed loop system looks much better.
+[00:10:29.900 → 00:10:32.720] However, it's not perfect.
+[00:10:32.720 → 00:10:38.940] Rather than rising to 1 like we would expect, the steady state output is only 0.5.
+[00:10:38.940 → 00:10:43.480] And this is finally where the scaling term comes in on the reference.
+[00:10:43.480 → 00:10:47.700] So far we've only been concerned with stability, and have paid little attention to steady state
+[00:10:47.700 → 00:10:49.040] performance.
+[00:10:49.040 → 00:10:52.000] But even addressing this is pretty straightforward.
+[00:10:52.000 → 00:10:56.940] If the response of the input is only half of what you would expect, why not just double
+[00:10:56.940 → 00:10:58.580] the input?
+[00:10:58.580 → 00:11:00.160] And that's pretty much what we do.
+[00:11:00.160 → 00:11:02.260] Well, we're not just doubling it.
+[00:11:02.260 → 00:11:07.720] We scale the input by the inverse of the steady state value.
+[00:11:07.720 → 00:11:11.680] In MATLAB we can do this by inverting the DC gain of the system.
+[00:11:11.680 → 00:11:16.820] You can see that the DC gain is 0.5, and so the inverse is 2.
+[00:11:16.820 → 00:11:22.980] Now we can rebuild our closed loop system by scaling the input by kr, or by 2, and checking
+[00:11:22.980 → 00:11:24.480] the step response.
+[00:11:24.480 → 00:11:27.780] And no surprise, its steady state value is 1.
+[00:11:27.780 → 00:11:30.940] And that's pretty much what there is to basic pole placement.
+[00:11:30.940 → 00:11:35.260] We feedback every state variable and multiply them by a gain matrix in such a way that the
+[00:11:35.260 → 00:11:39.820] closed loop eigenvalues are what we want, and then we scale the input to make the steady
+[00:11:39.820 → 00:11:42.480] state response what we want.
+[00:11:42.480 → 00:11:46.920] Of course there's more to pole placement than what I could cover in this 12 minute video.
+[00:11:46.920 → 00:11:50.680] And I don't want to drag this on too long, but I also don't want to leave this video
+[00:11:50.680 → 00:11:54.480] without addressing a few more interesting things for you to consider.
+[00:11:54.480 → 00:11:59.660] So in the interest of time, let's blast through these final thoughts lightning round style.
+[00:11:59.660 → 00:12:00.760] Are you ready?
+[00:12:00.760 → 00:12:02.380] Let's go.
+[00:12:02.380 → 00:12:05.000] Pole placement is like fancy root locus.
+[00:12:05.000 → 00:12:09.140] With root locus, you have one gain that you can adjust that can only move the poles along
+[00:12:09.140 → 00:12:10.660] the locus lines.
+[00:12:10.660 → 00:12:14.780] But with pole placement, we have a gain matrix that gives us the ability to move the poles
+[00:12:14.780 → 00:12:20.140] anywhere in the complex plane, not just along single dimensional lines.
+[00:12:20.140 → 00:12:24.660] A two-state pole placement controller is very similar to a PD controller.
+[00:12:24.660 → 00:12:29.500] With PD, you feed back the output and generate the derivative within the controller.
+[00:12:29.500 → 00:12:33.560] With pole placement, you are feeding back the derivative as a state, but the results are
+[00:12:33.560 → 00:12:35.040] essentially the same.
+[00:12:35.040 → 00:12:39.120] Two gains, one for a state, and one for its derivative.
+[00:12:39.120 → 00:12:44.120] Okay, we can move eigenvalues around, but where should we place them?
+[00:12:44.120 → 00:12:48.640] The answer to that is a much longer video, but here are some things to think about.
+[00:12:48.640 → 00:12:53.280] If you have a high order system, consider keeping two poles closer to the imaginary axis than
+[00:12:53.280 → 00:12:57.360] the others so that the system will behave like a common second order system.
+[00:12:57.360 → 00:13:01.540] These are called dominant poles since they are slower and tend to dominate the response
+[00:13:01.540 → 00:13:02.740] of the system.
+[00:13:02.740 → 00:13:08.200] Keep in mind that if you try to move a bunch of eigenvalues really far left in order to
+[00:13:08.200 → 00:13:12.420] get a super fast response, you may find that you don't have the speed or authority in
+[00:13:12.420 → 00:13:15.640] your actuators to generate the necessary response.
+[00:13:15.640 → 00:13:20.480] This is because it takes more gain, or more actuator effort, to move the eigenvalues further
+[00:13:20.480 → 00:13:24.240] from their open loop starting points.
+[00:13:24.240 → 00:13:27.020] Full state feedback is a bit of a misnomer.
+[00:13:27.020 → 00:13:30.080] You are feeding back every state in your mathematical model.
+[00:13:30.080 → 00:13:33.800] But you don't, and can't, feed back every state in a real system.
+[00:13:33.800 → 00:13:39.320] For just one example, at some level all mechanical hardware is flexible, which means additional
+[00:13:39.320 → 00:13:43.220] states, but you may choose to ignore those states in your model and develop your feedback
+[00:13:43.220 → 00:13:45.820] controller assuming a rigid system.
+[00:13:45.820 → 00:13:49.340] The important part is that you feed back all critical states to your design, so that your
+[00:13:49.340 → 00:13:53.240] controller will still work on the real hardware.
+[00:13:53.240 → 00:13:57.520] You have to have some kind of access to all of the critical states in order to feed them
+[00:13:57.520 → 00:13:58.520] back.
+[00:13:58.520 → 00:14:02.400] The output Y might include every state, in which case you're all set.
+[00:14:02.400 → 00:14:06.400] However, if this isn't the case, you will either need to add more sensors to your system
+[00:14:06.400 → 00:14:11.860] to measure the missing states, or use the existing outputs to estimate or observe the states you
+[00:14:11.860 → 00:14:13.600] aren't measuring directly.
+[00:14:13.600 → 00:14:16.980] In order to observe your system, it will need to be observable.
+[00:14:16.980 → 00:14:20.520] And similarly, in order to control your system, it needs to be controllable.
+[00:14:20.520 → 00:14:50.520] 
+[00:14:50.520 → 00:14:54.400] I'll see you next time.
+[00:14:54.400 → 00:14:58.280] Thank you.

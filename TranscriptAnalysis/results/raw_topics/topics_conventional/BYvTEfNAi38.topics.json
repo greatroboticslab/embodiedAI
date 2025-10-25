@@ -1,0 +1,71 @@
+{
+  "video_id": "BYvTEfNAi38",
+  "title": "BYvTEfNAi38",
+  "url": "https://www.youtube.com/watch?v=BYvTEfNAi38",
+  "created_at": "2025-09-17T11:55:33.470524+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Beam Modes and Node Locations",
+      "description": "Understanding how the motion of the beam consists of contributions from distinct bending modes.",
+      "evidence_quotes": [
+        "The first bending mode waves up and down, maybe like you'd expect. And then the second and third modes have slightly more complicated mode shapes."
+      ],
+      "start_s": 1116.7,
+      "end_s": 1146.66,
+      "id": "T1"
+    },
+    {
+      "title": "Controllability and Observability",
+      "description": "Understanding concepts of controllability and observability when analyzing systems with actuators and sensors.",
+      "evidence_quotes": [
+        "So rather than adding a second sensor and actuator at a location that's ideal for the second mode, a cheaper alternative might be to just move the sensor and actuator to a place that can observe and control all of the critical bending modes."
+      ],
+      "start_s": 1053.06,
+      "end_s": 1270.18,
+      "id": "T2"
+    },
+    {
+      "title": "MATLAB Analysis",
+      "description": "Using MATLAB to analyze controllability and observability in systems with actuators and sensors.",
+      "evidence_quotes": [
+        "They can help you think about the most effective places to add sensors and actuators, and to determine which states you should measure and which you should just estimate."
+      ],
+      "start_s": 1211.68,
+      "end_s": 1247.14,
+      "id": "T3"
+    },
+    {
+      "title": "Sensor and Actuator Placement",
+      "description": "Analyzing the effects of sensor and actuator placement on controllability and observability.",
+      "evidence_quotes": [
+        "Well, with the exception that you can't place it at the tip of the beam due to other engineering constraints."
+      ],
+      "start_s": 1070.28,
+      "end_s": 1146.66,
+      "id": "T4"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here are the coherent topics extracted from the provided transcript segment:\n\n```\n[\n  {\n    \"title\": \"Actuators and Sensors\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"It's essentially the actuators and sensors that you're using when you drive your car\"],\n    \"time_range\": \"00:05:24.040–00:05:27.640\"\n  },\n  {\n    \"title\": \"Observability\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"We remove all sensor information by closing our eyes.\", \"You don't know where you are, what speed you're going, or the direction you're facing.\"],\n    \"time_range\": \"00:05:35.700–00:06:02.520\"\n  },\n  {\n    \"title\": \"Controllability\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"Now, let's assume for this example that you can't feel acceleration or hear the engine or anything.\", \"However, the car is controllable within the definition that we said earlier.\"],\n    \"time_range\": \"00:06:00.680–00:06:20.360\"\n  },\n  {\n    \"title\": \"Relationship between Observability and Controllability\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"So, you can see how it's necessary to have a system that is capable of being observed and controlled.\"],\n    \"time_range\": \"00:06:50.140–00:07:02.820\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here are the coherent topics that vibrate in some way governed by mechanical properties of the beam:\n\n```\n[\n  {\n    \"title\": \"Controllability and Observability\",\n    \"description\": \"Understanding concepts of controllability and observability when analyzing systems with actuators and sensors.\",\n    \"evidence_quotes\": [\"So rather than adding a second sensor and actuator at a location that's ideal for the second mode, a cheaper alternative might be to just move the sensor and actuator to a place that can observe and control all of the critical bending modes.\"],\n    \"time_range\": \"00:09:48.920–00:13:26.040\"\n  },\n  {\n    \"title\": \"Sensor and Actuator Placement\",\n    \"description\": \"Analyzing the effects of sensor and actuator placement on controllability and observability.\",\n    \"evidence_quotes\": [\"Well, with the exception that you can't place it at the tip of the beam due to other engineering constraints.\"],\n    \"time_range\": \"00:10:06.140–00:11:22.520\"\n  },\n  {\n    \"title\": \"Beam Modes and Node Locations\",\n    \"description\": \"Understanding how the motion of the beam consists of contributions from distinct bending modes.\",\n    \"evidence_quotes\": [\"The first bending mode waves up and down, maybe like you'd expect. And then the second and third modes have slightly more complicated mode shapes.\"],\n    \"time_range\": \"00:10:52.560–00:11:22.520\"\n  },\n  {\n    \"title\": \"MATLAB Analysis\",\n    \"description\": \"Using MATLAB to analyze controllability and observability in systems with actuators and sensors.\",\n    \"evidence_quotes\": [\"They can help you think about the most effective places to add sensors and actuators, and to determine which states you should measure and which you should just estimate.\"],\n    \"time_range\": \"00:12:27.540–00:13:03.000\"\n  }\n]\n```"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,256 @@
+1
+00:00:00,000 --> 00:00:10,800
+Hello guys and welcome back to my channel. Today I'm going to check a new DJI-friendly F7 flight
+
+2
+00:00:10,800 --> 00:00:17,540
+controller and a very capable 20x20mm stack by T-Motor. In this video I'm going to go over their
+
+3
+00:00:17,540 --> 00:00:22,160
+features and specs and show you how to set them up using both digital and analog systems.
+
+4
+00:00:22,980 --> 00:00:29,760
+First let's start with the 20x20mm stack. In terms of packaging, inside the box you can find the
+
+5
+00:00:29,760 --> 00:00:38,960
+flight controller. The 4-in-1 ESC which comes with a pre-soldered 35V 470μF capacitor. A bag with M3
+
+6
+00:00:38,960 --> 00:00:46,340
+screws, nuts and silicone grammets. A high quality XT60 battery connector with pre-soldered 14G silicone
+
+7
+00:00:46,340 --> 00:00:53,020
+coated wires. A harness for connecting the 4-in-1 ESC and the flight controller and a GST connector
+
+8
+00:00:53,020 --> 00:00:59,060
+that will enable you to easily connect a DJI air unit. In terms of specs, the flight controller
+
+9
+00:00:59,060 --> 00:01:07,440
+features an F7 processor, 5 full U-out ports, in addition to a 5V BEC, a 10V BEC which is useful
+
+10
+00:01:07,440 --> 00:01:14,140
+for powering a DJI air unit and a dedicated connector for hooking it up. As for the 4-in-1 ESC,
+
+11
+00:01:14,420 --> 00:01:21,480
+its current rating is 45A, it features well-separated motor and battery pads, a built-in current sensor,
+
+12
+00:01:21,480 --> 00:01:28,360
+it's running BLL32 firmware and just like the flight controller, it can be powered with up to 6S batteries.
+
+13
+00:01:29,160 --> 00:01:35,860
+In addition, the weight of the flight controller is 5.3 grams. The weight of the 4-in-1 ESC including the
+
+14
+00:01:35,860 --> 00:01:44,420
+capacitor is 10.9 grams. They are both using 20x20mm M3 mounting holes. The outer dimensions of the flight
+
+15
+00:01:44,420 --> 00:01:53,480
+controller are 27.7 x 29.9 x 6.4 millimeters. The 4-in-1 ESC is a little bit bigger and its outer
+
+16
+00:01:53,480 --> 00:02:01,760
+dimensions are 33.4 x 39.3 x 6.4 millimeters and the total weight of the stack including the GST
+
+17
+00:02:01,760 --> 00:02:08,160
+harness is 17.1 grams. Now let's quickly go over a couple of guidelines when installing the stack.
+
+18
+00:02:08,160 --> 00:02:14,700
+Next to the micro USB port, you can find dedicated pads for connecting a ready receiver and you can
+
+19
+00:02:14,700 --> 00:02:20,760
+choose whether to power the ready receiver using 3.3 or 5 volts by bridging the center pad with the
+
+20
+00:02:20,760 --> 00:02:25,340
+right one or with the left one. Pay attention that if you are going to leave it unbridged,
+
+21
+00:02:25,780 --> 00:02:31,640
+the ready receiver is not going to be powered up. The easiest way to connect the DJI air unit to the
+
+22
+00:02:31,640 --> 00:02:37,500
+flight controller is using the provided GST connector. The air unit is going to be powered using the 10V
+
+23
+00:02:37,500 --> 00:02:44,060
+BAC. In order to display the OSD data, you need to enable the MSP switch on UART3 and pay attention
+
+24
+00:02:44,060 --> 00:02:49,240
+that in case you are going to use an external ready receiver, you need to disconnect the yellow wire as
+
+25
+00:02:49,240 --> 00:02:54,800
+it is wired to UART1. On the back of the flight controller, you can find the relevant pads for
+
+26
+00:02:54,800 --> 00:03:01,960
+connecting an analog VTX and in case you would like to control the 10V BAC using an auxiliary switch,
+
+27
+00:03:02,380 --> 00:03:07,440
+you can solder these two pads over here and then assign an auxiliary switch to the user
+
+28
+00:03:07,440 --> 00:03:13,040
+one mod on bit of light. Pay attention that this feature only applies to the 10V pads,
+
+29
+00:03:13,380 --> 00:03:18,680
+which means that in case you would like to use it, you can't use VTXs that only support a DC input
+
+30
+00:03:18,680 --> 00:03:25,140
+voltage of 5V. Here you can see what it looks like when the stack is assembled. So it features a slim
+
+31
+00:03:25,140 --> 00:03:30,740
+home factor and it is quite remarkable that such a small stack can power a 5-inch 6S build.
+
+32
+00:03:31,340 --> 00:03:36,220
+Now let's move on to the newly introduced single-sided Pacer F7 flight controller,
+
+33
+00:03:36,680 --> 00:03:41,900
+which actually came as a part of this plug-and-play build, which as far as I know is still not available.
+
+34
+00:03:42,600 --> 00:03:48,720
+In terms of specs, this flight controller features an F7 processor, a USB Type-C connector,
+
+35
+00:03:48,720 --> 00:03:57,160
+6 full UO ports, a dedicated connector for a DJI air unit. In addition to a 10-pin-suggester connector
+
+36
+00:03:57,160 --> 00:04:02,340
+for connecting the flight controller with the 4-in-1 ESC, you can find the matching pads on the
+
+37
+00:04:02,340 --> 00:04:08,020
+bottom of the flight controller. Most of the pads can be accessed from both top and bottom sides of
+
+38
+00:04:08,020 --> 00:04:14,460
+the flight controller. On its bottom, there are no electronic parts and pay attention that it only features
+
+39
+00:04:14,460 --> 00:04:21,260
+a 5V BAC and all the 10V pads are just pass-through pads, which rely on the fact that you are going
+
+40
+00:04:21,260 --> 00:04:30,260
+to use a 4-in-1 ESC, which features a built-in 10V BAC. In addition, the flight controller is using 30.5 by
+
+41
+00:04:30,260 --> 00:04:40,740
+30.5 mm M3 mounting holes. It weighs 8 grams and its outer dimensions are 40.1 by 39.2 by 7.8 mm.
+
+42
+00:04:40,740 --> 00:04:46,840
+In case you are going to use a DJI air unit and connect it to the dedicated connector, pay attention
+
+43
+00:04:46,840 --> 00:04:51,820
+that in case you are going to use a 6-pin GST connector, it is connected all the way to the right,
+
+44
+00:04:52,180 --> 00:04:58,880
+as the left pin is an extra ground pin which is not in use. In order to display the OSD data on your DJI
+
+45
+00:04:58,880 --> 00:05:05,920
+goggles, you need to enable the MSP switch on your 3D. And remember that as I just mentioned, the 10V pad
+
+46
+00:05:05,920 --> 00:05:12,460
+is just a pass-through, so in case you are not going to use a supported 4-in-1 ESC, the DJI air unit is not
+
+47
+00:05:12,460 --> 00:05:18,440
+going to be powered up, so what you can do is to bridge the VBAT and 10V pads, but keep in mind
+
+48
+00:05:18,440 --> 00:05:24,300
+that the DJI air unit can be powered directly with up to 4S batteries. As for the rest of the setup,
+
+49
+00:05:24,740 --> 00:05:28,940
+you can wire the ready receiver to the pads which are located on the back of the flight controller,
+
+50
+00:05:28,940 --> 00:05:35,180
+and then power it either using 3.3 or 5V. Pay attention that in case you are going to use an
+
+51
+00:05:35,180 --> 00:05:42,020
+S-Bus receiver, you will need to use the RX5 pin of the DJI air unit connector. Finally, in case you
+
+52
+00:05:42,020 --> 00:05:47,900
+are going to use an analog setup, the VTX and FEB camera are going to be wired to the pads which are
+
+53
+00:05:47,900 --> 00:05:53,640
+located on the front of the flight controller. You can power them either using 10V, 5V and VBAT,
+
+54
+00:05:53,640 --> 00:05:59,980
+and in addition you can also find a dedicated pad for camera control for configuring an analog FPV camera.
+
+55
+00:06:00,900 --> 00:06:06,400
+So overall, the T-Motor Pacer F7 flight controller looks like a pretty good option for a DJI air unit
+
+56
+00:06:06,400 --> 00:06:13,060
+setup, but keep in mind that you need to match it with a compatible 4-in-1 ESC since it lakes a 10V BC.
+
+57
+00:06:14,220 --> 00:06:19,100
+As for the mini stack, as far as I can tell it looks like a pretty good option for a light 5-inch
+
+58
+00:06:19,100 --> 00:06:24,560
+build. Its main downside, which is subjective, is that it's a little bit on the pricey side
+
+59
+00:06:24,560 --> 00:06:29,700
+since it costs around $100 and soon I'm going to feature it in a build-in-flight video,
+
+60
+00:06:29,940 --> 00:06:34,700
+so we'll see how it goes. Anyway, that's going to be it for this quick video. As always,
+
+61
+00:06:34,820 --> 00:06:38,380
+if you have any questions, feel free to ask them in the comments section down below.
+
+62
+00:06:38,800 --> 00:06:43,640
+Don't forget to leave a thumbs up if you like this video and consider subscribing to my channel
+
+63
+00:06:43,640 --> 00:06:48,720
+and hitting the notifications bell if you're not already subscribed. See you on my next videos,
+
+64
+00:06:48,720 --> 00:06:49,520
+and goodbye.
+

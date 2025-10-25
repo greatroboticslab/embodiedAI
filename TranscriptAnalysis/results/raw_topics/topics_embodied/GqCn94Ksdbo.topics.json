@@ -1,0 +1,46 @@
+{
+  "video_id": "GqCn94Ksdbo",
+  "title": "GqCn94Ksdbo",
+  "url": "https://www.youtube.com/watch?v=GqCn94Ksdbo",
+  "created_at": "2025-10-09T17:31:37.344144+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Capacitor Operation",
+      "description": "Explanation on how capacitors operate, including charging and discharging times.",
+      "evidence_quotes": [
+        "There's time to charge, and there's time to discharge. And we take advantage of that to creating filters."
+      ],
+      "start_s": 571.76,
+      "end_s": 580.3,
+      "id": "T1"
+    },
+    {
+      "title": "Low Pass Filter Design",
+      "description": "Discussion on how to design a low pass filter using RC circuits and capacitors.",
+      "evidence_quotes": [
+        "So that is just about it. If you keep one thing in mind when you're thinking about filters and RC circuits, and that is... a capacitor, whether it's, you know, one of these guys, or one of these guys, or whatever, is not an on and off device.",
+        "A capacitor operates analog. It operates in between the two extremes of on and off."
+      ],
+      "start_s": 0.64,
+      "end_s": 35573.74,
+      "id": "T2"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here are the topics extracted from the provided transcript segment:\n\n```\n[\n  {\n    \"title\": \"Low Pass Filter Design\",\n    \"description\": \"Discussion on how to design a low pass filter using RC circuits and capacitors.\",\n    \"evidence_quotes\": [\n      \"So that is just about it. If you keep one thing in mind when you're thinking about filters and RC circuits, and that is... a capacitor, whether it's, you know, one of these guys, or one of these guys, or whatever, is not an on and off device.\",\n      \"A capacitor operates analog. It operates in between the two extremes of on and off.\"\n    ],\n    \"time_range\": \"00:00:00.000–09:52:53.100\"\n  },\n  {\n    \"title\": \"Capacitor Operation\",\n    \"description\": \"Explanation on how capacitors operate, including charging and discharging times.\",\n    \"evidence_quotes\": [\n      \"There's time to charge, and there's time to discharge. And we take advantage of that to creating filters.\"\n    ],\n    \"time_range\": \"00:09:31.120–00:09:39.660\"\n  }\n]\n```"
+        ]
+      }
+    ]
+  }
+}

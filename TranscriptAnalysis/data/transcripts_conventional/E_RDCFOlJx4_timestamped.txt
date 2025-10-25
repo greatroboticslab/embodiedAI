@@ -1,0 +1,272 @@
+E_RDCFOlJx4
+https://www.youtube.com/watch?v=E_RDCFOlJx4
+Unknown Category
+
+[00:00:00.880 → 00:00:05.000] Let's talk about the Linear Quadratic Regulator, or LQR control.
+[00:00:05.000 → 00:00:10.000] LQR is a type of optimal control that is based on state space representation.
+[00:00:10.000 → 00:00:13.660] In this video I want to introduce this topic at a very high level so that you walk away
+[00:00:13.660 → 00:00:17.820] with a general understanding of the control problem and can build on this understanding
+[00:00:17.820 → 00:00:20.080] when you're studying the math behind it.
+[00:00:20.080 → 00:00:25.040] I'll cover what it means to be optimal, how to think about the LQR problem, and then I'll
+[00:00:25.040 → 00:00:29.000] show you some examples in MATLAB that I think will help you gain a little intuition about
+[00:00:29.000 → 00:00:30.000] LQR.
+[00:00:30.000 → 00:00:34.060] I'm Brian, and welcome to a MATLAB Tech Talk.
+[00:00:34.060 → 00:00:37.820] To begin, let's compare the structure of the pole placement controller that we covered
+[00:00:37.820 → 00:00:40.940] in the second video and an LQR controller.
+[00:00:40.940 → 00:00:44.460] That way you have some kind of an idea of how they're different.
+[00:00:44.460 → 00:00:48.580] With pole placement we found that if we feed back every state in the state vector and multiply
+[00:00:48.580 → 00:00:53.400] them by a gain matrix K, we have the ability to place the closed loop poles anywhere we
+[00:00:53.400 → 00:00:57.800] choose, assuming the system is controllable and observable.
+[00:00:57.800 → 00:01:01.700] Then we scaled the reference term to ensure that we have no steady state reference tracking
+[00:01:01.700 → 00:01:02.860] error.
+[00:01:02.860 → 00:01:08.540] Now, the LQR structure on the other hand feeds back the full state vector, then multiplies
+[00:01:08.540 → 00:01:12.520] it by a gain matrix K and subtracts it from the scaled reference.
+[00:01:12.520 → 00:01:18.540] So as you can see, the structure of these two control laws are completely diff- well, actually
+[00:01:18.540 → 00:01:20.220] no, they're exactly the same.
+[00:01:20.220 → 00:01:25.600] They are both full state feedback controllers, and we can implement the results with the same
+[00:01:25.600 → 00:01:29.500] structure from both LQR and pole placement.
+[00:01:29.500 → 00:01:31.460] Now, a quick side note about this structure.
+[00:01:31.460 → 00:01:35.900] We could have set it up to feed back the integral of the output, or we could have applied the
+[00:01:35.900 → 00:01:38.380] gain to the state error.
+[00:01:38.380 → 00:01:43.120] All three of these implementations can produce zero steady state error and can be used with
+[00:01:43.120 → 00:01:45.780] the results from pole placement or LQR.
+[00:01:45.780 → 00:01:49.420] And if you want to learn more about these other two feedback structures, I left a good source
+[00:01:49.420 → 00:01:50.420] in the description.
+[00:01:50.420 → 00:01:53.060] Okay, we're back.
+[00:01:53.060 → 00:01:56.800] So why are we giving these two controllers different names if they're implemented in
+[00:01:56.800 → 00:01:58.560] the exact same way?
+[00:01:58.560 → 00:01:59.920] Well here's the key.
+[00:01:59.920 → 00:02:05.440] The implementation is the same, but how we choose K is different.
+[00:02:05.440 → 00:02:10.240] With pole placement, we solved for K by choosing where we want to put the closed loop poles.
+[00:02:10.240 → 00:02:14.360] We wanted to place them in a specific spot, and this was awesome.
+[00:02:14.360 → 00:02:18.720] But one problem with this method is figuring out where a good place is for those closed loop
+[00:02:18.720 → 00:02:19.720] poles.
+[00:02:19.720 → 00:02:24.400] And this might not be terribly intuitive for high order systems and systems with multiple
+[00:02:24.400 → 00:02:25.400] actuators.
+[00:02:25.400 → 00:02:29.040] So, with LQR we don't pick pole locations.
+[00:02:29.040 → 00:02:34.720] We find the optimal K matrix by choosing closed loop characteristics that are important to us.
+[00:02:34.720 → 00:02:39.340] Specifically, how well the system performs and how much effort does it take to get that
+[00:02:39.340 → 00:02:40.780] performance.
+[00:02:40.780 → 00:02:45.080] And this statement might not make a lot of sense, so let's walk through a quick thought exercise
+[00:02:45.080 → 00:02:46.680] that I think will help.
+[00:02:46.680 → 00:02:50.680] From borrowing and modifying this example from Christopher Lum, who has his own video on
+[00:02:50.680 → 00:02:54.920] LQR that is worth watching if you want a more in-depth explanation of the mathematics.
+[00:02:54.920 → 00:02:57.280] I've linked to his video in the description.
+[00:02:57.280 → 00:02:59.680] But here's the general idea.
+[00:02:59.680 → 00:03:03.720] Let's say you're trying to figure out the best way, or the most optimal way, to get from
+[00:03:03.720 → 00:03:04.680] your home to work.
+[00:03:04.680 → 00:03:08.040] And you have several transportation options to choose from.
+[00:03:08.040 → 00:03:12.680] You could drive your car, you could ride your bike, take the bus, or charter a helicopter.
+[00:03:12.680 → 00:03:16.680] And the question is, which is the most optimal choice?
+[00:03:16.680 → 00:03:20.920] Well, that question by itself can't be answered, because I haven't told you what a good outcome
+[00:03:20.920 → 00:03:21.920] means.
+[00:03:21.920 → 00:03:26.280] All of those options can get us from home to work, but they do so differently, and we need
+[00:03:26.280 → 00:03:28.680] to figure out what's important to us.
+[00:03:28.680 → 00:03:34.040] If I said that time is the most important thing, get to work as fast as possible, then the optimal
+[00:03:34.040 → 00:03:36.680] solution would be to take the helicopter.
+[00:03:36.680 → 00:03:40.200] On the other hand, if I said that you don't have much money and getting to work as cheaply
+[00:03:40.200 → 00:03:44.680] as possible was a good outcome, then riding your bike would be the optimal solution.
+[00:03:44.680 → 00:03:48.920] Of course, in real life you don't have infinite money to maximize performance, and you don't
+[00:03:48.920 → 00:03:51.600] have unlimited time to minimize spending.
+[00:03:51.600 → 00:03:54.500] But rather you're trying to find a balance between the two.
+[00:03:54.500 → 00:03:58.480] So maybe you'd reason that you have an early meeting, and therefore value the time it takes
+[00:03:58.480 → 00:03:59.680] to get to work.
+[00:03:59.680 → 00:04:03.940] But you're not independently wealthy, so you care about how much money it takes.
+[00:04:03.940 → 00:04:09.000] Therefore the optimal solution would be to take your car, or to take the bus.
+[00:04:09.000 → 00:04:14.060] Now if we wanted a fancy way to mathematically assess which mode of transportation is optimal,
+[00:04:14.060 → 00:04:18.680] we could set up a function that adds together the travel time and the amount of money that
+[00:04:18.680 → 00:04:20.620] each option takes.
+[00:04:20.620 → 00:04:25.480] And then we can set the importance of time versus money with a multiplier.
+[00:04:25.480 → 00:04:29.260] We'll weight each of these matrices based on our own personal preferences.
+[00:04:29.260 → 00:04:33.620] We'll call this the cost function, or the objective function.
+[00:04:33.620 → 00:04:37.160] And you can see that it's heavily influenced by these weighting parameters.
+[00:04:37.160 → 00:04:41.420] If Q is high, then we're penalizing options that take more time, and if R is high, then
+[00:04:41.420 → 00:04:44.660] we're penalizing options that cost a lot of money.
+[00:04:44.660 → 00:04:50.180] And once we set the weights, we calculate the total cost for each option and choose the
+[00:04:50.180 → 00:04:52.900] one that has the lowest overall cost.
+[00:04:52.900 → 00:04:55.820] And this is the optimal solution.
+[00:04:55.820 → 00:04:59.500] And what's interesting about this is that there's different optimal solutions based on
+[00:04:59.500 → 00:05:02.760] the relative weights you attach to performance and spending.
+[00:05:02.760 → 00:05:08.420] There's no universal optimal solution, just the best one given the desires of the user.
+[00:05:08.420 → 00:05:13.400] A CEO might take a helicopter, whereas a college student might ride a bicycle.
+[00:05:13.400 → 00:05:16.820] But both are optimal given their preferences.
+[00:05:16.820 → 00:05:21.480] And this is exactly the same kind of reasoning we do when designing a control system.
+[00:05:21.480 → 00:05:25.860] Rather than think about pole locations, we can think about and assess what is important
+[00:05:25.860 → 00:05:32.300] to us between how well the system performs and how much we want to spend to get that performance.
+[00:05:32.300 → 00:05:37.300] Of course, usually how much we want to spend is not measured in dollars, but in actuator effort,
+[00:05:37.300 → 00:05:39.860] or the amount of energy it takes.
+[00:05:39.860 → 00:05:44.060] And this is how LQR approaches finding the optimal gain matrix.
+[00:05:44.060 → 00:05:48.060] We set up a cost function that adds up the weighted sum of performance and effort over
+[00:05:48.060 → 00:05:49.180] all time.
+[00:05:49.180 → 00:05:55.000] And then by solving the LQR problem, it returns the gain matrix that produces the lowest cost,
+[00:05:55.000 → 00:05:57.300] given the dynamics of the system.
+[00:05:57.300 → 00:06:01.420] Now, the cost function that we use with LQR looks a little different than the function
+[00:06:01.420 → 00:06:03.540] we developed for the travel example.
+[00:06:03.540 → 00:06:05.680] But the concept is exactly the same.
+[00:06:05.680 → 00:06:10.500] We penalize bad performance by adjusting Q, and we penalize actuator effort by adjusting
+[00:06:10.500 → 00:06:11.880] R.
+[00:06:11.880 → 00:06:16.440] So let's look at what performance means for this cost function.
+[00:06:16.440 → 00:06:18.760] Performance is judged on the state vector.
+[00:06:18.760 → 00:06:23.080] For now, let's assume that we want every state to be zero, to be driven back to its starting
+[00:06:23.080 → 00:06:24.720] equilibrium point.
+[00:06:24.720 → 00:06:30.120] So if the system is initialized in some non-zero state, the faster it returns to zero, the better
+[00:06:30.120 → 00:06:33.100] the performance is, and the lower the cost.
+[00:06:33.100 → 00:06:37.100] And the way we can get a measure of how quickly it's returning to the desired state is by looking
+[00:06:37.100 → 00:06:39.320] at the area under the curve.
+[00:06:39.320 → 00:06:41.320] This is what the integral is doing.
+[00:06:41.320 → 00:06:46.040] A curve with less area means that it spends more time closer to the goal than a curve with
+[00:06:46.040 → 00:06:47.320] more area.
+[00:06:47.320 → 00:06:52.520] However, states can be negative or positive, and we don't want negative values subtracting from
+[00:06:52.520 → 00:06:53.960] the overall cost.
+[00:06:53.960 → 00:06:57.240] So we square the value to ensure that it's positive.
+[00:06:57.240 → 00:07:02.180] This has the effect of punishing larger errors disproportionately more than smaller ones.
+[00:07:02.180 → 00:07:08.660] But it's a good compromise because it turns our cost function into a quadratic function.
+[00:07:08.660 → 00:07:13.720] Quadratic functions like z equals x squared plus y squared are convexed, and therefore have
+[00:07:13.720 → 00:07:15.700] a definite minimum value.
+[00:07:15.700 → 00:07:20.980] quadratic functions that are subject to linear dynamics remain quadratic, so our system will
+[00:07:20.980 → 00:07:23.420] also have a definite minimum value.
+[00:07:23.420 → 00:07:28.580] Lastly, we want to have the ability to weight the relative importance of each state.
+[00:07:28.580 → 00:07:32.880] And therefore, q isn't a single number, but a square matrix that has the same number of
+[00:07:32.880 → 00:07:35.360] rows as states.
+[00:07:35.360 → 00:07:39.960] The q matrix needs to be positive definite so that when we multiply it with the state vectors,
+[00:07:39.960 → 00:07:43.620] the resulting value is positive and non-zero.
+[00:07:43.620 → 00:07:48.200] And often it's just a diagonal matrix with positive values along the diagonal.
+[00:07:48.200 → 00:07:54.680] With this matrix, we can target the states where we want really low error by making the corresponding value in the q
+[00:07:54.680 → 00:07:56.460] matrix really large.
+[00:07:56.460 → 00:08:00.880] And the states that we don't care about as much make those values really small.
+[00:08:00.880 → 00:08:04.260] The other half of the cost function adds up the cost of actuation.
+[00:08:04.260 → 00:08:08.620] In a very similar fashion, we look at the input vector, and we square the terms to ensure that
+[00:08:08.620 → 00:08:13.460] they're positive, and then weight them with an r matrix that has positive multipliers along
+[00:08:13.460 → 00:08:15.400] its diagonal.
+[00:08:15.400 → 00:08:18.860] We can write this in larger matrix form as follows.
+[00:08:18.860 → 00:08:23.320] And while you don't see the cost function written like this often, it helps us visualize
+[00:08:23.320 → 00:08:24.320] something.
+[00:08:24.320 → 00:08:28.420] q and r are part of this larger weighting matrix.
+[00:08:28.420 → 00:08:31.680] But the off-diagonal terms of this matrix are zero.
+[00:08:31.680 → 00:08:37.780] And we can fill in those corners with n, such that the overall matrix is still positive definite,
+[00:08:37.780 → 00:08:43.440] but now the n matrix penalizes cross products of the input and the state.
+[00:08:43.440 → 00:08:47.580] Now while there's uses for setting up your cost function with an n matrix, for us we're
+[00:08:47.580 → 00:08:53.360] going to keep things simple and just set it to zero and focus only on q and r.
+[00:08:53.360 → 00:08:58.680] So by setting values of q and r, we now have a way to specify exactly what's important to
+[00:08:58.680 → 00:08:59.680] us.
+[00:08:59.680 → 00:09:03.220] If one of the actuators is really expensive and we're trying to save energy, then we
+[00:09:03.220 → 00:09:07.760] penalize it by increasing the r matrix value that corresponds with it.
+[00:09:07.760 → 00:09:12.040] And this might be the case if you're using thrusters for satellite control, because they use up
+[00:09:12.040 → 00:09:14.660] fuel, which is a finite resource.
+[00:09:14.660 → 00:09:21.100] In that case, you may accept a slower reaction or more state error so that you can save fuel.
+[00:09:21.100 → 00:09:25.120] On the other hand, if performance is really crucial, then we can penalize state error by
+[00:09:25.120 → 00:09:29.960] increasing the q matrix value that corresponds with the states that we care about.
+[00:09:29.960 → 00:09:33.900] And this might be the case when using reaction wheels for satellite control, because they
+[00:09:33.900 → 00:09:38.640] use energy that can be stored in batteries and replenished with the solar panels.
+[00:09:38.640 → 00:09:44.100] So using more energy for low error control is probably a good tradeoff.
+[00:09:44.100 → 00:09:46.300] So now the big question.
+[00:09:46.300 → 00:09:49.440] How do we solve this optimization problem?
+[00:09:49.440 → 00:09:53.500] I think the big disappointing answer is that deriving the solution is beyond the scope of
+[00:09:53.500 → 00:09:54.580] this video.
+[00:09:54.580 → 00:09:57.700] But I left a good link in the description if you want to read up on it.
+[00:09:57.700 → 00:10:01.900] The good news, however, is that as a control system designer, often the way you approach
+[00:10:01.900 → 00:10:07.780] LQR design is not by solving the optimization problem by hand, but by developing a linear model
+[00:10:07.780 → 00:10:13.440] of your system dynamics, then specifying what's important by adjusting the q and r weighting matrices,
+[00:10:13.440 → 00:10:19.580] then running the LQR command in MATLAB to solve the optimization problem and return the optimal
+[00:10:19.580 → 00:10:25.160] gain set, and then just simulate the system and adjust q and r again if necessary.
+[00:10:25.160 → 00:10:30.160] So as long as you understand how q and r affects the closed loop behavior, how they punish state
+[00:10:30.160 → 00:10:35.820] errors and actuator effort, and you understand that this is a quadratic optimization problem,
+[00:10:35.820 → 00:10:41.580] then it's relatively simple to use the LQR command in MATLAB to find the optimal gain set.
+[00:10:41.580 → 00:10:47.300] Now, with LQR, we've moved the design question away from where do we place poles to the question
+[00:10:47.300 → 00:10:49.300] how do we set q and r.
+[00:10:49.300 → 00:10:53.460] Unfortunately, there isn't a one-size-fits-all method for choosing these weights.
+[00:10:53.460 → 00:10:59.280] However, I'd argue that setting q and r is more intuitive than picking pole locations.
+[00:10:59.280 → 00:11:03.540] For example, you can just start with the identity matrix for both q and r, and then tweak them
+[00:11:03.540 → 00:11:07.000] through trial and error and intuition about your system.
+[00:11:07.000 → 00:11:13.720] So to help you develop some of that intuition, let's walk through a few examples in MATLAB.
+[00:11:13.720 → 00:11:16.380] Alright, this needs a little explanation.
+[00:11:16.380 → 00:11:18.340] Let's start with the code.
+[00:11:18.340 → 00:11:22.840] I have a very simple model of a rotating mass in a frictionless environment, and the system
+[00:11:22.840 → 00:11:26.180] has two states, angle and angular rate.
+[00:11:26.180 → 00:11:32.000] And I'm designing a full state feedback controller using LQR, and it really couldn't be simpler.
+[00:11:32.000 → 00:11:37.340] I'll start with the identity matrix for q, where the first diagonal entry is tied to
+[00:11:37.340 → 00:11:40.720] angular error, and the second is tied to angular rate.
+[00:11:40.720 → 00:11:46.040] Now, there's only a single actuation input for this system, which are four rotation thrusters
+[00:11:46.040 → 00:11:50.060] that all act together to create a single torque command.
+[00:11:50.060 → 00:11:53.140] Therefore r is just a single value.
+[00:11:53.140 → 00:11:58.480] Now I solve for the optimal feedback gain using the LQR command and build a state space object
+[00:11:58.480 → 00:12:01.360] that represents the closed loop dynamics.
+[00:12:01.360 → 00:12:05.240] With the controller designed, I can simulate the response to an initial condition, which
+[00:12:05.240 → 00:12:07.660] I'm setting to 3 radians.
+[00:12:07.660 → 00:12:09.980] And that's pretty much the whole thing.
+[00:12:09.980 → 00:12:13.660] Everything else in this script just makes this fancy plot so that it's easier to comprehend
+[00:12:13.660 → 00:12:14.660] the results.
+[00:12:14.660 → 00:12:17.660] Alright, let's run this script.
+[00:12:17.660 → 00:12:22.320] You can see the UFO gets initialized to 3 radians, as promised.
+[00:12:22.320 → 00:12:26.300] And up at the top I'm keeping track of how long the maneuver takes, which is representative
+[00:12:26.300 → 00:12:30.980] of the performance, and how much fuel is used to complete the maneuver.
+[00:12:30.980 → 00:12:34.920] So let's kick it off and see how well the controller does.
+[00:12:43.980 → 00:12:44.980] Hey, look at that.
+[00:12:44.980 → 00:12:51.220] It completed the maneuver in 5.8 seconds with 15 units of fuel, and it got the cow in the
+[00:12:51.220 → 00:12:54.220] process, which is the important part.
+[00:12:54.220 → 00:12:59.680] When the thrusters are active, they generate a torque that accelerates the UFO over time.
+[00:12:59.680 → 00:13:03.660] Therefore fuel usage is proportional to the integral of acceleration.
+[00:13:03.660 → 00:13:07.640] So the longer we accelerate, the more fuel is used.
+[00:13:07.640 → 00:13:12.700] Now let's see if we can use less fuel for this maneuver by penalizing the thruster more.
+[00:13:12.700 → 00:13:18.160] I'll bump R up to 2 and rerun the simulation.
+[00:13:18.160 → 00:13:35.640] Well, we used two fewer units of fuel, but at the expense of over 3 additional seconds.
+[00:13:35.640 → 00:13:40.420] The problem is that with this combination, it overshot the target just a bit and had to waste
+[00:13:40.420 → 00:13:42.200] time coming back.
+[00:13:42.200 → 00:13:46.320] So let's try to slow down the max rotation speed with the hope that it won't overshoot.
+[00:13:46.320 → 00:13:51.080] And we're going to do that by penalizing the angular rate portion of the Q matrix.
+[00:13:51.080 → 00:13:55.260] Now any non-zero rate costs double what it did before.
+[00:13:55.260 → 00:14:07.020] And let's give this a shot.
+[00:14:07.020 → 00:14:11.820] Well we saved about a second since it didn't overshoot, and in the process managed to knock
+[00:14:11.820 → 00:14:14.700] another unit of fuel off.
+[00:14:14.700 → 00:14:16.580] Alright enough of this small stuff.
+[00:14:16.580 → 00:14:28.180] Let's really save fuel now by relaxing the angle error weight a bunch.
+[00:14:28.180 → 00:14:33.540] Okay this is going really slowly now, so let me speed up the video to just get through it.
+[00:14:33.540 → 00:14:37.700] In the end we used 5 units of fuel, less than half of what was used before.
+[00:14:37.700 → 00:14:42.580] And we can go the other way as well and tune a really aggressive controller.
+[00:14:42.580 → 00:14:46.540] Okay yeah, that's much faster.
+[00:14:46.540 → 00:14:50.040] Less than 2 seconds and our acceleration is off the charts.
+[00:14:50.040 → 00:14:52.580] That's how you rotate to pick up a cow.
+[00:14:52.580 → 00:14:58.580] Unfortunately it's at the expense of almost 100 units of fuel, so there's downsides to everything.
+[00:14:58.580 → 00:15:02.860] Alright, so hopefully you're starting to see how we can tweak and tune our controller by
+[00:15:02.860 → 00:15:04.880] adjusting these two matrices.
+[00:15:04.880 → 00:15:07.400] And it's pretty simple.
+[00:15:07.400 → 00:15:11.460] Now I know this video is dragging on, but with a different script I want to show you one
+[00:15:11.460 → 00:15:12.900] more thing real quickly.
+[00:15:12.900 → 00:15:17.060] And that's how LQR is more powerful than pole placement.
+[00:15:17.060 → 00:15:21.960] Here I have a different state space model, one that has 3 states in a single actuator.
+[00:15:21.960 → 00:15:25.880] And I've defined my Q and R matrices and solved for the optimal gain.
+[00:15:25.880 → 00:15:29.840] And like before I'll generate the closed loop state space model, and then run the response
+[00:15:29.840 → 00:15:32.860] to an initial condition of 1, 0, 0.
+[00:15:32.860 → 00:15:38.880] I then plot the response of the first state, that step from 1 back to 0, the actuator effort,
+[00:15:38.880 → 00:15:42.040] and the location of the closed loop poles and zeros.
+[00:15:42.040 → 00:15:46.120] So let's run this and see what happens.
+[00:15:46.120 → 00:15:51.700] Well the first state tracks back to 0 nicely, but at the expense of a lot of actuation.
+[00:15:51.700 → 00:15:56.320] Now I didn't model anything in particular, but let's say that the actuator effort is thrust
+[00:15:56.320 → 00:15:57.320] required.
+[00:15:57.320 → 00:16:00.380] So this controller is requesting 10 units of thrust.
+[00:16:00.380 → 00:16:04.360] However, let's say our thruster is only capable of 2 units of thrust.
+[00:16:04.360 → 00:16:08.480] This controller design would saturate the thruster, and we wouldn't get the response that we're
+[00:16:08.480 → 00:16:09.480] looking for.
+[00:16:09.480 → 00:16:13.940] Now, had we developed this controller using pole placement, the question at this point
+[00:16:13.940 → 00:16:19.860] would be which of these 3 poles should we move in order to reduce the actuator effort?
+[00:16:19.860 → 00:16:22.800] And that's not too intuitive, right?
+[00:16:22.800 → 00:16:28.360] But with LQR we can easily go to the R matrix and penalize actuator usage by raising a single
+[00:16:28.360 → 00:16:29.360] value.
+[00:16:29.360 → 00:16:32.100] And I'll re-run the script.
+[00:16:32.100 → 00:16:37.560] We see that the response is slower as expected, but the actuator is no longer saturated.
+[00:16:37.560 → 00:16:38.860] And check this out.
+[00:16:38.860 → 00:16:44.600] All 3 closed loop poles moved with this single adjustment of R. So if we were using pole placement,
+[00:16:44.600 → 00:16:48.760] we would have had to know how to move these poles just like this in order to reduce the
+[00:16:48.760 → 00:16:50.360] actuator effort.
+[00:16:50.360 → 00:16:52.620] And that would be pretty tough.
+[00:16:52.620 → 00:16:55.040] So that's where I want to leave this video.
+[00:16:55.040 → 00:16:59.780] LQR control is pretty powerful, and hopefully you saw that it's simple to set up and relatively
+[00:16:59.780 → 00:17:01.940] intuitive to tune and tweak.
+[00:17:01.940 → 00:17:07.040] And the best part is that it returns an optimal gain matrix based on how you weight, performance,
+[00:17:07.040 → 00:17:07.960] and effort.
+[00:17:07.960 → 00:17:10.780] So it's up to you how you want your system to behave in the end.
+[00:17:10.780 → 00:17:14.560] Now if you don't want to miss the next Tech Talk video, don't forget to subscribe to this
+[00:17:14.560 → 00:17:15.560] channel.
+[00:17:15.560 → 00:17:19.400] Also if you want to check out my channel, Control System Lectures, I cover more control theory
+[00:17:19.400 → 00:17:20.840] topics there as well.
+[00:17:20.840 → 00:17:22.900] Thanks for watching and I'll see you next time.

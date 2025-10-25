@@ -1,0 +1,214 @@
+lBGE5lwbruE
+https://www.youtube.com/watch?v=lBGE5lwbruE
+Unknown Category
+
+[00:00:00.000 → 00:00:07.000] Hey guys, going to take a look at the ubiquitous LM386 audio amplifier IC.
+[00:00:07.000 → 00:00:11.000] Going to do some power measurements, talk about layout issues.
+[00:00:11.000 → 00:00:18.000] You know, a lot of people build these things and they pop and buzz and they get distortion and things.
+[00:00:18.000 → 00:00:24.000] And it's really not a problem with the chip, it's the layout of the circuit.
+[00:00:24.000 → 00:00:29.000] You really have to do it right and we'll experiment with that.
+[00:00:29.000 → 00:00:33.000] And like I say, we'll do power measurements and all that.
+[00:00:33.000 → 00:00:37.000] I'm shooting on a new camera I bought.
+[00:00:37.000 → 00:00:42.000] Canon PowerShot ELF or ELPH, whatever they call it.
+[00:00:42.000 → 00:00:45.000] 115IS.
+[00:00:45.000 → 00:00:48.000] Practically brand new.
+[00:00:48.000 → 00:00:51.000] I got at one of those check and cash places.
+[00:00:51.000 → 00:00:58.000] I guess somebody got it as a gift maybe and they needed quick cash and they turned it in for their drugs.
+[00:00:58.000 → 00:01:01.000] Or maybe they had a rent payment or something.
+[00:01:01.000 → 00:01:04.000] They usually don't give you any money for these things.
+[00:01:04.000 → 00:01:06.000] Maybe 20, 30 bucks.
+[00:01:06.000 → 00:01:10.000] But I saw it in there and got it for 40 bucks.
+[00:01:10.000 → 00:01:12.000] You can buy these things new.
+[00:01:12.000 → 00:01:16.000] You know, they're an old model for 80 dollars now.
+[00:01:16.000 → 00:01:19.000] Really happy with the audio quality of it.
+[00:01:19.000 → 00:01:24.000] But I don't want to get off on a tangent here.
+[00:01:24.000 → 00:01:28.000] So let's talk about the LM386.
+[00:01:28.000 → 00:01:32.000] Well, my first experience with this chip was probably 30 years ago.
+[00:01:32.000 → 00:01:38.000] I was getting into electronics and audio and things like that.
+[00:01:38.000 → 00:01:46.000] And as a teenager, I really needed something to play with.
+[00:01:46.000 → 00:01:50.000] And of course, Radio Shack down the road.
+[00:01:50.000 → 00:01:52.000] And they sold, they've been selling these things.
+[00:01:52.000 → 00:01:54.000] And they still sell these chips.
+[00:01:54.000 → 00:01:55.000] Even today.
+[00:01:55.000 → 00:02:01.000] And I think they started carrying them back in the 70's.
+[00:02:01.000 → 00:02:07.000] This is a national semiconductor product.
+[00:02:07.000 → 00:02:12.000] Though I think other companies have produced it.
+[00:02:12.000 → 00:02:16.000] It's a, uh...
+[00:02:16.000 → 00:02:21.000] Like I say, it's a good little chip for building small amplifiers.
+[00:02:21.000 → 00:02:25.000] Maybe one of some Bill Jones computer speakers.
+[00:02:25.000 → 00:02:28.000] It'd work for doing that.
+[00:02:28.000 → 00:02:30.000] But it does have its limitations though.
+[00:02:30.000 → 00:02:32.000] And we'll talk about that as well.
+[00:02:32.000 → 00:02:40.000] Well, as far as distortion, it's actually pretty close to HiFi.
+[00:02:40.000 → 00:02:42.000] But it doesn't quite make it.
+[00:02:42.000 → 00:02:45.000] You know, my criteria for HiFi...
+[00:02:45.000 → 00:02:47.000] Excuse me.
+[00:02:47.000 → 00:02:54.000] The amplifier total harmonic distortion across the power band and frequency band
+[00:02:54.000 → 00:03:01.000] must be under 0.1% or one tenth of a percent of total harmonic distortion.
+[00:03:01.000 → 00:03:03.000] This chip...
+[00:03:03.000 → 00:03:07.000] Across its power band, it's well under one percent.
+[00:03:07.000 → 00:03:12.000] And it's just scraping the bottom in probably the most audible range.
+[00:03:12.000 → 00:03:18.000] So, it's not bad, but it doesn't quite make it.
+[00:03:18.000 → 00:03:20.000] Here's the frequency band.
+[00:03:20.000 → 00:03:23.000] And these measurements are at six volts.
+[00:03:23.000 → 00:03:25.000] Might do better at nine volts.
+[00:03:25.000 → 00:03:27.000] But, uh...
+[00:03:27.000 → 00:03:30.000] You know, up here is the one percent line.
+[00:03:30.000 → 00:03:36.000] So, in much of the audible band, it's well under one percent.
+[00:03:36.000 → 00:03:40.000] And I really question if you can hear distortion.
+[00:03:40.000 → 00:03:43.000] That's so low under one percent.
+[00:03:43.000 → 00:03:44.000] You know...
+[00:03:44.000 → 00:03:46.000] I don't know.
+[00:03:46.000 → 00:03:53.000] It depends on the music as well.
+[00:03:53.000 → 00:03:57.000] Most music, it would take well over one percent.
+[00:03:57.000 → 00:03:59.000] Maybe one, two percent.
+[00:03:59.000 → 00:04:02.000] But some music with piano or flute...
+[00:04:02.000 → 00:04:04.000] Um...
+[00:04:04.000 → 00:04:05.000] It's...
+[00:04:05.000 → 00:04:08.000] You might be able to detect it at lower levels.
+[00:04:08.000 → 00:04:12.000] But at this level, I still doubt it.
+[00:04:12.000 → 00:04:17.000] Now, the one limitation of this amplifier...
+[00:04:17.000 → 00:04:19.000] You really shouldn't use it with four ohm loads.
+[00:04:19.000 → 00:04:21.000] And you can see that right here.
+[00:04:21.000 → 00:04:26.000] As you increase the power supply voltage...
+[00:04:26.000 → 00:04:30.000] The output power should go up quite a bit.
+[00:04:30.000 → 00:04:33.000] And we're getting some shadows from the kitty.
+[00:04:33.000 → 00:04:35.000] The Snickers.
+[00:04:35.000 → 00:04:38.000] Take a look outside.
+[00:04:38.000 → 00:04:44.000] But, as you see here, it doesn't really go up at all.
+[00:04:44.000 → 00:04:47.000] I mean, just a sliver.
+[00:04:47.000 → 00:04:52.000] But, that tells you right there that the amplifier cannot handle four ohm loads.
+[00:04:52.000 → 00:04:55.000] Don't even monkey with four ohm loads.
+[00:04:55.000 → 00:04:57.000] And here...
+[00:04:57.000 → 00:04:59.000] Eight ohm loads.
+[00:04:59.000 → 00:05:03.000] You're good up until nine volts.
+[00:05:03.000 → 00:05:05.000] There's a bit of increase at 12 volts.
+[00:05:05.000 → 00:05:09.000] But, the chip's gotta dissipate quite a bit of power.
+[00:05:09.000 → 00:05:13.000] And it's not really a power dissipating type design.
+[00:05:13.000 → 00:05:17.000] So, uh...
+[00:05:17.000 → 00:05:20.000] Nine volts, eight ohms, and you're golden.
+[00:05:20.000 → 00:05:24.000] That's where you probably should use this chip to get the most power.
+[00:05:24.000 → 00:05:26.000] What?
+[00:05:26.000 → 00:05:29.000] What do you want?
+[00:05:29.000 → 00:05:34.000] Okay, well...
+[00:05:34.000 → 00:05:38.000] Nine volts, eight ohms.
+[00:05:38.000 → 00:05:41.000] We'll do some power measurements there.
+[00:05:41.000 → 00:05:43.000] Give it a quick listening test.
+[00:05:43.000 → 00:05:45.000] And we'll talk about layout.
+[00:05:45.000 → 00:05:46.000] So...
+[00:05:46.000 → 00:05:48.000] Come right back.
+[00:05:48.000 → 00:05:53.000] Okay, I have it all breadboarded and everything.
+[00:05:53.000 → 00:05:54.000] We'll do some of the power measurements here.
+[00:05:54.000 → 00:05:55.000] And, uh...
+[00:05:55.000 → 00:06:00.000] I got the power supplied decoupling capacitor right close to the pins.
+[00:06:00.000 → 00:06:01.000] And, uh...
+[00:06:01.000 → 00:06:02.000] Everything looks pretty good.
+[00:06:02.000 → 00:06:03.000] So, uh...
+[00:06:03.000 → 00:06:04.000] Let's give it a listen.
+[00:06:04.000 → 00:06:05.000] Ooh, nasty.
+[00:06:05.000 → 00:06:07.000] I don't know if the camera picks that up or not.
+[00:06:07.000 → 00:06:08.000] But there's kind of a fuzzy distortion sound.
+[00:06:08.000 → 00:06:24.000] What is the problem?
+[00:06:24.000 → 00:06:38.000] Well, I purposely neglected my signal in power grounds.
+[00:06:38.000 → 00:06:41.000] And I see a lot of people doing that.
+[00:06:41.000 → 00:06:42.000] And, um...
+[00:06:42.000 → 00:06:48.000] In some cases, the thing is so bad it oscillates.
+[00:06:48.000 → 00:06:50.000] It sounds really crappy.
+[00:06:50.000 → 00:06:51.000] But, uh...
+[00:06:51.000 → 00:06:52.000] This one...
+[00:06:52.000 → 00:06:53.000] Wasn't as bad.
+[00:06:53.000 → 00:06:56.000] But it still sounds fuzzy and nasty to me.
+[00:06:56.000 → 00:07:06.000] I don't want any output or power supply ground signals flowing in the same path that a signal ground flows in.
+[00:07:06.000 → 00:07:11.000] Because that's gonna cause distortion and even oscillations.
+[00:07:11.000 → 00:07:17.000] Okay, so I'll rewire this thing and come back and see what we get.
+[00:07:17.000 → 00:07:20.000] Okay, so here's what I've done.
+[00:07:20.000 → 00:07:24.000] At pin 4, which is the ground pin on the IC,
+[00:07:24.000 → 00:07:26.000] Right at that point.
+[00:07:26.000 → 00:07:30.000] I mean, no wires going a distance.
+[00:07:30.000 → 00:07:36.000] But right at that point, I split the grounds off into separate zones.
+[00:07:36.000 → 00:07:40.000] Here's the decoupling... power supply decoupling capacitor.
+[00:07:40.000 → 00:07:42.000] It comes in at its own point.
+[00:07:42.000 → 00:07:45.000] Here is the power ground.
+[00:07:45.000 → 00:07:49.000] For the output and the power supply, it has its own point.
+[00:07:49.000 → 00:07:55.000] And, most importantly, the input comes off at its own zone.
+[00:07:55.000 → 00:07:57.000] Own grounding zone.
+[00:07:57.000 → 00:08:03.000] So, the bypass capacitor, which is part of the input circuit.
+[00:08:03.000 → 00:08:07.000] If you look at the amplifier's internal schematic.
+[00:08:07.000 → 00:08:14.000] The negative feedback is just connected to ground in this chip.
+[00:08:14.000 → 00:08:22.000] And, also, the input ground comes through this same grounding zone.
+[00:08:22.000 → 00:08:31.000] So, what that does is keep the input ground signals separate from the power ground signals.
+[00:08:31.000 → 00:08:36.000] So, you don't have any of those power grounds conducting in the input ground.
+[00:08:36.000 → 00:08:45.000] So, if you connected your input over here, you also have the output flowing in that same ground.
+[00:08:45.000 → 00:08:55.000] And, that little bit of resistance in the conductor will mean that that's going to raise a point here.
+[00:08:55.000 → 00:08:57.000] The voltage at this point.
+[00:08:57.000 → 00:08:59.000] And, it's going to cause distortion.
+[00:08:59.000 → 00:09:12.000] So, doing this will keep the amplifier from sputtering, oscillating, or just having that fuzzy distortion.
+[00:09:12.000 → 00:09:14.000] And, you can use it to its full capability.
+[00:09:14.000 → 00:09:16.000] Okay.
+[00:09:16.000 → 00:09:18.000] Well, it's really hard to see.
+[00:09:18.000 → 00:09:20.000] But, here's pin 4.
+[00:09:20.000 → 00:09:22.000] There's the decoupling cap.
+[00:09:22.000 → 00:09:25.000] This is the ground for the power supply.
+[00:09:25.000 → 00:09:27.000] It's going off in its own direction.
+[00:09:27.000 → 00:09:32.000] And, here is the grounds for the signal.
+[00:09:32.000 → 00:09:35.000] So, it goes off in its own direction.
+[00:09:35.000 → 00:09:37.000] And, that just goes over to the bypass cap.
+[00:09:37.000 → 00:09:38.000] Alright.
+[00:09:38.000 → 00:09:40.000] Let's give it a listen.
+[00:09:40.000 → 00:09:41.000] Perfect.
+[00:09:41.000 → 00:09:43.000] No buzzing.
+[00:09:43.000 → 00:10:01.000] Perfect clear signal.
+[00:10:01.000 → 00:10:03.000] Much better.
+[00:10:03.000 → 00:10:05.000] See how important that is?
+[00:10:05.000 → 00:10:15.000] Because, if you can get one of these LM386's to sound nice and clean with the proper grounding, you're set for moving on to other amplifiers.
+[00:10:15.000 → 00:10:18.000] Because, this chip is pretty sensitive to crappy grounding.
+[00:10:18.000 → 00:10:19.000] Alright.
+[00:10:19.000 → 00:10:22.000] Well, I'm going to move on to the power test now.
+[00:10:26.000 → 00:10:27.000] Okay.
+[00:10:27.000 → 00:10:30.000] I put on the non-inductive 8 ohm resistor.
+[00:10:30.000 → 00:10:34.000] Connected that to where the speaker was connected.
+[00:10:34.000 → 00:10:39.000] I set the power supply to be exactly 9 volts.
+[00:10:39.000 → 00:10:43.000] And, got the scope connected to the resistor.
+[00:10:43.000 → 00:10:46.000] So, we can measure the output.
+[00:10:46.000 → 00:10:47.000] Okay.
+[00:10:47.000 → 00:10:51.000] At 1 kHz, I turn it up.
+[00:10:51.000 → 00:10:53.000] And, it's starting to clip.
+[00:10:53.000 → 00:10:56.000] Turn it back down.
+[00:10:56.000 → 00:11:00.000] Now, you can see there's a fairly large step.
+[00:11:00.000 → 00:11:06.000] Because, the way the volume controls on these, they step in discrete levels.
+[00:11:06.000 → 00:11:10.000] It would be better if I didn't have to deal with that.
+[00:11:10.000 → 00:11:12.000] Like, add a potentiometer or something.
+[00:11:12.000 → 00:11:14.000] But, eh.
+[00:11:14.000 → 00:11:16.000] For now, this will work.
+[00:11:16.000 → 00:11:17.000] Okay.
+[00:11:17.000 → 00:11:19.000] So, what are we getting here?
+[00:11:19.000 → 00:11:22.000] 1.9...
+[00:11:22.000 → 00:11:23.000] Yeah.
+[00:11:23.000 → 00:11:26.000] 1.92 volts RMS.
+[00:11:26.000 → 00:11:27.000] Okay.
+[00:11:27.000 → 00:11:31.000] So, I'll punch that in.
+[00:11:31.000 → 00:11:32.000] 1.92.
+[00:11:32.000 → 00:11:35.000] You have to square that.
+[00:11:35.000 → 00:11:40.000] Divided by our load impedance of 8 ohms.
+[00:11:40.000 → 00:11:45.000] And, we're getting .46 watts.
+[00:11:45.000 → 00:11:46.000] Not too bad.
+[00:11:46.000 → 00:11:50.000] Now, if I could better measure this.
+[00:11:50.000 → 00:11:54.000] You know, these boards have a little bit of resistance.
+[00:11:54.000 → 00:12:01.000] And, um, get something where I can, you know, home it in closer to the pre-clipping level.
+[00:12:01.000 → 00:12:09.000] I probably can get, um, somewhere between .6 and .7 watts out of this thing.
+[00:12:09.000 → 00:12:11.000] 9 volt supply 8 ohm load.
+[00:12:11.000 → 00:12:14.000] In fact, I measured it before.
+[00:12:14.000 → 00:12:23.000] You know, a few years ago when I was getting, like, .66 or .67 or something like that.
+[00:12:23.000 → 00:12:25.000] Watts of output.
+[00:12:25.000 → 00:12:27.000] So, yeah.
+[00:12:27.000 → 00:12:28.000] It's not too bad.
+[00:12:28.000 → 00:12:30.000] I mean, it's not going to be screaming loud.
+[00:12:30.000 → 00:12:36.000] But, you know, how the logarithmic nature of hearing is.
+[00:12:36.000 → 00:12:43.000] You know, around a watt is going to, depending on the efficiency of your speaker, you know,
+[00:12:43.000 → 00:12:46.000] you can get a decent amount of decibels.
+[00:12:46.000 → 00:12:51.000] So, and I guess that wraps this video up.
+[00:12:51.000 → 00:12:57.000] Just wanted to show you, uh, the ubiquitous old LM386.
+[00:12:57.000 → 00:12:59.000] How to lay it out properly.
+[00:12:59.000 → 00:13:04.000] You know, pretty much applies to any electronic circuit, including digital.
+[00:13:04.000 → 00:13:07.000] And, uh, see what kind of power this thing could make.
+[00:13:07.000 → 00:13:09.000] Thanks for watching.

@@ -1,0 +1,168 @@
+{
+  "video_id": "iKZ05QIN8mc",
+  "title": "iKZ05QIN8mc",
+  "url": "https://www.youtube.com/watch?v=iKZ05QIN8mc",
+  "created_at": "2025-09-17T12:01:14.471098+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "LM18-75 vs TDA2050 Distortion Test",
+      "description": "Discussion of distortion test results and comparison with TDA2050.",
+      "coverage_ranges": [
+        {
+          "start_idx": 6,
+          "end_idx": 25
+        }
+      ],
+      "coverage_segments": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "coverage_times": [
+        {
+          "start_s": 43.56,
+          "end_s": 186.1
+        }
+      ],
+      "coverage_text": "we're going to take a look at today. But first of all, why do I like these chips so\nmuch? Well, they're simple 5-pin T0220 type packages. They don't require a lot of\nextra components to make a nice little amplifier. You know, there's no mute or\nstandby pins that require extra components. And you know, on some of the chips with\nthe mute and standby, you have to use Zener diodes that hold the voltage in a\ncertain range so the chip stays in play mode. Like the TDA7264 has that type of\narrangement. It's kind of annoying. But with these, there's no mute or standby pin to\nworry about. They're designed to have very good audio quality, low distortion, no\nstability issues. And with some of these chips, I've seen in the step response\ntests, which we'll look at today, that some of them did oscillate. They were easier to\nmake oscillate. And, well, I still have to test the TDA2050, but the LM1875 had no\nproblems in that test. Like I said, I do have to test this TDA2050, and we'll\ncheck that out today. You can set them up for single supply or dual supply operation.\nIn my experience, they're reliable. You know, my main listening amp has the TDA2050 in it,\nand it's on constantly for 10 years straight, and no problems with it. I never turn it off.\nSo as long as you use a good layout and big enough heatsink, it'll be just fine. Now these are what I\ncall the 20 watt class amplifier ICs. I mean, you can squeak more power out of them. In one of my\nvideos with the LM1875, I was able to get 40 watts, actually a little over 40 watts out of it. But that\nwas running it at its maximum supply voltage, which I would normally not do. But still, yeah, you can get\n25, 30 watts out of these things. Okay, so I have first off the LM1875 here on these little boards.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "TDA2050 Intermodulation Distortion Test",
+      "description": "Discussion of intermodulation distortion test results.",
+      "coverage_ranges": [
+        {
+          "start_idx": 26,
+          "end_idx": 36
+        }
+      ],
+      "coverage_segments": [
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "coverage_times": [
+        {
+          "start_s": 186.1,
+          "end_s": 279.86
+        }
+      ],
+      "coverage_text": "I talked about these kits before. Have a really nice, well laid out board. Nice ground layout here.\nYou got the ceramic caps, bypass caps for the power supply. We're pretty much right at the\npins of the chip. And they go right into the ground plane here. And yeah, these are just excellent boards.\nAnd because the TDA2050 has the same pin out, I can use it on the same board. Though I will have to\nchange the Bougereau cell components because they require a different value. We'll take a look at that\nas well. I'm going to start out doing a power test. I'll measure it at three different voltages. If you\nwant a more comprehensive power test results, well, a few years ago, I did a test of the LM1875. I tested\nit at a bunch of different load resistances and supply voltages. But I'm just going to do three\ndifferent ones here to compare the two chips. As always, I have my signal source going into the\npreamp so I can control the level. That goes into the amplifier here. Non-inductive 4 ohm load on the\noutput. And the power supply is hooked up. I have these reservoir capacitors. You know, they're connected",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Current Limiter Circuit Issues",
+      "description": "Discussion of issues with current limiter circuit in TDA2050 and its impact on amplifier design.",
+      "coverage_ranges": [
+        {
+          "start_idx": 37,
+          "end_idx": 45
+        }
+      ],
+      "coverage_segments": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "coverage_times": [
+        {
+          "start_s": 279.86,
+          "end_s": 360.74
+        }
+      ],
+      "coverage_text": "here close to the chip. And the power supply is set up. And we'll run a few power tests. I'm actually\ngoing to start out at plus or minus 12 volts. So we'll dial that in. And what I'll do here, I'll take\none measurement on camera and then I'll do the rest off camera to save time. Okay, power measurement time.\nSo we can dial out the clipping there. Right about there. And I have to put more waveforms on the\nscreen to get an accurate measurement. See, it always stays the same. But if I don't have enough\nwaveforms, you get a different number here. You get a higher number. So you get the wrong information.\nOkay. So we have 6.61 volts RMS squared divided by 4 ohms. So 10.9 watts. That's plus or minus 12 volts.\nOkay, power test.\n7.18 volts RMS.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Conclusion and Comparison Summary",
+      "description": "Summary of key points and comparison between LM18-75 and TDA2050.",
+      "coverage_ranges": [
+        {
+          "start_idx": 46,
+          "end_idx": 64
+        }
+      ],
+      "coverage_segments": [
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "coverage_times": [
+        {
+          "start_s": 360.74,
+          "end_s": 519.62
+        }
+      ],
+      "coverage_text": "By that by 4 is 12.8. Actually, 12.9. The 1875 was doing 10.9. And this one is doing 12.9.\nSo it's delivering a little more power than the LM1875 at the same supply voltage. But I'll run through\nsome more supply voltages and take some more measurements here and see how it stacks up at the\nend. Okay, so now I'm looking at a condition called rail sticking. That's when you send the amplifier into\nclipping. And you'll notice that it wants to stay stuck to the rail a little bit. You can see a little\nnotch there on the top and bottom, especially on the bottom. See how it's sticking to the rail a little\nbit. So I'm using a 10 kilohertz signal. So we can see that clearly. And with the LM1875, you can see that\nthere is a little bit of rail sticking. That's because the transistors don't want to come out of\nsaturation or well, at least clipping. What that can do is when you do clip, that can make the clipping\nsound a little bit more harsh. So the less you see it, the better. And we are running at 4 ohm load,\nso it's going to be harder for the amplifier not to do that with the lower impedance load.\nOkay, let's check rail sticking. This is 10 kilohertz with the 4 ohm load TDA 2050.\nOh yeah, pretty bad. Look at that rail sticking. Much worse than the LM1875.\nSo I'll stop that so I can turn off the amplifier. So they might be optimizing the chip to give more\noutput. But whenever you do stuff like that, you might be giving up something like stability or,\nyou know, something like this rail sticking. And it's pretty bad here. And we have Snickers here.\nI'm going to pass through here. I don't know where he's going. I think he's going to lay in the corner there.\nYeah, whatever. What you're going to do? Oh, grab the camera here. He's going to knock the camera over.\nHe's going out.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the high-level table of contents in JSON format:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"\",\n    \"coverage\": [\n      {\"start_idx\": 0, \"end_idx\": 5}\n    ]\n  },\n  {\n    \"title\": \"LM18-75 vs TDA2050 Distortion Test\",\n    \"description\": \"Discussion of distortion test results and comparison with TDA2050.\",\n    \"coverage\": [\n      {\"start_idx\": 6, \"end_idx\": 25}\n    ]\n  },\n  {\n    \"title\": \"TDA2050 Intermodulation Distortion Test\",\n    \"description\": \"Discussion of intermodulation distortion test results.\",\n    \"coverage\": [\n      {\"start_idx\": 26, \"end_idx\": 36}\n    ]\n  },\n  {\n    \"title\": \"Current Limiter Circuit Issues\",\n    \"description\": \"Discussion of issues with current limiter circuit in TDA2050 and its impact on amplifier design.\",\n    \"coverage\": [\n      {\"start_idx\": 37, \"end_idx\": 45}\n    ]\n  },\n  {\n    \"title\": \"Conclusion and Comparison Summary\",\n    \"description\": \"Summary of key points and comparison between LM18-75 and TDA2050.\",\n    \"coverage\": [\n      {\"start_idx\": 46, \"end_idx\": 64}\n    ]\n  }\n]\n```\n\nLet me know if this meets your requirements!"
+    ]
+  }
+}

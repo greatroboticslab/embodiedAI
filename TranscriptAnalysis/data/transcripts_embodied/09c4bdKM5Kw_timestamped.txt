@@ -1,0 +1,308 @@
+09c4bdKM5Kw
+https://www.youtube.com/watch?v=09c4bdKM5Kw
+Unknown Category
+
+[00:00:00.000 → 00:00:03.560] In today's video, we're going to be taking a look at an all-new stack from T-Motor.
+[00:00:03.660 → 00:00:07.320] Now, this is a 20x20 stack that comes with the ESC flight controller.
+[00:00:07.520 → 00:00:08.360] It is an F7.
+[00:00:08.800 → 00:00:13.700] It does have a 10-volt regulator, and it does have a direct connection to the DJI setup.
+[00:00:14.120 → 00:00:19.840] However, just because it's incorporating the DJI setup doesn't mean they've even removed the OSD.
+[00:00:20.280 → 00:00:25.700] You still have your on-screen display for analog setups if you needed that, which is really, really nice.
+[00:00:26.040 → 00:00:29.360] So what we're going to cover today is we're going to go ahead and take a look at some of the accessories.
+[00:00:29.360 → 00:00:31.860] Also, a detailed connection setup guide.
+[00:00:32.220 → 00:00:34.580] So with that being said, let's go ahead and get started.
+[00:00:40.240 → 00:00:45.900] So taking a look at some of the accessories here, you can tell they have a pre-made XT60 made for us,
+[00:00:45.960 → 00:00:50.060] which is a 14-gauge wire XT60 right here, which is really nice to see.
+[00:00:50.460 → 00:00:59.060] Also, a baggie with 10 rubber grommets because the ESC and the flight controller incorporate these rubber grommets.
+[00:00:59.060 → 00:01:02.340] And also some metal screws and some metal nuts as well.
+[00:01:02.500 → 00:01:03.460] So that's really nice.
+[00:01:03.500 → 00:01:05.940] You get two extra rubber grommets in case you lose one.
+[00:01:06.160 → 00:01:10.080] You do get the ESC with the capacitor pre-installed.
+[00:01:10.220 → 00:01:12.820] And they are using a Rubicon capacitor here.
+[00:01:13.140 → 00:01:18.340] This is a 35-volt, 470 microfarad capacitor that's set up right here.
+[00:01:18.680 → 00:01:21.480] You also obviously do get the flight controller, which is an F7.
+[00:01:21.480 → 00:01:24.320] And we get the connector for the DJI setup.
+[00:01:24.480 → 00:01:27.040] This is for the larger DJI modules.
+[00:01:27.180 → 00:01:28.480] As you can tell, you just plug that in.
+[00:01:28.560 → 00:01:29.860] You plug this right in there.
+[00:01:30.080 → 00:01:32.320] And it routes basically everything for you.
+[00:01:32.580 → 00:01:34.080] So that's really nice to see here.
+[00:01:34.380 → 00:01:38.860] And they also give us the connector, which will route our ESC to our flight controller.
+[00:01:39.260 → 00:01:43.300] Now, there are a lot of options on this flight controller, which we're going to take a look at in a bit here,
+[00:01:43.520 → 00:01:46.160] such as pit mode and the 10-volt regulator.
+[00:01:46.160 → 00:01:49.240] And we also obviously do have an F7 memory.
+[00:01:50.000 → 00:01:51.380] And yeah, so it's really nice.
+[00:01:51.440 → 00:01:53.040] We're going to take a closer look at that in a bit here.
+[00:01:53.240 → 00:01:59.180] So for the ESC, they went into a kind of a strange design here because the FETs are so tiny.
+[00:01:59.440 → 00:02:04.940] But they also do have some sort of a heatsink built in within them here to keep them cool.
+[00:02:05.100 → 00:02:07.960] But I have no idea how these are going to test right here.
+[00:02:08.480 → 00:02:14.020] These are, as I believe, DSHOT 1200, so BLHeli32 ESCs here.
+[00:02:14.460 → 00:02:15.760] Filtration is somewhat minimal.
+[00:02:16.160 → 00:02:18.960] But it's really good that they've provided that low-Ease R capacitor.
+[00:02:19.460 → 00:02:21.820] And if you didn't know how to install this, just a quick heads up.
+[00:02:22.140 → 00:02:23.120] This should be in the back.
+[00:02:23.500 → 00:02:25.840] And you could read motor 1, 2, 3, 4.
+[00:02:26.260 → 00:02:30.900] Install it just like this in your quadcopter or else it will never fly unless you know what you're doing.
+[00:02:31.240 → 00:02:32.880] The camera should be right there in the front.
+[00:02:33.260 → 00:02:34.680] Same thing with the flight controller here.
+[00:02:34.760 → 00:02:35.900] Watch that arrow right there.
+[00:02:36.340 → 00:02:39.000] The USB should be on top and to the left here.
+[00:02:39.400 → 00:02:41.520] And this is how it would be set up in your quadcopter.
+[00:02:41.520 → 00:02:48.180] So now let's go ahead and jump into the advanced breakdown of the flight controller and also the beginner setup guide right after that.
+[00:02:48.560 → 00:02:48.860] All right, guys.
+[00:02:48.900 → 00:02:52.440] So right now we're going to be doing the advanced breakdown of the T-Motor flight controller here.
+[00:02:52.580 → 00:02:53.680] So let's go ahead and take a look at it.
+[00:02:53.720 → 00:02:55.360] There isn't much going on here.
+[00:02:55.360 → 00:03:00.380] And it's really nice that they're able to fit all this stuff into one 20 by 20 board here.
+[00:03:00.720 → 00:03:02.660] So on the left here, we're looking at the top side.
+[00:03:03.160 → 00:03:05.860] And as we can tell, we have an on-screen display, which is really nice.
+[00:03:05.980 → 00:03:11.100] And at the same time, we also do have a connector for the DJI setups here, the DJI HD module setups.
+[00:03:11.680 → 00:03:15.400] And they're using tantalum capacitors for the on-screen display, which is really good.
+[00:03:15.800 → 00:03:19.420] Minimizes the chances of lines or your OSD flickering here.
+[00:03:19.420 → 00:03:23.680] And this seems like a barometer, but I don't think it's a barometer.
+[00:03:23.800 → 00:03:27.140] I think it's a 27 megahertz crystal for the on-screen display here.
+[00:03:27.380 → 00:03:29.560] Here we have our boob button if we ever get stuck.
+[00:03:29.660 → 00:03:30.840] 3.3 volt regulator.
+[00:03:31.380 → 00:03:32.920] MPU 6000 gyro.
+[00:03:33.640 → 00:03:37.280] And here we have two selectable pads, which are very important.
+[00:03:37.760 → 00:03:39.100] This one not as important.
+[00:03:39.200 → 00:03:40.680] This is to enable pit mode.
+[00:03:40.760 → 00:03:46.340] So if you wanted to set that up, which means it'll basically power off your video transmitter.
+[00:03:46.340 → 00:03:49.740] But you'd have to bridge these in order to enable them in the software.
+[00:03:49.940 → 00:03:51.420] So you have to keep that in mind.
+[00:03:51.960 → 00:03:55.760] And for the receiver side, as you can tell, this is meant to be for the receiver side.
+[00:03:55.840 → 00:03:56.800] We have RSSI.
+[00:03:57.060 → 00:03:58.120] We have PPM.
+[00:03:58.260 → 00:03:59.840] I don't know if anybody still uses PPM.
+[00:04:00.340 → 00:04:03.100] And we have RX1 and RX2 here.
+[00:04:03.420 → 00:04:04.480] These are for the receiver.
+[00:04:04.660 → 00:04:09.040] However, here's the plus, which is going to be the positive for the receiver and the ground.
+[00:04:09.660 → 00:04:15.980] Now, for the positive side, it's not going to give any power until you actually bridge one of these two here.
+[00:04:15.980 → 00:04:19.160] So if you wanted 3.3 volt, you'd have to solder these two together.
+[00:04:19.400 → 00:04:24.060] And if you wanted 5 volt in the middle one with the bottom one here, you'd have to solder those two together.
+[00:04:24.520 → 00:04:28.640] And that would give the output power to this plus sign right here.
+[00:04:28.720 → 00:04:30.820] So, for example, let's remove these.
+[00:04:30.960 → 00:04:34.000] We wanted 5 volts because most of our receivers nowadays are 5 volts.
+[00:04:34.100 → 00:04:36.260] Then this pad right here would be 5 volt.
+[00:04:36.620 → 00:04:42.220] And if you didn't bridge these, then you will get no power and you'd be going crazy while your receiver is not turning on.
+[00:04:42.600 → 00:04:43.540] And that would be the case.
+[00:04:43.540 → 00:04:49.220] We also do have the 10 volt broken out down here and another one broken out right here.
+[00:04:49.300 → 00:04:50.380] This is camera control.
+[00:04:50.680 → 00:04:51.500] This is really nice.
+[00:04:51.580 → 00:04:53.420] You have two 10 volt pads, which you could use.
+[00:04:53.500 → 00:04:56.560] You could either use it for your camera if you wanted to.
+[00:04:56.660 → 00:04:58.320] But I'd recommend you go with that 5 volt.
+[00:04:58.720 → 00:05:03.080] And if you wanted the 10 volt for your video transmitter, this is the area where you'd want it.
+[00:05:03.080 → 00:05:07.800] Because they also have a T3 right there for you for like smart audio or RC TRAM protocol.
+[00:05:07.960 → 00:05:10.440] That's for the analog setups also.
+[00:05:10.440 → 00:05:16.260] And you can tell right here R1 is being set up, also used for the DJI.
+[00:05:16.400 → 00:05:25.100] So, if you don't have this, if you don't have the controller for the DJI, you want to remove these two right here wires, the last two wires from this connector.
+[00:05:25.100 → 00:05:32.420] And just worry about T3 and R3, which would be the MSP serial protocol between the DJI module.
+[00:05:32.420 → 00:05:36.860] So, it can give you the telemetry data, ground, and the power for the DJI module right there.
+[00:05:37.320 → 00:05:39.680] We still have quite a lot of things going on for it.
+[00:05:40.140 → 00:05:43.020] And that's currently it for the advanced breakdown.
+[00:05:43.160 → 00:05:44.740] There isn't really much else to say.
+[00:05:45.160 → 00:05:45.900] Here we have memory.
+[00:05:46.040 → 00:05:46.980] Again, it's an F7.
+[00:05:47.400 → 00:05:48.680] And we have our voltage regulators.
+[00:05:48.680 → 00:05:50.620] We have two voltage regulators.
+[00:05:50.760 → 00:05:51.440] We have a 10 volt.
+[00:05:51.540 → 00:05:52.880] And we have the 5 volt here.
+[00:05:53.360 → 00:05:54.960] And that's about it for the advanced breakdown.
+[00:05:55.080 → 00:05:57.340] Let's go ahead and jump into the beginner setup guide here.
+[00:05:57.580 → 00:06:00.580] Alright guys, so right now we're going to be talking about the FPV camera.
+[00:06:00.700 → 00:06:06.180] Now, most of these cameras take anywhere between 5 volts all the way up to 30 plus volts.
+[00:06:06.320 → 00:06:11.000] But again, even though it does that, I really recommend you set it up on a 5 volt regulator.
+[00:06:11.000 → 00:06:20.060] Just stick to a 5 volt because this reduces the chances of you getting some weird lines or some weird flickers in your video feed which can be really annoying and hinder your flying performance.
+[00:06:20.660 → 00:06:23.300] So, for example, here it says VCC because it does that.
+[00:06:23.600 → 00:06:25.800] But we always want to give it just that 5 volts.
+[00:06:25.860 → 00:06:27.340] It makes things so much better here.
+[00:06:27.680 → 00:06:32.940] Now, the place where we want to go ahead and set up our 5 volts, there's plenty of places actually where we can do that.
+[00:06:33.340 → 00:06:37.480] But we can grab our first 5 volt from this right there, right at the edge right there.
+[00:06:37.540 → 00:06:38.960] And now we'll give our camera 5 volts.
+[00:06:38.960 → 00:06:40.440] Then we're going to need a ground.
+[00:06:41.300 → 00:06:44.700] And it's so weird because the ground is this far away right here.
+[00:06:44.720 → 00:06:45.900] Let's actually use a different color.
+[00:06:45.980 → 00:06:47.720] We're going to use white for that.
+[00:06:48.480 → 00:06:50.220] So we're going to grab our ground wire right there.
+[00:06:50.280 → 00:06:51.060] This is for the camera.
+[00:06:51.420 → 00:06:53.960] This is how it was intended to be installed.
+[00:06:54.320 → 00:06:57.020] But again, you could change out the layout if you wanted to.
+[00:06:57.060 → 00:06:59.140] But make sure you get a ground also.
+[00:06:59.640 → 00:07:02.220] Here's the VI, which means video input.
+[00:07:02.220 → 00:07:04.880] And that is going to be for your camera right there.
+[00:07:05.320 → 00:07:06.320] And that's about it.
+[00:07:06.380 → 00:07:07.380] This is the video line.
+[00:07:07.380 → 00:07:11.440] So the camera needs positive and a negative, which are the white and red wires right here.
+[00:07:11.580 → 00:07:14.220] And the video is going to be the video signal coming in.
+[00:07:14.360 → 00:07:15.700] And it goes into the flight control.
+[00:07:15.800 → 00:07:17.160] Now, why does it go into the flight controller?
+[00:07:17.240 → 00:07:25.020] It's because it goes through this chip right here, which overlays the useful information, such as your battery and many other things as well.
+[00:07:25.020 → 00:07:28.640] And then it'll output that back out to your video, especially on analog.
+[00:07:29.100 → 00:07:32.300] And if it's not on analog, it'll go through the UART for the DJI stuff here.
+[00:07:32.640 → 00:07:34.620] And that's about it for the FPV camera.
+[00:07:34.740 → 00:07:35.640] Very simple stuff.
+[00:07:35.760 → 00:07:36.780] Let's go to the next step.
+[00:07:38.280 → 00:07:38.680] Okay.
+[00:07:38.800 → 00:07:42.960] So in this part of the video, we're going to be talking about how to connect, for example, SBUS.
+[00:07:42.960 → 00:07:49.540] So SBUS, also IBUS for FlySky, and also the TBS Crossfire.
+[00:07:49.940 → 00:07:51.020] So we'll just say TBS.
+[00:07:51.580 → 00:07:52.240] There we go.
+[00:07:52.540 → 00:07:52.800] TBS.
+[00:07:52.900 → 00:07:53.980] So we're going to show all these.
+[00:07:54.140 → 00:07:58.520] Now, it's actually going to be pretty identical because this is an F7 flight controller.
+[00:07:58.740 → 00:08:01.400] And they all go into basically the same place.
+[00:08:01.600 → 00:08:02.820] So let's get started here.
+[00:08:02.840 → 00:08:05.060] First of all, we'll start off with just an SBUS.
+[00:08:05.120 → 00:08:06.380] So we're going to use the green wire here.
+[00:08:07.180 → 00:08:13.500] So SBUS is supposed to be, or at least when they've designed this, they want you to stick it on R1, which would be RX1 here.
+[00:08:14.160 → 00:08:21.100] And it'll be very simple for you to follow along with the instructions from the webpage also of how to set this up in Betaflight.
+[00:08:21.240 → 00:08:25.540] Basically, you just enable serial RX in the ports tab on UART1.
+[00:08:26.000 → 00:08:27.480] So this is SBUS right here.
+[00:08:27.700 → 00:08:28.540] Very simple stuff.
+[00:08:28.740 → 00:08:31.160] Now, how would we connect the IBUS signal?
+[00:08:31.380 → 00:08:33.220] Then we're going to jump into the power in a little bit here.
+[00:08:33.220 → 00:08:37.600] So an IBUS signal is going to be also the same exact thing.
+[00:08:37.740 → 00:08:39.100] There's nothing else to do here.
+[00:08:39.440 → 00:08:41.240] IBUS and SBUS are going to go in the same place.
+[00:08:41.780 → 00:08:44.140] Now, let's just say we have a TBS crossfire.
+[00:08:44.220 → 00:08:45.380] We're going to do that down here.
+[00:08:45.400 → 00:08:47.220] We're just going to call it TBS.
+[00:08:47.820 → 00:08:49.840] Now, those usually have two pads.
+[00:08:49.920 → 00:08:53.500] They will have an RX and they will have a TX.
+[00:08:53.660 → 00:08:55.940] So we're going to say TX right there.
+[00:08:56.020 → 00:08:57.400] And I'm going to remove this from here.
+[00:08:57.620 → 00:08:59.720] And we'll just call it down here TBS.
+[00:08:59.840 → 00:09:01.340] So if you have the TBS crossfire.
+[00:09:01.340 → 00:09:01.380] Okay.
+[00:09:02.500 → 00:09:05.960] So what you want to do is you want to grab the TX of your TBS,
+[00:09:06.180 → 00:09:07.340] the pad that says TX.
+[00:09:07.760 → 00:09:08.840] And we're just going to do it like that.
+[00:09:08.940 → 00:09:12.200] And that's going to go exactly in the same place as the SBUS and IBUS.
+[00:09:12.840 → 00:09:15.820] However, now we have the RX, which this thing will receive data.
+[00:09:15.900 → 00:09:16.900] That's what the RX stands for.
+[00:09:16.920 → 00:09:17.760] It's going to receive data.
+[00:09:18.020 → 00:09:20.460] So we're going to need a transmit pin from the flight controller,
+[00:09:20.500 → 00:09:21.440] which is usually a T.
+[00:09:22.100 → 00:09:23.700] And it's right over here.
+[00:09:23.700 → 00:09:26.120] So we're just going to go ahead and grab that, set that up.
+[00:09:26.420 → 00:09:28.580] And bam, we're done with the signal wires.
+[00:09:29.000 → 00:09:30.180] Now comes the power.
+[00:09:30.180 → 00:09:31.720] Now the power is usually pretty straightforward.
+[00:09:31.920 → 00:09:35.360] However, here there is a little extra step that we're going to have to take into consideration,
+[00:09:35.600 → 00:09:36.940] which we're going to cover as well.
+[00:09:37.400 → 00:09:39.020] So first of all, let's start with the power.
+[00:09:39.800 → 00:09:41.140] So here's the power signal.
+[00:09:41.680 → 00:09:45.500] You would hopefully know which one's the 5 volt on your receiver here.
+[00:09:46.040 → 00:09:48.240] And that's where it's going to go, the 5 volt.
+[00:09:48.620 → 00:09:50.160] And next one over is going to be ground.
+[00:09:50.240 → 00:09:51.280] We're going to use white here.
+[00:09:51.480 → 00:09:52.300] And it's right there.
+[00:09:53.260 → 00:09:54.560] And bam.
+[00:09:54.820 → 00:09:55.180] There we go.
+[00:09:55.180 → 00:09:57.100] We'll call this ground ground.
+[00:09:57.660 → 00:10:02.820] Now, when you set this all up and you boot it up, the thing is, your receiver will not
+[00:10:02.820 → 00:10:03.520] boot, basically.
+[00:10:03.640 → 00:10:08.540] Because on the other side of the flight controller, if we actually bring this in and move it somewhere
+[00:10:08.540 → 00:10:09.400] a little bit nicer.
+[00:10:09.860 → 00:10:12.140] So sorry about the little messy layout.
+[00:10:12.140 → 00:10:16.800] But if we look at the backside of the flight controller, there's going to be this little
+[00:10:16.800 → 00:10:17.560] pad right here.
+[00:10:17.660 → 00:10:19.320] And I think it's under this right there.
+[00:10:19.360 → 00:10:20.200] Yeah, it's by the USB.
+[00:10:20.480 → 00:10:22.840] So it's on the backside of this section right there.
+[00:10:23.420 → 00:10:25.800] And what you can see is we can see three pads here.
+[00:10:25.900 → 00:10:31.320] Now, if you're using any of these three receivers, then what you want to do is you want to add
+[00:10:31.320 → 00:10:33.780] solder on the middle one and this one.
+[00:10:33.880 → 00:10:35.100] Connect those two together.
+[00:10:35.620 → 00:10:39.000] And what that'll do is it'll output 5 volts on this line.
+[00:10:39.000 → 00:10:44.780] Now, if yours was a 3.3 volt, then you're going to want to do the 3.3 volt with the
+[00:10:44.780 → 00:10:45.700] middle one right here.
+[00:10:46.200 → 00:10:48.960] Then this will become 3.3 volts.
+[00:10:49.660 → 00:10:53.940] However, again, if you're using any of the ones that I have listed down here, you want
+[00:10:53.940 → 00:10:54.980] to connect the 5 volts.
+[00:10:55.120 → 00:10:56.340] So we want to connect those two.
+[00:10:56.760 → 00:10:57.920] And that should be 5 volts.
+[00:10:58.040 → 00:10:58.980] Then you're good to go.
+[00:10:59.400 → 00:11:01.220] And that's about it for this step.
+[00:11:01.300 → 00:11:02.700] Let's go ahead and jump into the next step.
+[00:11:02.880 → 00:11:03.040] All right.
+[00:11:03.060 → 00:11:06.620] So in this part of the video, we are going to be covering the video transmitter.
+[00:11:06.620 → 00:11:08.700] To be exact, the analog variance.
+[00:11:09.000 → 00:11:13.820] Now, the first thing you need to identify, which is very important, is what your video
+[00:11:13.820 → 00:11:16.000] transmitter takes as a power input.
+[00:11:16.140 → 00:11:21.860] There's only two in the market, 5 volts and 7 to whatever volts.
+[00:11:21.920 → 00:11:23.700] We'll just say XX volts.
+[00:11:23.900 → 00:11:26.300] So you need to identify which one you have here.
+[00:11:26.360 → 00:11:28.500] We call this the battery voltage video transmitter.
+[00:11:28.640 → 00:11:30.660] And we'll call this a 5 volt video transmitter.
+[00:11:30.840 → 00:11:31.960] I'll be showing you both.
+[00:11:31.960 → 00:11:37.320] First of all, let's start with the battery voltage video transmitter.
+[00:11:37.820 → 00:11:41.320] And that's going to basically go on the 10 volt right there.
+[00:11:41.520 → 00:11:43.380] So we're going to go ahead and grab the red wire here.
+[00:11:44.020 → 00:11:46.440] And we're just going to set that up right over here.
+[00:11:46.760 → 00:11:50.860] And that is the 10 volts for battery voltage video transmitters.
+[00:11:50.860 → 00:11:55.480] Now, if yours was the 5 volt, the only difference of the connection set up here is only going
+[00:11:55.480 → 00:11:56.560] to be this red wire.
+[00:11:57.080 → 00:12:02.060] So if you had the 5 volt version, then you're going to want to set up the red wire right there
+[00:12:02.060 → 00:12:02.940] for your 5 volt.
+[00:12:03.520 → 00:12:06.840] So again, this is the only difference between those two video transmitters.
+[00:12:07.280 → 00:12:11.000] The battery voltage video transmitter will go on the 10 volt and your 5 volt will go on
+[00:12:11.000 → 00:12:11.520] this 5 volt.
+[00:12:11.600 → 00:12:14.000] We can't use this one because we used this for the camera earlier.
+[00:12:14.500 → 00:12:15.880] And that's about it here.
+[00:12:16.480 → 00:12:18.140] So now we need ground.
+[00:12:18.460 → 00:12:19.480] So always the power.
+[00:12:19.660 → 00:12:21.560] I always recommend setting up the power first.
+[00:12:21.600 → 00:12:22.960] So we're going to go ahead and grab ground.
+[00:12:23.420 → 00:12:26.880] And we could basically grab ground from anywhere, any of those G pads.
+[00:12:27.000 → 00:12:29.680] But we'll just take it from here because it's right next to it.
+[00:12:29.860 → 00:12:31.880] And it's just going to make everything so much more simple.
+[00:12:32.360 → 00:12:36.600] Now, the next thing we need is the video line, which is usually the yellow wire here.
+[00:12:36.880 → 00:12:38.800] So let's go ahead and grab that real quick.
+[00:12:39.100 → 00:12:41.160] And that's going to go into VO.
+[00:12:41.160 → 00:12:42.780] So we're going to have to cross over here.
+[00:12:43.160 → 00:12:43.900] And we're going to go right there.
+[00:12:44.180 → 00:12:45.380] This is video output.
+[00:12:45.920 → 00:12:49.420] And because the camera comes in on a video input, it goes through here, goes through
+[00:12:49.420 → 00:12:49.900] this chip.
+[00:12:49.960 → 00:12:54.080] This chip puts all the useful information and then spits it back out to the video transmitter
+[00:12:54.080 → 00:12:55.160] right over here.
+[00:12:55.520 → 00:12:59.120] And you'll be able to get that nice telemetry data that you want.
+[00:12:59.260 → 00:13:04.900] So now we're left with one more wire, usually sometimes three more wires, which would be
+[00:13:04.900 → 00:13:07.100] another black and a red one, which would say 5 volt.
+[00:13:07.220 → 00:13:10.620] But be careful because that's a 5 volt output.
+[00:13:10.620 → 00:13:12.540] And you want to completely ignore that.
+[00:13:12.540 → 00:13:18.040] Those are usually used for RC wings where they don't have a flight controller and the video
+[00:13:18.040 → 00:13:20.420] transmitter usually powers on the camera.
+[00:13:20.540 → 00:13:21.600] So you want to ignore those.
+[00:13:21.940 → 00:13:26.300] But there is one little extra one that's going to be the, for example, smart, they call it
+[00:13:26.300 → 00:13:28.960] smart audio or the IRC tram protocol.
+[00:13:29.680 → 00:13:32.800] And usually it would be green or purple or something of that nature.
+[00:13:32.800 → 00:13:37.600] And the place where you want to set this wire up is going to be, so it's going to be right
+[00:13:37.600 → 00:13:39.040] here on T3.
+[00:13:39.360 → 00:13:41.800] So this is a TX3.
+[00:13:42.060 → 00:13:45.320] And now it's going to be the place where you set up your ports tab.
+[00:13:45.400 → 00:13:50.920] You go under UART3 peripherals and you choose whether you have smart audio, video transmitter
+[00:13:50.920 → 00:13:51.780] or IRC.
+[00:13:52.100 → 00:13:53.520] And that's found in the documentation.
+[00:13:53.820 → 00:13:56.400] I think this one right here was smart audio protocol.
+[00:13:56.400 → 00:13:59.720] And this will allow you to change the channel and output power through the onscreen display
+[00:13:59.720 → 00:14:03.960] instead of having to come here and play around with the button and start changing stuff.
+[00:14:04.380 → 00:14:05.600] So yeah, that's the only thing.
+[00:14:05.660 → 00:14:06.940] You really don't need to connect it.
+[00:14:07.000 → 00:14:09.160] But if you do connect it, it makes your life a little bit easier.
+[00:14:09.580 → 00:14:11.980] And with that being said, that's about it for this video, guys.
+[00:14:12.060 → 00:14:13.260] I really hope you guys enjoyed it.
+[00:14:13.860 → 00:14:14.920] Please come join my Patreon.
+[00:14:15.040 → 00:14:16.220] I do a ton of giveaways.
+[00:14:16.460 → 00:14:18.340] And I do, you get access to a lot of crazy stuff.
+[00:14:18.400 → 00:14:22.660] Secret Access Shop, which is my shop where I sell stuff for like super cheap that I've used
+[00:14:22.660 → 00:14:23.880] and just no longer using.
+[00:14:23.880 → 00:14:28.960] You also get access to my open hardware schematic files for the flight controller as well as
+[00:14:28.960 → 00:14:29.460] ESCs.
+[00:14:30.080 → 00:14:31.820] And well, that's really it, guys.
+[00:14:31.920 → 00:14:32.780] Everything's linked down below.
+[00:14:32.840 → 00:14:34.260] If you could check those out, it's a great support channel.
+[00:14:34.420 → 00:14:35.240] I'll see you guys in the next one.
+[00:14:35.340 → 00:14:35.600] Peace.

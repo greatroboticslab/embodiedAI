@@ -1,0 +1,312 @@
+1
+00:00:00,200 --> 00:00:04,500
+In this video I'm going to show you how to build a simple audio amplifier that can power
+
+2
+00:00:04,500 --> 00:00:10,480
+nearly any speaker. For less than $3 in parts it gets surprisingly loud. This tutorial was
+
+3
+00:00:10,480 --> 00:00:15,720
+supported by The Great Courses Plus. In my previous videos about amplifiers I showed
+
+4
+00:00:15,720 --> 00:00:20,080
+you how to make a simple op amp circuit that can power headphones and another one where
+
+5
+00:00:20,080 --> 00:00:24,720
+I showed you how to make a powerful class D design. But what if you just want a simple
+
+6
+00:00:24,720 --> 00:00:29,680
+amplifier that can drive a speaker without all the fancy switch mode circuitry? The LM
+
+7
+00:00:29,680 --> 00:00:35,440
+386 is an all-in-one class AB audio amplifier chip and it's the easiest way to power a
+
+8
+00:00:35,440 --> 00:00:40,640
+speaker. This chip has been around for decades and it's still used to this day in products
+
+9
+00:00:40,640 --> 00:00:45,400
+like computer speakers and portable stereos. So everyone who works with electronics needs
+
+10
+00:00:45,400 --> 00:00:50,620
+to know about this chip. The maximum power output is roughly 1 watt, which doesn't sound like
+
+11
+00:00:50,620 --> 00:00:55,380
+much in a world full of deceptive marketing, but trust me, 1 watt going into a speaker is
+
+12
+00:00:55,380 --> 00:00:59,300
+more than enough power to fill an entire living room full of sound.
+
+13
+00:00:59,300 --> 00:01:04,380
+The first thing you're going to need is a 3.5mm audio plug attached to a cable. There
+
+14
+00:01:04,380 --> 00:01:09,660
+are many ways to get this. You could solder wires onto a plug, or cut up an extension cable,
+
+15
+00:01:09,660 --> 00:01:14,360
+but I think the cheapest way to do this is to just cut up headphones from the dollar store.
+
+16
+00:01:14,360 --> 00:01:18,920
+After I was done being a stripper, I used some sandpaper to remove the insulation on the left
+
+17
+00:01:18,920 --> 00:01:23,580
+and right signal wires. And I soldered on some thicker wire to make it easier to connect
+
+18
+00:01:23,580 --> 00:01:28,100
+the cable to a breadboard. I also twisted the two ground wires together.
+
+19
+00:01:28,100 --> 00:01:33,180
+Next, we're going to implement the simplest possible stereo to mono conversion circuit.
+
+20
+00:01:33,180 --> 00:01:37,900
+It's just putting 1kohm resistors in series with the audio channels, then joining the
+
+21
+00:01:37,900 --> 00:01:43,080
+ends together. Now, this is definitely not the best way to do stereo to mono, as we're
+
+22
+00:01:43,080 --> 00:01:47,920
+just averaging the signals here, but the point of this project is to create the simplest amplifier
+
+23
+00:01:47,920 --> 00:01:54,180
+possible, and this trick works surprisingly well. Next, you're going to need an LM386 chip.
+
+24
+00:01:54,180 --> 00:01:58,680
+They are so popular that you can get them from anywhere that sells electronic components.
+
+25
+00:01:58,680 --> 00:02:02,880
+If you want, you could get them from Amazon for less than a dollar apiece. Just make sure
+
+26
+00:02:02,880 --> 00:02:08,220
+you get the DIP-8 version that's suitable for breadboarding, not the surface mount version.
+
+27
+00:02:08,220 --> 00:02:12,760
+I want you to be aware that there are a couple of versions of the LM386 out there that have
+
+28
+00:02:12,760 --> 00:02:20,580
+different input voltage and output power ratings. For example, the LM386N-1 works from 4 to 12 volts,
+
+29
+00:02:20,580 --> 00:02:27,580
+and the dash 4 works from 5 to 18 volts. For this project, I'm going to be using the LM386N-4.
+
+30
+00:02:27,580 --> 00:02:32,580
+It'll give you the flexibility to crank up the supply voltage for the full watt of power.
+
+31
+00:02:32,580 --> 00:02:38,580
+Ok, here's the partial schematic. For the power, I'm going to use a 9 volt battery, but I really
+
+32
+00:02:38,580 --> 00:02:44,580
+recommend using something like a 12 volt lead acid battery, or a 12 volt wall adapter, because that'll let you turn up the volume
+
+33
+00:02:44,580 --> 00:02:49,580
+louder without distortion, and this circuit can drain a 9 volt battery very quickly.
+
+34
+00:02:49,580 --> 00:02:55,580
+I also recommend putting a 100 microfarad capacitor in parallel with the power supply, reasonably close to the chip,
+
+35
+00:02:55,580 --> 00:03:00,580
+so that the amplifier can instantly get the power it'll need for loud bass notes.
+
+36
+00:03:00,580 --> 00:03:07,580
+This capacitor is also used for filtering, and it'll help make sure that noise from the power supply doesn't get passed into the audio amplification circuitry.
+
+37
+00:03:07,580 --> 00:03:15,580
+47 microfarads or higher will work just fine, and I used 100 microfarads just because that's what I had available.
+
+38
+00:03:15,580 --> 00:03:20,580
+On the output of the LM386, you should put a 1000 microfarad capacitor or higher.
+
+39
+00:03:20,580 --> 00:03:26,580
+This will ensure that no DC voltage could possibly get passed into your speaker, which would damage it.
+
+40
+00:03:26,580 --> 00:03:31,580
+Don't be misled by crappy schematics that you find on the internet with low values like 100 microfarads.
+
+41
+00:03:31,580 --> 00:03:37,580
+You want to use at least 1000 microfarads to guarantee good bass with a wide variety of speakers.
+
+42
+00:03:37,580 --> 00:03:42,580
+If you want to know more about why, make sure you've watched my video on RC highpass filters.
+
+43
+00:03:42,580 --> 00:03:44,580
+Alright, let's power this thing up!
+
+44
+00:03:52,580 --> 00:03:54,580
+Ugh, this metal sounds like Bieber.
+
+45
+00:03:54,580 --> 00:03:57,580
+Okay, so what's going on here?
+
+46
+00:03:57,580 --> 00:04:04,580
+The schematic I'm showing you is very similar to other schematics on the internet, but as you know, you can't trust everything you see on the internet.
+
+47
+00:04:04,580 --> 00:04:08,580
+Let's look at the output on an oscilloscope to figure out what's going on.
+
+48
+00:04:08,580 --> 00:04:17,580
+Okay, so we have what looks like a normal audio waveform, but on top of it there's a large amount of noise.
+
+49
+00:04:17,580 --> 00:04:20,580
+And that's what's causing this horrible sound.
+
+50
+00:04:20,580 --> 00:04:24,580
+Zooming in on the noise, you can see that it's about 2.2 MHz.
+
+51
+00:04:24,580 --> 00:04:30,580
+That's literally 100 times higher than any frequency we should be seeing out of an audio amplifier.
+
+52
+00:04:30,580 --> 00:04:37,580
+It turns out that our amplifier is oscillating, and we need to get all of this high frequency garbage out of our feedback loop,
+
+53
+00:04:37,580 --> 00:04:40,580
+so it's only amplifying audio frequencies.
+
+54
+00:04:40,580 --> 00:04:46,580
+Now, normally what you do here is add an RC highpass filter that'll send all the high frequency current to ground,
+
+55
+00:04:46,580 --> 00:04:49,580
+so it can't interfere with the audio.
+
+56
+00:04:49,580 --> 00:04:53,580
+But I found an even simpler solution, and it works for all the speakers I tried it with.
+
+57
+00:04:53,580 --> 00:05:00,580
+You can just put a 0.1uF capacitor in parallel with the output, and it'll stop all the unwanted oscillation.
+
+58
+00:05:00,580 --> 00:05:07,580
+Now the amplifier sounds exactly as it should, and you can see that the high frequency oscillation is gone.
+
+59
+00:05:07,580 --> 00:05:13,580
+Now, to give you an idea of how loud this thing can go, I'm standing right next to the camera.
+
+60
+00:05:13,580 --> 00:05:18,580
+And this is what you can just pop in with my piano, you can do it.
+
+61
+00:05:18,580 --> 00:05:21,580
+And that's what you can do everywhere, you can do it now.
+
+62
+00:05:21,580 --> 00:05:27,580
+Next, I'd like to give you a couple of close-up shots of the breadboard, to give you some ideas of how you can build this thing.
+
+63
+00:05:27,580 --> 00:05:32,580
+Keeping the wires as short as possible is the best way to keep unwanted noise out of your circuit.
+
+64
+00:05:32,580 --> 00:05:34,580
+So yeah, that's it!
+
+65
+00:05:34,580 --> 00:05:41,580
+For less than $3 in parts and a few minutes of your time, you can build an amplifier that'll work with any line-level audio source,
+
+66
+00:05:41,580 --> 00:05:44,580
+like phones, MP3 players, and laptops.
+
+67
+00:05:44,580 --> 00:05:47,580
+Now, are you interested in learning more about electronics?
+
+68
+00:05:47,580 --> 00:05:49,580
+Check out the Great Courses Plus.
+
+69
+00:05:49,580 --> 00:05:54,580
+It's a video streaming service with thousands of tutorial videos on every subject imaginable.
+
+70
+00:05:54,580 --> 00:06:02,580
+Science, cooking, photography, investing, programming, they've got courses that teach pretty much anything you'd ever want to know.
+
+71
+00:06:02,580 --> 00:06:05,580
+And most importantly, they have videos about electronics!
+
+72
+00:06:05,580 --> 00:06:08,580
+I've checked out the lectures and it's good stuff.
+
+73
+00:06:08,580 --> 00:06:14,580
+All the animations are really helpful for understanding things, and it's way better than the old-school chalk-on-a-blackboard approach.
+
+74
+00:06:14,580 --> 00:06:17,580
+It's kind of like university without all the homework.
+
+75
+00:06:17,580 --> 00:06:23,580
+It's all original content, not just stuff that you can find on YouTube, and they add new videos every month.
+
+76
+00:06:23,580 --> 00:06:30,580
+I've worked out a deal where you can get a free month of unlimited video streaming by visiting thegreatcoursesplus.com slash afrotechmods,
+
+77
+00:06:30,580 --> 00:06:35,580
+or just click on the link in the video description section to start your free trial.
+
+78
+00:06:35,580 --> 00:06:36,580
+Thanks everyone!
+

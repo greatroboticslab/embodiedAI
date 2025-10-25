@@ -1,0 +1,322 @@
+tFVAaUcOm4I
+https://www.youtube.com/watch?v=tFVAaUcOm4I
+Unknown Category
+
+[00:00:00.000 → 00:00:05.080] A PID controller is a control structure that's used in many closed-loop systems.
+[00:00:05.520 → 00:00:09.160] It was developed by Nicholas Minorski in 1922.
+[00:00:09.720 → 00:00:13.840] PID stands for Proportional, Integral, and Derivative.
+[00:00:14.260 → 00:00:20.720] It's a way to compare the input and output of a system to generate a signal to control some process or machinery.
+[00:00:21.340 → 00:00:24.380] Don't worry about understanding this diagram quite yet.
+[00:00:24.540 → 00:00:26.840] We'll work our way up to it throughout this video.
+[00:00:26.840 → 00:00:31.520] But know that PID controllers are one of the most popular control theory mechanisms.
+[00:00:32.100 → 00:00:39.860] If you're not familiar with it, control theory is a field of engineering and mathematics dealing with the control of dynamic systems.
+[00:00:40.360 → 00:00:45.500] Often, these systems are mechanical and can be described entirely by math equations.
+[00:00:46.080 → 00:00:52.240] I'll give you an overview of how PID controllers work and some examples of them in everyday use.
+[00:00:56.840 → 00:01:02.540] Let's start with our system or subsystem that we want to control.
+[00:01:02.800 → 00:01:07.440] This can be any process, piece of machinery, actuator, or what have you.
+[00:01:07.440 → 00:01:11.260] In control theory, you'll often see this referred to as a plant,
+[00:01:11.520 → 00:01:15.560] which is a term that comes from the Industrial Revolution in the late 1700s
+[00:01:15.560 → 00:01:21.220] to mean something that has been planted in the ground for industrial purposes, such as machinery or tools.
+[00:01:21.220 → 00:01:26.640] The process receives some sort of input signal, and the output can be ideally measured.
+[00:01:27.040 → 00:01:32.520] While controllers are extremely popular in industrial settings, let's start with a more common example.
+[00:01:33.420 → 00:01:36.900] Most cars have an accelerator, also known as a gas pedal.
+[00:01:37.160 → 00:01:42.460] When you press the gas pedal, the car responds by allowing more air and fuel into the engine.
+[00:01:42.800 → 00:01:46.200] As a result, your engine produces more power, which increases your speed.
+[00:01:46.200 → 00:01:48.960] Now, most accelerators are not binary.
+[00:01:49.440 → 00:01:52.520] You can control the amount you depress the pedal with your foot.
+[00:01:52.900 → 00:01:55.460] Press a little, and some air and fuel go into the engine,
+[00:01:55.640 → 00:01:58.800] and your car starts to accelerate slowly up to some speed.
+[00:01:59.220 → 00:02:03.400] Mash the pedal to the floor, and you'll start dumping a lot of air and fuel into the engine.
+[00:02:03.600 → 00:02:08.120] You'll accelerate quickly, and at some point, you will reach the maximum speed for your car.
+[00:02:08.540 → 00:02:11.700] Our car is an example of a process or plant.
+[00:02:12.060 → 00:02:15.560] We can give it an input signal, the accelerator position in this case.
+[00:02:15.560 → 00:02:20.620] The car will respond with motion, and we can read the speed of the car on our speedometer.
+[00:02:20.900 → 00:02:21.680] That's the output.
+[00:02:22.380 → 00:02:25.160] Let's say we want to maintain some constant speed.
+[00:02:25.460 → 00:02:28.320] As it turns out, our brains are very good controllers.
+[00:02:28.800 → 00:02:33.700] We can often read the speedometer and adjust the gas pedal as necessary to maintain that speed.
+[00:02:34.100 → 00:02:38.820] Keep in mind that on flat roads, you can just hold the pedal in one spot to maintain speed,
+[00:02:39.000 → 00:02:43.980] but you will need to adjust the accelerator position when going up and down hills and around turns.
+[00:02:43.980 → 00:02:46.600] This is a closed-loop system.
+[00:02:47.000 → 00:02:52.300] We read the speedometer or judge speed by looking out the windshield and adjusting the input signal,
+[00:02:52.440 → 00:02:54.400] the accelerometer in this case, as needed.
+[00:02:54.820 → 00:03:00.740] However, let's say that you, the engineer, have been tasked with designing a controller
+[00:03:00.740 → 00:03:07.080] that will automatically adjust the accelerator as needed to maintain a consistent speed.
+[00:03:07.320 → 00:03:09.180] We'll call this cruise control.
+[00:03:09.500 → 00:03:10.840] That has a nice ring to it.
+[00:03:10.840 → 00:03:14.060] Here's our initial pass at a control system.
+[00:03:14.520 → 00:03:17.300] Our controller takes some input or a set point.
+[00:03:17.620 → 00:03:22.080] In our example, this is like setting a particular value on our cruise control,
+[00:03:22.240 → 00:03:24.000] say 100 kilometers per hour.
+[00:03:24.220 → 00:03:27.860] The controller then figures out what value to send to the plant.
+[00:03:28.180 → 00:03:30.520] Remember that the plant in our example is the engine.
+[00:03:30.520 → 00:03:35.480] So let's create a simple mapping from desired speed to accelerator position,
+[00:03:35.620 → 00:03:39.760] as we know that the car will reach a maximum speed based on that position.
+[00:03:39.980 → 00:03:45.660] The pedal position will in turn affect the engine, which will accelerate the car up to some speed.
+[00:03:46.160 → 00:03:47.260] Seems simple enough.
+[00:03:47.480 → 00:03:49.740] This is known as an open-loop system.
+[00:03:50.260 → 00:03:52.720] There is no sensor or feedback loop.
+[00:03:53.080 → 00:03:55.040] While this might work in some cases,
+[00:03:55.040 → 00:04:00.520] I'm sure you can already see some issues with this control scheme for our cruise control device.
+[00:04:00.520 → 00:04:05.880] If we're going up a hill, the car is going to slow down thanks to the effects of gravity,
+[00:04:06.320 → 00:04:08.940] even though the accelerator is in the same position.
+[00:04:09.620 → 00:04:13.340] Similarly, if we're going down a hill, the car is going to speed up.
+[00:04:13.340 → 00:04:18.260] So we need to let off the gas pedal in order to maintain that same speed.
+[00:04:18.800 → 00:04:22.440] This is something that our open-loop system cannot accommodate.
+[00:04:22.760 → 00:04:25.780] So we turn to a closed-loop system.
+[00:04:26.180 → 00:04:28.980] Here, the output is measured by some sort of sensor,
+[00:04:29.240 → 00:04:31.500] and that feedback is sent to our controller.
+[00:04:31.840 → 00:04:35.680] In most cases, we will compare the input setpoint to that feedback
+[00:04:35.680 → 00:04:39.000] to generate an error signal, which goes to the controller.
+[00:04:39.000 → 00:04:44.920] We'll label that error signal as E of T, as it's something that can vary over time.
+[00:04:45.500 → 00:04:49.060] In our manual example, our brains acted as the controller.
+[00:04:49.620 → 00:04:53.800] We could adjust the gas pedal with our foot as needed to maintain our speed,
+[00:04:53.940 → 00:04:55.560] regardless of road variations.
+[00:04:55.980 → 00:05:00.020] But we want to automate this process to take that pressure off the driver.
+[00:05:00.240 → 00:05:04.020] So we need to design a controller that accepts the error signal
+[00:05:04.020 → 00:05:07.060] and outputs some other signal to drive the process.
+[00:05:07.060 → 00:05:13.160] First, let's try simply multiplying our error value by some constant to get the output signal.
+[00:05:13.420 → 00:05:15.780] This is known as a proportional controller,
+[00:05:15.940 → 00:05:18.920] as the output signal is proportional to the error term.
+[00:05:19.180 → 00:05:23.700] We'll start with a very simple example before coming back to our cruise control system.
+[00:05:24.180 → 00:05:28.100] Instead of speed, let's say that we want to move our car 10 kilometers.
+[00:05:28.360 → 00:05:30.440] So our setpoint is 10 kilometers.
+[00:05:31.040 → 00:05:35.640] Our error is the difference between this setpoint and the actual position of the car.
+[00:05:35.640 → 00:05:39.440] Therefore, our error is a measurement of the distance to the goal.
+[00:05:39.860 → 00:05:43.260] We want the output to be the speed of our car in kilometers per hour.
+[00:05:43.640 → 00:05:45.860] The plant is still our car or engine.
+[00:05:46.200 → 00:05:49.220] We give it a speed and it performs the movement for us.
+[00:05:49.520 → 00:05:52.360] Here's a diagram of our car moving toward its goal.
+[00:05:52.660 → 00:05:57.120] At zero kilometers, the error is 10 minus zero, so 10 kilometers.
+[00:05:57.120 → 00:06:02.660] Let's set our constant, kp, to some arbitrary value like 5.
+[00:06:02.840 → 00:06:08.680] So we multiply 5 by that error to get our controller output, which is 50 kilometers per hour.
+[00:06:08.940 → 00:06:11.420] Our car starts moving very quickly at first.
+[00:06:11.860 → 00:06:15.940] Don't worry about acceleration and deceleration for this very simple example.
+[00:06:16.500 → 00:06:19.580] At 3 kilometers, the error is 7 kilometers.
+[00:06:19.580 → 00:06:24.220] So our speed slows to 5 times 7, or 35 kilometers per hour.
+[00:06:24.640 → 00:06:25.920] We continue with this pattern.
+[00:06:26.140 → 00:06:31.080] At 5 kilometers, the speed is 25 kilometers per hour, as the error is 5 kilometers.
+[00:06:31.420 → 00:06:36.600] At 7 kilometers, the error is 3, so the speed slows even more to 15 kilometers per hour.
+[00:06:37.100 → 00:06:40.760] Similarly, at 8 kilometers, the speed drops to 10 kilometers per hour.
+[00:06:40.760 → 00:06:45.640] And at 9 kilometers, the speed slows all the way down to 5 kilometers per hour.
+[00:06:46.040 → 00:06:52.240] Finally, at our goal, the speed should be 0 kilometers per hour, as our error is 0 kilometers.
+[00:06:52.620 → 00:06:57.140] If we graph our error and speed, we should see something like this.
+[00:06:57.460 → 00:07:03.480] The error starts at 10 kilometers, and the speed is proportionally high, at 50 kilometers per hour.
+[00:07:03.700 → 00:07:07.380] As we get closer to our goal, the speed also starts to drop.
+[00:07:07.380 → 00:07:12.480] As a result, we approach our goal more slowly, until we're barely moving at all.
+[00:07:13.040 → 00:07:17.920] Assuming an ideal system, we should reach our goal at a snail's pace without overshooting.
+[00:07:18.360 → 00:07:20.560] Note that we can adjust our constant value.
+[00:07:20.740 → 00:07:25.880] For example, if we set it to 2, the speed will be slower, but still proportional to the distance error.
+[00:07:26.200 → 00:07:28.140] It will take longer to reach our goal.
+[00:07:28.460 → 00:07:33.400] If we increased the constant to, say, 10, we'll reach our goal much faster.
+[00:07:33.400 → 00:07:39.020] But we start risking overshoot in non-ideal systems, and possibly breaking some speeding laws.
+[00:07:39.600 → 00:07:43.900] Now, let's turn our attention back to the cruise control system that we're designing,
+[00:07:44.100 → 00:07:47.320] as it's a little more complex than this distance problem.
+[00:07:47.740 → 00:07:53.240] Remember, we want our car speed to match our set point at 100 kilometers per hour,
+[00:07:53.400 → 00:07:59.020] and we need to design a controller that can take in this information and adjust the accelerator position.
+[00:07:59.020 → 00:08:03.620] We'll say our accelerator position can go from 0 to 10 centimeters.
+[00:08:04.240 → 00:08:09.700] 0 is when we're not touching the pedal, and 10 centimeters is pushing it in as far as it will go.
+[00:08:10.140 → 00:08:15.520] For the sake of argument, we'll say that we can cruise at 100 kilometers per hour on a flat road
+[00:08:15.520 → 00:08:18.700] when the accelerator is pressed in at 5 centimeters.
+[00:08:18.700 → 00:08:23.760] Now, let's choose an initial proportional constant, say, 0.1.
+[00:08:24.340 → 00:08:28.640] At 0 kilometers per hour, the error is 100 kilometers per hour,
+[00:08:28.840 → 00:08:33.700] and the output of our controller is 0.1 times 100 to get 10 centimeters.
+[00:08:34.160 → 00:08:39.160] That's pressing the accelerator all the way in, so we will accelerate quite quickly at first.
+[00:08:39.500 → 00:08:43.420] Then, at 30 kilometers per hour, our error is 70.
+[00:08:43.420 → 00:08:49.040] Times our constant of 0.1, that means we begin to let off the gas pedal by a few centimeters.
+[00:08:49.400 → 00:08:53.800] At 50 kilometers per hour, we've moved the gas pedal to 5 centimeters.
+[00:08:53.980 → 00:08:57.300] Remember, that is our assumed cruising pedal position.
+[00:08:57.820 → 00:08:58.560] Do you see the problem?
+[00:08:59.380 → 00:09:01.580] We're not at our desired speed.
+[00:09:02.100 → 00:09:05.680] At 50 kilometers per hour and a pedal position of 5 centimeters,
+[00:09:05.880 → 00:09:07.960] we'll continue to accelerate some.
+[00:09:07.960 → 00:09:13.500] However, once we reach 60 kilometers per hour, our pedal position will be at 4 centimeters.
+[00:09:14.080 → 00:09:18.740] For the sake of this example, we'll say that we can cruise at 60 kilometers per hour
+[00:09:18.740 → 00:09:21.020] with the pedal position at 4 centimeters.
+[00:09:21.420 → 00:09:24.380] But we'll never quite get to our desired speed.
+[00:09:24.860 → 00:09:31.140] If our error is 0, that means our proportional controller will set the accelerator position to 0,
+[00:09:31.540 → 00:09:34.520] which essentially means no power from our engine.
+[00:09:35.080 → 00:09:37.260] Let's graph our error and speed.
+[00:09:37.260 → 00:09:41.540] As you can see, we go from 0 up to 60 kilometers per hour,
+[00:09:41.700 → 00:09:43.780] but we never quite reach our set point.
+[00:09:44.380 → 00:09:47.980] The difference between our set point and actual achieved cruising speed
+[00:09:47.980 → 00:09:49.980] is known as the steady state error.
+[00:09:50.760 → 00:09:54.640] Many systems, like a cruise control, suffer from this steady state error.
+[00:09:55.100 → 00:09:59.380] No matter how we adjust KP, we'll never quite get to the set point.
+[00:09:59.880 → 00:10:01.760] We could include a constant offset,
+[00:10:02.100 → 00:10:05.280] but there's a better, more robust way to handle such errors.
+[00:10:05.280 → 00:10:08.140] Let's go back to our system diagram for a moment.
+[00:10:08.560 → 00:10:14.200] A common way to find steady state error is to look at how much error has accumulated over time.
+[00:10:14.720 → 00:10:17.460] We then multiply that amount by some new constant,
+[00:10:17.720 → 00:10:21.660] KI, before adding it to the output of our proportional controller.
+[00:10:21.660 → 00:10:26.100] In the math world, we would take the area under our error curve,
+[00:10:26.300 → 00:10:27.400] which would be an integral.
+[00:10:27.840 → 00:10:30.340] This is how we get to a PI controller.
+[00:10:30.720 → 00:10:34.800] Proportional and integral values are summed together to produce a single output.
+[00:10:35.240 → 00:10:40.960] However, integrating this unknown error function is often impossible for most real-world systems.
+[00:10:40.960 → 00:10:44.360] So we can take an approximation of that integral.
+[00:10:44.780 → 00:10:51.120] We simply sum each error term over time and then multiply that accumulated value by our KI constant.
+[00:10:51.620 → 00:10:57.640] Note that for a true summation approximation, you should multiply by a delta T interval time.
+[00:10:57.960 → 00:11:01.920] To make our calculations easier, we can assume that this is 1.
+[00:11:02.640 → 00:11:06.260] For example, maybe we take an error reading every 1 second.
+[00:11:06.260 → 00:11:12.000] Or if we know that this interval time is constant, we can just say it's part of our KI value.
+[00:11:12.320 → 00:11:15.440] Either way, we won't need to worry about this term in this example.
+[00:11:15.780 → 00:11:21.460] Now, let's see what happens if we include this integral term with our proportional term from the previous example.
+[00:11:21.760 → 00:11:25.720] We start at 0 kilometers per hour, so our error is 100.
+[00:11:26.120 → 00:11:31.700] From before, we know that our proportional controller wants to set the accelerator to 10 centimeters,
+[00:11:32.020 → 00:11:34.460] assuming we have KP set to 0.1.
+[00:11:34.460 → 00:11:37.440] We'll set the KI term to 0.01.
+[00:11:38.060 → 00:11:43.200] As this is the start of the accumulation, the approximate integral is just 100.
+[00:11:43.580 → 00:11:47.580] 100 times our KI of 0.01 is 1 centimeter.
+[00:11:47.920 → 00:11:52.140] We then add the two controller outputs together to get a sum of 11 centimeters.
+[00:11:52.480 → 00:11:58.940] Our accelerator doesn't go to 11, so for now, we'll just say we max out the accelerator at 10 centimeters.
+[00:11:59.340 → 00:12:02.420] We start accelerating up to 30 kilometers per hour,
+[00:12:02.420 → 00:12:05.220] so our error term is now 70.
+[00:12:05.640 → 00:12:09.040] Our proportional controller sets the pedal to 7 centimeters.
+[00:12:09.640 → 00:12:14.840] In the integral controller, we accumulate 70 on top of 100 to get 170,
+[00:12:15.360 → 00:12:20.300] and multiply that by our constant to get an output of 1.7 centimeters.
+[00:12:20.860 → 00:12:25.000] Our new PI controller output is 8.7 centimeters.
+[00:12:25.000 → 00:12:30.060] So, we keep the accelerator pressed farther than we did with just the P controller.
+[00:12:30.420 → 00:12:37.480] We continue this trend to get a PI controller output of 7.2 centimeters when going 50 kilometers per hour.
+[00:12:37.940 → 00:12:41.040] Notice that the P controller is starting to contribute less,
+[00:12:41.180 → 00:12:45.980] but the I controller is contributing more as the area under the error curve grows.
+[00:12:46.380 → 00:12:50.660] At 70 kilometers per hour, the output is 5.5 centimeters.
+[00:12:50.660 → 00:12:57.340] We've already passed our original limit of 60 kilometers per hour when we used just the P controller.
+[00:12:57.820 → 00:13:02.500] Even at 70 kilometers per hour, our controller is saying to continue accelerating.
+[00:13:02.940 → 00:13:08.360] However, when we reach 80 kilometers per hour, the total output has dipped below 5 centimeters,
+[00:13:08.700 → 00:13:10.360] which we know is a problem.
+[00:13:11.100 → 00:13:12.260] There's still an error.
+[00:13:12.620 → 00:13:14.740] But wait, let's see what happens next.
+[00:13:14.740 → 00:13:20.360] Next, assuming we continue at 80 kilometers per hour, the P controller will output the same amount.
+[00:13:20.820 → 00:13:24.040] However, the integral controller continues to accumulate.
+[00:13:24.420 → 00:13:28.420] It says to increase the value of the output to account for that error.
+[00:13:28.640 → 00:13:32.380] So, we press the accelerator a little more to start closing that error.
+[00:13:32.780 → 00:13:36.940] It might look like the output will fluctuate as it approaches that steady state value,
+[00:13:36.940 → 00:13:42.240] but this example is just intended to show how the integral controller will account for that error.
+[00:13:42.240 → 00:13:45.260] In reality, our example will look something like this.
+[00:13:45.580 → 00:13:49.780] The proportional and integral terms will reach a steady state when the error is zero,
+[00:13:49.940 → 00:13:51.940] which means we perfectly hit our mark.
+[00:13:52.380 → 00:13:55.940] In fact, in many cases, a P.I. controller is all we need.
+[00:13:56.320 → 00:14:00.740] It's enough to move a process toward its goal while accounting for steady state error.
+[00:14:01.140 → 00:14:06.320] However, you'll often run into other issues that can't be solved by proportional and integral terms alone.
+[00:14:06.620 → 00:14:09.920] A well-tuned P.I. controller looks something like this.
+[00:14:09.920 → 00:14:13.120] However, the rate of change might be too slow for you.
+[00:14:13.540 → 00:14:15.720] This is known as an overdamped response.
+[00:14:16.260 → 00:14:18.980] You may want your process to approach the goal quickly.
+[00:14:19.240 → 00:14:24.580] So, you start playing with the K.P. and K.I. terms, and you end up with something like this.
+[00:14:24.860 → 00:14:28.760] While the system approaches the set point quickly, it also overshoots.
+[00:14:29.140 → 00:14:34.640] The integral term will account for the negative error and eventually bring the output in line with the set point.
+[00:14:35.020 → 00:14:38.160] However, the system might oscillate for a while before it does that.
+[00:14:38.160 → 00:14:40.620] This is known as an underdamped response.
+[00:14:41.040 → 00:14:45.300] In many cases, no matter how much you fiddle with the K.P. and K.I. terms,
+[00:14:45.680 → 00:14:50.660] you can't seem to find a good balance between an overdamped and an underdamped response.
+[00:14:51.100 → 00:14:54.460] What you're after is a response curve that looks like this.
+[00:14:54.780 → 00:14:59.260] The process quickly approaches the set point and settles there with no overshoot.
+[00:14:59.580 → 00:15:01.780] This is known as a critically damped response.
+[00:15:02.140 → 00:15:05.920] To make this happen, we need to add one more component to our controller.
+[00:15:05.920 → 00:15:07.940] This is the derivative term.
+[00:15:08.340 → 00:15:12.200] We multiply the rate of change in the error by some constant, KD.
+[00:15:12.640 → 00:15:17.080] We sum the proportional, integral, and derivative terms together to get the output.
+[00:15:17.440 → 00:15:20.140] This is known as a PID controller.
+[00:15:20.740 → 00:15:22.440] Let's see how this works with an example.
+[00:15:23.000 → 00:15:26.380] The derivative of the error is the slope at that particular point.
+[00:15:26.780 → 00:15:32.280] That means if the error is decreasing quickly, meaning we are accelerating fast toward our target speed,
+[00:15:32.280 → 00:15:36.280] then the derivative term will be a negative number with a large magnitude.
+[00:15:36.920 → 00:15:41.420] Like with the integral term, this is often difficult or impossible to analytically solve
+[00:15:41.420 → 00:15:44.140] unless you have a mathematical model of your process.
+[00:15:44.640 → 00:15:48.240] So we turn to numerical estimations again to help us out.
+[00:15:48.640 → 00:15:53.000] We can approximate the derivative by simply subtracting the current error value
+[00:15:53.000 → 00:15:57.460] from the previous error value and dividing that by our sampling interval time.
+[00:15:57.460 → 00:16:01.600] That should give us the slope of the line between the current and previous values,
+[00:16:01.780 → 00:16:04.020] which is good enough for what we need in most cases.
+[00:16:04.460 → 00:16:08.520] And just like we did with the integral term, we can assume the sampling interval,
+[00:16:08.800 → 00:16:12.780] delta T, is 1, or we can assume it's part of our constant for now.
+[00:16:13.200 → 00:16:17.240] The difference between the current and previous error values will work in this instance.
+[00:16:17.820 → 00:16:22.800] The idea is that we want a term that can tell if we are approaching the goal too fast
+[00:16:22.800 → 00:16:26.920] and dampen the response just enough so that we don't overshoot.
+[00:16:26.920 → 00:16:29.580] So let's work on another simple example.
+[00:16:29.960 → 00:16:33.600] Here we've added the proportional, integral, and derivative terms.
+[00:16:34.100 → 00:16:37.720] I've adjusted the ki coefficient to be a little higher.
+[00:16:38.160 → 00:16:43.060] That way our speed increases much more quickly toward our goal, at least in theory.
+[00:16:43.520 → 00:16:49.400] It's not a perfect example, but it should illustrate how the p, i, and d terms work together.
+[00:16:49.400 → 00:16:53.060] At first, we accelerate very quickly from a stop.
+[00:16:53.460 → 00:16:57.340] Note here that the derivative term is zero as we do not have a slope yet.
+[00:16:57.700 → 00:17:01.840] Once again, we make the assumption that we can only push the pedal to 10 centimeters.
+[00:17:02.400 → 00:17:06.940] At 30 kilometers per hour, the integral term starts to increase quickly.
+[00:17:07.360 → 00:17:09.620] However, because we are accelerating so fast,
+[00:17:09.940 → 00:17:15.760] the difference between this and the last error terms dampen the current pedal position to 7.1.
+[00:17:15.760 → 00:17:21.280] We repeat this procedure and we see that we've dampened the pedal position again to 7 centimeters.
+[00:17:21.840 → 00:17:27.580] At 70 kilometers per hour, our derivative controller output is again minus 2 centimeters,
+[00:17:27.980 → 00:17:30.200] which makes the total 5.5 centimeters.
+[00:17:30.680 → 00:17:33.940] We still have the pedal pressed more than what we want to cruise at,
+[00:17:34.200 → 00:17:35.360] but it means we're accelerating.
+[00:17:35.700 → 00:17:37.600] As we start to approach our goal,
+[00:17:37.880 → 00:17:42.280] you can see how the proportional term approaches zero and the integral term takes over.
+[00:17:42.280 → 00:17:47.540] The derivative term is no longer needed to dampen, so that also approaches zero.
+[00:17:47.980 → 00:17:53.800] In the ideal case, we land right at 100 kilometers per hour with the pedal at 5 centimeters.
+[00:17:54.180 → 00:18:00.000] We probably overshot a little as the pedal was pulled back to 4 centimeters for that second-to-last sample.
+[00:18:00.520 → 00:18:03.620] That's probably just indicative of my poor example here.
+[00:18:03.920 → 00:18:08.740] However, it shows that we need to tune the kp, ki, and kd terms
+[00:18:08.740 → 00:18:13.720] to make a system that is critically damped where we approach our goal quickly without overshooting.
+[00:18:14.040 → 00:18:18.340] If you have a mathematical model that correctly describes the behavior of the plant,
+[00:18:18.640 → 00:18:24.140] you can solve for kp, ki, and kd to make the system critically damped.
+[00:18:24.460 → 00:18:27.480] This model is usually expressed as a transfer function,
+[00:18:27.760 → 00:18:30.920] which gives the plant's output for any given input.
+[00:18:31.240 → 00:18:33.980] This works well in academic settings with simple plants.
+[00:18:33.980 → 00:18:39.680] In most cases, it's either impossible or very difficult to know the exact transfer function of the plant.
+[00:18:40.060 → 00:18:42.360] So, we turn to other tuning methods.
+[00:18:42.780 → 00:18:45.800] There are a number of ways to tune a PID controller,
+[00:18:46.020 → 00:18:48.420] but we'll demonstrate a simple manual method here.
+[00:18:48.780 → 00:18:51.720] We measure the output as we vary each of the constants.
+[00:18:52.260 → 00:18:56.340] You set ki and kd to zero and leave kp at some low value.
+[00:18:56.720 → 00:19:01.100] You increase kp until the output oscillates with some steady state offset.
+[00:19:01.100 → 00:19:05.220] You then increase ki until you correct the steady state offset,
+[00:19:05.540 → 00:19:07.220] even if that means more oscillation.
+[00:19:08.080 → 00:19:12.560] Just make sure the output does not become unstable and oscillates out of control.
+[00:19:13.060 → 00:19:16.180] Finally, adjust kd to remove the oscillations.
+[00:19:16.560 → 00:19:19.880] At the end of the process, you should have an optimally tuned system.
+[00:19:20.400 → 00:19:23.960] Note there are other tuning schemes, such as the Ziegler-Nichols method,
+[00:19:24.260 → 00:19:27.300] where you can use some math to help you choose ki and kd
+[00:19:27.300 → 00:19:29.780] to reduce the amount of trial and error that's needed.
+[00:19:29.780 → 00:19:33.940] Early PID controllers were pneumatic, and then eventually electrical.
+[00:19:34.480 → 00:19:38.960] Here is an example of a classical electrical PID controller used in a research paper.
+[00:19:39.280 → 00:19:44.880] However, most modern PID controllers rely on code and microcontrollers rather than discrete components.
+[00:19:45.400 → 00:19:48.920] This is some pseudocode for how you might implement a PID controller.
+[00:19:49.400 → 00:19:53.060] We set the constants to some arbitrary values to be tuned later,
+[00:19:53.220 → 00:19:55.440] and we also need to know the interval time.
+[00:19:55.440 → 00:19:59.780] This corresponds to the sample rate, how often we will sample from our sensor,
+[00:20:00.140 → 00:20:02.020] and perform some action on our plant.
+[00:20:02.520 → 00:20:04.180] We'll go with one millisecond.
+[00:20:04.660 → 00:20:06.240] We loop forever in this case.
+[00:20:06.420 → 00:20:10.700] At the beginning of the loop, we read our feedback value, which is often from a sensor.
+[00:20:11.080 → 00:20:13.580] We then calculate each of the PID terms.
+[00:20:13.580 → 00:20:18.460] To do that, we take the difference between the set point and the measured value to get the error term.
+[00:20:18.860 → 00:20:22.660] We then multiply it by the interval to accumulate in the integral term.
+[00:20:23.120 → 00:20:26.860] The derivative term takes the difference between the current and previous errors,
+[00:20:27.020 → 00:20:29.020] and then divides that value by the interval.
+[00:20:29.440 → 00:20:34.300] We then multiply each of these values by their respective k constants and add them together.
+[00:20:34.620 → 00:20:39.060] While not shown here, you would use that output value to drive whatever you needed.
+[00:20:39.060 → 00:20:43.460] This could be, say, adjusting the accelerator by some amount in centimeters.
+[00:20:44.020 → 00:20:49.760] Finally, we save the error value for the next iteration and then wait for the given interval time.
+[00:20:50.080 → 00:20:51.980] This is a very simple example.
+[00:20:52.340 → 00:20:58.300] You could obviously do this in a separate thread with timers or using a variable interval time.
+[00:20:58.880 → 00:21:02.420] You would also need to spend some time tuning the 3k constants,
+[00:21:02.780 → 00:21:07.240] but this should be enough to get you started making your own PID controllers in code.
+[00:21:07.240 → 00:21:10.480] Now, where would you actually use such a controller?
+[00:21:11.100 → 00:21:14.260] PID controllers are used in countless applications.
+[00:21:14.860 → 00:21:20.520] And as you probably guessed, most cruise control systems in cars use PID controllers.
+[00:21:20.980 → 00:21:25.900] In the 1920s, Minorski was researching methods for automatic ship steering
+[00:21:25.900 → 00:21:29.680] when he devised his theoretical analysis of PID controllers.
+[00:21:30.220 → 00:21:33.800] They are also heavily used in manufacturing and industrial equipment.
+[00:21:33.800 → 00:21:39.360] For example, many reflow ovens use PID controllers to adjust the heating elements as needed
+[00:21:39.360 → 00:21:41.360] to match the set points in the profile.
+[00:21:41.860 → 00:21:45.220] This allows mass soldering of components without burning boards.
+[00:21:45.800 → 00:21:49.900] I hope this helps you understand the theory behind PID controllers
+[00:21:49.900 → 00:21:55.200] and how they can be used to regulate a system based on feedback from one or more sensors.
+[00:21:55.760 → 00:21:59.820] In a future episode, I'll demonstrate tuning a PID controller.
+[00:22:00.280 → 00:22:01.940] Stay tuned and happy hacking!
+[00:22:01.940 → 00:22:03.700] Stay tuned!
+[00:22:04.440 → 00:22:04.960] souvenirs
+[00:22:04.960 → 00:22:05.080] etten北
+[00:22:05.080 → 00:22:05.700] 店
+[00:22:06.280 → 00:22:06.420] 店

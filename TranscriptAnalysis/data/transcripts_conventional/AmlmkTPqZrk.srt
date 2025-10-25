@@ -1,0 +1,96 @@
+1
+00:00:00,000 --> 00:00:11,740
+The FlySky FSIA6B receiver has three types of communication protocols, the classic PWM, and two serial protocols, PPM and IBIS.
+
+2
+00:00:12,460 --> 00:00:19,560
+When this receiver is connected to a flight controller, one of the two serial connections is always used.
+
+3
+00:00:19,560 --> 00:00:27,700
+The flight controllers have so-called UART serial ports, where one line is used to receive information from the radio,
+
+4
+00:00:27,700 --> 00:00:33,020
+and another line is used to send information from the controller to the radio.
+
+5
+00:00:33,840 --> 00:00:39,740
+The first is called the RX line, and the second is called the TX line, or telemetry.
+
+6
+00:00:40,580 --> 00:00:45,280
+The PPM connection is located in the first vertical slot of the receiver.
+
+7
+00:00:45,760 --> 00:00:52,460
+The upper pin is used to send the information to the controller, and the lower two to supply power to the receiver.
+
+8
+00:00:52,460 --> 00:00:58,440
+If we are going to use this protocol, it must be previously activated in the radio.
+
+9
+00:00:59,380 --> 00:01:04,280
+The RX line by IBIS protocol is in the horizontal slot on the right.
+
+10
+00:01:05,060 --> 00:01:11,860
+The rightmost pin is used to send information to the controller, and the other two pins are used to power the receiver.
+
+11
+00:01:12,720 --> 00:01:16,520
+The sending line is connected to some RX pin of the controller.
+
+12
+00:01:16,520 --> 00:01:22,400
+The TX line by IBIS protocol is in the horizontal slot on the left.
+
+13
+00:01:23,200 --> 00:01:30,660
+The rightmost pin is used to receive information from the controller, and must be connected to some TX pin of the controller.
+
+14
+00:01:31,540 --> 00:01:34,220
+The other two pins are used to power the sensors.
+
+15
+00:01:34,940 --> 00:01:39,140
+Since the controller is already powered, these power pins are not used.
+
+16
+00:01:39,140 --> 00:01:46,800
+In the following example, we send information to the controller through a RX line by the PPM protocol.
+
+17
+00:01:47,760 --> 00:01:53,400
+In addition, we receive information from the controller through a TX line by IBIS.
+
+18
+00:01:54,120 --> 00:01:59,460
+In the iNAB configurator, the communications for the UART ports are configured.
+
+19
+00:02:00,020 --> 00:02:04,820
+We use UART2 for the TX line, and UART3 for the RX line.
+
+20
+00:02:04,820 --> 00:02:09,460
+We see that the radio sends information of the channel to the controller.
+
+21
+00:02:10,240 --> 00:02:16,040
+In addition, we see that the radio receives information from some sensors of this controller.
+
+22
+00:02:16,820 --> 00:02:17,780
+And that is all.
+
+23
+00:02:18,000 --> 00:02:18,640
+Thank you.
+
+24
+00:02:18,640 --> 00:02:18,700
+Thank you.
+

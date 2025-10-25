@@ -1,0 +1,656 @@
+1
+00:00:00,000 --> 00:00:09,640
+so one of the biggest requests that i have had since starting this channel is to do a video
+
+2
+00:00:09,640 --> 00:00:15,840
+kind of overviewing and going into how to choose and select different mosfets there's a ton of
+
+3
+00:00:15,840 --> 00:00:22,520
+good information out there that either are insanely advanced to where you have to do like
+
+4
+00:00:22,520 --> 00:00:29,000
+18 derivations to figure out how to calculate anything with a mosfet there's a ton of articles
+
+5
+00:00:29,000 --> 00:00:37,060
+that say you apply voltage the mosfet turns on calculate power rds on that's it there's not a
+
+6
+00:00:37,060 --> 00:00:42,720
+whole lot of in between kind of going into what are the useful equations to where you can get valid
+
+7
+00:00:42,720 --> 00:00:48,960
+info how to drive them but don't get so down into the weeds to where you're really losing out on
+
+8
+00:00:48,960 --> 00:00:54,620
+actually how to make something useful and just trying to do all the theoretical side so my goal
+
+9
+00:00:54,620 --> 00:01:01,740
+with this video and i have a blog post also on this is to kind of go over just enough detail to
+
+10
+00:01:01,740 --> 00:01:08,780
+where you can do most useful calculations specifically for high power designs i'm going to mention a little
+
+11
+00:01:08,780 --> 00:01:13,800
+bit about higher switching speeds but not a ton because that is where it does get a little more
+
+12
+00:01:13,800 --> 00:01:19,660
+complicated but most people aren't really worried about that unless you're building like a voltage
+
+13
+00:01:19,660 --> 00:01:25,500
+regulator or something like that so i think the best way to start this is just with a simple example
+
+14
+00:01:25,500 --> 00:01:33,340
+of a logic level mosfet circuit so everyone has seen a mosfet circuit like this as a quick overview
+
+15
+00:01:33,340 --> 00:01:42,960
+on mosfets the big difference between them and a bjt or an npm transistor is a mosfet switches on and off
+
+16
+00:01:42,960 --> 00:01:50,160
+based on an applied voltage it doesn't require a continuous current going from the gate to source
+
+17
+00:01:50,160 --> 00:01:56,880
+like it would on a standard transistor it's also important to realize that the gate of a mosfet
+
+18
+00:01:56,880 --> 00:02:03,840
+essentially acts as a capacitor once the gate is fully charged there's really no current that flows
+
+19
+00:02:03,840 --> 00:02:09,920
+of course there's always parasitic so there's always some current that flows but it's mostly negligible
+
+20
+00:02:09,920 --> 00:02:15,920
+once the gate is charged then the drain conducts to the source and i'm going to be limiting this
+
+21
+00:02:15,920 --> 00:02:23,520
+discussion to n-channel mosfets they're way more common and realistically they for high power designs
+
+22
+00:02:23,520 --> 00:02:29,680
+that's really all you need this is what is called a logic level mosfet there are two main types of
+
+23
+00:02:29,680 --> 00:02:38,800
+mosfets standard or power mosfets and then logic level logic level are a newer type of mosfet and the
+
+24
+00:02:38,800 --> 00:02:48,000
+big difference with them is they require only a up to a five volt voltage applied on its gate with
+
+25
+00:02:48,000 --> 00:02:56,960
+respect to the source so if you look at the gate to source voltage once you get below around 2.1 ish
+
+26
+00:02:56,960 --> 00:03:06,880
+volts the resistance from the drain to source decreases exponentially the resistance from drain to source
+
+27
+00:03:06,880 --> 00:03:15,600
+is simply what the resistance going across these two terminals are so if you were to essentially get
+
+28
+00:03:15,600 --> 00:03:24,720
+rid of that mosfet and replace it with a resistor right here when the mosfet is fully turned on that
+
+29
+00:03:24,720 --> 00:03:31,360
+is the resistance that is right there simple as that so this is one of the main specs that governs
+
+30
+00:03:31,360 --> 00:03:38,320
+how much the mosfet will heat up when you're turning it on so the other thing that this circuit
+
+31
+00:03:38,320 --> 00:03:44,160
+has that a lot of people will overlook is this resistor right here this is what's called a gate
+
+32
+00:03:44,160 --> 00:03:50,880
+resistor and what you have to remember why those are needed is remember how i said that the gate acts
+
+33
+00:03:50,880 --> 00:03:58,800
+as a capacitor what happens to a capacitor when it's completely uncharged and you apply a voltage your
+
+34
+00:03:58,800 --> 00:04:07,520
+driving circuit sees that gate sees the capacitor as a short circuit so if this was just a wire the
+
+35
+00:04:07,520 --> 00:04:15,600
+second you go to switch this on this gate is viewed by this circuit as a short if this microcontroller is
+
+36
+00:04:15,600 --> 00:04:21,680
+unable to source that much current something bad is going to happen because with no resistance here of
+
+37
+00:04:21,680 --> 00:04:28,320
+course there's parasitics but with no real resistance here powering this from presumably five volts it can
+
+38
+00:04:28,320 --> 00:04:36,880
+try to source several amps going into this gate so a gate resistor acts to limit that so at five volts
+
+39
+00:04:36,880 --> 00:04:43,840
+with a hundred ohm resistor it's going to limit it to what 50 milliamps which any microcontroller should
+
+40
+00:04:43,840 --> 00:04:50,160
+be able to source if you need to have it a little bit lower you just raise the resistance of this there's
+
+41
+00:04:50,160 --> 00:04:55,440
+a couple other important reasons why gate resistors are used remember how i mentioned that there's those
+
+42
+00:04:55,440 --> 00:05:02,240
+parasitics so this trace has a certain resistance which you can't really calculate easily there are
+
+43
+00:05:02,240 --> 00:05:11,360
+certain resistances going into the gate those could be tens of ohm tens of milli ohms uh maybe up to half
+
+44
+00:05:11,360 --> 00:05:17,520
+an ohm you don't really know if you don't have this gate resistor and you try to calculate switching
+
+45
+00:05:17,520 --> 00:05:23,840
+speeds you try to calculate anything you really don't have a way to know what this resistance is and you
+
+46
+00:05:23,840 --> 00:05:29,840
+don't have a way to know how much current is being applied the second you add in one of these gate
+
+47
+00:05:29,840 --> 00:05:36,400
+resistors those parasitics become completely overshadowed by this gate resistor it doesn't
+
+48
+00:05:36,400 --> 00:05:43,200
+matter if it's a hundred point zero one ohms or a hundred point one ohms the hundred is way more
+
+49
+00:05:43,200 --> 00:05:52,960
+significant in your calculation and that's even true if this was 10 ohms 10.01 ohms and 10.1 is not that
+
+50
+00:05:52,960 --> 00:05:58,400
+big of a difference for your calculations so it just allows you to have a better reference point
+
+51
+00:05:58,400 --> 00:06:05,120
+to make your calculations from the other reason gate resistors are important and this is a little more
+
+52
+00:06:05,120 --> 00:06:10,960
+intricate so i'm not going to go into it too much basically if you don't have this you can get what's
+
+53
+00:06:10,960 --> 00:06:18,880
+called ringing or oscillation since there's such a high amount of current being sourced so quickly
+
+54
+00:06:18,880 --> 00:06:26,880
+without a gate resistor here the parasitics mainly the inductance has the ability to make this gate
+
+55
+00:06:26,880 --> 00:06:33,760
+oscillate from different voltages and it can keep the mosfet from turning on it can make it to where
+
+56
+00:06:33,760 --> 00:06:39,520
+it's in a state that you don't want it to be or it can over voltage it entirely basically that gate
+
+57
+00:06:39,520 --> 00:06:46,160
+resistor just acts to kind of dampen all of that and make it a much smoother transition going from off to
+
+58
+00:06:46,160 --> 00:06:51,760
+on or on to off so something else that's really important with mosfets and i did not draw it in
+
+59
+00:06:51,760 --> 00:06:57,360
+here i was making sure you guys were paying attention you have to have a pull down resistor
+
+60
+00:06:57,360 --> 00:07:04,880
+or you have to have something that makes this mosfet in a default state so if we add a 10k resistor right
+
+61
+00:07:04,880 --> 00:07:12,480
+here that means no matter what this output is if it's if it's floating or it's open drained if the
+
+62
+00:07:12,480 --> 00:07:18,720
+microcontroller turns on and it's at an unknown state this pull down resistor is going to ensure
+
+63
+00:07:18,720 --> 00:07:26,160
+that the gate is always in a down state to where there's no charge on it typically with high power
+
+64
+00:07:26,160 --> 00:07:31,760
+mosfets you're always going to want the default state to be off so if nothing else is happening with
+
+65
+00:07:31,760 --> 00:07:39,360
+this circuit you can be assured that this will not be conducting and your mosfet will not be turned on
+
+66
+00:07:39,360 --> 00:07:44,720
+so now i'm sure you're thinking oh logic level mosfets are the way to go i don't have to use
+
+67
+00:07:44,720 --> 00:07:53,200
+anything else that would be nice honestly i unless it's for an indicator led or something very low power
+
+68
+00:07:53,200 --> 00:08:00,240
+i virtually never use logic level mosfets there are incredible trade-offs that they made when they
+
+69
+00:08:00,240 --> 00:08:08,800
+designed the mosfet to be a logic level mosfet basically the rds on so the resistance from drain to
+
+70
+00:08:08,800 --> 00:08:15,200
+source the amount of gate charge so the amount of charge that has to be injected into the gate to
+
+71
+00:08:15,200 --> 00:08:21,200
+get it to turn on are almost always going to be significantly higher in a logic level mosfet unless
+
+72
+00:08:21,200 --> 00:08:29,840
+there's some overwhelming reason why you can't drive it as a normal mosfet is i would never recommend you
+
+73
+00:08:29,840 --> 00:08:37,280
+use a logic level fet for anything other than very low power non-important drivers this is kind of the
+
+74
+00:08:37,280 --> 00:08:45,680
+standard configuration that i will use for driving a high power mosfet this ncp chip is what's called a
+
+75
+00:08:45,680 --> 00:08:53,520
+gate driver it has one goal in life it turns on and turns off mosfets and it does it very well what's
+
+76
+00:08:53,520 --> 00:09:02,640
+really nice about this is it has a separate h and l output it has the output high which is actually what
+
+77
+00:09:02,640 --> 00:09:11,360
+injects the charge outputs current to turn on the mosfet and then the out l is what drains the gate
+
+78
+00:09:11,360 --> 00:09:17,520
+so removes the charge from it what that allows you to do i don't show it here you can use two different
+
+79
+00:09:17,520 --> 00:09:25,120
+gate resistors to fine tune how quickly the mosfet turns on and how quickly it turns off for this case
+
+80
+00:09:25,120 --> 00:09:30,240
+i don't put it there because for turning on a high power load it doesn't really matter because they're
+
+81
+00:09:30,240 --> 00:09:37,680
+pretty slow so the mosfet i am using here is one of the go-to power mosfets that i use it has an
+
+82
+00:09:37,680 --> 00:09:50,240
+incredibly small rds on which compared to the logic level mosfet which was 1.6 ohms this is 1.4 milli-ohms
+
+83
+00:09:50,240 --> 00:09:59,200
+so a substantial decrease in the resistance on it and it also has a pretty small gate charge which i'll talk
+
+84
+00:09:59,200 --> 00:10:04,320
+about in a little bit so now i want to discuss some other important data sheet specs a couple i've
+
+85
+00:10:04,320 --> 00:10:10,400
+already mentioned a couple i haven't for this i'm going to reference my blog post so let's say we
+
+86
+00:10:10,400 --> 00:10:16,720
+need to make a h bridge driver i've talked about h bridges in the past it's a way to control like a
+
+87
+00:10:16,720 --> 00:10:23,840
+brushed dc motor or a linear actuator it needs to be able to source 10 amps continuously if there is a
+
+88
+00:10:23,840 --> 00:10:31,920
+stall condition it needs to be able to handle up to 25 amps it'll be powered by 12 volt dc it'll have
+
+89
+00:10:31,920 --> 00:10:40,160
+a silent pwm speed which just means it's not in the audible range so ultrasonic which is 20 to 30 kilohertz
+
+90
+00:10:40,160 --> 00:10:48,960
+and of course we need to minimize heat dissipation as always if we take this mosfet and this gate driver
+
+91
+00:10:48,960 --> 00:10:56,080
+as our example we can look at the data sheet of this mosfet the important specs that we need to
+
+92
+00:10:56,080 --> 00:11:02,560
+grab from it are the rds max we don't care about the typical because we need to design for the worst
+
+93
+00:11:02,560 --> 00:11:08,160
+case scenario of course we can use that to calculate the amount of power that will be dissipated from the
+
+94
+00:11:08,160 --> 00:11:16,960
+mosfet the vdss is simply the amount of voltage that this mosfet can have between its drain and its
+
+95
+00:11:16,960 --> 00:11:24,320
+source so between here between this pin and this pin which since we're powering this from 12 volts
+
+96
+00:11:24,320 --> 00:11:30,960
+we're not even close to that the id which is either silicone limited or package limited we always care
+
+97
+00:11:30,960 --> 00:11:38,320
+about the package limited because that is irrelevant because we're using this specific package and this is
+
+98
+00:11:38,320 --> 00:11:46,000
+a spec that's commonly misunderstood this does not mean that you can drive this mosfet at 240 amps if you
+
+99
+00:11:46,000 --> 00:11:52,720
+try doing this at 240 amps without it being like literally underwater or some water cooling system
+
+100
+00:11:52,720 --> 00:12:00,160
+it'll burst into flames almost immediately all this means is you absolutely cannot drive it above that
+
+101
+00:12:00,160 --> 00:12:05,600
+but you're not going to be able to drive it at that so take this number with a complete grain of salt
+
+102
+00:12:05,600 --> 00:12:13,760
+just don't exceed it the next important spec is the vgs which is simply the gate to source voltage
+
+103
+00:12:13,760 --> 00:12:21,600
+so the maximum voltage that you can apply on the gate with respect to the source and this is typically
+
+104
+00:12:21,600 --> 00:12:28,080
+around 20 volts for a standard mosfet which we are driving it from 12 volts so again we're perfectly fine
+
+105
+00:12:28,080 --> 00:12:39,440
+there then the r theta j a which this is the thermal resistance from the junction of the mosfet to the outside air
+
+106
+00:12:39,440 --> 00:12:46,240
+this we use to determine how hot the mosfet will get at a given power the last important spec and this
+
+107
+00:12:46,240 --> 00:12:53,360
+is the one where it's definitely not a true science what i'm going to show you guys but it's a decent
+
+108
+00:12:53,360 --> 00:13:00,240
+rule of thumb and that is the total gate charge this i briefly mentioned a couple times already in this
+
+109
+00:13:00,240 --> 00:13:08,320
+video and what this is is this is the amount of charge that you have to inject into the gate before
+
+110
+00:13:08,320 --> 00:13:17,120
+it turns fully on since it's a capacitor essentially on the gate you have to give it that much charge
+
+111
+00:13:17,120 --> 00:13:24,720
+in coulombs or nano coulombs to have it turn on this is one of the main factors that governs how fast
+
+112
+00:13:24,720 --> 00:13:31,440
+the mosfet turns on and then by default turns off so let's start doing some calculations and this
+
+113
+00:13:31,440 --> 00:13:37,040
+obviously isn't the h bridge circuit but i changed the value of the resistor here so it should be
+
+114
+00:13:37,040 --> 00:13:44,080
+pretty similar so the first thing that we want to work on is determine how much power the mosfet will
+
+115
+00:13:44,080 --> 00:13:51,520
+be dissipating worst case so we use p equals i squared r we know that our max current in a stall which
+
+116
+00:13:51,520 --> 00:14:02,320
+is the worst case scenario is 25 amps and our worst case resistance is 1.4 and when we calculate that
+
+117
+00:14:02,320 --> 00:14:12,400
+out we get 0.875 watts but now we have to relate that value to something useful because in a vacuum
+
+118
+00:14:12,400 --> 00:14:18,320
+under a watt we don't really know if that's a good value or not so that's where that r theta junction to
+
+119
+00:14:18,320 --> 00:14:26,960
+ambient comes in so we know that the theta junction to ambient is 40 c over w which means for every watt
+
+120
+00:14:26,960 --> 00:14:34,800
+that the mosfet dissipates it will raise in temperature by 40 degrees celsius so if we simply
+
+121
+00:14:34,800 --> 00:14:43,680
+multiply that by our power that gives us the delta t we have to make sure that we understand that that is
+
+122
+00:14:43,680 --> 00:14:52,160
+not what temperature it'll be at that's the temperature it'll increase by so that is 35 c so if we are at
+
+123
+00:14:52,160 --> 00:15:03,120
+a room temperature ambient around 25 c it'll raise by 35 c which is 60 degrees celsius which 60 c for the
+
+124
+00:15:03,120 --> 00:15:11,120
+junction temperature is perfectly safe it should be safe depending on the mosfet up to around 100 c if not a
+
+125
+00:15:11,120 --> 00:15:18,320
+little more but i always try to shoot for a maximum of 80 c worst case but you can always reduce that
+
+126
+00:15:18,320 --> 00:15:23,920
+by having a heat sink on there so now we know that the heat dissipation of this mosfet will not be an
+
+127
+00:15:23,920 --> 00:15:31,200
+issue the next thing we want to see is how quickly we can switch it on and off so for that the first thing
+
+128
+00:15:31,200 --> 00:15:39,920
+we need to do is see how much current this driver will be sending to the gate and like i said this gate
+
+129
+00:15:39,920 --> 00:15:47,600
+driver can source up to an up to 10 amps i have a 10 ohm gate resistor here so we need to calculate
+
+130
+00:15:47,600 --> 00:15:55,520
+the amount of current maximum that it can inject and that is simply v equals ir our maximum current is
+
+131
+00:15:55,520 --> 00:16:06,960
+1.2 amps and there is a simplification here this is assuming that the voltage at the gate stays at zero
+
+132
+00:16:06,960 --> 00:16:15,040
+because we're assuming that the voltage from here minus this is the total voltage which it's not
+
+133
+00:16:15,600 --> 00:16:22,080
+typically this will be a couple volts but that's where my simplifications are coming in so just keep
+
+134
+00:16:22,080 --> 00:16:28,400
+that in mind if you have to do the exact calculation you're gonna have to do a lot more intricate stuff
+
+135
+00:16:28,400 --> 00:16:34,880
+than i'm showing here but when we finish this calculation i'll show you why i feel confident for
+
+136
+00:16:34,880 --> 00:16:41,040
+this case that these calculations hold true and now we can use a different calculation to see how long
+
+137
+00:16:41,040 --> 00:16:48,560
+it takes to inject that much charge into the gate of the mosfet and this is just the time equals charge
+
+138
+00:16:48,560 --> 00:16:56,480
+divided by current we're trying to solve for time we know that our charge that needs to be injected is
+
+139
+00:16:56,480 --> 00:17:09,680
+354 nanocoulombs and we know that our current is 1.2 amps when we calculate that out we get t is equal to 295
+
+140
+00:17:10,320 --> 00:17:18,960
+nanoseconds and with this calculation that is how long it will take for this mosfet to turn fully on if we
+
+141
+00:17:18,960 --> 00:17:26,000
+need to switch it at a different or a differing frequency it's not just how quickly it turns on it's how
+
+142
+00:17:26,000 --> 00:17:34,400
+quickly it turns on then off so technically the round trip is double this and when we do that
+
+143
+00:17:34,400 --> 00:17:42,160
+calculation and see the maximum frequency it comes out to around 2 megahertz so we only have to switch
+
+144
+00:17:42,160 --> 00:17:51,120
+this at 20 kilohertz we are several orders of magnitude below the theoretical max switching speed
+
+145
+00:17:51,120 --> 00:17:58,160
+of this mosfet this is where the rule of thumb comes into play if we would have calculated this out
+
+146
+00:17:58,160 --> 00:18:06,720
+and let's say this time would have or this frequency would have came out to 30 kilohertz or 40 we are way
+
+147
+00:18:06,720 --> 00:18:12,640
+too close to that threshold and i would not feel confident with this at all and we would either need
+
+148
+00:18:12,640 --> 00:18:21,120
+to change the gate resistor to have it be bigger of a gap or do the more intricate derivations which i
+
+149
+00:18:21,120 --> 00:18:27,360
+mention in the blog some app notes which go into great detail on that but for something like this
+
+150
+00:18:27,360 --> 00:18:33,360
+this is perfectly fine and i would never go into any more calculations than this because it's just not
+
+151
+00:18:33,360 --> 00:18:43,040
+necessary if we do the intricate calculations maybe we get that the actual switching speed maximum is 1.2
+
+152
+00:18:43,040 --> 00:18:50,960
+megahertz or 1.1 it doesn't matter we're still so far below that that it absolutely is fine whatever
+
+153
+00:18:50,960 --> 00:18:58,400
+this comes out to be and this is where you could actually tune this gate resistor to be a little bit
+
+154
+00:18:58,400 --> 00:19:05,360
+higher of a value making it turn on a little bit slower which can help with some emc and emissions
+
+155
+00:19:05,360 --> 00:19:11,920
+issues but that's something i'm not going to get into on this video so basically with those calculations
+
+156
+00:19:11,920 --> 00:19:19,040
+out of the way we now know that this mosfet driven by this gate driver won't heat up too much it's not
+
+157
+00:19:19,040 --> 00:19:25,760
+going to be even close to the maximum switching speed so we can feel pretty confident that this mosfet will
+
+158
+00:19:25,760 --> 00:19:31,920
+be able to drive that load of course there's other stuff to be concerned with with a brushed motor
+
+159
+00:19:31,920 --> 00:19:40,240
+driver the back emf having sure making sure you have enough bulk capacitance but on the mosfet side
+
+160
+00:19:40,240 --> 00:19:48,720
+we are perfectly fine with this selection so i hope that this video covered everything that you typically
+
+161
+00:19:48,720 --> 00:19:55,280
+need to know when selecting a mosfet and designing a circuit for it i will have a link in the description to
+
+162
+00:19:55,280 --> 00:20:01,760
+my blog post which goes into a little more detail on this and it gives a few more examples but other
+
+163
+00:20:01,760 --> 00:20:08,080
+than that i hope you guys enjoyed this video and please let me know any suggestions of future videos
+
+164
+00:20:08,080 --> 00:20:13,760
+and i will see you in the next video
+
