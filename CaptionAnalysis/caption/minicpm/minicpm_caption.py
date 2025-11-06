@@ -189,8 +189,8 @@ def caption_all_folders(root_folder, output_dir):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Batch caption frames using MiniCPM-V; save per-video DOCX (with images) and JSON.")
-    parser.add_argument('-src_dir', required=True, help='Root folder containing subfolders of images (frames_root)')
-    parser.add_argument('-out_dir', required=True, help='Output directory to store caption documents')
+    parser.add_argument('--src_dir', default="../../../VideoAnalysis/data/frames/frames_conventional", help='Root folder containing subfolders of images (frames_root)')
+    parser.add_argument('--out_dir', default="../../data/minicpm_caption", help='Output directory to store caption documents')
     args = parser.parse_args()
 
     caption_all_folders(args.src_dir, args.out_dir)

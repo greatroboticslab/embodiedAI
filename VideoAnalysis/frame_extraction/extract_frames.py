@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 def create_folder(folder_name):
     safe_name = re.sub(r'[\\/*?:"<>|]', '', folder_name)
-    folder_path = os.path.join("../frames/", safe_name, "raw_frames")
+    folder_path = os.path.join("../data/frames/frames/", safe_name, "raw_frames")
     os.makedirs(folder_path, exist_ok=True)
     return folder_path
 
@@ -73,7 +73,7 @@ def main():
     ap = argparse.ArgumentParser(description="Extract frames from videos")
     ap.add_argument('--start', type=int, default=0, help='Start index of video list')
     ap.add_argument('--end', type=int, default=-1, help='End index of video list (-1 = all)')
-    ap.add_argument("--video_dir", default="../rawvideos/downloaded_videos", help="Path to video root")
+    ap.add_argument("--video_dir", default="../rawvideos/conventional_videos", help="Path to video root")
     args = ap.parse_args()
 
     video_dir = args.video_dir
