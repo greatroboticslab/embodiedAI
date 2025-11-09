@@ -129,12 +129,40 @@ def caption_all_folders(root_folder, output_dir):
       JSON: <output_dir>/<basename(root)>_captions_MiniCPM/<video_id>/<video_id>_captions_MiniCPM.json
     """
     print("Loading model and tokenizer...")
-    model_id = 'openbmb/MiniCPM-V'
-    model = AutoModel.from_pretrained(model_id, trust_remote_code=True, torch_dtype=torch.float32)
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    model = model.to(device)
+    # model_id = 'openbmb/MiniCPM-V'
+    # model = AutoModel.from_pretrained(model_id, trust_remote_code=True, torch_dtype=torch.float32)
+    # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    # model = model.to(device)
+    # model.eval()
+    # tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
+    model_id = "openbmb/MiniCPM-V"
+
+    # Tokenizer (slow version avoids some platform/Rust issues)
+    tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True, use_fast=False)
+
+    # Model
+    use_cuda = torch.cuda.is_available()
+    device = torch.device("cuda" if use_cuda else "cpu")
+    dtype = torch.float16 if use_cuda else torch.float32
+
+    if use_cuda:
+        print(f"Using GPU: {torch.cuda.get_device_name(0)}")
+    else:
+        print("WARNING: CUDA not available. Using CPU (will be slow)")
+
+    model = AutoModel.from_pretrained(
+        model_id,
+        trust_remote_code=True,
+        torch_dtype=dtype,
+    ).to(device)
+
+    # Force all parameters and buffers to the correct dtype
+    if use_cuda:
+        model = model.half()  # Convert everything to float16
+    else:
+        model = model.float()  # Convert everything to float32
+
     model.eval()
-    tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
     print("Model and tokenizer loaded.")
 
     root_folder = os.path.abspath(root_folder)
