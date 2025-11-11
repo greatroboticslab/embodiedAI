@@ -1,0 +1,13 @@
+name: llava
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - python-docx>=0.8.11
+    - Pillow>=9.0.0
+    - requests>=2.28.0
+    - ollama>=0.1.0
