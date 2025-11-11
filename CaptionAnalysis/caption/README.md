@@ -10,7 +10,7 @@
     cd CaptionAnalysis/caption/llava
     conda env create -f environment.yml
     conda activate llava
-    ollama pull llava
+    ollama pull llava #if not downloaded
     python llava_caption.py --src_dir path/to/frames --out_dir output/path
     
     
