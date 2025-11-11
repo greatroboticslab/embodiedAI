@@ -119,7 +119,6 @@ def caption_folder_to_docx_and_json(
                     "Include any readable text, equations, or graph types visible on the screen. "
                     "Do not infer topics or intentions beyond what can be seen."
                 )
-
                 stream = generate_image_desc(image_path, llava_model, prompt)
                 caption = ''.join(stream_parser(stream))
 
@@ -226,7 +225,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         '--out_dir',
-        default="../../data/minicpm_caption",
+        default="../../data/llava_caption",
         help='Output directory to store caption documents'
     )
     args = parser.parse_args()
