@@ -7,10 +7,10 @@
 #SBATCH --output=../logs/minicpm_caption.out # Standard output
 #SBATCH --error=../logs/minicpm_caption.err # Standard error
 
-module load anaconda
+source /jet/home/byler/miniconda3/etc/profile.d/conda.sh
 conda activate minicpm
 
 set -x
 
 echo "Generating MiniCPM captions..."
-conda run -n minicpm python minicpm_caption.py --src_dir $1 --out_dir $2
+python minicpm_caption.py --src_dir $1 --out_dir $2

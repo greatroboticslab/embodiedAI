@@ -15,4 +15,4 @@ conda activate llava
 set -x
 
 echo "Generating Llava captions..."
-python llava_captions.py --src_dir "$1" --out_dir "$2"
+python llava_caption.py --src_dir "$1" --out_dir "$2"
