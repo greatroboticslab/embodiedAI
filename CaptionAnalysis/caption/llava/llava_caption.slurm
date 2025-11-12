@@ -10,7 +10,7 @@
 #SBATCH --error=../logs/llava_captions_%j.err
 
 source /jet/home/byler/miniconda3/etc/profile.d/conda.sh
-conda activate llava
+conda activate llava_caption
 
 set -x
 
