@@ -1,0 +1,1 @@
+rsync -avhP --ignore-existing ../data/frames byler@bridges2.psc.edu:/ocean/projects/cis240145p/byler/ben/embodiedAI/VideoAnalysis/data/
