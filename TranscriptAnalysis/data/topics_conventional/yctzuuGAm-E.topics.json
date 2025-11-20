@@ -1,0 +1,226 @@
+{
+  "video_id": "yctzuuGAm-E",
+  "title": "yctzuuGAm-E",
+  "url": "https://www.youtube.com/watch?v=yctzuuGAm-E",
+  "created_at": "2025-09-17T12:03:59.249371+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction to RLC Filters",
+      "description": "What are RLC filters?",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 9
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.32,
+          "end_s": 64.4
+        }
+      ],
+      "coverage_text": "Several radio stations are broadcasting their programs at the same time in the same area.\nWhy don't those signals mix? It's not just radio stations. TV channels, Bluetooth, Wi-Fi,\nRF remote controllers, radio transceivers, and many other devices are sending and receiving\ndata on radio waves. All of them are working at the same time and place and they are fine.\nAlso, there are a lot of noise signals on air which are added to all those signals.\nWondering why don't those signals mix? In this video, I am going to talk about RLC filters.\nAfter watching this video, you will find answers to many questions around this subject.\nIn this video, you will see one of the most beautiful and important applications of inductors\nin electronics, I mean in practical circuits. And also, you will see how inductors and capacitors\nmake love to remove a specific noise from your circuit. Get ready for this awesome hands-on",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "How Do RLC Filters Work?",
+      "description": "The role of resistors, capacitors, and inductors",
+      "coverage_ranges": [
+        {
+          "start_idx": 10,
+          "end_idx": 19
+        }
+      ],
+      "coverage_segments": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "coverage_times": [
+        {
+          "start_s": 64.4,
+          "end_s": 141.52
+        }
+      ],
+      "coverage_text": "learning. Please stay with me until the end of this video. Let's answer this question first.\nWhy don't those signals mix? The answer is, they are mixed actually. Some newbies may think that\nthose signals are placed in separate frequency bands, so they exist on air separately and independently.\nBut this is not completely true. They are not separated. Frequency bands are abstract concepts.\nThey are not truly separated. Surprisingly, all those radio stations, TV broadcastings,\nWi-Fi, Bluetooth signals, RF remote controller signals, radio transceiver signals, and many other signals\nare mixed and form an integrated, blended and complicated signal. There is only one signal on air.\nI know, it is confusing. I want to do a simple experiment to demonstrate what I tried to say.\nI have generated these two signals using my function generator. Let's suppose that these two are radio\nsignals from different radio stations broadcast at different frequencies. It's obvious that the",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "RLC Filter Types",
+      "description": "Series, parallel, and combination filters",
+      "coverage_ranges": [
+        {
+          "start_idx": 20,
+          "end_idx": 29
+        }
+      ],
+      "coverage_segments": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "coverage_times": [
+        {
+          "start_s": 141.52,
+          "end_s": 249.60000000000002
+        }
+      ],
+      "coverage_text": "frequency of this signal is higher than this because the cycles here are more than this in same time\nperiod. What will happen if these two signals are released at the same time?\nI have generated these two signals. This is a simple resistor-based signal mixer circuit. I am going to apply these two signals here to points A and B to see what will happen at point C.\nLook here. This trace is the result at point C. When two signals exist in the same medium,\nthey will be added and form a new signal. Look here.\nLook here. This is the signal at point A. And this is the signal at point B. And this yellow trace is the result at point C.\nTwo signals in previous experiments were not an exception. This is a general rule. When two or more signals share the same medium,\neither the air or a wire, they will mix and form a new signal, usually very complex signal. In real-world applications, unwanted signals are added to signals too.\nThe radio antenna captures only one signal, which consists of all of those signals at once. Radio station signals, TV broadcasting signals, radio transceiver signals, etc.\nI want to call the signal here mixed signal. I mean this yellow trace. Suppose that these two signals are radio signals and there is a radio transmitter at point C.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Designing RLC Filters",
+      "description": "Selecting the right values for resistors, capacitors, and inductors",
+      "coverage_ranges": [
+        {
+          "start_idx": 30,
+          "end_idx": 49
+        }
+      ],
+      "coverage_segments": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "coverage_times": [
+        {
+          "start_s": 250.16000000000003,
+          "end_s": 402.7
+        }
+      ],
+      "coverage_text": "So we will have the mixed signal on the air.\nThese two radio players are capturing the mixed signal, but the first radio player has to select the first signal\nand the second device has to select the second signal.\nHere you may ask, how can radio players select and play the signal from the desired radio station?\nNice question.\nHere we need a circuit inside the radio player to select the desired signal from a mixed signal.\nSuch a circuit is called a filter. A filter is actually a pathway circuit that blocks specific frequencies and allows others to pass.\nSo, RLC filters are one of them, actually the most simple ones.\nIn RLC filters, R stands for resistor, L stands for inductor, and C stands for capacitor.\nSo, RLC filters are made up of resistors, inductors, and capacitors.\nThis circuit filters high frequency and allows low frequency to pass to point E, and this circuit filters low frequency and allows high frequency to pass to point F.\nThe frequency of the signal at point F.\nThe frequency of the signal at point F is 1 kHz and the frequency of the signal at point F is 15 kHz.\nI want to apply this yellow trace to input of these two filters and probe points E and F.\nSo, RLC filters are one of them, which is the most important ones.\nLook here, when I probe the point E, this blue trace, I mean, you see the first signal is here and the second signal, the high frequency signal, is filtered.\nThere is only the first low frequency signal at point E.\nAnd when I probe the point F, you see there is only the second signal here and the first signal is filtered.\nI know you may have questions in mind about these circuits, I mean, this one and this one, particularly about the values of the capacitors and inductors.\nWhy did I use these specific values?",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Notch Filter Example",
+      "description": "Blocking a specific frequency with an RLC filter",
+      "coverage_ranges": [
+        {
+          "start_idx": 50,
+          "end_idx": 64
+        }
+      ],
+      "coverage_segments": [
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "coverage_times": [
+        {
+          "start_s": 402.7,
+          "end_s": 492.86
+        }
+      ],
+      "coverage_text": "I will answer most of those questions later in this video.\nJust let me start from basics.\nI am going to explain the basics first and then I will talk about the capacitor, inductor and resistor rules in a filter circuit and discuss the effect of increasing or decreasing value of each component.\nAnyway, a filter is a circuit that blocks unwanted signals like noises and allows others to pass.\nA filter can be a high pass, low pass, band pass or a band stop filter.\nA notch filter is another name for a band stop filter.\nThis is a sine wave form.\nThis is a cycle.\nPeriod indicates the time it takes for the wave to complete a cycle.\nSo, frequency is the number of cycles in time units, usually in one second.\nSo, the frequency of this wave is higher than this one because it has more cycles than the first one in same amount of time.\nAnd these two waves have same frequency but the amplitude in the first one is greater than the second.\nI mean the second one is an attenuated version of the first one.\nThis is a sample frequency response.\nThis chart shows how the system will respond to incoming frequencies.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T6",
+      "title": "Impact of Resistor Value",
+      "description": "Boosting or decreasing the power of the output signal",
+      "coverage_ranges": [
+        {
+          "start_idx": 65,
+          "end_idx": 72
+        }
+      ],
+      "coverage_segments": [
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72
+      ],
+      "coverage_times": [
+        {
+          "start_s": 492.86,
+          "end_s": 528.22
+        }
+      ],
+      "coverage_text": "The x-axis indicates the frequency on a logarithmic scale.\nThe y-axis indicates the gain.\nThis system will multiply the frequencies in this range by one.\nI mean between zero and omega one.\nWhich means that the system will not change or manipulate the frequencies in this range.\nHere in this range the gain is zero.\nWhich means that the system will multiply the frequencies in this range.\nI mean between omega one and omega two by zero.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the table of contents in the required format:\n\n```\n[\n  {\n    \"title\": \"Introduction to RLC Filters\",\n    \"description\": \"What are RLC filters?\",\n    \"coverage\": [{\"start_idx\": 0, \"end_idx\": 9}]\n  },\n  {\n    \"title\": \"How Do RLC Filters Work?\",\n    \"description\": \"The role of resistors, capacitors, and inductors\",\n    \"coverage\": [{\"start_idx\": 10, \"end_idx\": 19}]\n  },\n  {\n    \"title\": \"RLC Filter Types\",\n    \"description\": \"Series, parallel, and combination filters\",\n    \"coverage\": [{\"start_idx\": 20, \"end_idx\": 29}]\n  },\n  {\n    \"title\": \"Designing RLC Filters\",\n    \"description\": \"Selecting the right values for resistors, capacitors, and inductors\",\n    \"coverage\": [{\"start_idx\": 30, \"end_idx\": 49}]\n  },\n  {\n    \"title\": \"Notch Filter Example\",\n    \"description\": \"Blocking a specific frequency with an RLC filter\",\n    \"coverage\": [{\"start_idx\": 50, \"end_idx\": 64}]\n  },\n  {\n    \"title\": \"Impact of Resistor Value\",\n    \"description\": \"Boosting or decreasing the power of the output signal\",\n    \"coverage\": [{\"start_idx\": 65, \"end_idx\": 72}]\n  }\n]\n```"
+    ]
+  }
+}

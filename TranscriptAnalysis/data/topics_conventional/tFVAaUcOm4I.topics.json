@@ -1,0 +1,89 @@
+{
+  "video_id": "tFVAaUcOm4I",
+  "title": "tFVAaUcOm4I",
+  "url": "https://www.youtube.com/watch?v=tFVAaUcOm4I",
+  "created_at": "2025-09-17T12:03:30.374263+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Adjusting the Constant",
+      "description": "Changing the constant value to affect the controller output.",
+      "evidence_quotes": [
+        "We can adjust our constant value.",
+        "If we set it to 2, the speed will be slower..."
+      ],
+      "start_s": 440.74,
+      "end_s": 508.64,
+      "id": "T1"
+    },
+    {
+      "title": "Controller Output",
+      "description": "Setting the constant value and calculating the controller output.",
+      "evidence_quotes": [
+        "Let's set our constant, kp, to some arbitrary value like 5.",
+        "So we multiply 5 by that error to get our controller output..."
+      ],
+      "start_s": 362.66,
+      "end_s": 508.64,
+      "id": "T2"
+    },
+    {
+      "title": "Cruise Control System",
+      "description": "Designing a controller for the cruise control system.",
+      "evidence_quotes": [
+        "Now, let's turn our attention back to the cruise control system that we're designing...",
+        "We'll say our accelerator position can go from 0 to 10 centimeters."
+      ],
+      "start_s": 459.6,
+      "end_s": 523.42,
+      "id": "T3"
+    },
+    {
+      "title": "Error and Speed",
+      "description": "Graphing the error and speed, and how they change over time.",
+      "evidence_quotes": [
+        "If we graph our error and speed, we should see something like this.",
+        "The error starts at 10 kilometers, and the speed is proportionally high, at 50 kilometers per hour."
+      ],
+      "start_s": 417.46,
+      "end_s": 467.74,
+      "id": "T4"
+    },
+    {
+      "title": "PID Controller Tuning",
+      "description": "Tuning a PID controller involves adjusting kp, ki, and kd to achieve optimal performance.",
+      "evidence_quotes": [],
+      "start_s": 2176.8599999999997,
+      "end_s": 2362.1800000000003,
+      "id": "T5"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here are the extracted topics in a strict JSON format:\n\n```\n[\n  {\n    \"title\": \"Controller Output\",\n    \"description\": \"Setting the constant value and calculating the controller output.\",\n    \"evidence_quotes\": [\"Let's set our constant, kp, to some arbitrary value like 5.\", \"So we multiply 5 by that error to get our controller output...\"],\n    \"time_range\": \"00:06:02.660–00:08:28.640\"\n  },\n  {\n    \"title\": \"Error and Speed\",\n    \"description\": \"Graphing the error and speed, and how they change over time.\",\n    \"evidence_quotes\": [\"If we graph our error and speed, we should see something like this.\", \"The error starts at 10 kilometers, and the speed is proportionally high, at 50 kilometers per hour.\"],\n    \"time_range\": \"00:06:57.460–00:07:47.740\"\n  },\n  {\n    \"title\": \"Adjusting the Constant\",\n    \"description\": \"Changing the constant value to affect the controller output.\",\n    \"evidence_quotes\": [\"We can adjust our constant value.\", \"If we set it to 2, the speed will be slower...\"],\n    \"time_range\": \"00:07:20.740–00:08:28.640\"\n  },\n  {\n    \"title\": \"Cruise Control System\",\n    \"description\": \"Designing a controller for the cruise control system.\",\n    \"evidence_quotes\": [\"Now, let's turn our attention back to the cruise control system that we're designing...\", \"We'll say our accelerator position can go from 0 to 10 centimeters.\"],\n    \"time_range\": \"00:07:39.600–00:08:43.420\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here are the coherent topics extracted from the transcript segment:\n\n```\n[\n  {\n    \"title\": \"PID Controller\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"This is known as a PID controller.\", \"The process quickly approaches the set point and settles there with no overshoot. This is known as a critically damped response.\"],\n    \"time_range\": \"00:14:41–00:17:15\"\n  },\n  {\n    \"title\": \"Derivative Term\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"We multiply the rate of change in the error by some constant, KD.\", \"The derivative term will be a negative number with a large magnitude.\"],\n    \"time_range\": \"00:15:05–00:16:09\"\n  },\n  {\n    \"title\": \"Numerical Estimations\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"So we turn to numerical estimations again to help us out.\", \"We can approximate the derivative by simply subtracting the current error value from the previous error value and dividing that by our sampling interval time.\"],\n    \"time_range\": \"00:15:41–00:16:02\"\n  },\n  {\n    \"title\": \"PID Controller Example\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"Let's see how this works with an example.\", \"Here we've added the proportional, integral, and derivative terms.\"],\n    \"time_range\": \"00:15:20–00:17:02\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 2,
+        "attempts": [
+          "Here is the extracted coherent topic with the provided transcript segment:\n\n```\n[\n  {\n    \"title\": \"PID Controller Tuning\",\n    \"description\": \"Tuning a PID controller involves adjusting kp, ki, and kd to achieve optimal performance.\",\n    \"evidence_quotes\": [\n      [\"00:19:01.100 → 00:19:05.220\", \"You then increase kp until the output oscillates with some steady state offset.\"],\n      [\"00:19:13.060 → 00:19:16.180\", \"Finally, adjust kd to remove the oscillations.\"],\n      [\"00:21:02.780 → 00:21:07.240\", \"You would also need to spend some time tuning the 3k constants...\"]\n    ],\n    \"time_range\": \"00:19:01.100–00:22:06.420\"\n  }\n]\n```"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "video_id": "EdUAecpYVWQ",
+  "title": "EdUAecpYVWQ",
+  "url": "https://www.youtube.com/watch?v=EdUAecpYVWQ",
+  "created_at": "2025-09-17T11:56:05.802405+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Resistance of a Diode",
+      "description": "Discussion on how the resistance of a diode changes with applied voltage.",
+      "evidence_quotes": [
+        "[00:05:27.200 → 00:05:28.200] That is equal to 0.1A.",
+        "[00:06:23.040 → 00:06:27.900] Now, if you see the VI characteristic of this ideal diode, then you can observe that even"
+      ],
+      "start_s": 327.59999999999997,
+      "end_s": 469.47999999999996,
+      "id": "T1"
+    },
+    {
+      "title": "Threshold Voltage of a Diode",
+      "description": "Explanation of how a diode's threshold voltage affects its behavior.",
+      "evidence_quotes": [
+        "[00:06:52.220 → 00:06:56.960] So, up to certain threshold voltage, the diode will not allow any flow of current.",
+        "[00:07:23.700 → 00:07:28.400] So, actually the diode will start conducting once the applied voltage crosses this threshold"
+      ],
+      "start_s": 412.62,
+      "end_s": 469.47999999999996,
+      "id": "T2"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here are the coherent topics extracted from the provided transcript segment:\n\n```\n[\n  {\n    \"title\": \"Resistance of a Diode\",\n    \"description\": \"Discussion on how the resistance of a diode changes with applied voltage.\",\n    \"evidence_quotes\": [\n      \"[00:05:27.200 → 00:05:28.200] That is equal to 0.1A.\",\n      \"[00:06:23.040 → 00:06:27.900] Now, if you see the VI characteristic of this ideal diode, then you can observe that even\"\n    ],\n    \"time_range\": \"00:05:27.200–00:07:49.080\"\n  },\n  {\n    \"title\": \"Threshold Voltage of a Diode\",\n    \"description\": \"Explanation of how a diode's threshold voltage affects its behavior.\",\n    \"evidence_quotes\": [\n      \"[00:06:52.220 → 00:06:56.960] So, up to certain threshold voltage, the diode will not allow any flow of current.\",\n      \"[00:07:23.700 → 00:07:28.400] So, actually the diode will start conducting once the applied voltage crosses this threshold\"\n    ],\n    \"time_range\": \"00:06:52.220–00:07:49.080\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here is the extracted coherent topic with topics from 00:11:42.000 to 00:15:37.680:\n\n```\n[\n  {\n    \"title\": \"Diode Resistance\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"So, for example, in this case, let us assume that the diode has a resistance of 25 ohms.\", \"Because what we have done, we have segmented the actual characteristic curve into three regions: forward region, reverse saturation region and breakdown region.\"],\n    \"time_range\": \"00:11:42.000–00:15:37.680\"\n  }\n]\n```"
+        ]
+      }
+    ]
+  }
+}

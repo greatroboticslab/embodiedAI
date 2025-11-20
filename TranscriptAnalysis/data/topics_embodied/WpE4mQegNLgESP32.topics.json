@@ -1,0 +1,302 @@
+{
+  "video_id": "WpE4mQegNLg",
+  "title": "WpE4mQegNLg",
+  "url": "https://www.youtube.com/watch?v=WpE4mQegNLg",
+  "created_at": "2025-10-09T17:32:54.708418+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction",
+      "description": "Getting started with Dwin HMI display and ESP32 project tutorial.",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 5
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.72,
+          "end_s": 52.0
+        }
+      ],
+      "coverage_text": "Hello friends welcome to the IoT projects in this video we will make smart home automation IoT\nproject using ESP32, Dwin HMI display, relay module and few sensors.\nUsing this project you can easily control your AC home appliances like lights, fan,\nAC, TV etc and also monitor the real-time sensor data. So for the demonstration purpose I am using\nDST22 temperature and humidity sensor and LDR sensor but you can also use DST11 sensor which is more\ncheaper. This is a 7 inch Dwin HMI touch display here you can monitor the temperature humidity",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Configuring the Project",
+      "description": "Explaining the necessary steps to create a smart home UI with Dwin HMI display and ESP32.",
+      "coverage_ranges": [
+        {
+          "start_idx": 6,
+          "end_idx": 17
+        }
+      ],
+      "coverage_segments": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "coverage_times": [
+        {
+          "start_s": 52.0,
+          "end_s": 149.76
+        }
+      ],
+      "coverage_text": "and LDR sensor real-time sensor value. You can also use this project as a smart thermostat controller\nwhere you can turn on and off the devices based on a sensor threshold value like turning on fan or AC\nautomatically when the temperature value reaches a defined threshold value. Below sensor value widget\nyou can see the four control buttons to control your home appliances. You can click on the toggle switch\nto turn on and off the relay and here you can attach four different AC appliances to the relay module and\nin this demo I haven't connected home appliances to the relay but you can easily connect 220 to 250 volt\nAC appliances and control them using this project. This project is a local area network based project in which\nyou don't need an active internet connection to control and monitor your home appliances.\nHere I am configuring the ESP32 web server in soft app mode. So you just connect to the ESP32 smart home\nWi-Fi access point by entering its password then enter the IP address of the ESP32 board on your\nweb browser to monitor the real-time sensor data and control your appliances remotely using your\nsmartphone or PC. So you don't need any Wi-Fi connection to control and monitor your home appliances.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Adding Modules",
+      "description": "Creating modules for sensors and appliances using var icon module and increment adjustment module.",
+      "coverage_ranges": [
+        {
+          "start_idx": 18,
+          "end_idx": 51
+        }
+      ],
+      "coverage_segments": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "coverage_times": [
+        {
+          "start_s": 149.76,
+          "end_s": 465.2
+        }
+      ],
+      "coverage_text": "During this video I have shared a complete circuit diagram, Arduino source code, doing display GUI designing\nprocess etc. So you can easily make this project at your home.\nAlthough you can make this project easily using ESP32 relay module, DHT sensor and LDR sensor but it is better to use\ncustom PCB for this project to avoid any loose connection. So I have designed a custom PCB for this project.\nYou can go to the download links to download the project Gerber file and order the PCB directly from\npcbware.com. pcbware.com is one-stop solution for your all the PCB needs like PCB prototyping,\nSMD stencil, PCB assembly, etc. Currently they have moved to a new factory and offering you up to 20%\ndiscount on 4 layer PCB and 6 layer PCB. PCBWare provides high quality material TG150 to 160 but keeps the same\nprice with TG130 to 140. So get your first prototype PCB ready from pcbware.com.\nThe link is in the description below. Just click on the PCB instant code tab then click on quick order PCB.\nNow upload your Gerber file. Select your preferred shipping method and place your order.\nNow let's assemble all the components and for that you have to connect the GST22 or GST11 sensor,\nLDR sensor and the relay module to the ESP32 board. So first we interface the sensor and then relays and\nmake a serial communication to the display using RX2 and TX2 pins on the display module. Now connect the\nsensor relay module and doing HMI display to the ESP32 as shown here. Also provide the AC source to your home\nappliances as shown in the circuit diagram. Now let us visit the official website of dwingglobal.com.\nYou can see the Dwing company making a wide range of high quality touch screen for android LCD, HDMI LCD and\nLinux LCD display. Under the download section go to the tools and download the DGUS Dwing graphic\nutilized software that is DGUS software and XR21X driver. The driver is for HDL662B board. We don't need to\ninstall this DGUS software. Under this DGUS folder you can see some executable files which includes tools\nlike ICL tool, front generating tool, image resizing tool etc. inside this DGUS software.\nInside XR21X folder there are the driver files. You need to install the driver on your PC to establish\nthe communication between HDL662B and your PC. Double click the executable file to launch the\ndriver installer. Now click on the install to install the driver on your windows PC.\nAfter installing the DGUS software and the driver open the DGUS.exe file. By default the software\nlanguage is in Chinese. So go to the settings and change it to English. Now click on new to create a new\nproject. Select the screen resolution of 800 by 480 pixels. Choose your project folder path.\nIn this demonstration I am creating a new folder doing smart home and selecting the same folder path.\nNow you need to prepare images for your project. Here I have already created images and icons for my\nproject. You can name your project images and icon folder as 32, 42, 46, 56, 58, 62, 64 and so on.\nBecause we need to create an ICL file of these pictures later and memory is divided into different section.\nIn this tutorial under 32 folder I have placed images of my UI. Make sure that your image resolution is 800 by 480 pixels\nand is in .bmp format. Under the 46 folder I have placed icon files. Similarly on the 62 folder I have placed the\nnumber icon files. Now add your project images from 32 folder. Here I have a single image. We should create",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Generating Files",
+      "description": "Saving the project as touch file, show file, and config bin files.",
+      "coverage_ranges": [
+        {
+          "start_idx": 52,
+          "end_idx": 58
+        }
+      ],
+      "coverage_segments": [
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ],
+      "coverage_times": [
+        {
+          "start_s": 465.2,
+          "end_s": 529.4399999999999
+        }
+      ],
+      "coverage_text": "ICL files of our images. So for that go to the settings menu and click on DGUS. After a new window will pop up.\nNow click on ICL tool. Here you need to select the images and generate the ICL file.\nSave this file with the name 32 under the doing set folder. Similarly choose the button icon and generate\nthe ICL file as 46.icl under the same doing set folder. Finally select the number icons and generate the\n62.icl file under the same doing under score set folder.\nWe have successfully generated 3 ICL files. Now it's time to add functions to our UI. Here select the\n00.bmp image then click on icon display menu. Let's create an artistic variables. Select the area and here",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Previewing the UI",
+      "description": "Showing the preview of the smart home UI on the Dwin HMI display.",
+      "coverage_ranges": [
+        {
+          "start_idx": 59,
+          "end_idx": 64
+        }
+      ],
+      "coverage_segments": [
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "coverage_times": [
+        {
+          "start_s": 529.44,
+          "end_s": 585.52
+        }
+      ],
+      "coverage_text": "you need to assign the vp address for this module. I am choosing 1000 as a vp address and selecting your\nicon file as 62. Now select the start icon as 0. Under the variable byte choose the integer 2 byte and integer\ndigit as 2. Set the initial value as 0.\nYou can also set the initial number as a highest value of your sensor data and resize the artistic variable\naccording to your need and requirement. Now copy this module and place them on the humidity and LDR sensor\nwidget. But don't forget to change their vp address to 1500 and 2000 respectively. You can also change the",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T6",
+      "title": "Uploading the Project to the Display",
+      "description": "Explaining how to upload the project file to the Dwin HMI display using HD card and T5L download tool.",
+      "coverage_ranges": [
+        {
+          "start_idx": 65,
+          "end_idx": 71
+        }
+      ],
+      "coverage_segments": [
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71
+      ],
+      "coverage_times": [
+        {
+          "start_s": 585.52,
+          "end_s": 663.44
+        }
+      ],
+      "coverage_text": "variable type if needed. Now let's design our toggle switch button for controlling appliances like light, fan,\nAC, TV etc. Go to icon display menu and choose the var icon display. Select the area where you want to display your icons.\nAs always resize the module as your needs and choose the vp address as 2500.\nChoose the icon ICL file as 46.icl. When the value is minimum, select the off icon that is 0 icon\nand similarly set the maximum value as 1 and select the on icon that is 1 icon and keep the display module as\ntransparent. Now copy the var icon module and paste them onto fan, TV, AC, controller widget area and change\ntheir vp addresses. For light the vp address is 2500, for fan 3000 and for tv 3500 and for AC 4000.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T7",
+      "title": "Sending and Receiving Data",
+      "description": "Explaining how data is sent from the ESP32 web server to the Dwin HMI display and received back.",
+      "coverage_ranges": [
+        {
+          "start_idx": 72,
+          "end_idx": 85
+        }
+      ],
+      "coverage_segments": [
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85
+      ],
+      "coverage_times": [
+        {
+          "start_s": 666.32,
+          "end_s": 799.0400000000001
+        }
+      ],
+      "coverage_text": "Now from the touch control menu select the increment adjustment module. You can resize the module then select the data\nauto uploading. Click on no button effect. Give the same vp address as 2500. Click on low byte. Select the\nadjust method as plus plus and over limit operation as a cycle. Similarly adjust the step length to 1 and\nupper limit to 1. Finally set the touch effect as disposable setting. Also copy and paste the incremental\nadjustment module and set their vp addresses accordingly. Finally we have completed adding modules to our UI.\nNow click on save and generate to generate 13 touch file, 14 show file and 22 config bin files.\nNow you can preview the UI of our project from the display menu. Click on preview from the first page and you can see\nour newly created UI in a pop-up window. Here we cannot see the artistic variable and button icon module.\nThey will be visible when we upload the project to our display.\nSo let's quickly do that. If you don't know how to upload the project to this touch display then follow\nmy previous getting started tutorial in which I have explained two processes to upload the project to\nour display using HD card and T5L download tool. So this is the result of our newly created UI after\nuploading the project file to the display. As in this project we are sending data to ESP32 web server as\nwell as on the Dwin HMI display. And we are also receiving the data from both web server and display to the ESP32 module.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T8",
+      "title": "Conclusion and Next Steps",
+      "description": "Summarizing the smart home controller project and encouraging viewers to like and subscribe.",
+      "coverage_ranges": [
+        {
+          "start_idx": 86,
+          "end_idx": 104
+        }
+      ],
+      "coverage_segments": [
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104
+      ],
+      "coverage_times": [
+        {
+          "start_s": 799.04,
+          "end_s": 939.12
+        }
+      ],
+      "coverage_text": "So for sending purpose I am sending the frame with a VP address of that sensor value and that value is updating on the display.\nSimilarly for receiving I am checking the serial receive frame for a particular button\nand that value of the program. So let's see if you can see the code and select the code and select the code.\nMost of the code are similar to our previous project. You can watch those videos if you are viewing our videos for the first time.\nI have already explained them in detail. Now select your ESP32 dev kit and correct COM port to upload this program into your ESP32 board.\nClick on the upload button to upload the code and after successful upload of this program you can see this project into the action.\nNow you can also see the real-time sensor data on the Dwin HMI display.\nYou can see the value increasing and decreasing when the light source is moved onto the LDR sensor.\nThis is a single page smart home UI where you can monitor the sensor data and control appliances from the same screen.\nYou can control your home appliances connected through this four channel relay module.\nYou can also see the user's mobile device.\nWe have also configured the ESP32 web server in soft IP mode.\nSo you just connect the smartphone to ESP32 smart home Wi-Fi access point by entering its password.\nThen enter the IP address of the ESP board on your browser to monitor real-time sensor data and control your\nappliances remotely using your smartphone or PC.\nSo you don't need any Wi-Fi connection to control and monitor your home appliances.\nSo we have successfully made this smart home controller project with Dwin HMI display and ESP32.\nSo you can see the UI looks pretty good in this HMI display.\nI hope the tutorial was helpful to you.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the table of contents in the required format:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"Getting started with Dwin HMI display and ESP32 project tutorial.\",\n    \"coverage\": [\n      { \"start_idx\": 0, \"end_idx\": 5 }\n    ]\n  },\n  {\n    \"title\": \"Configuring the Project\",\n    \"description\": \"Explaining the necessary steps to create a smart home UI with Dwin HMI display and ESP32.\",\n    \"coverage\": [\n      { \"start_idx\": 6, \"end_idx\": 17 }\n    ]\n  },\n  {\n    \"title\": \"Adding Modules\",\n    \"description\": \"Creating modules for sensors and appliances using var icon module and increment adjustment module.\",\n    \"coverage\": [\n      { \"start_idx\": 18, \"end_idx\": 51 }\n    ]\n  },\n  {\n    \"title\": \"Generating Files\",\n    \"description\": \"Saving the project as touch file, show file, and config bin files.\",\n    \"coverage\": [\n      { \"start_idx\": 52, \"end_idx\": 58 }\n    ]\n  },\n  {\n    \"title\": \"Previewing the UI\",\n    \"description\": \"Showing the preview of the smart home UI on the Dwin HMI display.\",\n    \"coverage\": [\n      { \"start_idx\": 59, \"end_idx\": 64 }\n    ]\n  },\n  {\n    \"title\": \"Uploading the Project to the Display\",\n    \"description\": \"Explaining how to upload the project file to the Dwin HMI display using HD card and T5L download tool.\",\n    \"coverage\": [\n      { \"start_idx\": 65, \"end_idx\": 71 }\n    ]\n  },\n  {\n    \"title\": \"Sending and Receiving Data\",\n    \"description\": \"Explaining how data is sent from the ESP32 web server to the Dwin HMI display and received back.\",\n    \"coverage\": [\n      { \"start_idx\": 72, \"end_idx\": 85 }\n    ]\n  },\n  {\n    \"title\": \"Conclusion and Next Steps\",\n    \"description\": \"Summarizing the smart home controller project and encouraging viewers to like and subscribe.\",\n    \"coverage\": [\n      { \"start_idx\": 86, \"end_idx\": 104 }\n    ]\n  }\n]\n```"
+    ]
+  }
+}

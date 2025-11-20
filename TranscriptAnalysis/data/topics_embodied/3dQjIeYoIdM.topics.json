@@ -1,0 +1,60 @@
+{
+  "video_id": "3dQjIeYoIdM",
+  "title": "3dQjIeYoIdM",
+  "url": "https://www.youtube.com/watch?v=3dQjIeYoIdM",
+  "created_at": "2025-10-12T22:57:25.168759+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Audio Input Modulation",
+      "description": "The process of modulating an audio signal to drive a class D amplifier.",
+      "evidence_quotes": [
+        "Since the 555 timer creates a triangle voltage between around 1.3 and 2.3 of the supply voltage, we also have to use a potentiometer to add a DC offset to the sine wave...",
+        "If we now take a look at the output of the comparator, we can see how the slowly changing 1Hz sine wave creates the modulated high-frequent square wave."
+      ],
+      "start_s": 339.0,
+      "end_s": 375.0,
+      "id": "T1"
+    },
+    {
+      "title": "Class D Amplifier Circuit",
+      "description": "The class D amplifier circuit design and testing process.",
+      "evidence_quotes": [
+        "So I replaced the function generator with my smartphone and tested the music playback capabilities of the amp.",
+        "Now of course, this circuit is definitely not perfect. However, the audio quality is pretty decent."
+      ],
+      "start_s": 339.0,
+      "end_s": 479.0,
+      "id": "T2"
+    },
+    {
+      "title": "Class D-Amp Power and Music Playback",
+      "description": "The class D amplifier's power capabilities and music playback features.",
+      "evidence_quotes": [
+        "And as you would have expected it, by increasing the frequency of the sine wave, we produce higher tones, which means that the amp works without a problem.",
+        "As you can hear, the music playback also worked like a charm, but the volume was a bit low."
+      ],
+      "start_s": 400.0,
+      "end_s": 431.0,
+      "id": "T3"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "The coherent topics that can be extracted from this transcript segment are:\n\n1. The construction of a class D amplifier circuit using 555 timers, comparators, and op-amps.\n\n2. The functionality of the class D amplifier in amplifying audio signals and producing higher tones with increasing frequency.\n\n3. The testing of the amplifier's music playback capabilities using a smartphone as the input signal source.\n\n4. The addition of an LM386 op-amp to amplify the input audio signal, resulting in a louder playback volume.\n\n5. The limitations of the circuit, acknowledging that it is not perfect but still produces decent audio quality.\n\nThese topics can be deduced from the transcript segment's discussion on the design and testing of the class D amplifier circuit.",
+          "Here is the extracted data in JSON format:\n\n```\n[\n  {\n    \"title\": null,\n    \"description\": null,\n    \"evidence_quotes\": [\n      \"Since the 555 timer creates a triangle voltage between around 1.3 and 2.3 of the supply voltage\",\n      \"As you can hear, the music playback also worked like a charm, but the volume was a bit low\",\n      \"However, the audio quality is pretty decent\",\n      \"If so, don't forget to like, share and subscribe\"\n    ],\n    \"time_range\": [\"0:00\", \"7:58\"]\n  }\n]\n```\n\nLet me know if you'd like me to extract any specific topics or quotes for you!",
+          "Here are the extracted coherent topics with their respective title, description, and evidence quotes:\n\n```\n[\n  {\n    \"title\": \"Class D Amplifier Circuit\",\n    \"description\": \"The class D amplifier circuit design and testing process.\",\n    \"evidence_quotes\": [\"So I replaced the function generator with my smartphone and tested the music playback capabilities of the amp.\", \"Now of course, this circuit is definitely not perfect. However, the audio quality is pretty decent.\"],\n    \"time_range\": \"00:05:38–00:07:58\"\n  },\n  {\n    \"title\": \"Audio Input Modulation\",\n    \"description\": \"The process of modulating an audio signal to drive a class D amplifier.\",\n    \"evidence_quotes\": [\"Since the 555 timer creates a triangle voltage between around 1.3 and 2.3 of the supply voltage, we also have to use a potentiometer to add a DC offset to the sine wave...\", \"If we now take a look at the output of the comparator, we can see how the slowly changing 1Hz sine wave creates the modulated high-frequent square wave.\"],\n    \"time_range\": \"00:05:38–00:06:14\"\n  },\n  {\n    \"title\": \"Class D-Amp Power and Music Playback\",\n    \"description\": \"The class D amplifier's power capabilities and music playback features.\",\n    \"evidence_quotes\": [\"And as you would have expected it, by increasing the frequency of the sine wave, we produce higher tones, which means that the amp works without a problem.\", \"As you can hear, the music playback also worked like a charm, but the volume was a bit low.\"],\n    \"time_range\": \"00:06:39–00:07:10\"\n  }\n]\n```\n\nPlease note that these topics are based on the provided transcript segment and may not represent the entire content of the video or the speaker's intended meaning."
+        ]
+      }
+    ]
+  }
+}

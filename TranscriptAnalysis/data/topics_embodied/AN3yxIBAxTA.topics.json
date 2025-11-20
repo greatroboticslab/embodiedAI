@@ -1,0 +1,262 @@
+{
+  "video_id": "AN3yxIBAxTA",
+  "title": "AN3yxIBAxTA",
+  "url": "https://www.youtube.com/watch?v=AN3yxIBAxTA",
+  "created_at": "2025-10-09T17:30:44.759852+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction to PID Control for Drones",
+      "description": "Overview of PID control and its application to drone stabilization.",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 5
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.96,
+          "end_s": 32.64
+        }
+      ],
+      "coverage_text": "This is a brushless motor one-axis PID control example.\nIn general, all flying machines use this kind of feedback control in order to fly straight.\nTo control the inclination angle, the system uses the MPU6050 gyro and accelerometer\nand to control the movement, these two brushless motors.\nThe idea of this tutorial is to understand how PID control works inside of a drone flight controller\nin order to be able to create our own flight controller code for the fully Arduino based project.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "PID Algorithm Explanation",
+      "description": "Detailed explanation of the PID algorithm and how it is used for drone stabilization.",
+      "coverage_ranges": [
+        {
+          "start_idx": 6,
+          "end_idx": 15
+        }
+      ],
+      "coverage_segments": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "coverage_times": [
+        {
+          "start_s": 34.08,
+          "end_s": 92.08
+        }
+      ],
+      "coverage_text": "So let's get started.\nWhat's up my friends, welcome back.\nIn this video we will see an example of PID control for one axis movement.\nOnce we see how the control works for just one axis, we could apply the code for two axis in case of a drone.\nThe first thing to do is to build a balance for our test.\nFor that I've used a 55 cm long square meter bar.\nI've drilled a hole exactly in the middle.\nThen I've passed an 8 mm screw through the hole and through some bearings.\nI fit in place the two bearings to a wood support and screw in place this wood support to a wood base.\nThe only thing left is to make some holes in both ends of the metal bar.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Setting up the Drone System",
+      "description": "Description of the setup process for the drone system, including power supply and motor initialization.",
+      "coverage_ranges": [
+        {
+          "start_idx": 16,
+          "end_idx": 20
+        }
+      ],
+      "coverage_segments": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "coverage_times": [
+        {
+          "start_s": 93.68,
+          "end_s": 125.84
+        }
+      ],
+      "coverage_text": "Through these holes I'll pass some zip ties and tighten place two brushless motors.\nThe motors are connected following this schematic.\nI've soldered the ESCs to each motor and make sure that the motors will spin in these directions.\nI've soldered together the supply wires of each ESCs and added a LiPo connector to the end.\nTo supply the motors you could use a 3S LiPo battery or as in my case a PC power supply with 12V output,",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Measuring IMU Data and Calculating Angle",
+      "description": "Explanation of how to measure IMU data and calculate the angle using acceleration and gyro values.",
+      "coverage_ranges": [
+        {
+          "start_idx": 21,
+          "end_idx": 29
+        }
+      ],
+      "coverage_segments": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "coverage_times": [
+        {
+          "start_s": 125.84,
+          "end_s": 174.72
+        }
+      ],
+      "coverage_text": "since I will be using the motors for a long time for multiple tests.\nNow the next step is to add the Arduino microcontroller and the MPU 6050 IMU board.\nUsing a breadboard I make these connections from the Arduino to the module and connect ground and signal to the two ESCs.\nNow make sure that you place the IMU board as center as you can between the two motors.\nI've used a small balsa wood board and some double side tape to fit everything in place.\nNow the circuit is ready.\nThe MPU 6050 I2C connection is done.\nThe ESC signals are connected and the power supply is ready to go.\nThe only thing left is to program the Arduino.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "PID Control Implementation",
+      "description": "Implementation of the PID control algorithm for drone stabilization, including calculation of error, proportional, integral, and derivative values.",
+      "coverage_ranges": [
+        {
+          "start_idx": 30,
+          "end_idx": 40
+        }
+      ],
+      "coverage_segments": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "coverage_times": [
+        {
+          "start_s": 176.56,
+          "end_s": 238.88
+        }
+      ],
+      "coverage_text": "Ok, so let's understand what PID control is.\nPID stands for proportional, integral and derivative control.\nIn our case we want to control the angle of the metal bar since we want the drone to fly straight,\nhorizontal and without wobbling around.\nThese brushless motors are very powerful and any small change of power will spin the metal bar to the left or to the right.\nWe need a fast and accurate control of the angle.\nOk, so the MPU 6050 module will give us gyro and acceleration data.\nUsing this data and applying some filters we obtain the real inclination angle of the metal bar.\nWe will see the entire code and how to obtain the data and the angle a little bit later.\nFirst, let's see how we will proceed.\nOk, so we know the real angle of the metal bar and we want it to stay always at 0 degrees which is perfectly horizontal.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T6",
+      "title": "Applying PID Control to Motors",
+      "description": "Explanation of how to apply the PID control output to the motors, including setting maximum and minimum throttle values.",
+      "coverage_ranges": [
+        {
+          "start_idx": 41,
+          "end_idx": 44
+        }
+      ],
+      "coverage_segments": [
+        41,
+        42,
+        43,
+        44
+      ],
+      "coverage_times": [
+        {
+          "start_s": 240.24,
+          "end_s": 270.48
+        }
+      ],
+      "coverage_text": "The maximum angle to the right will be in this case around 45 degree.\nOk, so let's imagine now that we power up the motors with no control at all.\nThe brushless motors will be always different respecting the power.\nIt's almost impossible to have the same output power for the same signal since the motors are mechanical things and even a small difference will make a motor have more power than the other one.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T7",
+      "title": "PID Control Testing and Results",
+      "description": "Testing and results of the PID control algorithm for drone stabilization, including demonstration of metal bar stabilization.",
+      "coverage_ranges": [
+        {
+          "start_idx": 45,
+          "end_idx": 55
+        }
+      ],
+      "coverage_segments": [
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "coverage_times": [
+        {
+          "start_s": 270.48,
+          "end_s": 340.56
+        }
+      ],
+      "coverage_text": "So even with the same speed signal the metal bar will lean to the direction of the less powerful motor.\nIn this case, the PID control will work in the following way.\nI think this is the most common representation of a PID control that you could find.\nAs you can see, we have our process that in this case will be the movement of the motors to keep the metal bar horizontal.\nAfter the process, we have our feedback to the system that in this case is the real angle that the IMU unit will give us.\nNow we first have to calculate the error of our control.\nThis error is the difference between a desired value and the real value of the system.\nIn our case, our desired value is zero degree angle of the metal bar and the real value is the data received from the IMU unit.\nSo, the first thing to do is to create a variable and name it error.\nWe will give the difference value between the real angle and zero to this variable.\nNow we have our error value in each loop.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T8",
+      "title": "Conclusion and Future Plans",
+      "description": "Conclusion of the video and future plans to adapt this code for flight controllers and multiple axes.",
+      "coverage_ranges": [
+        {
+          "start_idx": 56,
+          "end_idx": 64
+        }
+      ],
+      "coverage_segments": [
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "coverage_times": [
+        {
+          "start_s": 342.64,
+          "end_s": 410.72
+        }
+      ],
+      "coverage_text": "The next step in the PID control is to use these three constants.\nThese constants are Kp, Ki and Kd as for proportional constants, integrate constants and derivative constant.\nThe total output of the PID control is the sum of these three parts, proportional, integrate and derivative.\nThe total output of the PID control is the sum of these two constants.\nOk, so let's start with the integrate and derivative constants equal to zero and the proportional to one.\nIn this case, the output of the PID control will be the error itself.\nNow we know that we should apply a 1000 microseconds to 2000 microseconds signal to the ESC in order to spin the motors where 1000 is no spinning at all and 2000 is full throttle.\nThese values may vary depending on your used ESC.\nNow let's imagine that we make the motor spin at low speed by applying a signal of 1200 microseconds, which is around 20% throttle.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the high-level table of contents in the required format:\n\n[\n  {\n    \"title\": \"Introduction to PID Control for Drones\",\n    \"description\": \"Overview of PID control and its application to drone stabilization.\",\n    \"coverage\": [\n      {\"start_idx\": 0, \"end_idx\": 5}\n    ]\n  },\n  {\n    \"title\": \"PID Algorithm Explanation\",\n    \"description\": \"Detailed explanation of the PID algorithm and how it is used for drone stabilization.\",\n    \"coverage\": [\n      {\"start_idx\": 6, \"end_idx\": 15}\n    ]\n  },\n  {\n    \"title\": \"Setting up the Drone System\",\n    \"description\": \"Description of the setup process for the drone system, including power supply and motor initialization.\",\n    \"coverage\": [\n      {\"start_idx\": 16, \"end_idx\": 20}\n    ]\n  },\n  {\n    \"title\": \"Measuring IMU Data and Calculating Angle\",\n    \"description\": \"Explanation of how to measure IMU data and calculate the angle using acceleration and gyro values.\",\n    \"coverage\": [\n      {\"start_idx\": 21, \"end_idx\": 29}\n    ]\n  },\n  {\n    \"title\": \"PID Control Implementation\",\n    \"description\": \"Implementation of the PID control algorithm for drone stabilization, including calculation of error, proportional, integral, and derivative values.\",\n    \"coverage\": [\n      {\"start_idx\": 30, \"end_idx\": 40}\n    ]\n  },\n  {\n    \"title\": \"Applying PID Control to Motors\",\n    \"description\": \"Explanation of how to apply the PID control output to the motors, including setting maximum and minimum throttle values.\",\n    \"coverage\": [\n      {\"start_idx\": 41, \"end_idx\": 44}\n    ]\n  },\n  {\n    \"title\": \"PID Control Testing and Results\",\n    \"description\": \"Testing and results of the PID control algorithm for drone stabilization, including demonstration of metal bar stabilization.\",\n    \"coverage\": [\n      {\"start_idx\": 45, \"end_idx\": 55}\n    ]\n  },\n  {\n    \"title\": \"Conclusion and Future Plans\",\n    \"description\": \"Conclusion of the video and future plans to adapt this code for flight controllers and multiple axes.\",\n    \"coverage\": [\n      {\"start_idx\": 56, \"end_idx\": 64}\n    ]\n  }\n]"
+    ]
+  }
+}

@@ -220,7 +220,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         '--src_dir',
-        default="../../../VideoAnalysis/data/frames/frames_conventional",
+        default="../../../VideoAnalysis/data/frames/frames_embodied",
         help='Root folder containing subfolders of images (frames_root)'
     )
     parser.add_argument(

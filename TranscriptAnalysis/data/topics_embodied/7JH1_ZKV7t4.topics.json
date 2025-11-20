@@ -1,0 +1,52 @@
+{
+  "video_id": "7JH1_ZKV7t4",
+  "title": "7JH1_ZKV7t4",
+  "url": "https://www.youtube.com/watch?v=7JH1_ZKV7t4",
+  "created_at": "2025-10-09T17:30:28.667051+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Efficient Propeller Operation",
+      "description": "The speaker shows how small drone propellers operate more efficiently in hover mode on the vehicle, without needing different designs for hover and forward flight.",
+      "evidence_quotes": [
+        "What's cool is that we now have small drone propellers operating much more efficiently",
+        "We can use the same propeller design for both flight modes"
+      ],
+      "start_s": 941.22,
+      "end_s": 952.28,
+      "id": "T1"
+    },
+    {
+      "title": "Increasing Propeller Moment Arm",
+      "description": "The speaker explains how putting propellers farther out increases their moment arm, leading to less thrust required.",
+      "evidence_quotes": [
+        "By putting the propellers farther out, we increase their moment arm"
+      ],
+      "start_s": 921.84,
+      "end_s": 925.96,
+      "id": "T2"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topics:\n\n```\n[\n  {\n    \"title\": \"Motor Efficiency\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"The power reduction isn't just a small amount. It's reduced by a factor of three.\"],\n    \"time_range\": \"00:05:51–00:06:07\"\n  },\n  {\n    \"title\": \"Propulsion and Drag\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"Drag on the propeller is directly proportional to kinetic energy of the air, keeping in mind that drag directly relates to power required.\"],\n    \"time_range\": \"00:06:52–00:07:16\"\n  },\n  {\n    \"title\": \"Momentum and Energy\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"Propeller thrust is proportional to the change in momentum of the airflow through the propeller.\"],\n    \"time_range\": \"00:06:44–00:07:05\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here is the extracted topics in the given transcript segment:\n\n[\n  {\n    \"title\": \"Increasing Propeller Moment Arm\",\n    \"description\": \"The speaker explains how putting propellers farther out increases their moment arm, leading to less thrust required.\",\n    \"evidence_quotes\": [\"By putting the propellers farther out, we increase their moment arm\"],\n    \"time_range\": \"00:07:40.920–00:07:45.040\"\n  },\n  {\n    \"title\": \"Efficient Propeller Operation\",\n    \"description\": \"The speaker shows how small drone propellers operate more efficiently in hover mode on the vehicle, without needing different designs for hover and forward flight.\",\n    \"evidence_quotes\": [\"What's cool is that we now have small drone propellers operating much more efficiently\", \"We can use the same propeller design for both flight modes\"],\n    \"time_range\": \"00:08:00.300–00:08:11.360\"\n  }\n]\n\nNote: There may be additional topics in the transcript, but these two are directly discussed within this segment."
+        ]
+      }
+    ]
+  }
+}

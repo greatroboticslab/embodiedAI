@@ -1,0 +1,125 @@
+{
+  "video_id": "aXTtu4n37WI",
+  "title": "aXTtu4n37WI",
+  "url": "https://www.youtube.com/watch?v=aXTtu4n37WI",
+  "created_at": "2025-09-17T11:59:54.034844+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction and Overview",
+      "description": "The speaker discusses their experience with the Zeus board and its overheating issues.",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 7
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.0,
+          "end_s": 106.06
+        }
+      ],
+      "coverage_text": "Alright, so I wanted to make this quick video just to kind of show you two of the prominent GPS systems that you can buy on Amazon if you just put in FPV GPS.\nAt first, whenever I was first getting into GPS, I really didn't know the difference between these two when it comes to size, how they perform, and things like that.\nAnd so I initially bought this one. They're about the same price. So I initially bought this one, and this is like your basic, just plugs into a UART, well, a TX and an RX pad of the same UART, and then your power and ground.\nAnd that's it. It has no telemetry or anything like that to it. It is just your basic GPS system.\nBut the 880 GPS, this one actually has, you can see how much thicker that one is in comparison. It's bigger and thicker. This one actually offers telemetry, has telemetry built into it.\nAnd you actually plug it into your SCA or, no, SDA or SCL pads. Your RX and TX of the same UART, and your ground and power. So it's got more cords. It plugs into a UART just like this one, but it also plugs into the SCL and SDA on your board.\nSo what does this mean for you if you're trying to find GPS to fly?\nSo what a lot of people are getting into when it comes to GPS is a sub-250, and that's because of the FAA regulations and stuff that are coming down with 250 grams and trying to keep everything under 250 grams.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "GPS Configuration and Troubleshooting",
+      "description": "The speaker explains how to configure GPS settings on the Zeus board and troubleshoot common issues.",
+      "coverage_ranges": [
+        {
+          "start_idx": 234,
+          "end_idx": 243
+        },
+        {
+          "start_idx": 246,
+          "end_idx": 253
+        }
+      ],
+      "coverage_segments": [
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253
+      ],
+      "coverage_times": [
+        {
+          "start_s": 1091.52,
+          "end_s": 1145.0
+        },
+        {
+          "start_s": 1156.18,
+          "end_s": 1204.2199999999998
+        }
+      ],
+      "coverage_text": "You can set your, you know, you've got your GPS stuff here.\nSo, you can see which one each of these are.\nSo, this is your GPS stats, your home distance, your aero.\nAnd like I said, I couldn't get the aero to work correctly.\nI don't know if just not having the telemetry off knocks the compass off or something.\nBut I'm fixing to go out there and retest it here in a second to make sure everything's working okay.\nBut then you push save and that's everything.\nSo, you've got your OSD, GPS, your modes, your receiver, or not your receiver, but your failsafe, and configuration and ports.\nSo, that's all backwards.\nSo, ports, configuration, your failsafe, modes, check your GPS.\nThat when it's flashing, that tells you that it's trying to pick up and transmit a signal and shows that this is working.\nThe way that you can tell that this is communicating with your board is right here.\nThat you'll start seeing numbers here.\nSo, when it's not working, all this will be at zero and nothing will be happening.\nBut, as soon as you get it working and actually sending and receiving, and you have it on the right one, and that's what was happening to me,\nis I was in configuration and I had this one picked.\nAnd when I went back to GPS, nothing was happening here.\nSo, you can obviously see that it's sending and receiving and all that stuff.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "OSD and Modes",
+      "description": "The speaker explains the OSD settings on the Zeus board and how to configure modes.",
+      "coverage_ranges": [
+        {
+          "start_idx": 241,
+          "end_idx": 244
+        }
+      ],
+      "coverage_segments": [
+        241,
+        242,
+        243,
+        244
+      ],
+      "coverage_times": [
+        {
+          "start_s": 1122.7,
+          "end_s": 1149.74
+        }
+      ],
+      "coverage_text": "So, you've got your OSD, GPS, your modes, your receiver, or not your receiver, but your failsafe, and configuration and ports.\nSo, that's all backwards.\nSo, ports, configuration, your failsafe, modes, check your GPS.\nAnd this right here, you'll know if it's working or not by plugging it in.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the high-level table of contents in JSON format:\n\n```\n[\n  {\n    \"title\": \"Introduction and Overview\",\n    \"description\": \"The speaker discusses their experience with the Zeus board and its overheating issues.\",\n    \"coverage\": [\n      {\"start_idx\": 0, \"end_idx\": 7}\n    ]\n  },\n  {\n    \"title\": \"GPS Configuration and Troubleshooting\",\n    \"description\": \"The speaker explains how to configure GPS settings on the Zeus board and troubleshoot common issues.\",\n    \"coverage\": [\n      {\"start_idx\": 234, \"end_idx\": 243},\n      {\"start_idx\": 246, \"end_idx\": 253}\n    ]\n  },\n  {\n    \"title\": \"OSD and Modes\",\n    \"description\": \"The speaker explains the OSD settings on the Zeus board and how to configure modes.\",\n    \"coverage\": [\n      {\"start_idx\": 241, \"end_idx\": 244}\n    ]\n  }\n]\n```\n\nLet me know if you'd like me to refine or expand this outline!"
+    ]
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "video_id": "z58RORCUTao",
+  "title": "z58RORCUTao",
+  "url": "https://www.youtube.com/watch?v=z58RORCUTao",
+  "created_at": "2025-10-09T17:35:36.513061+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction",
+      "description": "Overview of the video and its topics",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 14
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.0,
+          "end_s": 78.24
+        }
+      ],
+      "coverage_text": "A few weeks ago, Mark Roper released a video showing these really cool zipline drones that\ndeliver medical supplies in Rwanda. As cool as this is, he kind of glossed over one of the most\ninteresting features of these drones. Look at these propellers. He mentions that they're shaped like\nthat to reduce the noise, but why does this happen? And what is it about the shape that reduces the\nnoise? The internet right now is just buzzing, waiting for someone to make a 3D printable version\nof these to see how much quieter they actually are. And that's exactly what I have here. But before\nwe listen to these, let me explain why these propellers are shaped this way in the first place.\nWhat actually makes sound when a propeller spins really fast? Well, as the blades move past by a\nstationary point, it creates a pressure disturbance that propagates away from the blade. The frequency\nthat this happens is called the blade passage frequency, and it's equal to the rotational\nfrequency, so how fast the propeller's spinning, times the number of blades on the propeller. So\nlet's say that we have a propeller that has four blades. The traditional way to make these is to\nspace them evenly so that they're 90 degrees apart. When you have a propeller shaped like this, it creates\na lot of different frequencies, but it creates a loud frequency at the blade passage frequency, but also\nit creates frequencies at the harmonics of the blade passage frequency. So if you take an audio recording",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Unveiling the Zipline Propellers",
+      "description": "The concept of ziplines blades and their unique design",
+      "coverage_ranges": [
+        {
+          "start_idx": 15,
+          "end_idx": 31
+        }
+      ],
+      "coverage_segments": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "coverage_times": [
+        {
+          "start_s": 78.24,
+          "end_s": 191.7
+        }
+      ],
+      "coverage_text": "of this, you'll see peaks at the whole number multiples of the blade passage frequency. But\nsomething really interesting happens if you don't space out the blades evenly. So let's say instead\nof having the blades spaced 90 degrees apart, we space them 30 degrees apart only. So there's now a large\ngap and then a small gap between them, so they aren't evenly spaced. Well then when you record the sound,\nyou get the normal harmonics like before with one, two, three times the blade passage frequency,\nbut you also get 0.5 times the blade passage frequency and 1.5 and 2.5. So for the same\nacoustic energy, you're spreading out some of the sound into lower frequencies. The most important\nfrequency is the one that's generated, which has half the frequency of the blade passage frequency.\nYou can see this here. So first we'll start with this four blade propeller. I have these little\nreflective strips on here so I can measure the RPM. So how many times per second that it's spinning\naround in a circle? So we're at around 1200 RPM right now. So around 85 Hertz is one of the loudest\nfrequencies here. But now if I switch out these propellers to around a 30 degree propeller,\nlet's get it to the same RPM. So that's almost exactly the same RPM around 1200. The other one is around 1249.\nSo they're going the same speed now, but let's measure one of the loudest frequencies. So this is crazy.\nWe're going the same speed with four propellers, but the loudest frequency coming off here is half the\nfrequency of the propeller that has the evenly spaced blades. So it's picking up a lower frequency.\nThe higher one is still there, but the energy is shared between the two frequencies. So what does that do for us?",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Noise Reduction via Uneven Blade Spacing",
+      "description": "How uneven blade spacing can reduce noise levels",
+      "coverage_ranges": [
+        {
+          "start_idx": 32,
+          "end_idx": 64
+        }
+      ],
+      "coverage_segments": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "coverage_times": [
+        {
+          "start_s": 191.95999999999998,
+          "end_s": 405.7
+        }
+      ],
+      "coverage_text": "Well, humans are less sensitive to low frequency sounds. So we perceive them as quieter than they actually are.\nSo what this means is that when you space the blades unevenly, it creates a lower frequency that we perceive as quieter.\nAnd this fact has been known for a long time. For example, there are cooling fans and helicopter rotors that use uneven blade spacing.\nBut this design still doesn't quite look like the zip line design that we saw from Mark Rober's video.\nWhy is there this gap between the blades so that they're on different levels?\nWell, when you have a propeller design like this, there's an interaction that happens where the blades overlap.\nThis causes a lot of broadband noise, meaning just a large spread of many frequencies through the spectrum.\nSo any noise reduction that you gain with the uneven blade spacing gets canceled out with this broadband noise that's created.\nBut if you just get rid of that overlap by raising one of the blades a little bit higher than the other one, then the broadband noise just goes away.\nSo an easy way to create this is just to take two double blade propellers and stack them on top of each other.\nSo I've made two propellers here. These are taken from an FPV airplane propeller that I have.\nOkay, so what I have here are two different spacings of blades stacked on top of each other.\nAnd I put a little sticker on each of them so that I can measure the rotational rate, the RPMs as they're spinning to get them at the same RPM.\nOkay, so I'm going to turn both of them on.\n10,300 RPM.\nAnd this one's at 10,000 RPM.\n10,200 RPM.\nSo they're really close to the same RPM.\nOkay, let's listen to both of their sounds.\nNow in front.\n10,300 RPM.\nNow behind.\nThe high pitch tones are still there with this one, but they're a lot less because of the acoustic noise has been spread out to that lower frequency as well as the high one.\nWhereas this one has most of the high ones.\nYou can see that the uneven space blades have a noticeably lower tone than the evenly spaced one.\nWhat that amounts to is that it sounds quieter and not quite as annoying as the regularly spaced one.\nSo Zipline has made a version of the uneven space blades, but instead of including the four blades, they just have the two of them with a counterbalance on the other side.\nSo it sounds like this.\nNow mine isn't perfectly balanced, so it doesn't sound a lot quieter.\nI'd love for someone to make a better version of this in real life that uses the same design as Zipline.\nAlso a few months ago, MIT came up with a propeller called the toroidal propeller.\nThis is the two blade version.\nAnd then this is the three blade version.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Toroidal Propellers: A Different Approach",
+      "description": "The design and benefits of toroidal propellers",
+      "coverage_ranges": [
+        {
+          "start_idx": 65,
+          "end_idx": 85
+        }
+      ],
+      "coverage_segments": [
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85
+      ],
+      "coverage_times": [
+        {
+          "start_s": 405.7,
+          "end_s": 515.7
+        }
+      ],
+      "coverage_text": "This used a propeller in this shape that reduced the sound in a different way.\nIt actually reduced the vortices formed and slightly reduced the overall sound levels.\nYou can actually see what the flow looks like between a toroidal propeller and a regular one in this simulation here.\nFor the standard props, we see small detached tip vortices from the air rolling off the tip of the blades.\nThese contribute to the high buzz noise that's typical of quadcopter drones.\nIn the case of the toroidal props, this detached vortex is contained within the ring of the prop,\nand the overall jet of air is much more coherent, so it's quieter.\nSo this will correlate to a reduced overall noise signature due to improved turbulent flow.\nThis simulation is done using real physics using the software from our sponsor for this video, SimScale,\nthe world's first cloud-native engineering simulation platform.\nSimScale provides engineers and designers access to digital prototyping and simulation early in the design stage,\nthroughout the entire R&D cycle and across the entire enterprise, right in your web browser.\nIf you want to learn more about SimScale, you can click the link in my description and create a free community account.\nAnd also you can access thousands of public simulations as well.\nYou can also view the quadcopter project from this video and post-process the simulation results yourself by clicking the link in my description.\nAnd thanks to them for sponsoring this video and providing these nice simulations.\nNow let's get back to the experiment.\nOne problem with this design is notice that with the four propellers,\nat 1200 RPM we get around 3.1 miles per hour of wind coming off of it.\nBut at the same rotational frequency for the unevenly spaced propellers,\nwe're only getting like 2.5, 2.7 miles per hour.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "SimScale Simulation: Real Physics in Action",
+      "description": "Simulation results showing the effectiveness of toroidal propellers",
+      "coverage_ranges": [
+        {
+          "start_idx": 86,
+          "end_idx": 102
+        }
+      ],
+      "coverage_segments": [
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102
+      ],
+      "coverage_times": [
+        {
+          "start_s": 515.7,
+          "end_s": 588.7
+        }
+      ],
+      "coverage_text": "So for the same rotational speed with the same weight, we get less wind coming off of it.\nWhich means to get the same wind speed, you have to speed this one up a little bit faster.\nBut that doesn't actually hurt you sound wise.\nBecause I can turn up the speed to match the four propeller ones.\nLet's turn it up to get like 3.1.\nSo now I turn up the speed.\nSo overall you have to spin these a little bit faster than you would the evenly spaced blades.\nSo they're less efficient, but you still get the lower frequency,\neven at the faster speeds to get the same wind speed.\nSo overall these still can be a little bit quieter sounding than the evenly spaced blades.\nSo what's interesting about this apparent noise reduction with uneven blade spacing,\nis that it depends on the place where you're listening.\nIf you're behind the blades, then the noise reduction is worse for uneven spacing.\nBut when you're in front of the blades or in the same plane as the blade, it's actually better.\nSo this is actually beneficial for flyover noise for planes.\nBecause when they're closest to you, you're in about the same plane as the blade above you, so it's quieter.\nBut unfortunately that means it would be worse for drones because everything's below the blades.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T6",
+      "title": "Efficiency Comparison: Uneven vs. Even Blade Spacing",
+      "description": "The pros and cons of uneven blade spacing in terms of efficiency",
+      "coverage_ranges": [
+        {
+          "start_idx": 103,
+          "end_idx": 110
+        }
+      ],
+      "coverage_segments": [
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110
+      ],
+      "coverage_times": [
+        {
+          "start_s": 588.7,
+          "end_s": 611.7
+        }
+      ],
+      "coverage_text": "But I'm not sure how ziplines blades would sound on a drone.\nMaybe someone will get a hold of the real blades and do a comparison on a drone.\nAlso I got a lot of this information in this video from a paper on uneven blade spacing.\nAnd I'll put a link to that paper in the description as well.\nAnd thanks again for watching this video.\nIf you like this video, remember to like this video.\nAnd also subscribe to my channel if you haven't yet.\nAnd we'll see you next time.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T7",
+      "title": "Conclusion and Future Work",
+      "description": "Summary of the video's main points and potential future research directions",
+      "coverage_ranges": [
+        {
+          "start_idx": 110,
+          "end_idx": 110
+        }
+      ],
+      "coverage_segments": [
+        110
+      ],
+      "coverage_times": [
+        {
+          "start_s": 610.7,
+          "end_s": 611.7
+        }
+      ],
+      "coverage_text": "And we'll see you next time.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the high-level table of contents for the entire video:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"Overview of the video and its topics\",\n    \"coverage\": [{\"start_idx\": 0, \"end_idx\": 14}]\n  },\n  {\n    \"title\": \"Unveiling the Zipline Propellers\",\n    \"description\": \"The concept of ziplines blades and their unique design\",\n    \"coverage\": [{\"start_idx\": 15, \"end_idx\": 31}]\n  },\n  {\n    \"title\": \"Noise Reduction via Uneven Blade Spacing\",\n    \"description\": \"How uneven blade spacing can reduce noise levels\",\n    \"coverage\": [{\"start_idx\": 32, \"end_idx\": 64}]\n  },\n  {\n    \"title\": \"Toroidal Propellers: A Different Approach\",\n    \"description\": \"The design and benefits of toroidal propellers\",\n    \"coverage\": [{\"start_idx\": 65, \"end_idx\": 85}]\n  },\n  {\n    \"title\": \"SimScale Simulation: Real Physics in Action\",\n    \"description\": \"Simulation results showing the effectiveness of toroidal propellers\",\n    \"coverage\": [{\"start_idx\": 86, \"end_idx\": 102}]\n  },\n  {\n    \"title\": \"Efficiency Comparison: Uneven vs. Even Blade Spacing\",\n    \"description\": \"The pros and cons of uneven blade spacing in terms of efficiency\",\n    \"coverage\": [{\"start_idx\": 103, \"end_idx\": 123}]\n  },\n  {\n    \"title\": \"Conclusion and Future Work\",\n    \"description\": \"Summary of the video's main points and potential future research directions\",\n    \"coverage\": [{\"start_idx\": 124, \"end_idx\": 135}]\n  }\n]\n```\n\nNote that the coverage indices are approximate, as the exact start and end indices may vary depending on the specific formatting rules used by the video player or platform."
+    ]
+  }
+}

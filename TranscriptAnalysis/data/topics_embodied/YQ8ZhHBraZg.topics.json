@@ -1,0 +1,58 @@
+{
+  "video_id": "YQ8ZhHBraZg",
+  "title": "YQ8ZhHBraZg",
+  "url": "https://www.youtube.com/watch?v=YQ8ZhHBraZg",
+  "created_at": "2025-10-09T17:33:02.439990+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Aerobatics Input Control",
+      "description": "The instructor emphasizes the importance of controlling inputs while performing aerobatics to avoid aggressive snaps and maintain stability.",
+      "evidence_quotes": [
+        "Just adding slight inputs at a time, catching it with throttle.",
+        "Reducing throttle is probably the biggest importance..."
+      ],
+      "start_s": 147.0,
+      "end_s": 162.0,
+      "id": "T1"
+    },
+    {
+      "title": "Basic Aerobatics Techniques",
+      "description": "The instructor demonstrates basic aerobatics techniques such as right and left rolls, flips, and stalls.",
+      "evidence_quotes": [
+        "I'm going to go out and fly out and just have a good time...",
+        "Right rolls, left rolls, flips."
+      ],
+      "start_s": 121.0,
+      "end_s": 128.0,
+      "id": "T2"
+    },
+    {
+      "title": "Basic Loop Demonstration",
+      "description": "The instructor demonstrates how to perform a basic loop, including adding throttle and pulling back.",
+      "evidence_quotes": [
+        "That's how you do a basic loop.",
+        "Adding throttle, pulling elevator all the way through, and then stopping."
+      ],
+      "start_s": 97.0,
+      "end_s": 110.0,
+      "id": "T3"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topics in JSON format:\n\n[\n  {\n    \"title\": \"Basic Aerobatics Techniques\",\n    \"description\": \"The instructor demonstrates basic aerobatics techniques such as right and left rolls, flips, and stalls.\",\n    \"evidence_quotes\": [\"I'm going to go out and fly out and just have a good time...\", \"Right rolls, left rolls, flips.\"],\n    \"time_range\": \"00:02:01.000–00:02:08.000\"\n  },\n  {\n    \"title\": \"Aerobatics Input Control\",\n    \"description\": \"The instructor emphasizes the importance of controlling inputs while performing aerobatics to avoid aggressive snaps and maintain stability.\",\n    \"evidence_quotes\": [\"Just adding slight inputs at a time, catching it with throttle.\", \"Reducing throttle is probably the biggest importance...\"],\n    \"time_range\": \"00:02:27.000–00:02:42.000\"\n  },\n  {\n    \"title\": \"Basic Loop Demonstration\",\n    \"description\": \"The instructor demonstrates how to perform a basic loop, including adding throttle and pulling back.\",\n    \"evidence_quotes\": [\"That's how you do a basic loop.\", \"Adding throttle, pulling elevator all the way through, and then stopping.\"],\n    \"time_range\": \"00:01:37.000–00:01:50.000\"\n  }\n]"
+        ]
+      }
+    ]
+  }
+}

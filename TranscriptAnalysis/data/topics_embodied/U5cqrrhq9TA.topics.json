@@ -1,0 +1,223 @@
+{
+  "video_id": "U5cqrrhq9TA",
+  "title": "U5cqrrhq9TA",
+  "url": "https://www.youtube.com/watch?v=U5cqrrhq9TA",
+  "created_at": "2025-10-09T17:32:46.298621+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction",
+      "description": "Overview of the topic and goals of the video.",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 10
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.0,
+          "end_s": 78.8
+        }
+      ],
+      "coverage_text": "This heat gun is pure perfection while this LED strip is straight up garbage.\nWait, what? The reason why I am saying this is because when looking at the current consumption\nof those two loads we can see a remarkable difference. First off the heat gun which draws\ncurrent exactly in phase with our mains voltage and its shape also almost looks like it aka\nsinusoidal. Lovely. But next we got the terrible LED strip which draws current abruptly and\nonly for a short amount of time near the peak of our mains voltage.\nOkay so what is the problem here? I mean both devices seem to work perfectly fine.\nWell the problem is that the LED strip with its AC to DC power supply draws a lot of apparent\npower from the power grid because of the weird current waveform while the real power it actually\nrequires to do its job of lighting up LEDs is rather small in comparison.\nThat is a huge problem because nowadays we got tons of AC to DC power supplies in our homes",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Passive PFC vs. Active PFC",
+      "description": "Explanation of passive and active PFCs and their differences.",
+      "coverage_ranges": [
+        {
+          "start_idx": 11,
+          "end_idx": 30
+        }
+      ],
+      "coverage_segments": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "coverage_times": [
+        {
+          "start_s": 78.8,
+          "end_s": 232.95999999999998
+        }
+      ],
+      "coverage_text": "and if they would all perform this bad then our power grids will have to face some big\nchallenges in the future. But it doesn't have to be this way and that is why such power factor\ncorrection circuits or PFC for short do exist. And in this video I will show you what they can do,\nhow we can make them and why they are super important for our electrical future. Let's get started!\nThis video is sponsored by Mauser Electronics who not only offer a huge selection of electronics\ncomponents but also development boards. And I am not talking about microcontroller boards or similar\neven though they also have them. No, I am talking about development boards built around the newest ICs\nand technologies which also includes functional PFCs that you will see later. If you are curious for more\nthen head over to Mauser Electronics or check the link in the video description.\nNow let's start off with a popular analogy which is the foam to drink ratio. You see the liquid alone\nrepresents our real power aka the power that actually gets used to light things up, heat things up or\nfor example charge your phone's battery. But as you can see that is not all in our glass which in total\nrepresents our apparent power and that is the power your energy provider actually has to deal with in its grid\nso that you can get your desired real power. No, we still got the foam which is our reactive power\nand truth be told completely useless because it only oscillates between the energy provider and hooked up loads.\nDue to it more current flows through the grid than what we actually need for the real power demand\nand as you might know for bigger current flow we need thicker wires so that things do not get terribly\ninefficient and hot and that of course costs lots of money. So keeping the reactive power close to zero\nis our goal here meaning that apparent power should equal the real power. And in the heat gun example we\nstarted with we can actually see such a behaviour that real power equals apparent power meaning it is",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Why Do We Need a PFC?",
+      "description": "Discussion on the importance of power factor correction in AC-DC power supplies.",
+      "coverage_ranges": [
+        {
+          "start_idx": 31,
+          "end_idx": 50
+        }
+      ],
+      "coverage_segments": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "coverage_times": [
+        {
+          "start_s": 232.95999999999998,
+          "end_s": 378.48
+        }
+      ],
+      "coverage_text": "definitely possible. Which brings us to the question how such reactive power comes to be.\nThe most popular examples for that are simply a motor and a capacitive power supply that you can\nsometimes find in LED lights. Both of them create quite a bit of reactive power in comparison to their real power\npower and the root of all evil for that is like I teased at the beginning their current flow.\nThe power supply ones leads in comparison to the mains voltage and the one from the motor lacks in comparison.\nThe reason for that are of course the electrical properties of the capacitor for the power supply\nand the inductance for the motor coils. But feel free to watch my previous videos about those topics here\nso that I can keep the rest of this video short and sweet. Because in a nutshell such phase shifts\ndo create reactive power. And the simple fix here is to add inductance to the capacitance and vice versa\ncapacitance to the inductance to get rid of the phase shifts and thus reduce the reactive power\nand get a power factor of almost 1. By the way the power factor is simply the real power divided by the\napparent power and thus 1 means real power equals apparent power which is what we are after.\nNow like I said one solution is adding capacitance or inductance to the power grid to decrease the\nphase shifts and that is actually the first type of a power factor correction circuit and it is called a\npassive one. Of course there is also an active one that I already presented to you at the start.\nAnd to understand why we need it let's go back to the current draw of a common power supply I found in my shelf.\nAs you can see the more DC current I draw from its output the bigger the current pulse on the input\nnear the peak of the mains voltage gets. And by doing my usual measurements next we can see that this\ncurrent draw creates kind of a lot of reactive power which is easily noticeable through the low power factor.\nBut there is no phase shift so how does that work? Well the problem here is that this current waveform",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Practical Example: Using an Active PFC IC",
+      "description": "Demonstration of how to use an active PFC IC with a few external components.",
+      "coverage_ranges": [
+        {
+          "start_idx": 51,
+          "end_idx": 90
+        }
+      ],
+      "coverage_segments": [
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90
+      ],
+      "coverage_times": [
+        {
+          "start_s": 378.48,
+          "end_s": 678.88
+        }
+      ],
+      "coverage_text": "can be depicted as a sum of lots of current waveforms with different frequencies.\nMost importantly of course is the 50Hz fundamental frequency which is our mains voltage frequency and\nit obviously does not feature a phase shift. But then there are also 150Hz, 250Hz, 350Hz and so on parts\nwhich are called 3rd, 5th, 7th and so on current harmonics and they do kind of feature a phase shift\nthat creates the reactive power. By using my oscilloscope we can actually see how much they matter in comparison\nto the fundamental 50Hz frequency and let's just say that they are pretty dominant on the screen here.\nSo what we can do to fix this problem is basically convert this small current pulse to an even sinusoidal\none. And like I said before a circuit that can do that is an active PFC for which I looked for on Mauser\nelectronics and I found a promising looking IC that only requires a few external components to function.\nBut before creating a whole PCB for it which requires lots of time I firstly wanted to do some\ninitial tests with a similar IC for which Mauser luckily offered a development board.\nAfter powering its low voltage side with my lab bench power supply I next prepared a proper mains\nvoltage wire for it and this break might be a good opportunity to state that working with all the\nmains voltage shown in this video can be dangerous and you should only do that if you are professional.\nOkay with that out of the way I plugged the circuit into mains voltage and was very happy to find out\nthat nothing exploded. On its output I measured a voltage of around 400VDC which means the circuit works correctly.\nAnd before I start explaining here why this high voltage and how it is made and what not,\nlet's rather keep it practical and crack open the power supply that came with the horrible current draw.\nAfter removing its full bridge rectifier, I simply connected the output of the PFC\nto the input of the power supply and by once again plugging in mains voltage nothing blew up and the\npower supply seems to work correctly as well. This time though the input current does follow the mains\nvoltage shape a lot more when drawing more current on the outputs. That not only means that the current\nharmonics are mostly gone but also that the reactive power of the system decreased while the power factor\nincreased. Awesome! I think you can see the difference with and without a PFC pretty clearly in this chart here.\nWhich now brings us to the question how such an active PFC pulls this off?\nWell in a nutshell it does so by increasing the changing mains input voltage into a constant higher\nDC voltage voltage that the power supply then uses. Because yes, an active PFC is basically just a glorified\nboost converter. You see the problem of normal AC to DC power supplies is that they only draw current near\nthe voltage peak of the mains voltage because that is when the utilized capacitor's voltage drops beneath\nthe input voltage and thus can get charged up again. But by supplying a constant boosted voltage this problem\nbasically disappears. Of course creating such a stable boosted DC voltage from a varying input voltage\nis not that easy because you need to monitor the input and output voltage as well as the flowing current\ncurrent and then turn on or off the boost converter MOSFET switch accordingly so that always the right\namount of energy gets transferred to the output. When having a look at our practical example then the MOSFET\nswitching pattern looks something like this with a bigger duty cycle at low input voltages and a smaller\nduty cycle at higher input voltages which corresponds with the theory. So all in all such active PFC\nare pretty awesome. And considering that there are already regulations in place that limit the created current\nharmonics from appliances they will sooner or later become mandatory. So if you are shopping for a new beefy power supply\nmaybe next time consider getting one with a built in PFC. With that being said I hope you enjoyed this video\nand learn something new. As always don't forget to like, share, subscribe and hit the notification bell.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Conclusion",
+      "description": "Summary and final thoughts on the topic of power factor correction.",
+      "coverage_ranges": [
+        {
+          "start_idx": 91,
+          "end_idx": 91
+        }
+      ],
+      "coverage_segments": [
+        91
+      ],
+      "coverage_times": [
+        {
+          "start_s": 679.9200000000001,
+          "end_s": 684.88
+        }
+      ],
+      "coverage_text": "Stay creative and I will see you next time!",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the high-level table of contents for the video:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"Overview of the topic and goals of the video.\",\n    \"coverage\": [{\"start_idx\": 0, \"end_idx\": 10}]\n  },\n  {\n    \"title\": \"Passive PFC vs. Active PFC\",\n    \"description\": \"Explanation of passive and active PFCs and their differences.\",\n    \"coverage\": [{\"start_idx\": 11, \"end_idx\": 30}]\n  },\n  {\n    \"title\": \"Why Do We Need a PFC?\",\n    \"description\": \"Discussion on the importance of power factor correction in AC-DC power supplies.\",\n    \"coverage\": [{\"start_idx\": 31, \"end_idx\": 50}]\n  },\n  {\n    \"title\": \"Practical Example: Using an Active PFC IC\",\n    \"description\": \"Demonstration of how to use an active PFC IC with a few external components.\",\n    \"coverage\": [{\"start_idx\": 51, \"end_idx\": 90}]\n  },\n  {\n    \"title\": \"Conclusion\",\n    \"description\": \"Summary and final thoughts on the topic of power factor correction.\",\n    \"coverage\": [{\"start_idx\": 91, \"end_idx\": 100}]\n  }\n]\n```\n\nLet me know if you have any further requests!"
+    ]
+  }
+}

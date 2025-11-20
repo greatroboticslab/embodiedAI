@@ -1,0 +1,54 @@
+Here is the video-level outline in the required format:
+
+```
+[
+  {
+    "title": "Introduction",
+    "description": "",
+    "segments": [
+      { "line_idx": [S00000], "quote": "Hey, what's up guys? We're back talking about filters again. We've already done high pass and low pass, so today we're going to talk about band pass filters." }
+    ]
+  },
+  {
+    "title": "What is a Band Pass Filter?",
+    "description": "",
+    "segments": [
+      { "line_idx": [S00001], "quote": "And a band pass filter very simply passes frequencies within a certain frequency range and rejects frequencies that are outside of that range." },
+      { "line_idx": [S00002, S00003], "quote": "That's about as simple as it gets. So what are its applications?" }
+    ]
+  },
+  {
+    "title": "Applications",
+    "description": "",
+    "segments": [
+      { "line_idx": [S00004, S00005], "quote": "it's used in transmitting and receiving circuits to keep the transmitted or received signal within the allocated frequency bandwidth. They're also used in atmospheric studies and audio applications." }
+    ]
+  },
+  {
+    "title": "Frequency Response",
+    "description": "",
+    "segments": [
+      { "line_idx": [S00008, S00011], "quote": "And the frequency response of our high pass filter looks like this. Anything below this line here is going to be attenuated. Anything above it is going to be passed." },
+      { "line_idx": [S00012, S00015], "quote": "" }
+    ]
+  },
+  {
+    "title": "Band Pass Filter Example",
+    "description": "",
+    "segments": [
+      { "line_idx": [S00031, S00034], "quote": "So let's rotate up here. Have a look at the oscilloscope." },
+      { "line_idx": [S00035, S00038], "quote": "" }
+    ]
+  },
+  {
+    "title": "Conclusion",
+    "description": "",
+    "segments": [
+      { "line_idx": [S00043, S00045], "quote": "A little bit of math, and you can select whichever band you want to let through, and which bands you don't want to let through." },
+      { "line_idx": [S00046, S00052], "quote": "" }
+    ]
+  }
+]
+```
+
+Note: I've assumed that the `segments` array should contain objects with two properties each: `line_idx` (an array of line indices) and `quote` (the corresponding quote). Let me know if this is correct or not.

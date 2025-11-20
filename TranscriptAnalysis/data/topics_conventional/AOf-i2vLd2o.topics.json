@@ -1,0 +1,178 @@
+{
+  "video_id": "AOf-i2vLd2o",
+  "title": "AOf-i2vLd2o",
+  "url": "https://www.youtube.com/watch?v=AOf-i2vLd2o",
+  "created_at": "2025-09-17T11:54:57.330860+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction",
+      "description": "Driving MOSFETs with 12 volts",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 4
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.0,
+          "end_s": 60.059999999999995
+        }
+      ],
+      "coverage_text": "Welcome! The subject of this video is connecting power MOSFETs in parallel. I got an email from\na visitor who was having all kinds of problems using one of my circuits when he connected\nMOSFETs in parallel. The question became with RG. RG is used with these MOSFETs to bleed off any static\ncharge and thus enabling the MOSFET to cut completely off. Using them for one MOSFET is fine. I was using\na value of 10k. That could of course be lowered. Here I'm going to explain the problems you're going",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "VGS Considerations",
+      "description": "Do not exceed VGS",
+      "coverage_ranges": [
+        {
+          "start_idx": 109,
+          "end_idx": 112
+        }
+      ],
+      "coverage_segments": [
+        109,
+        110,
+        111,
+        112
+      ],
+      "coverage_times": [
+        {
+          "start_s": 903.12,
+          "end_s": 921.02
+        }
+      ],
+      "coverage_text": "But the important part is, if you look here at 1T at 12 volts, they all switched on somewhere in this little steep curve here.\nSo, that's your best bet.\nDrive these things.\nRemember VGS.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Drive Circuit Options",
+      "description": "Parallel MOSFETs and their capacitance",
+      "coverage_ranges": [
+        {
+          "start_idx": 119,
+          "end_idx": 122
+        }
+      ],
+      "coverage_segments": [
+        119,
+        120,
+        121,
+        122
+      ],
+      "coverage_times": [
+        {
+          "start_s": 951.72,
+          "end_s": 965.5
+        }
+      ],
+      "coverage_text": "What about a drive circuit?\nWhen you put MOSFETs in parallel, of course, the capacitance is going to add.\nYou cannot change that.\nBut you might be able to change R.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "MOSFET Drive Circuits",
+      "description": "H-bridge circuit and turn-on resistance",
+      "coverage_ranges": [
+        {
+          "start_idx": 127,
+          "end_idx": 130
+        }
+      ],
+      "coverage_segments": [
+        127,
+        128,
+        129,
+        130
+      ],
+      "coverage_times": [
+        {
+          "start_s": 982.82,
+          "end_s": 998.22
+        }
+      ],
+      "coverage_text": "This goes to your MOSFETs.\nYour gates that are all connected together.\nWhen there's no input on Q5, the gates of the transistors are high.\nQ2 is turned off.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Gate Resistance Variations",
+      "description": "Slowing down discharge surge",
+      "coverage_ranges": [
+        {
+          "start_idx": 141,
+          "end_idx": 144
+        }
+      ],
+      "coverage_segments": [
+        141,
+        142,
+        143,
+        144
+      ],
+      "coverage_times": [
+        {
+          "start_s": 1042.02,
+          "end_s": 1075.6999999999998
+        }
+      ],
+      "coverage_text": "It has 0.8 ohm drain source resistance.\nSo by reducing R again.\nBy having a very low conduction resistance on Q2, I have really massively reduced T to something back here.\nThat's how I reduce T is because my turn-on and turn-off resistance are so much lower than a regular bipolar transistor.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T6",
+      "title": "Conclusion and Next Steps",
+      "description": "Try out these solutions for parallel MOSFETs",
+      "coverage_ranges": [
+        {
+          "start_idx": 169,
+          "end_idx": 172
+        }
+      ],
+      "coverage_segments": [
+        169,
+        170,
+        171,
+        172
+      ],
+      "coverage_times": [
+        {
+          "start_s": 1213.5800000000002,
+          "end_s": 1221.22
+        }
+      ],
+      "coverage_text": "I hope this was useful.\nGive it a try.\nLet me know how it works out.\nThis is your host, Lewis Laughlin.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the high-level table of contents for the video:\n\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"Driving MOSFETs with 12 volts\",\n    \"coverage\": [\n      { \"start_idx\": 0, \"end_idx\": 4 }\n    ]\n  },\n  {\n    \"title\": \"VGS Considerations\",\n    \"description\": \"Do not exceed VGS\",\n    \"coverage\": [\n      { \"start_idx\": 109, \"end_idx\": 112 }\n    ]\n  },\n  {\n    \"title\": \"Drive Circuit Options\",\n    \"description\": \"Parallel MOSFETs and their capacitance\",\n    \"coverage\": [\n      { \"start_idx\": 119, \"end_idx\": 122 }\n    ]\n  },\n  {\n    \"title\": \"MOSFET Drive Circuits\",\n    \"description\": \"H-bridge circuit and turn-on resistance\",\n    \"coverage\": [\n      { \"start_idx\": 127, \"end_idx\": 130 }\n    ]\n  },\n  {\n    \"title\": \"Gate Resistance Variations\",\n    \"description\": \"Slowing down discharge surge\",\n    \"coverage\": [\n      { \"start_idx\": 141, \"end_idx\": 144 }\n    ]\n  },\n  {\n    \"title\": \"Conclusion and Next Steps\",\n    \"description\": \"Try out these solutions for parallel MOSFETs\",\n    \"coverage\": [\n      { \"start_idx\": 169, \"end_idx\": 172 }\n    ]\n  }\n]"
+    ]
+  }
+}

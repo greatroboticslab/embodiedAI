@@ -1,0 +1,215 @@
+{
+  "video_id": "AoJDIy52y7g",
+  "title": "AoJDIy52y7g",
+  "url": "https://www.youtube.com/watch?v=AoJDIy52y7g",
+  "created_at": "2025-09-17T11:55:09.158001+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "[S00032] Introduction",
+      "description": "Introduction to the video",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 31
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.0,
+          "end_s": 272.5
+        }
+      ],
+      "coverage_text": "Hey what's happening guys I thought today we might talk about this little guy right here\nthis chip this strange looking chip is the TDA 2030 which is a class AB amplifier chip\nnow if you think back to the times we've talked about amplifiers a class a\namplifier which is the most linear but the least efficient operates for the\nentire sine wave cycle from 0 to 360 degrees a class B amplifier operates on\nonly half the signal either from 0 to 180 or 181 to 360 it's more efficient but it\nis hardly linear and not very useful in audio because it's going to produce some\ndistortions but if you take the class A and the class B and you kind of put them\ntogether you get a class AB amplifier which is also known as a push-pull\namplifier and its characteristic is it is almost as linear as a class A amplifier\nbecause it operates for more than 180 degrees but less than 360 so instead of\nbeing on all the time getting hot and wasting power it's off for a small part\nof the cycle and that works out pretty well now what we were talking about is\nthis little guy here this is the TDA 2030 and it's from ST.com now has a wide voltage\nsupply up to 36 volts but you have to go that high it will operate as low as 6 volts but\n12 volts is a good place to start single or split supply that means if you think of\nthis somewhat as an op amp you can operate as an op amp with a plus vs and a minus vs but\nit's not necessary you can operate it with a single supply as well it has short circuit protection and a\nthermal out or a thermal shut down you see typically it provides 14 outputs of power\nnow that of course depends on your input voltage the impedance of the speaker and\nthose sorts of things but this is a really oh this by the way this package with the five leads is called the\npentawatt package just thought I'd throw that in there so a couple more things to talk about with this amplifier\nhere are some of its electrical characteristics so supply voltage a plus or minus 18 or 36 volts input voltage\nblah blah blah blah so here we go come down here and we talk about our supply voltage\nminimum six we build something we build with probably 12 volts and its quiescent current drain is 40 milliamps\nthat's not that small so this thing's going to drain power even when it's using that's the class a part of the amplifier in there it's always working\nnow our input bias is 0.2 to 2 microamps and our offset voltage is plus 2 to plus 20 millivolts\ncouple things to keep in mind\nit's pretty good on distortion half a percent now our frequency response our minus 3 dB so this is basically we'll call it the low cut frequency\nthe low cut frequency is 10 to 140 hertz depending on how you set it up that's great for audio stuff\ndrain current 900 500 let's split the difference call it 600 milliamps\nokay so what I've done here",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Resistors and Input Biasing",
+      "description": "Discussion of resistors RA, RB, R3, and R4",
+      "coverage_ranges": [
+        {
+          "start_idx": 32,
+          "end_idx": 59
+        }
+      ],
+      "coverage_segments": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59
+      ],
+      "coverage_times": [
+        {
+          "start_s": 272.5,
+          "end_s": 503.66
+        }
+      ],
+      "coverage_text": "is I have drawn up\na single supply\nclass a B amplifier here and I thought we'd talk about it and go over it\nso the first thing I want to talk about are the resistors and if we start with RA\nand RB these are our inverting or our yeah and our inverting and non-inverting\nnon-inverting input biasing now we're going to run these at a hundred K each\nnow if you go higher than that you're going to have poor frequency attenuation and if you go lower in\nthat you could end up getting into some sort of oscillation\nnext up we have R3 and this is our non-inverting input bias as well so it's also going to be\n100 K now R4 this one over here is our for frequency stability and it is just going to be\n1 ohm so the reason that we want to have that is just to keep everything stable if you increase\nthe value of that you could have oscillation at higher frequencies if you decrease it probably\nnot much going to happen but you're at 1 ohm how low are you going to go right\nokay next up we have R1 which is this guy right here\nand R2 where is R2 R2 where are you oh sorry we didn't use R2 that's for the um\ndouble supply so R1 is our closed loop gain setting and the value we're going to put here is 150 K\nif you increase it you get an increase in gain if you decrease it you get a decrease in gain so\nyou know you can see it's pretty easy all right let's talk capacitors then capacitor C1 right here\nthis is going to be that's more right at one microfarad and that's going to be our non-inv\nI can't talk our input DC decoupling it was going to that non-inverter that's why I was getting myself\nconfused so this is just to decouple any DC that's coming in on our input this is our input right here\nand also you know you would also have to have the other half of the signal the ground now C2 is our\ninverting input decoupling it's going to be 22 microfarad\nif you increase it you increase oh sorry if you decrease it you increase the low frequency cutoff so\nyou know you can play around with those values a little bit\nC3 and C5 the this is a 0.1 put the point on the right side there Paul 0.1 and 100 microfarad now\nyou've seen those numbers a lot of times you know exactly what they mean those are our supply voltage\nbypasses and we come down here to C7 which is 0.22 microfarad and C7 is used for frequency stability",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Capacitors",
+      "description": "Explanation of capacitors C1, C2, C3, C5, C7, and C8",
+      "coverage_ranges": [
+        {
+          "start_idx": 60,
+          "end_idx": 81
+        }
+      ],
+      "coverage_segments": [
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81
+      ],
+      "coverage_times": [
+        {
+          "start_s": 504.22,
+          "end_s": 626.98
+        }
+      ],
+      "coverage_text": "it's just keeping our frequency stable you change it you can end up with oscillation and C8\nthis guy right here is our upper frequency cutoff and it's going to be 2200 microfarad probably could go up to 3300\nif you increase it you decrease your bandwidth if you decrease it you increase your bandwidth\nso oh and let's not forget our diodes diode 1 and diode 2 they can be pretty much anything so we'll\nuse like a 1N4001 and they simply prevent voltage spikes from hitting the uh this is the plus v and\nthis is the minus v so it simply prevents voltage spikes from hitting the power supply to the TDA2030 chip\n0.32 microfarad now if you put a uh 4 ohm resistor on 4 ohm resistor on 4 ohm resistor a 4 ohm speaker\nyou're going to get one thing if you put 8 ohms on you're going to get a different thing that will\naffect the gain that will affect the power output because ohms law you change the resistance in this\nthis case impedance, then it affects both your voltage and your current as well.\nAlright?\nAlright, you guys think about this for today, and tomorrow we'll build the circuit and try\nit out, alright?\nAlright.\nHope you guys enjoyed.\nIf you did, give me a thumbs up.\nFeel free to comment and share, and don't forget to subscribe.\nBig thanks to all my patrons, especially Dave.\nBig thanks to all of you for watching.\nThat's it.\nI'm out.\nPeace.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Diodes and Power Supply",
+      "description": "Discussion of diodes D1 and D2 and their role in the power supply",
+      "coverage_ranges": [
+        {
+          "start_idx": 81,
+          "end_idx": 81
+        }
+      ],
+      "coverage_segments": [
+        81
+      ],
+      "coverage_times": [
+        {
+          "start_s": 626.6,
+          "end_s": 626.98
+        }
+      ],
+      "coverage_text": "Peace.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Speaker Impedance and Gain",
+      "description": "Explanation of how speaker impedance affects gain and power output",
+      "coverage_ranges": [
+        {
+          "start_idx": 81,
+          "end_idx": 81
+        }
+      ],
+      "coverage_segments": [
+        81
+      ],
+      "coverage_times": [
+        {
+          "start_s": 626.6,
+          "end_s": 626.98
+        }
+      ],
+      "coverage_text": "Peace.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the clean, high-level table of contents for the video:\n\n[\n  {\n    \"title\": \"[S00032] Introduction\",\n    \"description\": \"Introduction to the video\",\n    \"coverage\": [{\"start_idx\": 0, \"end_idx\": 31}]\n  },\n  {\n    \"title\": \"Resistors and Input Biasing\",\n    \"description\": \"Discussion of resistors RA, RB, R3, and R4\",\n    \"coverage\": [{\"start_idx\": 32, \"end_idx\": 59}]\n  },\n  {\n    \"title\": \"Capacitors\",\n    \"description\": \"Explanation of capacitors C1, C2, C3, C5, C7, and C8\",\n    \"coverage\": [{\"start_idx\": 60, \"end_idx\": 81}]\n  },\n  {\n    \"title\": \"Diodes and Power Supply\",\n    \"description\": \"Discussion of diodes D1 and D2 and their role in the power supply\",\n    \"coverage\": [{\"start_idx\": 82, \"end_idx\": 85}]\n  },\n  {\n    \"title\": \"Speaker Impedance and Gain\",\n    \"description\": \"Explanation of how speaker impedance affects gain and power output\",\n    \"coverage\": [{\"start_idx\": 86, \"end_idx\": 91}]\n  }\n]\n\nLet me know if you have any further requests!"
+    ]
+  }
+}

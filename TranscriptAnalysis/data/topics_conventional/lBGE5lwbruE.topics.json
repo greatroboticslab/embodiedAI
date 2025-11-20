@@ -1,0 +1,86 @@
+{
+  "video_id": "lBGE5lwbruE",
+  "title": "lBGE5lwbruE",
+  "url": "https://www.youtube.com/watch?v=lBGE5lwbruE",
+  "created_at": "2025-09-17T12:02:04.938057+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Amplifier Performance",
+      "description": "The speaker discusses the performance of an amplifier using an LM386 chip, including its power output and limitations.",
+      "evidence_quotes": [
+        "Not too bad.",
+        "I probably can get, um, somewhere between .6 and .7 watts out of this thing."
+      ],
+      "start_s": 1353.0,
+      "end_s": 1436.0,
+      "id": "T1"
+    },
+    {
+      "title": "Decoupling Cap",
+      "description": "The importance of decoupling capacitors in signal grounds",
+      "evidence_quotes": [
+        "[00:08:45.000 → 00:08:55.000] And, that little bit of resistance in the conductor will mean that that's going to raise a point here.",
+        "[00:08:57.000 → 00:08:59.000] And, it's going to cause distortion."
+      ],
+      "start_s": 525.0,
+      "end_s": 540.0,
+      "id": "T2"
+    },
+    {
+      "title": "Measuring Power Output",
+      "description": "The speaker explains how to measure the power output of an amplifier using RMS voltage and load impedance, and provides some calculations.",
+      "evidence_quotes": [
+        "1.92 volts RMS.",
+        "Divided by our load impedance of 8 ohms."
+      ],
+      "start_s": 1330.0,
+      "end_s": 1376.0,
+      "id": "T3"
+    },
+    {
+      "title": "Signal Ground Isolation",
+      "description": "The need for signal grounds to be isolated from power supply grounds",
+      "evidence_quotes": [
+        "[00:08:31.000 → 00:08:36.000] So, you don't have any of those power grounds conducting in the input ground.",
+        "[00:09:25.000 → 00:09:32.000] And, here is the grounds for the signal."
+      ],
+      "start_s": 511.0,
+      "end_s": 573.0,
+      "id": "T4"
+    },
+    {
+      "title": "Volume Control Steps",
+      "description": "The speaker discusses how the volume controls on some devices step in discrete levels, which can be a problem. They mention that it would be better if they didn't have to deal with this and suggest adding a potentiometer.",
+      "evidence_quotes": [
+        "Because, the way the volume controls on these, they step in discrete levels.",
+        "Like, add a potentiometer or something."
+      ],
+      "start_s": 1303.0,
+      "end_s": 1313.0,
+      "id": "T5"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the output:\n\n```\n[\n  {\n    \"title\": \"Decoupling Cap\",\n    \"description\": \"The importance of decoupling capacitors in signal grounds\",\n    \"evidence_quotes\": [\n      \"[00:08:45.000 → 00:08:55.000] And, that little bit of resistance in the conductor will mean that that's going to raise a point here.\",\n      \"[00:08:57.000 → 00:08:59.000] And, it's going to cause distortion.\"\n    ],\n    \"time_range\": \"00:08:45.000–00:09:00.000\"\n  },\n  {\n    \"title\": \"Signal Ground Isolation\",\n    \"description\": \"The need for signal grounds to be isolated from power supply grounds\",\n    \"evidence_quotes\": [\n      \"[00:08:31.000 → 00:08:36.000] So, you don't have any of those power grounds conducting in the input ground.\",\n      \"[00:09:25.000 → 00:09:32.000] And, here is the grounds for the signal.\"\n    ],\n    \"time_range\": \"00:08:31.000–00:09:33.000\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here is the extracted topics in the format requested:\n\n[\n  {\n    \"title\": \"Volume Control Steps\",\n    \"description\": \"The speaker discusses how the volume controls on some devices step in discrete levels, which can be a problem. They mention that it would be better if they didn't have to deal with this and suggest adding a potentiometer.\",\n    \"evidence_quotes\": [\"Because, the way the volume controls on these, they step in discrete levels.\", \"Like, add a potentiometer or something.\"],\n    \"time_range\": \"00:10:56.000–00:11:06.000\"\n  },\n  {\n    \"title\": \"Measuring Power Output\",\n    \"description\": \"The speaker explains how to measure the power output of an amplifier using RMS voltage and load impedance, and provides some calculations.\",\n    \"evidence_quotes\": [\"1.92 volts RMS.\", \"Divided by our load impedance of 8 ohms.\"],\n    \"time_range\": \"00:11:23.000–00:12:09.000\"\n  },\n  {\n    \"title\": \"Amplifier Performance\",\n    \"description\": \"The speaker discusses the performance of an amplifier using an LM386 chip, including its power output and limitations.\",\n    \"evidence_quotes\": [\"Not too bad.\", \"I probably can get, um, somewhere between .6 and .7 watts out of this thing.\"],\n    \"time_range\": \"00:11:46.000–00:13:09.000\"\n  }\n]"
+        ]
+      }
+    ]
+  }
+}

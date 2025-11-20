@@ -1,0 +1,241 @@
+{
+  "video_id": "sF0KOVWj9p8",
+  "title": "sF0KOVWj9p8",
+  "url": "https://www.youtube.com/watch?v=sF0KOVWj9p8",
+  "created_at": "2025-10-09T17:34:50.890437+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction",
+      "description": "Overview of the topic and importance of resettable fuses.",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 5
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.0,
+          "end_s": 37.34
+        }
+      ],
+      "coverage_text": "Sometimes when building circuits mistakes can happen, which can be a reverse voltage,\na voltage applied to the wrong pin, components failing due to their age or wrong usage or\nyou simply accidentally short something.\nNo matter the cause, the now appearing overcurrent is the root of all evil that needs to get\nstopped so that nothing explodes or burns down completely.\nTo do that I think pretty much everyone is familiar with such glass fuses that you just",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "What are Resettable Fuses?",
+      "description": "Definition, characteristics, and differences from traditional fuses.",
+      "coverage_ranges": [
+        {
+          "start_idx": 6,
+          "end_idx": 14
+        }
+      ],
+      "coverage_segments": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "coverage_times": [
+        {
+          "start_s": 37.34,
+          "end_s": 81.78
+        }
+      ],
+      "coverage_text": "put in series to your circuit and as soon as too much current is flowing the thin metal\ninside of it melts and thus interrupts the current flow.\nOnly problem is that replacing such fuses can be cumbersome.\nIt can get expensive if you are testing stuff and constantly destroy them and in case of\nenclosed electronics like your smartphone there is simply no way to replace such a fuse.\nThe solution to all these problems though are resettable fuses like these ones which I often\nfeel like not many people know about.\nSo in this video I will show you exactly how to use them and with what limitations they\ncome with.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Example: LED Strip Protection",
+      "description": "Application of resettable fuses in an LED strip example.",
+      "coverage_ranges": [
+        {
+          "start_idx": 15,
+          "end_idx": 23
+        }
+      ],
+      "coverage_segments": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "coverage_times": [
+        {
+          "start_s": 81.78,
+          "end_s": 134.1
+        }
+      ],
+      "coverage_text": "Because even though they are resettable and thus reusable they are certainly not perfect.\nLet's get started!\nThis video is sponsored by Mauser Electronics.\nNow truth be told I've been searching for fitting resettable fuses for a while on the internet.\nMauser was the only seller that not only came with a big selection of them but most of them\nwere also in stock, I could easily filter for preferences and best of all they sell to\nprivate people like you and me and not just companies.\nI have been ordering my components from them since 2018 and I can tell you for sure that they\nhave all the components you could ever need.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "How Resettable Fuses Work",
+      "description": "Explanation of how PPTCs increase resistance with temperature.",
+      "coverage_ranges": [
+        {
+          "start_idx": 24,
+          "end_idx": 34
+        }
+      ],
+      "coverage_segments": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "coverage_times": [
+        {
+          "start_s": 134.1,
+          "end_s": 191.16
+        }
+      ],
+      "coverage_text": "And you usually receive them within 3 or sometimes even only 2 days.\nSo feel free to check out Mauser Electronics if I piqued your interest.\nNow first off if you want to use resettable fuses then you always have the choice between the\nthrough hole ones that I feel like are easier to use and small SMD ones which you probably\nalready have seen on devices like the Raspberry Pi.\nSometimes resettable fuses are also known as a multi fuse, poly fuse or poly switch but\nif we want to be technically correct then they are actually called PPTC which stands for\nPolymeric Positive Temperature Coefficient device and wait a minute PTCs are actually quite\npopular.\nWhat they do and what their name basically implies is that they increase their resistance when\nthey get hotter.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Tripping and Recovery",
+      "description": "Behavior when resettable fuses trip and recover.",
+      "coverage_ranges": [
+        {
+          "start_idx": 35,
+          "end_idx": 44
+        }
+      ],
+      "coverage_segments": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "coverage_times": [
+        {
+          "start_s": 191.16,
+          "end_s": 248.0
+        }
+      ],
+      "coverage_text": "You can actually find their relative the NTC aka Negative Temperature Coefficient on lots\nof 3D printers because they decrease their resistance when their temperature rises and thus they both\ncan be used to measure temperature.\nBut back to the resettable fuse which does in fact increase its resistance when temperature\nrises but it still features lots of differences to normal PTCs or NTCs.\nSo as a practical example let's say I got a circuit that normally draws around 500mA at\n12V like this RGB LED strip right here and I want to protect it from shorts so that the\nfitting power supply does not get damaged.\nNow to choose a suitable resettable fuse we only have to worry about 4 crucial properties\nand those are the maximum voltage and current as well as the hold current and trip current.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T6",
+      "title": "Comparison to Traditional Fuses",
+      "description": "Advantages and disadvantages of resettable fuses compared to traditional fuses.",
+      "coverage_ranges": [
+        {
+          "start_idx": 45,
+          "end_idx": 55
+        }
+      ],
+      "coverage_segments": [
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "coverage_times": [
+        {
+          "start_s": 248.0,
+          "end_s": 303.62
+        }
+      ],
+      "coverage_text": "And I think the maximum voltage and current is pretty self explanatory meaning that if you\nexceed them you basically risk damaging your fuse.\nThe hold and trip current is a tiny bit more complicated but still pretty easy to understand.\nThe hold current basically stands for the current that can flow continuously without having to\nworry about that the fuse will ever trip.\nAnd the trip current of course is the current that needs to flow so that the fuse will activate\nand thus interrupt the over current.\nPretty simple.\nSo with these 4 rough values in mind for my circuit I went on to a search on Mauser Electronics\nand decided on this PPTC that can do 60V and 40A max and comes with a hold current of 0.5A and\na trip current of 1A.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T7",
+      "title": "Conclusion and Comparison to E-Fuses",
+      "description": "Summary and pros/cons of using resettable fuses vs. E-fuses.",
+      "coverage_ranges": [
+        {
+          "start_idx": 56,
+          "end_idx": 65
+        }
+      ],
+      "coverage_segments": [
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65
+      ],
+      "coverage_times": [
+        {
+          "start_s": 303.62,
+          "end_s": 357.1
+        }
+      ],
+      "coverage_text": "And if you are asking yourself right now why not use a fuse with slightly higher ratings for\na bit of wiggle room then just wait a few more minutes for a little revelation.\nBecause first off it was time for a small experiment in which I simulated my to be protected circuit\nwith a constant load to which I of course added my resettable fuse in series and powered it\nall with 12V.\nNow by slowly increasing the current flow through my fuse I also directly measured and wrote\ndown the voltage drop across it.\nBecause those electrical values give us insight about the power the fuse wastes which directly\ndetermines its temperature and also what resistance it currently possesses.\nSo first big stop was the hold current of 500mA at which point only a small voltage drop across",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the high-level table of contents for the entire video:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"Overview of the topic and importance of resettable fuses.\",\n    \"coverage\": [\n      {\"start_idx\": 0, \"end_idx\": 5}\n    ]\n  },\n  {\n    \"title\": \"What are Resettable Fuses?\",\n    \"description\": \"Definition, characteristics, and differences from traditional fuses.\",\n    \"coverage\": [\n      {\"start_idx\": 6, \"end_idx\": 14}\n    ]\n  },\n  {\n    \"title\": \"Example: LED Strip Protection\",\n    \"description\": \"Application of resettable fuses in an LED strip example.\",\n    \"coverage\": [\n      {\"start_idx\": 15, \"end_idx\": 23}\n    ]\n  },\n  {\n    \"title\": \"How Resettable Fuses Work\",\n    \"description\": \"Explanation of how PPTCs increase resistance with temperature.\",\n    \"coverage\": [\n      {\"start_idx\": 24, \"end_idx\": 34}\n    ]\n  },\n  {\n    \"title\": \"Tripping and Recovery\",\n    \"description\": \"Behavior when resettable fuses trip and recover.\",\n    \"coverage\": [\n      {\"start_idx\": 35, \"end_idx\": 44}\n    ]\n  },\n  {\n    \"title\": \"Comparison to Traditional Fuses\",\n    \"description\": \"Advantages and disadvantages of resettable fuses compared to traditional fuses.\",\n    \"coverage\": [\n      {\"start_idx\": 45, \"end_idx\": 55}\n    ]\n  },\n  {\n    \"title\": \"Conclusion and Comparison to E-Fuses\",\n    \"description\": \"Summary and pros/cons of using resettable fuses vs. E-fuses.\",\n    \"coverage\": [\n      {\"start_idx\": 56, \"end_idx\": 65}\n    ]\n  }\n]\n```\n\nNote that the `start_idx` and `end_idx` values are approximate and based on the video's timestamp."
+    ]
+  }
+}

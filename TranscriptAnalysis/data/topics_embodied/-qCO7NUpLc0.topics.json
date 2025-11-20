@@ -1,0 +1,38 @@
+{
+  "video_id": "-qCO7NUpLc0",
+  "title": "-qCO7NUpLc0",
+  "url": "https://www.youtube.com/watch?v=-qCO7NUpLc0",
+  "created_at": "2025-10-12T22:55:44.869864+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "No Specific Topic Discussed",
+      "description": "The speaker only says 'Thank you' repeatedly without discussing any specific topic.",
+      "evidence_quotes": [
+        "And and",
+        "Thank you"
+      ],
+      "start_s": 0.0,
+      "end_s": 481.98,
+      "id": "T1"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here are the extracted topics:\n\n[\n  {\n    \"title\": \"Repetitive Appreciations\",\n    \"description\": \"The speaker repeatedly expresses gratitude.\",\n    \"evidence_quotes\": [\"Thank you.\",],\n    \"time_range\": \"00:00:00.000–00:08:01.980\"\n  }\n]\n\nNote that the only topic that can be extracted from this transcript segment is the repetitive appreciation or gratitude expressed by the speaker, which is evident in the numerous instances of \"Thank you\" throughout the segment.",
+          "Here is the output:\n\n[\n{\n\"title\": \"Repetitive Gratitude Statements\",\n\"description\": The speaker repeats thank-you statements throughout this segment.\",\n\"evidence_quotes\": [\"And\", \"Thank you.\", \"Thank you.\"],\n\"time_range\": \"00:00:00.000-00:08:01.980\"\n},\n{\n\"title\": \"Acknowledgments and Appreciation\",\n\"description\": The speaker expresses gratitude and acknowledges something or someone.\",\n\"evidence_quotes\": [\"Thank you.\"],\n\"time_range\": \"00:00:32.000-00:08:01.980\"\n}\n]\n\nNote that since there is no actual discussion or content beyond the repetition of \"thank you\" statements, the topics are relatively minor and not substantial.",
+          "Here is the output:\n\n[\n  {\n    \"title\": \"No Specific Topic Discussed\",\n    \"description\": \"The speaker only says 'Thank you' repeatedly without discussing any specific topic.\",\n    \"evidence_quotes\": [\"And and\", \"Thank you\"],\n    \"time_range\": \"00:00:00.000–00:08:01.980\"\n  }\n]"
+        ]
+      }
+    ]
+  }
+}

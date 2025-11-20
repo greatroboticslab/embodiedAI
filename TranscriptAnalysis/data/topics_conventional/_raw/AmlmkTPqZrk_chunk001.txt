@@ -1,0 +1,33 @@
+Here are the extracted topics in JSON format:
+
+```
+[
+  {
+    "title": "FlySky FSIA6B Receiver Communication Protocols",
+    "description": "The FlySky FSIA6B receiver has three types of communication protocols, including PWM, PPM, and IBIS. One of the two serial connections is always used when connected to a flight controller.",
+    "evidence_quotes": [
+      "The FlySky FSIA6B receiver has three types of communication protocols,"
+      "When this receiver is connected to a flight controller, one of the two serial connections is always used."
+    ],
+    "time_range": "00:00:00.000 - 00:00:11.740"
+  },
+  {
+    "title": "UART Serial Ports on Flight Controllers",
+    "description": "Flight controllers have UART serial ports with separate RX and TX lines, used to receive information from the radio and send information from the controller to the radio.",
+    "evidence_quotes": [
+      "The flight controllers have so-called UART serial ports, where one line is used to receive information from the radio,"
+      "and another line is used to send information from the controller to the radio."
+    ],
+    "time_range": "00:00:19.560 - 00:00:33.020"
+  },
+  {
+    "title": "PPM and IBIS Protocol Pins",
+    "description": "The PPM connection has an upper pin for sending information to the controller, and lower two pins for powering the receiver. The IBIS protocol RX line is in the horizontal slot on the right, with similar pin usage.",
+    "evidence_quotes": [
+      "The upper pin is used to send the information to the controller, and the lower two to supply power to the receiver."
+      "The rightmost pin is used to send information to the controller, and the other two pins are used to power the receiver."
+    ],
+    "time_range": "00:00:40.580 - 00:01:16.520"
+  }
+]
+```

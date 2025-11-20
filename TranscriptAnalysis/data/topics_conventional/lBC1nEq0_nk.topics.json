@@ -1,0 +1,30 @@
+{
+  "video_id": "lBC1nEq0_nk",
+  "title": "lBC1nEq0_nk",
+  "url": "https://www.youtube.com/watch?v=lBC1nEq0_nk",
+  "created_at": "2025-09-17T12:01:45.746339+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here are the extracted topics:\n\n```\n[\n  {\n    \"title\": \"Feedforward Control\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"So, feedforward controllers are a pretty straightforward way to control a system.\", \"It requires a really good understanding of the system dynamics,\"],\n    \"time_range\": \"00:05:00.940–00:05:04.720\"\n  },\n  {\n    \"title\": \"Feedback Control\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"Of course, it doesn't take much imagination to see that feedforward control breaks down for systems that aren't robust to disturbances and uncertainty.\", \"In feedback control, the controller uses both the reference and the current state of the system to determine the appropriate control inputs.\"],\n    \"time_range\": \"00:06:10.540–00:07:17.240\"\n  },\n  {\n    \"title\": \"Controller Design\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"There are linear controllers like PID and full state feedback that assume the general behavior of the system being controlled is linear in nature.\", \"There are nonlinear controllers like on-off controllers and sliding mode controllers and gain scheduling.\"],\n    \"time_range\": \"00:08:42.620–00:09:30.220\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here is the extracted data in the required format:\n\n```\n[\n  {\n    \"title\": \"Particle Filter\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"And choosing an algorithm depends on which states you are directly measuring,\"],\n    \"time_range\": \"00:13:28.260–00:13:32.160\"\n  },\n  {\n    \"title\": \"State Estimation\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"You have to know about state estimation so that you can take all of those noisy measurements\"],\n    \"time_range\": \"00:14:25.960–00:14:29.700\"\n  },\n  {\n    \"title\": \"Particle Filters\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"And they are used for state estimation,\"],\n    \"time_range\": \"00:15:22.100–00:15:32.600\"\n  }\n]\n```"
+        ]
+      }
+    ]
+  }
+}

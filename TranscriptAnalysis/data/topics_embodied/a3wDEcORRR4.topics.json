@@ -1,0 +1,339 @@
+{
+  "video_id": "a3wDEcORRR4",
+  "title": "a3wDEcORRR4",
+  "url": "https://www.youtube.com/watch?v=a3wDEcORRR4",
+  "created_at": "2025-10-09T17:33:21.024894+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction",
+      "description": "Overview of building on a PerfBoard",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 13
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.0,
+          "end_s": 73.7
+        }
+      ],
+      "coverage_text": "Now let's take a look at how we can go from something like this fairly robust breadboard\nwith nice cleaned up wires to something even more robust, something that we can implement,\nsay, in a robot that's moving around or on your bicycle or in a car or an industrial application\nor something, or just the fact that you want to pass it around and let people play with this\nprototype, right? These wires can get loose eventually, they corrode, they make misconnections,\nit's just not the best long-term solution. So what we use is PerfBoard, and PerfBoard is perforated\nboard that you cut to whatever size you want, and you hardwire solder all those connections in place.\nThere's lots of different kind. This one is like a single point PerfBoard. Some of them have\nrows that are all connected, similar to like a breadboard and how that's connected.\nI like these, they're one-sided, and they have individual copper pads on each hole, and I'll show\nyou briefly how I would use it. This video is more about some tips and techniques more than actually\nbuilding something on a PerfBoard. It's fairly straightforward, but I've got some things that\nshould help you build it. Number one, size. Don't necessarily want this size of a PerfBoard.\nI want something smaller. Maybe I'm creating a little board that breaks out all the analog pins",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Getting Started with Soldering",
+      "description": "Tips and tricks for soldering on a PerfBoard",
+      "coverage_ranges": [
+        {
+          "start_idx": 14,
+          "end_idx": 24
+        }
+      ],
+      "coverage_segments": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "coverage_times": [
+        {
+          "start_s": 73.7,
+          "end_s": 132.04
+        }
+      ],
+      "coverage_text": "here of my Arduino. It'd be just so much easier to have a PerfBoard that could plug into there,\nor have breakout header pins or something. So cutting it, cutting it. You can use little nippers,\nyou can use some scissors. Don't bother. I see lots of people doing that. You get jagged edges.\nIt's not the best way. Best thing you can do, go get some really cheap tin snips. Make sure you buy\nwhether you buy a right-handed or left-handed version. But look at this. If I were to take\nthis PerfBoard, or actually I have one here cut down already, and I were to just cut a row off of this,\nI mean it cuts so easily. It leaves a nice clean edge, very little sharp corners. I mean it's just,\nit's really nice. And if I wanted, say, a little breakout board from my Arduino, I can actually\njust cut the board like that. And look at that. I've got this great little breakout board that I\ncould solder some header pins in and put it on my Arduino. Couldn't really be easier. So that's\nnumber one, cutting. Number two, soldering. So if you're going to put a integrated circuit into your",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Using Header Pins",
+      "description": "How to use header pins with a PerfBoard",
+      "coverage_ranges": [
+        {
+          "start_idx": 25,
+          "end_idx": 36
+        }
+      ],
+      "coverage_segments": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "coverage_times": [
+        {
+          "start_s": 132.04,
+          "end_s": 199.85999999999999
+        }
+      ],
+      "coverage_text": "board, you can solder it right to the PerfBoard, but trust me on this. And I've done it. Sadly,\nI've done it. I still actually remember one time I was making an Arduino many, many years ago. I want\nto say like close to 10 years ago. And I soldered my AT Mega, I don't remember, I think it was a 168\nmicrocontroller in there. And I fried it. And once I soldered it in, I go to unsolder it. It was a mess.\nIt was horrible. Don't put your microcontrollers or integrated circuits, don't solder them directly to\na board. Use something like a socket. And this is a socket. And what this allows you to do is put it\ninto PerfBoard, solder this in from the backside. And then I can take my microcontroller and I can\nsnap it into the socket. Something happens, I can pop it out. If I change my code, I can actually have\non the side a couple of different microcontrollers with different codes. It's really great for demoing.\nIt's great for having a backup. So that's one thing. Another thing to know is when soldering to\nthe PerfBoard, and I'll grab my soldering iron real quick to show you. And you know what, I'm going to\nmake a quick note about this soldering iron. This is my used industrial grade MetCal soldering iron.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Soldering on a PerfBoard",
+      "description": "Techniques and tools for soldering on a PerfBoard",
+      "coverage_ranges": [
+        {
+          "start_idx": 37,
+          "end_idx": 55
+        }
+      ],
+      "coverage_segments": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "coverage_times": [
+        {
+          "start_s": 200.1,
+          "end_s": 298.32
+        }
+      ],
+      "coverage_text": "Why do I use this? This uses these RF tips. It's basically like a radio antenna, believe it or not,\nthat from my understanding excites the tip of the soldering iron and heats it up extremely fast. I love\nthis soldering iron. They're hundreds of dollars new, but you can go to eBay and buy them used for,\nI think I paid under a hundred bucks for this. And what I like about it is if I go to turn it on,\nI've just turned my soldering iron on.\nAnd let these little brass there, let's see. There you go. It's already up to temperature.\nI mean, what was that? A couple of seconds? Love it. It actually cools down just as fast.\nBut what I wanted to show you is let's say we were going to solder this header pin in here.\nI push it through from this side.\nAnd I can get in here and get a nice little blob of solder on my soldering iron.\nI can tack it in place real quick.\nAnd now that's tacked in place, right? But this is what I wanted to get at.\nWhen working with PerfBoard, these are incredibly valuable.\nThis is a rosin flux pen. And what this does is it cleans and is a facilitator for the solder to flow.\nSo if I'm going to go in here, you can see the PerfBoards typically are a little,\nI don't want to say messy, but they're not exactly the cleanest of all things.\nAnd with a little flux pen, it makes soldering so much easier.\nTrust me on this one. You want a pen\nlike this. This is a",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Using Flux Pens",
+      "description": "How to use flux pens with a PerfBoard",
+      "coverage_ranges": [
+        {
+          "start_idx": 56,
+          "end_idx": 68
+        }
+      ],
+      "coverage_segments": [
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68
+      ],
+      "coverage_times": [
+        {
+          "start_s": 298.32,
+          "end_s": 337.26
+        }
+      ],
+      "coverage_text": "rosin flux pen by\nMG Chemicals. These are really\nhandy to have. They're also really good when you're reworking solder joints.\nPaint over it with some of the flux\nand you will desolder much easier.\nSo there's another tip. There I got my header pins in here.\nLast but not least, I want to also mention that\nif you are going to\nsolder a bunch of things together,\nlike let's say you needed a whole bunch of pins connected along a bar.\nI've mentioned earlier in videos, I saved these little\nclips from my LEDs and I'll usually have a few on hand.\nThese can be very handy when soldering on a PerfBoard.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T6",
+      "title": "Temporary Soldering Joints",
+      "description": "Tips for temporary soldering joints on a PerfBoard",
+      "coverage_ranges": [
+        {
+          "start_idx": 69,
+          "end_idx": 76
+        }
+      ],
+      "coverage_segments": [
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76
+      ],
+      "coverage_times": [
+        {
+          "start_s": 337.84000000000003,
+          "end_s": 365.85999999999996
+        }
+      ],
+      "coverage_text": "Again, I can flux this\nand say I wanted to connect all these pins together.\nI can quickly take my\nlittle lead that I have here.\nI can temporarily put it right there\nand then I can bend it like that\nand I can actually go in and connect all these points.\nSometimes you just need a lot of points connected together.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T7",
+      "title": "Connecting Multiple Points",
+      "description": "Techniques for connecting multiple points on a PerfBoard",
+      "coverage_ranges": [
+        {
+          "start_idx": 77,
+          "end_idx": 91
+        }
+      ],
+      "coverage_segments": [
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91
+      ],
+      "coverage_times": [
+        {
+          "start_s": 365.86,
+          "end_s": 394.58
+        }
+      ],
+      "coverage_text": "See how quickly I can flood that?\nLook at that.\nBeautiful bar of solder.\nSo, you know, imagine I had all different breakout wires\nthat I want to connect on the other side.\nThat's a really simple way of doing it.\nWires are connected the same way.\nYou know, I like to use these little\nflush cutters.\nI just put the wire in on the front.\nThere's my wire on the back\nand I can easily just go in there\nand solder it\nright where it needs to be.\nDone.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T8",
+      "title": "Trimming Leads and Solder Joints",
+      "description": "Tips for trimming leads and solder joints on a PerfBoard",
+      "coverage_ranges": [
+        {
+          "start_idx": 92,
+          "end_idx": 101
+        }
+      ],
+      "coverage_segments": [
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "coverage_times": [
+        {
+          "start_s": 395.52,
+          "end_s": 411.0
+        }
+      ],
+      "coverage_text": "A little bit of a cold solder joint\nbut don't worry about it.\nAnother very useful thing\nis make sure you trim these leads down.\nGet them real nice and short\nand close to the board.\nSo that's basically how you build\non a PerfBoard.\nNow, there's all different kinds.\nSome of them have built-in rows.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T9",
+      "title": "Perma-Proto Boards",
+      "description": "Overview of perma-proto boards as an alternative to breadboards",
+      "coverage_ranges": [
+        {
+          "start_idx": 102,
+          "end_idx": 119
+        }
+      ],
+      "coverage_segments": [
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ],
+      "coverage_times": [
+        {
+          "start_s": 411.0,
+          "end_s": 446.22
+        }
+      ],
+      "coverage_text": "Some of them look just like breadboards\nand that's the last thing I want to show you.\nI'm a big fan of these.\nThese are called the perma-proto boards.\nAnd what I like about these\nis if you look very carefully,\neach one of these holes is connected already\njust like it would be on a breadboard.\nAnd if you're building this circuit,\nI can buy a perma-proto board.\nThat's a half-size breadboard.\nThis happens to be a quarter size that I have here.\nBut I can literally just hold this right here\nand build the same circuit,\nwire it up the same way as my breadboard,\nflip it over, solder it together,\nand it works perfectly.\nThese are extremely handy.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the clean, high-level table of contents for the entire video:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"Overview of building on a PerfBoard\",\n    \"coverage\": [\n      { \"start_idx\": 0, \"end_idx\": 13 }\n    ]\n  },\n  {\n    \"title\": \"Getting Started with Soldering\",\n    \"description\": \"Tips and tricks for soldering on a PerfBoard\",\n    \"coverage\": [\n      { \"start_idx\": 14, \"end_idx\": 24 }\n    ]\n  },\n  {\n    \"title\": \"Using Header Pins\",\n    \"description\": \"How to use header pins with a PerfBoard\",\n    \"coverage\": [\n      { \"start_idx\": 25, \"end_idx\": 36 }\n    ]\n  },\n  {\n    \"title\": \"Soldering on a PerfBoard\",\n    \"description\": \"Techniques and tools for soldering on a PerfBoard\",\n    \"coverage\": [\n      { \"start_idx\": 37, \"end_idx\": 55 }\n    ]\n  },\n  {\n    \"title\": \"Using Flux Pens\",\n    \"description\": \"How to use flux pens with a PerfBoard\",\n    \"coverage\": [\n      { \"start_idx\": 56, \"end_idx\": 68 }\n    ]\n  },\n  {\n    \"title\": \"Temporary Soldering Joints\",\n    \"description\": \"Tips for temporary soldering joints on a PerfBoard\",\n    \"coverage\": [\n      { \"start_idx\": 69, \"end_idx\": 76 }\n    ]\n  },\n  {\n    \"title\": \"Connecting Multiple Points\",\n    \"description\": \"Techniques for connecting multiple points on a PerfBoard\",\n    \"coverage\": [\n      { \"start_idx\": 77, \"end_idx\": 91 }\n    ]\n  },\n  {\n    \"title\": \"Trimming Leads and Solder Joints\",\n    \"description\": \"Tips for trimming leads and solder joints on a PerfBoard\",\n    \"coverage\": [\n      { \"start_idx\": 92, \"end_idx\": 101 }\n    ]\n  },\n  {\n    \"title\": \"Perma-Proto Boards\",\n    \"description\": \"Overview of perma-proto boards as an alternative to breadboards\",\n    \"coverage\": [\n      { \"start_idx\": 102, \"end_idx\": 119 }\n    ]\n  }\n]\n```\n\nLet me know if you have any further requests!"
+    ]
+  }
+}

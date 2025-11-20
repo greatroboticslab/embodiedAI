@@ -1,0 +1,63 @@
+{
+  "video_id": "UrCFv2qCELI",
+  "title": "UrCFv2qCELI",
+  "url": "https://www.youtube.com/watch?v=UrCFv2qCELI",
+  "created_at": "2025-09-17T11:58:39.243406+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Capacitive Reactance",
+      "description": "The phenomenon where current consistently leads voltage in alternating current circuits. This is due to the force changing, causing water flow to lead the force.",
+      "evidence_quotes": [
+        "This behavior closely mirrors how a capacitor operates in an electrical circuit.",
+        "But in alternating current, current consistently leads voltage."
+      ],
+      "start_s": 1268.52,
+      "end_s": 1293.08,
+      "id": "T1"
+    },
+    {
+      "title": "Capacitor Operation",
+      "description": "A capacitor does not allow current to pass through in direct current, but it allows current to consistently lead voltage in alternating current.",
+      "evidence_quotes": [
+        "In direct current, where the voltage is constant, the capacitor does not allow current to pass through.",
+        "But in alternating current, current consistently leads voltage."
+      ],
+      "start_s": 1277.22,
+      "end_s": 1288.24,
+      "id": "T2"
+    },
+    {
+      "title": "Impedance",
+      "description": "The cumulative effect of resistance, inductive reactance, and capacitive reactance on the current within a circuit.",
+      "evidence_quotes": [
+        "The cumulative effect of these factors is referred to as impedance."
+      ],
+      "start_s": 1351.26,
+      "end_s": 1356.8600000000001,
+      "id": "T3"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the output in the required format:\n\n```\n[\n  {\n    \"title\": \"Water Wheel Behavior\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"The water wheel delays the increase in water flow.\", \"The water wheel delays the decrease in water flow.\"],\n    \"time_range\": \"00:07:32.160–00:08:02.400\"\n  },\n  {\n    \"title\": \"Inertia of Water Wheel\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"This behavior arises from the inertia of the water wheel, which strives to maintain a constant rotational speed.\"],\n    \"time_range\": \"00:07:39.560–00:07:53.180\"\n  },\n  {\n    \"title\": \"Comparison with Inductor\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"This behavior parallels that of an inductor in an electrical circuit.\", \"Inductive reactance does not like to change the current through it.\"],\n    \"time_range\": \"00:08:39.480–00:09:06.860\"\n  },\n  {\n    \"title\": \"Elastic Membrane Behavior\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"The elastic membrane tends to influence water flow changes to delay force changes.\"],\n    \"time_range\": \"00:09:30.820–00:10:22.120\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here is the extracted topics in JSON format:\n\n[\n  {\n    \"title\": \"Capacitive Reactance\",\n    \"description\": \"The phenomenon where current consistently leads voltage in alternating current circuits. This is due to the force changing, causing water flow to lead the force.\",\n    \"evidence_quotes\": [\"This behavior closely mirrors how a capacitor operates in an electrical circuit.\", \"But in alternating current, current consistently leads voltage.\"],\n    \"time_range\": \"00:10:38.560–00:11:03.120\"\n  },\n  {\n    \"title\": \"Impedance\",\n    \"description\": \"The cumulative effect of resistance, inductive reactance, and capacitive reactance on the current within a circuit.\",\n    \"evidence_quotes\": [\"The cumulative effect of these factors is referred to as impedance.\"],\n    \"time_range\": \"00:12:01.300–00:12:06.900\"\n  },\n  {\n    \"title\": \"Capacitor Operation\",\n    \"description\": \"A capacitor does not allow current to pass through in direct current, but it allows current to consistently lead voltage in alternating current.\",\n    \"evidence_quotes\": [\"In direct current, where the voltage is constant, the capacitor does not allow current to pass through.\", \"But in alternating current, current consistently leads voltage.\"],\n    \"time_range\": \"00:10:47.260–00:10:58.280\"\n  }\n]"
+        ]
+      }
+    ]
+  }
+}

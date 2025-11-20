@@ -1,0 +1,47 @@
+{
+  "video_id": "hnPi6i8Ua1M",
+  "title": "hnPi6i8Ua1M",
+  "url": "https://www.youtube.com/watch?v=hnPi6i8Ua1M",
+  "created_at": "2025-10-09T17:34:05.251502+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Adjusting Gain",
+      "description": "The LM386 chip has a feature that allows you to adjust its gain.",
+      "evidence_quotes": [
+        "If there's nothing connected to them then the internal resistance sets the gain at 20.",
+        "However if you connect a 10 microparad capacitor between pins 1 and 8 then the gain is increased to 200."
+      ],
+      "start_s": 182.66,
+      "end_s": 198.64,
+      "id": "T1"
+    },
+    {
+      "title": "LM386 Audio Amplifier Kit",
+      "description": "A review of the LM386 audio amplifier kit, including its features and performance.",
+      "evidence_quotes": [
+        "It's an absolute bargain.",
+        "For the price it's a trusted amplifier."
+      ],
+      "start_s": 0.0,
+      "end_s": 365.36,
+      "id": "T2"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the output in the required format:\n\n```\n[\n  {\n    \"title\": \"LM386 Audio Amplifier Kit\",\n    \"description\": \"A review of the LM386 audio amplifier kit, including its features and performance.\",\n    \"evidence_quotes\": [\"It's an absolute bargain.\", \"For the price it's a trusted amplifier.\"],\n    \"time_range\": \"00:00:00.000–00:06:05.360\"\n  },\n  {\n    \"title\": \"Adjusting Gain\",\n    \"description\": \"The LM386 chip has a feature that allows you to adjust its gain.\",\n    \"evidence_quotes\": [\"If there's nothing connected to them then the internal resistance sets the gain at 20.\", \"However if you connect a 10 microparad capacitor between pins 1 and 8 then the gain is increased to 200.\"],\n    \"time_range\": \"00:03:02.660–00:03:18.640\"\n  }\n]\n```"
+        ]
+      }
+    ]
+  }
+}

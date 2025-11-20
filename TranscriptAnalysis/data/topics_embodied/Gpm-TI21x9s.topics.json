@@ -1,0 +1,315 @@
+{
+  "video_id": "Gpm-TI21x9s",
+  "title": "Gpm-TI21x9s",
+  "url": "https://www.youtube.com/watch?v=Gpm-TI21x9s",
+  "created_at": "2025-10-09T17:31:31.167664+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction",
+      "description": "Overview of the project and its components",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 100
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.24,
+          "end_s": 699.36
+        }
+      ],
+      "coverage_text": "Hey guys, so this is a balancing robot. And yes, yes, I know there are already a lot of balancing\nrobots projects on the internet, but I wanted to make one for myself for a long time. And actually\nI wanted to make something special and make a mini balancing robot using this tiny PCB here.\nBut I kind of failed with the stepper motors and I will explain that problem in the video,\nso stay tuned for that. So what I've done in the end is to use the same PCB that I've prepared for\nthe mini balancing robot, design a small 3D printed body and use bigger stepper motors and like that\nbe able to finish my idea. For now, this robot is pretty much stable even if you push it around.\nAnd I had a very hard time getting the good PID values so it would be more and more stable,\nbut I'm not yet 100% happy with these results. Anyway, the robot should also get information\nfrom a homemade remote with a Bluetooth connection and like that we could move around. But internally,\nit should also get information from this IMU module here and calculate a PID value for the angle so it\nwill never fall and always try to stay horizontal. That's pretty interesting and I think you will\nlearn a lot with this video because I will explain step by step the circuit and also the code. So what\ndo you think? Will this work? Stay tuned to find out. So guys, let's get started.\nThese PCBs were manufactured by PCBWay and the finish quality is very good, especially with these gold\nplated pads. If you want to finish your product faster, you could also ask PCBWay to make a panelized\norder where you receive multiple PCBs on a single panel. Together with this, you can also order the\nSMD stencil from PCBWay and use it to add solder paste and solder all the components at once and by\nthat you save time and effort. All the orders are high quality and you could select a lot of settings,\nsuch as the thickness, flexible PCBs, the color of the solder mask, the amount of layers, the material,\nthe surface finish and more. So upload the Gerber files directly on PCBWay.com and make the order in just a couple of minutes.\nWhat's up my friends, welcome back. This here is the PCB that I've made for this project.\nAnd my plan was to use this PCB with this kind of stepper motors. I have this from some old DVD\nwriters and I thought it would work great connected to this PCB. It's very easy to control them with some\nstepper drivers so that's not the problem. The problem was mechanical. You see these motors have\nthe shaft connected to the magnets inside. This shaft is supported on both sides, here and here.\nSo if I want to add a wheel to this shaft, I had to cut it smaller and in that way we have support only\non one side. That's the problem. Without support on both sides, this shaft will move around and\nautomatically break all the small coils and magnets inside. I've also tried gluing a bearing at the\noutput but without success. Inside the shaft is kept in the center by a metal ball and once you move\nthat, you can say goodbye to the whole motor. I've ordered these motors here which are smaller,\nbut this time they are too small. They don't have enough torque and guess what? Their shaft is also\nweak and it will break very easy just as the other ones. So I had no other option but to use the NEMA 17\nmotors. These are one of the smaller NEMA 17 steppers. On the side of that PCB I've also designed this support.\nAnd like this we can attach the motors below. The battery in the middle and the PCB will be kept\nin place with some plastic supports. So this is not a mini robot anymore but anyway, let's make this\nrobot and you will definitely learn something new. So let's see what we have on the PCB.\nIf you want the same PCB, you can get the Gerber files from below and go to PCBway.com. You click the\nCode Now button and select your settings such as the thickness, the amount of PCBs, the materials and the\nsolar mask color. In my case I've selected the black one but you can select any other one as for example\npurple or the matte black which look amazing. On the next page you can upload the Gerber files\nand order the PCBs. I've received my ports to Spain in around 8 days so let's check them out.\nOn the front part we have some spaces for two stepper motor drivers.\nOn the front part you can use the basic A4988 drivers or even better you can use the TMC2225 drivers\nfor better and silent movement. Below that we have these 4 pins which are used to connect a\nbuck converter for 5V. Because I want to use a 2S or maybe a 3S battery and because the digital\npart will work at 5V, I will connect a buck converter here to these pins and have that voltage.\nOn the bottom side we have the output for the 2 stepper motors. This is the place where I wanted\nto solder those tiny motors but unfortunately they break too easy. If you manage to use them,\njust solder the motor and use a zip tie like this one and keep them in place. It would be a lot cooler\nto have a mini robot but anyway. What more do we have on the PCB? These 4 pins here are for the IMU module\nand I will use the MPU 6050 as always. We use this module to measure the angle. On the top part we\nhave 4 more pins for the Bluetooth module and I will use the HC05. On side of that we have these 4 more\npins for the I2C for an OLED display. I might add this as well so we can draw faces for the robot and give it\nmore personality. I've also placed an SMD buzzer here for some notifications. On the bottom of the\nPCB we have some LEDs to make the robot look cooler and also the input from the battery.\nSo now let's take a look on the back of the PCB. Actually the Bluetooth module will go here\nbecause the other side will be full of components. Below here we have the Atmega 328 microcontroller\nand the needed components in order to work. It's very difficult to see but we have 3 pairs of pads\nfor each stepper driver and by soldering this here we can select the microstepping amount.\nThat's it for the PCB, that's all we need. The PCB, the stepper drivers as well, the back converter module\nfor 5V, the HC05 Bluetooth module, the NPU6050 sensor and two NEMA17 stepper motors.\nIf you want you can also add an OLED screen like this one. As for the tiny components we need the\nbuzzer, also some SMD capacitors, some LEDs and resistors and yet mega cheap together with the 60MHz\nresonator. As for the battery, you can use a 3S LiPo battery like this one. But in my case,\nbecause I have a lot of batteries from cell phones, I want to connect 2 of these iPhone batteries in\nseries and get 12V. These are very flat and will occupy less space. As for the body, just download\nthe STL files from below and print them using PLA material. I've used a 0.2 mm layer height and a 0.4 mm\nnozzle with 3 perimeters and 20% infill. As for the wheels, the inner part is made out of PLA but the\nexterior is made out of flexible material and this must be printed at very low speeds. Like that we\ncan have more grip. The wheels have this hole so we can pass a screwdriver and tie the screw here.\nSo we have to add a screw nut inside and then insert the shaft on the motor and tie the screw.\nAnd like that it will stay in place. Once we tie the screw, we can add this rubber part on top.\nSo these are all the parts that we need for this robot, more or less. You have the full part\nlist below on electronoops.com. So let's assemble it. It should end up something like this, like this\n3D design example. So I get the main 3D printed part and add the stepper motors. You just have to\napply a little bit of force and it will snap into place. Then we add some screws and washers and tie the\nmotor. Also make sure that the motor connector is on the back side of the robot. Now get the plastic\nwheels and add a small nut inside of this hole. We also add a screw. Now we can add a wheel to each\nmotor. We tie that screw so it will stay tight on the motor shaft. Now this part was printed in flexible\nfilament. So we can now add this part on top of the wheels. First I wanted the battery to go here …",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Tuning PID Controller",
+      "description": "Explanation of how to tune the PID controller for the stepper motor robot",
+      "coverage_ranges": [
+        {
+          "start_idx": 101,
+          "end_idx": 157
+        }
+      ],
+      "coverage_segments": [
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "coverage_times": [
+        {
+          "start_s": 699.36,
+          "end_s": 1060.16
+        }
+      ],
+      "coverage_text": "the stepper motors to the PCB on these pins here. Between the battery and the PCB I add a switch so\nwe can turn the robot on and off. But guys, before we go over the code, I have to say that with this\nshape, this robot won't be stable. Why is that? Well, because this type of balancing robot will need some\nweight on the upper part in order to have some inertia. But at this moment all the weight is on\nthe bottom side of the robot as you can see and is very difficult to balance.\nThis robot will work exactly the same as trying to balance a stick in your hand.\nIf the stick is too short, it will be impossible.\nWhen the stick is large enough, you can move your hand in the same direction as the tilt and you can\nstabilize it. That's why I've placed some threaded rods on top of the robot. On top I have a plywood\npart and here I can place the battery. Like this we can have more inertia when moving. This is a crucial\npart for this project. With the same code before, I now got better results but as you can see the robot is\nstill wobbling around. That's because we can still have to adjust the PID values in the code.\nAnd this was the longest part of this project. I had to manually go and change the PID values\ntill I got better and better but even so I am not quite happy with the final results.\nSo for example, if you start only with the P values and the I and the D are zero, you get this kind of\noscillations where the wheels are rotating in the same direction as the tilt of the robot according to the\nangle. But then we add some D values and this will react to the speed of changing of the angle and it\nwill try to stop the oscillations. But that's not enough, especially when the error is very small.\nSo finally, to fine adjust the position, we can add the I and that will increase and decrease slowly\nwhen the error is very small. So after more than 30 tries, I got more or less good results and the\nrobot is quite stable but I am not entirely happy yet. So at this point I've decided to make a second\npart for this project where I will show you how to tune the PID values. So till then I will try to get\nbetter results and in that video I will explore the mathematics and physics behind this kind of project,\nincluding the IMU position, the center of gravity, the inertia of the robot, the motor speed and the PID algorithm.\nBefore I end this video, let's take a look at the code. These here are the variables that you could\nchange in order to tune the PID controller. This is the same that we had for the brushless PID controller\nor the ping pong ball controller but this time we use stepper motors. To create the step pulses applied\nto the stepper drivers, we use a timer, timer 2 in this case. So by setting these registers, we can\nmake that timer to click every 20 microseconds. Next, with these lines here in the code, we read the raw data\nfrom the gyro and the accelerometer. To overcome the gyro offset, we make around 500 reads from the IMU module\nand we save this data as an offset and subtract that later in the main loop. Then we calculate the\nangle each loop, which is said to be around 4000 microseconds. Using this gyro angle variable,\nwe can calculate the PID values. As always, we first find the PID error which is the difference between\nthe real angle of the robot and the desired angle, which in this case should be zero so the robot will\nstay horizontal. Finally, inside of the timer routine, depending on the PID output, we calculate the\nspeed of the motors by creating more or less, faster or slower pulses applied to the stepper motors.\nAnd to make the code faster, instead of using a digital write function, we use register control,\nwhere this line here for example is the same as setting the digital pin D3 to high.\nAnd for more about this, you can take a look at my Arduino register control video and the links are\nbelow. So using this code, the robot should be able to stay horizontal. When I lift the code,\nit will detect the angle and starts the PID code. When it detects a tilt on the front side,\nit will accelerate the wheels so it will get horizontal once again and do the same process\nbackwards if the tilt is on the other side. If you do this fast enough with the PID control,\nyou get a stable horizontal robot. So this is not yet perfect. I will make it better in the second\npart of this project. Without a remote, we can control it. I will also add that in the second part.\nI want to use this Wii console nunchuck and get the movement from this joystick and we can send the\ndata using a Bluetooth module. This actually has an accuracy communication so I might use that to read\nthe values from the joystick. The schematic would be something like this with the battery and also a\nswitch, the Arduino, the joystick analog outputs and the Bluetooth module. Stay tuned for more.\nSo guys, that's how a balanced robot works and how you can make one. You have my PCB below for download,\nyou also have the schematic for the robot and controller, the part list and the codes and everything\nis below in the description. If you have learned something new, consider giving me a like or comment\nbelow. Thanks again and see you later guys. Hey, so one more video that ends, I hope that you like it.\nOkay, so listen, if you want to buy my merch, my t-shirts, you have the links below for my shop\nand I promise that I will make more designs. Also, maybe you would comment below which one you like\nmore and what more designs you would like to see because in that way I could start designing them\nand post my new t-shirts. So thank you for all the support and I'll see you in the next video.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Balanced Robot Overview",
+      "description": "How a balanced robot works and its components",
+      "coverage_ranges": [
+        {
+          "start_idx": 157,
+          "end_idx": 157
+        }
+      ],
+      "coverage_segments": [
+        157
+      ],
+      "coverage_times": [
+        {
+          "start_s": 1042.96,
+          "end_s": 1060.16
+        }
+      ],
+      "coverage_text": "and post my new t-shirts. So thank you for all the support and I'll see you in the next video.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Code Explanation",
+      "description": "Explanation of the code used to control the stepper motors and PID controller",
+      "coverage_ranges": [
+        {
+          "start_idx": 157,
+          "end_idx": 157
+        }
+      ],
+      "coverage_segments": [
+        157
+      ],
+      "coverage_times": [
+        {
+          "start_s": 1042.96,
+          "end_s": 1060.16
+        }
+      ],
+      "coverage_text": "and post my new t-shirts. So thank you for all the support and I'll see you in the next video.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Wii Nunchuck Control",
+      "description": "How to use a Wii nunchuck to control the robot remotely",
+      "coverage_ranges": [
+        {
+          "start_idx": 157,
+          "end_idx": 157
+        }
+      ],
+      "coverage_segments": [
+        157
+      ],
+      "coverage_times": [
+        {
+          "start_s": 1042.96,
+          "end_s": 1060.16
+        }
+      ],
+      "coverage_text": "and post my new t-shirts. So thank you for all the support and I'll see you in the next video.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T6",
+      "title": "Conclusion and Future Work",
+      "description": "Summary of the project and future plans for improvements",
+      "coverage_ranges": [
+        {
+          "start_idx": 157,
+          "end_idx": 157
+        }
+      ],
+      "coverage_segments": [
+        157
+      ],
+      "coverage_times": [
+        {
+          "start_s": 1042.96,
+          "end_s": 1060.16
+        }
+      ],
+      "coverage_text": "and post my new t-shirts. So thank you for all the support and I'll see you in the next video.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the high-level table of contents for the entire video:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"Overview of the project and its components\",\n    \"coverage\": [{\"start_idx\": 0, \"end_idx\": 100}]\n  },\n  {\n    \"title\": \"Tuning PID Controller\",\n    \"description\": \"Explanation of how to tune the PID controller for the stepper motor robot\",\n    \"coverage\": [{\"start_idx\": 101, \"end_idx\": 300}]\n  },\n  {\n    \"title\": \"Balanced Robot Overview\",\n    \"description\": \"How a balanced robot works and its components\",\n    \"coverage\": [{\"start_idx\": 301, \"end_idx\": 500}]\n  },\n  {\n    \"title\": \"Code Explanation\",\n    \"description\": \"Explanation of the code used to control the stepper motors and PID controller\",\n    \"coverage\": [{\"start_idx\": 501, \"end_idx\": 700}]\n  },\n  {\n    \"title\": \"Wii Nunchuck Control\",\n    \"description\": \"How to use a Wii nunchuck to control the robot remotely\",\n    \"coverage\": [{\"start_idx\": 701, \"end_idx\": 900}]\n  },\n  {\n    \"title\": \"Conclusion and Future Work\",\n    \"description\": \"Summary of the project and future plans for improvements\",\n    \"coverage\": [{\"start_idx\": 901, \"end_idx\": 1000}]\n  }\n]\n```"
+    ]
+  }
+}

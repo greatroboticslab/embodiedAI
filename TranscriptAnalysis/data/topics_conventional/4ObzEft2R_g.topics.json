@@ -1,0 +1,175 @@
+{
+  "video_id": "4ObzEft2R_g",
+  "title": "4ObzEft2R_g",
+  "url": "https://www.youtube.com/watch?v=4ObzEft2R_g",
+  "created_at": "2025-09-17T11:54:30.379994+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "[S00032] Loud Audio Amplifier",
+      "description": "Turn up the volume without distortion and drain a 9V battery quickly.",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 1
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.2,
+          "end_s": 10.48
+        }
+      ],
+      "coverage_text": "In this video I'm going to show you how to build a simple audio amplifier that can power\nnearly any speaker. For less than $3 in parts it gets surprisingly loud. This tutorial was",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Adding a Filter Capacitor",
+      "description": "Use a 100uF capacitor to filter out noise from the power supply.",
+      "coverage_ranges": [
+        {
+          "start_idx": 2,
+          "end_idx": 5
+        }
+      ],
+      "coverage_segments": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "coverage_times": [
+        {
+          "start_s": 10.48,
+          "end_s": 29.68
+        }
+      ],
+      "coverage_text": "supported by The Great Courses Plus. In my previous videos about amplifiers I showed\nyou how to make a simple op amp circuit that can power headphones and another one where\nI showed you how to make a powerful class D design. But what if you just want a simple\namplifier that can drive a speaker without all the fancy switch mode circuitry? The LM",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Output Filtering",
+      "description": "Add a 1k0uF capacitor to ensure no DC voltage reaches your speaker.",
+      "coverage_ranges": [
+        {
+          "start_idx": 7,
+          "end_idx": 10
+        }
+      ],
+      "coverage_segments": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "coverage_times": [
+        {
+          "start_s": 35.44,
+          "end_s": 55.379999999999995
+        }
+      ],
+      "coverage_text": "speaker. This chip has been around for decades and it's still used to this day in products\nlike computer speakers and portable stereos. So everyone who works with electronics needs\nto know about this chip. The maximum power output is roughly 1 watt, which doesn't sound like\nmuch in a world full of deceptive marketing, but trust me, 1 watt going into a speaker is",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Analyzing the Output",
+      "description": "Use an oscilloscope to identify noise and oscillation in the audio signal.",
+      "coverage_ranges": [
+        {
+          "start_idx": 11,
+          "end_idx": 14
+        }
+      ],
+      "coverage_segments": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "coverage_times": [
+        {
+          "start_s": 55.379999999999995,
+          "end_s": 74.36
+        }
+      ],
+      "coverage_text": "more than enough power to fill an entire living room full of sound.\nThe first thing you're going to need is a 3.5mm audio plug attached to a cable. There\nare many ways to get this. You could solder wires onto a plug, or cut up an extension cable,\nbut I think the cheapest way to do this is to just cut up headphones from the dollar store.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Fixing Oscillation Issues",
+      "description": "Add a 0.1uF capacitor to filter out high-frequency oscillation.",
+      "coverage_ranges": [
+        {
+          "start_idx": 15,
+          "end_idx": 18
+        }
+      ],
+      "coverage_segments": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "coverage_times": [
+        {
+          "start_s": 74.36,
+          "end_s": 93.17999999999999
+        }
+      ],
+      "coverage_text": "After I was done being a stripper, I used some sandpaper to remove the insulation on the left\nand right signal wires. And I soldered on some thicker wire to make it easier to connect\nthe cable to a breadboard. I also twisted the two ground wires together.\nNext, we're going to implement the simplest possible stereo to mono conversion circuit.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T6",
+      "title": "Conclusion and Future Learning",
+      "description": "Build an amplifier for under $3 and explore more electronics resources online.",
+      "coverage_ranges": [
+        {
+          "start_idx": 19,
+          "end_idx": 22
+        }
+      ],
+      "coverage_segments": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "coverage_times": [
+        {
+          "start_s": 93.17999999999999,
+          "end_s": 114.17999999999999
+        }
+      ],
+      "coverage_text": "It's just putting 1kohm resistors in series with the audio channels, then joining the\nends together. Now, this is definitely not the best way to do stereo to mono, as we're\njust averaging the signals here, but the point of this project is to create the simplest amplifier\npossible, and this trick works surprisingly well. Next, you're going to need an LM386 chip.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the high-level table of contents in JSON format:\n\n[\n  {\n    \"title\": \"[S00032] Loud Audio Amplifier\",\n    \"description\": \"Turn up the volume without distortion and drain a 9V battery quickly.\",\n    \"coverage\": [{\"start_idx\": 0, \"end_idx\": 1}]\n  },\n  {\n    \"title\": \"Adding a Filter Capacitor\",\n    \"description\": \"Use a 100uF capacitor to filter out noise from the power supply.\",\n    \"coverage\": [{\"start_idx\": 2, \"end_idx\": 5}]\n  },\n  {\n    \"title\": \"Output Filtering\",\n    \"description\": \"Add a 1k0uF capacitor to ensure no DC voltage reaches your speaker.\",\n    \"coverage\": [{\"start_idx\": 7, \"end_idx\": 10}]\n  },\n  {\n    \"title\": \"Analyzing the Output\",\n    \"description\": \"Use an oscilloscope to identify noise and oscillation in the audio signal.\",\n    \"coverage\": [{\"start_idx\": 11, \"end_idx\": 14}]\n  },\n  {\n    \"title\": \"Fixing Oscillation Issues\",\n    \"description\": \"Add a 0.1uF capacitor to filter out high-frequency oscillation.\",\n    \"coverage\": [{\"start_idx\": 15, \"end_idx\": 18}]\n  },\n  {\n    \"title\": \"Conclusion and Future Learning\",\n    \"description\": \"Build an amplifier for under $3 and explore more electronics resources online.\",\n    \"coverage\": [{\"start_idx\": 19, \"end_idx\": 22}]\n  }\n]"
+    ]
+  }
+}

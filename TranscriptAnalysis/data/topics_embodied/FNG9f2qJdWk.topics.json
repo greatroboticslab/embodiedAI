@@ -1,0 +1,46 @@
+{
+  "video_id": "FNG9f2qJdWk",
+  "title": "FNG9f2qJdWk",
+  "url": "https://www.youtube.com/watch?v=FNG9f2qJdWk",
+  "created_at": "2025-10-09T17:31:23.094309+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Altium 365 Platform",
+      "description": "The speaker mentions Altium 365 as a platform that allows seamless integration and does not require extra setup or configuration.",
+      "evidence_quotes": [
+        "Platforma sorunsuz bir şekilde entegre olduğundan ek lisans gerektirmeden ekstra kurulum veya yapılandırmaya ihtiyaç duymadan Altium Designer içinden zahmetsizce tasarlayın, paylaşın ve üretin."
+      ],
+      "start_s": 150.88,
+      "end_s": 166.38,
+      "id": "T1"
+    },
+    {
+      "title": "Altyum Designer and Octopart",
+      "description": "The speaker describes Altium Designer as a tool for creating PCB designs with an intuitive interface. Octopart is also mentioned as a free search engine for electronic components.",
+      "evidence_quotes": [
+        "Sizi fikirden üretime kadar elektronik üretim sürecinin her detayına sorunsuz bir şekilde bağlayan sezgisel bir arayüzle zahmetsizce PCB tasarımları oluşturun.",
+        "Octopart elektronik parçalar ve bileşenler için ücretsiz bir arama motorudur."
+      ],
+      "start_s": 120.0,
+      "end_s": 172.96,
+      "id": "T2"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topics in JSON format:\n\n[\n  {\n    \"title\": \"Altyum Designer and Octopart\",\n    \"description\": \"The speaker describes Altium Designer as a tool for creating PCB designs with an intuitive interface. Octopart is also mentioned as a free search engine for electronic components.\",\n    \"evidence_quotes\": [\"Sizi fikirden üretime kadar elektronik üretim sürecinin her detayına sorunsuz bir şekilde bağlayan sezgisel bir arayüzle zahmetsizce PCB tasarımları oluşturun.\", \"Octopart elektronik parçalar ve bileşenler için ücretsiz bir arama motorudur.\"],\n    \"time_range\": \"00:02:00.000–00:02:52.960\"\n  },\n  {\n    \"title\": \"Altium 365 Platform\",\n    \"description\": \"The speaker mentions Altium 365 as a platform that allows seamless integration and does not require extra setup or configuration.\",\n    \"evidence_quotes\": [\"Platforma sorunsuz bir şekilde entegre olduğundan ek lisans gerektirmeden ekstra kurulum veya yapılandırmaya ihtiyaç duymadan Altium Designer içinden zahmetsizce tasarlayın, paylaşın ve üretin.\"],\n    \"time_range\": \"00:02:30.880–00:02:46.380\"\n  }\n]"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "video_id": "KKjHZpNMeik",
+  "title": "KKjHZpNMeik",
+  "url": "https://www.youtube.com/watch?v=KKjHZpNMeik",
+  "created_at": "2025-09-17T11:56:55.214972+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Bypass Capacitors",
+      "description": "The use of bypass capacitors to provide current and suppress frequencies.",
+      "evidence_quotes": [
+        "A capacitor is placed in the circuit where it will suppress or bypass signals.",
+        "They act as a frequency-dependent resistor."
+      ],
+      "start_s": 239.12,
+      "end_s": 507.76,
+      "id": "T1"
+    },
+    {
+      "title": "Capacitor Selection",
+      "description": "The importance of selecting the right capacitor for decoupling applications.",
+      "evidence_quotes": [
+        "The capacitors should be placed as close as possible to the ICs.",
+        "The first and most important aspect is to choose capacitors which has low equivalent series resistance."
+      ],
+      "start_s": 239.12,
+      "end_s": 507.76,
+      "id": "T2"
+    },
+    {
+      "title": "Decoupling Capacitors",
+      "description": "The use of decoupling capacitors to bypass noise and suppress frequencies.",
+      "evidence_quotes": [
+        "It needs remarkable amount of current immediately.",
+        "A capacitor is placed in the circuit where it will suppress or bypass signals."
+      ],
+      "start_s": 239.12,
+      "end_s": 507.76,
+      "id": "T3"
+    },
+    {
+      "title": "Noise Suppression",
+      "description": "The importance of noise suppression and the use of decoupling capacitors to achieve it.",
+      "evidence_quotes": [
+        "Noise through the power lines is completely unpredictable and changes in nature every time.",
+        "So, these capacitors are connected in parallel with the ICs."
+      ],
+      "start_s": 239.12,
+      "end_s": 507.76,
+      "id": "T4"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topics in the format specified:\n\n```\n[\n  {\n    \"title\": \"Decoupling Capacitors\",\n    \"description\": \"The use of decoupling capacitors to bypass noise and suppress frequencies.\",\n    \"evidence_quotes\": [\"It needs remarkable amount of current immediately.\", \"A capacitor is placed in the circuit where it will suppress or bypass signals.\"],\n    \"time_range\": \"00:03:59.120–00:08:27.760\"\n  },\n  {\n    \"title\": \"Bypass Capacitors\",\n    \"description\": \"The use of bypass capacitors to provide current and suppress frequencies.\",\n    \"evidence_quotes\": [\"A capacitor is placed in the circuit where it will suppress or bypass signals.\", \"They act as a frequency-dependent resistor.\"],\n    \"time_range\": \"00:03:59.120–00:08:27.760\"\n  },\n  {\n    \"title\": \"Noise Suppression\",\n    \"description\": \"The importance of noise suppression and the use of decoupling capacitors to achieve it.\",\n    \"evidence_quotes\": [\"Noise through the power lines is completely unpredictable and changes in nature every time.\", \"So, these capacitors are connected in parallel with the ICs.\"],\n    \"time_range\": \"00:03:59.120–00:08:27.760\"\n  },\n  {\n    \"title\": \"Capacitor Selection\",\n    \"description\": \"The importance of selecting the right capacitor for decoupling applications.\",\n    \"evidence_quotes\": [\"The capacitors should be placed as close as possible to the ICs.\", \"The first and most important aspect is to choose capacitors which has low equivalent series resistance.\"],\n    \"time_range\": \"00:03:59.120–00:08:27.760\"\n  }\n]\n```"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "video_id": "re-dSV_a0tM",
+  "title": "re-dSV_a0tM",
+  "url": "https://www.youtube.com/watch?v=re-dSV_a0tM",
+  "created_at": "2025-10-09T17:34:41.381325+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction",
+      "description": "An overview of the DIY Alexa project and its goals.",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 5
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.0,
+          "end_s": 22.12
+        }
+      ],
+      "coverage_text": "Marvin, turn on the lights.\nOkay.\nMarvin, turn off the bedroom.\nOkay.\nMarvin, turn off the kitchen.\nOkay.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Hardware Requirements",
+      "description": "The components needed to build the DIY Alexa device.",
+      "coverage_ranges": [
+        {
+          "start_idx": 6,
+          "end_idx": 10
+        }
+      ],
+      "coverage_segments": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "coverage_times": [
+        {
+          "start_s": 22.56,
+          "end_s": 41.08
+        }
+      ],
+      "coverage_text": "Marvin, tell me a joke.\nWhat goes up and down but does not move?\nStairs.\nMarvin, turn off the lights.\nOkay.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Software Overview",
+      "description": "An introduction to the software used in the project, including the neural network and Wit.ai API.",
+      "coverage_ranges": [
+        {
+          "start_idx": 11,
+          "end_idx": 15
+        }
+      ],
+      "coverage_segments": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "coverage_times": [
+        {
+          "start_s": 42.4,
+          "end_s": 68.56
+        }
+      ],
+      "coverage_text": "Hey everyone.\nSo, if you've been playing along at home, you'll have known that we've been building towards something.\nWe've covered getting audio into the ESP32, getting audio out of the ESP32, and we've looked at getting some AI running using TensorFlow Lite.\nThis has all been building towards building an Alexa type system.\nSo what actually is an Alexa system?",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Wake Word Detection",
+      "description": "How the DIY Alexa device detects the wake word using a neural network.",
+      "coverage_ranges": [
+        {
+          "start_idx": 16,
+          "end_idx": 22
+        }
+      ],
+      "coverage_segments": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "coverage_times": [
+        {
+          "start_s": 69.12,
+          "end_s": 108.42
+        }
+      ],
+      "coverage_text": "What components do we need to plug together to get something working?\nSo, the first thing we're going to need is some kind of wake word detection system.\nThis will continuously listen to audio waiting for a trigger phrase or word.\nWhen it hears this word, it will wake up the rest of the system and start recording audio to capture whatever instructions the user has.\nOnce the audio has been captured, it will send it off to a server to be recognised.\nThe server processes the audio and works out what the user is asking for.\nThe server may process the user's request and may trigger actions in other services.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Command Recognition",
+      "description": "How the DIY Alexa device recognizes and interprets user commands using Wit.ai API.",
+      "coverage_ranges": [
+        {
+          "start_idx": 23,
+          "end_idx": 31
+        }
+      ],
+      "coverage_segments": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "coverage_times": [
+        {
+          "start_s": 108.98,
+          "end_s": 147.78
+        }
+      ],
+      "coverage_text": "In the system we're building, we'll just be using the server to work out what the user's intention was.\nThis intention is then sent back to the device and the device tries to perform what the user asked it to do.\nSo we need three components.\nA wake word detection.\nAudio capture and intent recognition.\nAnd intent execution.\nLet's start off with the wake word detection.\nWe're going to be using TensorFlow Lite for our wake word detection.\nAnd as with any machine learning problem, our first port of call is to find some data to train against.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T6",
+      "title": "Intent Processing",
+      "description": "How the DIY Alexa device processes user intents and carries out actions.",
+      "coverage_ranges": [
+        {
+          "start_idx": 32,
+          "end_idx": 37
+        }
+      ],
+      "coverage_segments": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "coverage_times": [
+        {
+          "start_s": 147.78,
+          "end_s": 183.22
+        }
+      ],
+      "coverage_text": "Now fortunately the good folk at Google have already done the heavy lifting for us and collated a speech commands dataset.\nSo this dataset contains over 100,000 audio files consisting of a set of 20 core command words such as\nup, down, left, right, yes, no and a set of extra words.\nEach of the samples is one second long.\nThere's one word in particular that looks like a good candidate for a wake word.\nI've chosen to use the word Marvin as my wake word.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T7",
+      "title": "Testing and Results",
+      "description": "The results of testing the DIY Alexa device and its limitations.",
+      "coverage_ranges": [
+        {
+          "start_idx": 38,
+          "end_idx": 45
+        }
+      ],
+      "coverage_segments": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "coverage_times": [
+        {
+          "start_s": 183.22,
+          "end_s": 200.5
+        }
+      ],
+      "coverage_text": "Oh god, I'm so depressed.\nLet's have a listen to a couple of the files.\nMarvin\nMarvin\nMarvin\nMarvin\nMarvin\nSeven",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T8",
+      "title": "Conclusion",
+      "description": "A summary of the project and its potential applications.",
+      "coverage_ranges": [
+        {
+          "start_idx": 46,
+          "end_idx": 50
+        }
+      ],
+      "coverage_segments": [
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "coverage_times": [
+        {
+          "start_s": 200.5,
+          "end_s": 216.02
+        }
+      ],
+      "coverage_text": "Seven\nSeven\nSeven\nI've also recorded a large sample of ambient background noise consisting of TV,\nradio shows and general office noise.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the high-level table of contents for the entire video:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"An overview of the DIY Alexa project and its goals.\",\n    \"coverage\": [{\"start_idx\": 0, \"end_idx\": 5}]\n  },\n  {\n    \"title\": \"Hardware Requirements\",\n    \"description\": \"The components needed to build the DIY Alexa device.\",\n    \"coverage\": [{\"start_idx\": 6, \"end_idx\": 10}]\n  },\n  {\n    \"title\": \"Software Overview\",\n    \"description\": \"An introduction to the software used in the project, including the neural network and Wit.ai API.\",\n    \"coverage\": [{\"start_idx\": 11, \"end_idx\": 15}]\n  },\n  {\n    \"title\": \"Wake Word Detection\",\n    \"description\": \"How the DIY Alexa device detects the wake word using a neural network.\",\n    \"coverage\": [{\"start_idx\": 16, \"end_idx\": 22}]\n  },\n  {\n    \"title\": \"Command Recognition\",\n    \"description\": \"How the DIY Alexa device recognizes and interprets user commands using Wit.ai API.\",\n    \"coverage\": [{\"start_idx\": 23, \"end_idx\": 31}]\n  },\n  {\n    \"title\": \"Intent Processing\",\n    \"description\": \"How the DIY Alexa device processes user intents and carries out actions.\",\n    \"coverage\": [{\"start_idx\": 32, \"end_idx\": 37}]\n  },\n  {\n    \"title\": \"Testing and Results\",\n    \"description\": \"The results of testing the DIY Alexa device and its limitations.\",\n    \"coverage\": [{\"start_idx\": 38, \"end_idx\": 45}]\n  },\n  {\n    \"title\": \"Conclusion\",\n    \"description\": \"A summary of the project and its potential applications.\",\n    \"coverage\": [{\"start_idx\": 46, \"end_idx\": 50}]\n  }\n]\n```\n\nLet me know if this meets your requirements!"
+    ]
+  }
+}

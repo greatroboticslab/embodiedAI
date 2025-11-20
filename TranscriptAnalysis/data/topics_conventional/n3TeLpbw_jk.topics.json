@@ -1,0 +1,71 @@
+{
+  "video_id": "n3TeLpbw_jk",
+  "title": "n3TeLpbw_jk",
+  "url": "https://www.youtube.com/watch?v=n3TeLpbw_jk",
+  "created_at": "2025-09-17T12:02:29.798712+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Check Board Orientation",
+      "description": "Verify board orientation to ensure correct gyro direction",
+      "evidence_quotes": [
+        "And you'll be surprised that not all manufacturers point the gyro directly at the front the same direction of the arrow as you would think.",
+        "So let's go over to the configuration tab and I'll show you where to find this setting."
+      ],
+      "start_s": 1243.0,
+      "end_s": 1370.7,
+      "id": "T1"
+    },
+    {
+      "title": "Incorrect Quad Orientation",
+      "description": "Flash quad to correct orientation or check board setup",
+      "evidence_quotes": [
+        "Another way to get the wrong board orientation is to flash your quad because sometimes when you flash your quad, things don't get applied properly.",
+        "So if it doesn't say the right thing, you'll get a flipping quad."
+      ],
+      "start_s": 1238.72,
+      "end_s": 1388.54,
+      "id": "T2"
+    },
+    {
+      "title": "Quad Issues",
+      "description": "Discussion on quad problems and common issues with new Metaflight versions.",
+      "evidence_quotes": [
+        "It does happen. So, go down there and tell me how yours went.",
+        "I'd really be interested to know because I see this literally all the time, especially in beginner forums.",
+        "Quads are crazy. And they're going to do what they're going to do."
+      ],
+      "start_s": 2126.7799999999997,
+      "end_s": 2213.44,
+      "id": "T3"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topics in the format you specified:\n\n```\n[\n  {\n    \"title\": \"Crash Due to Incorrect Prop Configuration\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"either you need to make sure the switches on your radio where flip over after crash is assigned are in the proper position.\", \"So there are two ways to put your props on that will cause this.\", \"I have both of those facing out from my camera.\"],\n    \"time_range\": \"00:05:43.980–00:07:49.160\"\n  },\n  {\n    \"title\": \"Common Cause of Crash\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"A lot of people know what modes are going on and if it's active or not.\", \"But that's actually not the most common thing.\", \"What is the most common thing and what causes that to happen more often than not is the props being on wrong.\"],\n    \"time_range\": \"00:05:43.980–00:06:34.600\"\n  },\n  {\n    \"title\": \"Incorrect Prop Orientation\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"If you'll notice on my quad, I have both leading edges.\", \"So a prop looks kind of like a wing and it swoops down.\", \"You want to make sure that you are using the leading edge of the prop to determine the prop orientation on these.\"],\n    \"time_range\": \"00:06:17.080–00:07:13.400\"\n  },\n  {\n    \"title\": \"Upside-Down Prop Configuration\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"Now another way you can do this incorrectly other than just putting the props on in the wrong direction is putting them on upside down.\", \"Normally it'll just pin it there.\"],\n    \"time_range\": \"00:07:13.400–00:07:28.920\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here is the extracted coherent topics in JSON format:\n\n```\n[\n  {\n    \"title\": \"Incorrect Quad Orientation\",\n    \"description\": \"Flash quad to correct orientation or check board setup\",\n    \"evidence_quotes\": [\n      \"Another way to get the wrong board orientation is to flash your quad because sometimes when you flash your quad, things don't get applied properly.\",\n      \"So if it doesn't say the right thing, you'll get a flipping quad.\"\n    ],\n    \"time_range\": \"00:12:39.660–00:15:09.480\"\n  },\n  {\n    \"title\": \"Check Board Orientation\",\n    \"description\": \"Verify board orientation to ensure correct gyro direction\",\n    \"evidence_quotes\": [\n      \"And you'll be surprised that not all manufacturers point the gyro directly at the front the same direction of the arrow as you would think.\",\n      \"So let's go over to the configuration tab and I'll show you where to find this setting.\"\n    ],\n    \"time_range\": \"00:12:43.940–00:14:51.640\"\n  }\n]\n```\n\nLet me know if you need anything else!"
+        ]
+      },
+      {
+        "chunk_index": 2,
+        "attempts": [
+          "Here is the extracted topic in JSON format:\n\n```\n[\n  {\n    \"title\": \"Quad Issues\",\n    \"description\": \"Discussion on quad problems and common issues with new Metaflight versions.\",\n    \"evidence_quotes\": [\n      \"It does happen. So, go down there and tell me how yours went.\", \n      \"I'd really be interested to know because I see this literally all the time, especially in beginner forums.\", \n      \"Quads are crazy. And they're going to do what they're going to do.\"\n    ],\n    \"time_range\": \"00:20:17.300–00:21:43.960\"\n  }\n]\n```"
+        ]
+      }
+    ]
+  }
+}

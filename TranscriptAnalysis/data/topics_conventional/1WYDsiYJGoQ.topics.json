@@ -1,0 +1,103 @@
+{
+  "video_id": "1WYDsiYJGoQ",
+  "title": "1WYDsiYJGoQ",
+  "url": "https://www.youtube.com/watch?v=1WYDsiYJGoQ",
+  "created_at": "2025-09-17T11:53:57.630478+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Bidirectional D-shot",
+      "description": "Enabling bidirectional D-shot for low latency motor RPM feedback",
+      "evidence_quotes": [
+        "[00:08:15.580 → 00:08:18.520] This is potentially one of the most important options you can enable in order to get the best flight performance out of your quadcopter.",
+        "[00:08:22.840 → 00:08:28.540] Bidirectional D-shot allows the ESC to send motor RPM back to the flight controller with extremely low latency."
+      ],
+      "start_s": 495.58,
+      "end_s": 508.54,
+      "id": "T1"
+    },
+    {
+      "title": "ESC Sensor",
+      "description": "Configuring ESC sensor for BL-Heli32 telemetry and battery data",
+      "evidence_quotes": [
+        "[00:07:31.780 → 00:07:36.100] If you have an ESC that does BL-Heli32 ESC telemetry, ESC sensor tells the flight controller that that is going to be the case.",
+        "[00:07:46.480 → 00:07:50.960] And then when you enable ESC sensor, you also have the option here in the power and battery tab to choose ESC sensor as your current and your voltage meter source."
+      ],
+      "start_s": 450.9,
+      "end_s": 486.82,
+      "id": "T2"
+    },
+    {
+      "title": "Motor Calibration Shortcuts",
+      "description": "Exploration of shortcuts for working with motor sliders, including using the up arrow, page up and down, and home and end keys.",
+      "evidence_quotes": [
+        "If I click on the slider and then use the up arrow, it'll raise slowly, like one at a time.",
+        "And if I do home and end, it'll go all the way to full and all the way to zero."
+      ],
+      "start_s": 1345.82,
+      "end_s": 1378.36,
+      "id": "T3"
+    },
+    {
+      "title": "Motor Control and Calibration",
+      "description": "Discussion on controlling and calibrating motors, including limitations of USB power and the importance of bidirectional D-shot.",
+      "evidence_quotes": [
+        "You can't spin the motors off of USB.",
+        "Now, that error percent only is visible if you're using bidirectional D-shot,"
+      ],
+      "start_s": 1331.34,
+      "end_s": 1513.26,
+      "id": "T4"
+    },
+    {
+      "title": "Motor RPM and Calibration",
+      "description": "Discussion on motor RPM and calibration, including small manufacturing variances and their impact on motor speed.",
+      "evidence_quotes": [
+        "You might also be surprised that the motors aren't spinning at exactly the same RPM, given that they're getting the exact same throttle signal.",
+        "In my experience, a difference in RPM of maybe 1 to 200 RPM is normal for, like, motors in this class."
+      ],
+      "start_s": 1469.2199999999998,
+      "end_s": 1513.26,
+      "id": "T5"
+    },
+    {
+      "title": "Motor Stop",
+      "description": "Configuring motor stop for racing quads and camera platforms",
+      "evidence_quotes": [
+        "[00:06:40.920 → 00:06:43.080] And if you have motor stop enabled, when you do that, the quad will stop the motors and fall out of the air, and you'll lose control.",
+        "[00:07:03.100 → 00:07:05.540] Now, though we're not talking about the configuration tab yet, there is one thing I need to show you, and that is if in the configuration tab you have air mode enabled, then motor stop will have no effect."
+      ],
+      "start_s": 21995.62,
+      "end_s": 25689.16,
+      "id": "T6"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted coherent topic:\n\n```\n[\n  {\n    \"title\": \"Motor Stop\",\n    \"description\": \"Configuring motor stop for racing quads and camera platforms\",\n    \"evidence_quotes\": [\n      \"[00:06:40.920 → 00:06:43.080] And if you have motor stop enabled, when you do that, the quad will stop the motors and fall out of the air, and you'll lose control.\",\n      \"[00:07:03.100 → 00:07:05.540] Now, though we're not talking about the configuration tab yet, there is one thing I need to show you, and that is if in the configuration tab you have air mode enabled, then motor stop will have no effect.\"\n    ],\n    \"time_range\": \"06:06:35.620–07:08:09.160\"\n  },\n  {\n    \"title\": \"ESC Sensor\",\n    \"description\": \"Configuring ESC sensor for BL-Heli32 telemetry and battery data\",\n    \"evidence_quotes\": [\n      \"[00:07:31.780 → 00:07:36.100] If you have an ESC that does BL-Heli32 ESC telemetry, ESC sensor tells the flight controller that that is going to be the case.\",\n      \"[00:07:46.480 → 00:07:50.960] And then when you enable ESC sensor, you also have the option here in the power and battery tab to choose ESC sensor as your current and your voltage meter source.\"\n    ],\n    \"time_range\": \"07:30.900–08:06.820\"\n  },\n  {\n    \"title\": \"Bidirectional D-shot\",\n    \"description\": \"Enabling bidirectional D-shot for low latency motor RPM feedback\",\n    \"evidence_quotes\": [\n      \"[00:08:15.580 → 00:08:18.520] This is potentially one of the most important options you can enable in order to get the best flight performance out of your quadcopter.\",\n      \"[00:08:22.840 → 00:08:28.540] Bidirectional D-shot allows the ESC to send motor RPM back to the flight controller with extremely low latency.\"\n    ],\n    \"time_range\": \"08:15.580–08:28.540\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here is the extracted coherent topic with relevant information:\n\n```\n[\n  {\n    \"title\": \"Motor Control and Calibration\",\n    \"description\": \"Discussion on controlling and calibrating motors, including limitations of USB power and the importance of bidirectional D-shot.\",\n    \"evidence_quotes\": [\"You can't spin the motors off of USB.\", \"Now, that error percent only is visible if you're using bidirectional D-shot,\"],\n    \"time_range\": \"00:13:38.900–00:16:40.820\"\n  },\n  {\n    \"title\": \"Motor Calibration Shortcuts\",\n    \"description\": \"Exploration of shortcuts for working with motor sliders, including using the up arrow, page up and down, and home and end keys.\",\n    \"evidence_quotes\": [\"If I click on the slider and then use the up arrow, it'll raise slowly, like one at a time.\", \"And if I do home and end, it'll go all the way to full and all the way to zero.\"],\n    \"time_range\": \"00:13:53.380–00:14:25.920\"\n  },\n  {\n    \"title\": \"Motor RPM and Calibration\",\n    \"description\": \"Discussion on motor RPM and calibration, including small manufacturing variances and their impact on motor speed.\",\n    \"evidence_quotes\": [\"You might also be surprised that the motors aren't spinning at exactly the same RPM, given that they're getting the exact same throttle signal.\", \"In my experience, a difference in RPM of maybe 1 to 200 RPM is normal for, like, motors in this class.\"],\n    \"time_range\": \"00:15:56.780–00:16:40.820\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 2,
+        "attempts": [
+          "Here are the coherent topics extracted from the provided transcript segment:\n\n```\n[\n  {\n    \"title\": \"Motor Direction Wizard\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"So I normally do individually, and I just pick one motor, ...\", \"If we need to reverse it, we can just hit reverse here, ...\"],\n    \"time_range\": \"00:20:02.920–00:21:54.080\"\n  },\n  {\n    \"title\": \"Motor Reorder Wizard\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"And then run the reorder motors wizard to check the motor order.\"],\n    \"time_range\": \"00:21:32.480–00:21:35.340\"\n  }\n]\n```"
+        ]
+      }
+    ]
+  }
+}

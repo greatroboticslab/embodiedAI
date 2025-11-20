@@ -36,9 +36,9 @@ You can also generate depth frames (pictures of 3d depth) from the relevant vide
 ### Video Analysis
 
     cd VideoAnalysis/
-    conda create -n videoanalysis
+    conda env create -f environment.yml
     conda activate videoanalysis
-    pip install -r requirements.txt
+
 
 
 ## Usage 🏃‍♂️

@@ -1,0 +1,83 @@
+{
+  "video_id": "sL0LtyfNYkM",
+  "title": "sL0LtyfNYkM",
+  "url": "https://www.youtube.com/watch?v=sL0LtyfNYkM",
+  "created_at": "2025-09-17T12:03:01.650726+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Circuit Analysis",
+      "description": "Analyzing the circuit behavior and identifying key components",
+      "evidence_quotes": [
+        "[00:05:40.800 → 00:05:46.800] We can represent our system in state-space form.",
+        "[00:09:12.840 → 00:09:17.840] So when you go counterclockwise here, you are going against the current through Vc."
+      ],
+      "start_s": 340.8,
+      "end_s": 557.84,
+      "id": "T1"
+    },
+    {
+      "title": "Output Equation",
+      "description": "The speaker derives an equation for the output y as C times x plus D times U.",
+      "evidence_quotes": [
+        "The equation for the output, which is y, will be C times x plus D times U."
+      ],
+      "start_s": 1575.68,
+      "end_s": 1608.68,
+      "id": "T2"
+    },
+    {
+      "title": "State Space Representation",
+      "description": "The speaker writes the derived equations in the standard state space representation using A and B matrices.",
+      "evidence_quotes": [
+        "So now let's complete the third row here."
+      ],
+      "start_s": 1525.68,
+      "end_s": 1533.68,
+      "id": "T3"
+    },
+    {
+      "title": "State-Space Representation",
+      "description": "Extracting state-space representation equations from the circuit analysis",
+      "evidence_quotes": [
+        "[00:06:20.560 → 00:06:26.560] That is I2 plus I1 plus Ic.",
+        "[00:09:51.600 → 00:09:57.840] This equation is perfect because we have everything here as a function of the states."
+      ],
+      "start_s": 380.56,
+      "end_s": 658.84,
+      "id": "T4"
+    },
+    {
+      "title": "VL Output Expression",
+      "description": "The speaker derives an expression for the output VL as Vc minus Ri1, and shows it in state space variables.",
+      "evidence_quotes": [
+        "So VL, the output, becomes Vc minus Ri1."
+      ],
+      "start_s": 1381.68,
+      "end_s": 1389.68,
+      "id": "T5"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here are the coherent topics extracted from the provided transcript segment:\n\n```\n[\n  {\n    \"title\": \"State-Space Representation\",\n    \"description\": \"Extracting state-space representation equations from the circuit analysis\",\n    \"evidence_quotes\": [\n      \"[00:06:20.560 → 00:06:26.560] That is I2 plus I1 plus Ic.\",\n      \"[00:09:51.600 → 00:09:57.840] This equation is perfect because we have everything here as a function of the states.\"\n    ],\n    \"time_range\": \"00:06:20.560–00:10:58.840\"\n  },\n  {\n    \"title\": \"Circuit Analysis\",\n    \"description\": \"Analyzing the circuit behavior and identifying key components\",\n    \"evidence_quotes\": [\n      \"[00:05:40.800 → 00:05:46.800] We can represent our system in state-space form.\",\n      \"[00:09:12.840 → 00:09:17.840] So when you go counterclockwise here, you are going against the current through Vc.\"\n    ],\n    \"time_range\": \"00:05:40.800–00:09:17.840\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here is the extracted topics in JSON format:\n\n[\n  {\n    \"title\": \"VL Output Expression\",\n    \"description\": \"The speaker derives an expression for the output VL as Vc minus Ri1, and shows it in state space variables.\",\n    \"evidence_quotes\": [\n      \"So VL, the output, becomes Vc minus Ri1.\"\n    ],\n    \"time_range\": \"00:11:30.840–00:11:38.840\"\n  },\n  {\n    \"title\": \"State Space Representation\",\n    \"description\": \"The speaker writes the derived equations in the standard state space representation using A and B matrices.\",\n    \"evidence_quotes\": [\n      \"So now let's complete the third row here.\"\n    ],\n    \"time_range\": \"00:13:54.840–00:14:02.840\"\n  },\n  {\n    \"title\": \"Output Equation\",\n    \"description\": \"The speaker derives an equation for the output y as C times x plus D times U.\",\n    \"evidence_quotes\": [\n      \"The equation for the output, which is y, will be C times x plus D times U.\"\n    ],\n    \"time_range\": \"00:14:44.840–00:15:17.840\"\n  }\n]"
+        ]
+      }
+    ]
+  }
+}

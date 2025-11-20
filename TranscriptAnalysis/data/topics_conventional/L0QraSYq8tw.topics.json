@@ -1,0 +1,60 @@
+{
+  "video_id": "L0QraSYq8tw",
+  "title": "L0QraSYq8tw",
+  "url": "https://www.youtube.com/watch?v=L0QraSYq8tw",
+  "created_at": "2025-09-17T11:57:05.592273+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "BJT Transistors",
+      "description": "Discussion on PNP and NPN type transistors, their modes of operation, and usage in digital circuits.",
+      "evidence_quotes": [
+        "If your transistor is a PNP type, then you have to place it on positive side of power supply.",
+        "In addition, the emitter pin must be connected to power supply and collector pin is always connected to the load in both types.",
+        "NPN transistor is switching the ground of load."
+      ],
+      "start_s": 122.78,
+      "end_s": 371.86,
+      "id": "T1"
+    },
+    {
+      "title": "Modes of Operation",
+      "description": "Discussion on the four modes of operation of BJT transistors and their usage in digital circuits.",
+      "evidence_quotes": [
+        "Saturation, active forward, cutoff and reverse active modes.",
+        "Cutoff mode, which transistor acts like open circuit when the switch is off.",
+        "And saturation mode, which transistor acts like short circuit when the switch is on."
+      ],
+      "start_s": 151.26,
+      "end_s": 185.98,
+      "id": "T2"
+    },
+    {
+      "title": "NPN vs PNP Transistors",
+      "description": "Discussion on why NPN transistors are used more than PNP transistors in digital circuits.",
+      "evidence_quotes": [
+        "According to our basic knowledge about BJT transistors, base emitter voltage, base emitter voltage in NPN transistors, and emitter base voltage in PNP transistors must be more than 0.7 volts to turn the transistor on and take it into forward active or saturation modes.",
+        "But if you try to switch the motor using PNP type transistors, I have bad news for you."
+      ],
+      "start_s": 318.86,
+      "end_s": 371.86,
+      "id": "T3"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topics in the format you requested:\n\n[\n  {\n    \"title\": \"BJT Transistors\",\n    \"description\": \"Discussion on PNP and NPN type transistors, their modes of operation, and usage in digital circuits.\",\n    \"evidence_quotes\": [\n      \"If your transistor is a PNP type, then you have to place it on positive side of power supply.\",\n      \"In addition, the emitter pin must be connected to power supply and collector pin is always connected to the load in both types.\",\n      \"NPN transistor is switching the ground of load.\"\n    ],\n    \"time_range\": \"00:02:02.780–00:06:11.860\"\n  },\n  {\n    \"title\": \"Modes of Operation\",\n    \"description\": \"Discussion on the four modes of operation of BJT transistors and their usage in digital circuits.\",\n    \"evidence_quotes\": [\n      \"Saturation, active forward, cutoff and reverse active modes.\",\n      \"Cutoff mode, which transistor acts like open circuit when the switch is off.\",\n      \"And saturation mode, which transistor acts like short circuit when the switch is on.\"\n    ],\n    \"time_range\": \"00:02:31.260–00:03:05.980\"\n  },\n  {\n    \"title\": \"NPN vs PNP Transistors\",\n    \"description\": \"Discussion on why NPN transistors are used more than PNP transistors in digital circuits.\",\n    \"evidence_quotes\": [\n      \"According to our basic knowledge about BJT transistors, base emitter voltage, base emitter voltage in NPN transistors, and emitter base voltage in PNP transistors must be more than 0.7 volts to turn the transistor on and take it into forward active or saturation modes.\",\n      \"But if you try to switch the motor using PNP type transistors, I have bad news for you.\"\n    ],\n    \"time_range\": \"00:05:18.860–00:06:11.860\"\n  }\n]"
+        ]
+      }
+    ]
+  }
+}

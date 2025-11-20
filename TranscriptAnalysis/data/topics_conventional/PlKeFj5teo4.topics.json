@@ -1,0 +1,233 @@
+{
+  "video_id": "PlKeFj5teo4",
+  "title": "PlKeFj5teo4",
+  "url": "https://www.youtube.com/watch?v=PlKeFj5teo4",
+  "created_at": "2025-09-17T11:57:36.911549+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Stabilizing Pitch and Motors",
+      "description": "The forward motors and rear motors must receive opposite stabilized signals.",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 1
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.0,
+          "end_s": 11.14
+        }
+      ],
+      "coverage_text": "There's two very critical pieces of hardware on a drone that allows it to fly autonomously.\nToday we're going to cover what the difference is between a flight controller and a flight computer",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Flight Controller Loop Diagram",
+      "description": "This process runs at 1000 or more cycles per second.",
+      "coverage_ranges": [
+        {
+          "start_idx": 39,
+          "end_idx": 41
+        }
+      ],
+      "coverage_segments": [
+        39,
+        40,
+        41
+      ],
+      "coverage_times": [
+        {
+          "start_s": 174.82,
+          "end_s": 188.52
+        }
+      ],
+      "coverage_text": "This response is again measured by the IMU, and we have created a feedback loop.\nTypically on a flight controller, this process runs at 1000 or more cycles per second.\nSo now that we can see all of the challenges that must be solved in order to complete this loop,",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Operation of the Flight Computer",
+      "description": "A continuously updated stream of input and output data.",
+      "coverage_ranges": [
+        {
+          "start_idx": 46,
+          "end_idx": 48
+        }
+      ],
+      "coverage_segments": [
+        46,
+        47,
+        48
+      ],
+      "coverage_times": [
+        {
+          "start_s": 204.82,
+          "end_s": 213.54
+        }
+      ],
+      "coverage_text": "Next, we will look at the operation of the flight computer.\nThis is a very broad overview of what could be happening on board,\nthough the specifics vary based on the application.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Sensor Data and Odometry",
+      "description": "Estimate the drone's position in space from information about its surroundings or movement.",
+      "coverage_ranges": [
+        {
+          "start_idx": 52,
+          "end_idx": 55
+        }
+      ],
+      "coverage_segments": [
+        52,
+        53,
+        54,
+        55
+      ],
+      "coverage_times": [
+        {
+          "start_s": 226.24,
+          "end_s": 242.38
+        }
+      ],
+      "coverage_text": "The popular system used is ROS,\nwhich allows for easy access across multiple sensors, computations, and outputs.\nAn autonomous drone might have a combination of cameras, LIDAR, or GPS on board.\nThis sensor data is used to estimate the drone's position in space",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Mission Planner Overview",
+      "description": "Decide what to do next based on odometry and sensor data.",
+      "coverage_ranges": [
+        {
+          "start_idx": 56,
+          "end_idx": 63
+        }
+      ],
+      "coverage_segments": [
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "coverage_times": [
+        {
+          "start_s": 242.38,
+          "end_s": 271.54
+        }
+      ],
+      "coverage_text": "from information about its surroundings or movement, which is known as odometry.\nOnce the drone knows where it is, a mission planner can be used to decide where to go next.\nA typical mission planner might look something like this.\nIt must first decide what the current task is, for example, flying through a window.\nNext, the mission planner may request that the drone search for the target\nby either flying forward or turning around.\nThen once the target is identified,\nit must converge on it to ensure that it has actually found the target and not something else.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T6",
+      "title": "Autonomous Landing Demo",
+      "description": "Perform a forward search and then request that the vehicle begins to descend.",
+      "coverage_ranges": [
+        {
+          "start_idx": 71,
+          "end_idx": 74
+        }
+      ],
+      "coverage_segments": [
+        71,
+        72,
+        73,
+        74
+      ],
+      "coverage_times": [
+        {
+          "start_s": 299.72,
+          "end_s": 318.3
+        }
+      ],
+      "coverage_text": "Here we can see that full and complicated process in action in a simple autonomous landing demo.\nThe mission planner's goal here is to land on the target.\nIt first performs a forward search and then once the target is identified by a downward-facing camera,\nrequests that the vehicle begins to descend as the detection algorithm converges on the target.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T7",
+      "title": "Why Not Do Everything on the Flight Computer?",
+      "description": "Dedicate single-task microcontrollers for stabilization and decision-making.",
+      "coverage_ranges": [
+        {
+          "start_idx": 76,
+          "end_idx": 84
+        }
+      ],
+      "coverage_segments": [
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ],
+      "coverage_times": [
+        {
+          "start_s": 332.02000000000004,
+          "end_s": 369.79999999999995
+        }
+      ],
+      "coverage_text": "why not just do everything on the flight computer?\nMy answer to that is you certainly can,\nand many companies such as DJI do that with their custom boards to save power and weight,\nbut if you are assembling your own system, you may run into some problems.\nFirst, the flight computer speed is not guaranteed constant,\nwhich is a problem for stabilizing a vehicle which requires constant, high-speed operation to stay in the air.\nA flight computer's CPU may become overloaded if excessive computations are being demanded from computer vision algorithms,\nwhich slow down the whole system or even crash it entirely.\nSo generally speaking, it is best to have a dedicated single-task microcontroller for stabilization",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T8",
+      "title": "Conclusion",
+      "description": "A broad overview of autonomous drone operation.",
+      "coverage_ranges": [
+        {
+          "start_idx": 92,
+          "end_idx": 94
+        }
+      ],
+      "coverage_segments": [
+        92,
+        93,
+        94
+      ],
+      "coverage_times": [
+        {
+          "start_s": 398.65999999999997,
+          "end_s": 406.71999999999997
+        }
+      ],
+      "coverage_text": "This was a very broad overview of some of the things going on inside an autonomous drone,\nand is by no means comprehensive.\nI hope you've learned something,",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the table of contents in the required format:\n\n[\n  {\n    \"title\": \"Stabilizing Pitch and Motors\",\n    \"description\": \"The forward motors and rear motors must receive opposite stabilized signals.\",\n    \"coverage\": [\n      { \"start_idx\": 0, \"end_idx\": 1 }\n    ]\n  },\n  {\n    \"title\": \"Flight Controller Loop Diagram\",\n    \"description\": \"This process runs at 1000 or more cycles per second.\",\n    \"coverage\": [\n      { \"start_idx\": 39, \"end_idx\": 41 }\n    ]\n  },\n  {\n    \"title\": \"Operation of the Flight Computer\",\n    \"description\": \"A continuously updated stream of input and output data.\",\n    \"coverage\": [\n      { \"start_idx\": 46, \"end_idx\": 48 }\n    ]\n  },\n  {\n    \"title\": \"Sensor Data and Odometry\",\n    \"description\": \"Estimate the drone's position in space from information about its surroundings or movement.\",\n    \"coverage\": [\n      { \"start_idx\": 52, \"end_idx\": 55 }\n    ]\n  },\n  {\n    \"title\": \"Mission Planner Overview\",\n    \"description\": \"Decide what to do next based on odometry and sensor data.\",\n    \"coverage\": [\n      { \"start_idx\": 56, \"end_idx\": 63 }\n    ]\n  },\n  {\n    \"title\": \"Autonomous Landing Demo\",\n    \"description\": \"Perform a forward search and then request that the vehicle begins to descend.\",\n    \"coverage\": [\n      { \"start_idx\": 71, \"end_idx\": 74 }\n    ]\n  },\n  {\n    \"title\": \"Why Not Do Everything on the Flight Computer?\",\n    \"description\": \"Dedicate single-task microcontrollers for stabilization and decision-making.\",\n    \"coverage\": [\n      { \"start_idx\": 76, \"end_idx\": 84 }\n    ]\n  },\n  {\n    \"title\": \"Conclusion\",\n    \"description\": \"A broad overview of autonomous drone operation.\",\n    \"coverage\": [\n      { \"start_idx\": 92, \"end_idx\": 94 }\n    ]\n  }\n]"
+    ]
+  }
+}

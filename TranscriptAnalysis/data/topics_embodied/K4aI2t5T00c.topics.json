@@ -1,0 +1,55 @@
+{
+  "video_id": "K4aI2t5T00c",
+  "title": "K4aI2t5T00c",
+  "url": "https://www.youtube.com/watch?v=K4aI2t5T00c",
+  "created_at": "2025-10-09T17:31:51.387976+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Box Consideration",
+      "description": "The speaker discusses considering one box.",
+      "evidence_quotes": [
+        "One box will be considered as.."
+      ],
+      "start_s": 6.64,
+      "end_s": 9.26,
+      "id": "T1"
+    },
+    {
+      "title": "Flight Availability",
+      "description": "The speaker mentions the sounds of flight availability.",
+      "evidence_quotes": [
+        "The board inevitables the M sounds of the flight that's available here."
+      ],
+      "start_s": 20.62,
+      "end_s": 26.44,
+      "id": "T2"
+    },
+    {
+      "title": "Introduction and Name",
+      "description": "The speaker introduces themselves and their name.",
+      "evidence_quotes": [
+        "Other information, what is your name, Mr. Hmmm huh."
+      ],
+      "start_s": 0.0,
+      "end_s": 6.64,
+      "id": "T3"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the output:\n\n[\n  {\n    \"title\": \"Introduction and Name\",\n    \"description\": \"The speaker introduces themselves and their name.\",\n    \"evidence_quotes\": [\"Other information, what is your name, Mr. Hmmm huh.\"],\n    \"time_range\": \"00:00:00.000–00:00:06.640\"\n  },\n  {\n    \"title\": \"Box Consideration\",\n    \"description\": \"The speaker discusses considering one box.\",\n    \"evidence_quotes\": [\"One box will be considered as..\"],\n    \"time_range\": \"00:00:06.640–00:00:09.260\"\n  },\n  {\n    \"title\": \"Flight Availability\",\n    \"description\": \"The speaker mentions the sounds of flight availability.\",\n    \"evidence_quotes\": [\"The board inevitables the M sounds of the flight that's available here.\"],\n    \"time_range\": \"00:00:20.620–00:00:26.440\"\n  }\n]"
+        ]
+      }
+    ]
+  }
+}

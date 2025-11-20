@@ -1,0 +1,188 @@
+{
+  "video_id": "RiRyzLl4Y8U",
+  "title": "RiRyzLl4Y8U",
+  "url": "https://www.youtube.com/watch?v=RiRyzLl4Y8U",
+  "created_at": "2025-09-17T11:57:44.628913+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Value of Resistor",
+      "description": "Drain capacitor when circuit is off to keep us safe.",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 10
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.0,
+          "end_s": 41.38
+        }
+      ],
+      "coverage_text": "This is a full wave bridge rectifier.\nIt's used to power electronic circuits,\nso we're going to learn in detail how they work in this video.\nElectricity is dangerous and can be fatal.\nYou must be qualified and competent to carry out any electrical work.\nFull bridge rectifiers look like this.\nThere are many shapes and sizes,\nbut they essentially consist of four diodes in a certain arrangement.\nThey are usually aligned in a diamond configuration,\nbut they can be aligned in other ways such as these.\nWe typically find them represented on engineering drawings like this,",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Why We Need a Capacitor",
+      "description": "Capacitors store energy and can be dangerous if not discharged properly.",
+      "coverage_ranges": [
+        {
+          "start_idx": 11,
+          "end_idx": 20
+        }
+      ],
+      "coverage_segments": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "coverage_times": [
+        {
+          "start_s": 42.120000000000005,
+          "end_s": 84.46
+        }
+      ],
+      "coverage_text": "this being the symbol for a diode.\nThe arrow points in the direction of conventional current.\nThis shows that AC electricity is the input and DC electricity is the output.\nThe full bridge rectifier converts AC alternating current into DC direct current.\nWhy is that important?\nBecause the power outlets in our homes provide AC,\nbut our electrical devices use DC,\nso we need to convert the AC into DC electricity.\nFor example, a laptop charger takes AC from the power outlet\nand converts this to DC to power the laptop.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "The Role of Diodes in Rectification",
+      "description": "Diodes drop voltage, reducing output voltage from AC input.",
+      "coverage_ranges": [
+        {
+          "start_idx": 21,
+          "end_idx": 32
+        }
+      ],
+      "coverage_segments": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "coverage_times": [
+        {
+          "start_s": 85.0,
+          "end_s": 136.88
+        }
+      ],
+      "coverage_text": "If you look at the power adapter for your laptop and other electronic devices,\nthe manufacturer's label tells you it's converting AC to DC.\nIn this example, it states that it needs an input of between 100 and 240 volts\nwith the symbol for AC electricity,\nand this will draw 1.5 amps of current.\nIt will then output 19.5 volts of DC electricity\nand 3.33 amps of current.\nNotice that it also states 50 to 60 hertz.\nThis is the AC frequency and we'll look at that in just a moment.\nIn AC electricity, the voltage and current constantly change direction\nbetween forwards and backwards.\nThat's because there's a magnetic field in the AC generator",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "How Capacitors Can Increase Output Voltage",
+      "description": "Capacitors charge to peak voltage and release, producing higher output.",
+      "coverage_ranges": [
+        {
+          "start_idx": 33,
+          "end_idx": 43
+        }
+      ],
+      "coverage_segments": [
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43
+      ],
+      "coverage_times": [
+        {
+          "start_s": 136.88,
+          "end_s": 178.0
+        }
+      ],
+      "coverage_text": "which essentially pushes and pulls electrons in the wires.\nThis is therefore changing between positive and negative values\nas it flows forwards and backwards.\nThe voltage is not constant\neven though the multimeter will make it look like it is.\nIf we plotted this, we get a sine wave pattern.\nThe voltage changes between a peak positive and a peak negative value\nas the maximum intensity of the magnetic field\npasses the coils of wire inside the AC generator.\nThis example reaches 170 volts at its peaks.\nSo if we plotted these values,",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Common Filtering Techniques",
+      "description": "Parallel- series capacitor-inductor filter for larger loads, and voltage regulators for constant output.",
+      "coverage_ranges": [
+        {
+          "start_idx": 44,
+          "end_idx": 55
+        }
+      ],
+      "coverage_segments": [
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "coverage_times": [
+        {
+          "start_s": 178.44,
+          "end_s": 216.6
+        }
+      ],
+      "coverage_text": "we have positive and negative peaks of 170 volts.\nIf we took the average of these values, we would get 0 volts.\nThat's not very useful.\nSo a clever engineer decided to use the root mean squared voltage.\nThat is what our multimeters calculate\nwhen we connect them to the electrical outlets.\nTo find the peak voltage,\nwe multiply the root mean squared voltage\nby the square root of 2,\nwhich is roughly 1.41.\nTo find the RMS voltage,\nwe divide the peak voltage by 0.707.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the clean, high-level table of contents for the value resistor:\n\n```\n[\n  {\n    \"title\": \"Value Resistor\",\n    \"description\": \"Drain capacitor when circuit is off to keep us safe\",\n    \"coverage\": [\n      {\"start_idx\": S00241, \"end_idx\": S00249}\n    ]\n  },\n  {\n    \"title\": \"Bridge Rectifier\",\n    \"description\": \"Output voltage lower than input due to diode voltage drop\",\n    \"coverage\": [\n      {\"start_idx\": S00251, \"end_idx\": S00260}\n    ]\n  },\n  {\n    \"title\": \"Capacitor Charging\",\n    \"description\": \"AC input measures RMS voltage, not peak voltage\",\n    \"coverage\": [\n      {\"start_idx\": S00265, \"end_idx\": S00274}\n    ]\n  },\n  {\n    \"title\": \"Filter Circuits\",\n    \"description\": \"Using inductors and capacitors to smooth output\",\n    \"coverage\": [\n      {\"start_idx\": S00278, \"end_idx\": S00283}\n    ]\n  },\n  {\n    \"title\": \"Voltage Regulator\",\n    \"description\": \"Regulating output voltage with a regulator circuit\",\n    \"coverage\": [\n      {\"start_idx\": S00284, \"end_idx\": S00289}\n    ]\n  }\n]\n```",
+      "Here is the table of contents in the required format:\n\n```\n[\n  {\n    \"title\": \"Value of Resistor\",\n    \"description\": \"Drain capacitor when circuit is off to keep us safe.\",\n    \"coverage\": [\n      {\"start_idx\": 0, \"end_idx\": 10}\n    ]\n  },\n  {\n    \"title\": \"Why We Need a Capacitor\",\n    \"description\": \"Capacitors store energy and can be dangerous if not discharged properly.\",\n    \"coverage\": [\n      {\"start_idx\": 11, \"end_idx\": 20}\n    ]\n  },\n  {\n    \"title\": \"The Role of Diodes in Rectification\",\n    \"description\": \"Diodes drop voltage, reducing output voltage from AC input.\",\n    \"coverage\": [\n      {\"start_idx\": 21, \"end_idx\": 32}\n    ]\n  },\n  {\n    \"title\": \"How Capacitors Can Increase Output Voltage\",\n    \"description\": \"Capacitors charge to peak voltage and release, producing higher output.\",\n    \"coverage\": [\n      {\"start_idx\": 33, \"end_idx\": 43}\n    ]\n  },\n  {\n    \"title\": \"Common Filtering Techniques\",\n    \"description\": \"Parallel- series capacitor-inductor filter for larger loads, and voltage regulators for constant output.\",\n    \"coverage\": [\n      {\"start_idx\": 44, \"end_idx\": 55}\n    ]\n  }\n]\n```"
+    ]
+  }
+}

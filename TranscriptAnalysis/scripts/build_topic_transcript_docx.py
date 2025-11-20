@@ -242,9 +242,9 @@ def find_video_ids(transcripts_root: str, topics_root: str, explicit_ids: List[s
 
 def main():
     ap = argparse.ArgumentParser(description="Create per-video DOCX files (topics + plain transcript).")
-    ap.add_argument('--transcripts_root', default='../data/transcripts', help='Directory containing <video_id>.txt transcripts')
-    ap.add_argument('--topics_root', default='../data/topics', help='Directory containing <video_id>.topics.json files')
-    ap.add_argument('--out_dir', default='../results/docs', help='Output directory for generated DOCX files')
+    ap.add_argument('--transcripts_root', default='../data/transcripts_embodied', help='Directory containing <video_id>.txt transcripts')
+    ap.add_argument('--topics_root', default='../data/topics_embodied', help='Directory containing <video_id>.topics.json files')
+    ap.add_argument('--out_dir', default='../results/topic_docs/embodied', help='Output directory for generated DOCX files')
     ap.add_argument('-v', '--video_id', action='append', default=[], help='Specific video_id(s) to process; can repeat')
     ap.add_argument('--no-overwrite', dest='overwrite', action='store_false', help='Do not overwrite existing files')
     args = ap.parse_args()

@@ -1,0 +1,55 @@
+{
+  "video_id": "t1Q9_PlN4GU",
+  "title": "t1Q9_PlN4GU",
+  "url": "https://www.youtube.com/watch?v=t1Q9_PlN4GU",
+  "created_at": "2025-09-17T12:03:09.898274+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Euler Angles and Conventions",
+      "description": "The speaker explains the concept of Euler angles, specifically mentioning the ZXY convention for representing rotations in a quadrotor's movements.",
+      "evidence_quotes": [
+        "We will use the ZXY convention, the first rotation being about the Z-axis through Psi,"
+      ],
+      "start_s": 69.0,
+      "end_s": 88.0,
+      "id": "T1"
+    },
+    {
+      "title": "External Forces and Moments",
+      "description": "The speaker introduces external forces (thrusts) and moments that act on a quadrotor, explaining how these can be combined to predict the robot's acceleration.",
+      "evidence_quotes": [
+        "We have four thrusts, F1, F2, and F3, and F4, and then four moments, M1, M2, and M3, and M4."
+      ],
+      "start_s": 138.0,
+      "end_s": 154.0,
+      "id": "T2"
+    },
+    {
+      "title": "Quadrotor Dynamics",
+      "description": "The speaker begins discussing the dynamics of a quadrotor, introducing the concept of two coordinate systems (body fixed and inertial) and explaining how they relate to the robot's movements.",
+      "evidence_quotes": [
+        "Once again, let's remind ourselves that we have two coordinate systems,"
+      ],
+      "start_s": 3.0,
+      "end_s": 7.0,
+      "id": "T3"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the output in the required format:\n\n[\n  {\n    \"title\": \"Quadrotor Dynamics\",\n    \"description\": \"The speaker begins discussing the dynamics of a quadrotor, introducing the concept of two coordinate systems (body fixed and inertial) and explaining how they relate to the robot's movements.\",\n    \"evidence_quotes\": [\"Once again, let's remind ourselves that we have two coordinate systems,\"],\n    \"time_range\": \"00:00:03.000–00:00:07.000\"\n  },\n  {\n    \"title\": \"Euler Angles and Conventions\",\n    \"description\": \"The speaker explains the concept of Euler angles, specifically mentioning the ZXY convention for representing rotations in a quadrotor's movements.\",\n    \"evidence_quotes\": [\"We will use the ZXY convention, the first rotation being about the Z-axis through Psi,\"],\n    \"time_range\": \"00:01:09.000–00:01:28.000\"\n  },\n  {\n    \"title\": \"External Forces and Moments\",\n    \"description\": \"The speaker introduces external forces (thrusts) and moments that act on a quadrotor, explaining how these can be combined to predict the robot's acceleration.\",\n    \"evidence_quotes\": [\"We have four thrusts, F1, F2, and F3, and F4, and then four moments, M1, M2, and M3, and M4.\"],\n    \"time_range\": \"00:02:18.000–00:02:34.000\"\n  }\n]"
+        ]
+      }
+    ]
+  }
+}

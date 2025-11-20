@@ -1,0 +1,104 @@
+{
+  "video_id": "hRnofMxEf3Q",
+  "title": "hRnofMxEf3Q",
+  "url": "https://www.youtube.com/watch?v=hRnofMxEf3Q",
+  "created_at": "2025-10-09T17:33:59.036403+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Arduino Board Configuration",
+      "description": "Setting up Arduino board with L6474 library and stepper motor configuration.",
+      "evidence_quotes": [
+        "I'm using the ST microelectronics L6474 library, and I've set the acceleration to very high.",
+        "I've set the maximum speed to 5000, which is about half of their maximum."
+      ],
+      "start_s": 440.7,
+      "end_s": 512.7,
+      "id": "T1"
+    },
+    {
+      "title": "Controller Tuning",
+      "description": "Tuning the PID controller for controlling the stepper motor.",
+      "evidence_quotes": [
+        "Once we verified that this control works, it's time to tune the controller.",
+        "Sometimes you will need a bias, which we just add to our output of the controller."
+      ],
+      "start_s": 543.7,
+      "end_s": 568.7,
+      "id": "T2"
+    },
+    {
+      "title": "KI parameter adjustment",
+      "description": "The speaker is adjusting the KI parameter to achieve stable control.",
+      "evidence_quotes": [
+        "It usually starts much lower than KP.",
+        "Let's go take a look at our code."
+      ],
+      "start_s": 1581.4,
+      "end_s": 1675.4,
+      "id": "T3"
+    },
+    {
+      "title": "KP parameter adjustment",
+      "description": "The speaker is adjusting the KP parameter to achieve stable control.",
+      "evidence_quotes": [
+        "Oh, what just happened there?",
+        "Let's try that again."
+      ],
+      "start_s": 1578.4,
+      "end_s": 1598.4,
+      "id": "T4"
+    },
+    {
+      "title": "Stepper Motor Settings",
+      "description": "Setting stepper mode and commands for controlling the stepper motor.",
+      "evidence_quotes": [
+        "We've got some communication constants that we will be using.",
+        "In this case, we're going to be using stepper mode eight, which is eight divisions per step."
+      ],
+      "start_s": 446.7,
+      "end_s": 463.7,
+      "id": "T5"
+    },
+    {
+      "title": "Tuning of KP and KI parameters",
+      "description": "The speaker is adjusting the KP and KI parameters to achieve stable control.",
+      "evidence_quotes": [
+        "So let's try that again.",
+        "Oh, what just happened there?",
+        "Let's go take a look at our code."
+      ],
+      "start_s": 1586.4,
+      "end_s": 1703.4,
+      "id": "T6"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here are the coherent topics extracted from the transcript segment:\n\n```\n[\n  {\n    \"title\": \"Arduino Board Configuration\",\n    \"description\": \"Setting up Arduino board with L6474 library and stepper motor configuration.\",\n    \"evidence_quotes\": [\"I'm using the ST microelectronics L6474 library, and I've set the acceleration to very high.\", \"I've set the maximum speed to 5000, which is about half of their maximum.\"],\n    \"time_range\": \"00:07:20.700–00:08:32.700\"\n  },\n  {\n    \"title\": \"Stepper Motor Settings\",\n    \"description\": \"Setting stepper mode and commands for controlling the stepper motor.\",\n    \"evidence_quotes\": [\"We've got some communication constants that we will be using.\", \"In this case, we're going to be using stepper mode eight, which is eight divisions per step.\"],\n    \"time_range\": \"00:07:26.700–00:07:43.700\"\n  },\n  {\n    \"title\": \"Controller Tuning\",\n    \"description\": \"Tuning the PID controller for controlling the stepper motor.\",\n    \"evidence_quotes\": [\"Once we verified that this control works, it's time to tune the controller.\", \"Sometimes you will need a bias, which we just add to our output of the controller.\"],\n    \"time_range\": \"00:09:03.700–00:09:28.700\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here are the coherent topics that can be extracted from the transcript segment:\n\n```\n[\n  {\n    \"title\": \"Tuning of KP and KI parameters\",\n    \"description\": \"The speaker is adjusting the KP and KI parameters to achieve stable control.\",\n    \"evidence_quotes\": [\"So let's try that again.\", \"Oh, what just happened there?\", \"Let's go take a look at our code.\"],\n    \"time_range\": \"16:55.700–18:52.700\"\n  },\n  {\n    \"title\": \"KP parameter adjustment\",\n    \"description\": \"The speaker is adjusting the KP parameter to achieve stable control.\",\n    \"evidence_quotes\": [\"Oh, what just happened there?\", \"Let's try that again.\"],\n    \"time_range\": \"16:47.700–17:07.700\"\n  },\n  {\n    \"title\": \"KI parameter adjustment\",\n    \"description\": \"The speaker is adjusting the KI parameter to achieve stable control.\",\n    \"evidence_quotes\": [\"It usually starts much lower than KP.\", \"Let's go take a look at our code.\"],\n    \"time_range\": \"16:50.700–18:24.700\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 2,
+        "attempts": [
+          "Here are the extracted coherent topics with their corresponding quotes and time ranges:\n\n```\n[\n  {\n    \"title\": \"PID Controller Tuning\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"So I'm going to call this pretty tuned for our needs.\", \"I think we can say we have a fully tuned system.\"],\n    \"time_range\": \"23:01.700–24:31.700\"\n  },\n  {\n    \"title\": \"Inverted Pendulum Control\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"Let's try to control an inverted pendulum using PID controllers.\", \"That's something that can be corrected with a dual or nested PID controller, but not something we're going to get into right now.\"],\n    \"time_range\": \"22:49.700–23:57.700\"\n  }\n]\n```"
+        ]
+      }
+    ]
+  }
+}

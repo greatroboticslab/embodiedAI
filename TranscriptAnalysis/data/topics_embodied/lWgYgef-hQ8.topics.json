@@ -1,0 +1,37 @@
+{
+  "video_id": "lWgYgef-hQ8",
+  "title": "lWgYgef-hQ8",
+  "url": "https://www.youtube.com/watch?v=lWgYgef-hQ8",
+  "created_at": "2025-10-09T17:34:14.886951+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Repeated Answers",
+      "description": "The speaker repeatedly answers a question without providing any new information.",
+      "evidence_quotes": [
+        "回答",
+        "回答",
+        "回答"
+      ],
+      "start_s": 12.64,
+      "end_s": 511.82,
+      "id": "T1"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topics in JSON format:\n\n[\n  {\n    \"title\": \"Repeated Answers\",\n    \"description\": \"The speaker repeatedly answers a question without providing any new information.\",\n    \"evidence_quotes\": [\"回答\", \"回答\", \"回答\"],\n    \"time_range\": \"00:00:12.640–00:08:31.820\"\n  }\n]"
+        ]
+      }
+    ]
+  }
+}

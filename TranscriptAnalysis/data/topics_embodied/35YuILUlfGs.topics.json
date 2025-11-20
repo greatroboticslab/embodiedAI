@@ -1,0 +1,310 @@
+{
+  "video_id": "35YuILUlfGs",
+  "title": "35YuILUlfGs",
+  "url": "https://www.youtube.com/watch?v=35YuILUlfGs",
+  "created_at": "2025-10-12T22:56:57.231010+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction",
+      "description": "Overview of the PCB design process",
+      "coverage_ranges": [
+        {
+          "start_idx": 1,
+          "end_idx": 4
+        }
+      ],
+      "coverage_segments": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "coverage_times": [
+        {
+          "start_s": 7.24,
+          "end_s": 26.48
+        }
+      ],
+      "coverage_text": "that you want to build more units of it.\nBut creating these solder traces takes up way too much time.\nOr you ogled a new awesome IC that would be perfect for your next project.\nBut sadly it does only exist as an SMD package, which makes perfboard soldering pretty hard to do.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Designing the PCB",
+      "description": "Creating the outline and connections for the board",
+      "coverage_ranges": [
+        {
+          "start_idx": 5,
+          "end_idx": 23
+        }
+      ],
+      "coverage_segments": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "coverage_times": [
+        {
+          "start_s": 26.48,
+          "end_s": 152.0
+        }
+      ],
+      "coverage_text": "In both cases creating a proper PCB design and ordering it from a PCB manufacturing house is the way to go to save time and play around easily with SMD components.\nSo in this video I will be showing you step by step what to look out for when creating the schematic of your project\nand how we can then turn it easily into a PCB design that we can order through a couple of simple clicks for quite a low price.\nLet's get started!\nAs a practical example for this video I will be using this relatively simple double-sided PCB that I designed.\nWhich brings me to the first step of this tutorial.\nPlanning the function of the circuits.\nI knew that I wanted to create a microcontroller based circuit.\nThat reads the position of a joystick and then sends the values through the RF band to receiver.\nAlso I wanted to power the circuit through a LiPo battery.\nWhich means I needed a LiPo charge controller IC, a micro USB port to deliver the power for charging.\nAnd a power switch to connect the battery voltage to a 3.3V regulator.\nWhich converts the unregulated battery voltage into a suitable voltage for the microcontroller.\nLast but not least I wanted to monitor the battery voltage through a voltage divider with the microcontroller.\nSo that when the battery voltage gets close to 3.4V the RF functionality shuts down and the yellow LED lights up.\nAnd with the function of the circuit planned out it was time for step 2.\nWhich involves searching for suitable components and creating a paper schematic.\nFor component sourcing I like to use LCSC.\nBecause their selection is not only big.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Wiring the Top Layer",
+      "description": "Connecting components on the top layer",
+      "coverage_ranges": [
+        {
+          "start_idx": 24,
+          "end_idx": 53
+        }
+      ],
+      "coverage_segments": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53
+      ],
+      "coverage_times": [
+        {
+          "start_s": 152.0,
+          "end_s": 272.22
+        }
+      ],
+      "coverage_text": "But also because we will be ordering the PCBs through JLCPCB later on.\nAnd we can combine that with the LCSC order and thus save shipping costs.\nBut anyway once I decided on the main ICs.\nWhich were the ATMEGA328 as a microcontroller.\nAn NRF24 as the RF transmitter.\nA TP4056 as the charge controller.\nAnd a TPS76933dBVR as the voltage regulator.\nIt was time to think about the packages.\nThe package basically describes how the IC will physically look like.\nAnd determines whether it is a THT or SMD component.\nFor example while the NRF24 is only available as a breakout board in THT.\nAnd the TP4056 is only available as an SMD version.\nWe do have the choice between THT and SMD for the microcontroller.\nBut since I wanted the circuit to be as small as possible.\nI went with the SMD version.\nWhich I also set as the standard for the remaining complementary components.\nNext I planned out on a piece of paper.\nHow to connect the main ICs to one another.\nAnd also what passive components are necessary to make them all work.\nTo find that out.\nI had a closer look at all the data sheets of the ICs.\nAnd the recommended example circuits.\nAnd if everything fails you can always google your question.\nWhich should give you a suitable answer in 99% of the cases.\nThe last thing to do for the paper circuits was to add breakout points.\nSo that I could later program the microcontroller.\nAnd also hook up the battery and LEDs to the circuits.\nWhich will be mounted in a separate enclosure.\nNow for the passive component selection.\nI mainly went with 0603 as the package size.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Wiring the Bottom Layer and Vias",
+      "description": "Creating connections between layers for SMD components",
+      "coverage_ranges": [
+        {
+          "start_idx": 54,
+          "end_idx": 69
+        }
+      ],
+      "coverage_segments": [
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69
+      ],
+      "coverage_times": [
+        {
+          "start_s": 272.22,
+          "end_s": 328.14000000000004
+        }
+      ],
+      "coverage_text": "Which stands for 0.06 by 0.03 inches.\nOr 1.6 by 0.8 millimeters.\nThere also exists a 0402 and a 0201 package.\nBut I think 0603 is neither too big or too small.\nAnd can still be soldered with an iron with a bit of practice.\nAnd with the component selection and paper schematic being completed.\nIt was time for step 3.\nCreating a proper schematic.\nFor that I used the EasyEDA free online circuit creator.\nAfter logging in I created a new project.\nAnd there a new schematic.\nThen I simply used their online library.\nWhich also includes pretty much all LCSC components.\nTo search for my utilized components.\nAnd firstly imported them into the workspace.\nBut make sure that you choose components.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Ground Connections",
+      "description": "Isolating traces and creating a solid copper ground layer",
+      "coverage_ranges": [
+        {
+          "start_idx": 70,
+          "end_idx": 84
+        }
+      ],
+      "coverage_segments": [
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ],
+      "coverage_times": [
+        {
+          "start_s": 328.14000000000004,
+          "end_s": 367.42
+        }
+      ],
+      "coverage_text": "With the right package and correct footprint.\nOtherwise the PCB design will later not work out.\nOnce all the main actors of the circuit were imported.\nI then used the left aligned resistors with the right package.\nAnd capacitors with the right package.\nAs the complementary passive components.\nAnd of course we should not forget.\nTo add male header connectors.\nFor the breakout points.\nNow that we got all of our required components.\nIn the editor.\nWe can arrange them to logical blocks.\nWhich in my case is the power parts.\nAnd the microcontroller parts.\nOnce that was done.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T6",
+      "title": "Gerber Files and Ordering the PCB",
+      "description": "Generating Gerber files and ordering the board from JLC PCB",
+      "coverage_ranges": [
+        {
+          "start_idx": 85,
+          "end_idx": 93
+        }
+      ],
+      "coverage_segments": [
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93
+      ],
+      "coverage_times": [
+        {
+          "start_s": 367.42,
+          "end_s": 388.06
+        }
+      ],
+      "coverage_text": "I utilized the wire function of the software.\nTo connect all the components to one another.\nAccording to how I planned it out on paper.\nLast but not least.\nI then added the ground.\nVCC.\nAnd battery voltage supply flags to the schematic.\nWhich not only completes it.\nBut also ends the third step of this tutorial.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T7",
+      "title": "Soldering Tutorial",
+      "description": "A separate tutorial on soldering components to the PCB",
+      "coverage_ranges": [
+        {
+          "start_idx": 94,
+          "end_idx": 103
+        }
+      ],
+      "coverage_segments": [
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103
+      ],
+      "coverage_times": [
+        {
+          "start_s": 388.06,
+          "end_s": 412.62
+        }
+      ],
+      "coverage_text": "That means it is time for the last step.\nStep 4.\nWhich is PCB design and ordering.\nFor that.\nWe firstly have to click the convert to PCB button.\nWhich automatically throws all the component footprints.\nInto the PCB editor.\nShows how to connect them through the blue lines.\nAnd creates a PCB outline for us.\nThe first thing I did though.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T8",
+      "title": "Conclusion",
+      "description": "Final thoughts and next steps",
+      "coverage_ranges": [
+        {
+          "start_idx": 104,
+          "end_idx": 111
+        }
+      ],
+      "coverage_segments": [
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111
+      ],
+      "coverage_times": [
+        {
+          "start_s": 412.62,
+          "end_s": 427.98
+        }
+      ],
+      "coverage_text": "Was removing the outline.\nBecause as I mentioned earlier.\nI needed a specific PCB size.\nFor the enclosure.\nTo do that.\nI changed the measuring system to millimeters.\nSelected the board outline layer.\nAnd used the track tool.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is a high-level table of contents for the entire video:\n\n**I. Introduction**\n\n* Brief overview of the topic: PCB design\n* Thesis statement: This video will walk viewers through the process of designing a PCB using JLC PCBs\n\n**II. Designing the PCB**\n\n* Step 1: Creating a new project in KiCad\n* Step 2: Adding components to the PCB\n* Step 3: Routing wires and creating connections\n* Step 4: Using layers for grounding and signal routing\n\n**III. Finishing the Design**\n\n* Step 5: Checking for errors and making adjustments\n* Step 6: Creating a bill of materials (BOM) and generating Gerber files\n* Step 7: Ordering the PCBs from JLC PCBs\n\n**IV. Conclusion**\n\n* Summary of the design process\n* Tips and best practices for designing PCBs\n* Final thoughts and call to action\n\nThis table of contents provides a high-level overview of the video's content, highlighting the main sections and steps involved in designing a PCB using JLC PCBs.",
+      "Here is the high-level table of contents for the entire video in a JSON array format:\n\n```\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"Video introduction and overview\",\n    \"coverage\": 0\n  },\n  {\n    \"title\": \"Designing the PCB\",\n    \"description\": \"Creating a high-level outline of the PCB design process\",\n    \"coverage\": 5-10%\n  },\n  {\n    \"title\": \"Using Online Tools\",\n    \"description\": \"Utilizing online tools for PCB design and simulation\",\n    \"coverage\": 15-20%\n  },\n  {\n    \"title\": \"Creating a Top Layer Design\",\n    \"description\": \"Designing the top layer of the PCB, including wiring and components\",\n    \"coverage\": 30-35%\n  },\n  {\n    \"title\": \"Using the Bottom Layer\",\n    \"description\": \"Using the bottom layer for additional wiring and components\",\n    \"coverage\": 40-45%\n  },\n  {\n    \"title\": \"Finishing the Design\",\n    \"description\": \"Completing the PCB design, including ground connections and Gerber files\",\n    \"coverage\": 50-55%\n  },\n  {\n    \"title\": \"Manufacturing and Testing\",\n    \"description\": \"Ordering and receiving the manufactured PCBs, with testing and soldering instructions\",\n    \"coverage\": 60-65%\n  },\n  {\n    \"title\": \"Conclusion and Next Steps\",\n    \"description\": \"Final thoughts and suggestions for future learning and improvement\",\n    \"coverage\": 70-75%\n  }\n]\n```\n\nNote that the `coverage` percentage is an estimate of the time spent on each topic in the video.",
+      "Here is the high-level table of contents in the required format:\n\n[\n  {\n    \"title\": \"Introduction\",\n    \"description\": \"Overview of the PCB design process\",\n    \"coverage\": [\n      { \"start_idx\": 1, \"end_idx\": 4 }\n    ]\n  },\n  {\n    \"title\": \"Designing the PCB\",\n    \"description\": \"Creating the outline and connections for the board\",\n    \"coverage\": [\n      { \"start_idx\": 5, \"end_idx\": 23 }\n    ]\n  },\n  {\n    \"title\": \"Wiring the Top Layer\",\n    \"description\": \"Connecting components on the top layer\",\n    \"coverage\": [\n      { \"start_idx\": 24, \"end_idx\": 53 }\n    ]\n  },\n  {\n    \"title\": \"Wiring the Bottom Layer and Vias\",\n    \"description\": \"Creating connections between layers for SMD components\",\n    \"coverage\": [\n      { \"start_idx\": 54, \"end_idx\": 69 }\n    ]\n  },\n  {\n    \"title\": \"Ground Connections\",\n    \"description\": \"Isolating traces and creating a solid copper ground layer\",\n    \"coverage\": [\n      { \"start_idx\": 70, \"end_idx\": 84 }\n    ]\n  },\n  {\n    \"title\": \"Gerber Files and Ordering the PCB\",\n    \"description\": \"Generating Gerber files and ordering the board from JLC PCB\",\n    \"coverage\": [\n      { \"start_idx\": 85, \"end_idx\": 93 }\n    ]\n  },\n  {\n    \"title\": \"Soldering Tutorial\",\n    \"description\": \"A separate tutorial on soldering components to the PCB\",\n    \"coverage\": [\n      { \"start_idx\": 94, \"end_idx\": 103 }\n    ]\n  },\n  {\n    \"title\": \"Conclusion\",\n    \"description\": \"Final thoughts and next steps\",\n    \"coverage\": [\n      { \"start_idx\": 104, \"end_idx\": 111 }\n    ]\n  }\n]"
+    ]
+  }
+}

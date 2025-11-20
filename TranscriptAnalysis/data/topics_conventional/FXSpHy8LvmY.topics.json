@@ -1,0 +1,281 @@
+{
+  "video_id": "FXSpHy8LvmY",
+  "title": "FXSpHy8LvmY",
+  "url": "https://www.youtube.com/watch?v=FXSpHy8LvmY",
+  "created_at": "2025-09-17T11:56:14.500943+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:19fc15e376",
+  "chunking": {
+    "max_duration_s": 0,
+    "max_chars": 80000
+  },
+  "topics_mode": "title_description_with_coverage",
+  "topics": [
+    {
+      "id": "T1",
+      "title": "Introduction to Pole Placement",
+      "description": "Learn how to use the place command in MATLAB to design a controller that stabilizes an unstable system and improves its steady-state response.",
+      "coverage_ranges": [
+        {
+          "start_idx": 0,
+          "end_idx": 12
+        }
+      ],
+      "coverage_segments": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "coverage_times": [
+        {
+          "start_s": 0.4,
+          "end_s": 50.14
+        }
+      ],
+      "coverage_text": "In this video, we're going to talk about a way to develop a feedback controller for\na model that's represented using state space equations.\nAnd we're going to do that with a method called pole placement, or full state feedback.\nNow my experience is that pole placement itself isn't used extensively in industry.\nYou might find that you're using other methods like LQR or H infinity more often.\nHowever, pole placement is worth spending some time on because it will give you a better\nunderstanding of the general approach to feedback control using state space equations.\nAnd it's a stepping stone to getting to those other methods.\nSo I hope you stick around.\nI'm Brian, and welcome to a MATLAB Tech Talk.\nTo start off, we have a plant with inputs U and outputs Y.\nAnd the goal is to develop a feedback control system that drives the output to some desired\nvalue.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T2",
+      "title": "Define Matrices and Create Open Loop State Space Object",
+      "description": "Define the four matrices and create the open loop state space object using MATLAB.",
+      "coverage_ranges": [
+        {
+          "start_idx": 14,
+          "end_idx": 16
+        }
+      ],
+      "coverage_segments": [
+        14,
+        15,
+        16
+      ],
+      "coverage_times": [
+        {
+          "start_s": 54.46,
+          "end_s": 64.8
+        }
+      ],
+      "coverage_text": "to get the control error.\nThen you can develop a controller that uses that error to generate the input signals into\nthe plant with the goal of driving the error to zero.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T3",
+      "title": "Check Eigenvalues of Open Loop A Matrix",
+      "description": "Check the eigenvalues of the open loop A matrix to show that there is a positive eigenvalue that causes the system to be unstable.",
+      "coverage_ranges": [
+        {
+          "start_idx": 18,
+          "end_idx": 20
+        }
+      ],
+      "coverage_segments": [
+        18,
+        19,
+        20
+      ],
+      "coverage_times": [
+        {
+          "start_s": 69.02,
+          "end_s": 80.92
+        }
+      ],
+      "coverage_text": "say, a PID controller.\nBut for pole placement, we're going to approach this problem in a different way.\nRather than feedback the output Y, we're going to feedback the value of every state variable",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T4",
+      "title": "Move Eigenvalues to Minus 2 and Minus 1",
+      "description": "Move the eigenvalues of the system to minus 2 and minus 1.",
+      "coverage_ranges": [
+        {
+          "start_idx": 22,
+          "end_idx": 24
+        }
+      ],
+      "coverage_segments": [
+        22,
+        23,
+        24
+      ],
+      "coverage_times": [
+        {
+          "start_s": 81.92,
+          "end_s": 89.76
+        }
+      ],
+      "coverage_text": "Now we're going to claim that we know the value of every state, even though it's not\nnecessarily part of the output Y.\nAnd we'll get to that in a bit.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T5",
+      "title": "Solve for Gain Matrix using Pole Placement",
+      "description": "Use the place command in MATLAB to solve for the gain matrix that places the eigenvalues at minus 2 and minus 1.",
+      "coverage_ranges": [
+        {
+          "start_idx": 26,
+          "end_idx": 28
+        }
+      ],
+      "coverage_segments": [
+        26,
+        27,
+        28
+      ],
+      "coverage_times": [
+        {
+          "start_s": 93.64,
+          "end_s": 103.72
+        }
+      ],
+      "coverage_text": "We then take the state vector and multiply it by a matrix that is made up of a bunch of\ndifferent gain values.\nAnd the result is subtracted from a scaled reference signal.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T6",
+      "title": "Create Closed Loop System Object",
+      "description": "Create the closed loop system object using the gain matrix from pole placement.",
+      "coverage_ranges": [
+        {
+          "start_idx": 30,
+          "end_idx": 32
+        }
+      ],
+      "coverage_segments": [
+        30,
+        31,
+        32
+      ],
+      "coverage_times": [
+        {
+          "start_s": 108.08,
+          "end_s": 119.08
+        }
+      ],
+      "coverage_text": "Now, you'll notice that there isn't a block here labeled controller, like we have in the\ntop block diagram.\nIn this feedback structure, this whole section is the controller.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T7",
+      "title": "Compare Open Loop and Closed Loop Responses",
+      "description": "Compare the open loop and closed loop responses to show the improvement in stability and steady-state response.",
+      "coverage_ranges": [
+        {
+          "start_idx": 34,
+          "end_idx": 36
+        }
+      ],
+      "coverage_segments": [
+        34,
+        35,
+        36
+      ],
+      "coverage_times": [
+        {
+          "start_s": 124.62,
+          "end_s": 132.07999999999998
+        }
+      ],
+      "coverage_text": "system stability.\nAnd the scaling term on the reference is used to ensure that steady state error performance\nis acceptable.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T8",
+      "title": "Tips for Placing Eigenvalues",
+      "description": "Provide tips on where to place eigenvalues in a system, such as keeping dominant poles closer to the imaginary axis.",
+      "coverage_ranges": [
+        {
+          "start_idx": 38,
+          "end_idx": 40
+        }
+      ],
+      "coverage_segments": [
+        38,
+        39,
+        40
+      ],
+      "coverage_times": [
+        {
+          "start_s": 135.82000000000002,
+          "end_s": 148.24
+        }
+      ],
+      "coverage_text": "But first we need some background information.\nIn the last video we introduced the state equation x dot equals ax plus bu.\nAnd we showed that the dynamics of a linear system are captured in this first part, ax.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T9",
+      "title": "Full State Feedback is a Misnomer",
+      "description": "Discuss the limitations of full state feedback and how it may not be possible or practical to measure all states in a real system.",
+      "coverage_ranges": [
+        {
+          "start_idx": 42,
+          "end_idx": 44
+        }
+      ],
+      "coverage_segments": [
+        42,
+        43,
+        44
+      ],
+      "coverage_times": [
+        {
+          "start_s": 152.9,
+          "end_s": 162.36
+        }
+      ],
+      "coverage_text": "is stored and moves is captured by the ax term.\nSo, you might expect that there is something special about the A matrix when it comes to\ncontroller design.",
+      "start_s": null,
+      "end_s": null
+    },
+    {
+      "id": "T10",
+      "title": "Conclusion",
+      "description": "Summarize the key takeaways from this video and provide next steps for designing controllers using pole placement.",
+      "coverage_ranges": [
+        {
+          "start_idx": 46,
+          "end_idx": 48
+        }
+      ],
+      "coverage_segments": [
+        46,
+        47,
+        48
+      ],
+      "coverage_times": [
+        {
+          "start_s": 163.92000000000002,
+          "end_s": 172.92000000000002
+        }
+      ],
+      "coverage_text": "Any feedback controller has to modify the A matrix in order to change the dynamics of\nthe system.\nAnd this is especially true when it comes to stability.",
+      "start_s": null,
+      "end_s": null
+    }
+  ],
+  "llm_raw": {
+    "mode": "whole_simple",
+    "attempts": [
+      "Here is the table of contents in the required format:\n\n[\n  {\n    \"title\": \"Introduction to Pole Placement\",\n    \"description\": \"Learn how to use the place command in MATLAB to design a controller that stabilizes an unstable system and improves its steady-state response.\",\n    \"coverage\": [\n      {\"start_idx\": 0, \"end_idx\": 12}\n    ]\n  },\n  {\n    \"title\": \"Define Matrices and Create Open Loop State Space Object\",\n    \"description\": \" Define the four matrices and create the open loop state space object using MATLAB.\",\n    \"coverage\": [\n      {\"start_idx\": 14, \"end_idx\": 16}\n    ]\n  },\n  {\n    \"title\": \"Check Eigenvalues of Open Loop A Matrix\",\n    \"description\": \"Check the eigenvalues of the open loop A matrix to show that there is a positive eigenvalue that causes the system to be unstable.\",\n    \"coverage\": [\n      {\"start_idx\": 18, \"end_idx\": 20}\n    ]\n  },\n  {\n    \"title\": \"Move Eigenvalues to Minus 2 and Minus 1\",\n    \"description\": \"Move the eigenvalues of the system to minus 2 and minus 1.\",\n    \"coverage\": [\n      {\"start_idx\": 22, \"end_idx\": 24}\n    ]\n  },\n  {\n    \"title\": \"Solve for Gain Matrix using Pole Placement\",\n    \"description\": \"Use the place command in MATLAB to solve for the gain matrix that places the eigenvalues at minus 2 and minus 1.\",\n    \"coverage\": [\n      {\"start_idx\": 26, \"end_idx\": 28}\n    ]\n  },\n  {\n    \"title\": \"Create Closed Loop System Object\",\n    \"description\": \"Create the closed loop system object using the gain matrix from pole placement.\",\n    \"coverage\": [\n      {\"start_idx\": 30, \"end_idx\": 32}\n    ]\n  },\n  {\n    \"title\": \"Compare Open Loop and Closed Loop Responses\",\n    \"description\": \"Compare the open loop and closed loop responses to show the improvement in stability and steady-state response.\",\n    \"coverage\": [\n      {\"start_idx\": 34, \"end_idx\": 36}\n    ]\n  },\n  {\n    \"title\": \"Tips for Placing Eigenvalues\",\n    \"description\": \"Provide tips on where to place eigenvalues in a system, such as keeping dominant poles closer to the imaginary axis.\",\n    \"coverage\": [\n      {\"start_idx\": 38, \"end_idx\": 40}\n    ]\n  },\n  {\n    \"title\": \"Full State Feedback is a Misnomer\",\n    \"description\": \"Discuss the limitations of full state feedback and how it may not be possible or practical to measure all states in a real system.\",\n    \"coverage\": [\n      {\"start_idx\": 42, \"end_idx\": 44}\n    ]\n  },\n  {\n    \"title\": \"Conclusion\",\n    \"description\": \"Summarize the key takeaways from this video and provide next steps for designing controllers using pole placement.\",\n    \"coverage\": [\n      {\"start_idx\": 46, \"end_idx\": 48}\n    ]\n  }\n]"
+    ]
+  }
+}

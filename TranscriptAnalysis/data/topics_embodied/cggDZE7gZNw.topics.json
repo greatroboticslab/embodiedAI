@@ -1,0 +1,55 @@
+{
+  "video_id": "cggDZE7gZNw",
+  "title": "cggDZE7gZNw",
+  "url": "https://www.youtube.com/watch?v=cggDZE7gZNw",
+  "created_at": "2025-10-09T17:33:24.581853+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Kids Club",
+      "description": "The speaker mentions that they usually make a kids club, which includes moms and children.",
+      "evidence_quotes": [
+        "They usually make a kids club,"
+      ],
+      "start_s": 0.0,
+      "end_s": 9.84,
+      "id": "T1"
+    },
+    {
+      "title": "Kids' Clothing",
+      "description": "The speaker notes that kids are not bare, implying that they wear clothing.",
+      "evidence_quotes": [
+        "kids are not bare,"
+      ],
+      "start_s": 9.84,
+      "end_s": 17.84,
+      "id": "T2"
+    },
+    {
+      "title": "Personal Experience",
+      "description": "The speaker shares a personal experience, mentioning that their dad was actually present.",
+      "evidence_quotes": [
+        "It's also my dad was actually here"
+      ],
+      "start_s": 17.84,
+      "end_s": 22.5,
+      "id": "T3"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topics in JSON format:\n\n[\n  {\n    \"title\": \"Kids Club\",\n    \"description\": \"The speaker mentions that they usually make a kids club, which includes moms and children.\",\n    \"evidence_quotes\": [\"They usually make a kids club,\"],\n    \"time_range\": \"00:00:00.000–00:00:09.840\"\n  },\n  {\n    \"title\": \"Kids' Clothing\",\n    \"description\": \"The speaker notes that kids are not bare, implying that they wear clothing.\",\n    \"evidence_quotes\": [\"kids are not bare,\"],\n    \"time_range\": \"00:00:09.840–00:00:17.840\"\n  },\n  {\n    \"title\": \"Personal Experience\",\n    \"description\": \"The speaker shares a personal experience, mentioning that their dad was actually present.\",\n    \"evidence_quotes\": [\"It's also my dad was actually here\"],\n    \"time_range\": \"00:00:17.840–00:00:22.500\"\n  }\n]"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "video_id": "P4GsoMTv-SY",
+  "title": "P4GsoMTv-SY",
+  "url": "https://www.youtube.com/watch?v=P4GsoMTv-SY",
+  "created_at": "2025-10-09T17:32:29.523414+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Amplifier Performance",
+      "description": "The analyst tests the amplifier's performance, discussing its output power and distortion.",
+      "evidence_quotes": [
+        "Now we're putting out 2.27 volts so 2.27 volts RMS",
+        "It starts clipping because it shifted the output a little bit"
+      ],
+      "start_s": 1659.4,
+      "end_s": 1808.48,
+      "id": "T1"
+    },
+    {
+      "title": "Board Quality",
+      "description": "The analyst discusses how soldering a board directly instead of using a socket board improves the amplifier's performance.",
+      "evidence_quotes": [
+        "I actually soldered up a board instead of using a socket board"
+      ],
+      "start_s": 1683.8200000000002,
+      "end_s": 1690.9,
+      "id": "T2"
+    },
+    {
+      "title": "Capacitor Effect",
+      "description": "The analyst shows how using the capacitor from the inverting input to ground affects the amplifier's output and reduces clipping.",
+      "evidence_quotes": [
+        "I have that capacitor from inverting input to ground rather than shorting it"
+      ],
+      "start_s": 1696.12,
+      "end_s": 1723.44,
+      "id": "T3"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted topic list in the required JSON format:\n\n```\n[\n  {\n    \"title\": \"Using a Resistor to Compensate for Low Impedance Load\",\n    \"description\": null,\n    \"evidence_quotes\": [\"So you could add a resistor in series with that. For example, just add a 4 ohm resistor in series with the speaker.\"],\n    \"time_range\": \"09:28:96–09:36:64\"\n  },\n  {\n    \"title\": \"Characteristics of Amplifier Output\",\n    \"description\": null,\n    \"evidence_quotes\": [\"This is with no load connected to the output.\", \"With 8 ohm loads, it's decent up to about this point...\"],\n    \"time_range\": \"08:07:84–08:30:72\"\n  },\n  {\n    \"title\": \"Impedance Matching and Speaker Selection\",\n    \"description\": null,\n    \"evidence_quotes\": [\"So you're fine up until 9 volts with 8 ohm loads.\", \"Let's say you don't have a choice. The only extra speaker you have is a 4 ohm speaker.\"],\n    \"time_range\": \"09:21:84–09:45:04\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here are the coherent topics extracted from the transcript segment:\n\n```\n[\n  {\n    \"title\": \"Board Quality\",\n    \"description\": \"The analyst discusses how soldering a board directly instead of using a socket board improves the amplifier's performance.\",\n    \"evidence_quotes\": [\"I actually soldered up a board instead of using a socket board\"],\n    \"time_range\": \"17:26.140–17:33.220\"\n  },\n  {\n    \"title\": \"Capacitor Effect\",\n    \"description\": \"The analyst shows how using the capacitor from the inverting input to ground affects the amplifier's output and reduces clipping.\",\n    \"evidence_quotes\": [\"I have that capacitor from inverting input to ground rather than shorting it\"],\n    \"time_range\": \"17:38.440–18:05.760\"\n  },\n  {\n    \"title\": \"Amplifier Performance\",\n    \"description\": \"The analyst tests the amplifier's performance, discussing its output power and distortion.\",\n    \"evidence_quotes\": [\"Now we're putting out 2.27 volts so 2.27 volts RMS\", \"It starts clipping because it shifted the output a little bit\"],\n    \"time_range\": \"17:01.720–19:30.800\"\n  }\n]\n```\n\nNote that these topics may not be exhaustive, and there could be other coherent topics present in the transcript segment."
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "video_id": "N5DbiWFjbh8",
+  "title": "N5DbiWFjbh8",
+  "url": "https://www.youtube.com/watch?v=N5DbiWFjbh8",
+  "created_at": "2025-10-09T17:32:15.795439+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "Flight testing",
+      "description": "The process of flying the quadcopter and testing its stability and performance.",
+      "evidence_quotes": [
+        "And for this specific build this is the tune we ended up with just before i showed the flight footage i thought i would show you guys um the pid toolbox results at the end as you can see our latency is extremely low now that everything's implemented and these lines are pretty much almost perfect we could somewhat tweak this to make it even better but i'm happy with these results.",
+        "Just wanted to show you guys this just to show like how good of a frame quad mullet is like there's especially for being a two minute flight"
+      ],
+      "start_s": 1528.56,
+      "end_s": 1637.3999999999999,
+      "id": "T1"
+    },
+    {
+      "title": "Master Multiplier Limitations",
+      "description": "Determining the limit for master multiplier adjustments",
+      "evidence_quotes": [
+        "I would feel the motors and once they start feeling just a little bit uh too hot...probably a good place to stop."
+      ],
+      "start_s": 530.64,
+      "end_s": 554.5600000000001,
+      "id": "T2"
+    },
+    {
+      "title": "Master Multiplier Settings",
+      "description": "Adjusting master multiplier for fast control links",
+      "evidence_quotes": [
+        "If you are running a high packet rate...filter it out more.",
+        "I have been able to get my quads up to 1.4 but I like to play it on the safe side."
+      ],
+      "start_s": 478.16,
+      "end_s": 501.6,
+      "id": "T3"
+    },
+    {
+      "title": "Pitch Dampening",
+      "description": "Adjusting pitch dampening for under-damped response",
+      "evidence_quotes": [
+        "I lowered it down to 0.95 because it's just very subtle...sightly under damped."
+      ],
+      "start_s": 447.76,
+      "end_s": 459.28000000000003,
+      "id": "T4"
+    },
+    {
+      "title": "Tuning PID for quadcopter",
+      "description": "The process of fine-tuning the PID (proportional-integral-derivative) settings for a quadcopter to achieve stable flight.",
+      "evidence_quotes": [
+        "Just before I showed you guys um the pid toolbox results at the end as you can see our latency is extremely low now that everything's implemented and these lines are pretty much almost perfect we could somewhat tweak this to make it even better but i'm happy with these results.",
+        "Another thing too these are the black box logs keep in mind this is a two minute flight so the longer you fly the more noisy these graphs are going to look"
+      ],
+      "start_s": 1523.44,
+      "end_s": 1601.52,
+      "id": "T5"
+    },
+    {
+      "title": "Using PID toolbox for analysis",
+      "description": "The use of the PID toolbox software for analyzing and fine-tuning the PID settings for a quadcopter.",
+      "evidence_quotes": [
+        "Just before I showed you guys um the pid toolbox results at the end as you can see our latency is extremely low now that everything's implemented and these lines are pretty much almost perfect we could somewhat tweak this to make it even better but i'm happy with these results."
+      ],
+      "start_s": 1523.44,
+      "end_s": 1601.52,
+      "id": "T6"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here is the extracted list of topics with corresponding quotes and time ranges:\n\n```\n[\n  {\n    \"title\": \"Master Multiplier Settings\",\n    \"description\": \"Adjusting master multiplier for fast control links\",\n    \"evidence_quotes\": [\"If you are running a high packet rate...filter it out more.\", \"I have been able to get my quads up to 1.4 but I like to play it on the safe side.\"],\n    \"time_range\": \"07:57.680–08:21.120\"\n  },\n  {\n    \"title\": \"Pitch Dampening\",\n    \"description\": \"Adjusting pitch dampening for under-damped response\",\n    \"evidence_quotes\": [\"I lowered it down to 0.95 because it's just very subtle...sightly under damped.\"],\n    \"time_range\": \"07:27.280–07:38.800\"\n  },\n  {\n    \"title\": \"Master Multiplier Limitations\",\n    \"description\": \"Determining the limit for master multiplier adjustments\",\n    \"evidence_quotes\": [\"I would feel the motors and once they start feeling just a little bit uh too hot...probably a good place to stop.\"],\n    \"time_range\": \"08:50.160–09:14.080\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here are the extracted topics with their corresponding evidence quotes and time ranges:\n\n[\n  {\n    \"title\": \"Tuning PID for quadcopter\",\n    \"description\": \"The process of fine-tuning the PID (proportional-integral-derivative) settings for a quadcopter to achieve stable flight.\",\n    \"evidence_quotes\": [\n      \"Just before I showed you guys um the pid toolbox results at the end as you can see our latency is extremely low now that everything's implemented and these lines are pretty much almost perfect we could somewhat tweak this to make it even better but i'm happy with these results.\", \n      \"Another thing too these are the black box logs keep in mind this is a two minute flight so the longer you fly the more noisy these graphs are going to look\"\n    ],\n    \"time_range\": \"00:15:39.120–00:16:57.200\"\n  },\n  {\n    \"title\": \"Using PID toolbox for analysis\",\n    \"description\": \"The use of the PID toolbox software for analyzing and fine-tuning the PID settings for a quadcopter.\",\n    \"evidence_quotes\": [\n      \"Just before I showed you guys um the pid toolbox results at the end as you can see our latency is extremely low now that everything's implemented and these lines are pretty much almost perfect we could somewhat tweak this to make it even better but i'm happy with these results.\"\n    ],\n    \"time_range\": \"00:15:39.120–00:16:57.200\"\n  },\n  {\n    \"title\": \"Flight testing\",\n    \"description\": \"The process of flying the quadcopter and testing its stability and performance.\",\n    \"evidence_quotes\": [\n      \"And for this specific build this is the tune we ended up with just before i showed the flight footage i thought i would show you guys um the pid toolbox results at the end as you can see our latency is extremely low now that everything's implemented and these lines are pretty much almost perfect we could somewhat tweak this to make it even better but i'm happy with these results.\", \n      \"Just wanted to show you guys this just to show like how good of a frame quad mullet is like there's especially for being a two minute flight\"\n    ],\n    \"time_range\": \"00:15:44.240–00:17:33.080\"\n  }\n]"
+        ]
+      }
+    ]
+  }
+}

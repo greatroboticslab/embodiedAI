@@ -1,0 +1,85 @@
+{
+  "video_id": "ewYBc1jBDGM",
+  "title": "ewYBc1jBDGM",
+  "url": "https://www.youtube.com/watch?v=ewYBc1jBDGM",
+  "created_at": "2025-09-17T12:00:53.143245+00:00",
+  "model": "llama3",
+  "prompt_version": "topics_v1.0:9356be46fd",
+  "chunking": {
+    "max_duration_s": 900,
+    "max_chars": 12000
+  },
+  "topics": [
+    {
+      "title": "AC Coupling and Amplification",
+      "description": "Discussion of how AC coupling allows the amplifier to operate.",
+      "evidence_quotes": [
+        "But now we can AC couple a diode here only in the AC path using a capacitor here.",
+        "And now this voltage fluctuation can generate an AC current flowing through the diode."
+      ],
+      "start_s": 548.26,
+      "end_s": 601.06,
+      "id": "T1"
+    },
+    {
+      "title": "Amplification Gain",
+      "description": "Discussion of how the gain of a common emitter amplifier is determined.",
+      "evidence_quotes": [
+        "So it becomes very clear that an approximation for the gain of any common emitter amplifier is the ratio between the collector impedance and the emitter impedance."
+      ],
+      "start_s": 444.74,
+      "end_s": 498.74,
+      "id": "T2"
+    },
+    {
+      "title": "Impedance Transformation",
+      "description": "Explanation of how the resistor transforms current into voltage.",
+      "evidence_quotes": [
+        "So if I place a 10 times higher resistor here, I'm gonna have 10 times higher voltage here.",
+        "Because the resistor here is transforming the current on voltage."
+      ],
+      "start_s": 428.66,
+      "end_s": 444.74,
+      "id": "T3"
+    },
+    {
+      "title": "Inductor in Series",
+      "description": "Explanation of how an inductor in series with a resistor affects the amplifier.",
+      "evidence_quotes": [
+        "I first placed an inductor in series with this resistor here.",
+        "Because this inductor here for AC will have very high impedance."
+      ],
+      "start_s": 503.86,
+      "end_s": 532.34,
+      "id": "T4"
+    },
+    {
+      "title": "Voltage and Current Fluctuations",
+      "description": "Discussion of voltage and current fluctuations in a common emitter amplifier.",
+      "evidence_quotes": [
+        "Any voltage fluctuation here will generate a current fluctuation on this resistor here.",
+        "An approximation for the gain of any common emitter amplifier is the ratio between the collector impedance and the emitter impedance."
+      ],
+      "start_s": 425.06,
+      "end_s": 601.06,
+      "id": "T5"
+    }
+  ],
+  "llm_raw": {
+    "mode": "chunked",
+    "chunks": [
+      {
+        "chunk_index": 0,
+        "attempts": [
+          "Here are the extracted topics:\n\n```\n[\n  {\n    \"title\": \"Voltage and Current Fluctuations\",\n    \"description\": \"Discussion of voltage and current fluctuations in a common emitter amplifier.\",\n    \"evidence_quotes\": [\"Any voltage fluctuation here will generate a current fluctuation on this resistor here.\", \"An approximation for the gain of any common emitter amplifier is the ratio between the collector impedance and the emitter impedance.\"],\n    \"time_range\": \"00:07:05.060–00:10:01.060\"\n  },\n  {\n    \"title\": \"Impedance Transformation\",\n    \"description\": \"Explanation of how the resistor transforms current into voltage.\",\n    \"evidence_quotes\": [\"So if I place a 10 times higher resistor here, I'm gonna have 10 times higher voltage here.\", \"Because the resistor here is transforming the current on voltage.\"],\n    \"time_range\": \"00:07:08.660–00:07:24.740\"\n  },\n  {\n    \"title\": \"Amplification Gain\",\n    \"description\": \"Discussion of how the gain of a common emitter amplifier is determined.\",\n    \"evidence_quotes\": [\"So it becomes very clear that an approximation for the gain of any common emitter amplifier is the ratio between the collector impedance and the emitter impedance.\"],\n    \"time_range\": \"00:07:24.740–00:08:18.740\"\n  },\n  {\n    \"title\": \"Inductor in Series\",\n    \"description\": \"Explanation of how an inductor in series with a resistor affects the amplifier.\",\n    \"evidence_quotes\": [\"I first placed an inductor in series with this resistor here.\", \"Because this inductor here for AC will have very high impedance.\"],\n    \"time_range\": \"00:08:23.860–00:08:52.340\"\n  },\n  {\n    \"title\": \"AC Coupling and Amplification\",\n    \"description\": \"Discussion of how AC coupling allows the amplifier to operate.\",\n    \"evidence_quotes\": [\"But now we can AC couple a diode here only in the AC path using a capacitor here.\", \"And now this voltage fluctuation can generate an AC current flowing through the diode.\"],\n    \"time_range\": \"00:09:08.260–00:10:01.060\"\n  }\n]\n```"
+        ]
+      },
+      {
+        "chunk_index": 1,
+        "attempts": [
+          "Here are the coherent topics extracted from the transcript segment:\n\n```\n[\n  {\n    \"title\": \"Transistor Biasing and Autotransformer\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"because we are using all the current and all the voltage available on the biasing condition.\", \"Very, very, very interesting.\"],\n    \"time_range\": \"00:14:28.260–00:17:09.060\"\n  },\n  {\n    \"title\": \"Voltage Divider and Constant Voltage\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"this voltage divider here is setting a constant voltage on the base to have the constant voltage here on the emitter.\"],\n    \"time_range\": \"00:15:01.460–00:15:04.100\"\n  },\n  {\n    \"title\": \"Inductor and AC Fluctuations\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"the inductor is isolating the resistor here from AC fluctuations.\"],\n    \"time_range\": \"00:15:12.340–00:15:18.500\"\n  },\n  {\n    \"title\": \"Autotransformer and Impedance Transformation\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"And the autotransformer is transforming the impedance, the low impedance output to a higher impedance here.\"],\n    \"time_range\": \"00:15:31.620–00:15:34.660\"\n  },\n  {\n    \"title\": \"Stabilizing the Stage\",\n    \"description\": \"\",\n    \"evidence_quotes\": [\"the 39Ω resistor is only here to help a little more stabilizing the stage.\"],\n    \"time_range\": \"00:15:41.700–00:15:48.020\"\n  }\n]\n```"
+        ]
+      }
+    ]
+  }
+}
