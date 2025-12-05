@@ -62,6 +62,7 @@ from docx.shared import Inches
 
 YES = {"yes", "y", "true", "t", "1"}
 
+
 # -------------------- URL parsing --------------------
 
 def get_video_id_from_url(text: str):
@@ -90,9 +91,11 @@ def get_video_id_from_url(text: str):
         pass
     return None
 
+
 def clean_video_id(vid: str):
     m = re.match(r"([A-Za-z0-9_-]{6,})", vid)
     return m.group(1) if m else vid
+
 
 # -------------------- DOCX parsers --------------------
 
@@ -124,6 +127,7 @@ def parse_comments_docx(comments_docx_path: str):
     flush()
     return dict(by_video)
 
+
 # -------------------- Topic loading --------------------
 
 def _find_topics_json(raw_frames_dir: str, topics_root: str):
@@ -144,6 +148,7 @@ def _find_topics_json(raw_frames_dir: str, topics_root: str):
         return candidate
     return None
 
+
 def parse_topics(topics_json_path: str):
     """
     Returns list of topics with keys: id, title, description, start_s, end_s.
@@ -154,13 +159,14 @@ def parse_topics(topics_json_path: str):
     topics = []
     for t in data.get("topics", []):
         topics.append({
-            "id": t.get("id") or t.get("topic_id") or f"T{len(topics)+1}",
+            "id": t.get("id") or t.get("topic_id") or f"T{len(topics) + 1}",
             "title": t.get("title", "").strip(),
             "description": t.get("description", "").strip(),
             "start_s": t.get("start_s"),
             "end_s": t.get("end_s"),
         })
     return topics
+
 
 # -------------------- Embeddings + helpers --------------------
 
@@ -183,7 +189,7 @@ def pick_representative_frames(frame_names, k=3):
         return []
     if k >= len(frame_names):
         return frame_names
-    idxs = [int(round(i * (len(frame_names)-1) / (k-1))) for i in range(k)]
+    idxs = [int(round(i * (len(frame_names) - 1) / (k - 1))) for i in range(k)]
     seen = set()
     picks = []
     for idx in idxs:
@@ -204,6 +210,7 @@ def discover_raw_frames(frames_input: str):
         if os.path.isdir(d):
             targets.append(d)
     return targets
+
 
 # -------------------- LLM scoring --------------------
 
@@ -238,12 +245,13 @@ def ask_model_topic(model_name: str, topic_title: str, topic_desc: str, comment:
         score = max(0, min(100, score))
         return {"correlated": corr, "score": score, "reason": text[:400]}
 
+
 # -------------------- IO helpers (resume-safe) --------------------
 
-def results_path(raw_frames_dir: str, video_id: str, seg_tag: str, embed_model: str, retrieval_topk: int):
+def results_path(output_dir: str, video_id: str, seg_tag: str, embed_model: str, retrieval_topk: int):
     safe_model = re.sub(r"[^A-Za-z0-9_-]+", "", embed_model or "mpnet")
     return os.path.join(
-        raw_frames_dir,
+        output_dir,
         f"{video_id}_topiccorr_{seg_tag}_{safe_model}_k{retrieval_topk}.results.jsonl"
     )
 
@@ -265,6 +273,7 @@ def load_existing_results(results_file: str):
 def append_result(results_file: str, record: dict):
     with open(results_file, "a", encoding="utf-8") as f:
         f.write(json.dumps(record, ensure_ascii=False) + "\n")
+
 
 # -------------------- DOCX helpers --------------------
 
@@ -298,9 +307,9 @@ def build_docx_from_results(out_docx: str, topics: list, results_map: dict,
 
     # Topic metadata map for quick lookup (stringify IDs for safety)
     topic_map = {str(t.get("id")): {
-                    "title": t.get("title", ""),
-                    "description": t.get("description", "")
-                 } for t in topics}
+        "title": t.get("title", ""),
+        "description": t.get("description", "")
+    } for t in topics}
 
     # Per-comment index (for coverage summary)
     comments_index = {}
@@ -360,7 +369,7 @@ def build_docx_from_results(out_docx: str, topics: list, results_map: dict,
 
     # Sort by average score (desc), then title/id to stabilize
     ranked_desc = sorted(topic_stats, key=lambda x: (x[2], x[1], str(x[0])), reverse=True)
-    ranked_asc  = sorted(topic_stats, key=lambda x: (x[2], x[1], str(x[0])))  # for bottom-3
+    ranked_asc = sorted(topic_stats, key=lambda x: (x[2], x[1], str(x[0])))  # for bottom-3
 
     top3 = ranked_desc[:3]
     bottom3 = ranked_asc[:3]
@@ -383,7 +392,6 @@ def build_docx_from_results(out_docx: str, topics: list, results_map: dict,
         doc.add_paragraph("    • (none)")
     # ======================= END: rank topics by average score =======================
 
-
     # Per-comment coverage
     if comments_index:
         doc.add_paragraph("Correlated comment coverage (all comments):")
@@ -399,7 +407,7 @@ def build_docx_from_results(out_docx: str, topics: list, results_map: dict,
             header = f"- matched {coverage} topic(s)"
             if max_score is not None:
                 header += f", max score {max_score:.4f}"
-            header += f": {e.get('comment','')}"
+            header += f": {e.get('comment', '')}"
             doc.add_paragraph(header)
             if e.get("url"):
                 doc.add_paragraph(f"  Source: {e['url']}")
@@ -413,7 +421,7 @@ def build_docx_from_results(out_docx: str, topics: list, results_map: dict,
                 for tid, info in top_t:
                     _add_thumbnails_row(doc, base_dir, info.get("rep_frames", []), thumb_width_in=1.2)
                     title = topic_map.get(str(tid), {}).get("title", "(untitled)")
-                    desc  = topic_map.get(str(tid), {}).get("description", "")
+                    desc = topic_map.get(str(tid), {}).get("description", "")
                     p = doc.add_paragraph()
                     p.add_run(f"Topic {tid}: {title} — score {float(info.get('score', 0.0)):.4f}")
                     if desc:
@@ -430,7 +438,7 @@ def build_docx_from_results(out_docx: str, topics: list, results_map: dict,
                 for tid, info in bot_t:
                     _add_thumbnails_row(doc, base_dir, info.get("rep_frames", []), thumb_width_in=1.2)
                     title = topic_map.get(str(tid), {}).get("title", "(untitled)")
-                    desc  = topic_map.get(str(tid), {}).get("description", "")
+                    desc = topic_map.get(str(tid), {}).get("description", "")
                     p = doc.add_paragraph()
                     p.add_run(f"Topic {tid}: {title} — score {float(info.get('score', 0.0)):.4f}")
                     if desc:
@@ -477,15 +485,20 @@ def list_all_frames(raw_frames_dir: str):
     files.sort()
     return files
 
+
 # -------------------- Core processing --------------------
 
-def process_one_video(raw_frames_dir: str, comments_by_video: dict, topics_root: str, model: str,
+def process_one_video(raw_frames_dir: str, comments_by_video: dict, topics_root: str, results_root: str, model: str,
                       min_score: int, top_k_scan: int,
                       seg_n_sections: int | None, seg_penalty: int | None,
                       seg_min_size: int, embed_model: str,
                       retrieval_topk: int, rep_k: int):
     """Segment knobs (n/penalty/min) are kept for tag consistency only; topics are pre-defined."""
     video_id = os.path.basename(os.path.dirname(raw_frames_dir))
+
+    # Prepare output dir
+    video_out_dir = os.path.join(results_root, video_id)
+    os.makedirs(video_out_dir, exist_ok=True)
 
     topics_json = _find_topics_json(raw_frames_dir, topics_root)
     if not topics_json:
@@ -506,7 +519,8 @@ def process_one_video(raw_frames_dir: str, comments_by_video: dict, topics_root:
     comments_for_video = comments_by_video.get(video_id, [])
     if not comments_for_video:
         comments_for_video = [c for v in comments_by_video.values() for c in v]
-        print(f"[WARN] {video_id}: no comments matched by video id; falling back to ALL comments ({len(comments_for_video)}).")
+        print(
+            f"[WARN] {video_id}: no comments matched by video id; falling back to ALL comments ({len(comments_for_video)}).")
     else:
         print(f"[INFO] {video_id}: {len(comments_for_video)} comments found for this video.")
 
@@ -518,11 +532,14 @@ def process_one_video(raw_frames_dir: str, comments_by_video: dict, topics_root:
         C = _embed_texts(comment_texts, model_name=embed_model)
         retrieval_ok = True
     except ImportError:
-        print(f"[WARN] {video_id}: sentence-transformers missing; skipping fast retrieval (LLM will score all comments).")
+        print(
+            f"[WARN] {video_id}: sentence-transformers missing; skipping fast retrieval (LLM will score all comments).")
 
     # Resume state
     seg_tag = f"n{seg_n_sections or 0}_p{seg_penalty or 0}_m{seg_min_size}"
-    res_file = results_path(raw_frames_dir, video_id, seg_tag, embed_model, retrieval_topk)
+    # Resume state
+    seg_tag = f"n{seg_n_sections or 0}_p{seg_penalty or 0}_m{seg_min_size}"
+    res_file = results_path(video_out_dir, video_id, seg_tag, embed_model, retrieval_topk)
     existing = load_existing_results(res_file)
     print(f"[RESUME] {video_id}: {len(existing)}/{len(topics)} topics already processed.")
 
@@ -576,7 +593,7 @@ def process_one_video(raw_frames_dir: str, comments_by_video: dict, topics_root:
         print(f"[OK] {video_id}: topic {tid} processed ({checked_pairs} pairs).")
 
     # Build DOCX
-    out_docx = os.path.join(raw_frames_dir, f"{video_id}_correlation_topics_{seg_tag}.docx")
+    out_docx = os.path.join(video_out_dir, f"{video_id}_correlation_topics_{seg_tag}.docx")
     build_docx_from_results(
         out_docx, topics, existing,
         min_score=min_score, top_k=top_k_scan,
@@ -586,12 +603,16 @@ def process_one_video(raw_frames_dir: str, comments_by_video: dict, topics_root:
     print(f"[DONE] {video_id}: report saved -> {out_docx}")
 
 
-def rebuild_docx_only(raw_frames_dir: str, comments_by_video: dict, topics_root: str, model: str,
+def rebuild_docx_only(raw_frames_dir: str, comments_by_video: dict, topics_root: str, results_root: str, model: str,
                       min_score: int, top_k_scan: int,
                       seg_n_sections: int | None, seg_penalty: int | None,
                       seg_min_size: int, embed_model: str,
                       retrieval_topk: int, rep_k: int):
     video_id = os.path.basename(os.path.dirname(raw_frames_dir))
+
+    # Prepare output dir
+    video_out_dir = os.path.join(results_root, video_id)
+    os.makedirs(video_out_dir, exist_ok=True)
 
     topics_json = _find_topics_json(raw_frames_dir, topics_root)
     if not topics_json:
@@ -608,7 +629,8 @@ def rebuild_docx_only(raw_frames_dir: str, comments_by_video: dict, topics_root:
         t["rep_frames"] = pick_representative_frames(all_frames, k=rep_k)
 
     seg_tag = f"n{seg_n_sections or 0}_p{seg_penalty or 0}_m{seg_min_size}"
-    res_file = results_path(raw_frames_dir, video_id, seg_tag, embed_model, retrieval_topk)
+    seg_tag = f"n{seg_n_sections or 0}_p{seg_penalty or 0}_m{seg_min_size}"
+    res_file = results_path(video_out_dir, video_id, seg_tag, embed_model, retrieval_topk)
     if not os.path.isfile(res_file):
         print(f"[SKIP] {video_id}: no results file found to rebuild.")
         return
@@ -616,7 +638,7 @@ def rebuild_docx_only(raw_frames_dir: str, comments_by_video: dict, topics_root:
     existing = load_existing_results(res_file)
     comments_for_video = comments_by_video.get(video_id, [])
 
-    out_docx = os.path.join(raw_frames_dir, f"{video_id}_correlation_topics_{seg_tag}.docx")
+    out_docx = os.path.join(video_out_dir, f"{video_id}_correlation_topics_{seg_tag}.docx")
     build_docx_from_results(
         out_docx, topics, existing,
         min_score=min_score, top_k=top_k_scan,
@@ -625,31 +647,52 @@ def rebuild_docx_only(raw_frames_dir: str, comments_by_video: dict, topics_root:
     )
     print(f"[REBUILT] {video_id}: report saved -> {out_docx}")
 
+
 # -------------------- CLI --------------------
 
 def main():
-    ap = argparse.ArgumentParser(description="Correlate viewer comments to topics (resume-safe) and build a DOCX report.")
-    ap.add_argument("--frames_path", default="../frames", help="Path to frames root (containing <video_id>/raw_frames) OR a single raw_frames folder.")
-    ap.add_argument("--comments_docx", default="../../Data For Classes-Analysis/final_merged_data/final_merged_class_data.docx", help="DOCX with video URLs and comments.")
+    ap = argparse.ArgumentParser(
+        description="Correlate viewer comments to topics (resume-safe) and build a DOCX report.")
+    ap.add_argument("--frames_path", default="../frames",
+                    help="Path to frames root (containing <video_id>/raw_frames) OR a single raw_frames folder.")
+    ap.add_argument("--results_root", default="../results",
+                    help="Root directory for results. Defaults to ../results relative to this script.")
+    ap.add_argument("--comments_docx",
+                    default="../../Data For Classes-Analysis/final_merged_data/final_merged_class_data.docx",
+                    help="DOCX with video URLs and comments.")
 
     ap.add_argument("--topics_root", default="topics", help="Directory containing <video_id>.topics.json files.")
     ap.add_argument("--model", default=None, help="LLM name for scoring (defaults to Config.ollama_models[0]).")
-    ap.add_argument("--min_score", type=int, default=60, help="Minimum score to include a matched comment in the final report.")
+    ap.add_argument("--min_score", type=int, default=60,
+                    help="Minimum score to include a matched comment in the final report.")
     ap.add_argument("--top_k", type=int, default=5, help="Top-K comments per topic shown in the final report.")
 
     # Tags only (for naming parity with your section pipeline)
-    ap.add_argument("--seg_n_sections", type=int, default=None, help="Unused for topics; kept for tag naming consistency.")
+    ap.add_argument("--seg_n_sections", type=int, default=None,
+                    help="Unused for topics; kept for tag naming consistency.")
     ap.add_argument("--seg_penalty", type=int, default=15, help="Unused for topics; kept for tag naming consistency.")
     ap.add_argument("--seg_min_size", type=int, default=6, help="Unused for topics; kept for tag naming consistency.")
 
     ap.add_argument("--embed_model", default="all-mpnet-base-v2", help="SentenceTransformer model for embeddings.")
-    ap.add_argument("--retrieval_topk", type=int, default=50, help="How many candidate comments to retrieve per topic before LLM re-score (0 = score all).")
+    ap.add_argument("--retrieval_topk", type=int, default=50,
+                    help="How many candidate comments to retrieve per topic before LLM re-score (0 = score all).")
     ap.add_argument("--rep_k", type=int, default=3, help="Representative thumbnails per topic in the report.")
 
-    ap.add_argument("--rebuild", action="store_true", help="Rebuild DOCX from existing results without running the model.")
+    ap.add_argument("--rebuild", action="store_true",
+                    help="Rebuild DOCX from existing results without running the model.")
 
     args = ap.parse_args()
     model = args.model or Config.ollama_models[0]
+
+    # Resolve results root
+    if args.results_root:
+        results_root = os.path.abspath(args.results_root)
+    else:
+        # Default: ../results relative to this script
+        base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        results_root = os.path.join(base, "results")
+
+    print(f"[INFO] Results will be saved to: {results_root}")
 
     comments_by_video = parse_comments_docx(args.comments_docx)
     if not comments_by_video:
@@ -668,7 +711,7 @@ def main():
         try:
             if args.rebuild:
                 rebuild_docx_only(
-                    raw_frames, comments_by_video, args.topics_root, model,
+                    raw_frames, comments_by_video, args.topics_root, results_root, model,
                     min_score=args.min_score, top_k_scan=args.top_k,
                     seg_n_sections=args.seg_n_sections, seg_penalty=args.seg_penalty,
                     seg_min_size=args.seg_min_size, embed_model=args.embed_model,
@@ -676,7 +719,7 @@ def main():
                 )
             else:
                 process_one_video(
-                    raw_frames, comments_by_video, args.topics_root, model,
+                    raw_frames, comments_by_video, args.topics_root, results_root, model,
                     min_score=args.min_score, top_k_scan=args.top_k,
                     seg_n_sections=args.seg_n_sections, seg_penalty=args.seg_penalty,
                     seg_min_size=args.seg_min_size, embed_model=args.embed_model,
@@ -687,6 +730,7 @@ def main():
             break
         except Exception as e:
             print(f"[ERROR] {raw_frames}: {e}")
+
 
 if __name__ == "__main__":
     main()
