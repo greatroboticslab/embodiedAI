@@ -383,10 +383,10 @@ def build_docx_table(out_docx_path: str, metrics: List[VideoMetrics], agg: Aggre
 
 def main():
     ap = argparse.ArgumentParser(description="Collect metrics for Caption Analysis results (Embodied vs Conventional)")
-    ap.add_argument('--results_root', type=str, required=True, help='Root directory containing *_correlation.results.jsonl files')
-    ap.add_argument('--integrated_captions_root', type=str, required=True, help='Root directory containing *_captions_integrated.json files')
-    ap.add_argument('--videos_root', type=str, default=None, help='Raw videos folder (optional; used for duration via ffprobe)')
-    ap.add_argument('--out_dir', type=str, default="./output", help='Output directory for JSON + DOCX')
+    ap.add_argument('--results_root', type=str, default="../results/frames_embodied", help='Root directory containing *_correlation.results.jsonl files')
+    ap.add_argument('--integrated_captions_root', type=str, default="../data/integrated_caption/frames_embodied_captions_integrated", help='Root directory containing *_captions_integrated.json files')
+    ap.add_argument('--videos_root', type=str, default="../../VideoAnalysis/rawvideos/embodied_videos", help='Raw videos folder (optional; used for duration via ffprobe)')
+    ap.add_argument('--out_dir', type=str, default="../output", help='Output directory for JSON + DOCX')
     ap.add_argument('--label', type=str, default="Embodied", help='Label to tag this run (e.g., Conventional or Embodied)')
     ap.add_argument('--corr_threshold', type=float, default=60, help='Threshold for counting a correlation as present')
 
