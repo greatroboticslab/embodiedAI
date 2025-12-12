@@ -7,13 +7,15 @@ This script correlates YouTube viewer comments with video frame captions to iden
 ### Prerequisites
 
 *   Python 3.x
+*   Use llava conda environment
 *   Dependencies: `python-docx` (Install via `pip install python-docx`)
 *   Configuration: Ensure `config.py` and `utils/` are available in the parent directory.
 
 ### Usage
 
 ```bash
-python correlate_comments.py  <frames_input> <comments_docx> \
+python correlate_comments.py  --frames_path <frames_input> \
+    --comments_docx <comments_docx> \
     --results_root <output_directory> \
     --integrated_captions_root <captions_directory> \
     [--model <model_name>] \
@@ -43,8 +45,8 @@ python correlate_comments.py  <frames_input> <comments_docx> \
 
 ```bash
 python correlate_comments.py \
-    ../data/integrated_caption/frames_conventional_captions_integrated \
-    comments.docx \
+    -- frames_path../data/integrated_caption/frames_conventional_captions_integrated \
+    --comments_docx comments.docx \
     --results_root ../results \
     --integrated_captions_root ../data/integrated_caption \
     --min_score 70

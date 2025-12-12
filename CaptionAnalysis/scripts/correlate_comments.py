@@ -510,8 +510,8 @@ def rebuild_docx_only(raw_frames_dir: str, frames_input_base: str, output_base: 
 
 def main():
     ap = argparse.ArgumentParser(description="Batch correlate integrated frame captions with YouTube comments (resume-safe).")
-    ap.add_argument("frames_path", help="Path to frames root (containing <video_id>/raw_frames) OR a single raw_frames folder.")
-    ap.add_argument("comments_docx", help="DOCX with video URLs and comments.")
+    ap.add_argument("--frames_path", default="../../VideoAnalysis/data/frames", help="Path to frames root (containing <video_id>/raw_frames) OR a single raw_frames folder.")
+    ap.add_argument("--comments_docx", default="../../Data For Classes-Analysis/final_merged_data/final_merged_class_data.docx", help="DOCX with video URLs and comments.")
     ap.add_argument("--results_root", default="../results", help="Directory where results/reports will be saved (mirrors input structure).")
     ap.add_argument("--integrated_captions_root", default="../data/integrated_caption", help="Root directory containing <video_id>_captions_integrated.json files.")
     
