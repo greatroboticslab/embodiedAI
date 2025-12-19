@@ -35,3 +35,33 @@ Select --force to recompute even if outputs exist.
     cd TranscriptAnalysis/scripts
     conda activate videoanalysis
     python topic_comment_correlation.py 
+
+### To Generate Metrics
+
+    cd TranscriptAnalysis/scripts
+    # Ensure you are in the correct environment (e.g. videoanalysis)
+    
+    # 1. Run collection (requires access to frames/transcripts/topics)
+    # Conventional
+    python embodiment_project_collect_metrics.py \
+      --frames_root ../../VideoAnalysis/data/frames/frames_conventional \
+      --transcripts_root ../data/transcripts_conventional \
+      --topics_root ../data/topics_conventional \
+      --correlation_root ../results/conventional \
+      --out_dir ../results/conventional \
+      --label Conventional
+
+    # Embodied
+    python embodiment_project_collect_metrics.py \
+      --frames_root ../../VideoAnalysis/data/frames/frames_embodied \
+      --transcripts_root ../data/transcripts_embodied \
+      --topics_root ../data/topics_embodied \
+      --correlation_root ../results/embodied \
+      --out_dir ../results/embodied \
+      --label Embodied
+
+    # 2. Export summary CSV for LaTeX
+    python export_plot_data.py \
+      --conventional ../results/conventional/Conventional_metrics.json \
+      --embodied ../results/embodied/Embodied_metrics.json \
+      --output ../metrics_summary.csv 
