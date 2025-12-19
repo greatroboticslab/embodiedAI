@@ -681,13 +681,13 @@ def build_docx_table(out_docx_path: str, metrics: List[VideoMetrics], agg: Aggre
 def main():
     ap = argparse.ArgumentParser(
         description="Collect metrics for embodied vs conventional video sets and export JSON + DOCX table")
-    ap.add_argument('--videos_root', type=str, default="../rawvideos/downloaded_videos",
+    ap.add_argument('--videos_root', type=str, default="../../VideoAnalysis/rawvideos/conventional_videos",
                     help='Raw videos folder (optional; used for duration via ffprobe)')
-    ap.add_argument('--frames_root', type=str, default="../frames",
+    ap.add_argument('--frames_root', type=str, default="../../VideoAnalysis/data/frames/frames_conventional",
                     help='Frames root: <frames_root>/<video_id>/raw_frames')
-    ap.add_argument('--transcripts_root', type=str, default="../transcription/transcripts",
+    ap.add_argument('--transcripts_root', type=str, default="../data/transcripts_conventional",
                     help='Transcripts root containing <video_id>.txt or .json')
-    ap.add_argument('--topics_root', type=str, default="../correlation/topics",
+    ap.add_argument('--topics_root', type=str, default="../data/topics_conventional",
                     help='Topics root containing <video_id>.topics.json')
     ap.add_argument('--correlation_root', type=str, default="../../TranscriptAnalysis/results",
                     help='Root for correlation results (optional)')
