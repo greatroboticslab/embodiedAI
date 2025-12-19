@@ -191,7 +191,10 @@ def _embed_texts(texts, model_name="all-mpnet-base-v2"):
     """Returns L2-normalized embeddings. If sentence-transformers is missing, raises ImportError."""
     try:
         from sentence_transformers import SentenceTransformer
-        import numpy as np  # noqa: F401
+        try:
+            import numpy as np
+        except ImportError:
+            pass
     except Exception as e:
         raise ImportError("sentence-transformers not installed") from e
 
@@ -560,7 +563,10 @@ def process_one_video(raw_frames_dir: str, comments_by_video: dict, topics_root:
     existing = load_existing_results(res_file)
     print(f"[RESUME] {video_id}: {len(existing)}/{len(topics)} topics already processed.")
 
-    import numpy as np
+    try:
+        import numpy as np
+    except ImportError:
+        np = None
 
     # Process topics
     for t in topics:
@@ -580,7 +586,7 @@ def process_one_video(raw_frames_dir: str, comments_by_video: dict, topics_root:
 
         # choose candidate comments via retrieval
         candidate_indices = range(len(comment_texts))
-        if retrieval_ok and retrieval_topk > 0 and topic_text:
+        if retrieval_ok and retrieval_topk > 0 and topic_text and np:
             t_vec = _embed_texts([topic_text], model_name=embed_model)[0]
             sims = np.dot(C, t_vec)
             idx = np.argsort(-sims)[:min(retrieval_topk, len(comment_texts))]
