@@ -133,19 +133,36 @@ def parse_comments_docx(comments_docx_path: str):
 def _find_topics_json(raw_frames_dir: str, topics_root: str):
     """Look for <topics_root>/<video_id>.topics.json, else scan raw_frames for *topics.json"""
     video_id = os.path.basename(os.path.dirname(raw_frames_dir))
-    # 1) preferred path under topics_root
+    
+    # Potential search roots
+    roots_to_check = []
     if topics_root:
-        p = os.path.join(topics_root, f"{video_id}.topics.json")
+        roots_to_check.append(topics_root)
+    
+    # Add smart defaults relative to this script: ../data/topics_embodied, ../data/topics_conventional
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # TranscriptAnalysis/
+    data_dir = os.path.join(base_dir, "data")
+    roots_to_check.append(os.path.join(data_dir, "topics_embodied"))
+    roots_to_check.append(os.path.join(data_dir, "topics_conventional"))
+
+    # 1) Check preferred roots
+    for root in roots_to_check:
+        if not root or not os.path.exists(root):
+            continue
+        p = os.path.join(root, f"{video_id}.topics.json")
         if os.path.isfile(p):
             return p
-    # 2) sibling/within raw_frames folder
+            
+    # 2) sibling/within raw_frames folder (legacy)
     for f in os.listdir(raw_frames_dir):
         if f.endswith(".topics.json") and video_id in f:
             return os.path.join(raw_frames_dir, f)
-    # 3) one level up under a 'topics' folder
+            
+    # 3) one level up under a 'topics' folder (legacy)
     candidate = os.path.join(os.path.dirname(os.path.dirname(raw_frames_dir)), "topics", f"{video_id}.topics.json")
     if os.path.isfile(candidate):
         return candidate
+        
     return None
 
 
@@ -648,6 +665,30 @@ def rebuild_docx_only(raw_frames_dir: str, comments_by_video: dict, topics_root:
     print(f"[REBUILT] {video_id}: report saved -> {out_docx}")
 
 
+def determine_subfolder(raw_frames_dir: str):
+    """
+    Heuristic: if the path contains 'frames_embodied', return 'correlation_embodied'.
+    If 'frames_conventional', return 'correlation_conventional'.
+    """
+    parts = os.path.normpath(raw_frames_dir).split(os.sep)
+    for p in parts:
+        if p == "frames_embodied":
+            return "correlation_embodied"
+        if p == "frames_conventional":
+            return "correlation_conventional"
+    # Fallback: check direct parent of video_id if it's named frames_something
+    # raw_frames_dir is .../<video_id>/raw_frames
+    # parent is <video_id>
+    # grantparent might be frames_conventional
+    try:
+        grandparent = os.path.basename(os.path.dirname(os.path.dirname(raw_frames_dir)))
+        if grandparent.startswith("frames_"):
+            return grandparent.replace("frames_", "correlation_")
+    except:
+        pass
+    return None
+
+
 # -------------------- CLI --------------------
 
 def main():
@@ -708,10 +749,19 @@ def main():
 
     for raw_frames in targets:
         print(f"\n=== Processing: {os.path.basename(os.path.dirname(raw_frames))} ===")
+        
+        # Adjust results root for this specific video if subfolder detected
+        current_results_root = results_root
+        sub = determine_subfolder(raw_frames)
+        if sub:
+            current_results_root = os.path.join(results_root, sub)
+            # Make sure we don't double-nest if user passed specific results root?
+            # We assume results_root is the base 'results' dir.
+            
         try:
             if args.rebuild:
                 rebuild_docx_only(
-                    raw_frames, comments_by_video, args.topics_root, results_root, model,
+                    raw_frames, comments_by_video, args.topics_root, current_results_root, model,
                     min_score=args.min_score, top_k_scan=args.top_k,
                     seg_n_sections=args.seg_n_sections, seg_penalty=args.seg_penalty,
                     seg_min_size=args.seg_min_size, embed_model=args.embed_model,
@@ -719,7 +769,7 @@ def main():
                 )
             else:
                 process_one_video(
-                    raw_frames, comments_by_video, args.topics_root, results_root, model,
+                    raw_frames, comments_by_video, args.topics_root, current_results_root, model,
                     min_score=args.min_score, top_k_scan=args.top_k,
                     seg_n_sections=args.seg_n_sections, seg_penalty=args.seg_penalty,
                     seg_min_size=args.seg_min_size, embed_model=args.embed_model,
