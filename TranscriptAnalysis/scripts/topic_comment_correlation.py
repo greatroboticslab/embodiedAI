@@ -694,7 +694,7 @@ def determine_subfolder(raw_frames_dir: str):
 def main():
     ap = argparse.ArgumentParser(
         description="Correlate viewer comments to topics (resume-safe) and build a DOCX report.")
-    ap.add_argument("--frames_path", default="../frames",
+    ap.add_argument("--frames_path", default="../../VideoAnalysis/data/frames/frames_conventional",
                     help="Path to frames root (containing <video_id>/raw_frames) OR a single raw_frames folder.")
     ap.add_argument("--results_root", default="../results",
                     help="Root directory for results. Defaults to ../results relative to this script.")
@@ -702,7 +702,7 @@ def main():
                     default="../../Data For Classes-Analysis/final_merged_data/final_merged_class_data.docx",
                     help="DOCX with video URLs and comments.")
 
-    ap.add_argument("--topics_root", default="topics", help="Directory containing <video_id>.topics.json files.")
+    ap.add_argument("--topics_root", default="../data/topics_conventional", help="Directory containing <video_id>.topics.json files.")
     ap.add_argument("--model", default=None, help="LLM name for scoring (defaults to Config.ollama_models[0]).")
     ap.add_argument("--min_score", type=int, default=60,
                     help="Minimum score to include a matched comment in the final report.")
