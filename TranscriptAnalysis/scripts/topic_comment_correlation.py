@@ -316,6 +316,7 @@ def _add_thumbnails_row(doc, base_dir, frame_list, thumb_width_in=1.3):
 
 def build_docx_from_results(out_docx: str, topics: list, results_map: dict,
                             min_score: int, top_k: int, model_name: str,
+                            frame_dir: str,
                             total_comments_available: int | None = None):
     doc = Document()
     doc.add_heading("Comment–Topic Correlation Report", 0)
@@ -323,7 +324,7 @@ def build_docx_from_results(out_docx: str, topics: list, results_map: dict,
 
     # Aggregate
     total_pairs = sum(rec.get("checked_pairs", 0) for rec in results_map.values())
-    base_dir = os.path.dirname(out_docx)
+    base_dir = frame_dir
 
     # Topic metadata map for quick lookup (stringify IDs for safety)
     topic_map = {str(t.get("id")): {
@@ -621,6 +622,7 @@ def process_one_video(raw_frames_dir: str, comments_by_video: dict, topics_root:
         out_docx, topics, existing,
         min_score=min_score, top_k=top_k_scan,
         model_name=model,
+        frame_dir=raw_frames_dir,
         total_comments_available=len(comments_for_video) if comments_for_video else None
     )
     print(f"[DONE] {video_id}: report saved -> {out_docx}")
@@ -666,6 +668,7 @@ def rebuild_docx_only(raw_frames_dir: str, comments_by_video: dict, topics_root:
         out_docx, topics, existing,
         min_score=min_score, top_k=top_k_scan,
         model_name=model,
+        frame_dir=raw_frames_dir,
         total_comments_available=len(comments_for_video) if comments_for_video else None
     )
     print(f"[REBUILT] {video_id}: report saved -> {out_docx}")
