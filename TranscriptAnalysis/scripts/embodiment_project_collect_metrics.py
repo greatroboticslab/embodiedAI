@@ -83,19 +83,53 @@ def _none(x):
     return "" if x is None else x
 
 
-def list_video_ids_from_frames(frames_root: str) -> List[str]:
-    """Assume frames_root/<video_id>/raw_frames exists; use those subdirs as canonical IDs."""
-    if not os.path.isdir(frames_root):
-        return []
-    vids = []
-    for name in os.listdir(frames_root):
-        vid_dir = os.path.join(frames_root, name)
-        if not os.path.isdir(vid_dir):
-            continue
-        raw_frames = os.path.join(vid_dir, "raw_frames")
-        if os.path.isdir(raw_frames):
-            vids.append(name)
-    return sorted(vids)
+def discover_video_ids(
+    frames_root: str,
+    transcripts_root: str,
+    topics_root: str,
+    correlation_root: Optional[str]
+) -> List[str]:
+    """
+    Discover video IDs from multiple potential sources.
+    Returns sorted list of unique IDs.
+    """
+    ids = set()
+
+    # 1. From frames (original logic + relaxed)
+    if os.path.isdir(frames_root):
+        for name in os.listdir(frames_root):
+            p = os.path.join(frames_root, name)
+            if os.path.isdir(p):
+                # strict: check for raw_frames
+                if os.path.isdir(os.path.join(p, "raw_frames")):
+                    ids.add(name)
+                # relaxed: just the dir name if it looks like an ID (len 11, etc) - useful if no raw_frames
+                elif len(name) >= 11:
+                    ids.add(name)
+
+    # 2. From correlation root (directories)
+    if correlation_root and os.path.isdir(correlation_root):
+        for name in os.listdir(correlation_root):
+            if os.path.isdir(os.path.join(correlation_root, name)):
+                ids.add(name)
+
+    # 3. From Topics (<vid>.topics.json)
+    if os.path.isdir(topics_root):
+        for fn in os.listdir(topics_root):
+            if fn.endswith(".topics.json"):
+                ids.add(fn.replace(".topics.json", ""))
+
+    # 4. From Transcripts (<vid>.txt or <vid>.json)
+    # Be careful with suffixes like _timestamped
+    if os.path.isdir(transcripts_root):
+        for fn in os.listdir(transcripts_root):
+            if fn.endswith(".txt") and not fn.endswith("_timestamped.txt"):
+                ids.add(fn[:-4])
+            elif fn.endswith(".json") and not fn.endswith(".topics.json"):
+                 ids.add(fn[:-5])
+
+    # Filter out empty strings
+    return sorted([i for i in ids if i])
 
 
 import glob
@@ -566,7 +600,7 @@ def compute_metrics_for_set(
         label: str,
         corr_threshold: float = 0.0,
 ) -> Tuple[List[VideoMetrics], Aggregate]:
-    video_ids = list_video_ids_from_frames(frames_root)
+    video_ids = discover_video_ids(frames_root, transcripts_root, topics_root, correlation_root)
 
     metrics: List[VideoMetrics] = []
     corr_avgs: List[float] = []

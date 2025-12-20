@@ -41,27 +41,29 @@ Select --force to recompute even if outputs exist.
     cd TranscriptAnalysis/scripts
     # Ensure you are in the correct environment (e.g. videoanalysis)
     
-    # 1. Run collection (requires access to frames/transcripts/topics)
+    # 1. Run collection
     # Conventional
     python embodiment_project_collect_metrics.py \
-      --frames_root ../../VideoAnalysis/data/frames/frames_conventional \
+      --videos_root ../../VideoAnalysis/rawvideos/conventional_videos \
+      --frames_root ../../CaptionAnalysis/results/frames_conventional \
       --transcripts_root ../data/transcripts_conventional \
       --topics_root ../data/topics_conventional \
-      --correlation_root ../results/conventional \
-      --out_dir ../results/conventional \
+      --correlation_root ../results/correlation_conventional \
+      --out_dir ../results/metrics \
       --label Conventional
 
     # Embodied
     python embodiment_project_collect_metrics.py \
-      --frames_root ../../VideoAnalysis/data/frames/frames_embodied \
+      --videos_root ../../VideoAnalysis/rawvideos/embodied_videos \
+      --frames_root ../../CaptionAnalysis/results/frames_embodied \
       --transcripts_root ../data/transcripts_embodied \
       --topics_root ../data/topics_embodied \
-      --correlation_root ../results/embodied \
-      --out_dir ../results/embodied \
+      --correlation_root ../results/correlation_embodied \
+      --out_dir ../results/metrics \
       --label Embodied
 
     # 2. Export summary CSV for LaTeX
     python export_plot_data.py \
-      --conventional ../results/conventional/Conventional_metrics.json \
-      --embodied ../results/embodied/Embodied_metrics.json \
-      --output ../metrics_summary.csv 
+      --conventional ../results/metrics/Conventional_metrics.json \
+      --embodied ../results/metrics/Embodied_metrics.json \
+      --output ../results/metrics/transcript_plot_data.csv 
