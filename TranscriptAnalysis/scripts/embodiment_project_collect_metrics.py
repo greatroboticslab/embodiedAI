@@ -157,13 +157,28 @@ def list_correlation_result_paths(frames_video_dir: str, correlation_video_dir: 
     return sorted(set(out))
 
 
+IMG_EXTS = {'.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.webp'}
+
 def count_frames(raw_frames_dir: str) -> int:
-    cnt = 0
     if not os.path.isdir(raw_frames_dir):
         return 0
-    for fn in os.listdir(raw_frames_dir):
-        if os.path.splitext(fn)[1].lower() in IMG_EXTS:
-            cnt += 1
+    
+    cnt = 0
+    first_few = []
+    try:
+        all_files = os.listdir(raw_frames_dir)
+        for fn in all_files:
+            if os.path.splitext(fn)[1].lower() in IMG_EXTS:
+                cnt += 1
+            if len(first_few) < 5:
+                first_few.append(fn)
+    except Exception as e:
+        print(f"Error listing {raw_frames_dir}: {e}")
+        return 0
+
+    if cnt == 0 and len(first_few) > 0:
+        print(f"[DEBUG] Found 0 frames in {raw_frames_dir}, but dir has files: {first_few}. Allowed exts: {IMG_EXTS}")
+
     return cnt
 
 

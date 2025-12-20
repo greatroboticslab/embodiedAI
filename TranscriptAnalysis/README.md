@@ -45,7 +45,7 @@ Select --force to recompute even if outputs exist.
     # Conventional
     python embodiment_project_collect_metrics.py \
       --videos_root ../../VideoAnalysis/rawvideos/conventional_videos \
-      --frames_root ../../CaptionAnalysis/results/frames_conventional \
+      --frames_root ../../VideoAnalysis/data/frames/frames_conventional \
       --transcripts_root ../data/transcripts_conventional \
       --topics_root ../data/topics_conventional \
       --correlation_root ../results/correlation_conventional \
@@ -56,7 +56,7 @@ Select --force to recompute even if outputs exist.
     # Embodied
     python embodiment_project_collect_metrics.py \
       --videos_root ../../VideoAnalysis/rawvideos/embodied_videos \
-      --frames_root ../../CaptionAnalysis/results/frames_embodied \
+      --frames_root ../../VideoAnalysis/data/frames/frames_embodied \
       --transcripts_root ../data/transcripts_embodied \
       --topics_root ../data/topics_embodied \
       --correlation_root ../results/correlation_embodied \
