@@ -591,12 +591,35 @@ def build_csv_files(out_dir: str, label: str, metrics: List[VideoMetrics], agg: 
     print(f"Wrote: {agg_csv}")
 
 
+def count_frames_from_captions(integrated_captions_root: str, video_id: str) -> int:
+    """
+    Count frames by reading the integrated captions JSON file.
+    Expected path: <root>/<video_id>/<video_id>_captions_integrated.json
+    """
+    if not integrated_captions_root:
+        return 0
+    
+    json_path = os.path.join(integrated_captions_root, video_id, f"{video_id}_captions_integrated.json")
+    if not os.path.isfile(json_path):
+        return 0
+        
+    try:
+        with open(json_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            if "frames" in data:
+                return len(data["frames"])
+    except Exception as e:
+        print(f"Error reading captions for frame count {video_id}: {e}")
+        return 0
+    return 0
+
 def compute_metrics_for_set(
         videos_root: Optional[str],
         frames_root: str,
         transcripts_root: str,
         topics_root: str,
         correlation_root: Optional[str],
+        integrated_captions_root: Optional[str],
         label: str,
         corr_threshold: float = 0.0,
 ) -> Tuple[List[VideoMetrics], Aggregate]:
@@ -606,9 +629,15 @@ def compute_metrics_for_set(
     corr_avgs: List[float] = []
 
     for vid in video_ids:
+        # 1. Try raw frames
         vid_dir = os.path.join(frames_root, vid)
         raw_frames_dir = os.path.join(vid_dir, 'raw_frames')
         frames_count = count_frames(raw_frames_dir)
+        
+        # 2. Fallback to integrated captions if 0
+        if frames_count == 0 and integrated_captions_root:
+            frames_count = count_frames_from_captions(integrated_captions_root, vid)
+
         transcript_words = read_transcript_word_count(transcripts_root, vid)
         topics_count = read_topics_count(topics_root, vid)
 
@@ -725,6 +754,8 @@ def main():
                     help='Topics root containing <video_id>.topics.json')
     ap.add_argument('--correlation_root', type=str, default="../../TranscriptAnalysis/results",
                     help='Root for correlation results (optional)')
+    ap.add_argument("--integrated_captions_root", type=str, default=None,
+                    help="Root for integrated captions (fallback for frame counting).")
     ap.add_argument('--out_dir', type=str, default="../output/embodied", help='Output directory for JSON + DOCX')
     ap.add_argument('--label', type=str, default="Embodied",
                     help='Label to tag this run (e.g., Conventional or Embodied)')
@@ -740,6 +771,7 @@ def main():
         transcripts_root=args.transcripts_root,
         topics_root=args.topics_root,
         correlation_root=args.correlation_root,
+        integrated_captions_root=args.integrated_captions_root,
         label=args.label,
         corr_threshold=args.corr_threshold,
     )

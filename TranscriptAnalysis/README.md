@@ -49,6 +49,7 @@ Select --force to recompute even if outputs exist.
       --transcripts_root ../data/transcripts_conventional \
       --topics_root ../data/topics_conventional \
       --correlation_root ../results/correlation_conventional \
+      --integrated_captions_root ../../CaptionAnalysis/data/integrated_caption/frames_conventional_captions_integrated \
       --out_dir ../results/metrics \
       --label Conventional
 
@@ -59,6 +60,7 @@ Select --force to recompute even if outputs exist.
       --transcripts_root ../data/transcripts_embodied \
       --topics_root ../data/topics_embodied \
       --correlation_root ../results/correlation_embodied \
+      --integrated_captions_root ../../CaptionAnalysis/data/integrated_caption/frames_embodied_captions_integrated \
       --out_dir ../results/metrics \
       --label Embodied
 

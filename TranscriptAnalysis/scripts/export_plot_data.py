@@ -63,11 +63,10 @@ def get_metrics_summary(data_dict, label):
             correlations.append(corr_val)
         if dur is not None and dur > 0:
             durations.append(dur)
-            word_density.append(wc / dur)
-            engagement.append(cc / dur)
-            # Maybe topics per minute? Let's stick to per sec for consistency or per minute if nums too small
-            # Let's use base units first.
-            topic_density.append(tc / dur)
+            # Convert to per-minute for readability
+            word_density.append((wc / dur) * 60)
+            engagement.append((cc / dur) * 60)
+            topic_density.append((tc / dur) * 60)
         
         if c_n > 0:
             efficiency.append(c_ge / c_n)
@@ -107,9 +106,9 @@ def main():
     # TopicMean, TopicSEM, 
     # CommMean, CommSEM, 
     # DurMean, DurSEM, 
-    # DensMean, DensSEM,   (Word Density)
-    # TopDensMean, TopDensSEM,
-    # EngMean, EngSEM, 
+    # DensMean, DensSEM,   (Words/min)
+    # TopDensMean, TopDensSEM, (Topics/min)
+    # EngMean, EngSEM, (Comments/min)
     # EffMean, EffSEM
 
     headers = [
@@ -119,9 +118,9 @@ def main():
         "TopicMean", "TopicSEM",
         "CommMean", "CommSEM",
         "DurMean", "DurSEM",
-        "DensMean", "DensSEM",
-        "TopDensMean", "TopDensSEM",
-        "EngMean", "EngSEM",
+        "DensMean(w/min)", "DensSEM",
+        "TopDensMean(t/min)", "TopDensSEM",
+        "EngMean(c/min)", "EngSEM",
         "EffMean", "EffSEM"
     ]
 
