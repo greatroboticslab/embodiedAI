@@ -118,9 +118,9 @@ def main():
         "TopicMean", "TopicSEM",
         "CommMean", "CommSEM",
         "DurMean", "DurSEM",
-        "DensMean(w/min)", "DensSEM",
-        "TopDensMean(t/min)", "TopDensSEM",
-        "EngMean(c/min)", "EngSEM",
+        "DensMean", "DensSEM",
+        "TopDensMean", "TopDensSEM",
+        "EngMean", "EngSEM",
         "EffMean", "EffSEM"
     ]
 
