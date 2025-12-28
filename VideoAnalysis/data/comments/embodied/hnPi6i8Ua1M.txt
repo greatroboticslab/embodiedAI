@@ -1,0 +1,49 @@
+Hi man, welcome to you.
+
+Nice build! I building one now I want to use as a small battery power amplifier for my 3 string cigar box guitar. I connected the guitar Jack to the audio input, is that correct. I not getting any sound out of the speaker I connected the speaker to the SP +- on the PCB.
+Thanks
+
+I just soldered one together and it don't work I should know better than to by fake stuff
+
+hello i recently build my own speaker using 2 small speaker and a car door speaker now i used the motherboard of the small speaker and the car door speaker cant go louder is this because of the lower voltage battery (3.7v) or because of the motherboard and would this help with that issue ?
+
+Can use this one in the car?
+
+Hi Houssein, thanks for reaching out. It’s a very useful and low-cost little amplifier that could be put to lots of uses 👍
+
+Hi, that sounds a very interesting project. Your speaker connections to SP+ - are correct. If you not getting any O/P, you might want to re-check a few items:
+
+1. Check the polarity of your DC supply connections if you are using the 3.5mm jack as it is easy to get these crossed.
+2. Check that all the electrolytic capacitors are correctly connected polarity wise.
+3. Check for any unintended solder bridges.
+4. Check that the DIL socket is not fitted the opposite way round & hence, the LM38 chip may end up being fitted 180 deg. to what it should be.
+5. Check for any dry solder joints
+6. If still no joy, try another speaker.
+
+I would be interested on how you get on. Thanks for getting touch.
+TWCG
+
+ @TheWobblyCameraGuy  Tanks for the help. I will check out over the weekend and let you know how I make out. Would I connect the guitar jacks into the 3.5 audio block?
+
+you probably need a pre-amp
+
+Hi, sorry to hear your little amp didn't work out. However, it would be worth checking a few things before you give up. These might sound a little basic, but I have done some of these myself on more than a few occasions! Firstly, ensure that electrolytic capacitors have been correctly fitted as they are polarised & so will not perform reversed. Is the LM386 fitted the correct way around, (and a check to see if a pin has been bent)? Suggest you also check for any dry joints, (sometimes component leads require a quick rub with fine wet and dry to remove oxidisation especially if new old stock items are used), solder bridges between PCB tracks etc.  All worth checking - good luck!
+
+skill issue
+
+Hi, thanks for getting in touch. Assuming the gain is at maximum, (i.e. 10uF cap between pins 1 & 8) then there are a couple of things to look at. I'm not sure how you have connected three speakers to the amp, but if these are in parallel, then their overall impedance may be too low for the amp, (it needs at least 4 ohms). Your 3.7V dc supply is a little low, (some data sheets for the LM386 give a minimum of 4Vdc. As you say, a higher voltage will improve the output power a little). Note that the LM386 amp provided in the kit is rated between 200 & 300mW depending upon voltage. You could substitute it for an LM386-N4 which has higher output of approx. 1Watt. Hope this helps and good luck with your speaker build.
+
+ @TheWobblyCameraGuy  honestly i dont know im 14 and got bored on a sunday and started doing random things and somehow it worked and yesterday i got a bigger battery but still with 3.7 volts because i was scared that it would overheat or something with higher vaults bc im pretty bad at elektricity stuff
+
+Hi, thanks for getting back to me. Once you have gone past the 4Vdc supply level (you were previously using a 3.7V battery), you are within the recommended power supply voltage levels, so you won’t really get much more out of this little amp. Assuming that you have a 10uF capacitor between pins 1 & 8 on the chip, (this gives a gain of 200) then you are also at max gain. As mentioned before, the LM386 audio chip used in this kit is the lower O/P version LM386-N1. If you swap for a LM386-N4 it will give you a little more gain and hence, a slightly higher output. However, please bear in mind though that this little amp is used primarily for small portable devices like radios etc. If you need a lot more power then you may need to look at a different amplifier. BTW not sure if you have one or two speakers connected, but their impedance should be between 4 & 16 ohms. Might be worth checking, as if you have two 4ohm speakers connected in parallel, it would result in a 2ohm load for the amp which may cause issues. Hope this helps – please come back to me if I can assist you any further
+
+ @TheWobblyCameraGuy  hi so note i forgot to tell in the first comment i didnt buy this amplifier yet im just using the motherboard of a small speaker altough that i do have some 100uf 25v capacators and a while back the batterys i order are 4 18650 3.7 volts and 9800 mAh if its too complicated for me to figure out a way to make it louder wich is currently not working out since i have low to 0 knowledge could i pair up those 4 batteries to just make it last very long withouth having to charge it
+
+Hi, good question! It is possible, but in my opinion, not really recommended. It's maximum upper voltage supply is given as 12Vdc and car batteries & charging systems can go as high as 14Vdc depending upon load. Additionally the  audio output would not really be loud enough. However, if you search for 'car audio amplifiers' in AliExpress, there are a lot of low cost $10 or less amplifiers that may be just what you are looking for.  Good luck in finding your amp.
+
+ @TheWobblyCameraGuy  thanks
+
+No it’s against the law
+
+ @tonywright8294    lmao
+

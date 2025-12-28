@@ -1,0 +1,245 @@
+nice tutorial! quick tip re Master multiplier. the ripple is oscillation (you'll see it in the dterm traces). Notice that it lower on pitch because there's more weight along that axis and it requires higher relative gains than roll, and you can see this in the latency difference between the two (pitch has higher/slower latency). what you wanna do in that case is bring roll only down until that ripple looks about the same as on pitch and their latency is approximately matched. then you know you have equal responsiveness on both axes. you'd do this by dropping the MM until roll only shows a small ripple then boost pitch PI and D to where it was before dropping the MM.
+
+Nice🎉 sir
+
+What a great video for a beginner like myself. I have watched several videos on PID tuning, most are either to long and/or to indepth for a beginner. This was perfect showing the cause and effect of the changes made. 
+More of this please! 🙏👍😁
+A video series building on these principles would be great. 
+Many thanks and keep up the great work and content.
+
+I really appreciate you bringing value to the FPV community in an easy-to-understand way. I’m still wondering one thing: Do you test the quad in acro mode or angle mode?
+
+I don't understand the feed forward. lol About the pid tuning... It was perfect.
+
+I've been trying to learn how to tune my quads for the longest time and I just didn't understand how because most tutorials don't really start from the beginning for so much that is left out and I feel you explained  PID tuning in a way I understand and I really appreciate you making this video My quad was already flying pretty good with stock PIDS but after tuning it blew my mind how great it flies now thx for the video. I subbed your channel
+
+@17:26 you can hear the turbo. #facts
+
+Thanks Nick. Watched again. 👏👏
+
+Very good video, I tune the same way the only thing I do diferent is no dmax and I tune the FF to always have P term helping a bit. I find that in slower roll/pitch move it fight agains each other (like in the video at 17:25). I see it as FF is a P term helper not a replacement. Keep it up, it would be nice to see how you tune the filters 🚀🚀
+
+Putting aside the great tutorial for a minute, it's good to see I'm not the only one that names everything "stuff" 😉
+
+Awesome tutorial. Finaly got quads with no propwash and flying like a butter. Big thanks to you😎
+
+Just want to say thank you for this video.  I was able to get a great tune by using your procedure!
+
+Absolutely loving your videos; you're my favorite FPV pilot by far! I could really use your expertise to PID tune my 5' JohnnyFPV quad. Would you be open to helping me out? I’d be happy to compensate you for your time. Thanks!
+
+Thank you for this tutorial, especially the dynamic damping tips.
+
+Thanks for the vid. Never done any tuning ...but now will give it a shot!
+
+As far as the having to unplug between flights, I found that if you just save and exit you may not get the separate bb files, if you save and reboot then it works. Nice tutorial! Thanks
+
+12:50 min : How does the quad level itself horizontally like that or is that your own personal skill? You flip it and it's always in a perfect horizontal angle. I guess I have to watch this whole video 5 more times :) ..thx for the vid
+
+I struggled with tuning until learning this method.  My APEX DC flies like a dream!
+
+Quick question, does the trace need to be at or above 1 for the whole plot?  Thanks.🤙🏾
+
+I got my tune pretty nice...for flow flying its great and for quick turns and no prop wash on pull outs....but when I snap roll it of juicy flick I end up what I'm guessing is a dsync and it will fall back towards motor 1 amd 2 and death roll out of the sky....and I have no clue how to fix it....if I give it throttle it his hit or miss but if I completely kill throttle during roll it does it....and on bluejay my timing is high I'm on 24 ppm or pwm... also my min and max (the 2 bars on top right in esc config for bluejay are well past stock they're like .75 of the way up and stock is like .25 percent of the slider....I'm so agitated with it because my 3 inch and my 2s toothpick and my whoops are all good but my 5 inch quads it has happened to both
+
+wow ..... Awesome !!!!!!!!!!!!!!!!!:face-red-heart-shape:
+
+Oh interesting okay 👍 I though it was something to do with d-max but yeah I get what you’re saying. Appreciate the feedback man!
+
+Hey, The TPA Break point is verry low, for tuning is not good you must be push it to 1750 ( some quads hovering is over 35% throttle.
+if necessary put it down after tuning PID, do last Throttle test. If you can see vibrations in high Throttle in Frec/Throttle tab,  set TPA little bit under vibrations !
+
+Great advice thank you Brian!
+
+Edit: Other question to you @D3B8 are the filter settings unchanged? I have seen there are presets for super clean/clean/normal/noisy etc. filter settings and wanted to ask how do we judge when its already noisy etc :D
+
+ @sarcasticfpv  So my filters are stock in this video but I plan to cover them in the future. I wouldn’t recommend it but if you really want to try a filter preset just make sure it’s in a safe area. Trial and error is really how to know
+
+@pidtoolbox, Thanks for this tip. But what should I do if its the other way around? I have osc on pitch
+
+ @FPV-Jon  you do the opposite. Bring pitch PI and D down instead
+
+That’s a good way to put it with ff being a helper rather than a replacement for p. But yeah man I appreciate it. I do plan to go more into depth with quad tuning in the future 👍
+
+Yeah np, good luck!
+
+Looks really good!!
+
+Thanks Bro 🤙🏼 I just have the ringing and warmish motors. I also run tracer. I never knew it messed with the tune. I hope like hell I can get my 7” to fly half as that quad.  lol. No criticism here.✊🏼I do appreciate you mane🤙🏼
+
+Great video, I've been trying many different presets and none worked for me really. Will try your method out today!
+
+THat thing is locked in at the end. Good video. I always find it hard to tune PIDs. Filters are easy, but not PIDs.
+
+i just found out that if you start noticing more and more oscilations as you push up the master multiplier, try lowering i term relax to middigate the oscilations coming from p term especially when anti gtavity kicks in. my master multiplier is at about 1.4, when id punch out it would go berserk with oscilations, the blackbox log showed p and d oscilatin in phase while i term was inverted, which means the quad was struggling to meet that setpoint, the antigravity feature was placing on it. so i lowered the iterm relax from 25 to 5 and that practically eliminated the issue! also antigrav gain is on 1.5 since my iterm is already crazy high, i might lower it
+
+Awesome video!
+Thanks for making this❤
+
+This is great stuff thanks man!
+
+nice dc2 integra and nice tutorial :D
+
+Thanks for making it look so easy! I build my first 5" and currently playing with the Supafly filter and PID preset. Maybe I will flash to 4.4 and try your method for a tailored tune!
+
+i wish I could be this good
+
+The pitch of a prop isn't spec'd in degrees; it's in inches or millimeters..
+
+I’m still new to FPV so I’m not at a stage where I can build and tune but always interested to see how others do it. Good video 🍻
+
+bro you explained that in a way i can actually understand now very cool im gonna give this a shot i have the 3 quadmula frame love these frames can you help if i need any help ive been flying for awhile now just giving tuning with pid toolbox a try
+
+Question,  what about motor soft mounts.  For me In the past tpu or silicone soft mounts really made it alot easier/possible to get a good tune.    Excellent video, thank you.
+
+Awsome video. Did you tweak filters too?
+
+you can see some drift in the horizon on the throttle blips, maybe it need some more D term on the Roll axis.
+
+Ive waited so long for a video like. Im gonna try this method.. thank you!
+
+Very much appreciate how thorough yet fast paced you are 😎🤘 I am getting stuck on PID toolbox where it says “please wait” after trying to upload bbl files. Is it just that slow? Haha
+
+Being new to Beta flight how would you set PID for minimal motor-controlled orientation and how would I run servos. Just want the motors for thrust I have servos running the roll pitch and yaw on an experimental system, but have yet to figure out a way to configure them. My receiver is a Flysky FSia10B. I am running the rx1 pad and using serial receiver via ibus. Can I use the chanels on the receiver to run the servos?
+
+I generally take the karate preset and call it a day for quads without Blackbox
+
+Yeah np, good luck with it man 👍
+
+ @JevinW  I did have to move the MM down to 1.4 The motors was warmish.  It flys pretty smooth now. I do just have it on a preset. One day would like to try to tune it like that.
+
+Thanks man! Filter tuning still scares me haha
+
+Thanks :)
+
+Yeah np man, good luck with it 👍
+
+Thank you 👍 I plan to cover that in the future
+
+I'm guessing you're launching it from a shortcut and you're encountering a bug. Try launching it from the application itself rather than using a shortcut. Reference 1:20
+
+ @JevinW  I tried that prior to commenting haha. I appreciate you replying!
+
+ @JevinW  I had to run as an administrator. Oops! Thanks man
+
+Oh sorry, controller is a SpeedyBee F405 v3
+
+You may be better with a different package if your trying to control servos. There is this option within betaflight, but as I understand it this is quite basic. For a great guide on the latest release of betaflight head over to Joshua Bardwells channel. His guide is split into each of the options making it very easy to find the info you require without watching lengthy videos. Also have a look at the software used for flight control on wings and planes. I know they drive servos direct from the receiver but these are quite large that's all I really know on the subject. Hope it gives you a few ideas and avenues to progress you experiment, keep on innervating and I hope you get it flying soon. 👍
+
+Wow! I have just had a look at at your channel going to be a long term project getting it flying but I'm going to keep watching and subscribe.
+I would have thought you would want your PID loop altering the speed of each motor to maintain a level hover. I don't think beta flight will be able to keep it in the air by itself, as I'm guessing your creating thrust by way of servos on the ducts? Beta flight has been developed over the years focusing on FPV racing and freestyle quads. There options for other motor layouts away from X style frame. But I think on larger lifter and camera platform drones other software is used.
+
+I was wondering if you change anything in the filter tab
+
+Hello.
+Thanks for the tutorial. How do you tune the filters? Do you reduce filtering?
+
+clicking in there scares the living shit out me! ( so scared ! but thanks
+
+Could you please explain how to read value in waveform. I don’t recognise how to read value .8 .6 .2 at 6:45
+
+What about filter settings? Do you leave them on basic settings?
+
+👏👏👏👍👍👍
+
+What are your filters set at? I’m new in this hobby and just trying to learn as much as I can
+
+gemfan 51466 v2 how setting on dynamic idle?
+
+why i cant change my pitch and roll values??
+
+To adjust the PIDs, do you fly in acro or air?
+
+Thanks for doing this. I was able to glean some knowledge here which was good but some constructive criticisms if I may. 1. Overall the pace of this video is too fast, speech, mouse movements, screen transitions, shifting from app to app, everything really is very hard to follow due to the speed. I know that short videos are better but if the pace is too fast to comprehend then it doesn't matter. 2. Need more attention to detail, while there is some attempt to explain what you are doing and why in the end I came away with more questions than answers. For perspective what I learned from this video are the SW tools that can be used to tune things and the rough overall process that one needs to go through to do it. What I didn't come away with was any practical idea on how to actually tune on my own as there are too many details left out. Perhaps that was your goal all along, don't know. I know tuning is a complicated process so making a how to guide is hard, iI get it. Thanks for the attempt at it. As for me unfortunately I can't find this video that useful as I didn't walk away with an enhanced ability to tune i.e. I'm no better off after watching the video than I was before watching. Hopefully you will take this the right way, not trying to be negative,  just providing my perspective. Cheers!!
+
+The problem is that everyone says something different from the other.
+
+How do you know which line corresponds to the PI?
+
+are you turning off airmode when tuning ff?
+
+Very easy to follow instructions. I have an issue, when I try to open any of the logs off my Chimera, it just hangs. I've moved them to the PIDToolbox as per the Wiki, but nothing seems to work, so sort of stuck at bat. Any help would be appreciated.
+
+Thanks for tutorial!  This PID tune was with Air mode or Angle mode ?
+
+how did you set your filters for this tune?
+
+Hey bro cinelog35 1800kv can try this pid?
+
+well I'm Kida bummed PIDtoolbox isn't available for macOS
+
+this method can be used on 4.5? thanks
+
+Yeah man np. I’m sorry this video was so fast paced and can be brief at certain points but yeah part of it involves keeping up with the algorithm and the simple fact I’ve never made a video like this before. Anyways thanks for the criticism and I’ve definitely taken notes 👍
+
+ @JevinW  Again thanks for taking the time to put this video together. The postitive thing about it is that it is a good addition to the mosaic of videos and other information that one must attempt to wade through in order to understand how to tune.
+
+Np 👍 I wasn’t using angle mode
+
+ @JevinW   Sorry - Acro mode or Air mode - I actually mean)))
+
+And how to tune yaw? Thanks!
+
+What would you do next if you had the perfect tune, but still had HD cam jello
+
+One important step is missing bro, you have to enable 100% pid controller for angle mode, stock value is 50%… if you fly angle for recording logs this step is essential…
+
+best thing about it is that is it is only 17 min
+
+Any advice on tune whit out black box 😢, my fc doesn’t have thanks
+
+Thanks for this video! My usb port is quite hard to reach since mines a waterproof build. Is there a way to do this without the Blackbox analysis? Or should I do this the old school way and adjust the parameters after every flight? My fc has bluetooth
+
+Do you set up your esc at all?
+
+any idea how to lower the latency on pitch axes? what should i add? the difference is quite significat.. around 25/30%
+
+can cineape 25 choose your setting pdi ?
+
+Could you define a "fast" control link? How many Hz is that? I'm running FrSky D8, and it's 111Hz, so is that considered fast or slow?
+
+First of all, thank you a lot for your tutorial. Your quad is clean, why do you need so much filtering (I think you have defaults)? Do you use RPM filtering?  Did you try to disable Gyro LPF and Yaw LPF? What values do you see in PIDToolbox -> Spectral Analyzer -> filter delay?
+
+Wouldn´t it make more sense for dynamic damping to decrease the D Gains rather than decreasing the master multiplier?
+
+Curious why you didn’t bother balancing the latency & ratios between axes prior to running mm test? I have a slightly different approach when I tune (always learning!), with an emphasis on balancing the latency between axes, prior to running up mm for latency reduction. Brain pointed out recently that what a lot of us have come to recognize as an over damped situation (rises to 1, then quickly undershoots and recovers) is actually the beginnings of an oscillation on that axis, relative to the pids on the other axis (typically roll relative to pitch, if I understood correctly).
+
+can i know your rate bro ? did u use bf rate or actual rate?
+
+your graphs look the same with the I setting because I is not running during step-response thanks to i-therm relax
+
+Tried it, but for some reason, I can't get the btfl files loaded into the PIDtoolbox. It keeps loading but nothing happens.
+
+Whos Integra❤🖖🫶
+
+Do you lower your rates while doing the flights?
+
+i can't hear the flutter that you are referring to, or the difference that you are trying to point out.  I always find it hard to hear or know when something isnt/shouldnt be right.
+
+UMMM I COPIED AND PASTED TO MY AVATA AND IT DIDNT FLY PROPERLY.
+
+Check your blackbox and make sure there’s no excessive noise in a particular area. Could also be how the camera is mounted as in it could simply be loose. Also too if you’ve happened hit it from crashing in the past it could be a damaged sensor.
+
+Oh okay did not know that, hardly ever fly angle mode haha
+
+ @JevinW  if you move the drone with the pid controller at 50% pidtoolbox will read wrong values
+
+I believe you can blackbox off of the speedybee app but it’s not too reliable from what I’ve heard. If you still want to get a tune going without black boxing, you could always just raise the master multiplier up a bit and call it a day.
+
+pid i mean
+
+Slow
+
+That’s what I was thinking… as increasing the dynamic dampening would change the P:D balance that you found at the beginning.
+
+That's actually a good point about balancing the latency ratio's and I wish I would have mentioned that. Personally I don't do it because the difference is so minuscule but then again, you got me thinking as I'm typing this lol, having consistency is probably whats best. I don't believe that means the start of an oscillation just because that scenario can happen even on stock pids.
+
+ @JevinW  I think his point was relative to the other axes. I don’t want to get to technical, but I think it’s worth a look the next time you brave the murky waters of bbl/PTB. Just bring a  🛟 so you don’t drown 😅
+
+Little late to this sorry, but make sure to launch PID Toolbox from where you installed it and not using a shortcut.
+
+ @JevinW  Thanks Mate, now its working
+
+Try wearing headphones, it’s very fast pitched sounding
+
+Can i have ur contact person bro
+

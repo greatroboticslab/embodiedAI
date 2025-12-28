@@ -1,0 +1,3151 @@
+Such a cool idea! Now to make a super fast one axis brushless gimbal so it can be used for FPV
+
+The last part when it glides forward like an airplane was so cool. This thing has so many flying options.
+
+I am astounded at how you can share your findings and teach new concepts in a fun way at the same time. Great job!
+
+This concept was actually explored over a decade ago with the Air Hogs toy “Switchblade”.    It had basically a much simpler version of this concept but with two rotors during launch.  You locked the toy into “Launch Mode” by twisting the two rotors away from each other, and let it spin itself to altitude, and when you were ready, hitting a button to unlock it from launch mode to fully fly like any plane-esque twin-rotor RC.  Pretty neat to see this concept again in my 20s after seeing it before i even hit 10 :D
+
+This is a remarkable breakthrough - a 30 watt hover. As far as I know, the longest continuous flight for a multirotor is 175 minutes (happy to be corrected if anyone knows differently) - you could knock up a big Li-ion pack and claim the un-official world record (though you'd probably need 6S and more efficient, larger props)
+
+A little correction at 00:35 
+60 degree tilt from vertical results in requiring twice the thrust to match the initial vertical thrust component, not 45 degrees. You’d think I’d know my vectors by now….
+
+When I saw the winged version, i never saw it as a paradox as the wings itself is already pushing down static air providing lift.
+
+I couldn't fail to notice another way to improve the efficiency of your setup: Just let it spin in the other direction!
+As any winged aircraft, your drone suffers from  wing tip vortices due to induced drag. 
+These vortices reduce the wing's ability to generate lift, so that it requires a higher angle of attack for the same lift, which tilts the total aerodynamic force rearwards and increases the drag component of that force.
+In the flights you showed us, the propellers were turning in the same direction as the vortices, hence enhancing them. Now  if the drone spins in the other direction the wing tip vortices switch direction too. Since the spinning direction of the prop would stay the same, those vortices would be reduced by the prop spin.
+The effect would be even more pronounced if the props would be at the very tip of the wing. 
+See:
+Chance Vought V-173
+Chance Vought XF5U
+Bell-Boeing V-22
+On all these planes the outside tip of the props were moving downward.
+
+The prop taking off without the rest of the drone made my day. 😂
+
+You, sir - and I mean this sincerely - have finally discovered a practical use for the tip jet... rotor... whatever.  Super impressive.
+
+Very interesting. I love how 3d printing has enabled R&D and exploring engineering and ideas on a mass level.
+
+Its insane how you managed to apply such a simple concept to such a popular platform and create something which i hadnt seen before. Very well made design and nicely explained too
+
+Impressive!
+ I wonder how the "big propeller mode" would perform in horizontal flights
+
+This is a profoundly simple and wonderful design. I want to see more
+
+I’d consider the copter to be a quad. Technically when you’re “spin hovering” you turn the arms into a giant prop. If that makes sense.
+
+That's a nice lawn mower right there, this bad boy can spin real fast and efficiently
+
+Extremely impressive! This makes me think of a German concept aircraft designed at the end of WW2. It would use 3 jet engines in the same configuration as yours to take off and land vertically.  It never reached the prototyping phase though. Here is a link for more info: https://en.wikipedia.org/wiki/Focke-Wulf_Triebfl%C3%BCgel
+
+Nicholas:  "I'll try spinning, that's a good trick!"
+
+Really neat!
+
+In forward flight, if the arms were all on separate servos, then two could rotate in opposite directions inward to make a plane with reverse sweep, using the third motor to keep the tail up.
+
+Not sure if I'm getting old, but seeing such beautiful data and nicely labeled plots made me happy... Subbed!
+
+"Simply" build an optical derotator ;).
+It uses a rotating assembly of mirrors (or a dove prism) to get a stationary image of a rotating object (or the opposite in your case: stationary surroundings, rotating camera).
+
+ @LS-xb2fh  Or just give it a fisheye lens and have the software rotate the image. This does require a camera with a high shutter speed ofc.
+
+ @LS-xb2fh  it would probably be easier to just rotate the camera, since they're so light (probably lighter than the mirror array)
+
+How about a 360 cam, with software that counterrotates the forward view in sync.
+
+A rotation compensator like this? https://www.youtube.com/watch?v=fkZ4uqd-2rw - that way you can also include a swash plate for cyclic pitch :) Can't wait to see what you have planned for directional control!/cb
+
+ @christofbeaupoil8035  The concept in your linked video seems very interesting, but I meant an optical image derotator. US patent US3625612A Fig. 7 shows the version with mirrors I was referring to. These are used for vibration measurement of rotating objects (e.g. Polytec PSV-A-440) and in telescopes to eliminate motion blur due to the earths rotation (e.g. "Barboza, 2018, Design and Prototyping of the Image Derotator for the ELT Infrared Instrument MICADO").
+
+Sync the framerate with the rotation, the video would be slightly choppy but with only software trickery should work.
+
+ @anveshshrivastava2225  : You'll tend to get individual video lines misaligned with each other, in relation to the "shutter" speed.
+
+ @anveshshrivastava2225  
+I think this IS done on the Samurai, by Lockheed Martin.
+
+ @anveshshrivastava2225  this is the most efficient answer
+
+what about a ball or platform in the middle with gyro stabilization. Modernize the Focke-Wulf Triebflügel prototype
+
+ @403.FORBIDDEN  yes, a fully isolated (no wires to the rest of the chassis) or slip ring connected gimbal module would work. I believe an active gyro stabilizer would work, and you could possibly put an IMU on the gimbal to provide usable attitude information. Normally the spin would outrun what IMUs can deal with
+
+The way the Lockheed Martin "samurai" one wing drone gets images is it digitally throws away any frames from the high framerate camera that aren't taken in the desired direction.
+
+ @JinKee  this is probably the best way
+
+I built one with a gimbal a few months ago: https://www.youtube.com/watch?v=YqxiWzX9Bts
+
+It used the stabilized platform for its flight controller and swashplate.  I didn't put FPV on it, but it would have worked.
+
+use a 360 deg cam with auto direction.
+
+Dont forget to put solar panels into the wings for longer flight times!!! 😉
+
+Do I feel a Collab coming on?
+
+yepp imagine 1 hour flight time for photogrammetry per battery. fractal propellers let's goooooo
+
+Just stick a insta 360 in it. I think it has that type of stabilization if is rotated then the image is undisturbed footage looks like camera has never been rotated.
+I am not remembering the type of stabilization it uses.
+
+You don't need to do that. Monocopters using only one wing and one propeller  that utilise a similar flight concept have been around for some time. They just use CCD cameras that sync the frame rate to the rate of rotation. This also incentivises high rpm rotation for smooth video
+
+Good to see you hear brother!
+
+Or use a 360 camera and dynamically change the angle?
+
+Or software derotation, and make it 360°
+
+I thought this was your video at first hahaha
+
+one step closer to ufo's
+
+At that point, wouldn't it be a helicopter?
+
+ @P13z0-1  Lol
+
+Do it - please!
+
+Deepfake
+
+If you use a 360 camera, you might be able to easily and quickly remove the rotation from flying in your video feed.
+
+Or a digital/virtual gimbal using gyro measurements?
+
+You'd also need a cyclic pitch control to steer
+
+Well, there's this option https://www.youtube.com/watch?v=JfP7955XipY
+(Using a standard motor & some gears)
+
+If only the arms where able to rotate freely around the center hub, while that remained in a stationary state. But I don't think technology can handle that yet. It would need power to move to the arms without cabling.
+
+There are 360 cameras
+
+Oh hey I was hoping you'd see this!
+
+sync the camera refresh rate with the drone spinning speed ;)
+
+Fpv camera pointing at a spinning mirror.
+
+ @casoblantly  Why to use anything mechanical when you can do that in software later on ?
+
+This sounds like your speed. Build one!
+
+Use a 360⁰ camera and use software for video rotation counter
+
+Or put two on a airplane like the ospre
+
+At that point, just remove the small propellers and make it a helicopter.
+
+If I setup this in my FPV arsenal then I’d be forced to call it the Vomit Comet. Anybody who shares my video feed is sure to have a good time.
+
+Really stupid question but would 360 camera work for better video? Or would that still spin?(I obviously know what a 360 camera is but don't know if there is software that would stabilize video😅)
+
+ @dimagass7801  not a stupid question at all. Typical 360 cameras involve a spinning head, which may or may not spin at the same speed as the rotor in this case, which means you may end up having a 360 camera that only actually shoots one small thing, rather than a running panorama.
+
+This maybe can be adressed with a ball bearing (partially because of friction from the ball bearing assembly) decoupling the camera from the drone motion?
+
+ @lulululu4912  friction will kick in before too long, Even with the best bearings, and it will start the rotation where you don't want it to be. You need a counter rotation motor.
+
+You and Rehm are the same person right??
+
+You should also do it with solar imagine the flight time
+
+By next week
+
+my thought was having the arms rotate freely as well, there's some potential here and I can't wait to see more
+
+This comment thread is full of great ideas. Cheers to you all for kindly contributing. :)
+
+I actually think this design wont work for super fast FPV drones. These wings greatly increase flight efficiency but decrease acceleration and maneuverability. You have to move more mass and you also increase your drag coefficient. If you want the insane maneuvarability of an FPV drone, all the movement of air needs to be controlled by the propellers. However  think this design could be extremely useful for filming (if you can get a camera attached the is decoupled from the rotation) as the drone can fly for much longer, potentially higher in the air and most importantly, it creates less noise (which can be immensly important if you want to film animals from above without distracting them).
+
+I can already see ppl thinking these are ufos lmfao 🤣 imagine upscaling this …
+
+ @zaceryhammond1144  you all do realize that this is just a helicopter with extra steps right?
+
+The camera would need to be quite a way away from the drone or it would be shooting between the arms!
+
+Nah medium speed gimbal w/ high speed 360 camera and software stabilization
+
+does spinning will help with horizontal movement as well ?
+
+Just lock the shutter to the rotation rate. You could even have two cameras and get binocular vision.
+
+make a Star Wars X-Wing fighter with propellers on 4 wings
+
+Hi Daniel, how you doing
+
+Can you try this with toroidal shaped props?
+
+Homegrown inventors are the key to the future! It's a shame we can't interview the Wright Brothers. To this day, all planes still fly on the principles of the Wright Brothers
+
+"easiest" way to do this is have the gimble as part of the drones spin control, and then the camera is a totally separate system (battery, control) so nothing has to pass through the gimble that would allow you to use a cheaper motor that can sync to the spin speed, and then the gimble control would all be on the camera side. 
+this would also make it a lot easier to have the gimble rotation trimable to match with the rotation speed.
+
+hear me out: the blown wing version of this
+
+Or just fix the video in post with flow state.
+
+ @mrreddog  Usually when we say fpv in relation to drones it's referring to flying from a live video feed. No post processing from a live feed.
+
+ @mrreddog  the only issue is that you want fpv to be as low lattency as possible, and post processing takes time, it's doable, definitely, but my take (as an embedded system dev) would be to take in multiple image, splice/stitch them, then using the movement of the drone, simulate a virtual camera and take the part of the video that's stitch/spliced, that or do overhead math to simulate that virtual camera, then just take input from the concerned camera and copy their frame data in the resulting frame accordingly (BUT the main issue of coppying lines of data this way is that it's not simple and cost operations, thus time, so it'd be slow (hell some file format add padding just so a row of bytes fit properly in memory cuz it's less calcul intensive this way)
+
+ @mrreddog  flowstate? Fix it with bardwell s doco ? Maybe gyro flow ;)
+
+Counter rotating FPV pod?
+
+ @alexanderfaucher1619  that's an awesome idea!!
+
+​ @alexanderfaucher1619  Seems to me to be the most perfect approach.
+
+ @alexanderfaucher1619  So in essence build a sandwich of two of these, one rotating clockwise, one counter clockwise?!  What could possibly go wrong?
+
+get more replies please
+
+It reminds me Darth Vader's space ship. Imagine if he could somehow get independent servos for each wing/blade so the bottom ones would act like conventional wings and the top one like a rudder.
+
+ @davialves5970  Servos can do this pretty easily. It's actually harder to gear the booms together like he did, but it arguably saves weight and complexity.
+
+ @davialves5970  You actually don't need to do that. Simply tilting the entire vehicle accomplishes the same thing.
+
+yes, totally reminded me of the Lambda-class T-4a shuttle from starwars
+
+Really appreciate your comment
+
+ @NicholasRehm  The concept actually comes from a children's toy. It's a stick that you attach to a small propeller, and you rub it in your palms which causes it to spin, lift up and hover like a helicopter.
+
+Putting that on a drone makes it more efficient, just like you touched on, the whole unit becomes one large, slow spinning, "passive" propeller.
+
+Also, having tri-drone is a more efficient design than a quad-drone. You basically can have three larger active-propellers, rather than four smaller ones. So these two attributes fit together nicely.
+
+The reason why people opt for the quad-drone setup is because it is actually more simple, cheaper, and easier to navigate (you can assign each side as front/back/left/right). Each of the four arms can be rigid and controlled by a simple on/off switch. A tri-drone needs more tweaks, and have each arm needing to pivot and spin at different rates.
+
+As for energy source, fossil fuel is still better method at the medium to heavy weight. Electrical is only viable at the super lightweight scale. Not sure about nuclear, we don't have the technology for it (small nuclear engine). The best compromise is using solar energy for splitting water, generating hydrogen, using solar energy to compress it, then having hydrogen engine for helicopter flight. It can scale to heavyweight sizes, and is based on a renewable source.
+
+Good times with the switchblade
+
+ @NicholasRehm  ​ do you think this is what disc shaped ufos are doing? it makes sense for such an efficient filing object, and would get better with better technology
+
+Tempted to go a little bigger and try this out!
+
+ @NicholasRehm    I've flown RC helis since the early 1990's, so a bit of experience on related things, so I'll just list out some ideas off hand..
+1.  Get rid of the center part of the 'wings', and make the outer wing part bigger so it's more efficient.  Center part has a low speed, so it adds more weight while adding little lift.  Even with a lot of wash in toward the center, the center part still is usually terrible for weight to lift.  IOW from the length of the wings now, get rid of the inner 1/2, and make the remaining outer parts larger.  Might be more unstable like that though.  (If it's flying fast forward enough, the center 'whole disc' can give a lot of lift from translational lift.  But you can always add it back in later, and it adds more weight for hovering without much lift.)
+2.  From 7:15 .   Realize this prop thrust idea is not the only thing going on.  In a plane, the thrust motor pulls the wing forward, and then a large lift force is generated by the wing at roughly 90 degrees to the thrust direction.  The force of lift is coming from tapping the generated pressure differential not the thrust motor directly.  Think of making the outboard wing sections large and glider wings, the diameter larger, and then having tiny motors that just pull the glider wings around for lift.  Should be able to beat your current 3:1 hover and make something that could approach a plane, you're largely operating as one if you make this big.  I'd be tempted to try and make a huge, light one just to see if you can catch thermals and fly it like a glider.
+3.  Might be able to steer this with control surfaces on the outboard wings instead of directly by power.  Just something to check maybe, the motor thrust steering is probably fine, even if there was some 'gain' it would be pretty small.
+4.  You can always reduce it to 1 rotary wing.  Look at the 1 rotor heli, and there are some one wing 'drones' similar to this idea with just one wing.  There are some modeled after the idea of a helicopter seed.  But I do prefer the 3 
+
+I'd make a big one, cheap, and test it oversized large.  Then reduce it back down to more like this 'drone' sized, but see if you can retain large wing sizes, high lift etc.  Hmm think it was RCtestflight has some little plane with 3 stacked wings with high lift.  Ah looked it up 'Best STOL Wing Design Ever?!?'  Would be interesting to see 3 of those for the wings, and spinning slow but high lift.  Do it with plug in sections, and you could try totally different wings just by plugging them on to the rest of the drone.
+
+Anyway what you're doing already looks great, just some extra ideas..
+
+ @NicholasRehm  you should THAT  would be cool
+
+ @NicholasRehm  provided you are smart about materials; it should scale up a fair bit.
+
+How is "multirotor" defined in that world record? 
+I mean a helicopter also has 2 props and it drives them directly instead of moving the bigger one by smaller ones... I would guess that's more efficient?
+
+ @jackwiedemann  It wastes energy by not rotating whatever is rotating the helicopter. And when using counterrotation you artificialy limit the blade length. So my gues is that theoreticaly a flying prop is more efficient.
+
+ @jackwiedemann  ' instead of moving the bigger one by smaller ones... I would guess that's more efficient?' 
+Actually some of the most efficient helicopters ever had jets or rockets at the end of the rotor blades and powered them directly.  'Engine and gear train' to spin things = many more places for losses.
+
+Wowzers.....
+
+Can you add grooves to the wings to direct air toward the center?  Always been curious about what would happen. Maybe becomes very unstable maybe creates a vortex
+
+This isn't a new breakthrough. I had a Wowee spinning toy that used this concept back in 2007. Two tiny pager motors spinning the larger blades and it hovered with very little power. It also had directional control. I was under the impression nobody uses this concept as drones are usually only useful with a camera, but keeping the camera from spinning becomes an issue (mechanically and power wise).
+
+It's just a drone with a bigger slower rotor
+
+I wonder if he could put solar panels on the wings so, at least, get a partial charge during extended hover,
+
+ @ActuallyPotato  That's an exercise of weight and added power needed to hover, and the power these panels would generate. Hover is 30 Watts now, how much can the panels bring at the size, and how much would hover become, 40-50 watts?
+
+world record is far higher
+
+Yeah, I frowned a bit, but your concept is so amazing I'm still happy I clicked! Great experiment!
+
+ @Sekir80  thanks for being patient with my annoying error lol. A good lesson in not rushing through the editing process or else things like that go overlooked
+
+That's news to me and I'm sure it is to others also. 45 degrees seems like it would be the right answer. Care to quickly explain why 60 degrees produces half thrust for the rest of us?
+
+ @Chris-oj7ro  if you recall F=MA, F being Force, M=mass, A= Acceleration. Apply it to F_net = MG•sin30°, where G is "Acceleration due to Gravity." If you recall your unit circle, sin30° is equal to 1/2. So essentially (weight on earth)/2.
+
+ @Chris-oj7ro  A circle of radius 1 centred at (0,0) doesn't pass through (0.5, 0.5). However it does pass through (sqrt(3)/2, 0.5).
+
+You know your vectors. It's human to err. It's noble to be humble and improve those errs. Expertise should be that constant humble improvements. You're doing the good stuff my man.
+
+A very cool video, and yes I was going to point out that with the  degree inclination that the vector would be roughly 0.7. Nevertheless this is very impressive. I guess an evolution could have a contra rotating large propellor. Easier said than done. Strikes me that this would make a great lifting drone, taking off conventionally but going to entire body spin mode for more lift. A bearing on the lifting cord would be easy...
+
+ @g0fvt  Hmmm   pair contra rotating coaxial lifters & a non -rotating payload /control section?? (confession = I haven't watched vid yet ...)
+
+Trigonometry: He a little confused but he got the spirit
+
+So basically, your ' pitch angle' from the horizontal is 30 degrees right ? For ur spin mode with wings on aswell
+
+yeah, it didn't really seem like a paradox to me either - seemed quite obvious that drone + propellers angled to make it spin + wings angled in the direction it's spinning = more lift for less energy. if i had to guess, the title/claim might be an example of "experts on a topic either drastically over- or under-estimate average layperson's knowledge", or perhaps it's based on reactions from people with less intuitive understanding of how wings work, if that makes sense.
+...or, maybe the "paradox" is more to do with how much more efficient it is than a wingless drone? in that case i don't know nearly enough to comment on that lol
+no judgement towards OP one way or another, ofc, just theorizing a bit
+
+ @mozarteanchaos  I think the "paradox" in the title is "less power spent going up => drone goes farther up", which is just a paradox for the tiny propellers themselves and not the entire drone.
+
+Yes and no. It is not pushing down. Its using the same principle as airplane wings. Air moving faster over one side of the wing causes lift. Its basically a hover jet with helicopter props.
+
+​ @jeffl4802  Yes, it is pushing air down, just like a ceiling fan. Planes and helicopters obtain lift by equal-and-opposite-reaction: push against air; air pushes against you; if you're not secured, up you go. A positive angle of attack for a wing or horizontal rotor blade ensures that this effect is constant. Thus, even flat or symmetrically curved wings can provide lift. What you're talking about is the Bernoulli effect, which is real, and can also contribute to lift if the wing is curved (concave down), since the faster air over the top will be at a lower pressure than the slower air flowing under the bottom. But note that this does not "suck" the wing up; there is no such thing as suction. It just creates differential pressure that pushes the wing from the high-pressure area below to the low-pressure area above.
+
+where would u suggest I learn more about what u've said?
+
+ @davidthomson8010 
+A&P online courses. I’m a licensed A&P myself but basically every single topic pertinent to aircraft is taught in these courses. 
+
+ Actual books you can own is the AC-43.1B. This is an advisory circular giving instructions on part 43 of the Code of Federal Regulations. 
+
+ The FAA 8083 is good training books too. 
+
+ Since these are federal guidelines and recommendations, they are available for free as PDF online. 
+
+ Watch YouTube courses on A&P topics as well.
+
+ For avionics it’s NCATT AET which can be quite complex subject because it is a training book for passing the NCATT, probably one of the more difficult federal licensing programs available.
+
+ @davidthomson8010  Wherever you are right now is fine man, just gotta start! Good luck!
+
+Wait couldn't we also just sweep the inside part of the wings a lot and get vortex lift while leaving the end of the wings straight and fighting the wing tip vortices with the props. As the inside of the wings is slower it would also make sense to increase the cord off the wing right? IDK I'm just talking about what i think i know about aerodynamics.
+
+In addition, it could be  torodal design
+
+​ @saulerius  toroidal*
+
+Yep, was pretty funny to watch haha.
+
+Thanks! We’ll see where we can take this idea…
+
+ @NicholasRehm  How does the power requirement compare to a single motor running the larger propeller? In other words, could this concept be used to improve efficiency of propeller aircraft assuming the fuel routing issues could be resolved?
+Edit: alternatively, could this be used to improve the viability of electric prop planes?
+
+ @NicholasRehm  bigger! for more efficiency :P
+
+ @NicholasRehm  I feel like this flies very similar to what a classic UFO would, a few more propellers/wings shaped to curve downward near the tip and a stabilized ring in the center for a camera that doesn't spin and you have it.  course, I have no idea what shaping the wings differently would do
+
+Tippeller
+
+anyone in any part of the world can create cool stuff now ( which could make a huge change in the field they are working on
+
+The angular momentum would give it excellent stability in extreme weather conditions.
+Like a spinning bullet shot out of a rifle.
+
+Imagining horizontal big prop mode.... Wow. That just kept my imagination busy for the past hour.
+
+ @BVLVI  you whould have no lift though as all your trust is either cancelling each other out of giving you forward momentum
+
+I could get interested in investing in same design and larger assembly.
+
+Hi Phillippe, 'Big Propeller Mode' will have most of the characteristics of a Helicopter, so it will need to balance the advancing/retreating blades lift, etc.  
+Aaand for manoevering, Cyclic pitch control, perhaps?
+
+haha true
+
+Tri plus one maybe?
+
+I want to make one of these eventually!
+
+ @NicholasRehm  contra rotating
+
+ @NicholasRehm  you better
+
+Yes this design is almost exactly the same. The problem here is the forward flight. In a drone there is no mass to transport. So the aerodynamics become very easy. In a real situation Osprey is the best we can achieve. I will be very astonished if anyone is able to make a better practical design.
+
+That concept was also used in the famous Fairey Rotodyne
+
+That was the TriebFlugel (https://en.m.wikipedia.org/wiki/Focke-Wulf_Triebfl%C3%BCgel).  The US had the Pogo which is not the same idea but also was a VTOL.  Landing was always a problem since the pilot couldn't see what he was doing as he set down.
+
+That’s a really cool idea. V2 might need to have separate servos per wing now
+
+ @NicholasRehm  what about using the current design (but non spinning) in fast forward flight, with pitch angle near 90 degrees? This might be what you meant at the end of the video, but maybe you were talking about spinning forward flight.
+
+It won't be passively stable, but it would be interesting to see if you are able to hold altitude with similar efficiency. Great project.
+
+ @NicholasRehm  
+Probably two of this drones could be connected on one central axis, and up one turns in one side, second one - in the other, so axis is somewhat stable and load can be attached to it. Would be kinda similar to helicopter with coaxial rotors.
+
+The same thought hit me at 8:20, it looked like a plane..
+
+Nice! In forward flight you get some lift from the two lower blade/wings! (I propose blades + wings = blings😄) Maybe you can use the top one as rudder.  In fwd flight, looks like a Imperial Lambda-class shuttle!
+
+Wow, this is incredible! I am imagining a future version of this with a payload section underneath that is counter-rotated to be kept stationary. This could be super applicable to long-distance/payload flights with sensitive cargo or cameras. Can't wait for the next video!
+
+Great idea, ive been dreaming about stuff like this for some time.
+Also the footage of the prop flying off cracked me up
+
+Toroidal shaped propellers  create less eddy at the wing tip where the air foil stops, maybe this can be used on the macro and micro propellers to harness even more energy, stellar video! You’re onto something big and we don’t even realize it yet
+
+Holy crap dude... I can't remember the last time I saw something this brilliant! Is this an existing  concept I just happened to never hear of, or did you come up with it on your own? Either way, you u got a sub from me! I can't wait to see more!
+
+That's pretty sick! And I love how it looks like an imperial shuttle when it was flying forward!
+
+You know, like a helicopter! 
+
+Fun fact, there have been helicopters that had their main rotor propulsion take place at the end of the rotors by little rockets. These tip jet Copters came in several different formulations. Including ram jets! 
+You’re essentially recreating this basic idea. Thrust at the end of the rotors! Another benefit of propulsion at the tip of the rotors is a lack of torque applied to the center mass. This makes it not necessary to have tail rotors on these types of craft!
+
+It would be cool if you put a swashplate in the centerbody and used cyclic for directional control. No need for anti-torque because the rotors self propelled. If the battery was in the non rotating centerbody you'd need some kind of power coupling to deliver power to the tip propellers which might be hard to do, brushes or something I guess. Reminds me a bit of one of the human powered helicopter attempts to win the sikorsky prize (before they all went quadcopter, the cal poly one from 89 i think)
+
+5:24 damn fallen and can't get up
+sweet project
+
+Great design and explanation. Try removing 1/2 or even 2/3 of the wing on the inside. The inside part of your rotor-wings are more weight than lift.
+
+I want to watch more about the capabilities of this design. So nice of you to share it publicly.
+
+I got big Imperial Shuttle vibes in that last shot of it flying away.  Cool design
+
+I love it! Now make a gigantic quadcopter with four of these and see how much it can lift. Seems like you already have good feedback about the yaw rate, which could be fed into another PID for the quad control. An added benefit is you could adjust the 'cyclic' or average pitch of all corners so that the rev/s aims for the minimum of the blue line in the graph at 5:52. It would be hard to program, expensive, and as agile as a school bus. Yay!
+
+Wow, suddenly this "simple" design looks like a prime VTOL configuration!
+
+The rotor setup reminds me of how the Rotodyne was setup for hover.
+
+This is a lot cooler than I thought it would be
+
+3:28 — Let's catch it gently (reaching for it).
+Drone: A sharp whirring "No!" your not touching me ground-hand & Full throttle escape to the sky. 😂
+
+The idea of substantially less energy made me immediatly think of the Focke-Wulf Triebflügel plan. Vertical take off jet thing, but instead of normal jet thrust, it had 3 engines placed at the ends of wings that spin around the center of the fuselage. Nothing beyond the initial concept was made, but it did make its way into the Captain America movie
+
+Additionally let's all take a hard pause to admire the pure beauty of this 8:16 ! THIS IS DOPE!!!!!
+
+Physics, engineering, CS, cinematography, editing, chill voice this guy got talent
+
+I can't tell if that's serious, or the most sarcastic way to describe a helicopter ever
+
+It actually isn't. Helicopters suffer the same problem as the airfoil-less drone.
+
+Maybe not "counter-rotated" as much as just stationary. How about the payload section on a bearing with an internal gyroscope?
+
+ @mikestaihr5183  yea a bearing design would be better i think
+
+Genius! Perhaps we could also move the electronics, batteries, etc. to the payload section which doesn't spin, to reduce the mass we need to spin around. And instead of using some complicated counter-rotation system, we can just spin the top part with a motor held in the bottom part, while keeping that from spinning with a second little propeller offset from the center. Let's give this new invention a cool sounding name, something like "helicopter" maybe
+
+can you explain your first statement little bit more ??
+
+VTOL fixed wing drones exist that have solved all the solvable efficiency issues when it comes to duration and long distance flights. The design in this video is not a better solution, in fact it is much worse.
+
+What do you think a tilt rotor is? 
+
+You don't need some pointless complicated counterrotation system if you just tilt the rotors the same way, and just generate lift by moving forwards - which is what you want to do anyways, instead of going in a circle.
+
+The worst part is that I didn’t have a wrench or pliers in my car to re-tighten it. So I had to use my jumper cable clamps lol
+
+ @NicholasRehm  time to get a good little multitool 😜
+
+ @NicholasRehm  can't be worse than when I had to use a pair of sticks pinched together lol
+
+Shibeeb, there was at least one toy "drone" that used this concept in the mid to late 2000s. Those toys could spin hover (no normal hover) and fly forward/back and side to side as seen from the pilot. It used an infrared controller and pulsed the motors at the right times for directional flight.
+
+There are other spinning drones that leverage the efficiency boost of the tip-driven blade configuration, but none that can do regular multirotor hover, spinning hover, and forward flight all in one to my knowledge
+
+ pyropulse  Hey prolapse, this is way more like a flying wing version of an osprey than it is like a helicopter. Hell, it's more like a gyrocopter in it's propulsion than a helicopter. I know that spinning things may all look the same to you but we often group engineered items under different names due to their differing capabilities. This can do things that helicopters can't, same as quad copters, gyrocopters, and other items we don't call helicopters for good reason.
+
+ pyropulse  It is a rotating flying wing rather than a helicopter, with the additional ability to turn 90 degrees and fly as a normal flying wing. I don't think I have seen the concept before personally.
+
+ @rexsceleratorum1632  It's similar to the Focke-Wulf Triebflügel. Germany came up with the concept during WWII but afaik it never got past the design and mock-up stage.
+
+Their has been a similar concept out there for a while already. Tip jet helicopters place jet motors way out on the end of the rotor rather than using a central motor, eliminating the need for a tail rotor in the process.
+
+They have their own complexities that have lead to the typical central motor design with tail rotor being far more common these days.
+
+it's just an Osprey in drone form
+
+ @MrTeddy12397  no. No it’s not.
+
+ pyropulse  old brain🥴
+
+ pyropulse  why don't you use your gigabrain to go create something impressive or help others instead of insulting strangers on the Internet? I doubt this is less efficient than a traditional helicopter for a number of reasons: 1. There's no fuselage obstructing air flow. Instead, the prop wash is moving air across an airfoil which aids lift. 2. There's no tail rotor needed to overcome the rotation from a traditional helicopter design. Newton's third law dude... "Equal and opposite reaction". If you have to impart force into a fuselage to keep it from rotating, how efficient is that really?
+
+ pyropulse  I too am amazed at the amazement over this design. Over a hundred and ten years ago, a man thought of and was doing research on “tip jet” design that used compressed air to spin the blades of a “helicopter.” It’s not exactly the same as this, but it’s the same general principle that has been tried and tested throughout the last one hundred years. I love this video of a homemade design that works amazing, with actual data to show its efficiency, but come on people, this isn’t a new invention. 
+
+Idiocracy wasn’t a comedy.
+
+ @dozer1642  Totally man. This is just a tip jet hellicpoter, Tanks are just armored tractors, and motorcycles are just half a car. And deriding the opinion of people who understand something based on your impression of its surface level characteristics? Well that's just the same as keen observation.
+
+i wonder if two wings can be turned oposite directions and the third be used as stabilization like a plane's tail. it would be so weird but so cool see it flying like that
+
+Came here looking for somebody mentioning a helicopter and here you are. Somebody else on here made a comment about separate servos for rotor tilt and I think they stumbled upon the cyclic.
+
+There used to be advertisements in the back of magazines like Popular Science that sold plans for one-man helicopters that used pulse jets on the rotor tips.  Apparently they did work but the pulse jets were so loud that they were no fun.  Pulse jets are simple and cheap and precession is not a problem, but damn they are stupid loud.
+
+ @florabee9283  pulse jets are a great way to convert potential chemical energy into noise.
+
+What you describe is a Fairy Rotodyne.
+
+I used to subscribe to popular science and mechanics way back then... How did they steer?
+
+ @petevenuti7355  they had swash plates. Like most copters.
+
+Yes, I remember talking with my brothers and father about helicopter engineering. For conext, both of my brothers and my father all have degrees in mechanical engineering. And I was just an undergraduate chemistry major. I suggested it may be possible to improve helicopter performance at high altitude by powering the rotor with ramjets mounted to the tips of the rotors as these tip jets would exhibit excellent thrust with the increased rotor speed. I had never heard of tipjets before and was just spitballing. They all scoffed at me and told me that design would be completely impractical. I later learned that tipjets were actually a thing and was totally vidicated, but still a bit resentful about how quick they were to dismiss my idea.
+
+ @FourthRoot  Keyword, *were*.
+
+Tipjets were a thing, and no longer are a thing, because the design is completely impractical.
+
+There was one production tipjet helicopter ever, and it ended up being replaced by a conventional helicopter.
+
+There is a YouTuber that already made that
+
+Mustard's video on rotocopters is great!
+
+Mmmm.... No.
+
+The more accurate comparison is between a turbojet vs a turbofan/prop, and why turbofans have been steadily getting bigger.
+
+A helicopters kinda have the same problem as the naked tricopter - it's moving a relatively small amount of air quickly rather than a lot of air slowly.
+
+For example, compare the CH53 with the Dash 8 Q400 they both have a similar maximum takeoff weight, yet the Q400 flies faster and farther with less powerful engines.
+
+That could  be done with slip rings.  Like on a car Steering wheel n such.
+
+ @southtexasspecials175 most cars use clock springs because they only need 3 turns max
+
+Then you'd kinda have a helicopter with tip propellers on the big propeller. I guess you'd need a way to brake the rotor so that it can still function as a tricopter in order to be able to choose between high efficiency and high stability, which I'm guessing is the whole purpose of this.
+
+lol thanks!
+
+Why?
+
+ @kekogonzalez677  the inside has lower wind speed so it generates less lift
+
+This is so insane that I just might do it LOL
+
+ @NicholasRehm  you're using a 4-in-1 ESC anyway, so, why not 4th motor?
+
+ @NicholasRehm  yes im thinking if all four are attached from the bottom and then enough distance that they don't rob air from one another, that flight controller is gana need a number of code levels so it can understand all four in motion so the overall frame and be stable, but all over my head lol
+
+ @NicholasRehm  of course you would need to make a quad of quads, creating the first Koch Snowflake Infinite Multirotor
+
+Oh i just saw watched this video and thought i thought of this first, i hope you do this though
+
+Dang I was just going to comment and say "Make it a dual design!" But you just went ahead and went straight to quad!
+
+make a tricopter with three of these. Then tilt them and spin the whole thing! Then make an even bigger one with three of THOSE.
+
+This but ^3 ed lol This tricopter driving a larger propellor which would be on the quad. LOL sorry couldn't help it.
+
+No shit, I've seen one of these ~20 years ago and everyone working on it hated it and thought it was dumb. It was made out of the pink insulation foam and each blade was ~12 feet.
+
+Can you make tiny rotors to drive the small ones?
+
+You mean a tip powered helicopter like the Fairey Rotodyne?  From 1957
+
+ @chrispollard6568  that's a mad helli / plane for its time
+
+Love me some tip jets
+
+yep, literally the same idea, just 80 years ago....
+
+The whole video I was wondering if he would do this!
+
+this sort of reminds me of the so called "engineless helicopter" called the XH-26 jeep jet, that was basically a one person cockpit with a tiny tail boom, single bladed tail rotor, and a dual-bladed main rotor that had a pulse jet engine attached to each end, such a weird yet interesting piece of technology, and this one just brings it to whole new levels of both
+
+Nicholas, 
+You have a real gift for making incredibly complex subjects understandable.
+
+Thank you so much for making all of this - especially your flight control system  - open source.
+
+My first view of your videos, and I am now very interested in the next generation of developements this design causes. I am a nerd without any budget at the time and vuicariously live through such content, Thank you sir for sharing.
+
+3-D printing is just getting more amazing
+
+So awesome! What a great solution for climbing and descending incredibly efficiently!
+
+This seems like a really cool idea for drone photography. Yes the camera spinning would pose a challenge, but the extra flight time would be a huge draw while still being able to hold position, slowly move around with that efficiency, and even fly like a plane
+
+Descent could be very efficient, you would need to store momentum thanks to the air the drone meets during descent....at the end of the descent you change the wings angle, so that you transform the drone from turbine that has stored the potential energy in to a propeller that pushes it self upwards to slow down.
+
+
+I also wonder how a spinning drone like that could understand its horizontal direction of travel while the entire system is spinning, in a future model
+
+How did this get recommended to me, I have no idea. But that was awesome and I subbed lol
+
+I used to play around with this in Kerbal Space Program. Maybe I should go back and explore the idea now that I know there are better controls I can use. 
+
+You explain it well in your video. Well done!
+
+Great idea! 
+I'd be interested in knowing if this design is more efficient than a coaxial platform of similar dimensions.
+
+You should really make 3 more of these and use them and props for a single large drone. Might actually catch on with future drone designs!
+
+I was blown away by those horizontal flights at the end!
+
+Interesting. I envision a quadcopter assembled with four of these. I wonder how it would compare in efficiency to a traditional quadcopter of similar size.
+
+The German, Focke Wulf Trebfluegel VTOL may not have been as much fringe science as previously believed. Nice work getting your Tri-copter to outperform other multi-copters in hover. I will definitely be following your progress of this unique model.
+
+As always impeccable work man. It’s like a tip jet rotor but so much better!
+
+A fantastic good video! No intro music, no music at all! This is how I love informative videos!
+
+A flying propeller. So genius! You just got my subscription. Can’t wait to see what comes next.
+
+Great video and a cool idea. Besides the energy efficiency, this should also be more robust to position errors. The angular momentum will keep it from tilting and thrusting in the wrong direction. Did you have any problems with MPU data while spinning?
+
+Interesting!  You might look into the designs of some helicopters that had various propulsion methods at the tips of the blades.  I recall seeing one a few years ago that was still flying!
+
+Thanks to you I’ve found something to do that isn’t rotting my brain as a 14 year old
+
+That helicopter is still on my mind since seeing it on the internet for years. 
+
+Tip jet helicopters are always interesting. The only issues I think are the noise, and the gas consumption (this one's the one I'm not sure) but if we can make a helicopter like that it would be awesome since they're simple, and doesn't need tail rotors to fly.
+
+ @JayHeartwing  Won't gas consumption be significantly less than a standard copter, as explained in this vid?
+
+I was looking for this before I posted my own comment lol
+
+This guy gets it
+
+For lidar drones the rotation would not be that much of an issue.  Doesn't really matter how the laser hits the ground as long as the instruments can geolocate it properly
+
+Maybe have the center hub in a bearing so it doesn't spin with the rest of the drone. Or have the camera on a bearing so it can't spin with the body of the drone. Framing would be a bitch though 😅
+
+The camera spinning would prob cancel out the energy savings as it’s turning the exact same amount inverse
+
+ @greggotheeggo2354  It's not really a function of the speed of rotation.  The camera support would impose little mechanical resistance, and any air resistance on the camera would actually help to keep the camera from rotating, so the camera stabilisation would not require that much power.  The power required to spin the propellers and pull the (much larger) three bladed wing through the air would be significantly greater.
+
+I am not sure the spinning is any real problem and may in fact be a benefit. It would give an automatic panorama view with a fixed frame view derived computationally. Think how synthetic aperture radar improves image resolution as the camera traverses terrain giving result likea  much larger apparent lens. Numerous satellites spin to cover a larger field of view and specific images are collected with the object comes into view. All this is done by software and don't need to be mechanically corrected on the drone itself.
+
+ @chucknaussie  That's an interesting point, but the issue would be with rolling shutter. I believe Smarter Every Day is the one who made a really good video on that, but the speed at which the craft spins would make most cameras really struggle to get a clean image. You would either need some serious software correction or a global shutter to counteract that, but then you still have motion blur to consider.
+
+ @chucknaussie  considering you probably want 60 fps at least (to smooth out the fast motion of the thing) you need 1/120 shutter times. With the rate this thing spins that would just be blurry.
+
+And so on and so on... a Russian doll drone!
+
+Recursive! And even better: why not have smaller drones that assemble themselves into the recursive structure and then repeat? Keep recursion into bigger and bigger recursively spinning system. It'll be like a fractal drone.
+
+More coming soon!!
+
+That was my first thought too!
+
+My thoughts exactly. I wonder if you could make a highly efficient 'personal helicopter' by replacing the tip jets with electric motors and small props ? Or ducted fans maybe ?
+
+ @Haawser  Thay was my first thought too.
+
+Yes, Rex - somewhere (iirc) there is a 'prop-copter' site, which references the H.E.P.A.R.S. approach as well as some very  early  work by Curtis?  Hang on . . .  Found it!  Searched on 'propcopter'  , also there is a Wikipedia page on the massive Curtiss-Bleecker Helicopter from 1930.... I have a long-dead toy with 2 articulated blades and a cross-piece with two motors/props that  flew reliably back in the day . . .  Interesting!
+
+ @250tegra  Interesting!  But, ummm.... what does H.E.P.A.R.S. stand for?  I couldn't find it online (at least it was turning into more work than asking you)
+
+I’ve had this idea for years. Good to see it being tried. Believe it can work. My idea has the props tilt separate from the central props tilt. The central prop would just be on a ultra bearing. It made me think the drone motorized props would provide the speed and stability control. While the central gave the thrust. Which was regulated thru the motors the same. With tilt control on the central prop I thought the drone would be able to launch into a zero g 180 flip. Then tilt the central prop, launching back up instead of down. Don’t know what purpose it would serve besides fun. 🤷
+
+Love it, well done! 
+Im working on related madness, aiming at a
+ultra slow 60rpm version though.
+
+Dude this is awesome. You've stumbled onto something that could change drones forever. Just isolate that center with a camera or a payload and you've got yourself a promising platform!
+
+Your comparison to a <1 thrust to weight plane immediately made this concept click.  Cool design!
+
+ordinary 4-arm drones, also have opposite spin-directions to counteract it's own torque, so i imagine some of the energy is lost there, and by allowing the entire craft to spin, the torque spins the vings, acting as it's own propeller, meaning more of that energy gets put into lift
+
+So obvious. I'm astonished at the fact that I've never thought of this, bloody well done!! 
+
+PS: my findings in sustaining longer flight times without foils were as follows. 
+1- larger props
+2- more torque (less kvs)
+3- higher voltage
+Those in combination have taken some designs from a 25min to a 90min flight!
+
+Larger props wouldn't work well with your design however they do as a rule of thumb and should also still work great with a maximum rotation of 45deg.
+
+Wonder what would happen if you incorporated this current design with a 10' - 3 blade prop powered by a 100kv motor in the center!? 🤪
+
+With the low total weight and strengths of composites, have you considered trying a shallower (and thereby lighter and causing less drag when not spinning) supercritical airfoil wing design? Could spin that puppy up really fast before shock and vortexes become an issue.
+
+I couldn't help but giggle when you covered up the LiDAR sensor.
+
+Absolutely brilliant!
+This moves us closer to a revolutionary and elegant VTOL.
+Maybe an asymmetric design could be a flying plank with an axial rotating tail. 
+I hope the ardupilot team is watching this development.
+
+Fun and interesting video! 
+
+It seems to me that the dip in thrust required for the wingless drone could just as easily be explained by an overfitted model. What order was the polynomials you fitted the data to? And did you keep some data not used in training to verify that those models were in fact better and not just overfitted?
+
+Instead of putting the props on the tips of the blades, you could put them closer to the hub. Since they would now work in a lower speed airflow, their efficiency could improve.
+Also, this drone could be fractal, has each propeller could be made on the the same principle .
+
+I love the sudden boost in throttle when you covered the altitude sensor. Its lke it screamed after getting goosed. 
+
+"1000 years of death!"
+
+This is amazing. Also, it looked like the Emperor's Lambda T-4a Shuttle from Star Wars! You could really mod this thing out too look like it and fly it around and it would look so sick~!
+
+Follow me on twitter for occasional exclusive project updates (and memes): https://twitter.com/Nicholas_Rehm
+
+When I was about 12/13 I built this exact setup (albeit in a quad rotor configuration) in a game called SimplePlanes. I wasn't measuring efficiency or anything, it was just fun to play around with the game's physics. Super cool video!!
+
+Thank you very much for bringing the Focke-Wulf Triebflügel concept to life
+
+0:50   actually 1.414x thrust required?
+
+I could already see military uses for a drone like this. Improving efficiency and extending range is always something they would be interested in. I'll definitely be looking out for that forward flight performance video.
+
+Awesome! I love it! But I gotta ask, since the air speed is much higher at the tip of the wing, Wouldn't they work better if the sweep of the wings were reversed?
+
+This reminds me like the seed helicopter thingy so cool.
+
+Can't wait to see what you're cooking up. Always a fun time to be had on the amazingdiyprojects channel
+
+ @NicholasRehm  Really appreciate that you take on such an ambitious scientific approach and take the time to share your findings with all of us. Love your work!
+
+No, the rotation force is still lost. Remember the angle of the propellers changes.
+
+Congrats you just designed the V-22 Osprey.
+
+ @yolo_burrito  😁
+
+The data I showed was admittedly just from one flight, but I did have other flight worth of data that I never combined into one batch. Still, the slight dip was consistently there, though subtle
+
+Actually, higher inflow/velocity is more efficient depending on the pitch of the prop 04:18
+
+ @NicholasRehm  Usually the larger the prop, the better the efficiency. In that case I suppose every prop has its optimal RPM efficiency by design, but slow props are more efficient overall  ...
+
+I thought the same thing! It really looked like that shuttle when it flies away from the camera.
+
+Here is a video of the WowWee toy from the 2000's: https://www.youtube.com/watch?v=JPfUR1Kq1-A
+
+ @megatesla  
+"Wow Wee"
+Sounds like a company funded by Mr. Poopybutthole.
+
+Absolutely superb creativity, prototyping, and testing. As a design engineer with many inventions and research papers, I highly commend your work. I’m not in aeronautics, but I understand the energy situation, and you are doing yeoman work!  Thank you so much, Steve
+
+ @steveperreira5850  Hear hear!
+
+This is very interesting and rather unintuitive application of physics. Thank you for the video and keep up the amazing work. I am currently in school for engineering and it definitely makes it easier understanding all of the terms. The relation at the end is a very good practice when conveying information that I have found that most professors do not do and they often answer questions with the same explanation instead of adapting the idea into a more unorthodox method to get the idea across. This also shows why VTOL aircraft like the Osprey  still have wings, so they can fly much further and faster than if it stayed in helicopter mode the whole time.
+
+I can't tell if you're legit brain damaged or just trying to do a clickbait title.  It's plainly obvious why it requires less power to hover, the wings generate lift.  Propellers only doing nothing but fighting gravity is literally the least efficient method of achieving flight.
+
+I imagine a similar drone with free rotating camera in the center.
+The drone would be able to use two of the wings like an airplane (third wing as a tail) and hover like you do.
+
+This could be the future of personal aircraft haha
+
+now add a circular wing and since tilting and flying horizontal apparently isn't a problem, this could possibly improve stability, or could be redundant weight...
+
+It would be really cool to add a power consumption loop that compared power/vs angle of attack of the wing-rotors. You could tune the angle to do the 'near stall' magic that bees use to fly... (and it would be super interesting to see if that max-lift angle is actually more efficient than the lowest power consumption level)
+
+ @relativityboy  What's the 'near stall' magic that bees use to fly? It sounds really interesting!
+
+How about a triple-triple (9 total small rotors, 3 combined rotors)? Turn those "winged rotors" into separate rotors and then control the the combined "rotors" for regular (if slower) flight?
+
+Then compare the 9 rotors flying in a traditional manner to the the three "winged rotors".
+
+I'd imagine that, in addition to energy efficiency, you'd also see a lift capacity increase.
+
+Just a thought...
+
+ @GlueFactoryBJJ  He he, good idea!
+
+Now do a BIGGER propeller 
+run by
+3 smaller propellers
+run by 
+3 smaller propellers.
+
+ @maxsolo2652  Already suggested, but that configuration has the advantage of "classical" flight for a tri-copter... 🙂👍
+
+Just discovered you and I absolutely love this. It is similar to a Design I've had Brewing for a while.   Are your "Wings" Made from just Foam ?  Wonder if you used a Mesh allowing some wind to pass through would help? 🤔
+
+Tienes poca idea de la propulsión electromagnética de los Condensadores Asimétricos, llámalo también electrodinámica
+Te lo imaginas? Pues funciona igual pero tanto con el Aire como sin aire o más allá de la atmósfera.
+
+Did you create the design yourself or get it from somewhere else?
+
+.  . it's the same as wings for most conventional aircraft that have much less than a 1 to 1 power to weight ratio.
+
+which course did you stuyed
+
+Subbed for the math me teacher couldn't explain to me :)
+
+So now you need to add cyclic control xd
+
+It is not a paradox. This is basically a tilt-wing design that spins, just like V22 Osprey.
+
+I will suggest to move the engines to the tip of the prop to get a better angular momentum, the prop should have a higher aspect ratio at the lower spinning point like half teardrop shape and placing a bottom cone with a counter rotating turbine blades will accelerate the residual flow into a Coanda effect. My two cents improvement on your design for higher efficiency.
+
+Propeller-ception? If this is an order-2 propeller (where mini propellers cause a larger propeller to rotate) what happens if you make an order-3 propeller (where three order-2 propellers are used to spin a even-larger propeller)?
+
+I imagine the control software might get a bit complicated--though the planetary gearing system probably helps localize some of that complexity into the mechanics. It'd be especially cool if the control software was eventually generic enough that it could run any order-N propeller you'd care to build and just re-configure the software to set the value for N.
+
+In addition to recursion, I also wonder if there's anything to the possibility of inverting this concept. I.e., instead of propellers spinning propellers to create a large airflow from relatively little energy, what if we mounted small windmills on the blades of a larger windmill? Would we thus be able to more efficiently capture more energy from a same/given of amount airflow / wind?
+
+I feel like a newer control would be the wing direction that would have one default foil, a neutral foil, and a flipped foil for better wing efficiency. However it would be complex and add weight to the drone.
+
+This could be va very interesting concept for a electric helicopter. Only thing needed is a non rotation cabinet below or above it 🤔
+
+I am still trying to understand this strange paradox where moving big wings through the air provides lift. Someone should try this on an airplane or a helicopter.
+
+ @itoibo4208  
+There was a helicopter in USSR having a propeller with small jet-engines on its tips.
+
+Could you make a larger ring to take advantage of that, so that you don't have to spin the whole thing to achieve that hover?  Kind of like having a fidget spinner where the center doesn't actually move. Use a 4th prop to thrust around :3
+
+im hooked,this is really innovative
+
+Just copy how a helicopter moves
+
+Hell, you could make the ultimate dream, the rotary winged glider.  Easy to keep in the thermal when the craft can match the speed of the thermal without having to turn all the time to keep from stalling like a normal glider
+
+the flight @ 8:17 ... why not spin the large wings too ?
+also, wouldn't a hybrid design like this have a really strong lift capability ?
+Like, lifting logs, or people with injuries out from a place that is difficult to access ?
+It's basically a remote controlled helicopter rotor that can control itself ? But it doesn't have to lift an entire helicopter as well.
+
+also one other thing I have seen and noticed is that plane engines are trending to be larger following the trend that the bigger propellers are more efficient.
+
+This is a way cooler craft then your average Drone by far
+
+A camera with a gyro would be awesome as well.
+
+can you get 3 or 4 of them mounted on 1 frame and have them talk to each other?
+
+Do you think commercial drones should use this technique?
+
+8:10 bro that shit looks like a star wars y wing flying
+
+@wisdomiscenter Thought of what? This design? It isn't new and definitely makes zero sense for something like the mars drone.
+
+nice vid but if I remember it correctly, drones consume more power hovering than it is travelling.  basically, hovering is a difficult and expensive process so that one gets to shoot photo/video in good stability, in addition to an already good gimbal.
+
+I dont agree how you compared it and said its 3x more efficient vs the 100w spinning of the other one when the other one hovers at 80w without needing to spin its around 2.4  2.5 times more efficient still alot but a noticeble doference compared to 3
+
+ @kaloyanbg2799  You're misunderstanding the point. The power consumption graph shows the 2.5x factor.
+
+@Nicholas what I'm thinking is, probably we got engine for helicarrier. Let me know what do u think
+
+There’s also an effect of turning the motor sideways. I can’t remember the name of it, but it’s why UPS makes their routes left turn heavy. Why we haven’t changed our engines to turn on the vertical is beyond me. Including the transmission and alternator/starter.
+
+@Nicholas Rehm can't the wings be tilted to more than 45? like maybe 85 degrees, looking at how an airplane wing is
+
+May I ask, how much did this project cost you? I have an idea I wish to prototype...
+
+Doesnt really need a whole video.  You create low-high pressure difference like an airplanes wings.  Hence lift.
+
+Would ultrasonic transducers be helpful for height measurement ?
+
+Please provide the equation
+
+Not sure I agree. Unless you can somehow fly it all the way until you need to drop the payload
+
+As is, it wouldn't be usefull.
+You'd need a sensor I.e. camera to be in a static position, for target acquisition.
+
+One option being the center part not rotating. So another layer of complexity and another point of failure, getting power to the small rotors.
+
+ @soul0360 I think image stabilizing could take care of that, especially since the spin would be a known variable.
+
+Increased payload capacity for one. Same power consumption for carrying 3 grenades compared to one.
+
+instead of holding 1 kg of explosives it can hold 3 kg
+
+Yes, I see finances in your future ...
+
+Alternatively a propeller's pitch increases along the length of the blade so as the angle-of-attack is congruent with apparent air flow. The tips of a propeller spirals through more air at the tip of the propeller over the  region closer to the center. Given the design has a flat wing rather than one that twist along its length, the thinning blade is an appoximation of having an increased pitch the closer to the centerline
+
+I could totally see this for cargo delivery, once you've been able to balance the load. Your cargo won't care about spinning.
+
+I was impressed. Two questions: Have you explored using the large wing hover configurtion for take off and landing since increased ground clearance nor a freely rotating mount should not be difficult.? Have you considered using a pair of counter-rotating systems, either co-axial or co-planar?
+
+Great Idea! Would make a great heavy super lifter for gliders and such once you figure out directional control. Fpv would be the next step but how would you keep the image from rotating. Mechanical or could it be simulated as level in software.
+
+Next step: Use 3 of these to make an even BIGGER drone.
+
+so i added props on the props of your prop!
+
+This seems like a very significant innovation
+
+Mounting the props on the wing tips would make it even more efficient
+
+The sound when the prop went flying lol
+
+You’ve created literally a controllable stand alone propeller.
+
+Bro as far as I can see this is one of those great ideas that seem so obvious that everybody's wondering why nobody else put 2 and 2 together like this before.
+
+now i want to see you make a 3 rotor drone out of 3 rotor drones
+
+God damn, thats incredible!
+
+4:02 I never would've thought to graph this
+
+Most interesting video I've seen in a while.
+
+6:40 for exactly that reason the commercial turbofan engines became so huge compared to the older designs.
+
+Now I'm just imagining three of these operating as the rotors on an even larger craft... just go entirely recursive with it
+
+When it flies around it reminds me of the T4-A shuttle from star wars.
+
+Flipping it on its side and using two wings for lift was cool.
+
+My dad had an old RC plane that has sat collecting dust in the garage for decades. This kinda makes me want to dig it out and get it working again.
+
+Thank you for this amazing idea time to make a Kickstarter
+
+the cat I ordered: 😔
+
+Gotta sharpen my software skills to figure out stabilizing a 360 video stream. Hardware fix may be the solution for now!
+
+For every frame, make a triangle out of some easily identifiable feature (in your case maybe some differently colored retro reflectors placed on the ground, just to avoid any more complex image processing). Once you can identify the points of the triangle, calculate the center of the triangle. Compare one frame's triangle to the previous frame's and calculate how much rotation around the center minimizes the error of this frame to the last. That is the angle of rotation over the duration of the frame (1/60sec) for 60fps video). If you have known features, then you also have an absolute reference (ex: the blue reflector is north). Obviously a commercial solution would extract features from the environment, and thus have to determine ground truth in a different way, but for a test flight, this should give you angular velocity and orientation with very little computation.
+
+A camera in the center could be attached to a counter-rotating motor. The motor rpm could match the drone rotation and not use much current to do it.
+
+When you get into it you think of everything
+
+The era of fractal drones has begun.
+
+seems like a great design for floating lawn mower
+
+That friendly reminder to tighten the props was spot on:elbowcough:...😅😂
+
+7:53 is the most creative way I’ve been asked to subscribe. I’ll allow it.
+
+I don't think that's a paradox, but it seems like a vital discovery
+
+Ughhh the fluidity of air. I love it
+
+Who would have thought adding wings would increase lift? Mind. Blown...
+
+Finally! A way to take care of zombies without getting your hands dirty. Cool project man.
+
+Really cool. I like how you tried to dumb it down so we could understand. I still didn't. But i appreciate you doing so
+
+"yes, my lawn needs mowing, and no, I won't mow it".......resonates with me!
+
+5:53 The squeak as the prop decides to go on its own adventure 🤣 #byebye
+
+This is some incredibly brilliant stuff!
+
+All we had then were planes, then we had flying wings, but now, we have the flying propellers.
+
+This thing is so damn cool.  I really think you're on to something with this.
+
+Haha that prop yeeting itself 😂
+
+This is brilliant.  Well done!
+
+This is awesome .   I will perhaps build
+
+That moment when you put your hand over the lidar sensor, the sound is almost like it had been touched inappropriately. XD
+
+THIS. IS. IMPRESSIVE !!! Instant subscribed, wow.
+
+Very cool idea. Simple and effective
+Congrats!
+
+Brilliant idea, you are making me wanting to go back to engineering and study aerospace
+
+now take three of those and make an even bigger one!
+
+My man just made a flying fan
+
+Wow, very cool idea.  Not the first time I've seen a rotor powered this way. but to combine it into a drone concept is outstanding.
+
+This was first channel I instantly subscribed after watching first video
+
+That is soo impresive.
+
+Sweet!  Next put a propeller on a propeller on a propeller!
+
+I’ve seen footage of devices that operate this way used to deliver shaped explosives, couldn’t understand why they were spinning, thanks for explaining what’s happening when they spin!
+
+Very interesting project
+
+Helicopters are going to be a lot more sickening to ride if the whole aircraft needs to spin too lol
+
+Manhacks! Neat!
+
+not into drones, but man, that looked as simple as awesome!
+
+Your work is fantastic. We appreciate your contributions. Thank you.
+
+Bro made the imperial shuttle and thought we wouldn't notice
+
+There is a fractal design out there, where watch level of propellers get replaced by set of 3 smaller propellers and a set of wings, then repeat for the next level.
+
+Whilst all the aerodynamic physics goes above my head, I love the fact that there are smart people out there who are tinkering and discovering new ways to use technology. 
+
+Brilliant and thank you.
+
+Holy crap this is brilliant!
+
+5:43 I found that way more comical than I probably should’ve 😂
+
+This is brilliant. Keep going.
+
+Blown away! Thank you!
+
+Thanks!
+
+Irrational laughter at 3:30, especially the noise it makes, "EEEE! GET YOUR HAND OUT OF THERE!
+
+This is simply amazing! Wow
+
+Love to make something like this one day! Great video!!!
+
+Interesting concept!
+With the white props it supposably saves energy through aerodynamics
+
+this reminds me of how the elevator on the  MD-83 used to work! basically instead of turning it directly using powerful hydraulics, the pilots only operate a small tab that sits on the elevator, and aerodynamically forces it to turn in the opposite direction.
+
+ha haha..cutting the grass with the drone at the end...fantastic idea for adding wings to reduce the energy for longer flight..well done!
+
+When you calmly just turned it on it's side and said now forward flight I immediately thought. That's a Skyhopper. He must be a good pilot.
+
+To put this into perspective. The whole drone becomes one "propeller" which makes the drone itself lift as a propeller does when shinning the proper direction. This is realy an insane idea and opens up lots of other ideas.  Like should we add another propeller? Another type of drone shape (propeller shape) its hard to even refer to the propeller shaped drone or the drones actual propellers lol
+
+8:15 omg, you didn't tell me it was also a freaking Y-Wing. 😍That is so cool!
+
+Ugggghhhhh. Now I have to get back in to rc stuff again. Awesome stuff here.
+
+Time for a fractal drone!
+
+Amazing idea and video explanation
+
+This is seriously brilliant! Thinking out of the box to the nth degree.
+
+Awesome ! Congratulations !
+
+This seems important.
+
+I think it will change things.
+
+What an interesting video.   Thank you.
+
+Very interesting concept !!
+
+This is definitely the drone of the future.
+
+Imagine precision of bomb dropping with this drone. 
+Spinning will result in stability of ammo.
+
+First time watching your vid and i am glad i clicked. Funny and fascinating. Exactly what I wish for when i want to watch an engineering build especially about aeronautics
+
+Time for a toroidal version of this
+
+SUPER IDEA .POZDRAWIAM .
+
+This is insane. I love it. Here, take my subscription 😊
+
+Now make an even bigger drone with this drone as a propellers!
+
+Glad I found your channel, very cool project!
+
+cool build dude ;)
+
+This man just solved ufo’s
+
+I’ve seen this before in a very old military VTOL concept. However, it didn’t make it past testing because the pilot would’ve needed to look backwards when landing.
+
+8:15  Best Tie-Fighter I've ever seen ! 😍
+
+Your work is just amazing!
+
+So cool. It flies like a dragon-fly. Hope that it could carry some loads.
+
+we're closer now to flying saucer
+
+Great content! Thanks for sharing
+
+Nice info, thanks for sharing :)
+
+now you need to put even smaller propellers on the 3 propellers
+
+Might be interesting to look into mounting a camera on a gimbal to capture some footage from this drone
+
+Make 2 more of these, and now that you have 3, make a new giant one out of them.
+
+Congratulations 👏 you figured out why helicopters work.
+
+this is very cool thank you for making this a video and making ur code open source.
+
+3:33 how that poor drone panics when it thinks they are about to hit the ground jaja, poor thing.
+
+Welcome aboard
+
+you could add sometime on top that doesn't rotate with the entire drone, which, if made on a larger scale could transport humans without making them incredibly dizzy while hovering.
+
+And thats the future ufo we will seen
+
+This is why I love physics, and wish I would've have good math teachers in my lower education to entice me to pursue higher education in physics. I always struggled with math in grades 6-12. It wasn't till my senior year or college that I took an advanced business calculus class, and realized I wasn't terrible at math, I just didn't have very good instructors before this. The guy was a literal rocket scientist who helped develop the space shuttle fuel tanl jettison rockets after the Challenger disaster. I thought I was screwed as soon as I heard he was a rocket scientist, but I ended up excelling in his glass, and, for the first time in my life, understood the theory behind the problems presented to me (as opposed to just memorizing steps). As a result, I aced every test without even needing to use my allowed double-sided note card. I didn't need to memorize steps because he ensured we knew the "WHY"/theory behind our calculations/problems.
+
+So many of these situations don't make sense to me, logically. But when the science is explained to me in a way I can understand, it makes perfect sense!
+
+This new design also has the benefit of less weight compared to the previous design but somehow the wings helps but only when spinning.
+
+Darpa will be calling soon
+
+If "I'll try spinning, that's a cool trick" was a drone
+
+I have had this idea for years now and I kept wondering what happens if the smaller blade is replaced with more smaller blades!
+
+Why did I know this immediately
+
+Every aviation company under the sun:"Give this man a job!!!"
+
+Beautiful
+
+search yt for leviator you will find a 5 meter version of this 
+it hovers at only 60 rpm 
+it is absolutely mesmerizing
+
+Now make a formation of four of these connected to a central unit. Fractal Drone
+
+For a heavy load cargo drone, put those thing as propellers. That can change mode, only active propellers for more speed...unloaded, and with passive propellers for load.
+
+Nice experiment. Next, the counter spin for the cameras or what have you.
+
+Almost like a jet tipped helicopter blade setup
+
+Mind blowing!
+
+This looks very cool. 
+The flying prop drone.
+
+This is how the rotodyne used its jet-tipped powered rotor to liftoff.
+
+You are what this world needs
+
+Now make three of those and use them as the propellers to a bigger spinning drone
+
+You may be able to combine this idea with the toroidal wing shape and get an even further boost to efficiency
+
+Dude this is Super interesting!!! This is my 1st video so I dont know how far you took it yet. I was just watching the no gravity stuff. Im wondering how long you can keep it up, does it need to spin super fast, have 2 motors on each wing, light weight, even solar panels,  it looks like it needs balanced some how.
+
+So glad I am not your neighbour, my dog would go crazy.
+Excellent video. So cool.
+
+Impressive ! Plus one subscription for that!
+
+very neat
+
+That´s great  home-engineering.   Your video reminds me  when i was   younger,  and i  modified an IR  indoor  helicopter  by  making a  whole new blades  with bigger surface and sharper attack edges,  so  the tiny motors energy was used   better,  the Helicopter  was then, able to hover in air  even when  entered in low battery mode, for automatic landing.
+
+I’ll try spinning, that’s a good trick!
+
+Bruh you are underrated
+
+Man, I just love engineers!
+
+Congrats!!
+
+"My drone is a propeller"
+"You mean your drone HAS a propeller?!"
+"No."
+
+Video: 30 seconds in "this is a paradox"
+Me: looks at it "that makes perfect as to why that would work.
+
+So, this is how flying saucers move
+Fascinating
+
+I'll try spinming. That's a good Trick!
+
+Cool as hell!!!
+
+Adding frisby action does make it better.
+
+You're a genius dude!
+
+Great work ‼️ You are definitely onto something.  I'm sure well soon see adaptation by the commercial drone makers. 👍👍👍❤️
+
+I REALLY like this. I would like to see this finalized, perhaps with a stabilized camera, an automatic hover switch and the ability to control it while spinning
+
+This isn't a paradox; its lift...  This is how a propeller plane flies at all...
+
+Literally my thoughts
+
+no u
+
+Hands down for your effort.
+
+5:40 - That would make a great short!  :D
+
+Seeing how this thing took off at horizontal flight made my jaw drop. Amazing! 8:10
+
+Add another level of motors and fins, make it even crazier
+
+Great work!!
+
+This idea is genius
+
+Awesome!
+
+I looks like the wing shape could be optimized so that they together are more propeller like.
+
+Now you just need a way to keep the camera from spinning
+
+Reminds me mechanical advantage, but for aerodynamics "You could rotate the planet if you had a long enough pole" my elementary teacher would say
+
+I realize there's a lot more to account for in aerodynamics, so I wonder just how long you could make the wings before the other factors cause less efficiency
+
+Now make a larger drone with the smaller drones being the props... Then repeat infinitely
+
+Now you just have to figure out the perfect wing and distance to the center for the props. Or even make the props dynamically adjust their distance to the center.
+
+Love this!!!
+
+It looks a lot like a star wars ship at the end of the video
+
+This concept was actually explored over a decade ago with the Air Hogs toy “Switchblade”.    It had basically a much simpler version of this concept but with two rotors during launch.  You locked the toy into “Launch Mode” by twisting the two rotors away from each other, and let it spin itself to altitude, and when you were ready, hitting a button to unlock it from launch mode to fully fly like any plane-esque twin-rotor RC.  Pretty neat to see this concept again in my 20s after seeing it before i even hit 10 :D
+
+really cool =D
+
+Very interesting
+
+AMAZING
+
+Aeronautical Engineer here is impressed.   A much bigger four blade version with flaps would be interesting, with 3 or 4 extra control variables.
+
+That's so fucking cool man.
+
+This concept was also used 15 years ago in the WowWee Bladestar toy.
+
+It's interesting that the solution to propeller lift is a propeller. This might be the optimal way to make a personal flying vehicle, with a gyroscopic central stabilization design. interesting!
+
+The forwad flight @ 8:18 makes me think of death vaders ship....
+
+Hello,  thanks so much for doing this, very interesting to see. I could never actually make this,  but I had almost the exact same idea, where a single central motor would power shafts that would run props that push wings like you have done here, but the wings would not tilt,  just the props. What would be cool is another set of props + wings on top, facing opposite and counter-rotating where lift is generated by both sets. This could allow a cylinder in the center that separated the two to carry a non-spinning payload like a camera. The center hub would allow the wings to spin on bearings while remaining mostly stationary. Very nice project! really cool. .
+
+The physics are quite clear, no doubt about it !  However, the systematic scientific investigation and explanation together with the very well crafted parts is great.  Thumbs up !
+
+Man made a inside out helicopter
+
+Could you design your next one to have the center stay stationary while everything around it spins?
+
+Spinning is always a good trick.
+
+Nice Nice Jobs
+Thanks for sharing
+
+8:16 wow, that reminds me of starwars when it flew sideways like that
+
+Good stuff, try adding toroidal propellers and see how that increases efficiency
+
+Brilliant!
+
+Great idea, excited to see what you do with part 2 :)
+
+An Incident Commander on a structure fire could deploy these to bird-dog hydrant locations and water sources for arriving engines.
+
+Awesome!
+
+About 60 years ago Hughs Aircraft built a helicopter with ramjet engines on the tips of the rotor.
+
+Absolutely ingenious!
+
+wow one of the coolest channels on youtube!
+
+Cool I want to make one with the center hub static
+
+Excellent!
+
+I am awed
+
+Forward flight testing is underway for part 2, then maybe a part 3 with directional control while spinning
+
+I found one of the coolest commenters
+
+Pretty cool! You're a great propeller of humankind!
+
+there's a reason why planes are more wing than propellor, and this is the drone version of that
+
+Very cool and makes complete sense. You get exponentially more lift per square inch of propeller/wing. I also like the comment that suggested having the smaller propellers on the back of the wings pushing them forward rather than pulling them forward as that would reduce drag and make it even more efficient. I imagine something like this might be utilized for package delivery where in the main drone is above the package holding section attached via cable and the main drone does this spinning drone effect to minimize power usage while the package holding section is lowered to the ground. It's also good for surveillance drones that just need to hover in place for extended periods of time.
+
+Brilliant!!
+
+Forget this gimmicky toroidal propellor business. This is so bloody clever.
+
+Very cool 👍
+At 8:13 it looks like the Imperial Shuttle
+Cheers
+
+I really love the corkscrew effect, is it worth taking notes from helicopters and their autorotation to allow for motorless "smooth" landings, akin to a sycamore seed spiralling down
+
+"I used the propellors to propel the propellors"
+
+Great idea and a correct observation that large, low speed props are more efficient than high speed small props. You can see the practical application of this if you look at human power air vehicles. They have huge props that turn very slowly. Planes that need efficiency, like solar powered planes use this trick too. 
+
+Very innovative approach and fun to watch your progress. Keep up the good work.
+
+you HAVE to make it fractaly
+
+Now take three of these drones and use them as props for another bigger drone
+
+this reminds me of the German propeller jet I use to read about.
+
+This is how flying saucers started
+
+omg the perfect survelenic drone
+
+alright, now take this concept, and make a spinning, spinning drone, with even higher efficiency.
+
+This is absolutely a glimpse into the inevitable future of drones. That 3x power reduction is massive. Which also offers the possibility and flexibility of a significant speed increase for a similar, or less, energy cost if you can manage to achieve directional control during spinning horizontal flight. A flying propeller. Honestly a little terrifying to think of a world of flying helicopter blades. But this efficiency gain is simply too massive to not try to take advantage of.
+
+This design also makes me think a "UFO" drone, actually kept aloft by it's spinning, could be possible. A cylinder of blades like a turbine, spun by 3/4 propellers on the outside. That's more of an art project but would be very cool.
+
+You guys are so cool
+
+The entire momentum vs. energy thing is why modern aircraft have these giant high bypass ratio turbofans.
+
+Now stick three of these together with bigger airfoils
+
+You're combining gyroscopic inertial propulsion AND lift from the wings!
+
+I see what you did there, big fan of your comment
+
+This is great idea.  Very interesting.  Have you thought about using duck fan?
+
+You should make three of those and use then as Props for an even larger spinning tricopter!
+
+This is the coolest
+
+Nice sir I like your video you are making a good drone
+
+make the whole thing smaller and use three of them to make a new drone that does not rotate.
+
+Further, look into the concept of the exhaust jet powered blades of gyro copters. Similar idea. There even was an airliner style gyro copter concept around like that, which proofed too noisy for urban applications and hence never came into service.
+
+i want to see how the small props effect the vortex at the tip of the wing, especially if they were moved to the tip.
+
+the thing flying forward just made me think of starwars emerial shuttle
+
+That's probably how flying saucers work!!
+
+Wou yes gods kreatip sir!
+
+No patadox ,fibonacci math. Great work.
+
+I'd say it's less chaotic lift. You could probably optimize the shape of the added airfoils to make it even more efficient.
+
+He just described how lift works basically. He just put it together weird.
+
+Sweet!
+
+Very interesting concept.
+Helicopters have a very nifty mechanism for steering where the variable pitch is applied more at one side of the cockpit compared to the other. A camera payload could counter rotate through a small motor and a digital system perhaps.
+
+Imagine if the wings that you applied to this craft  Were like a biplane they would not have to be the entire length, but they would increase the surface and possibly cause a better efficiency at low RPM justified and you’re just a guy smart enough to figure it out. Thanks for the video.
+
+This is how a helicopter with rotor tip-mounted jet engines runs so efficiently.
+
+the problem is that most of the time you need to fly somewhere, not stay at the same point and the weight if the wings will negatively affect the flying efficiency. however , if you need a drone which takes a position and stays there for as much time as possible, it could be a good solution
+
+reminds me of some of Jacque Fresco's designs
+
+Now take three of these and put them on even bigger rotors
+
+Very cool - great potential - try those toroidal props we see on some super quiet, super efficient drones. Now, how to give it directionality....
+
+Not it the whole vehicle could be tilted while in spinny mode, the whole thing would just become a plane prop with no fuselage
+
+You should try adding micro props at the tips of the small ones. And then nano ones at the tips of the micro ones... And voilà a fractal drone is born.
+
+Awesome. Hardly a paradox though.
+
+Brilliant
+
+You should try to have a central turbine and have outflow from the tips of the wings
+
+Love this idea!❤
+Initial thought: what would happen if you hung a small gyroscope via swivel with a shifting weight below for steering?  I realize this may be too complex & may not be viable, though I hope it may act as a catalyst for further ideas.
+
+Make an prediction algorithm so drone doesn't react but predicts situation and reacts before situation change so when it stopped spinning it would predict the decrease in thrust and adjust accordingly
+
+Awesome.
+
+Now add tiny fins at the end of the little fins.
+
+Great video, seems like you missed the most obvious point which is bigger wings = more lift = more efficiency
+
+Brilliant
+
+If you have the exact same setup, but have the large propeller fixed to a rail and then have another outer rail that the inner rail runs on. You could perhaps have a sensor that relays the speed of the propeller through to a controller that controls a motor that rotates the outer unit in the opposite direction. You could then mount 3 very small motors to the Outer Unit to control the direction. If three thin arms protrude downward from the outer rail, you can even mount the camera.
+
+The concept that anything that goes in a straight line can also go in a circle. You’ve glued three C-130 wings together and spun them around. With independent control of the angles of the wings rather than a shared axis, you could program x/y axis directional control of the unit as it flies, similar to a helicopter’s pitching rotors.
+
+Now make a version with a top half that corrects for spin
+
+you could make a "yo dawg" drone with 3 of these on a larger frame.
+
+What a weird lawnmower
+
+Looks like a T-16 Skyhopper to me.
+
+Quick answer:
+Because the rotor surfaces on the drone body are larger than those tiny little standard drone rotors.
+
+This looks like a very interesting design. If it's so much more efficient then you should be able to set a new drone endurance hover record.
+
+@8:17 star wars Imperial Shuttle designed drone, didnt see that coming lol
+
+8:17 looks like the T-4a-Shuttle from StarWars
+
+Seems like this could be implemented in transporting goods when untouched work out the controls.
+
+Very very cool! I wonder what would happen if you introduced control surfaces to the larger airfoils. Basically having two foils on the bottom and using the third as a rudder. I wonder if the power requirement for horizontal flight would decrease, assuming the COM and COL could be balanced. Using this to increase range in horizontal flight
+
+1903: first airplane produced
+
+1940: first flying wing produced
+
+2022: first flying propeller produced
+
+Wow!
+
+Certainly counterintuitive in a lot of ways. Surface area you would assume creates drag. But it also creates the vertices that keep it afloat. The kind of thing you can only create, to see what it does, because mentally you can go in circles.
+
+Tuning a drone with 5” props in your living room is… brave
+
+That's not a drone! That's a self-propelled propeller!
+
+LOL the prop said. "peace." 5:42
+
+Nice, nice.
+
+
+
+
+Now give it blades on the wings
+
+What if you put propellers on those propellers
+
+So… question is could tiny solar panels be made into those wings?
+
+awesome
+
+Put the LiDAR on bearings to keep it still.
+
+Isn't this the first step into making flying saucers?
+
+3:28 you scared him to death 😆
+
+This is somewhat close to how a UFO would fly
+
+I've had this in my head for 40 years still haven't quit got the skills to reinvent aircraft control to make it work. Looking forward to your approach. My imaginary version used one wing and one motor counterweighted by the battery. Also a strip scanning camera in conjunction with a post processor that reconstructs a conventional view. All this is all way more achievable now than 40 years ago but remains above my skill level. Not sure why you thought it was counter intuitive though.
+
+You need to do part 2 of the sky crane and solve the issues identified
+
+I have a name for you, dark nimbus.
+
+This design is so elegant, it's like a hybrid between a fixed wing VTOL plane and an autogyro. It would be awesome to incorporate an autorotation capability in it
+
+I was thinking about a possible solar version with bigger wings and seeing if we could get 100% solar powered vertical flight
+
+here ya go: https://www.youtube.com/watch?v=XmYRQi48s-8
+
+Thanks! I’ve tried auto rotation off camera and it works well! Just kinda plops in the grass after descending
+
+ @NicholasRehm  Beautiful, I was hoping it could do that since I ate the other videos and seen that it can stay airborne with a single motor. Again, incredible development
+
+Bet you could program it to autorotate in the event of motor failure, and thus lessen damage from crashes
+
+if you gave something like this a body, it would start looking like a ufo
+
+Hmm, i imagine this works underwater too
+
+Reminds me of those flying blade copters the aliens use in Chicken Little, if anyone remembers that flop lmao
+
+Reminds me of that german experimental plane from ww2. Think it was a focke-wulf VTOL.
+
+5:43 That right there should give you a clue to a super efficient hovering device. PS they sell them at the Dollar Store.
+
+I'd like to see some exploration into better airfoil profiles to try and generate more lift
+
+If you tilt to 45° you have √2/2 of the upwards force, not half
+
+I'll be honest, I still don't quite understand it, but it finally addresses the question that bugged me for years - how could planes with thrust to weight below one even fly!
+
+So Focke Wulf’s „Triebflügel“ wasn‘t that stupid a concept at all?
+
+Very cool , guess the camera should freewheel , or counter spin with a prop to assist ( double duty)
+
+I wanna see @Scrapman make something like this.
+
+Not a paradox, just physics.
+
+Multiple LIDAR sensors might help with bumpy terrain and moving objects. The use of a GPS altimeter and three-axis compass may help as well.
+
+Makes sense, you basically just increase the size of your blade with the arm blades so you're pushing more air. It's why bigger fans are more efficient.
+
+Try to move the props inward and see if the outside will spin faster
+
+I'm now waiting to see this with a bomb attached, maybe some other sensors. Like floating mines or for assassinations
+
+Now you know how ufo's work
+
+Sci fi will never be the same again.
+
+The us army will be calling you shortly. Good job mate thats really cool.
+
+You just build a drone-Helicopter haha
+
+great!!!!!!!!!!! but it cannot long lasting in this way
+
+To be useful, this would require a way to carry a payload that doesn't spin. Perhaps you could arrange your device similarly to helicopter blades spinning above a stationary cabin. Your explanation of the effect you found is very interesting in itself.
+
+This is how Ufo works
+
+Brilliant idea, well researched. Subscribed.
+One thought: could you use a thin ring bearing to isolate the core from the wings? It would require separate batteries and controllers on each arm, and a comms link to control them from the core, but this would allow you to put a conventional camera on it for FPV and in theory at least, it would scale and be possible for a human passenger VTOL craft. Just an idea…
+
+"Kinda like an airplane" is what broke me cuz YOU MADE AN AIRPLANE THAT CAN ONLY DO CIRCLES. That's the exact take away I got frome this
+
+what if you also turn the propellers into tiny drones that spin
+
+Three small propellers drag a big one
+
+"And this is your friendly reminder to tighten your props."
+ 😆😆😆😆😆
+
+8:17 It just casually acts like a Y wing in star wars. I bet some green screen work could make this look like it is in star wars.
+
+So that Hydra's wingtip-rocket-mounted propeller plane design from Captain America: the first Avenger actually served a purpose :))
+
+I wonder if this concept could be applied to actual prop aircraft
+
+1. The wing load or pressure is crucial for effectiveness. 2. A propeller in air doesn't just work according to the recoil principle like it does in water.
+
+This will be the dude that makes the first UFO
+
+That will be excellent iteration how rotodyne work. In the original they use micro jets for the initial lift. This much more convenient approch.
+
+So it's  basically a helicopter with "external motors"
+
+hear me out...this design combines 3 small propellers to drive a spinning drone. what if we took 3 of these drones and combined them to act as the propellers of an even larger spinning drone, making a spinning drone propeller fractal?
+
+Bro, just cut your grass with the prop! Ha ha. This is a really cool idea though. I'm here randomly, but now you got my interest.
+
+Now add even smaller propellers to the small propellers 😂
+
+Oh, what an idea, to make a single big rotor, congratulations, you have invented the helicoplter...
+
+I like where this is going.
+
+A gyroscope can help you with directional control (problem is weight though...) but you can build a gyro with a satelite design to create momentum with a lower weight.
+
+I'd love to see an efficiency tests on corkscrew propeller designs, might be more, maybe quieter, please test this as well as you can.
+
+So now he kind of have the propeller of a helicopter spinning and flying without the rest.
+
+Really cool drone , hard to attach a functional camera
+
+what would happen if you kept it rotating when you switched to forward motion?  would it decrease energy to produce flight?
+
+If you put the central hub on ball bearings and/or gyroscope you could keep it stationary while the rest rotates... Could be good for filming and/or if making a huge passenger-ridable version
+
+It's like an autogyro of sorts
+
+Very noice
+
+Tht was geat , I subscribed!! Can you compare the EDF and Open wing aircrafts the same way in coming videos?
+
+Dude! I kept asking my drone buddies why they didn't do this.  I immediately thought of angular momentum tricks and all sorts of stuff you could try :)
+
+Fins On Fins 🤯
+
+It's not rocket science.  The propellers have more inertia.
+
+Amos Root who published the first account of the Wright Bros. successful flight (in a beekeeping magazine I kid you not) remarked that the thrust of the Flyer's little engine was far less than the Flyer's gross weight. This is still true for most airplanes, since for a well-designed wing in level flight,  (Lift = Weight) > (Drag = Thrust). So what you observed makes sense, but it is still a VERY cool application of that result.
+
+For forward travel you could configure 2 of the wings to act AS wings with the third being neutral or act as a kind of rudder. It has a lot of dihedral and the props might blow away wing tip vortices because of their location. \ /
+
+Awesome. Now add the new helix prop and see what that does.
+
+Now that you made a tricopter into a big propeller, I guess the next step is to make that big propeller one of three for a massive tricopter! Tricopterception!
+
+At the end it looks like a Tai fighter from star wars. Sounds like it too haha
+
+Tried this in Kerbal Space Program 2.
+
+It ended with explosions.
+
+In airplane mode it reminds me of a Star Wars landing craft
+
+👏🏽👏🏽👏🏽 awesome
+
+My buddy Austin did that: https://www.youtube.com/watch?v=VEFv6gs67zA Basically, incredibly less efficient that a regular low solidity rotor. So much so that in some conditions, the screw actually creates negative thrust from what you'd expect from the rotation direction.
+
+Thanks, Cap
+
+I can't begin to tell you how many experimental aircraft have been built with similar designs
+
+Very very very cool idea, bro. So simple and so effective. Not sure if this is a reference english speakers use, but I'll say you put he egg standing. I expect great development of the concept you have proven there
+
+This is the initial idea of the UFO
+
+Hi Nicholas,
+Airplane wings in normal level flight have a natural vortex at the tips where the difference in air pressure between the upper and lower surfaces generates the tip vortex through loss of underside pressure. That's why some airplanes have the folded up tip design, to try to cut the losses. Could you not use your engine rotation in the other direction to reverse the tip vortex losses and use the circular prop-wash to actually help charge each airfoil underside with higher pressure? 
+Rather than moving your engine mountings to the tip of the airfoils,  just shorten your current airfoils to bring the tips to the engines, and then you could test the power efficiency. If you don't get any less lift for the same power with shorter wings then this should prove to be the efficiency savings at the tips votexes.
+Most interesting videos, and some wonderful pieces of flying kit. Can't wait for the next installment on this one.
+All the best :)
+
+I'd love to see a stabilized center for a makeshift pilot see if it'd be plausible for a full sized version without being rotated to death
+
+The extra weight negates everything
+
+That would be something that could be used to transport "heavy" stuff, wouldn't it?
+
+Attach a string to the drone, which itself attaches to the payload. Lift off in "quad" mode until string is extended, switch to uni-rotor mode for lifting off the heavy payload.
+
+I am not sure about practicality but I guess this could be used for applications where you don't have much space but you still want to carry weight (i.e. firefighting, where you might want to carry extinguishing stuff to inaccessible regions of a building with people inside, to slow burning until rescue gets there). Idk, it's 2:30 am and I am watching this instead of sleeping. I'll regret it at work and I will definitely do it again.
+
+SkyNet about to be terrifying
+
+Very cool! The next step seems pretty clear to me. Use a quad wing design, when you go to forward flight mode you move the arms together (thinking X wing fighters from Star Wars) to make it a 2 wing design. That way you get the best of both worlds. There's almost 4K comments here, did someone else say that?
+
+Perhaps stability could be achieved by studying the way rocket missiles are controlled.  The fins impart a spin to the rocket by deflecting the airflow slightly.  But the rocket is steered to the target by those same fins, which correct the trajectory based on their position in the rotation of the rocket.
+
+8:17 to 8:23 looks just like a Star Wars imperial shuttle departing
+
+This one brake all the drone DIY design.
+
+Cool
+
+While it’s spinning, can you implement directional control through maybe 4 propellers on a base platform that doesn’t spin with the main platform, maybe it has a bearing and its own motors to counteract the force of your current platform. Then you can independently control the 4 propellers as it spins
+
+you should do it with 4 wing and propellers❗
+
+5:10 i thought that about 6 seconds before you said something
+
+Ah yes, the portable wireless ceiling fan
+
+Don't put you hand under the lidar 🤣 
+
+Drone: eek why is your hand down there!
+
+Here come the Manhacks!!
+
+Dope
+
+I don’t think I ever claimed that this was a first, or did I..?
+
+ @NicholasRehm  Oh, I'm sorry! It wasn't my intent to say that. I was just reminiscing all of the designs I have studied over the years. No, your experments are fascinating!
+
+ @NicholasRehm  I remember the adds in the backs of magazines when I was a kid for plans and kits to make your own helicopter with pulse jet engines at the ends of the blades that spun them up. Frankly, strapping bottle rockets to my pants sounded safer 😆
+
+ @NicholasRehm  I've also known some pretty interesting characters over the years, some who set world altitude and distance records for types of aircraft most people have never heard of. So when I say I found this fascinating, I meant it.
+
+And it occurred to me that you should try use a mechanic balancing load under the drone to steer it while it's spinning
+
+Like a gyroscopic stable seat on top in a bubble that rotates at the same speed in the opposite direction as the quadcopter
+
+Maybe your little propellers need more propellers.
+
+Sounds like a ufo to me
+
+could be intresting move the rotors and the wings indipendently to see the changes. trying different angles of propellers and wings to find the best combination
+
+There are wind generators in which small propellers with electric generators are located at the ends of the blades and power is removed from these small propellers and not from the main shaft.
+
+Make it fly like the things from the old Star Wars with 3 long wings, one pointing straight up!
+
+now add mini rotors to the mini rotors
+
+I like it..
+
+You should make the center stationary with a bearing and gyro or something. Then you can connect a camera to it and not have it spin.
+
+I would check how much power is required to hover with the weight included vs removed.
+
+"flying abominations", a great way to annoy the wife.😆
+
+30 Second Cleaner from Lowes... Spray it on that white fence, and then hose it off to get it white again... 🙂 (and cool props!)
+
+The way I would explain why angling the propellers doesn't require extra rpm to stay in the air:  Now you also have air wings that is producing lift. Would love to know how you feel about this.
+
+IT  is apparent you have greater lift with the addition of  Wings . The  Wings could be weighted to provide lift as speed increases. Lift  is directly related to air speed over each surface. WING IN GROUND EFFECT  is the most efficient as the craft gets larger, especially a reverse wing.
+
+oh man imagine using this with the new Raspberry pi global shutter camera, and taking an image once at the exact same point in the rotation of the drone. That would probably be the worst, coolest fpv drone.
+
+That's an incredible increase in efficiency! Any onboard camera will of course  be spinning , but it should be easy to cause the camera to 'snap' in sync with rotation so you have a steady movie  of any chosen direction . the frames per second will be speed of rotation.
+
+I know it was a joke but if you attached a length of line trimmer cord to the end of each wing and came at it from the side rather than from above it would make a nifty grass trimming robot.
+
+Very cool idea. Could you attach two contra-rotating versions if this to a frame which would stay fixed to allow for a payload to be carried?
+
+All flying saucers are flying on this principle of spinning. It's rotation is around it's axis. And propellers are lifting up and down
+
+looks like a starwars battlestarship at the end :D
+
+I wonder if same/better/worse if there was an outer ring for the props and motors that could mechanically drive an inner ring which houses the wings. That way wings spin but props don't. There would be thrust needed to hold the rings from counter rotating, but no drag from the props and motors since they would no longer be spinning
+
+Thats inmediatly what I thought, those wings are producing extra lift which decreases the energh consumption required to hover the drone
+
+360 cam would work spinning
+
+Check out my second video on this design!
+
+This is really awesome and has got me wondering if efficiency would improve if using smaller propellers to spin the motorized propellers? I am having a hard time figuring out how to explain it but instead of using motorized propellers to spin the main arms, you could use 3 smaller motors (for each arm) to spin a second set of propeller arms. Propeller on propeller on propellor. 
+
+Super curious if that could work. It would be a total of 9 even smaller motorized to spin the arms which would then spin the aim arms. This would be awesome to see. Thanks for the video man!
+
+This is so freaky i LOVE IT just some thoughts on the design. what if your tricopter is combined with something like a fidget spinner where the middle part does not spin but only the sides so we can still have a visual while flying up?
+
+8:20 Galactic Empire like it ;D
+
+if you add a differential attack angle control between the small propellers axis vertical angle and the wing attack angle it would be even more energy efficient and more controlable, excellent project anyway 👍👍👍
+
+As very impressed as I am, in times of War, you seem to have no difficulty in sharing your findings with both rivals and more importantly adversaries.
+ Finding game changing insight into aerodynamics is of itself an incredible achievement. Reducing flight costs equal to heavier payloads etc.
+Yet please maybe respect the details for what they truly are.
+I wish you every success in your future and have a feeling that this will be my last chance to do so. So thank you :hand-purple-blue-peace:your having fun, yet you are also changing
+our world every time you pick up your pen. :yougotthis::goodvibes:
+
+9 минут объяснять, что самолет эффективнее вертолета - это талант!
+
+You can actually mount the three motors on a ring encased tri propeller. So the outer ring is stationary. Then you can have directional control from the stationary outer right. You’ll just need to counter rotate the ring to propeller.  The three props on the inner propeller can still rotate.  There is probably a ratio you can calculate for all rotations at each angle.
+
+Basically you made a plane that spins
+
+That's a cool helicopter! lol
+
+I don't understand how this is a paradox, I'm no scientologist, but it seems as though the lift from driving the "wings" is much better than just the motors with small rotors themselves, which given the surface area of the wings kinda makes sense to me.
+
+So if I wanted to freak out a 1950s-esque alien pilot with a ufo that can pull off "impossible" movement and crazy maneuvers, I should use a large scale version of this drone.
+
+Isn't this basically a big propeller being powered by 3 smaller ones?
+
+So in the end it is almost working like the blades of a helicopter..
+
+at 3:33, Is when he knew, He F'd up!
+
+Отлично, чувак 😄👍
+Попробуй уменьшить ширину профиля, а ось внутри крыла сдвинуть максимально к передней поверхности обтекания (где утолщение). Чтобы при повороте осей он носом за воздух не "цеплялся".
+
+Wow
+
+I love it, now you just need a magnetic gimbal in the middle to put the passengers.  This thing has good mobility and if it can use less energy then its fuel cell will last longer.  Doesn't sound too noisy either.  At human scale it would be pretty disruptive.
+
+now you need to somehow fix a camera to it thats shutter speed is directly matched to the rotational speed, to take fast frame stills and compile them into a live video feedback. that way the camera is always pointed in 1 direction when taking stills. no clue how to make a camera that can take photos that fast without distortion or blur, but im sure its probably possible
+
+You're so close to inventing the helicopter.
+
+It seems that this would increase payload substantially? A swivel attachment might be in order.
+
+There was nothing "discovered" here that aerodynamicists have not known for 100+ years. I have been building and sharing my toy aircraft to educate others on these basic principles for 15+ years.
+
+I understand @NicholasRehm 
+
+Subbed
+
+Damn 08:20 it flys like imperial tiefighter
+
+propellers on a propeller
+
+Its look like a starwar spaceship 🚀🚀
+
+Fantastic presentation! ...so, further to that, there is possibility of increasing the overall efficiency even more by having wings profiled for a single direction of rotation, right? Obviously at the price of no longer being able to spin in either direction at will, but perhaps increasing the speed in the direction of tilt? I'm looking forward to your further tests. Great vid! Thank you for sharing!
+
+U are a genius 😮
+
+At 45 degrees, vertical component (lift) is .707, sin(45)=.707, horizontal component (thrust) is also .707, cos(45)=.707
+
+Wow, very good plane. I would love to make one. But I have no skill. Anyways, you did really good today.
+
+So its a helicoptor with thrust for the propellors at end of blades instead of 1 at the centre of them all. Surely this just means there are more important components exposed. It looks really cool though
+
+Da Vinci would cry
+
+Only works that well because the props are tiny.
+
+this drone just went full circle back to helicopter lmfao
+
+I would just add weight under it till fullpower was just a hover, then add the wings and see if it lifts
+
+because bees fly like this
+
+1945, under Berlin, they also had rockets at end of rotating wings of VTOL...
+
+Its effectively making a propellor
+
+If you had a center mounted payload hanging, you could control direction while in spin my adjusting payload angle which would not be spinning.  :)
+
+Cool, now make it a lawnmower
+
+Wonder how much efficiency could be gained if any using this type of a design vs a standard hilocopter.
+
+To me, taking the simple excample only made it harder for me, because I pretty much already understood it. If you have a good grasp about lift, you already to a exstent know what's going on
+
+Sharpen the wings and you'll have an interesting lawn mower.
+
+Before even watching the video completely I assume its because in the winged version you are imparting equal momentum to air, but to a larger mass of air so the kinetic energy imparted to the air is lesser. Inface you could probably spin the large propeller by a single central motor and retain the efficiency without needing 3 motors mounted on the tips. I assume that changing the spin direction of the propeller with respect to the wingtip vortex might  help.
+
+are discovering the celestial technology of the wheel within another wheel
+
+Would you dare to go another layer up? As using these drones as the three turbines you have for an even bigger drone with a similar design
+
+Propeller for the propellers
+
+put on separate servos for each of the wings, once you climb out fly it like a x wing :D
+
+It isn't necessarily more efficient to have a larger propeller I don't think; I reckon that effect you mentioned of a drop in efficiency at high airspeed will kick in a lot faster for a bigger prop. What is interesting about this design is that you keep both options open. It would be interesting to see if in high speed horizontal flight you got better performance in the 'normal' tricopter regime, or perhaps even operating at an extreme angle of tilt effectively using those blades as fixed wings. It might be quite a useful configuration if it allows fast efficient flight from point to point as well as a very efficient hover by switching flight modes like that.
+
+The next step is to put lightweight solar panels on the wings, and keep increasing efficiency until it can power itself for an infinite hover.
+
+0:34 cos(45) = 0.7071
+
+pretty sure this is the alpha build of a flying saucer, all you need to do is scale it up a ton, build a cockpit inside that spins in the opposite direction, there u go
+
+8:16
+Emperor Palpatine flying away lol
+
+First thing that occured to me is that you need a 360' camera with software to stabilize the view based on the RPM speed of the drone. That would give the efficiency of the wings and a usable FPV view. I wonder if you could also mount an alerion on each wing to deflect at specific points of the rotation to vary the lift and give you an effective cyclic control. 
+With those 2 features combined you'd have a VERY cool drone.
+
+"Simple PID controller" easy to say. But for some reason, whenever I touch PID myself I end up creating a drunk robot!
+
+This is a so interesting video, but what control law are you using?
+
+Put three of those on another larger one. Then three of those on another. Eventually, I speculate you may generate power.
+
+8:40 my man skipped pythagorean class in primary school
+
+Holy moley What a demon of swirling death
+
+Maybe you could use that knowledge to rig up a lawn mower drone?
+
+If you have two identical fidget spinners on top of each other and spin one counter clockwise and the clockwise and rotate them it will cancel out angular momentum.
+
+Have you thought of a single craft with two of these spinning on either side (chinook style), or more.
+
+I agree
+
+8:10 and 8:20, that literally reminds me of a certain spacecraft in Star Wars with a similar shape when the drone is in a sideways angle....
+Specifically the Imperial Shuttle
+
+Nice science
+
+if you throw on a gyroscope sensor IMU with a high polling rate you could calculate your orientation and control tilt by delivering more power to the propeller that is opposite of the direction you want to go and a constraint to limit max tilt angle.
+
+3X less power! Im impressed!
+
+what if you could independently control the arms, you could have "plane mode" where 2 blades are in opposite directions, and the "rear" one is straight up and the propellor acts as a tail.
+
+Now I understand why UFO spins.
+
+Add a 4th arm\wing and you'd have a X wing... sorta... could help stability and increase lift in hover mode.
+
+a propellor propelled propellor!!! 
+a propropelledor A TRI-PRO-PROPELLED-OR !!!
+now make it propel a flying wing!
+
+This why real helicoper using the single big propeller instead of the 4 small one. 😅
+
+this should become the new way of making commercial planes. It would be so much more efficient. They would only need to make place for passengers to sit in the wings et voilà!!
+
+What an amazing concept , and apparent proof of concept too.  Surely this could be upscaled simply. Throw in nano tech for the lightness of the wings . From an inquiring mind. And pretty easily explained also. Good luck.
+
+seems like you built an over-engineered helicopter
+
+Given that the torque created by the motors would get greater and greater as the wings got longer, would a super super huge one be like, crazy efficient?
+
+Wait, no. Uh my brain hurts
+
+3:32 had me laughing 
+The poor thing just seemed to get scared ****less, jump out of it's skin, then just fall over
+
+Forward momentum + surface area
+
+They're basically tip jets. Which makes this a helicopter with badly distributed load and no steering.
+
+The wings are afforded torque by the props being at the end.
+There’s got to be a sweet spot of arm length
+
+What if every one of those small propellers could move along the wing's edge, towards central hub and back away from it.
+
+When a drone marries a helicopter
+
+When rotors are tilted 45 degrees, you get 0.71 not half of rotors thrust, upward
+
+You’ll love the next video on this design!
+
+Check out the third video on this design, did exactly that!
+
+It was upscaled decades ago. Lots of helicopters in the 50s and 60s used this concept.
+
+ @megatesla   to overcome the effects of torque, I believe.
+
+Sadly, they were abandoned due to the complexities of those systems.
+
+Cool, you said that in more sciencey language around 7:40 😂
+
+Could you try a controlled fall with the propellers pitched down increased the rpm and used the rotational inertia to slow it down in the last second, is that possible. It would make for a cool concept parachute
+
+What if the wing assembly was on a bearing around the body of a missile like drone body.
+
+Great idea! Could you do the same with toroidal props?
+
+Add tiny properties to the ends of all the smaller propellers and then even tinier propellers to the ends of those. Keep going for infinite energy.
+
+Just an idea, add a good processing power 360 camera and you have a steady video instead of a spinning one.
+
+can u add gimbal  camera at the center of the drone...🤔
+
+Now the next step make the man hack from halflife 2
+
+That looks great. Is it possible to make the drone fly like a star wars shuttle. If that works, then also turn 180 degrees in the air?
+
+Next project: make even smaller propeller/motor to attatch on the wings of the smaller propellers, and then to mount the main one on one big enough to fly a plane and travel not only for free, but charge batteries because at this point you are making energy!
+
+Yes, clear. Good demonstration. The larger the area the bigger the lift. This is pure physics. In the end you might have big model airplanes. I made about 100 different 1 propeller, remote controlled flying disks with counterforce mechanism, what has even more than 300% efficiency. I have to admit, that aerodynamic stabilization was really challenging. My disk like flier is only 10cm diameter,  2cm thick 10 gram and costs 5 Euro. Of course I am a good engineer, not proud, but good 😋🥰. Thanks for this nice video.
+
+3:33 Drone gets jumpscared
+
+Could you put 3 of these together and make a big one?
+
+Hi, hope you having a good day! thanks for uploading this content, its really inspiring! and I do apologize for my english btw, I hope your eyes don't bleed  while you're reading this... I was checking on the new kind of toroidal propeller design and I couldn't stop thinking on this video. So, by my understanding, you are using the little blades to create momentum on the larger blades and therefore you generate more draft due the increased area and mass in the bigger blades,  making the whole lifting energetically cheaper. Here comes my question: Based on that, is there a way to "grab" more air in front of you? applying the same logic you used to move bigger blades,  idk if it's possible to create like an "induction fan" using the toridal desing to do so.
+
+"Counter intuitive" is possibly too harsh word :-)
+
+i'll subscribe now before you go missing 😂😂
+
+dunno man but I imagine this with knives fitted at the end of the arms would be very funny
+
+now use those fancy silent propelers that look like ♾️ :(i forgot the name of):
+
+and also copy the tilting mechanism of helicopters
+
+What about adds extra tilt control to the small propeller and eliminate the upward component in spin mode ?
+
+Not really a surprise to me -- the Osprey rotates its engines to use wing lift since it's more efficient.
+
+longer narrower wings with one wing able to flip back(while transitioning to level flight relative to the other two wings) and the now stabilizer tail/ wing blade can flip its motor back to act as a pusher propeller ....simple!
+
+I wonder if solar panels on the wing could make it fully autonomous 😅
+
+What’s the limit of the concept? What if the propellers on the wings had each 3 propellers on top of them to spin them? 
+Basically square the concept to a total of 12 propellers + the wings
+
+And it also gives rotation to a released granate for better accuracy! I bet military will eventually use your idea to improve killing.
+
+It seems to me that there was an experimental helicopter with little jets on the blade tips...
+Isn't this about the same thing?
+
+I was wondering how would it fly foreward, then I remembered that one spaceship from starwars that I don't remember the name of😅
+
+Maybe you could just do a more conventional quad design with fixed angled rotors, and then build the body as a toroidal or conventional prop with a fixed pitch instead. Use all four rotors to get into the air, and then shut down two of the rotors so that it starts to spin. It'd be mechanically much simpler.
+
+Hi Nicholas Rehm, you invented an UFO
+
+A propeller propelled by propellers
+
+Helicopter propellers are probably different from airplane propellers for a reason.  Same goes for the V-22 Osprey.  Maybe these drones should be using larger propellers at a slower rotational speed.
+
+Tilt the carrying Big propeller blades, in order to much quicker engage lift when spinning.
+Also make a bigger one with small jet engines instead of propellers, with wide lightweight blades on the carrying Big propeller.
+Don't forget about Gyro stabilization.
+
+imagine using the new MIT fan blade for this design. UFO sightings lol
+
+today i learned that a helicopter blade is a "paradox", for SCIENCE!
+
+And now imagine, that the 3 big propellers are one thin disk, and add 15-20 more disks on the same axis, very closely spaced, as to create a boundary layer when the air flows between them. Enclose that rotating discs structure between 2 plate-shaped-surfaces and you will have quite interesting fluid dynamics passing in that structure, of course requiring air-sucking intake and air-pushing outtake. Such a flying machine was the Brainchild of Tesla.
+
+Ha logrado volar un ventilador de techo....!!
+
+Would a electric modern version of Hiller's flying platform be a smart idea?
+
+How about adding a counter spinning center with camera…
+
+Now you can cut the grass with your copter.
+
+What about the power for trying to maintain stability? If you want a good shot of something, you'd probably want to stay a bit more still while spinning like that. Not sure how hard that'd be
+
+I’ve learnt more engineering on YouTube then uni did
+
+0:38 While yes half of the total thrust is now sideways the upwards thrust is actually at 1/sqrt(2) of the initial so still over 70%. You would need to go as low as 30 degrees to have only half of the thrust compared to an upright rotor. 
+
+So at 45 degrees you wouldn‘t need double the power to keep the drone airborne but only ~1.4 times the power.
+
+Imagine having a drone consisting of three of these.
+
+Would it be even more efficient with that setup plus two more spinning around making an even larger/complex unit.
+
+Cool! now make it fractal 😈 it's actually a drone propeller
+
+What more efficient, a plane or helicopter. Same concept.
+
+What if you used bigger propellers? I’m guessing it would reduce the efficiency gains from spinning it. Would be nice to have the data on it :)
+
+You build a propeller from propellers.
+
+You'll note the power isnt double.  This is because of pythagoras.  If you tilt the motor 45 degrees, you drop thrust to 71% (1/sqrt(2)) not 50%, and to equalize you need to multiply thrust by sqrt(2), which is approx 1.4.  So 80W x 1.4 = 112W, which is a lot closer to what you're actually seeing (rather than 160W which is way off).  Very cool though!
+
+Now im wondering how it would look like if the drone was a couple meters in diameter with similar engines.
+
+Build 3 like this one and make a big tricopter, hahaha
+
+The wings are mounted wrong. The big part must be at the outside. And you can use a very effectiv glider profile. And maybe you can use only 2 wings :)
+
+Boss level 10
+
+Love this because it just shows you why helicopters are so much more efficient than quad rotors.
+
+I think it’s hilarious that people want to scale drones when we’ve had helicopters for decades…
+
+How about making three of these and attaching them to the struts of an even larger tricopter, itself with wings on the struts, would you have even bigger energy saving?
+
+What you are telling me then is that if you make 2 more of those and use them as the small propellers you could technically make it use even less energy ?
+
+TBH I didn't read your comments so I don't know if somebody else already said this but what if you were to put a housing on the bottom of it to keep the cords and stuff and getting tangled up and then put some kind of attachment onto it with a free spinning link and then put a hook on the bottom of all of that and then you could test its weight load you may have also vastly increase that capacity
+
+If you add tail at bottom, in shape of turbine jet, you have turbine giving you extra lift from bottom. 
+
+Add small wings for lift, pitch and direction, at the tail end.. 
+You get new drone design.
+
+Can you make hyperdrones of smaller fans feeding into bigger and bigger fans?
+
+Flying gearbox. Independent control of big blades angle would be cool. If set two almost flat, and one  vertical, this thing would look almost like a plane, and could glide forward, then hover in "fan mode", keeping all the manoeuvrability in "drone mode" with fan blades vertical. I hope it is only a beginning :)
+
+Why would someone think making the entire drone a prop and spinning it be somehow detrimental to its lift overall?
+
+Can't wait until they build one big enough to take passengers 😃
+
+lower disk loading, same reason a traditional helicopter is so much more efficient than a multirotor.
+
+Have you been reading my mind? Stay tuned...
+
+😎
+
+More coming soon!
+
+This stuff is AAA, respect lvl.999 and support from Mumbai, India !!!  🔥🌈
+
+in a larger version the cockpit could be placed on a bearing structure and small servo to keep it aligned. and to address direction control, you could use a gyroscopic type of movement, or develop a pulsing program that will pulse a motor as it passes through a certain phase in the arc. How would a toroidal prop help efficiency here?
+
+now curve the wings so they push more air down and less out the sides
+
+What about a propeller that changes shape as needed?
+
+Congratulations, you made a helicopter
+
+Por qué no intentas poner de las nuevas hélices curvas? Para que haya más eficiencia en las hélices
+
+Use 4 of those on a large quadcopter
+
+👍👏
+
+To reduce the vertical vector in half it would be 30°, not 45°
+
+Can dhremflight run on an alternative to the teensy 4.0? They are pretty much out of stock everywhere atm and I want to explore some experimental vtol aircraft! Thanks Nick!
+
+congrats, you just invented a helicopter
+
+Interesting, but an extra weight penalty when not spinning.
+
+Fractals, yo.
+
+Say, this is COOL
+
+Now we need to know if this works with jet engines lol
+
+waiting for a fractal Drone....
+
+So what happens if you put three of those on an even bigger propellor?
+
+Make it much bigger, add lights to it and go trip up UFO buffs :D
+
+This effect have explanation. Try to compare     water skiing on feet and on skis. Bigger wings make smaller pressure on air with same plane weight, so air is not pushed down so quiqly. In aerodynamic this effect is described, (not directly) by "Thrust-to-weight ratio" (weight means here also possibility to lift such weight, so it also can be replaced by lift force recalculated to kilograms)
+Fighters have this ratio above , so they can fly vertically up.  But big transport planes have this value vary small. That mean, their wings produce more lift force than their engines thrust force. And they can't fly vertically up, at least continuously.
+
+If an alternator is applied to it in the dynamics of rotation, it will create its own electricity for the batteries like an automatic self-generating car, simply let it rotate for a few minutes. Thank you.
+ Sí se le aplica un alternador en la dinámica de giro creará su propia electricidad para las baterías como un auto generador automático simplemente dejar que giré unos minutos. Gracias
+
+It works out of the box on the 4.1, which seems to be in stock more often. But the 4.0 is currently in stock on amazon, don't know for how long though so grab it while its hot: https://amzn.to/3KkWnkc
+
+ @NicholasRehm Wow, did not even realize! Thank you!
+
+What if you attached 3 of these drones together to make 1 giant drone?
+
+you can actually get a quite large part of this efficiency increase without rotating the entire things.just look at the mars gliders whings which flatten out at the end. it is old technology by now but somehow most people other than some hobbyist airplane/gliderplane designers and builders don't know about it's existence and it still isn't really used other than by NASA and one ultralight glideing plane manufacturer and those hobbyists.
+
+but it is quite simple since the airfoil eventually returns to flat before reaching the end of the wing this causes the  elimination of turbulence causing it to be automatically completely stable without the need for other effect*.  some years ago some people also used this for propellers which resulted in basically silent propellers which you in general couldn't hear. it also made them hugely more efficient. so if you use something like that it would become greatly more efficient. and the only loss higher speed would cause is due to the interaction of the air molecules with the material and such, or when the speed becomes so high that it actually doesn't work anymore. but the mayor problem with normal wings and propellers is the turbulence  this causes energy loss and makes it behave very differently at different speeds. with such a design which basically has no turbulence unless wind really comes from a wrong direction the speed doesn't matter that much. that glider plane build on it can fly and stay in the air at walking speed, yet can also go much faster without real change in behaviour while with traditional wings there would be problems much more early. a funny thing is that some of the first drachenfliegers where made kind of like that but then mostly to save on material, cost and manual work since back then everyone in general build their own ones.only many years later science caught up to those hobbyists who on accident made their gliders super stable and efficient.
+
+So it requires 3x less energy to hover, but will it work in other direction? I.e. is it able to produce 3x lift in spinning mode with the same energy consumption? This concept is very interesting.
+
+What if you scale it up. And put smaller propellers on the small propellers on the propeller
+
+Try it with toroidal propellers
+
+Try it again with the toroidal propeller.
+
+Can you design a rail for the motors, so they travel inward to the center
+
+So when it climbs it becomes even more efficient?
+
+How about using 2~3 sensors and calculate altitude by aggregation?
+
+Make a dual copter of it
+
+we built a bunch of these a few years ago to cut grass with but the water was hard on the electronics.  I think you're balance wires are throwing it out of balance
+
+This is why UFOs rotate.
+
+Ok now attach 3 of these drones to one super drone and have the super drone tilt the 3 drones to provide lift to wings on the super drone.
+
+Those wings look kinda bulky for how much strain they probably actually under; I wonder if you could slim it down into some kind of fabric type material
+
+Math check, angling something at 45° means 0.707x of the thrust is up and 0.707 is to the side, just how sine and cosine functions work.
+
+what if you build three of them, tilt them and add three bigger air foils ?
+
+Make the wings toroidal and put toroidal props on it too.   Toroidal Inception
+
+Amazing!! What’s your background? Kinda hard to believe you only do this casually lol
+
+I tried to hold on through the equations but i got lost :(
+
+Could you have three of these attached to the arms of yet another drone? That might further increase the efficiency, but it'd also increase the weight substantially.
+
+I’m an aerospace engineer by day and an RC nerd by night
+
+It would help solve the steering problem too. Independently controlled trios of wings would make this thing incredibly manoeuvrable.
+
+And provide a non-rotating base for camera and any other payload.
+
+I don't do drones but I love math and physics. I'm trying to learn more so I'm wondering if the power deduction would continue to decrease even if only by a small amount if you built three drones like this and attached them as the propellers of a bigger drone also fitted with these wings such that the small propellers spin, the medium propellers spin, and the large drone spins with them. if someone knows more than me and would like to explain why this would or wouldn't work I would really love that.
+
+4 of these as a quad setup?
+
+how about making a drone with 2 or 4 of this propeller powered propellers?
+
+What about if you put propeller on the tip of a propeller that's spinning another propeller that's spinning yet another propeller that is the actual drone? It would be like propellersception of energy efficiency!
+
+Anyone suggested using 2 of these I'm an osprey style vtol configuration yet? Like seems to solve lot of the directional flight problems and provides a platform to use that efficiency gain instead for increased lift capacity.
+
+Also wonder with the central "prop" if used a equal numbered blade design 4/7/8 could possibly turn on/off some of the small "wing tip props" instead of throttling them all down to achieve hover and coming out of peak motor efficiency. Like run a couple flat out instead of more lower in the rpm band.
+
+This quite similar to a tip jet helicopter
+
+You could sharpen the leading edges of the foils and mow that grass with the drone.  What could possibly go wrong?:)
+
+Now attach a cat and peanut butter toast on either side
+
+You can put some knifes on it instead of wings and use it to mow down your grass. lol
+
+If it could cut grass at same it may be hit :D Anyways that is grate invention!
+
+Make the small props do the same thing
+
+Interesting but maybe not ideal for having a gimbal camera, since the camera would need to counter the spin 🤔
+
+Yo dawg - iz herd u like propellers
+
+The wings produce lift
+
+So you've more or less made a tip jet helicopter?
+
+Wouldn't be easier for measuring power output to just hook up the drone to some weight scale with some rope and measure amount of lift force created for different modes of flying with constant motor power, rather then doing complicated and still not the most consistent regulation of motor power based on flight hight? ;-) But still super cool idea. I really like it.
+
+Needs to be in an Anime
+
+Spinning Helicopter Drone ;)
+
+What if you revisited this with the new toroidal blade designs?
+
+Okay, now make a large quad drone with 4 of those propeller designs. Would it really require less power to lift or hover?
+
+The bigger question is: would 4 large propellers require less power than 12 small propellers powering 4 larger propellers?
+
+LOL
+
+Just Put bigger Propellers in The drone
+
+Small weights at end of arms that are pulled in when it goes to spin-mode?
+
+Hey so at the end you turned it up right and flew it like a Star Wars ship. So what’s the efficiency if you were to spin and fly forward!?!?
+
+Consider setting the bottom of your graph to zero so the drop in power consumption is easier to see visually.
+
+It's basically a helicopter. Now if you exceed a certain speed in forward flight, the whole rotor disc will act as an airfoil and reduce power requirements for straight and level flight even further.
+
+Two words: disk loading!
+
+The cluster bomb has just entered the chat .
+
+I still dont understand why it is a paradox
+
+This is why my airplanes are more efficient than my quad. You've built 3x 0.5 airplanes. With 3 wings
+
+Make the blades carbon fiber so that they can cut through the grass without chipping.
+
+here is the short answer. Its easier for those motors to spin blades that make thrust than for them to directly lift the weight of the drone.
+
+make three and use them as props on a bigger drone
+
+👍
+
+I gotta say it... Put three of them on a bigger drone.
+
+Wonder how it would do in a crosswind without spinning
+
+Skunk works wants to have a word with you
+
+Fractal propellers
+
+Huh…kinda like the prop version of a Hiller YH-32 Hornet…
+
+how about two larger coaxial propellers, like on Kamov helicopter? would it add extra stability?
+
+This is to be expected. Read on "disk loading" in rotocrafts.
+
+Honestly probably not too well since the rotational speed is so low
+
+Interesting
+
+It is not a paradox, it is a normal logic. The thrust is proportional to the mass of air accelerated, and the mass accelerated by the small propellers at higher velocity is greater than with almost no speed. It is further enhanced by accelerated air of the wings (when they are moving).
+
+UFOs aren't looking to much like UFO's nowdays aye
+
+Would it be better and simpler,  if you make a plain helicopter with counter rotation rotor and drive it directly from the geared motor?
+
+5:43 🤣
+
+i see three of these, attached in a tricopter configuration (swivel mounts), so when they are spinning, you can use them like normal, but highly efficient rotors. (for steering etc)
+however, would it not just be more efficient to larger, better angled blades in the first place?
+
+We could miniaturise tiny gas flame on a tiny water boiler to make reaction thrusts comparable or better than electric power. Heros engine miniaturised! Just a thought you have triggered! You are doing great things! As good as the so called experts! Good luck mate, I wish you all the best.✌🏻
+
+Not even a minute into the video and I figure it out. It's basic lift from aerodynamic forces, the speed of rotation turns it into a propeller and push air downward. It's simple.
+
+Oooh fascinating, I wonder if you could sync the shutter speed of the camera to the rotational speed and you'd be able to control where its looking, or possibly have a 360° view.
+
+Is this also more efficient than an equivalent helicopter with just the large blades spinning on a motor and a secondary servo for steering?
+
+Can you do an efficiency comparison with a helicopter same rotor diameter similar to the arm length of this drone? 
+
+To me it looks like essentially like a helicopter. 
+It's like replacing three small rotors with a giant rotor which would be where you are gaining efficiency from. It'd be really nice to see a comparison.
+
+Flies like a “UFO” 😂
+
+45 degrees is actually around 70%.... But you knew that
+
+Could you get real high, gimbal the wings to 180ish, thrust for some spinning and then cut the power, or greatly reduce the power and spin slowly back to ground?
+
+power reduction by factor of 3 would be 200 percent more efficient
+
+make the the body suspended ona brearing so only the propeler part turns and not the camera etc.
+
+This is a really cool video and idea but I don’t get it how is it not intuitive that larger surface area would produce more lift.
+
+Can you position the motors on the ends of the wings and use them to mitigate wing tip vortex drag?
+
+Doesn't seem a paradox to me, seems entirely intuitive.
+
+How does this compare to a single big propeller spinning at the same speed with a central motor (ignoring the stability issues)?
+
+Recent UFO sighting design leaked?😂
+
+Hah I see you've teased this idea in your future vids 😂
+
+You invented a helicopter..
+
+You know what.. how about connecting it to another two tricopter drone turning it to a bigger tricopter drone with multiple motors?
+
+Maybe coils cools better too
+
+gr8 videos , watching from INDIA
+
+Перемещение в горизонтальных плоскостях тоже желательно вращательным образом организовать, дальность хода увеличиться тоже на 60% и жути нагонять будет адской )
+
+I don't know why but I'm thinking about some similarities with UFOs
+
+Yea but how do you prevent it from constantly lifting up? If you reduce the small motor rpm then the big one lowers proportionally and fails to maintain steady hover. Also what about a secondary tail that would prevent it from turning on its own axis
+
+I'm afraid this design cannot be scaled to carry passengers, as it would make them extremely dizzy. 😆
+
+So what if you have a fa on a fan on fan. 3 layers deep?
+
+What happens if you repeat the process over and over again ?
+
+OCD... Can I mow your lawn? Edit: damn so I can't
+
+Congratulations, you've just made flying fan…!!
+Now if only we have a way to transfer energy through the air, and a new propeller design that tone down the noise made…
+
+Does it keep track of orientation if on headless mode while spinning? . . this could be great for a stationary aerial signal repeater.
+
+Could this idea be applied to hellicopters to reduce fuel consumption?
+
+4:46 it doesnt become more efficient it  loses lift so drag caused by lift because when air speed increases even though attack angle of wing is still  same its true angle of attack increases ( andle of attack towards incoming air )
+
+Yeah, but your drone-mounted camera then ends up spinning too.
+
+Would it be more efficient to add 3 more motors in a triangular orientation or to upgrade the motors to ones that are twice as powerful?
+
+Make a big one and use it as a regular new type of helicopter 436 it should make order gyrating a lot safer
+
+would adding more propellers along the wing increase efficiency?
+
+I feel like in 2086 something like this is going to be hunting and killing humans.
+
+6:13 I don't agree that it's 3x more efficient at hovering than a regular drone, regular drones are not most efficient (and not made to be) spinning and your more efficient drone is worse at normal hovering and way better while spinning. You should compare the spinning drone's energy use while spinning to the regular drone's power use while hovering without spinning, which would make your spinning version 2x more efficient, which is still crazy.
+
+what about combining an ultra buoyant gas in a super light weight ridged pill shaped shell with drone motors affixed to it so you have a zero buoyancy (or as close as it can) drone that can have a solar strip to charge it while not using energy to move?
+
+Currently you have motors at the end of the rotor to create the momentum. Is that more efficient than a normal helicopter with a central motor powering the rotor?
+
+Dude make a fucking patent now, someone gonna steal that lmao
+
+bit of random so um do a missive quad copter?
+
+8:16 shows you're a Star Wars fan.
+
+The bigger propeller is more efficient, because of the speed of the propeller is faster at the tips.
+So why not just use a few inches of the propeller at the tips and remove the rest of it, so there is no drag.
+I bet it would be even more efficient.
+
+I think this has far more applications than you think. If it is truly solely your work and research and idea the you need patent it. It might just make you rich one day
+
+make a 4 prop version?
+
+I would like to know the efficiency ratings compared to a helicopter of the same size and weight. Is one bigger central engine more or less efficient then 3 smaller wing tip engines? What pros and cons from each design?
+
+Can’t tell if your wings are symmetrical or if they have a lift. If they have Lift, wouldn’t it be more efficient in a less aggressive angle more like 90°?
+
+1:22 into the video and I already know what your doing. The added wings on the drone creates uplift just like on a plane when the drone spins, lowering the needed power to the motors to create the uplift. Duh! Lol.
+
+Could this be combined with ground affect for uber efficient hover?
+
+Okay, now install the equipment needed to stabilize a camera. Now can it match the quality of a typical drone? Can it still offer the same efficiency?
+
+What equation are you fitting to make the power curves? The slight dip in the blue line looks like overfitting rather than actual signal, IMO.
+
+The increased efficiency during hovering is true, but is it work the trade-off being that flying straight in non-hovering mode it would be less aerodynamic due to the increased air friction caused by vertical surfaces on the wings?
+
+Implement this for a passanger flight. It would be a barfing expirience.
+
+So how dangerous would it be to attach blades to it and use lidar to do lawn the grass?
+
+Would a very high aspect ratio wing do even better?
+
+Imagine this: Instead of putting large tilting fins on the copter, put tiny propellers on the tips of your standard propellers. Then the main body will remain stable instead of spinning. Right? Now transfer that concept to your large fins. Ie, build a separate non-spinning body under your giant prop -- like a helicopter.
+
+Maybe that's a random question but why not just 2 wings and 2 motors? I guess the 3rd gives more stability in some circumstances, if so could the 3rd wing be smaller/shorter? And the 3rd motor more light?
+
+That tilt rotor design isn´t anything new, it is used on real scale Osprey too. But for drones it is very good usage of this idea.
+
+Yo Dawg! I heard you like generating lift! So I put propellers on your propeller so you can generate lift while you generate lift!
+
+Stuff like this must be the cause of most UFO sittings lol. Just a nerd flying home brews around.
+
+Is there any reason this wouldn't work with 4 arms/propellers?
+
+LOL its not a paradox, its something called "helix force" and its been known to us for ages. The differential in my 40 year old car used the helix force to engage.
+
+Hmm, now how to steer while in spinning mode...
+
+What about planetary propellers?
+
+Build the rest of the helicopter, now it's stable 💯
+
+This is so cool!… but now you’ve given me one more YT channel to follow and got me added a bit more to my interest in consume drones… I don’t have time to start another hobby!😭
+
+What about the extra weight of the rotors? Would this design be more efficient overall?
+
+you sound like a younger version of the how its made guy
+
+Did u try to ...short the distance from center to propeler? But with the same long wings? U know what I mean?? Sry for my english
+
+How does the lift vs power ratio perform against a single center motor spinning the large propeller? Are their enough gains there for a helicopter to implement this design?
+
+Hovering by drone propeller isn't efficient, but the wing arms produce lift with low wing loading plus they have a high aspect ratio which adds to their efficiency. 
+  A glider's wings have similar characteristics and are very efficient for flying. Drone props on the other hand don't really fly, they thrust. 
+This design works well for a human powered helicopters.
+https://www.extremetech.com/wp-content/uploads/2012/12/helicopter.jpg
+
+It’s just lift just like ospreys use winged rotors for more distance the lift with the rotors I’m pretty sure
+
+Alright, so, how is having adjustable wings counter intuitive? You've just applied angular force on normal plane wings.
+
+8:17 Will it be more stable to fly "upside down" ?
+
+now just replace the propellers with toroidal ones
+
+only 1 minute and 20 seconds in but it's pretty clear that half the force of the little properlers is traded for a giant gain of lift generating surface area, so it's not really a paradox honestly.
+
+Future video!
+
+My mission has been accomplished, sorry about that!
+
+Like that the spining speed increase...( with Good propelers) ;)
+
+OH you did...ok
+
+And what would a fast spinning drone actually be used for?!
+
+would it help even more if it was toroidal design?
+
+4 blades would be easier to control?
+
+Now fly it horizontally by spinning it
+
+what if you put a pair of motor at the wing tip propeller perpendicularly to spin it ? Similar to how the central axial propeller is spun by the wing tip propeller. Except this time the wing tip propeller is spun by another two propeller at the propeller tip. The same flow momentum/energy improvement should affect the wing tip propeller just as it did to the main central axis propeller. Essentially a recursive drone tip propeller. The hover efficiency should increase further, although at a lesser degree. Since it's only improving the tip propeller's thrust efficiency. 
+
+I'm kind of curious on how many layer of this recursive tip propeller configuration can go until diminish return cap the efficiency.
+
+3 times 100% is the just that end of
+
+nifty
+
+WE need to collaborate on a project. Please let me know if you are interested. Great work!
+
+not half but around 70% of the trust ❗
+
+Not really a paradox when the wings create lift just like airplane wings. At that point, the motorized props are just adding additional lift.
+
+If you simply sharpen the leading edge of those big props, you could mow your lawn and fly at the same time, killing two birds with one stone.
+
+What if you have a quad prop instead?
+
+You just created a huge propeller, of cause its more efficient 😂
+
+DaVinci spinning in his grave
+
+bro figured out how to make a ufo like scale this shit up find a way to make the cockpit stable and stationairy in the whole thing and you got a working ufo
+
+THE AIRCRAFT IS A FRACTAL
+
+This is just transforms to a regular helicopter, not sure where the paradox should be.
+
+You need to visualize the air as a fluid. What you are doing is creating a pocketed vortex for your drone to hover on top of. Everything in nature spins down to a vortex. The helix is the nature of the geodesic. You might be interested in how hummingbirds fly. TLDR they create a vortex under each ring and ride the tornadoes
+
+If, instead of putting large tilting fins on the copter, you put tiny propellers on the tips of your standard propellers, would that also reduce power consumption? I think not. Ie, i think the reason you're saving power isn't because of angular props, tip props, or a spinning body -- that's all a distraction. The reason you're getting greater efficiency is because of the giant prop. If that's correct, then you'd gain the same efficiency with a normal helicopter design, without tip props or fins. Right?
+
+Power & weight savings will be offset by the need to gyrostabilize the camera.
+
+Education
+
+RIP to the people having ceiling fans at their homes. Seeing a ceiling fan out of no where flying above up your head would make you run for your life🤣. This guy is simply out of the box thinker.
+
+I can get my dog to come when called...but my drone flew away  :(
+
+Noob question should you be using different sized propellers for the three props on each wing, the outer ones are flying much faster!
+
+This is likely been asked already about 30 times in this comment section, but I'm curious about practical application. What can you use such a drone for if the center of the drone is constantly spinning? I ask because it seems like most drone applications would require the center or hub to be stationary.
+
+This won't work on bigger models due to heavy motors at the edge. They would fly off.
+
+3:30 scared me!
+
+Is this what ufos are?
+
+then the extra energy can be use for servo straightening the cam for the footage yes?
+
+In the animation it looks like a bat
+
+I thought you needed equal and opposite rotations of propellers for drones to work, how are you doing it with 3?
+
+скоро они додумаются до вертолёта жака фреско
+
+The us military wants to know your location
+
+I'm not sure it's that counter-intuitive. It's basically a wing driven by a prop, like any other propeller aircraft; I'd expect a Cessna to have to work harder if it pointed its prop straight up.
+
+does the fact that this made perfect sense to me from the start make me really smart or really stupid? lmao
+I can see why extra weight would mean it would mean more power, but you also seem to just be turning it into one giant propeller
+
+8:15 only star wars fan can see it
+
+Try a cruciform design.
+
+Correction - if it's 3x more efficient, that's only a 200% increase, not 300%. If 100% is double, then 200% is triple. #TheMoreYouKnow
+
+You say "half the total thrust is pushing sideways when tilted at a 45 degree angle", cosd(45) = 0.7071 my friend.
+For half the thrust angled upward you'd need a 60 degree angle ;)
+Nice project though!
+
+😊
+
+Cool, but... a regular helicopter rotor design should work even better.
+
+the payload can be actively stabilized by a motor rotating in the opposite direction
+
+Me too lol
+
+(Technically not DOUBLE at the 45 degree angle - multiply by the square root of 2)
+
+Awesome idea dude! Loved it! But I'm curious if this is any better than a helicopter with a couple of coaxial rotors (rotors that rotate in opposite directions).
+
+can you make this design with toroidal propellers now, if you haven't already? I hear the toroidal props increase efficiency by about 2x and is quieter.
+
+So basically what I got from this video, “Man invents new device and creates detailed scientific youtube video to avoid cutting grass”
+
+Could you achieve equivalent efficiency benefits sans wings by just throwing large propellers on? Or, maybe the motors aren’t designed to spin that slow, is the problem?
+
+So, how many times can you do this?
+You basically made a propellor out of the drone.
+What if you made 3 of these and put it on a larger drone. Could 9 of those tiny motord lift that?
+
+Young Anakin Skywalker would be proud
+
+what's the paradox?  I don't get it... Maybe it's a paradox only if you don't know how airfoils produce lift?
+
+A spinning drone will be practically useless, because the drone has a device called IMU to measure it's orientation. IMU is the hypothalamus of the drone. If you are planning to simply hover at one place, you don't need a drone for that. You can use the good old baloon.
+Why the spinning drone gives more lift? Because by design, aircrafts are supposed to spend their thrust to counter drag, and gain lift.
+For example, a biplane, spends it engine power to neutralize the drag of the propellor. The propellor gains lift in forward direction, and this lift neutralizes the drag experienced by it's wings. And wings finally lift the aircraft upward. So let's say, if you spend 1 N-m torque at the front propellor, you gain a lift of 5 N in forward direction. That 5 N forward pull, counters the 5 N drag of the wing. The wing returns 15 N upward lift. So By inversting 1 N-m torque, we are getting back 15 N upward lift.
+You can create a 3 dimensional copter by neutralizing the drag at three levels. The lift of smaller propellor rotating in YZ plane, will neutralize the drag of medium size propellor rotating in XY plane. And the lift of medium size propellor(XY plane) will neutralize the drag of large size propellor rotating in ZX plane. So by investing small power in the YZ plane, you may get tremandous lift in the ZX plane. But at the end of the day such a drone will be useless, because IMU will not work in in it.
+If we could do with rotating drones, we would catapult a boomerang in the sky. But most sensors will fail if the entire body rotates. We can still create hand grenades or relief packages, shaped like boomerang. Sensors are not necessary in every application - but such scenarios are rare.
+
+Why is it more efficient?
+Simple, it has +1 rotor now that isn't drawing power for spinning, only blade tilt
+
+could it be so efficient that you dont have to use trade markets anymore, to get your stuff.
+
+What if instead you used a larger, central, motor to spin the wings? And then you could just use a smaller, horizontal propeller to counter the spin.
+
+Maple seeds
+
+You are actually not also inclusing the benefit of a couple of extra forces. If you can imagine that the propellar was facing horizontal at the end of the wing. You would lose some of your benefit. While the thrust created by the propellar would have less drag. Its vertical vector is zero, but its horizontal vector is 1. If we tilt it up by say 30 degrees, then the vertical vector is 0.5 and horizontal vector is 0.866. Typical stall angle of attack  for an aircraft is about 18 degrees. so more than 18 degrees not so optimal. But Even at 15 degrees you have a relative trust vertical vector of about 0.3
+but you only lose a few percent of horizontal thrust. So if we keep the blade face perpendicular to the plane of the bottom of the wing, anywear from 13 to 17 degree wing angel of attack is beneficial. 
+   The second thing here since is you have the propellar blowing over the wing, whereas you have the Angle of Attacked being realligned relative to the wing position, while it creates more turbulence on the outer wing, it creates a much higher lift on the wider part of the wing since the higher angles of attack given rise to 'stall' inefficiencies is partially being corrected by the action of the increase directed windflow behind the propellar. 
+Ideally, one would want to see laminar flow from the prop to the wing, and I think the fluxes in lift created by the eddies from the propellar are causing the craft to pitch. One way to correct this is to finlets along the wing to keep the air from traveling radially down the wing. 
+Some possibilites for improvement
+1. Move the propellars closer in. 
+2. Finlets behind the prop and at the end of the wing would help straighten out the airflow.
+
+Hey dude, with the proof of concept you've made here, do you think you could escalated the model to make a proof of concept drone of the Triebflügel, another old, crazy WWII German plane that works under a similar concept as the one you've proven here?
+
+At 0:37 you’re not even close.  When you tilt to 45º, you only lose 29% of the vertical thrust.
+
+you just invented a helicopter )
+
+why not increase surface area at the far side of the blade?
+
+Most drones are used for cameras so idk how this works be useful lol. definitely cool though
+
+Isn't this just the same concept as a normal plane, with propeller engines?
+
+i suppose it is, as a helicopter has the motor in the center, and has to overcome the momentum advantage which this contraption shown has, as the spinning force comes from the tip of the blades. Not familiar with coaxial designs advantages though.
+
+Correct
+
+Excellent idea Mr. Sikorsky
+
+Yes, but with math
+
+…and now replace the propellers with toroidal ones and see if this brings improvements.
+
+would this also increase lift efficiency?
+
+What’s the flight time with that
+
+I don't see how this is a paradox.  It looks like the power was simply moved from the hub to the tips of a rotor-wing, which doesn't strike me as paradoxical.  Furthermore, as propellers get longer and their RPM decreases, they get more efficient.  If I had to guess, that's why Power-Required goes down.
+
+Tip: if you can explain it, it's not a paradox
+
+helicopter with extra steps
+
+Doesn’t this simply means that a larger propeller is more efficient?
+
+whats the total mass of the airfoils + drome?
+
+Super interesting! Now I’d really like to see the hover efficiency of this compared to a helicopter of similar weight and size. How do you think it would compare?
+
+sooooo... yow made a sci-fi "AI apocalypse" anti-fidget spinner (anxiety inducing) most terrifying possible enemy 3x more efficient.
+I so hecking like it, jokes aside, 3x improvement on energy consumption is a hell of an achievement, way to go!
+
+Isn’t thus the ground effect
+
+✌✌
+
+What if you add more wings 🤷🏼
+
+You're about 80 years late to inventing the single-rotor helicopter.
+
+This sounds like an academic research.
+No really, just tidy up your data and publish it on an academical journal. It would help so much.
+
+Nicolas, boa noite meu nome é Dornelas moro em Fortaleza Ceará Brasil 🇧🇷
+ Eu estava vendo aqui o seu vídeo... E já vi várias vezes achei muito interessante gostei muito gostaria de saber se você tem condições de mandar os dados dos acessórios em nome dos acessórios como faz o passo a passo desse projeto achei muito interessante muito obrigado. Boa noite Deus abençoe. Muito obrigado.
+
+is it possible with a quadcopter?
+
+Not sure why this is surprising, you created a giant propeller. Lift/weight ratio increased dramatically.
+
+When you put your hand over the liDAR sensor did unexpectedly jump up its voltage used to increase its altitude? It sounded like the motors died? I’m a novice at best when it comes to stuff so please correct me if I’m wrong!
+
+x2 tiltrotor?
+
+For the same thrust, yup!
+
+Probably worse but it would really depend on the helicopters drive train efficiency
+
+Exactly
+
+Hmm cos45 doesn’t equal 0.5 but close
+
+V-TOLL Benson ???
+
+Just like a 'tip' jet😅
+
+Interesting, but you'll need to find a way stabilize the central hub, or at least its payload. Otherwise it won't be useful for much.
+
+Could this be made into a fractal design? By which I mean using 3 of these drones as propellers for a larger version of this drone. 
+
+Obviously you'd have other issues and complications to deal with when scaling up a build like that, but the idea sounds hilarious.
+
+Some people are very intelligent and then there’s the rest of us 🤯😖
+
+Okay sir now I wanna ask this, Let's say we somehow find limitless power energy, so power consumption isn't a problem, and all I want is to increase thrust and lift so my drone can lift heavier stuffs, what you recommend me doing or making please? Please reply or anyone with enough knowledge
+
+Why stop at 2 levels of propeller-on-propeller? Time to make a 3rd or 4th level
+
+Flying killer lawnmowers are around the corner!
+
+Hi! I’m clueless about aero dynamics but if the wings help a plane push upward when air passes under it wouldn’t the propellers create the same effect if the wings were facing down? Four wings instead of three then you can balance the object like legs on a table? Just my observations….clueless observer.
+
+I just realized my hobbies are kinda lame compared to other folks hobbies, lol. 😁
+
+This concept is used by planes during flight all the time. The thrust given off by their propellers or jets would not be enough to lift them if pointed straight down. They are able to fly by making use of their wings and using thrust to push the wings through the air. Interesting 🤔
+
+UFO style :D
+
+Couldn’t you put the camera on a free rotating arm so that it doesn’t spin with the drone?
+
+Could you use the falling concept of a maple seed/helicopter seed to regenerate energy?
+
+Power consumption improves, cause those small engines have very poor efficiency. A big propeller just increases effectively.
+
+send it to Mars
+
+How do you maintain horizontal control?
+
+12 motors... 4 arms each with 3 motors...
+
+Wait, would this work as like... a replacement for a helicopter blade? Like if you had a helicopter blade that had smaller helicopter blades on top of it, tilted slightly, would that improve fuel efficiency?
+
+What if you nested the engines? Like, a tri-copter of tri-copters? LOL
+
+Droneception
+
+Those propellers would be too small to generate any substantial amount of power!
+
+Not a fan of abusing the work paradox, but cool idea
+
+Would love to talk to you about an idea I had while watching your video.  Excellent work.  Let me know if there is a way to send you a private message
+
+You should try a Focke-Wulf Triebflügel
+https://en.m.wikipedia.org/wiki/Focke-Wulf_Triebfl%C3%BCgel
+
+That explains UFOs
+
+How to make a simple rc airplane
+
+You lose half the thrust at 45 degrees? Or at 30 degrees?
+
+This is awesome.
+Having these on your drone for energy efficient increases of altitude would be awesome even if you need stable flight for something like a camera these would let you film for way longer.
+
+Is you think about the weight of a commercial airliner imagine the amount of energy it would take to lift it straight off the ground like a helicopter.  Not try dragging it across the ground in oder to let air help push it up for you. This doesn't seem crazy to me.
+
+Engineers fails to understand angular momentum conservation.
+
+Bro at 45° Is about 0.7 you have to rotate at 60°for half of the lift
+
+Now just add blades and the use it to mow the grass/j
+
+Ok now make smaller and and a Gyro for camera to help
+
+30 watts to hover, very low, what is the weight of that rig?
+
+Square root of 2 is 1.414, but I understand. 70%×70%=50% so double the thrust,  
+Yep you are ✅️ right.
+
+Also very very dangerous
+
+We have the same last name?? 🤔
+
+I'm 60 seconds in and I'm not seeing how creating an aerofoil is a paradox. Of course there's less power required when you're essentially creating a falling plate with huge drag, plus generating a bit of lift when angling the fins.
+
+Just tilt one prop
+
+Maybe use a different type of airfoil like the Eppler 420 series.. get even more lift for less power
+
+YES! Arduinos rule over all.
+
+Needs to be symmetric so it can spin and not produce a horrible rolling moment in forward flight
+
+ @NicholasRehm  Have you tried different airfoils? Just curious...
+
+Question: this almost looks like it is able to be flown like a frisbee - or if you are into arcade games, in this case asphalt 9 legends unite - it "feels" like it is capable to have the flight profile of a car 360-ing off a curved ramp, a bit more "drifting in air" - slightly sloppy flight curve at high speeds possible? What i am getting at is an "arcade" acceleration instead of speed based feel (vertigo fx not raw speed) - though in this case the real question is, would this be in any way adaptable to fpv in a usable manner?
+
+Why don't we have airplanes like this, ffs
+
+Lift. Simply put…
+
+Could the three wing arms vary in angle of attack to reflect the varying speed through the air with respect to radius.  This might further add to the lifting efficiency of the three wings.
+
+The dod would like to know your location
+
+It's sort of like a gyrodyne, but... also not.
+
+RIP fpv pilot
+
+Airplane is more effective than a helicopter. Nothing strange so.
+
+Doesn’t it basically become a helicopter?
+
+Like
+
+Isn't it misleading to say a factor of 3? because the drone without blades on its arms is optimal at 0 rotations, which has a power draw closer to 80. 80 to 35 is just 2.3 divisor.
+
+Thrust from 45 degree angle rotors is off, it's less by a factor of 0.7 ish. Remember your Pythagorean lol
+
+I mean hold on... at the start of the video still so... take what I say with a grain of salt but...
+This doesn't at all feel like a paradox. It's as simple as a larger wing. The trust powers a larger wing requiring less power over all.
+So as soon as the larger wings produce upwards thrust or lift the efficiency of that takes over. 
+Like the intuition we all have that a helicopter will dead stall if the motor fails, but that isn't necessarily the case, lift decreases over time.
+
+Not a paradox. Pushing wings through air creates lift, making up for the angle/loss from the propellers (given that propellers are just small rotating wings) and if setup correctly will give more lift than the propellers on their own. You basically turned a tri-copter into a mono-copter. Cool build though mate.
+
+Could there be a dome shaped cockpit in the center on a large bearing so it remains stationary as the blades spin?
+
+I find it's not counterintuitive. Basically you go from three tiny propellors to one big one. It seems logical the big one is far more efficient.
+
+I love the idea. But the whole counterintuitive thing sounds a bit made up to gain traction/attention for your idea/video. Still props, cause it does deserve attention ;).
+
+The answer is there is no paradox, velocity is a squared function of the lift formula, if you were to change any one amount of the lift formula V2 has the biggest impact 😉
+
+Why don't drones just use one propeller like helicopters?
+
+You should sharpen the wings and use it to cut grass 😉
+
+can you make it go horizontally and still spin
+
+Definitely, but I wanted to keep the blades symmetric to preserve forward flight abilities
+
+It would need some sort of powered gymbal to keep it from spinning because with just a bearing it might stay still for a moment but would eventually spin along with the wings
+
+I'll give it a try in the next vid
+
+I detest the sound of "drones", but nice job... With a few design tweaks it could look like an imperial shuttle ;)
+
+Solution: video
+Problem: No ones spin their drons.
+
+Sin(45°) =/= 1/2
+
+This is a very old idea.
+The Brits made a full size helicopter like this, with jets on the wing-tips.
+The large rotor is more efficient, than small rotors.  
+But it was too complex, and the idea was shelved.  Perhaps with electric motors, it could be made more simple.
+
+R
+
+Dumb idea: that spinning looks an awful lot like on big propellor. So couldnt we make really efficient propellors with propellorception. Also what of 3,4,5 or 6 Arms and is the ratio of Arms of small proppellor to Arms of large propellor of any importance?
+
+Hi, very nice work! I’m really interested about you althold function. I understood well how you compute PID in controlAlt() but my question is for example how to you add alt_pid value in controlmixer() with other roll pitch and yaw pid?
+
+why stop there? make 9 even smaller propellers that powers the three propellers you got on each arms, they ultimately power the one big propeller to make the aircraft hover for a very efficient power use. 
+
+propellerception.
+
+i'm a genius.
+
+Are you MrBtongue?
+
+imagine being a youtuber and companies were stealing your ideas
+
+These concepts have been around since the 1940s. 
+https://en.m.wikipedia.org/wiki/Tip_jet
+
+Make the same thing but with a toroidale propeller. It'll look like an UFO 🛸 🤣
+
+Cuz wings…
+
+would a two wing spinning drone give the best configuration for hover AND forward flight?
+
+This word paradox, I don't think it means what you think it means.
+
+No paradox, you are not gaining anything you are just losing less 😉
+Nice built 😘
+
+Would you be open to me using a variation of this design for a science fiction?
+
+I'd be interested to see what happened if you reversed the taper of the 'wings'. The outer tips are moving so much faster than the inner part so should generate more lift if they were larger. You have a classic fixed wing "mentality" in your design but air speed over plane wings is the same across it's length... not so here. You could perhaps reduce the weight by removing the part of the wing closest to the body and still have the same lift increasing efficiency even more.
+
+new transformer dropped
+
+Whoa! Zoomers just invented a helicopter!
+
+What is the weight of the system?   Usually, good VTOLS are at 100W/kg and fixed wings at 30-40W/kg
+
+Just by adding it to the motor outputs
+
+ @NicholasRehm  nice thanks I’ll try it by adding alt_pid on my for motor in controlmixer() thanks a lot for your open source code
+
+happens every day.
+
+Check out the next video :)
+
+I like the way you put it, very true
+
+Sure, you wouldn’t be the first!
+
+Yes, but that compromises the horizontal flight component that he also wants to include (8:19)
+
+I guess you were trying to be condescending 
+Dislike and move along man
+
+About 900g
+
+He doesn't mention the 'lift' of the wings. Confusing.
+
+are you using APM flight controller?
+
+Wonder if you could see these kinds of gains fractally - As in, if you used this drone as the propellers for a yet larger drone, or sone other setup with nested rotary drones.
+
+My assumption is that this is a very stupid idea that can't possibly work, but I would have assumed the same thing about this design. There obviously must eventually come a dropoff in efficiency that can be gained from the increased complexity, not to mention the maintenance nightmare that would become, but... This video has piqued my curiosity regardless.
+
+'best fit'  Brah, you just came up with your theory and chose a line fitting method that gave a curve you could interpret the way you wanted
+
+So what if you Fibonacci that shit?
+
+This is some alternate timeline Russian tech.
+
+cool idea but not a paradox, just lift from wings.
+
+The power requirement goes down “way down,” because gravity is providing the energy for lift via the airfoils. Airfoils, in a way, are gravitational energy harvesters.
+
+Yeah, I know, it sounds unbelievable. Hints: Lift from airfoils is Newtonian in nature NOT Bernoulli. Though, differentials in air pressure are involved.
+
+Why 3 instead of 4? BTW, it's an awesome idea!!!!
+
+How are you thinking of adding directional control?
+
+Wait hear me out, this probably doesn’t work and I didn’t listen to your explanation of this affect so it probably doesn’t but say if you were to put more tiny props on the small props in order to spin them and then do the same to the tiny props and so on indefinitely making an infinitely efficient drone.
+
+ive got an idea for the lawn, make the drone a lawn mower, it already spins fast :)
+jk ofc, too dangerous
+
+Do you think you could design a wing in wa way so that when power is cut the larger wings go into an auto rotation effective enough to slow the crafts decent; or is that too much?
+
+Well what you are doing here will soon be used to make more efficient helicopters, perhaps small jet engines could also be used on larger drones -  and still larger jet engines could power the rotor,- or rotors on very large helicopters. 
+In fact, the size of helicopters and drones could easily become much larger using this method to turn the lift generating rotors.!!! 
+It is in fact something I have mulled over in the past, but I don't have the technical skill to back up my ideas, something likely common to most would-be inventors etc.😩..
+Stay safe - and keep innovating. ☆  Niels  💕
+
+Tell me this is not militarized already.
+
+Bigger wings are more efficient. Doesn't seem very unintuitive to me...
+
+now add a gyro camera
+
+Its not counter intuitive, those little motors creates a shit ton of turbulence which eats up efficiency.
+
+I think you’ve got your vector math a bit wrong here, 45 degrees would provide 70.7ish percent of maximum vertical thrust, not half.
+
+300% is just 3x keep in mind
+
+I think I do
+
+Nah
+
+I don’t think so
+
+Less parts to make for the same demonstration!
+
+Check out part 3
+
+Watch till end :)
+
+This thing will autorotate on its own already actually
+
+​ @NicholasRehm  Nice. I'm looking forward to seeing a concept vehicle with maybe a few of these, and you showing off it's auto-rotation.
+
+Why do you use tricopter over quadcopter? I always hated the added complexity because of the CW/CCW spin-forces.
+
+You gave it spinning wings that generate lift.  How is this paradoxical?
+
+INITIATING SPIN
+
+freaking awesome, and damn u got a like from @rctestflight, so what's the MGTOW of this configuration, i mean without screwing the performance averages by too many standard deviations that is :). also i'll dig around for the build instructions or configuration details used if you published that somewhere, if not, please link.  thank you so much again
+
+Man hack irl on god!1!1!!1
+
+Do you already use model predictive control or moving horizon estimation for stable movement with the old model?
+
+Nothing wrong with an uncut lawn! I mean unless you are doing scientific stuff apparently.
+
+this looks like a mech boss of a japan game LOL, just put some NEON lights and a rocket launcher as well laser... WELL, i want it! did you sell?
+
+Ещё в советских журналах типа "моделист-конструктор" такой принцип рассматривался.
+С тех пор это всё уже неоднократно обсуждалось и насчитывалось. Эффективность ниже плинтуса.
+
+Yawh, I work for a cartel, how much for a big drone
+
+hmm the wings are of a really bad design, really inefficient, I take it that are wider in the middle due to a lower rotational speed, or that is the thinking. having a more narrow flat design where the angle of the motor changes the trailing edge but only out near the motor would give much better lift and a lot less drag.
+
+How does Lidar work for altitude control?
+
+Not sure if this video is clickbait or just plain dumb. Where exactly is the paradox in more air moving across larger air foils producing more lift?
+
+Waiting update ..😂
+
+It seems breakthrough but surely you are not the first techie to do this.
+
+Have you just discovered the efficiency of helicopters? There's a reason NASA sent to Mars a helicopter, not a tricopter/quadcopter.
+
+Y wing 😂
+
+Twist the wings the inside is too steep.
+
+Please experts, I have a question
+I really admire the drone and it’s catagory
+But I’m scared to end up selling my kidney for drone’s sake😂
+So, how much does it cost an average drone programmer/engineer?
+
+This is contra intuitive, when it all boils down an airfoil is air resistance, how does more drag lessen the energy needed to keep it hovering?
+
+Less parts to make and solder
+
+You watched the video to the end, thanks!
+
+Thanks Joe, check out the hackaday link in the description for 3D print files
+
+ @NicholasRehm  whaaaat? thank you sir! 🤯 oof, how did i miss that
+
+It measures distance to ground and a pid controller modulates motor throttle to maintain a set altitude
+
+ @NicholasRehm  Thanks. Could you have used an ultrasonic sensor instead?
+
+I am a busy man
+
+Don’t think I claimed to be first lol
+
+ @NicholasRehm  nah, you didnt, that wasnt my point. My point was how has this concept only just now come to my attention. Seems like a natural path of experimentation.
+
+Not really claiming a discovery here, just trying to educate on the physics at play with a clever application
+
+Momentum theory
+
+Hello Nicholas, I find the analysis you do in the process very interesting, it really is an interesting compound propulsion system, and extremely interesting, I'll be attentive to the next step. My curiosity awoke and I found this video too, maybe you can give an analysis, according to what I see it is quite influenced by your design: https://www.youtube.com/watch?v=JTawCaKmpSo
+
+Бедные соседи.
+
+Oh ...it took off and it looked like Emperor Palpatine from the Star Wars movie... remember the top dorsal and the two lower hanging wings??? Look at the 8:14 mark and h keep watching... you'll see what I mean lol...
+
+how is this better than a helicopter? I think a helicopter is more elegant except for it's rear prop.
+
+couldnt you do this with 4 blades/propellers also? then youd gain movement controls... i dont see why not
+
+sin(45)=0.707 not 0.5.......
+
+Is that more efficient than a helicopter style drone?
+
+There’s no paradox, you’ve turned it into a bodiless helicopter (or… a three winged rotary airplane)
+Good luck getting a camera to work on it 😝
+
+to bad all it can do is hover ???
+
+Why paradox? Large propellers turning slow are much more efficient than small turning fast. The drone on Mars works at all in 0.7% of Earth's atmosphere because of its huge blades. Some work on your airfoils and you might double your efficiency on top of this achievement.
+
+What programing lanauge do you use for this?
+
+did you patent this idea?
+please doooo
+
+It doesnt seem like a paradox at all, by the way.
+
+First of all, you're not bright. Wait for it, you're, Brilliant 👏 👌 😀 👍. 
+I landed on your site by happenstance.
+Your Mind is fascinating. I am, Meta at heart ❤️ 💙 💜, I believe you understand.
+Anyway, I am preparing to get my drone's license.
+I am following yor Brilliance
+
+Project sources?
+
+this is neat but what is the point of a drone. to be a platform for cameras, equipment, passenger, and WEAPONS.  this is a neat toy but research is unlikely. really for such a fast drone how can u fly it without a camera to see where your going at 100 miles / hour
+
+Looks like a ceiling fan. Too ugly to consider it as a drone.
+
+hgh
+
+LOL Short Grass benefits no one
+
+https://youtu.be/7JH1_ZKV7t4?t=36 That's not correct.  It would actually still have 70.7% of the diagonal thrust in both the lateral and vertical directions.  Basic pyrthagorian triangle decomposition.
+
+Looks like lots of extra degrees of freedom prone to breaking
+
+You'll love the next video on my channel ;)
+
+No reason you can’t, 3 is just less parts to build and the bare minimum to work
+
+ @NicholasRehm  Why can't we use the yaw action of a quadcopter to make the drone spin and add wings to its body?
+
+Nope
+
+C/Arduino
+
+In the description
+
+Aren't you also pushing the airflow of the smaller propellers over the larger propellers? From my non-engineering brain, that seems... good. Because you are using the same airflow to do two different functions?
+
+The 45° math is wrong. Unless, of course, you were just simplifying it.  Otherwise sorry to bother
+
+0:35 The word paradox implies logical inconsistency. The only logical inconsistency I see is why you neglected lift from the spinning drone.
+
+I wonder how long it’ll be before this is seen in drones being used in Ukraine.
+
+Upgrade to a stem32 instead of Arduino
+
+You're just turning a helicopter into a plane. Why is it counterintuitive?
+
+What lidar do you use?
+
+1 motor and 1 big properller would generate even more efficiency. There's no "paradox" here. You just made a helicopter with unnecessary complexities.
+
+Regenerative braking for drones
+
+That’s cool. It transitions from vtol to forward flight beautifully. I can see larger versions of this being used for water bombing and heavy lift.
+
+It's not counterintuitive at all...
+
+Dude this is NOT counterintuitive. This is literally why planes have wings and not JUST jet engines or propellers.
+
+Duh!
+
+bluetooth fan
+
+calling something a paradox when it's very easily explained by physics is kinda dumb imo... oh my how surprising that lifting bodies create lift! some paradox
+
+No good for camera application
+
+Hey, we need your help in Ukraine! )
+Great drone
+
+COOL - Just be carefull with your percentge claims. Reduction of power required by a factor of three is a 200% reduction, not 300% as claimed on your YouTube page. (halving requirement = 100% gain)
+
+I don't understand why you mention in the beginning that its not intuitive. By making wings you transition away from helicopter style flight towards a plane that is just flying in circles on the same spot. Its not a paradox.
+
+Not counterintuitive at all. It basically becomes a plane (that spins) at this point and planes are a lot more efficient than helicopters.
+
+Well, that’s the reason for the video—to explain lift generation efficiency
+
+ @NicholasRehm  yeah, but you don't find the video title a bit click baity?
+
+I use teensy 4 which is an order of magnitude or so better than esp32
+
+I agree,
+That’s what the video is about!
+
+Tfmini plus
+
+I didn't realize 06:40
+
+ @NicholasRehm  I realised that you mentioned it at the end of your video, but it was the first thing I had to think about.
+
+If the purpose of the entire video could be summarized in a single comment, this would be it
+
+ @NicholasRehm The title and first minutes of your video make it look like as if you have discovered something new.
+
+You watched till the end!
+
+So UFO's are correct to spin while hovering?....great.... one step closer to alien tech.
+
+Science  :) A BOY IS STILL A BOY IN THIS WORLD 🌎
+
+Okay i bet Ukrainian army found your channel some time ago 😂
+
+its not counter intuitive....its a helicopter rotor.... Dont tell people something so simple is 'weird' thats how they become convinced they are too ignorant to understand unique, new, or interesting applications of technology therefore shy away from trying new concepts....
+
+yes a plane is more energy efficient than a helicopter.
+There is nothing counter intuitive here. We know that for decades.
+
+Also I like how you show such a monstrosity as an example of a VTOL and not let's say a normal Boeing MV-22
+In the next step you can find out that spinning your entire plane is stupid because of so many reasons and add static wings. Then you just have to rotate the rotors, which means less mass and more controllability.
+
+CAN BE AN BRILIANT PROJECT.  FOR UCRAINEAN WAR WITH RUSIAN ARMY!!!PLEASE ANALISE OPORTUNITY!!
+
+Tree trimmer
+
+It's Physics and Aerodynamics...not a paradox.  Words mean things...
+
+Nazi referencia???
+
+Has no one here ever heard of a helicopter?
+A large single rotor has always, and will always be more efficient at generating thrust than multiple smaller rotors.
+Multirotor drones are a downgrade from helicopter designs in terms of efficiency, while being a more stable platform for shooting photos/videos.
+Helicopter designs also rely more heavily on decent mechanical components for stability and control, as ideally you want to be able to adjust individual blade angle for yaw/pitch/roll control. Drones on the flip side can handle yaw/pitch/roll and stability control all through cheap electronics.
+
+This design would be even more efficient if the large rotor was powered directly rather than three small rotors, with a tail rotor to counter the torque generated, though I guess that wouldn't make an interesting video.
+
+mowing lawns is bad for the environment anyway.
+
+Over exaggeration on the basics of flying.
+
+This was such a waste of time. Impossible to extend this video even more. -8 minutes
+
+You insult my intelligence.. do we repeat the same bulshit every freaking generation
+
+Calling this paradox is lame
+
+Just please don't sell yourself to China!
+
+Sorry fellows.You are just to darn loud. This was a Quote from Back to the Future. No one wants the annoying sound of a monstrous mechanical mosquito in our day to day environment.
+
+You don't need a Video to explain this. It's basic aerodynamics. Nice engineering tho...
+
+Expensive education was not wasted on this one! Good job on your math and physics.
+
+This is truly a breakthrough design btw. If you could also make it so that it is capable of reconfiguring into a "fixed-wing" airplane midflight that would be glorious. A gist of it can be seen around 8:00, as you've likely already thought about it. I don't know what the hurdles might be engineering-wise, but essentially you [efficiently] VTOL the thing up, you then switch to hover, then switch to the aircraft mode, then [efficiently] move like a prop aircraft would (maybe something like osprey, where you have the leftover rear wing act like a stabilizer), with the less-efficient but practical hovering seamlessly gluing the other two efficient modes together. I think you can bring surveillance and perhaps even delivery to a whole new level with this design, because it maximizes both the economy and the range of the flying drone concept without introducing extra costs.
+
+Patent design, sell to armed forces
+
+You are very smart
+
+Watching the whole video means more !
+
+ @NicholasRehm  There is no "paradox" detailed in the entire video nor concept.  Aerospace Engineer here too...
+
+Tell me more of this “helicopter”
+
+Some people don’t understand aerodynamics so it’s fun to teach them :)
+
+Gay
+
+Why are you using a useless clickbaity arrow in your thumbnail?  We know that the item in the image refers to the text.  We're not idiots.  It sucks when channels start placing clickbait techniques to get those precious clicks over standing on their own merit.  Please stop using these useless clickbaity arrows in your thumbnails.  I'll be more than happy to block your channel.  Please don't make me do so.
+
+Would be such a cool life size ship. Just a gyroscopically controlled cockpit at the center as the whole ship moves around you to fly. Reminds me of bobo fets ship.
+
+No paradox, nothing counterintuitive.
+Large, slow aerofoils (the wings) are more efficient than tiny fast moving ones (the propellors)
+
+When all motion is centripetal or centrifugal, well you have your answer as to why. 
+Sadly the backyard engineer is just a tinkerer today with nothing to say that isn't just repeated nonsense.
+
+The only thing I took away from the video is that you don't mow your lawn 😮‍💨
+
+it's comically easy to see how it is not a paradox at all right at the start of the video. disliked.
+
+You clicked on it!
+
+You watched the whole video, nice!
+
+ @NicholasRehm  on a clickbait title, you gotta be kidding!
+
+…you okay man?
+

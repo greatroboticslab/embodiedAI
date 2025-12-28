@@ -1,0 +1,81 @@
+I really appreciate that DigiKey is paying for videos like this to be made, it doesnt directly support sales of a particular product or even a direct tie in with DigiKey themselves. Just informative videos to garnish good will and brand recognition. This sorta stuff makes me want to purchase from DigiKey and/or refer to colleagues more than any product/brand specific videos would. As usual, another great video from Shawn Hymel
+
+Thank you, Digikey team and Shawn Hymel for this nice introductory instruction guide for PID controllers tuning.
+
+Thanks Digikey for these educational videos! This tips the balance of why I will buy parts for work from Digikey as opposed to the competitors.
+
+Nice little "Great Scott" shout-out at the beginning 🙂
+
+What a complete introduction to PID control. Thanks!
+
+this is such a great video! you explained the concepts so well! great effort :D
+
+Thank you for the great content  ❣
+
+It would be fun to replace the rotary encoder with imaging.  Great video!
+
+I love you. I like to watch all your videos
+
+This is so good
+
+Cool!!!
+
+So cool! Will we ever see a micropython version?
+
+Well presented tutorial Shawn, very informative. Question, what if Kp was a negative number, what would be the effect of the PID?
+
+👍👍👍
+
+Would you mind sharing the python code?
+
+Thanks so much for this great video! Top quality!
+
+A usefully instructive video for getting from theory to practice.
+
+As an aside...
+Float variables are quite slow on AVR Arduino. Scaled integers are much faster, which can be significant in reducing controller loop delays.
+
+Such delays can wreak havoc in real world systems as they are significantly variable, depending on the values of variables and therefore difficult to tune out.
+
+Buddy needs a slip ring
+
+I have been doing a PID controller for a reflux system for the last year. This is a great intro. There is only one more item I would add, being 'windup' handling. It can be the difference between controllable and not at all. I have never used a derivative but it is meant to be handy for speeding the approach to setpoint. For my use, a slow and steady approach with a well tuned integral wins by a long way.
+
+9:43, 12:46
+
+Honestly some of the best ads I've ran across. I appreciate them too!
+
+"Yes, DigiKey's origins are in the hobby and DIY market:  Ham radio
+
+DigiKey's founder, Ron Stordahl, started the company in 1969 after developing an electronic keying device for ham radio. Stordahl sold the device as a kit to other ham radio hobbyists."
+
+Good to know there's interest. It should be fairly straightforward to implement in micropython--the Python code for the PID controller should be the exact same. The only think you need to change is the encoder reading and stepper motor control.
+
+While derivative can speed up reaction time, it is not well suited with high frequent errors going up and down. It needs a clean signal to work well.
+
+Can you elaborate on the ROS latency issue?  Are you using ROS 1 or 2?
+
+I'm a robotics engineer and use ROS heavily in my work.  I've built multiple complex systems using ROS 2 with a huge amount of data being passed through topics, services, and actions.  ROS 2 messaging (DDS) performance is surprisingly good.  Granted, we're deploying on relatively poweful Jetsons, but for this robot and (I'm guessing) a Raspberry Pi, you really shouldn't be having these sorts of latency issues unless there's something seriously wrong with the configuration or the code.  Perhaps whatever model you're using for inference is the true issue and is using most of the system resources.
+
+I hope this doesn't come across as too critical, and I know that this video was a good way to talk about a use case for PID controllers, but I absolutely love ROS and think that it's unfair to blame ROS for what is unlikely to truely be a ROS issue.
+
+Is integral just another proportional if intervals are equal?
+
+Thank you Shawn and Digikey.    The two part series was very good.  Question: what if the PID controller is to operate the supply of CO2 within a Grow Tent (CO2 can help plants grow 30% more)?  Here we deal with not only fans blowing around, but the distribution of CO2 through a cylinder within a room distributed with plants ?
+
+This was great, but I would have expected you to disturb the pendulum while it was stable, by giving it little bumps, and see how it reacted.  Also would have been nice for a bigger screen to see the pendulum better.
+
+I am so so sick of your stupid inverted pendulum ad  make a new one
+
+That's a Mickey Mouse inverted pendulum.   All you are doing is just keeping it vertical with the stepper motor that has inherent rotor lock.  And there are several positions of the stepper motor rotor that keep the rod vertical.   A real inverted pendulum rides on a cart.  The actuators move the cart back and forth in order to keep the pendulum vertical.   What you are doing is the equivalent of holding a pole vertical by gripping it with both hands.   An inverted pendulum is kept vertical by moving it's base, similar to how a performer who balances a pole on the palm of his hand.   Your ideas about how to derive the PID constants are equally naive.  There are some very good mathematical methods used.
+
+Does anybody just want to get out there bat 🏏and pretend this guy is the printer in office space?
+
+I've received this advertisement on my YouTube feeds at least 100 times..
+
+If the CO2 and fans operate together, you can use a single PID controller that has one output. If they need to operate separately, then you likely need two different controllers or look for a more advanced Single Input Multiple Output (SIMO) or Multiple Input Mulitple Output (MIMO) control scheme.
+
+You're quite wrong with this. The part where the pendulum is connected to is the encoder and that encoder sits on top of the stepper motor shaft. The shaft rotates along the vertical axis.
+
+@janjoecarcillar  it's  a Mickey Mouse PID example.
+

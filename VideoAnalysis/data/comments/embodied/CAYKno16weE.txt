@@ -1,0 +1,737 @@
+Please study the calculation examples in the video description to better understand how to read the results of any calculations you make for capacitance  :)
+
+You are very good at explaining what can seem a complex subject. 50 years ago I was into electronics (valve amplifiers) it's been quite a struggle to bring myself up to date. I did try and tighten a connection with 240V on it whilst well earthed. Seems at 70 odd years old my heart is pretty sound. Good videos young fella me lad, greetings from the old country.
+
+I have always wondered how the capacitor value was calculated, a clear and concise explanation.
+
+thank you. I've been trying to sort this aspect of AC-DC rectification for a number of days. YOURS was the first well explained, thorough description I've found.
+
+Thanks, again..
+GeoD
+
+I have been looking for this information for a long time, thank you very much for you clearly understood method of choosing a filter capacitor value,  I have been using trial and error since the 80's but now I know exactly how to calculate it right off the bat.  Keep theses vids coming.
+
+The forward voltage drop shown at 4:24 in your video (Vf = 1.1.V) is the forward drop per diode in the bridge.  The positive and negative paths through the bridge each have 2 diodes in series. You need to make allowance for double the voltage drop i.e. 2.2 volts and consequently double the power dissipation. Selection of the "right" capacitor also requires consideration of the load current. If the ripple current rating of the capacitor is inadequate it will have a short life.
+
+Thank you for the explanation. You just answered all my questions I had about the topic, 7 years before those questions even came up in me.
+
+Excellent explanation and demonstration, I managed to follow every part of it, very clear and at a speed  that someone like myself can follow.  I will definitely watch more of your videos.
+
+It is such a shame you decided to stop your videos. Giving that microwave transformer 'what for' brought a smile to my face. For gawds sake keep this bloke away from a power station. However I am about to do exactly the same to a microwave transformer. I need 40V so my wire choice in amps and insulation will be a bit tight. Perhaps you could add a comment as to whether you will do any new videos. I hope you do. Happy New Year from Pomland.
+
+Thank you. Best explanation I have yet come across on YT!
+
+Thanks for posting this.  It takes me back to basic electronics I used during my military service.  Well thought out and explained.  You have a new follower!
+
+very interesting and well descriped I am from Malta, and I really enjoy your lessons Thanks for your time
+
+I learned a lot here.  Great video!  Thank you for including an example calculation for 60Hz too that was very helpful.  Now to go find a huge capacitor and pray I don't wire it up backwards. :)
+
+Cool I needed a refresher course on rectification and this did the Job.  especially about how to determine capacitance!
+
+Great job I understand more now than I ever have
+
+I really appreciate that you are sharing your experience worth us
+
+GREAT video!  I learned a lot from it.  You're video is the first I've come across that not only talks about choosing the right capacitor, but HOW to choose the correct capacitor.  You do a great job in your explanation of things!  Keep up the good work.
+
+Great video thanks, the only slight issue is that the formula states that it equals ųF but it actually equals mF. Though in your example you had already converted it (15000 vs 15)
+
+These are really interesting and well explained videos. Your arithmetic at the end fired my awkwardness a bit, multiply the result by 1000 to get the microfarad result. (Because we don't say the mili word with capacitors!)
+
+Thank you that was exactly the info I needed. Very informative, I am subscribed. Keep up the good work
+
+Raks Electric; OK, first you have to find the peak voltage after rectification. You calculate that simply by multiplying the AC output voltage of the secondary of your power transformer by the square root of 2. That gives you the peak DC voltage output of the bridge rectifier, before adding any smoothing/filter capacitors to it. (A very close example to this video would be a secondary transformer voltage of 50V X 1.4142 = approximately 70.71VDC out of your rectifier bridge.)
+
+Then, you as a designer of your circuit, have to determine the "minimum acceptable voltage" that your circuit can safely or effectively operate from, which, depending on circuit design and type, can vary significantly , however, for most electronic items, if you stay within a 5-10% drop from the Peak DC output voltage of your rectifier then you should be fine. Your specific design may require tighter tolerances than that, but if so, that increases your required capacitance ( and cost ) quite significantly!
+
+So, just for an example that's again relatively close to this video for ease of comparison, let's say that in order for your circuit to work effectively and to perform at an optimum level it needs an absolute "minimum acceptable voltage" of 65 volts DC. If you do the math, that voltage would be within about -8% of the peak DC volts out of your rectifier, so that should be just fine in most cases.
+
+The difference between the peak voltage out of the rectifier and the "minimum acceptable operating voltage" for your circuit would then be the "acceptable voltage drop" that is used in the final equation for determining the required capacitance value. In this example it would be: 
+70.71 - 65 = 5.71V "acceptable voltage drop"
+
+Now comes the (slightly) confusing part; This video didn't explain the discrepancies in the units , and that is why the answer is not exactly what is shown, but rather off by a factor of 1000 in each case... The (correct) formula for calculating the required capacitance is, (should be);
+
+Circuit Current (IN AMPS) x Half Cycle Time (IN SECONDS) / Acceptable Voltage Drop (IN VOLTS) = Required Capacitance (IN FARADS)
+
+If you use the above formula with the above shown units then your answer will always be correct... Using the above example's first Voltage calculations, and assuming (again for example only ) that your circuit current is 10 Amps and you are in a location that uses 60Hz frequency of AC power, like in the USA, then the correct way to use the formula is as follows;
+
+(First calculate the last needed parameter to use in the final formula, which is the Half Cycle Time of a 60Hz line frequency, but calculate it in SECONDS, instead of mS, as is the error in the above video... This then equals 0.008333 Seconds.) (1/120th of a Second)
+
+Now finally put all of your (correct unit) numbers into the correct unit formula which I showed above and you get;
+
+10 (AMPS) x 0.008333 (SECONDS) / 5.71 (VOLTS) = 0.0146 (FARADS) of required capacitance. (Approximately anyway, due to rounding of answer)
+
+Now, since 1 FARAD = 1,000,000 MicroFarads (or uF), then just multiply the above answer by 1,000,000 and you get the correct answer of 14,600 uF.
+In this example's case, I would just use a 15,000 uF capacitor for a filter capacitor, which is the next largest commonly available value above the "minimum required" 14,600 uF.
+
+The above example may seem complicated at first, but once you do it a few times with different values and for different electronic projects, you'll get the hang of it quickly. And if you always use the consistent (whole) unit formula above, and then just quickly convert your answer from Farads to MicroFarads (1/1,000,000th of a Farad), then you will always calculate the correct answer when doing this!
+
+FYI, the formula in this video gives answers in MILLIFARADS (or mF) (1/1000th of a Farad), NOT MICROFARADS, (or uF) (1/1,000,000th of a Farad)!... Simply because they are using MILLISECONDS (mS) (1/1000th of a Second), rather than full Seconds... Somewhere along the line, the units got switched or dropped, (i.e. "lost in translation"), in the formula shown in the video, from the original, correct formula which I gave above... Possibly because oftentimes mF (millifarads) is commonly mistaken for uF (microfarads), simply because of the letter "m"!
+
+Anyway, now you know the "rest of the story", LOL!... I hope this detailed explanation helps someone out there to better understand this at least, because knowing what is the correct size of capacitor to use to filter your AC-DC power supply is a VERY important part of proper electronic equipment design!
+
+JoeJ8282 I really loved ur explanation
+
+ @JoeJ-8282  Great Explanation :)
+
+ @JoeJ-8282  Gr8 job
+
+Accumulator1; I totally understand your confusion, however, you made the same exact (very common) mistake that this video makes, in confusing the units of mF (MILLIFARADS) and uF (MICROFARADS)... The answer actually IS 15mF, however, it is ALSO 15,000uF, because they are a ratio of 1:1000 ... The full, detailed explanation is below;
+
+(BTW, A Higher capacitance used for the filtering of a bridge rectifier actually results in LESS of a voltage drop, not more, and therefore a higher capacitance also results in a more stable final DC output!)
+
+Now comes the (slightly) confusing part; This video didn't explain the discrepancies in the units , and that is why the answer is not exactly what is shown, but rather off by a factor of 1000 in each case... The (correct) formula for calculating the required capacitance is, (should be);
+
+Circuit Current (IN AMPS) x Half Cycle Time (IN SECONDS) / Acceptable Voltage Drop (IN VOLTS) = Required Capacitance (IN FARADS)
+
+If you always use the above formula with the above shown FULL units then your answer will always be correct... Using this video's "Acceptable Voltage Drop" calculations for an example, and assuming (again for example only ) that your circuit current is also 10 Amps and you are in a location that uses 60Hz frequency of AC power, like in the USA, then the correct way to use the (correct unit) formula is as follows;
+
+(First calculate the last needed parameter to use in the final formula, which is the Half Cycle Time of a 60Hz line frequency, but calculate it in SECONDS, instead of mS, as is the error in the above video... This then equals approximately 0.0083 Seconds.) (1/120th of a Second)
+
+Now finally put all of your (correct unit) numbers into the correct unit formula which I showed above and you get;
+
+10 (AMPS) x 0.0083 (SECONDS) / 5.5 (VOLTS) = 0.015091 (FARADS) of required capacitance. (Approximately anyway, due to rounding of numbers)
+
+Now, since 1 FARAD = 1,000,000 MICROFarads (or uF), then just multiply the above answer by 1,000,000 and you get the correct answer of 15,091 uF.
+In this example's case, I would just use a 15,000 uF capacitor for a filter capacitor, since it is so very close to the calculated value, and that value is the closest commonly available value. Plus, since most electrolytic type capacitors generally tend to measure slightly higher than stated anyway, especially when new, then you should be just fine!
+
+The above example may seem complicated at first, but once you do it a few times with different values and for different electronic projects, you'll get the hang of it quickly. And if you always use the consistent (whole) unit formula above, and then just quickly convert your answer from Farads to MicroFarads (1/1,000,000th of a Farad), then you will always calculate the correct answer when doing this!
+
+FYI, the formula in this video gives answers in MILLIFARADS (or mF) (1/1000th of a Farad), NOT MICROFARADS, (or uF) (1/1,000,000th of a Farad)!... Simply because they are using MILLISECONDS (mS) (1/1000th of a Second), rather than full Seconds... Somewhere along the line, the units got switched or dropped, (i.e. "lost in translation"), in the formula shown in the video, from the original, correct formula which I gave above... Possibly because oftentimes mF (millifarads) is/are quite commonly mistaken for uF (microfarads), simply because of the letter "m" being common between the two unit names! In addition, the "u" in uF isn't actually a "u" anyway, but instead it is only the closest resemblance on a common keyboard to the real unit measure, which is actually the Greek letter "mu", shown in lowercase, but to make matters even worse, that same Greek letter in Uppercase is also "M", and sometimes people state MILLIFarads as MF instead of the more proper mF!... This all results in very much confusion between the MICRO- and MILLI- prefixes of the FARAD capacitance unit!! (I see that mistake being made almost all the time, so it helps to understand the difference!)
+
+Anyway, now you know the "rest of the story", LOL!... I hope this detailed explanation helps you to better understand this, because knowing what is the correct size of capacitor to use to filter your AC-DC power supply is a VERY important part of proper electronic equipment design!
+
+I love your tutorials but I don't understand your capacitance formula. Result say 15.090mF but you call it 15 thousand mF. Does higher capacitance mean more voltage drop?
+
+Schematix Hi there I was wondering if how you find out the minimal voltage drop and the peak voltage after rectification.
+ thanks
+
+JoelJ8282: thanks for your detailed explanation. I'm in the process of building my first Full Wave Bridge Rectifier using diodes (I'm not using an "off-the-shelf" rectifier) and coupling that to a voltage divider to power up a dc volt/amp meter that will show the output of a 0~30 volt ac supply I built. It all works fine but I was having trouble sizing the capacitor until I came across this video and then your clarification. I found that everything you said was what I have found: I'm using a larger sized capacitor because, as you said, the voltage drop is less and the output signal is much smoother - my DDM and oscilloscope proved those points. Thanks again.
+
+JoeJ8282 thankyou very much now I understand
+
+Great explanation. I observed the same mistake in the formula and you clarified it perfectly.
+
+Liked & subscribed !
+
+Llllllllllllllllllll
+
+Lollllllll.
+
+Id like to agree with this persons statement, thank you for explaning this and walking us threw how to do it! Btw popping caps can be fun I got a good chuckle outta that
+
+Thanks kindly for your support ;)
+
+uF (microfarrad) IS mF (microfarrad).
+They represent the same thing. 
+They are the same thing.
+
+ @googleedwardbernays6455  
+uF is microFarad (x10-6)
+mF is milliFarad (x10-3)
+
+Nice one, I just made a comment on this too haha
+
+yes the cycle time input in the formula is in ms and the capacitance im mF. I specially enjoyed the definitions of a poor power supply.
+
+at the end when talkin about the cap blowin up, u said "it adds a little drama to ur life, but makes for a poor power supply"  ..i dont Need anymore drama in my life lol i have pLENty!
+
+Excellent explanation and demonstration
+
+I really like your content, very informative and to the point, really cool to see a fellow kiwi sharing his knowledge! :)
+
+The best explanation out there on this topic! Thank you!
+
+You answered so many of my questions but show us what ur wiring up for ur example so I can see a finished setup thanks keep making videos!!!
+
+Short, simple and well explained
+
+Your information was a BIG help to me. Thanks
+
+These vids are the king keep them coming teacher many thanks.
+
+Very interesting ! The method of calculating the required capacitor is very clear and easy .. thank you so much I really enjoyed your video it was a wonderful morning :)
+
+Thank you so much i learn allot with this video.
+
+I am so pleased that I have found your channel.
+I am going to make a battery charger as I have been told that the new type solid-state chargers are not much good.
+I want a charger that will charge a tractor battery, so I am looking at 4-5 Amps output current.
+I can get a transformer from Jaycar, now I know what size rectifier and capacitor I need to get.
+
+A full bridge rectifier is basically four hardwired diodes .... great piece of electronic hardware ... they commonly have a hole in the middle to allow mounting on a heatsink if you are going to push its limits ....
+
+This was great.   I am ok with transforming and rectification etc but was never too sure about a good capacitance selection.   Now I have it.   Subscribed for good clear presentation of material.
+PS.  Kiwis rock!
+
+You have a wonderful way of explaining
+
+Great videos and very well explained,  cheers mate
+
+Thanks for your videos Schematix, they are Excellent.
+
+Very easy to understand,thank you 👍
+
+i want more videos on your channel, related to electrical engineering.
+
+Thank you sir. I was planning to build myself an amplifier PSU this video helped me a lot :)
+
+Great video. I also appreciate your humor.
+
+Thanks mate :)
+
+Old info, bin there, done that 25 years ago.
+
+perfect,, this is exactly I have been looking for .. you do really nice job. thanks !
+
+This is the stuff why i subbed to this channel, good for people like me who have to start from the beginning.    :-)
+
+Great job all around.  Quality and content.
+
+Thank You for this  video, well done.
+
+This was so clear! Thank you! Thumbs up and suscribed!
+
+Thank you this really helped me understand the calculations.
+
+This was so helpful.  I went down to subscribe, but saw i already was. Rad
+
+at 5:57 bridge generate 2 x VF or 33 Watts . great vid
+
+Very informative. Thanks learned a lot on transformers and rectifiers.
+
+liked and enjoyed .. thank you for sharing.
+
+Great video, thank you for the calculations
+
+God bless u, thanks for a very nice job
+
+Hi Schematix, hope you're doing well! I've enjoyed the couple of videos you've posted on transformers and other power supply components.
+
+Great video!
+
+Great video great teacher you are
+
+thank you very much for making the film
+
+Thank you , really helpful
+
+Awesome explanation!!
+
+By any chance have you done a full video of DC power supply using transformer and capacitors? Great video by the way. Nicely done!
+
+Awesome video!!!
+
+This channel is very informative i like big, hello my dear new friend im fully watched from philippines👍🤝🙏🏼👏👇🏿👇🏿👇🏿
+
+Your videos are great! You've got yourself a subscriber
+
+Hi a very explanatory video, its appreciated greatly. 
+
+The question it brings to mind is, how did you decide on the minimum acceptable voltage and for a long service life how does this acceptable voltage effect the life of the capacitor. From the data sheet I only see the recommended ripple current and not ripple voltage.
+
+Excellent video!! Thanks very much
+
+Another option not addressed at the end is that when picking your capacitors is to just add more small capacitors rather than one big one, as long as you aren't going to exceed their voltage rating. The benefit there is that you can usually use smaller capacitors that are faster at discharging, you can often over-provision incrementally by leaving space for additional capacitors that you insert when and if your load requirements change, or for heavier duty versions of your circuit, and 2-3 smaller capacitors are usually cheaper than one big one, and if one blows you may not lose the whole bundle in the field, and you let out less magic smoke per blown cap.
+
+Perfect, thanks.
+
+I wish someone would come along and do one that is my size; 50 amp. 120 volts going into my 200 Amp rectifier and I am getting 29 volts out and I need to have at least 17.5 volts max, I have used 220uF for my filtering bank, 4 on the positive side and 4 on the neg. side as well. But I still need to be able to handle 875 Watt potential, for my power supply loading. Running an RF amplifier along with my RCI 2950 radio for my loads. Amplifier will be of a size that will not over burden my load capacity and still have some headroom to keep it running cool. So my RF Amp will be no larger than a 800 watt PEP amplifier. RMS should be well below 350-400 maybe 450 at the highest watt average for my loads.
+
+Very useful.....thanks mate!
+
+Great video. To the point and well organized. Well done. Count me in as a subscriber.
+
+Thanks man...🙏🙏
+
+Thank you sir...!!!!
+
+Why choose electrolytic capacitors vs. say ceramic or plate or a coil capacitor?
+
+Creative video, thanks :)
+
+Great mate.
+
+Interesting, very well explained
+
+Nice vid series thanks.
+
+good video
+
+Very useful, thanks. Subbed.
+
+Back to school dude... there are 2 diodes conducting at the same time in a bridge rectifier therefore the power dissipated is 33 watts at the peak of the waveform IF each diode is dropping 1.1 volts. Because you are dealing with a sinusoidal waveform which only conducts towards the peak of each half wave, the average power is a lot lower (as you should point out at the 8 minute mark with a very good diagram). You need to read the graphs for those figures. The inrush current when turning on your power supply will cause a 5 or more times the normal current flow through your rectifier depending on the capacitance chosen and you need to make sure that the rectifier can handle this  burst. Fortunately it can... 300 amps in the next line down from the "Maximum average forward rectified current" line... "Peak forward surge current etc." Overlook that figure at your own peril. Personally, I'd use the 35 amp bridge for your task to cover any current surges and the price is about the same for that peace of mind. Been there, done that... retired electronic tech with very few blown rectifiers to my name. Apart from that, a very informative tutorial.
+
+its not a pair of black hands with ridiculous music playing from start to finish , well done for making a normal video using your voice in clear spoken English  .
+
+Thanks ;)
+
+You've made my day ;)
+
+Sure, in theory that works. In reality they start to clamp and self limit the amount of current output.
+
+ @linandy1  I'm not advocating for more than a few. You see this all the time in power boards for eurorack gear where you just line up a something like 3 cheap 4700uF caps per rail rather than try to find a single capacitor.
+
+:)
+
+well done !
+
+Why is your calculation on the calculator off by a factor of a thousand? Just a little confused because you used the basic unit for amps and multiplied it by the milli unit for seconds rather than the basic unit for seconds. 
+
+But the formula still checks out with matching units, the final unit is microfarrads and using matching units, I get 0.015090farrads which is 15.09 millifarrads which is also just 15k microfarads.
+
+Apart from that, this video was very useful. I wanna make a diy circuit to power a car radio from an outlet for a sort of home made boom box type deal. The power supply is the hardest part, and I feel the diy transformer is gonna be the hard part of the hard part.
+
+Considering the radio is gonna power speakers at at least 15w rms to 4 outputs, including the other internal that need to be ran , I’m guessing between 5-7 amps to run the radio and thinking of designing a circuit that can handle 9 amps. 
+
+Course, figuring out how to make a diy transformer to convert 120vac to 10vac at 9 amps is a whole other thing in itself.
+
+This would leave me with a 14.1v peak and assuming a 1.4v drop between the positive phase and negative phase diodes, I’m left with a 12.7v peak and should at the very least aim to stay above 12.3v since that’s about the minimum good voltage of car batteries with no alternator. But this isn’t accounting for the radios amplifiers efficiency. 
+
+Anyways, using the formula, to run and rectify a circuit running at 12.7v peak at 9 amps while maintaining at least 12.3 volts……. 186,750uF…. So definitely gonna have to redesign this and probably run the radio closer to its max operating voltage to allow a larger voltage ripple because that’s a crap ton of capacitance.
+
+All this makes me realize just how much thought has to be considered in circuit designing. Really makes me respect the people who design motherboards and gpu’s, bet that stuff is a complete nightmare compared to this stuff.
+
+Thanks. Joe
+
+In my case adding a smoothing capacitor leads to an increase in power consumption from the grid (x3 times more). Why is this happening and what should be done to eliminate this effect?
+
+Can you build a simple power supply for testing a inverter compressor.  Where it is not known if the compressor or inverter or both are bad.
+
+Thanks
+
+Handy stuff, however, when you got to required capacitor calculation with that formula I don't get where thousands came from as equation gave whole number 15 and a bit but not thousands... Unless we change the wording of the equation from '= microfarads" to '= millifarads' or '= microfarads x10^3' hope this makes sense, good work anyways!
+
+Liked & subscribed
+
+Thank you for that great explnation. I have ? if i have only normal diode & i have to make BR from it with Capacitor. if I want 18V & 15A or higher, from 220 transformer. How much should be the diode & capacitor? Thank u for answering if you can.
+
+what about ripple current {storage current} rating of cap
+
+Can you elaborate it more please
+
+Excellent video & tutorial.   I am in the process of replacing the Bridge Rectifier in a Daiwa PS-30XMII.   When I removed the faulty BR it had a 14mm brown ceramic disc capacitor across the AC terminals.   I can find nothing about this on the schematic.   Is the capacitor of any real value in this situation or would you recommend
+ fitting the new one without it please?
+
+As someone who knows nothing about electronic components, what is the capacitor used for with the bridge rectifier.  Is this called a "full wave" bridge rectifier when you add the capacitor or is that with a resistor added?  I am trying to repair a set of LED christmas light string, which is 110V at .02 amps.  There are 36 LEDs.  The rectifier was burned out during a bad rainstorm and the plug got underwater.  The LEDs are still good (I tested them).  I can't get another rectifier (tried many places that sell christmas lights) and the place I bought them from recommended my to build one..  I was thinking a 150V 2amps rated but don't know if I need to add a capacitor and/or resistor.  What components do you recommend I use?  Thank you
+
+Hi. Enjoyed your video. I have 2 questions, I wonder if you can help me with or provide a link to point me in the right direction.
+
+1. Adding capacitance usually improves performance but how do you calculate threshold beyond which adding more will no longer make an improvement?
+
+2. I'd like to understand the difference in designing a power supply using vacuum tubes Vs using diodes.
+
+Thanks and more power to your channel!
+
+Hi, any advice on the brand to choose, there are so many ! Thank you
+
+Can a full bridge rectifier be used as a choke in place of an inductor between a control board and a DC treadmill motor? The inductor that came with the treadmill had a bullet hole in it and was beyond repair. Also, don't know how to use a transformer as an inductor because I don't know what values would be needed. You probably have a video on inductors that I should watch. Cheers
+
+Hello, I have an ATV with no battery, just pull start which outputs AC power and I want to run a 12 V DC fan for the radiator (no other powered accessories such as lights etc.).  The stator has a lighting coil that outputs 150 watts.  I cannot find the wattage of the fan but I did measure the resistance and got 3.8 ohms, so I believe the wattage is about 38 through calculation.  The engine manual says the lighting coil produces 32V at 2000 rpm, 50V at 3000 rpm and 67V at 4000 rpm.  The motor is rated at a peak rpm of 7200 (not sure if all of this info is needed).  This is a retrofit so I have not added the voltage regulator yet but I assume it will bring the voltage to 12V?  With that information, can you provide guidance of which rectifier and capacitor to use?  I am somewhat electrically helpless, so any assistance would be appreciated.  Thanks!
+
+hello i started making a toroidal power supply ive seen the videos people plugging in the toroid to find neg and pos current before hooking up the capasitor i tried with mine it immediatly blew my breaker any suggewstions would be appreciated
+
+Hi, I am replacing the rectifier on my car battery charger and it has a 22UF cap on it and the new one that I ordered tuned up and is only half the diameter and the two legs come out the same end as each other where as the old one comes out both ends, will this still be ok or should I look for another one, also does the capacitor connect positive to positive and negative to negative on the DC pins. Thanks.
+
+I plan to charge my 2006 Prius hybrid battery with it
+The hybrid battery I'm not sure
+could be 210 volt DC
+Or 201 
+It's 28 cells in series pairs
+I think each cell is 7.5
+I'm checking
+So series is 14 series 15
+In series to make 210.
+I hope my charger works.
+But I'm charging with very low amps
+it may take a week.
+
+are you sure its  cap....could be a MOV
+such a cap can reduce line noise/spikes
+
+gOOGLE CAPACITANCE VERSUS RIPPLE
+
+Adding capacitance usually improves 
+  depends on the circuit - for a power supply using a full bridge rectifier the rule of thumb is 2000 uF per Amp but the point of no difference is rather complex.  MOTOROLA has some reference books showing this
+
+silicon power diodes;  longer life, smaller size, efficiency,  lower cost, easier to obtain, lower heat
+
+excellent videos keep them coming. im interested to find out how to pair a mosfet and a protection diode cause im sick of destroying mosfets lol. im running a 240vdc treadmill motor off of a 12v battery to 240vac inverter to a bridge rectifier  (now i know how to match a cap for the job) to a pwm circuit with mosfet then to the motor. the motor is 100% dc not ac but the mosfets don't last long. any help would be awesome
+
+Nice tutorial very educatioal
+
+I bought a solar panel
+Rated 200 watt 22.7 to 26.6 volts
+That's gonna go into a box that makes it 12volt through a 30 amp charger controller.
+This controller has twol 2.5 amp USB outlets.
+There should still be over 100 wats 12 volts 
+Great cause I bought two 50 watt inverters that put out 115 volts AC
+I'm guessing .2 amp
+I can rectify both 115 powers then put them together to make 230
+or put them together then rectify 230 AC to make it DC
+I want your help calculating the diodes and capacitor.
+I want it to be your design.
+Could you please do that for me?
+
+Birds singing in the background. Thought I was going crazy there for a minute.
+
+Good video. So the result of cap with not enough uf will not fully smooth out the current as well as a cap with the proper uf required by your calculation? Does a toroid core wrapped with copper wire, and connected to the cap, help smooth out the current even more than without it?
+
+If I'm hooking a 200 Volts 4 Amp rectifier to a wall plug. Does the rectifier only draws 4 amps from the socket or is there a flow of 16 amps then?
+
+So I guess my questioning would be can you use multiple compasitors to reach the compasitance you require? Like idk if that would even work in series or parallel or dose it have to be one compassitor i guess depending on the application?
+
+intuitive, so if I want 50amps and 16 volts what type and how many capacitors would I need?
+
+how do i calculate the filter capacitor required for a half wave rectifier with diode(1N4007) and a 1K resistor?
+
+How do you calculate the 'half-cycle time'?
+
+Do I get benefit from choosing higher capacitance then necessary?
+Does that equal lower Ripple better Smoothing out?
+Does the capacitance storage in power supply affect capacitance storage in Load (music Class D amplifier (DC Powered)?
+Is there a benefit adding additional capacitance board (capacitors in parallel) to increase total capacitance? 
+Does the transformer has to be then more powerful (power wise/ current wise) to handle that?
+Thank you for responses ( i know quite specific questions)
+Example: 26V rectified voltage (200W - transformer) going into Class D amplifier board (which has its own capacitors)that is 2x100W. Will I benefit from additional capacitors in series between transformer and amplifier?
+Thank you
+
+I was gonna build a dc supply with a 1000w microwave transformer. gonna rewind it to put out around 50v I have a couple 1000v 50a bridge rectifier laying around could I just use them or would that be way overkill and have negative effects?
+
+the more the better ,the bigger the better
+
+I'm confused, you are saying the voltage increase by 1.414 and later you are saying it drops by 1.1 ... so it increases or it drops ? thanks
+
+Hey Schematix where did you go dude... its 2019... are you still alive out there ?
+
+Thanks, really enjoying your vids. Building a twin power supply (2x55 watts) at the moment and bought some (probably) oversized caps because I found no suitable formula on the internet. Now I can calculate if they are sufficient.
+
+Btw, where is the hawaii shirt from the early vids? ;-)
+
+So If I were to use in my typical electrical application an electric lawn mower for example which has an electric motor rated at 13 amps maximum with 115VAC(70.5Vdc full wave bridge rectified output with minimum 65Vdc ripple voltage varying output);
+
+13 Max Amps x 0.00835(ms) = 0.10855 
+
+0.10855 divided by 5.5 = 19,736uF for electrolytic capacitor @75Vdc about $35 on google shopping;
+
+would that value work for example electric lawn mower application?
+
+Thanks for the video, I need a 60 micro farad cap by the calculation and I have a 360v 60mf cap from a photo machine flash circuit. But I am not sure about using it, Is it safe to use it? It is above the voltage I need (16v) but still don't feel safe :)
+
+Please, how can I get 100 dc v with 5Amp circuit diagram from 220 V AC....With all respect
+
+How do i calculate the capacitor value if the ac source is from a bicycle dynamo? Any way to make an estimate? Also, does the ready-made bridge rectifier comes with capacitor??
+
+Thanks! Plenty more videos coming! My first thought is the mosfet being adequately cooled with a heatsink?  If the mosfet is exceeding the rated operation temp it's life span will be significantly reduced. Make sure you have a mosfet rated for at least 20% more current & higher voltage than what you require
+
+I've tried telling the birds to be quite.... But they don't listen! 🤣
+
+Do I get benefit from choosing higher capacitance then necessary?                     marginal
+Does that equal lower Ripple better Smoothing out?                                                    yes
+ 
+Is there a benefit adding additional capacitance board (capacitors in parallel) to increase total capacitance?      Yes, lower ESR 
+Does the transformer has to be then more powerful (power wise/ current wise) to handle that?                                 there will be a higher inrush current       It MIGHT impact  components such as diodes
+
+Does the capacitance storage in power supply affect capacitance storage in Load (music Class D amplifier (DC Powered)?
+
+except for class A   amps respond by drawing extra power form the power supply, so the power supply must react quickly.  This is a strong argument for large output caps.  Some argue against tight regukation because it oftens results in slower response
+
+From what I'm understanding, there's a drop in AC voltage on the way through but you still get a higher DC voltage at the end. 
+
+The question I think you're wondering is do you multiply the initial AC voltage by 1.414 or do you multiply it after the forward drop?
+
+According to the video (at 3:37), it's 1.414 times the INPUT acv to get the dcv output. 
+
+The loss of 1.1v on input of 50acv would be about 2%, so it's not that much of a loss even if we were to multiply the input voltage after the 1.1 voltage drop.
+
+I guess this is why it's important to size your rectifier correctly. If you pick one with a relatively large drop, it'll be inefficient and needlessly overheat your rectifier. 
+
+Based on his choice, a drop of 2-3% is what you'd expect. If it's larger, you probably need a smaller rectifier. 
+
+I think...
+
+ @MichaelApproved  I did some research since and I understand better. So yes the bridge converter will convert ac to dc. But let’s say a 230v ac is in fact a curb of 320v but the vrms is 230v. So after beeing dc it can be 50v but still the same it’s vrms and peak will be higher corresponding by X1.414. So it’s the capacitor which will make the vrms equal to the peak by blending thoses peaks. So yeah the increase is either the voltage after the capacitor or how you mesure between peak and vrms value. Hope it helps.
+
+RaithUK I was thinking that he died
+
+Lejf Diecks. Thanks for the feedback. At the moment I'm building a 900watt programmable bench power supply (Build video coming) it was a little chilly for a tropical themed shirt ;-)
+
+higher WVDC is fine
+
+Can someone explain? At 3:38 we are told that "To calculate the volts after rectification multiply AC input voltage by 1.414... " . Why then does the calculation at 8:27 only use 70.5V for the capacitor calculation? Both the 100V (approx.) and the 70.5V are referred to as DC voltage "after rectification". Is this because the 100V is only a peak (as referenced in the RMS calculation), and the capacitor should be calculated based on the nominal 70.5V? Thanks for any explanation.
+
+Well presented thanks..I have one question regarding my DIY project/experiment..I'm trying to rectify the HV/HF output from the Secondary of my mini Slayer Exciter tesla coil and not sure about the type and the current rating of the rectifier I require..any input appreciated thanks
+
+Please I want to make a changer that can change a battery of 200amps how can I go about it
+
+Hello I have a magnetic drill base that does not work, it uses a bridged rectifier . AC TO DC how do I find out what size the magnet needs? and or how to test if rectifier is bad not knowing the size of it and drop....I believe the label of magnetic  base says 300v and or 30v its hard to read and the rectifier has no markings besides AC markings, any help would be appreciated
+
+How about a 3 phase windgenerator... how can I know what capasitor to use? Since its up and down on the power all the time? 
+Regards.
+
+How do you get 8.3
+from 10  miliseconds
+why is the DC voltage higher 
+when the diode takes 1.1 volt
+if the diode has a 1.1 voltage drop
+sign meaning it could be something else why is your DC voltage always 1.4 times the ac?
+
+Sir,
+Excellent video! I just found what I was looking for.
+But, I have few questions. 
+
+On 12-6-0-6-12 CT transformer, I'm getting 32V from first and last terminal by reading from multimeter without any load. It is the RMS right?
+If it is RMS, then peak should be 45.25V. If I use a 35V capacitor, I'm getting 45V after adding capacitor. is it okay/safe?
+Whats does 35V mean on that capacitor - maximum of RMS of maximum of peak?
+
+Thanks in advance :D
+
+I wanted to know when to use a Zener Diode and where to put in the set-up. Please let me know.
+
+Would a 100volt 3,700 or 5,000 or 10,000 Farrad capacitor be dangerous ? I need 100volt because a bicycle bottle or hub dynamo can output up to around 100 volts ac on very fast down hill descents. I plan to use it to make a full wave bridge rectifier as a smoother for my vintage bicycle dynamo lights to stop the very annoying strobing that occurs with the AC & to hopefully enable the light to glow for a few minutes when stopped at traffic lights when the current from the dynamo is no longer flowing - the capacitor discharging into the load ( a 3 watt total of  front & rear led bulbs).  How long could I expect the lights to glow for before going out completely with these value capacitors please?
+
+Thanks. So I can replace a broken bridge rectifier with a other one, that has a higher voltage and amp rating, without cousing  problems to the circuits?
+
+I am converting the power to a kiln which runs at 240v and 50 amps. The kiln remains ON powering heating coils for long periods...weeks at a time. It's a strange project I realize but please bear with me. I would like to eliminate as much ripple voltage as possible but when I calculate the capacitor specs they are very high (350V-400V and ~42000uF). Even if I try and run 2 or 4 in parallel the cost and availability become real issues. Is it possible to get a partial smoothing with less capacitor power? How well would it run at 10,000uF? Thanks for helping!
+
+How do I find out how many watts a Bridge rectifier can handle cuz I have one that's a thousand volt 35 amp and ain't no way I can handle that
+
+10:19 - Please Sir, is an "electrolic" capacitor the same as an electrolytic one?
+I mean, did you mean to say "electrolytic" rather than "electrolic" ?
+You clarification would be appreciated.
+Thanks.
+Great video by the way.
+
+Why capacitor value is always like 4.7 , 47, 470 or 4700 ??
+
+can someone tell me what does acceptable voltage mean? thanks in advance.
+
+In the datasheet, there somewhere written "half wave", so does it mean I'm gonna only get half the signal using this diode?
+
+I have seen videos using a center-tap transformer with 2 diodes for full-wave rectifier and a single smoothing capacitor and I have seen them with the standard full-wave rectifier with the center-tap tied between 2 smoothing capacitors. Transformers are rated in power as either Watts or Volt-Amp rating which is still the same thing. So is there any one that is better for a power supply. If you have 30 volts AC at 4 Amps and after DC Rectification and Regulation - is that going to provide 15 Volts at 8 Amps?
+
+so why dont we just buy the biggest rectifier on the data sheet?
+
+reverse voltage and forward voltage???..is reverse what come out of transformer?..is forward what comes out of out let/plug?edit ok google tells me ets voltage on each side of the diode.
+
+Hi. thank you for explination but i want to clarify something: your math in calculating the capacitor value is not right, or the formula is wrong. maybe the formula is in milifarads since you used miliseconds.. the result from your calculator is 15.09 milifarads what is equal to 15090 microfarads. Best regards!
+
+While you could purchase an ultra-fast recovery diode, the problem is the voltage. A quick browse online shows a mere 40kv or higher diode is in $$$$ range. Even though the humble slayer exciter is a baby tesla coil in the grand scheme of things. It's very capable of outputting over 40kv. I've never heard of anyone rectifying such a high voltage/frequency before.
+
+thanks
+
+Hey raydan18, does your project works? I am also trying to rectify a HV HF voltage with f=49khz. May I know what are the specs of ur rectifier?
+
+Zener diode is used when you need a specific vpltage , you now get a zener diode of dat rating connect as required
+
+what is the ominal voltgage
+hard to beieve the voltage peaks at 100V  - maybe a cheapuit or badly designed
+such caps are quite expensive, so I would limit the votgae - maybe use a power zener
+
+How long could I expect the lights to glow for before going out completely with these value capacitors please?
+depends on the cap value, current and drop-out voltage
+you can google th cap dischrage formula but it is a bit nasty
+
+yes
+
+try a capacitance multiplier     it is just a BJT transister, resistor, and a cap             So a 100 uF cap and a transistor with a gain [beta] of 50 is like a 5,000 uF cap
+
+its just a dialect. or a short form for the all too lengthy word. the electrolytic type is usually choosen in power supplies, as it is well predictable which side is always positive. simply because they are cheaper.
+
+no
+
+Why u not posting Videos anymore?
+
+are you sure about the margins you are taking ? because you always take 30% ish but sometimes I see taking like factor 3 to 20 on voltage and 2 times on amps easy.
+
+No mention of ripple current rating? I think that's pretty important. This resource explains it well https://www.electronics-notes.com/articles/analogue_circuits/power-supply-electronics/capacitor-smoothing-circuits.php
+
+Not sure I understand. Why is 5.5V voltage drop "acceptable" for a power supply. Doesn't that mean that the voltage will constantly vary within a 5. 5V range? That much change will wreck a lot of things.
+
+What do u mean by acceptable voltage drop, is it the rating of the capacitor
+
+In your example starting at (8:26) - you state that : "Formular: Current X (sic) Half cycle time / acceptable voltage drop = Microfarads (sic). 
+
+Using milliseconds as the unit of time I get: 10 x 8.3 / 5.5 = 15.09091 but this is not microfarads is it?
+
+OK, so next I tried using seconds as the unit of time, thus: 10 x 0.0083 / 5.5 = 0.01509091  Again, this is not microfarads,
+
+I think you should be much clearer in your presentation of formulae because people run the risk of blowing themselves up.
+
+Incidentally, I believe my second result is actually in Farads. Please, do you concur?
+
+Post edit: Actually, I have just realised that your displayed formula gives the result in millifarads, not microfarads. Please, do you have any comment?
+
+How many uf & volt capacitor use in 10A bridge rectifier?
+
+if the bridge rectifier have 10A and we need 20A how can connected bridge rctifier in parallel can you  explain in video thanks
+
+I need your help with 2 things :
+
+
+1: I am using Bridge Rectifier QL5010 it suppose to Handel 50A but it brakes down in (25A  soo fast) ( 15A in 10min ) even I put aluminium colling but the black resin temperature reach 100 even the case is cold.
+
+
+another thing. how many capacitors need to put in output 25v / 25A  to smooth the voltage without a ripple more than 400mv
+
+How would I calculate required microfarad capacity of a cap when the frequency is unstable like that based on the rotation of a stator matched to the turns of a bicycle wheel?
+
+Respectable Sir, I have not understood about heat sink size required for any particular watts absorbing I.e dimensions calculation of heat sink required for any desired watts. Respectable Sir, Is there is any formula for it's calculations for installing right sink to required Watts? Please explain this Point ? Overall very excellent explanation, I praise your explanations. Thanks for your teaching us.
+
+Can I used diodes in series on each side of the rectifier to help with heat dissipation or will that just add to the voltage drop, create more heat and leave me with the same issue?
+
+How to calculate capacitance values for 5amps 24v transformer, 230v ac, 60hz
+
+Hello sir I am a indian
+I have one question sir. I want to convert a 110Ac to 110Dc . I can use a bridge rectifier but which value capacitor can I use ? Because of pulsating Dc to convert pure Dc.
+
+should the capacitor be in front of the bridge rectifier? the capacitor I have  is  80 v ADC
+
+I can't even figure the number for half a cycle 60 hz
+I've never done anything like it.
+
+Hi, Thanks for the video and could you please tell me how to calculate capacitor for DC AC inverter on DC site 12VDC to 220VAC,  24VDC, 48VDC and etc.. or give me a like of the web site please.
+
+👍👍
+
+There is no such thing called "Full Bridge rectifier". It can be either a "Full Wave Rectifier" or a "Bridge" Rectifier. The term: Full Bridge Rectifier is as wrong as "Wet Water" or "dark darkness".
+
+volume is low
+
+Good question. It is acceptable for my application in this example I had a 65~80VDC window. So 5.5v drop is within spec. No, it does not mean it will constantly vary with 5.5v range. A 5.5v drop means if my peak voltage is 80v at no load. Then at full load, I can expect no less than 74.5v. In applications where you can't tolerate voltage drops under load, often a voltage regulator/buck converter can be used in conjunction with a transformer/rectifier/cap setup to provide smooth power. :)
+
+Acceptable voltage drop is the voltage difference between the lowest & highest voltage readings. For example, if I required a minimum voltage of 20v and my power supply was outputting 25v, I could tolerate upto a 5v voltage drop.  25v (power supply) minus 5v (acceptable voltage drop) equals 20v, which is my minimum required voltage
+
+Well, 1 Farad is the same as (A x s)/V (Ampere second per Volt). The Formula in the Video is: Current(A) times cycle time in milliseconds divided by Voltage so: (A x ms)/V  1 Ampere milisecond per Volt. So your right, the result is in Milifarads.  if you'd calculate with microseconds right away you would get microfarads as a result.
+
+I wouldn't recommend parallel FBR's. If one FBR has a slightly higher or lower forward voltage than its counterpart, current will be biased to the FBR with the lowest forward voltage. Potentially overloading & resulting in a blown FBR. 20amp FBR's are cheap and easy to buy online. That is the safer option
+
+abed itani this is pretty late, but I would honestly just buy a rectifier rated for way more amps than you need it for and screw it to a heat sink and put a fan to it, I had problems with heat too but this helped
+
+@Βασίλειος Μπεσλεμές most of the time yes, but I'm looking for a capacitor for a bicycle generator.
+
+Thanks. Calculating the required heatsink isn't exactly simple. There are several factors to consider, such as the metal used, the design of the heatsink, efficiency, air flow, climate.etc However, most heatsinks are rated to dissipate a certain amount of watts. Simply put, buy a heatsink rated for at least the amount of watts you want to dissipate. :)
+
+I know on a typical computer aluminum heat sink one has to dissipate at least sixteen watts of power so a three inch by three inch by two inch high aluminum heat sink should be able to do the job.
+
+That will only add more heat. The best way to manage heat is by using a heatsink to dissipate the heat more effectively.
+
+You didn't write sir so no answer for you.
+
+cURRENT?
+
+study  the video
+
+cap must always be after the diode, else the cap acts like a short circuit to AC ...
+
+Ghafoor Samadi hello..I need to design 60volr 1A power supply without transformer..can u help me?
+
+You are right, it is not "Full Bridge rectifier" it is "FUUULL BRIIIDGE RECTIFIER", look for it it with ELECTROBOOM, it is funny, please dont take the wrong way as it can be rectified.... I am sooo not funny... I know...
+
+I have never in my life seen 200000uF (0.2F) capacitor in PSU.
+
+Hello, i'm asking if you can help me with my project i'm trying to build, please? i have a 18 v battery drill  and i want to convert it to wired drill, so i brought a transformer , rectifier and capacitor. after connecting the drill, i cant get enough torque and there is a lot of volt drop  especially when i increase wire length to the drill.  with deepest thanks for answering.
+
+The equation doesn't match the maths - it should say how many 1000 uF capacitance you need.
+
+I use 10 car batteries in series, 120 volts, no hum, 100 amps.
+
+Sorry to be pedantic, especially because otherwise this is a really nice video, but the commonly accepted terminology is a "full-wave rectifier" (as opposed to a "half-wave rectifier") with a "bridge rectifier" being synonymous with a "full-wave rectifier".   "Full-bridge rectifier" just sounds so wrong.
+
+Hello, thanks. In conjuntion with you video on modifying a microwave transformer, if I wanted 15VDC, would the following be correct: 11.5VAC (Approx from secondary winding) --> 16.5VCD --> 15.4VCD after bridge (is it a problem if the bridge is rated at 1000V but the real voltage is 15?). For capacitor: 10A*10ms*0.5V (acceptable voltage drop)= 5000 microfarads. Could I get away with a 25V 4700uF? Or a 25V 22000uF? (that is what I have at hand at present), thanks.
+
+how do you know what the minimum acceptable voltage is?
+
+Ive got a tranformer that outputs 30-0-30 ac after i use a bridge rectifer and some capacitors my voltages is incorrect.the positive voltage is 37 when the other is 48 where is the problem?
+
+I know I'm asking a lot but if you can help me I'd be very thankful.
+I have a AC Lincoln 225 welder (up to 225 amp) that needs to be converted to DC with a rectifier ,capacitor, and inductor and I do not understand what is the right parts. 
+I'm very sorry to ask you for this info but I'm not good with electricity. can you please in your spare time figure this for me?
+
+Don't you mean 15.090 Mf not 15,090 Mf.   Fifteen thousand is a monster of a capacitor
+
+Doing arithmetic is hardly calculation. Too entry level to be useful
+
+Finally
+
+So are the bought bridge rectifiers more efficient then me wiring up 4 diodes myself? Or is it just easier
+
+Cuz i dont mind soldering them :P
+
+you should tell people to use 2 or 4 caps to get closer to the right number on the cap
+
+Your voice over conflicts with what is written. In your formula, you say that the awnser is how many uF you need. However the voice over says mF instead of uF. In your example, your calculation comes to about 15, but instead of saying 15micro farads you say 15,000 microfarads (1000uF = 1mF or 1 milifarad)
+
+Hi any chance of building me one for a 3 hp water cooler ill pay$$$$
+
+Dear sir,
+First input supply 230v then rectifier 8A after bulk capacitor 100uf/450v this one ok ?
+
+"TIMES" it ?   Multiply it !  ENGLISH ?   Grade School Child's error !
+
+Lets say i have a transformer of 50 volt 10 amp ac out put. What will be the rectifier or diode rating and capacitor rating?
+
+Drinking game.   Take a shot every time he says full bridge rectifier.
+
+Welder
+
+A battery outputs DC power. Transformer can't be simply be wired into a DC source. You're better off buying an inverter from online that will convert the DC to AC to run your corded drill. Another thing to consider is how much current the battery can supply? Typically an AC drill will draw a few hundred watts. And most drill batteries wouldn't be able to supply that kind of power. So I'd recommend using a 12v car battery and using an inverter to run your drill.
+
+ @Schematix  Thank you
+
+And to charge this array??
+
+His formula in the video is a little sketchy.  First, you don't multiply by 10 for 10 milliseconds (milli = 10^-3), you multiply by 0.01 (or by 0.0083 for 8.3ms).  Second, the final answer is in farads, not microfarads (micro = 10^-6).  For your application, it works like this:
+
+(11.5VAC x 1.414) - 1.1V = 15.2VDC
+
+(10A x 0.01s) / 0.5V = 0.2F
+
+That final answer is 200,000 microfarads.  At high currents, it takes a lot of capacitance to produce very low voltage drop (ripple).  The 26,700uF of capacitors that you have on hand will result in about 3.75V of drop at 10A:
+
+(10A x 10ms) / 0.0267F = 3.75V
+
+A few more things to consider...
+
+If you're measuring 11.5VAC from your transformer with no load, that's not what it will produce under a 10A load.  It will be significantly less (as much as 20% less, in some cases).  If you're getting the 11.5V number from the full-load rating on the transformer's label or data sheet, then you're in good shape.
+
+You don't usually use the transformer-rectifier-filter circuit to achieve your desired final voltage tolerance (0.5V, in your case).  Instead, you should design it to supply a minimum voltage to your regulator that never goes below its dropout voltage.  It's the regulator's job to eliminate gross ripple and provide the stable voltage you need.  My point is that if you're making a regulated DC supply, you probably don't need to get 0.5V ripple from your filter capacitor.
+
+For example, let's say you want 12VDC at 1A and you decide to use an LM7812 linear voltage regulator.  The LM7812 has a typical dropout voltage of 2V, so the output from your filter capacitor(s) must never fall below 14V.  Any ripple above that value (within reason) is handled by the regulator.
+
+Tip: if your design is really tight on dropout margin, you can "save" half a volt or so by making the rectifier out of discrete Schottky diodes.
+
+Yes, a 1,000V rectifier will work fine.  Its rating just has to exceed the peak AC voltage from the transformer's secondary winding.
+
+Hello, thank you for the detailed response, appologies for not responding sooner. The application is to give 15V to a car battery at around 5Amps without forcing the transformer/capacitor Etc (for car battery recovery for a solar set-up). I know I could buy this from ebay, just trying to play around (with care). Once I manage to put something together I will share results!
+
++FlyingShotsman why did you substract 1.1v while converting vac to vac max (vrms * 1.4142)?
+
+Pretty sure its the voltage forward needed across the diode to be greater than the reverse voltage and the voltage drop or else the diode can't let the voltage pass like if the reverse voltage was say .7 and your voltage drop across the diode is 1.1 you would need a voltage greater than 1.8 . To have any voltage after it passes through the diode so like 1.9 would be the minimum voltage you would need to produce any kind of volts after passing through cus every thing up until 1.8  or maybe just the voltage drop and not adding the reverse. Something along those lines I think.
+
+I don't know the answer for sure. Perhaps bad soldering. However you led me to an idea of buying separate diodes in bulk and measuring resistance of each, putting together the closest values possible, instead of buying a ready made rectifier with unknown components inside. Thank you.
+
+Ringo Gingo 
+all you need for a welder is the rectifier. you can even get them on amazon. they have single module  diodes.  100 & 150 & 200amp. I'd get 3of the 150amp units. mount them to a good heat sink. or a big chunk of aluminum or both. for heavy current you want to over rate the diodes. at least double to triple. the more likely it will survive. use 1/2" x 1/4" aluminium copper steel or brass as links to connect the same points of the rectifiers. when possible. then connect the welder leads to the ac connection. then the +&- is DC output. but mount them to at least a 1/2" x4"x4" heat sink. for short welds . like spot welding.  but check the temp. of the diodes. weld a few seconds . wait a few minutes . check temp. then repeat. if they get crazy hot . you need more heat sink. this is a quick and dirty fix. like that genius with a mullet would have done.
+
+James stranger you should add at least a capacitor to smooth the voltage ripple in order to get a smoother arc. It could become a real pain especially with stick welding to have an inconsistent arc.
+
+u want high votage dc ? if u want high voltage dc  it is fine  since capacitor is very low ripple will be high also
+
+Alcohol poisoning will result.
+
+ @gorillaau  He's a KIWI haha
+
+im building a adj 5-30v 60amp power supply in the u.s.a'''' what size caps '' do you think i need'''''thank you''james''' oklahoma.
+
+daaattaa, like data but WRONG
+
+can i get your email Id. I do have some questions regarding this video. Keep up your good work.
+
+Those are full wave bridge rectifiers, not full bridge rectifiers. ;-) They rectify a full wave of AC. They do not rectify a bridge that is full.
+
+Googdjop,thanks
+
+Thanks
+

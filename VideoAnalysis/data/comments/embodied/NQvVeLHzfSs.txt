@@ -1,0 +1,67 @@
+Your older H-bridge designs is what brought me to your channel. 
+My current project is improving the speed control on a milling machine power feed. These use universal motors, and are just SCR half wave controlled. Reversing is done with micro switches the reverse the connection of the field coils. Once I figured out that a H-bridge will not reverse the motor (I thought universal motors worked the same as PM motors), now I'm back to an improved PWM design that is much faster then 60Hz. 
+The problem with all these power feed after market units, the sweet spot on the speed potentiometer is so very small, from not rotating to too fast. I'm going to use an encoder so there will be feedback in the system. This will also let me have electronic limit switch end points.
+So I can use a DPDT relay to switch the field coil, or figure out a solid state one. The direction change would only occur when the current is zero, so arching of relay contacts will not be an issue. I just think solid state is the way to do this. And that is effectively an H-bridge. And would be the design you have in this video.
+I'm a retired EE, 10 years now.
+
+What a bliss to have found your channel. Subscribed when I came across the photovoltaic optocoupler video of yours, we are lucky to have such good content online! This here is the standard CMOS implementation, MOSFETS requiring a P on top and an N at the bottom, naturally forming a NOT gate, with field effect transistors. I love you have extended it to allow for higher voltages that the MOSFET gates natively tolerate, in the standard CMOS implementation, you don't even have those as your rail is always within the region, and the silicon goes as fast as it can. One could ofcouse manufacture a p and a n mosfet with a thicker gate insulator to allow for 30 volts of input, and in that configuration nothing else is needed except the transistors and how you lay them to do any logic. I have three videos on the complete design starting with the CMOS not gate and then the AND and the OR on my channel, if you have a look you will see we have no mercy on the transistors, all gates are either connected to the up or the down rail directly. Best regards, happy to see so nicely made videos :)
+
+I love to see more, it's been a while.
+
+Fascinating....cheers.
+
+Thanks for sharing
+
+Thank you.
+
+👍👍👍👍👍
+
+God
+
+Thanks.
+Maybe use photovoltaic optocouplers to allow use of  identical  n-channels on both low and high side.
+
+Hello Sir, I would like to ask a question about MOSFETs.... I'm trying to add a remote on and off switching to a 12vdc lamp. I'm trying to use a tsop1730 receiver which will drive a pnp transistor that connect to the 12v in order to power the lamp.I found that the light just flicker rapidly but doesn't stay on. So thinking and looking for a solution, I thought replacing the transistor with a pnp mosfet will do the job. I just not sure if will be possible, perhaps there is a simpler better solution to accomplish the on and off switching. Any help or advice will be appreciated very much.  Thank you
+
+I'm still trying to wrap my head around how the circuit knows to go in a s-shape or a backwards s-shape. Because it looks symmetrical. This video I feel like I'm getting closer because I've been googling this for a hot minute.
+
+This project is very good!
+
+Basically the " dead time" (when  all 4 Tx's.are "OFF") is only ensured if one doesn't press both push buttons simultaneously..
+it is possible to provide this with both push buttons being of 1NO/1NC type...( at least..) instead of just an 1NO type.....
+Here the NC of one being in series with NO of the other...
+
+Does it have PWM control? Can a 40 amp motor be driven in this circuit?
+
+Is the motor braking?
+
+your circuit doesn't make sense , you will blow up lower MOSFET because gate voltage will be 24V, and Why use zener diode ! While you make a voltage decided on the gate of the up MOSFET ?
+
+fast opto- c ..perhaps 6N134 type or similar
+
+@analoghardwaretops3976  I was thinking the photovoltaic type.
+The output of such can be wired between a mosfet's gate and source, and if the photovoltaic optocoupler is powered it'll lift Vgs by say 5V regardless of source, or emitter voltage. Such can really help if switching certain loads (like capacitors) where duing a switch on Vs might take a while to rise. Better to float Vg on Vs etc.
+
+As can sometimes be a bit difficult to obtain those optocouplers... it would be possible to experiment using LEDs. A LED will exhibit some photovoltaic effect if illuminated by an identical LED. Line the pair up inside a plastic tube or similar to stop ambient light from effecting operation.
+
+such as you think plausible candidates...they will be operating in the linear region..i.e. their voltage output varies linearly with intensity..
+A Mosfet gate will " switch" its output efficiently provided its gate is above a certain threshold..below that it may exhibit a sluggish response and will be operating in it's Ohmic region...yet not considering the current  drive capability of the photo voltaic device..
+Also unknown is the  impedance the g-s sees when the drive voltage is too low or below operating threshold.....
+If it's impedance is too high or open circuited the gate will charge up due to the drain-gate capacitance& turn the device on unintentionally..that can lead to it's destruction.
+
+S shape? Sorry, no idea about the question.
+
+There is no 100% "dead time". With no buttons pressed the 2 N-channels stay on, grounding both sides of the motor.
+
+ @LewisLoflin  thats good.. something I overlooked..so it's in 
+" brake" mode when OFF 👍
+
+ @LewisLoflin  can it work with 36volts?
+
+Yes PWM can work. Yes a 40-amp motor will work if the MOSFETs can handle it and the voltage is no higher than 20V.
+
+ @LewisLoflin  bts7960 b 
+Can I use it instead of this circuit? I use rpwm and lpwm terminals. Do you think the engine will switch right and left momentarily? Can it handle the circuit? Thank you.
+
+Yes. When both switches are off the MOSFETs switch to ground.
+

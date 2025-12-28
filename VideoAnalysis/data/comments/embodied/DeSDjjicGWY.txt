@@ -1,0 +1,1704 @@
+Hey its been 2 years! Lets do a new version of this
+
+Da hab ich mal einen interessanten YouTuber gefunden der auch ausm Ländle ist 😂
+
+You totally missed the chance to start this video with "I'm Greatscott and you're going to learn something new today!"
+
+Thank God you did it. i have been waiting for many years for this. 😂
+
+Have you played with the PID parameters after recording? Too much oscillation can be caused by too much proportional and integral gains
+
+WELCOME TO FPV!!!!! 
+I've been flying fpv for 8+ years. No one really understands how incredible it feels to fly a machine that only does what you ask it to, and nothing else. (And sometimes not even that... Lol) 
+
+I will never stop dancing in the tree branches! And building and repairing my electronic birds. So glad you're joining us
+
+This video came just at the right time I was researching FPV drones yesterday and this video solved a lot of questions I had.
+
+His voice makes the video 100000x better
+
+I REMEMBER YEARS AGO WHEN YOU SAID YOU'D FINISH THIS IN 2022
+I'M SO PROUD OF YOU
+
+14:16. Most likely the problems you're having are the results of your frame being not stiff enough, and that messes up with Betaflight filters
+
+I'd get a carbon fiber frame as its much more resistant against crashing.
+
+Hi, great videoand nice job !
+
+As an FPV Pilot, I have some advice's for you:
+- Never try any adjustments with propellers on, this can lead to severe injury
+- Using PLA and other plastic materials create a lot of vibrations making it really hard to tune and even harder to pilot, not smooth at all, you can use pla for prototyping, then create a carbon fiber frame
+- You should stick to 1000-1500maH battery, it's not efficient on a five inches drone to fly with heavier battery (1300 is perfect in my opinion)
+- Every cables inside the drone should be short as possible to avoiding making vibration. Especially for your power cables, they should be attach with your LiPo strap or anything else to avoid them from being cut by propellers.
+- Your antenna is a bit too long and can add vibration to your drone. A shorter antenna cans help a lot. You should mount the antenna vertically to match your VRX antenna, this will give you a better range even with a shorter antenna. If you want to keep this antenna, at least, bend it to the top
+- Add a capacitor on the power pad on your ESC, this help a lot and can be the cause of your mid-flight death spinning (cause we ear the esc rebooting).
+
+Vibration is really the most important things when your building a FPV drone, especially on newer versions of betaflight. Every vibration is gathered by the gyro and need to be filtered. More filter you add on a gyro, more CPU is needed and less smoother and controllable is your drone. A youtuber nammed @ChrisRosser have made a lot of videos about vibration and filtering.
+
+Hope this help, sorry for my poor English,
+
+Leo,
+
+I could feel the frustration and heartbreak in the clip of the drone falling in the field
+
+Apart from getting a carbon fiber frame, I would recommend that you swap ESC and FC in the stack. Having the FC on the top is more convenient for maintenance, since you rarely need to work on the ESC after you solder the motors to it.
+
+Failures and overcoming those is what makes this a great channel. Congratulations on the new drone!
+
+11:45 Uses flush cutters but doesn't cut flush the tie wraps.  👀😉
+
+This video made me realise I have been watching you since more than 5 years. Great Video!
+
+I understand your value for being able to reprint parts that break, but as someone VERY into the FPV hobby (many thousand dollars deep), here are a few things to consider:
+
+1. Carbon frames break WAY less than you would think. Well made frames like the Apex, Moongoat, etc are flown into brick walls, trees, and pretty much anything else you can think of at great speeds and can usually fly off with no issues after a quick turtle mode (flip over after crash mode). The Apex even has a warranty and they will replace parts if you break them. The most commonly replaced parts are motors and props. Props are a consumable, motors (for some people like myself who fly very hard) are as well. The arms are not. They should last you months or even years of flying around and just cruising. Until you start doing risky stuff around brick/concrete, you most likely wont break any carbon at all.
+
+2. Plastic frames have much worse flight characteristics. We moved to carbon fiber because it is much, much stiffer. Frame resonance for plastic frames is a big issue. The flight controller needs to filter out those resonances, which adds latency to your system. If those vibrations are bad enough, it can even burn up your motors and ESCs.
+
+3. Carbon frames offer the best durability for the weight. Carrying around a full size gopro, you really want to be conscious of the all up weight of the drone. Especially  on a 4s build, heavier drones will have problems coming out of dives or stopping quickly due to voltage sag. The heavier the quad, the more your motors need to work, the more demand is put on the lipo. 
+
+All in all, there is a reason the entire FPV community has moved to carbon frames. Until some of the more exotic composite materials are tested, carbon fiber offers the best balance of weigh, durability, price, and stiffness. 
+
+Also a side note, you really shouldnt be holding the drone while it is armed. It is a lesson you will eventually learn yourself, but just, trust me... those props will win a 1v1 vs your hands. Ask how I know :)
+
+When I designed my 3d printed long range 9" quad I learnt a few things that might help:
+I also used petg in the first version, but actually pla had better results due to the higher stiffness resulting in less flex in the arms.
+You can also turn on blackbox logging in betaflight, if your flight controller has an sdcard slot or flash storage. That way you can use BlackBox viewer, to find out what happens in case something fails.
+It flies really well with default PIDs, so that is definitely possible with a 3d printed design.
+
+Had not thought we'd survive to see this video release but here we are ❤️
+
+^^^
+
+Definitely a missed opportunity :-)
+
+I don't get it.
+
+ @Boogie_the_cat  joshua bardwell says that which is like the master teacher of fpv
+
+Haha there you go :-)
+
+ @greatscottlab  Good work! I would have loved to see a drone with your own esc though. But I can understand the development time might be an issue :)
+
+I will try that 🙂
+
+ @greatscottlab  check out chris rosser for really good tuning guides
+
+ @greatscottlab   You need 1 drone simulator. 2 good quality drone , not 3d  pninted.
+
+ @greatscottlab  you shouldn't have to touch PIDs on a 5" quad to solve an issue of bad flight characteristics. the main reason it would fly bad are
+1. electric noise => you should solder a low ESR capacitor on your ESC
+2. gyro noise => you have a bad gyro and should replace the flight controller. use blackbox to confirm it
+3. bad mechanical characteristics => get a proper carbon fiber frame (my reco is you should start there). could be a bashed motor but your build is new.
+
+Yeah, correct. It can also be fixed by increasing the Derivative gain as it contributes to minimizing the oscillations. However, it was good.
+
+As alluded to here, tuning is less of your issue here and filters are more impactful I'd say. Get a black box log of your gyro data (YouTube tutorials) and see where all the vibration is at and set filters accordingly. With the over filtered frame as it's not nearly as stiff as carbon, it won't fly pristine but you don't need it to. Filtering can help a lot, especially if you notice the motors getting too warm.
+
+​ @erick4188  I think so too that filtering is the problem. Zeus F7 uses BMI270 and it has LPF 750Hz by default. It wont work with BF defaults.
+
+Doesn't Betaflight have auto tune? Ardupilot does
+
+I don't think he'll be and to tune much of that out. This is the problem with 3D printed frames. There is too much flex. This is why we all run carbon frames because they are strong, light and rigid. So while he could tune a lot of it out, it will be at the expense of responsiveness and flight performance.
+
+What this poster said is absolutely right but if you are a beginner then absolutely don't mess with the tuning. If you are flying a standard Betaflight flight controller then the stock settings will be all you need
+
+Mans had me thinking he was going to break out biquad standard form.
+
+That is what I hoped for :-)
+
+one thing you can try is to reinforce the frame with some carbon fiber pieces or tubes, or use a carbon fiber frame altogether, you can get modular frames which if you breake an arm or something you can get a spare one, something like the "TCMM Martian ii" should be good
+
+And 14:26 should be a motor desync from the strong oscillations.
+
+Good to know :-)
+
+ @greatscottlab  why not inlay another stronger material in your prints, that way you can improve durability and vibration characteristics while maintaining the easy to produce and prototype nature of your parts maybe something like inlaid aluminum
+
+ @greatscottlab  yes. this is a strong advise.. printed frames in large drone simply dont work since the acelerometer pick all the vibrations and f.up all your parameters. you can find cheap frames on amazon for 20 or less usd
+
+I've also thought about using a drone with 3D printed components and then carbon tubes with 3D printed connectors for the arms. That should increase stability.
+
+More for the stiffness I'd say. vibrations will be putting the PID loop through some shit.
+
+ @rawfpv1207  Agreed, the vibrations and potential harmonics from the 3D printed frame will probably cause poor performance if the printed parts aren't stiff enough.
+
+Carbon fiber is nice and strong but a pain the the behind to modify without making a mess. That dust is not good to breath in.
+
+ @kenengel620  they come premade for like 25 bucks. they are dirt cheap when it comes to the rest of the drone.
+
+Go with a thicker carbon fiber frame and one that has separate arms. That way you can replace the arms if they break.
+
+Wouldn't the whole thing be more stable with the body mass below the blades?
+
+Definitely possible. But you can not easily reprint parts ;-)
+
+ @greatscottlab  Thats true but you don't have to anymore. Mine held up against hard crashes for now 3 years.
+
+ @greatscottlab  carbon fiber frames are also more rigid and fly better since there are fewer vibrations shaking the gyro around!
+
+ @greatscottlab  You can buy spare parts, but honestly carbon fiber is so strong you won't need to replace parts
+
+Excellent tips, and your English is better than many people writing comments on YouTube whose first and only language is English.
+
+ @evanbarnes9984  Thanks 🙏
+
+Thanks for all the tips :-)
+
+ @greatscottlab  Happy to help
+
+Plus one for the first suggestion! I have the scars to prove it!
+
+ @ulwur  same here, I forgot to disarm when I picked up my quad and I'm glad I was just flying a 2"! You only make that mistake once haha
+
+Your English is fine. Don't give it a second thought.
+
+great tips leo :-) 
+
+The tbs source one frame only costs about 30€ and can withstand a lot of crashes, so it's not really worth printing a frame yourself.
+You should also put your expensive gorpo in a TPU holder, TPU resists falls much better.
+With your mount, you could easily lose your camera in a crash.
+
+a tip for flying itself... Try a simulator like liftoff or VelociDrone, crashes don't hurt and you learn your muscle memory.
+ok two tips...
+learn to fly fpv only in air mode, angel mod only hinders you to fly properly.
+
+Personally I like the larger battery sizes. I fly 1800 on 5'. I've experimented a fair bit and the biggest thing for me is the larger weight. If I ran 1300 I'd probably end up taping some weights onto it instead. A heavier drone carries it's weight through maneuvers much better; i.e. punch out forwards and then flip facing backwards. In a heavier drone it will continue backwards much more fluidly and stably, while a light drone will tend to "stop" in the air when you flip it, and you're not able to do the wonderful free falls after punching out while carrying the same ballistic trajectory.
+
+Of course a heavier drone comes with its own set of problems, but I definitely prefer heavier drones that follow a more ballistic trajectory instead of lighter ones where wind resistance effects the drone more (particularly at zero throttle in a free fall)
+
+TLDR; 1000-1500 is not an optimal battery size. It's user preference.
+
+Bro hears the esc rebooting. Frekin next level. I think for the first time ist already pretty well imo.
+
+German should work her too!
+Nice tips and reminds me on my building career.
+
+ @C4Ti0  My German is way worst !
+
+as an fpv pilot  i wanted too say all that you did.. i just didnt have the patience to write the comment.
+
+- Add a capacitor on the power pad on your ESC, this help a lot and can be the cause of your mid-flight death spinning (cause we ear the esc rebooting).
+the cap is for the noise for the vtx xD for the esc to do something  the cap is very much to small lol XD
+
+Hey, are your FPV advices viables for CubeSats?
+
+That has a lot of good info 
+Thanks
+
+Your English is okay. You just put an S on a bunch of words that don't need it, that's all. For example Advice's.  You don't need  's on that.
+
+This comment is a whole LESSON! Much appreciated!
+
+As an electronic student NOTED.  Thanks 😊
+
+When you go bando bashing everything in this hobby is a consumable. :D
+
+Good points. I agree with all of them. :)
+
+SHTF prepper; Im interested in learning more about drones and creating them from nothing with replacement parts as I envision the next decade of SHTF crimes and modern warfare combat situations, drones seem to be the epicenter for many next discoveries of modern tactics in using drones in helping solider in battle, helping police fight crime, helping firefighters put out forest fires, and potentially SHTF type situation, perhaps it'll do some good to know such things and have such capabilities knowledge, skills and fighting skills in being able to both attack and defend yourself from afar.
+
+ @westcoastadventurers8504  Yeah after seeing what they can accomplish in the Ukraine/Russia war, I kind of want to build one myself. Mainly for recon during an emergency type scenario. Plus you can just get cool footage from them lol. The DJI drones are really nice but seems like building your own would be cool.
+
+Ah, that's why! I built a "springy" titanium frame whoop drone and it requires more than a lot to handle😂
+
+I remember when I was a kid, my dad bought me and a friend of mine two identical RC planes. The instructions said to throw it like an airplane while putting the throttle to full. Quickly learned that these instructions are pretty bad for this particular plane (props in the back). My friend's mum threw the thing while he throttled to max. It just barely graced her finger with a prop and took of a bunch of skin. She had to get stitches.
+
+So yeah, props do be dangerous
+
+Finally waiting for a drone video from u since 2017 😂😂
+
+You dont know how much i was waiting for this video and now its here .
+
+This reminds me of building my first quad it was so fun learning everything. Just wait until you are doing flips and flying through trees so fun. But I think a lot of your issues are caused by the flex of the 3d printed frame. These quads are extremely powerful and need a stiff frame to transfer accurate info to the gyro and a good carbon fiber frame can be had cheap probably close to what the filament and electricity would cost to print.
+
+This is awesome! Good for you Great Scott! Not only did you finally make your drone but this video was amazing in showing how you did it. Thanks as always!
+
+I would have had the same reaction when the moters switched off... " Why?!"
+
+Always cool to get an outsider's view on our amazing hobby that is FPV! <3
+
+Tuning PID parameters is a nightmare!
+
+13:53 face expressions 😆 😂 🤣
+
+I’m glad I’m not the only one who had an unusually difficult time building a drone from scratch. Great job!
+
+Congratulations sir! I am so happy now!
+
+PID settings can be the hardest part of a new build
+
+Where i can get that "Stay creative" shirt? 🤔😅😏
+
+FPV drone racing is what got me into electronics when I was 14.
+
+01:45 that smile!!!!!! awesome. I only watch the video for the smile.
+
+This is the cutest FPV Drone tutorial I have seen. Congrats on your first fpv build!🎉♥
+
+nice one.  first FPV flights are most exhilerating. thanks for sharing!
+
+joshua bardwell x greatscott, cant quite believe it
+
+Thank you for posting this.  You have really sparked a desire to build my own drone  now!  This could be a really good winter build project.
+
+The capacitor part is a nice punch line. You are a great comedian!
+
+Years of waiting finally ended with a good experience 😂
+
+Well.....there you go ;-)
+
+Glad you enjoyed it!
+
+Dream team? ;-)
+
+ @greatscottlab  YES! next time u should build a 5" freestyle drone with an actual carbon frame and fly in acro
+
+This is a really good overview, I'm glad you got a drone in the air finally!!
+
+Sponsored by Keysight? That says a lot about the quality of this channel! Great job!
+
+really great build great scott, keep up the work
+
+Nice work! Congrats on getting past the steep learning curve that can be frustrating for many people interested in getting started with fpv. I hope you have more videos in the future following your progress.
+
+Great video! Can't afford to finish mine right now, so I'm drooling over yours.
+
+LOL when the drone spin.. i bet you say OOOHHH-SNAAAPP!!!
+
+super great scott for your efforts
+
+I love seeing you get into FPV! It's perfect given all your other content. My first build 6 years ago was also (mostly) 3D printed. Racing drones have come a long way since then, and 3D printing makes it all so much easier!
+
+you finally made it in the FPV world! was waiting long enough for that :D
+Thanks for the insight of making it! there is soooo much to try and learn in the fpv/drone world!
+
+Tolles Video. Schön dass Du auf JB verweist.
+
+Great work dude! Keep it up.
+
+Excellent video.  Was good to see it finally fly!  I didn't think the piloting was that bad either.
+
+That was great. Thanks for posting.
+
+I've waited five years for this video
+
+Joshua Bardwell is definitely a wealth of information when it comes to FPV drones! I personally have made my own drone for an engineering challenge sponsored by Penn State University, and my design got Best Innovation. I utilized JB's tips and tricks for putting it together and tuning it. Happy flying!
+
+Keep it up !   I've been flying FPV drones for since 2016, it changed my life.....and my career
+
+Hi, I'm great Scott, and you're gonna learn something today!
+
+Holy crap when did you get almost 2 million subs?!? Nice! Javol!!
+
+Thank you for making this!
+
+We have an IOT subject this semester and thanks to your vids i already know a lot of stuff already
+
+This took so long that , in the meantime, I started university and graduated as an electrical engineer
+
+Now you can finally make a DIY or Buy episode about Drones/Quadcopters :D
+
+Hoping to see a new video comparing this drone using theses traditional propellers and the new toroidal design
+
+Nice video as always. Thank you.
+
+I have to build a drone for my final year project to get a BEng Mechatronics degree, and it amazes me how I've personally grown and used your content to learn. I was much younger when I first started watching and it was so hard to understand anything, I had too many questions. Now that I am older and finishing off my degree I of course follow a lot more and I'm happy to be here again, this time actually attempting to build something. I am required to allow for autonomous flight as well and I am very pleased to use your content as my research lol.
+
+Great video! I was thinking about building a drone myself. This is very comprehensive and helpful to get started!
+
+Nice build! I'm feeling inspired! :)
+
+Broo, I remeber that old video like being yesterday. Good job tho!!
+
+You're Amazing man , keep up
+
+I would say however that the ‘overflowing’ hardware market is a very good thing. We have so much to choose from! We can truly make our own machines, it’s lovely!
+
+This was really helpful and informative 👍😀
+
+From personal experience, I have printed drone frames for fun with custom designs, but usually having more solid infill is the best (with minimal cooling) as the arms become very rigid and hard to flex. Awesome job though, building is always the most fun part of the process, and this definitely looked like an exciting project to build!
+
+Awsome mate, finaly😉
+
+Welcome to the hobby!!
+
+Loved your video, this is very similar to how I got into FPV almost 3 years ago, frustrations and all. Been hooked ever since. Enjoy!
+
+wow great video thanks for the parts list and thanks for describing all of it you are awsome!!!!
+
+For my fpv freestyle drone I took an existing 3D model, edited it to reinforce the weak points and then printed the whole thing with Nylon CF15 filament.
+The carbon fiber additives make the entire frame extremely stiff while being virtually unbreakable.
+I also recommend flying in a simulator first to get a feel for the controls, so you don't crash your expensive drone in the beginning.
+
+I really love this. I built a FPV drone myself this year and had lots of the same problems as you had. It did not take 5 years to complete, but like 4 months.
+
+I haven't Fully finish this video but I can say it's lit. I was searching  my first drone build for part I was mind blown by many choices. Now i can finally understand. Thank you
+
+It's interesting to see this video for me because I have built a few drones in my life and find it easy at this point. Normally I watch your videos feeling like a bit of an electronics noob to learn something. Now I'm watching you discover something new that I already feel competent in and that gives me joy, because it's cool to see someone's progress in "your own field".
+
+BTW I feel your pain with FrSky binding. ;)
+
+Maybe one day. For now I am pretty happy with this result.
+
+Great job. I love everything you do.
+
+Very impressive build
+
+Dude... FANTASTIC work! 😃
+First of all, fantastic choice of motors! The same brand has a cheaper version (I'm not sure which you bought) that are perfect!
+I'm not going to talk about the carbon frame, lots of people already did. 😬
+But there are companies that would cut any frame design you come with, which could be a great option indeed. 
+About learning to fly, I'm not sure if your transmitter can be connected to a PC and used as a joystick... But there are some fantastic simulators you can choose from. That's how I started and learned! You can crash hundreds of times without it costing your kidneys. 😂
+Oh, in case your transmitter can't connect to a PC to be used with a simulator, looks for the Radiomaster models. They're great, the best in the market!
+Anyway, stay safe and creative there! And flying! 🖖😃
+
+Ots funny to read Scott call himself idiot, when several of the betaflight and other drone parts developers learn loads from him. The VESC video, FOC video and other ESC based videos are the reason why we have some of the cool features in our modern blheli32 ESCs. Videos on PID control by electronoob and Scott also made it easy for drones to simplify tuning.
+
+Man you're my inspiration
+
+first person to ever finish a project on time xD
+
+I love the "concentration face" at 13:55
+
+That's really cool! Coincidentally just a couple of days ago my dad asked me if I knew anything about making a motor controller for a remote control aeroplane, so I think I'll have to do some research into this stuff too.
+
+Great! Thank you for this
+
+Heh quite a coincidence, I started building my fpv drone around the time you did your original video. 
+I actually finished it but a very bad choice of goggles and camera coupled with my being a total noob flying made me put it in a drawer and forget about it. 
+
+I just randomly picked it back up and got it running a week ago, started training in a simulator and got a better fpv setup. Now this video comes out :)
+
+Good luck practicing your skills, the simulators like liftoff really helped me get over the initial fears of crashing or hitting someone.
+
+This looks chaotic fr!
+
+love how all the FPV geeks are here trying to help him
+great vud as alw
+
+Congratulations 🎊🎊
+
+awesome video i love to fly FPV and recommend everyone to try it once it's an totaly lovely hobby 🥰👍
+
+cool video!
+as someone who has been into fpv for a few years now i would love to work with you on an updated version for this drone.
+plus a tip, it is really important to not test the drone with propllers on as it can lead to severe injuries.
+
+Strap a 3s on it if you want to tame it down and get used to it first. Also that 4s battery is HUGE!!!!  
+Most FPV freestyle use smaller batteries, shorter flight time but way more maneuverability
+
+Great video. Two suggestions from my experience
+
+1. Try practicing in a simulator. There are a a few out there and it gives you lots of opertunities to practice without risk of breaking anything
+
+2. Get a carbon fiber frame. The strength difference is massive. I have crashed drones into metal objects going 60mph without anything breaking
+
+This is very cool! This makes me want to build one of my own design. I would recommend putting some rubber dampeners on the flight controller and reinforcing the body with Carbon Fibre.
+
+Awesome video!
+
+The way you cut your zip ties triggers me on another level.....
+
+It is a tradeoff. Going with a smaller battery reduces the weight and draws less power, so there is a sweet spot. Also going to a 6s battery will make the drone more efficient but may be too much power to begin learning
+
+ @fishfpv9916  and with the current motors and a 6s battery you can risk burning something so by going with a 6s you will have to get slower motors (about 1750-1800kv should work fine) and for learning on 6s you could also decrease the MOTOR OUTPUT LIMIT not throttle limit to like 80-90%
+
+Great suggestions! Along with these tips I'd say bump down to a 1400maH-ish 4s to shave some weight as well.
+
+Well. With the current battery flight time was already only around 4 minutes. So I really do not want to go down with capacity.
+
+Thanks for the tips!
+
+Casually making a nearly 4kW drone <3
+Gotta love fpv
+
+Nice. I can see it already! 
+DJI competitor GSD (Great Scott Drones)
+
+oh my XD ima fpv Freestyle pilot and i never do this kind of study about the trust of motors and nothing like that, if it dsnt burns its oke XDD nice video dude and continue doing that epic things
+
+
+and couple of things, both the battery and the frame I don't think they have the most appropriate power-to-weight ratio (I would lower the battery capacity), those things make the drone very unstable this kind of frame is build for cinematic. 
+and that's silly but the TBS antennas give a range in the shape of a donut leaving the logo and the connector being radios of bad frequency, well take a look and I know you will build a monster!
+
+pd: the propellers are fine! belive
+
+8:50 So you decided on the WHAAAT?! 😳😳
+
+I'd highly recommend using PLA+ filament instead of PETG. PETG might be a bit stronger but also less stiff and for a drone frame you really want the stiffness. PLA+ also can be "baked" to make it more crash resistant. I have also 3D printed drones before and after switching from PETG to PLA+ oscillations greatly decreased and I was able to use less aggressiv PID settings.
+
+Bardwell is FPV god
+
+Damn, i remember back when this idea was concieved
+
+I'm a bit late to the video but welcome to FPV! You didn't mention reshaping the arms to better fit the 5" props. Plastic is heavier than the carbon frames we typically use and 5" props are a bit less efficient than 6" would be esp for the motor size and extra frame weight
+
+Wonderful!
+
+Amazing video! liked, already subscribed & share.
+
+did anyone already mention not to run the thing indoors / on the workbench with the propellers on the motors? 😱😆
+
+Good work! Like others mentioned frame stiffness might be a possible issue.
+
+You might also want to try the iNav controller firmware, not only if you're interested in adding more functions like position hold or route following, but also just for "normal" FPV.
+
+It's configured much like Betaflight, since they share an open-source lineage.
+
+Thank you for doing this. If you hadn’t I might have been tempted to attempt it myself, which would have resulted in hours of frustration and possibly mental health issues. Now I see why commercial drones are so expensive.
+
+As for the frame: you can try printing with something stiffer and a little stronger, like PP, PC, ASA. Also, often using a wider nozzle (0.6mm, 0.8mm) and/or increasing number of perimeters help
+
+diy, action camera, with stabilization would be great
+
+you should probably make some cover for this lipo battery in case of hitting something hard
+
+Amazing!! 🔥🔥
+
+Finally! A flying lawnmower
+
+Congratulation!
+
+Very interesting!!
+
+13:50 it’s Dishy!
+
+That also happened to me when I build a drone with my friend for school project :
+- Aluminium frame without proper precision control and use epoxy putty to attach leg from body.
+- Gyroscope module taped with 2 side tape
+- No clue what's PID control
+- Zapped one of multiwii board because what's different between RS-232 and UART (I connected RS-232 output to UART port that supposed TTL logic level)
+- One of rotor decided to seperated from stator 
+- more epic fails
+
+wieder mal ein super Video
+
+Awesome 😎😎😎✌🏻✌🏻✌🏻
+
+Finally you have done it👍🏻👍🏻👍🏻
+
+You are inspiration for new learning person i am sure he will be happy by seeing your Hard work..
+
+Keep it up and thank you for sharing your valuable knowledge 🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻
+
+Please make a Gaming Steering Wheel to play some racing games using Arduino and least number of passive components.
+Hope you will try my Suggested Project.
+
+This is the first video you’ve ever posted where I knew exactly what you were talking about 😊 
+2 tips… try to avoid powering up the VTX without an antenna hooked up to it. Depending on the one you have it can damage it. Also try a carbon fiber frame. The FC will work better with a rigid frame.
+
+8:52 not actually because it looked well made… he picked the one that looks like iron man
+
+It is better to fail a 1000 times and than make drone than fail completly. Congrats on making good drone :D
+
+C'mon man don't call yourself an idiot, your awesome
+
+I'm very happy to see FPV on this channel! You should try a digital system for video if you enjoy the analog experience. 
+
+I love 3d printing frames but they have so many issues I didn't know about until recently. They cause a lot of noise for the flight controller that makes the fc work harder and can cause fly away, unstable tunes, prop wash etc etc. Modern carbon fiber frames are also really resilient. I usually buy 2 of a frame and never have to open the other package even after crashing dozens of times.
+
+Welcome to Elrs! It's a wonderful protocol!!
+
+Building is fun but it's only half the journey. I enjoy building them more than I do flying them. It's a big learning curve figuring out how to fly them and change the settings. But it is very rewarding flying them around and first person view with goggles
+
+Lol great scott, never thought this day would come..
+
+Hi there, I have been watching your videos for years :) Good to know that you have finally started with drone racing.
+Few tips:
+1.) Use a carbon fiber frame. Especially the 3D printed arms are not durable enough and will break very often. They are also not stiff enough and the FC gets way too much vibration which might lead to oscillations and poor flight performance.
+2.) 3D printing is great for frame accessories like GoPro mounts or antenna mounts. ALWAYS use a flexible filament, preferably the TPU. Flexfill 98A is great for basically anything. It is very very durable.
+3.) Learn how to fly on the FPV simulator. Liftoff, Velocidrone, or free FPV.Skydive can do the work. It will save you hours and hours of repairing the damaged drone. It absolutely pays off.
+4.) The ESC is usually the first board in the stack and the FC is above it. It is way easier to build the drone that way ;)
+5.) When building the drone on a carbon fiber frame, don't forget that the carbon is conductive so you should have all the parts laying on the frame insulated in heat shrink and it is a good way to do so even on a plastic frame. Cover the receiver with a heat shrink, stick it to the frame with double-sided tape and secure it with a zip-tie for safety.
+
+So glad you learned a little bit of "Line of Sight" flying and got used to orientations, etc.  I know so many pilots that couldn't fly out of a paper bag without the goggles on. Hehe.
+
+Now I need C4… Jokes apart I love the way you explain it
+
+Awesome video there, with great details as well.
+
+Though I was wondering have you remembered to configure your drone, so that it is on angle mode, which is essential for beginners in the drone hobby. 
+
+Also I would strongly recommend using a carbon frame (perhaps the apex) as they can even survive multiple crashes flying straight into objects and falling from heights like it is nothing.
+
+Amazing drone project.
+
+Yeah I'm on my way too, started back in early 2021 and going uptil now 🙂
+
+Great video! I watched your videos before getting into FPV, then I found myself getting into drones right after your first few attempts in creating one. I am really excited to see this video and your new hobby maybe? I agree, the 5/6inch size of the drone is a little big. I don’t make/fly any greater than 3inches. There are a few reasons but mainly because you don’t break much when you crash and not as $$$ to replace parts 😂. I look forward to more like this from you to see if you can maybe design your own ESC pcb for a mount size of maybe 20x20? Or even a DIY ELRS receive? They are open source.
+
+Maybe reducing the maximum power or throttle input might be a good idea to start with, one of the most important things first time flyers have to learn is that the adjustments you make during flight are incredibly miniscule, give your sticks say half the max throttle they can have using a linear curve, you'll be able to get used ot making finer adjustments with a larger throw on your controller, then bring the curve back up once you get more used to it so you can get into the acrobatics.
+
+@Funk FPV do you have a channel where you fly FPV? I love your YT Shorts btw
+
+Thanks for the tip :-)
+
+Digital is awesome but very very expensive. Wait till you get into the hobby some more before you invest
+
+I hope it will do its job just fine :-)
+
+Your antenna is the funniest thing in FPV I've ever seen!! You either had a motor desync or your prop caught your battery lead... How did the battery lead get cut?
+
+I like to watch the video of GreatScott but also of CounterGreatScott.
+
+Nice work and explanation, you almost cover all hot topics in fpv drone! I advice you to practice on a simulator, you save money and work 😊
+
+Excellent video breaking down the process of how to build a quad from a beginner's perspective!! I would recommend trying out a sim, and you should be able to use your controller as a joy stick if it has a USB plug.  For a sim, I would recommend using Liftoff or DRL, both of which are on steam.  You can crash all day on those and not spend a penny!
+
+3d printing is great way to have spare parts around. While PETG is seems very tough, it is actually a bit brittle with sharp impacts.
+
+Awsome video! This highlighted a lot of struggles people such as myself have and these drones are very powerful. At first it will feel overwhelming but as you learn to fly and learn to tune them they are very fun to fly. I recommend the Youtube channel's: Mr. Steele  as he probably one of the best pilots and RCTestFlight as he makes videos building autonomous RC vehicles such as planes, boats and drones. RC stuff is really amazing.
+
+can you do about crystal oscillator?
+
+Try building a five33 Tiny Trainer! I think it will be much more your size/taste but will provide you with a similar flying experience to the big one.
+
+Fun build!  The esc beeps tell you the FC reinitialized so you can trace it back to a connection/supply issue.  Not the cap though.  Cheers Bud
+
+Great vid
+
+I'm pretty sure “The Model Creator” has a name!
+
+A good build for ya would be something along the lines of a "babytooth" build which is a light 1s 3" that weighs like 60g with a battery. Very agile, super quiet, can still go nearly 100kph. The original babytooth frame is shipped from the US, but look around for other 3" toothpick style frames, ~1302 11000kv motors, 600mah (gnb) 1s, aio whoop board, and the other bits. Love my build! Or for more power build one with 1303 5000kv motors in 3s.
+
+hi Great Scott, i like your videos :> 
+
+i am a fpy pilot but i have no drone yet so I practiced in a simulator her are my recommendations and information
+
+* practice in a simulator 
+* avoid 3D printed parts except for the gopro mount 
+* if possible use a better controller/transmitter like RADIOMASTER (optional)
+* avoid exposing the battery cable near the props as when you crash it will get chopped up
+
+i hope you will have a great and fun flight out there :>
+
+that's all from me stay safe and happy flying :)
+
+13:36 Lawnmower-Drone, 👌😉👍, Great Idea Scott ❗
+
+if you find its a bit too powerful you could play with the throttle curve. Awesome video pls do a speed test :)
+
+Congratulations 🎊
+
+Very cool
+
+thank for your help
+
+well done
+
+where ever fpv there is joshua
+
+You Really Inspired Me With Your Videos Since 2017. Did You Have To  Go To College To Learn About Electronics??
+
+Thanks 👍
+
+Love it! ❤️
+
+It seems like building it so that the propellers sit below the level of the body rather than mounting the camera under the drone would make it inherently less stable to fly
+
+Why is the video still in 24/25/30fps for the talking sections? We voted for 50/60fps! The drone footage looks really nice and smooth.
+
+I also built a drone a few years ago, it was quite large and was great fun to fly.
+Then Sweden changed its rules and it and now you can't use it.
+Maybe I will return to this hobby if you can make really small ones like you have done.
+
+I love this content! My channel is based on it after all😂
+
+Finally!!! It is beautiful!! ❤️
+
+Point that camera up more so you can see in front of you in forward flight!  Awesome though and welcome to the hobby!
+
+I HAD THAT SAME CONTROLLER!
+
+Seriously, discovering that we had the FrSky version of these controllers takes entirely far too long lol. They need to give people a warning haha.
+
+Jb your gonna learn something today
+
+Thanks to you I will be able to convince my friends to make one together!!😂
+Keep the great work!!👏🏻👏🏻
+
+bro dropping some garphs and math and hes teklling us he"s the idiot lool i'm the idiot !!!! Thx for the vIDEO !
+
+Nice! Maybe my time to get into FPV drones? 🤔 Also had an eye on it for the same timespan as you 😂 Pretty good overview when dipping in this section for the first time though!
+
+Well I don't feel too bad now,  6 years and still half done
+
+Love the video. Any chance of you eventually making your own ESC / flight controller and software from scratch?
+
+Great video! Always nice to see more people get into the hobby
+I see other commenters have already yelled at you to get a different frame, so I won't touch on that... But I would like to point out that technically, you probably need a license to fly the drone in the EU. Not that difficult to get (just an online course/exam), and depending on the course provider it's free!
+
+hey man, nice one, like every video :) good setup and good explanations for beginners, except for the frame xD  you should defently try a carbon frame instead of printing one ^^ less vibrations = more stable flight and it safes you money and time to fly ;) tbs source one for ex. is good cheap beginner frame ;) .. the fc failsafed mostly cause you got too much noise cause of vibrations..   und bei der rpm berechnung solltest die vollen 16.8v von 4s hernehmen, somit bist mit 2555kv bei 42.924rpm.. weil ab ca 45000rpm wirds kritisch mit 5zoll props, dann durchbrechen die spitzen die schallmauer und fangen an flattern ;) achja und nur acro ist richtig fliegen :P ;)
+
+I’d suggest to develop this project further and add useful addons to the drone. Small manipulator to carry and drop small items like keys and tools, temperature and pressure sensors, thermal camera mount to search lost people, etc
+
+Live is full of fiallure ,
+But don't you ever give up
+
+Welcome to the Hobby.
+
+There was a time when the only way to get into the drone hobby was building it yourself. I built many drones in those days. These days the pre-built drones have just gotten so good that it is usually not worth building one. There are still cases where building is the right way to go but the average drone pilot will be far better served buying an ARF. You often times still need to install a receiver but you can even find many with the receiver built in.
+
+Great project scott!!
+
+Thanks :-)
+
+Have fun! But keep safety in mind while doing so ;-)
+
+Glad you enjoyed it
+
+Also, gopro mounts are best when made out of tpu, it will isolate some of the vibrations ('jello') and is mostly more durable since it will bend rather than break
+
+Also remember to make sure you comply with your local laws which may require you to get a license or take a short test.
+
+Awesome
+
+Custom frames are the only way to go if you like creating issues for yourself
+
+Nice project! I’ll add my opinion with everyone else’s. The stock beta flight pids should work pretty good with a standard weight 5in. Your battery is quite large and heavy, this will probably need pid adjustments or a smaller battery. Flex in the frame may be an issue but I think major gains could be had with better esc/fc mounting. With the heavy esc on top and free mounted long bolts the whole assembly will move too much. I would install the long bolts with nuts mounted tight to the frame. Esc (heavy) on the bottom and FC on the top. Don’t squish the rubber too much. Great job!
+
+Great!!! Definetly great idiot guide to creat great drone, great scott 😝 next i looking forward a great idiot guide to create ride able drone 😊
+
+Ah, the first signs of success: "I hooked up the power and nothing exploded."
+
+Those grapes look ready.
+
+Nice idea for my next video!!!! ❤
+
+I still have a mini drone I bought a few years ago. 
+Hey, I could always print a new body for it
+
+Dang, I've chopped up my fingers very badly picking up Cinewhoops quite a few times.. Just seeing you barehand a spinning bare prop drone scares me haha.
+
+Heeeey, welcome to the FPV world :D please use the simulator firts in order to get used with the "ACRO" mode, and then you will discovere a hole new world
+
+Next DIY or buy: an entire drone and all components 😅
+
+amazing channel! love sunday because of your videos :D
+
+Würde dir empfehlen in einem Simulator zu üben, Liftoff ist mein Favorit. Es empfiehlt sich direkt mit dem acro Modus zu üben. Wenn man das drauf hat, hat man die drohne mehr unter Kontrolle als im angle Modus.
+
+Ein sehr schönes Hobby!
+
+makes his own drone GIGACHAD
+
+@GreatScott! >>> 👍👍
+
+LOL it’s so funny when different channels collide. I watch your channel for the electronics. My hobby is drone building and flying, and I have a small channel about drones and electronics :)
+
+Haha I was just about to suggest taking a look at @JoshuaBardwell . Also we have a ton of regulations for drones in germany. I suggest to get familiar with them :) Welcome to the FPV world!
+
+Finally, I wait it for five years. 🥹
+
+True
+
+In fact he's filmed himself not complying with German regulations - while he could have added the mandatory fireproof label off-cam, both the EU and STRFF rulesets require Spotters to be present for most FPV flights. Until someone complains that's fine, but since many people unknowingly did some very stupid stuff with drones, regulations & enforcement got quite strict, especially when outside of a model-flight club.
+
+Go for it!
+
+Yay! Thank you!
+
+The easiest way to build a drone is getting into the RC hobbies first.
+
+Looks interesting
+
+Good Job sticking to your plans! Did you do some research about registration in Germany? Your drone rather heavy so I think you have to put a little "license plate" on it
+
+Nice topic ;)
+
+The biggest downside of printed frames is the resonance behavior. That can lead to oscillations in the pid loop and can cause flyaways and shaky video.  Carbon is waaaaay more durable  and even stiffer. 
+Also the vtx antenna causes massive oscillations. The rule is to get it as short and stiff as possible (stubby antenna) ✌
+
+7 of the top 9 comments advise on a carbon frame and they're correct, too! The TBS Source One is dirt cheap, tested and approved by lots of pilots. Lighter, stiffer and stronger. Other than that and the power lead getting chopped: good job!
+Overall people tend to go with a lighter battery on a 5" for maneuverability and a bigger battery like yours for mountain surfing on 7" quads but if you like it, that's the way you should fly it.
+It's funny how building and flying an FPV quad is almost like second nature to me but a learning process for you. I'm usually in awe of your knowledge and skills but FPV quads are where I learned most of what I know about electronics so that's like a baseline in my head.
+
+awesome quad! ^w^
+
+Welcome to the great hobby of FPV! Its well worth to learn acro mode with a simulator. You might want to try the free DRL sim or Liftoff for like 10€, but DRL is free and great to learn. This safes a lot of money and has a very realistic feeling when used with the original drone controller
+
+You should use Horent 60A esc that act like para-shoot not stop and smooth power output.
+
+Great!
+
+Another great video, thanks. One criticism; that is no way to cut off the excess on a cable tie! Put your snips blades butt up to the lock shoulder please. 😉😉
+
+This video was good and all, just not what I was expecting. I figured you where going to actually build it from scratch. Before you could buy all this stuff we used to make flight controllers from an arduino pro micro and a gyro/accelerometer pulled out of a Nintendo Wii controller.
+
+Yeah, these things often gain huge benefit from clean electricity, minimal vibrations, and good PIDs. The low ESR capacitor is obviously going to soak up the little spikes, your filters would greatly benefit from bi-directional DShot and RPM filtering (flash Bluejay if you're on a BLHeli-S board), and usually stock Betaflight PIDs will at least let you fly. Good on you for your first build though!
+
+Hi, it is a good practice to ziptie the power cable to the frame. So in a crash you do not rip of the solder pads
+
+It sounds like an angry bee
+
+Great video and thanks for posting. Are you employed by Keysight Technologies?
+
+“Your scientists were so preoccupied with whether they could, they didn’t stop to think if they should.” - Dr. Ian Malcolm
+
+If you want to try a small racing drone, I highly recommend the EMAX TinyHawk Race 2. I know it's not DIY but is a ton of fun for it's price. Very fast too compared to the starter kit brushed FPV quad you have. If you plan on staying analog for VTX, I also recommend EV800Ds. Having a bigger viewing screen really makes the experience that much more immersive and I find myself having trouble going back to a smaller headset.
+
+Hi greatscott! Happy to see you flying fpv drone!! oscillation can be caused too by the stifness of the arm. Get a carbon fiber frame :)
+
+half the links dont work
+any chance of updated list?
+
+Nice work, built one by myself in february this year. I would recommend you to buy a carbon frame because as I have learned by a lot of different sources they are much stiffer than 3D-printed frames and thus you won't have those oscilaiton problems. I bought a cheap one for 15€ from Banggood. It held up eversince and I've had no problems with it so far. 
+
+I went overboard with it as well btw. I went with 6s 1900kv motors on a 5 inch frame. Speed record: 180Km/h xD
+
+🤙
+
+Thanks for the tips!
+
+If you are following along this video and planning on building a drone, NEVER EVER do what he did at 13:18 EVER, that's how you lose a finger, get your arm cut to pieces or possibly worse.
+Specially if you are using betaflight with defaults settings where the pid loop is always active.
+
+I really hope you generously compensated the creator of the frame for sharing, helping you build, pick suitable parts, troubleshoot and generate ad revenue with this video :D such a nice guy
+
+Nice!
+
+I have the same flight controller,and before jumping into PID tuning i would recommend you to try the bmi270 filter from the presets tab .it helped stabilize my quad.
+
+make sure the motor screws aren't touching the windings
+
+drone gulyás:face-blue-smiling: (pov mikor a magyrat próbálod angolra fordítani értelmesen)  :D
+
+Finally.... you did it. Congratulations..
+
+Glad you tried fpv ! You should get a carbone fiber frame, much more stiff and resistant, it can handdle a lot of crash. I did some video of what you can do with a fpv drone, it give a lot of sensation, u should watch 👌, but to become good without losing a looooot of money, simulator is the way to go
+
+I would highly recommend going with a carbon, of the shelf frame. Especially if you don't know how to tune yet, you will have so much better results with a carbon frame: way stiffer, less oscillations and you don't need to worry about crashing (especially if you are only flying in the field). For most of them you can get spare arms and just swap them, should they break.
+
+I'd recommend a lighter (carbon) frame (they are really strong, just buy a 2 spare arms when you buy the frame and you'll be set for years to come). Furthermore, those motors have quite high kv (2400kv on 4s is more than enough), so you could use some lighter pitch props to gain some flight time. And lastly, like mentioned by others, your batteries are quite high in capacity, and therefore heavy. Try some 1500mah 4s lipo (for example the cnhl black ones). The weight reductions mentioned above in combination with a lighter lipo should get you about 5 minutes of flight time!
+
+I can make a lot of drone configurations but like you I m shit at flying it 😂
+
+Scott watch out because fpv is addictive:]
+
+Jesus, max power for ONE motor is 820.8W? :O
+It just blows my mind how power hungry those things can get
+
+very kool
+
+Gosh!!! You have problema with the receiver!!! Me too!!! I was stuck with that until I could finnaly flash correctly the receiver with the appropiate firmware version.
+
+From someone who is donig this for a while, welcome to this amazing hobby!
+to give you some general advice:
+-get some hours in a simulator before trying to fly irl
+-NEVER start such a drone in your handy, this is really dangerous
+and to add some comments to your build:
+-get a real carbon fiber frame, this printed one has way too much flex and breaks immediately
+-use a shorter antenna
+-your batteries are a bit big, soemthign in the 1300-1800mAh range would be better
+
+This video is 50FPS and 1440p
+wao, nice move greatscott
+
+In the FPV drone world there are only 3 YouTube names to remember when starting on your own project: Joshua Bardwell, Joshua Bardwell and Joshua Bardwell. From there you should be fine 🙂
+
+I love goulash!
+
+Working on a drone with a small Nitro motor and generator. This drone you built should be able to lift it.  So it charges the battery in flight.  Going to be a great project if I had the time.
+
+I can feel the pain just by watching it...
+
+yeahh, 3+ kilowatts worth of motor power attached to essentially rotating blades (that produce thrust; aka erratic movement that could easily get out of control) is not something to fuck with
+
+That has appened to me and almost lost a finger a year ago 
+I picked it up from the ground and somehow hit the arm button and it went crazy on me 
+Not a good experience
+
+any suggestions for a frame with the blades in a boundary?
+
+Yep. He got paid.
+
+Nice!
+
+Thanks :-)
+
+;-) I think 50FPS looks better with the fly sequences.
+
+LOL, nice job thanking the frame designer, but honestly that looks like it would take about 4 minutes in CAD...
+
+Awhhh, I wish I was allowed to fly a drone! Sadly, in my entire part of the province it's illegal.
+
+Wonderful video
+
+Please,  if the drone is too big, can you transform it into a more practical lawn mower. It would be a nice video for April 1st.
+
+I was waiting so many years
+
+Here's an idea: why don't you try and make butter passing robot from Rick and Morty? That could be fun :D
+
+you did build a 5inch drone, you should propably start with a 3inch one ;)
+
+2kg hmm... so it can carry a full 0.5L can of beer :) now i just need a 3d printer ^^
+
+Hi, Really a great video
+But the problem you had with the motor being stopped at the highest point of the throttle that same thing is happening to me but I don’t know whether it is the copper wire or capacitor needed or the esc is not calibrated properly🤔 and another problem is that when the motor is armed it automatically starts at a lowered speed then I have to the desired throttle means that the motor doesn’t stop at the lowest throttle rate😢
+If anyone wants to help or give a suggestion please reply
+
+While this content is neither novel or groundbreaking, it’s a good beginner video. DIY Drones have been covered in depth for years by the likes of Bardwell, Mads Tech, Painless, and the late project Blue Falcon. However these channels specialize in DIY drones, so they would be my first go to for help imo.
+
+Nice
+
+I made one in college using a Pi and arduino with some extra sensors and it worked pretty well. At the time the only leveling software was some open source stuff but it was really basic and rough. It's interesting that this stuff is now all in one board.
+
+As someone who has a 60A zeus you might want to set some throttle limits if you haven't yet just starting out, If I mess up it will be gone in the blink of an eye 200+ feet in the air.
+
+next up: put the camera on a decent positive angle instead of negative so you can fly in a higher pitch angle and still see, meaning faster.
+
+Great to see a popular channel like yours showcase an FPV drone.
+
+I hate to say it, but in this case a bit more research on the topic would have helped you make better decisions which would have made a much better and longer flying quad.
+
+The goal when building an FPV quad is always to make it as light as possible with as few vibrations as possible. In this way, filtering on the gyros can be reduced and you end up with much better performance with much quicker response time.
+
+Don't get me wrong, it looks really super cool, but it also looks like it would fly like a pig (I mean no offence). You say it's too powerful for you, but I reckon if you flew a well tuned 5in quad with a carbon fibre frame you'd realise how underpowered it actually is (or rather how far from optimal yours really is).
+
+Still love your channel bro.
+
+thanks for it
+
+Go bigger! I bet you could 3d print brushless motors big enough to support a 7 inch or bigger drone
+
+Really nice guide and build!
+
+But not cutting the zipties at the bottom triggered the hell out of me, especially while using a flush wirecutter 😂 Nice video!
+
+I think programming the drone in cube  ide in c or Arduino is more of a greatScott type project ;) Betaflight too is too easy.
+
+All in all please mention the overall build cost😁
+
+Many thanks
+
+Glad you stuck around ;-)
+
+But the software is still open source and likely can trace its origins to the same place as yours
+
+Sorry!
+
+ @greatscottlab  They can really give you a surprisingly nasty cut.
+
+Hell. I though the scene did come further in the years since we cracked open Wii controllers to get the accelerometer from it and use Arduino nanos as brains. 🙈😊
+
+Yeah, not the best parts, not the best build but nice to see you did it. As someone already mentioned- carbon frames are much, MUCH stronger. Especially if you take a high-end frame. For example Gravityloss frame can handle a human weight, because of not cutted, but formed legs, and titanium booster at the center of the frame. Thouh they are expensive.
+Also there are dedicated FPV stores, you can get all the needed parts. 
+And if you need some info, Oscar Liang's website and Joshua Bardwell youtube channel would be very helpful
+
+Der Kondensator am ESC ist mehr dazu gedacht, ein besseres Videobild zu haben. Ohne hat man meist sehr viel Rauschen oder Streifen im Bild. Für den FPV-Flug auch unbedingt die Kamera etwas nach oben neigen. Andernfalls sieht man im Vorwärtsflug nur den Boden. Vielleicht auch vorher etwas mit einer Sim am PC trainieren.
+EDIT: Kurz vorm Crash scheint ein Motor ziemlich hochgedreht zu haben. Tippe mal darauf das da nicht genug Schub erzeugt wurde und Betaflight das mit dem Hochdrehen ausgleichen wollte. Also war da vielleicht ein Propeller nicht fest genug angezogen. Vom Videomaterial her würde ich sagen der linke, vordere Motor/Prop. Am besten das Log checken, wenn vorhanden.
+
+Nope, you are not an idiot
+You are GENIUS
+
+Put the Esc under the FC!
+
+Through trial and error you built a good 👍🏼 drone. You have any instructions someone else will want to build one themselves?
+
+As an fpv pilot myself i got some tips 😅 
+1st i know 3d printed frame sounds nice in theory but sadly the problem with those is the vibrations that come from those.
+Carbon frames are much stiffer and so mich easier to tune. And you can get replacement parts for most quite cheap.
+2nd lighter batteries are better, like 1100mah to 1500mah. Those exta 600mah of the larger one wont give more flighttime cause of the increased weight.
+And 3rd i know it seems intuitive to point the camera down like with dji drones but its a lot harde to fly like that. Try a little bit of uptilt start with like 10degrees on both the fpv cam and gopro. The reason for that is that u want to be flying foreward which means you will tilt forward. So if u tilt the cam upwards it will be level when u tilt to fly foreward. Oh and also tighten the fpv cam so it cant move up or down in angle 👍
+
+welcome to teh community oh and search for  Bardwell plus the problem your having and youll 99% of the time fiind hes got it sorted
+
+Nice video! I think I'll stick with watching Nurk's channel instead of building an FPV. :P
+
+What I just watched was a difficult assembly even for the advanced instrument tech / engineer. Not that I can’t do all that you did but there were items that I wanted to know more about. Obstacle avoidance along with follow me. I also wanted to see a drone that could take off automatically and hover before gaining altitude. Also, how about satellite locks?
+
+Hey, fpv flyer here, there is a reason frames are made of carbon fiber, mainly they are incredibly hard to break on soft grass, and as they are more rigid, they tend to vibrate less, and will make pid tuning way more easyer. 
+If you want to get more in depth with the frame design and pid tuning, look at Chris Rosser's youtube channel, and DaveC_FPV for more creative ideas on frame design.
+
+A good option for an affordable 5" chassis is the Steele Apex, and if you want the best for the vibration dampening, the AOS 5 is a good choice too (made by chris rosser)
+
+Other than that, a 3D printed frame is fun for the experiment, but will limit your PID tuning ability in the long run.
+
+Ver nice lots of trial and error. Can i ask for a request for a video idea thats really popular. I know you allready build a power supply out of a buck converter module very nice btw i build an identical one. But could you show us how to build a traditional linear power supply with a current limit :)
+
+hey we’re trying to build a drone too using your video as a tutorial. first of all thank you for making this incredible guide. second, i had a question. i don’t see you using a power distribution board in your video at all or in the description. do we need it to distribute power to all 4 motors? thank you so much !!
+
+Hi there, I am a fan of your studies. I recently buy some mini servos (MG945). After some time they started to behave abnormal. As I guess I have blown up some components when I connetted the Vcc to 12 volt. Then I tried to make my own control circuit but I didnt able to success.  
+If you like the topic can you make a video about diy mini servo circuits which can be used to convert small dc motors to servo motors. There are some Arduino solutions but I mean a custom circuit design.
+ Best Wishes.
+Waiting your new videos.
+
+I wish I was an idiot who was smart enough and could actually put their mind to things.
+
+FINALLLYYYY!!!!!!!!!!!!!!!!
+
+Can you make part of the drone from an old iPhone
+
+Welcome to FPV! This hobby is seriously awesome. A few things I would recommend - use a carbon fiber frame, they are incredibly durable and lightweight, and allow much less vibrations from the motors into the gyro on the flight controller (due to it being more rigid), leading to better flight performance. The TBS Source One is a great cheap frame for about $25, but there are plenty of other great options. I would also recommend using acro mode (manual mode), as it doesn't limit your movements and is much better suited for FPV drones. I would definitely practice in a simulator first though. Great video!
+
+Great video! It’s great that you’ve worked through all the problems and shared your experience so we don’t have to get frustrated and repeat all the same mistakes!
+
+==> How much did the build cost in total?
+
+Go from the 3 blade to the 2 blade propellers, it wont feel as like crazy powerful, the more blades the hard it will turn amd maneuver. And i also recommend adjusting your motors in the firmware. The stock setup never works for me anyways! 👍🏼
+
+Stop it ;-)
+
+You can do it :-)
+
+;-)
+
+"TBS Source One".  Got a link?
+
+Osilations might be because of flexing 3d printed parts try to stiffen the arms also for starting with drones i wuld recomend you to have it position controlled by gps to get used to controls but you need antena for that or you culd practice in simulator
+
+Good job👍👍
+
+Hi ... pls can u give a review on your laptop power bank you created... Do you still use it? And if you are to recreat, what will you change from it
+
+Always use 100% infill for frames.
+
+If anybody’s wondering the project’s final cost is about 600 dollars without the 3d printed frame.
+
+No spring on the throttle, and a stabilization hover needed.
+
+nice
+
+For 14:30 I expected a "scheiße"
+
+The problem with 3D printed arms is that they are too flexible, the motor vibrations will excite their harmonic resonances and mess up your gyro signal. You can fix this by adding a lot of filtering, but this in turns adds delay, which messes up the PID loop as there's too much delay between the action-reaction as perceived by the flight controller. This is without even considering how many times you'll crash due to breaking the arm in flight in aggressive maneuvers and then break other things.  
+
+Stick to carbon frame arms, you can buy a bunch of them very cheap for whatever frame and they're genuinely indestructible if you only fly over grass. If you want a cheap but good one, look at GepRC. In this case of DIY or buy, I guarantee you buy is better.
+
+Great project!
+How much did it cost overall?Not taking in account the time of research,  just an estimation of parts overall.
+
+Also if it is designed for a specific sized prop than use that size
+
+Please make a drone like dhi love from india
+
+Fantastic project. What was the final weight?
+
+Pinch the control joysticks on the controller, it gives you more precision over the drone...
+
+it's fun seeing someone new to the hobby try it out, the only problems for me are the german regulations on weight and transmission power
+
+I can't help but feel like mounting the gopro to the front like that could make the drone unbalanced. Mounting it more towards the center might make it more balanced. It would probably get parts of the drone in the frame, but that might not be such a bad thing and could look kinda cool since it is a drone video after all.
+
+I fly those drones! haha
+
+9:55 do not rely on the fc or esc cable! not every manufacturer has the same pin arrangement. you might fry your expensive fc so definetly check the manual at least twice before powering the drone!
+
+Can you make a simple flight controller in your upcoming new video
+
+14:49 provavelmente a corrente (V) ficou abaixo de 3.2V e a controladora desligou os esc pra proteger a bateria
+
+Thanks
+
+Germany takes away everything that is fun. All you are allowed to do is work your entire life until death.
+
+11:16 hoje tem cameras que gravam 4k ou 1080p e tambem tem a saida de sinal sd pra colocar no vtx
+não precisa usar mais um tranblodo desse
+
+Well.... Fpv drone control is really very different from other drones (or flycams), if you want to move, in addition to pushing the right joystick, you also have to increase the throttle, Otherwise it will tend to descend gradually due to the loss of upward thrust caused by the downward force not being perpendicular to the ground.
+
+👍
+
+nice mowing machine ! :D
+just kidding you.... you did a great job on this ! however i'd just make a notice: motor arms are too bendy. This will act like an oscillating mech part between motors and their gyro-sensors through the servo loop.... i guess you could enhance control and stability by making those arms less bendable ;)
+
+YAW PITCH said she gon ROLL with me and she def gon be  PITCH n ROLLING YAW
+
+Hey I'm a mechanical engineer, and I just wanted to mention that there might be a way to print the parts to your drone without sacrificing payload, and  at the same time you may add structural integrity to the frame of your drone. First off, I'm curious about what type of infill you used, as well as support structure within the frame. Second, what type of filament did you use when you printed your part? Are you willing to use different materials for loading, like would you be opposed to using a metal support with gussets added in your 3d prints? I like this project and I see a lot of potential with it. If you use a CAD software like Solidworks then I can run an analysis on your drones body and determine what parts need to be supported, but I would need a copy of your CAD design to do so.
+
+A simulator is mandatory for anyone who is beginning to fly
+
+Been waiting forever 😅
+
+good luck on not getting addicted.
+
+Beta Fpv parts are hit or miss. Some times they work, sometimes they are broken when you get them, or shortly afterward.
+
+Hi sir you are amazing and it's a good drone but It needs to be more stable.continue improve it.
+
+11:05 podia ter atualizado o radio antigo ou usado um modulo nele seria melhor que esse controle branco de brinquedo
+
+LOL   Back in 2018-ish I switched from building Arduino projects to building and flying FPV drones.  I now have a whole fleet of them,  Although every once in a while I pull out a circuit board (Typically Wemos D-1 Mini or Lolin ESP32's) and play with Arduino.IDE or MicroPython.
+
+Great project! Even if the PETG is not carbon fiber (as the experts mention in the comments) it is great learning experience.  I wonder of the total cost though ( I would love to build one too). Do you know what the final cost (of materials) was at the end?
+
+are you calling me an idiot? okay that went far.... I think i know the answer
+
+I wonder if there is an FPV system without googles (i.e. just projects to the screen.).
+
+great work! Just wondering why you decided to print the frame in PETG? PLA is easier to print with and more durable (besides temperature). If your printer can handle it, Nylon (or better Nylon with carbon fibre) is the absolute best for a frame. Casing should be lightweight PLA or ASA as both are extremely light
+
+Get a carbon fiber frame it will help with the oscillations also pay attention to motor temperature. With 3d printed parts there comes a tone of oscillation and subsequently heating of motors. You can burn them out if it's too bad. Have fun. PS: with a 2200 battery on 4s its not powerful enough :)
+
+"Build your own drone" ,They said... "It will be easy", They said. I drove my wife crazy programing the PID on my kk2 flight controller. 5 days of beep...beep...beep. Worth every second.
+
+Those xing motors are really nice, but in my eyes too nice. $20 per motor is hard to swallow. It would make more sense to buy something like an emax eco 2306 for $13 each, then have plenty of money left over for a cheap Source 1 5" frame and spare arms.
+Great video btw, but definitely some components that came be improved upon once you have more experience 👍
+
+3d printing is still a great resource for printing antenna mounts, cam mounts, arm protectors, and motor skids though!
+
+Yep, that video took a while.....
+
+should be around 300-350 Euro -> Motors 100, Elrs 20, FC 100, VTX50, + the small things like propeller, lipo, screws standoff and camera. For goggle and remote another 100 Dollar
+
+now you could program in some AI and integration in a mobile phone to maintain control / stability..  old phone..  use the g-sensors and gps for onboard nav..  and you've got something quite good.
+
+Even dji makes fpv drones
+
+nice . ich empfehle Freerider  Simulator auf PC  oder Orca fpv beide sind kostenlos und relativ gut um Acro Mode fliegen zu lernen .
+Simulator auf pc + hdmi to Av converter (kostet 5 euro ) + 25mw vtx =  perfekt combo , damit hab ich gelernt , und direkt Acro . Angel mode ist einfacher aber nicht halb cool .. 
+
+ich empfehle es mindestens 1 Woche vor dem Fliegen auf Simulator bleiben ... ich hab versucht fpv direkt auf Quadcopter fliegen zu lernen und hab fast mein kopf verloren . mach es richtig mit Simulator
+save your money fingers and head .
+Turn off Air mode always on to make landing more easy (not to get those unexpected jumps when you try to land )
+Air mode to correct for strong wind but has it down sides (when hitting objects )
+i think the quad is on the heavy side , anyway try always going forward to get much more juicy flight experienc  . fix your camera angle too , 20 digress is  good angle for learning  i think .more angle more speed (also in similar )
+
+Falls du mal fliegen gehen willst, sag Bescheid :)
+
+As someone who's been doing this for a few years now, a few tips.  Don't use a 3D printed frame, it flexes too much causing the oscillations you were seeing, buy a carbon fibre one, they last a lot longer too, especially if you get a proper "name brand" one rather than a cheap knockoff (Armattan have a lifetime warranty, so if you break anything, you just have to pay shipping, other good brands are ImpulseRC/Ethix, Catalyst Machineworks, Ummagawd, GEPRC, iFlight, and there's a heap more, but that's a good start). Next, put your ESC on the bottom of the stack, and shorten the motor wires. Capacitor isn't needed for 4S but still recommended, but you definitely need to lock your battery straps into the drone a lot tighter so they don't flop into the props (the balance lead will tuck nicely under one of the velcro straps too). Your battery is too large for a 5" drone, I'd suggest a 1500 mAh one. The rest of your parts are very good, but your VTX is overkill unless you unlock it and go beyond the 25mW limits you have there.
+
+Beyond that, pick up a simulator for your computer, Velocidrone and Liftoff are the two most popular, and practice there.  If you want to get into tricks, don't worry about learning angle mode, as the techniques are quite different.  Personally I spent about 5 hours in the sim before I could do a coordinated turn (using both roll and yaw at the same time) properly, and about 10 hours before I went out with my actual drone.
+
+Please make a video on vtx ,about how to make a vtx.
+
+I was seriously considering building my own drone and now I've decided I will not build my own drone.
+
+That battery is to big for the drone tho (to get good freestyle performance)
+
+Falls du in dem Hobby interesse hast oder noch weitere videos in die richtung produzierst und fragen hast, hit me up, ich fliege seit 5 Jahre FPV. Ansonsten super Video aus einem Ingenieur standpunkt, für ein gut fliegendes Quad sollte man allerdings auf jedenfall ein carbon frame, wegen Resonanzen und Stiffness nutzen. 6 inch Propeller wären schon richtig gewesen, dass ist immer so eng am Frame und der Crash war wahrscheinlich ein Dsync der Motoren mit dem ESC den man durch ein anderes Timing der Motoren verhindern kann.
+
+Could you not fit a small gyroscope to give you a better stability for the cost of a bit of extra weight?   Also you should think 3d in determining you multiple direction values if it can handle it by smoothing out the +1 increments in two directions with a nice curve which will smooth out banking, climbing and diving whilst turning.
+
+Hello, can you make a tutorial how to make and program our own car battery charger/ trickle/ maintainer for 6V/12V batteries with Arduino?
+
+Maybe try to train your flying skills in a simulator. First time i flew fpv i crashed (as its suppose to be for the first time). Spending time in the Simulator really teaches you the basic muscle memory. Use Liftoft or Velocidrone
+Edit: you need a Versicherung and a Kompetenznachweis in order to fly your diy drone.
+
+Dude you are the great Scott lol I thought when you said finally finished a build I thought you where makign you own components I remembered I would even see your videos to learn how to design my own esc like the basics. Anyways please let’s make one esc or fc open source like vesc!? He can’t be the only dude out there. There’s got to be more competition not Chinese copies for a change please.
+
+That 3d printed frame will have way too much give to fly ‘well’. You’ll get gyro oscillations and general unstable flying as your skill base grows. I’d highly recommend a 5” frame from Amazon. They can be had for as little as $30 usd. 
+Another note. You typically don’t want anything above the FC for maximum electrical noise isolation. The ESC is the noisiest component so it’s best at the bottom of the stack. The only thing i’ll put on top of a FC is the RX usually just for packaging constraints. Check out Thingiverse for printable TPU holders for your RX to make it secure and electrically isolated without having to wrap it with tape of some sort.
+
+If you want to fly and not spend months learning it and wasting money on crashes, I recommend using auto level mode. Let the drone balance itself to horizontal when you release the stick. In any kind of emergency you can just let go and it will be fine.
+
+"Why?" 😂
+
+Can you make big drone from small drone mother board power delivery and calibration this is little complex i think
+
+You should not power up the vtx without a mounted antenna because it could damage the vtx, at least not for a long period of time
+
+Nice vid, im asking myself how much a set up Like this would cost?
+A diy fpv Drone with decent googles and components.
+Are we talking about 200-500€ or way more?
+Thanks!
+
+Please anybody tell if Hard disk drive motors can be used to make drone or not ? What thrust can they produce comparatively
+
+have you got a link to that 5 inch frame on Amazon?
+
+I suggest you should get carbon fiber frame and after that A decent controller like mambo TBS Ethix Mambo RC Radio Drone Controller Latest one and A vr set Like fatshark or other Can give shot In steam simulators for flying acro or else try angle for new till you get use to the sticks after that you can give it real shot Yeah
+
+bro the caption 💀💀💀
+
+You should have given total price for the components. It would help.
+
+Welcome ot the world of FPV, bud. =^/,..,^=
+
+If you watch Josua, you know he said that printed frame are bad unless you stay at 3 inch or less.
+
+Please don't hold your drone in your hand while powered up, if it flips out you will get seriously hurt! No joke.
+
+Lol
+
+Now, full trotle between the trees i dare you. 
+
+love to fly these litte buggers. and yes, i destroyed one complytly with a tree standing in my way ;P
+
+last part of the video you said you will save money lol. you are right but the headache building it would drive me crazy. figuring out what parts go with what and the correct ones at that would do my head in, I think. after watching this I'm not sure I want to build one now lol.
+
+Great video and welcome in fpv. But please dont arm a racing drone in your hand. Trust me ive learned that the hard way :D
+Im 95% sure that the oscilations are because of the 3d printed frame. Its tempting to print frames but we've setteled on carbon frames for a good reason
+
+3d printed frames alone can cause tons of vibration that will cause feedback loops with the pid controller.  I would look into carbon fiber.  If you absolutely have to make it yourself check out the source one open source frame. There is files to cut it yourself. Love your channel since getting into fpv I like knowing the how things work and you do great at explaining it all. I look forward to seeing you progress with your flying 🤙 if you need any help with betaflight feel free to hit me up. Looking into black box explorer or pid toolbox as a side program to explore flight data is always a good idea.  Welcome to the fun of FPV 🙂 it gets very deep very quick 🤣
+
+Drooonnnneeeessszzzz!
+
+Great video but what was the total cost?
+
+Problem in Deutschland: Drohnen dürfen nur auf Sicht geflogen werden, wenn du also alleine bist, darfst du in der Öffentlichkeit nicht mit der Brille fliegen.
+
+Please do don’t use the drone with props in the hand not at all recommend 
+Don’t underestimate the power please keep that in mind next time 
+But as always nice video
+
+Listening to the motors I can hear the PID parameters are not good and I think the first time all of your motors have stopped in mid air was because the FC thought it detected a runaway (you can see this alarm in OSD). I have built my first drone using basic servo signal ESCs (dont ask) and that is what it would do before I altered the PIDs drastically. While it was no longer going to the moon, it would still flip out a bit after a sharp turn or a stronger gust of wind. The default betaflight settings should not be this bad with your equipment though. I think you need a proper carbon fiber frame, the plastic may not be stiff enough. In my opinion there is no reason to tune the quad or learn to fly it with mechanical problems.
+
+Getting into drones after years of messing around with arduino/ electronics was a little crazy lol. I thought I would know exactly what to do with everything. Fuckin' nope.  Lol
+
+Question: does one need a BMS for the battery and if yess can one use li-ion bms for li-po bms
+
+Play simulator on the pc. This is must!
+
+U r a legend
+
+ditto. Idiots Guide? My ass.
+
+I just realized you have the esc on top also you should try to avoid this the flight controller is very sensitive to the emi from the esc/motors/motor wires
+
+Will do
+
+Thanks ;-)
+
+Buy Naza-m v2, if you have problem with piloting the drone😉
+
+how hot do the motors get, even when there is no load?
+
+Great Video! 👍
+
+Edit: I like the titel 😂
+Edit: I also like your garden :D
+
+not yet watched the full video , but plastic frame introduce a lottttttt of vibration and resonance problem that are not really fixable. and too much flexibilty too
+and plastic frame can also introduce uncontrolable drone , and flyaway for no apparent reason.   it s a whole rabit hole
+
+you can found solid carbon frame for cheap.    cheers
+
+Do they make any drones with more than four propellers to increase the lift power?
+
+Hi 
+please I have a big business for you
+How can I get you
+
+Is the transformer or welder upgrade on the to do list?
+
+It seem like  it is not stable in air after the usear stop controler the joystick it like we have to constantly manuplate it to fly in a constant hight but , it would be nice if  after reaching a desired hight when the usear takes his hand off of the remort the drone keep on flying  in a fixed position
+
+Velocidrone, velocidrone, velocidrone
+
+Well, if you don’t have a 3D printer or a controller or headset, then what would you do?
+
+If you did talked to the model creator, why not ask him to help you fit the 6" blades?
+
+i really want to go FPV drone, but i dont know if i have the tecnical know how.. It seems really hard.
+
+Quick question, why is the battery and Go pro, the 2 heavy items, mounted on TOP of center line? It should be bellow the center line for better stability, right?
+
+I 3d printed a PLA-impact  frame and the resonances were unbeareable. It flew to the moon almost every time I cut the throttle while flying. 
+I am not a tunner guy and didn't know how to fix that.
+
+😍😍😍😍😍😍😍😍😍😍😍😍😍😍😍😍😍😍😍😍
+
+Does he know that goggles are supposed to have two screens 1 for each eye?
+
+Mmmm Drone Gulash
+
+When u print parts dont use Gyrolid as infill cause its weak af , and when u Power up the quad never do it without the vtx antenna . Besides from that GJ
+
+default pids will definitely not work on a 3d printed frame. carbon frames are way stiffer. whats the end weight of it? btw the sweet spot for me are 2" 2s toothpicks.
+
+What prusa i3 cooling upgrade are you using :D ?
+
+Thanks :-)
+
+Testing a quad while holding it in your hands.... yep, this is an Idiot's guide all right :-)
+
+Soo should we diy or buy?🤔
+
+I can help make your drone fly better, you need the camera tilted at about 15 degrees up to start with, so you're not looking at the ground when you move forwards.
+
+Danke!
+
+I'd bougt a new rather a new receiver, than a new remote
+
+Thanks!
+
+No autopilot features? use a PX4 stack next time. How long did the FC/ESC keep going for?
+
+HobbyWing seems to have best ESCs
+
+Hi there. Re drones and security. Boundary security is important at my farm  .Can you kindly visit a raspberry pi or similar land  radar unit please?
+Diy boundary radar theses days is important for families and is a very interesting project.
+  Adding a 360 degree rotating co linear panel antenna with
+5w Rf output including code for size of object  differential algorithm (bird, drone,man or car ) at 500m would be awesome.
+Im happy to buy a radar kit on your web site ( F band ) pre programed would be fantastic.
+I can also be keen buy the Gerber file for printing the 18 inch x 18 inch co linear array PCB and have your filter plus a  tuned circuit design fitted to pcb aerial. 
+Have potchers on farm problems.
+Thanks mate for your videos
+From Andrew.
+
+I don't think I'd recommend PETG for something like this, too brittle. I'd go for something like PLA+ first and once you get everything dialed in jump to CF nylon.
+
+One of the most important rules is to NEVER! EVER! touch an armed FPV quad! Those props can and will mess you up real bad if it freaks out for any reason! 
+3D printed frames don`t work. They kinda do but they don`t. Kinda like wooden wheels compared to a tire. They break way too easy and are too flexyble which upsets the gyro. Get a Carbon fibre frame, they aren`t very expensive, are better in  every way and don`t break in such light crashes.
+
+you need carbon fiber body (frame). First anything else breaks extremely easily, second anything else vibrates a lot and that affects the flying performance. Carbon fiber is the best option.
+
+Is there a supply list
+
+Can't you just get powerful motors and restrict the power when you need precise movement? surely there's some controllers and software that support that right?
+
+ELRS yay
+
+I been wondering how PETG 6mm or more holds up with drones. Does it break way more than carbon.. and thus print lots of extra arms, etc? Seems like if you dont crash much... it could be a great way to have all kinds of drones to fly for less. But is the flying dynamics good with PETG/3d printed.. how much different than carbon?
+
+nice vid <3
+
+i can see you fly in acro mode,that is why it is uncontrolable
+
+Now lets say i want to attach a cola bottle filled with mentos to my drone, one time as a drop variant and the other time as a fixed variant. How would i have to build These?
+
+Did he just use frush cutters and cut them long what's the point
+
+How do I calculate weight of parts if I want a larger drone? Is their a formula?
+
+Thanks for the support :-)
+
+Thanks for the support :-)
+
+Thanks
+
+well great scott finally gets into fpv, aint this gonna be awesome, so about your drone there are a lot of problems first one being the frame these 3d printed ones are never perfect and have a little to a pot of vibrations which mess with the quad, and hence require extensive pid tuning and more agressive gyro filtering, then a 4s 2200mah ia wayy to heavy for a 5" better to yse something like 1300mah, i would really advice using a carbon fiber frame or use some some carbon fiber pieces or tubes to reinforce your printed frame
+
+you should have done a bit more resartch into fpv iv knowdes that your camera its at 0° witch is not good because when you go forwords your drone its angeld and your camera would just point at the grownd and the 3d printed frame its not good as its verry fragile and thous drones are ment to survive big hits i would recomend to practice your flying into a simulator befor flying for the first time in acro mode to anyways tips aside good video 👍
+
+Hi Great Scott!!!!😁😁😁
+
+Ich Hoffe du hast einen Drohnenschein und eine User ID auf der Drohne ;D
+
+is aliexpress safe to buy drone kit? I'm new with drone, never build or owned drone before. but I want to learn how to build and program my own drone.
+
+bro made a 2012 quad
+
+Your Drone looks amazing! After some training you will be a master in flying.
+
+But don't forget to get the Drone flying license and register yourself by your local aerospace agency.
+
+Otherwise any flying activity in the EU is ILLEGAL!
+
+brooooo, i build them in 2 hours aaaaaa, is it a 3 inch?
+
+instead of printing a frame 
+yknow 
+maybe buy a carbon from that is stiffer, preforms better and doesnt break as easilly so you wont need to replace it as much...
+
+is a 30mm hole good or should i look for a 30.5???
+
+You know building an FPV - UAV is not a small feat by any means. I'm trying to do it by myself, but I'm clumsy with assembling the technology. Then again! - I'm a CHEMIST - I've been working with polimers and polimeric materials for 25 years. It's quite easy for me to obtain lightweight & very durable materials, but I'm in a pickle as soon as it comes to electronics, electrical motors, etc. I have friends in the business, that allow me to even PRINT (gratis!) any ...idk!...blade-propellers or any other part of the drone I want, but as soon as it comes to power it, control it, realay real-times images, etc., I'm starting to having problems. I will persist obviously, but there's a SH*TLOAD of stuff I still have to learn. PS. KUDOS for your drone, though! Nice job!
+
+If you are printing the frame, why not make it hollow and run the wiring on the inside, rather than worrying about the ziptie?
+
+Hi 😀
+
+Sie brauchen nicht, als Idiot zu sagen. Ich persönlich, Idiot ist besser als nichts.
+Von Fehlern macht den Meister.
+
+Make sure you read the local legislation on drone flight before you fly (or build)!  If you can keep it below 250g even better. https://www.easa.europa.eu/en/domains/civil-drones for EU (but its similar for US as well)
+
+But DJI makes fpv drones, and even their normal camera drones can go quite fast...
+
+ANSWER:
+The drone fell out of the air because of a cut in power, this may have been caused by a dead battery, bad wiring or something  else.
+Also if you want to get good you should practice with a simulator.
+
+Since I started building my birds (5-6 years?) I've only flied with stock BF rates and filters.
+You will have lots of problems related to oscillations and vibrations because of the plastic frame. Get a real carbon fiber one (no matter the model or manufacturer, anything is better than 3D printed)
+
+Oooh look! A bouncing drone 😂
+
+The frame have to be very stiff. Most of your problem comes from the frame (vibration issue..) . Buy carbon fiber frame TBS Source . Is very cheap and will have more success. And the rest you have decent parts what I can see.
+
+Hi there ;-)
+
+ @greatscottlab  Awesome video as always😁👍
+
+Hai 🖐️
+
+Welp, here's the fpv crowd coming. Please just get a cheap cfk frame. Source one or something of the likes, 30bux and it basically won't break unless you're bashing it around on concrete for hours. And ziptie that battery lead to a standoff, otherwise the battery will yank directly on the esc solder connection when it inevitably goes flying.
+
+you know fpv drone have carbon fiber frames for a reazon
+
+That gives back hope that half life 3 wil come out
+
+Not sure about Germany, but do you have to have a certain permit for your DIY drone? Danke
+
+Do you have the drone pilot certification, which you need in germany/EU ? xD
+
+Omg those zip ties ends on the arms. It just waiting to cut some one.
+
+Well, one can use house hold water pipe as frame, strong and less costly
+
+Do you sell the t-shirts?
+
+i would practise the flying with a sim, so you don't break parts and lose a lot of time and money
+
+as a fpv drone pilot for years, i really suggest you tu buy a carbon fiber body as it much stronger and light in comparison to 3d printed, buy a thick one and you will destroy every single part of your drone before the body broke
+
+Your propellars are too small try using bigger ones?
+
+U not an idiot bro ur smart
+
+How much did this cost in total?
+
+PID was my 1st mistake 30 sec flight and broke my drone fpv racing drones are nothing like dji ones u take off u are the drone life line u don't have a computer to keep u in the air u have to do that
+
+This is the one best of the carbon 5" fraim https://youtu.be/8iqao_ubsdc strongly recommend
+
+I just recognised this drone in Mark Rober's latest video. Did you give him permission? I don't even see any mention or credit to you. It appears at 2:19 in his video.
+
+Why would you put the bulk of the mass (battery, electronics) etc above the center of lift of the propellers ... ? Its inherently more unstable aerodynamically, so I'm sure your controller was working overtime to keep it stablised and its no wonder the pilot input was so sensitive ... when was the last time you saw a helicopter with its rotor below the centre of mass of the cockpit?
+
+OMG do NOT run the drone in your hand WITH PROPS ON!!!! DO NOT if you want to keep your fingers or your face.
+
+3d print frame not rigid enough for over 2 inch quad. and gopro+4s 2000mah is to over weight for 5 inch
+
+Haha happy to give you hope. I hope for that too by the way :-)
+
+Maybe some day......
+
+Seems plausible.
+
+ @greatscottlab  Actually, i did
+
+Thanks ;-) It is also more meant as a joke ;-)
+
+Thanks for the input.
+
+Although 3D-printing a frame might make for a better video, what I learned the hard way is that there is zero benefit to not buying a ready made off-the-shelf drone such as the Diatone Roma F5. They have also done all the component matching and tuning for you, so you can literally plug in a receiver and a battery and fly it. Where 3D printing comes in handy is when you are experimenting and might change the design between each flight. Otherwise, plastic frames are too brittle and sensitive to heat. Carbon fiber is nearly indestructible. When you get fed up fixing and rebuilding it all the time, just go buy one. You will thank me later.
+
+wow! did it really take 5 years? how many hours did you put in every week?
+
+Alwhat was the while cost?
+
+Lot's of people see value in LOS flying, but I don't. Flying with goggles is easier and you get a more intuitive feel for what the quad is doing.
+
+One of your props is upside down. Please fix it
+
+Yet another unsuspecting victim sucked into this glorious hobby... Welcome to the club mate!
+
+Anything beyond 2.5-3" (~80 grams AUW - take a look at "Toothpick class quads") sucks when it comes to 3D printed frames. The vibrations, the durability...
+Also if your Flight controller is STM32F4xx based one, in betaflight you should use DShot 300 (not DShot 600) and run a 4K pid loop. Maybe that has something to do with the initial desync too.
+
+I was promised an "idiot," but I've watched the entire video and don't see one. False advertising. 😃
+
+You can get all in one boards with ESC and Flight controller combined.   ELRS is the best on the market for consumers right now. DJI has digital VTX called Air Units. This is not a cheap hobby anymore.
+
+Great video. I'm working on a drone myself. I'm using brushed motors to keep complexity down but I'm designing the controller board myself so I'm able to add sensors similar to the bigger drones. Do you ever mess around with obstacle avoidance?
+
+why are you placing the battery on top?
+That's like asking for a bad flying performance.
+
+If you consider yourself idiot I need to leave!😅
+
+Just use a carbon fiber frame, yes you cant print it if it breaks but you probably will never break it anyway. Not only reliablity, carbon fiber is much stiffer and lighter. Stiffer frame makes a drone fly better as there are less vibrations. Also if im correct you didnt print the frame with 100% infill, i assume because that would make the frame so heavy. Your choice of fc, esc, and motors is pretty good, although you might want top swap the fc and esc position for ease of use. The 2200mah lipo is too heavy for 4s 5 inch, 1500 is the sweet spot. One really bad thing you showed in this video is holding the drone while its armed with the propeller installed. Any pilots would never recommend you do that. Otherwise, just keep practicing in simulators to improve your skills.🙌
+
+What did this thing cost?
+
+FPV is the only way to go.  Def switch to a carbon frame.  There is to much resonance in 3D printed frames.  They just dont work right.  Otherwise its just a LOT of practice.  A SIM will save you from breaking parts and spending money.
+
+I just started getting into fpv drone flying I ordered my first drone components, and I've had experience flying DJI drones but this is like a whole new world of drone flying, but seeing you go through it step by step, it was just what I needed thanks for the inspiration!
+
+not sure what's the legislation in your country, but almost everywhere you need a license to fly anything above 250gr. maybe you can learn on a smaller drone (say 3" propellers) before jumping on a honking big 5". smaller, lighter, less damage in an impact and less powerful
+
+Aw I thought that was a small frame Vespa, something about the small frame Vespa the German folk seem to just adore but alas it was a cheap Chinesium moped /sigh
+
+I wonder if you're having trouble with flipping?  I wonder how high your Center of Gravity is.
+
+Send me beginers kit of drone 😂😂😂😂
+
+3d printed arms are not ideal. You need something stiffer that cannot flex so much to get way better performance, like carbon.
+
+Sounds great! Have not tried obstacle avoidance yet.
+
+Simulator is the way. Practice a few hours on simulator and it'll spare you a lot of time and money fixing your real drone. Also, don't get temped to use aggressive expo curves on the RC input... It'll be easier if you learn how to fly it linear.
+
+3d printed frame probably results in a noisy system, add to that 6inch props that inharently produce more noise than "default" 5inch makes it harder to get a  good flying drone. 
+Did you use default pids? Look like you had too low pids
+
+Very beautiful 
+Just project take long time it took from me  2 years to build my own 10dof flight controller board
+I wonder if I could send you one of my own built to use it on your quad
+
+Hmmm.. what is the total spending to DIY a drone ? $ 400 ?
+
+Alot of your aliexpress links need updating - they're dead....
+
+That was a very interesting video!
+I am curious about the FPV goggles: Do they contain some kind of lens system, or are they simply an LCD set back from the wearer's eyes?
+
+I have a doubt, At 8:30 minutes and seconds into the video you have mentioned the ESC must be able to handle the power consumption from the motor but the motor you have used, seemed to be a 60S Motor with 51-52 Amp Approximately in current rating at full throttle and the ESC That you Have used is of 50 Amp Rating Was That A Problem or Will that be a problem or not - This is my question Scott ? Please Let Me Know !!
+
+first diy airplane...is more hard..is faster..🥴..i loss my diy..is gone in forest 😓😫
+
+Please get a carbon fiber frame, they are virtually indestructible. I swear you can run over the frame with a truck and it won't break.
+
+for anyone thinking of building this... buy a carbon fiber frame... it's much tougher than you think... I used to practice over a deep plowed field (big chunks of dry mud, the about 30cm heigh)... when i crashed, which was a lot, the only victim were my anckles being stabbed by the sharp dry mud. 3-blade pastic rotors are pretty tough too... if you can, wrapp the battery in foam, those are NOT tough, one hit and a 4S battery becomes an unusable 3S battery
+
+Sadly buying, building or owning a drone is not allowed in our country and can get to jail if we did so
+
+good job but why put the esc over fc ? Esc go under. Also a 3d printed frame will cause lot of vibration to the gyro so it's very hard  to tune your pids and filters
+
+Please. Props off when testing indoors! Also that lipo is wayyy too big, try a 1500mah 4s lipo and you will find it way more fun.
+
+hey just saying, the startup sound is incaft not a buzzer. its acually the motors making the sound.
+
+looks heavy, you may get a better frame for not too much and very light in weight
+
+No hate but a carbon fiber frame would be better. If you crash a 3D printed frame like you did in the video at 14:26 it will always break. But if you use a carbon fiber frame it won’t. It’s light and durable.
+
+Just so you know: PETG is NOT stronger than normal PLA. That’s a myth. Source: CNC-Kitchen
+
+Beginning of the video:
+😀😗😀😗😀😗
+
+5:20 it's aliexpress, not amazon
+
+Disappointed - I thought it would be more DIY/hacky but aside from the 3D printed frame (which is probably the root of most of the problems with this build) there wasn't really any of that, just standard FPV drone parts. However, props to you directing people to Joshua Bardwell who is indeed, the FPV Knowitall ;-)
+
+He’s using 5” props
+
+Thanks for your reply but Your message has been deleted or some thing went wrong I will contact you in telegram  could you please give me your name on telegram
+
+LCD with a mirror.
+
+depends on the one you want, there are really fancy ones with oled screen and complex optics and then there are simple ones
+
+and DON'T BUY PWM REMOTES! no matter how cheap, they do work, but they are very limiting in accessories... they're better for beginner RC planes (very simple to connect), but not copters.
+
+Written where?
+
+ @greatscottlab  Esc go under because the wires are shorter and are far away from fc, current wires cause interference. Mounted over are a mess of cables that can be easily ripped off in any crash and touch anything with esc current is how you get your quad on fire.Your Esc cables are long almost double what you need and weight is added for no reason. Look any serious build, nobody put esc over fc. Also no stack has esc over fc, do you think is coincidence? Also something above fc bring more vibrations, fc goes on top with soft mount. Ps flying fpv for 5 years now, trust me i build many drones, also remove props when trying it, it's not written anywhere, it's just common sense if you don't want lose a finger or an eye. Your capacitor is soldered on with cold sold spots you need to melt it down more with the main lead battery wires.
+
+ESC on top will help keep it cool, i think
+
+The reply to this comment is a scam guys.
+
+Haha true ;-)
+
+I mean should I make my own motors/ESC/FC......that would be a video on its own. And I even made some of that before.
+
+ @greatscottlab  I was aware of your esc video, that's kind of why I was disappointed :-) It would be a huge undertaking though! Still, you managed to build and fly an fpv drone which is no small potatoes given the amount of technical knowledge required 👍
+
+I am from US, and I have a ham radio license, and reading thru the rules it sounds like a lot of guys make ham frequency controlled radios, that I see as beneficial because then you aren't stuck with part 15 rules and the 2.4GHz frequency
+
+Oh please for God's sake. Please mount the motors on the bottom of the frame. 😭😭😭😭
+
+Maybe you did not set up AIR mode in Betaflight
+
+Zeee battery C ratings are incredibly overstated. 
+My ESC requires 35c minimum to run and my Zeee "80 C" battery would not even provide the 35c minimum, resulting in voltage sag causing false LVC state.
+
+Zeee is crap battery company. 
+
+SMC make actual good batteries.
+
+Average flight time please
+
+change your transmitter first. betafpv transmitter is not good.
+
+Would it be more stable if the weight was below the propellers?
+
+You live in germany correct? Do you have an insurance ?
+
+PLEASE add a warning to the video telling people to never do what you did at 2:54 and 3:18. Arming a drone in your hands like that with props on is extremely dangerous and can lead to serious injury. There are many images on the FPV subreddits from people who had to learn that lesson the hard way.
+
+Please don't do stuff like testing it in your hand. 5" props can easily slice your fingers open!
+Your component choice was alright, but 3d printing the frame isn't a great idea. Betaflight isn't made to handle oscillations caused by soft arms like this. The PID adjustments required to make it fly smooth would make the controls pretty sluggish. Carbon frames are pretty cheap these days and using 3d prints would be more expensive in the end with them breaking all the time :)
+
+Dude, if you were an electrician you'd get a mouthfull cutting your zip-ties like that!
+You should use flush-cutters and cut them at the base, bechause zip-ties becomes tiny knives when cut.
+
+Is... is that terraria music I hear at 2:28?
+
+Just turn Air Mode off
+
+Oh, please, people, don't make this your first drone. Buy a ready-to-fly whoop kit (even Betafpv Cetus) to learn how to fly and not harm anybody (including yourself, these 5" props are really!!!! dangerous).
+
+Also, spend some quality time in the simulator, such as Velocidrone.
+
+Then once you ready, buy some bind-and-fly drone from carbon so you won't destroy it completely after the very first crash. But also, carbon is way better in terms of vibrations. The drone will fly 10000% better.
+
+You can also order a carbon frame from many manufacturers, or for example, from Criss Rosser (AOS frame), and buy all the components separately.
+
+Say few words for me..
+
+As a fpv fanatic myself, I must say that the budget in this video is kind of weird. Expensive motors and a 3d printed frame is very weird. One could make a drone superior to this one for way less.
+
+12th
+
+FPV!!!!!!!!!!!
+
+get a drone simulator on your PC and spend 10 to 30 hours.... it will be much cheaper and faster way to learn. Important is to use in the simulator the same remote controller as your real life drone so that u build the correct memory muscles.
+
+what you say about motors is not valid for beginners in my experience. better get the cheaper ones and replace them as you crash. You selected the best motor for 20$ and they are similar or better than most other more expensive motors.
+
+enjoy the hobby !!
+
+it's not a drone it's a quad and all your 3d printed parts are going to brake welcome to the hobby
+
+So I want to make a fixed wing drone and just see how far I can fly it away
+
+#Great Scott I experienced loss of control many times, when not enabling air mode ... As soon as you cut throttle the motors can lock and the drone will fall from the sky (this is especially true on Xing motors that have very strong magnets).
+These are some of the best motors you can buy so great choice, but you could save a lot if you buy the cheaper version of the Xing that cost almost half of the price but have identical performance.
+
+pendulum rocket fallacy
+
+Noted.
+
+I do not think so
+
+I just saw the end of the video :) do yourself a favor and give up on the 3d printed frame idea and get a carbon fiber one : it will resist crashes much much better and solve your vibration issues. Suggested list of frames at Joshua Bardwell website https://www.fpvknowitall.com/fpv-shopping-list-five-inch-freestyle/#frames
+
+Stay on aliexpreas n arduino stuff😂
+
+Lipo c ratings are hot garbage.
+
+Reduce your rates and dont fly angle its a crutch
+
+Dude! Take your props off on the bench! Drone bites can hurt you bad! Or at least power it from a power supply and limit the current. It's gonna be hard to make great YouTube videos if a drone eats your face off! Love your vids, but please be safe!
+
+Of course nothing blowed up, blowing up projects on YouTube is not your jamm. You don't get electrocuted with high voltage in almost every video (probably every video XD).
+
+sorry dude but the price not worth it .... i love the vid !
+
+The vtx antenna is badly placed. The frame drone will greatly decrease your range.
+
+Don't do it to me, I almost got rid of the idea of spending even more money on drones but a 3d printed frame is too good of a proposition to not try
+
+Please, don't use 3d printed parts for fpv quads, the rigidness of carbon fiber heavily affects the tune of the quad and how the flight controller reacts to it, 3d prints need to be thrown out the window, get a carbon fiber frame and spare arms, easy as that
+
+it's on printables. why would you need to ask permission to make a video about it?
+
+I would consider mounting the heavy battery at the bottom of the unit for better stability
+
+3d printed frames its realy bad idea. Lots of noise and low durability
+
+You got all the parts ready, you did no projecting or anything. You did almost the same drone that you had plans for. You haven't even changed the PID xD. So sorry memory, you did not build it. You assembled a drone. Still waiting for a real build video
+ps: PID is mandatory for stable and predictable flight.
+
+I hate the sound drones make
+
+Your design is not balance like a boat
+
+This is just a standard drone. Nothing in this build is DIY.
+
+At 11:11 it's a little sad to see you struggled with binding on ELRS as it is the easiest the industry has until now. Just connect to it's wifi Hotspot and put in your pass phrase and wallah done.
+
+Second
+
+i know its been 2 years but omg you wasted so many prints and so much plastic on that thing that was so unnessacary
+
+My down syndrome son did it in a week following one youtube video.   PID tuning and all.  
+
+Doesnt say much for you.
+
+Why?
+
+ @greatscottlab  Drone frame is an obstacle to 5g waves. Best placing is outside the frame and perpendicular
+
+3d printed frames aren't any good.
+
+It's been done, and it's not done for many reasons.
+
+And please do not message him on telegram he’s a scammer there’s no checkmark on his username
+
+As a professional fpv drone pilot it was so painful to watch your mistakes.
+Firstly: always spend some days practising the drone navigation in somekind of pc simulator - it saves you hundreds of $ and also gives a better first real flight experience after.
+And as you realized 3d printed drone parts are not the way for fpv (racing/ crashing) drones. You adviced to use anykind (brand/model) carbon fiber composite frame, which is way more durable, also lighter (gives you more flight time), and probably cheaper too (they comes from like 16$ for a complete drone frame set.
+Some other minor suggestions: betafpv is not the brand who makes great qc/quality products, so in the future i offer you to buy some other branded radio controller (for example jumper/radiomaster) when your current radio transmitter will starts to fail; and one tiny bity advice for the last: We (fpv drone pilot word) tends to put our ESC to the bottom of the flight stack, and Flight controller on the top of the ESC, so like reversed or flipped like you did, but who cares if its good for you for now :)
+
+Bro I'm so sorry about all the whole controller problems! The same thing happened to me and it knocked me out so so much it was so so horrible!
+
+I'm glad that you got into it but a wee bit suggestion, let this video be for someone who already knows about FPV. Because for a beginner, it's pretty risky. Rather beginners are suggested to use RTF or BNF
+
+.
+
+For the love of god, please do not do a "hand test" with propellers on like is shown in the video... Thats just asking for a desaster to happen...
+
+Please don’t hold your quad in your hands for testing. It’s really dangerous and cause some serious harm.
+
+Never ever hold an operational drone or work on the bench with props on. 5" props spinning at speed will cause VERY serious injuries... They will chop off a finger or take out an eye. I'm a massive fan of your channel but pleaee make sure this safety advice is communicated as people could get very badly hurt if they follow this video. Sorry to be a kill joy.
+
+I built a quadcopter like this many years ago, not from a kit but from parts I bought from different places and it worked great! I can do a lot if I put my mind to it :-D I learned how to do it from watching youtube videos and reading forums. I haven´t used it for many years, I guess all those lipo´s can´t be charged now...I wonder if my FPV glasses and camera is worth anything now, they´re not HD, that much I remember...also I´m not sure where I put them lol
+
+as far as learning to fly, should have bought a game like DRL to practice in.
+you started without the goggles? why?
+
+seriously, pick up a video game for drones like DRL. it's the best way to practice before real life.
+
+is this really DIY? you just bought the components and assembled them which seems to be pretty standard. you didn't even design the 3d printed frame yourself?
+
+you spent 5 years making a plastic drone that will detonate on its first crash? Why? Just buy a nice carbon frame. Just because you can 3d print something does not mean it will work well and be usable.
+
+Why do people love fpv drones? I want to make a diy drone but I've never played with a drone before not even a toy one so I sont want to spend too much money on thw first one I make
+
+Hey Scott, you may be interested in my DIY teensy-based flight controller. Not quite as polished as betaflight, but still very good stabilization performance--and it's arduino-based, so it's super easy to customize and modify (custom sensors, automation, etc...). Made for hackers like you!
+
+For the Love of god, please remove the props when testing and never let it get near you. The blades at that speed will just slice cleanly throw your veins and you blead out in just minutes.
+I'm flying fpv drones for years now and i have seen horrible accidents. This is not a Toy!
+Good luck, stay safe and happy flying!
+
+That is a Quadcopter, NOT a drone, it has no autonomous capability.
+
+now just mass produce these and ship em to ukraine ;)
+
+you crashed because of rxloss
+
+greetings from Ukraine, the FPV capital of the world, year 2024...
+
+10:50 if the remote is closer than a meter to the receiver it won’t bind.
+
+Ahh no money to build
+
+Unless it’s a hot day then it’s nice.
+
+Hmm,
+
+Thanks for the info
+
+Feel free to drop a link.
+
+ @greatscottlab  check his channel
+
+Would you recommend putting cages round the props?
+
+I think just more people associate the name "drone" with such devices. No offense to quadcopters or drones.
+
+ @greatscottlab  Yes but a drone is a capability and not a vehicle or frame type, its the ignorant media that have made others think anything with four props is a drone.
+I have two quads that are drones, a quad that is NOT a drone, many fixed planes that are drones and even a 1/4 scale truck that is a drone.
+Think Military drone, what immediately pops into your head, a Fixed wing plane!
+The U.S army even have Full size Helicopters that are drones, those are seriously cool and i have a 450 size heli frame i intend to give autonomous capability too :) 
+
+Drones come in all flavors, air, ground and water based vehicles and all vehicle types within those classes but ALL must have autonomous capability to be a drone.
+
+Possible.
+
+You can always get way cheaper components. The way to build it stays the same.
+
+ @greatscottlab  do a giveaway 😁
+
+Pleas NEVER test your drone in your HANDS!!!! when you have propellers attached,  i head known this and still i learnd it the hard way and brought somebody to hospital. Espacially for the first test flights i would reccomand around 5m between you and the drone and if possible some hard cover.
+
+Too much things, I stay with dji
+
+15:15 No I don't have a basic idea of how to make my own drone. This video showed me how to buy components and assemble them together. I don't have any clue neither did i gain something valuable from the video. Either i grew up  or youtube is turning to bad arid stuff
+
+Very cool build. Please don't forget a failback! (don't ask how i discovered that i didn't have one XD)
+
+I'd make the frame out of aluminum. Just cut out a simple X from a sheet and drill some holes into it. If you don't have a tap and die set I'd suggest getting one to make threading the holes easier. You could even make an oval for the bottom, use standoffs to connect the top and bottom pieces and it'd be pretty sturdy.
+
+Trying to pretend you're inventing the wheel when there are so many guides to building racing drones that actually fly and crash just fine is just stupid.
+
+Love watching newbees try to fly and learn build a quad. Nice video, nice try, good parts, except the printed frame is an absolute no go. FC is way too sensitive for those wobbly 3d printed things. And everything is probably said already, so I'll keep it short.
+1.Simulator is for children, learn the hard way😋
+2.Lower your rates to make it easier and learn faster.
+3.Add 0.25 expo to make it even easier.
+4.Fly it on a 3s lipo if you're still think it has too much power. 
+
+BUT MOST IMPORTANTLY: Please don't ever arm this thing in your hands...or close too you for that matter. The flip out it did in the air can also happen when you first arm it, and you won't be able to hold when that happens. Many, including me, have had an accidental arm while holding it and that is some scary sh!t. Will spare you the details😅
+
+Noted :-)
+

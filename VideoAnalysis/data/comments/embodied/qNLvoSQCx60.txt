@@ -1,0 +1,908 @@
+6:38 Looks like you interpreted the signed 16 bit value returned by the mic as an unsigned one.
+
+9:33 The result sounds like a Dalek..
+
+Finally a crystal clear explanation of I2S!
+
+Years later, this video is still the easiest I2S explanation. Thank you!
+
+great stuff.  would love to see more videos using the esp32!
+
+9:32 Save yourselves, Great Scott has already been terminated 😂.
+
+Man! Those drawings are amazing. Worth watching just to see how neat the guy draws.
+
+6:48 whoopsi , someone soldered on his probe :D
+
+Can you make a walkie talkie with 2 esp32's using this metod and wifi/bluetooth?
+
+my pic32 had enough flash to store a funny audio sample and i managed to port bitluni's arduino audio sampling code to it. Bitluni and Greatscott are great teachers !
+
+As a high school student who only recently got into electronics, if even I can follow along with what he's saying then this is truly high quality.
+
+Great walkthrough 👍
+Thanks for sharing 👍😀
+
+Great video, and the best I2C explanation , thank you for sharing
+
+1:26 Was the pun intended?
+
+You know i was waiting for this one 🤩
+
+Thanks for the great explanation of i2s!
+
+awesome project, Scott! Thx!
+
+Really interesting!!! Thanks a lot, dude!!! 😃
+Stay safe there! 🖖😊
+
+thanks finally I can build something this weekend.
+
+Wow! This video is really awesome. Didn't know the ESP had such capabilities.
+
+Maybe that would explain the clipping in his result.  I was looking through comments to see an explaination.  This could be it.
+
+You are right.
+
+Plot twist: The Daleks also watched this video and made a sound device according to this video. That's why they sound like this.
+
+sounds like bsod
+
+This is just the beginning.
+
+Touch this time text every 1 sec.
+
+You're welcome :-)
+
+ @greatscottlab  here's a really good video idea: HOW TO MAKE VCO SINE. tiny arduinos aren't fast enough. circuits that support variable pitch are complex. i am not an electronics expert but i am a sound expert. i want to make a sine. i don't want to spend $30 in parts ot make a sine. i want a sine. give me a sine. someone make a video on how to make variable pitch sine oscillator with few and inexpensive parts. i don't want to include an incandescant bulb in the circuit. i just want a sine oscillator i can change the pitch of across the audio range. i will measure it with an arduino. i don't want a sine with a static pitch. i don't want to control it with MIDI. i just want to plop a potentiometer, on a circuit, and output a sine wave of variable frequency. how is this so complicated? i have 20+ years of audio dsp. i know a T bridge circuit will produce a sine because its an elementary structure parallelled in dsp. where th eufck are the fucking cheap to build sine oscillators? what the fucking fuck? why the fuck can;t people understand that you would want an oscillator with a variable pitch and a sine contour/spectrum? how does this not happen in electronics, which is just physics? i don't want three phase power. i don't want a 741 op amp. i want cheap ass parts, as few as possible. i want to do this shit. i'm fucking fifty i should have done it thirty years ago. fucking hell. it's just one frequency.
+
+Dude, you’re 54 now… I’m 52. “I SHOULD HAVE DONE THIS 30 YEARS AGO” really hit home for me!
+
+Also: did you ever find a way to make your sine? Because I’m super curious… that’s a circuit that would be incredibly handy for a whole bunch of things!
+
+Thanks! Will do!
+
+I can put it on my to do list
+
+ @greatscottlab  I'd love to see that.
+
+Hmmm I guess it could be done... but bluetooth I think it's limited to about 10m  range, and wi-fi would require one device to act as an AP and others to trust it, also said device would have to be within a reasonable distance of every other device... seems like an overkill for something that could be done just over radio
+
+Yes!
+
+Ooo. Hack up some headsets perhaps?
+
+Very interested.
+
+Esp32 or stm32 black pills (NOT BLUE PILLS) also have I2S
+
+Why don't you use RF module (433Mhz) for a long distance like 1000M. wifi/Bluetooth is so short for walkie talkie as you can hear the voice without any tools :)
+
+Maybe
+
+well, so my $1200 24bit/192KHz DAC and $990 wired headphones were a waste of money???
+not to forget the $20/month subscription for tidal...
+
+ @ayushp.5395  lol obviously a waste. Who spends so much for headphones? You need high quality audio files like FLAC for these headphones to work in full potential...
+Waste of money. My 3€ earbuds works perfectly.
+
+Great video as always!
+
+Thank you very much! We really enjoy your videos. You are badass and Nationwide!... Joel
+
+I learn so much from your videos
+
+You make it look oh so easy.
+
+Good video as always but I would have like to seen why it sounds distorted and how you get around it.
+
+Whoa amazing explanation dude!
+
+Great info if you're wondering how modern car audio works.
+
+Helpful video 👍
+
+Thanks for sharing!
+
+Yaaaaaaaaaaaaaaaay new awesome video i love your Videos they are beeeeeeeest
+
+Sir iam an huge fan of u sir keep creating, more viedoes like this 😍
+
+Very cool!
+
+Interesting, a month ago I set up a streaming player with an old raspberry Pi and a TeraDaK ES9023.  The Pi is an old model B, 26 pin header but has an unpopulated 8 pin header for I2S.  Sounds great and was pretty easy to set up.
+
+Thank you! Thank you! Thank you!
+
+What else to say here than: Great Scott!
+
+youre a legend thanks for this
+
+Do you know why it sounded so weird in the end? Great video, btw!
+
+Great tutorial !!👍
+
+Nice going through all that just to end up with underruns
+
+Awesome 👍...
+
+We need a revisit when he figures it out. This is not acceptable quality from i2s
+
+I agree from the video I expected it to sound much better.
+
+ @InlineSkater72  and me personally I get very interested in knowing what the problem is, sometimes it can give more insight when we are doing our own projects
+
+Well I did a similar thing back in the day, but using raw audio and only SD and a r-2r ladder. I got the same results. It boils down to a problem with the SD protocol I think. So whenever I switch sectors in the sd card (read 512 bytes (one sector) and need to read another) the sd_read operation takes 1.5 milliseconds instead of the usually instantaneous speed. This results in an audible jitter in the audio. It occurs regardless if you read 1 bytes or a megabyte in burst mode, so long as that read operation has to cross a sector, ıt takes a solid 1.5 millisecond longer. (doesn't get effected by number of sector switches, maybe how computers can read faster -in burst mode-) I think the propper way to fix this is to have the SD read into a sufficiently large buffer and the I2C peripheral reading from that buffer in non-blocking mode (interrupts maybe? even utilising some hard-wired logic similar to what bitluni does) and only refill the buffer when you have read like %90 of it, and while the SD reads still allow the I2S to keep taking what's left of the buffer (so that the DAC will never have to wait for the SD to read). Not sure if this is how the mp3 library works but they probably read a small amount of data, decompress it then play it and when the section is done, they do it again thus when the total amount of bytes read the next section to be read takes 1.5 milliseconds longer, thus the wierd effect.
+
+ @batugunduz3950   I discovered this problem when trying to save real time measurement data onto an SD card. Was extremely annoying. 
+I'll only use soldered flash chips for real time stuff from now on. -.-
+
+The proper way to implement this is with a set of ping-pong DMA ram buffers. One buffer is read and the other is streamed with I2S. Both SD and I2S could benefit from DMA and do their thing in the background.
+
+Isnt it due to the sampling of the analog signal?
+
+ @adamkoszaka1130  no, it isn't. The audio is sampled at CD-level quality (which is very good) and you can hear it when he plays it in Audacity. I am inclined towards it being an SD card read problem too.
+
+It sounded like it could also be clipping the analog signal.
+
+could it be a defective speaker?
+
+Something is preventing a continuous stream of proper uncompressed audio output. It should sound CD quality. I would presume the mp3 decoding is taking too long. Maybe GS should try using uncompressed audio on the SD card.
+
+ @eDoc2020  For initial testing I'd use .wav data in progmem / psram with a suitably sized playback buffer.
+
+Probably either unwanted interrupts or reading from sdcard took too long
+
+Sounds like jitter
+
+GreatScott get Datasheet
+GreatScott HIGHLIGHT
+
+Nice video
+
+Thanx for sharing
+
+I can't Guess how much paper do you use for every video 😂😂 Aniway, you are the eletronic teacher i never had at school, Simply awesome!
+
+nice video
+
+Your content is really great!. Please make a video on "Commercial grade Low Power IC's (Bluetooth and wifi) for low power IoT". Please compare them with their specs like current drawn while transmission and reception. I would love to get insights about the topic, from you. Thank you!
+
+Awesome :) . Planning to add darth vader sounds to  my room Automation project.. This will be really helpful....  The force is strong with Scott !!! Love from India
+
+Könntest du mehr zum Thema Audio machen?
+
+Thank you! Been wondering why folks were using this for audio, haha turns out that's what it is for! :D
+
+Thank you
+
+gracias, tqm
+
+Awesome!!!
+
+Lovely
+
+I'm so glad you finally dive into the world of ESPs!! And for a first test I2S is really not the easiest project! Thanks a lot 🙏🏻
+
+Great
+
+I feel like a failure of an engineer when I watch his videos 🥺
+
+This might work well for my Halloween decoration I created years ago. I use a raspberry pi to play audio and flash red LEDs in the eyes when a motion event happens from my security camera. I've always felt like the raspberry pi was overkill. All it really does is has a webserver for commands. Takes the commands and plays either a random file (for motion) or a specific file from the command. Analyzes the wave form to blink the LEDs in sync with what is being said. The only thing that might be tricky is I have a web interface set up and I can talk through it using the microphone on my mobile phone. But it seems like I can probably get rid of the raspberry pi and just use an ESP32. Get rid of the hosted webserver and use my existing MQTT.
+
+Great video.  I really like this project, just what I was looking for.  I just wish you had a project page that showed how to build it like the parts and code used.
+
+I like the vids love it
+
+I love these kind of projects great scott keep it up😍😍😍😍😍🔥🔥🔥🔥
+
+Sounds great!
+
+This is far from his first dive into ESP
+
+It's
+
+He littelary connected 3 bought parts and used existing library's basic example 
+
+It's not harder then connecting addressable leds
+
+Aight, we found the time traveler.
+
+ @Derpuwolf  Patreon.
+
+Glad you like them!
+
+Great scoooot
+
+Bro!
+You're pretty awesome!
+I guess that I have said it before but doesn't matter.
+
+I would love a device that would let you use as an interface for salvaged amplifiers from from broken TVs as they use I2S.
+
+You are really awesome iam a great fan of you.thank very much for sharing your knowledge
+
+8:11 Bomfunk MC's - In Stereo
+
+とても参考になりました！ありがとう😊
+
+Love your vids bought my first arduino thanks to you
+
+2 minuite OMG
+first time !
+
+I am using "Node MCU 8266" for my project !!!
+
+I love your videos nd loved this one too.
+Had been a subscriber of yours since 3 years
+
+I liked it 👍 ,great content
+
+I'm your all videos like
+
+4:02 mediainfo 👍
+
+I keep thinking about re-creating the Portal Radio (from the game) and something like this would work a treat (minus the microphone). Only want it to play the standard low-quality tune on loop. Great video.
+
+I am trying to build a ociloscope using ESP32.
+
+Pls upload vid everyday.😘😊
+
+Hey GreatScott, can you please make a video on building an audio amplifier using STA380BW
+
+Hello! Hope you're doing well!
+
+So now you can hear yourself saying STAY CREATIVE!!! All the time
+
+Awesome!!! If you come to Mexico someday, i'll invite you "unos tacos"
+
+It's my pleasure
+
+Glad I could help
+
+Awesome :-)
+
+Glad you enjoyed
+
+In pandemic times, a clip of The Police's Don't Stand So Close to Me triggered by a hidden momentary switch would be fun.
+
+Marvin W - Depends if you’re a Patreon? If not, sign up now!
+
+well there are also decoder chips that play mp3's 
+https://www.adafruit.com/product/1788 this is a good board to work with it also has theoretically midi syntesizer capabilities and the library has all the features needed. works with an arduino which for me is an added bonus.
+
+ @Ramog1000  there should be cheaper DF robot boards that outputs a headphone signal
+
+Sounds good!
+
+I hope you will have a video : Building  a Bluetooth receiver with esp32
+
+Please make a video on - voltage (-5, -12) . How it works and why it used.
+
+you should do a video on TOSLINK fiber optic audio
+
+How convenient it was to find this nice video literally 24 hours after I figured out how to code I2S on ESP32 and how to connect wires to external DAC. LOL. Oh man... I'd say wiring it together was the easiest part. The code and RTOS required a bit of wrestling...
+
+please do a video at Resistor Ladder R2R DACs for high quality music reproduction! great video
+
+Sir as you started with esp32 please make a video on micro python
+
+Fun fact: You can use I2S to generate the 38 kHz carrier for IR signaling, and save a lot of CPU cycles compared to the popular techniques.
+(One of the features under the hood is called DMA, I think it would be worth a separate video)
+
+Hi, I don't understand why the sound is so bad at the end of the video as you used 16bits /44khz which should result with good audio quality? Is it a limitation on the esp32? Is it because of your speaker?
+
+Bro make a video about pic microcontroller
+
+Please make a video about MQ gas sensors, there's no good tutorial/explanation about how to use them properly.
+
+Bro where is green house part 2
+
+Nice video. But also you can buy $2 mp3 player circuit in the same size as your card reader that can be controlled by microcontroller. Check the borderlands robot video from Prusa :D
+
+Could you make a decent sound system that applicable to scooters/mopeds? I'd love to see your take on the subject.
+
+I am too high for this... BUT ITS AWESOME!
+
+Hello! Can you take a look at the Sonoff WiFi Smart Switch for a DIY or BUY episode?
+
+please do a video about switch mode power supply and how to make a one at home.
+
+👍👍
+
+Looks like something Dankpods would look at
+
+Make a cellphone signal jammer
+
+why don't you repair some Variable Frequency Drives and show us some basics, would love to see something like that from your channel
+
+The esp32 has a remote control peripheral.
+
+Mostly likely not using DMA with double buffering.  Without that any delay will show up as breaks.  In realtime transmission, it's a must.  If playing from a file, still the IO will cause lots of interrupts and result in breaking audio, even with a fast mcu.
+
+I'm not sure, but I think the is2 amplifier generates PWM output instead of real waveform.
+
+We're you able to clear up the audio and I must have missed the part about the 16bit transfer
+
+WOW WOW WOW I just checked the price of your Oscilloscope MSOX3054T (500Mhz). It's about 15,000USD! So expensive! Please advice me a cheap and economic one. I need it for learning as you are teaching us in your nice videos. Also I need it for repairing home audio systems. Thanks GreatScott! Stay creative!
+
+Make a video showing how to calibrate a multimeter voltmeter.
+
+Hi scott! Please start an a episode of programming arduino, arduino projects
+
+Thank you for this video, but what about if you have a set of speakers that allows for audio over USB input?
+
+It's better to use switch-case instead of multiple else if :)
+
+Wie geht herr Scott! Man, you got some pretty informative stuff going on but I think about 70 percent off it is going over our laymans heads! Maybe the electronics majors here have an easy time understanding your tech terms but as easily as you explain the rest of us probably just pretend we understood. Just saying you should make some beginner or intro into electronics videos and your viewership will grow! Danke fur die lektionen!
+
+great video until at the end the audio that came out was all choppy! what was the reason for that? Thanks!! can it sound better than that? :)
+
+Every one:- I2S
+Le me:- I²S #fivehead
+
+Why was the output sound so disrupted? I was expecting that i2s is pretty much lossless. I am thinking about creating wireless 5.1 sound system (it will use only power cords) using my old 5.1 (with too much cables) and using esp32 and esp-now. Problem is that I need to convert 5.1 audio to i2s and then distribute that to each speaker. Any ideas? It doesn't need to be esp32, just everything which would make it wireless 5.1 and is already documented.
+
+You've been hitting home runs with the projects you have been choosing. Thanks for all your hard work. The ESP32 is pretty amazing, but very complex.
+
+Pls make a clock/name sider with esp8266 and MAX7219
+
+Ive been writing an I2S library for a lowish clock speed Pic chip. Its providing very difficult to read from Sd, and send i2s data fast enough.
+
+at 6:30 the microphone you have the wrong side... the hole in the centre is the opening (there is the mic logo^^)
+
+You can also use DFplayer mini module which is batter than this
+
+Hi,,great scoot,,can you make a short circuit keller? And how it works
+
+To get stereo sound can you connect the word select pin to the L/R pin since the word select changes between high and low to send the data, if it was connected to the L/R pin as well wouldnt that toggle which side is transmitted?
+
+Can you please make a video on HHO gas generator
+
+The playback doesn't sound great. Could you debug it for us? Buffer underrun?
+
+Hi Scott big fan of your work! I'm currently working on this project but with a max4466 module and just storing 1mb of this data in spiffs 
+I'm not able to find any code related to this in github. I would be glad if u can help .Tnx in advance.
+
+I have ESP32 microcontroller and I tried to make Bluetooth speaker using it, but I had some problems...
+
+Would it be possible to implement lossless low latency audio over Wifi using an ESP32? I'm thinking kind of like Nvidia's wireless HD audio except it would work on devices other than the Shield TV.
+
+1:15 microsiemens \*clenching fist\*
+
+Please make usb size fm radio
+
+I am really likes esp32 videos...
+
+I wander if this is similar to how voice prompts on say a portable bt speakers internal  bt decoder module is recorded.
+
+YESSSSSSSS!!!! 127th view, 75th like!
+
+I wish you good work.  I have a question.  Can vehicle tracking system be made with 3G wifi?  How can I make this system?
+
+2:21 Two minutes and twenty seconds and we're already in the intro. Longest intro ever.
+
+Please sir make metal detektor or buy ... thanks..
+
+Well, a higher sampling rate than 44.1 kHz won't actually improve the sound quality since a sampling rate of 44.1 kHz is enough to reconstruct the original signal perfectly as long the highest frequency of the signal is below the Nyquist frequency (22.05 kHz in this case).
+
+Can we make a dolby digital sound system using this principle?
+
+or you just use the dfplayer mini :D
+
+You have a beard!
+
+Hi Scott my esp32 camera i have goes into burn protection mode when starting up any ideas on how to stop it?
+
+How to make the sound more clear?
+
+500Mhz 2G Sample scope with touch screen how nice :-9. What do you do for a living?
+
+Is there a soundcard for PC available with I2S interface?
+
+If you want to make a 16 bit resistor DAC, you would needd 65536 pins, and double the resistors. Good video
+
+How to stream the audio to wifi and a webbrowser?
+
+I'm sorry nobody corrected you, you need only 16 pins, you can use a SIPO shift register to bring that number down.
+
+Scott give me a best source to learn digital electronics including microcontrollers and microporocessors. I am a good Analog electronics known student.
+
+Sounds a bit choppy
+
+I thought that the result would be perfect
+
+How can one mic-modul generate real left-right-stereo data?
+
+Can you tech me.
+How to send mp3 
+File to esp32 from
+Phone .
+
+Thanks for responding to my request Greatscott.
+I actually hold a bachelors in Electronics but couldn't get into that field due to some reasons.
+ I'm a datascientist now and I'm able to still have a good hold on Electronics is just because of your videos.
+Stay creative, stay hungry for more knowledge
+
+Can you make video building a voice changer?
+
+Is this the Sony PSP-3000's microphone
+
+Good afternoon Mr. Scott, you went all the way to be able to playback a 16bit, 44.1kHz, stereo sound and the quality is appalling like that? That is surely no better than a mono 8bit output. In fact it is reminiscent of audio output of the Commodore 64 when the audio chip was turned on and off quickly enough to transform pulses in actual speech. I have worked with I2S equipped boards that have perfectly good audio quality, that one is unacceptable - for the reasons explained in the several first minutes of the video. I have reasons to think if you used a lower sampling rate and resolution you'd get a better result.
+
+Hmmm what’s the Sample Rate on the ESP32? I can’t seem to get around the 16kHz
+
+can I work around with arduino UNO R3 instead of esp32
+
+I thought that using an external DAC would improve the quality but I see/hear is not the case...
+
+Somebody may explain to me what is happingin on 6:09. i think there is a constructor that takes arguments its own class member variable am i right ? But what is mean of dots that beginning of every line ? I am confused help me.
+
+Isn't it time for new DIY vs BUY oscilloscope video?
+
+Still waiting for the second part video on the green House
+
+Can we build digital wireless intercom using  ESP32 module?
+
+We can reuse/recycle a smartphone processor?
+
+Can you make the quality of the audio better with some modification? i was kinda disappointed with that much work for a so "robot"-like sound
+
+Is there a way to do this as an audio mixer? Like, playing multiple audio tracks and adjusting the volume for each track independently?
+
+Can I re purpose my iflash board :)?
+
+But i learned a lot from this video, thanks great scott!
+
+ @fatonisodiq9341  I did too and I did too.
+
+I am on it.
+
+ @greatscottlab  nice, keep It up at your own pace
+
+Haven't played with ESP32 boards yet. I've dome alot with the arduino and the dfplayer mini. Sound quality isn't as good, but works for the small projects.
+
+1:44 Why not use both, decrease the level with a voltage divider and add using an OpAmp?!
+
+what about instead of using laptop speakers I want to use this external speaker?
+
+sir how to use DAC to play 8 bit pcm code?can you provide basic code or something?tq
+
+sir what is the rating of the speaker used
+
+Can u make a video about reverse engineering
+
+Can on I2S driver be shared with 2 peripherals?
+
+Also have you written the Device Driver for PCM5122  ? How are you providing the I2S clocks ? What is your CLK source ? Can you support 32-bit PCM instead of 16-bit PCM..?
+
+9:33  Does anyone know how to get rid of the choppy sounding audio?
+
+I finished all parts, but this part is my problem, and I have just 2 months
+
+Plzzz
+
+Please i want to know your educational background??? 
+Plz
+
+I need a very simple player to play one simple midi better loud. no need sound quality, better to use just onboard flash memory. This is to use as the speaker side of a door bell. Do you have any way to do that? Thanks.
+
+lütfen bu video grubuna türkçe alt yazı ekler misin?
+
+Please 
+
+I want Turkish subtitles for electornic basics
+
+can you please provide or comment here , complete sources that used i2s
+
+I2C, I2S, What's next?
+I2Z?!
+
+How to use i2s with tas5707 ic or other
+
+12S
+
+Plsss tell meeee
+
+Can u try to transmit and receive audio signal by using hm-10 blutooth module with the help of slave and master mode?
+
+Music player? i'd say "sounds player", it sounds pretty awful
+
+I've got a couple esp32's kicking around but haven't used them yet... although that's gonna be changing soon since the 8266 has a bunch of unusable ports on it
+
+You can fix that in code, I've built a bluetooth-to-jack thing with an esp32 and a DAC and the quality is great. It's still on a breadboard after 2 years, but I don't care if it works.
+
+ @turai_  trying to do the same...is it just editing the i2s configuration values, or is there more to it?
+
+ @turai_  is it hard to improve the code to get better quality?
+
+Hi, I would like to use I2C MIC to capture the sound and forward it to the I2S DAC MAX98357A, I can not find any example how to do that. Can you help? Thx.
+
+It has 2x 8 bit DAC, why not use both?
+
+I want to add a little to the whole sampling rate debate. 44.1khz is all you need. It is in fact enough to PERFECTLY represent an audio signal ranging between 0Hz and 20khz. You do not need more. It is completely wasted to add more. Reason: you only need twice as many sampling points as the highest frequency you want to digitise. The rest can be mathematically interpolated. 
+Higher Bit Depth can be usefull for higher volumes. Also it gives more freedom when mastering the song. However, as a listener you only need a certain amount of dynamic range. 16Bit is completely fine. You may argue for 24Bit but anything above is only useful at volumes that would completely destroy your ears.
+
+CSR 8645 bt module to esp32 via SPI lines .  Then I2S out of esp32 to my car stereo's DAC . 
+ Is it ok?
+
+Hey scott do you have IHS Markit subscription??
+
+Could you use the two 8 bit DACs and combine them with the R-2R resistor arrangement to make a  higher resolution output?  A downside would be only 1 channel, no stereo
+
+What is the name of the pen you use?
+
+Why does the audio sound distorted?
+
+hey there can we send realtime audio from mobile to iot speaker and if yes pls reply
+
+Hi! I am planning to build a device with 12 triggers that are activated by closing a circuit between a small brass plate and a fret on a guitars fretboard, do you think that would be complicated or could I basically do this and just add more triggers? ❤
+
+What’s your favourite idea? Mine is being creative
+
+I was just about to do this with these exact materials, perfect timing
+
+Should this be Philips I2S standard rather than MSB?
+
+Can i use this  for mono ?
+
+why not use the 2x8bit DAC and turn it into a 1x16 bit mono output? I've been wondering about a good way to do this sort of technique. Using 2 or more lower bit DACs and adding them together to get higher resolution or more bits
+
+hy Scott. I have made a project using an arduino nano and a mp3 TF-16P module. Everything is ok whet i hookit to may PC usb but once i suply curent from anything else it is starting to make a disturbing noise. I have tried external batery, USB on a laptop with baterry or without it, 5 diferent usb chargers but nothing seams to work. only on my usb on the keybord is working perfect. Can you helb or make a video about this cheap MP# module. Tanks for your time.
+
+A bit of nitpicking: sample bit depth is about dynamic range, not signal quality as such. There is a great explanation at
+https://sonicscoop.com/2013/08/29/why-almost-everything-you-thought-you-knew-about-bit-depth-is-probably-wrong/
+
+Hi Scott,
+just a quick question. Do you know if i2s also works with the esp8266?
+
+check your microphone, there's noise all over the video. You are amazing!
+
+👍👍
+
+You would need r-256r, but yes.
+
+What about noise?
+
+Its background music I think, you can hear something more than his voice sometimes
+
+What noise?
+
+Why not utilize the 16~128 MHz clock used by the DAC?
+The most significant 8 bits of a single 16bit/44.1kHz sample would be the baseline output, and the least significant 8 bits would determine what fraction of the ≈363 samples(16MHz/44.1kHz) of the 16MHz output should be baseline+1. Spread them uniformly, dither, and presto: Good enough...
+Yeah, ≈363 does not equal 256. But it wouldn't be as fun to implement if there weren't any difficulties now would it?
+
+Did anyone make it? or just listens to the stories?
+
+A good follow-up to this basics video: Direct Memory Access (or DMA). For very high speed data transfer
+
+Where can I get the code for the Arduino at timestamp 8:54?
+
+Last time i tried this 
+Audio got corrupted and I summoned Ikea demon
+
+I don't get why he never uses breadboards and instead solders the wires right into the modules when he could just solder in some ordinary goldpins.
+
+Saying that 44.1kHz 16 bit sounds pretty ok is quite an understatement for being literally better than humans can perceive.
+
+Wait wattt... u can do ESP32 in ardiuno?
+
+Why was the final sound so crappy? I expected something decent...
+
+Also I2S MEMS MIC,  INMP441 can be interfaced with ESP-32 and a Capture Loopback Playback can be done using PCM5122..here's my video of the same.https://youtu.be/wdSmVHaw5DU
+
+Please make a video on basics of Arduino Uno
+
+hey can you make show in more detail how you made the buttons  work in your lunch pad ?
+
+溗
+
+hi great scott .. have you ever been iiritated by those cheap chinese bluetooth speakers which are great for the price except that they added a full volume voice telling the whole village at night that you just turned on your speaker or that you got disconnected/reconnected. i hope this will happen to you.SInce you seem a person hat could not let this go and will try and fix it.. and if you cannot fix it mots of us certainly cannot soryy about the text but I love our video when thing g wrong and you go full hacker mode. respect..  (ps some day I will do th etv rmote audio volume thing you made  a vid on once)
+
+Will you do a followup on the greenhouse project?
+
+Wait why did the audio sound so terrible tho?
+
+It's important to note that while greater sampling frequency does increase quality, any sampling frequency above 40 kHz makes irrelevant increase to the human hearing. Because, according do the Nyquist theorem, to perfectly reconstruct a analog signal you need a sampling frequency at least double the analysed signal. Thus we need only 40kHz, as the human hearing only goes to about 20kHz (and that's in very young children, because you'd be lucky to have this hearing past your adolescence). Also speakers are almost always limited to playing till this frequency, so even if you say that frequencies above 20kHz do somehow contribute to sound quality, your speakers won't even play it.
+
+Nice! I used this to build this soundbox https://github.com/stetro/white-noise-box
+
+Can you add player controls to it...? Like Play, Mute, Volume Up, Volume Down, Shuffle & Select Tactile buttons interfaced to GPIOs of ESP-32 , which when pressed would invoke the functionality...? Here's is what I have done in my Video of ESP-32 with PCM5122 DAC with Player Controls... https://youtu.be/eI5xh9aCSC0
+
+Your videos are really helpful. can you also tell how to improve the quality of audio???
+
+I found no solution on internet. Please help me.
+
+It happens.......
+
+Haha true
+
+Already did. Search for Arduino 101 GreatScott
+
+like how dose the code work
+
+Yes
+
+When I was at the age of 22, a test showed that I can hear to 22K. The test was on a full room of students, the speaker frequency went up. Those who can still hear a sound raise their hands. There are quite a few of us run till the peak, which was 22k.
+
+​@Heads MessRegarding your point about two points making a triangle/sawtooth wave: Whole point of the nyquist theorem is that IF we are certain that no frequencies greater than the nyquist frequency was contained within the signal before we sample it, then we can reconstruct the sampled signal with any temporal resolution we want. So you dont have to drive your speaker with those 2 points, since nyquist tells you that thre is no ambiguity about the frequencies in there, you can fill the samples in  between to form the sinusoidal before you drive the speaker. And actually you dont even have to bother about doing that in software as a lowpass filter on the sampled output will do that for you anyways.
+I agree with the rest of your comment.
+
+These first few suggestions are extremely important. Use a good quality sound file (play the sound file with your computer...if it sounds crappy on your computer, it will ALWAYS sound crappy with your MCU I2S setup). Load sound file into SRAM before playing. Make use of DMA (assures consistent delivery of the sound file to the amplifier). Those will be the important frontend solutions. Now the backend. Use a high quality I2S amplifier. Make sure your DC blocking capacitors to your speakers are properly matched to the speakers you are using (i.e. 4 ohm vs 8 ohm and at what wattage). Use an I2S amplifier that has high pass filter and clipping capabilities built in (in addition to low THD) like the TAS5760L chip. Follow proper power supply filtering (both at the power supply and at the power inputs to all your ICs) and circuit design (i.e. pay attention to crosstalk and EMI/EMC) to prevent any electrical noise from entering/exiting the audio (i.e. means you can only expect so good of sound quality using prebuilt modules vs a custom 4+ layer properly designed PCB). So in the end you may not have found any solutions on the internet because your problem encompasses more than just 'how to improve sound quality'. When you read datasheets, many of them will provide circuit recommendations that will help their product perform. Many times prebuilt modules don't follow all of those recommendations and therefore won't perform with 'quality' in mind.
+
+Nice ! i was about to build something similar, why it doesnt sound clear tho ?
+
+East or West Great Scott is the best ❤️
+
+First
+
+Hello, great video!!! I would like to know if it is possible to put an amplifier at the output of the i2s max98357 to amplify even more?
+
+too funny, i created a similar SD to audio device using an atmega in the last days. but i chose DIY not BUY as you did :-). 
+i justed used an old SD card holder, transistors, caps and resistors ... a lot of C / C++ coding, debugging and optimization on an 8 bit, 20 MHz overclocked atmega328 
+i think mine has better sound quality: -D
+
+44.1 kHz 16 bit depth is perfect as far as the hooman ear is concerned, but not for their dogs' or cats' ears which require 96 kHz sampling rate and 24 bit depth.  Lol.
+
+Hey Scott I want to make my own coin based Arduino soda fountain and vending machine so please check this out as you are only one who can help me
+
+I’m disappointed. From an implementation standpoint, this leaves more questions than answers. Great if you use an ESP32 and that particular audio library, but this doesn’t really explain I2S in a way which allows competent viewers to use I2S peripherals with generic microcontrollers.
+
+Why was the output so terrible?
+
+For this short soundclip the internal flash of the esp32 would also have been big enough, or?
+
+Pls make more esp8266 prodject pls
+
+Why does he keep writing I2S instead of I²S?
+
+I can't even get this much out of my ESP32-S3. Seems they really dropped the ball on support.
+
+No using i2c ... Uses i2c at port 22
+
+Can I give you my email?
+
+Hello Mr. Scott, I followed this video - https://www.youtube.com/watch?v=MG1-kYFCkqI   and made the project ( which seems fake to me now). However I am getting a lot of noise directly from the esp32. I verified this by getting rid of the lm386 used in the project and directly plugging in the speaker(4 Ohm 3Watt)  to esp32. No matter what voltages(3.3v, 5v) or power sources( i.e. usb, 12v dc)  I try I couldn't get rid of the noise. Could you please help me out.
+
+The project does not work!  As some other viewer mentioned: "6:38 Looks like you interpreted the signed 16 bit value returned by the mic as an unsigned one." From my point of view you simply should state that your project has failed and tha it will need bug fixing.
+
+9:33 thank me later 😅😂
+
+Does anyone know what's his qualification
+
+Set 1.5 playback speed or do you will need a barber...
+
+It was my code. It was not the best
+
+The input of MAX98357 are digital signals, I2S, 16-bit PCM..same I2S goes for PCM5122 DAC...but the output of DAC PCM5122 is Analog Line Out or Headphone Out, which actually needs ANALOG Amplifier to drive the Speaker Drivers....whereas output of MAX98357 is Speaker Out, which can drive 20 Watt RMS Speakers, stereo..so if you are using PCM5122 DAC, you need a ANALOG amplifier along with it, like TPA3118 which takes Analog Line-In not a DIGITAL amplifier like MAX98357 which again would take digital I2S as inputs..
+
+ @youtherbiswas8  Using the PCM5122 in addition to an analog amplifier would be a good option. Thanks for the help friend!
+
+Mine sounded like crap. But ya, I was expecting better than that.
+
+44000 x 16 bits x 3 seconds = 2112000 bits /8bits per byte = 264 kbytes of space
+
+I will think about it :-)
+
+That annoyed me a bit too :)
+
+Why is that ?  He used an i2s mic and i2s speaker with amplification.
+
+Because Espresif dropped the ball and practically abandoned Arduino IDE. Old example codes also don't work.
+
+Master of Science in Electrical Power Engineering
+
+ @greatscottlab  nice....I'm just a B.mech student...whose planning to take masters In mechatronics. I'm still wondering i should change my plan or not.
+
+Hi guys I have a question let's imagine that I want to do a project as follows: an sd card reader module reads an mp3 file which goes into the esp 32 to output into a 10W amp then into a speaker is that This will work even without the digital to analog converter. Thanks for your help.
+
+Be careful with Pin 2. If it's pulled high during programming, programming will fail.
+
+Hi, i got a job at an electronics store in the netherlands. So now im learning arduino. 
+
+Btw, did you get your golden play button yet?
+
+why you didn't used an Arduino Nano/Uno or Mega to implement this?
+
+Sir I had a dought, u r the right person to answer this.how much secure ardunio based projects for security solutions like banks like places....
+
+1 minuite OMG
+thats a first
+
+I am wondering about why the audio file at the end seemed to have been played so choppy. I'm not too knowledgeable on the circuitry at work but I believed the idea was to be able to play the uncompressed file without loss of quality. Was the choppy playback a result of a limiting component such as the amplifier?
+
+can you do this with an arduino??
+
+Hey GreatScott
+I just recently created a HiFi bluetooth receiver with i2s and a Raspberry with a Hifiberry DAC+ DSP hat. 
+
+The reason to use this method was the quality and input methods. 
+
+The CSRA6415 I used can handle APTX which is a high quality bluetooth protocol. Also this chip can handle button Inputs (to play / pause or control volume on the smartphone via local buttons) as well as many other things. 
+It's a very cheap but great way!  It's completely configurable. 
+
+So I connected it to my Hifiberry hat with correct I2S parameters and it worked a treat. 
+
+
+Maybe an upgrade for your portable speaker! :)
+
+I just realized I could have written this in Deutsch.
+
+It feels so good to see your videos. Please try to upload videos once a week :)
+Stay safe
+
+can we use bluetooth to replace sd card reader?
+
+The final output sounded terrible.
+
+I would not be satisfied with that.
+
+What pen do you use and paper
+
+why was it stuttering?
+
+What oscilloscope are you using?
+
+6:35 That looks like underflow. Are you sure this is supposed to happen?
+
+You have to do something with inhale noises to the mic, please. It’s unbearable to watch for me
+
+Why did it sound like shit though? Sounded like something was configured to the wrong bit depth or sample rate or something. Sounded like the shit I get sometimes when turning Cantibile (a VST plug in host) off then back on. That was ass.
+
+Nice, bro can u make a tutorial about how to copy an existing PCB and also make it as the inspiration was with components
+
+Someone said Scott doesn't react love to his daily subscriber 🥺
+
+Your two choices (well technically 3) to get audio out of any MCU will be DAC (only so many have those built in), PWM and I2S. With the DAC, you will generally want a precision that matches your audio file. So if you have an 8-bit audio file than the 8-bit DAC on the ESP32 will work great for you. If you have a 10-bit (or higher) audio file then the 8-bit DAC on the ESP32 will cause a reduction in your sound quality (think 8-bit audio like Nintendo games when Nintendo first came out...don't expect MP3 jamming music). Normally with a DAC you will want 12-bits or higher for at least semi-decent audio (which then usually means an external DAC and an additional IC since you still need an amplifier). PWM is worse because it takes a lot of overhead to convert your sound file into a PWM signal that will then be smoothed to an analog output via filtering (which also reduces sound quality). PWM sound is basically if you have no other choice and you are ok with crappy sound. Now I2S reigns supreme for this because it is digital data and not analog (which is what your sound file comes in). In addition if you get a proper I2S amplifier (a TAS5760L can do 20W @ 12V mono or 10W @ 12V stereo), you can send the data directly out (via DMA - for proper sound quality you will want to use DMA) to the amplifier and the amplifier will take care of converting the digital signal to an amplified analog audio signal. In addition, the TAS5760L has an I2C interface that allows you to adjust things like gain, volume, clipping...even tells you if a fault has occurred with some faults being fully recoverable.
+
+I did receive it
+
+ @greatscottlab  why did you never show it?
+
+LOL, great comment, made my day.
+
+My used code was the problem. I am not the best coder. Sorry. In theory you can playback uncompressed audio.
+
+​ @greatscottlab  Maybe a buffer but anyways the video was awesome.
+
+Like with a nano or uno, no, they are not fast enough. ESP32 has a 240MHz clock. I did this same thing with an arduino and the sound was terrible.
+
+Do you have some links to this topics?
+
+ @steameier8590  What are you interested in?  For information about the CSRA6415 I would recommend the suredspratz site if you search on Google. If you need information about the tool, there's none. It's trial and error but theres a great standard configuration preloaded. For the Raspberry I used Moode as an OS and the hifiberry DAC+ DSP Hat, which would be programmable but I decided to just adapt the CSRA instead of struggling with this too. 
+
+Just tell me about what you would like to know more. I also just did basic Internet research and a lot of testing! :)
+
+There is a new video almost every week
+
+The sd card doesn't have a blue tooth interface. Since spi is faster and simpler than blue tooth I don't see an advantage.  You would have to make a custom board with an antenna and a blue tooth chip set and an sd card and would also need power.
+
+ @noweare1  esp32 have a Bluetooth right?
+
+Stabilo Point 88. Normal printer paper
+
+ @greatscottlab  Thanks you can seriously right I admire how you draw your circuits one of a kind
+
+Perhaps the gaps betwen the alternation for the le/ri signals ?
+
+Wait for my next video to find that out :-)
+
+GreatScott! Awesome man. Love your videos
+
+He probably prints the 16 bit signed integers as 16 bit unsigned integers, thus the wierd clipping
+
+ @batugunduz3950  fair enough, still a bit weird though for in this video
+
+The code was not the best
+
+ @greatscottlab  I believe it.
+
+Just wanted to praise your handwriting, especially when writing small.
+
+It's weird how you always solder wires. Can't you just use a breadboard?
+
+can you make a video about TDA amplifiers
+
+Please can you make a high bass Blue tooth speakers
+
+Hi, it would be very interesting if you could make a Video about 2 wire Intercom. Data and power are just transmitted over 2 wires
+
+can you please share your code
+
+Try, "Exterminate!".
+
+You let us Starve for your videos.. please upload more often
+
+My MP3 player project is warming up to I2S, but I’m thinking of doing digitally stored nonreal-time PWM to a class D DAC/modulator.
+
+Right at the beginning, your wrong about the sampling rate.  There is no reason to increase sampling rate above 44.1khz, the wave form can be perfectly reproduced up to 20khz by that sampling frequency, humans can't hear sounds above 20khz.
+
+Was it me, or did that sound really bad?
+
+just what I need to learn for my project
+thank you very much
+
+I had doubt to clear brother.
+How much does a 12v 7ah battery last if we convert to 5v 3ah for phone charging.
+
+I wonder if they make a 24 bit and or a 32 bit float breakout board? Why did the playback sound in and out (Garbled)?
+
+Hi
+Plz
+
+Can you help me to make project like this video?
+But with mic
+And
+
+Can you send it to me,plz?
+
+It is a part of my project, but I am a student and I don't now a lot about this things.
+
+Ths
+
+Here me
+
+Who watch this video but doesn't understand anything like me 🤓🤓
+
+When part 2 of automating greenhouse with lora is comming ?
+
+The other day i,'ve tried to attach the i2s dac to my router. Finally the Linux community have fixed the dma driver and now my router can play music :D
+
+Why I can see comments from two weeks ago? 🤨🤷🏿‍♂️
+
+Thanks :-)
+
+I like it this way :-)
+
+ @greatscottlab  Thanks for replying!
+
+Any idea how much time it takes to produce one video with this quality?
+
+ @greatscottlab  I know it takes time but can't to do something to reduce the time gap. It will be beneficial for you as well as for viewers
+
+😓
+
+The code was the problem. Sorry.
+
+12v*7ah means 84wh , so if you have 100% efficiency and you draw constantly 5V @ 3ah so 15Wh .. the battery will last 5.6h ..now for charging a phone 1 time a phone I don't need that big  of a battery ..you could use a  li ION battery pack
+
+Thank u Fabio 😊😊😊
+
+ @austenbenny9659  no prob ; )
+
+uhm... 24 bit is rather extreme - 16 million steps. there are 24 bit DAC but they cost quite a lot and are used only in very niece applications.
+And no - you can not hear the difference between 16 bit and 24 bit - nobody can.
+
+Anything above 24 bit - you are looking not at prebuilt chips but special purpose custom made circuitry - nothing of the shelf - cause simply there is no need for that.
+
+Watch it again and again. You will get it :-)
+
+ @greatscottlab  oh my God. I got reply from Great Scott😮😮. I can't believe
+
+ @greatscottlab  yeah I will
+
+When it is done
+
+Awesome :-)
+
+ @greatscottlab  Yes, my router is based around the mt7628an chip. It have pcie x1, lots of gpios, i2s or pcm. It also have 2r2t wifi 2.4Ghz.
+
+If you run Openwrt you can do a lot of cool things!
+
+Patreon viewers can watch earlier
+
+Hate  that heavy breading before you start speaking
+
+you have to much time on your hands bro lol
+
+8:53 Use switch case instead of if else
+
+No one:
+Literally not even a single soul:
+
+Greatscott: Stay Creative!
+
+Wtf?
+
+Not really bro. Making such videos is my job.
+

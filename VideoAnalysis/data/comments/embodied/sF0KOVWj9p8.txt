@@ -1,0 +1,1452 @@
+In late 90s, I found a schematic of a resetteable fuse made with an thyristor. That was not automatically resetteable but instead when triggered, you had to push a button to rearm it. I built that circuit (and I remember using a potentiometer to make it adjustable) and used it as the fuse at the ouput of my homemade bench variable power supply. However, I remember it being not reliable at low voltages.
+
+This was a very well presented introduction to these fuses. I never knew they were that complicated, or available in so many different ratings. Thanks, as always ;-))
+
+Reminds me of when I did competitive robotics.  We were limited to 12 rather underpowered motors that had these kind of fuses (we called them PTCs but I guess technically they were PPTCs).  Between matches we would turn canned air upside down to spray the motors with the refrigerant or the PPTCs would trip in the next match. There were actually a few teams that got caught bypassing the PPTCs, which was a big no no.
+
+I've seen many PCB's with surface mount fuses. But I never thought that they were the resettable ones. So thank you for letting me know that and this video topic is awesome 👌.
+
+You should have mentioned that these components do degrade with each trip, and also degrade if held in a tripped state for long periods (degradation=untripped resistance increase).  They are not suitable for applications that are likely to be regularly tripped.
+
+A story on resettable fuses that an aerospace engineer once told me: GPS satelites have some of them. Now for ground testing, they use non-resetting fuses, which get swapped out for resettable ones prior to final assembly. After launch, the new satelites go through a series of tests to verify they are working correctly. One of these tests involved deliberately triggering the overcurrent protection. 
+
+When they ran the test on one of two newly launched satelites, they suddenly lost contact with it. After a round of testing, debugging and analysis, they arrived at the conclusion that the fuses never had been swapped out, and the two satelites were launched with the test fuses still in place. 
+
+Immagine the bone-chilling realization that there was another satelite in orbit with the same flaw, and ground control was about to begin the test sequence! A frantic phone call from the testing facility to ground control managed to get the test called off by mere seconds. 
+
+So the second satelite had escaped doom by the skin of its metaphorical teeth. Bottom line is, one dead GPS satelite is orbiting earth, and another one has a damocles sword hanging over it, which is a very strange metaphor in microgravity. Oh and probably some GPS flight engineers and testers, when they have managed to entangle themselves in their bedsheets on a hot summer night, dream of that fuse getting hotter and hotter...
+
+Hi scott! I just have to say that yours and Electroboom's videos are the videos that made me interested in electronics as a kid, and made me choose a Electrician major in HS. And videos like these make me love electronics even more. So, Thank you!
+
+Congratulations on getting Mouser as a new sponsor. I have been buying from them since about 2007 and have always been very satisfied.
+
+I learned about thermistors a loooong time ago.
+
+we use those resettable fuses at work, I never knew these existed so it was really cool to find out about these
+
+I think the previous intro was more fun to watch than the current now
+
+I took an electronics class in high school and remember having a Mouser catalog for ordering components by phone or by mail.
+
+I've also have looked for resettable fuses.  Ty for sharing!!!!
+
+I watch your videos every Sunday you publish it on YouTube and I really like the fact that you in every video came up with a new idea to solve many problems and also explaining the basics
+
+7:15 the way the wire just went around the Component
+
+This is one of the best starts to a video I've ever seen 😂😂
+
+I really love what ur doing since I followed u 4 years ago. Your brilliant Sir!
+
+I popped one in my multimeter. Been going strong ever since.
+
+My favorite technique is to use a resettable fuse followed by a transient-absorbing Zener such as a 1N6373 in parallel with the load. This not only protects from overvoltage but also protects against reverse voltage since the Zener would then be forward-biased instead of reverse-biased. I ran my own set of tests and melted the insulation on my power supply wires because the resettable fuse - transient Zener could handle more power than my power supply leads could. (The combo did get very hot though - space them away from your PWB!)
+
+I used PTCs years ago in industrial control circuits. They work a treat if you design a trip indicator into your circuit.
+
+Sounds similar to an eFuse. Just with older technology.
+
+ @greatscottlab  Yes, something like that. It was in a book like the old "Elektor 300 schematics". It was a nice addition to my power supply. Maybe I dig it out and if I find it, I will add a link.
+
+ @greatscottlab  So, I will describe the circuit, as I can not upload a image and I did not find it online. 
+Between the positive of the power supply and the load is an 2N3055, collector to PSU, emitter to the load. Between the collector and the base is connected the tyristor (anode to base) and between the base and emitter a resistor of 0.2-1Ohm (it sets the fuse current). The tyristor gate is connected trough a push-button and a 47k resistor to its cathode and transistor collector. 
+To power the load, have to push the button to latch the tyristor; when the overcurrent, the transistor opens, shorting the tyristor, making it to shutdown and powers off the load. 
+Hope it is clear enough to be replicate and analyzed.
+
+ @greatscottlab   you cant smell videos  me at 0:02
+
+Low Current
+
+Thanks for that info. I must remember it for higher current projects. 👍🇮🇪💚🙏🏻
+
+I did use the same crowbar circuit before at the output of a 5v buck converter, and indeed it was very unreliable, one time the circuit activated and instead of blowing the fuse, the Thyristor stayed on forming a short circuit while getting super hot at the same time, but neither the fuse nor the Thyristor were willing to burn for no explicable reason
+
+my dad showed me that one when i was 9 XD
+
+A Thyristor would make a good OVP (Over Voltage Protect) circuit in a power supply.
+
+ @paulcohen1555  Inefficient. Because if a minimum idle current required.
+
+I once accidentally made that I think haha
+
+You are welcome :-) And thanks for the feedback
+
+was fuse active cooling an option? :D
+
+ @dv5809  Using one of the motors to run an AC compressor for cooling the fuses😏
+
+If the resettabel fuse is in a hot place, one should take set temperature into account. 
+The datasheets usually state trip-current vs ambient temperature, in a chart...
+
+Plot twist instead of bypassing the PPTCs you just add an other one in parallel to share the load 😂
+
+Glad to help
+
+Replacing SMC fuses is very tricky.
+
+for that you'd probably want a breaker
+
+Electronics creepypasta😄
+
+I want to say it sounds unbelievable, but it's not like NASA has never forgotten to swap out not-for-flight parts.
+
+It's a nice story, but it doesn't match my experience.
+
+Why would you test a fuse in Orbit anyways?
+
+U⁷uuu hi
+
+Really or just an "Urban legend"?
+(Smells like one)
+
+​ @paulcohen1555  good story either way 🙂
+
+that looks like an elaborately written take on an urban legend. Before launch they test every last circuit on the ground first. And any case take it from me there's no fuses and no PTC 'multifuses' etc flown on spaceflight hardware. PTCs are a nightmare to predict in thermal vacuum. If a power bus requires load shedding after a failure then then clients on the bus use foldback current limiting instead.
+
+ @jagmarc  there are on low cost missions (cubesats etc)
+
+I don’t whether you’ve learnt anatomy, but the teeth usually don’t have a skin
+
+Typical of human intelligence... to send trash into space orbit
+
+Hahaha, I've been buying from Mouser since the early 80's, when they had one of their outlets here in San Diego (actually a nearby suburb).  You could place an order in the morning and pick it up in the afternoon. Now with modern conveniences like the internet, you can get parts only three or four times as slowly!
+
+Hellova sponsor
+
+Yep they always have pertinent datasheets for nearly all of the components they offer..
+
+Mouser is reliable but slow.  It takes a couple weeks for me to get components from them.
+
+Yep. I wasn't aware of them for a long time as well.
+
+You're welcome :-)
+
+Fuse + crowbar in the reverse voltage situation. Makes sense to force the trigger in some situations like this instead of having constantly a voltage drop with a series diode.
+
+I haven't seen it myself, but I have read that Zeners always fail shorted.
+
+​ @hardlygamaliel455  i've always wanted to know how TVS diodes degrade and fail. the type report that requires effort.
+
+Sounds like you're using components in a way they weren't designed to be used.
+This generally not a good idea and you may not get predictable behaviour.
+
+Inefficient design. Zener's consume current. Not good for High current applications.
+
+totally. ive seen this often done in industrial electronics. but i think it would work better if you glue the PTC fuse to the zener with silicone. that way heat can transfer from zener to the PTC fuse and help it activate. the combo might run cooler than both things separately. what temperature are the PTC fuses anyway? i havent done any tests. maybe you do them.
+a big flat surface mount zener and PTC fuse of similar size glued together might work best.
+
+ @echelonrank3927  Interesting idea, but I do wonder now about how the zener would behave, given semiconductors aren't really happy above 100ºc often enough. Might be interesting to check it out on the datasheets.
+
+Great video as always and a big +1 for Mouser!!! Two things to be aware of with PTCs vs a normal fuse or breaker though. The max interrupt rating and how fast it interrupts. PTCs are fine for low power electronics, but if there is a device with a high current source feeding it the PTC can destroy itself or not stop the inrush of fault current. Since, as like in your example, they can be rated as low as a 60 Amp interrupt rating. Fine for devices with small power supplies. But if you are powering something with a large power supply that can deliver 100's of amps (batteries, mains powered power supplies) and the device has a solid short the PTC may not be able to absorb the current spike. Whereas fuses have interrupt ratings from 5k up to 200k amps. Why some fuse holders are reject style holders, they will only fit a certain interrupt rated fuse and you physically can't install a lower rated fuse in the holder. 
+Then there is the speed. Sure, tripping a 1A fuse or PTC with 2A will take a while, but how fast will a 1A PTC interrupt a fault with 20A of fault current vs a fuse that will instantaneously blow. 
+Sure most of the viewers projects would be fine with a PTC, but to avoid possible damage with higher powered  devises a fuse or breaker is still needed. It can be in series with the PTC and at a higher trip level, yet will still provide protection in high current fault situations. PTC will take care of overloads and lower amperage faults and the fuse will take care of interrupting higher current faults that may have destroyed the PTC and NOT have interrupted the current flow.
+
+Nice video, GreatScott!
+
+one of the most informative videos I've witnessed in this channel, thank you for your service!
+
+Those little yellow claw connectors are really cool.
+
+One day, when my mind grows up, I want to be just like you. Great video and thanks.
+
+The "Stay creative, I will see you next time" always does it for me!😅
+Great content!
+
+Great video! See you next time!
+
+I can  confirm,  amazing service from Mouser
+
+Interesting! I thought those are capacitors just from the thumbnail. Gave me the idea of making this fuse to trigger something like a relay to fully cut-off the current after the trip.
+
+I haven't watched your video yet, but your thumbnail gave me an idea that solves a problem I've been having all week! And I think it'll work and makes my solution 1000x easier, cheaper and more reliable!
+
+never knew about resettable fuses before this! It's amazing how technology is evolving to make our gadgets safer and more durable. Can't wait to see this in action in more devices.
+
+Your videos are great! Scott🎉
+
+Glad you did this video and agree totally on Mouser.  Have used them for many years.
+
+You have such a thick accent but you enunciate so well.
+
+Great as always!  My best channel ❤❤
+
+Wow man! These fuses are quite trippy. 👀✌
+
+Polyfuses are great, and I agree they are an underappreciated and underused component. They're quite useful, simple and easy to integrate into designs, and very affordable. You do have to watch out for their quirks as noted in this video ("soft" trip, temperature dependence, don't quite reset to the same point after they've been tripped once) but any time you need overcurrent protection, they're worth considering as an option.
+
+In most cases, I leave regular fuses for more "industrial" applications at higher currents especially where the chance of tripping them is very low unless somebody has done something seriously wrong. In the "electronics" space, if I have very tight thresholds for when to trip I'll use an e-fuse but otherwise the PPTC is my go-to for low current stuff.
+
+Another related useful technique is the "crowbar" circuit. Basically, you use some mechanism to detect a fault condition in your circuit and then you deliberately short across the power rails to purposefully trip the fusing element. This can really expand your options for exactly what trips your fuse and can give you more precise control over the trip point while using a soft/simple trip element like a polyfuse, while still retaining the easy "unplug it for a bit to reset it" behaviour.
+
+Got to get me some of these fuses 👍🇮🇪💚🙏🏻
+
+SUPER useful as always! I knew about PPTCs, but not their details, and didn’t know about e-fuses at all: gonna go watch that video of yours right now 😁
+
+I found out about resettable fuses as a kid when I accidentally covered my laptop PSU with a blanket. Thought it broke, only to find out it healed after a couple of hours. That blew my mind back then
+
+VERY HELPFUL, THANK YOU
+
+Amazing. I hear about this first time
+
+Excellent video.. well explained...
+Thanks.
+Thom in Scotland.
+
+I just used this! So wonderful to have. Got a whole box for 250Vac. Thank you for the introduction and explanation.
+
+First time I ever saw one of these was in the battery holder for my SnapCircuits kit. Had a lot of fun with that kit as a kid, would recommend
+
+Thanks. I just realised I had to replace my PPTCs with the correct ratings. cheers mate.
+
+Oh... Really interesting indeed, dude! Thanks!!! 😃
+I'm going to try to use them in my next projects!
+Stay safe there with your family! 🖖😊
+
+Thanks for the knowledge 👏🏻
+
+I always put this on passive crossover, PPTC is so handy
+
+Interesting stuff. Reminds me of the Frantone crowbar circuit with a PTC resistor and a Zener diode.
+
+I've seen these on circuit boards of equipment I've worked on or disassembled. I had no idea what the long tubular thing with what looks like heat sink blades was. Now I know. Thanks for the tip !
+
+I love your content. I am a mechanical engineering student and I don't know much about electronics.Even so, your channel is has been an easy and great way to get close to this world. Thanks a lot 😁
+
+These capacitor shreds are an absolute horror to clean up, respect that you still did it, I once accidentally exploded a large capacitor, I had the whole wall full of the stuff😆
+
+i often use fuses, but they usually don't blow until after damage has been done, that's why  i always incorporate a crowbar circuit in my designs because they are faster, and can protect delicate IC's
+
+You have a very good knowledge.
+
+I was an electronics engineer working in Central Texas.
+Mouser has a Dallas TX warehouse, I could order parts in the afternoon and get them the next morning via lowest cost ground shipping. It was great!
+
+Now I am retired and pinching pennies and buy my stuff via AliExpress and wait a week or two.
+
+thank you sensei !
+
+Excellent.
+
+New subscriber here, also a big fan of mouser, they legit have just about anything your looking for
+
+The glass/ceramic fuses are similar to those used to protect your house installation as they will trigger at 10x their rated current within 10ms(FF Superflink) to 3s(TT Superträge) depending on the class/characteristic of the fuse.
+
+Die Schmelzsicherungen für Geräte sind ähnlich, zu denen, die in der Hausinstallation verwendet werden,  da sie auch erst beim 10x ihres Nennstromes sofort 10ms bzw. innerhalb von 3s abhängig von ihrer Charakteristik auslösen.
+
+0:14 lol never had a component desolder itself due to human error... amazing!
+
+anda adalah guru terbaik dalam belajar mandiri
+
+I Never Knew it Thanks!
+
+Thank you! 👍
+
+Thanks for your sharing
+
+Thanks so much!!! I did not knew you ride simsons 💪 such a cool bike makes me wish I would live in germany
+
+Good presentation. Thanks
+
+Darn fine write-up here. I will sometimes use a circuit breaker for small electronics, but this is a better idea.
+
+You call it mistakes. I call it fun 💥 😁
+
+Thats a cool video, thank you!!!
+
+The problem with companies such as Mouser is that they tend to have very high delivery costs when only ordering a few parts. The advantage is that the components you receive are clearly marked and packaged in a proper way.
+
+I learned something new!  :)
+
+I’ve recovered a load of various sizes of these but never bothered to learn what they do. Now that I know I might reuse some of them.
+
+Hey Scott! Just want to mention that 3D printers used PPTC's in the old ages of the RepRap project. If you take a look at the design of the RAMPS1.4 Shield you can see that they used PPTCs to protect against overcurrent/shortcurcuit, but sadly this method didn't work that well so it was scrapped and got replaced with blade fuses.
+
+Hey man love your work bro! keep the good deeds going on.. you video's are very knowable..!
+
+Excellent 🎉
+
+Metal bending from heat, old fashioned thermostat. Cuts power, job done.
+
+Ver useful video!
+
+I often use an incandesent lamp of suitable size.
+
+Very nice. Thank you for your informative video :)
+
+Well, companies like Mouser tend to focus more on companies than individuals. While individuals might only need a maximum of 50 pieces for many projects, companies need thousands at a time, so they have a constant supply of parts to fit into their products.
+
+I enjoy you videos and find the informative.  I was disappointed to see this video was sponsored by Mouser.  I have had unhappy times dealing with them last year.  Mouser started canceling item from my orders saying "The following item(s) have been cancelled from your order due to either the manufacturers’ distributor sales restrictions or Mousers’ distributor sales restrictions", via a phone conversation with customer service they told me I must be a distributor because I buy to many parts to be a hobbyist.  Their web sales policy states they can refuse to sell to anyone for any reason, so I just gave up and started using other sellers.   I liked using Mouser because they have a wide variety of items in stuck at a good price and they do ship quickly.  I now have to use four different sellers (DigiKey, Newark, TME and Arrow) to get what I used to be able to buy from Mouser.  I hope you followers have better luck with Mouser then I did..
+
+If you want to do a video on another very cool circuit protection device, check out the Bourns TBU.
+
+I did not know about them neat.
+
+Man's turning into ElectroBOOM 😂😂
+
+Old fashioned fuses do trip faster than any of the alternatives in the cases of severe overloads, which can be a factor in some situations as well.
+
+For example, if you have your normal current for your IC of about 500mA, in  case of a short circuit you will have maybe 10A (if your power source can supply). So it means that typically, current consumption will increase not twice, but much-much more. And in this case, this kind of fuse will (must) react immediately.
+
+Wow what a good video about fuses. I learned very much and finally understood why the fuse in my selfmade motor driver circuit never tripped... To be honest, after you blew up the capacitor I had to zoom in to check if you started growing an unibrow ;)
+
+Great!
+
+You can get resetable car fuses that moves a leaver when blown an a led comes on to show you it's blown,then you just pull the leaver back to reset it
+
+A VERY big plus on resetable fuses is many models also act as a heat protection device, disconnecting at a certain temperature.
+
+thanks man
+
+This idea i am using since 2010 with a ptc,  especially repairing smps of mirowave oven,air conditioner pcb or washing machine pcb but you share a new idea
+
+I recently just found out about thyristors while desoldering a board and thought it was just a capacitor :)
+
+Excellent vid, really clear, much less of the annoying over-writing of the felt pens (a pet hate but I realise it is your thing so just ignore me)
+
+very interesting
+
+I didn't know that the Pi-ya had one of these! Learned something new-a!
+
+좋은 지식 영상 감사합니다.
+
+You let the magic smoke out!
+
+nice!
+
+Seen it in a homebuilt led lamp for plants. It was used to prevent thermal runaway in a 2s3p build. The goal was to achieve protection if one series broke and the other 2 got a higher current flow. When one was disconnected to simulate a brakeage it made the lamp dim because it limited the current. Interesting enough the other fuses actually restored themselves very slowly(almost simultaneously) until they tripped again. It will therefor slowly "blink" which can hint that something has happened. A perfect way to save the LEDs which can be pretty expensive in comparison to one of the PPTCs. Also the plants therefor never completely lost their lights.
+
+Explosions are fun. I can't deny that.
+
+You could add a crowbar circuit as well for better protection.
+
+Mouser is great! I have been ordering components from them for 20 years. Mouser my first preference when I order components 👍
+
+thx good video
+
+There are glass fuses are are labeled 'fast blow' are those still slower than a PPTC
+The 1 project i have a glass fuse in is my pico smart light, i put a 1A fuse on the AC side of my SSR rated at 2A
+
+FWIW: In my designs I use a PTC & a TVS diode for overvoltage and reverse voltage protect. I put the TVS diode behind the PTC so if there is a overvoltage condition the PTC fuse will trip protecting the TVS diode. A unidirectional TVS diode can also protect against reverse polarity from the power source. TVS diodes (basically a Zener diode) will have a forward voltage drop of a bout 0.7V so it will limit reverse polarity to -0.7V. So with just two low cost components you get current protection, overvoltage protection, & reverse polarity protection.
+
+These fuses are used in heavy overhead commercial steel door operators. They also have blowable fuses as redundancy.
+
+One problem I have found with these as a result of the small power leakage is some devices like CVCC regulators can "crash" and when the fault clears are no longer regulating.  Tried to do this with a battery charger and when there was an overload cleared it then would appear to work but the CVCC no longer limited and would have blown up the battery.  The total cutoff of a fuse eliminates the "funky control failure" of chips due to the brownout the PTC causes in a fault state.
+
+THAT'S WHAT THOSE ARE!!!!!?
+
+I always though these were some kind of weird capacitor and never paid them any attention, and the SMD ones on my Arduino Due's USB ports really confused me - despite how pretty they look. But the timing of your video couldn't have been better, as I've been bringing myself up to speed on electrical engineering to design/simulate my first complete circuit for a prototype and I've been planning on adding a fuse to it for protecting itself and my Arduino... But now I might rethink that.
+
+PS: Just checked for these in the PC Power Supply I use for a bench power supply and found them, which explains why it cuts out when I accidently short it, but has never blown up or popped it's soldered-in-place fuse. So cool!
+
+Great walk-through of the different overcurrent protection
+Thanks for sharing your experiences with all of us 🙂
+
+My favorite protection is a lamp instead of a fuse. Its so ridiculously simple and it will light up indicating a short 😁. Must be the right lamp for voltage and current. 😁🍻
+
+Some multimeters have PTC fuses. If you work with (school) students, I highly recommend to get those, because reasons ...
+
+I use a 10A circuit breaker for my WLED setup, it's all 12V based and the breaker fits in an automotive blade fuse holder.
+
+I bet it smells great over there! Thanks for the video.
+
+so much better when it's resettable
+
+Thanks a bunch! Very useful! Where do you get those yellow long hook probe ends? Cool. Cheers!
+
+I shove a ptc in parallel with the burned out fuse in my radio shack multimeter. No more 200mA burn out. But the meter affects the current a bit.
+
+It would be awesome if you build an eFuse that behaves like a GFCI but for DC circuits :)
+
+Thanks ,Scott. It's helpful. 😊😊
+
+I use automotive fuses. I take a U.S. outlet plug apart and align the contacts to the fuse blades then mount it all by the edge of the enclosure so the fuse sticks-out enough to pull if need be from the outside. Its not small though comparatively. But I trust it. Can handle 20a easily with the proper fuse. The hepa filter beside me pulls 1.9a on start then settles to 1.1, I put a 2a on it and its never popped.
+
+i use one on my ups circuit.
+
+MOV's
+transients . i'm too tired
+
+You bet!
+
+So glad!
+
+A fuse rating is the curent that it can hold without tripping. The tripping current/time is however on datasheet and is usually significantly higher.
+
+I tried to repair my Xiaomi robot vacuum. I saw this piece but didn't understand what it was. Thanks so much for this video. now it's like you gifted me a robot vacuum :D
+
+When you said traditional fuses are slower, is that Fast-Acting, or Slo-blow/ Time delay?
+
+01:28 watch this smile every week and avoid depression completely 🥳🥳🥳❤️
+
+This video is definitely made for me. I keep blowing up almost everything I touch. And no, I am not a ghost yet
+
+I could understand this type of fuses to use with any type of controller that detects the trip and use as alarm (for example, in lithium batteries to detect shorts and disconnect the output with an additional power transistor). Or  with sensible electronics, to limit the current in case of critical failure.
+
+But not for use with big loads that requires instant disconnect and non reset without supervision.
+
+You can connect PPTC to lockable relay simillar like red LED so it will cut off all power
+
+Adding a digital switch, relay, or other circuits that completely shuts off power when the LED indicator light comes on makes faster protection than a fuse and functions like a fuse. It could reset when the power was toggled with a timer or reset button.
+
+Love your videos ❤️ 😍
+
+Very usefull, again! Thanks.
+
+Very good... I never used glass fuses in my projects, I think they take up too much space. I've always used resettable fuses mainly because of their size and the advantage of not having to change them all the time.
+
+awesome. every Sunday i wait your video and i like specially electronic basics like this. continue
+
+Cooool
+
+These resettable fuses often have a recovery time associated, and a much higher delay than a simple fuse. Read the specsheets!
+
+I was studing pptc in this days.. the right video in the right time. thank you very much. i was asking me about theys slowness too..
+
+you can find usefull ones in old USBv1 hubs too 5v 1amp max
+
+These old fashioned glass fuses come in different versions, like the FF (Fast Fuse) and the SF (Slow Fuse). The fast ones react, as the name implies... quite fast. Even a small peak current, like when a device is powered up, can be enough to trigger them. Which type did you use in your test to do the comparison?
+
+Scott! live your vids. Could you do a full tools "tour" of what you have? I don't know what good tools are or what the best are for electronics and everutime I see your videos I see a new tool and would love to know which ones you have or recommend for advanced electronics. Greetings from Venezuela!
+
+We recently had a Fender amp with a PPTC inside. They reported it started play less loud over time and the unit eventually turned off. When we tried to troubleshoot it we found one of those PPTC inside which had tripped. Thanks for the great video!
+
+Is it possible that a fan meetup could happen at some point?
+
+Glad I could help :-)
+
+Thanks so much 😊
+
+My pleasure!
+
+Thanks, will do!
+
+Glad it was helpful!
+
+If resettable fuses were good for really sensitive applications they'd be used there but - to date - glass fuses or ceramic fuses are still in use in both protection of digital multimeters (and other measurement devices) as well as power semiconductors. Obviously that's not the case. Actually fuses come with more categories than just slow blow and fast acting.  On the other hand there really are quite slow when just slight overload is induced. And that is also intentional.
+
+I wanted point this because my multimeter in the manual say use fast fuse 350mA and they are really fast, I just did touch the circuit and was fused even when I realized instantanly was in current mode instead voltage, :,D at least I have spare because that happen too like 4 years ago and was impossible to me find those values in my city, I had to imported them and wait because also UPS didn't have a normal service to my location.
+Slow fuses are useful on high capacitive loads like power supply or motors, even on USB devices they are intentionally slow to alow charge a big condenser before trigger.
+
+That is very interesting. I have a Bose system  that behaves the same way. I couldn't find the cause when I opened it up. I don't recall seeing a PTTC. Will take another look. thanks,
+
+I find these work best for motors to help stop the windings burning out etc.
+
+I only heared "time to trip"
+
+Idk if I'm insane but I wanna see more components exploding like in the beginning
+
+I Have seen those many times but thought that they were capacitors
+
+Show!  Brasil 👀🖒
+
+Mouser is awesome. I've been getting hard to find parts from them for years. They have the largest selection of parts that I've ever seen. 
+And their prices are reasonable. The shipping costs are very high however.
+
+The LPC2129 microcontroller
+
+In ny Opinion, you should use both but using fuse for much higher currents when the pptc  might for any reson fail
+
+i think the conclusion here is - whatever protection device thats appropriate to your specific circuit is whats best.
+have you seen 3 terminal surface mount fuses with built in resistor heaters designed to melt fuse element?
+part number ITV4030 :face-blue-question-mark:
+
+There are fast and slow blow glass fuses as well. I think you should have mentioned it and not just focusing to the slow ones.
+
+lightbulb best fuse
+
+I've seen PTCs in transistor radios from the 60's in the load side (I believe) of BJT's, as the old germanium transistors were prone to thermal runaway.
+
+Fuse is good ! 
+But it can be better !!
+
+A PTC is commonly used in self regulating heaters, as the temperature increases the resistance increases and hence the power draw goes down, when the power draw has decreased to the amount of heat loss then it has reached its stable temperature. This way the heater cannot go above its rated temperature even if it fails on and you can get them designed with lots of different max temperatures.
+
+Edit: Another example is the smoke stoppers used with drones for testing, they are just a lightbulb but they are effectively a PTC and limit the current flow.
+
+Interesting. I wonder how these compare to just using a breaker.
+
+Very good video as usual. Where can I get some electronic books on this and transistors and... And...
+
+@6:35 The 1A at the glass fuse is the hold current. So you should use a 500mA glass fuse. An the time it needs to get triggered depends on the characteristic. You did not mention it. But it looks like you use a slow one. A fast triggering glass fuse should trigger with double current in about 30ms.
+
+I fried my esp32 yesterday :-(
+
+I've never seen a blown glass fuse without a nearby component being blown up too.
+
+We called these inrush current limiters when designing power supplies with high front end capacitance. Great for limiting short and expected  inrush transients
+
+I am not sure about that.
+I remember them coming on to the market in the 1990s.
+
+Almost the same but exactly the opposite. ICLs are NTC.
+
+I swear all my life I thought those funky things were capacitors, never used one though
+
+I have seen a design where the PPTC was glued to the chassis to reduce vibration issues. Unfortunately this acted as a heatsink and prevented the PPTC from tripping.
+
+Even today I am thinking about adding an SCR crowbar circuit to an linear power supply to protect the load which costs tens thousands of dollars (and isn't available anymore!).
+
+Very nice! As always it comes down to the right tool for the job. Within micro-electronics, that's usually never the fuse. When working with mains, it very likely is a fuse.
+
+Learned about these when troubleshooting rasb 3B and few other electronics. My question would be what effect of temperature has for these different fuse types? Does the cold delay the fuse potentially causing damage before it can trip in negative C temps. How about air moisture effect? How about in hot climates?
+
+There are also NTCs, that act as in rush current protection! It means that they have a decent resistance that decreases over time while it heats up.
+
+Great video! There was one very important fuse at the start of this video that you may or may not have covered previously? - The Multimeter fuse these are super interesting fast blow HRC fuses that stop people creating accidental arc-flash events.... also a good reason to never use a cheap meter on anything above SELV. May be a good topic for a video?
+
+I normally use PTC fuses, though i find they get pretty expensive as you go up in ratings as they get physically bigger compared to your regular one-shot glass/blade fuses. They also get a bit looser in characteristics. So for some things like a Train speed regulator that may have to conduct up to 120W and preferably has a faster one-shot on a sudden derail short. I use automotive blade fuses instead.
+
+YES we have a new Electroboom!! 😂
+
+I had resettable fuses on my first 3d printer in 2015. I did not know what they were so I counteracted their current limitations with fans. in my use case they were not sized correctly and a glass fuse would have been better.
+
+fuses are mandatory especially ebikes whenever i wire up an ebike I just put a 60A dc mcb then a ton of glass fuses for the accessories and blade fuses for the controller and motor so that in case of problem i can easily find who is the culprit
+
+I only know about this haha
+
+Thanks, helpful as ever! One question at 7:18 - why is the diode in series with the led needed?
+
+We have simmilar electronic shop called TME (hell it even has so simmilar web design i have a feeling it's a parent company for CZ SK market)
+
+Glass fuses can be useful if you want to force the device to be serviced by a professional before applying any power to it again. In some circuits, fuses blow for a good reason, and you don't want any power to be applied again before the faulty components are replaced. Also be careful about possible failure modes, safety first!
+
+8:36 I think the variable power loss is reasonable, since resistance increases with temperature and power loss I proportional to resistance. So unless the PPCT is maintained at the literature temperature it is always going to be different. More often higher than lower since temperature increases during operation.
+
+I highly recommend mouser. Many times shopped there. 
+Just once there was missing items, but after i raised it to support, they send me them without shipping fees (That would definitely not happen with some random "Chinese" sellers).
+
+Reset able fuses are used in any decent phone charger
+
+There are different kind of glass fuses; fast and slow. I think you used the slow ones.
+
+These would come in quite handy in some of our ceiling air con units, which do blow their glass fuses (F3.15A and M3.15A) quite regularly after power cycling. I need to look into that further...
+
+i don't think these are considered micro electronics...i mean there's fuses less than one amp and it's not unusual for a circuit to draw near one amp I'm pretty sure micro electronics is more like what's inside of an IC package or even smaller than that... just saying. but i think you still made a good point.
+
+True. You can find out about them in my soft starter video ;-)
+
+Thermistors
+
+Haha. Yes, cooling them down with a fan destroys their functionality. It happens though ;-)
+
+If you are in a country with regular power fluctuations you should have motor starters in your aircon, refrigerator etc with a delay that prevents fuses tripping after short brownouts.
+
+ @mrfrenzy.  I didn't mean the main fuse of a compressor unit. It's more like the internal air handler unit which is mounted on a ceiling, that works with a cold water heat exchanger. I'm talking about industrial sized cooling here, not domestic.
+You just need to supply power, cold water supply run, warm water return run and a drain line to it and you're good to go (as long as you have some machine, that cools the water circuit down).
+These only have to run the fan, the solenoid valve for the water circuit and the internal drain pump on occasion.
+It's always the little fuse on the control board which blows, but that power line is supplying power to the whole thing.
+
+👍
+
+In SMPS circuits, glass fuse is soldered to PCB and not on socket. because fuse does't blow, it bursts. Unless proper cause is found it shouldn't be just replaced. Else that fuse also will burst.
+
+Great Scott: "sometimes I build circuits, mistakes can happen"
+Me: "sometimes I build mistakes, circuits can happen"
+
+We called them Varister
+
+I have a Laney Cub series valve/tube guitar amplifier that uses a polyfuse in the heater circuit. They were notorious for tripping under normal use, leaving the amp silent after about a minute of use. I forget whether it was defective components or the wrong rating being used.
+
+好極了，正是我想要的資料!不過視頻提到的是直流電，不知道要放在交流電路內是否要先進行整流?
+
+Thanks for the intro to these components! I knew they existed, but had never bothered finding out more... Until now!
+
+One note: your English is excellent (besser als mein Deutsch, doch), but there's one odd thing I've heard you do repeatedly:  "...with what limitations they come with" (1:22) - you need to pick one of the positions of "with", you can't have both. ;)
+
+The "with what limitations they come" will be insisted upon by people who think English is Latin (the joke is "a preposition is a terrible thing to end a sentence with"), but those people are wrong. You can do it either way... Just not both ways.  :) 
+
+Either way, keep up the great content, and sorry for being That Guy.
+
+Great video! 
+I occasionally restore old transistor radios which may or may not have shorts in any part of the circuit so connecting to a battery might be "terminal".
+I built 3 volt, 6 volt, 9 volt and 12 volt battery supplies with a tiny "pea" sized 100mA light bulb (for each voltage) in series. At 10-20mA (correct) current the light is off and the radio might work.  If there is a short, the bulb lights up very quickly and limits the current, AND tells me that there is a fault. It uses less wires and needs less hands to work.
+In some ways it is like a PPTC but I have not done your accurate work in measuring the rate of heating and current limitation.
+Dave D. Australia
+
+Pretty easy to replace the fuses on the phone motherboards. Provided you have the right tools. Micro Tweezers, flux, and a microscrope. Using tools will give you the schematics needed to debug the lines and find the shorted fuse. But I digress. I understand not everyone has access to the physical tools needed, as low end would be around $1200, but still ver achievable.
+
+Complex Mechanical devices can also have fuses, it's can usually be identified by being the only flimsy gear ⚙️ in a otherwise well designed machine.
+
+Well explained bro, such a clear Explanation about fuses,I enjoyed and learned from your video super bro👍👌
+
+I blithely used one in a circuit that monitors it's own power supply voltage... Not a good match, since the relatively high resistance and temperature instability led to serious errors.
+
+At first I thought resettable fuses were capacitors
+
+11:32 Although valid in general, this specific type of fuse 5x20mm can only handle a short circuit current of about 30A. It can't safely break any current.
+
+I use them in my car instead of the blade fuses, you have to remove the fault or supply current before they reset
+
+Anything with a higher voltage and amperage, such as utility power, use glass. It will melt before the transformers will.
+
+Problem with these is that they still allow current to flow because they want to maintain a constant temperature when tripped. You have to be careful where you place them because they can cause a different component to drop all that voltage and current across it
+
+perhaps i got bad ones, or perhaps that 3A is a bit much, but it took so much power and time to pop that they didn't feel like a safety measure.
+
+Very interesting.  I wasn't aware that those could be used in regular circuits.  Something to think about for future projects.  Thanks.  So I've been meaning to ask you, where did you get the little device with the LCD screen and fan?  I'd like to have one of those.
+
+mouser or rs are super expensive in term of shipping when you order in europe
+
+This is a standard test-jig in audio amplifier repair, where the lamp is a 60W mains lamp in series with the live mains wire.
+
+ @misterbonzoid5623  Yep. I have done this for valve/tube amps and radios. A 20 watt lamp has a higher resistance giving a lower voltage and current to allow the capacitors to reform slowly. When there is noise from the speaker and no smoke, swap to the 60 watt lamp and then full power. 
+Dave D. Australia
+
+Thank you so much 🙂
+
+ElecroBOOM Flashbacks 0:09
+
+I used to blow up capacitors with a car amp and music
+
+Interesting in my experience most circuits protect the standard fuse by blowing first!!!
+
+All I want to know is that a robot hand, anamation. How do you write so small and so neat, and less I forget so fast??? Let me just say always very interesting videos.
+
+Why can it be used in lithium battery protection circuits? During a battery short circuit, it can generate a current of 1000A, which clearly exceeds its maximum current rating, typically around 40A.
+
+6:15 once the fuse trips it makes a disconnection by high resistance and then the voltmeter should show the power bank voltage, here it shows zero
+
+What people forget is that ordinary fuses get hot and increase resistance wasting power, so these electronic ones are just as good if not better in a lot of applications.
+
+8:50 The datasheet claims that value at 23°C, not at 80-90°C
+
+I thought it was going to be about MOV's
+
+11:44 eFuse is resetable, but it is *resetable*. It has to be reset manually. PPTCs don't need any action after tripping and act like nothing happened. eFuse has a con of needing to reset, but better than a standard fuse
+
+Everytime i see a non resettable fuse in anything but the cheapest of equipment it blows my mind
+
+Fuses are there to protect the wiring (and PSU) supplying the current to the device.
+
+It's ok MCB don't cry 😂
+
+Back when I was learning electronics we called them Thermisors.
+https://en.wikipedia.org/wiki/Thermistor
+
+An automatically resetting circuit breaker will behave more like a fuse, cutting all current.
+
+"Welcome to ElectroBOOM!"
+
+I requested components for my brother's 100 ampere fuse, I will use it in the car
+
+Great video, but a minor note about the comment that eFuses aren't resettable - that's incorrect. The TI TPS 2596X0 (that you show in this video) is latching off, the TI TPS 2596X1 however will auto reset. I learnt this while shopping after learning about eFuses in your first video. :D I have TI TPS 249631's in my pet projects thanks to your video, and they happily auto reset when I accidentally trigger them.
+
+W8 !!
+I thought THERMISTOR !!
+
+Finny I was just on mouser yesterday looking for a PTC to protect a connector that had 12V on it for a fan but is fed from a high current capable source.   Ultimately I decided to go with a standard fuse because of the temperature range that the unit will require to work in... from well below freezing to above 100F..  The temperature derating was a concern and was worried it would not properly protect in the cold climates and trip too early in hot climates.
+
+i have to discuss so many things about technology and tech youtubers can we have meet-up all tech youtubers in my place kerala palakkad?
+
+They're cheap, small, and reliable. Most of the ones I see are built inside of devices, where if properly chosen they will only blow if there is a catastrophic failure. I think resettable overcurrent protection only makes sense where the user can cause the fault, such as an external power supply.
+
+If the fuse is located in the plug which is connected to the wiring, yes, however many devices contain fuses on the circuit board inside the product, and they are not there to protect the appliance cable.
+
+They are typically much lower current rates, say 100mA.
+
+I like this good job ✅
+
+nice explaining
+
+🏆🏆🏆
+
+Long ago, when thinking about my prototype EV builds. I thought about just replacing all fuses with Circuit-breakers, to not only save money on blowing fuses during experiments, but also keep me from being stranded. Breaker trips, just readjust something, reset breaker, and continue testing or riding around doing my delivery job. But the only circuit-breakers I knew about at the time were too big for a bike. I'm going to revisit that idea. But thank you for teaching me about this option.
+
+I am thinking if I could use this to replace one fuse in my car
+
+Wow -I learned something new. Thanks for testing. Can Resettable fuse in used A.C. circuits ? My computer Power Supply trips and I have to wait 15 min before I can switch it on again.
+
+Can you make a magnetic amplifier
+
+Could you explain how to choose between the Class T fuse and the HRC fuse like NT00?
+For the main fuse of a lithium battery, feeding an inverter.
+
+I have a suggestion for your next video
+
+GREAT VIDEO SCOTT!!!
+I need a polyfuse to work at about 450v.  Can I use them in series to increase the voltage handling capability?
+THANKS MUCH!
+
+I have once tested a ceramic heater, which had negative temp coeff until is reached the rated temp, but had really huge positive temp coeff after it went over. So it was very actively fighting against overtemperature events, without any semiconductors at all. So these heater elements cannot catastrophically overheat even if the supply voltage is somewhat bigger than it should be.
+But multifuses (using similar material science) are kind of a let down for me :(
+
+😃👍🏻👏🏻👏🏻👏🏻
+
+Thank you for your good video, I'm almost at the end now, as a noob I had to ask the following question:
+Can I use them into a DIY variable power supply from a PC power supply, like in all the videos that are on youtube about it or is it not a good idea and if so why?
+Thanks for your help.
+
+very good timing. I am getting into wled and rgb strips. I have already bought the parts and skipped the fuses since my powersupply from meanwell has according to the specsheet all protection already included. 
+But if i were to use a less reliable psu I now can choose a pptc fuse that will fit my needs
+Did you already think about making a video with solid state relais? 
+also I can add mouser to my list of trusted shops now ^^
+
+4:19 wait I thought hold current is the current that will keep the fuse tripped once it activates. So the fuse to be reset it needs to go below I hold (by disconnecting the power supply for example). Current up to I trip can flow continuously without tripping the fuse. Correct me if I'm wrong
+
+Attn greatscott in hvac ptac units it is common to use a ptc in place of a capacitor on some low hp blower motors.  That said my question is this if these degrade when tripped or held in a tripped state over long periods of time. How do they work around that?  Thanks for any insight you may have.
+
+Fun fact: Voltage rating of PTC fuses is important: I once experimented with a PTC that I took from an old knock-off Ni-MH Roomba battery pack and I exposed it to 10 A 32 V. I don't remember the rating, but it tripped and for about 10 seconds staying in a tripped state nothing interesting happened... After which it burst in flames in a spectacular fireball! So the conclusion is that voltage rating of a PTC fuse is important.
+
+Any component is a fuse if you run enough current through it 😄
+
+Could you use a bimetallic strip as a fuse, almost like a relay to deflects and break contact if enough current passes through and then monitor when the current drops to zero to activate a relay to keep the contact broken
+
+I use smd resettable fuse in my project.
+
+Thanks :-)
+
+Thanks :-)
+
+ @greatscottlab OMG GreatScott!! replied!
+
+And thank you for exposing me to Mouser.
+
+Brilliant :-)
+
+This is such a valuable video. Thanks for the continuous lessons and amazing eye openers Mr. Scott
+
+Metal Oxide Varistors (MOV) and the newer GMOV?
+
+Hey, erstmal ein top Video!
+Ich verfolge auch schon lange deine DIY or Buy Videos und hätte eine Idee für ein Projekt. Und zwar würde es mich sehr interessieren, ob man einen "Galaxy Projektor" auch selber Bauen kann. Online sind die Dinger mega teuer und sind überladen mit unnötigen Gimmicks, die den Preis noch weiter nach oben steigen lassen. Wenn einer sowas auch selber bauen kann, dann ja wohl du ;) :D
+
+Hi! Thanks for the informative video.  Q: What is the device shown at 6:10?
+
+Ive never seen a 6 pin ic fuse….  Ive came across the pptc fuses many times though.  Wonder why ive never had a repair involving the ic type before though..?  Kind of odd seeing on how many boards ive dug into throughout the years..
+
+Doesnt that strip supply have internal protection in them to protect from shortcircuit??
+
+So... Surely you could use the resetting fuse to trigger a latching circuit or relay, to cut all the power completely?
+
+@GreatScott! You are wrong about the tripping speed of normal fuses. If you take so called "very fast-acting" fuse, which is designed to trip fast - it trips in time of a few hundreds of milliseconds @ a double current. Used for very current sensitive circuits. So you had to mention the type of the glass fuse you were using. The other reason the world is not completely displaced the melting fuses with PPTCs is that they degrade over the number of times they trip. They are normally used in the environment when the overcurrent situation is rare. The other disadvantage of PPTC is that its resistance before and after it trips differs. It will never be the same again due to the material PPTC is made of. There is another type of fuse you haven't mentioned: the so called "TBU". This guy trips in about 100 nanoseconds time (the datasheet stated time is 1 uS, to stay on the safe side) and is fully resettable. But as it is the mosfet based device - it's very sensitive to the voltage.
+
+Surprised you had trouble finding them - search PTC fuse or polyfuse will find plenty at any distributor
+
+What about DC resettable breakers? Ive replaced my trucks fuses with some because changing fuses is cumbersome, especially when you only need 1 and you have to buy a 15 pack 😂
+
+There are tons of these in fire alarm systems, and act as the required current limiting for all of the input and output circuits on them.
+
+Don't you think the resettable fuses in some case cuts off when there is a short due to increase in  temp and soon the temp decreases causing the fuse to set back and this will continue to happen in a loop causing the system to turn on and off repeatedly
+
+There are also bi-metallic thermal fuses of course which are standard for thermal cut-outs. I guess you could fix one to a low value resistor to make it trigger based on current (as the resistor heats) and it would be automatically resetting and have no 'trickle' current.
+
+Would a colder environment make the PPTC act slower?
+
+Is it possible to make 100% IR powerful laser on handwatch that can burn matchstick quick from 3,4 meter distance easily
+
+Sometimes a circuit is better without a fuse. I had to remove both protections from a car batt charger, the heat relay and the fuse. Still, there was a third protection within the diode module.
+
+A very effective way to protect a circuit is just a light bulb. When small intensity is consume it has a low internal resistance, in case of a short circuit it will limit the current to the rated lamp current. Of course a little more difficult to select but has the huge plus to emit light if "activated", 100% safe. Very useful in case of fugitive faults...
+
+why not just use a divider on a FET to trip a relay, maybe with an RC to prevent thrashing the relay?
+
+Hi, Im following you from more than two years and then I came across this vide, can you help me with what temperature sensor module you are using for measuring temperature?
+
+@GreatScott!
+
+What happend to your coil gun Part - 2 😭
+
+Thanks for the info
+
+There's a version of thermal cutout made specifically for overcurrent protection. Instead of using a resistor they run the current through the bimetallic strip and the self-heating makes it trip. Or now that I think about it, this trip mechanism is exactly how regular circuit breakers work. Look for "auto reset circuit breaker" online.
+
+That means your fuse isn't sized appropriately or have a suitable disconnect time.
+
+A fuse in normal operation will have no effect.
+It isn't that circuit is better without them, it's that the design is wrong and is interfering with normal operation.
+
+And if the current is too high due to a sustained overvoltage, the lightbulb will pop just like a normal fuse.
+
+Never happened
+
+ @greatscottlab  
+But it was a super interesting project You should make part 2 on it 🥺
+
+Another interesting video about fuses is the one by BigClive where he talks about high current and high voltage fuses: https://youtu.be/kx35WN3uLis
+
+Always happen..
+
+Man i miss the og intro
+
+What is that thing at 5:52? I'm really curious as to what it is and what it does in detail.
+
+What can i use to protect 50A / 200A  24V and 12V systems that dont have polarity protection. Thank you. Im just  a beginner.
+
+Is there a resettable fuse for analog and digital multimeters?
+
+Sometimes when building circuits, ELECTROBOOM can happen.
+
+Can't find 220v 3.5A pptc on AliExpress.
+
+what clip leads are you using here?
+
+There's still one important question uncovered: what about very high fault currents? Can the PTC withstand 100 or 200 Amps or will it explode hopefully cutting the circuit? Or will it even get conductive permanently like many semiconductors? Traditional fuses can handle fault currents of up to several 10 kA! And what about overvoltage?
+
+What about ICP-N50 fuse can it replace glass fuse 2A?
+
+There's a question that I have been mulling over for a while that I would love for you to explore. could fuses either, Glass Ones Or automotive blade style, work as current shunts.
+
+These were introduced by Raychem many years ago. We use them in loudspeaker crossover instead of lamps. I still don't understand why many US speaker manufacturers still in 2023 use lamps?
+
+They are great but..... the problem with them is that if they fail you will have a hard time i have got a bad batch of them and about 25% were tripping  even on lover than a whole current and you will not see that for 20-30min so I shipped about 300 units of my product with them and after a week got to do a recall.
+
+I can smell this video
+
+Great(scott) video 2x👍
+reverse current diodes are also very helpful keeping the components safe.
+
+🌟🌷🌟
+
+But when the resetabble fuse trips it just limits current right? Becahse otherwise it would just cycle kn and off right?
+
+You didnt include Thermal Bi-metal resettable breakers
+
+be careful to observe the maximum short circuit current rating. the polymer is flammable and the fuse will catch on fire if the max short circuit current is exceeded. for example, if you have a 1 amp ptc fuse and your battery can give a short circuit current of 50 amps , no problem.  if you have a car battery that can give a short circuit current of 500 amps, the ptc can catch on fire. this is similar to the interrupting rating of a conventional fuse.
+
+i blew up my UPS because it didn't have any reverse current protection, I'm still mad. It was just a small tap of the wrong cable for less than a second, the reverse current dropped directly at the junction of the mosfet, I was like, WTF no reverse current diode ? 
+I'm never buying from this brand anymore
+
+ @monad_tcp  I has more than one or two things let the magic smoke out. 💣⚡
+
+Definitely
+
+Warning: You may find that a lot of generic containers of fuses are not rated correctly. I have found that they will take, for example, a 3 amp fuse, and mark it 1/2, 1, 2, & 3.
+So, I always buy name brand fuses.
+
+Poly fuses still don't act quick enough in all cases. We had them split and more damage to the phone circuit. We used the poly fuse on the phone line, our surge boards worked better that had half amp fast acting fuses. Phone lines had surges that could ruin a whole phone board. Our payphones still used surge protector with replaceable fuses. The grounds on the phone boards protected the boards but we replaced a lot of varistors. Our air machine boards use multiple varistors and many come in needing replaced. A low amp fuse and the fast acting are better than any electronic part. I would not want a poly fuse protecting my home from shorts. Fuse is the best protection besides a circuit breaker. The circuit breaker is better on 240 circuits because both hots are disconnected if only one fuse blows the the other side can back feed into the fuse box I'm talking about the cartridge fuses that also protect the smaller screw in fuses. The water heater is a big resistor in series with the other circuits. If the 240 fault was with a motor a similar effect would happen. Any heating element can be a big resistor. 73
+
+Best Testing  fuse is a incandescent bulb/lamp('s) in series  
+Not Only does it Pervert a True dead Short but also acts as a current limiter & Below voltage Limiter  For more Sensitive & untested "Experimental"  "FAULTY" Devices / circuits it makes  more sense
+
+I've tried Resettable Fuse.
+I gave it maximum voltage as per the fuse rating (mine was 30v) and shorted the load. The temperature continued to rise and after a few minutes it caught fire.
+It is possible that it burned because the temperature was too high and finally the fuse broke (shorted) and finally the current rose again and burned.
+
+Kannst du uns mal Gitarren Verstärker erklären?
+
+Resettable fuse... You mean like a breaker 😂
+
+If only mouser had other shipping options than FedEx in France... Never had a package delivered to my adresseS on the first try with them... Aliexpres's shipping is often more reliable and faster wich is crazy.
+
+What about fast acting fuse?
+
+It looks very similar to capacitor or varistor. This might trick people to think this component is having short circuit, and replace it with capacitor.
+
+Not that good I would say, PTC fuses have at least 5 distinct drawbacks:
+1. There is a peak current that must never be exceeded. For example a 1A Littlefuse RHEF100 has a maximum peak current of 40A. That means that in car applications, you must probably add an wire wound power resistor on the 12V supply line to keep the initial short circuit current within spec. 
+2. PTC fuses wear out and degrade after approx 200 trip cycles. That means in practice that, if there is a permanent short circuit and the power of switched on and off (as in a car), or an intermittent fault, the PTC fuse may be worn out before you even realize there is a problem! 
+3. Trip and hold currents are to a high degree temperature dependent. Does not work well over for example the -40 to +85C range usually required for automotive electronics. (RHEF100 goes from 1.36A to 0.56A trip current).
+4. PTC fuses are not even considered as fuses in for example the EN 60950 safety standard. So if you're heading for a CE approval, the test house will apply a short circuit across the fuse during the safety testing! That's not much of a fuse then 🙄
+5. Disc type PTC fuses are extremely slow compared to "F" melting fuses.. May be a problem if you want to protect sensitive semiconductors..
+But If you can accept all the listed drawbacks, go for a PTC fuse 😁
+
+Experience shows: With enough current, every component can become a fuse of sorts...
+
+A 3D printer blew a fuse, but it wasn't the fuse's fault. The fuse connection corroded, causing resistance to heat up the fuse until it blew, partially melting the fuse connection housing. This circuit wouldn't help with that. Perhaps some WD-40 will preserve it. Or.. maybe it will help if it monitors temperature.
+
+If current instantly crosses  rated Amp, will thermal fuse be blown just like  normal glass fuse?
+
+So scr/thyristor or triac for over voltage and pptc for over current?
+
+If e-Fuses have limited current range then how do 12V 2kW DC power supplies work?
+
+Hello, the load with display you use at 06m24s, can you please tell me where I can buy that kit ? Thanks!
+
+Mouser really need a facility in europe, I cant pay 20€ shipping/import to get a 20ct component
+
+Imma just steal one from the wall
+
+mate i need the wire to only carry earthing(earth connection) and not carry any current. i want it to break or trip as soon as current flows through it. how do i do it. please explain.
+
+What's the difference between these & thermistor? Or are these thermistors?
+
+Incandescent bulbs do protect...but there are circuits  that require a small real-estate area...besides rigidity..in some instances the  lamp is a fragile / brittle...component
+
+ @analoghardwaretops3976  That's why they're only on the test bench. Inside finished products they don't really make sense.
+
+Well, then nothing will happen. At least in a DC circuit. AC....well.....
+
+Dose it work on an snes?
+
+കൊള്ളാം 👍👍👌👌
+
+which is the fuse used in first few seconds that blew up?, name please
+
+To protect a Raspberry pi sitting behind a buck Converter, do i need vdc or v fuses?
+
+Isn't that just the opposite of a varistor?
+
+What scope do you have?
+
+Welp there are fuses rated for 22kV
+
+Perfect is varistor and thermistor.
+
+What resettable fuse can i use inside a battery pack , i saw a guy who put one on each cell in his pack to prevent too much current being pulled . is that a good idea ?
+ + Thank You for all your vids  cheers =)
+
+The advantage with convention swappable fuses is , the onsafe situation is being lifted and the device needs to be repared and the fuse swapped , but in the case of such an PPTC element the overcurent situation is not lifted if it's not detected right away, the circuit is broken for a while but when the PPTC cools down the circuit is restored , thus creating a loop , there should be somethin in place with a relay circuit that switches it off other wise the situation is being maintained ?, or am i seeing that wrong?.
+
+Could this be used with a relay so that after the relay is triggered the pptc goes into a low power state but enough for the relay to stay on ?
+eg; I found that a 12v relay will trigger above 8v and stay on until the voltage drops below 4v .
+
+Hey guys i need help to fix my ps2 an smd fuse rated at 0.7a is blown and i cannot get a replacement but i do have a printer controller board which had lot of smd fuses, resistor how can i replace with it
+
+1:13 was i the only one who. thought that was a capacitor
+
+Question... I believe I saw on one of the graphs you showed, that if you pushed 10a through it, it would cutoff much faster after the 1a trip point, than if you just pushed 2am through, correct?  So then, wouldn't the circuit design technique be, if I want it to cut off fast at 1a, size the component's trip point to 250mA or something?
+
+Would an eFuse be much better than a resettable fuse?
+
+The device you are using as a load as in the time spamp 5:26, what is it? I want to do some test of power electronics of my own and I am kind of bored with altering the resistances one by one and using 2 DMMs for supply power and current.
+
+some resetable fuse could go bad without any reason at all , i have experienced this on a medical machine that runs 24/7, like a xray machine and audiometry diagnostic machine have their control board protected by smd 1206 ressetable fuses , all of a sudden the machine just shuts down and it took me 1week to diagnose the problem is a ressetable fuse, after some time the machine just dont want to work anymore 😄, (these machine are more than (5 years old). so i can say that these ressetable fuses are not recommend for long use and its pretty much useless to use on long life machines
+
+Ptc's are ok and bose use these on there series 2 and over (maybe) internal speaker circuit.if too much power inputted then they go high resistance but....Not as safe as a fuse.fuse is blown then no shock??????
+
+nice Sponsor :goodvibes:
+
+I bought several 40A PPTC some time ago, never used them. I'm surprised they have those very fine legs that look insufficient for 40 amps. Was that a scam I bit into ?
+
+:-)
+
+Perfect for what?
+
+How long does it take to reset? In my experience it takes days...
+
+what is that green piece holding the glass fuse? 6:38
+
+I have a UPS for my modem and router and I would like to use a PPTC. The full current of both combined is 4A. What PPTC should I use?
+
+This is an offer you can't refuse (or maybe you  can refuse? since you're resetting it)
+
+This looks more like an overload protection component, instead of a short-circuit one.
+
+මෙම ක්‍රමය භාවිතා කරන ලද කෙනා පිස්සෙක් තමයි
+
+no regulators were harmed in the making of this video, they were dead already :P
+
+In any serious circuit on a beefy supply or battery, regular one-shot fuses are mandatory to protect against fire. They are not to protect the electronics.
+
+Trip current is always double Hold current. Fuses are the same.
+
+8:50 I think you need to consider the temperature derating curve of the device, since its now running at 95C not 23C. After all, it is a PTC, therefore the resistance increases with temperature and so P = R * I² increases as well.
+
+That they look exactly like ceramic capacitors does not help, whoever invented them could have at least used a different color.   Thank you for your videos.
+
+Might order parts from Mouser just because I could tell people my laser gun has Mauser parts.
+
+What's the typical cost for the traditional fuse socket component? That should play a role in the comparison
+
+Nice clear video!
+Would anyone know the effects of these on sound signal? I was thinking about using some to protect speakers and the easiest would be to put one directly in series on the wire feeding them.
+
+Power loss fuse   mccb Make a full video about
+
+modified batterry bms shoul be as reseteable fast fuse
+
+Do you have a Acer Nitro 5 Laptop?
+
+Hi scot, 
+Can you redo the experiment but in real life situations for example consider both factors time and rising current in real life ordinary fuses are rated 1amp i think if the current stayed  stable they will not burn but since the short circuit cause the current to rises very fast it will cause it to burn. My question is how many seconds when a short circuit happens both fuses will burn or reset? Please make real short circuit 😊 thank you
+
+What about the earlier overcurrent protection video?
+
+I like pptcs, but if you use a diode for reverse voltage protection and you have basically a short circuit I think they trip too late compared to a conventional fuse.
+
+What is an overload if it is not current higher than a specified threshold? What is a short circuit?
+
+😵😈🥸😈😈🤓🥸🥸😲😆😛😘😊😌😝😝😏😜😌🥰🥰☺️☺️😘😄😘☺️☺️😑🥺😠😯😟😕😱😱🧐🧐😡😠😒😓😣🤤😴🌜🌝🤕😪😴🌞😫😯😦😖😖😣🌚🤒🤑🤓🤠🥸👺💥✨🤖👽💫💤😺😸😾💤😼🧡❤️😾😿🙀😾🧡🧡💛🤎💙💙🤍💘❣️💜💗🫂👥🫀👃🦷🦷🚕🏎️🚈🛺🛺🚐🛴🦽⛽🛢️🚛🚈⏫⏫🔂🔼🔽📴☣️🎼🔆🔼📲⏫
+
+I once solved a product issue by using the thermal derating curve. A coil used in a clutch. Normal operation would see a 3 second operation. If an abnormal operation were to occur, the coil would heat up rapidly, but not necessarily go over current unless an insulation breakdown occurred. The application was designed to prevent that occurrence.
+
+Haha ;-)
+
+Oh boy. True. I did not consider that in the video.
+
+See my comment above. I never did audiophile tests, but using a Bourns Multifuse in parallel with a power resistor I protected a lot of drivers that would otherwise have been destroyed. Including my two hard-driven 400W RMS 15" Beyma drivers with 4" voice coils. At a school summer fair once, they were the main PA speakers for a full band outdoors (!). After a while I noticed a strange sort of compression effect going on with the sound: the band was hot and so was the weather. The protection was working and 28 years since fitting, those drivers are fine.
+
+I can put it on my to do list
+
+It is included at the end of the video comparing eFuses, traditional fuses and resettable fuses. Keep watching ;-)
+
+Sorry.
+
+texas instruments had a guy.
+his write ups where/are pireless. he's old.
+his write ups on the various applications[the actual circits]
+
+go looking
+
+Thanks for the video GreatScott. Was blowing up my previous fuses due to the capacitance in my circuit, causing insurge current. There is a Nominal melting parameter i didnt calculate previously for normal fuses. May I know if PTC will face this issue? Thanks =D
+
+if something does not work, first of all, change resettable fuse.  Like @ferrumignis said, they degrage badly, especialy on hot surrounding.
+
+Ok very interesting very nice good presentation GOOD GOD WHAT DID YOU DO TO THAT PHONE?
+
+Cost of fuse vs cost of components.
+
+2:52
+
+Those things have a life span. Description of fuses is inaccurate. You want speed? Use a fast blow fuse, some are fast enough to blow on ESD discharges (4 nanoseconds). Fast blow fuses have issues with in rush current. Slow blow fuse are slow to avoid current spikes. Current sensing shutoff are better. More accurate. And way faster.
+
+Fuses are meant to be a last recourse to prevent damage.
+
+its a pitty they dont make a "micro" circuit breaker
+
+I think designing with these is currently very difficult to do in a responsible manner.
+
+The on and off-resistances will change greatly through their lifetimes, which when coupled with their relatively low off/on resistance ratio, makes it quite difficult to guarantee that it won't be too high resistance when there is no fault, while at the same time always being sufficiently high resistance when there is a fault, through the components lifetime.
+
+And if you are not designing for the post-reset abnormal behavior, why are you using a resettable fuse?
+
+In the Early 2003 i tested every thing and the best is FLINK fuse ..... al you that say that try a FLIVK fuse with 230a with three fase ... sorry but i tested it!!!!
+
+Wow this is old tech.  foldback current limiting is used in things like power supplies
+
+Just gonna say... Ramps 1.4... that's the reason I hate those fuses 😂
+
+Residual current device.
+
+Over Voltage
+
+left handed!
+
+খিট খা আমার ঘন্টা কী আমি ডিসটাভ কোরি তবে এখোন কী দরকার
+
+Nice. How can I limit inrush current to protect relays when I switch a smps with a large smoothing capacitor?
+
+varactor diode fm tuner circuit
+
+If you really needed a resettable fuse that completely opens the circuit, there's probably a way to use a PPTC in conjunction with a relay, I'm trying to picture the circuit in my head but I'd need to draw and test some versions to see if it could work!
+
+The question one would have before the video starts would be what the difference between a resetable fuse and a circuit breaker is.
+
+so thats what they are
+
+I think PPTCs can fit better here than normal fuses. Give it a try.
+
+ @greatscottlab  Ok thanks for the advice 😘
+
+You can find out in one of my previous videos ;-)
+
+You can use an Inrush Current Limiter (ICL) which is a type of NTC, the opposite of the PPTCs featured here. Most SMPs have them built in. Their downside is they do not limit inrush for short "off" times because they need time to cool down.
+
+I could list the different types of components, but what is the purpose of your post?
+
+You could use a "no volt release" circuit after the PPTC. Short version is the relay's coil is powered by its own output.
+
+Or another option is the "auto reset circuit breaker" which uses a bimetallic strip.
+
+Think the answer is obvious.
+
+ @deang5622  not to someone with very limited knowledge of circuits and electrical components.
+
+Illl replace as many fuses at any price as long as I am not replacing the whole circuit and no not a fuse over 40 or 60 dollars.
+
+Can we use relays as fuse? Pick a relay such that operational current is not enough to trip the relay. But once high current starts pouring in, relay switches.
+
+Mouser Eletronics is not affordable in Italy because they want 24 euros for shipping...
+
+No way man
+
+thought he said mozar
+
+2:18 I noticed mouser taking way longer with shipping, taking 2 weeks to the Netherlands. Compare this to aliexpress, which usually takes 10 days
+
+Can you make a video about stepper motor and stepper motor driver using Arduino??😇
+
+1:00 kla man kann doch eine neue einlöten man braucht nur die richtigen werkzeuge und fingerspitzengefühl :D
+
+In electronics dangerous component?
+1) resistor
+2) capacitor
+3) variable resistor
+4) transistor
+5) inductor
+
+The best is chinese pcb track fuse
+
+Exam tommorow,58 min ago
+HII
+
+With a suspect mains powered device a good way to prevent blown fuses is to initially power it with a LARGE mains light bulb in series with any input lead ... the bulb might glow dimly indicating a working device .... should the bulb glow with full brilliance , the device is VERY faulty , and should be fixed ( but your fuse will be OK ! ... tried - n tested ) .... DAVE™🛑
+
+can i use NTC's for like a step start for a 200 amp power supply using 30 amp switching supplys ?
+
+those look like capacitors lol
+
+Why aren't these used in cars?
+
+Common practice for some circuits could be to select a fuse that is rated to reset at a lower Amperage than you initially want. That would help speed up the time required for a trip. eg. instead of selecting a 1Amp trip select a 800mA trip
+
+Is there something of similar size but that works like a breaker, with relatively fast reaction and manual/external resetting?
+
+as I understand, these are better not be on path of constant air flow used to cool the device it is in? otherwise they might not trigger when expected?
+
+I would order from Mouser if they had reasonable shipping prices to Norway :(
+
+fanuc fuses?
+
+Go find a relay with a coil that can handle 10Amps, 20 Amps.
+
+Good luck with that.
+
+The purpose of a relay is so that a small voltage and small current can switch a much a higher current.
+
+Therefore the coil tends to be made with low guage wire which means it can't handle a high current.
+
+Hmm weird. I get my stuff super fast. Also before they sponsored this video. Never had problems.
+
+10 days from aliexpress? Bullshit.
+
+Already did years ago. Just search for stepper motor on my channel.
+
+ @greatscottlab  Bro but there is no code on it.I can't read it properly on screen (I said to make a video about programming code to run a stepper motor)
+
+If you need to ask, then you don't know enough electronics. And perhaps you should keep away from electronics until you understand what each component does and why they might be dangerous.
+
+I would suggest you buy a book in basic electronics, or you watch online videos.
+
+Because of crap design? 😂
+
+Good luck :-)
+
+ @greatscottlab  thanks
+
+Watch my soft starter video ;-)
+
+Many different kinds of protection circuits can be built.....
+One has to study  end application/ research datasheets ..etc...besides thoroughly knowing component behaviour .
+
+Correct
+
+ @greatscottlab  would it be then that they are also sometimes placed in a heatshrink tube for same reason?
+
+Sorry to hear that....maybe try them when you need to order tons of stuff.
+
+Hey, Scott! Thanks for the video. I'm afraid there's a mistake at 11:44 - eFuses ARE resettable, aren't they?
+
+So when building a circuit, can I add both of them? Glass fuse and resettable fuse?
+
+What about lets say one that has a hold of 3A with a 4A trip 40A max and you get a sudden surge of 35A and that surge happened to be through 15A rated mosfet...
+Would the PPTC trip before the mosfet got damaged?
+
+He played Electroboom for a few seconds at the start
+
+Resettable fuse: varistor
+
+i just realised that you're a lefty
+
+It's depend. Resettable fuse is not better in all cases
+
+sony jbl kenwood car amplifier how many amps transformer should l supply for home use?
+
+No shade for the Mouser Electronics sponsorship (in fact, nice get), but it seems funny to me that they should EVER need to advertise. I'm JUST diving into the world of DIY electronics, and Mouser was the only site I could find that had quite literally anything (electronics-wise) I could ever need. Although, now that I'm thinking about it, maybe it's because they knew how to advertise and not just that they're the only game in town.
+
+Glass fuses are not rated for protecting semiconductors. Semiconductor fuses are.
+
+......and here I was thinking a resettable fuse was called a breaker
+
+I killed $500 equipment just by plugging battery in backwards.
+The connector was suppose to prevent this, but it didn't.  
+Blind people can only do so much by feel.
+
+TIL there are resettable fuses.
+
+I was struck by the fact that there was a constant power loss in the tripped state - I bet that's driven by how much heat the specific package can dissipate.  I wonder if a fan or heatsink would have an appreciable impact on that behavior...
+
+Most eFuses are resettable by simply cycling the power.
+
+It looks like a ceramic capacitor; but it's not?
+
+Its still a fuse
+
+These self resetting fuses are not Fuses. They are good for a limited number of cycles.The Best circuit protection is a good old mechanical circuit breaker. The only disadvantage is they are slow because current needs to rise above a set level.. Better than fuses and good for most circuits.
+  Now for those who need lighting fast response. Remember that voltage drop leads current rise when a circuit fails.. On a should use a mechanical DPDT break before make type relay (or a Solid stare relay of you can fine one suitable) One pole is your on/ off switch  (normally off) and the other pole clamps open the load when power is removed.
+The relay is controlled by a resettable JK FlipFlop. The flip flop is driven by a voltage detector If  the voltage drops below a preset level the circuit assumes there s a short and shuts down the load..
+In the normally off mode it does consume power when the circuit is operating normally. 
+In the Normally on mode  it does  NOT consume power when the circuit is operating normally. But a battery backup is recommended.
+In the event of any failure the load is instantly separated from the power supply.
+A failure would include a Brown out of the AC supply.
+This circuit will work for a wide range of current capacities and depends on the relay specifications.
+The trip point is precise.
+Better than a crowbar circuit.
+I use Mouser all the time, for decades.
+
+Why they looks like Ceramic Capacitors?
+
+Would you say there is a significant difference between PPTC and a "Thermistor"? It sounds like they are almost the same (if not synonymous or a suitable replacement for one another)
+
+Not on their own. If they trigger you will have to reset them manually. Resettable fuses do this automatically
+
+You have to be very careful about failure modes. AFAIK a glass fuse will never fail closed. Of course, you can add both in series, you can also add a crowbar or TVS to prevent overvoltage etc... The first priority is always safety (fire hasard...). Then the second criterion is protecting valuable components. Last criterion might be comfort.
+
+Short version: it depends. Longer version: it should be safe if the MOSFET is fully turned on.
+
+weird coincidence i just watched electrobroom first time in like 3-4 years. still same monobrow material, now with multiple oscilloscopes in the background not hooked up to anything LOL
+
+;-)
+
+A thousand gigawatts...you need enough power for the flux capacitor
+
+No. A breaker is something different. Or to give its proper name, Circuit Breaker or Miniature Circuit Breaker.
+
+A heatsink would increase the trip loss, because more power is needed to keep it hot
+
+A fan would make the fuse so cold that it would no longer be tripped.
+
+A capacitor holds charge. This devices does not. It changes its resistance when current exceeds a threshold.
+
+Two totally unrelated functions.
+
+I have no idea
+
+Same package so you are wrong, they don't look like capacitors or whatever. Generally, you can put anything of similar volume in any package. For example, it makes sense to put resistors in the same package as power transistors as well as rectifiers, and some Chinese scammers even sell 2 diodes in the same package as bipolar transistors, but the general reason is that such package is cheaper for some purposes.
+
+The PPTC is a specific type of thermistor. There are also other types of thermistor. NTC thermistors are very often used for temperature measurement.
+
+Two completely opposite types of devices.
+PPTC's are positive temperature coefficient, thermistors are negative temperate coefficient.
+
+They are not interchangeable devices.
+
+@6:40 "How a 1A-rated glass fuse would react to 1A of current". And how should it react exactly? Isn't 1A fuse rated for 1A of hold current? You should have gotten a 500 mA rated glass fuse for "apples to apples" comparison.
+
+Sooo... What's the difference between these and the varistors?
+
+First 10 sec I thought of @electroboom
+
+I don't get it ^^
+Why is Imax much higher than Ihold and ITrip? 🤔
+
+Were you using slow blow or fast blow glass fuses?
+
+Hi.
+I work with electric scooters and many of them have problems with overheating and get burned controllers where the transistors(mosfet) often burns. My question is if it's possible to use this kind of fuse one the 3 phase cables to stop this for happenin?
+
+Could this be used to lower a start up current to a max amount?  I know it couldn't by itself. But perhaps in conjunction with a circuit to switch current draw to a alternate circuit with a resistance added?
+
+Electroboom, is that you?
+
+Can you please make vape
+
+you just put a thin wire, that will burn and snap fast
+
+please link the efuse Board
+
+Omg they look like caps- I may never buy a fuse again
+
+HOW ARE THESE DIFFERENT THAN MOV'S
+
+For some reason, all electronic build in China (and not designed by a Western Company) do lack a fuse, or any other type of protection. This is disgraceful.
+I have been designing electronic systems for decades. I included a fuse of the proper size and speed on both sides of a power supply, i.e. on the main side (220 or 110 V) a slow-blow 2.5x max current, and a fuse on secondary, 3x fast blow type.
+Resettable fuses (polyfuse) arrived on the scene in the '90s, and they were a godsend for inductive loads and generally for high power factor (cos φ < 0.68) devices. I begun using polyfuses in series with the primary of the main power supply transformers too, but I run into problems because the main transformer mode of failure: either the primary winding opens - no problem there; or the primary winding partially or fully shorts. The polyfuse intervene, heats up in few hundred milliseconds and presents a megaohm - level resistance. People plugged in and out the device, noting some reaction, and after few cycles, the polyfuse blew up: they can't be cycled quickly.
+So I went back to slow-blow, sand-filled (arc damper) 5x20 fuses.
+My 2 ¢...
+
+Are you an electronic engineer?
+
+Am I the only one that heard these called "thermistors"?
+
+Hi
+
+Could you test the difference between fuses? Like Hi-Fi fuse vs normal one?
+If there are any differences in measurements and such
+
+Yeah fuses are mostly for your safety
+
+Is this Scotty Kilmer ?
+
+Varistor responds to voltage. Fuses respond to current 
+
+Current and voltage are not the same thing.
+
+ @deang5622  Yes, I'm aware of the difference between current and voltage. My confusion comes from the statement: "What they do and what their name basically implies is that they increase their resistance when they get hotter." An increased resistance, is not what a varistor does? Maybe I'm just ignorant about how a varistor "responds to voltage"
+All in all, we can say then: varistor is an overvoltage protection, while fuse is an overcurrent protection.
+Thanks for the clarification!
+
+Excellent,  for recalling the use of this spare......thanks
+
+Because IMax is the current at which permanent damage to the device occurs.
+
+iTrip is the current level at which the device triggers and goes high resistance.
+
+ITrip needs to be lower than IMax otherwise when the device trips it will become permanently damaged and not resettable. 
+
+And then manufacturer will be sued for false advertising and false claims because the product doesn't do what it is supposed to do, which is be automatically resettable.
+
+I used both for various tests in the video.
+
+ @greatscottlab  was there a notable timing difference between the slow blow and quick blow glass types, I have never bothered to actually compare them.
+
+The solution is to upgrade the mosfets
+
+ @techheck3358  yeah have tryed that but even the stronger mosfets breaks
+
+If you want to limit start up current then check out my soft starter video ;-) You can use a PTC there as well.
+
+ @greatscottlab  I think the best thing for me to try is an autotransformer start.  I already have the transformer. So ordered a delay on dpst relay.  It's only a 120vac motor. Thanks for your videos
+
+No ..to lower start up current one needs to use an NTC. type inrush current limiter...
+
+Close ;-)
+
+Well. That is one way to do things.
+
+You can find it in the description of my eFuse video
+
+ @greatscottlab  The link in the efuse Video is no longer available for Germany
+
+Clue is in the name. MOV - metal oxide varistor.
+Varistor. Voltage controlled resistor.
+PTC's are sensitive to current, not voltage
+
+I've seen lots of power transformers with a thermal fuse mounted in the internals.
+
+He has never heard of a crowbar circuit, so I think the answer is no. I on the other hand...
+
+nope....you're not special
+
+ @ChadLuciano  Good. I always thought Mr. Rogers was off base every time he told me that.
+
+Hi
+
+I can put it on my to do list. No idea though when I will get to it.
+
+ @greatscottlab  Thanks! Would love to see it. Maybe make a complete episode about HiFi(audiophile) products and say which ones work and which ones don't
+
+There's no such thing as Hi Fi fuses....
+but HRC fuses ..YES...( high rupture capacity) fuses....
+f.y.i. back in 90's there was a monthly mag.available.." Control Engineering" 
+in one of those issues " SIEMENS" had the whole " Special" issue covering all types of fuses , fuse behaviour , selection...,mfgr. process..
+ ..etc. all in general..besides some examples/ comparision of their own.....
+perhaps something like that is on internet...
+
+Zhe süüükits
+
+In case no has mentioned this so far, ever, to anyone reading:
+Fuses do not protect your circuit. Fuses protect the wiring in the wall from faults in your circuit.
+In other words: The only thing a fuse protects you from is fire.
+
+Thanks I thought they were just caps!!😂 now I know 😆 I think I can use them to protect transistors from high voltage spikes ????  I have had that problem with my latest project. Great video!! 👍👍
+
+Mini mcb are the best way to resist over current
+
+Do you have discord?
+
+I love how you stole the intro from makers muse and the outtro from demolition ranch.
+
+Electronic version of a bimetal cut out nothing new here.
+
+44 min ago
+
+Siukit. Suirqid. Sewrkid.
+
+Are you sponsored by Mouser? Just asking because there are multiple other sopurces where someone can get Resetable Fuses ^^ (utm_campaign=GS) Pls mark your videos as advertisements.
+
+They are to slow.
+
+Gamer laptop.
+
+It's too late this video would have been helpful 4 months ago
+
+comparing a 0,5A polyfuse to a 1,0A glasfuse is quiet inaccurate :D:D:D... 1,0A on the glasfuse means: 1A will NEVER trip...lol
+
+EDIT: this video is very inaccurate :(
+
+i would use a crowbar circuit rather this device
+
+PPTCs are too imprecise and unreliable for my needs - there are plenty of issues not mentioned here. They have significant derating factors over time, temperature and humidity. They can fail to reset. Don't even thinkg of exposing them to mechanical forces... for example, slight flexing of the pcb an smd pptc is soldered too. These issues might be tolerable if they were user replaceable, but they're not. So I wont be using them in future designs. 
+I have watched the eFuse video, and would appreciate more content on them
+
+Click bait title. It's too bad the obvious information isn't provided until 11:38.
+
+May have been worth mentioning that a type of PTC can be used as heaters, too. These are common on crystals to keep them at a similar temperature.
+
+PPTC FUSE is bater
+
+Wie immer recht gut dargestellt und erklärt.
+In der Muttersprache wäre er viel besser verständlich und auch ansprechend. Leider sind die deutschen immer veranlagt in dummen Englisch zu sprechen. Sie denken sie wären dadurch besser...
+
+Not when the product is in space and you can't reset the MCB.
+
+ @deang5622  not talking about space man
+
+I do
+
+Late
+
+Yep. This video is sponsored by Mouser. It is written in the description twice. I said it in the video, it is shown on screen and the paid promotion annotation is also activated.
+
+Actually never heard of this circuit. Will look it up.
+
+And that because you don't understand the difference between over voltage and over current protection.
+
+So you would use a circuit without knowing what it is designed to do?
+
+Crowbar circuits protect against over voltage.
+Fuses protect against over current.
+
+Do you understand the difference between current and voltage? Current is the flow of electrons (measured in Coulombs per second which equals amps) and voltage is.....
+
+Are there resettable fuses adequate to high quality audio or signal circuits or even to a guitar cable?
+
+What a lot of plastic bags send by Mouser. Why not all the component in just one bag with a bill of materials included ?
+It is obviously that Mouser doesn't care about the environment.
+
+Why does Mouser Electronics have a local branch in my city in Malaysia but still insist on charging me crazy amounts for shipping from the USA? Needles to say, thats where I stopped watching.
+
+I lie, your accent
+
+wait doesn't like every house have a resettable fuse box?
+
+I thought they were varistors.
+
+So it's kinda like a "MOV"  yes???
+
+hmm wrong face in this video or ??? (ment to be a joke regarding another youtuber popping components)
+
+Fuse are a scam. Just another way to nickle and dime people. I just replace all my fuse with wire and no more blowing fuse ✌️
+
+One more drawback to regular glass fuse. After couple of years, socket start to get dirty, hot and problematic. Best is to replace glass fuse and clean metal sockets once per year. When you have this problem because of fuse and socket, it will be last place to look for solution.
+
+The best protection is proper engineering.
+
+this is not a good idea, replacing a 'one time' blow fuse with a resettable one is only delaying the enevidable, therefore increasing the potential of a more catastrophic failure that could destroy the device permanently.
+the whole point of having a 'one time' blow fuse is to let you know something is wrong 'somewhere else' in the circuit and you should trace that down and fix the actual problem elsewhere in the circuit without damaging any other components.
+only an unaware amature would apply this inaccurate information to what they are doing. instead of being lazy, do some actual research and take an advanced electronic's class and stop promoting bad practice and putting people on the wrong path in their carreer.
+
+The comparison to the glass fuse was a bit pointless. Should have picked a 500mA glass fuse, rather than a 1A rated one, as your PPTC was also rated for 500mA....
+
+Why would you want a fuse in the signal line to a guitar pickup?
+
+Are you worried you are going to burn out the pick up?
+
+ @deang5622  Defective pedals and very low quality power can burn multiple pedals, boards or even electrocute you through the guitar. A chain of resettable fuses can save multiple equipments, even your life.
+
+They have a manually resettable fuse box.
+Not automatically resettable fuses.
+
+Perhaps you don't understand the difference between the words "manual" and "automatic"?
+
+No, definitely not.
+
+No
+
+​ @greatscottlab  was ment to be a joke regarding another youtuber popping components
+
+buy a fire extinguisher
+
+ @ChadLuciano  another scam. Water works fine
+
+Nah, total rubbish.
+I have had glass fuses in situ for 5 years, even longer without any issue.
+
+Which is why he specifically said for testing purposes
+
+ @techheck3358  did he say specifically 'for testing purposes'? or did he actually say that replacing glass single use fuses during testing can be expensive and so using a CB type fuse was better but not actually saying 'for testing purposes only'. His incinuation is that using CB type fuses were better over single use fuses and that's what he is selling his whole concept on. Even went as far as to promote a vendor he uses.
+the context of the video went far beyond what you are saying, you're just ignoring that part.
+
+Hold was rated at 0.5A. yes.
+

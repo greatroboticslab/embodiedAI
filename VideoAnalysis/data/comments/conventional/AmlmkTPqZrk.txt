@@ -1,0 +1,78 @@
+I've been searching all over and this is the only video that I could find that tells you how to connect TX and RX on an FS-IA6B to a flight controller. I have an FS-IA10B and an F7 flight controller that has ports (no soldering) for external devices including the receiver. That port has four wires to connect for power ground TX and RX but nobody explains how to connect those four wires to an FS-IA type receiver.
+
+thank God found this video otherwise loosing my hope, i thought i cooked my receiver
+
+I really appreciate this video 🎉❤
+
+this saved me hours!!!! thank you RC channel....
+
+if i become a super cool drone startup founder, you will be credited the most. thank you again, my internet friend. i love your channel.
+
+Obrigado pelo vídeo, ajudou muito 🪽👍
+
+Hello, I bought a FlySky FS IA 6B. I want to specify the pins for the PWM feature. Thank you.
+
+hi the lefeiRC SN-L+ FC says it ppm/sbus and i have the FS-IA6B receiver, it will work correctly if use ppm port to connect them?
+
+Where does the reflex go?
+
+Hey mf fc has output for 8ch ...but my reciever has 10ch...so can i use ibus for 8 channels and  pwm for remaining 2 channel
+
+Pls share the connection diagrams ia6b to fc
+
+Hello ! Great vid. I conect oposite voltage baterry to my fs ia6 receiver AND saw smoke... any ideas for the repair
+
+Assuming u used UART2 for your RECEIVER iBUS, what for did you use a single pin from iBUS sensor slot ? To gather the data from sensors connected to the FC and then send it directly to the radio ? is that right ? 
+While connecting receiver to the FB TX goes to RX and vice versa. Is it the same story with telemetry ? Where should it be connected on FC ? RX or TX ?
+
+HI,
+original flysky documentation an overall internet, there is no mention to use of two uarts. it makes sense, because FC uarts have different RX TX pins, but I still do not understand why, at this point, IBUS is defined as a three wire protocol half-duplex (s-gnd-5v).
+On spracing f3 fc, I cannot figure out telemetry with standard setup, neither with opentx mod on flysky fs-ia6x transmitter. Only radiolink values appear on transmitter fs-ia6x "telemetry".
+
+On another system with frsky taranis opentx stuff, I had no this problem, because since the beginning, all internet info ends up in using two uarts for rx-tx communication.
+The question is : is Inav/betaflight need to use two uarts, or just a rx-tx protocol need ?
+
+At the end of the story, should it be be sufficient to add a fourth wire for telemetry as in video vs standard three wire IBUS,  between ia6b and fc, and configure transmitter and inav for using telemetry and two uarts ? Or do I miss something ? (It is about one year that I own a flysky system that I have to clarify this issue ..., so this video might be "THE LIGHT" :-))
+
+Alfredo
+
+I connected it to battery 3.7v and it exploded
+
+Which one is the ground and + pin is it the first pin or last pin
+
+if you use UART2 en your FC, join the Tx to TX2 in FC, and RX to RX2 in FC
+
+jon 5v and ground to any available pins
+
+Eso ya no tiene arreglo, arreglar la microelectronica es mas caro que comprar uno nuevo
+
+RX goes through PPM, TX goes through IBUS in a different UART; you only get a few data from the FC; this receiver is not suitable for a good ibus connection, use X6B
+
+I found why tm is not fully discovered, Your tutorial is correct ... with another uart tm appears.
+
+It is necessary to configure IBUS telemetry in the inav (I use inav) ports tab on another (a second) uart.
+The new uart tx (fc side) pin must be connected to sensor ibus signal pin on the receiver (I use ia6b receiver) as You describe in this video. 
+Since on the fc electric ground is common, I just added one connection pin2pin to the overall setup.
+Quite easy ...
+
+Flysky documentation is not clear about this, and many infos on internet seem to refer different obsolete hw ia6b receiver models, declaring that telemetry is not available, or that Ibus is half-duplex.
+A big mess ...
+
+Hope this post/comment can be helpful to other guys !!! ...
+
+Alfredo
+
+Do you have the ia6b v1 or v2? I believe v2 can be identified by input voltage being 4.0-8.4v
+
+ @scotthager1718  I see this post only now. I think I have the newest version, but I reflashed both tx and rx fw, and I am using a different setup now, with new opentx from MarianoFpv/Rakish. This Flysky system (ia6b rx + ia6x tx) is a total mess , there is noo way to come out of this .... only trial & test 🙂. I tried, while googling,  to go back in past time : it seems that half duplex tm has not been very much  used and tested aftet its first "discovery".
+
+God damn every one sounds so smart. I just want to fly my drone more than i crash it. PPM works for me, but i never got my receiver and transmitter to work with ibus. This is so obviously dated. Flysky must be a joke.
+
+lol
+
+Same
+
+positive is the upper, negative is the lower
+
+ @FisicayQuimicaCanal  I did oppisit and it exploded
+

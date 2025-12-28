@@ -1,0 +1,1285 @@
+Problem! It's great that you're making videos like this, but I think the power calculation is a bit off. if you're going to deliberately slow the on-off and off-on transitions, then those transition times are durations when the MOSFET will have to conduct significant current while exhibiting significant resistance. This can easily dominate the heat output.
+
+Just the first 5 minutes, and I can totally say THIS is the way to explain things. Clear, simple, direct, practical examples. I've seen tons of videos about the same topic, and none of them were useful at all.
+Man, you deserve credit. Thank you for the vid.
+
+Thank you so much for this. Huge appreciation!
+
+"Theres not a whole lot of in between" - I have observed this on many topics.   It is the curse of the internet.  So much information, so little relevant information.
+
+This is incredible, thanks so much! I especially love how you explain WHY you do certain things. A lot of videos say "oh just do this, put this resistor here" then they move on. But you explain WHY certain things go there. I love it cause it helps me learn!
+
+with videos like these existing, i am convinced i didn't need to go school for this
+
+A concise, to the point explanation in a language the 'mortal' being can understand without the 'gobbledygook' and 'dreaded' calculus. Great stuff, keep it up!
+
+I've never seen a video that holds all the information needed in less than half an hour! Right into the point like an arrow! Well done.
+
+So I needed to refresh myself with a single concise tut on MOSFET's and I found it. Bravo.
+
+The best video about Mosfets driving i ever seen, thanks
+
+Perfectly practical introduction into using a mosfet with MCUs.
+
+WOW. Great job...I learnt without frowning and scrunching up my face. The information just went straight in. I will be watching ALL of your videos. Thank you.
+
+you are the only one that 
+had actual values for the resistors  big help  thank you
+
+perfect intro! beats watching the news :D
+
+Immediately understood this completely. Thank you 😁
+
+Great job, everything is cleared
+
+excellent presentation on how to design with mosfet
+
+That thumbnail is such a nice picture of a MOSFET.
+
+Most in-depth mosfet circuit explanation on YouTube . Great job. Thanks
+
+Perhaps the best instructional video for mosfets really clear thank you
+
+Yes, you're right. I had to limit what went in the video, and was focusing mainly on high-power low switching speeds drives. But yes, I wish I would have at least mentioned the losses during switching.
+
+ @MicroTypeEngineering  Thanks for replying.  I'll just add that I think what happens during turn-on/turn-off is especially crucial to mention, because an unaware designer could be lulled into over-optimism by the astoundingly low on resistance that some of these devices have. That low resistance does indeed mean that your sample device can carry very high current, especially given suitable heatsink. But factor in frequent switching, and the numbers blow up, perhaps surprisingly for some.
+
+I'm glad you two brought this up.  Thank you for the video, MTE!
+
+So should we reduce the gate resistance to speed up the on-off transitions?
+
+ @dwalden74  Right, you would reduce the gate resistance according to the calculations that MTE did in the last 5 minutes of the video. That's assuming the gate driver chip can handle the current pulse and isn't the limiting factor.  But first, you would first want to assess how much heat is dissipated during those transitions to see how fast you need the transitions to be. If you are switching infrequently, then slow transitions are not much of a concern. But if you're switching frequently, then they can easily dominate the heat output. To assess the heat output per transition, conceptually you would need the gate waveform (VGS vs t), then the corresponding RDS (drain-source resistance) vs VGS, so you arrive at an RDS vs t. That's pretty tedious, so instead model it in Spice (for example).  The Spice sim can directly plot the power dissipated per transition (just VDS x IDS). And run  a range of parameter values, as VGS vs RDS is not a tightly controlled parameter.
+
+Nicely done , enough information to get you up and running with pointers to more in-depth detail if desired . I should have watched this before trying the videos by Nexperia or TI , would have saved a lot of head scratching .
+
+ @mineown1861   Same.
+
+Great Point @Graham W  probably the video maker had not even considered this or, he would have at least mentioned it.  PWMing something could easily run into this.
+
+Agreed - the "why" is so often missing. This has been a marvellous video.
+
+Glad it was helpful!
+
+Thanks, glad you enjoyed!
+
+Glad you liked it!
+
+You are welcome!
+
+Very good information, thank you for sharing!
+
+Lord, I’ve wasted so much time prior to finding this extremely-excellent-explanation.
+
+fuck yes dude. your channel is EXACTLY what i've been looking for!! Thank you!!
+
+This is an absolutely superb presentation. This mechanical engineer is now in with a fighting chance of building a simple dc switch which demands effectively zero gate current once energised. Thank you for improving my education with no pain.
+
+Well done ! Can you make one about High Side switching of a inductive load ?
+
+I never thought about that gate inrush current before! And here I was with just a 10K pull down for my Arduino.
+
+This is literally what I needed. Thank you!
+
+This man is gold, great work.
+
+New subscriber.  Very informative video.  Thanks for your work on this.
+
+You're such a good teacher.
+
+The video I’ve been hunting for too long. Thank you, earned a sub!
+
+So nice and educative thanks sir
+
+This has been the most helpful video on MOSFET's I've seen yet. Thank you!
+
+Excellent ❤
+
+Thanks!  Just the right amount of detail.
+
+Clear and refreshing pertinent rational thinking process
+
+Extremely well explained thanks, I still have a long way to go but with tutorials like this half the battle is won
+
+I know virtually nothing about any of this, but I watch a lot of tear down channels as I find it very interesting.  This video made so many things that those gloss over so clear...  such as why there are little circuits with resisters going around the "real" circuits, etc.   THANKS!
+
+I love the way you speak and explain things. Thank you
+
+Great explanation on driving MOSFETs. Thanks !
+
+Wow, thanks!
+
+I completely agree. Too many videos rely on music, obnoxious antics, weird visual effects, and the like. A simple factual presentation that covers the crucial aspects with explanations is an increasingly rare thing, and definitely appreciated.
+
+Yeah I agree this was extremely helpful
+
+holy shit you spared me a ton of time and nerves with this, thank you!
+
+I finally understand why gate resistors are used in uC circuits.
+
+Thank you sir
+I found the video helpful.
+
+I am a huge fan of your design tips
+
+i would love to see more educational and practical videos like this from you
+
+Fantastic practical review. And I red the article in your blog. Its fantastic to. Thankvyou for the effort to simplify that important matter.
+
+This video was amazing! Just what i was looking for
+
+Great Video 👍
+
+Nice bit of theory
+Liked and subbed !  👌
+
+Finally and finally i got what I searched for a very Long time
+
+Thanks your explanation is very good .well done.
+
+This is what i'm looking for 🙌
+
+Great video! Your explanation was so clear. Nice work!
+
+Great video, thorough and clear! Thanks!!
+
+I smell quality here
+
+Finally, one lession with real engineering approach. I forgot how it's looks like.
+
+Great Video !!  Thanks !!
+
+This is pretty sick.
+
+Very well explained. You keep it practical. Nice job!
+
+great stuff! tysm :  )
+
+Thanks for this Tutorial I am grateful for taking your precious  time to make this video.
+
+This was awesome. Thank you for creating this video.
+
+Excellent explanation and especially you give the reason for using the resistors in gate of mos transistors. Thanks for great and concise explanation.
+
+Instant subscribe. Huge help, thank you!
+
+This was really helpful, thank you very much!
+
+I m working as electronic engineer . This video was very informative .Thanks .Expects more videos
+
+Awesome!!! great explanation, please make a vide for advanced calculations also.
+
+wonderfully explained.  you should have more subs
+
+Bravo monsieur.  Keep the good work going. Your prononciation is clear and sufficiently slow so people like me (?) can understand and follow you. I taught at the university level in Canada and I would of liked to have your ease and pedagogic talent of communication during those years.
+
+Nice video, keep it up, thanks for sharing it:)
+
+Awesome stuff
+
+this was really informative
+
+Super well explained. Thanks.
+
+very well explained. thank you!
+
+Excellent sir! And in English, thank you
+
+Very Comprehensive.Good to know the « why ? » of things 👍🏻
+
+Excellent pragmatic presentation. Especially important discussion of gate resistors seldom addressed by many videos.
+
+Great video!
+
+👍👍soo informative. TY
+
+Thanks a lot friend keep up we are with you forever
+
+Great explanation. Thank you for your time.
+
+This is really a handy way to do rough calculations around a power MOSFET. I personally calculate with half of the gate current to get more realistic switching times. Under more critical timing conditions I also consider the internal gate resistance, which is typically in the order of 1 to 10 Ohm. So in some cases you don't need an additional gate resistor or you have to avoid it to fulfill your switching requirements.
+
+I appreciate your work in making this video!  I am new to playing with, and designing circuits with MOSFET's, and this info definitely gives me some crucial knowledge in understanding the what's and how to's for working with them. Fortunately, my circuits are mostly for managing voltage and current regulation, or on/off of higher currents, so, I am not worried about frequency issues, but things like the Rds ON resistance / conductance, and the Vgs ON and MAX are issues I need to grasp and account for, and your video lays down some of that for me. Playing around with some circuit design on LTSPICE,  I've found that they can be used for voltage and current regulation like BJT's, but need to be handled differently as far as the management components are configured. The nice part, is, they have a PTC behavior, so they can be paralleled if needed with less fear of thermal runaway, as they tend to go higher in D-S resistance when they rise in temperature.
+
+I have a degree in EE, but I never had such a clear explanation from any of my professors back in school. Well done!
+
+Wow.. you make things so much easier to understand. You dont assume we know anything at all and its great. Everything you say if it isnt obvious, you breifly explain what you meant in laymans terms. Thank you!
+
+Wow - this is fantastic. So well presented and really useful even for those of us who have been using mosfets for years. New sub for sure :)
+
+Really awesome video.. keep making such videos sir.. your videos help a lot to me
+
+Thank you for teaching that so well. This is the first bit of info I've come across that actually helps me make an informed decision on which mosfet to get. Thank you for taking the time to make this video.
+
+The gate resistor also prevents the hole circuitry to burn down, if the MOSFET gets damaged. It also reduces EMI by slowing the switching process down a bit, resulting in lower frequencies
+
+Great explanation specially the parts where you refer to the tech data sheets.
+
+oh hell yes...subbed.
+
+Thoroughly enjoyed the crystal clear explanation!
+
+Awesome.  Wish I had watched this a few years ago, I'm sure it'll be useful to anyone getting into electronics.
+
+Clear, concise, pragmatic. Love it mate. I learned a lot thanks to you. :)
+
+great intro to the topic
+
+holy fuck dude. i give this presentation an A*. you re pretty damn good at explaining.
+
+Incredible good video. You are really impressive
+
+Thanks for this, it's exactly the level of detail I needed, and from your explanation I can appreciate when and why there are cases where far more detailed selection/calculations would be required. i suspect that for my purposes I'll probably never need more than these basic selection considerations and quick safe limit proximity checks.
+
+Wow excellent explanation! Great job!
+
+Your contribution to this field is really unmatched.
+
+ @jamescollier3  The circuit in this video is using the mosfet at it's most simplest function, as switch.  So normally you would wire your "load" (led, motor, etc) in series with the switch (mosfet).  Mosfets are popular as switches since they dissipate very little power compared to transistor switches. 
+The video you linked to is using the mosfet as an (analogue) amplifier. Without going into the many different amplifier configurations (some which have the speaker in series with the mosfet) the results, conditions, and calculations are different.
+
+you probably don't have a degree in EE then.
+
+I appreciate the words 😊
+
+Nicely explained
+
+awesome content!
+
+Thank you very much. very clear and instructive video!
+
+Thank you! Great video!
+
+BRILLIANT !
+
+Very helpful thank you.
+
+Im so thankfull to have found your channel
+
+As always; excellent.
+
+Super-cool!
+
+Bro thanks <3
+
+Very good video. 
+Thanks
+
+Hats off for well structured and crystal clear explanation.
+
+well done man!!!
+
+It's so difficult to read a  data sheets and understand the values you made that easy, thank you !!
+
+Well explained. Thanks sir
+
+I've been doin this a while, but sir, this was clearly and concisely explained. Kudos. Subbed.
+
+this is a wonderful explanation! the simple videos you mentioned make it seem so easy to drive but the other videos make it so complicated. you managed to find whats important and relayed that info in a clear and concise way. 
+
+I am designing a 9v battery to usb charger and i wanted to add undervolting protection. i found a very low power comparator that has an internal reference that makes it easy. the problem is my buck converter doesn’t have an enable pin. so i have to use something to turn the circuit on and off. i didn’t want to waste power driving a bjt but mosfets seem so complicated. now i understand what to do.
+
+Very useful video on MOSFET. Thank you for covering the datasheet  parameters and their meaning. Thoroughly enjoyed it. Thank you.
+
+Thank you for this tutorial on Mosfets. Posting a further video on IGBTs would be helpful especially because  according to my experience IGBTs are more difficult to work with.
+
+I liked your video. Excellent explanation and calculation. I subscribed to your channel. Thak you for sharing.
+
+You are welcome!
+
+Glad it was helpful!
+
+Now that was an excellent explanation!  This is probably one of the clearest and and most thoroughly explained videos about any electronics topics that I have ever seen (and there are quite a few great ones out there).  Very well done.  Thank you!
+
+Awesome👏🏻
+
+awesome, great presentation!
+
+Great video.
+
+Excellent overview! Thank you for doing this.
+
+very helpful thank you jim peterson
+
+This showed up in recommended channels....how did it know I was working on a large smps for a power amp with blown MOSFETS at that moment.  It was a design I did and surely the YouTube masterminds were trying to tell me something. Very well explained and the production values of your videos are welcome indeed. Thank you.  Why only 6k subs? It is 6k +1 now.
+
+Thank you so much for such a great explanation, I never had this clear idea before. really useful. 💯
+
+Great explanation !! Thanks a lot.
+
+Thanks sir. Great video..
+
+I learned so much about the mosfet. Thanks a lot for this video. Gtz from Amsterdam, The Netherlands.
+
+Great video. Suscribed :-)
+
+Well explained sir
+
+Very good video.
+
+Nice content, thank you! Love the format, simple and calm explanation - that really changes from those crazy super-fast videos out there on Youtube ;) 
+Cheers
+Simon
+
+Thank you. Well done. I like how you slow down as you drill down through layers of abstraction. I also like the orders of magnitude short cuts. As in, I don't actually know how far it is to Jupiter but, I won't be driving there, no need to get hung up on the math at this point.
+
+Easily, by far, the best guide to real-world use of MOSFETs on Youtube. Not a home run - a grand slam. It absolutely accomplished the goals stated at the start: genuinely useful, while steering clear of the weeds that others let their viewers/students get lost in. Definitely sets the new high-water mark for the MTE channel. Looking forward to whatever comes next! Thanks much.
+
+Bloody amazing.
+
+Very well explained. Ist time getting to know what a datasheet mean..
+
+Very beautiful explanation sustained by a clear and slow speed language! Thank you!
+
+Wow, thanks!
+
+Wow, I appreciate the comment :) Yeah, I don't know how I can follow this one up haha!
+
+Glad you liked it
+
+Thumbs up.. 👍👍
+
+Thanks - great job
+
+Great job
+
+Hi i just found your channel. Really great stuff!!! Thanks
+
+That's the best video i found about  the subject in YT. Just one thing, why don't you use SOA graph (Fig 10) to select the MOSFET ?
+
+Thanks for the explanation, Now I understand  working principal, the design parameters and calculations.
+
+I really appreciate you taking the time to thoroughly explain Mosfets and how they work in conjuction with the MOSFET Drivers. As a controls engineer I can say this was very well explained and simple to undertsand. Trying to research everything i need so I can design a BLDC controller for  a special project I have  jumped into to keep my self busy.
+    Thanks Brother.
+
+Man you deserve more views
+
+Yes I really enjoyed.  Thank you.
+
+You did exactly what you said, this is super helpful. Thank you.
+
+great stuff! been learning how to repair electronics mainly car amps. I have mastered the art of blowing them up so i figured it is time to learn how to fix'um and sense it's just for fun, i am getting my degree here on YouTube. so i gotta say i have watched a bunch of electronics videos most of witch if i didn't know better i would of sworn they where in a different langue then English. but i also would have to say most of this video, if not all of i understood an learned a bunch. i appreciate you sharing your knowledge an more importantly, to me anyways. in a way you don't have to be a electrical engineer to understand so thanks an cant wait for another.
+
+What I exactly needed. The inbetween of hardcore calculus and "voltage to gate turns it on". Thanks
+
+I am glad I watch this video, it's amazing. For a complete explanation about the power losses, it would be better to include the switching losses. Thank you very much for such outstanding explanations.
+
+great video!
+
+I am glad to meet you. Seriously. Excellent work. Very useful to me. Thank you very much.
+
+Excellent tutorial. I'm going to search your channel for bootstrapping n channel mosfets.
+
+Thank you for doing this
+
+Awesome! I feel like I actually understand basic MOSFETs now!
+
+fuck yeah! thanks bro!
+so thankful for this information that im several orders of magnitude beyond thanks
+
+Really great video. You sir have gained followers ❤
+
+I appreciate it!
+
+Glad you enjoyed it!
+
+You're so welcome!
+
+Awesome! That's what I was shooting for
+
+Thanks for the kind words!
+
+Me Too!!
+
+Only you could have touch based on miller capacitance
+
+so nice sir thanks
+
+Its a beautiful thumbnail !! and very useful content and thanks for the link to your blog. Stay safe.
+
+well done!
+
+Congratulations from Brazil..
+
+bellissima spiegazione,complimenti.
+
+This video is enough for every MOSFET designer. I appreciate for your efforts. Please, make a video on intricate-accurate MOSFET calculations.
+
+This is nice to know if I want to use the high-current MOSFETs I have for modding flywheel dart blasters with a microcontroller for, say, a select-fire system.
+
+Good content well presented......more on heatsink design would be nice
+
+Nice wish I knew this years ago 🤣
+
+I've watched this multiple times, and it has helped so much! They explain components and pcb design tips really well! Thanks so much!
+
+This video should be hyped to heaven by the almighty algorithm
+
+Super happy I found this channel! Will binge every vid soon I think
+
+Excellent. You commented on increasing the gate resistor. The thing to watch is that by doing this, you increase the charge time and the amount of time the divine is in linear mode. During this time it is dissipating much more power. If the gate resistor is too high, it will increase the delta T.
+
+Good video, some of the comments were somewhat belabored regarding the transition  of the wave form.
+
+So nice
+
+You are a real Guru .thank you so much for this
+
+Great video, thank you ! Also, can you please make a video comparing bjt gate-driver and optocoupler gate-driver. Thanks in advanced.
+
+Really amazing
+
+Thanks! I was hoping to see more nuances into how to ensure GS voltage as:
+ DS Voltage drops (equalizes)
+ Inductive spikes on S side upon Gate closure.
+
+great video thank u
+
+You're very welcome!
+
+Welcome aboard! Enjoy :)
+
+I certainly wouldn't go that far! Thanks :)
+
+Amazing how many EE's don't know how to decode any component's specs. I worked with a lot of just-out-of-college EE's that would read a component's spec and think they could drive parts beyond their real specs using one or two maximum specs as their only guide while forgetting that everything has to be observed. Just because a part can handle 10 amps and 100 watts, doesn't mean you can drive it to that 10 amps at any voltage. And watching them burn up circuits (and their bench tops) was actually funny... Thumbs Up!
+
+شكرا يا استاذ
+
+Great video with excellent explanation. Learnt more from this video than the 20 previous ones combined, subscribed!
+
+Great video buddy.
+Keep it up.
+Thank you.
+
+Could you make more video about the gate driver circuit design please? like DPT, active gate driver and so on. your video is really good. clear and easy to understand. Thank you so much.
+
+good. very similar to  IGBT 's      ......insulated gate bi-polar transistor...
+
+One other consideration with regard to the gate resistor is the situation where the MOSFET fails,  typically shorted.  In that scenario you have a pretty good chance of applying Vdd to the microcontroller pin that's driving the circuit,  with usually unpleasant results.
+
+Good talk.
+
+Hi, I've worked with electronics from the early sixties, learning on crystal radios, and building from there, out of hobby books, spent two decades in the Marines in aviation electronics, communications, navigation equipment, and never got the detailed depth of understanding you've given, outside of the exact aspects I worked on, and had specific engineering problems with, and got an engineer involved.  You've done a great job of showing the reasons for selection of specific components, values, for a rather general application, one that varies widely, but not such that it negates the broad application.
+      I've built such driver circuits from kits, without knowing the reason for selection, and I've built them out, trial and error, and didn't know exactly why they failed, or why this one succeeded, or how much by.  A very professional production, without too much detail on this specific motor application.  Thanks, still trying to learn.  Semper Fidelis
+
+You have convinced me to buy a 300 watt mosfet trigger switch/relay already assembled for $2. Great explanation tho.
+
+This is perfect thank you so much!!!
+
+Excellent. Just the right about of detail. Thanks.
+
+I know this is an old video but you are the first ever educational channel I have subscribed too cause I feel like learning from this channel is actually interesting and informative.
+
+Great video, subbed!
+
+Thank you for making this video and explaining things how you do. I was having a problem with ringing in the circuit and I was thinking i was going to have to add a RCD clamp and snubber circuit, but adding a resistor to the gate solved the whole issue! I was kind of confused why it was ringing since my load is basically resistive. Anyway, thanks again!
+
+Good
+
+Thank you for this very clear, practical and helpful explanation.
+
+clear and detailed explain, thank you a lot.
+
+Helpful video. I've not used a gate driver yet, but thank you for the part number.
+
+For inductive loads, generally, I don't trust the internal diode. I used an external Diode for the back EMF spike, Also, I've seen MOSFETs use not a regular diode in a flyback configuration, but instead Zener diode, likely to clamp for static only. For small stuff, a 1N4001 diode would likely protect your MOSFET. I also used a STTH812 ultra-fast diode, but that's using a sledgehammer for a tack. 
+
+Traditionally, I've use NEC PS2501 optocouplers for isolation, but lately, I am leaning toward optocouplers with a Schmidt trigger, built in, as I don't need the nice linear region for switching.
+
+For logic-level MOSFETs, I' like the IRL640A They are reasonably priced. Compared with your application/choice, the IRL640 is higher voltage, lower current, lower Rds.
+https://www.vishay.com/docs/91305/sihl640.pdf
+
+Amazing! Many thanks.
+
+Awesome, thank you!
+
+Thanks, will do!
+
+Woah, thanks a lot for the words! Really appreciate it
+
+ @MicroTypeEngineering  I never got formal training, I learned from doing, and while I got schools in the Marines, it was specific to equipment, and the general electronics teaching was far below what I'd accumulated by personal study.  Our work always was too much to allow meandering into theory, except for the occasional really odd problem.  I've learned more about specifics, in the last year, online, than all my previous years, and it helps in design, less "trial and error".
+
+You're welcome! Glad you enjoyed it
+
+Thanks for watching!
+
+Excellent job, bro. Are there oscillators that work on about 150MHz? What is max frequency of your gate driver circuit?
+
+Thanks for the sub!
+
+Glad you enjoyed it!
+
+Glad you liked it
+
+This is the last MOSFET video I'll ever search for. I just wish I'd have found it 6 months ago. I've been spinning my wheels. You're smart engineer and have a gift for demystifying the black magic that all too often bars people entry from realizing their applications.
+
+No BS, no stretching, no clickbait titles, no grandstanding or egocentric self promotion.
+
+You got yourself another subscriber.
+
+I have watched lots of videos on mosfets and yours is the most succinct and easily understandable with just about everything you need on one page that you can see during the explanation. You crystalized quite a few things for me. The only thing that was not mentioned was about use of zener diodes to pull up voltages but you may cover these in another video, and possible use of a transistor to be triggered to charge up the gate capacitor.. The gate driver IC I guess is most useful for driving higher frequency as it allows higher currents for charging it. I was not sure why the gate driver is better than use of these. Is it because it simplifies the pcb layout, as you still need other components?
+I was trying to get to grips with them for making an h bridges for an initially rc controlled (pre automated) lawnmower with  brushless motor 40v/(?100a from an existing possibly failed esc) and dc brushed wheelchair motors.24v 250-340w. Your video will helped look to do this rather than buying expensive driver escs such as the sabretooth 2x60 as well as make a lawnmower esc to fix the lawnmower which uses 60v 100a mosfets inside he box.
+
+Thank you for the video, all the questions I had, Answered.
+
+I tried asking chatGPT for these, but all the answers were useless.
+
+Excellent video! Liked and subscribed, thank you.
+
+Very good explanation.  Thanx.
+
+شكرا لكم
+
+Thank you for the excellent info. I have subscribed.
+
+Excellent video mate, keep them comming, very well explained. Subscribed!
+
+Thanks.
+
+Excellent information and presentation. Thank you.
+
+You Tubes algos working well . Exactly what I was looking for , and love the K I S S approach . Thanks
+
+Great
+
+I've back away MOSFET transistors as I wasn't sure how safety bias then.
+
+Thank you Thank you So much. Great explanation on a topic of so many whys.
+
+Great Great Video
+
+The depth of the theory dive is predicated upon the MOSFET's application. Speed AND power takes some theoretical application. This discussion is basically N-Channel grounded-source applications.
+
+Awesome Explanation! 👍👍👌👌❤️
+
+Very well understood, Thank you Sir!
+
+Brill !!! :-)
+
+Just saw the comment below on hooking Mosfets up in parallel.  Circuit would consist of two,three, or more Mosfets with all Gates joined, all Drains joined, and all Sources joined, apparently for driving really HUGE loads that one Mosfet could not handle. One YouTube video regarding this is called "Issues on Connecting MOSFETs in Parallel" and addresses some of the problems. It seems that the electric vehicles would have to have multiple banks of Mosfets just to propel the vehicles down the road. Would like to hear your thoughts on this.     Thanks again. Great videos.
+
+Woah, thanks for the kind words! Though, I am working on a part 2 of sorts, so you might need to add another MOSFET video to your list! ;)
+
+Thanks and welcome!
+
+Glad it was helpful!
+
+Awesome, thank you!
+
+Thanks for the sub!
+
+Glad you enjoyed it!
+
+Glad you enjoyed it!
+
+Thanks Thanks!
+
+Thank you! 😃
+
+You are welcome!
+
+I don't have any direct experience with FETs in parallel, but typically the reason people shy away from parallel components is that they won't react the same way to the current across them. In some use-cases (fuses), parallel components are OK, since the resistances even out due to heat. But FETs can have their resistances decrease with heat, causing a runaway condition. (I know Vgs decreases with heat, not sure about Rds off the top of my head.)
+
+I love you man. I'm a hillbilly and my take away from this would be use a great big automotive mosfet. I'm building windmills and interrupting things. I'm using slow-turning DC permanent magnet motors that don't put out much voltage. However if you have six small permanent magnet motors rotating and pushing a current then you interrupt the current the voltage will Spike up to just enough to get through the wires and charge the battery and maybe knock off a little sulphur. I'm looking for something with three or maybe six permanent magnet motors in series. All of the rotors are direct drive so when the wind is very slow they pulse and put out very little. When the wind is very fast they might be able to put continuous current at charging voltage from each motor. If you weren't switching power supplies, you need to have a good gate resistor and a good tie-down resistor and a good source of current to short the mosfet and then stop shorting the mosfet, and you can catch that voltage Spike. Just go ahead and put a great big fat heat sink on it and be proud of your heat sink. If you were only buying one and all you have are unknowns in a windmill electric situation you might as well go fat. I always did wonder about that top number being so big. Thanks again for letting this out I'm going to watch it again and think about how this works with my designs.
+
+Very good instructive video. Information I've been searching for in trying to improve my circuits. Thanks much for making this.
+
+Excellent videos.
+
+Golden
+
+👍👍👍
+
+Finally
+
+Great video! Also the max power and thermal resistance is related. 375 Watts * 0.4c/W gives junction temp rise of 150A. If case is held at 25c then junction would be at 175c which is max junction temp found in datasheet. Also at 375W and 338A then voltage would be 1,109V and that gives RDS(on) at 3,28mOhm which probably is the RDS(on) at 175c junction temp although I cannot find it in the datasheet.
+
+Superb instruction, thank you.
+
+Thanks for the video, Can i know  what  simulation software are you using?
+
+I just ran into a circuit where I run 2.5A coil with my mosfet and all is good. If I disconnect and install a 12A coil, my mosfet will not turn off. I have gate resistor, resistor to ground to drain it, but it must be picking up EM interference from my power cord because once I pull the coils power supply off, the mosfet turns off. And the power supply is still green despite being off, so it had capacitance to supply the coil, the coil just never took it because the EMI was gone the split micro second I uplugged the power. After playing around with all my power cords and making sure they have no wraps in them, this seemed to mostly fix the issue. It occurred less frequently and appears to be solved by directly grounding the gate so that it immediately drains the gate and it can't hold any charge in the gate line.
+
+Hi, could you do similar tutorial for mosfet snubber circuits?
+
+👍
+
+Thank you for sharing...
+
+I never used such kind of MOSFET over some kHz of switching frequency for  PWM driving purpose. Without a good ESD filter I suppose you are going to  measure electrical noise everywhere around the circuit.
+It would be nice to speak about some designe focalized to reduce these issues.
+
+  By the way: nice video, I like the way you speak slow and clear. Thank you.
+
+😎 video
+
+Please make video on simulation of DRF1400 circuit
+
+One has "Turn-On Delay Time", "Rise Time", "Turn-Off Delay Time ", "Fall time" to consider too, with the Rise/Fall times being the ones that the most significant power loss happens. E.g. the IRFS7530TRL7PP datasheet places the total of those timed at 373ns (for over 3A as the gate charging current) - which places the absolute upper limit on the switching freq at 2.6MHz.
+
+Great, these kind of videos are really needed. +1❤️
+
+Excellent thanks.
+
+thankyou man
+
+Great to hear!
+
+Glad you like them!
+
+You are welcome!
+
+Thanks for watching!
+
+Glad you think so!
+
+ @MicroTypeEngineering  I agree! For beginners like myself, these kind of videos are really helpful. When people actually explain what different parts of a datasheet mean, that is so useful when I've never used a MOSFET before. And now I know I should go back and modify the one thing I've done with MOSFETS just to be safe.
+
+ @MicroTypeEngineering  when I was starting out  with electronics, there were not much resources without same boring books, which were not very good at developing interest, now a days I am happy there are people like you who knows what they are talking about, it helps in recapitulation.
+ I have seen people to regulate the text book knowledge or some one else's writings, if you ask something to them, you are unable to to get a  clarification.
+ I wish you prosperity.
+
+Would love to know the relevant metrics for mosfets operating in the linear region.
+
+No problem!
+
+Thanks 👌 New subscriber👍
+
+Greetings from the UK.
+This was a most interesting and informative video thank you.
+I will now be subscribing to your channel
+
+Awesome video with such a great explanation! Is there a simple calculation you use to determine what wattage is needed for each of the resistors in your logic level mosfet example (i.e what Wattage should the 100 & 10k ohm resistors be)?
+
+Hot damn the "algorithm" works! Youtube suggested this out of the blue and now after your explanation, I'm ready to go ahead with a project I put on the back burner because I was hesitant to commit  on the power mosfet section. Damn your style is good...
+
+How did y figure out the frequency is 2hz can u explain 17:44 ....
+
+Came here from Greg's Automobiles and Airplanes.
+
+What is the software you are using to demonstrate circuit in this video?
+
+What a good overview - it covered just about all of the essential design considerations. About the only comments I might have added is that driving inductive loads needs an extra couple of things to take care of; and that because heat flows through thermal resistances in a very similar way to how current flows through ohmic resistances, the bulk of the 35 C temperature drop will be between the case and the air - which means that the case will be quite close to junction temperature, i.e. up to 60 C, so try not to touch the MOSFET unless you decide to put a decent heat sink on it!
+
+Thanks for the good video. What other considerations for running 5 or more mosfets in parallel? As in a lipo battery spot welder.
+
+You are getting closer. You should consider the turn on current at just 10 amps with the inductance from the 12 volt source considering the clamping load current diode's reverse recovery and also look at the forward recovery of the pn clamping diode. A 1n4004 can have 20 volts forward recovery and a very high reverse recovery. Most mosfets have a protection characteristic of avalanche that protects a lot of shortcomings. Also the gate resistor should be as close to the gate as possible in order to prevent a colpits oscillator from forming at high currents.
+
+thank you really helpful ...
+
+Thanks for this excellent video. My question : how can we replace the relay in a battery charger by one or two MOSFETs? I imagine a P MOSFET mounted as a polarity protection and directly charging the battery through a schottky, and the voltage of the battery sensed by a BJT thru a voltage divider that will block the MOSFET as the battery reaches 14 volts or so. What would be the values of the components : transistor (N? P?), voltage divider... Can you make a video on that? Thanks once again. You are great.
+
+It would be great to have a video that takes this a little further in the design differences of IGBT's.
+
+As always great video! I missed you :)
+
+Thank you for this usefull tutorial.  Could you tell something about switching-losses? You described losses usung RdsON but if I understand correctly during switching, channel resistance varies from RdsOFF to RdsON and ofcourse power dissipation should be much higher.
+
+I would appreciate if you can enlighten me on full bridge FET  configuration with the driver circuits
+
+fantastic video really appreciate this. What is the program you’re using for the schematics please?
+
+KiCad?
+
+I like the info here. Thank you. It helps me understand a little more than I did before watching. However, why would you need to choose a power mosfet if you’re not building a voltage regulator?!? Also I’ve never seen that circuit before. :(
+
+This is a very helpful video. Exactly what I was looking for. One quick question though how does 25 amp  squared * 1.4 ohms equal 0.8 watts? Is there a reason why you divided by 1000 ?
+
+This is a great video, thanks! I might have missed something, but I use PSMN1R8-30PL and IRLB3034PbF for switching DC motors at 20-30 A average load using logic level input. They've got almost as low RdsOn as the standard one you use as an example, and much lower gate charge. The rest of the parameters are similar. What have I missed?
+
+Thanks for the sub!
+
+Awesome, thank you!
+
+Hah! Praise the algorithm! Thanks for the words :)
+
+ @MicroTypeEngineering  I'm going through your videos ,😀 However do you remember if you have one that explains a good LED PWM circuit? Lots of people online have very different views on how it should be done.
+
+Yep, agreed!
+
+Glad it helped!
+
+Honestly, I have very little experience with IGBT's, as I always default to FETs. If doing really high-power designs, that's when it seems  like IGBT's become the only option.
+
+Thank you! Hadn't seen you comment for a bit, wondered if you were still around! You still want that circuit reviewed, or any other? Go ahead and shoot it over if so.
+
+ @MicroTypeEngineering  mine? Why not, but I will send you other one, my OpenTacho project. Say if you're interested in! Why I wasn't commenting around? Work, work and work lately, so... But I'm still here!
+
+Thanks! I completely forgot about that t = Q / I calculation. I must have learned about it at school but I guess it was getting a little too abstract for me that day 😅. But I guess that means in logic circuits where you have an audio codec chip for example, the MCLK line can easily have a signal of around 12-25 MHz. In order to prevent ringing, you'll still want a resistor there, and maybe a couple pF of capacitance as well.. But the resistance should be calculated pretty accurately I guess. Still, I see people giving I²S (Inter-IC-Sound protocol) demonstrations with simply using jumper wires on a breadboard.. So maybe it's not that important after all. Or do logic inputs like that just commonly need a much lower charge to register a logic '1'?
+
+Yep these articles told me to apply voltage to turn on and there were many problems
+1. My mosfet was not logic level
+2. It was N channel and they did not explain the difference It's just a switch
+
+Thank you for the practical video.  one question: to calculate the power  why is 25A considered?
+
+Answer pls 
+Assuming a linear fall of voltage in a transistor at turn  on, falling from V to zero in actime t2 , derive an expression for the snubber inductance L which will delay the rise of current to its on state value of I in a time of t1. Derive expressions for the switching energy loss and the inductor energy , in terms of V,I,t1 and t2 and show that the overall loss will be a minimum when t1=(2/3)t2
+
+Excellent! .(and thank you).. Now please make an equivalent video for IGBT High power applications
+
+Very nice.. can you change the duty cycle ?
+
+Information is good enough to design, Thanks. Instead of Microcontroller input can we use potentiometer input to drive a Mosfet so such circuit is possible?. Thanks.
+
+Awesome stuff!! Anyway you can go over a high side switch?
+
+Just what i needed
+Liked and subscribed
+*edit*
+07.00  with that 10k resistor,what is the discharge time?  the Khz?
+
+I was kind of hoping you would show an H-bridge circuit. Could you build it with four N-channel mosfets?
+
+great tips thank you very much! I'm making an H bridge for a robot the video came in good time, I would like to see more about power control of DC motors and protection systems, greetings from Brazil
+
+great video! explaining whats matters in the datasheet really a life saver. keep it up! 
+
+
+p/s: any consideration on making videos on SMPS maybe?
+
+We cannot expect  we get all trade secrets  on the net for free. Everyone  hideouts  important  aspects  as copyright.  We just get simple  clues.
+
+17:40 Can we use lower frequency like 1kHz to gate? what will be the effect on working?
+Thanks for a great video and explaination !!! subscribed ❤
+
+Thanks for the great video on MOSFET drive circuits.  I would very much appreciate your opinion on what seemed to me, a simple application.  I need to discharge a small capacitor (less than 0.5uf) from 300v to gnd. at about 100Hz.  The norm here is to use an SCR with it's high surge rating, however, the latching effect of an SCR has ruled this out as the charging current (less than 30mA) keeps it latched.  Also I can't insert a series resistor as I need a fast discharge.
+Would there be any disadvantages for a MOSFET in this capacitive switching application?  An IGBT doesn't seem to last long here.
+Thanks very much and a 'thumbs UP and subscribe'
+
+Wonderful video sir! I'm brand new and trying to learn. Would you recommend a gate driver for something like running a outdoor LED light? I am working on a project for my home built RV and I'm designing a switch/remote relay for my external LED light banks. My thoughts after your video are that I should use one versus just straight N mosfet. But would like clarification if this is high enough power requirements to need such a design. Thanks!
+
+Please be mindful that the decrease the turn OFF times is to drive the gate negative witth a class B drive amp to discharge the gate capacatance. if not then you will run into problems.
+
+Such a great video, Thank you.
+I do have a problem. I am using a 3.3v logic devise.
+Will the ncp81074a work with 3.3v logic?
+
+Man you have some awesome content, too bad your audio is not as good. I'm not sure what you're using for Mike and whether you've edited the sound, but it don't sound too swell on earbuds. I know it's tempting to try to clean- up some noise etc, but just a good condenser desktop or lapel mic should do the trick ;)
+
+Besides everything. You are so cute; good powerful vocal. i liked this presentation. Thank you.
+
+:) Glad you enjoyed! Honestly, I haven't done much (anything) with an IGBT. Never had a use that I couldn't use a FET instead.
+
+I need to do that, I've been getting requests for it lately. Thanks for the suggestion!
+
+Thank you! I'm actually planning a project for a high-power brushed DC motor driver. Will use discrete MOSFETs for the H-Bridge :)
+
+Probably won't be ready to film it for a little while longer, but it is coming!
+
+ @MicroTypeEngineering  
+great! I'm waiting for that, good luck with the project
+
+Thank you :) I have thought of it, but honestly, they're not a specialty of mine, and I fear I don't have enough knowledge of the intricacies of them to do the video properly.
+
+Very good Vid, nice explanations, I wish I could have watched this 30 years ago. I think some power Mosfets like the IRF3205 and  irlb8721 will happily switch at 5v and low RDSon, not as low as 1m Ohm  but maybe 10 to 20 m Ohm and source certainly a few amps? My only criticism of this video was the audio, its clear but fades in and out quite a bit. I never paid much attention to switching speeds as mine are always so low its never been a problem but now you have provided me with a good explanation I shall work them out ! Thankyou for your good work.
+
+Can the mosfet gate resistor be placed AHEAD of the gate-driver??...or must it always be directly connected to the mosfrt gate pin?
+THANKS MUCH FOR THE VERY INFORMATIVE VIDEO!!!
+
+Short and sweet explanation, but me (as someone without any experience with MOSFET) has two small remarks ?
+At 02:50 :
+"... the gate to source voltage, once you get below 2.1 Volt, the resistance from the drain to source decreases exponential."
+I think should be:
+"... the gate to source voltage, once you get above 2.1 Volt, the resistance from the drain to source decreases exponential."
+And this:
+" 'Silent' PWMspeed control at an ultrasonic frequency of 20 kHz".
+Ultrasonics may start theoretically at 20 kHz, but humans and dogs and other creatures are surely able to hear these frequencies, although it is not part of the bandwidth of our ears. But when the power is high enough we are bothered by it, sometimes without us able to pinpoint the source. So making these designs at least at 30 or 40 kHz is (in my eyes) a must.
+
+Can we use that NCP IC (MOSFET Driver) to drive Solid State Relays ?
+
+Why did you connect the gate pull-down resistor after the gate in-rush resistor, and not before it?
+
+Awesome.. Can you do video about MOSFET as regulator. Thanks
+
+Can you show some example for P-channel MOSFET? and do I need gate driver for that? I try to design a MARX generator with P-channel MOSFET and controll it with 3.3V signal from FPGA.
+
+I really appreciate your videos. Do you by any chance have anything related to cell balancing? I watched a one-cell battery charger you have. Can you do a multi-cells circuit? I know cell balancing is pain but it would be interesting to see one from you.
+
+I love this stuff. I am a noob to it but I am learning. I have 4 APC Pro1300s i want to use the components to make a pure sine wave inverter. Whar program do you use for schematics?
+
+Is there an explanation on how making phases with mosfets a motherboard has 3 phases or 6 phases connected with each other work together as one to make more power delivery?
+
+nice video i have a question for you if am connecting the mosfet to an optocopler and VDD is 15 volts on the optocoupler , when i connect the gate to the mosfet the signal on the gate it goes under the gate needed voltage why ?
+
+Good video. I have to relearn a bunch of stuff. I had a bad heart attack causing hypoxia (lack of blood flow to the brain). My memory is like Swiss cheese. One thing I remember is that I used MosFETs to power 36 V motors at 36 A. I used a Flyback/Free Wheel diode across the motors but was burning holes in the MosFETs. I was operating at about 20,000 to 22,000 cycles per second adjusting the duty cycle for speed control. What I had to do is use Shottky fast acting diodes. 
+
+Would a capacitor paralleled with the motor help prevent holes being burned in the MosFETs? I also have MosFETs rated at 120 A. I can't find the video again, but someone said I can push 120 A continuous through the MosFET in a TO-220 package. I have difficulty wrapping my brain around 120 A through a TO-220 package. Is 12 to 15 A more realistic, using 3 MosFETs paralleled for each motor. Or with 4 motors, can I just parallel 12 MosFETs to drive all four motors?? I am using a PWM to drive the gates.
+
+Thank you for this video. I hope you can help me out:
+
+I'm going to use 12V supply to power an Arduino.
+I need to switch several high power laser diodes (2 V, 3.5 A) on and off and I have to be able to modulate the power from the laser diodes. If I want to control the MOSFET with PWM, can I still use that driver and MOSFET to control de current in the diode? 
+If not, what driver and MOSFET do you recommend? 
+
+I assume I will use 12 V to power the driver and the MOSFET gate, but I need 2 V for the laser diodes.
+
+Interesting! What do you think about IRLB8743PBF as a logic level mosfet? They go for cheap on ebay and they have an RDS on of 3.2 mohm and a junction to ambient of 62c/w.
+
+Very informative. Thanks so much.
+
+Another video talked about average voltage to the gate via an Arduino analog output. That doesn't seem correct to me, as in an ideal situation you're simply passing a PWM signal from a microcontroller on to the MOSFET (possibly via a gate driver), which then replicates this same PWM signal as closely as possible. This would effectively be an average only on the final output.
+
+Or at least that is my understanding. Does that seem correct?
+
+You calculate and say the temperature rise in degrees, but how to calculate in what time it will reach that deltaT? How fast will it reach that temperature?  Thank you so much?
+
+9:27 What's slow? The driver? The load?
+
+Beautiful bhaisaab Hindi mai bolo bhaiya
+
+Do you have any advice for a low noise one for audio circuits?  Think of a Fetzer Valve application or something for microphones or amps.
+
+What kind of logic mosfet would you select for automotive application to turn on the 12v lights. It’s different from your example, the light  needs to be connected to the ground, so to the mosfet source rather than drain. Need to control it from arduino. Do you have circuit examples by any chance? Thanks for great  videos.
+
+Totally agree. Logic level FETs have come a long way. By far I use them more often than standard 10v FETs. But when you need the lowest Rds or gate charge, you don't have much of an option!
+
+Thanks for the words, and yeah, still trying to get audio dialed in!
+
+Hey thanks! You mean as a switching voltage regulator?
+
+Negative. That is one realm that I've never actually done a design for.
+
+Text on the youtube hide the circut
+
+May I know at the time of 13.49, when calculating the power dissipated by the MOSFET, where to get the current of 25A?
+
+Hi
+How to calculate the life time of the power mosfet?
+
+how you chosen the current value to be 25 amps please explain
+
+Excellent overview, concise and practical, and given that the video was just as you described, it left nothing to be desired. I appreciate the switching speed bit since that ties into some of my design interests of transformers and core material. I would love a part 2 that covers the square/impulse harmonics when driving one much harder(faster), and any other knowledge you have to share.
+
+High frequency power transformer design principles reference material covering winding configurations, skin effect, saturation, core configuration, and controlled saturation, etc. would be appreciated if anyone's got some to share.
+
+I love finding great creators to subscribe to, thanks for sharing!
+
+Hi, how was the max switching freq of 2MHz determined?
+
+Do you think that I can drive an ultrasonic transducer at 40khz with the circuit at the end of this video? Btw, I like the way you explain things for noobs like me, thank you.
+
+So u r doing round trip of time to calculate frequency how it is. Are u doubling the value how u say it as Meha hertz please explain
+
+Thanks for sharing. Very informative with practical calculations. Could I use part of this video as reference on my future YouTube content especially when involved with MOSFET. ECErcuit.
+
+Would it be better to put pull down 10k resistor before 100hm gate resistor since otherway around like in the video, that acts like a voltage divider that gives out Vin x 10/10.1
+
+so what your saying is if i turn on a io pin (connected to gate) it will turn on the source (led exe.) connected to drain, is there a easy to follow video on calcating heat dissipation of a mosfet and let's say you're load has a back ems issue could you use a flyback diode to prevent the ems from dystroying the circuit/load?
+
+Which software are you using in this video?
+
+A very helpful video overall, thanks. There is far too few videos that explain why the practices in Electronics are needed, they tend to be more 'like this, do that' in a rather blind fashion without providing some explanation of the underlying concept, and what those parts are doing.
+
+Very very useful video! Thnx! 
+Looking forward for more "in between" practical circuit calculations and examples. 
+
+One question. Even if I do all those calculations, I would still have to look at bunch of MOSFET datasheets to find matching MOSFET. 
+Than could take a lot of time if you randomly opening MOSFET datasheets and don't know how to look, like I don't.
+There are naming conventions that could guide you to look for certain type of MOSFET based on your circuit requirements which could narrow down number of datasheets you have to look at. Can you help with that? How to match MOSFET without looking bunch of datasheets  and spend hours on that?
+
+Not sure is it something that you want to cover on your channel, but would be interesting to understand for example practical calculations of inductor and capacitance for buck or boost convertor.
+Or for example example, simple design for power amplifier with bjt transistor.
+Just some ideas...
+
+Hello can you make a video about driving mosfets in parallel.
+
+p=I^2 x R calculation where did u get 25AMP current wghen load 1.2Ohms and supply voltage 12V?
+
+So my application has a p type mosfet because i am controlling it from a current sinking device. I suppose i still need to worry about the max voltage between the drain and the source and the gate and the source? That sorta sucks
+
+@microtype engineering Does adding a 10k pull down resistor on each mosfet protects from blowing up?
+
+How you got 25A as maximum stall current from datasheet? Kindly clarify my doubt..
+
+1.2A for driving mosfet?! What I missed?
+
+Thanks a lot for the video! I was just wondering why don't you take into account the switching power losses into the heat that the MOSFET has to dissipate. I guess the switching is low enough or that the switch is fast enough so that the power peak is short enough or negligible. Again, great video!!
+
+As long as you link and credit me and the video, that is OK.
+
+ @MicroTypeEngineering  Thanks! I will!
+
+Software wise, I think this was in KiCad?
+
+Yep, I am planning on a selection video/blog coming up, seems to be a common request.
+
+One of the next videos is going to be on a review of a buck converter, so I'll cover some of that :)
+
+Care to explain what you mean by "parallel"?
+
+ @MicroTypeEngineering  Not sure what the OP wanted, but I was also wondering about this. Can I parallel several MOSFETS to increase current handling? I've seen somewhere that it can be done with appropriate gate resistors, but coverage in more depth would be useful.
+
+---- current -----> MOSFET ------> load
+                     |--> MOSFET --|
+                     |--> MOSFET --|
+
+Yes, I debated about mentioning that. I probably should have when I said that you can slow the switching to help with EMC issues. But yeah, it usually isn't a factor with high current applications with slower speeds like this. I did briefly mention it in the blog post at least!
+
+Thank you very much!
+
+I was thinking the same thing, but, but, but ... and then I stepped back and thought about what a good balance this presentation strikes between the extremes mentioned at the beginning of the video. Even though this is a very important consideration, the very fact that the theoretical speed is described a “1.2” MHz vs 2 MHz should give viewers who need to know about switching the hint that it’s not a 1% factor - it’s more like a 40 or 50% factor and therefore necessitates consideration. But, again the balance of coverage was well planned and executed. Thumbs up.
+
+WELL done!  I’m a self taught octogenarian who finds this stuff fascinating and try to use it with Arduino stuff.  Keep up the great work.
+P.s. what software are you using in the video?  It seems to work well.
+
+The frequency that you calculated in last 5 mins it should be 2khz but you calculated 2Mhz if iam wrong then please correct me
+
+Thanks for the video. Now that Micro-Cap is free, maybe you could use that instead of KiCad. That way you'll be able to show the circuits actually running, and you'll be able to see how close the actual circuit is to your calculations.
+
+I am new to Electronics, I want to know Using Mosfet Gate Driver you said it can supply 10A in that case I have to provide 10 A power supply to Mosfet Gate Driver ?
+
+I am working on a 4 Kw Single phase 220AC motor Speed Control (a simple VFD) Would you suggest the irfs7530 mosfet ? Your reply will be highly appreciated? What kinf of transformers will I need?
+
+Gate resistor: not sure it is about the capacitor being gharged since if the GPIO (or a battery) tries to charge a RC circuit with R really low, the battery (or the GPIO) will simply limit its current naturally: it starts with 0uA, and gradually climb up to the maximum it can supply... as constant current. 
+
+On the other hand, when you discharge the capacitor, putting the MCU GPIO pin to a logical 0, then you ask it to SINK a large incoming current (if R = 0) and THAT can damage the electronic inside the MCU.
+
+Also, many MCU allows you to use an internal resistor to their GPIO pins, which would be more than enough to do the job, without an external resistor.
+
+I tried  to drive IRFP460 ( Vge 10Volt ) with TC4420 ( 18Volt power supply ) but the max output  of TC4420 is 7,56 Volt with not enough volt to fully open IRFP460. Anyhelp ?  How much voltage goes the NCP81074 give ?
+
+Szörnyű hallani ezt a sok-sok emberi áldozatot, azt a sok-sok pusztítást, az emberi munka meg nem becsülését...
+
+LEGYEN MÁR VÉGE ENNEK AZ ŐRÜLETNEK!!!
+
+Tomorrow my exam pls help Sir
+
+A power mosfet with a breakdown rating BVDSS =800V MUST COnduct 10 A when on with a maximum on state voltage VDs =4v if the current density in the mosfet limit to 200A/cm2, estimate the conducting area which is required
+
+I'm confused. I thought applying voltage to gate only allows for a tiny current? It is a voltage controlled device compared to bjt as a current controlled one.  You say it will be like a short?
+
+Which is better mosfet or transistor
+
+excuse me! how can I calculate the parameter K of mosfet based on datasheet
+
+Thankyou for demystifying MOSFETS providing a perfect mix of practical and technical information. I'll mostly use this info to diagnose faults with equipment, do you think checking a resistance on the gate is a way to diagnose issues with mosfets without removing them from circuit?
+
+i slept in....sorry
+
+Hello my friends, I need the name of the program used in this video, the electronic circuit drawing program?!!
+
+Your talking about driving the H-Bridge with a PWM signal but specifying "continuous" current requirements which implies DC, not PWM. I'm confused. When you're calculating temperature, is your 25amps DC or PWM and if PWM what is the duty cycle?  What is your Vds at the 25 amps? I'm not that smart when it comes to data sheet numbers. I just burn up FETs a lot.
+
+You most certainly can use the 7530 at a continuous 240A, with an adequate heatsink, preferably a soldered copper spreader to aluminum but its only 60 watts of dissipation. While I agree, you would never design a circuit to run a fet at it's package or any limit, the dpak will transfer enough to good thermal solution to get rid of 60 or so watts, everything else being best case. Good video
+
+Which software you are using for this persentation?
+
+Thank you for this - this helped a lot.
+I have a question though - why is a gate driver IC necessary? Isn't a microcontroller IO pin capable of charging/decharging the gate by itself?
+
+In 2023, logic level Mosfets are much better than you say. The low cost IRF3708 can deliver 12 Amps with a gate voltage of 4.5V and has an Rdson of 10 milli ohms.
+
+I too am wondering what this software is?
+
+I think this was KiCad, but could be wrong...
+
+Thanks for the tip! I heard about that a little while back, been meaning to look into it.
+
+ @MicroTypeEngineering  If you want some tips on how to use it, have a look at the "Kiss Analog" channel.
+
+Yeah, that's mostly true. Until you use a microcontroller that it isn't, and you destroy it while trying to save a penny on a resistor. It is really never worth it to not have one, you can always throw on a 0R if you really end up not wanting it. Plus, without one, you can't do any real calculations on switching speeds, since the R is rarely given in the MCU datasheet.
+
+Glad you enjoyed! It really depends, but in my experience, when a FET fails, it's typically going to fail as a short between the drain and the source. This is especially true for ESD failures.
+
+ @MicroTypeEngineering  Im currently dealing with a circuit where a 800ma Voltage Regulator located near the 12-18v DC power input is getting hot to the touch. The component in question is MC33269 in the 269AJC DPAK DT suffix
+
+This could for a myriad of reasons but I suspect possibly injecting +42v into the circuit could have destroyed one of the components. 
+
+Thankyou for your response!
+
+Oof! I'd love to see your source or calculations saying that a DPAK can dissipate 60 watts continuously! That's not happening due to their thermal resistances. Especially since you can't directly affix a heatsink to the metal portion like the THT FETs. I'm sure for short peak's it is possible, but certainty not sustained. See here for a good appnote on real-world max power dissipations: https://www.infineon.com/dgdl/ThermalPackageConsideration-DPAK-SO-8.pdf?folderId=db3a304412b407950112b408e8c90004&fileId=db3a304412b407950112b40b5e9a07a8
+
+ @MicroTypeEngineering  Sure you can. Don't pay attention to all that tj temp blah blah. Get a 4x25x50mm copper plate, solder that bad boy right to it and bolt the copper plate to adequality sized heatsink and she'll be right. Ok maybe it won't maintain 240 but you can get up there, that is until your rdsOn climbs to high due to heating and you're no longer dissipating 50 or 60 watts. Copper has twice the thermal conductivity of aluminum, or very near it and has surprised me in the past.
+
+Please Search & read up on Amperage/Current limitations of different switching device packages...
+i.e. their internal wafer/die to external leads/pins..
+Back in 2003-2005 we were using a TO220 160A device..but later found out its D/S leads could handle a safe max.of 75A , above which any typical related failure mode could kick in...
+Leaving aside adequate heatsinking/ heatspreaders etc.
+
+In some cases sure. If it isn't a logic level FET, it won't produce a high enough voltage to turn it on. If it is a logic level FET, some MCUs can be damaged from trying to source that much current that fast. Even if it can, it will not be able to switch the FET on fast enough for certain applications.
+
+ @MicroTypeEngineering  Thank you for the reply. I feel like I've got a handle on it now.
+
+Hello, I would like to dissipate a concept that is use in electronics here. First of all, I am a hobbits in electronics so I learn things watching or reading about projects that I am interested to. I had learn (when purchasing son SSR modules) that they are made with High and Low side, what I learned is that Low side SSR modules need a negative input and High side need a positive input. Anyway, checking your mosfet driver, it's description in the datasheet said low side driver, the mosfet you are using according to you it's a NPN mosfet... Unless I am misunderstanding something, is it the mosfet driver should be a high side driver?  Thank you for your time.
+
+8:03 So, RDSon drain to source is very high? And that's equivalent to saying a big gate charge is needed to turn it on? 
+
+But i thought it's easily driven by a low-power logic-level device?
+
+Why is low power "non-important"?
+
+The one thing about the driver ICs is that they really aren’t cheap. Some articles from reputable sources have recommended using simple BJTs as drivers - on the order of 1/20th the cost of the driver IC, with a similar component count. For example: https://www.eetimes.com/power-tip-42-part-1-discrete-devices-a-good-alternative-to-integrated-mosfet-drivers/ Assuming 10+V power is readily available to keep the MOSFET in its safe, low Rds operating zone, as is the case in the example presented, what other considerations should one have in mind when deciding between those two design options. This question goes a bit beyond the video, but it’s a really hazy area for me, and possibly others as well. Maybe something for a future video?
+
+Good stuff.  What's that software you are using?
+
+Can you make a video from hardware point of view regarding the selection of microcontrollers?
+
+This is really good stuff! I have a couple of questions, though. If using that MOSFET driver, do I still need that gate pull down resistor, or is that included internally in that driver (I noticed the IN+ pin contains a 200K pull down, but wasn't sure if that translated to the gate pin). Second question is, if I use that setup, with the micro going to the MOSFET driver and then to the MOSFET, can I just hook that MOSFET drain straight to the brushed 10A DC motor's "negative" lead with the 12V going to the brushed 10A DC motor's "positive" lead? Assuming I use a fly back diode, like a MBR40100CT?
+
+Sir which software you r using
+
+3:58 Short to ground?
+
+hmm, logic one  IRLZ44N: RDS(on) MAX = 0.035Ω, Qg=48nC. How is this MOSFET super then?
+
+You reference 1.2A from the driver to the gate, But there's no way the gate will ever conduct 1.2A Right ?
+
+I saw your post in the link you have mentioned. I would like to make a small question regarding the current you have calculated in that blog.  For the current calculation you have used the driver voltage divided by the resistance. But i have found something different which is  gate current is equal to the Voltage difference between the driver and the gate(which separated by resistor) divided by the resistance. As found in this link;
+
+https://www.vishay.com/docs/73217/an608a.pdf
+
+Can you please update us about this?
+
+WHAT IS THAT SOFTWARE
+
+Thanks for the video, I love your channel...
+
+However, I do believe there are times to drive the gate directly without a gate resistor.
+
+My current project is a ATTiny1606 so I feel it is pretty good MCU. I have it driving a smallish logic level MOSFET (IRF7313). It switches on and runs for a minute and switches off. No PWM. Other components will wear out I imagine in 10k cycles. I have decided I would like the MCU and MOSFET to last for 30k cycles (thats 10 uses a day for 10 years and way beyond the practical life of the product or other components).
+
+I am hand assembling each board and every component on the board is a time cost, this is why I used a dual MOSFET instead of 2 cheaper single units. I have decided to run burn in tests and have 100k cycles on the test unit. So far everything looks fine and I can't justify increasing component count by 2 when I have been so tight everywhere else.
+
+If they sell, I will be redesigning for pick 'n place and the gate resistor might go in with a bunch of other changes. As for now I am happy and on the path to 200 units.
+
+To anyone else in my situation I would say if you are using PWM consider a driver, if you have a MOSFET with a large gate, a resistor is a must. If you are in the specific need to run a small MOSFET 10k times with a decent MCU you will be fine. You may be operating the MCU out of specification, think logically how many failures you may cause and decide if that is acceptable product loss/failure.
+
+I gotta ask, are you afrotechmods?  Your voice is super distinct.
+
+Are you using Kicad here? How did you get IEEE resistors instead of the euro rectangles?  I couldn't find any back when I tried Kicad.
+
+Pro tip, don't use International Rectifier trash. Figure of Merit/Switching characteristics are terrible compared to similar MOSFETs with the same or lower Rdson. 13:12, that gate charge spec is terrible. The TPW1R306PL has a lower Rdson, total gate charge of less than half that, miller charge of 1/7th and gate switching charge 1/5. Switching losses are non-negligble. Switching losses are not simply the energy dissipated in the gate capacitor, it is also the energy dissipated when the MOSFET's Drain-Source voltage goes from near 0 to load voltage when turning off and back down again when turning on; this does not happen instantaneously and the MOSFET is dissipating full load current when this occurs. With a MOSFET as terrible as the ones from IR, their switching losses dominate well into 80A + for 48V systems.
+
+20 min felt like 2 min ...
+
+What software are you using?
+
+9:47 you call this a drawback, I call this a feature. Simply build a kettle heater into your device and put the mosfets under it, then you can boil some water for tea while the device is running.
+
+What is this program you are using?
+
+Looks like someone didn't read the blog ;) I mention how to use transistors to drive them instead of the gate driver. Honestly, you hit the nail on the head with your thinking, it's 100% cost based for me. I'll use a dedicated driver every time if the BOM cost can handle it. I actually had a section in the video about this, but cut it out for the sake of time.
+
+ @MicroTypeEngineering  <hangs head in shame>, I must admit it's true. ;) The post describes the tradeoffs sufficiently well. Thanks for taking the time to work on the blog as well. Until now, I didn't realize that the blog has quite a bit of extra info - not just recaps of the videos. Win. This whole topic has been quite timely for me, as I have to step up my game and step up the volume for my current project. Still low 100's of boards, enclosures, etc. - not millions, but still... Each widget has no less than 8 sizable MOSFETs (as well as many other goodies), so I'm forced to consider cost more carefully. The biggest hurdle now is switching 2A @ 24V (ideally 48V) - typically DC. On the surface, this seems so simple, but these figures are also outside the safe operating area of every part I've investigated to date. Maybe those plots are just misleading - idk. Time for a bit more math, I guess.
+
+Thanks! This was in KiCad.
+
+I like that idea! Any specifics items/peripherals you'd like to see?
+
+ @MicroTypeEngineering  The big one is using 5v peripheral such as an LCD with a 3.3v micro. Logic level conversion seems to get missed from time to time. Supposing we need to change 8 lines to or from the micro.
+
+Great Questions!
+"If using that MOSFET driver, do I still need that gate pull down resistor" 
+Typically no, because it is included like you say. But, an external resistor costs pennies, so I normally always include it, then there's never any surprises, and you can adjust the strength of it.
+
+"if I use that setup, with the micro going to the MOSFET driver and then to the MOSFET, can I just hook that MOSFET drain straight to the brushed 10A DC motor's "negative" lead"
+This one isn't as straight-forward. For the most part yes, what you described works. It depends on the motor in question though. Some don't like having their ground pin not at true ground. This is especially true if there's anything else on the motor (sensors, tach, encoder, etc.) that also uses ground. But for the most part, that is how I would control a brushed DC motor that I don't need directional control.
+
+ @MicroTypeEngineering  Actually, I think I figured it out. If it's like a half-bridge MOSFET driver, then it appears to be "no pull down required" because the MOSFET driver takes care of that.
+
+On a different note, but similar. Is this why cheap Chinese PWM motor controllers, which don't use MOSFET drivers at all, and just use 555 Timers, or op-amps to create a PWM, require large heatsinks on their MOSFETs to keep them cool? I've traced a PCB from one, if you need one for reference.
+
+did you found out? I want to know too :)
+
+It looks like Kicad
+
+It's kicad :)
+
+Sure, that's certainly possible, and I've done it plenty of times. The big thing to consider, is you're potentially introducing a risk, to save a few tenths of a cent. That normally doesn't make sense.
+
+ @MicroTypeEngineering  couldn’t agree more. Seriously thanks for your videos. Your older ones kind of inspired me. We appreciate people that share knowledge, good luck with your endeavors.
+
+Hah, I am not!
+
+Yep, I am. Well I make all our symbols, but it's based off of the R_US symbol
+
+Does your company also do board designs for hobbyists? After watching this and the LED controller video, I now know there is a lot to keep in mind when designing boards for high currents. I do not feel comfortable creating this board myself, and I seriously doubt someone on Fiverr could develop even close as well thought as you.
+
+I've seen schematics where the series resistor is put between the gate and the pull-down resistor instead of between the driving output and the pull-down resistor.  Which setup to choose and why?
+
+What about the turn on/off and on/off delay time mentioned in the datasheet?
+
+That was interesting and earned you a new subscriber. I'm a retired software dev who got a basic electronics education via the Navy some 50 years ago. I spent much of my civilian career working with EE's on various projects from embedded systems to hardware evaluation systems. Now I'm peering farther into their territory and finding a lot to like, and of course a lot to learn. So please excuse me if this is a ridiculous question...
+
+I've built one of those supercapacitor battery spot welders with 6 500F caps in parallel. Functional but very imprecise. Now I'd like to build a circuit to experiment with pulsing the current flow for short intervals (sub-millisecond if possible). A test discharge on the bank shows nearly 2 A-H available. Would a MOSFET be capable of switching this kind of current? If not, what would you suggest?
+
+Can you please explain gate resistor calculation for a msofet being used as a high side switch. Consider that mosfet is supplying continuous current and not in the switching mode. I am really confused how to calculate the gate resistor for high side switching.
+
+Great video ! I do have one question , when ever I have chose a MOSFET I have gone to the Digi-Key or Mouser website and used the filters to filter down to probably 20 or so possibilities and then chose based on price and availability , but I'm always worried about errors in the data sheets , I have once found a datasheet on a charge IC that had 87 errors !  So when you said "go to MOSFET" I thought a list of "go to MOSFETs" would be handy because they probably have fairly reliable data sheets . Is there a list of  "go to MOSFETs" ?
+
+So, what datasheet specs would one need to look at & which calculations would one need to perform to determine the practical V, A, & W that one could reasonably expect from the IRFS7530-7PPbF with & without a heat sink--when the ambient temp is between 20 °C to 38 °C? In other words, how would one go about determining when the mosfet would work properly in such a temp range without premature failure?
+
+i have a question regarding the gate resistor value, what if i used 4 mosfets in parallel, should i increase the resistance value of the gate resistor?
+
+Hi, if i using the case on mosfet, in calculate for dissipation i use junction-to-case (0.40) instead junction-to-ambient(40)? Thanks for your video.
+
+Is the gate resistor really that important? Gate capacitance of smaller MOSFETs are not going to be that large..the gate resistors are really useful for reducing ' ringing' and EMI issues. I would not be worried about short circuit type currents into the gate from uCs... I have not come across any issues so far...unless I am wrong.  Pull-down resistor however is a must
+
+Thanks for the lesson! I have a question. Is it a problem to use such a Mosfet driver for non-switching applications? I want to run several high power mosfets from an STM32 chip (3,3V). Some will run PWM signals, some will just turn on at a certain point, but might only shut down after several hours. All info is welcome!
+
+Why you did not mention switching power loss?
+
+There will be nobody tell you what the letters and the numbers mean on a transistor there is different numbers and different letters some of them have four rolls of letters someone have 3 rolls of letter something has to want is it
+
+newb question, why not just use a transistor if all you need is logic level? thanks
+
+Any reason not to just use a BJT to trigger a power mosfet?
+
+Great Video, I have reviewed several,  most have address some of my problems.  calculations that are kept simple;  Work.  We see a lot of transistors or MOSFETS in parallel;   I have an application that needs parallel and series combinations due to the high voltage needs as well as power.   Any ideas on how to stabilize 10 MOSFETS in series as well as  Parallel.  I have a high voltage switching application.  This would be driven by an FPGA  ;  rise time around 1ns about 10K to 40K VDC  PWM input.   Switching frequency is usually constant around 30 Hz or so.  ON time is 20 us.  35 ms total time.  Heat Sink is about 12" long now flat steel plate.
+
+how do we determine if the switching frequency is too close to the maximum switching frequency? If the target switching frequency is 1MHz, do 4MHz enough for using? or we need to have 10 times higher than the target switching frequency which is 10MHz switching frequency in order to ensure the target switching frequency can be met? Why do we need so much switching frequency buffer
+
+Wait so you need both resistors? ive only ever used a pull down
+
+I'm on a crusade to get tutorial creators to avoid inserting the severely distracting talking-head in their tutorials.
+
+I found your video very helpful, but still i'm trying to understand the Maximum Safe Operating Area. From that plot it should handle a little more than 1A for a Vds of 12V in DC. Which is way lower than your design. I can't get it.
+
+Shoot me an email! kyle@microtype.io
+
+It depends on the resistor values.
+If the series resistance is very low, it makes virtually no difference. If the series resistance is a "significant" fraction of the pull-down resistance, then you have to consider the voltage division.
+I've seen MOSFET boards sold to the hobby market with a 1k pull-down. That's far too low in my opinion unless you are relying on that resistor to reasonably quickly discharge the gate capacitance.
+
+Yeah, that's another way to see the result of the total gate capacitance. I find it to be less useful than the gate charge though, since you don't directly know the current injected some times. Also, it's usually measured in 10%to 90%.
+
+:D Absolutely. FETs are used in many LiFEPO4 batteries, which switch 100s of amps. As long as you choose carefully, you should be fine. Especially will want to minimize the switching speed.
+
+ @MicroTypeEngineering  Thank you. I'm not sure how to choose the correct part. I'm asking a lot, so if you'd prefer to point me to a resource rather than answer my specific questions I'm happy.
+
+How much current am I actually switching and how do I find a part that will handle it? I'm not sure how to think about this. As I recall, I = E/R. In this case E = 2.7 (initially) but R can't be merely the resistance of a few inches of 12 gauge cable which is damn near zero? If the MOSFET offered much resistance no amount of heatsinking could protect it...
+
+If 'minimize switching speed' means 'switch as fast as possible', that's what I'm going for. Microsecond pulses are what I'd like to play with. This means a fast rise/fall times on the gate voltage which I think I can handle. Are there other considerations?
+
+Thanks again for your help!
+
+Consider the MOSFET gate as a capacitor. When you go to charge it up, the circuit driving it see's it as a dead short. Depending on the specifics of the driving circuit and the FET itself, this can destroy what is driving it. Also, it can cause ringing at the gate, which could cause EMC issues. Normally just throw a 100-1k and you can adjust it if you see any issues.
+
+Right. Yeah, it seems like a video/blog on the selection process is something that has been requested a lot. I will add that to the list of videos coming up!
+
+As for errors in datasheets, you think I have a list of FETs that have perfect datasheets?! LOL I wish. At least once a week we have a small/large issue with a datasheet on some IC/part. It is honestly one of the more frustrating aspects of designing circuits as a career.
+
+ @MicroTypeEngineering  I was designing a charge controller using a "made for" IC from what was Linear , as I said 87 errors in the datasheet , the company assigned me to a unbelievably bad engineer , one time I asked him what the correct value was on something and his answer was , and I am quoting , " I could tell you". I finally went to a trade show and went to the Linear booth , all I got was promises from 20 somethings , I finally just gave up , and decided micro controllers were a better way to go , and just write my own code.  If you don't have access to the A or B list engineers and you are not lucky enough to have a very simple component or a very accurate data sheet , I just don't know what to do but find another way.
+
+This sounds frighteningly close to a homework question ;)
+
+ @MicroTypeEngineering  Nope.  I'm 55 & just a curious person...
+
+4 individual series gate resistors for each of the four Mosfets....instead of one single 100 ohms..4 of 240-330 ohms each is ok .... provided the gate driver  has sufficient drive capability..& each with their own pulldown resistors..but preferably higher value..
+One gate 10k to min.5k6 is ok 
+But four separate ones ,each can be as high as 18-20 k each
+
+No, as that's just to the case. That measurement is used for when you're using a heat sink
+
+​ @MicroTypeEngineering  So, if i to user a heat sink, in calculate i would using junction-to-case, correte?
+
+Yeah you're "mostly" right. It typically won't cause an issue with small FETs. But, when you have that gate resistor there, you know exactly what the resistance is, and you can vary it to test. You'd be surprised what a little gate resistance will do to help ringing and EMI compliance issues.
+
+Not at all, it's just sometimes overkill to use one for that use case
+
+I should have. I had to limit what went in the video, and was focusing mainly on high-power low switching speeds drives. But yes, I wish I would have at least mentioned the losses during switching.
+
+You can use either or, but unless you need the additional gain or current control of a BJT, a FET will be superior in almost every other way (except price sometimes). Also, since FETs are voltage controlled and not current, they're much easier to implement too.
+
+You certainly can. Main advantage of the gate driver is that it is stupid simple!
+
+Oof. Yeah driving FETs in parallel is tough, as they can drive out of control pretty easy. As they heat up their resistance drops, so you get an uncontrollable loop. I don't have any experience with it, but be careful
+
+ @MicroTypeEngineering  "As they heat up their resistance drops" huh?
+
+I would like to know how do we determine the smallest ohm of gate resistor of a particular MOSFET which can still avoid oscillation. is there a formula or we can only do experiment to determine the smallest resistor.
+
+I'm working on a video around that now! Stay tuned
+
+If you aren't doing fast switching, sometimes you can get away without it... At your own risk!
+
+Yeah, so the MSOA chart is based on super short intervals, and at large voltages. In a standard low-side switch application, the FET will be dropping a really small amount of voltage. So you should always be well below the curve. I really don't reference it often honestly. Use the Rds and your current to calculate the voltage across the FET. It will typically be well under a volt.
+
+ @MicroTypeEngineering  Thank you for your reply!
+
+So if I understand correctly, i shouldn’t use the full VDD as my Vds in the MSOA chart. But just the voltage drop due to the Rds*Id . Which should be lower due to the presence of the load. This all starts to make sense..! Still have to perform the calculations. You helped me a lot! 😊
+
+Hello, does this data sheet specification "Vgs - Gate-Source Voltage:  - 10 V, + 10 V" mean what I think it does? As in, do not supply more than plus or minus 10V to the gate from the driver? Gate-Source is confusing due to the MOSFET having a "source" pin. Does it really mean Driver-Gate Voltage?
+
+Why you multiply 10^-3 to I2R. 
+Here I is in amp. So i can't understand.
+
+What program do you use to design your circuits?
+
+Name  the software you are using please ?
+
+I need your help with a problem I have with pwm fans
+
+What Editor are you using here?
+
+Electrons are negative so current flows from negative to positive (source to drain). Why do engineers insist on using conventional current.
+
+Is Matthew Miller your father?
+
+You shouldn't have to do "throretical calculations" the manufacturers and electronics companies have it covered.
+
+I have to disagree about the "two kinds of MOSFETs"  You can certainly have high power logic level MOSFETs.  An example that is not particularly new is the FDP8880.  What makes a MOSFET logic level is a low threshold voltage.  Particularly a MOSFET that will be essentially turned full on at or blow a Vgs of 5V.  The FDP8880 has rds of only 14.5 mohm at 4.5V Vgs and can pass up to 54A, deal with 30V and dissipate 55W.
+
+I completely disagree with your conclusions about logic-level mosfets and the the reasons you gave. Your "incredible trade-offs" don't seem very incredible to me. Take a look at your objections: "basically the Rds(on), the amount of gate charge". Check the datasheets for a couple of popular mosfets and their logic-level equivalents:
+IRLZ44: Qg = 66nC; Rds(on)=28mΩ @Vgs=5V
+IRFZ44: Qg = 67nC; Rds(on)=28mΩ @Vgs=10V
+IRL530: Qg = 28nC; Rds(on)=160mΩ @Vgs=5V
+IRF530: Qg = 26nC; Rds(on)=160mΩ @Vgs=10V
+Now are you going to tell me with a straight face that those differences in Rds and Qg are indicative of "incredible trade-offs"?
+Unless I need a mosfet gate driver, I'm always going to specify a logic-level mosfet if I'm controlling it from a 5V or 3.3V microcontroller, and I'd strongly recommend others do the same.
+
+a $2.49/1000 for the ncp81074 your design goes in the trash in most engineering depts.
+
+It's  a shame you discourage the use of P-channel FETs. It seems you're sharing knowledge from an incomplete understanding, which will lead to confusion from others.
+
+Can I confirm: the OUTL of the high power mosfet driver obviates the need for a pull down resistor on the gate?
+
+
+This was perfect, and I don't use that word lightly. Content and calculation pacing, lack of umms and ahhs, good editing, simple but functional example. Spot on. Thank you. You're a natural.
+
+1.25x playback speed
+
+Thank you 
+Consider becoming a Muslim if you're not :)
+When I see people who are helpful I remember the Prophet Muhammed peace be upon Him saying: "The best of people are those who are most beneficial to people."
+
+Get to the point. Dang put a resister at the gate, got it. 30 seconds.
+
+The outlet of the mosfet is called the source (this is connected to ground / -ve). This means that Vgs is the voltage at the gate compared to ground.
+
+He multiplied   I*I*Rds, that is, 25A*25A*1.4E-3 Ohms =  0.875 Watts
+
+Rds is 1.4E-3 Ohms.
+
+KiCad
+
+ @MicroTypeEngineering  Thank you!
+
+KiCad
+
+what problem
+
+You seem to know what your doing can you help me with some power distribution?
+
+This was done in KiCad
+
+ G E T  R E K T  By that logic we can say water runs up hill.  It doesn't matter, the physics is the same.
+
+It's a convention, agrrement. I think that was before electrons were discovered.
+
+hot damn this thing looks perfect for my use case because of space limitations
+
+fuck kinda highway robbery place you saw the price? it displays 1.16/1000 for me, still expensive as shit but not like it's built out of solid gold anymore
+
+Care to elaborate? Ofc there are exceptions, but generally NFETs will be more efficient (lower rds and gate charge) and definitely cheaper than comparable PFETs. Also there's lots more available.
+
+Especially when it comes to power drives, NFETs are almost exclusively used.
+
+Ahh no, I just realized I didn't have a pulldown on the driver example, nor did I really explain that section well... I'll make some adjustments to the blog. 
+
+So, you need to still have a pulldown, but instead of it being on the gate driver -> MOSFET line, it's on the microcontroller -> gate driver line. The OUTH pin is what sources current to turn the gate on. The OUTL pin sinks current to turn the gate off.
+
+Glad you liked it :)
+
+Thank you
+

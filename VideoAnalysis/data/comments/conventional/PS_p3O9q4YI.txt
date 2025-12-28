@@ -1,0 +1,160 @@
+I wish electronics was taught like this in college. Info is easier to absorb because of an objective which is to design.
+
+Good music..good courses
+
+thank you very much man, i have this project at uni and have to design an audio amplifier with my unique values for some things, and tried to design for 2 weeks, and almost every time had some problems like at the output i had a monoalternating sine instead of an amplified input signal or the negative part of the signal was clipped and watched many videos and searched the web many times, and also gave gpt and gemini a shot (they were really not on the subject : ) and were giving random advice ) ,  ... and then i saw your series and studied through a few videos of yours and designed something similar with this and from the start worked wonders in the sims . thank you so much
+
+1:40 This circuit has quite a few design flaws.
+
+The input stage has a very low bias current of abt. 1.7mA, leading to low transconductance and current starving of the voltage amplifier stage at frequencies above 1kHz, which in turn causes poor slew rate and  distortion (mostly 2nd harmonic). It's also hugely disbalanced, because one transistor draws abt. 0.46mA (0.7V/1.5k), while the other one draws 1.7-0.46 = 1.24mA. The whole point of a differential pair is to be perfectly balanced. Deviations in transistor currents over 1% cause a significant increase in distortion (2nd and 3rd harmonic). The best solution here would be to use a current mirror - the increase in complexity and cost is negligible compared to the great improvement it makes.
+It's also beneficial to increase the bias current to abt. 6mA and add emitter degeneration resistors of abt. 33 Ohm to the differential pair.
+
+The dominant pole capacitor (220p) is too big. The whole point of the dominant pole compensation is to bring the open-loop gain down to unity just before the phase shift at the output approaches 180 degrees, thus turning an amplifier into an oscillator. The value of Cdom is determined by the current sourcing/sinking capabilities of the transconductance stage and the VAS collector impedance. The open-loop gain here is not that high to begin with, due to the aforementioned low transconductance and current starving of VAS. All of this leads to a poor slew rate and great increase in distortion at higher frequencies.
+
+The VAS collector is loaded by a current sink, which is correct, but there is never a need to adjust the exact current flowing through it, so the 10k potentiometer is useless. The 2.24k pot is placed between the Vbe multiplier's base and collector, which is a timebomb, because if it fails, the bias voltage will increase to a maximum, likely causing the output transistors to blow up. It's always a better idea to put it between the base and the emitter.
+
+The 3K resistor between the driver transistors' emitters is too big. Reduce it by a factor of ten and put a 0.1-1uF capacitor in parallel. Its purpose is to provide a small reverse-bias voltage to the output transistors, making them turn off faster. Doesn't hugely matter in this relatively low-power circuit.
+
+It's always a good idea to couple the lower leg resistor of the feedback circuit (10K) to ground through a large (470uF+) capacitor, thus bringing the DC gain down to unity. The input pair is never going to be perfectly matched, and you don't need to amplify the DC offset voltage. The 220K will then have to be reduced to the same value as the input bias resistor (10K in this case) to match the impedances. It's always better to keep the value of these resistors as low as practically possible to reduce the Johnson noise (the exact values will ultimately depend of the signal source's output impedance). It's also necessary to put a small (4.7-33pF) capacitor in parallel with the upper leg resistor of the feedback circuit. This circuit is likely to work fine without it because its dominant pole frequency and slew rate are very low and therefore the Nyquist stability is not compromised - but the noise and distortion figures most definitely are.
+
+That's all. :)
+
+Nice video, thanks :)
+
+I also make videos about audio, electronic and I also like your video. They are helpful for audiences
+
+We are still waiting on part 3!!
+
+Very good video.
+
+nice power amplifier. succses for you. good luck
+
+The input capacitor has a very large value and has no resistor between it and the base of the input transistor.  Input capacitors are usually around 10 uF, (and preferably non polarised) with a resistor of 10 K - 22 K.  Why did you design your circuit this way?
+
+Magnifico, grandioso !!  ⭐⭐⭐⭐⭐
+
+thank you very much
+
+thank you very much!
+
+looks like a nice circuit
+
+Thanku sir
+
+At the beginning you are missing the input voltage or level specification.
+
+I know this question is a bit late, but can you use an active load (a pair of diode connected PNP BJTs) on the high side of the differential amplifier?
+
+Hi ...can you do schematic?
+
+the 2nd stage how works?
+
+12:45 Why is so hard to have a no-damaged speaker, this days? 🤣
+
+That is some pretty in depth stuff you say right there. 
+I'm trying to learn how to build an amplifier as my amplifier developed a technical glitch. I have no knowledge of electronics and to a practical approach for me is the best way to learn. 
+This video is the first time I have seen someone explain how to build one and from that I am hopeful I can learn how an amp works and then from that maybe how to fix the one I have. 
+Your answer is really interesting as it seems to show both interest and practical experience. Of course (and this is a joke) I know nothing about amplifiers or circuits, so what you are saying could be written by someone who knows nothing, but from a novices point of view, sounds wise and knowledgeable. :) 
+My point here is I am going to look through the comments, but if you could highlight any videos, books or other information to teach me (us) how to do this, that would be great! 
+As for the guy that made this video:- Thank you ever so much for this gem!!! I keep comping across fantastic repair videos, but they all presume we know how an amplifier works and what the components do, we don't. No one seems to point at anything on a PCB board from an amp and explain how each component relates to another. Seems as AB amps are based on the same principles, then know what is going on then means we can learn how to diagnose e.g. like where to put the multimeter to see what current flow is happening to find the exact problem. 
+This subject is a minefield, but like most subjects, practice makes perfect and you video is absolutely stunning for the breakdown, explanation, but also the incredible comments from all the people pointing things out. 
+Cheers peeps!!! ;)
+
+ @waynecummings5021  It's all complete gibberish, I assure you.😊
+A really good book to read would be "Audio Power Amplifier Design Handbook" by Douglas Self. You can download it for free. It does require some knowledge of electronics though. Power amps are relatively simple circuits. About 95% of all amps use the same basic topology shown here, it's only the details that differ (but they do make a big difference). The best way to get started is by learning about positive and negative feedback, and how a differential amplifier works.
+I can't recommend any videos because back when I was learning this stuff, there weren't any, and now I rarely watch them. You could watch some about operational amplifiers, because that's what power amps basically are: big, discrete op-amps.
+
+What kind of "glitch"? Analog circuits rarely glitch in the same way computers and other digital devices do. Normally, if they stop working properly, it's due to a component failure. If your amp hasn't blown up, if there's voltage on the supply rails, and the output transistors are not shorted (which you can easily check with a multimeter when the power is OFF), then you could probably fix it.
+
+There's no capacitor in Q2 after 10k resistance, so  how to ground ?????
+
+How much might it cost to hire an EE to design a custom schematic of a power amplifier? Do you ever take on custom jobs?
+
+Why the input capacitor is so large?
+
+Stop putting sub tittles ,that is bidding what u r trying to show on book
+
+You should add a capacitor from your feedback translator base to 10k resistor. You don't want gain at DC, you just want the amp to servo the output to 0 V DC with no input.
+
+sir pls explain  op amp and  amplifier part stages
+
+Nice and very good explanation. Can you tell me Why the powe loss at output is taken as 4v?
+
+and how to finde amplifier watt
+
+I just started the video, so you will probably say it later, anyway... wouldn't it be better to actually have a capacitor on the voltage divider at the input on the second transistor (Q2) of the input diff. pair?
+
+I mean, the voltage divider works miracle for AC signal, but for DC ones you'll have a diff. pair which is not balanced, and as far as I know, that can't be good as far as common-motion rejection goes, right?
+
+do you have a gerber about this desing?
+
+Hi.a question what is difference between video and audio amplifier pls answer me if you know
+
+I made a similar circuit, used Fallstad simulator, i adjusted the circuit to deliver 1 amp @ 1around 9 V.p.p. swing from a 2 x 15 V transformer, so 2 x 19.6 V.
+Using BD137, BD140, it follows the input voltage perfectly, pcb made, on it's way. wonder how it sounds, also included 2 pole Sallen Key filter.
+How much watts would that be would your recon? P = U x I, states like 19 ,6 watts, right or wrong?
+
+You can substitute the Darlington output configuration by a Sziklai output configuration in order to get a little more output voltage swing and output power. Probably you can also use the D44VH10 / D45VH10 as single output transistor combination. They have a very high current gain (> 200 @ 1A, > 100 @ 4 A) which should be enough without current gain multiplication.
+
+The collctor base capacitor at the transistor of the voltage amplification stage appers to me a bit too large. I would recomment not to exceed 47 pF. Otherwise the amplifier could become too slowly for a sufficient pulse response.
+
+Further options are a snubber network at the amplifier output to compensate for wire / spreaker inductances and an input low pass filter (1 kOhm, 1 nF) to avaid rf input penetration.
+
+can you help me give my opinion about my circuit? Can we exchange gmail?
+
+How would you calculate or determine the gain  and input resistance of the pre amplifier transistor?
+
+Use a TDA2040 and save yourself design headaches.
+
+Are you sure about this feedback loop between the power output and base of the "right" transistor in coupled pair ? I mean - if you had a capacitor in series with this 10k resistor then there would be nothing wrong but if you dont have it then the voltage on the power output in bias state will be highier equivalently to the proportion of the resistances of the feedback divider because its connected to the ground. And I assume we want to stabilize the bias voltage having the ground as reference because the "left" transistor of the coupled pair is biased through 10k resistor to ground without any divider. That's little yet tremendously important detail - if missed it will cause disstorsions or in the worst case it's gonna blow up the power stage because the output transistors will be "trying" to put at least several volts above ground on the few ohm resistor which is the speaker in bias state - thats a lot of current. Details of this kind are CRUCIAL for designing even the crudest and most basic power amplifiers.
+
+It’s an amplifier, but I see some flaws with the design.  Why are you using a descrete design at all and a BJT technology family in 2025 (or whenever this is from) though? At audio frequencies you are going to just get poor static performance (high losses). The feedback design is quite rudimentary too as is the implementation of the opamp. You could get an order of magnitude or more performance improvement in distortion figures by using a proper opamp and potentially a more robust feedback loop.
+
+And an $8 I.c. does it with 10 times less distortion...
+
+Your dome is pushed-in. Not serious about the business.
+
+Is the input impedance of a differential pair configured like this Vt/Ic?   13 ohms???   1/(13*.0022) / (2 * pi)  ~=  7 Hz
+
+correct. In this case you don't amplify the input offset voltage. But you have to make sure in this case to replace the 10 k input resistor by a 220 k input resistor. In order to match the input resistances between both differential amplifier inputs. Otherwise you get perhaps more dc offset than before.
+
+All the 'op-amp' in this case the 'power amplifier' stages will be explained and worked out in detail. 
+
+
+Thanks!
+
+Right. There's room for quite a few other improvements here.
+
+Video amplifier typically is a wideband amplifier which means it is able to amplify signals with frequencies from few hertzs to hundreds of megahertzs. While an audio amplifier is meant to amplify signals from few hertzs to hundreds of kilohertzs.
+
+For example NE592 is a typical video amplifier while LM386 is an audio amplifier. Take a look at their datasheets to learn the difference between video amplifier and audio amplifier.
+
+Hi there, I hope you are doing well, its good to hear that you made the circuit, I want to ask you about how did you find out what type of capacitors he was using, like ceramic, tantalum or electrolytic. Plus are you talking about the power calculations across the capacitors or at the speaker itself, You could easily calculate that by using a simulator, or by the equations that he had described in the video, if you know the parameters
+
+ @Gagandeepsingh-uf2un  The pcb's are on the way.
+
+The Szukilia configuration is used , because he wants to unite the type of Power transistor, ie npn ,or pnp , not both as typical push pull is .
+
+I agree, although the output stage is the least problematic part of this circuit which has quite a few design flaws (see my comment in the main field).
+
+The gain is determined by the ratio of the voltage divider between the amplifier output and the inverting input (G = (220k + 10k)/10k). The input resistance is the resistance of the resistor between non-inverting input and ground in parallel with that of the collector resistor at the not-inverting input multiplied by its current gain.
+
+ @gkdresden   hey buddy instead of those two mq3904 transistors, is it not better to use a op amps there.
+
+What you call "headache" I call it fun! There is nothing wrong making 25W power amplifier using TDA2040 if your purpose it to just have something that works out of the box. But it is much more educational and rewarding if you make the amplifier using relatively basic devices.
+
+ @SmithKerona Exactly! Same as baking a cake from scratch versus a box of cake mix.
+
+Hi RedfusionPL. At DC, the base of the two emitter coupled pairs see almost the same resistance which is approximately 10k. The left transistor sees 10k to ground while the right sees 10k in parallel with (220k + 4R) which is about 9.6k. The difference is minimal which won't have any effect on bias of the output transistors since the matching of the two pairs isn't great to begin with (I am using MPQ3904) and the tolerance of the resistors. The amplifier was exactly built as seen on the schematic and didn't have any bias issues. In fact initially I had the 10k resistor on the right transistor connected with 2200uF capacitor to ground and the left transistor connected to ground through 220k resistor (basically connected as an AC amplifier). But I was having DC offset issues with the parts I had on hand and the feedback connection shown on the video solved this issue.
+
+ @SmithKerona  Sorry mate it's my bad I didnt notice it. Though both of us are little unprecise in our explanations because what will happen in circuits like this one is strongly dependable from current gain of the transistors, temperature voltage coefficients, differences between offset voltages (as you mentioned above) etc. so to compensate them a much more elegant and complex circuitry would have to be applied :) I dont think there is any sense in digging so deep if this is only for quick and simple applications lol. You get suprisingly nice sound out of it btw. Run some disstortion tests if ya can.
+I just noticed the release date XD nvm
+
+Opamps severely limit your maximum voltage swing because you can only use the voltage rails they can max out at. You aren't going to get 100watts from an opamps signal because it simply cant swing to high enough voltage like that ..
+
+ @researchandbuild1751  Nothing of the sort, first of all modern opamps can handle operating voltages into the low hundred volts range if not more, and secondly, there is no need for an opamp to ever see particularly high voltages in an audio circuit as it is an element of your feedback loop which should be scaled and amplified accordingly (elephant in the room being slew rate). If anything, having the opamp drive the output via a unity (or worse below unity) gain stage is a poor design practice. 
+
+Honestly, dont waste your time in 2025 on this at all, use a proper P control with feedback linearization* and ideally a PID control loop and a class D amplifier jellybean circuit, add some dead time generation and you can scale this arbitrarily, this is in essence how single chip class D things work (except these are all on a single chip and dont have to deal with parasitic effects from large size and can be ran even faster).
+
+Yes, and the schematic paper was precariously clipped to the clipboard 📋. So, another minus of 150 points.
+

@@ -1,0 +1,111 @@
+A capacitor as a frequency dependent resistor... that was the key to my understanding - thank you!
+
+I've had trouble understanding how op amps work but you've helped clarify several points. Thank you for the great explanation
+
+Incredible explanation mate! EE student here and your simple explanations really have helped me get my intuitions together regarding op-amps. Subscribed!
+
+Man, best amp configurations explanation ever. I love this.
+
+Was having trouble with opamps all week, this helped!
+
+I finally feel like I've reached an understanding of op-amps; thank you!!
+
+this is exactly the explanation i was looking for , lmao even the chip is the same as i am messing with, tysm
+
+Well done mate - reaaaly nice, logical explanation!! - Kudos from Oz
+
+My van is on your t-shirt!!! Well, maybe not mine personally, but I drove a 62 for a couple years back in the 90's. I love your channel.
+
+I LOVE your channel and your content!!  Thank you for the time and effort you put into EACH video.  The only thing I disagree with is that you are NOT an audio "phool"... more like an audio genius. 🙂 Keep rockin' the content!!! 🙂
+
+holy shit what an action-packed and well done video. this connected a lot of ancient college memories to what I'm working on now. thanks!
+
+2:25 "it doesn't really do anything" it does do something, though. It's an  impedance converter that presents a high impedance to the source and a low impedance on the output that can drive a low impedance load or subsequent circuit. There's also power gain. Good stuff.
+
+Very helpful video for understanding why the resistors are important to the feedback. Thanks
+
+You're the best!
+
+Great job, dude. Brilliant...
+
+great video!
+
+Love your page.
+
+Thank you so so much, subscribed 4 lyfe
+
+Thanks for posting. If + input of opamp starts at 1 at peak of osc and - input starts at 0, then diff is 1 so it outputs 1 and then the diff is 0, so…..how does that function if diff is 0 at that point? Basically it seems as though it would outputting a binary toggle as voltage is + on + input.
+
+Nice work explaining these concepts.  As an EE, i'm able to track regardless, but you used terms that were both correct and simple (which is a nice skill).  You also cut the video nicely and kept it short and on-point.  Well done.  sub'd.
+
+I was born in the 90's 😬 Thanks for watching!!
+
+this + isolating the source from the rest of the circuit
+
+Thanks very much! :)
+
+I agree. Nicely "translated" to the beginning electronics enthusiast or those who are just now dipping their toes into circuits.
+
+Thank you!
+
+Great video! I started my first big analog synth project recently and this was helpful background. I don't have much EE background so very helpful
+
+Heeeeeyyyyy op amps just clicked
+
+Why not use a sine wave to show the -3db point?
+
+Hi there, this video was very clear and informative, thank you! I'm interested in using the concept here to create a variable high pass filter, either using a regular pot, or having several different filter circuits and being able to just click through the different frequencies. Do you have any suggestions at all? (I am a complete beginner to electronics)
+
+Great channel, mate!
+
+hey can you by any chance do an in depth video on audio protection circuits ...because im currently repairing one and its in protection and i dont understand the circuitry...a bunch of zener diodes and and transistor logic idk
+
+Hi, thanks for sharing the wonderful knowledge..
+At 8:15, you assumed the output to be zero volt. Could you please help me understating this assumption. Could you please share some reference for that.  Thanks
+
+12:07 rest of the owl
+
+Another great video, thanks! However, I was confused about one thing — I’ve played around with tl072s and similar as op amps, but when I looked at the data sheet for the CD4069UB, it says it’s a hex inverter, and I don’t quite understand how this works. Would it only work with square wave type “logic” signals that only have a high and low state? I don’t understand how it’s able to provide voltages besides supply and ground. Still a real beginner and maybe I’ve forgotten something fundamental from an earlier video?
+
+Can we test by sending some music signals too :)
+
+What is the white guitar behind you at the end?
+
+The CD4069 is a six-fold inverter, tha CD40106 is a six-fold Schmitt-trigger inverter. I don't understand the relation of these devices to an op amp. Or these CMOS inverters also used as "low cost" op amps?
+
+How can no current flow into the op amp?
+
+NEWBE QUESTION THE 40106 AND 4069 ARE THEY CONNECT TO +12V AND -12    OR +12V AND GND
+
+CD4069 is a Logic IC and not an OP-Amp nor an Amplifier. The IC has nothing to do with an OP-Amp or an Amplifier !
+
+All you're doing is writing a ton of stuff. No idea what you're doing until the end, and that's very unclear. You need to learn how to do digital writing diagrams to include the positive, negative, dual wires, wire gages, component photos, ground location, power input locations, speaker locations, etc.
+
+I'm very glad to hear :) I feel if you don't have an EE background then electronics can be very hard to get into. I'm trying to change that!
+
+ @TheAudioPhool  oh yeah, definitely a barrier to entry. I studied computer science in college and touched on a few basic things. Not sure if you're familiar with Ben Eater. He has a channel that teaches a lot about digital logic and building primitive computers with TTL chips. Might be good inspiration for growing your channel
+
+this is actually a great and very thoughtful question. It's quite technical but essentially the 4069UB is a special type of inverter that has unbuffered inputs and outputs that allows it to have values inbetween the usual limits of 20 & 80% of Vcc that we usually say are the valid high and low states of logic chips. This is how it essentially acts as an inverting op-amp, but it has a really nice characteristic curve that gives it a nice amount of distortion as well as being slightly simpler to put together for beginners.
+If you're more comfortable then go ahead and use ordinary op-amps. That's what we'll generally be using moving forward anyway! Just set the non-inverting input to 1/2 of Vcc and it should be similar. Maybe set them both up and see how they behave slightly differently as you approach the supply rails! :)
+
+If you want more info there's a pretty great TI technical document that explains it, although it is quite technical you seem like the type of guy (like me!) who likes to understand everything thoroughly as they learn so i would have a look over it. Don't worry too much if you don't understand everything!
+https://www.ti.com/lit/an/scha004/scha004.pdf
+
+Here's a very good video by TSP that explains how a CMOS inverter can be used as an amplifier. In a nutshell the transistors in the output circuitry of the inverter acts as an amplifier for voltages that do not put it them into saturation or cutoff which would be the way the transistors would be used in a digital system. https://www.youtube.com/watch?v=TABgfsryt8s Hope this help, Vince.
+
+Because of High input impedance
+
+Both can be set up either way (which is part of their appeal). Generally you'll want a steady reference at half your supply if you want to start off with simple battery powered bits.  This reference voltage will act as ground (zero potential) for your little audio signals.  The trick is to hold that reference steady under various conditions.
+
+It performs it's logic switching by extreme amplification (to keep the edges sharp). That behavior can be manipulated into operating in a (mostly)  linear inverting amplification.  It's an extremely common use of the cd4069.  It's used in synthesizers and guitar pedals and all types of silly stuff from major manufacturers.
+
+ @ahdziz666  Try to get a sinusoidal direct from the output of the CD4069. That will not work . The CD4069 is sometimes used to improve square wave signals. Since the gates contain a Schmitt trigger. But the CD4069 is and remains a digital IC. And is used in logic circuits.I can well imagine that the chip will be used in synthesizers. Because sometimes you want everything to be beautifully distorted. But that doesn't make it an Amplifier....
+
+ @ahdziz666  I just read the data sheet the CD4069 has no Schmitt trigger but there are some with Schmitt trigger. Sorry, my statement was wrong on that point! I can only recommend reading the data sheet. It's all in there!
+
+Sorry but I feel like that feedback was a bit uncalled for 😕 Shame if the format didn't work for you, I can understand that, but it sounds like everyone else in the comment section (me included) thought it was a very clear and simple explanation of the circuit and what it really does.
+
+ @MarcDupuis50400  Its a shame that the CD4069 is a hex inverter and not an op amp.
+
+skill issue
+

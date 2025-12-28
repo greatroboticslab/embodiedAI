@@ -1,0 +1,353 @@
+please replace my professor.
+
+Note for college students:
+Please take notes and just pause and ponder at some time. It took more than a hour to completely gain some grip.
+
+Also note he might have taken a week to prepare for this set of videos. By watching just 14 mins, you just can't grab everything. If you think you are getting everything, yes definitely, but it won't last long. To remember everything he said just take notes and remember to pause and ponder.
+
+Thank you Brian for your awesome videos.
+
+Hey everyone, thanks for watching this video! If you have any questions or comments that you'd like me to see, please leave them under this comment so that I get notified and can respond.  Cheers!
+
+These videos are really good!! Great explanations. I only regret not finding them sooner. I think it filled a few gaps in my understanding and everything just suddenly clicked. If only professors gave this kind of intuitive explanations at the beginning instead of bombarding us with equations and formal definitions right away, it would make the rest of the course more interesting. Thankfully there exists the internet. Thank you Brian!
+
+Man, you are awesome. I understood in 14 minutes what i couldn't in a semester. Thanks a lot!
+
+Brian has been always the best in Control field since i was learning a lot from his channel.     Thanks Brian
+
+Brian is definitely the best. Glad to see you are working with MATLAB now. I still visit your videos to ground myself in control foundations. Kudos!
+
+this video has changed my life
+
+Dude, u’ve helped me in my undergrad, now you are helping me with masters. Thanks
+
+YOU JUST SAVED MY LIFE <3 I LOVE YOU <3 <3
+
+This was wildly satisfying to watch after taking my controls classes.
+
+I wish I had these in 2016 during my senior control systems class. I don't know how the prof passed me. I should have failed. I had no idea what was going on and these videos really help explain a complex topic. It's been so long that I've forgotten most of the math required to build up to this such as derivates, matrices, and eigenvalues.
+
+just wow, I came from a class where they teach us all of these in a different way, but checking the overview made it much clear
+
+I can't imagine getting through my Control course without your guidance! You are truly an outstanding educator—thank you so much!
+
+Thank you sir. As you said in the video: you are the lightning making the world of contol theory so bright!
+
+man, this video deserves more likes
+
+inspring explanation and animation for mordernized control theroy, thanks a lot for shaing!
+
+Lol I'd searched Brian Douglas Pole Placement and this came first on the list. The description claimed to provide an intuitive understanding on the matter. I decided against my better judgement to click on the Matlab link as opposed to a BD one only to  be greeted by the comfort of familiarity. :). Thanks Brian.
+
+Hello @BrianBDouglas, Thank you very much for your video. I have been making some analysis on the Inverted pendulum on a cart system. Your video has allowed me to gain a deeper knowledge of how to analyze the system and what pole placement actually means. Thank you a bunch !!
+
+Lovely explanation in a short time thanks MATLAB
+
+*our professors
+
+can't like this comment, can't ruin the perfect number of 119 likes
+
+My prof legit replaced himself with these video's. He just uses these video's + a book as lecture material and in the actual lectures there are just some practical examples.
+
+He doesn't even have to replace him, just get rid of him ....
+
+Same
+
+Hi Brian,
+For the pole placement, you could consider a butterworth configuration. Since all the poles need to be placed in state space compared to classical control, you need to find a spot for the non dominant poles. Placing them in a butterworth configuration (equidistant around a circle centered at the origin), it is shown that it approach a optimal configuration.
+Btw, my username on the reddit control theory sub is nickeltoes
+
+ @marctison1039  that's a good point.  I didn't really go into too much depth on where to place the poles but that would have been worth mentioning.  We've spoken on Reddit, I recognized your username right away!
+
+why did we chose to place poles at lamda = -1 and -2   ???
+
+Thank's Mr. #Brian  for the clear explanation,
+I would greatly appreciate it if you kindly give us some examples about Integral action in state feedback control for disturbance rejection,
+thanks in advance
+
+ @mohammedabdeldjalildjehaf1515  I don't have any plans right now to discuss integral action in an upcoming video.  But I'll mention it briefly in the video I'm working on and provide some references that give good examples.
+
+how do I select the values in the reference input 'r', if I only care about one state (lets say, speed) and not the others (lets say, current)?
+
+Hi Brian, 
+Your lecture is awesome, the way you explain and give example is very clear, i really appreciate it. However, i think there is an important thing that you should add to the lecture, that is the controllability of the system, it is a very important concept of pole placement.
+Thanks for your contribution
+
+First of all, thank you for your instructive videos, I just have a question about the system if in this system (xdot=A.x+B.u) the A matrix is also varies with time and this variation is a function of the value of x in the previous increment how can I model this system in MATLAB. I would greatly appreciate it if you kindly give me some reading materials or examples because I'm new in this field. Thank you in advance.
+
+Thanks for the videos! Do you have any of you implementing some of the methods into MatLab? Cheers
+
+Hello Brian, your video is amazing. Could you make video on how we deal with N order of system in terms of controller design and analysis , i remember you mention one of your video you have worked on aerospace industry and you know aircraft control has more than 10000 order of model equation  need to be aken care of if you could explain the strategy for them it would be helpful and if you could make a video on MPC specially explaining the mathematics or core algorithm behind it, it would be helpful.thnx.
+
+Hi Brian,
+I learn strong backround information and root idea before going deep into them thanks to your videos. Thanks a lot. 
+I follow your channel and Matlab videos.
+Do you plan to make videos some different topics such as Robust Control, Adaptive Control, MPC , Anti-windup...
+Please do it. I would be greatfull.
+
+YOU ARE BRILLIANT!
+
+Hi Brian,
+I'm having a hard time understanding one specific aspect of this explanation. When we use pole-placement in classical control, the poles of a closed-loop system will determine the complex exponentials that make up the time-response of the system. And the time-response of the system is how the output, y, behaves over time. So we are effectively moving the poles to get our system output, y, to behave as desired (in response to our single input).
+
+
+However, it seems like pole placement in state-space is different. It seems like the poles of the closed loop system will determine the complex exponentials that make up the time-response of the state variables. In fact, it seems like we are determining the complex exponentials that make of the time response of the state variables in z-space (not x-space). But I'm confused as to why we care about the time response of the state variables. After all, we are trying to control outputs of the system, our vector y. Shouldn't we be picking values in matrix K to control the time responses of the outputs?
+
+
+Furthermore, if we have N state variables, it seems like pole placement will lead us to N time-domain equations that will reveal how our state-z-variables behave over time. But this is in response to what? Input 1, or 2, etc? Or both? Or just initial conditions? If there are P inputs, don't we want P*N equations to describe the time behavior of the z-state variables?
+
+
+So kind of combining my two points of confusion from the previous two paragraphs: if there is a system with P inputs, N state variables, and R outputs, don't we want to be selecting our K matrix to shape the P*R system-output-time-responses as desired?
+
+
+Thanks for the help
+
+sir can you please make video on pole placement in MIMO system.
+with this video my concept for pole placement for SISO is clear.
+
+Could you please upload more content in your personal channel...
+
+Hi Brian, thanks for such a great video! I'm trying to understand how the Nyquist stability criterion can be used to determine the stability of a state-space matrix. I know from your video that we can easily find a plant transfer function, G(s), but how do I get a controller transfer function, H(s), from the state-space representation? Or if anything is represented in a state-space form, then should I just analyze the stability based on poles only?
+
+What do you recommend for simulating a nonlinear system my prof wants me to compare the two systems
+
+Hi Brian, at 4:13 you mention that the new A matrix for Z has the complex eigenvalues across the diagonal. Then, after 5:37 you explain what happens if the eigenvalues are real. Where are the real eigenvalues in this new A matrix? I am missing the link of how the eigenvalues get into the solutions to the differential equations. Thanks!
+
+ @GOAFPilotChannel  Hi! I'm sorry that I've confused you. Rewatching it now I'm realizing that it wasn't as clear as I thought it was when I made it. If I understand your question correctly, at 4:13 I was saying that the result of E'*A*E is a diagonal matrix where the eigenvalues are along the diagonal. Eigenvalues are complex numbers (they have a real and an imaginary part). In the example I used, the two eigenvalues only had a real component but they could have also had an imaginary component too if I chose a different A matrix.  For example, try it with A = [-1 -1; 1 0].  The solution to the differential equation z dot = lambda * z is the equation I wrote in the video, z = C*exp(lambda*t). At 5:37, I'm just showing what the general shape of the curve would look like for different lambdas.  If the complex variable lambda only has a real component (like my example had) then the solution is purely only an exponential response. If it only has an imaginary component then the solution has a cyclical sinusoid response. And if lambda has both a real and imaginary component then the solution has both an exponential and sinusoidal response. Did that help?
+
+Hi, Brian. Thank you for your videos.
+I am trying this method on a MIMO system where the linearization is done around a non-fixed point, where the control variables are constant, but not zero. How should I define the control rule in this case?
+Thanks!
+
+Hi Brian,
+could you please explain how do we choose the desired poles? For example in matlab, coding " K=place(A, B, P)", for an open loop system with 7 eigenvalues, how do we exactly choose these seven values of "P" ?  
+thank you in advance
+
+I just want to say I've yet to see a better or more clear explanation of a topic this complicated.  Your videos on this subject are the reason I got an A in my first semester controls class and I can't thank you enough for that.
+
+Hi Brian! Thank you so much for those amazing reference videos. I want to bring your attention to 12:36 as you mentioned the control law for the PD controller part to be u=r-(kp*P+kd*P_d). I believe that the control action is being applied to the error between the reference and the output, as we are feeding the former to the controller, as it should be u=kp(r-P)+kd(r-p)_d (the _d means derivative). Correct me if what I am saying is false. Otherwise, thank you so much for this fabulous and amazing work!
+I look forward to be an amazing control engineer like you!
+
+Thank you so much, these videos are gold
+
+هل بأمكانك مساعدتي لدي عرض تقديمي
+
+Hey, Brian, do you have any videos on pole placement using polynomial methods instead of state-space?  Or do you know of any good resources for that?
+
+I miss you on YouTube Brian ❤
+
+I miss you on YouTube Brian. Hope you are ok  ❤.
+
+100% agreed
+
+so true!
+
+yes
+
+I second this
+
+same here.
+
+Glad to help, thanks for watching!
+
+These series of videos contains distilled essence of many of years of experience.. Thanks to Brian and Matlab team for making these gold nuggets available free for all.. Its been tremendously helpful in my Journey towards becoming a great Control Systems Engineer!
+
+This video was pure 🔥🔥🔥
+
+Another 👍 Brian's video... Thank you from my ❤
+
+Genius teaching ! Really awesome ! From a french student
+
+Such a great work, I really hoped the video wouldn't end. Thanks!
+
+These videos are seriously underrated. Great work!
+
+Wow! This video explains so many concepts so well. Thank you Brian!
+
+You are my outstanding teacher.
+
+Awesome, clear and direct to the point as usual. Love you Bud.
+
+This video is amazing!
+
+Thank you so much! This was really helpful.
+
+Amazing video. You make my weekend better!
+
+Very good explanation and examples, thanks.
+
+Great explanation!!! Thanks a lot...
+
+Excellent explanation
+
+This video was so well done! Bravo Brian, Bravo!
+
+AWESOME !!
+
+Well Done! Thanks!
+
+Thankyou #Brian Sir.
+
+Your explanations are amazing
+
+Brian, thank you! I have served myself during this quarantine with each one of your videos! You have really helped me to refresh and probably to gain a deeper understanding of control engineering. Please, keep the good work!
+
+Thanks a lot for wonderful video.
+
+Brian you are great you explain so we'll 😍😍
+
+Thank you it was awsome
+
+I love it. I understood very quickly what I was struggling to get in my class!!
+
+😁😁😁clear, concise, brilliant explanation
+
+Wonderful .. Great Lec.
+
+All superheroes dont wear capes .
+
+thank you soooo much
+
+THANKS ! S2
+
+very nice thanks
+
+thanks bro
+
+Thanks a lot, Brian! What’s amazing is that I watched some of your videos from a year ago, and each time I revisit them, I discover new insights that teach me more about control systems.
+
+Bravo 🤝
+
+Thanks 
+that's great
+we need videos about the nonlinear systems such the "negative resistance oscillator"
+we will be very thankful
+
+Great job with these videos Brian!  Love how you add color to these equations...makes it so much easier to follow along.
+
+Thanks
+
+Best
+
+I really regret not finding these series before >>> Now control theory starts making sense for me
+
+Loved it.
+
+Great!
+
+Fantastic! Thrilled to hear that.
+
+I'm happy to hear that this video helped ☺
+
+Glad you enjoyed it!
+
+10:15 Why use B matrix as ss closed-loop second argument?
+
+you're videos are the best, this really saved me on my final. Thanks so much!
+
+amazing. I'm just amazed by a fact that some genius figured this out a long time ago. How did he or she come up with it!? haha
+
+Hello Brian Douglas
+
+Brain, another great video as usual 👍.  I especially like your discussion on practical implementation issues at 13:04.  If you're interested, I actually made a video discussing some of these issues at https://youtu.be/9vCTokJ5RQ8?t=1599.  I'm looking forward to more of your videos!
+
+Hello Brian, your video is amazing. Could you make video on how we deal with N order of system in terms of controller design and analysis , i remember you mention one of your video you have worked on aerospace industry and you know aircraft control has more than 10000 order of model equation need to be aken care of if you could explain the strategy for them it would be helpful and if you could make a video on MPC specially explaining the mathematics or core algorithm behind it, it would be helpful.thnx.
+
+Hi Brian, Good  work!, will you tell us about the linearization of non linear model? thanks
+
+I love you Brian
+
+Beautiful. 
+Only, I haven't been able to find a good definition for the poles. Can you direct me to one?
+
+why do i get for E by min 4:10 for [V,D] = eig(A) in MATLAB for V column 1 and 2 switched? [0.71,-0.45; 0.71, 0.89]
+
+Is the control input equation for PD controller at 12.35 correct?
+
+why is it showing error while using poles imaginary ??
+
+Can anyone explain the foll. please: 
+[1 0] *[k1 k2] = k1 but in the example there is k2 as well
+
+Amazing video!
+4:03 Matrix E for matrix A=[0 1 ; 2 -1] should be [1 -1 ; 1 2]. What am I missing? Where do the values in this matrix E shown in the video come from?!
+
+How do you calculate the reference gain when there are multiple inputs/outputs? 
+For instance, if the system is 2x2, then the DC gain will be 2x2, do you invert the matrix and multiply by the reference?
+
+your state space diagram looks differently to the one shown in the book by powell and franklin. How can i reconcile these differences? Thanks for the video :)
+
+In this approach , we can't look in the system to be adjusted by  phase margin like in scalar approach.
+
+Can someone explain to me how we get the E matrix for the modal form?
+
+Hi Brian , Thanks for providing a beautiful lecture. could you please share an example with real system like a DC motor servo.
+
+Thank you for the video! I was trying to analyse how desired placement of poles will influence the response. I used pretty much the same code in MATLAB as shown in the video, but I'm getting errors when I try to move poles along imaginary axis (adding imaginary part of pole). Am I missing something? Thank you in advance!
+
+giants sitting on the shoulders of other giants, all the way back to pythagoras
+
+Yes, Brian Douglas is awesome!
+
+same qustion here.. did u find the answer
+
+Anyone ?
+
+saneemp, if you're interested here is an example of full state feedback with a DC motor system https://youtu.be/9vCTokJ5RQ8?t=147
+
+Hello, X’=AX+BU, let V=AX+BU then U=inv(B)(V-AX) => X’=V and Could we  choose V=-KX and U=-inv(B)(K+A)X?
+
+Hello, Brain. Firstly, thank you for your continuous sharing. And then, I want to ask you a question. In this video at 8:10, you said" The gain matrix K is a 1 by 2 since there's one OUTPUT and two states." But as you said in the previous slide, kx is part of u. And u is the input. So, why isn't the gain matrix K is a 1 by 2 since there's one INPUT and two states?
+
+respected Matlab, is it possible to do hacking wid help of Matlab?
+
+Hi Brian, Thanks for all your great videos.
+I have a question regarding the control signal u for the PD controller at 12:36. 
+Shouldn't the control signal u be a function of the error (e = r-p) hence the controller output u should be: u =  Kp.e + Kd.e_dot = Kp.(r-p) + Kd.(r-p)_dot ? I mean shouldn't r be multiplied by the gains also?
+
+i feel proud since i am an electrical and computer engineering (power)student
+
+is there a reason why we move the pole values to -1 and -2 or just randomly choose, is there a method to choose the best poles for the system
+
+someon told in the comment sction, this 15 min of video will take around 1 hour. first i thought he was joking now i realise it was true. he explained everything very good, but my brain stops brainning in every 30 sec. :}
+
+is it bass gura method?
+
+Whose here during Covid trying to substitute their university shitty online learning?
+
+why do I feel pole placement is like root-locus...
+
+Great video! Question though, How would I use MATLAB to solve for the poles if I am given the natural frequency and damping ratio? 
+I'm given:
+u(t) = -K( x - x_d)
+My matrices A-D
+the size of K is a 1x4 vector 
+
+
+any tips would help thanks!
+
+That is some excellent sleuthing skills! I did mean to say input there.  I'll see if there is a way MATLAB can add a card or a note in the description to call out this error.  Thanks for finding that and letting me know!
+
+ @BrianBDouglas  HAHAHA. It's my pleasure. It feels good to hear from you.
+
+Gah! I completely messed that up.  I'm not sure what I was thinking when I wrote that transfer function out.  Good catch!
+
+ @BrianBDouglas Maybe you meant a special case. For example if the input r is constant (a step input) , then its derivative will be zero. So we'll end up with r.Kp which makes it similar to the state feedback equation with Kr=Kp and the rest are the same.
+
+ @BrianBDouglas  why isn't B multiplied by Kr as well when calculating the modified A matrix? i.e. Acl = A - B*Kr*K? Asking because B is multiplied by Kr later.
+
+Thanks for asking the question. I thought I was going wrong somewhere.
+
+i also has this doubt thanks from your reply I got ans
+
+You can use root-locus design method techniques to find the locations that meet your requirements.
+Usually when working in a project you have some requirements regarding damping (or overshoot), bandwidth, loop gain and actuator effort (or something related to actuator effort, like battery life of total system).
+
+Thank you for watching, and I know the feeling. In the end, it's all worth it.
+
+The video just describes pole placement in general. I believe the Bass-Gura method is a way to compute the state feedback controller gains from the coefficients of the desired closed-loop characteristic polynomial. So, it's essentially the same thing, I think, just instead of selecting the pole locations like I do in the video, you select a characteristic equation that has the desired pole locations already. Then the gains for the controller are found directly from the coefficients of that equation.
+
+Almost everyone
+
+Because it is :) But root locus for more classical control systems can’t arbitrarily move poles to a desired location, for a single gain you can just place poles along the root locus. With a pid controller you can add a pole or a zero and have a bit more control, but expressing the system in state space (as in this video) allows you to arbitrarily choose pole placement, though in practice this will be limited by practicalities of your system!
+

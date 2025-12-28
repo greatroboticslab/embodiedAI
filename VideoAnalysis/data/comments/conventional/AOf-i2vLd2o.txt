@@ -1,0 +1,368 @@
+I try to read comments before asking my simple questions, as to waist time. Several years have passed but my question is; with 4 MOSFET’s in parallel is increasing the current flow rating? 50 amps each times 4 = 200 amps. Operating at say 160 amps including inrush current, but spreads the heat and load across multiples of matched sets, is this the Benefit or used for a different reason? Just a 62 year old guy trying to learn. I know you’re busy but perhaps someone could chime in. I fixed vehicles, not electronics. Now, forced into retirement I am building a 55 year Chevy truck from my childhood. It’s just getting 3/4 of the electronics from a 2003 Tahoe and the Body Control Module is ( Thru Per-Planning) how to provide 6 different signals from the BCM that requires from a key switch that only produces 4 single signal. Rather than controlling relays thru 3 watt diodes, I was thinking of smaller diodes to control 12.8-14.8 Vdc using N-Channel MOSFET’s. (I don’t need 4) Example;
+Crank.
+Crank, Run.
+ACC, Run, Crank.
+Run.
+It is required inputs into the BCM so it knows by the order of inputs, which modules to turn or  or off. It’s called the power mode master. Yes, I can spend days with a dash ignition switch, but major modifications needed to mount an 03 switch on back. I am thinking of future repair, diagnostics and parts. I have to create an entire service manual so anyone at a dealer or shop can not waist time and fix my son’s truck after I am gone. Any help would be appreciated! I like the “KISS” method of design (Keep It Simple Stupid), 12 volt into multiple circuits, separated by diodes, but operating a simple mosfet. In turn, it controls a relay that turns on a buss bar, fused protected for all circuits, yet a single signal input into the BCM. I am not using all of the toys, but 3/4 of them. Sounds complex, yet everyone want to use a ardrino. Not me! KISS and If designed well, will never fail. Thanks!
+ASE Master Tech since 1978 - Retired
+
+I would like to like this video every time I see it. Now 4th time. Very clear explanations and solutions. Thank you Lewis.
+
+Really excellent explanations and insights! The engineering challenge of managing parallel MOSFETs was fascinating, I think I understand now why some cheap offshore inverter welding boxes with parallel MOSFETs are prone to blowing MOSFET chips.
+
+Very clear discussion of this tricky,  misunderstood and often ignored issue.  Spot on!
+
+This is awesome, I love the clear explanation and strategies.
+
+excellent , i am myself an electtronics engeneer building an inverter , but i learned something , thank you
+
+Excellent explanation. Much improved my understanding of MOSFETS. Thanks
+
+Nice and very useful video but its good that you could drawn out my thought in particular. Thx a lot.
+
+Great job man. Thank you for sharing.
+
+I came to the same conclusions. Nice to know they are right.
+
+Very good and solid information ! Thanks !
+
+Excellent video.  Very professional.
+
+Best explanation.  I am only starting to use Power Mosfets now after a 40 year break  from this hobby ( started with OC71 and OC45 transistors ) so thank you.
+
+Wow. Super useful. Thank you.
+
+great vid thanks for posting
+
+Thank you for this tutorial on parallelling  mosfets my application is to build a quarter bridge induction heater 
+and I will try to //  several mosfets to drive an induction coil (6 turns)  achieve high power of about 2000watts.
+
+Very good explanation,  rapid switching and shunt of the gate capacitor charge is critical in maintaining even power sharing.
+
+muy bien analisis y explicacion , gracias
+
+Excellent instructional vodeo, thanks.
+
+I'm so glad I have access to 200a mosfet for free.
+
+I remember those. I was very young at the time 😮
+
+Great explaination. many thank
+
+Thanks for sharing
+
+Useful video
+
+Nice video, thanks for sharing it, keep it up :)
+
+good explanation.
+
+Great tutorial.
+
+Very good
+
+So I guess  if you need alot of FETs paralled. Get extra. And match them!
+
+Hi. I have a problem with a parallel arangement at high voltage. To mention that I am using already several years parallel arrangements at low voltage (40-150V) and big currents (40-240A), without problems. 
+
+
+Short description: 6 x 500V/190miliohms (IPA50R190) MOSFETs in parallel, each driven with 10 ohms gate resistance; supply is 300Vdc, load is typically 2-3A/case, resistive load, and transistors should do overload to 6A/case for miliseconds; these transistors are good, can handle roughly 60A each for 1-2 microseconds (in SOA on datasheet). I am driving all of them with a single 9A driver (TC4422), it should switch them on/off very-very quickly (<100ns), and without problems. I have snubbers of 150 ohms+4,7nF on each transistor. Also I have 440V ESR diode in parallel on supply, and flywheel diode in antiparallel on output cables. 
+
+
+Still, at roughly 4kW load (15A) one of the transistors immediately fail (always), typically I measure gate-source breakdown. What could be the problem?? Gate-gate oscillations? Gate-drain spikes? Or something else.. I am working on it, but a few ideas will be helpful. I do not have zenner on gates because I deemed them unnecesary (because of driver TC4422), maybe I should...
+
+for the circuit of figure 10, to each resistor of 27 ohms can the diode 1N914 be placed in parallel?
+
+Very nicely presented. Can you recommend a MOSFET with the spec of the K150E10NE.
+
+Dear Lewis
+If I use a gate driver IC (like TC4422)  for triggering the MOSFETs (ex.15  of them), still have a need to use SERIES GATE RESISTORS or not?
+
+Hello. Good presentation. Thank you. Cgs is represented wrong in the variant with seperate Rg-s. Cgs is after the Rg for each fet separate. It is the gate source capacitance. Can you explain little bit how do you prevent shoot through in you mosfet push-pull driver. Thank you for sharing your knolage.
+
+new sub here
+
+In the circuit at 18:41 the 1N914 diode provides a fast discharge path and the 47 Ohm resistor creates a slow turn on. The problem with using parallel mosfets is not that they turn on at different points because when they first turn on they will be barely turned on and they will remain in the linear region well past when all of the transistors start to conduct. The problem is that they will all spend much of their time in the linear region which causes them to heat up. Quickly driving all of the transistor past the linear region allows all of the transistors to operate in their low resistance region for most on the on time. Discharging quickly is the same problem as the transistors have to come out of saturation and then turn-off traveling through the linear region. 
+The diodes does not remove noise in fact it creates some near the barrier voltage but at less than 1 v the transistors are fully off so the noise does not affect the transistors.
+
+Using a 12v drive and the 47 Ohm resistor allows the bias voltage to rise rapidly but keeps the transistor in the linear region long enough to reduce turn-on surge currents to a reasonable level. Balancing how fast the transistors turn on with the problem of power loss in the linear region is part of designing the circuit for the load. The problem with turning off the transistor very fast is than the motor which is an inductive load will fighting the reduction of current and cause a voltage spike which can exceed the breakdown voltage of the transistor or other circuits connected to the power supply. By slowing the discharge down a little the transistors can reduce the voltage spike by lowering the dv/dt. The discharge typically should be faster than the charging so that the transistors reaches full off without too much delay. This is particularly important in an H-Bridge because the other transistors are going to be turning on and you don't want both sets on at the same time even for a short duration.
+
+In addition when driving large currents you must be very aware of ground bounce. This is what happens when large currents switch and the stray resistance and inductance in the wires causes a extra voltage between the ground and the source of the transistors. This can cause the voltage at the gate to rise possibly enough to exceed the gate to source break-down voltage for a short duration. It can also cause the gate to become partially turned on when the gate drive voltage should have fallen below the turn-off point. For this reason gate discharge should be done through a active element not a resistor and terminated at the source of the transistor not at the power ground. When switch occurs at low enough frequencies using a single resistor to all gates works well enough but as the frequency of on time decreases the added stray capacitance and inductance in the wire to the gate will bite you just like the gate does. By driving the all through separate resistors you isolate the stray capacitance and inductance to only one path to the gate. This can also allow using a high gate resistance which can be help keep MOSFET device failures from damaging the driver circuit and other MOSFETs in the stack.
+
+Power MOSFETs are very capable devices and can handle serious power but their weakness is the gate to source breakdown voltage. Protected the gate and keeping voltage spikes below the Drain to Source breakdown voltage will keep them happy. And as always heat is every circuit's enemy so keeping the cool is the key to long life. Properly driving the gate can make a huge difference in both static and switching power loss. When dealing with large currents always remember that every wire is a resistor and a inductor. Lastly don't ever believe the specs that say the transistor can handle more than 100 amperes, the leads will melt at around 75 amperes. Average 25-30 amperes per transistor is more reasonable with spikes around 50 amperes are still possible by the beefy transistors at DC or low frequencies. As the switching frequency goes above 50 KHz things get tricky and you will be increasing the switch losses resulting in more heat.
+
+Thanks so much for this. I'm trying to creat a circuit that charges capacitors in parallel and discharges to the list in series, I'm having this exact problem. Charging time is abysmal all because of TAU! I SHOULD'VE KNOWN!
+
+Excellent presentation !!! Have you ever use the HA210N06 mosfet ?? ...It has a very high current (50 AMps) for a Vgs of 5 volts as to be used with an Arduino....and therefore avoid using this lower current mosfet in parallel and all the issues here discussed...what do you think?  Thanks.
+
+Tricks-n-Traps of MOSFETS. You "can" use a microcontroller to turn on a N-ch mosfet up to a certain frequency, low speed like blinkers on your car is fine. IF you're trying to vary the speed of a motor, much better to use at LEAST a gate driver IC that basically consists of two N-ch MOSFETS with an additional charge pump circuit. It will keep your output MOSFETS cooler during higher frequency switching with much less RC constant.
+
+want to  switch an h bridge at 1meg hert but the mosfet capacitance is a problem.
+
+I have a plan to fire 8 IRFB4110 IN A sequence where the load is approximately  70A in this each mosfet will fire for 2 milliseconds each  in a sequence 1,2,3,4,5,6,7,8,1 . with heavy heat sink . the rating 
+of the mosfet is (Imax) is 180 , will the mosfet stand the load as the duration of load is in millisecond 
+and it takes 16 milliseconds off time for each mosfet yet the output remains constant on output end as all mosfets are connected to a common buss , they only fire one at a time .please advise , Can the mosfet bear the Current
+
+True. This is hobby level and to present circuit ideas. You need a good clean switching pulse. You can lower the 47 ohm that is what I had when I built it. Try 10 ohms, etc. thanks
+
+Hi. I have a problem with a parallel arangement at high voltage. Short description: 6 x 500V/190miliohms (IPA50R190) MOSFETs in parallel, each driven with 10 ohms gate resistance; supply is 300Vdc, load is typically 3A/case, resistive load, and should do overload to 6A/case for miliseconds; these transistors are good, can handle roughly 60A each for 1-2 microseconds (in SOA on datasheet). I am driving all of them with a single 9A driver (TC4422), it should switch them on/off very-very quickly (<100ns), and without problems. I have snubbers of 150 ohms+4,7nF on each transistor. Also I have 440V ESR diode in parallel on supply, and flywheel diode in antiparallel on output cables. Still, at roughly 4kW load (15A) one of the transistors immediately fail always, typically I measure gate-source breakdown. What could be the problem?? Gate-gate oscillations? Gate-drain spikes? Or something else.. I am working on it, but a few ideas will be helpful. I do nat have zenner on gates because I deemed them unnecesary (because of driver TC4422), maybe I should...
+
+ @addysoftware  Working with high voltage and current can be difficult to dangerous to diagnose, scaling down the power level is often a good idea so you can observe the heck of the circuit without it failing so quickly. I would also put in a zener diode that you may not need in the end but it could provide some good protection while you find the problem. I would not drive 6 transistors from the same driver just because the trace length starts adding up quickly. Using two drivers may be a better fit. One advantage of scaling the power down is that you can just leave transistors out of the circuit and observe how adding them in affects the circuit performance. You may find that certain position on the board have different effects when a transistor is present. Observing the gate drive signal at the gate pin relative to the source of that transistor could be very helpful. Observing the voltage across the drain and source is much safer to do at lower voltages and current levels and what you care about is not the exact voltage but the patterns like ringing or sharply rise and failing levels. This can be used to tune your snubber circuit for maximum effect and let you observe the effects of changes to the driver circuit.
+
+
+Look for difference in the signals pattern on different transistors. This could alert you to PCB layout issues, which can be lots of fun to resolve. One of the most critical connections on the PCB is between the sources pins and the driver ground. This connect alone could be a argument for multiple driver chips and using a driver with a lower current capability but with a lower price may be a good trade off making it practical to use more drivers. Using more than 2 layers may be needed to give you a way of separating circuit loops and making sure the driver get all the power they need to do there job. Decoupling the heck out of the drivers and the signal sources is also important. Also make sure the control circuit and driver circuits has clean power.
+
+After stripping the semantics away I think you are saying that off rate is as important as on rate.  Reasonable.  What's not reasonable anywhere in either the video or your post is the use of the term noise.  It's not semantics.  Are either of you talking about flyback?  Do you think the resistor is acting as an antenna? Do you mean that power dissipation is duty cycle dependent?  What "noise" are you talking about?
+
+Those are really good points. I can see how they will be affected by high frequency switching. I'd really like to read more about this. Do you know of any documentation I can take a look at?
+
+Hi Lewis,
+And thanks for your very well explained videos.
+
+I tried using two mosfets (ref RU8580, Amax=90 A, Vmax=85V, RDSon=5mOhm, Vgs=3V ) in parallel to power a vacuum cleaner motor (150W i'd say, so the amps to pass is lower than 8A). The battery is around 20V (7 Li-Ion cells in series). I used a resistor-divider setup (with a pot in the middle) to have a variable input voltage of 2-6V for attacking the gate of the FET. The total resistance of the resistor-divider is 120 KOhms. There's a 10K resistance from gate to ground, preventing the gate to stay on even when lowering the pot. I found the setup fries one of the FET quickly (5-6s) even with a 10 cm² heatsink on the fets. In the meantime, I stuck a DC-DC buck converter to get the job done (no problem) although the output is low (3A max).
+I'd like to understand why my initial setup didn't work, so if you have any idea on this, I'd really appreciate. I read a bit the basics on the mosfets, I have little experience though.
+Thank you !
+
+Well. Now I know why my power mosfets were cheap.
+
+the internal MOSFET's structurer are mirrored along base line, so it's ok to switch drain and source ?
+
+I don't understand how Q2 will discharge the mosfet array when the bjt transistor switches off. How is the charge in the gate of the mosfets going to be dissipated when the signal is off?
+
+Thanks, for good expl. but true is if you try connected mosfets in parallel up to 24V it will work but from 100 -240V it will fail under heavy load because the truth is that in nature there are no things that are 100% similar to each other and in this case one mosfet will turn on faster than another.
+
+Fortunately, I'm dealing with building four solid state relay circuits for four battery modules, and each module's solid state relay will involve two parallel MOSFETs for a total 52KW power handling capability for each module, at a max charge of 109.6 VDC each, at a max current draw of 254 amps. I will not, of course, allow the load to draw any more than about 50-80 amps per module for the inverters. So, capacitance isn't nearly so critical. My power MOSFETs have a VGS of 4 V Max. 2 Min, 3 typical, and 4 Max. The MOSFETs are rated at 200 VoltsSD and 140 AmpsSD. Their part number is STE140NF20D. Their RDS is between 10 and 12 milliohms. They will be on large aluminum heat sink blocks and I will see what they heat up to in operation as to if I will need a fan. Great power backup for the house in those times when local power drops out for whatever reason.
+
+dear lewis loflin i want to make transformer isolated push pull dc/dc converter with two mosfets and microcontroller with sinusoidal pwm output. how can we resample shunt resistor voltage at primary side. should we get some feedback from secondary side?
+
+hi at 10:35 u didnt calculate that 4 capacitor fount then the the total t is different
+
+I made another variation to connect my two mosfets in parallel for each side so 4 mosfets in total... (ZVS Driver circuit) I have a variable input voltage via a LM317 which I set to 14.8 volt (VCC), from VCC I have on every gate a 470 ohm 2 watt precision resistor (1%), also I've limited all gates with a 15 volt zener diode and I've put a 10k ohm resistor on every gate to ground.
+
+It's the Mazzilli circuit but I changed it so every mosfet has its own zener diode and gate resistors and the 4 schottky diodes so everything times 4.
+
+It's a monster zvs driver with an isolated power supply to drive the gates via the LM317 at 14.8 volt and I use 4 computer power supplies in series to get 48 volt capable to deliver a maximum of 20 ampere but my circuit needs about 8 ampere so I have plenty of headroom...
+
+I have a flyback transformer connected and the output of that is about 100kv... I can pull 10cm white hot plasma arcs with it, it's a beast!
+
+Best regards,
+Ricardo Penders
+
+hi...PLEASE HELP,
+I have a TC4429 Driver chip and a IRF4905 P channel mosfet.
+I want to make a High side drive.
+I have put a 1k resistor from gate to positive,  
+the Source is direct to Positive and a 12 volt 1 Amp bulb is connected to drain and Gnd.
+the TC4429 is run on 12V.  i am feeding it with a PWM signal.
+I cannot get the P channel mosfet to vary the output at all. it stays in the ON condition.
+if i use an N channel mosfet it varies the output... in high side mode... but makes lots of heat!
+i just want a decent High side driver ... i want 3 amps at 24v output with PWM control once i have a good circuit.
+HHHEEELLLPP!    :o)
+
+Quick question on 18:58, isn't Cgs supposed to be coming from the gate, not from the 27ohm?
+
+Really good!! Thanks for sharing  knowledge! Something I was thinking... It's usually done with N-Mosfets, because of the negative thermal associated resistence, ie, the more it heats up, the more resistivity it gets. It's the opposite for P-MOSFETs, correct me if I'm wrong.
+
+And also https://en.wikipedia.org/wiki/Miller_effect
+
+I thought I was on uncle Doug channel. You sound very similar. 
+So today I felt bold to learn about transistors . Pulled some out of old parts , looked them up on spec . Have one working with my hand when I touch the gate . 40 volt dc trying to lower to 12 v  have a pnp to work with . If I hook the gate to power it full on . If I use my hand I get 12 volt depending how I touch it . Do I need a higher ohm resistor to solve this ?
+
+@0:47 Great video - thank you. May I add that it is recommended to connect a resistor between each Gate and Driving Singal - Also I would avoid connecting all Gates together, at least if one transistor get damaged then the others operation will not get affected and for timing purpose. Also, you may add seperate bleeding resistor Rg for each transistor and account for the total resistance seen by the source, from output looking into the input.
+
+هل يوصل الmosfet على التوالي ولماذا
+
+You should be talking about the input levels of the mosfet driver, not the mosfets themselves
+
+I added a 4.7 ohms in series each MOSFET's gate
+
+A note from practical experience: Driving at 12V solves some problems, but makes a new one: There's a parasitic inductance in the wire to the gate. You can get some ringing, which means when you drive up to 12V you can briefly generate an inadvertent voltage in excess of 20V and exceed Vgs. Lost a few power MOSFETs to that before I figured it out. It's easy enough to avoid once you know to look for it.
+
+I gotta ask. Isn't that what Td(on) & Td(off) is (kinda) for?
+There you see the time delay for it's totally turned on/off and thus you know the "max" frequency you can use.
+or am I totally way off?
+
+Driving inductive loads is tricky because energy is easily coupled in undesirable ways. Short length of wiring in the control circuit are very important and preventing energy coupling from the load to the gate pin is critical. Lower the gate pull down resistor to 1K and the resistance of the divider to something on the order of 10K would help. Also consider than the voltage across the motor can spike to crazy values at times due to the nature of the motor. Putting a large foil type capacitor with a 100 or higher voltage rating across the load may help.
+
+I'm trying to make a dummy load. Mosfets are P75NF85. 75A 80V. Six of them are connected parallel. They aint warmin up til the 3A if they are not parallel. But when I connected parallel 6 of them allways one of them is burning up after the 5Amp. Then the other and the other. So every of them are burned up. I'm using 80mmx150mm heat sink with the fan cooler. Gate resistor 1K for every mosfet apartly and the voltage divider is 4k7. They are not working that like they are connected parallel. My driver is arduino over opamp, gate voltage 10V dc,  Vcc 12vdc for drain, duty cycle %10 maybe %20, pwm freq 3.9khz 
+
+I think have not fault myself but the result is  like you know.
+
+Made an update to my 4 MOSFET ZVS driver, I made a new power supply using the LT1084CP Linear Technology voltage regulator, it can drive loads up to 3 ampere and this particular regulator tends to go up a bit in voltage, this is different from the LM317 regulator because that one tends to go down a bit in voltage. For my ZVS driver I prefer the new regulator because I don't have to worry about the voltage going down from where I set it with the potentiometer and it can deliver 3 times as much power as the LM317.
+
+
+I also added a new 24 volt transformer (100VA), a footswitch to switch two 24 volt AC relays, one which I've connected to the high voltage AC before the bridge rectifier and the other relay after the bridge rectifier for safety reasons because I don't want to mess around with any part of the high voltage part since I've shocked myself a couple times when connecting the power by hand. So now I can switch the two relays together with the footswitch using the low voltage of the 24 volt transformer which also provides the power to my new voltage regulator that drives the ZVS driver.
+
+
+The high voltage part is now coming from a new high current audio transformer which is fully isolated and disconnected when switched off from the voltage regulator by the two relays to make the flyback much safer.
+
+
+Now I get even longer and thicker plasma arcs and much more ion wind, the arcs are now about 15 cm which is about 150 KV and the absolute maximum that my flyback can handle for a somewhat shorter period of time. I'm still able to play with it for 10 to 15 minutes without any problems.
+
+
+So I've tested my leyden jars with it and the sound coming from the arcs is super hard, overwhelming and scary... But I want to use it to drive a spark gap tesla coil for my next experiment.
+
+
+One thing that I find interesting using 4 MOSFETS is when I blow up the driver (it happened 2 times) it only kills just one MOSFET and nothing else, the driver simply locks itself when a MOSFET is blown and it doesn't short my low voltage power supply or the high voltage power supply when it all goes to sh*t, just the one MOSFET which is an unexpected outcome.
+
+
+Best regards,
+Ricardo Penders
+
+Actually both P and N channel MOSFETS increase in resistance with temperature meaning it has a positive thermal coefficient. This is important because it allow the transistor to easily share current because even if they vary widely to start with they will heat to equalize themselves if enough load it put on them to heat them up. This is unlike junction transistors that pass higher currents as they heat up right until they get too hot and die. The reason that N channels transistor are preferred is that they can be made to handle higher currents and have lower resistance using the same amount of material. However in many circuits using a P channel transistor results in simpler circuitry. And modern P channel MOSFETs perform pretty well at a reasonable price. But for serious power levels N channel is the way to go.
+
+
+Another important thing to keep in mind is that junction transistors are basically diodes that have to be turned on while MOSFETS are more like resistors that can vary in resistance from very high to very low. They difference is the junction transistor can only pass current in one direction while the MOSFET can pass current in both directions. If also means that the junction transistor has a fixed forward voltage drop that is a loss of power in the system. For example: Passing 10 amperes through a junction diode results in ~0.6 Volts * 10 Amperes = 6 watts of power converted to heat in the transistor. While a similar MOSFET might pass 10 amperes with resistance as low as .005 Ohms. So power loss is I * I * R or 10 * 10 * .005 = 0.5 watts. MOSFETs can also be placed back to back (sources connected and power flowing flow drain to drain) to switch AC current.
+
+ @briannebeker2099  that's really interesting! Thanks for sharing knowledge, it's really nice!! 👏 👏
+
+Check the datasheet
+
+Agree. this is a demo and ideas are always welcome.
+
+How do you figure the resistance needed on the gates I'm trying to parallel  6 MOSFETs  for a amplifier  and several videos later  I still don't really have a answer or a way  or do I just start putting a resistor till I find it maybe working
+
+ @Davidsmith218    You may use trial-and-error but is not good practice. For a given MOSFET you must refer to the data sheet for optimal Gate resistance. Please read the data sheet and learn how MOSFETs work, I have been working with them for over 30 years and I invest my time on designing and building, rather on educating.
+
+Good whatever works best.
+
+True if you are doing this at crazy high frequencies. But this is hobby circuit level not a commercial level say switching power supply. Thanks for your input.
+
+ @LewisLoflin  It's not frequency that's the problem, it's rise time. Sticking a few ohms between the driver and gate solved it for me - it slowed the rise time down just a little, thus bringing the ringing within an acceptable level.
+
+Correct. Thank you.
+
+That does play directly into max frequency.
+
+Is Cgs a real capacitor component in the circuit or is it a mental variable that's part of the FET's internal characteristics?
+
+Can I increase MOSFET D S voltage by connecting Diode in series ex using P55N 60volt MOSFET with Fr10 series diode which block 100 or 600 volt reverse ? Is it possible ??
+
+I always wonder why drain and source are not interchangeable, as the scheme of a MOSFET is always drawn symmetrically...
+
+There are literally no issues paralleling MOSFETs - use more gate drive or bigger FETs.
+
+Gate capacitance is not the scariest thing in direct parallel connection. The scariest thing is ringing. Especially in half bridge circuits, which basically can cause  a "shot-thru" BUS to GND. So NEVER connect 2 or more gates together without placing extra resistors per gate, to prevent LC circuit ringing in  Gate-Source - Source-Gate
+
+Sir, I have a question about electrons. A photon is a wave packet that's propagating in the electric and magnetic fields. But, in what medium is the electron wave packet propagating in, what is it made out of? I've tried to look up this question on the Internet and I've tried to ask others this question and no one seems to know or want to answer it. I was just wondering if you know the answer, sir. Thank You.
+
+Lewis - Thanks for sharing your insightful experience! I did all the odd problems in six electrical engineering text books, but it helps to hear someone else's perspective. Fun fact: The video pace was perfect first time through. The second time I was able to soak it in at almost 2x speed!  :) Good stuff!!
+
+The drive circuit(half H bridge) that you explained in the video also has a BJT driving the the Mosfets. So it's essentially BJT+MOSFET driving the main MOSFETs. Won't that introduce additional turn-on/turn-off delay?
+
+can i use a transistor with high frequency switching capability and lower current just to switch my mosfet "Bank" very fast and hard to 5V Vgs and make them turn on safely all at once?
+
+Great explanation. 
+In the half bridge, is the diode not to discharge Cg through the source of Q2 to make it turn off faster and prevent shorting Vcc? I'm not following the noise explanation? 
+Same with D across Rg on the fet parallel CCT driven by an MCU, is D not there discharge Cg through the MCU pin when 'low'? I'm not following the voltage spike unless you are meaning D clamps Rg to Vf?
+
+Electrons are also wave packets with their own frequency, wavelength, and velocity. But, in what medium are electrons rippling through? If I may interest you into looking at a video on youtube entitled: modern physics (16 of 26) by michel van beizen.
+
+MOSFETS in Parallel give more current if they synchronous;  However if we do these in series with a 1200 volt drop across each other.  I can reach 10K volts with about 10 of them plus some lead way.  I what to switch 10K Volt signal around 20usec range.   Not unless there is another way?
+
+Thank you very much for your clarification. I have some doubts on your h- bridge circuit. Inorder to switch on Q2, you are switching on Q5 to gnd, in the same time +VCC will get shorted to gnd via Q5. So you are blowing up the PS . Can u please explain that ?
+
+Old video. Now days (2022) it is not really necessary to parallel small (under 50amp) FETs since single units with internal matched dies capable of hundreds of amps are available that will be much more reliable.
+
+Hi Mr Loflin, I'm very interested in the Drive Circuit at 15:51 of this video.  I want to trigger 16 coils in a pulse motor simultaneously.  1000W in, 1.3A per coil.  I know how to do this with MJL21194's  but not with mosfets.  I attempted to bread board the circuit but It got very congested and problematic for me, I'd rather solder a circuit.  Any feedback from you would be of great value.  I will trigger the fets with Hall device or opto switching.  I can do those as well.  Need help and advice with the 16 parallel mosfets. Thanks, Donald.
+
+I did not completely understood the role of the 1N914 DIODE AND 47 Ohm resistor . Can you please put it out in writing ?
+
+Very Nice,   I am looking to switch 10K voltages I want to add Mosfet in Series to drop the voltage is this possible?
+
+او ای وای وای اوی اوی........ اصل مطلب را بگو جان بکن .انگار تو دستشویی نشسته.
+
+Hi Lewis,  IXYS 4500V High Voltage Power MOSFETs and PCB are already made... for high voltage switching. I just wanted to know how they did it.   I want to go  10K volts with two of them in series if possible.   maybe four of them for 20K...    What is involved in making this work without arcing and we can get a fast 20us pulse train out within a period of time.   we will need heatsinks possible water cooling don't know.   Its a tough problem... no doubt.
+
+Can i use the 1n4148 diode at the gate
+
+No not as such. It's the capacitance between the MOSFET electrodes. This is in the spec sheets.
+
+You can measure it.  Does that make it real to you?
+
+use high voltage mosfet
+
+Some people claim they are but I stick to convention.
+
+Electron wave packet? Did you mean photon? Photons are electromagnetic energy not influenced by magnetic fields while an electron is matter with a negative charge and effected by magnetics. Photons can pass through a vacuum but unless translucent or very thin (or very high energy levels) won't pass though matter. It's a matter of wavelength where shorter wavelength (x-rays, gamma rays) the better they will pass through matter. Hope that helps.
+
+Can u tell the names of these books, please?
+
+ @waltersullivan3787  Below are the books I used. I got them at the Harvard Coop or MIT Book Store some years ago. MIT students were using them. Each book is two courses for six total. It was quite a bit of work but well worth it to me. I don’t think there are any shortcuts but videos here are really good.  Also, I don’t think the basics are changing that fast. So, for me,  book versions that are a few years old are great and you save a lot of money. These were really good for me. Note that at least one of these is the electron flow version compared to conventional flow. I found that easier to learn at first.
+
+Good luck!
+
+Digital Systems Principles and Applications
+By Tocci and Widmer
+
+Principles of Electric Circuits Electron Flow Version
+By Floyd  (You need to learn this before Floyd’s Fundamentals book below.)
+
+Fundamentals of Analog Circuits
+By Floyd and Buchla
+
+The main problem is charge/discharge on the MOSFET gates. The MOSFET drivers provide low turn on/off resistance. Thanks.
+
+Yes, but typically important is not the delay (not very high usually, for example a good driver like TC4422 have several tens of nanosec delay), but the switching speed; this is improved a lot.
+
+aye okay should have watched further
+
+The diodes are spike suppressors.
+
+This comes under theoretical physics some say a hypothesis. They claim matter for example is congealed packets of energy, etc. I deal in applied physics not stuff that sounds like a mystical religion with no practical uses as such. I'll look at the video if you have a link. Thanks.
+
+Don't think so. You are trying to use MOSFEts as a type of series resistors. Each G-S voltage will be different and the circuitry for this is very complex and not practical at this level.
+
+Rg which is usually 10K will not allow Vcc to short to ground. Vcc MUST NOT exceed Vgs usually 20V most of the time. Thanks.
+
+ @LewisLoflin  thank you very much for your clarification. And one more think I have some other doubts also in building a h- bridge circuit. How can I contact you ?
+
+I have since cut brds on my router and will test today.  brds are for driver and 3 fets switching 3 coils of pulse motor.
+
+Help suppress switching noise.
+
+I don't understand why you would want to do this. Not enough information.
+
+I know the part but not the the PC board circuits. I learn new things all the time myself.
+
+If you want to.
+
+1.25x sounds normal!! is it ur recording software that slows down the video?
+
+How ! 11:41 you said mos 1 fire first mos2 sec mos 3 fire next ! Why if all MOSFET connected in parallel with parallel gate connection so all should be Active at once because all signals comes  at same time ???
+
+So why inverter mosfet or parallel
+
+what would be the main reason to use mosfet in parallel ? is it to make the amps double ? drain to source i mean ?
+
+Why do you use ground symbol for VCC?
+
+Would this capacitance issue also apply to bjt transistors?
+
+What a fail. He can play smart by adding diode to mute any noise generated by resistor, but he can't put diode across motor for BASIC transistor protection.
+
+Hi Lewis, Do you think mosfets could be driven from automotive points, allowing the points to only need to handle only a small voltage suficient to operate their gate, rather than that from the primary coil and still retain the mechanical tuning of the points for static timing, primary coil charging dwell (on) time and advance etc? Would this eliminate the need for troublesome condensers?
+
+Lewis - Thanks for sharing your insightful experience! I did all the odd problems in six electrical engineering text books, but it helps to hear someone else's perspective. Fun fact: The video pace was perfect first time through. The second time I was able to soak it in at almost 2x speed! Good stuff!!
+
+Because of production variants, they are not all the same. One hast a little thicker gate insolation and so so, they are not even close to be perfekt.
+
+Ideally yes you are right.  Unfortunately things are not perfect and all turn on at slightly different voltages this is why the datasheet shows a minimum and maximum and a typical which means any single device falls somewhere in that range. so if the MOSFET with the lowest threshold turns on before all the others it alone is carrying all the current until the others catch up
+
+To handle higher currents.
+
+Yes it will carry more current and less RDS resistance.
+
+ @LewisLoflin  very nice so if we need more voltage will be in series then ? Ok if am connecting two in parallel what will be the value for the pull down resistor? Can I pulse with the same arduino or the same driver like 4420
+
+That is a power symbol in my schematic software. Perhaps it differs in older or non-US drawings?
+
+ @LewisLoflin  That and ground symbol you're using both are for ground.
+For example in Kicad default ground symbol is that you used for VCC.
+
+There is capacitance in BJTs but not like MOSFETs. BJTs are current controlled MOSFETs voltage controlled.
+
+Diodes are in the MOSFETs. They all come that way.
+
+I see no problem with that if wired correctly. You are supplying a turn on voltage not a high current to a coil.
+
