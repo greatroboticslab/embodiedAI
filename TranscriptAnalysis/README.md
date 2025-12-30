@@ -36,6 +36,16 @@ Select --force to recompute even if outputs exist.
     conda activate videoanalysis
     python topic_comment_correlation.py 
 
+### To Correlate YouTube Comments with Topics (JSON input)
+
+This script is similar to `topic_comment_correlation.py` but accepts a folder of JSON/JSONL comment files (downloaded from YouTube) instead of a single DOCX file.
+
+    cd TranscriptAnalysis/scripts
+    conda activate videoanalysis
+    python topic_comment_correlation_youtube.py \
+      --comments_dir ../../VideoAnalysis/data/comments \
+      --results_root ../results_youtube 
+
 ### To Generate Metrics
 
     cd TranscriptAnalysis/scripts
