@@ -720,7 +720,7 @@ def main():
     ap.add_argument("--results_root", default="../results_youtube",
                     help="Root directory for results. Defaults to ../results_youtube relative to this script.")
     ap.add_argument("--comments_dir",
-                    default="../../VideoAnalysis/data/comments",
+                    default="../../VideoAnalysis/data/comments/conventional",
                     help="Directory containing <video_id>.json comment files.")
 
     ap.add_argument("--topics_root", default="../data/topics_conventional", help="Directory containing <video_id>.topics.json files.")
