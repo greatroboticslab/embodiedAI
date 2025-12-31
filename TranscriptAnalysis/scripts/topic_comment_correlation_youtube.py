@@ -736,7 +736,7 @@ def main():
     ap.add_argument("--seg_min_size", type=int, default=6, help="Unused for topics; kept for tag naming consistency.")
 
     ap.add_argument("--embed_model", default="all-mpnet-base-v2", help="SentenceTransformer model for embeddings.")
-    ap.add_argument("--retrieval_topk", type=int, default=50,
+    ap.add_argument("--retrieval_topk", type=int, default=200,
                     help="How many candidate comments to retrieve per topic before LLM re-score (0 = score all).")
     ap.add_argument("--rep_k", type=int, default=3, help="Representative thumbnails per topic in the report.")
 
