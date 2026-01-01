@@ -339,178 +339,123 @@ def build_docx_from_results(out_docx: str, topics: list, results_map: dict,
     doc.add_paragraph(f"Model: {model_name}")
 
     # Aggregate
+    # Aggregate stats
     total_pairs = sum(rec.get("checked_pairs", 0) for rec in results_map.values())
     base_dir = frame_dir
 
-    # Topic metadata map for quick lookup (stringify IDs for safety)
-    topic_map = {str(t.get("id")): {
-        "title": t.get("title", ""),
-        "description": t.get("description", "")
-    } for t in topics}
+    # Topic metadata map
+    topic_map = {str(t.get("id")): t for t in topics}
 
-    # Per-comment index (for coverage summary)
-    comments_index = {}
+    # Calculate summary metrics and per-topic correlation scores
+    corr_true_ids = set()       # correlated=True
+    high_score_ids = set()      # correlated=True AND score >= min
+    
+    topic_sort_data = [] # (avg_score, topic_obj)
+
     for t in topics:
         tid = t["id"]
         rec = results_map.get((tid,), {})
-        for c in rec.get("candidates", []):
-            key = (c.get("url", ""), c.get("comment", ""))
-            entry = comments_index.setdefault(key, {
-                "comment": c.get("comment", ""),
-                "url": c.get("url", ""),
-                "topics": set(),
-                "max_score": 0,
-                "per_topic": {}
-            })
-            s = float(c.get("score", 0))
-            r = str(c.get("reason", "") or "")
-            entry["per_topic"][tid] = {"score": s, "reason": r, "rep_frames": t.get("rep_frames", [])}
-            if c.get("correlated") and int(s) >= min_score:
-                entry["topics"].add(tid)
-                entry["max_score"] = max(entry["max_score"], int(s))
+        candidates = rec.get("candidates", [])
+        
+        valid_scores = []
+        for c in candidates:
+            cid = (c.get("url", ""), c.get("comment", ""))
+            s = int(c.get("score", 0))
+            is_corr = c.get("correlated")
+            
+            if is_corr:
+                corr_true_ids.add(cid)
+                if s >= min_score:
+                    high_score_ids.add(cid)
+                    valid_scores.append(s)
+        
+        # Metric for sorting topics: Avg score of VALID matches (>= min_score)
+        # If no valid matches, score is 0.
+        avg_score = sum(valid_scores) / len(valid_scores) if valid_scores else 0.0
+        topic_sort_data.append((avg_score, t))
 
-    unique_corr_count = sum(1 for v in comments_index.values() if v["topics"])
-    pct = None
-    if total_comments_available and total_comments_available > 0:
-        pct = 100.0 * unique_corr_count / total_comments_available
+    # Sort topics: descending by avg score, then ID
+    topic_sort_data.sort(key=lambda x: (x[0], str(x[1]["id"])), reverse=True)
+    sorted_topics = [x[1] for x in topic_sort_data]
 
-    # Summary
+    # Summary Section
     doc.add_heading("Summary", level=1)
     doc.add_paragraph(f"Topics processed: {len(topics)}")
     if total_comments_available is not None:
         doc.add_paragraph(f"Comments available for this video: {total_comments_available}")
-    doc.add_paragraph(
-        f"Comments correlated to ≥ {min_score}: {unique_corr_count}" + (f" ({pct:.1f}%)" if pct is not None else "")
-    )
+    
+    # Coverage stats
+    pct_any = 0.0
+    pct_high = 0.0
+    if total_comments_available and total_comments_available > 0:
+        pct_any = 100.0 * len(corr_true_ids) / total_comments_available
+        pct_high = 100.0 * len(high_score_ids) / total_comments_available
+
+    doc.add_paragraph(f"Comments with correlated=True: {len(corr_true_ids)} ({pct_any:.1f}%)")
+    doc.add_paragraph(f"Comments with score >= {min_score}: {len(high_score_ids)} ({pct_high:.1f}%)")
     doc.add_paragraph(f"Total candidate pairs checked: {total_pairs}")
+    
+    doc.add_paragraph("-" * 40)
 
-    # ========================= REPLACE WITH: rank topics by average score =========================
-    # Compute average score from correlated comments (score >= min_score) per topic
-    topic_stats = []  # list of (tid, title, avg_score, contributions)
-    for t in topics:
-        tid = t["id"]
-        title = topic_map.get(str(tid), {}).get("title", "(untitled)")
-        rec = results_map.get((tid,), {})
-        scores = []
-        for c in rec.get("candidates", []):
-            s = int(c.get("score", 0))
-            if c.get("correlated") and s >= min_score:
-                scores.append(s)
-        if scores:
-            avg = sum(scores) / len(scores)
-            contrib = len(scores)
-        else:
-            avg = 0.0
-            contrib = 0
-        topic_stats.append((tid, title, avg, contrib))
-
-    # Sort by average score (desc), then title/id to stabilize
-    ranked_desc = sorted(topic_stats, key=lambda x: (x[2], x[1], str(x[0])), reverse=True)
-    ranked_asc = sorted(topic_stats, key=lambda x: (x[2], x[1], str(x[0])))  # for bottom-3
-
-    top3 = ranked_desc[:3]
-    bottom3 = ranked_asc[:3]
-
-    # Insert section
-    doc.add_paragraph("")  # spacing
-    doc.add_paragraph("Most/Least correlated topics (by average score across correlated comments):")
-    doc.add_paragraph("  Top 3:")
-    if top3:
-        for tid, title, avg, contrib in top3:
-            doc.add_paragraph(f"    • Topic {tid}: {title} — avg {avg:.2f}, contributions {contrib}")
-    else:
-        doc.add_paragraph("    • (none)")
-
-    doc.add_paragraph("  Bottom 3:")
-    if bottom3:
-        for tid, title, avg, contrib in bottom3:
-            doc.add_paragraph(f"    • Topic {tid}: {title} — avg {avg:.2f}, contributions {contrib}")
-    else:
-        doc.add_paragraph("    • (none)")
-    # ======================= END: rank topics by average score =======================
-
-    # Per-comment coverage
-    if comments_index:
-        doc.add_paragraph("Correlated comment coverage (all comments):")
-        TOPK = 10
-        all_list = sorted(
-            comments_index.values(),
-            key=lambda x: (len(x.get("topics", [])), x.get("max_score", float("-inf")), x.get("comment", "")),
-            reverse=True
-        )
-        for e in all_list:
-            coverage = len(e.get("topics", []))
-            max_score = e.get("max_score")
-            header = f"- matched {coverage} topic(s)"
-            if max_score is not None:
-                header += f", max score {max_score:.4f}"
-            header += f": {e.get('comment', '')}"
-            doc.add_paragraph(header)
-            if e.get("url"):
-                doc.add_paragraph(f"  Source: {e['url']}")
-
-            items = list(e.get("per_topic", {}).items())  # (tid, info)
-
-            # Top-10
-            top_t = sorted(items, key=lambda kv: (kv[1].get("score", 0.0), str(kv[0])), reverse=True)[:TOPK]
-            doc.add_paragraph("  Top correlated topics:")
-            if top_t:
-                for tid, info in top_t:
-                    _add_thumbnails_row(doc, base_dir, info.get("rep_frames", []), thumb_width_in=1.2)
-                    title = topic_map.get(str(tid), {}).get("title", "(untitled)")
-                    desc = topic_map.get(str(tid), {}).get("description", "")
-                    p = doc.add_paragraph()
-                    p.add_run(f"Topic {tid}: {title} — score {float(info.get('score', 0.0)):.4f}")
-                    if desc:
-                        doc.add_paragraph(f"    Description: {desc}")
-                    if info.get("reason"):
-                        doc.add_paragraph(f"    Reason: {info['reason']}")
-            else:
-                doc.add_paragraph("    • (none)")
-
-            # Bottom-10
-            bot_t = sorted(items, key=lambda kv: (kv[1].get("score", 0.0), str(kv[0])))[:TOPK]
-            doc.add_paragraph("  Least correlated topics:")
-            if bot_t:
-                for tid, info in bot_t:
-                    _add_thumbnails_row(doc, base_dir, info.get("rep_frames", []), thumb_width_in=1.2)
-                    title = topic_map.get(str(tid), {}).get("title", "(untitled)")
-                    desc = topic_map.get(str(tid), {}).get("description", "")
-                    p = doc.add_paragraph()
-                    p.add_run(f"Topic {tid}: {title} — score {float(info.get('score', 0.0)):.4f}")
-                    if desc:
-                        doc.add_paragraph(f"    Description: {desc}")
-                    if info.get("reason"):
-                        doc.add_paragraph(f"    Reason: {info['reason']}")
-            else:
-                doc.add_paragraph("    • (none)")
-
-    # Per-topic details
-    for t in topics:
+    # Per-Topic Details (Sorted)
+    for t in sorted_topics:
         tid = t["id"]
         title = t.get("title", "").strip()
         desc = t.get("description", "").strip()
         rep = t.get("rep_frames", [])
-
-        doc.add_heading(f"Topic {tid}: {title}", level=1)
+        
+        # Header
+        doc.add_heading(f"Topic {tid}: {title}", level=2)
+        
+        # Thumbnails
         if rep:
-            _add_thumbnails_row(doc, base_dir, rep, thumb_width_in=1.4)
+            _add_thumbnails_row(doc, base_dir, rep, thumb_width_in=1.5)
+            
+        # Description
         if desc:
-            doc.add_paragraph(f"Description: {desc}")
-
+            p = doc.add_paragraph()
+            run = p.add_run(f"Description: {desc}")
+            run.italic = True
+            
+        # Matched Comments
         rec = results_map.get((tid,), {})
         candidates = rec.get("candidates", [])
+        # Filter for display: score >= min_score AND correlated
         kept = [c for c in candidates if c.get("score", 0) >= min_score and c.get("correlated", False)]
         kept.sort(key=lambda x: x.get("score", 0), reverse=True)
         kept = kept[:top_k]
 
         if kept:
+            doc.add_paragraph(f"Top {len(kept)} Correlated Comments:", style="Heading 3")
+            
+            # Create a table for cleaner layout
+            table = doc.add_table(rows=1, cols=3)
+            table.autofit = True
+            table.style = 'Table Grid'
+            
+            # Header row
+            hdr_cells = table.rows[0].cells
+            hdr_cells[0].text = "Score"
+            hdr_cells[1].text = "Comment"
+            hdr_cells[2].text = "Reason"
+            # Set widths roughly (optional, python-docx autofit handles mostly)
+            
             for r in kept:
-                doc.add_paragraph(f"Comment (score {r['score']}): {r['comment']}")
-                if r.get("reason"): doc.add_paragraph(f"Reason: {r['reason']}")
-                if r.get("url"): doc.add_paragraph(f"Source: {r['url']}")
+                row_cells = table.add_row().cells
+                row_cells[0].text = str(r.get("score", 0))
+                
+                # Comment + URL
+                c_text = r.get("comment", "")
+                if r.get("url"):
+                    c_text += f"\n\n[Source]({r['url']})"
+                row_cells[1].text = c_text
+                
+                row_cells[2].text = r.get("reason", "")
+                
+            doc.add_paragraph("") # Spacing after table
         else:
-            doc.add_paragraph("No strongly correlated comments found for this topic.")
+            doc.add_paragraph("No strongly correlated comments found.", style="Body Text")
+            doc.add_paragraph("") # Spacing
 
     doc.save(out_docx)
 
