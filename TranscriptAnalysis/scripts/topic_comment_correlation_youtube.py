@@ -433,6 +433,8 @@ def build_docx_from_results(out_docx: str, topics: list, results_map: dict,
         
         # Filter for display: score >= min_score AND correlated
         kept = []
+        valid_scores_for_avg = [] # For average calculation (same criteria as 'kept')
+
         for c in candidates:
             s = int(c.get("score", 0))
             is_corr = c.get("correlated", False)
@@ -441,9 +443,11 @@ def build_docx_from_results(out_docx: str, topics: list, results_map: dict,
                 if s >= min_score:
                     t_high_count += 1
                     kept.append(c)
+                    valid_scores_for_avg.append(s)
         
         pct_corr = 100.0 * t_corr_count / denom if denom > 0 else 0.0
         pct_high = 100.0 * t_high_count / denom if denom > 0 else 0.0
+        avg_score = sum(valid_scores_for_avg) / len(valid_scores_for_avg) if valid_scores_for_avg else 0.0
         
         # Add stats block
         if denom > 0:
@@ -451,6 +455,8 @@ def build_docx_from_results(out_docx: str, topics: list, results_map: dict,
             p_stats.add_run(f"Correlated (true): {t_corr_count} ({pct_corr:.1f}%)").bold = True
             p_stats.add_run("\n")
             p_stats.add_run(f"Score >= {min_score}: {t_high_count} ({pct_high:.1f}%)").bold = True
+            p_stats.add_run("\n")
+            p_stats.add_run(f"Average Score (of valid matches): {avg_score:.2f}").bold = True
         
         kept.sort(key=lambda x: x.get("score", 0), reverse=True)
         kept = kept[:top_k]
