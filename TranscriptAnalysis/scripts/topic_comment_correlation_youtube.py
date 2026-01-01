@@ -420,39 +420,69 @@ def build_docx_from_results(out_docx: str, topics: list, results_map: dict,
         # Matched Comments
         rec = results_map.get((tid,), {})
         candidates = rec.get("candidates", [])
+        
+        # Calculate stats for this topic
+        # Note: 'total_comments_available' is the total for the video.
+        # If retrieval_topk was used, we only checked 'checked_pairs' count.
+        # Users usually want % relative to whole video context or at least checked ones.
+        # We will use total_comments_available if known, else checked_pairs.
+        denom = total_comments_available if total_comments_available and total_comments_available > 0 else len(candidates)
+        
+        t_corr_count = 0
+        t_high_count = 0
+        
         # Filter for display: score >= min_score AND correlated
-        kept = [c for c in candidates if c.get("score", 0) >= min_score and c.get("correlated", False)]
+        kept = []
+        for c in candidates:
+            s = int(c.get("score", 0))
+            is_corr = c.get("correlated", False)
+            if is_corr:
+                t_corr_count += 1
+                if s >= min_score:
+                    t_high_count += 1
+                    kept.append(c)
+        
+        pct_corr = 100.0 * t_corr_count / denom if denom > 0 else 0.0
+        pct_high = 100.0 * t_high_count / denom if denom > 0 else 0.0
+        
+        # Add stats block
+        if denom > 0:
+            p_stats = doc.add_paragraph()
+            p_stats.add_run(f"Correlated (true): {t_corr_count} ({pct_corr:.1f}%)").bold = True
+            p_stats.add_run("\n")
+            p_stats.add_run(f"Score >= {min_score}: {t_high_count} ({pct_high:.1f}%)").bold = True
+        
         kept.sort(key=lambda x: x.get("score", 0), reverse=True)
         kept = kept[:top_k]
 
         if kept:
             doc.add_paragraph(f"Top {len(kept)} Correlated Comments:", style="Heading 3")
             
-            # Create a table for cleaner layout
-            table = doc.add_table(rows=1, cols=3)
-            table.autofit = True
-            table.style = 'Table Grid'
-            
-            # Header row
-            hdr_cells = table.rows[0].cells
-            hdr_cells[0].text = "Score"
-            hdr_cells[1].text = "Comment"
-            hdr_cells[2].text = "Reason"
-            # Set widths roughly (optional, python-docx autofit handles mostly)
-            
             for r in kept:
-                row_cells = table.add_row().cells
-                row_cells[0].text = str(r.get("score", 0))
+                # Score
+                p = doc.add_paragraph()
+                p.add_run("Score: ").bold = True
+                p.add_run(str(r.get("score", 0)))
                 
-                # Comment + URL
-                c_text = r.get("comment", "")
+                # Comment
+                p = doc.add_paragraph()
+                p.add_run("Comment: ").bold = True
+                p.add_run(r.get("comment", "").strip())
+                
+                # Reason
+                if r.get("reason"):
+                    p = doc.add_paragraph()
+                    p.add_run("Reason: ").bold = True
+                    p.add_run(r.get("reason", "").strip())
+                
+                # Source
                 if r.get("url"):
-                    c_text += f"\n\n[Source]({r['url']})"
-                row_cells[1].text = c_text
-                
-                row_cells[2].text = r.get("reason", "")
-                
-            doc.add_paragraph("") # Spacing after table
+                    p = doc.add_paragraph()
+                    p.add_run("Source: ").bold = True
+                    p.add_run(r.get("url", ""))
+
+                # Empty line between comments
+                doc.add_paragraph("")
         else:
             doc.add_paragraph("No strongly correlated comments found.", style="Body Text")
             doc.add_paragraph("") # Spacing
