@@ -696,15 +696,15 @@ def determine_subfolder(raw_frames_dir: str):
 def main():
     ap = argparse.ArgumentParser(
         description="Correlate viewer comments (from JSON) to topics (resume-safe) and build a DOCX report.")
-    ap.add_argument("--frames_path", default="../../VideoAnalysis/data/frames/frames_conventional",
+    ap.add_argument("--frames_path", default="../../VideoAnalysis/data/frames/frames_embodied",
                     help="Path to frames root (containing <video_id>/raw_frames) OR a single raw_frames folder.")
     ap.add_argument("--results_root", default="../results_youtube",
                     help="Root directory for results. Defaults to ../results_youtube relative to this script.")
     ap.add_argument("--comments_dir",
-                    default="../../VideoAnalysis/data/comments/conventional",
+                    default="../../VideoAnalysis/data/comments/embodied",
                     help="Directory containing <video_id>.json comment files.")
 
-    ap.add_argument("--topics_root", default="../data/topics_conventional", help="Directory containing <video_id>.topics.json files.")
+    ap.add_argument("--topics_root", default="../data/topics_embodied", help="Directory containing <video_id>.topics.json files.")
     ap.add_argument("--model", default=None, help="LLM name for scoring (defaults to Config.ollama_models[0]).")
     ap.add_argument("--min_score", type=int, default=60,
                     help="Minimum score to include a matched comment in the final report.")
