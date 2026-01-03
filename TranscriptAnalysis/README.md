@@ -77,5 +77,32 @@ This script is similar to `topic_comment_correlation.py` but accepts a folder of
     # 2. Export summary CSV for LaTeX
     python export_plot_data.py \
       --conventional ../results/metrics/Conventional_metrics.json \
-      --embodied ../results/metrics/Embodied_metrics.json \
-      --output ../results/metrics/transcript_plot_data.csv 
+
+### To Collect YouTube Metrics (Pipelined)
+
+    cd TranscriptAnalysis/scripts
+    conda activate videoanalysis
+
+    # 1. Collect Detailed Metrics (JSON)
+    # Conventional
+    python collect_youtube_metrics_detailed.py \
+      --comments_root ../../VideoAnalysis/data/comments/conventional \
+      --correlation_root ../results_youtube/correlation_conventional \
+      --metrics_root ../results/metrics \
+      --out_dir ../results_youtube/metrics \
+      --label Conventional
+
+    # Embodied
+    python collect_youtube_metrics_detailed.py \
+      --comments_root ../../VideoAnalysis/data/comments/embodied \
+      --correlation_root ../results_youtube/correlation_embodied \
+      --metrics_root ../results/metrics \
+      --out_dir ../results_youtube/metrics \
+      --label Embodied
+
+    # 2. Export Summary CSV
+    python export_youtube_plot_data.py \
+      --conventional ../results_youtube/metrics/Conventional_youtube_metrics.json \
+      --embodied ../results_youtube/metrics/Embodied_youtube_metrics.json \
+      --output ../results_youtube/metrics/transcript_youtube_plot_data.csv
+
