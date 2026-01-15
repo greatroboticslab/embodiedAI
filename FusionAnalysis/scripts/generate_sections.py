@@ -157,7 +157,7 @@ def load_captions(path: str, fps: float) -> List[Tuple[float, float, str]]:
 
 # -------------------- Core Logic --------------------
 
-SAFE_CHAR_LIMIT = 100000
+SAFE_CHAR_LIMIT = 500000
 
 def create_fusion_stream(transcripts: List[Tuple], captions: List[Tuple], caption_step: int = 1) -> List[FusionEvent]:
     events = []
