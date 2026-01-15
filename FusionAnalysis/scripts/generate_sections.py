@@ -157,12 +157,18 @@ def load_captions(path: str, fps: float) -> List[Tuple[float, float, str]]:
 
 # -------------------- Core Logic --------------------
 
-def create_fusion_stream(transcripts: List[Tuple], captions: List[Tuple]) -> List[FusionEvent]:
+SAFE_CHAR_LIMIT = 100000
+
+def create_fusion_stream(transcripts: List[Tuple], captions: List[Tuple], caption_step: int = 1) -> List[FusionEvent]:
     events = []
     for s, e, txt in transcripts:
         events.append(FusionEvent(s, e, "AUDIO", txt))
-    for s, e, txt in captions:
-        events.append(FusionEvent(s, e, "VISUAL", txt))
+    
+    # Filter captions based on step
+    for i, (s, e, txt) in enumerate(captions):
+        if i % caption_step == 0:
+            events.append(FusionEvent(s, e, "VISUAL", txt))
+            
     events.sort(key=lambda x: x.timestamp)
     return events
 
@@ -175,7 +181,6 @@ def format_stream_for_llm(events: List[FusionEvent]) -> str:
 
 def segment_video(context_stream_text: str, duration_sec: float, model_name: str) -> List[EngagementSection]:
     """Segment video into sections, chunking if needed."""
-    SAFE_CHAR_LIMIT = 20000 
     
     if len(context_stream_text) <= SAFE_CHAR_LIMIT:
         return _segment_chunk(context_stream_text, duration_sec, model_name)
@@ -213,7 +218,14 @@ def _segment_chunk(text: str, duration_sec: float, model_name: str) -> List[Enga
     Below is a chronological stream of a video's content (AUDIO + VISUAL).
     
     YOUR TASK:
-    Analyze this stream and divide it into distinct "Engagement Sections" based on topic shifts.
+    Analyze this stream and divide it into distinct "Engagement Sections" based on topic shifts, activity changes, or narrative progression.
+    
+    GUIDELINES:
+    1. **Coherence**: Each section should represent a cohesive segment of the video (e.g., an intro, a specific demo, a Q&A session, a conclusion).
+    2. **Granularity**: Avoid making sections too short (<30s) unless strictly necessary. Aim for standard video chapters.
+    3. **Titles**: Create descriptive, engaging titles (e.g., "Robot Demonstration: Picking up the Cup" instead of just "Demo").
+    4. **Summary**: Synthesize both what is seen (VISUAL) and what is said (AUDIO).
+    5. **Cues**: explicitely list the key visuals and words that define the section.
     
     INPUT STREAM:
     {text}
@@ -223,10 +235,10 @@ def _segment_chunk(text: str, duration_sec: float, model_name: str) -> List[Enga
       {{
         "start_time": 0.0,
         "end_time": 45.5,
-        "title": "Short Title",
-        "summary": "Visual/Audio summary",
-        "visual_cues": "Key visuals",
-        "verbal_cues": "Key words"
+        "title": "Descriptive Title",
+        "summary": "Comprehensive summary of the section's content.",
+        "visual_cues": "Key actions or objects seen.",
+        "verbal_cues": "Key phrases or topics discussed."
       }}
     ]
     Response must be ONLY valid JSON.
@@ -364,7 +376,7 @@ def main():
     parser.add_argument("--frames_root", default="../../VideoAnalysis/data/frames/frames_embodied", help="Root dir containing <video_id>/raw_frames or similar")
     parser.add_argument("--metrics_csv", default=["../../CaptionAnalysis/output/Embodied_metrics.csv"], nargs='+', help="One or more CSVs to load FPS from")
     parser.add_argument("--output_dir", default="../results/fusion_analysis")
-    parser.add_argument("--model", default="llama3", help="LLM model name")
+    parser.add_argument("--model", default="llama3.1", help="LLM model name")
     
     args = parser.parse_args()
     
@@ -409,10 +421,30 @@ def main():
         if captions: max_t = max(max_t, captions[-1][1])
         if max_t == 0: max_t = 60
         
-        # Fusion & Segmentation
-        stream = create_fusion_stream(transcripts, captions)
-        stream_text = format_stream_for_llm(stream)
+        # Fusion & Filtering
+        # Iteratively increase filtering step if text is too long
+        cap_step = 1
+        stream = []
+        stream_text = ""
         
+        while True:
+            stream = create_fusion_stream(transcripts, captions, caption_step=cap_step)
+            stream_text = format_stream_for_llm(stream)
+            
+            if len(stream_text) <= SAFE_CHAR_LIMIT:
+                break
+            
+            # If we are filtering significantly, check if we should stop
+            # Let's limit filtering to say 1/20 (~30s timestamps), otherwise we just fallback to chunking
+            if cap_step >= 20: 
+                print(f"  [WARN] Stream still exceeds {SAFE_CHAR_LIMIT} chars even at 1/{cap_step} captions. Proceeding with chunking.")
+                break
+                
+            cap_step += 1
+            
+        if cap_step > 1:
+            print(f"  > Filtered captions: taking 1 out of every {cap_step} (Reduced size to {len(stream_text)})")
+                
         print(f"  > Segmenting ({len(stream)} events)...")
         sections = segment_video(stream_text, max_t, args.model)
         
