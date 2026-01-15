@@ -22,7 +22,7 @@ Run `generate_sections.py` to create the engagement sections. This script fuses 
 
 ```bash
 python generate_sections.py \
-    --transcripts_root ../data/transcripts_conventional \
+    --transcripts_root ../../TranscriptAnalysis/data/transcripts_conventional \
     --captions_root ../../CaptionAnalysis/data/integrated_caption/frames_conventional_captions_integrated \
     --frames_root ../../VideoAnalysis/data/frames/frames_conventional \
     --metrics_csv ../../CaptionAnalysis/output/Conventional_metrics.csv \

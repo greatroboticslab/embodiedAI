@@ -359,11 +359,11 @@ def generate_docx_report(video_id: str, sections: List[EngagementSection], trans
 
 def main():
     parser = argparse.ArgumentParser(description="Fusion Analysis - Step 1: Segmentation")
-    parser.add_argument("--transcripts_root", required=True)
-    parser.add_argument("--captions_root", required=True)
-    parser.add_argument("--frames_root", required=True, help="Root dir containing <video_id>/raw_frames or similar")
-    parser.add_argument("--metrics_csv", required=True, nargs='+', help="One or more CSVs to load FPS from")
-    parser.add_argument("--output_dir", required=True)
+    parser.add_argument("--transcripts_root", default="../../TranscriptAnalysis/data/transcripts_embodied", help="Directory containing <video_id>.transcripts.json files.")
+    parser.add_argument("--captions_root", default="../../CaptionAnalysis/data/integrated_caption/frames_embodied_captions_integrated")
+    parser.add_argument("--frames_root", default="../../VideoAnalysis/data/frames/frames_embodied", help="Root dir containing <video_id>/raw_frames or similar")
+    parser.add_argument("--metrics_csv", default="../../CaptionAnalysis/output/Embodied_metrics.csv", nargs='+', help="One or more CSVs to load FPS from")
+    parser.add_argument("--output_dir", default="../results/fusion_analysis")
     parser.add_argument("--model", default="llama3", help="LLM model name")
     
     args = parser.parse_args()
