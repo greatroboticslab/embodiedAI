@@ -123,7 +123,7 @@ def load_transcript(path: str) -> List[Tuple[float, float, str]]:
             with open(path, 'r', encoding='utf-8') as f:
                 for line in f:
                     # Regex for [HH:MM:SS.mmm → HH:MM:SS.mmm]
-                    m = re.search(r'\[(\d{2}):(\d{2}):(\d{2}\.\d+)\s+[→->]\s+(\d{2}):(\d{2}):(\d{2}\.\d+)\]\s+(.*)', line)
+                    m = re.search(r'\[(\d{2}):(\d{2}):(\d{2}\.\d+)\s+(?:→|->)\s+(\d{2}):(\d{2}):(\d{2}\.\d+)\]\s+(.*)', line)
                     if m:
                         h1, m1, s1 = int(m.group(1)), int(m.group(2)), float(m.group(3))
                         start_sec = h1*3600 + m1*60 + s1

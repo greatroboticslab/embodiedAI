@@ -151,33 +151,35 @@ def get_duration_seconds(videos_root: Optional[str], vid: str) -> Optional[float
     if not videos_root or not os.path.isdir(videos_root):
         return None
     
-    # Try to find video file
-    cand = None
-    # We might have nested folders or flat. Let's do a simple os.listdir first if flat
-    # If recursive needed, we might want to improve strictness. Assuming flat or finding first match.
-    # For speed, let's walk if not found in root.
-    
-    def _scan(d):
-        for fn in os.listdir(d):
-            if fn.startswith(vid):
-                # check exact match or extension
-                # but filename might be just <vid>.mp4 or <vid>_something.mp4? 
-                # Usually <vid>.mp4
-                if os.path.splitext(fn)[0] == vid and os.path.splitext(fn)[1].lower() in {'.mp4', '.mkv', '.mov', '.avi', '.webm'}:
-                    return os.path.join(d, fn)
-        return None
+    def _find_file_for_id(target_id):
+        def _scan(d):
+            try:
+                for fn in os.listdir(d):
+                    if fn.startswith(target_id):
+                        if os.path.splitext(fn)[0] == target_id and os.path.splitext(fn)[1].lower() in {'.mp4', '.mkv', '.mov', '.avi', '.webm'}:
+                            return os.path.join(d, fn)
+            except OSError:
+                pass
+            return None
 
-    cand = _scan(videos_root)
-    if not cand:
-        # Try one level deep if structured
+        # Check root
+        cand = _scan(videos_root)
+        if cand: return cand
+
+        # Check subdirectories (1 level deep)
         for subd in os.listdir(videos_root):
             subp = os.path.join(videos_root, subd)
             if os.path.isdir(subp):
                 c = _scan(subp)
-                if c:
-                    cand = c
-                    break
+                if c: return c
+        return None
+
+    cand = _find_file_for_id(vid)
     
+    # Fallback: if ID is longer than 11 chars (e.g. has suffix), try first 11 chars
+    if not cand and len(vid) > 11:
+        cand = _find_file_for_id(vid[:11])
+
     if not cand:
         return None
 
