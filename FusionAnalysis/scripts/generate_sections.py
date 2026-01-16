@@ -179,11 +179,28 @@ def format_stream_for_llm(events: List[FusionEvent]) -> str:
         lines.append(f"[{time_str}] [{ev.source_type}] {ev.content}")
     return "\n".join(lines)
 
-def segment_video(context_stream_text: str, duration_sec: float, model_name: str) -> List[EngagementSection]:
+def save_debug_docx(filepath: str, contents: List[str]):
+    try:
+        doc = Document()
+        for i, content in enumerate(contents):
+            doc.add_heading(f"Chunk {i+1}", level=1)
+            doc.add_paragraph(str(content) if content else "[No Content]")
+            doc.add_page_break()
+        doc.save(filepath)
+    except Exception as e:
+        print(f"[ERR] Failed to save debug docx {filepath}: {e}")
+
+def segment_video(context_stream_text: str, duration_sec: float, model_name: str, debug_prefix: str = None) -> List[EngagementSection]:
     """Segment video into sections, chunking if needed."""
     
+    prompts_debug = []
+    responses_debug = []
+    
     if len(context_stream_text) <= SAFE_CHAR_LIMIT:
-        return _segment_chunk(context_stream_text, duration_sec, model_name)
+        sections, prompt, resp = _segment_chunk(context_stream_text, duration_sec, model_name)
+        prompts_debug.append(prompt)
+        responses_debug.append(resp)
+        final_sections = sections
     else:
         print(f"    [INFO] Stream length {len(context_stream_text)} chars exceeds limit. Chunking...")
         lines = context_stream_text.split('\n')
@@ -201,18 +218,26 @@ def segment_video(context_stream_text: str, duration_sec: float, model_name: str
         if current_chunk:
             chunks.append("\n".join(current_chunk))
             
-        all_sections = []
+        final_sections = []
         offset_id = 1
         for i, chunk in enumerate(chunks):
             print(f"    > Processing chunk {i+1}/{len(chunks)}...")
-            chunk_sections = _segment_chunk(chunk, duration_sec, model_name)
+            chunk_sections, prompt, resp = _segment_chunk(chunk, duration_sec, model_name)
+            prompts_debug.append(prompt)
+            responses_debug.append(resp)
+            
             for sec in chunk_sections:
                 sec.id = offset_id
                 offset_id += 1
-                all_sections.append(sec)
-        return all_sections
+                final_sections.append(sec)
 
-def _segment_chunk(text: str, duration_sec: float, model_name: str) -> List[EngagementSection]:
+    if debug_prefix:
+        save_debug_docx(f"{debug_prefix}_prompt.docx", prompts_debug)
+        save_debug_docx(f"{debug_prefix}_raw_output.docx", responses_debug)
+        
+    return final_sections
+
+def _segment_chunk(text: str, duration_sec: float, model_name: str) -> Tuple[List[EngagementSection], str, str]:
     prompt = f"""
     You are an expert AI Video Analyst. 
     Below is a chronological stream of a video's content (AUDIO + VISUAL).
@@ -243,6 +268,7 @@ def _segment_chunk(text: str, duration_sec: float, model_name: str) -> List[Enga
     ]
     Response must be ONLY valid JSON.
     """
+    full_text = ""
     try:
         stream = generate_response(model_name, prompt)
         full_text = "".join(stream_parser(stream)).strip()
@@ -288,7 +314,7 @@ def _segment_chunk(text: str, duration_sec: float, model_name: str) -> List[Enga
                         # Saving bad fragment for debug
                         with open("debug_bad_json_chunk.txt", "w", encoding="utf-8") as f:
                             f.write(json_str)
-                        return []
+                        return [], prompt, full_text
                 
                 if isinstance(data, dict):
                     # Sometimes LLM wraps it in {"sections": [...]}
@@ -322,12 +348,12 @@ def _segment_chunk(text: str, duration_sec: float, model_name: str) -> List[Enga
                         visual_cues=item.get('visual_cues', ''),
                         verbal_cues=item.get('verbal_cues', '')
                     ))
-                return sections
+                return sections, prompt, full_text
             else:
                 print("    [ERR] Could not find matching closing bracket for JSON list.")
     except Exception as e:
         print(f"    [ERR] Chunk processing failed: {e}")
-    return []
+    return [], prompt, full_text
 
 # -------------------- DOCX Report Generation --------------------
 
@@ -516,7 +542,8 @@ def main():
             print(f"  > Filtered captions: taking 1 out of every {cap_step} (Reduced size to {len(stream_text)})")
                 
         print(f"  > Segmenting ({len(stream)} events)...")
-        sections = segment_video(stream_text, max_t, args.model)
+        debug_prefix = os.path.join(sections_dir, vid)
+        sections = segment_video(stream_text, max_t, args.model, debug_prefix=debug_prefix)
         
         # 1. Save JSON
         json_out = os.path.join(sections_dir, f"{vid}_sections.json")
