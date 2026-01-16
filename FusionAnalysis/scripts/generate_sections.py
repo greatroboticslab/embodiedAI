@@ -241,16 +241,17 @@ def _segment_chunk(text: str, duration_sec: float, model_name: str) -> Tuple[Lis
     prompt = f"""
     You are an expert AI Video Analyst. 
     Below is a chronological stream of a video's content (AUDIO + VISUAL).
+    Each segment of the video content is [start time] [(AUDIO or VISUAL)] + content.
+    AUDIO means the paragraph is the a part of the audio transcript of the video. VISUAL means it is a AI generated caption of the frame at the labeled time.
     
     YOUR TASK:
-    Analyze this stream and divide it into distinct "Engagement Sections" based on topic shifts, activity changes, or narrative progression.
+    Analyze this stream with both transcript segments and captions to understand the content and structure of the video and divide it into distinct "Engagement Sections" based on topic shifts, activity changes, or narrative progression.
     
     GUIDELINES:
     1. **Coherence**: Each section should represent a cohesive segment of the video (e.g., an intro, a specific demo, a Q&A session, a conclusion).
     2. **Granularity**: Avoid making sections too short (<30s) unless strictly necessary. Aim for standard video chapters.
     3. **Titles**: Create descriptive, engaging titles (e.g., "Robot Demonstration: Picking up the Cup" instead of just "Demo").
     4. **Summary**: Synthesize both what is seen (VISUAL) and what is said (AUDIO).
-    5. **Cues**: explicitely list the key visuals and words that define the section.
     
     INPUT STREAM:
     {text}
@@ -258,12 +259,9 @@ def _segment_chunk(text: str, duration_sec: float, model_name: str) -> Tuple[Lis
     OUTPUT FORMAT (Strict JSON list):
     [
       {{
-        "start_time": 0.0,
-        "end_time": 45.5,
+        "start_time": mm:ss,
         "title": "Descriptive Title",
-        "summary": "Comprehensive summary of the section's content.",
-        "visual_cues": "Key actions or objects seen.",
-        "verbal_cues": "Key phrases or topics discussed."
+        "summary": "Comprehensive summary of the section's content."
       }}
     ]
     Response must be ONLY valid JSON.
