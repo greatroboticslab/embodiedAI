@@ -268,10 +268,15 @@ def _segment_chunk(text: str, duration_sec: float, model_name: str) -> List[Enga
                 
                 sections = []
                 for item in data:
+                    s_t = item.get('start_time')
+                    if s_t is None: s_t = 0.0
+                    e_t = item.get('end_time')
+                    if e_t is None: e_t = 0.0
+                    
                     sections.append(EngagementSection(
                         id=0,
-                        start_time=float(item.get('start_time', 0)),
-                        end_time=float(item.get('end_time', 0)),
+                        start_time=float(s_t),
+                        end_time=float(e_t),
                         title=item.get('title', 'Unknown'),
                         summary=item.get('summary', ''),
                         visual_cues=item.get('visual_cues', ''),
