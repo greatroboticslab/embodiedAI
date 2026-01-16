@@ -290,8 +290,24 @@ def _segment_chunk(text: str, duration_sec: float, model_name: str) -> List[Enga
                             f.write(json_str)
                         return []
                 
+                if isinstance(data, dict):
+                    # Sometimes LLM wraps it in {"sections": [...]}
+                    found_list = None
+                    for key in ["sections", "segments", "intervals", "events"]:
+                        if key in data and isinstance(data[key], list):
+                            found_list = data[key]
+                            break
+                    if found_list:
+                        data = found_list
+                    else:
+                        # Maybe the dict IS the single item?
+                        data = [data]
+
                 sections = []
                 for item in data:
+                    if not isinstance(item, dict):
+                        continue # Skip invalid items
+                        
                     s_t = item.get('start_time')
                     if s_t is None: s_t = 0.0
                     e_t = item.get('end_time')
