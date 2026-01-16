@@ -26,7 +26,7 @@ python generate_sections.py \
     --captions_root ../../CaptionAnalysis/data/integrated_caption/frames_conventional_captions_integrated \
     --frames_root ../../VideoAnalysis/data/frames/frames_conventional \
     --metrics_csv ../../CaptionAnalysis/output/Conventional_metrics.csv \
-    --output_dir ../results/fusion_analysis \
+    --output_dir ../data/sections_conventional \
     --model llama3
 ```
 

@@ -247,56 +247,23 @@ def _segment_chunk(text: str, duration_sec: float, model_name: str) -> List[Enga
         stream = generate_response(model_name, prompt)
         full_text = "".join(stream_parser(stream)).strip()
         
-        # Look for the first JSON list [...] 
-        # We use non-greedy matching .*? inside but wait, we need to match nested brackets potentially?
-        # A simple non-greedy match might fail on nested structures, but for this strict format 
-        # it usually works. Let's try to find the first '[' and the last ']' that makes valid JSON.
-        
-        # Robust strategy: Find start '[', then Try to parse from there.
+        # Robust JSON extraction via bracket counting
         start_idx = full_text.find('[')
         if start_idx != -1:
-            potential_json = full_text[start_idx:]
-            # Try to find the matching closing bracket by parsing?
-            # Or just use the original regex which was strict: r'\[.*\]' with DOTALL matches EVERYTHING from first [ to LAST ]
-            # If the LLM adds text AFTER the last ], the original regex `r'\[.*\]'` matches it if inside.
-            # But if it output: [ ... ] \n Hope that helps!
-            # The regex `\[.*\]` (greedy) will match up to the LAST ] in "Hope that helps!", which doesn't exist. 
-            # So it matches up to the actual last ]. 
+            depth = 0
+            end_idx = -1
+            for i in range(start_idx, len(full_text)):
+                char = full_text[i]
+                if char == '[':
+                    depth += 1
+                elif char == ']':
+                    depth -= 1
+                    if depth == 0:
+                        end_idx = i
+                        break
             
-            # Wait, `Extra data` error usually means we passed "[...] some garbage" to json.loads.
-            # json.loads only accepts ONE valid JSON object. 
-            # If `json_match.group(0)` captured "[...] \n text", then json.loads fails.
-            
-            # Fix: Use a regex that stops at the closing bracket of the list.
-            # Since we can't easily balance brackets with regex, let's just clean up the `full_text` 
-            # to extract the largest substring starting with [ and ending with ] that parses.
-            
-            # Simplified approach for this specific error "Extra data":
-            # The regex `\[.*\]` is greedy. If there is text like "Here is the list: [...] Some notes",
-            # it matches "[...]". Wait, regex `\[.*\]` will match from first [ to LAST ]. 
-            # IF the text is "[...]\nNotes", the last ] is the end of the list. 
-            # So regex SHOULD extract "[...]". 
-            
-            # However, if the regex is `\[.*\]` and the text is `[...]`, json.loads works.
-            # If text is `[...] \n Text`, regex `\[.*\]` matches `[...]`. 
-            # BUT if text is `[...] ... [other thing]`, it matches the whole span.
-            
-            # The error "Extra data: line X col Y" specifically comes from `json.loads` when the string HAS valid json but continues.
-            # This suggests my regex might be capturing too much or `json_match.group(0)` is NOT doing what I think.
-            # Let's verify standard `re.search(r'\[.*\]', text, flags=re.DOTALL)`.
-            # If text = "[A]\nB", match is "[A]". json.loads("[A]") -> OK.
-            
-            # Ah, maybe the LLM output something like:  
-            # ```json
-            # [...]
-            # ```
-            # My current code uses regex. 
-            # Let's try to be safer: parse only the valid JSON part.
-            
-            # Fallback: Just assume the list ends at the last ']' found.
-            end_idx = potential_json.rfind(']')
             if end_idx != -1:
-                json_str = potential_json[:end_idx+1]
+                json_str = full_text[start_idx:end_idx+1]
                 data = json.loads(json_str)
                 
                 sections = []
@@ -311,10 +278,10 @@ def _segment_chunk(text: str, duration_sec: float, model_name: str) -> List[Enga
                         verbal_cues=item.get('verbal_cues', '')
                     ))
                 return sections
+            else:
+                print("    [ERR] Could not find matching closing bracket for JSON list.")
     except Exception as e:
         print(f"    [ERR] Chunk processing failed: {e}")
-        # Debug: print the bad text to see what happened
-        # print(f"DEBUG TEXT: {full_text}") 
     return []
 
 # -------------------- DOCX Report Generation --------------------
@@ -427,7 +394,7 @@ def main():
     parser.add_argument("--captions_root", default="../../CaptionAnalysis/data/integrated_caption/frames_embodied_captions_integrated")
     parser.add_argument("--frames_root", default="../../VideoAnalysis/data/frames/frames_embodied", help="Root dir containing <video_id>/raw_frames or similar")
     parser.add_argument("--metrics_csv", default=["../../CaptionAnalysis/output/Embodied_metrics.csv"], nargs='+', help="One or more CSVs to load FPS from")
-    parser.add_argument("--output_dir", default="../results/fusion_analysis")
+    parser.add_argument("--output_dir", default="../data/sections_embodied")
     parser.add_argument("--model", default="llama3.1", help="LLM model name")
     
     args = parser.parse_args()
