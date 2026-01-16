@@ -399,7 +399,7 @@ def main():
     parser.add_argument("--captions_root", default="../../CaptionAnalysis/data/integrated_caption/frames_embodied_captions_integrated")
     parser.add_argument("--frames_root", default="../../VideoAnalysis/data/frames/frames_embodied", help="Root dir containing <video_id>/raw_frames or similar")
     parser.add_argument("--metrics_csv", default=["../../CaptionAnalysis/output/Embodied_metrics.csv"], nargs='+', help="One or more CSVs to load FPS from")
-    parser.add_argument("--output_dir", default="../data/sections_embodied")
+    parser.add_argument("--output_dir", default="../data")
     parser.add_argument("--model", default="llama3.1", help="LLM model name")
     
     args = parser.parse_args()
