@@ -332,20 +332,45 @@ def _segment_chunk(text: str, duration_sec: float, model_name: str) -> Tuple[Lis
                     if not isinstance(item, dict):
                         continue # Skip invalid items
                         
-                    s_t = item.get('start_time')
-                    if s_t is None: s_t = 0.0
-                    e_t = item.get('end_time')
-                    if e_t is None: e_t = 0.0
+                    s_t_raw = item.get('start_time')
+                    s_t = 0.0
+                    
+                    # Parse start_time (mm:ss or float)
+                    if isinstance(s_t_raw, str):
+                        try:
+                            parts = s_t_raw.split(':')
+                            if len(parts) == 2:
+                                s_t = float(parts[0]) * 60 + float(parts[1])
+                            else:
+                                s_t = float(s_t_raw)
+                        except:
+                            s_t = 0.0
+                    elif isinstance(s_t_raw, (int, float)):
+                        s_t = float(s_t_raw)
+
+                    # End time is unknown initially, set to -1 or similar to fill later
+                    e_t = -1.0 
                     
                     sections.append(EngagementSection(
                         id=0,
-                        start_time=float(s_t),
-                        end_time=float(e_t),
+                        start_time=s_t,
+                        end_time=e_t,
                         title=item.get('title', 'Unknown'),
                         summary=item.get('summary', ''),
                         visual_cues=item.get('visual_cues', ''),
                         verbal_cues=item.get('verbal_cues', '')
                     ))
+                
+                # Sort by start_time just in case
+                sections.sort(key=lambda x: x.start_time)
+                
+                # Fill end_times
+                for i in range(len(sections)):
+                    if i < len(sections) - 1:
+                        sections[i].end_time = sections[i+1].start_time
+                    else:
+                        sections[i].end_time = duration_sec
+                
                 return sections, prompt, full_text
             else:
                 print("    [ERR] Could not find matching closing bracket for JSON list.")
