@@ -264,7 +264,31 @@ def _segment_chunk(text: str, duration_sec: float, model_name: str) -> List[Enga
             
             if end_idx != -1:
                 json_str = full_text[start_idx:end_idx+1]
-                data = json.loads(json_str)
+                
+                # --- Robust Parsing Fix ---
+                try:
+                    data = json.loads(json_str)
+                except json.JSONDecodeError as e:
+                    print(f"    [WARN] JSON parse error: {e}. Attempting repair...")
+                    # Common errors:
+                    # 1. Missing comma between objects: } {  ->  }, {
+                    # 2. Trailing comma in list: , ] -> ]
+                    
+                    # Fix missing comma between objects
+                    json_str_repaired = re.sub(r'\}\s*\{', '}, {', json_str)
+                    
+                    # Fix trailing commas before closing bracket (simple case)
+                    json_str_repaired = re.sub(r',\s*\]', ']', json_str_repaired)
+                    
+                    try:
+                        data = json.loads(json_str_repaired)
+                        print("    [INFO] JSON repair successful.")
+                    except json.JSONDecodeError as e2:
+                        print(f"    [ERR] JSON repair failed: {e2}")
+                        # Saving bad fragment for debug
+                        with open("debug_bad_json_chunk.txt", "w", encoding="utf-8") as f:
+                            f.write(json_str)
+                        return []
                 
                 sections = []
                 for item in data:
