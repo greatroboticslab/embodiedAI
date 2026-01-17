@@ -241,11 +241,11 @@ def _segment_chunk(text: str, duration_sec: float, model_name: str) -> Tuple[Lis
     prompt = f"""
     You are an expert AI Video Analyst. 
     Below is a chronological stream of a video's content (AUDIO + VISUAL).
-    Each segment of the video content is [start time] [(AUDIO or VISUAL)] + content.
+    Each segment of the video content is [(start time in mm:ss)] [(AUDIO or VISUAL)] + content.
     AUDIO means the paragraph is the a part of the audio transcript of the video. VISUAL means it is a AI generated caption of the frame at the labeled time.
     
     YOUR TASK:
-    Analyze this stream with both transcript segments and captions to understand the content and structure of the video and divide it into distinct "Engagement Sections" based on topic shifts, activity changes, or narrative progression.
+    Analyze this stream with both transcript segments and captions to understand the content and structure of the video and divide it chronologically into distinct "Engagement Sections" based on topic shifts, activity changes, or narrative progression.
     
     GUIDELINES:
     1. **Coherence**: Each section should represent a cohesive segment of the video (e.g., an intro, a specific demo, a Q&A session, a conclusion).
