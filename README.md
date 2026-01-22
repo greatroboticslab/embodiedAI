@@ -77,10 +77,33 @@ Select --outline_simple to uses segments instead of timestamps in transcripts.
 Select --whole_video_outline to pass entire transcript instead of chunked segments.
 Select --force to recompute even if outputs exist.
 
+
 ### To Correlate Comments with Topics
 
     cd VideoAnalysis/correlation
     conda activate videoanalysis
     python topic_comment_correlation.py 
+
+### Fusion Analysis (Manual Segmentation & Dual Correlation)
+
+**Step 1: Divide Video into Segments**
+
+    cd FusionAnalysis/scripts
+    python divide_sections.py \
+        --transcripts_root ../../TranscriptAnalysis/data/transcripts_embodied \
+        --frames_root ../../VideoAnalysis/data/frames/frames_embodied \
+        --output_dir ../data/manual_segmentation \
+        --interval 10
+
+**Step 2: Correlate Segments with Comments (Visual & Transcript)**
+
+    cd FusionAnalysis/scripts
+    python correlate_segments.py \
+        --segments_root ../data/manual_segmentation \
+        --comments_root ../../VideoAnalysis/data/comments/conventional \
+        --captions_root ../../CaptionAnalysis/data/integrated_caption/frames_embodied_captions_integrated \
+        --output_dir ../results/segment_correlations \
+        --model llama3
+
 
 
