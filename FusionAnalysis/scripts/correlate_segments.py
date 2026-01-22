@@ -385,10 +385,10 @@ def generate_docx_report(video_id: str, segments: List[Dict], output_path: str):
 
 def main():
     parser = argparse.ArgumentParser(description="Correlate Segments (Dual Modality)")
-    parser.add_argument("--segments_root", required=True, help="Folder with <vid>_manual_sections.json")
-    parser.add_argument("--comments_root", required=True, help="Dir (JSON) or File (DOCX)")
-    parser.add_argument("--captions_root", required=True, help="Path to CaptionAnalysis/.../integrated_caption")
-    parser.add_argument("--output_dir", required=True)
+    parser.add_argument("--segments_root", default="../data/manual_segmentation", help="Folder with <vid>_manual_sections.json")
+    parser.add_argument("--comments_root", default="../../Data For Classes-Analysis/final_merged_data/final_merged_class_data.docx", help="Dir (JSON) or File (DOCX)")
+    parser.add_argument("--captions_root", default="../../CaptionAnalysis/data/integrated_caption/frames_embodied_captions_integrated", help="Path to CaptionAnalysis/.../integrated_caption")
+    parser.add_argument("--output_dir", default="../results/segment_correlations")
     parser.add_argument("--model", default="llama3")
     
     args = parser.parse_args()
