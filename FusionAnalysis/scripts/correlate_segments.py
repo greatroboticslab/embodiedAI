@@ -381,11 +381,21 @@ def generate_docx_report(video_id: str, segments: List[Dict], total_comments: in
         
         for r in vis_list:
             t = r.get('comment')
+            if isinstance(t, list): 
+                t = " ".join([str(x) for x in t])
+            if not isinstance(t, str): 
+                t = str(t)
+                
             if t not in c_map: c_map[t] = {'v': None, 't': None}
             c_map[t]['v'] = r
             
         for r in trans_list:
             t = r.get('comment')
+            if isinstance(t, list): 
+                t = " ".join([str(x) for x in t])
+            if not isinstance(t, str): 
+                t = str(t)
+                
             if t not in c_map: c_map[t] = {'v': None, 't': None}
             c_map[t]['t'] = r
             
@@ -518,6 +528,13 @@ def main():
     
     for f in seg_files:
         vid = f.replace('_manual_sections.json', '')
+        
+        # Resume Check
+        out_json = os.path.join(args.output_dir, f"{vid}_segment_correlation.json")
+        if os.path.exists(out_json):
+            print(f"[SKIP] Results already exist for {vid}")
+            continue
+
         print(f"\n=== Processing {vid} ===")
         
         # 1. Load Segments
