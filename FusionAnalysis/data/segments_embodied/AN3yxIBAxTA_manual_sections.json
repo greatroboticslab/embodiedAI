@@ -1,0 +1,1083 @@
+{
+  "video_id": "AN3yxIBAxTA",
+  "duration": 970.96,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg",
+        "frame_0003.jpg"
+      ],
+      "transcript": "[0:00] This is a brushless motor one-axis PID control example.\n[0:05] In general, all flying machines use this kind of feedback control in order to fly straight."
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0004.jpg",
+        "frame_0005.jpg",
+        "frame_0006.jpg"
+      ],
+      "transcript": "[0:05] In general, all flying machines use this kind of feedback control in order to fly straight.\n[0:11] To control the inclination angle, the system uses the MPU6050 gyro and accelerometer\n[0:17] and to control the movement, these two brushless motors."
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0007.jpg",
+        "frame_0008.jpg",
+        "frame_0009.jpg"
+      ],
+      "transcript": "[0:21] The idea of this tutorial is to understand how PID control works inside of a drone flight controller\n[0:27] in order to be able to create our own flight controller code for the fully Arduino based project."
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:27] in order to be able to create our own flight controller code for the fully Arduino based project.\n[0:34] So let's get started."
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg",
+        "frame_0015.jpg"
+      ],
+      "transcript": "[0:45] What's up my friends, welcome back.\n[0:48] In this video we will see an example of PID control for one axis movement."
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0016.jpg",
+        "frame_0017.jpg",
+        "frame_0018.jpg"
+      ],
+      "transcript": "[0:48] In this video we will see an example of PID control for one axis movement.\n[0:53] Once we see how the control works for just one axis, we could apply the code for two axis in case of a drone."
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0019.jpg",
+        "frame_0020.jpg",
+        "frame_0021.jpg"
+      ],
+      "transcript": "[0:53] Once we see how the control works for just one axis, we could apply the code for two axis in case of a drone.\n[1:02] The first thing to do is to build a balance for our test.\n[1:07] For that I've used a 55 cm long square meter bar."
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[1:07] For that I've used a 55 cm long square meter bar.\n[1:12] I've drilled a hole exactly in the middle.\n[1:15] Then I've passed an 8 mm screw through the hole and through some bearings.\n[1:19] I fit in place the two bearings to a wood support and screw in place this wood support to a wood base."
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg",
+        "frame_0027.jpg"
+      ],
+      "transcript": "[1:19] I fit in place the two bearings to a wood support and screw in place this wood support to a wood base.\n[1:28] The only thing left is to make some holes in both ends of the metal bar."
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0028.jpg",
+        "frame_0029.jpg",
+        "frame_0030.jpg"
+      ],
+      "transcript": "[1:28] The only thing left is to make some holes in both ends of the metal bar.\n[1:33] Through these holes I'll pass some zip ties and tighten place two brushless motors.\n[1:39] The motors are connected following this schematic."
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0031.jpg",
+        "frame_0032.jpg",
+        "frame_0033.jpg"
+      ],
+      "transcript": "[1:39] The motors are connected following this schematic.\n[1:42] I've soldered the ESCs to each motor and make sure that the motors will spin in these directions."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[1:51] I've soldered together the supply wires of each ESCs and added a LiPo connector to the end.\n[1:58] To supply the motors you could use a 3S LiPo battery or as in my case a PC power supply with 12V output,"
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg",
+        "frame_0039.jpg"
+      ],
+      "transcript": "[1:58] To supply the motors you could use a 3S LiPo battery or as in my case a PC power supply with 12V output,\n[2:05] since I will be using the motors for a long time for multiple tests."
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0040.jpg",
+        "frame_0041.jpg",
+        "frame_0042.jpg"
+      ],
+      "transcript": "[2:11] Now the next step is to add the Arduino microcontroller and the MPU 6050 IMU board.\n[2:18] Using a breadboard I make these connections from the Arduino to the module and connect ground and signal to the two ESCs."
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0043.jpg",
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:18] Using a breadboard I make these connections from the Arduino to the module and connect ground and signal to the two ESCs.\n[2:26] Now make sure that you place the IMU board as center as you can between the two motors."
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[2:26] Now make sure that you place the IMU board as center as you can between the two motors.\n[2:31] I've used a small balsa wood board and some double side tape to fit everything in place.\n[2:39] Now the circuit is ready."
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg",
+        "frame_0051.jpg"
+      ],
+      "transcript": "[2:39] Now the circuit is ready.\n[2:42] The MPU 6050 I2C connection is done.\n[2:46] The ESC signals are connected and the power supply is ready to go."
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0052.jpg",
+        "frame_0053.jpg",
+        "frame_0054.jpg"
+      ],
+      "transcript": "[2:46] The ESC signals are connected and the power supply is ready to go.\n[2:52] The only thing left is to program the Arduino.\n[2:56] Ok, so let's understand what PID control is.\n[2:59] PID stands for proportional, integral and derivative control."
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0055.jpg",
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[2:59] PID stands for proportional, integral and derivative control.\n[3:06] In our case we want to control the angle of the metal bar since we want the drone to fly straight,"
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:06] In our case we want to control the angle of the metal bar since we want the drone to fly straight,\n[3:11] horizontal and without wobbling around.\n[3:16] These brushless motors are very powerful and any small change of power will spin the metal bar to the left or to the right."
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg",
+        "frame_0063.jpg"
+      ],
+      "transcript": "[3:16] These brushless motors are very powerful and any small change of power will spin the metal bar to the left or to the right.\n[3:24] We need a fast and accurate control of the angle.\n[3:29] Ok, so the MPU 6050 module will give us gyro and acceleration data."
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0064.jpg",
+        "frame_0065.jpg",
+        "frame_0066.jpg"
+      ],
+      "transcript": "[3:29] Ok, so the MPU 6050 module will give us gyro and acceleration data.\n[3:35] Using this data and applying some filters we obtain the real inclination angle of the metal bar."
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0067.jpg",
+        "frame_0068.jpg",
+        "frame_0069.jpg"
+      ],
+      "transcript": "[3:35] Using this data and applying some filters we obtain the real inclination angle of the metal bar.\n[3:42] We will see the entire code and how to obtain the data and the angle a little bit later.\n[3:48] First, let's see how we will proceed.\n[3:49] Ok, so we know the real angle of the metal bar and we want it to stay always at 0 degrees which is perfectly horizontal."
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[3:49] Ok, so we know the real angle of the metal bar and we want it to stay always at 0 degrees which is perfectly horizontal."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg",
+        "frame_0075.jpg"
+      ],
+      "transcript": "[4:00] The maximum angle to the right will be in this case around 45 degree.\n[4:04] Ok, so let's imagine now that we power up the motors with no control at all."
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0076.jpg",
+        "frame_0077.jpg",
+        "frame_0078.jpg"
+      ],
+      "transcript": "[4:04] Ok, so let's imagine now that we power up the motors with no control at all.\n[4:15] The brushless motors will be always different respecting the power.\n[4:18] It's almost impossible to have the same output power for the same signal since the motors are mechanical things and even a small difference will make a motor have more power than the other one."
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0079.jpg",
+        "frame_0080.jpg",
+        "frame_0081.jpg"
+      ],
+      "transcript": "[4:18] It's almost impossible to have the same output power for the same signal since the motors are mechanical things and even a small difference will make a motor have more power than the other one."
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[4:18] It's almost impossible to have the same output power for the same signal since the motors are mechanical things and even a small difference will make a motor have more power than the other one.\n[4:30] So even with the same speed signal the metal bar will lean to the direction of the less powerful motor.\n[4:38] In this case, the PID control will work in the following way."
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg",
+        "frame_0087.jpg"
+      ],
+      "transcript": "[4:38] In this case, the PID control will work in the following way.\n[4:42] I think this is the most common representation of a PID control that you could find.\n[4:49] As you can see, we have our process that in this case will be the movement of the motors to keep the metal bar horizontal."
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0088.jpg",
+        "frame_0089.jpg",
+        "frame_0090.jpg"
+      ],
+      "transcript": "[4:49] As you can see, we have our process that in this case will be the movement of the motors to keep the metal bar horizontal.\n[4:57] After the process, we have our feedback to the system that in this case is the real angle that the IMU unit will give us."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0091.jpg",
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[4:57] After the process, we have our feedback to the system that in this case is the real angle that the IMU unit will give us.\n[5:06] Now we first have to calculate the error of our control.\n[5:09] This error is the difference between a desired value and the real value of the system."
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[5:09] This error is the difference between a desired value and the real value of the system.\n[5:16] In our case, our desired value is zero degree angle of the metal bar and the real value is the data received from the IMU unit."
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg",
+        "frame_0099.jpg"
+      ],
+      "transcript": "[5:16] In our case, our desired value is zero degree angle of the metal bar and the real value is the data received from the IMU unit.\n[5:26] So, the first thing to do is to create a variable and name it error."
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0100.jpg",
+        "frame_0101.jpg",
+        "frame_0102.jpg"
+      ],
+      "transcript": "[5:26] So, the first thing to do is to create a variable and name it error.\n[5:32] We will give the difference value between the real angle and zero to this variable.\n[5:36] Now we have our error value in each loop."
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0103.jpg",
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[5:36] Now we have our error value in each loop.\n[5:42] The next step in the PID control is to use these three constants.\n[5:47] These constants are Kp, Ki and Kd as for proportional constants, integrate constants and derivative constant."
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[5:47] These constants are Kp, Ki and Kd as for proportional constants, integrate constants and derivative constant.\n[5:56] The total output of the PID control is the sum of these three parts, proportional, integrate and derivative."
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg",
+        "frame_0111.jpg"
+      ],
+      "transcript": "[5:56] The total output of the PID control is the sum of these three parts, proportional, integrate and derivative.\n[6:02] The total output of the PID control is the sum of these two constants.\n[6:09] Ok, so let's start with the integrate and derivative constants equal to zero and the proportional to one."
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0112.jpg",
+        "frame_0113.jpg",
+        "frame_0114.jpg"
+      ],
+      "transcript": "[6:09] Ok, so let's start with the integrate and derivative constants equal to zero and the proportional to one.\n[6:17] In this case, the output of the PID control will be the error itself."
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0115.jpg",
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[6:17] In this case, the output of the PID control will be the error itself.\n[6:20] Now we know that we should apply a 1000 microseconds to 2000 microseconds signal to the ESC in order to spin the motors where 1000 is no spinning at all and 2000 is full throttle."
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[6:20] Now we know that we should apply a 1000 microseconds to 2000 microseconds signal to the ESC in order to spin the motors where 1000 is no spinning at all and 2000 is full throttle.\n[6:36] These values may vary depending on your used ESC.\n[6:39] Now let's imagine that we make the motor spin at low speed by applying a signal of 1200 microseconds, which is around 20% throttle."
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg",
+        "frame_0123.jpg"
+      ],
+      "transcript": "[6:39] Now let's imagine that we make the motor spin at low speed by applying a signal of 1200 microseconds, which is around 20% throttle."
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0124.jpg",
+        "frame_0125.jpg",
+        "frame_0126.jpg"
+      ],
+      "transcript": "[6:39] Now let's imagine that we make the motor spin at low speed by applying a signal of 1200 microseconds, which is around 20% throttle.\n[6:51] Plus or minus the output of the PID control.\n[6:54] I say plus or minus because to the right side we have positive values of the angle and in the left side negative."
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0127.jpg",
+        "frame_0128.jpg",
+        "frame_0129.jpg"
+      ],
+      "transcript": "[6:54] I say plus or minus because to the right side we have positive values of the angle and in the left side negative.\n[7:02] So we have to sum the PID value to the right motor and subtract the PID output to the left motor in order to balance the power."
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0130.jpg",
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[7:11] We power up the system and let's say that at the beginning the left motor will push a little bit harder making the metal bar lean to the right.\n[7:18] As the bar leans to the right the PID value increase proportional to the angle."
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg",
+        "frame_0135.jpg"
+      ],
+      "transcript": "[7:18] As the bar leans to the right the PID value increase proportional to the angle.\n[7:25] As bigger the angle gets the right motor will spin faster each time and the left motor slower since we sum the PID value to one and subtract it to the other."
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0136.jpg",
+        "frame_0137.jpg",
+        "frame_0138.jpg"
+      ],
+      "transcript": "[7:25] As bigger the angle gets the right motor will spin faster each time and the left motor slower since we sum the PID value to one and subtract it to the other.\n[7:36] That will make the bar start leaning to the opposite side."
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0139.jpg",
+        "frame_0140.jpg",
+        "frame_0141.jpg"
+      ],
+      "transcript": "[7:40] And here, once again following the same process we will start leaning to the right side and so on.\n[7:45] This will create an oscillating movement of the bar that will maybe stabilize after a long time."
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0142.jpg",
+        "frame_0143.jpg",
+        "frame_0144.jpg"
+      ],
+      "transcript": "[7:45] This will create an oscillating movement of the bar that will maybe stabilize after a long time.\n[7:55] The oscillation is too slow with the proportional constant equal to 1.\n[7:59] So after some tests I define it to 3 and this is the result."
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0145.jpg",
+        "frame_0146.jpg",
+        "frame_0147.jpg"
+      ],
+      "transcript": "[7:59] So after some tests I define it to 3 and this is the result.\n[8:04] Seems pretty good for now.\n[8:08] What we need now is to fast react at the speed of movement of the bar."
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0148.jpg",
+        "frame_0149.jpg",
+        "frame_0150.jpg"
+      ],
+      "transcript": "[8:08] What we need now is to fast react at the speed of movement of the bar.\n[8:12] In this case it's not the angle that we will control but the speed in degrees per second."
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0151.jpg",
+        "frame_0152.jpg",
+        "frame_0153.jpg"
+      ],
+      "transcript": "[8:20] So our code will also count the elapsed time of each loop and by dividing the angle difference by this time we will get the speed.\n[8:29] Now we have to multiply this speed by the derivative constant which in this case won't be zero anymore."
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0154.jpg",
+        "frame_0155.jpg",
+        "frame_0156.jpg"
+      ],
+      "transcript": "[8:29] Now we have to multiply this speed by the derivative constant which in this case won't be zero anymore.\n[8:34] I set the derivative constant too high and the system gets crazy."
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0157.jpg",
+        "frame_0158.jpg",
+        "frame_0159.jpg"
+      ],
+      "transcript": "[8:34] I set the derivative constant too high and the system gets crazy.\n[8:42] Set it to low and it won't affect.\n[8:45] To cancel both effects I'll make the PAT output to be the sum of the proportional and derivative values."
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0160.jpg",
+        "frame_0161.jpg",
+        "frame_0162.jpg"
+      ],
+      "transcript": "[8:45] To cancel both effects I'll make the PAT output to be the sum of the proportional and derivative values.\n[8:51] After some tests I've set the derivative constant to 2 and the result was quite good."
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0163.jpg",
+        "frame_0164.jpg",
+        "frame_0165.jpg"
+      ],
+      "transcript": "[9:00] Now the system stabilizes itself quite well with a good response to the fast speed changes.\n[9:07] Then what will the integral part add to the system?"
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0166.jpg",
+        "frame_0167.jpg",
+        "frame_0168.jpg"
+      ],
+      "transcript": "[9:10] Well, for very small angles the proportional constant won't affect anymore or the value will be very small.\n[9:17] And if the metal bar is not moving the derivative constant won't affect neither."
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0169.jpg",
+        "frame_0170.jpg",
+        "frame_0171.jpg"
+      ],
+      "transcript": "[9:17] And if the metal bar is not moving the derivative constant won't affect neither.\n[9:23] So the bar could get stabilized but not perfect horizontal.\n[9:29] For that we add the integrate constant that gets bigger and bigger as more time is elapsed."
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0172.jpg",
+        "frame_0173.jpg",
+        "frame_0174.jpg"
+      ],
+      "transcript": "[9:29] For that we add the integrate constant that gets bigger and bigger as more time is elapsed.\n[9:33] So the bar is the first.\n[9:35] To show you how this works I will keep the bar lean to the right and observe that each time the right motor spins faster and the left one slower."
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0175.jpg",
+        "frame_0176.jpg",
+        "frame_0177.jpg"
+      ],
+      "transcript": "[9:35] To show you how this works I will keep the bar lean to the right and observe that each time the right motor spins faster and the left one slower.\n[9:44] That's because each loop the integral value increase a little bit more."
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0178.jpg",
+        "frame_0179.jpg",
+        "frame_0180.jpg"
+      ],
+      "transcript": "[9:50] This will fine tune our PID control when the angle is very small and the speed is almost zero.\n[9:56] The integral constant usually is very low. In my case 0.048 was a good value."
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0181.jpg",
+        "frame_0182.jpg",
+        "frame_0183.jpg"
+      ],
+      "transcript": "[9:56] The integral constant usually is very low. In my case 0.048 was a good value.\n[10:06] For our drone flight controller you could even not use the integral constant and make the PID output just the sum of the proportional and derivative values."
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0184.jpg",
+        "frame_0185.jpg",
+        "frame_0186.jpg"
+      ],
+      "transcript": "[10:06] For our drone flight controller you could even not use the integral constant and make the PID output just the sum of the proportional and derivative values.\n[10:17] Now that I've explained you how each part of the PID control works, I've made a bunch of tests and changing the values"
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0187.jpg",
+        "frame_0188.jpg",
+        "frame_0189.jpg"
+      ],
+      "transcript": "[10:17] Now that I've explained you how each part of the PID control works, I've made a bunch of tests and changing the values\n[10:23] and my best result was Kp equal to 3.44, Kd equal to 1.92 and Ki equal to 0.048."
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0190.jpg",
+        "frame_0191.jpg",
+        "frame_0192.jpg"
+      ],
+      "transcript": "[10:23] and my best result was Kp equal to 3.44, Kd equal to 1.92 and Ki equal to 0.048.\n[10:35] These PID constants will change depending of the shape, weight and size of the system."
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0193.jpg",
+        "frame_0194.jpg",
+        "frame_0195.jpg"
+      ],
+      "transcript": "[10:35] These PID constants will change depending of the shape, weight and size of the system.\n[10:40] So when we will add the second axis these values will definitely change.\n[10:46] Ok, so let's now take a look at the code that I've used.\n[10:49] I'll show you how to use the code that I've used."
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0196.jpg",
+        "frame_0197.jpg",
+        "frame_0198.jpg"
+      ],
+      "transcript": "[10:49] I'll show you how to use the code that I've used.\n[10:50] I'll show you how to use the code that I've used.\n[10:51] You could download all the schematics, codes and examples using the link below.\n[10:56] Also check my webpage for more details of the tutorial."
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0199.jpg",
+        "frame_0200.jpg",
+        "frame_0201.jpg"
+      ],
+      "transcript": "[11:02] Ok, the first thing to do is to import the libraries and define our motors, the right and the left one.\n[11:09] If we study the NPU6050 datasheet and the register map, we will see that it will give us 3 values for the acceleration"
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0202.jpg",
+        "frame_0203.jpg",
+        "frame_0204.jpg"
+      ],
+      "transcript": "[11:09] If we study the NPU6050 datasheet and the register map, we will see that it will give us 3 values for the acceleration\n[11:16] and 3 values for the gyro data, one for each of the x, y and z axes."
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0205.jpg",
+        "frame_0206.jpg",
+        "frame_0207.jpg"
+      ],
+      "transcript": "[11:16] and 3 values for the gyro data, one for each of the x, y and z axes.\n[11:23] We will store those values in these constants.\n[11:27] In order to obtain a good real angle, we will have to add a filter between the angle obtained with the gyro values"
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0208.jpg",
+        "frame_0209.jpg",
+        "frame_0210.jpg"
+      ],
+      "transcript": "[11:27] In order to obtain a good real angle, we will have to add a filter between the angle obtained with the gyro values\n[11:34] and the one obtained with the accelerations.\n[11:36] We can get the total angle using this formula where we can obtain the gyro angle directly with the IMU values"
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0211.jpg",
+        "frame_0212.jpg",
+        "frame_0213.jpg"
+      ],
+      "transcript": "[11:36] We can get the total angle using this formula where we can obtain the gyro angle directly with the IMU values\n[11:44] and the acceleration angle using the Euler formula and finally applying the complementary filter."
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0214.jpg",
+        "frame_0215.jpg",
+        "frame_0216.jpg"
+      ],
+      "transcript": "[11:51] This is a real data graphic made with the NPU6050 values.\n[11:57] The yellow line is the real angle and as you can see it's way better having less errors than using just gyro or acceleration values."
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0217.jpg",
+        "frame_0218.jpg",
+        "frame_0219.jpg"
+      ],
+      "transcript": "[11:57] The yellow line is the real angle and as you can see it's way better having less errors than using just gyro or acceleration values.\n[12:06] That's why we are using the complementary filter."
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0220.jpg",
+        "frame_0221.jpg",
+        "frame_0222.jpg"
+      ],
+      "transcript": "[12:10] Ok, now in the setup loop we write the minimum values to the motors and add a delay of 7 seconds\n[12:16] to give us time to connect the power supply to the motors."
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0223.jpg",
+        "frame_0224.jpg",
+        "frame_0225.jpg"
+      ],
+      "transcript": "[12:20] In the void loop, as we talked before, we measure the real elapsed time using the millis function.\n[12:28] We will use this elapsed time to calculate the speed in the derivative part of the PID."
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0226.jpg",
+        "frame_0227.jpg",
+        "frame_0228.jpg"
+      ],
+      "transcript": "[12:28] We will use this elapsed time to calculate the speed in the derivative part of the PID.\n[12:32] Now we send the slave address to the IMU module which is 0x68 and send the first direction of the acceleration data."
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0229.jpg",
+        "frame_0230.jpg",
+        "frame_0231.jpg"
+      ],
+      "transcript": "[12:32] Now we send the slave address to the IMU module which is 0x68 and send the first direction of the acceleration data.\n[12:44] Since each value for each axis is divided in two 8-bit registers, we ask for 6 registers."
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0232.jpg",
+        "frame_0233.jpg",
+        "frame_0234.jpg"
+      ],
+      "transcript": "[12:44] Since each value for each axis is divided in two 8-bit registers, we ask for 6 registers.\n[12:52] Once we receive those 6 registers, we combine the high and low part of each in order to obtain the x, y and z accelerations."
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0235.jpg",
+        "frame_0236.jpg",
+        "frame_0237.jpg"
+      ],
+      "transcript": "[12:52] Once we receive those 6 registers, we combine the high and low part of each in order to obtain the x, y and z accelerations.\n[13:00] Now, in order to convert these values to g's, we divide them by 16384 since this is the values that the module gives us for 1g accelerations."
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0238.jpg",
+        "frame_0239.jpg",
+        "frame_0240.jpg"
+      ],
+      "transcript": "[13:00] Now, in order to convert these values to g's, we divide them by 16384 since this is the values that the module gives us for 1g accelerations.\n[13:14] Using this Euler formula, we obtain the acceleration angles.\n[13:17] Now, we ask for the gyro data and divide that value by 131 as the datasheet tells us in order to obtain degrees per second."
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0241.jpg",
+        "frame_0242.jpg",
+        "frame_0243.jpg"
+      ],
+      "transcript": "[13:17] Now, we ask for the gyro data and divide that value by 131 as the datasheet tells us in order to obtain degrees per second.\n[13:28] If we multiply these values by the elapsed time and sum the value each loop, we obtain the inclination angle."
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0244.jpg",
+        "frame_0245.jpg",
+        "frame_0246.jpg"
+      ],
+      "transcript": "[13:28] If we multiply these values by the elapsed time and sum the value each loop, we obtain the inclination angle.\n[13:36] Finally, we calculate the real total angle applying the complementary filter between the gyro angle and the acceleration angles."
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0247.jpg",
+        "frame_0248.jpg",
+        "frame_0249.jpg"
+      ],
+      "transcript": "[13:36] Finally, we calculate the real total angle applying the complementary filter between the gyro angle and the acceleration angles.\n[13:43] Here we start the PID control.\n[13:48] Remember that we will use just one angle because this is a one axis test."
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0250.jpg",
+        "frame_0251.jpg",
+        "frame_0252.jpg"
+      ],
+      "transcript": "[13:48] Remember that we will use just one angle because this is a one axis test.\n[13:54] In this case, I've used the y axis because in the way I've placed the IMU module, that is the parallel axis with the metal bar."
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0253.jpg",
+        "frame_0254.jpg",
+        "frame_0255.jpg"
+      ],
+      "transcript": "[13:54] In this case, I've used the y axis because in the way I've placed the IMU module, that is the parallel axis with the metal bar.\n[14:01] First, we calculate the error as mentioned before.\n[14:07] We create the proportional value of the PID control."
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0256.jpg",
+        "frame_0257.jpg",
+        "frame_0258.jpg"
+      ],
+      "transcript": "[14:07] We create the proportional value of the PID control.\n[14:12] Next, we create the integral value and finally the derivative values dividing the subtraction between the last error and the actual error by the elapsed time."
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0259.jpg",
+        "frame_0260.jpg",
+        "frame_0261.jpg"
+      ],
+      "transcript": "[14:12] Next, we create the integral value and finally the derivative values dividing the subtraction between the last error and the actual error by the elapsed time.\n[14:20] That will give us the speed in degrees per second.\n[14:27] Finally, the total PID output is the sum of these 3 parts."
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0262.jpg",
+        "frame_0263.jpg",
+        "frame_0264.jpg"
+      ],
+      "transcript": "[14:27] Finally, the total PID output is the sum of these 3 parts.\n[14:32] Now we have to give a maximum and minimum range for the PID, since the motors could only accept values between 1000 and 2000 microseconds."
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0265.jpg",
+        "frame_0266.jpg",
+        "frame_0267.jpg"
+      ],
+      "transcript": "[14:32] Now we have to give a maximum and minimum range for the PID, since the motors could only accept values between 1000 and 2000 microseconds.\n[14:41] Now we apply that range here.\n[14:46] We calculate the throttle and write these values to each motor."
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 900,
+      "frames": [
+        "frame_0268.jpg",
+        "frame_0269.jpg",
+        "frame_0270.jpg"
+      ],
+      "transcript": "[14:51] Remember that we have to add the PID output to one motor and subtract it to the other one.\n[14:58] We are done.\n[14:59] The PID control is ready."
+    },
+    {
+      "segment_index": 91,
+      "start_time": 900,
+      "end_time": 910,
+      "frames": [
+        "frame_0271.jpg",
+        "frame_0272.jpg",
+        "frame_0273.jpg"
+      ],
+      "transcript": "[14:59] The PID control is ready.\n[15:02] The drone could now fly straight even if I push it around.\n[15:05] As you could see, the metal bar gets always horizontal."
+    },
+    {
+      "segment_index": 92,
+      "start_time": 910,
+      "end_time": 920,
+      "frames": [
+        "frame_0274.jpg",
+        "frame_0275.jpg",
+        "frame_0276.jpg"
+      ],
+      "transcript": "[15:05] As you could see, the metal bar gets always horizontal.\n[15:12] If we change the desired angle when we calculate the error, we could stabilize the bar in any other angle.\n[15:19] This is not the perfect PID control, but fine tuning the constants, you could always obtain the best results."
+    },
+    {
+      "segment_index": 93,
+      "start_time": 920,
+      "end_time": 930,
+      "frames": [
+        "frame_0277.jpg",
+        "frame_0278.jpg",
+        "frame_0279.jpg"
+      ],
+      "transcript": "[15:19] This is not the perfect PID control, but fine tuning the constants, you could always obtain the best results.\n[15:27] In next videos, we will see how to adapt this code for our flight controller and for two axes."
+    },
+    {
+      "segment_index": 94,
+      "start_time": 930,
+      "end_time": 940,
+      "frames": [
+        "frame_0280.jpg",
+        "frame_0281.jpg",
+        "frame_0282.jpg"
+      ],
+      "transcript": "[15:27] In next videos, we will see how to adapt this code for our flight controller and for two axes.\n[15:32] Also, how to change the desired angle depending on the received values from the radio controller of the drone."
+    },
+    {
+      "segment_index": 95,
+      "start_time": 940,
+      "end_time": 950,
+      "frames": [
+        "frame_0283.jpg",
+        "frame_0284.jpg",
+        "frame_0285.jpg"
+      ],
+      "transcript": "[15:40] I hope that you learned how PID works for drones and also for any other system.\n[15:46] If you like this video, click the like button like crazy."
+    },
+    {
+      "segment_index": 96,
+      "start_time": 950,
+      "end_time": 960,
+      "frames": [
+        "frame_0286.jpg",
+        "frame_0287.jpg",
+        "frame_0288.jpg"
+      ],
+      "transcript": "[15:50] Also, share my videos with your friends because that will help my channel a lot.\n[15:55] Don't forget to subscribe and also consider helping my projects on my new Patreon page."
+    },
+    {
+      "segment_index": 97,
+      "start_time": 960,
+      "end_time": 970,
+      "frames": [
+        "frame_0289.jpg",
+        "frame_0290.jpg",
+        "frame_0291.jpg"
+      ],
+      "transcript": "[15:55] Don't forget to subscribe and also consider helping my projects on my new Patreon page.\n[16:02] If you have any questions, just leave it in the comment section below or my Q&A page.\n[16:08] Thanks again and see you later guys!"
+    },
+    {
+      "segment_index": 98,
+      "start_time": 970,
+      "end_time": 970.96,
+      "frames": [
+        "frame_0292.jpg"
+      ],
+      "transcript": "[16:08] Thanks again and see you later guys!"
+    }
+  ]
+}

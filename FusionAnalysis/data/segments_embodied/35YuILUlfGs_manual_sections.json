@@ -1,0 +1,702 @@
+{
+  "video_id": "35YuILUlfGs",
+  "duration": 664.06,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg"
+      ],
+      "transcript": "[0:00] Let's face it, we've all been at one point where an electronic circuit works so well on perfboards\n[0:07] that you want to build more units of it.\n[0:09] But creating these solder traces takes up way too much time."
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0003.jpg",
+        "frame_0004.jpg"
+      ],
+      "transcript": "[0:09] But creating these solder traces takes up way too much time.\n[0:14] Or you ogled a new awesome IC that would be perfect for your next project.\n[0:19] But sadly it does only exist as an SMD package, which makes perfboard soldering pretty hard to do."
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0005.jpg",
+        "frame_0006.jpg",
+        "frame_0007.jpg"
+      ],
+      "transcript": "[0:19] But sadly it does only exist as an SMD package, which makes perfboard soldering pretty hard to do.\n[0:26] In both cases creating a proper PCB design and ordering it from a PCB manufacturing house is the way to go to save time and play around easily with SMD components."
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0008.jpg",
+        "frame_0009.jpg"
+      ],
+      "transcript": "[0:26] In both cases creating a proper PCB design and ordering it from a PCB manufacturing house is the way to go to save time and play around easily with SMD components.\n[0:39] So in this video I will be showing you step by step what to look out for when creating the schematic of your project"
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:39] So in this video I will be showing you step by step what to look out for when creating the schematic of your project\n[0:46] and how we can then turn it easily into a PCB design that we can order through a couple of simple clicks for quite a low price."
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg"
+      ],
+      "transcript": "[0:46] and how we can then turn it easily into a PCB design that we can order through a couple of simple clicks for quite a low price.\n[0:55] Let's get started!"
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0015.jpg",
+        "frame_0016.jpg"
+      ],
+      "transcript": "[1:09] As a practical example for this video I will be using this relatively simple double-sided PCB that I designed."
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0017.jpg",
+        "frame_0018.jpg",
+        "frame_0019.jpg"
+      ],
+      "transcript": "[1:09] As a practical example for this video I will be using this relatively simple double-sided PCB that I designed.\n[1:18] Which brings me to the first step of this tutorial."
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0020.jpg",
+        "frame_0021.jpg"
+      ],
+      "transcript": "[1:18] Which brings me to the first step of this tutorial.\n[1:21] Planning the function of the circuits.\n[1:23] I knew that I wanted to create a microcontroller based circuit.\n[1:28] That reads the position of a joystick and then sends the values through the RF band to receiver."
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[1:28] That reads the position of a joystick and then sends the values through the RF band to receiver.\n[1:35] Also I wanted to power the circuit through a LiPo battery.\n[1:39] Which means I needed a LiPo charge controller IC, a micro USB port to deliver the power for charging."
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg"
+      ],
+      "transcript": "[1:39] Which means I needed a LiPo charge controller IC, a micro USB port to deliver the power for charging.\n[1:47] And a power switch to connect the battery voltage to a 3.3V regulator."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0027.jpg",
+        "frame_0028.jpg"
+      ],
+      "transcript": "[1:47] And a power switch to connect the battery voltage to a 3.3V regulator.\n[1:52] Which converts the unregulated battery voltage into a suitable voltage for the microcontroller.\n[1:58] Last but not least I wanted to monitor the battery voltage through a voltage divider with the microcontroller."
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0029.jpg",
+        "frame_0030.jpg",
+        "frame_0031.jpg"
+      ],
+      "transcript": "[1:58] Last but not least I wanted to monitor the battery voltage through a voltage divider with the microcontroller.\n[2:05] So that when the battery voltage gets close to 3.4V the RF functionality shuts down and the yellow LED lights up."
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0032.jpg",
+        "frame_0033.jpg"
+      ],
+      "transcript": "[2:05] So that when the battery voltage gets close to 3.4V the RF functionality shuts down and the yellow LED lights up.\n[2:15] And with the function of the circuit planned out it was time for step 2.\n[2:19] Which involves searching for suitable components and creating a paper schematic."
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[2:19] Which involves searching for suitable components and creating a paper schematic.\n[2:25] For component sourcing I like to use LCSC."
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg"
+      ],
+      "transcript": "[2:30] Because their selection is not only big.\n[2:32] But also because we will be ordering the PCBs through JLCPCB later on.\n[2:37] And we can combine that with the LCSC order and thus save shipping costs."
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0039.jpg",
+        "frame_0040.jpg"
+      ],
+      "transcript": "[2:37] And we can combine that with the LCSC order and thus save shipping costs.\n[2:43] But anyway once I decided on the main ICs.\n[2:47] Which were the ATMEGA328 as a microcontroller."
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0041.jpg",
+        "frame_0042.jpg",
+        "frame_0043.jpg"
+      ],
+      "transcript": "[2:47] Which were the ATMEGA328 as a microcontroller.\n[2:50] An NRF24 as the RF transmitter.\n[2:54] A TP4056 as the charge controller.\n[2:58] And a TPS76933dBVR as the voltage regulator."
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:58] And a TPS76933dBVR as the voltage regulator.\n[3:03] It was time to think about the packages.\n[3:06] The package basically describes how the IC will physically look like."
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[3:06] The package basically describes how the IC will physically look like.\n[3:11] And determines whether it is a THT or SMD component.\n[3:17] For example while the NRF24 is only available as a breakout board in THT."
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg"
+      ],
+      "transcript": "[3:17] For example while the NRF24 is only available as a breakout board in THT.\n[3:23] And the TP4056 is only available as an SMD version.\n[3:28] We do have the choice between THT and SMD for the microcontroller."
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0051.jpg",
+        "frame_0052.jpg"
+      ],
+      "transcript": "[3:28] We do have the choice between THT and SMD for the microcontroller.\n[3:34] But since I wanted the circuit to be as small as possible.\n[3:37] I went with the SMD version.\n[3:39] Which I also set as the standard for the remaining complementary components."
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0053.jpg",
+        "frame_0054.jpg",
+        "frame_0055.jpg"
+      ],
+      "transcript": "[3:39] Which I also set as the standard for the remaining complementary components.\n[3:45] Next I planned out on a piece of paper.\n[3:47] How to connect the main ICs to one another."
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[3:47] How to connect the main ICs to one another.\n[3:51] And also what passive components are necessary to make them all work.\n[3:55] To find that out.\n[3:56] I had a closer look at all the data sheets of the ICs."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:56] I had a closer look at all the data sheets of the ICs.\n[4:00] And the recommended example circuits.\n[4:03] And if everything fails you can always google your question.\n[4:06] Which should give you a suitable answer in 99% of the cases."
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg"
+      ],
+      "transcript": "[4:06] Which should give you a suitable answer in 99% of the cases.\n[4:11] The last thing to do for the paper circuits was to add breakout points.\n[4:15] So that I could later program the microcontroller.\n[4:18] And also hook up the battery and LEDs to the circuits."
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0063.jpg",
+        "frame_0064.jpg"
+      ],
+      "transcript": "[4:18] And also hook up the battery and LEDs to the circuits.\n[4:22] Which will be mounted in a separate enclosure.\n[4:24] Now for the passive component selection.\n[4:28] I mainly went with 0603 as the package size."
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0065.jpg",
+        "frame_0066.jpg",
+        "frame_0067.jpg"
+      ],
+      "transcript": "[4:28] I mainly went with 0603 as the package size.\n[4:32] Which stands for 0.06 by 0.03 inches.\n[4:36] Or 1.6 by 0.8 millimeters."
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0068.jpg",
+        "frame_0069.jpg"
+      ],
+      "transcript": "[4:36] Or 1.6 by 0.8 millimeters.\n[4:40] There also exists a 0402 and a 0201 package.\n[4:45] But I think 0603 is neither too big or too small."
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[4:45] But I think 0603 is neither too big or too small.\n[4:50] And can still be soldered with an iron with a bit of practice.\n[4:54] And with the component selection and paper schematic being completed.\n[4:58] It was time for step 3."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg"
+      ],
+      "transcript": "[4:58] It was time for step 3.\n[5:00] Creating a proper schematic.\n[5:03] For that I used the EasyEDA free online circuit creator.\n[5:07] After logging in I created a new project."
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0075.jpg",
+        "frame_0076.jpg",
+        "frame_0077.jpg"
+      ],
+      "transcript": "[5:07] After logging in I created a new project.\n[5:10] And there a new schematic.\n[5:13] Then I simply used their online library.\n[5:15] Which also includes pretty much all LCSC components.\n[5:19] To search for my utilized components."
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0078.jpg",
+        "frame_0079.jpg"
+      ],
+      "transcript": "[5:19] To search for my utilized components.\n[5:22] And firstly imported them into the workspace.\n[5:25] But make sure that you choose components.\n[5:28] With the right package and correct footprint."
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0080.jpg",
+        "frame_0081.jpg"
+      ],
+      "transcript": "[5:28] With the right package and correct footprint.\n[5:31] Otherwise the PCB design will later not work out.\n[5:34] Once all the main actors of the circuit were imported.\n[5:39] I then used the left aligned resistors with the right package."
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[5:39] I then used the left aligned resistors with the right package.\n[5:43] And capacitors with the right package.\n[5:45] As the complementary passive components.\n[5:48] And of course we should not forget."
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg"
+      ],
+      "transcript": "[5:48] And of course we should not forget.\n[5:50] To add male header connectors.\n[5:52] For the breakout points.\n[5:54] Now that we got all of our required components.\n[5:57] In the editor.\n[5:58] We can arrange them to logical blocks."
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0087.jpg",
+        "frame_0088.jpg",
+        "frame_0089.jpg"
+      ],
+      "transcript": "[5:58] We can arrange them to logical blocks.\n[6:01] Which in my case is the power parts.\n[6:03] And the microcontroller parts.\n[6:06] Once that was done.\n[6:07] I utilized the wire function of the software."
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0090.jpg",
+        "frame_0091.jpg"
+      ],
+      "transcript": "[6:07] I utilized the wire function of the software.\n[6:10] To connect all the components to one another.\n[6:13] According to how I planned it out on paper.\n[6:16] Last but not least.\n[6:17] I then added the ground.\n[6:19] VCC."
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[6:19] VCC.\n[6:20] And battery voltage supply flags to the schematic.\n[6:23] Which not only completes it.\n[6:25] But also ends the third step of this tutorial.\n[6:28] That means it is time for the last step."
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[6:28] That means it is time for the last step.\n[6:31] Step 4.\n[6:32] Which is PCB design and ordering.\n[6:35] For that.\n[6:36] We firstly have to click the convert to PCB button.\n[6:39] Which automatically throws all the component footprints."
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg"
+      ],
+      "transcript": "[6:39] Which automatically throws all the component footprints.\n[6:42] Into the PCB editor.\n[6:44] Shows how to connect them through the blue lines.\n[6:47] And creates a PCB outline for us."
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0099.jpg",
+        "frame_0100.jpg",
+        "frame_0101.jpg"
+      ],
+      "transcript": "[6:51] The first thing I did though.\n[6:52] Was removing the outline.\n[6:54] Because as I mentioned earlier.\n[6:56] I needed a specific PCB size.\n[6:58] For the enclosure."
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0102.jpg",
+        "frame_0103.jpg"
+      ],
+      "transcript": "[7:00] To do that.\n[7:01] I changed the measuring system to millimeters.\n[7:04] Selected the board outline layer.\n[7:06] And used the track tool.\n[7:07] In combination with the given coordinates."
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[7:07] In combination with the given coordinates.\n[7:10] In the down right corner.\n[7:11] To create the correct size for the PCB.\n[7:15] Then I moved the micro USB port.\n[7:17] The main power switch.\n[7:19] And the joystick.\n[7:19] To the required position."
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[7:19] To the required position.\n[7:21] According to the enclosure's cutouts.\n[7:24] To later mount the PCB.\n[7:26] I also added three pads.\n[7:28] Whose size I enlarged.\n[7:29] So that M3 screws would fit through them."
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg"
+      ],
+      "transcript": "[7:29] So that M3 screws would fit through them.\n[7:33] And with that being done.\n[7:34] I placed the rest of the components onto the PCB.\n[7:38] Of course.\n[7:39] You want to separate the power parts."
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0111.jpg",
+        "frame_0112.jpg",
+        "frame_0113.jpg"
+      ],
+      "transcript": "[7:39] You want to separate the power parts.\n[7:41] And microcontroller part a bit.\n[7:43] And also make sure.\n[7:44] That the pins slash components.\n[7:46] That need to get connected.\n[7:47] To one another.\n[7:49] Are physically close to one another."
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0114.jpg",
+        "frame_0115.jpg"
+      ],
+      "transcript": "[7:49] Are physically close to one another.\n[7:51] So that the copper trace length.\n[7:53] Can be as short as possible.\n[7:56] As soon as you think.\n[7:57] Your layout looks logical.\n[7:59] We could use the given auto router."
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[7:59] We could use the given auto router.\n[8:01] To do the wiring for us.\n[8:03] But as you might already have guessed.\n[8:05] That is often not the best solution.\n[8:08] So let's do it manually."
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[8:08] So let's do it manually.\n[8:10] By selecting the top layer.\n[8:12] And using the track tool.\n[8:13] To simply connect all the components.\n[8:15] To one another.\n[8:17] But before doing so.\n[8:18] We have to talk about the width."
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg"
+      ],
+      "transcript": "[8:18] We have to talk about the width.\n[8:20] Of the traces.\n[8:21] Which is usually set to 0.254 millimeters.\n[8:26] If we use an online trace width calculator.\n[8:29] And set the ounce value to 1."
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0123.jpg",
+        "frame_0124.jpg",
+        "frame_0125.jpg"
+      ],
+      "transcript": "[8:29] And set the ounce value to 1.\n[8:31] Which is the standard value.\n[8:33] For JLC PCBs.\n[8:35] Then the trace could handle.\n[8:36] Around 0.885 amps.\n[8:39] Of current on outer layers."
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0126.jpg",
+        "frame_0127.jpg"
+      ],
+      "transcript": "[8:39] Of current on outer layers.\n[8:41] Which is enough.\n[8:42] But I always like to work.\n[8:44] With a width of 0.3 millimeters.\n[8:47] Since that gives me.\n[8:48] A maximum of 1 amp."
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0128.jpg",
+        "frame_0129.jpg"
+      ],
+      "transcript": "[8:50] And with that out of the way.\n[8:52] I created all possible connections.\n[8:54] On the top layer.\n[8:55] While making sure.\n[8:56] To not use 90 degree bends.\n[8:58] Since that is bad practice."
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0130.jpg",
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[8:58] Since that is bad practice.\n[9:00] And everyone in the comment section.\n[9:02] Will hate you.\n[9:04] The only problem.\n[9:05] With this top layer wiring.\n[9:07] Was that after a short while.\n[9:09] I was running out of space."
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg"
+      ],
+      "transcript": "[9:09] I was running out of space.\n[9:11] And not all necessary connections.\n[9:13] Were made yet.\n[9:14] But don't worry.\n[9:15] Since we can switch to the bottom layer.\n[9:18] And do the rest wiring there."
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0135.jpg",
+        "frame_0136.jpg",
+        "frame_0137.jpg"
+      ],
+      "transcript": "[9:20] Which would be very simple to do.\n[9:22] For THD components.\n[9:23] Since the solder pads.\n[9:24] Penetrate through all layers.\n[9:27] But for SMD components.\n[9:28] We have to create.\n[9:29] A so called via."
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0138.jpg",
+        "frame_0139.jpg"
+      ],
+      "transcript": "[9:29] A so called via.\n[9:31] It is basically.\n[9:32] A small tunnel.\n[9:33] That connects the top.\n[9:35] And bottom layer.\n[9:36] And just like that.\n[9:37] We can finish the wiring.\n[9:39] Even for SMD components."
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0140.jpg",
+        "frame_0141.jpg",
+        "frame_0142.jpg"
+      ],
+      "transcript": "[9:39] Even for SMD components.\n[9:40] On the bottom layer.\n[9:42] Now here is my finished.\n[9:43] PCB design.\n[9:45] To which you would answer.\n[9:46] It is not finished yet.\n[9:47] Since all ground connections.\n[9:49] Are not made."
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0143.jpg",
+        "frame_0144.jpg"
+      ],
+      "transcript": "[9:49] Are not made.\n[9:51] Well.\n[9:51] For those.\n[9:52] We can simply select.\n[9:53] The top layer.\n[9:54] And use the copper region tool.\n[9:56] To encircle the whole PCB.\n[9:59] And just like that."
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0145.jpg",
+        "frame_0146.jpg"
+      ],
+      "transcript": "[9:59] And just like that.\n[10:00] The traces got isolated.\n[10:02] And the rest of the top layer space.\n[10:04] Is used as a solid copper ground layer.\n[10:08] Of course.\n[10:08] If you want to.\n[10:09] You could also repeat this process."
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0147.jpg",
+        "frame_0148.jpg",
+        "frame_0149.jpg"
+      ],
+      "transcript": "[10:09] You could also repeat this process.\n[10:11] For the bottom layer.\n[10:13] At this point.\n[10:14] The PCB design.\n[10:15] Is basically complete.\n[10:17] Which means.\n[10:17] We can click.\n[10:18] Generate Gerber files."
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0150.jpg",
+        "frame_0151.jpg"
+      ],
+      "transcript": "[10:18] Generate Gerber files.\n[10:20] In order to download them.\n[10:21] Or.\n[10:22] We can directly.\n[10:23] Order our finished products.\n[10:24] From JLC PCB.\n[10:26] Which I did.\n[10:28] And after waiting for a week."
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0152.jpg",
+        "frame_0153.jpg",
+        "frame_0154.jpg"
+      ],
+      "transcript": "[10:28] And after waiting for a week.\n[10:30] I was greeted.\n[10:31] With 10 copies.\n[10:32] Of my board.\n[10:33] Which did not only look promising.\n[10:35] Under the microscope.\n[10:36] But also worked.\n[10:37] Without any problems.\n[10:39] Now."
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0155.jpg",
+        "frame_0156.jpg"
+      ],
+      "transcript": "[10:39] Now.\n[10:40] If you're curious.\n[10:41] How to solder the components.\n[10:42] To such a PCB.\n[10:43] Then definitely.\n[10:44] Make sure.\n[10:45] To watch my soldering tutorial.\n[10:46] About the subjects.\n[10:49] As always.\n[10:49] I hope you enjoyed."
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0157.jpg",
+        "frame_0158.jpg"
+      ],
+      "transcript": "[10:49] I hope you enjoyed.\n[10:50] Watching this video.\n[10:52] And learned a thing or two.\n[10:53] About PCB design.\n[10:55] If so.\n[10:56] Don't forget to like.\n[10:57] Share.\n[10:58] And subscribe.\n[10:59] Stay creative."
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 664.06,
+      "frames": [
+        "frame_0159.jpg"
+      ],
+      "transcript": "[10:59] Stay creative.\n[11:01] And I will see you.\n[11:02] Next time."
+    }
+  ]
+}

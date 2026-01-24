@@ -1,0 +1,520 @@
+{
+  "video_id": "a3wDEcORRR4",
+  "duration": 460.62,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg",
+        "frame_0003.jpg"
+      ],
+      "transcript": "[0:00] Now let's take a look at how we can go from something like this fairly robust breadboard\n[0:04] with nice cleaned up wires to something even more robust, something that we can implement,\n[0:09] say, in a robot that's moving around or on your bicycle or in a car or an industrial application"
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0004.jpg",
+        "frame_0005.jpg",
+        "frame_0006.jpg"
+      ],
+      "transcript": "[0:09] say, in a robot that's moving around or on your bicycle or in a car or an industrial application\n[0:13] or something, or just the fact that you want to pass it around and let people play with this\n[0:18] prototype, right? These wires can get loose eventually, they corrode, they make misconnections,"
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0007.jpg",
+        "frame_0008.jpg",
+        "frame_0009.jpg"
+      ],
+      "transcript": "[0:18] prototype, right? These wires can get loose eventually, they corrode, they make misconnections,\n[0:23] it's just not the best long-term solution. So what we use is PerfBoard, and PerfBoard is perforated\n[0:29] board that you cut to whatever size you want, and you hardwire solder all those connections in place."
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:29] board that you cut to whatever size you want, and you hardwire solder all those connections in place.\n[0:37] There's lots of different kind. This one is like a single point PerfBoard. Some of them have"
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg",
+        "frame_0015.jpg"
+      ],
+      "transcript": "[0:37] There's lots of different kind. This one is like a single point PerfBoard. Some of them have\n[0:41] rows that are all connected, similar to like a breadboard and how that's connected.\n[0:45] I like these, they're one-sided, and they have individual copper pads on each hole, and I'll show"
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0016.jpg",
+        "frame_0017.jpg",
+        "frame_0018.jpg"
+      ],
+      "transcript": "[0:45] I like these, they're one-sided, and they have individual copper pads on each hole, and I'll show\n[0:51] you briefly how I would use it. This video is more about some tips and techniques more than actually\n[0:56] building something on a PerfBoard. It's fairly straightforward, but I've got some things that"
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0019.jpg",
+        "frame_0020.jpg",
+        "frame_0021.jpg"
+      ],
+      "transcript": "[0:56] building something on a PerfBoard. It's fairly straightforward, but I've got some things that\n[1:01] should help you build it. Number one, size. Don't necessarily want this size of a PerfBoard.\n[1:08] I want something smaller. Maybe I'm creating a little board that breaks out all the analog pins"
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[1:08] I want something smaller. Maybe I'm creating a little board that breaks out all the analog pins\n[1:13] here of my Arduino. It'd be just so much easier to have a PerfBoard that could plug into there,\n[1:18] or have breakout header pins or something. So cutting it, cutting it. You can use little nippers,"
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg",
+        "frame_0027.jpg"
+      ],
+      "transcript": "[1:18] or have breakout header pins or something. So cutting it, cutting it. You can use little nippers,\n[1:22] you can use some scissors. Don't bother. I see lots of people doing that. You get jagged edges.\n[1:27] It's not the best way. Best thing you can do, go get some really cheap tin snips. Make sure you buy"
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0028.jpg",
+        "frame_0029.jpg",
+        "frame_0030.jpg"
+      ],
+      "transcript": "[1:27] It's not the best way. Best thing you can do, go get some really cheap tin snips. Make sure you buy\n[1:32] whether you buy a right-handed or left-handed version. But look at this. If I were to take\n[1:36] this PerfBoard, or actually I have one here cut down already, and I were to just cut a row off of this,"
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0031.jpg",
+        "frame_0032.jpg",
+        "frame_0033.jpg"
+      ],
+      "transcript": "[1:36] this PerfBoard, or actually I have one here cut down already, and I were to just cut a row off of this,\n[1:43] I mean it cuts so easily. It leaves a nice clean edge, very little sharp corners. I mean it's just,\n[1:49] it's really nice. And if I wanted, say, a little breakout board from my Arduino, I can actually"
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[1:49] it's really nice. And if I wanted, say, a little breakout board from my Arduino, I can actually\n[1:54] just cut the board like that. And look at that. I've got this great little breakout board that I\n[1:59] could solder some header pins in and put it on my Arduino. Couldn't really be easier. So that's"
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg",
+        "frame_0039.jpg"
+      ],
+      "transcript": "[1:59] could solder some header pins in and put it on my Arduino. Couldn't really be easier. So that's\n[2:04] number one, cutting. Number two, soldering. So if you're going to put a integrated circuit into your"
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0040.jpg",
+        "frame_0041.jpg",
+        "frame_0042.jpg"
+      ],
+      "transcript": "[2:04] number one, cutting. Number two, soldering. So if you're going to put a integrated circuit into your\n[2:12] board, you can solder it right to the PerfBoard, but trust me on this. And I've done it. Sadly,\n[2:17] I've done it. I still actually remember one time I was making an Arduino many, many years ago. I want"
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0043.jpg",
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:17] I've done it. I still actually remember one time I was making an Arduino many, many years ago. I want\n[2:21] to say like close to 10 years ago. And I soldered my AT Mega, I don't remember, I think it was a 168\n[2:28] microcontroller in there. And I fried it. And once I soldered it in, I go to unsolder it. It was a mess."
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[2:28] microcontroller in there. And I fried it. And once I soldered it in, I go to unsolder it. It was a mess.\n[2:35] It was horrible. Don't put your microcontrollers or integrated circuits, don't solder them directly to"
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg",
+        "frame_0051.jpg"
+      ],
+      "transcript": "[2:35] It was horrible. Don't put your microcontrollers or integrated circuits, don't solder them directly to\n[2:41] a board. Use something like a socket. And this is a socket. And what this allows you to do is put it\n[2:46] into PerfBoard, solder this in from the backside. And then I can take my microcontroller and I can"
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0052.jpg",
+        "frame_0053.jpg",
+        "frame_0054.jpg"
+      ],
+      "transcript": "[2:46] into PerfBoard, solder this in from the backside. And then I can take my microcontroller and I can\n[2:51] snap it into the socket. Something happens, I can pop it out. If I change my code, I can actually have\n[2:56] on the side a couple of different microcontrollers with different codes. It's really great for demoing."
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0055.jpg",
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[2:56] on the side a couple of different microcontrollers with different codes. It's really great for demoing.\n[3:01] It's great for having a backup. So that's one thing. Another thing to know is when soldering to\n[3:07] the PerfBoard, and I'll grab my soldering iron real quick to show you. And you know what, I'm going to"
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:07] the PerfBoard, and I'll grab my soldering iron real quick to show you. And you know what, I'm going to\n[3:12] make a quick note about this soldering iron. This is my used industrial grade MetCal soldering iron."
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg",
+        "frame_0063.jpg"
+      ],
+      "transcript": "[3:20] Why do I use this? This uses these RF tips. It's basically like a radio antenna, believe it or not,\n[3:26] that from my understanding excites the tip of the soldering iron and heats it up extremely fast. I love"
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0064.jpg",
+        "frame_0065.jpg",
+        "frame_0066.jpg"
+      ],
+      "transcript": "[3:26] that from my understanding excites the tip of the soldering iron and heats it up extremely fast. I love\n[3:34] this soldering iron. They're hundreds of dollars new, but you can go to eBay and buy them used for,"
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0067.jpg",
+        "frame_0068.jpg",
+        "frame_0069.jpg"
+      ],
+      "transcript": "[3:34] this soldering iron. They're hundreds of dollars new, but you can go to eBay and buy them used for,\n[3:40] I think I paid under a hundred bucks for this. And what I like about it is if I go to turn it on,\n[3:45] I've just turned my soldering iron on."
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[3:50] And let these little brass there, let's see. There you go. It's already up to temperature.\n[3:56] I mean, what was that? A couple of seconds? Love it. It actually cools down just as fast."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg",
+        "frame_0075.jpg"
+      ],
+      "transcript": "[3:56] I mean, what was that? A couple of seconds? Love it. It actually cools down just as fast.\n[4:00] But what I wanted to show you is let's say we were going to solder this header pin in here.\n[4:05] I push it through from this side."
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0076.jpg",
+        "frame_0077.jpg",
+        "frame_0078.jpg"
+      ],
+      "transcript": "[4:11] And I can get in here and get a nice little blob of solder on my soldering iron.\n[4:16] I can tack it in place real quick.\n[4:19] And now that's tacked in place, right? But this is what I wanted to get at."
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0079.jpg",
+        "frame_0080.jpg",
+        "frame_0081.jpg"
+      ],
+      "transcript": "[4:19] And now that's tacked in place, right? But this is what I wanted to get at.\n[4:25] When working with PerfBoard, these are incredibly valuable.\n[4:28] This is a rosin flux pen. And what this does is it cleans and is a facilitator for the solder to flow."
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[4:28] This is a rosin flux pen. And what this does is it cleans and is a facilitator for the solder to flow.\n[4:37] So if I'm going to go in here, you can see the PerfBoards typically are a little,"
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg",
+        "frame_0087.jpg"
+      ],
+      "transcript": "[4:37] So if I'm going to go in here, you can see the PerfBoards typically are a little,\n[4:42] I don't want to say messy, but they're not exactly the cleanest of all things.\n[4:46] And with a little flux pen, it makes soldering so much easier."
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0088.jpg",
+        "frame_0089.jpg",
+        "frame_0090.jpg"
+      ],
+      "transcript": "[4:46] And with a little flux pen, it makes soldering so much easier.\n[4:51] Trust me on this one. You want a pen\n[4:53] like this. This is a\n[4:58] rosin flux pen by"
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0091.jpg",
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[4:58] rosin flux pen by\n[5:00] MG Chemicals. These are really\n[5:03] handy to have. They're also really good when you're reworking solder joints.\n[5:07] Paint over it with some of the flux\n[5:09] and you will desolder much easier."
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[5:09] and you will desolder much easier.\n[5:12] So there's another tip. There I got my header pins in here.\n[5:14] Last but not least, I want to also mention that\n[5:17] if you are going to\n[5:19] solder a bunch of things together,"
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg",
+        "frame_0099.jpg"
+      ],
+      "transcript": "[5:19] solder a bunch of things together,\n[5:21] like let's say you needed a whole bunch of pins connected along a bar.\n[5:27] I've mentioned earlier in videos, I saved these little"
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0100.jpg",
+        "frame_0101.jpg",
+        "frame_0102.jpg"
+      ],
+      "transcript": "[5:27] I've mentioned earlier in videos, I saved these little\n[5:30] clips from my LEDs and I'll usually have a few on hand.\n[5:34] These can be very handy when soldering on a PerfBoard.\n[5:37] Again, I can flux this\n[5:39] and say I wanted to connect all these pins together."
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0103.jpg",
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[5:39] and say I wanted to connect all these pins together.\n[5:41] I can quickly take my\n[5:46] little lead that I have here."
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[5:46] little lead that I have here.\n[5:54] I can temporarily put it right there\n[5:56] and then I can bend it like that"
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg",
+        "frame_0111.jpg"
+      ],
+      "transcript": "[5:56] and then I can bend it like that\n[6:00] and I can actually go in and connect all these points.\n[6:03] Sometimes you just need a lot of points connected together.\n[6:05] See how quickly I can flood that?\n[6:08] Look at that."
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0112.jpg",
+        "frame_0113.jpg",
+        "frame_0114.jpg"
+      ],
+      "transcript": "[6:10] Beautiful bar of solder.\n[6:12] So, you know, imagine I had all different breakout wires\n[6:14] that I want to connect on the other side.\n[6:15] That's a really simple way of doing it.\n[6:18] Wires are connected the same way.\n[6:19] You know, I like to use these little"
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0115.jpg",
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[6:19] You know, I like to use these little\n[6:21] flush cutters.\n[6:24] I just put the wire in on the front.\n[6:26] There's my wire on the back\n[6:27] and I can easily just go in there\n[6:29] and solder it"
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[6:29] and solder it\n[6:31] right where it needs to be.\n[6:34] Done.\n[6:35] A little bit of a cold solder joint\n[6:36] but don't worry about it.\n[6:39] Another very useful thing"
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg",
+        "frame_0123.jpg"
+      ],
+      "transcript": "[6:39] Another very useful thing\n[6:41] is make sure you trim these leads down.\n[6:42] Get them real nice and short\n[6:44] and close to the board.\n[6:45] So that's basically how you build\n[6:46] on a PerfBoard.\n[6:48] Now, there's all different kinds.\n[6:49] Some of them have built-in rows."
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0124.jpg",
+        "frame_0125.jpg",
+        "frame_0126.jpg"
+      ],
+      "transcript": "[6:49] Some of them have built-in rows.\n[6:51] Some of them look just like breadboards\n[6:52] and that's the last thing I want to show you.\n[6:55] I'm a big fan of these.\n[6:56] These are called the perma-proto boards.\n[6:58] And what I like about these"
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0127.jpg",
+        "frame_0128.jpg",
+        "frame_0129.jpg"
+      ],
+      "transcript": "[6:58] And what I like about these\n[7:00] is if you look very carefully,\n[7:01] each one of these holes is connected already\n[7:04] just like it would be on a breadboard.\n[7:07] And if you're building this circuit,\n[7:08] I can buy a perma-proto board."
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0130.jpg",
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[7:08] I can buy a perma-proto board.\n[7:11] That's a half-size breadboard.\n[7:12] This happens to be a quarter size that I have here.\n[7:15] But I can literally just hold this right here\n[7:17] and build the same circuit,\n[7:19] wire it up the same way as my breadboard,"
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg",
+        "frame_0135.jpg"
+      ],
+      "transcript": "[7:19] wire it up the same way as my breadboard,\n[7:21] flip it over, solder it together,\n[7:22] and it works perfectly.\n[7:24] These are extremely handy.\n[7:26] They're quite affordable.\n[7:27] And to be quite honest with you,\n[7:29] if you're building a prototype,"
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0136.jpg",
+        "frame_0137.jpg",
+        "frame_0138.jpg"
+      ],
+      "transcript": "[7:29] if you're building a prototype,\n[7:30] they're really slick looking.\n[7:32] So that's about it for building on a PerfBoard.\n[7:35] I hope those tips and tricks help you a little bit\n[7:38] and ease that learning curve."
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 460.62,
+      "frames": [],
+      "transcript": "[7:38] and ease that learning curve."
+    }
+  ]
+}

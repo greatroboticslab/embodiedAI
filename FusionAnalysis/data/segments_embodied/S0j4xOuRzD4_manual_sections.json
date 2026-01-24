@@ -1,0 +1,696 @@
+{
+  "video_id": "S0j4xOuRzD4",
+  "duration": 657.76,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg"
+      ],
+      "transcript": "[0:00] This little component right here is a full bridge rectifier which converts our AC mains voltage we\n[0:07] get from our outlets into a rather bumpy DC voltage. This might sound unspectacular but"
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0003.jpg",
+        "frame_0004.jpg",
+        "frame_0005.jpg"
+      ],
+      "transcript": "[0:07] get from our outlets into a rather bumpy DC voltage. This might sound unspectacular but\n[0:14] if we add a capacitor to the rectifier's output we get a smooth DC voltage that is basically"
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0006.jpg",
+        "frame_0007.jpg"
+      ],
+      "transcript": "[0:14] if we add a capacitor to the rectifier's output we get a smooth DC voltage that is basically\n[0:20] required for every modern power supply to work. So yes, full bridge rectifiers are a big deal\n[0:27] and make our modern electronics world possible. But that doesn't mean they are perfect. They in fact"
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0008.jpg",
+        "frame_0009.jpg",
+        "frame_0010.jpg"
+      ],
+      "transcript": "[0:27] and make our modern electronics world possible. But that doesn't mean they are perfect. They in fact\n[0:34] come with a noticeable voltage drop which multiplies with the flowing current equals the power loss that"
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:34] come with a noticeable voltage drop which multiplies with the flowing current equals the power loss that\n[0:40] the rectifier dissipates in the form of heat. Needless to say we want to keep this power loss as small as\n[0:47] possible to increase efficiency and that is why I was super excited to find this active rectifier board"
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg",
+        "frame_0015.jpg"
+      ],
+      "transcript": "[0:47] possible to increase efficiency and that is why I was super excited to find this active rectifier board\n[0:54] on the internet which apparently replaces the old school diodes of a full bridge rectifier"
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0016.jpg",
+        "frame_0017.jpg"
+      ],
+      "transcript": "[0:54] on the internet which apparently replaces the old school diodes of a full bridge rectifier\n[1:00] with MOSFETs in order to decrease the voltage drop and thus power losses.\n[1:06] So in this video we will not only put this pre-made active rectifier board to the test but also"
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0018.jpg",
+        "frame_0019.jpg",
+        "frame_0020.jpg"
+      ],
+      "transcript": "[1:06] So in this video we will not only put this pre-made active rectifier board to the test but also\n[1:12] try to create our own DIY version in order to find out whether they are the future of rectification"
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0021.jpg",
+        "frame_0022.jpg"
+      ],
+      "transcript": "[1:12] try to create our own DIY version in order to find out whether they are the future of rectification\n[1:20] or whether we should stick with the old school solution instead. Let's get started!"
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0023.jpg",
+        "frame_0024.jpg",
+        "frame_0025.jpg"
+      ],
+      "transcript": "[1:34] This video is sponsored by Altium. Now you might already be familiar with the Altium Designer for\n[1:39] creating schematics and PCBs since I mentioned it once or twice before. But today I want to tell you about"
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0026.jpg",
+        "frame_0027.jpg"
+      ],
+      "transcript": "[1:39] creating schematics and PCBs since I mentioned it once or twice before. But today I want to tell you about\n[1:47] Altium 365 which is already integrated into the designer software and lets you easily share your"
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0028.jpg",
+        "frame_0029.jpg",
+        "frame_0030.jpg"
+      ],
+      "transcript": "[1:47] Altium 365 which is already integrated into the designer software and lets you easily share your\n[1:54] designs not only with your colleagues but basically the entire world. This way you can get feedback"
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0031.jpg",
+        "frame_0032.jpg"
+      ],
+      "transcript": "[1:54] designs not only with your colleagues but basically the entire world. This way you can get feedback\n[2:00] easily and speed up your design process. So why not give it a try for free by clicking the link in the\n[2:07] description. First off we need to understand how a traditional full bridge rectifier functions."
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0033.jpg",
+        "frame_0034.jpg",
+        "frame_0035.jpg"
+      ],
+      "transcript": "[2:07] description. First off we need to understand how a traditional full bridge rectifier functions.\n[2:14] As you can see in this schematic it only consists of 4 diodes positioned in a particular arrangement"
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0036.jpg",
+        "frame_0037.jpg"
+      ],
+      "transcript": "[2:14] As you can see in this schematic it only consists of 4 diodes positioned in a particular arrangement\n[2:21] which I personally like to draw like this because this way it is easier to understand.\n[2:27] And let's imagine we got a resistive load on the output across which we should later get the bumpy"
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0038.jpg",
+        "frame_0039.jpg",
+        "frame_0040.jpg"
+      ],
+      "transcript": "[2:27] And let's imagine we got a resistive load on the output across which we should later get the bumpy\n[2:33] DC voltage we saw before and on the input we got the mains AC voltage. So how exactly do we go from"
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0041.jpg",
+        "frame_0042.jpg"
+      ],
+      "transcript": "[2:33] DC voltage we saw before and on the input we got the mains AC voltage. So how exactly do we go from\n[2:41] this to this is the question? Well the answer lies in the behavior of a diode which lets current flow in\n[2:49] only one direction and not the other. That means that when AC mains voltage is in the positive region"
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0043.jpg",
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:49] only one direction and not the other. That means that when AC mains voltage is in the positive region\n[2:56] we got a voltage potential here which lets current flow this way. And when the AC mains voltage is in"
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg"
+      ],
+      "transcript": "[2:56] we got a voltage potential here which lets current flow this way. And when the AC mains voltage is in\n[3:02] the negative region we got the opposite voltage potential here which this time lets current flow this way."
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0048.jpg",
+        "frame_0049.jpg",
+        "frame_0050.jpg"
+      ],
+      "transcript": "[3:10] So in both cases a current flow through the load was possible and what is remarkable is that the current\n[3:16] direction was always the same which basically means we folded over one half of the AC voltage and thus created DC."
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0051.jpg",
+        "frame_0052.jpg"
+      ],
+      "transcript": "[3:16] direction was always the same which basically means we folded over one half of the AC voltage and thus created DC.\n[3:25] Pretty straightforward if you ask me but the bad news is that every diode comes with a certain voltage drop"
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0053.jpg",
+        "frame_0054.jpg",
+        "frame_0055.jpg"
+      ],
+      "transcript": "[3:25] Pretty straightforward if you ask me but the bad news is that every diode comes with a certain voltage drop\n[3:32] which causes the power loss I talked about at the beginning. The AC rectifier idea wants to change\n[3:38] that by replacing the diodes with MOSFET switches that come with super low resistances and thus should"
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[3:38] that by replacing the diodes with MOSFET switches that come with super low resistances and thus should\n[3:46] decrease the power losses. Only problem is that MOSFETs are not exactly diodes even though they come with a"
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:46] decrease the power losses. Only problem is that MOSFETs are not exactly diodes even though they come with a\n[3:53] body diode that also only allows one current path direction. But using the body diode is not the goal"
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg"
+      ],
+      "transcript": "[3:53] body diode that also only allows one current path direction. But using the body diode is not the goal\n[4:00] of the voltage voltage drop. Since its voltage drop is also rather high. No, we want to apply a DC voltage\n[4:07] to the MOSFETs gate in order to properly turn it on. So for full bridge rectifier we would need some"
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0063.jpg",
+        "frame_0064.jpg",
+        "frame_0065.jpg"
+      ],
+      "transcript": "[4:07] to the MOSFETs gate in order to properly turn it on. So for full bridge rectifier we would need some\n[4:14] kind of circuitry that detects when the AC voltage is either positive or negative and depending on that"
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0066.jpg",
+        "frame_0067.jpg"
+      ],
+      "transcript": "[4:14] kind of circuitry that detects when the AC voltage is either positive or negative and depending on that\n[4:21] only turns on the two MOSFETs diagonally to one another to mimic the functionality of a full bridge\n[4:27] rectifier. Good timing is also key here because if just one additional MOSFET is on at any point"
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0068.jpg",
+        "frame_0069.jpg",
+        "frame_0070.jpg"
+      ],
+      "transcript": "[4:27] rectifier. Good timing is also key here because if just one additional MOSFET is on at any point\n[4:35] we basically got a short circuit. And that is exactly why I was rather happy that I didn't have to design"
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[4:35] we basically got a short circuit. And that is exactly why I was rather happy that I didn't have to design\n[4:42] such a circuit myself because I found the TEA2206 and TEA2208IC on the internet. They are active bridge"
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg",
+        "frame_0075.jpg"
+      ],
+      "transcript": "[4:42] such a circuit myself because I found the TEA2206 and TEA2208IC on the internet. They are active bridge\n[4:52] rectifier controllers and can do what I just described by utilizing their built in comparators and MOSFET\n[4:59] drivers. So according to their typical application schematic there is not much I have to add to the"
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0076.jpg",
+        "frame_0077.jpg"
+      ],
+      "transcript": "[4:59] drivers. So according to their typical application schematic there is not much I have to add to the\n[5:05] ICs to create an active rectifier, just some MOSFETs and capacitors. And in case you are wondering the"
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0078.jpg",
+        "frame_0079.jpg",
+        "frame_0080.jpg"
+      ],
+      "transcript": "[5:05] ICs to create an active rectifier, just some MOSFETs and capacitors. And in case you are wondering the\n[5:12] 2206 one only replaces the lower side diodes with MOSFETs while the 2208 one replaces them all which"
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0081.jpg",
+        "frame_0082.jpg"
+      ],
+      "transcript": "[5:12] 2206 one only replaces the lower side diodes with MOSFETs while the 2208 one replaces them all which\n[5:21] begs the question why I even got the 2206 version if it only does half the job of lowering the power\n[5:28] losses. Well, the reason is that I got my hands on a development board around it which I can use to"
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0083.jpg",
+        "frame_0084.jpg",
+        "frame_0085.jpg"
+      ],
+      "transcript": "[5:28] losses. Well, the reason is that I got my hands on a development board around it which I can use to\n[5:35] get my feet wet since it should be functional right? To safely try it out I utilized my small auto"
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0086.jpg",
+        "frame_0087.jpg"
+      ],
+      "transcript": "[5:35] get my feet wet since it should be functional right? To safely try it out I utilized my small auto\n[5:43] transformer to decrease the mains voltage to 25V ACRMS which I directly hooked up to the active rectifier."
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0088.jpg",
+        "frame_0089.jpg",
+        "frame_0090.jpg"
+      ],
+      "transcript": "[5:43] transformer to decrease the mains voltage to 25V ACRMS which I directly hooked up to the active rectifier.\n[5:52] And as you can see on the oscilloscope it does seem to work just fine, awesome!\n[5:58] That means it was time for the first efficiency tests slash comparisons which I performed by adding"
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0091.jpg",
+        "frame_0092.jpg"
+      ],
+      "transcript": "[5:58] That means it was time for the first efficiency tests slash comparisons which I performed by adding\n[6:04] a capacitor bank to the rectifier's output as well as a constant load and then drawing varying constant"
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0093.jpg",
+        "frame_0094.jpg",
+        "frame_0095.jpg"
+      ],
+      "transcript": "[6:04] a capacitor bank to the rectifier's output as well as a constant load and then drawing varying constant\n[6:11] current with it while measuring how much input power that required. Of course to get accurate values on\n[6:18] the output side I also utilized my multimeter to precisely measure the current and my oscilloscope"
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0096.jpg",
+        "frame_0097.jpg"
+      ],
+      "transcript": "[6:18] the output side I also utilized my multimeter to precisely measure the current and my oscilloscope\n[6:25] to get the RMS voltage value. After that was done I replaced the active rectifier with a normal full"
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0098.jpg",
+        "frame_0099.jpg",
+        "frame_0100.jpg"
+      ],
+      "transcript": "[6:25] to get the RMS voltage value. After that was done I replaced the active rectifier with a normal full\n[6:31] bridge rectifier and basically repeated this test in order to find out that the average efficiency was\n[6:38] bumped up around 2 to 4% with the active version. Not bad!"
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0101.jpg",
+        "frame_0102.jpg"
+      ],
+      "transcript": "[6:38] bumped up around 2 to 4% with the active version. Not bad!\n[6:44] But of course next I wanted to replace all the diodes to increase the efficiency even more."
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0103.jpg",
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[6:50] To do that I soldered the TEA2208IC to a breakout board and afterwards to a perf board to which I\n[6:58] then added the 4 MOSFETs and some capacitors pretty much like the typical application schematic recommended"
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg"
+      ],
+      "transcript": "[6:58] then added the 4 MOSFETs and some capacitors pretty much like the typical application schematic recommended\n[7:05] me to do. The result didn't look half bad but I was still very nervous while doing the first test with"
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0108.jpg",
+        "frame_0109.jpg",
+        "frame_0110.jpg"
+      ],
+      "transcript": "[7:05] me to do. The result didn't look half bad but I was still very nervous while doing the first test with\n[7:12] lowered mains voltage. But as you can see on the oscilloscope this active rectifier also seems to\n[7:18] work just fine at least with resistive loads. Because while trying to charge up the capacitor bank for"
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0111.jpg",
+        "frame_0112.jpg"
+      ],
+      "transcript": "[7:18] work just fine at least with resistive loads. Because while trying to charge up the capacitor bank for\n[7:25] the power test there appeared to be some sort of short circuit problem with the rectifier."
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0113.jpg",
+        "frame_0114.jpg",
+        "frame_0115.jpg"
+      ],
+      "transcript": "[7:25] the power test there appeared to be some sort of short circuit problem with the rectifier.\n[7:31] Not sure if my design with the low cost high resistance MOSFETs is the problem or whether the topology and IC can\n[7:39] generally not handle capacitive loads because the datasheet also states that a boost type power"
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[7:39] generally not handle capacitive loads because the datasheet also states that a boost type power\n[7:45] factor circuit must follow the application which more or less prevents current surges from capacitors."
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[7:45] factor circuit must follow the application which more or less prevents current surges from capacitors.\n[7:53] The circuit does however work just fine with like I said resistive loads.\n[7:58] But due to obvious safety concerns I really didn't want to include it in the next mains voltage power"
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg"
+      ],
+      "transcript": "[7:58] But due to obvious safety concerns I really didn't want to include it in the next mains voltage power\n[8:04] supply test in which I basically measured the efficiency of a common switch mode power supply"
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0123.jpg",
+        "frame_0124.jpg",
+        "frame_0125.jpg"
+      ],
+      "transcript": "[8:04] supply test in which I basically measured the efficiency of a common switch mode power supply\n[8:10] before and after implementing an active rectifier. The only thing though that held me back once again\n[8:17] was a familiar sentence in the TEA2206 datasheet that states that it is intended for applications followed by a PFC."
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0126.jpg",
+        "frame_0127.jpg"
+      ],
+      "transcript": "[8:17] was a familiar sentence in the TEA2206 datasheet that states that it is intended for applications followed by a PFC.\n[8:27] And since such a power factor circuit got mentioned twice now, let me tell you that it basically"
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0128.jpg",
+        "frame_0129.jpg",
+        "frame_0130.jpg"
+      ],
+      "transcript": "[8:27] And since such a power factor circuit got mentioned twice now, let me tell you that it basically\n[8:33] prevents that mains current only gets drawn near the peak of the AC mains voltage.\n[8:39] Instead it distributes the current draw evenly across the whole sinusoidal voltage but more about"
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[8:39] Instead it distributes the current draw evenly across the whole sinusoidal voltage but more about\n[8:45] that topic in another video. The only problem was that pretty much all of my power supplies didn't"
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg",
+        "frame_0135.jpg"
+      ],
+      "transcript": "[8:45] that topic in another video. The only problem was that pretty much all of my power supplies didn't\n[8:51] come with this feature except of course one that I need to charge my newest laptop. And I decided to\n[8:59] not sacrifice it for this video which is why I pushed my luck and tried it with this a bit nicer power"
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0136.jpg",
+        "frame_0137.jpg"
+      ],
+      "transcript": "[8:59] not sacrifice it for this video which is why I pushed my luck and tried it with this a bit nicer power\n[9:06] supply that not only comes with less sharp current surges but also some filters on its inputs."
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0138.jpg",
+        "frame_0139.jpg",
+        "frame_0140.jpg"
+      ],
+      "transcript": "[9:06] supply that not only comes with less sharp current surges but also some filters on its inputs.\n[9:13] So after doing the usual power measurement test with it, I desoldered its original full bridge rectifier\n[9:19] and simply replaced it with the leads of the active rectifier boards."
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0141.jpg",
+        "frame_0142.jpg"
+      ],
+      "transcript": "[9:19] and simply replaced it with the leads of the active rectifier boards.\n[9:23] So I did not get the same thing as I did. And luckily nothing exploded after the power up and\n[9:28] everything worked perfectly fine so that I could do all the measurements."
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0143.jpg",
+        "frame_0144.jpg",
+        "frame_0145.jpg"
+      ],
+      "transcript": "[9:28] everything worked perfectly fine so that I could do all the measurements.\n[9:33] Now the final results tell us that the active rectifier is once again more efficient but this time\n[9:39] only with a difference of around 0.2 to a maximum of 0.9%. The reason is that due to the higher mains"
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0146.jpg",
+        "frame_0147.jpg"
+      ],
+      "transcript": "[9:39] only with a difference of around 0.2 to a maximum of 0.9%. The reason is that due to the higher mains\n[9:48] voltage level of 230V that gets transformed down, there is only a small current flowing through the"
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0148.jpg",
+        "frame_0149.jpg",
+        "frame_0150.jpg"
+      ],
+      "transcript": "[9:48] voltage level of 230V that gets transformed down, there is only a small current flowing through the\n[9:55] rectifier which does not create that big of a power loss and thus is not that important for the efficiency."
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0151.jpg",
+        "frame_0152.jpg"
+      ],
+      "transcript": "[9:55] rectifier which does not create that big of a power loss and thus is not that important for the efficiency.\n[10:02] But if we got a low voltage high current system without transformation then a better rectifier\n[10:08] is definitely recommended as we proved in test 1 of this video."
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0153.jpg",
+        "frame_0154.jpg",
+        "frame_0155.jpg"
+      ],
+      "transcript": "[10:08] is definitely recommended as we proved in test 1 of this video.\n[10:13] So in conclusion the old school full bridge rectifier is definitely good enough for most of the mains"
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0156.jpg",
+        "frame_0157.jpg",
+        "frame_0158.jpg"
+      ],
+      "transcript": "[10:20] voltage rectification because it is cheap, rigid and efficient enough for this task.\n[10:26] With that being said I hope you learned something new through this video and now understand the"
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0159.jpg",
+        "frame_0160.jpg"
+      ],
+      "transcript": "[10:26] With that being said I hope you learned something new through this video and now understand the\n[10:31] advantages and disadvantages of active rectifiers. If so consider supporting me through Patreon.\n[10:39] Don't forget to like, share, subscribe and hit the notification bell. Stay creative and I will see you next time!"
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0161.jpg",
+        "frame_0162.jpg"
+      ],
+      "transcript": "[10:39] Don't forget to like, share, subscribe and hit the notification bell. Stay creative and I will see you next time!"
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 657.76,
+      "frames": [],
+      "transcript": "[10:39] Don't forget to like, share, subscribe and hit the notification bell. Stay creative and I will see you next time!"
+    }
+  ]
+}

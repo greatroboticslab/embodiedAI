@@ -1,0 +1,971 @@
+{
+  "video_id": "PWyqVEkZGWk",
+  "duration": 871.24,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg",
+        "frame_0003.jpg"
+      ],
+      "transcript": "[0:00] Hey everybody, welcome back to RC with Adam. My name is Adam. In this video, you're going to\n[0:05] learn about how to set up your quadcopter motors, specifically in Betaflight. And you might be"
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0004.jpg",
+        "frame_0005.jpg",
+        "frame_0006.jpg"
+      ],
+      "transcript": "[0:05] learn about how to set up your quadcopter motors, specifically in Betaflight. And you might be\n[0:12] wondering, set up the motors, what does that even mean? Like, why would I have to set up the motors?\n[0:16] Well, there are a few reasons why. Because you see, the flight controller, the brain of the"
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0007.jpg",
+        "frame_0008.jpg",
+        "frame_0009.jpg"
+      ],
+      "transcript": "[0:16] Well, there are a few reasons why. Because you see, the flight controller, the brain of the\n[0:21] quadcopter, needs to know which motor to spin up at which time. And it needs to know where that\n[0:29] motor is. Or basically, that motor has to be in the right spot. And we need to make sure that our"
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:29] motor is. Or basically, that motor has to be in the right spot. And we need to make sure that our\n[0:35] motors are spinning in the correct direction. So those are the two main things. Now in this video,"
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg",
+        "frame_0015.jpg"
+      ],
+      "transcript": "[0:35] motors are spinning in the correct direction. So those are the two main things. Now in this video,\n[0:41] we're going to cover how to set up the ESC protocol, which is not very hard. We're going to cover motor\n[0:47] order, or used to be called motor mapping, and motor direction. And that's going to be how it spins."
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0016.jpg",
+        "frame_0017.jpg",
+        "frame_0018.jpg"
+      ],
+      "transcript": "[0:47] order, or used to be called motor mapping, and motor direction. And that's going to be how it spins.\n[0:54] And then what you need to do if you want to spin props out, which is how I like to have my propellers"
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0019.jpg",
+        "frame_0020.jpg",
+        "frame_0021.jpg"
+      ],
+      "transcript": "[0:54] And then what you need to do if you want to spin props out, which is how I like to have my propellers\n[1:00] spin. And I'm going to show you how to do all of that. The bad news is it can be kind of a complicated,\n[1:06] or just not complicated, it can be confusing. And and maybe that's why your quadcopter isn't flying."
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[1:06] or just not complicated, it can be confusing. And and maybe that's why your quadcopter isn't flying.\n[1:11] And maybe it's not working, and you're frustrated. And I totally get that. The good news is Betaflight\n[1:16] has made it much easier. But either way, I'm going to walk you through it. And we're going to do this"
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg",
+        "frame_0027.jpg"
+      ],
+      "transcript": "[1:16] has made it much easier. But either way, I'm going to walk you through it. And we're going to do this\n[1:20] together. But first, I need to tell you that this video is sponsored by PCBWay. They make custom\n[1:25] printed circuit boards. That's what PCB stands for. And if you are into that, you can send them a file"
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0028.jpg",
+        "frame_0029.jpg",
+        "frame_0030.jpg"
+      ],
+      "transcript": "[1:25] printed circuit boards. That's what PCB stands for. And if you are into that, you can send them a file\n[1:32] of your own design of your own circuit board. And they can assemble that they have 1000s of components,\n[1:38] and they can actually put all of them on the board so that it works and is ready to rock and roll when"
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0031.jpg",
+        "frame_0032.jpg",
+        "frame_0033.jpg"
+      ],
+      "transcript": "[1:38] and they can actually put all of them on the board so that it works and is ready to rock and roll when\n[1:44] it comes to your door. So that's a pretty cool service. If you're not into PCBs, they also offer rapid\n[1:49] prototyping services. So you could get something injection molded or 3d printed or sheet metal"
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[1:49] prototyping services. So you could get something injection molded or 3d printed or sheet metal\n[1:55] bended or even CNC'd out of various materials. So if that sounds interesting to you, check the link"
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg",
+        "frame_0039.jpg"
+      ],
+      "transcript": "[1:55] bended or even CNC'd out of various materials. So if that sounds interesting to you, check the link\n[2:03] down in the description of this video and tell them that I sent you if you want, but it probably won't\n[2:09] make a difference. Okay, now what we have what we're using today is this seven inch FPV drone that I"
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0040.jpg",
+        "frame_0041.jpg",
+        "frame_0042.jpg"
+      ],
+      "transcript": "[2:09] make a difference. Okay, now what we have what we're using today is this seven inch FPV drone that I\n[2:14] bought secondhand. So it's kind of one of those things where like, you don't know exactly how it's\n[2:19] built or what's been going on. And this could be a situation where the motors aren't working,"
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0043.jpg",
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:19] built or what's been going on. And this could be a situation where the motors aren't working,\n[2:24] and it really is confusing to you. All right, step one, we need to determine what we're working with.\n[2:29] So in this case, we have a four in one ESC board, and it's mounted in the center of our quadcopter."
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[2:29] So in this case, we have a four in one ESC board, and it's mounted in the center of our quadcopter.\n[2:37] That's very common, like four in one ESCs are very, very common. Now spoiler alert, this time,"
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg",
+        "frame_0051.jpg"
+      ],
+      "transcript": "[2:37] That's very common, like four in one ESCs are very, very common. Now spoiler alert, this time,\n[2:43] it's actually been flipped over, it's been it's been rotated in a roll orientation, and it's been\n[2:49] flipped. And that is why these motors are not spinning in the correct direction. And I'll,"
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0052.jpg",
+        "frame_0053.jpg",
+        "frame_0054.jpg"
+      ],
+      "transcript": "[2:49] flipped. And that is why these motors are not spinning in the correct direction. And I'll,\n[2:54] I'll demonstrate that once we get this connected to beta flight. So we're going to connect our flight"
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0055.jpg",
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[2:54] I'll demonstrate that once we get this connected to beta flight. So we're going to connect our flight\n[3:00] controller, and everything's like hooked up to everything else. Like the flight controller is\n[3:05] connected to the ESC, we're going to connect our flight controller to beta flight, we're going to\n[3:09] get into beta flight. Now, if you are setting this up from a brand new profile, it's going to ask you"
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:09] get into beta flight. Now, if you are setting this up from a brand new profile, it's going to ask you\n[3:16] some other questions, like if you want to enable default settings, and you want to say yes, and then"
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg",
+        "frame_0063.jpg"
+      ],
+      "transcript": "[3:16] some other questions, like if you want to enable default settings, and you want to say yes, and then\n[3:20] it will come up with a prompt that says, hey, your ESC protocol has not been set. And so to do that,\n[3:29] you want to go to the motors tab on the left hand side. And then you'll see this right here where it says"
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0064.jpg",
+        "frame_0065.jpg",
+        "frame_0066.jpg"
+      ],
+      "transcript": "[3:29] you want to go to the motors tab on the left hand side. And then you'll see this right here where it says\n[3:35] motor ESC features, it'll probably say disabled at first. And then you want to select the one that you"
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0067.jpg",
+        "frame_0068.jpg",
+        "frame_0069.jpg"
+      ],
+      "transcript": "[3:35] motor ESC features, it'll probably say disabled at first. And then you want to select the one that you\n[3:43] want the protocol that you want. In this case, we're doing D shot 600. And I found that information\n[3:49] by going to the T motor, the manufacturer's website for this stack. And so basically look at the manual"
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[3:49] by going to the T motor, the manufacturer's website for this stack. And so basically look at the manual\n[3:57] or the manufacturer website, and that should give you that information. Once you do that, go and click"
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg",
+        "frame_0075.jpg"
+      ],
+      "transcript": "[3:57] or the manufacturer website, and that should give you that information. Once you do that, go and click\n[4:04] save and reboot, and then come back to this page. Now, at this point, let's just kind of, you know,"
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0076.jpg",
+        "frame_0077.jpg",
+        "frame_0078.jpg"
+      ],
+      "transcript": "[4:04] save and reboot, and then come back to this page. Now, at this point, let's just kind of, you know,\n[4:11] see what the motors are doing. And so this next step, we've already done the ESC protocol,\n[4:17] that's been D shot, and then we're going to do the motor order before we change the direction of"
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0079.jpg",
+        "frame_0080.jpg",
+        "frame_0081.jpg"
+      ],
+      "transcript": "[4:17] that's been D shot, and then we're going to do the motor order before we change the direction of\n[4:23] the motors. So let's see what we're working with here. So we want to plug in a battery, make sure\n[4:29] your propellers are not connected to your motors, like take them off completely. Okay, because we have"
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[4:29] your propellers are not connected to your motors, like take them off completely. Okay, because we have\n[4:36] to spin the motors. So with the battery plugged in, and we're still connected to beta flight,"
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg",
+        "frame_0087.jpg"
+      ],
+      "transcript": "[4:36] to spin the motors. So with the battery plugged in, and we're still connected to beta flight,\n[4:42] what we want to do is go to this little motor testing box. And it's going to say motor test mode\n[4:48] slash arming notice, it's saying take off your propellers, because you might chop your fingers"
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0088.jpg",
+        "frame_0089.jpg",
+        "frame_0090.jpg"
+      ],
+      "transcript": "[4:48] slash arming notice, it's saying take off your propellers, because you might chop your fingers\n[4:53] off. And click I understand the risks. And then it's going to give us these motor sliders right here.\n[4:58] And we can slide the motors. And so we have motor 123 and four. Now, if we look at the in the little"
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0091.jpg",
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[4:58] And we can slide the motors. And so we have motor 123 and four. Now, if we look at the in the little\n[5:07] section that says mixer, we have a little diagram of the quadcopter. And we see that the motors are"
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[5:07] section that says mixer, we have a little diagram of the quadcopter. And we see that the motors are\n[5:13] 123 and four. So the motors are labeled. So the goal is when we spin these motors here, I'm just going to"
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg",
+        "frame_0099.jpg"
+      ],
+      "transcript": "[5:13] 123 and four. So the motors are labeled. So the goal is when we spin these motors here, I'm just going to\n[5:22] spin one, we want that motor to correspond with the motor in the diagram. So as it's as it's laid out."
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0100.jpg",
+        "frame_0101.jpg",
+        "frame_0102.jpg"
+      ],
+      "transcript": "[5:22] spin one, we want that motor to correspond with the motor in the diagram. So as it's as it's laid out.\n[5:30] So when I spin up motor one, we have the rear left motor is spinning. Okay, and that's not correct,\n[5:38] because we want motor one to be on the opposite side. Motor two is going to be the front left. And"
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0103.jpg",
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[5:38] because we want motor one to be on the opposite side. Motor two is going to be the front left. And\n[5:46] that's incorrect. We want that to be on the other side. And then motor three is going to be the opposite."
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[5:46] that's incorrect. We want that to be on the other side. And then motor three is going to be the opposite.\n[5:51] And motor four is going to be the opposite of that it should be on the other side. And again,\n[5:57] we don't care about the actual spinning direction right now. And again, the reason why these two are"
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg",
+        "frame_0111.jpg"
+      ],
+      "transcript": "[5:57] we don't care about the actual spinning direction right now. And again, the reason why these two are\n[6:03] opposite is because the flight or the excuse me, the ESC board has been flipped, it's been rotated.\n[6:09] So for whatever reason, the pilot who built this decided to flip the ESC upside down. Now,"
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0112.jpg",
+        "frame_0113.jpg",
+        "frame_0114.jpg"
+      ],
+      "transcript": "[6:09] So for whatever reason, the pilot who built this decided to flip the ESC upside down. Now,\n[6:16] the great thing is we don't have to change the wire direction or, or undo the ESC or anything like"
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0115.jpg",
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[6:16] the great thing is we don't have to change the wire direction or, or undo the ESC or anything like\n[6:23] that, we can do this all through software. So what we're going to do is we're going to get out of the\n[6:28] motor testing mode. So we're going to check that I understand the risk box again. And then we're going"
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[6:28] motor testing mode. So we're going to check that I understand the risk box again. And then we're going\n[6:36] to go down to reorder motors, and that's going to be at the bottom right of the screen. Let's click"
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg",
+        "frame_0123.jpg"
+      ],
+      "transcript": "[6:36] to go down to reorder motors, and that's going to be at the bottom right of the screen. Let's click\n[6:43] on that. And then it's going to say, Hey, take off your propellers again. And then here's the\n[6:48] information notice, it's going to say motors will spin up one by one, you will be able to select which"
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0124.jpg",
+        "frame_0125.jpg",
+        "frame_0126.jpg"
+      ],
+      "transcript": "[6:48] information notice, it's going to say motors will spin up one by one, you will be able to select which\n[6:52] motor is spinning, the battery should be plugged in correct ESC protocol should be selected, which\n[6:56] we've already done. This utility can only rearrange currently active motors. So more complex remapping"
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0127.jpg",
+        "frame_0128.jpg",
+        "frame_0129.jpg"
+      ],
+      "transcript": "[6:56] we've already done. This utility can only rearrange currently active motors. So more complex remapping\n[7:04] requires a CLI resource command. And that's what I've done in the past, past, that's more complicated."
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0130.jpg",
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[7:04] requires a CLI resource command. And that's what I've done in the past, past, that's more complicated.\n[7:11] All right, so basically, we're going to click I understand the risks. Okay, and let's click start.\n[7:17] So you see, it says click on the spinning motor, and the spinning motor is the back left motor right now."
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg",
+        "frame_0135.jpg"
+      ],
+      "transcript": "[7:17] So you see, it says click on the spinning motor, and the spinning motor is the back left motor right now.\n[7:24] So we're going to click on that. Now it's spinning the front left motor, we're going to click on that one on\n[7:29] the diagram. And now spinning the rear right motor, we're going to click on that one. And finally, the"
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0136.jpg",
+        "frame_0137.jpg",
+        "frame_0138.jpg"
+      ],
+      "transcript": "[7:29] the diagram. And now spinning the rear right motor, we're going to click on that one. And finally, the\n[7:36] front right motor, and we're going to click on that one. And it helps if you have your quadcopter in the"
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0139.jpg",
+        "frame_0140.jpg",
+        "frame_0141.jpg"
+      ],
+      "transcript": "[7:36] front right motor, and we're going to click on that one. And it helps if you have your quadcopter in the\n[7:41] same orientation as what you see on the screen, as shown with the arrow. So now it says ready, check the\n[7:48] motor spinning order by clicking on the image. So now we can see so we click on the motor, and it's going to"
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0142.jpg",
+        "frame_0143.jpg",
+        "frame_0144.jpg"
+      ],
+      "transcript": "[7:48] motor spinning order by clicking on the image. So now we can see so we click on the motor, and it's going to\n[7:54] spin it up. And so they're all spinning correctly. So we click on that motor and spins up. So let's"
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0145.jpg",
+        "frame_0146.jpg",
+        "frame_0147.jpg"
+      ],
+      "transcript": "[7:54] spin it up. And so they're all spinning correctly. So we click on that motor and spins up. So let's\n[8:02] click Save. Wow, that's loud. Okay, sorry about that. So it's going to it's going to restart the"
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0148.jpg",
+        "frame_0149.jpg",
+        "frame_0150.jpg"
+      ],
+      "transcript": "[8:10] aircraft and save it. And then you see, I'm getting this accelerometer warning. That's fine, because I\n[8:17] haven't finished setting this all up. Once I get the quad like stabilized, and the the screws tighten down,"
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0151.jpg",
+        "frame_0152.jpg",
+        "frame_0153.jpg"
+      ],
+      "transcript": "[8:17] haven't finished setting this all up. Once I get the quad like stabilized, and the the screws tighten down,\n[8:23] then I'll do the accelerometer calibration. All right, let's go back into the motors tab."
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0154.jpg",
+        "frame_0155.jpg",
+        "frame_0156.jpg"
+      ],
+      "transcript": "[8:23] then I'll do the accelerometer calibration. All right, let's go back into the motors tab.\n[8:31] And now let's check the motors again with this testing mode. So let's spin up motor one.\n[8:38] And it spins. All right. Motor two should be the front right and it is motor three should be the back"
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0157.jpg",
+        "frame_0158.jpg",
+        "frame_0159.jpg"
+      ],
+      "transcript": "[8:38] And it spins. All right. Motor two should be the front right and it is motor three should be the back\n[8:46] left and it is and motor four is the front left. All right. So congratulations."
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0160.jpg",
+        "frame_0161.jpg",
+        "frame_0162.jpg"
+      ],
+      "transcript": "[8:46] left and it is and motor four is the front left. All right. So congratulations.\n[8:53] That solved a lot of problems. Okay, so we so now we have the motor order taken care of. Let's move on\n[8:59] to the motor direction. Now at this point, we need to decide if we want to have our propellers spinning"
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0163.jpg",
+        "frame_0164.jpg",
+        "frame_0165.jpg"
+      ],
+      "transcript": "[8:59] to the motor direction. Now at this point, we need to decide if we want to have our propellers spinning\n[9:05] in or outward. And so if you look at the front of the quad, here's some propellers here. If you want"
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0166.jpg",
+        "frame_0167.jpg",
+        "frame_0168.jpg"
+      ],
+      "transcript": "[9:05] in or outward. And so if you look at the front of the quad, here's some propellers here. If you want\n[9:12] them to spin. Well, let's see, these are right propellers. Yeah, I don't know. I don't have the right\n[9:18] propellers on here. But this is just for demonstration purposes. So if you want them to spin in an"
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0169.jpg",
+        "frame_0170.jpg",
+        "frame_0171.jpg"
+      ],
+      "transcript": "[9:18] propellers on here. But this is just for demonstration purposes. So if you want them to spin in an\n[9:22] outward rotation, like spinning out away from the front and out away from the back,\n[9:29] then that's called props out. If you want them to spin inward, like towards your camera,"
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0172.jpg",
+        "frame_0173.jpg",
+        "frame_0174.jpg"
+      ],
+      "transcript": "[9:29] then that's called props out. If you want them to spin inward, like towards your camera,\n[9:35] or inward towards the tail of the quadcopter, that's called props in. I like to have them spin props"
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0175.jpg",
+        "frame_0176.jpg",
+        "frame_0177.jpg"
+      ],
+      "transcript": "[9:35] or inward towards the tail of the quadcopter, that's called props in. I like to have them spin props\n[9:42] out, because I think it keeps junk from getting slung onto the lens of the camera.\n[9:49] And so and as some people have other preferences, but that's how I like to have them. So we want to"
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0178.jpg",
+        "frame_0179.jpg",
+        "frame_0180.jpg"
+      ],
+      "transcript": "[9:49] And so and as some people have other preferences, but that's how I like to have them. So we want to\n[9:56] make sure that the motors are spinning in that orientation. Now this is this part is really"
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0181.jpg",
+        "frame_0182.jpg",
+        "frame_0183.jpg"
+      ],
+      "transcript": "[9:56] make sure that the motors are spinning in that orientation. Now this is this part is really\n[10:01] important. If you decide to, to use reversed props or spinning props out, you want to go over to the\n[10:09] motor mixer section. And right below that diagram, you'll see a little slider that says motor direction"
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0184.jpg",
+        "frame_0185.jpg",
+        "frame_0186.jpg"
+      ],
+      "transcript": "[10:09] motor mixer section. And right below that diagram, you'll see a little slider that says motor direction\n[10:14] is reversed, you want to click that. And you see how it changes the little arrows, those little"
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0187.jpg",
+        "frame_0188.jpg",
+        "frame_0189.jpg"
+      ],
+      "transcript": "[10:14] is reversed, you want to click that. And you see how it changes the little arrows, those little\n[10:22] yellow arrows, it's going to change the direction. And that's going to show you like, yeah, you want\n[10:27] that's, that's how they should be spinning. Now clicking this box does not actually change the"
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0190.jpg",
+        "frame_0191.jpg",
+        "frame_0192.jpg"
+      ],
+      "transcript": "[10:27] that's, that's how they should be spinning. Now clicking this box does not actually change the\n[10:32] motor direction. This just tells the flight controller that that is the way the motors are spinning. So it can\n[10:39] work its magic and fly stable stably. So we want to make sure we click that. And then let's hit save and"
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0193.jpg",
+        "frame_0194.jpg",
+        "frame_0195.jpg"
+      ],
+      "transcript": "[10:39] work its magic and fly stable stably. So we want to make sure we click that. And then let's hit save and\n[10:47] reboot. Man, that's loud. Okay. All right, let's get back in here. Let's go to the motors tab again."
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0196.jpg",
+        "frame_0197.jpg",
+        "frame_0198.jpg"
+      ],
+      "transcript": "[10:47] reboot. Man, that's loud. Okay. All right, let's get back in here. Let's go to the motors tab again.\n[10:57] Okay, so now we can check the motor direction, we're going to go into the testing mode, we're going to start"
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0199.jpg",
+        "frame_0200.jpg",
+        "frame_0201.jpg"
+      ],
+      "transcript": "[10:57] Okay, so now we can check the motor direction, we're going to go into the testing mode, we're going to start\n[11:03] with motor one, we're going to spin it up. And it is spinning, I can just feel it with you know, feel\n[11:09] the motor bell with my finger. Don't get your finger caught in there or anything. It is spinning props"
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0202.jpg",
+        "frame_0203.jpg",
+        "frame_0204.jpg"
+      ],
+      "transcript": "[11:09] the motor bell with my finger. Don't get your finger caught in there or anything. It is spinning props\n[11:14] in. Or if you're looking straight down, it's spinning in a clockwise rotation, we want it to spin the"
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0205.jpg",
+        "frame_0206.jpg",
+        "frame_0207.jpg"
+      ],
+      "transcript": "[11:14] in. Or if you're looking straight down, it's spinning in a clockwise rotation, we want it to spin the\n[11:20] opposite direction. So what we're going to do, actually, we don't even need to do that. Sorry,\n[11:26] that doesn't even make any sense. All right, now that we're back in the motor tab, we're going to go down to"
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0208.jpg",
+        "frame_0209.jpg",
+        "frame_0210.jpg"
+      ],
+      "transcript": "[11:26] that doesn't even make any sense. All right, now that we're back in the motor tab, we're going to go down to\n[11:30] the button at the bottom right. And it's going to say motor direction, we're going to click on that.\n[11:36] It's going to give us the safety warning, and then information notice, and it gives you the instructions"
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0211.jpg",
+        "frame_0212.jpg",
+        "frame_0213.jpg"
+      ],
+      "transcript": "[11:36] It's going to give us the safety warning, and then information notice, and it gives you the instructions\n[11:42] on how to do that. And it says some, not all DSHOT ESDs will work with this dialogue. So just keep that in\n[11:48] mind, if it doesn't work for some reason, this is possibly why. All right, so we're going to say yes, I"
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0214.jpg",
+        "frame_0215.jpg",
+        "frame_0216.jpg"
+      ],
+      "transcript": "[11:48] mind, if it doesn't work for some reason, this is possibly why. All right, so we're going to say yes, I\n[11:55] understand the risks. And you can do a wizard thing where it's guided or you can do individually."
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0217.jpg",
+        "frame_0218.jpg",
+        "frame_0219.jpg"
+      ],
+      "transcript": "[11:55] understand the risks. And you can do a wizard thing where it's guided or you can do individually.\n[12:00] Let's go ahead and do the guided version. And so it's going to say, so we're going to start\n[12:07] spinning the motors. Okay, click on motor numbers individually to change spin direction, verify all"
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0220.jpg",
+        "frame_0221.jpg",
+        "frame_0222.jpg"
+      ],
+      "transcript": "[12:07] spinning the motors. Okay, click on motor numbers individually to change spin direction, verify all\n[12:13] motors are spinning correctly. So what we can do is, let's just start with one and we'll go through\n[12:19] them all. So motor number one is spinning the wrong way. It's spinning clockwise, we want to change that."
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0223.jpg",
+        "frame_0224.jpg",
+        "frame_0225.jpg"
+      ],
+      "transcript": "[12:19] them all. So motor number one is spinning the wrong way. It's spinning clockwise, we want to change that.\n[12:24] So let's click on number one, it stopped the motor, and now it's spinning in the opposite direction."
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0226.jpg",
+        "frame_0227.jpg",
+        "frame_0228.jpg"
+      ],
+      "transcript": "[12:24] So let's click on number one, it stopped the motor, and now it's spinning in the opposite direction.\n[12:31] So that's good. Motor number two, the front right motor, that's spinning in the correct direction,\n[12:36] which is clockwise, or in in how I want these props to be set up. And you and it does show this little"
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0229.jpg",
+        "frame_0230.jpg",
+        "frame_0231.jpg"
+      ],
+      "transcript": "[12:36] which is clockwise, or in in how I want these props to be set up. And you and it does show this little\n[12:42] diagram and which way the props should be spinning, since we have it set up for reversed. Let's go to\n[12:48] motor three, that is spinning in the correct direction as well. And then motor four is spinning in the"
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0232.jpg",
+        "frame_0233.jpg",
+        "frame_0234.jpg"
+      ],
+      "transcript": "[12:48] motor three, that is spinning in the correct direction as well. And then motor four is spinning in the\n[12:56] wrong direction. It's spinning like props in, we want it to spin props out. So let's click on number four."
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0235.jpg",
+        "frame_0236.jpg",
+        "frame_0237.jpg"
+      ],
+      "transcript": "[12:56] wrong direction. It's spinning like props in, we want it to spin props out. So let's click on number four.\n[13:02] And there we go. Now it's spinning in the correct direction. Okay, so then we'll hit stop motors, and then\n[13:09] close. And is there can we hit save and reboot? Is that an option? All right, now let's go over to the motor test"
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0238.jpg",
+        "frame_0239.jpg",
+        "frame_0240.jpg"
+      ],
+      "transcript": "[13:09] close. And is there can we hit save and reboot? Is that an option? All right, now let's go over to the motor test\n[13:16] thing right here. And we'll spin up the motor. And yeah, it's going the right way. Okay, we can click"
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0241.jpg",
+        "frame_0242.jpg",
+        "frame_0243.jpg"
+      ],
+      "transcript": "[13:16] thing right here. And we'll spin up the motor. And yeah, it's going the right way. Okay, we can click\n[13:22] on the slide, do the master slider and slide all of them. And check them. Yes, so they are all spinning\n[13:29] in the correct direction. So that's it. I think that's it. So we don't have the option to save and"
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0244.jpg",
+        "frame_0245.jpg",
+        "frame_0246.jpg"
+      ],
+      "transcript": "[13:29] in the correct direction. So that's it. I think that's it. So we don't have the option to save and\n[13:35] reboot. So I guess it just automatically saved it. So that's great. All right, so that that's it. That's it,"
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0247.jpg",
+        "frame_0248.jpg",
+        "frame_0249.jpg"
+      ],
+      "transcript": "[13:35] reboot. So I guess it just automatically saved it. So that's great. All right, so that that's it. That's it,\n[13:41] actually. So congratulations, you should have your quadcopter working properly. Now, the next thing\n[13:47] is, we would want to check and make sure that the motor responds properly, based on our control inputs."
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0250.jpg",
+        "frame_0251.jpg",
+        "frame_0252.jpg"
+      ],
+      "transcript": "[13:47] is, we would want to check and make sure that the motor responds properly, based on our control inputs.\n[13:55] And that that's kind of a separate thing. Because this should be like the baseline, like the flight"
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0253.jpg",
+        "frame_0254.jpg",
+        "frame_0255.jpg"
+      ],
+      "transcript": "[13:55] And that that's kind of a separate thing. Because this should be like the baseline, like the flight\n[14:01] controller now understands which motors are where, and that the motors are in the correct spot."
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0256.jpg",
+        "frame_0257.jpg",
+        "frame_0258.jpg"
+      ],
+      "transcript": "[14:10] And that they're spinning in the correct direction. So this is kind of the baseline thing. That's all\n[14:15] we're going to do in this video. Thanks for watching. I hope this was helpful. If you have questions\n[14:19] about setting up your quadcopter and getting the motors right, leave a comment down below. And hopefully,"
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0259.jpg",
+        "frame_0260.jpg",
+        "frame_0261.jpg"
+      ],
+      "transcript": "[14:19] about setting up your quadcopter and getting the motors right, leave a comment down below. And hopefully,\n[14:24] I or someone else will be able to help you. Thanks for watching. Get out there and fly something and I'll see you next time."
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 871.24,
+      "frames": [],
+      "transcript": "[14:24] I or someone else will be able to help you. Thanks for watching. Get out there and fly something and I'll see you next time."
+    }
+  ]
+}

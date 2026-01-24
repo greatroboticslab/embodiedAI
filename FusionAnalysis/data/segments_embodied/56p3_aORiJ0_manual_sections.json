@@ -1,0 +1,1344 @@
+{
+  "video_id": "56p3_aORiJ0",
+  "duration": 1213.76,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg",
+        "frame_0003.jpg"
+      ],
+      "transcript": "[0:00] so one of the biggest requests that i have had since starting this channel is to do a video\n[0:09] kind of overviewing and going into how to choose and select different mosfets there's a ton of"
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0004.jpg",
+        "frame_0005.jpg",
+        "frame_0006.jpg"
+      ],
+      "transcript": "[0:09] kind of overviewing and going into how to choose and select different mosfets there's a ton of\n[0:15] good information out there that either are insanely advanced to where you have to do like"
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0007.jpg",
+        "frame_0008.jpg",
+        "frame_0009.jpg"
+      ],
+      "transcript": "[0:15] good information out there that either are insanely advanced to where you have to do like\n[0:22] 18 derivations to figure out how to calculate anything with a mosfet there's a ton of articles\n[0:29] that say you apply voltage the mosfet turns on calculate power rds on that's it there's not a"
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:29] that say you apply voltage the mosfet turns on calculate power rds on that's it there's not a\n[0:37] whole lot of in between kind of going into what are the useful equations to where you can get valid"
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg",
+        "frame_0015.jpg"
+      ],
+      "transcript": "[0:37] whole lot of in between kind of going into what are the useful equations to where you can get valid\n[0:42] info how to drive them but don't get so down into the weeds to where you're really losing out on\n[0:48] actually how to make something useful and just trying to do all the theoretical side so my goal"
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0016.jpg",
+        "frame_0017.jpg",
+        "frame_0018.jpg"
+      ],
+      "transcript": "[0:48] actually how to make something useful and just trying to do all the theoretical side so my goal\n[0:54] with this video and i have a blog post also on this is to kind of go over just enough detail to"
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0019.jpg",
+        "frame_0020.jpg",
+        "frame_0021.jpg"
+      ],
+      "transcript": "[0:54] with this video and i have a blog post also on this is to kind of go over just enough detail to\n[1:01] where you can do most useful calculations specifically for high power designs i'm going to mention a little\n[1:08] bit about higher switching speeds but not a ton because that is where it does get a little more"
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[1:08] bit about higher switching speeds but not a ton because that is where it does get a little more\n[1:13] complicated but most people aren't really worried about that unless you're building like a voltage\n[1:19] regulator or something like that so i think the best way to start this is just with a simple example"
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg",
+        "frame_0027.jpg"
+      ],
+      "transcript": "[1:19] regulator or something like that so i think the best way to start this is just with a simple example\n[1:25] of a logic level mosfet circuit so everyone has seen a mosfet circuit like this as a quick overview"
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0028.jpg",
+        "frame_0029.jpg",
+        "frame_0030.jpg"
+      ],
+      "transcript": "[1:25] of a logic level mosfet circuit so everyone has seen a mosfet circuit like this as a quick overview\n[1:33] on mosfets the big difference between them and a bjt or an npm transistor is a mosfet switches on and off"
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0031.jpg",
+        "frame_0032.jpg",
+        "frame_0033.jpg"
+      ],
+      "transcript": "[1:33] on mosfets the big difference between them and a bjt or an npm transistor is a mosfet switches on and off\n[1:42] based on an applied voltage it doesn't require a continuous current going from the gate to source"
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[1:42] based on an applied voltage it doesn't require a continuous current going from the gate to source\n[1:50] like it would on a standard transistor it's also important to realize that the gate of a mosfet\n[1:56] essentially acts as a capacitor once the gate is fully charged there's really no current that flows"
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg",
+        "frame_0039.jpg"
+      ],
+      "transcript": "[1:56] essentially acts as a capacitor once the gate is fully charged there's really no current that flows\n[2:03] of course there's always parasitic so there's always some current that flows but it's mostly negligible\n[2:09] once the gate is charged then the drain conducts to the source and i'm going to be limiting this"
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0040.jpg",
+        "frame_0041.jpg",
+        "frame_0042.jpg"
+      ],
+      "transcript": "[2:09] once the gate is charged then the drain conducts to the source and i'm going to be limiting this\n[2:15] discussion to n-channel mosfets they're way more common and realistically they for high power designs"
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0043.jpg",
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:15] discussion to n-channel mosfets they're way more common and realistically they for high power designs\n[2:23] that's really all you need this is what is called a logic level mosfet there are two main types of\n[2:29] mosfets standard or power mosfets and then logic level logic level are a newer type of mosfet and the"
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[2:29] mosfets standard or power mosfets and then logic level logic level are a newer type of mosfet and the\n[2:38] big difference with them is they require only a up to a five volt voltage applied on its gate with"
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg",
+        "frame_0051.jpg"
+      ],
+      "transcript": "[2:38] big difference with them is they require only a up to a five volt voltage applied on its gate with\n[2:48] respect to the source so if you look at the gate to source voltage once you get below around 2.1 ish"
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0052.jpg",
+        "frame_0053.jpg",
+        "frame_0054.jpg"
+      ],
+      "transcript": "[2:48] respect to the source so if you look at the gate to source voltage once you get below around 2.1 ish\n[2:56] volts the resistance from the drain to source decreases exponentially the resistance from drain to source"
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0055.jpg",
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[2:56] volts the resistance from the drain to source decreases exponentially the resistance from drain to source\n[3:06] is simply what the resistance going across these two terminals are so if you were to essentially get"
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:06] is simply what the resistance going across these two terminals are so if you were to essentially get\n[3:15] rid of that mosfet and replace it with a resistor right here when the mosfet is fully turned on that"
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg",
+        "frame_0063.jpg"
+      ],
+      "transcript": "[3:15] rid of that mosfet and replace it with a resistor right here when the mosfet is fully turned on that\n[3:24] is the resistance that is right there simple as that so this is one of the main specs that governs"
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0064.jpg",
+        "frame_0065.jpg",
+        "frame_0066.jpg"
+      ],
+      "transcript": "[3:24] is the resistance that is right there simple as that so this is one of the main specs that governs\n[3:31] how much the mosfet will heat up when you're turning it on so the other thing that this circuit\n[3:38] has that a lot of people will overlook is this resistor right here this is what's called a gate"
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0067.jpg",
+        "frame_0068.jpg",
+        "frame_0069.jpg"
+      ],
+      "transcript": "[3:38] has that a lot of people will overlook is this resistor right here this is what's called a gate\n[3:44] resistor and what you have to remember why those are needed is remember how i said that the gate acts"
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[3:44] resistor and what you have to remember why those are needed is remember how i said that the gate acts\n[3:50] as a capacitor what happens to a capacitor when it's completely uncharged and you apply a voltage your\n[3:58] driving circuit sees that gate sees the capacitor as a short circuit so if this was just a wire the"
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg",
+        "frame_0075.jpg"
+      ],
+      "transcript": "[3:58] driving circuit sees that gate sees the capacitor as a short circuit so if this was just a wire the\n[4:07] second you go to switch this on this gate is viewed by this circuit as a short if this microcontroller is"
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0076.jpg",
+        "frame_0077.jpg",
+        "frame_0078.jpg"
+      ],
+      "transcript": "[4:07] second you go to switch this on this gate is viewed by this circuit as a short if this microcontroller is\n[4:15] unable to source that much current something bad is going to happen because with no resistance here of"
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0079.jpg",
+        "frame_0080.jpg",
+        "frame_0081.jpg"
+      ],
+      "transcript": "[4:15] unable to source that much current something bad is going to happen because with no resistance here of\n[4:21] course there's parasitics but with no real resistance here powering this from presumably five volts it can\n[4:28] try to source several amps going into this gate so a gate resistor acts to limit that so at five volts"
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[4:28] try to source several amps going into this gate so a gate resistor acts to limit that so at five volts\n[4:36] with a hundred ohm resistor it's going to limit it to what 50 milliamps which any microcontroller should"
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg",
+        "frame_0087.jpg"
+      ],
+      "transcript": "[4:36] with a hundred ohm resistor it's going to limit it to what 50 milliamps which any microcontroller should\n[4:43] be able to source if you need to have it a little bit lower you just raise the resistance of this there's"
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0088.jpg",
+        "frame_0089.jpg",
+        "frame_0090.jpg"
+      ],
+      "transcript": "[4:43] be able to source if you need to have it a little bit lower you just raise the resistance of this there's\n[4:50] a couple other important reasons why gate resistors are used remember how i mentioned that there's those\n[4:55] parasitics so this trace has a certain resistance which you can't really calculate easily there are"
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0091.jpg",
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[4:55] parasitics so this trace has a certain resistance which you can't really calculate easily there are\n[5:02] certain resistances going into the gate those could be tens of ohm tens of milli ohms uh maybe up to half"
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[5:02] certain resistances going into the gate those could be tens of ohm tens of milli ohms uh maybe up to half\n[5:11] an ohm you don't really know if you don't have this gate resistor and you try to calculate switching\n[5:17] speeds you try to calculate anything you really don't have a way to know what this resistance is and you"
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg",
+        "frame_0099.jpg"
+      ],
+      "transcript": "[5:17] speeds you try to calculate anything you really don't have a way to know what this resistance is and you\n[5:23] don't have a way to know how much current is being applied the second you add in one of these gate\n[5:29] resistors those parasitics become completely overshadowed by this gate resistor it doesn't"
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0100.jpg",
+        "frame_0101.jpg",
+        "frame_0102.jpg"
+      ],
+      "transcript": "[5:29] resistors those parasitics become completely overshadowed by this gate resistor it doesn't\n[5:36] matter if it's a hundred point zero one ohms or a hundred point one ohms the hundred is way more"
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0103.jpg",
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[5:36] matter if it's a hundred point zero one ohms or a hundred point one ohms the hundred is way more\n[5:43] significant in your calculation and that's even true if this was 10 ohms 10.01 ohms and 10.1 is not that"
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[5:43] significant in your calculation and that's even true if this was 10 ohms 10.01 ohms and 10.1 is not that\n[5:52] big of a difference for your calculations so it just allows you to have a better reference point\n[5:58] to make your calculations from the other reason gate resistors are important and this is a little more"
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg",
+        "frame_0111.jpg"
+      ],
+      "transcript": "[5:58] to make your calculations from the other reason gate resistors are important and this is a little more\n[6:05] intricate so i'm not going to go into it too much basically if you don't have this you can get what's"
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0112.jpg",
+        "frame_0113.jpg",
+        "frame_0114.jpg"
+      ],
+      "transcript": "[6:05] intricate so i'm not going to go into it too much basically if you don't have this you can get what's\n[6:10] called ringing or oscillation since there's such a high amount of current being sourced so quickly\n[6:18] without a gate resistor here the parasitics mainly the inductance has the ability to make this gate"
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0115.jpg",
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[6:18] without a gate resistor here the parasitics mainly the inductance has the ability to make this gate\n[6:26] oscillate from different voltages and it can keep the mosfet from turning on it can make it to where"
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[6:26] oscillate from different voltages and it can keep the mosfet from turning on it can make it to where\n[6:33] it's in a state that you don't want it to be or it can over voltage it entirely basically that gate\n[6:39] resistor just acts to kind of dampen all of that and make it a much smoother transition going from off to"
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg",
+        "frame_0123.jpg"
+      ],
+      "transcript": "[6:39] resistor just acts to kind of dampen all of that and make it a much smoother transition going from off to\n[6:46] on or on to off so something else that's really important with mosfets and i did not draw it in"
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0124.jpg",
+        "frame_0125.jpg",
+        "frame_0126.jpg"
+      ],
+      "transcript": "[6:46] on or on to off so something else that's really important with mosfets and i did not draw it in\n[6:51] here i was making sure you guys were paying attention you have to have a pull down resistor\n[6:57] or you have to have something that makes this mosfet in a default state so if we add a 10k resistor right"
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0127.jpg",
+        "frame_0128.jpg",
+        "frame_0129.jpg"
+      ],
+      "transcript": "[6:57] or you have to have something that makes this mosfet in a default state so if we add a 10k resistor right\n[7:04] here that means no matter what this output is if it's if it's floating or it's open drained if the"
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0130.jpg",
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[7:04] here that means no matter what this output is if it's if it's floating or it's open drained if the\n[7:12] microcontroller turns on and it's at an unknown state this pull down resistor is going to ensure\n[7:18] that the gate is always in a down state to where there's no charge on it typically with high power"
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg",
+        "frame_0135.jpg"
+      ],
+      "transcript": "[7:18] that the gate is always in a down state to where there's no charge on it typically with high power\n[7:26] mosfets you're always going to want the default state to be off so if nothing else is happening with"
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0136.jpg",
+        "frame_0137.jpg",
+        "frame_0138.jpg"
+      ],
+      "transcript": "[7:26] mosfets you're always going to want the default state to be off so if nothing else is happening with\n[7:31] this circuit you can be assured that this will not be conducting and your mosfet will not be turned on\n[7:39] so now i'm sure you're thinking oh logic level mosfets are the way to go i don't have to use"
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0139.jpg",
+        "frame_0140.jpg",
+        "frame_0141.jpg"
+      ],
+      "transcript": "[7:39] so now i'm sure you're thinking oh logic level mosfets are the way to go i don't have to use\n[7:44] anything else that would be nice honestly i unless it's for an indicator led or something very low power"
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0142.jpg",
+        "frame_0143.jpg",
+        "frame_0144.jpg"
+      ],
+      "transcript": "[7:44] anything else that would be nice honestly i unless it's for an indicator led or something very low power\n[7:53] i virtually never use logic level mosfets there are incredible trade-offs that they made when they"
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0145.jpg",
+        "frame_0146.jpg",
+        "frame_0147.jpg"
+      ],
+      "transcript": "[7:53] i virtually never use logic level mosfets there are incredible trade-offs that they made when they\n[8:00] designed the mosfet to be a logic level mosfet basically the rds on so the resistance from drain to\n[8:08] source the amount of gate charge so the amount of charge that has to be injected into the gate to"
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0148.jpg",
+        "frame_0149.jpg",
+        "frame_0150.jpg"
+      ],
+      "transcript": "[8:08] source the amount of gate charge so the amount of charge that has to be injected into the gate to\n[8:15] get it to turn on are almost always going to be significantly higher in a logic level mosfet unless"
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0151.jpg",
+        "frame_0152.jpg",
+        "frame_0153.jpg"
+      ],
+      "transcript": "[8:15] get it to turn on are almost always going to be significantly higher in a logic level mosfet unless\n[8:21] there's some overwhelming reason why you can't drive it as a normal mosfet is i would never recommend you\n[8:29] use a logic level fet for anything other than very low power non-important drivers this is kind of the"
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0154.jpg",
+        "frame_0155.jpg",
+        "frame_0156.jpg"
+      ],
+      "transcript": "[8:29] use a logic level fet for anything other than very low power non-important drivers this is kind of the\n[8:37] standard configuration that i will use for driving a high power mosfet this ncp chip is what's called a"
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0157.jpg",
+        "frame_0158.jpg",
+        "frame_0159.jpg"
+      ],
+      "transcript": "[8:37] standard configuration that i will use for driving a high power mosfet this ncp chip is what's called a\n[8:45] gate driver it has one goal in life it turns on and turns off mosfets and it does it very well what's"
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0160.jpg",
+        "frame_0161.jpg",
+        "frame_0162.jpg"
+      ],
+      "transcript": "[8:45] gate driver it has one goal in life it turns on and turns off mosfets and it does it very well what's\n[8:53] really nice about this is it has a separate h and l output it has the output high which is actually what"
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0163.jpg",
+        "frame_0164.jpg",
+        "frame_0165.jpg"
+      ],
+      "transcript": "[8:53] really nice about this is it has a separate h and l output it has the output high which is actually what\n[9:02] injects the charge outputs current to turn on the mosfet and then the out l is what drains the gate"
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0166.jpg",
+        "frame_0167.jpg",
+        "frame_0168.jpg"
+      ],
+      "transcript": "[9:02] injects the charge outputs current to turn on the mosfet and then the out l is what drains the gate\n[9:11] so removes the charge from it what that allows you to do i don't show it here you can use two different\n[9:17] gate resistors to fine tune how quickly the mosfet turns on and how quickly it turns off for this case"
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0169.jpg",
+        "frame_0170.jpg",
+        "frame_0171.jpg"
+      ],
+      "transcript": "[9:17] gate resistors to fine tune how quickly the mosfet turns on and how quickly it turns off for this case\n[9:25] i don't put it there because for turning on a high power load it doesn't really matter because they're"
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0172.jpg",
+        "frame_0173.jpg",
+        "frame_0174.jpg"
+      ],
+      "transcript": "[9:25] i don't put it there because for turning on a high power load it doesn't really matter because they're\n[9:30] pretty slow so the mosfet i am using here is one of the go-to power mosfets that i use it has an\n[9:37] incredibly small rds on which compared to the logic level mosfet which was 1.6 ohms this is 1.4 milli-ohms"
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0175.jpg",
+        "frame_0176.jpg",
+        "frame_0177.jpg"
+      ],
+      "transcript": "[9:37] incredibly small rds on which compared to the logic level mosfet which was 1.6 ohms this is 1.4 milli-ohms"
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0178.jpg",
+        "frame_0179.jpg",
+        "frame_0180.jpg"
+      ],
+      "transcript": "[9:37] incredibly small rds on which compared to the logic level mosfet which was 1.6 ohms this is 1.4 milli-ohms\n[9:50] so a substantial decrease in the resistance on it and it also has a pretty small gate charge which i'll talk\n[9:59] about in a little bit so now i want to discuss some other important data sheet specs a couple i've"
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0181.jpg",
+        "frame_0182.jpg",
+        "frame_0183.jpg"
+      ],
+      "transcript": "[9:59] about in a little bit so now i want to discuss some other important data sheet specs a couple i've\n[10:04] already mentioned a couple i haven't for this i'm going to reference my blog post so let's say we"
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0184.jpg",
+        "frame_0185.jpg",
+        "frame_0186.jpg"
+      ],
+      "transcript": "[10:04] already mentioned a couple i haven't for this i'm going to reference my blog post so let's say we\n[10:10] need to make a h bridge driver i've talked about h bridges in the past it's a way to control like a\n[10:16] brushed dc motor or a linear actuator it needs to be able to source 10 amps continuously if there is a"
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0187.jpg",
+        "frame_0188.jpg",
+        "frame_0189.jpg"
+      ],
+      "transcript": "[10:16] brushed dc motor or a linear actuator it needs to be able to source 10 amps continuously if there is a\n[10:23] stall condition it needs to be able to handle up to 25 amps it'll be powered by 12 volt dc it'll have"
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0190.jpg",
+        "frame_0191.jpg",
+        "frame_0192.jpg"
+      ],
+      "transcript": "[10:23] stall condition it needs to be able to handle up to 25 amps it'll be powered by 12 volt dc it'll have\n[10:31] a silent pwm speed which just means it's not in the audible range so ultrasonic which is 20 to 30 kilohertz"
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0193.jpg",
+        "frame_0194.jpg",
+        "frame_0195.jpg"
+      ],
+      "transcript": "[10:31] a silent pwm speed which just means it's not in the audible range so ultrasonic which is 20 to 30 kilohertz\n[10:40] and of course we need to minimize heat dissipation as always if we take this mosfet and this gate driver\n[10:48] as our example we can look at the data sheet of this mosfet the important specs that we need to"
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0196.jpg",
+        "frame_0197.jpg",
+        "frame_0198.jpg"
+      ],
+      "transcript": "[10:48] as our example we can look at the data sheet of this mosfet the important specs that we need to\n[10:56] grab from it are the rds max we don't care about the typical because we need to design for the worst"
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0199.jpg",
+        "frame_0200.jpg",
+        "frame_0201.jpg"
+      ],
+      "transcript": "[10:56] grab from it are the rds max we don't care about the typical because we need to design for the worst\n[11:02] case scenario of course we can use that to calculate the amount of power that will be dissipated from the\n[11:08] mosfet the vdss is simply the amount of voltage that this mosfet can have between its drain and its"
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0202.jpg",
+        "frame_0203.jpg",
+        "frame_0204.jpg"
+      ],
+      "transcript": "[11:08] mosfet the vdss is simply the amount of voltage that this mosfet can have between its drain and its\n[11:16] source so between here between this pin and this pin which since we're powering this from 12 volts"
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0205.jpg",
+        "frame_0206.jpg",
+        "frame_0207.jpg"
+      ],
+      "transcript": "[11:16] source so between here between this pin and this pin which since we're powering this from 12 volts\n[11:24] we're not even close to that the id which is either silicone limited or package limited we always care"
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0208.jpg",
+        "frame_0209.jpg",
+        "frame_0210.jpg"
+      ],
+      "transcript": "[11:24] we're not even close to that the id which is either silicone limited or package limited we always care\n[11:30] about the package limited because that is irrelevant because we're using this specific package and this is\n[11:38] a spec that's commonly misunderstood this does not mean that you can drive this mosfet at 240 amps if you"
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0211.jpg",
+        "frame_0212.jpg",
+        "frame_0213.jpg"
+      ],
+      "transcript": "[11:38] a spec that's commonly misunderstood this does not mean that you can drive this mosfet at 240 amps if you\n[11:46] try doing this at 240 amps without it being like literally underwater or some water cooling system"
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0214.jpg",
+        "frame_0215.jpg",
+        "frame_0216.jpg"
+      ],
+      "transcript": "[11:46] try doing this at 240 amps without it being like literally underwater or some water cooling system\n[11:52] it'll burst into flames almost immediately all this means is you absolutely cannot drive it above that"
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0217.jpg",
+        "frame_0218.jpg",
+        "frame_0219.jpg"
+      ],
+      "transcript": "[11:52] it'll burst into flames almost immediately all this means is you absolutely cannot drive it above that\n[12:00] but you're not going to be able to drive it at that so take this number with a complete grain of salt\n[12:05] just don't exceed it the next important spec is the vgs which is simply the gate to source voltage"
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0220.jpg",
+        "frame_0221.jpg",
+        "frame_0222.jpg"
+      ],
+      "transcript": "[12:05] just don't exceed it the next important spec is the vgs which is simply the gate to source voltage\n[12:13] so the maximum voltage that you can apply on the gate with respect to the source and this is typically"
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0223.jpg",
+        "frame_0224.jpg",
+        "frame_0225.jpg"
+      ],
+      "transcript": "[12:13] so the maximum voltage that you can apply on the gate with respect to the source and this is typically\n[12:21] around 20 volts for a standard mosfet which we are driving it from 12 volts so again we're perfectly fine\n[12:28] there then the r theta j a which this is the thermal resistance from the junction of the mosfet to the outside air"
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0226.jpg",
+        "frame_0227.jpg",
+        "frame_0228.jpg"
+      ],
+      "transcript": "[12:28] there then the r theta j a which this is the thermal resistance from the junction of the mosfet to the outside air\n[12:39] this we use to determine how hot the mosfet will get at a given power the last important spec and this"
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0229.jpg",
+        "frame_0230.jpg",
+        "frame_0231.jpg"
+      ],
+      "transcript": "[12:39] this we use to determine how hot the mosfet will get at a given power the last important spec and this\n[12:46] is the one where it's definitely not a true science what i'm going to show you guys but it's a decent"
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0232.jpg",
+        "frame_0233.jpg",
+        "frame_0234.jpg"
+      ],
+      "transcript": "[12:46] is the one where it's definitely not a true science what i'm going to show you guys but it's a decent\n[12:53] rule of thumb and that is the total gate charge this i briefly mentioned a couple times already in this"
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0235.jpg",
+        "frame_0236.jpg",
+        "frame_0237.jpg"
+      ],
+      "transcript": "[12:53] rule of thumb and that is the total gate charge this i briefly mentioned a couple times already in this\n[13:00] video and what this is is this is the amount of charge that you have to inject into the gate before\n[13:08] it turns fully on since it's a capacitor essentially on the gate you have to give it that much charge"
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0238.jpg",
+        "frame_0239.jpg",
+        "frame_0240.jpg"
+      ],
+      "transcript": "[13:08] it turns fully on since it's a capacitor essentially on the gate you have to give it that much charge\n[13:17] in coulombs or nano coulombs to have it turn on this is one of the main factors that governs how fast"
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0241.jpg",
+        "frame_0242.jpg",
+        "frame_0243.jpg"
+      ],
+      "transcript": "[13:17] in coulombs or nano coulombs to have it turn on this is one of the main factors that governs how fast\n[13:24] the mosfet turns on and then by default turns off so let's start doing some calculations and this"
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0244.jpg",
+        "frame_0245.jpg",
+        "frame_0246.jpg"
+      ],
+      "transcript": "[13:24] the mosfet turns on and then by default turns off so let's start doing some calculations and this\n[13:31] obviously isn't the h bridge circuit but i changed the value of the resistor here so it should be\n[13:37] pretty similar so the first thing that we want to work on is determine how much power the mosfet will"
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0247.jpg",
+        "frame_0248.jpg",
+        "frame_0249.jpg"
+      ],
+      "transcript": "[13:37] pretty similar so the first thing that we want to work on is determine how much power the mosfet will\n[13:44] be dissipating worst case so we use p equals i squared r we know that our max current in a stall which"
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0250.jpg",
+        "frame_0251.jpg",
+        "frame_0252.jpg"
+      ],
+      "transcript": "[13:44] be dissipating worst case so we use p equals i squared r we know that our max current in a stall which\n[13:51] is the worst case scenario is 25 amps and our worst case resistance is 1.4 and when we calculate that"
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0253.jpg",
+        "frame_0254.jpg",
+        "frame_0255.jpg"
+      ],
+      "transcript": "[13:51] is the worst case scenario is 25 amps and our worst case resistance is 1.4 and when we calculate that\n[14:02] out we get 0.875 watts but now we have to relate that value to something useful because in a vacuum"
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0256.jpg",
+        "frame_0257.jpg",
+        "frame_0258.jpg"
+      ],
+      "transcript": "[14:02] out we get 0.875 watts but now we have to relate that value to something useful because in a vacuum\n[14:12] under a watt we don't really know if that's a good value or not so that's where that r theta junction to\n[14:18] ambient comes in so we know that the theta junction to ambient is 40 c over w which means for every watt"
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0259.jpg",
+        "frame_0260.jpg",
+        "frame_0261.jpg"
+      ],
+      "transcript": "[14:18] ambient comes in so we know that the theta junction to ambient is 40 c over w which means for every watt\n[14:26] that the mosfet dissipates it will raise in temperature by 40 degrees celsius so if we simply"
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0262.jpg",
+        "frame_0263.jpg",
+        "frame_0264.jpg"
+      ],
+      "transcript": "[14:26] that the mosfet dissipates it will raise in temperature by 40 degrees celsius so if we simply\n[14:34] multiply that by our power that gives us the delta t we have to make sure that we understand that that is"
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0265.jpg",
+        "frame_0266.jpg",
+        "frame_0267.jpg"
+      ],
+      "transcript": "[14:34] multiply that by our power that gives us the delta t we have to make sure that we understand that that is\n[14:43] not what temperature it'll be at that's the temperature it'll increase by so that is 35 c so if we are at"
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 900,
+      "frames": [
+        "frame_0268.jpg",
+        "frame_0269.jpg",
+        "frame_0270.jpg"
+      ],
+      "transcript": "[14:43] not what temperature it'll be at that's the temperature it'll increase by so that is 35 c so if we are at\n[14:52] a room temperature ambient around 25 c it'll raise by 35 c which is 60 degrees celsius which 60 c for the"
+    },
+    {
+      "segment_index": 91,
+      "start_time": 900,
+      "end_time": 910,
+      "frames": [
+        "frame_0271.jpg",
+        "frame_0272.jpg",
+        "frame_0273.jpg"
+      ],
+      "transcript": "[14:52] a room temperature ambient around 25 c it'll raise by 35 c which is 60 degrees celsius which 60 c for the\n[15:03] junction temperature is perfectly safe it should be safe depending on the mosfet up to around 100 c if not a"
+    },
+    {
+      "segment_index": 92,
+      "start_time": 910,
+      "end_time": 920,
+      "frames": [
+        "frame_0274.jpg",
+        "frame_0275.jpg",
+        "frame_0276.jpg"
+      ],
+      "transcript": "[15:03] junction temperature is perfectly safe it should be safe depending on the mosfet up to around 100 c if not a\n[15:11] little more but i always try to shoot for a maximum of 80 c worst case but you can always reduce that\n[15:18] by having a heat sink on there so now we know that the heat dissipation of this mosfet will not be an"
+    },
+    {
+      "segment_index": 93,
+      "start_time": 920,
+      "end_time": 930,
+      "frames": [
+        "frame_0277.jpg",
+        "frame_0278.jpg",
+        "frame_0279.jpg"
+      ],
+      "transcript": "[15:18] by having a heat sink on there so now we know that the heat dissipation of this mosfet will not be an\n[15:23] issue the next thing we want to see is how quickly we can switch it on and off so for that the first thing"
+    },
+    {
+      "segment_index": 94,
+      "start_time": 930,
+      "end_time": 940,
+      "frames": [
+        "frame_0280.jpg",
+        "frame_0281.jpg",
+        "frame_0282.jpg"
+      ],
+      "transcript": "[15:23] issue the next thing we want to see is how quickly we can switch it on and off so for that the first thing\n[15:31] we need to do is see how much current this driver will be sending to the gate and like i said this gate\n[15:39] driver can source up to an up to 10 amps i have a 10 ohm gate resistor here so we need to calculate"
+    },
+    {
+      "segment_index": 95,
+      "start_time": 940,
+      "end_time": 950,
+      "frames": [
+        "frame_0283.jpg",
+        "frame_0284.jpg",
+        "frame_0285.jpg"
+      ],
+      "transcript": "[15:39] driver can source up to an up to 10 amps i have a 10 ohm gate resistor here so we need to calculate\n[15:47] the amount of current maximum that it can inject and that is simply v equals ir our maximum current is"
+    },
+    {
+      "segment_index": 96,
+      "start_time": 950,
+      "end_time": 960,
+      "frames": [
+        "frame_0286.jpg",
+        "frame_0287.jpg",
+        "frame_0288.jpg"
+      ],
+      "transcript": "[15:47] the amount of current maximum that it can inject and that is simply v equals ir our maximum current is\n[15:55] 1.2 amps and there is a simplification here this is assuming that the voltage at the gate stays at zero"
+    },
+    {
+      "segment_index": 97,
+      "start_time": 960,
+      "end_time": 970,
+      "frames": [
+        "frame_0289.jpg",
+        "frame_0290.jpg",
+        "frame_0291.jpg"
+      ],
+      "transcript": "[15:55] 1.2 amps and there is a simplification here this is assuming that the voltage at the gate stays at zero\n[16:06] because we're assuming that the voltage from here minus this is the total voltage which it's not"
+    },
+    {
+      "segment_index": 98,
+      "start_time": 970,
+      "end_time": 980,
+      "frames": [
+        "frame_0292.jpg",
+        "frame_0293.jpg",
+        "frame_0294.jpg"
+      ],
+      "transcript": "[16:06] because we're assuming that the voltage from here minus this is the total voltage which it's not\n[16:15] typically this will be a couple volts but that's where my simplifications are coming in so just keep"
+    },
+    {
+      "segment_index": 99,
+      "start_time": 980,
+      "end_time": 990,
+      "frames": [
+        "frame_0295.jpg",
+        "frame_0296.jpg",
+        "frame_0297.jpg"
+      ],
+      "transcript": "[16:15] typically this will be a couple volts but that's where my simplifications are coming in so just keep\n[16:22] that in mind if you have to do the exact calculation you're gonna have to do a lot more intricate stuff\n[16:28] than i'm showing here but when we finish this calculation i'll show you why i feel confident for"
+    },
+    {
+      "segment_index": 100,
+      "start_time": 990,
+      "end_time": 1000,
+      "frames": [
+        "frame_0298.jpg",
+        "frame_0299.jpg",
+        "frame_0300.jpg"
+      ],
+      "transcript": "[16:28] than i'm showing here but when we finish this calculation i'll show you why i feel confident for\n[16:34] this case that these calculations hold true and now we can use a different calculation to see how long"
+    },
+    {
+      "segment_index": 101,
+      "start_time": 1000,
+      "end_time": 1010,
+      "frames": [
+        "frame_0301.jpg",
+        "frame_0302.jpg",
+        "frame_0303.jpg"
+      ],
+      "transcript": "[16:34] this case that these calculations hold true and now we can use a different calculation to see how long\n[16:41] it takes to inject that much charge into the gate of the mosfet and this is just the time equals charge\n[16:48] divided by current we're trying to solve for time we know that our charge that needs to be injected is"
+    },
+    {
+      "segment_index": 102,
+      "start_time": 1010,
+      "end_time": 1020,
+      "frames": [
+        "frame_0304.jpg",
+        "frame_0305.jpg",
+        "frame_0306.jpg"
+      ],
+      "transcript": "[16:48] divided by current we're trying to solve for time we know that our charge that needs to be injected is\n[16:56] 354 nanocoulombs and we know that our current is 1.2 amps when we calculate that out we get t is equal to 295"
+    },
+    {
+      "segment_index": 103,
+      "start_time": 1020,
+      "end_time": 1030,
+      "frames": [
+        "frame_0307.jpg",
+        "frame_0308.jpg",
+        "frame_0309.jpg"
+      ],
+      "transcript": "[16:56] 354 nanocoulombs and we know that our current is 1.2 amps when we calculate that out we get t is equal to 295"
+    },
+    {
+      "segment_index": 104,
+      "start_time": 1030,
+      "end_time": 1040,
+      "frames": [
+        "frame_0310.jpg",
+        "frame_0311.jpg",
+        "frame_0312.jpg"
+      ],
+      "transcript": "[17:10] nanoseconds and with this calculation that is how long it will take for this mosfet to turn fully on if we\n[17:18] need to switch it at a different or a differing frequency it's not just how quickly it turns on it's how"
+    },
+    {
+      "segment_index": 105,
+      "start_time": 1040,
+      "end_time": 1050,
+      "frames": [
+        "frame_0313.jpg",
+        "frame_0314.jpg",
+        "frame_0315.jpg"
+      ],
+      "transcript": "[17:18] need to switch it at a different or a differing frequency it's not just how quickly it turns on it's how\n[17:26] quickly it turns on then off so technically the round trip is double this and when we do that"
+    },
+    {
+      "segment_index": 106,
+      "start_time": 1050,
+      "end_time": 1060,
+      "frames": [
+        "frame_0316.jpg",
+        "frame_0317.jpg",
+        "frame_0318.jpg"
+      ],
+      "transcript": "[17:26] quickly it turns on then off so technically the round trip is double this and when we do that\n[17:34] calculation and see the maximum frequency it comes out to around 2 megahertz so we only have to switch"
+    },
+    {
+      "segment_index": 107,
+      "start_time": 1060,
+      "end_time": 1070,
+      "frames": [
+        "frame_0319.jpg",
+        "frame_0320.jpg",
+        "frame_0321.jpg"
+      ],
+      "transcript": "[17:34] calculation and see the maximum frequency it comes out to around 2 megahertz so we only have to switch\n[17:42] this at 20 kilohertz we are several orders of magnitude below the theoretical max switching speed"
+    },
+    {
+      "segment_index": 108,
+      "start_time": 1070,
+      "end_time": 1080,
+      "frames": [
+        "frame_0322.jpg",
+        "frame_0323.jpg",
+        "frame_0324.jpg"
+      ],
+      "transcript": "[17:42] this at 20 kilohertz we are several orders of magnitude below the theoretical max switching speed\n[17:51] of this mosfet this is where the rule of thumb comes into play if we would have calculated this out\n[17:58] and let's say this time would have or this frequency would have came out to 30 kilohertz or 40 we are way"
+    },
+    {
+      "segment_index": 109,
+      "start_time": 1080,
+      "end_time": 1090,
+      "frames": [
+        "frame_0325.jpg",
+        "frame_0326.jpg",
+        "frame_0327.jpg"
+      ],
+      "transcript": "[17:58] and let's say this time would have or this frequency would have came out to 30 kilohertz or 40 we are way\n[18:06] too close to that threshold and i would not feel confident with this at all and we would either need"
+    },
+    {
+      "segment_index": 110,
+      "start_time": 1090,
+      "end_time": 1100,
+      "frames": [
+        "frame_0328.jpg",
+        "frame_0329.jpg",
+        "frame_0330.jpg"
+      ],
+      "transcript": "[18:06] too close to that threshold and i would not feel confident with this at all and we would either need\n[18:12] to change the gate resistor to have it be bigger of a gap or do the more intricate derivations which i"
+    },
+    {
+      "segment_index": 111,
+      "start_time": 1100,
+      "end_time": 1110,
+      "frames": [
+        "frame_0331.jpg",
+        "frame_0332.jpg",
+        "frame_0333.jpg"
+      ],
+      "transcript": "[18:12] to change the gate resistor to have it be bigger of a gap or do the more intricate derivations which i\n[18:21] mention in the blog some app notes which go into great detail on that but for something like this\n[18:27] this is perfectly fine and i would never go into any more calculations than this because it's just not"
+    },
+    {
+      "segment_index": 112,
+      "start_time": 1110,
+      "end_time": 1120,
+      "frames": [
+        "frame_0334.jpg",
+        "frame_0335.jpg",
+        "frame_0336.jpg"
+      ],
+      "transcript": "[18:27] this is perfectly fine and i would never go into any more calculations than this because it's just not\n[18:33] necessary if we do the intricate calculations maybe we get that the actual switching speed maximum is 1.2"
+    },
+    {
+      "segment_index": 113,
+      "start_time": 1120,
+      "end_time": 1130,
+      "frames": [
+        "frame_0337.jpg",
+        "frame_0338.jpg",
+        "frame_0339.jpg"
+      ],
+      "transcript": "[18:33] necessary if we do the intricate calculations maybe we get that the actual switching speed maximum is 1.2\n[18:43] megahertz or 1.1 it doesn't matter we're still so far below that that it absolutely is fine whatever"
+    },
+    {
+      "segment_index": 114,
+      "start_time": 1130,
+      "end_time": 1140,
+      "frames": [
+        "frame_0340.jpg",
+        "frame_0341.jpg",
+        "frame_0342.jpg"
+      ],
+      "transcript": "[18:43] megahertz or 1.1 it doesn't matter we're still so far below that that it absolutely is fine whatever\n[18:50] this comes out to be and this is where you could actually tune this gate resistor to be a little bit\n[18:58] higher of a value making it turn on a little bit slower which can help with some emc and emissions"
+    },
+    {
+      "segment_index": 115,
+      "start_time": 1140,
+      "end_time": 1150,
+      "frames": [
+        "frame_0343.jpg",
+        "frame_0344.jpg",
+        "frame_0345.jpg"
+      ],
+      "transcript": "[18:58] higher of a value making it turn on a little bit slower which can help with some emc and emissions\n[19:05] issues but that's something i'm not going to get into on this video so basically with those calculations"
+    },
+    {
+      "segment_index": 116,
+      "start_time": 1150,
+      "end_time": 1160,
+      "frames": [
+        "frame_0346.jpg",
+        "frame_0347.jpg",
+        "frame_0348.jpg"
+      ],
+      "transcript": "[19:05] issues but that's something i'm not going to get into on this video so basically with those calculations\n[19:11] out of the way we now know that this mosfet driven by this gate driver won't heat up too much it's not\n[19:19] going to be even close to the maximum switching speed so we can feel pretty confident that this mosfet will"
+    },
+    {
+      "segment_index": 117,
+      "start_time": 1160,
+      "end_time": 1170,
+      "frames": [
+        "frame_0349.jpg",
+        "frame_0350.jpg",
+        "frame_0351.jpg"
+      ],
+      "transcript": "[19:19] going to be even close to the maximum switching speed so we can feel pretty confident that this mosfet will\n[19:25] be able to drive that load of course there's other stuff to be concerned with with a brushed motor"
+    },
+    {
+      "segment_index": 118,
+      "start_time": 1170,
+      "end_time": 1180,
+      "frames": [
+        "frame_0352.jpg",
+        "frame_0353.jpg",
+        "frame_0354.jpg"
+      ],
+      "transcript": "[19:25] be able to drive that load of course there's other stuff to be concerned with with a brushed motor\n[19:31] driver the back emf having sure making sure you have enough bulk capacitance but on the mosfet side"
+    },
+    {
+      "segment_index": 119,
+      "start_time": 1180,
+      "end_time": 1190,
+      "frames": [
+        "frame_0355.jpg",
+        "frame_0356.jpg",
+        "frame_0357.jpg"
+      ],
+      "transcript": "[19:31] driver the back emf having sure making sure you have enough bulk capacitance but on the mosfet side\n[19:40] we are perfectly fine with this selection so i hope that this video covered everything that you typically\n[19:48] need to know when selecting a mosfet and designing a circuit for it i will have a link in the description to"
+    },
+    {
+      "segment_index": 120,
+      "start_time": 1190,
+      "end_time": 1200,
+      "frames": [
+        "frame_0358.jpg",
+        "frame_0359.jpg",
+        "frame_0360.jpg"
+      ],
+      "transcript": "[19:48] need to know when selecting a mosfet and designing a circuit for it i will have a link in the description to\n[19:55] my blog post which goes into a little more detail on this and it gives a few more examples but other"
+    },
+    {
+      "segment_index": 121,
+      "start_time": 1200,
+      "end_time": 1210,
+      "frames": [
+        "frame_0361.jpg",
+        "frame_0362.jpg"
+      ],
+      "transcript": "[19:55] my blog post which goes into a little more detail on this and it gives a few more examples but other\n[20:01] than that i hope you guys enjoyed this video and please let me know any suggestions of future videos\n[20:08] and i will see you in the next video"
+    },
+    {
+      "segment_index": 122,
+      "start_time": 1210,
+      "end_time": 1213.76,
+      "frames": [],
+      "transcript": "[20:08] and i will see you in the next video"
+    }
+  ]
+}

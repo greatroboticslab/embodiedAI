@@ -1,0 +1,505 @@
+{
+  "video_id": "3dQjIeYoIdM",
+  "duration": 478.0,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg"
+      ],
+      "transcript": "[0:01] In a previous video I showed you how to create a simple class AB audio amplifier\n[0:06] that consists of any 5534-bamp and a push-pull bipolar junction transistor output stage."
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0003.jpg",
+        "frame_0004.jpg"
+      ],
+      "transcript": "[0:06] that consists of any 5534-bamp and a push-pull bipolar junction transistor output stage.\n[0:13] Now, even though the circuit did work decently, there was one problem.\n[0:19] It's power loss."
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0005.jpg",
+        "frame_0006.jpg",
+        "frame_0007.jpg"
+      ],
+      "transcript": "[0:19] It's power loss.\n[0:20] We can identify its cause by taking a look at the simplified functional block diagram.\n[0:26] Firstly, our originally applied audio signal gets its voltage amplified by an op-amp."
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0008.jpg",
+        "frame_0009.jpg"
+      ],
+      "transcript": "[0:26] Firstly, our originally applied audio signal gets its voltage amplified by an op-amp.\n[0:32] Since such op-amps can only supply very little power, the next part of the circuit is a BJT output stage\n[0:39] that modulates a supply voltage of 12 volts to become the audio signal that is not only voltage amplified"
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:39] that modulates a supply voltage of 12 volts to become the audio signal that is not only voltage amplified\n[0:46] but can also supply sufficient current for the speaker."
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg"
+      ],
+      "transcript": "[0:46] but can also supply sufficient current for the speaker.\n[0:50] The only problem is that the transistors work in the active region,\n[0:55] which means there exists a noticeable voltage drop across the collector emitter path"
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0015.jpg",
+        "frame_0016.jpg"
+      ],
+      "transcript": "[1:00] and thus power loss is created, which leads to an overall efficiency of around 50 to 60%.\n[1:08] To increase this efficiency though, we can utilize another audio amp kind,"
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0017.jpg",
+        "frame_0018.jpg",
+        "frame_0019.jpg"
+      ],
+      "transcript": "[1:08] To increase this efficiency though, we can utilize another audio amp kind,\n[1:13] a class D amp to be precise, with an efficiency of up to 95%.\n[1:19] So in this video, I will show you how such an audio amp works"
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0020.jpg",
+        "frame_0021.jpg"
+      ],
+      "transcript": "[1:19] So in this video, I will show you how such an audio amp works\n[1:23] and how we can create our own DIY version, which consists of common components.\n[1:29] Let's get started!"
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[1:29] Let's get started!\n[1:31] First off, let's have a look at the simplified functional block diagram of a class D amp."
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg"
+      ],
+      "transcript": "[1:31] First off, let's have a look at the simplified functional block diagram of a class D amp.\n[1:49] On the left side, we got our audio signal, which is connected to the non-inverting input of a comparator."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0027.jpg",
+        "frame_0028.jpg"
+      ],
+      "transcript": "[1:49] On the left side, we got our audio signal, which is connected to the non-inverting input of a comparator.\n[1:56] The inverting input however, gets connected to a triangle wave with a frequency of above 200 kilohertz."
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0029.jpg",
+        "frame_0030.jpg",
+        "frame_0031.jpg"
+      ],
+      "transcript": "[1:56] The inverting input however, gets connected to a triangle wave with a frequency of above 200 kilohertz.\n[2:04] Now whenever the voltage of our audio signal is higher than the triangle voltage,\n[2:09] the output of the comparator gets pulled high and vice versa."
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0032.jpg",
+        "frame_0033.jpg"
+      ],
+      "transcript": "[2:09] the output of the comparator gets pulled high and vice versa.\n[2:14] This way, we basically modulated our audio signal with maximum frequencies of around 20 kilohertz"
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[2:14] This way, we basically modulated our audio signal with maximum frequencies of around 20 kilohertz\n[2:21] into a high-frequent square wave, which then connects to a MOSFET driver.\n[2:26] The driver obviously turns on and off two MOSFETs."
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg"
+      ],
+      "transcript": "[2:30] The high side one according to the high voltage levels,\n[2:33] and the low side one according to the low voltage levels.\n[2:37] This way, we get a powerful high-frequent square wave at the MOSFETs output,"
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0039.jpg",
+        "frame_0040.jpg"
+      ],
+      "transcript": "[2:37] This way, we get a powerful high-frequent square wave at the MOSFETs output,\n[2:42] which since the MOSFETs were switched on and off in their ohmic region,\n[2:46] with a low drain to source voltage drop, created very little power losses."
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0041.jpg",
+        "frame_0042.jpg",
+        "frame_0043.jpg"
+      ],
+      "transcript": "[2:46] with a low drain to source voltage drop, created very little power losses.\n[2:52] Now we can recreate the original audio signal by adding an LC low-pass filter,\n[2:58] which like the name implies, filters out all the high frequencies,"
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:58] which like the name implies, filters out all the high frequencies,\n[3:02] and leaves us with our original, now amplified audio signal.\n[3:06] As suitable components, we can use a 555 timer, a LM393, a 74HC04 to create an inverted signal of the high-frequent square wave,"
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[3:06] As suitable components, we can use a 555 timer, a LM393, a 74HC04 to create an inverted signal of the high-frequent square wave,\n[3:18] which is mandatory for the IR2113 MOSFET driver, and two IRLZ44N MOSFETs."
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg"
+      ],
+      "transcript": "[3:18] which is mandatory for the IR2113 MOSFET driver, and two IRLZ44N MOSFETs.\n[3:26] Before we can solder a proper circuit though, I utilized the free EasyEDA circuit design software,"
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0051.jpg",
+        "frame_0052.jpg"
+      ],
+      "transcript": "[3:26] Before we can solder a proper circuit though, I utilized the free EasyEDA circuit design software,\n[3:33] to create an appropriate schematic.\n[3:36] By utilizing the online component library, I imported all the required ICs and passive components,"
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0053.jpg",
+        "frame_0054.jpg",
+        "frame_0055.jpg"
+      ],
+      "transcript": "[3:36] By utilizing the online component library, I imported all the required ICs and passive components,\n[3:42] and afterwards connected them all to one another, according to the previously discussed functional block diagram.\n[3:49] The only question left to answer, was what kind of values should be used for the LC filter."
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[3:49] The only question left to answer, was what kind of values should be used for the LC filter.\n[3:55] According to a commercial class D amp that I had lying around, inductances of 22\u03bcH should be suitable."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:55] According to a commercial class D amp that I had lying around, inductances of 22\u03bcH should be suitable.\n[4:04] The only inductors I had lying around though, were 33\u03bcH ones.\n[4:09] So I connected two of them in parallel, in order to create a 16.5\u03bcH value,"
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg"
+      ],
+      "transcript": "[4:09] So I connected two of them in parallel, in order to create a 16.5\u03bcH value,\n[4:15] and wrote down the two formulas to calculate the inductance and capacity of a LC low-pass filter."
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0063.jpg",
+        "frame_0064.jpg"
+      ],
+      "transcript": "[4:15] and wrote down the two formulas to calculate the inductance and capacity of a LC low-pass filter.\n[4:22] If we rearrange the inductor formula, and insert the load impedance of 4\u03a9,\n[4:28] according to the speaker properties, and the inductance of 16.5\u03bcH,"
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0065.jpg",
+        "frame_0066.jpg",
+        "frame_0067.jpg"
+      ],
+      "transcript": "[4:28] according to the speaker properties, and the inductance of 16.5\u03bcH,\n[4:33] we can calculate a cutoff frequency of around 40kHz,\n[4:38] at which the original voltage amplitude will be lowered by 3dB, or 40% of the original amplitude."
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0068.jpg",
+        "frame_0069.jpg"
+      ],
+      "transcript": "[4:38] at which the original voltage amplitude will be lowered by 3dB, or 40% of the original amplitude.\n[4:46] By inserting this frequency into the capacitor formula, we get a capacitance of around 1.03\u03bcF,"
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[4:46] By inserting this frequency into the capacitor formula, we get a capacitance of around 1.03\u03bcF,\n[4:54] which I created by connecting five 0.22\u03bcF capacitors in parallel."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg"
+      ],
+      "transcript": "[5:00] And now that the schematic was complete, I gathered all the required components,\n[5:05] and started soldering them to a piece of perfboard.\n[5:08] As always, I tried to utilize silvered copper wire for the most part,"
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0075.jpg",
+        "frame_0076.jpg"
+      ],
+      "transcript": "[5:08] As always, I tried to utilize silvered copper wire for the most part,\n[5:13] but still had to use a bit of hookup wire at the end.\n[5:17] And of course, you can find reference pictures of my perfboard layout,"
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0077.jpg",
+        "frame_0078.jpg",
+        "frame_0079.jpg"
+      ],
+      "transcript": "[5:17] And of course, you can find reference pictures of my perfboard layout,\n[5:21] as well as the schematic for this project, in the video description.\n[5:25] After three hours of soldering, the circuit was complete,\n[5:29] and it was time to insert all the ICs, connect a 15V power supply to the input,"
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0080.jpg",
+        "frame_0081.jpg"
+      ],
+      "transcript": "[5:29] and it was time to insert all the ICs, connect a 15V power supply to the input,\n[5:36] and a speaker to the output.\n[5:38] As a first test, I hooked up my function generator,"
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[5:38] As a first test, I hooked up my function generator,\n[5:41] set to a sine wave with a frequency of only 1Hz to the audio input.\n[5:47] Since the 555 timer creates a triangle voltage between around 1.3 and 2.3 of the supply voltage,"
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg"
+      ],
+      "transcript": "[5:47] Since the 555 timer creates a triangle voltage between around 1.3 and 2.3 of the supply voltage,\n[5:54] we also have to use a potentiometer to add a DC offset to the sine wave,\n[5:59] so that it is completely submerged inside the triangle wave."
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0087.jpg",
+        "frame_0088.jpg"
+      ],
+      "transcript": "[5:59] so that it is completely submerged inside the triangle wave.\n[6:04] If we now take a look at the output of the comparator,\n[6:07] we can see how the slowly changing 1Hz sine wave creates the modulated high-frequent square wave."
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0089.jpg",
+        "frame_0090.jpg",
+        "frame_0091.jpg"
+      ],
+      "transcript": "[6:07] we can see how the slowly changing 1Hz sine wave creates the modulated high-frequent square wave.\n[6:14] And if we increase the frequency to a value that is closer to proper music,\n[6:19] the output definitely looks crazy and confusing,"
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[6:19] the output definitely looks crazy and confusing,\n[6:23] but the theory pretty much stays the same.\n[6:26] But by using lower frequencies, we can actually create a lot of visible vibrations of the speaker cone,"
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[6:26] But by using lower frequencies, we can actually create a lot of visible vibrations of the speaker cone,\n[6:33] which showcases that this class D-Amp is pretty damn powerful for its simplicity.\n[6:39] And as you would have expected it, by increasing the frequency of the sine wave,"
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg"
+      ],
+      "transcript": "[6:39] And as you would have expected it, by increasing the frequency of the sine wave,\n[6:44] we produce higher tones, which means that the amp works without a problem.\n[6:49] So I replaced the function generator with my smartphone and tested the music playback capabilities of the amp."
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0099.jpg",
+        "frame_0100.jpg"
+      ],
+      "transcript": "[6:49] So I replaced the function generator with my smartphone and tested the music playback capabilities of the amp.\n[6:56] As you can hear, the music playback also worked like a charm, but the volume was a bit low."
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0101.jpg",
+        "frame_0102.jpg",
+        "frame_0103.jpg"
+      ],
+      "transcript": "[6:56] As you can hear, the music playback also worked like a charm, but the volume was a bit low.\n[7:03] The reason for that was that the music signal only features a peak-to-peak voltage of around half a volt,"
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[7:10] while the function generator easily created peak-to-peak voltages of 4 volts.\n[7:15] So as an afterthought, I added an LM386 op-amp in between the input audio signal and the comparator,"
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[7:15] So as an afterthought, I added an LM386 op-amp in between the input audio signal and the comparator,\n[7:23] which didn't even require complementary components.\n[7:26] Afterwards, the audio signal consisted of a peak-to-peak voltage of 4 volts as well,"
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg"
+      ],
+      "transcript": "[7:26] Afterwards, the audio signal consisted of a peak-to-peak voltage of 4 volts as well,\n[7:32] which was suitable to create a much louder playback of the music through the class D-Amp.\n[7:38] Now of course, this circuit is definitely not perfect."
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0111.jpg",
+        "frame_0112.jpg"
+      ],
+      "transcript": "[7:38] Now of course, this circuit is definitely not perfect.\n[7:42] However, the audio quality is pretty decent.\n[7:46] And more importantly, maybe you learned something new.\n[7:49] If so, don't forget to like, share and subscribe."
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 478.0,
+      "frames": [
+        "frame_0113.jpg",
+        "frame_0114.jpg"
+      ],
+      "transcript": "[7:49] If so, don't forget to like, share and subscribe.\n[7:53] Stay creative and I will see you next time.\n[7:57] See you next time."
+    }
+  ]
+}

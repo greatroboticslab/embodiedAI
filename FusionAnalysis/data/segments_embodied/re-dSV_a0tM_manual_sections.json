@@ -1,0 +1,2037 @@
+{
+  "video_id": "re-dSV_a0tM",
+  "duration": 1455.22,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg",
+        "frame_0003.jpg",
+        "frame_0004.jpg",
+        "frame_0005.jpg",
+        "frame_0006.jpg"
+      ],
+      "transcript": "[0:00] Marvin, turn on the lights.\n[0:06] Okay.\n[0:08] Marvin, turn off the bedroom."
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0007.jpg",
+        "frame_0008.jpg",
+        "frame_0009.jpg",
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:08] Marvin, turn off the bedroom.\n[0:13] Okay.\n[0:15] Marvin, turn off the kitchen."
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg",
+        "frame_0015.jpg",
+        "frame_0016.jpg",
+        "frame_0017.jpg",
+        "frame_0018.jpg"
+      ],
+      "transcript": "[0:21] Okay.\n[0:22] Marvin, tell me a joke.\n[0:25] What goes up and down but does not move?"
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0019.jpg",
+        "frame_0020.jpg",
+        "frame_0021.jpg",
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[0:25] What goes up and down but does not move?\n[0:32] Stairs.\n[0:34] Marvin, turn off the lights."
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg",
+        "frame_0027.jpg",
+        "frame_0028.jpg",
+        "frame_0029.jpg",
+        "frame_0030.jpg"
+      ],
+      "transcript": "[0:40] Okay.\n[0:42] Hey everyone.\n[0:43] So, if you've been playing along at home, you'll have known that we've been building towards something.\n[0:49] We've covered getting audio into the ESP32, getting audio out of the ESP32, and we've looked at getting some AI running using TensorFlow Lite."
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0031.jpg",
+        "frame_0032.jpg",
+        "frame_0033.jpg",
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[0:49] We've covered getting audio into the ESP32, getting audio out of the ESP32, and we've looked at getting some AI running using TensorFlow Lite."
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg",
+        "frame_0039.jpg",
+        "frame_0040.jpg",
+        "frame_0041.jpg",
+        "frame_0042.jpg"
+      ],
+      "transcript": "[0:49] We've covered getting audio into the ESP32, getting audio out of the ESP32, and we've looked at getting some AI running using TensorFlow Lite.\n[1:01] This has all been building towards building an Alexa type system.\n[1:06] So what actually is an Alexa system?\n[1:09] What components do we need to plug together to get something working?"
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0043.jpg",
+        "frame_0044.jpg",
+        "frame_0045.jpg",
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[1:09] What components do we need to plug together to get something working?\n[1:12] So, the first thing we're going to need is some kind of wake word detection system.\n[1:19] This will continuously listen to audio waiting for a trigger phrase or word."
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg",
+        "frame_0051.jpg",
+        "frame_0052.jpg",
+        "frame_0053.jpg",
+        "frame_0054.jpg"
+      ],
+      "transcript": "[1:19] This will continuously listen to audio waiting for a trigger phrase or word.\n[1:25] When it hears this word, it will wake up the rest of the system and start recording audio to capture whatever instructions the user has."
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0055.jpg",
+        "frame_0056.jpg",
+        "frame_0057.jpg",
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[1:25] When it hears this word, it will wake up the rest of the system and start recording audio to capture whatever instructions the user has.\n[1:34] Once the audio has been captured, it will send it off to a server to be recognised.\n[1:38] The server processes the audio and works out what the user is asking for."
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg",
+        "frame_0063.jpg",
+        "frame_0064.jpg",
+        "frame_0065.jpg",
+        "frame_0066.jpg"
+      ],
+      "transcript": "[1:38] The server processes the audio and works out what the user is asking for.\n[1:44] The server may process the user's request and may trigger actions in other services.\n[1:48] In the system we're building, we'll just be using the server to work out what the user's intention was."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0067.jpg",
+        "frame_0068.jpg",
+        "frame_0069.jpg",
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[1:48] In the system we're building, we'll just be using the server to work out what the user's intention was.\n[1:55] This intention is then sent back to the device and the device tries to perform what the user asked it to do."
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg",
+        "frame_0075.jpg",
+        "frame_0076.jpg",
+        "frame_0077.jpg",
+        "frame_0078.jpg"
+      ],
+      "transcript": "[1:55] This intention is then sent back to the device and the device tries to perform what the user asked it to do.\n[2:02] So we need three components.\n[2:03] A wake word detection.\n[2:06] Audio capture and intent recognition.\n[2:09] And intent execution."
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0079.jpg",
+        "frame_0080.jpg",
+        "frame_0081.jpg",
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[2:09] And intent execution.\n[2:12] Let's start off with the wake word detection.\n[2:17] We're going to be using TensorFlow Lite for our wake word detection."
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg",
+        "frame_0087.jpg",
+        "frame_0088.jpg",
+        "frame_0089.jpg",
+        "frame_0090.jpg"
+      ],
+      "transcript": "[2:17] We're going to be using TensorFlow Lite for our wake word detection.\n[2:22] And as with any machine learning problem, our first port of call is to find some data to train against.\n[2:27] Now fortunately the good folk at Google have already done the heavy lifting for us and collated a speech commands dataset."
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0091.jpg",
+        "frame_0092.jpg",
+        "frame_0093.jpg",
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[2:27] Now fortunately the good folk at Google have already done the heavy lifting for us and collated a speech commands dataset.\n[2:38] So this dataset contains over 100,000 audio files consisting of a set of 20 core command words such as"
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg",
+        "frame_0099.jpg",
+        "frame_0100.jpg",
+        "frame_0101.jpg",
+        "frame_0102.jpg"
+      ],
+      "transcript": "[2:38] So this dataset contains over 100,000 audio files consisting of a set of 20 core command words such as\n[2:46] up, down, left, right, yes, no and a set of extra words."
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0103.jpg",
+        "frame_0104.jpg",
+        "frame_0105.jpg",
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[2:46] up, down, left, right, yes, no and a set of extra words.\n[2:52] Each of the samples is one second long.\n[2:54] There's one word in particular that looks like a good candidate for a wake word.\n[2:59] I've chosen to use the word Marvin as my wake word."
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg",
+        "frame_0111.jpg",
+        "frame_0112.jpg",
+        "frame_0113.jpg",
+        "frame_0114.jpg"
+      ],
+      "transcript": "[2:59] I've chosen to use the word Marvin as my wake word.\n[3:03] Oh god, I'm so depressed.\n[3:07] Let's have a listen to a couple of the files.\n[3:09] Marvin"
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0115.jpg",
+        "frame_0116.jpg",
+        "frame_0117.jpg",
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[3:09] Marvin\n[3:10] Marvin\n[3:13] Marvin\n[3:15] Marvin\n[3:17] Marvin\n[3:19] Seven"
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg",
+        "frame_0123.jpg",
+        "frame_0124.jpg",
+        "frame_0125.jpg",
+        "frame_0126.jpg"
+      ],
+      "transcript": "[3:19] Seven\n[3:20] Seven\n[3:22] Seven\n[3:24] Seven\n[3:26] I've also recorded a large sample of ambient background noise consisting of TV,"
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0127.jpg",
+        "frame_0128.jpg",
+        "frame_0129.jpg",
+        "frame_0130.jpg",
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[3:26] I've also recorded a large sample of ambient background noise consisting of TV,\n[3:33] radio shows and general office noise.\n[3:37] So now we've got our training data we need to work out what features to train our neural network against."
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg",
+        "frame_0135.jpg",
+        "frame_0136.jpg",
+        "frame_0137.jpg",
+        "frame_0138.jpg"
+      ],
+      "transcript": "[3:37] So now we've got our training data we need to work out what features to train our neural network against.\n[3:43] It's not likely that feeding in raw audio samples will give us a good result.\n[3:48] So reading around and looking at some TensorFlow samples"
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0139.jpg",
+        "frame_0140.jpg",
+        "frame_0141.jpg",
+        "frame_0142.jpg",
+        "frame_0143.jpg",
+        "frame_0144.jpg"
+      ],
+      "transcript": "[3:48] So reading around and looking at some TensorFlow samples\n[3:52] A good approach seems to be to treat the problem as an image recognition problem.\n[3:58] We need to turn our audio samples into something that looks like an image."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0145.jpg",
+        "frame_0146.jpg",
+        "frame_0147.jpg",
+        "frame_0148.jpg",
+        "frame_0149.jpg",
+        "frame_0150.jpg"
+      ],
+      "transcript": "[3:58] We need to turn our audio samples into something that looks like an image.\n[4:02] To do this we can take a spectrogram of the audio sample.\n[4:07] To get a spectrum of an audio sample we break the sample into small sections."
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0151.jpg",
+        "frame_0152.jpg",
+        "frame_0153.jpg",
+        "frame_0154.jpg",
+        "frame_0155.jpg",
+        "frame_0156.jpg"
+      ],
+      "transcript": "[4:07] To get a spectrum of an audio sample we break the sample into small sections.\n[4:12] We then perform a discrete Fourier transform on each of these sections.\n[4:17] This gives us the frequencies that are present in that slice of audio."
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0157.jpg",
+        "frame_0158.jpg",
+        "frame_0159.jpg",
+        "frame_0160.jpg",
+        "frame_0161.jpg",
+        "frame_0162.jpg"
+      ],
+      "transcript": "[4:17] This gives us the frequencies that are present in that slice of audio.\n[4:22] Putting these frequency slices together gives us a spectrogram of the sample."
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0163.jpg",
+        "frame_0164.jpg",
+        "frame_0165.jpg",
+        "frame_0166.jpg",
+        "frame_0167.jpg",
+        "frame_0168.jpg"
+      ],
+      "transcript": "[4:22] Putting these frequency slices together gives us a spectrogram of the sample.\n[4:30] Now I've created a Jupyter notebook to create the training data.\n[4:35] As always the first thing we do is import the libraries we're going to need and set up some\n[4:39] constants."
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0169.jpg",
+        "frame_0170.jpg",
+        "frame_0171.jpg",
+        "frame_0172.jpg",
+        "frame_0173.jpg",
+        "frame_0174.jpg"
+      ],
+      "transcript": "[4:39] constants.\n[4:40] We've got a list of words in our training data along with a dummy word for the background\n[4:44] noise.\n[4:45] I've made some helper functions for getting all the files for a word and also for detecting"
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0175.jpg",
+        "frame_0176.jpg",
+        "frame_0177.jpg",
+        "frame_0178.jpg",
+        "frame_0179.jpg",
+        "frame_0180.jpg"
+      ],
+      "transcript": "[4:45] I've made some helper functions for getting all the files for a word and also for detecting\n[4:51] if the file actually contains voice data.\n[4:54] Some of the samples are not exactly one second long and some of them have truncated audio\n[4:59] data."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0181.jpg",
+        "frame_0182.jpg",
+        "frame_0183.jpg",
+        "frame_0184.jpg",
+        "frame_0185.jpg",
+        "frame_0186.jpg"
+      ],
+      "transcript": "[4:59] data.\n[5:01] We then have our function for generating the spectrogram for an audio sample.\n[5:06] We first make sure the audio sample is normalised and then we compute the spectrogram."
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0187.jpg",
+        "frame_0188.jpg",
+        "frame_0189.jpg",
+        "frame_0190.jpg",
+        "frame_0191.jpg",
+        "frame_0192.jpg"
+      ],
+      "transcript": "[5:06] We first make sure the audio sample is normalised and then we compute the spectrogram.\n[5:12] We reduce the result of this by applying average pooling.\n[5:16] We finally take a log of the spectrogram so that we don't feed extreme values into our"
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0193.jpg",
+        "frame_0194.jpg",
+        "frame_0195.jpg",
+        "frame_0196.jpg",
+        "frame_0197.jpg",
+        "frame_0198.jpg"
+      ],
+      "transcript": "[5:16] We finally take a log of the spectrogram so that we don't feed extreme values into our\n[5:21] neural network which might make it harder to train.\n[5:25] For each file we collect training data from we apply some random modifications."
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0199.jpg",
+        "frame_0200.jpg",
+        "frame_0201.jpg",
+        "frame_0202.jpg",
+        "frame_0203.jpg",
+        "frame_0204.jpg"
+      ],
+      "transcript": "[5:25] For each file we collect training data from we apply some random modifications.\n[5:30] We randomly shift the audio sample in its one second segment.\n[5:34] This makes sure that our neural network generalises around the audio position.\n[5:39] We also add in some random sample of background noise."
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0205.jpg",
+        "frame_0206.jpg",
+        "frame_0207.jpg",
+        "frame_0208.jpg",
+        "frame_0209.jpg",
+        "frame_0210.jpg"
+      ],
+      "transcript": "[5:39] We also add in some random sample of background noise.\n[5:43] This helps our neural network work out the unique features of our target word and ignore\n[5:48] any background noise."
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0211.jpg",
+        "frame_0212.jpg",
+        "frame_0213.jpg",
+        "frame_0214.jpg",
+        "frame_0215.jpg",
+        "frame_0216.jpg"
+      ],
+      "transcript": "[5:48] any background noise.\n[5:51] Now we need to add more samples of the Marvin word to our dataset as it would otherwise be\n[5:56] swamped by the other words in our training data.\n[5:59] So we repeat it multiple times."
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0217.jpg",
+        "frame_0218.jpg",
+        "frame_0219.jpg",
+        "frame_0220.jpg",
+        "frame_0221.jpg",
+        "frame_0222.jpg"
+      ],
+      "transcript": "[5:59] So we repeat it multiple times.\n[6:02] This also helps our neural network generalise as there will be multiple samples of the word\n[6:06] different background noise and in different positions in the one second sample."
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0223.jpg",
+        "frame_0224.jpg",
+        "frame_0225.jpg",
+        "frame_0226.jpg",
+        "frame_0227.jpg",
+        "frame_0228.jpg"
+      ],
+      "transcript": "[6:06] different background noise and in different positions in the one second sample.\n[6:13] We then add in samples from our background noise.\n[6:16] We run through each file of background noise and chop it into one second segments."
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0229.jpg",
+        "frame_0230.jpg",
+        "frame_0231.jpg",
+        "frame_0232.jpg",
+        "frame_0233.jpg",
+        "frame_0234.jpg"
+      ],
+      "transcript": "[6:16] We run through each file of background noise and chop it into one second segments.\n[6:21] And then we also generate some random utterances from our background noise.\n[6:25] Once again this should help our network distinguish between the word Marvin and random noises."
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0235.jpg",
+        "frame_0236.jpg",
+        "frame_0237.jpg",
+        "frame_0238.jpg",
+        "frame_0239.jpg",
+        "frame_0240.jpg"
+      ],
+      "transcript": "[6:25] Once again this should help our network distinguish between the word Marvin and random noises.\n[6:32] Now during my testing of the system I found that there were some particular noises that\n[6:36] seem to trigger false detection of the word Marvin.\n[6:39] These seem to consist of low frequency humming and strange scraping sounds."
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0241.jpg",
+        "frame_0242.jpg",
+        "frame_0243.jpg",
+        "frame_0244.jpg",
+        "frame_0245.jpg",
+        "frame_0246.jpg"
+      ],
+      "transcript": "[6:39] These seem to consist of low frequency humming and strange scraping sounds.\n[6:45] So I've collected some of these sounds as more negative samples for the training process."
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0247.jpg",
+        "frame_0248.jpg",
+        "frame_0249.jpg",
+        "frame_0250.jpg",
+        "frame_0251.jpg",
+        "frame_0252.jpg"
+      ],
+      "transcript": "[6:45] So I've collected some of these sounds as more negative samples for the training process.\n[6:51] With all this data we end up with a reasonably sized training validation and testing dataset.\n[6:57] So we can save this to disk for use in our training workbook."
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0253.jpg",
+        "frame_0254.jpg",
+        "frame_0255.jpg",
+        "frame_0256.jpg",
+        "frame_0257.jpg",
+        "frame_0258.jpg"
+      ],
+      "transcript": "[6:57] So we can save this to disk for use in our training workbook.\n[7:01] We can also have a look at the spectrograms for different words in our training data.\n[7:05] So here's some examples of Marvin.\n[7:09] And here's some examples of the word yes."
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0259.jpg",
+        "frame_0260.jpg",
+        "frame_0261.jpg",
+        "frame_0262.jpg",
+        "frame_0263.jpg",
+        "frame_0264.jpg"
+      ],
+      "transcript": "[7:09] And here's some examples of the word yes.\n[7:14] So that's our training data prepared.\n[7:16] Let's have a look at how we train our model up."
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0265.jpg",
+        "frame_0266.jpg",
+        "frame_0267.jpg",
+        "frame_0268.jpg",
+        "frame_0269.jpg",
+        "frame_0270.jpg"
+      ],
+      "transcript": "[7:16] Let's have a look at how we train our model up.\n[7:20] I've created another Jupyter notebook for training our model.\n[7:24] Once again we have to pull in the imports we need.\n[7:28] We also set up TensorBoard so that we can visualise the training of our model."
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0271.jpg",
+        "frame_0272.jpg",
+        "frame_0273.jpg",
+        "frame_0274.jpg",
+        "frame_0275.jpg",
+        "frame_0276.jpg"
+      ],
+      "transcript": "[7:28] We also set up TensorBoard so that we can visualise the training of our model.\n[7:33] We've got our list of words.\n[7:35] It's important that this is in the same order as in the training workbook."
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0277.jpg",
+        "frame_0278.jpg",
+        "frame_0279.jpg",
+        "frame_0280.jpg",
+        "frame_0281.jpg",
+        "frame_0282.jpg"
+      ],
+      "transcript": "[7:35] It's important that this is in the same order as in the training workbook.\n[7:40] And we have the code to load up our training data.\n[7:43] If we plot a histogram of the training data you can see that we have a lot of examples"
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0283.jpg",
+        "frame_0284.jpg",
+        "frame_0285.jpg",
+        "frame_0286.jpg",
+        "frame_0287.jpg",
+        "frame_0288.jpg"
+      ],
+      "transcript": "[7:43] If we plot a histogram of the training data you can see that we have a lot of examples\n[7:50] of the word at position 16 and quite a few at position 35.\n[7:56] Combining this with our words we can see that this matches up to the word Marvin and to our"
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0289.jpg",
+        "frame_0290.jpg",
+        "frame_0291.jpg",
+        "frame_0292.jpg",
+        "frame_0293.jpg",
+        "frame_0294.jpg"
+      ],
+      "transcript": "[7:56] Combining this with our words we can see that this matches up to the word Marvin and to our\n[8:02] background noise.\n[8:03] Now for our system we only really care about detecting the word Marvin so we'll modify\n[8:09] our y labels so that it contains a 1 for Marvin and a 0 for everything else."
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0295.jpg",
+        "frame_0296.jpg",
+        "frame_0297.jpg",
+        "frame_0298.jpg",
+        "frame_0299.jpg",
+        "frame_0300.jpg"
+      ],
+      "transcript": "[8:09] our y labels so that it contains a 1 for Marvin and a 0 for everything else.\n[8:16] Plotting another histogram we can see that we now have a fairly balanced set of training"
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0301.jpg",
+        "frame_0302.jpg",
+        "frame_0303.jpg",
+        "frame_0304.jpg",
+        "frame_0305.jpg",
+        "frame_0306.jpg"
+      ],
+      "transcript": "[8:16] Plotting another histogram we can see that we now have a fairly balanced set of training\n[8:20] data with examples of our positive and negative classes.\n[8:24] We can now feed our data into TensorFlow datasets.\n[8:29] We set up our training data to repeat forever, randomly shuffle and to come out in batches."
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0307.jpg",
+        "frame_0308.jpg",
+        "frame_0309.jpg",
+        "frame_0310.jpg",
+        "frame_0311.jpg",
+        "frame_0312.jpg"
+      ],
+      "transcript": "[8:29] We set up our training data to repeat forever, randomly shuffle and to come out in batches.\n[8:37] Now we create our model.\n[8:39] I've played around with a few different model architectures and ended up with this as a trade-off"
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0313.jpg",
+        "frame_0314.jpg",
+        "frame_0315.jpg",
+        "frame_0316.jpg",
+        "frame_0317.jpg",
+        "frame_0318.jpg"
+      ],
+      "transcript": "[8:39] I've played around with a few different model architectures and ended up with this as a trade-off\n[8:44] between time to train, accuracy and model size.\n[8:48] We have a convolution layer followed by a max pooling layer."
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0319.jpg",
+        "frame_0320.jpg",
+        "frame_0321.jpg",
+        "frame_0322.jpg",
+        "frame_0323.jpg",
+        "frame_0324.jpg"
+      ],
+      "transcript": "[8:48] We have a convolution layer followed by a max pooling layer.\n[8:53] We have a convolution layer followed by another convolution layer with a max pooling layer\n[8:57] and the result of this is fed into a densely connected layer and finally to our output neuron."
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0325.jpg",
+        "frame_0326.jpg",
+        "frame_0327.jpg",
+        "frame_0328.jpg",
+        "frame_0329.jpg",
+        "frame_0330.jpg"
+      ],
+      "transcript": "[8:57] and the result of this is fed into a densely connected layer and finally to our output neuron.\n[9:04] Looking at the summary of our model we can see how many parameters it has.\n[9:09] This gives us a fairly good indication of how large the model will be when we convert it"
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0331.jpg",
+        "frame_0332.jpg",
+        "frame_0333.jpg",
+        "frame_0334.jpg",
+        "frame_0335.jpg",
+        "frame_0336.jpg"
+      ],
+      "transcript": "[9:09] This gives us a fairly good indication of how large the model will be when we convert it\n[9:14] to TensorFlow Lite.\n[9:16] Finally, we compile our model, set up the tensorboard logging and kick off the training."
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0337.jpg",
+        "frame_0338.jpg",
+        "frame_0339.jpg",
+        "frame_0340.jpg",
+        "frame_0341.jpg",
+        "frame_0342.jpg"
+      ],
+      "transcript": "[9:16] Finally, we compile our model, set up the tensorboard logging and kick off the training.\n[9:22] With our training completed we can now take a look at how well it has performed."
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0343.jpg",
+        "frame_0344.jpg",
+        "frame_0345.jpg",
+        "frame_0346.jpg",
+        "frame_0347.jpg",
+        "frame_0348.jpg"
+      ],
+      "transcript": "[9:22] With our training completed we can now take a look at how well it has performed.\n[9:31] Looking at the tensorboard we can see that our training performance is pretty close to\n[9:35] our validation performance.\n[9:36] There is a bit of noise on the unsmoothed lines.\n[9:39] Ideally we should probably try and increase the size of our training and validation data."
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0349.jpg",
+        "frame_0350.jpg",
+        "frame_0351.jpg",
+        "frame_0352.jpg",
+        "frame_0353.jpg",
+        "frame_0354.jpg"
+      ],
+      "transcript": "[9:39] Ideally we should probably try and increase the size of our training and validation data.\n[9:45] Let's see how well it does on the testing dataset.\n[9:47] I'm going to use the best model that was found during training and work from that."
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0355.jpg",
+        "frame_0356.jpg",
+        "frame_0357.jpg",
+        "frame_0358.jpg",
+        "frame_0359.jpg",
+        "frame_0360.jpg"
+      ],
+      "transcript": "[9:47] I'm going to use the best model that was found during training and work from that.\n[9:53] You can see that we get pretty good results.\n[9:56] Checking the confusion matrix we can see how many false positives and how many false negatives"
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0361.jpg",
+        "frame_0362.jpg",
+        "frame_0363.jpg",
+        "frame_0364.jpg",
+        "frame_0365.jpg",
+        "frame_0366.jpg"
+      ],
+      "transcript": "[9:56] Checking the confusion matrix we can see how many false positives and how many false negatives\n[10:01] we get.\n[10:02] These are pretty good results as well.\n[10:04] I would rather get more false positives than false negatives as we don't want to be randomly\n[10:09] waking up from background noises."
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0367.jpg",
+        "frame_0368.jpg",
+        "frame_0369.jpg",
+        "frame_0370.jpg",
+        "frame_0371.jpg",
+        "frame_0372.jpg"
+      ],
+      "transcript": "[10:09] waking up from background noises.\n[10:11] Let's try it with a higher threshold and see how that performs.\n[10:16] This is probably what we will go for in our code.\n[10:19] We will get a lot more false negatives but also far fewer false positives."
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0373.jpg",
+        "frame_0374.jpg",
+        "frame_0375.jpg",
+        "frame_0376.jpg",
+        "frame_0377.jpg",
+        "frame_0378.jpg"
+      ],
+      "transcript": "[10:19] We will get a lot more false negatives but also far fewer false positives.\n[10:25] So as we don't seem to be overfitting I am happy to train the model on our complete dataset."
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0379.jpg",
+        "frame_0380.jpg",
+        "frame_0381.jpg",
+        "frame_0382.jpg",
+        "frame_0383.jpg",
+        "frame_0384.jpg"
+      ],
+      "transcript": "[10:25] So as we don't seem to be overfitting I am happy to train the model on our complete dataset.\n[10:31] We will get a lot of training, validation and testing all combined into one large dataset."
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0385.jpg",
+        "frame_0386.jpg",
+        "frame_0387.jpg",
+        "frame_0388.jpg",
+        "frame_0389.jpg",
+        "frame_0390.jpg"
+      ],
+      "transcript": "[10:31] We will get a lot of training, validation and testing all combined into one large dataset.\n[10:44] Let's see how this performs on all our data.\n[10:47] Once again we have pretty good results."
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0391.jpg",
+        "frame_0392.jpg",
+        "frame_0393.jpg",
+        "frame_0394.jpg",
+        "frame_0395.jpg",
+        "frame_0396.jpg"
+      ],
+      "transcript": "[10:47] Once again we have pretty good results.\n[10:50] Our next step is to convert the model to TensorFlow Lite for use on the ESP32.\n[10:57] So let's jump into another workbook for this."
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0397.jpg",
+        "frame_0398.jpg",
+        "frame_0399.jpg",
+        "frame_0400.jpg",
+        "frame_0401.jpg",
+        "frame_0402.jpg"
+      ],
+      "transcript": "[10:57] So let's jump into another workbook for this.\n[11:00] We have our imports to bring in TensorFlow and NumPy.\n[11:03] We are also going to need our data.\n[11:06] We need this so that the converter can quantize our model accurately."
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0403.jpg",
+        "frame_0404.jpg",
+        "frame_0405.jpg",
+        "frame_0406.jpg",
+        "frame_0407.jpg",
+        "frame_0408.jpg"
+      ],
+      "transcript": "[11:06] We need this so that the converter can quantize our model accurately.\n[11:12] Once the model has been converted we can run a command line tool to generate the C code.\n[11:17] We can now compile that into our project."
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0409.jpg",
+        "frame_0410.jpg",
+        "frame_0411.jpg",
+        "frame_0412.jpg",
+        "frame_0413.jpg",
+        "frame_0414.jpg"
+      ],
+      "transcript": "[11:17] We can now compile that into our project.\n[11:21] We'll take a look at the wake word detection code on the ESP side of things later.\n[11:26] Next we need to get to another building block.\n[11:29] Once we've detected the wake word we need to record some audio and work out what the user"
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0415.jpg",
+        "frame_0416.jpg",
+        "frame_0417.jpg",
+        "frame_0418.jpg",
+        "frame_0419.jpg",
+        "frame_0420.jpg"
+      ],
+      "transcript": "[11:29] Once we've detected the wake word we need to record some audio and work out what the user\n[11:34] wants us to do.\n[11:35] We're going to need something that can understand speech."
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0421.jpg",
+        "frame_0422.jpg",
+        "frame_0423.jpg",
+        "frame_0424.jpg",
+        "frame_0425.jpg",
+        "frame_0426.jpg"
+      ],
+      "transcript": "[11:35] We're going to need something that can understand speech.\n[11:41] So to do the heavy lifting of actually recognising the text we're going to be using a service\n[11:47] from Facebook called Wit AI."
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0427.jpg",
+        "frame_0428.jpg",
+        "frame_0429.jpg",
+        "frame_0430.jpg",
+        "frame_0431.jpg",
+        "frame_0432.jpg"
+      ],
+      "transcript": "[11:47] from Facebook called Wit AI.\n[11:51] So this is a free service that will analyse speech and work out what the intention is behind\n[11:58] the speech.\n[11:59] So we'll log in using Facebook."
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0433.jpg",
+        "frame_0434.jpg",
+        "frame_0435.jpg",
+        "frame_0436.jpg",
+        "frame_0437.jpg",
+        "frame_0438.jpg"
+      ],
+      "transcript": "[11:59] So we'll log in using Facebook.\n[12:07] And then the first thing we need to do is create a new application."
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0439.jpg",
+        "frame_0440.jpg",
+        "frame_0441.jpg",
+        "frame_0442.jpg",
+        "frame_0443.jpg",
+        "frame_0444.jpg"
+      ],
+      "transcript": "[12:07] And then the first thing we need to do is create a new application.\n[12:12] So let's just call this marty1.\n[12:17] We'll make it private for now."
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0445.jpg",
+        "frame_0446.jpg",
+        "frame_0447.jpg",
+        "frame_0448.jpg",
+        "frame_0449.jpg",
+        "frame_0450.jpg"
+      ],
+      "transcript": "[12:17] We'll make it private for now.\n[12:20] And we'll create.\n[12:21] So now we need to train our application to work out what it is we're trying to do."
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0451.jpg",
+        "frame_0452.jpg",
+        "frame_0453.jpg",
+        "frame_0454.jpg",
+        "frame_0455.jpg",
+        "frame_0456.jpg"
+      ],
+      "transcript": "[12:21] So now we need to train our application to work out what it is we're trying to do.\n[12:30] So let's add a few sample phrases.\n[12:32] So let's try turning something on.\n[12:39] So we need to create an intent."
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0457.jpg",
+        "frame_0458.jpg",
+        "frame_0459.jpg",
+        "frame_0460.jpg",
+        "frame_0461.jpg",
+        "frame_0462.jpg"
+      ],
+      "transcript": "[12:39] So we need to create an intent.\n[12:49] And then we need to start highlighting some of the bits of text."
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0463.jpg",
+        "frame_0464.jpg",
+        "frame_0465.jpg",
+        "frame_0466.jpg",
+        "frame_0467.jpg",
+        "frame_0468.jpg"
+      ],
+      "transcript": "[12:49] And then we need to start highlighting some of the bits of text.\n[12:53] So let's try and pull out the device that we're trying to turn on.\n[12:58] So I'll create an entity."
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0469.jpg",
+        "frame_0470.jpg",
+        "frame_0471.jpg",
+        "frame_0472.jpg",
+        "frame_0473.jpg",
+        "frame_0474.jpg"
+      ],
+      "transcript": "[12:58] So I'll create an entity.\n[13:01] So now we have an entity called device.\n[13:04] And we've highlighted bedroom as the piece of text that should correspond to that device."
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0475.jpg",
+        "frame_0476.jpg",
+        "frame_0477.jpg",
+        "frame_0478.jpg",
+        "frame_0479.jpg",
+        "frame_0480.jpg"
+      ],
+      "transcript": "[13:04] And we've highlighted bedroom as the piece of text that should correspond to that device.\n[13:10] And now we can add a trait for on and off.\n[13:13] So this is a built-in trait that's supplied by Wit.\n[13:17] And we want to say that this should be turned on."
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0481.jpg",
+        "frame_0482.jpg",
+        "frame_0483.jpg",
+        "frame_0484.jpg",
+        "frame_0485.jpg",
+        "frame_0486.jpg"
+      ],
+      "transcript": "[13:17] And we want to say that this should be turned on.\n[13:21] So let's train this.\n[13:24] And now let's try adding another piece of text."
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0487.jpg",
+        "frame_0488.jpg",
+        "frame_0489.jpg",
+        "frame_0490.jpg",
+        "frame_0491.jpg",
+        "frame_0492.jpg"
+      ],
+      "transcript": "[13:24] And now let's try adding another piece of text.\n[13:31] So you can see that it's worked out the device already.\n[13:37] And it's worked out the value should be off."
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0493.jpg",
+        "frame_0494.jpg",
+        "frame_0495.jpg",
+        "frame_0496.jpg",
+        "frame_0497.jpg",
+        "frame_0498.jpg"
+      ],
+      "transcript": "[13:37] And it's worked out the value should be off.\n[13:40] So let's add that to our turn off and on intent.\n[13:47] Let's try adding another one.\n[13:49] So let's try turn on the kitchen."
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0499.jpg",
+        "frame_0500.jpg",
+        "frame_0501.jpg",
+        "frame_0502.jpg",
+        "frame_0503.jpg",
+        "frame_0504.jpg"
+      ],
+      "transcript": "[13:49] So let's try turn on the kitchen.\n[13:54] So it's worked out that it's an on-off trait.\n[13:57] And it's worked out on.\n[13:59] And then let's highlight this and tell it that's the device."
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0505.jpg",
+        "frame_0506.jpg",
+        "frame_0507.jpg",
+        "frame_0508.jpg",
+        "frame_0509.jpg",
+        "frame_0510.jpg"
+      ],
+      "transcript": "[13:59] And then let's highlight this and tell it that's the device.\n[14:03] And we'll train that as well.\n[14:05] So let's try another one."
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0511.jpg",
+        "frame_0512.jpg",
+        "frame_0513.jpg",
+        "frame_0514.jpg",
+        "frame_0515.jpg",
+        "frame_0516.jpg"
+      ],
+      "transcript": "[14:05] So let's try another one.\n[14:10] Turn off the kitchen.\n[14:12] So it's improved its understanding.\n[14:16] Now it can see the device is kitchen and the trait is off."
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0517.jpg",
+        "frame_0518.jpg",
+        "frame_0519.jpg",
+        "frame_0520.jpg",
+        "frame_0521.jpg",
+        "frame_0522.jpg"
+      ],
+      "transcript": "[14:16] Now it can see the device is kitchen and the trait is off.\n[14:20] So let's try and validate that.\n[14:22] Now you can keep adding more utterances to improve the performance of your application.\n[14:28] But I think for now that should be enough for our use case."
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0523.jpg",
+        "frame_0524.jpg",
+        "frame_0525.jpg",
+        "frame_0526.jpg",
+        "frame_0527.jpg",
+        "frame_0528.jpg"
+      ],
+      "transcript": "[14:28] But I think for now that should be enough for our use case.\n[14:32] So let's try this out with some real text.\n[14:37] So I've made some sample utterances and recorded them to WAV files."
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0529.jpg",
+        "frame_0530.jpg",
+        "frame_0531.jpg",
+        "frame_0532.jpg",
+        "frame_0533.jpg",
+        "frame_0534.jpg"
+      ],
+      "transcript": "[14:37] So I've made some sample utterances and recorded them to WAV files.\n[14:43] So I have a turn off, a turn on, and another example turn on.\n[14:49] So let's have a quick listen to these files."
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 900,
+      "frames": [
+        "frame_0535.jpg",
+        "frame_0536.jpg",
+        "frame_0537.jpg",
+        "frame_0538.jpg",
+        "frame_0539.jpg",
+        "frame_0540.jpg"
+      ],
+      "transcript": "[14:49] So let's have a quick listen to these files.\n[14:52] So turn off.\n[14:54] Turn off the bedroom.\n[14:56] So hopefully that should turn off the bedroom.\n[14:59] So let's try running this through wit."
+    },
+    {
+      "segment_index": 91,
+      "start_time": 900,
+      "end_time": 910,
+      "frames": [
+        "frame_0541.jpg",
+        "frame_0542.jpg",
+        "frame_0543.jpg",
+        "frame_0544.jpg",
+        "frame_0545.jpg",
+        "frame_0546.jpg"
+      ],
+      "transcript": "[14:59] So let's try running this through wit.\n[15:03] So I have a curl command here that will post up the WAV file to the backend service."
+    },
+    {
+      "segment_index": 92,
+      "start_time": 910,
+      "end_time": 920,
+      "frames": [
+        "frame_0547.jpg",
+        "frame_0548.jpg",
+        "frame_0549.jpg",
+        "frame_0550.jpg",
+        "frame_0551.jpg",
+        "frame_0552.jpg"
+      ],
+      "transcript": "[15:03] So I have a curl command here that will post up the WAV file to the backend service.\n[15:15] So you can see it's detected that the device is bedroom."
+    },
+    {
+      "segment_index": 93,
+      "start_time": 920,
+      "end_time": 930,
+      "frames": [
+        "frame_0553.jpg",
+        "frame_0554.jpg",
+        "frame_0555.jpg",
+        "frame_0556.jpg",
+        "frame_0557.jpg",
+        "frame_0558.jpg"
+      ],
+      "transcript": "[15:15] So you can see it's detected that the device is bedroom.\n[15:21] And it's detected that we want to turn off the bedroom.\n[15:24] So let's try another one.\n[15:26] So we'll try turn on."
+    },
+    {
+      "segment_index": 94,
+      "start_time": 930,
+      "end_time": 940,
+      "frames": [
+        "frame_0559.jpg",
+        "frame_0560.jpg",
+        "frame_0561.jpg",
+        "frame_0562.jpg",
+        "frame_0563.jpg",
+        "frame_0564.jpg"
+      ],
+      "transcript": "[15:26] So we'll try turn on.\n[15:31] Turn on the light.\n[15:34] So this should turn on the light.\n[15:37] So let's try that.\n[15:39] So we can see once again it's detected the device."
+    },
+    {
+      "segment_index": 95,
+      "start_time": 940,
+      "end_time": 950,
+      "frames": [
+        "frame_0565.jpg",
+        "frame_0566.jpg",
+        "frame_0567.jpg",
+        "frame_0568.jpg",
+        "frame_0569.jpg",
+        "frame_0570.jpg"
+      ],
+      "transcript": "[15:39] So we can see once again it's detected the device.\n[15:46] It tells us that it's the light."
+    },
+    {
+      "segment_index": 96,
+      "start_time": 950,
+      "end_time": 960,
+      "frames": [
+        "frame_0571.jpg",
+        "frame_0572.jpg",
+        "frame_0573.jpg",
+        "frame_0574.jpg",
+        "frame_0575.jpg",
+        "frame_0576.jpg"
+      ],
+      "transcript": "[15:46] It tells us that it's the light.\n[15:50] It's found the intent, turn on device.\n[15:52] But it says we want to turn it on.\n[15:54] So let's try our last sample.\n[15:58] So turn on two.\n[15:59] Turn on bedroom."
+    },
+    {
+      "segment_index": 97,
+      "start_time": 960,
+      "end_time": 970,
+      "frames": [
+        "frame_0577.jpg",
+        "frame_0578.jpg",
+        "frame_0579.jpg",
+        "frame_0580.jpg",
+        "frame_0581.jpg",
+        "frame_0582.jpg"
+      ],
+      "transcript": "[15:59] Turn on bedroom.\n[16:03] So this should turn on the bedroom as well.\n[16:06] So let's check that works.\n[16:07] So yeah.\n[16:08] So it's found the device and it's worked out."
+    },
+    {
+      "segment_index": 98,
+      "start_time": 970,
+      "end_time": 980,
+      "frames": [
+        "frame_0583.jpg",
+        "frame_0584.jpg",
+        "frame_0585.jpg",
+        "frame_0586.jpg",
+        "frame_0587.jpg",
+        "frame_0588.jpg"
+      ],
+      "transcript": "[16:08] So it's found the device and it's worked out."
+    },
+    {
+      "segment_index": 99,
+      "start_time": 980,
+      "end_time": 990,
+      "frames": [
+        "frame_0589.jpg",
+        "frame_0590.jpg",
+        "frame_0591.jpg",
+        "frame_0592.jpg",
+        "frame_0593.jpg",
+        "frame_0594.jpg"
+      ],
+      "transcript": "[16:08] So it's found the device and it's worked out.\n[16:20] We want to turn it on.\n[16:21] So I think this wit application should work for us.\n[16:26] So let's integrate it into our code.\n[16:29] So that's our building blocks completed."
+    },
+    {
+      "segment_index": 100,
+      "start_time": 990,
+      "end_time": 1000,
+      "frames": [
+        "frame_0595.jpg",
+        "frame_0596.jpg",
+        "frame_0597.jpg",
+        "frame_0598.jpg",
+        "frame_0599.jpg",
+        "frame_0600.jpg"
+      ],
+      "transcript": "[16:29] So that's our building blocks completed.\n[16:35] We have something that will detect a wake word.\n[16:37] And we have something that will work out what the user's intention was."
+    },
+    {
+      "segment_index": 101,
+      "start_time": 1000,
+      "end_time": 1010,
+      "frames": [
+        "frame_0601.jpg",
+        "frame_0602.jpg",
+        "frame_0603.jpg",
+        "frame_0604.jpg",
+        "frame_0605.jpg",
+        "frame_0606.jpg"
+      ],
+      "transcript": "[16:37] And we have something that will work out what the user's intention was.\n[16:42] Let's have a look at how this is all wired up on the ESP32 side of things.\n[16:47] I've created a set of libraries for the main components of the project."
+    },
+    {
+      "segment_index": 102,
+      "start_time": 1010,
+      "end_time": 1020,
+      "frames": [
+        "frame_0607.jpg",
+        "frame_0608.jpg",
+        "frame_0609.jpg",
+        "frame_0610.jpg",
+        "frame_0611.jpg",
+        "frame_0612.jpg"
+      ],
+      "transcript": "[16:47] I've created a set of libraries for the main components of the project.\n[16:52] We have the TFMicro library which includes everything needed to run a TensorFlow Lite model.\n[16:58] And we have a wrapper library to make it slightly easier to use."
+    },
+    {
+      "segment_index": 103,
+      "start_time": 1020,
+      "end_time": 1030,
+      "frames": [
+        "frame_0613.jpg",
+        "frame_0614.jpg",
+        "frame_0615.jpg",
+        "frame_0616.jpg",
+        "frame_0617.jpg",
+        "frame_0618.jpg"
+      ],
+      "transcript": "[16:58] And we have a wrapper library to make it slightly easier to use.\n[17:02] Here's our trained model converted into C code.\n[17:06] And here are the functions that we'll use to communicate with it.\n[17:09] We have one to get the input buffer and another to run a prediction on the input data."
+    },
+    {
+      "segment_index": 104,
+      "start_time": 1030,
+      "end_time": 1040,
+      "frames": [
+        "frame_0619.jpg",
+        "frame_0620.jpg",
+        "frame_0621.jpg",
+        "frame_0622.jpg",
+        "frame_0623.jpg",
+        "frame_0624.jpg"
+      ],
+      "transcript": "[17:09] We have one to get the input buffer and another to run a prediction on the input data.\n[17:15] We've covered this in more detail in a previous video so I won't go into too many details on this now."
+    },
+    {
+      "segment_index": 105,
+      "start_time": 1040,
+      "end_time": 1050,
+      "frames": [
+        "frame_0625.jpg",
+        "frame_0626.jpg",
+        "frame_0627.jpg",
+        "frame_0628.jpg",
+        "frame_0629.jpg",
+        "frame_0630.jpg"
+      ],
+      "transcript": "[17:15] We've covered this in more detail in a previous video so I won't go into too many details on this now.\n[17:22] Moving on, we have a couple of helper libraries for getting audio in and out of the system.\n[17:28] We can support both I2S microphones directly and analogue microphones using the analogue to digital converter."
+    },
+    {
+      "segment_index": 106,
+      "start_time": 1050,
+      "end_time": 1060,
+      "frames": [
+        "frame_0631.jpg",
+        "frame_0632.jpg",
+        "frame_0633.jpg",
+        "frame_0634.jpg",
+        "frame_0635.jpg",
+        "frame_0636.jpg"
+      ],
+      "transcript": "[17:28] We can support both I2S microphones directly and analogue microphones using the analogue to digital converter.\n[17:37] Samples from the microphone are heading to a circular buffer with room for just over 1 seconds worth of audio."
+    },
+    {
+      "segment_index": 107,
+      "start_time": 1060,
+      "end_time": 1070,
+      "frames": [
+        "frame_0637.jpg",
+        "frame_0638.jpg",
+        "frame_0639.jpg",
+        "frame_0640.jpg",
+        "frame_0641.jpg",
+        "frame_0642.jpg"
+      ],
+      "transcript": "[17:37] Samples from the microphone are heading to a circular buffer with room for just over 1 seconds worth of audio.\n[17:45] Our audio output library supports playing WAV files from SPIFs via an I2S amplifier."
+    },
+    {
+      "segment_index": 108,
+      "start_time": 1070,
+      "end_time": 1080,
+      "frames": [
+        "frame_0643.jpg",
+        "frame_0644.jpg",
+        "frame_0645.jpg",
+        "frame_0646.jpg",
+        "frame_0647.jpg",
+        "frame_0648.jpg"
+      ],
+      "transcript": "[17:45] Our audio output library supports playing WAV files from SPIFs via an I2S amplifier.\n[17:53] We've then got our audio processing code.\n[17:56] This needs to recreate the same process that we used for our training data."
+    },
+    {
+      "segment_index": 109,
+      "start_time": 1080,
+      "end_time": 1090,
+      "frames": [
+        "frame_0649.jpg",
+        "frame_0650.jpg",
+        "frame_0651.jpg",
+        "frame_0652.jpg",
+        "frame_0653.jpg",
+        "frame_0654.jpg"
+      ],
+      "transcript": "[17:56] This needs to recreate the same process that we used for our training data.\n[18:01] The first thing we need to do is work out the mean and max values of the samples so that\n[18:05] we can normalise the audio.\n[18:08] We then step through the 1 second of audio, extracting a window of samples on each step."
+    },
+    {
+      "segment_index": 110,
+      "start_time": 1090,
+      "end_time": 1100,
+      "frames": [
+        "frame_0655.jpg",
+        "frame_0656.jpg",
+        "frame_0657.jpg",
+        "frame_0658.jpg",
+        "frame_0659.jpg",
+        "frame_0660.jpg"
+      ],
+      "transcript": "[18:08] We then step through the 1 second of audio, extracting a window of samples on each step.\n[18:14] The input samples are normalised and copied into our FFT input buffer."
+    },
+    {
+      "segment_index": 111,
+      "start_time": 1100,
+      "end_time": 1110,
+      "frames": [
+        "frame_0661.jpg",
+        "frame_0662.jpg",
+        "frame_0663.jpg",
+        "frame_0664.jpg",
+        "frame_0665.jpg",
+        "frame_0666.jpg"
+      ],
+      "transcript": "[18:14] The input samples are normalised and copied into our FFT input buffer.\n[18:20] Now the input to the FFT is a power of 2 so there is a blank area that we need to zero out.\n[18:27] Before performing the FFT we apply a hamming window and then once we have done the FFT we"
+    },
+    {
+      "segment_index": 112,
+      "start_time": 1110,
+      "end_time": 1120,
+      "frames": [
+        "frame_0667.jpg",
+        "frame_0668.jpg",
+        "frame_0669.jpg",
+        "frame_0670.jpg",
+        "frame_0671.jpg",
+        "frame_0672.jpg"
+      ],
+      "transcript": "[18:27] Before performing the FFT we apply a hamming window and then once we have done the FFT we\n[18:33] extract the energy in each frequency bin.\n[18:36] We follow that by the same average pooling process as in training and then finally we take the log."
+    },
+    {
+      "segment_index": 113,
+      "start_time": 1120,
+      "end_time": 1130,
+      "frames": [
+        "frame_0673.jpg",
+        "frame_0674.jpg",
+        "frame_0675.jpg",
+        "frame_0676.jpg",
+        "frame_0677.jpg",
+        "frame_0678.jpg"
+      ],
+      "transcript": "[18:36] We follow that by the same average pooling process as in training and then finally we take the log.\n[18:44] This gives us the set of features that our neural network is expecting to see."
+    },
+    {
+      "segment_index": 114,
+      "start_time": 1130,
+      "end_time": 1140,
+      "frames": [
+        "frame_0679.jpg",
+        "frame_0680.jpg",
+        "frame_0681.jpg",
+        "frame_0682.jpg",
+        "frame_0683.jpg",
+        "frame_0684.jpg"
+      ],
+      "transcript": "[18:44] This gives us the set of features that our neural network is expecting to see.\n[18:50] Finally we have the code for talking to WIT AI.\n[18:54] To avoid having to buffer the entire audio sample in memory we need to perform a chunked upload\n[18:59] of the data."
+    },
+    {
+      "segment_index": 115,
+      "start_time": 1140,
+      "end_time": 1150,
+      "frames": [
+        "frame_0685.jpg",
+        "frame_0686.jpg",
+        "frame_0687.jpg",
+        "frame_0688.jpg",
+        "frame_0689.jpg",
+        "frame_0690.jpg"
+      ],
+      "transcript": "[18:59] of the data.\n[19:01] We create a connection to WIT AI and then upload the chunks of data until we have collected\n[19:06] sufficient audio to capture the user's command."
+    },
+    {
+      "segment_index": 116,
+      "start_time": 1150,
+      "end_time": 1160,
+      "frames": [
+        "frame_0691.jpg",
+        "frame_0692.jpg",
+        "frame_0693.jpg",
+        "frame_0694.jpg",
+        "frame_0695.jpg",
+        "frame_0696.jpg"
+      ],
+      "transcript": "[19:06] sufficient audio to capture the user's command.\n[19:10] We decode the results from WIT AI and extract the pieces of information that we are interested\n[19:15] in.\n[19:16] We only care about the intent, the device and whether the user wants to turn the device"
+    },
+    {
+      "segment_index": 117,
+      "start_time": 1160,
+      "end_time": 1170,
+      "frames": [
+        "frame_0697.jpg",
+        "frame_0698.jpg",
+        "frame_0699.jpg",
+        "frame_0700.jpg",
+        "frame_0701.jpg",
+        "frame_0702.jpg"
+      ],
+      "transcript": "[19:16] We only care about the intent, the device and whether the user wants to turn the device\n[19:22] on or off.\n[19:23] That's all the components of our application.\n[19:27] Let's see how these are all coordinated."
+    },
+    {
+      "segment_index": 118,
+      "start_time": 1170,
+      "end_time": 1180,
+      "frames": [
+        "frame_0703.jpg",
+        "frame_0704.jpg",
+        "frame_0705.jpg",
+        "frame_0706.jpg",
+        "frame_0707.jpg",
+        "frame_0708.jpg"
+      ],
+      "transcript": "[19:27] Let's see how these are all coordinated.\n[19:30] In our setup function we do all the normal work of setting up the serial port, connecting\n[19:35] to WiFi and starting up SPFs.\n[19:39] We configure the audio input and the audio output and we set up some devices and map them onto GPIO"
+    },
+    {
+      "segment_index": 119,
+      "start_time": 1180,
+      "end_time": 1190,
+      "frames": [
+        "frame_0709.jpg",
+        "frame_0710.jpg",
+        "frame_0711.jpg",
+        "frame_0712.jpg",
+        "frame_0713.jpg",
+        "frame_0714.jpg"
+      ],
+      "transcript": "[19:39] We configure the audio input and the audio output and we set up some devices and map them onto GPIO\n[19:45] ports.\n[19:47] Finally we create a task that will delegate onto our application class before we kick"
+    },
+    {
+      "segment_index": 120,
+      "start_time": 1190,
+      "end_time": 1200,
+      "frames": [
+        "frame_0715.jpg",
+        "frame_0716.jpg",
+        "frame_0717.jpg",
+        "frame_0718.jpg",
+        "frame_0719.jpg",
+        "frame_0720.jpg"
+      ],
+      "transcript": "[19:47] Finally we create a task that will delegate onto our application class before we kick\n[19:52] off the audio input.\n[19:56] Our application task is woken up every time the audio input fills up one of the sections"
+    },
+    {
+      "segment_index": 121,
+      "start_time": 1200,
+      "end_time": 1210,
+      "frames": [
+        "frame_0721.jpg",
+        "frame_0722.jpg",
+        "frame_0723.jpg",
+        "frame_0724.jpg",
+        "frame_0725.jpg",
+        "frame_0726.jpg"
+      ],
+      "transcript": "[19:56] Our application task is woken up every time the audio input fills up one of the sections\n[20:01] of the ring buffer.\n[20:02] Every time that happens it services the application.\n[20:08] Our application consists of a very simple state machine."
+    },
+    {
+      "segment_index": 122,
+      "start_time": 1210,
+      "end_time": 1220,
+      "frames": [
+        "frame_0727.jpg",
+        "frame_0728.jpg",
+        "frame_0729.jpg",
+        "frame_0730.jpg",
+        "frame_0731.jpg",
+        "frame_0732.jpg"
+      ],
+      "transcript": "[20:08] Our application consists of a very simple state machine.\n[20:11] We can be in one of two states.\n[20:13] We can either be waiting for the wake word or we can be recognising a command.\n[20:19] Let's have a look at the detect wake word state."
+    },
+    {
+      "segment_index": 123,
+      "start_time": 1220,
+      "end_time": 1230,
+      "frames": [
+        "frame_0733.jpg",
+        "frame_0734.jpg",
+        "frame_0735.jpg",
+        "frame_0736.jpg",
+        "frame_0737.jpg",
+        "frame_0738.jpg"
+      ],
+      "transcript": "[20:19] Let's have a look at the detect wake word state.\n[20:23] The first thing we do is get hold of the ring buffer.\n[20:27] We rewind by one seconds worth of samples and then generate the spectrogram."
+    },
+    {
+      "segment_index": 124,
+      "start_time": 1230,
+      "end_time": 1240,
+      "frames": [
+        "frame_0739.jpg",
+        "frame_0740.jpg",
+        "frame_0741.jpg",
+        "frame_0742.jpg",
+        "frame_0743.jpg",
+        "frame_0744.jpg"
+      ],
+      "transcript": "[20:27] We rewind by one seconds worth of samples and then generate the spectrogram.\n[20:32] This spectrogram is fed directly into the neural network's input buffer so we can run the\n[20:37] prediction.\n[20:39] If the neural network thinks the wake word occurred then we move onto the next state."
+    },
+    {
+      "segment_index": 125,
+      "start_time": 1240,
+      "end_time": 1250,
+      "frames": [
+        "frame_0745.jpg",
+        "frame_0746.jpg",
+        "frame_0747.jpg",
+        "frame_0748.jpg",
+        "frame_0749.jpg",
+        "frame_0750.jpg"
+      ],
+      "transcript": "[20:39] If the neural network thinks the wake word occurred then we move onto the next state.\n[20:43] Otherwise we stay in the current state.\n[20:48] For the command recognition state."
+    },
+    {
+      "segment_index": 126,
+      "start_time": 1250,
+      "end_time": 1260,
+      "frames": [
+        "frame_0751.jpg",
+        "frame_0752.jpg",
+        "frame_0753.jpg",
+        "frame_0754.jpg",
+        "frame_0755.jpg",
+        "frame_0756.jpg"
+      ],
+      "transcript": "[20:48] For the command recognition state.\n[20:50] When we enter the state we make a connection to witai.\n[20:54] This can take up to 1.5 seconds as making an SSL connection on the ESP32 is quite slow."
+    },
+    {
+      "segment_index": 127,
+      "start_time": 1260,
+      "end_time": 1270,
+      "frames": [
+        "frame_0757.jpg",
+        "frame_0758.jpg",
+        "frame_0759.jpg",
+        "frame_0760.jpg",
+        "frame_0761.jpg",
+        "frame_0762.jpg"
+      ],
+      "transcript": "[20:54] This can take up to 1.5 seconds as making an SSL connection on the ESP32 is quite slow.\n[21:02] We then start streaming samples to the server.\n[21:05] To allow for the SSL connection time we go back one second into the past so we don't miss\n[21:09] too much of what the user said."
+    },
+    {
+      "segment_index": 128,
+      "start_time": 1270,
+      "end_time": 1280,
+      "frames": [
+        "frame_0763.jpg",
+        "frame_0764.jpg",
+        "frame_0765.jpg",
+        "frame_0766.jpg",
+        "frame_0767.jpg",
+        "frame_0768.jpg"
+      ],
+      "transcript": "[21:09] too much of what the user said.\n[21:12] Once we streamed 3 seconds of samples we ask witai what the user said.\n[21:18] We could be more clever here and we could wait until we think the user has stopped speaking"
+    },
+    {
+      "segment_index": 129,
+      "start_time": 1280,
+      "end_time": 1290,
+      "frames": [
+        "frame_0769.jpg",
+        "frame_0770.jpg",
+        "frame_0771.jpg",
+        "frame_0772.jpg",
+        "frame_0773.jpg",
+        "frame_0774.jpg"
+      ],
+      "transcript": "[21:18] We could be more clever here and we could wait until we think the user has stopped speaking\n[21:24] but that's probably work for a future version.\n[21:27] Witai processes the audio and tells us what the user asked."
+    },
+    {
+      "segment_index": 130,
+      "start_time": 1290,
+      "end_time": 1300,
+      "frames": [
+        "frame_0775.jpg",
+        "frame_0776.jpg",
+        "frame_0777.jpg",
+        "frame_0778.jpg",
+        "frame_0779.jpg",
+        "frame_0780.jpg"
+      ],
+      "transcript": "[21:27] Witai processes the audio and tells us what the user asked.\n[21:32] We pass that onto our intent processor to interpret the request and move onto the next state which\n[21:38] will put us back into waiting for the wake word."
+    },
+    {
+      "segment_index": 131,
+      "start_time": 1300,
+      "end_time": 1310,
+      "frames": [
+        "frame_0781.jpg",
+        "frame_0782.jpg",
+        "frame_0783.jpg",
+        "frame_0784.jpg",
+        "frame_0785.jpg",
+        "frame_0786.jpg"
+      ],
+      "transcript": "[21:38] will put us back into waiting for the wake word.\n[21:42] Our intent processor simply looks at the intent name that witai provides us and carries out\n[21:48] the appropriate action."
+    },
+    {
+      "segment_index": 132,
+      "start_time": 1310,
+      "end_time": 1320,
+      "frames": [
+        "frame_0787.jpg",
+        "frame_0788.jpg",
+        "frame_0789.jpg",
+        "frame_0790.jpg",
+        "frame_0791.jpg",
+        "frame_0792.jpg"
+      ],
+      "transcript": "[21:48] the appropriate action.\n[21:51] the user's intent to interpret the request and the user's intent.\n[21:52] Marvin, tell me about life.\n[21:56] LIFE.\n[21:57] Don't talk to me about LIFE.\n[21:58] So there we have it."
+    },
+    {
+      "segment_index": 133,
+      "start_time": 1320,
+      "end_time": 1330,
+      "frames": [
+        "frame_0793.jpg",
+        "frame_0794.jpg",
+        "frame_0795.jpg",
+        "frame_0796.jpg",
+        "frame_0797.jpg",
+        "frame_0798.jpg"
+      ],
+      "transcript": "[21:58] So there we have it.\n[22:00] A DIY Alexa.\n[22:05] How well does it actually work?"
+    },
+    {
+      "segment_index": 134,
+      "start_time": 1330,
+      "end_time": 1340,
+      "frames": [
+        "frame_0799.jpg",
+        "frame_0800.jpg",
+        "frame_0801.jpg",
+        "frame_0802.jpg",
+        "frame_0803.jpg",
+        "frame_0804.jpg"
+      ],
+      "transcript": "[22:05] How well does it actually work?\n[22:10] It works reasonably well.\n[22:13] We have a very lightweight wake word detection system.\n[22:17] It runs in around 100ms and there's still room for lots of optimisation."
+    },
+    {
+      "segment_index": 135,
+      "start_time": 1340,
+      "end_time": 1350,
+      "frames": [
+        "frame_0805.jpg",
+        "frame_0806.jpg",
+        "frame_0807.jpg",
+        "frame_0808.jpg",
+        "frame_0809.jpg",
+        "frame_0810.jpg"
+      ],
+      "transcript": "[22:17] It runs in around 100ms and there's still room for lots of optimisation.\n[22:24] Accuracy on the wake word is ok.\n[22:26] We do need more training data to make it really robust."
+    },
+    {
+      "segment_index": 136,
+      "start_time": 1350,
+      "end_time": 1360,
+      "frames": [
+        "frame_0811.jpg",
+        "frame_0812.jpg",
+        "frame_0813.jpg",
+        "frame_0814.jpg",
+        "frame_0815.jpg",
+        "frame_0816.jpg"
+      ],
+      "transcript": "[22:26] We do need more training data to make it really robust.\n[22:30] You can easily trick it into activating by using similar words to Marvin such as marvellous,\n[22:36] Martin, Marlin.\n[22:39] More negative examples of words would help with this problem."
+    },
+    {
+      "segment_index": 137,
+      "start_time": 1360,
+      "end_time": 1370,
+      "frames": [
+        "frame_0817.jpg",
+        "frame_0818.jpg",
+        "frame_0819.jpg",
+        "frame_0820.jpg",
+        "frame_0821.jpg",
+        "frame_0822.jpg"
+      ],
+      "transcript": "[22:39] More negative examples of words would help with this problem.\n[22:43] The witai system works very well and you can easily add your own intents and traits and\n[22:49] build a very powerful system."
+    },
+    {
+      "segment_index": 138,
+      "start_time": 1370,
+      "end_time": 1380,
+      "frames": [
+        "frame_0823.jpg",
+        "frame_0824.jpg",
+        "frame_0825.jpg",
+        "frame_0826.jpg",
+        "frame_0827.jpg",
+        "frame_0828.jpg"
+      ],
+      "transcript": "[22:49] build a very powerful system.\n[22:50] There are also alternative paid versions which you can use instead.\n[22:56] One is available from Microsoft and Google and Amazon also have similar and equivalent services."
+    },
+    {
+      "segment_index": 139,
+      "start_time": 1380,
+      "end_time": 1390,
+      "frames": [
+        "frame_0829.jpg",
+        "frame_0830.jpg",
+        "frame_0831.jpg",
+        "frame_0832.jpg",
+        "frame_0833.jpg",
+        "frame_0834.jpg"
+      ],
+      "transcript": "[22:56] One is available from Microsoft and Google and Amazon also have similar and equivalent services.\n[23:03] All the code is in GitHub.\n[23:05] The link is in the description.\n[23:07] All you actually need is a microphone to get audio data into the ESP32."
+    },
+    {
+      "segment_index": 140,
+      "start_time": 1390,
+      "end_time": 1400,
+      "frames": [
+        "frame_0835.jpg",
+        "frame_0836.jpg",
+        "frame_0837.jpg",
+        "frame_0838.jpg",
+        "frame_0839.jpg",
+        "frame_0840.jpg"
+      ],
+      "transcript": "[23:07] All you actually need is a microphone to get audio data into the ESP32.\n[23:13] You don't necessarily need a speaker.\n[23:15] You can just comment out the sections that try and talk to you."
+    },
+    {
+      "segment_index": 141,
+      "start_time": 1400,
+      "end_time": 1410,
+      "frames": [
+        "frame_0841.jpg",
+        "frame_0842.jpg",
+        "frame_0843.jpg",
+        "frame_0844.jpg",
+        "frame_0845.jpg",
+        "frame_0846.jpg"
+      ],
+      "transcript": "[23:15] You can just comment out the sections that try and talk to you.\n[23:20] Let me know how you get on in the comments section."
+    },
+    {
+      "segment_index": 142,
+      "start_time": 1410,
+      "end_time": 1420,
+      "frames": [
+        "frame_0847.jpg",
+        "frame_0848.jpg",
+        "frame_0849.jpg",
+        "frame_0850.jpg",
+        "frame_0851.jpg",
+        "frame_0852.jpg"
+      ],
+      "transcript": "[23:20] Let me know how you get on in the comments section."
+    },
+    {
+      "segment_index": 143,
+      "start_time": 1420,
+      "end_time": 1430,
+      "frames": [
+        "frame_0853.jpg",
+        "frame_0854.jpg",
+        "frame_0855.jpg",
+        "frame_0856.jpg",
+        "frame_0857.jpg",
+        "frame_0858.jpg"
+      ],
+      "transcript": ""
+    },
+    {
+      "segment_index": 144,
+      "start_time": 1430,
+      "end_time": 1440,
+      "frames": [
+        "frame_0859.jpg",
+        "frame_0860.jpg",
+        "frame_0861.jpg",
+        "frame_0862.jpg",
+        "frame_0863.jpg",
+        "frame_0864.jpg"
+      ],
+      "transcript": "[23:50] that you are typing shows a 81 that it would also be making some very smart fellow\n[23:53] Casting it to the AVadads.\n[23:54] If you had that sensitivity around,aremisation is a good score.\n[23:54] I'm always sad that you can do l\u00e4ngers with your neon head, which are completely incredible.\n[23:58] You should know how to check out the effects and the other things that have displayed all."
+    },
+    {
+      "segment_index": 145,
+      "start_time": 1440,
+      "end_time": 1450,
+      "frames": [],
+      "transcript": "[23:58] You should know how to check out the effects and the other things that have displayed all.\n[24:00] Lots of things they make different.\n[24:01] When you are goog Old and intents andendo and learning, learn about which Phi.\n[24:04] The most experimental\u61c9 ARgs are not medio how you can use some estuv Casey.\n[24:07] That skill"
+    },
+    {
+      "segment_index": 146,
+      "start_time": 1450,
+      "end_time": 1455.22,
+      "frames": [],
+      "transcript": "[24:07] That skill\n[24:14] is particularly really important to you."
+    }
+  ]
+}

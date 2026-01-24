@@ -1,0 +1,2932 @@
+{
+  "video_id": "_HHxV-7alwE",
+  "duration": 2659.44,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg"
+      ],
+      "transcript": "[0:00] Today in the workshop we're working with operational amplifiers.\n[0:03] You'll see how op amps work and how to use them in several popular configurations.\n[0:08] We'll also build a light activated switch, a dual power supply,"
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0003.jpg",
+        "frame_0004.jpg",
+        "frame_0005.jpg"
+      ],
+      "transcript": "[0:08] We'll also build a light activated switch, a dual power supply,\n[0:13] and we'll use op amps with an Arduino.\n[0:15] We're back in operation today, so welcome to the workshop."
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0006.jpg",
+        "frame_0007.jpg",
+        "frame_0008.jpg"
+      ],
+      "transcript": ""
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0009.jpg",
+        "frame_0010.jpg",
+        "frame_0011.jpg"
+      ],
+      "transcript": "[0:30] Well, hello and welcome to the workshop,\n[0:33] and today we're going to be working with operational amplifiers,\n[0:37] more commonly known as op amps.\n[0:39] Now, op amps have been available in integrated circuit format for about six decades now,"
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0012.jpg",
+        "frame_0013.jpg",
+        "frame_0014.jpg"
+      ],
+      "transcript": "[0:39] Now, op amps have been available in integrated circuit format for about six decades now,\n[0:45] and during that time they have been used in thousands and thousands of different analog designs."
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0015.jpg",
+        "frame_0016.jpg",
+        "frame_0017.jpg"
+      ],
+      "transcript": "[0:45] and during that time they have been used in thousands and thousands of different analog designs.\n[0:51] One of the reasons for their popularity is because they are so versatile.\n[0:55] You can literally configure an op amp in a couple of dozen different ways,"
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0018.jpg",
+        "frame_0019.jpg",
+        "frame_0020.jpg"
+      ],
+      "transcript": "[0:55] You can literally configure an op amp in a couple of dozen different ways,\n[1:00] and each of those configurations can be considered to be an analog building block\n[1:04] that you can use to build more complex circuitry.\n[1:08] Op amps can also be used to interface analog electronics to digital electronics."
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0021.jpg",
+        "frame_0022.jpg",
+        "frame_0023.jpg"
+      ],
+      "transcript": "[1:08] Op amps can also be used to interface analog electronics to digital electronics.\n[1:13] Op amps are also extraordinarily inexpensive.\n[1:17] In fact, one of the op amps we're using today is a quad op amp that costs all of 40 cents,"
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0024.jpg",
+        "frame_0025.jpg",
+        "frame_0026.jpg"
+      ],
+      "transcript": "[1:17] In fact, one of the op amps we're using today is a quad op amp that costs all of 40 cents,\n[1:22] so each op amp costs a dime.\n[1:25] Now, what we are going to do today is we're going to, of course,\n[1:28] start off by learning a bit about op amps,"
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0027.jpg",
+        "frame_0028.jpg",
+        "frame_0029.jpg"
+      ],
+      "transcript": "[1:28] start off by learning a bit about op amps,\n[1:30] and then we're going to put some of that theory into practice.\n[1:33] We're going to take an op amp, put it on a sonless breadboard,\n[1:37] and wire it in a number of different configurations."
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0030.jpg",
+        "frame_0031.jpg",
+        "frame_0032.jpg"
+      ],
+      "transcript": "[1:40] After that, I'm going to show you how we can use an op amp with a microcontroller.\n[1:44] We're going to connect one to an Arduino Uno.\n[1:47] After that, we're going to build a little project,\n[1:49] a light-sensitive switch that is built with an op amp"
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0033.jpg",
+        "frame_0034.jpg",
+        "frame_0035.jpg"
+      ],
+      "transcript": "[1:49] a light-sensitive switch that is built with an op amp\n[1:53] and will probably cost you about $2 in components to put together.\n[1:57] And finally, many op amps need a dual power supply,"
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0036.jpg",
+        "frame_0037.jpg",
+        "frame_0038.jpg"
+      ],
+      "transcript": "[1:57] And finally, many op amps need a dual power supply,\n[2:01] a supply with both a positive and a negative component,\n[2:04] while most of us have benched supplies that only are single power supplies.\n[2:09] So we're going to build a converter that converts a single supply to a dual supply,"
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0039.jpg",
+        "frame_0040.jpg",
+        "frame_0041.jpg"
+      ],
+      "transcript": "[2:09] So we're going to build a converter that converts a single supply to a dual supply,\n[2:13] and, of course, that converter is going to be built with an op amp.\n[2:17] I told you these things are versatile.\n[2:19] So let's start off by learning a bit more about operational amplifiers."
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0042.jpg",
+        "frame_0043.jpg",
+        "frame_0044.jpg"
+      ],
+      "transcript": "[2:19] So let's start off by learning a bit more about operational amplifiers.\n[2:25] An op amp is a high-gain differential amplifier."
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0045.jpg",
+        "frame_0046.jpg",
+        "frame_0047.jpg"
+      ],
+      "transcript": "[2:30] It has both a positive or non-inverting and negative or inverting input.\n[2:36] An op amp amplifies the differences between these two input voltages."
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0048.jpg",
+        "frame_0049.jpg",
+        "frame_0050.jpg"
+      ],
+      "transcript": "[2:36] An op amp amplifies the differences between these two input voltages.\n[2:40] These devices are characterized by having a very high input impedance\n[2:45] and a very low output impedance.\n[2:48] Originally, operational amplifiers were developed for analog computers."
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0051.jpg",
+        "frame_0052.jpg",
+        "frame_0053.jpg"
+      ],
+      "transcript": "[2:48] Originally, operational amplifiers were developed for analog computers.\n[2:53] Analog computers used voltages to represent numbers.\n[2:57] The first operational amplifier was built with vacuum tubes in 1941."
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0054.jpg",
+        "frame_0055.jpg",
+        "frame_0056.jpg"
+      ],
+      "transcript": "[2:57] The first operational amplifier was built with vacuum tubes in 1941.\n[3:02] The UA702 was the first integrated circuit operational amplifier,\n[3:08] and it was designed in 1963."
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0057.jpg",
+        "frame_0058.jpg",
+        "frame_0059.jpg"
+      ],
+      "transcript": "[3:08] and it was designed in 1963.\n[3:12] The schematic symbol for an operational amplifier\n[3:15] is chosen as a triangle with a number of connections to it.\n[3:19] On the top, we have the positive power,"
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0060.jpg",
+        "frame_0061.jpg",
+        "frame_0062.jpg"
+      ],
+      "transcript": "[3:19] On the top, we have the positive power,\n[3:21] and on the bottom, the negative power.\n[3:24] Most operational amplifiers require a bipolar power supply\n[3:28] with both positive and negative components."
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0063.jpg",
+        "frame_0064.jpg",
+        "frame_0065.jpg"
+      ],
+      "transcript": "[3:28] with both positive and negative components.\n[3:32] There are two inputs in the op amp,\n[3:34] an inverting input and the non-inverting input.\n[3:38] Note that the inverting input on top"
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0066.jpg",
+        "frame_0067.jpg",
+        "frame_0068.jpg"
+      ],
+      "transcript": "[3:38] Note that the inverting input on top\n[3:40] and the non-inverting on the bottom is not a convention,\n[3:44] and when you see op amps drawn in schematic diagrams,\n[3:47] you can see it drawn the other way around as well."
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0069.jpg",
+        "frame_0070.jpg",
+        "frame_0071.jpg"
+      ],
+      "transcript": "[3:47] you can see it drawn the other way around as well.\n[3:50] It just depends what looks better on the diagram.\n[3:53] Finally, the output of the op amp is at the point of the triangle.\n[3:58] In order to visualize how an operational amplifier works,"
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0072.jpg",
+        "frame_0073.jpg",
+        "frame_0074.jpg"
+      ],
+      "transcript": "[3:58] In order to visualize how an operational amplifier works,\n[4:02] first we need to power it up.\n[4:04] We will use a bipolar power supply for the op amp\n[4:07] that has both a positive and a negative component."
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0075.jpg",
+        "frame_0076.jpg",
+        "frame_0077.jpg"
+      ],
+      "transcript": "[4:10] Note that the power supply has a common ground point.\n[4:13] This ground point is a reference point.\n[4:16] We'll also connect two input voltages to our operational amplifier,"
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0078.jpg",
+        "frame_0079.jpg",
+        "frame_0080.jpg"
+      ],
+      "transcript": "[4:16] We'll also connect two input voltages to our operational amplifier,\n[4:21] V1, which is connected to the inverting input,\n[4:24] and V2, which is connected to the non-inverting input.\n[4:28] Again, the two voltages reference the same common ground point."
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0081.jpg",
+        "frame_0082.jpg",
+        "frame_0083.jpg"
+      ],
+      "transcript": "[4:28] Again, the two voltages reference the same common ground point.\n[4:33] If we apply a voltage of 4 volts to V1 and 6 volts to V2,\n[4:37] that'll create a difference of positive 2 volts."
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0084.jpg",
+        "frame_0085.jpg",
+        "frame_0086.jpg"
+      ],
+      "transcript": "[4:37] that'll create a difference of positive 2 volts.\n[4:40] Since this is a positive difference,\n[4:42] our output will be positive,\n[4:44] and the greater difference, the greater the output will be.\n[4:47] If we increase V1 to 9 volts,"
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0087.jpg",
+        "frame_0088.jpg",
+        "frame_0089.jpg"
+      ],
+      "transcript": "[4:47] If we increase V1 to 9 volts,\n[4:50] then our difference will be negative 3 volts,\n[4:53] and so our output will go negative.\n[4:55] Again, the amplitude of the output will depend\n[4:58] on the amount of difference between the two inputs."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0090.jpg",
+        "frame_0091.jpg",
+        "frame_0092.jpg"
+      ],
+      "transcript": "[4:58] on the amount of difference between the two inputs.\n[5:01] If we reduce V1 to 6 volts and keep V2 at 6 volts,\n[5:05] there'll be no difference between the two inputs.\n[5:08] Therefore, the output of the operational amplifier will be zero."
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0093.jpg",
+        "frame_0094.jpg",
+        "frame_0095.jpg"
+      ],
+      "transcript": "[5:08] Therefore, the output of the operational amplifier will be zero.\n[5:12] By itself, an operational amplifier has a great deal of gain.\n[5:17] In fact, the typical op amp has a gain of 100,000 times or more."
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0096.jpg",
+        "frame_0097.jpg",
+        "frame_0098.jpg"
+      ],
+      "transcript": "[5:17] In fact, the typical op amp has a gain of 100,000 times or more.\n[5:22] Since this is likely too much for our circuit,\n[5:24] we need to regulate it,\n[5:25] and we can do that by applying feedback,\n[5:28] which is to take the output of the op amp"
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0099.jpg",
+        "frame_0100.jpg",
+        "frame_0101.jpg"
+      ],
+      "transcript": "[5:28] which is to take the output of the op amp\n[5:30] and apply it to one of its inputs.\n[5:33] Over here, I show it being applied to the inverting input.\n[5:36] This will actually create an amplifier whose gain is only one."
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0102.jpg",
+        "frame_0103.jpg",
+        "frame_0104.jpg"
+      ],
+      "transcript": "[5:36] This will actually create an amplifier whose gain is only one.\n[5:40] In other words, what goes into the amplifier will be what comes out.\n[5:45] Since we might want a little bit more gain than that,\n[5:47] but not the infinite amount of gain that we get with the open loop,"
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0105.jpg",
+        "frame_0106.jpg",
+        "frame_0107.jpg"
+      ],
+      "transcript": "[5:47] but not the infinite amount of gain that we get with the open loop,\n[5:51] we can apply a feedback resistor.\n[5:54] The value of the resistor will determine the gain of the amplifier,\n[5:58] and the higher the value of the resistor,"
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0108.jpg",
+        "frame_0109.jpg",
+        "frame_0110.jpg"
+      ],
+      "transcript": "[6:00] the higher the amplifier's gain will be.\n[6:03] A common configuration for an operational amplifier\n[6:06] is as an inverting amplifier.\n[6:08] An amplifier whose output is 180 degrees out of phase with its input."
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0111.jpg",
+        "frame_0112.jpg",
+        "frame_0113.jpg"
+      ],
+      "transcript": "[6:08] An amplifier whose output is 180 degrees out of phase with its input.\n[6:14] The two components used with the operational amplifier in this configuration\n[6:18] are the input resistor and the feedback resistor,"
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0114.jpg",
+        "frame_0115.jpg",
+        "frame_0116.jpg"
+      ],
+      "transcript": "[6:18] are the input resistor and the feedback resistor,\n[6:21] and these two components determine the gain of the inverting amplifier.\n[6:25] Another common configuration is the non-inverting amplifier,"
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0117.jpg",
+        "frame_0118.jpg",
+        "frame_0119.jpg"
+      ],
+      "transcript": "[6:25] Another common configuration is the non-inverting amplifier,\n[6:31] an amplifier whose output is in phase with its input.\n[6:35] Once again, the feedback and divider resistor will determine the gain of this type of amplifier."
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0120.jpg",
+        "frame_0121.jpg",
+        "frame_0122.jpg"
+      ],
+      "transcript": "[6:35] Once again, the feedback and divider resistor will determine the gain of this type of amplifier.\n[6:42] A unity gain buffer is an amplifier that has a gain of 1.\n[6:46] This is also known as a voltage follower,\n[6:49] and takes advantage of the fact that the operational amplifier"
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0123.jpg",
+        "frame_0124.jpg",
+        "frame_0125.jpg"
+      ],
+      "transcript": "[6:49] and takes advantage of the fact that the operational amplifier\n[6:52] has a very high input impedance and very low output impedance.\n[6:57] Unity gain buffers are often used throughout op-amp circuitry."
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0126.jpg",
+        "frame_0127.jpg",
+        "frame_0128.jpg"
+      ],
+      "transcript": "[6:57] Unity gain buffers are often used throughout op-amp circuitry.\n[7:02] The voltage summing amplifier is an application from the op-amp's analog computer days.\n[7:08] The op-amp will output a sum of the three different input voltages."
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0129.jpg",
+        "frame_0130.jpg",
+        "frame_0131.jpg"
+      ],
+      "transcript": "[7:08] The op-amp will output a sum of the three different input voltages.\n[7:14] The feedback can be used to amplify this\n[7:16] and effectively do a multiplication on the voltage."
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0132.jpg",
+        "frame_0133.jpg",
+        "frame_0134.jpg"
+      ],
+      "transcript": "[7:16] and effectively do a multiplication on the voltage.\n[7:22] Another mathematical operation that could be done with an op-amp\n[7:25] is as a differential amplifier.\n[7:27] In this case, the output of the amplifier will be the difference between V in 1 and V in 2."
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0135.jpg",
+        "frame_0136.jpg",
+        "frame_0137.jpg"
+      ],
+      "transcript": "[7:27] In this case, the output of the amplifier will be the difference between V in 1 and V in 2.\n[7:35] Integration is another mathematical operation that operational amplifiers can perform,"
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0138.jpg",
+        "frame_0139.jpg",
+        "frame_0140.jpg"
+      ],
+      "transcript": "[7:35] Integration is another mathematical operation that operational amplifiers can perform,\n[7:41] and when performed upon a square wave, it can turn it into a triangle wave.\n[7:46] You can also input a triangle wave into an integrator\n[7:49] and come out with an approximation of a sine wave."
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0141.jpg",
+        "frame_0142.jpg",
+        "frame_0143.jpg"
+      ],
+      "transcript": "[7:49] and come out with an approximation of a sine wave.\n[7:53] And the differentiating amplifier performs a differential operation on the voltage coming in."
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0144.jpg",
+        "frame_0145.jpg",
+        "frame_0146.jpg"
+      ],
+      "transcript": "[7:53] And the differentiating amplifier performs a differential operation on the voltage coming in.\n[8:00] You'll notice its effect on a square wave here.\n[8:04] An open-end comparator is a very common configuration for an operational amplifier."
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0147.jpg",
+        "frame_0148.jpg",
+        "frame_0149.jpg"
+      ],
+      "transcript": "[8:04] An open-end comparator is a very common configuration for an operational amplifier.\n[8:10] A comparator has a reference voltage and an input voltage,\n[8:14] and if the input voltage exceeds the reference voltage,\n[8:18] the output voltage will go high, or to positive Vcc."
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0150.jpg",
+        "frame_0151.jpg",
+        "frame_0152.jpg"
+      ],
+      "transcript": "[8:18] the output voltage will go high, or to positive Vcc.\n[8:21] If it's below the reference voltage, it'll go low, or down to the ground level.\n[8:28] Comparators are often used to interface analog electronics to digital electronics."
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0153.jpg",
+        "frame_0154.jpg",
+        "frame_0155.jpg"
+      ],
+      "transcript": "[8:28] Comparators are often used to interface analog electronics to digital electronics.\n[8:34] A low-pass active filter is a very common application in audio.\n[8:39] A low-pass filter allows low frequencies to pass while attenuating high frequencies,"
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0156.jpg",
+        "frame_0157.jpg",
+        "frame_0158.jpg"
+      ],
+      "transcript": "[8:39] A low-pass filter allows low frequencies to pass while attenuating high frequencies,\n[8:45] and it can be built as follows with an op-amp.\n[8:47] A different configuration creates a high-pass active filter,"
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0159.jpg",
+        "frame_0160.jpg",
+        "frame_0161.jpg"
+      ],
+      "transcript": "[8:47] A different configuration creates a high-pass active filter,\n[8:53] a filter that allows higher frequencies to pass, but attenuates lower ones.\n[8:59] And a multivibrator is a configuration which an operational amplifier can produce a waveform."
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0162.jpg",
+        "frame_0163.jpg",
+        "frame_0164.jpg"
+      ],
+      "transcript": "[8:59] And a multivibrator is a configuration which an operational amplifier can produce a waveform.\n[9:05] In this diagram, we are producing a square wave whose frequency is determined by the value of Cx and Rx."
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0165.jpg",
+        "frame_0166.jpg",
+        "frame_0167.jpg"
+      ],
+      "transcript": "[9:05] In this diagram, we are producing a square wave whose frequency is determined by the value of Cx and Rx.\n[9:12] R2 and R1 can be used to determine the duty cycle and the amplitude of our square wave.\n[9:18] Now, in selecting an operational amplifier, you should go and take a look at the spec sheets,"
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0168.jpg",
+        "frame_0169.jpg",
+        "frame_0170.jpg"
+      ],
+      "transcript": "[9:18] Now, in selecting an operational amplifier, you should go and take a look at the spec sheets,\n[9:23] as they'll give you all the information you need to know.\n[9:26] There's quite a bit of info here, and some of it may be confusing,"
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0171.jpg",
+        "frame_0172.jpg",
+        "frame_0173.jpg"
+      ],
+      "transcript": "[9:30] so here are some of the key specifications to look out for.\n[9:33] The open-loop gain of the operational amplifier defines the gain of the op-amp without any feedback."
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0174.jpg",
+        "frame_0175.jpg",
+        "frame_0176.jpg"
+      ],
+      "transcript": "[9:33] The open-loop gain of the operational amplifier defines the gain of the op-amp without any feedback.\n[9:42] Now, an ideal op-amp would have an infinite open-loop gain.\n[9:46] In the real world, values typically range from 20,000 to 200,000 or even more."
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0177.jpg",
+        "frame_0178.jpg",
+        "frame_0179.jpg"
+      ],
+      "transcript": "[9:46] In the real world, values typically range from 20,000 to 200,000 or even more.\n[9:52] Now, keep in mind that the maximum output that your operational amplifier can give\n[9:57] is going to be limited by the power supply voltage and not the gain."
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0180.jpg",
+        "frame_0181.jpg",
+        "frame_0182.jpg"
+      ],
+      "transcript": "[9:57] is going to be limited by the power supply voltage and not the gain.\n[10:01] The input impedance of the op-amp is defined as the ratio of the input voltage to the input current."
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0183.jpg",
+        "frame_0184.jpg",
+        "frame_0185.jpg"
+      ],
+      "transcript": "[10:10] Impedance is a factor that is measured in ohms.\n[10:14] An ideal op-amp would have an infinite input impedance,\n[10:18] and real-world values for op-amp input impedance are typically several megohms,"
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0186.jpg",
+        "frame_0187.jpg",
+        "frame_0188.jpg"
+      ],
+      "transcript": "[10:18] and real-world values for op-amp input impedance are typically several megohms,\n[10:24] meaning op-amps won't load down the driving circuitry.\n[10:27] The output impedance of an op-amp is also an important specification."
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0189.jpg",
+        "frame_0190.jpg",
+        "frame_0191.jpg"
+      ],
+      "transcript": "[10:27] The output impedance of an op-amp is also an important specification.\n[10:33] An ideal op-amp would have a zero output impedance.\n[10:37] In the real world, the values are typically about 100 to 20,000 ohms."
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0192.jpg",
+        "frame_0193.jpg",
+        "frame_0194.jpg"
+      ],
+      "transcript": "[10:37] In the real world, the values are typically about 100 to 20,000 ohms.\n[10:42] The gain bandwidth product, or GBP, is a very important specification\n[10:48] as it refers to the frequency response of your op-amp."
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0195.jpg",
+        "frame_0196.jpg",
+        "frame_0197.jpg"
+      ],
+      "transcript": "[10:48] as it refers to the frequency response of your op-amp.\n[10:52] Now, an ideal op-amp would, of course, have an infinite bandwidth.\n[10:56] The bandwidth of the op-amp is limited by the gain bandwidth product,"
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0198.jpg",
+        "frame_0199.jpg",
+        "frame_0200.jpg"
+      ],
+      "transcript": "[10:56] The bandwidth of the op-amp is limited by the gain bandwidth product,\n[11:00] and this is defined as the bandwidth with an open-loop gain of 1.\n[11:05] In the real world, op-amps typically have values from 500 kHz to 20 MHz or more."
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0201.jpg",
+        "frame_0202.jpg",
+        "frame_0203.jpg"
+      ],
+      "transcript": "[11:05] In the real world, op-amps typically have values from 500 kHz to 20 MHz or more.\n[11:13] The offset voltage is the output voltage when the difference between the inputs is zero.\n[11:19] An ideal op-amp would have no offset voltage."
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0204.jpg",
+        "frame_0205.jpg",
+        "frame_0206.jpg"
+      ],
+      "transcript": "[11:19] An ideal op-amp would have no offset voltage.\n[11:23] In the real world, the values typically are 1 mV to 10 mV,\n[11:28] and this is an inaccuracy in the op-amp."
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0207.jpg",
+        "frame_0208.jpg",
+        "frame_0209.jpg"
+      ],
+      "transcript": "[11:28] and this is an inaccuracy in the op-amp.\n[11:31] Some operational amplifiers have an offset pin to allow adjustment of the offset voltage."
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0210.jpg",
+        "frame_0211.jpg",
+        "frame_0212.jpg"
+      ],
+      "transcript": "[11:40] Op-amps are available in several different packages, including dip and surface mount.\n[11:46] You can get single, dual, or quad op-amps in the same package."
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0213.jpg",
+        "frame_0214.jpg",
+        "frame_0215.jpg"
+      ],
+      "transcript": "[11:46] You can get single, dual, or quad op-amps in the same package.\n[11:51] Op-amps are available using both single and traditional dual power supplies.\n[11:56] You also might see the term rail-to-rail designs.\n[11:59] These are op-amps whose output can go all the way to their VCC."
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0216.jpg",
+        "frame_0217.jpg",
+        "frame_0218.jpg"
+      ],
+      "transcript": "[11:59] These are op-amps whose output can go all the way to their VCC.\n[12:04] On most op-amps, the output is slightly less than VCC,\n[12:07] unless it is specified as being rail-to-rail."
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0219.jpg",
+        "frame_0220.jpg",
+        "frame_0221.jpg"
+      ],
+      "transcript": "[12:10] So now let's take a look at a couple of op-amps and put them to use.\n[12:14] Now here are a number of op-amps that I got out of my parts drawer,\n[12:18] and each one of these is unique in its own right."
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0222.jpg",
+        "frame_0223.jpg",
+        "frame_0224.jpg"
+      ],
+      "transcript": "[12:18] and each one of these is unique in its own right.\n[12:21] Some of them are single op-amps, some are dual, some are quad.\n[12:25] There are op-amps here that are single supply, and there are dual supply op-amps as well."
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0225.jpg",
+        "frame_0226.jpg",
+        "frame_0227.jpg"
+      ],
+      "transcript": "[12:25] There are op-amps here that are single supply, and there are dual supply op-amps as well.\n[12:31] Now all of these are in dip or dual inline packages.\n[12:35] Of course you can get op-amps in other packages,\n[12:37] but for experimenting, the dip package is what we will use,"
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0228.jpg",
+        "frame_0229.jpg",
+        "frame_0230.jpg"
+      ],
+      "transcript": "[12:37] but for experimenting, the dip package is what we will use,\n[12:41] because they fit into a soddeless breadboard.\n[12:43] Now I'm sure you've probably worked with them before,\n[12:45] but if you haven't, on a dip package there is usually a notch over at the front,"
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0231.jpg",
+        "frame_0232.jpg",
+        "frame_0233.jpg"
+      ],
+      "transcript": "[12:45] but if you haven't, on a dip package there is usually a notch over at the front,\n[12:50] and quite often a dot like you'll see over here,\n[12:53] and that indicates pin 1.\n[12:55] So when you're orienting things, that's the way it is.\n[12:58] And they'll be numbered 1, 2, 3, 4 down this side,"
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0234.jpg",
+        "frame_0235.jpg",
+        "frame_0236.jpg"
+      ],
+      "transcript": "[12:58] And they'll be numbered 1, 2, 3, 4 down this side,\n[13:02] and then they'll go 5, 6, 7, 8 up on the other side.\n[13:06] And of course for a 14 or a 16-pin package, the number follows accordingly."
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0237.jpg",
+        "frame_0238.jpg",
+        "frame_0239.jpg"
+      ],
+      "transcript": "[13:06] And of course for a 14 or a 16-pin package, the number follows accordingly.\n[13:11] And so let's take a look at the characteristics of some of these operational amplifiers.\n[13:19] The LM324 is a very popular quad operational amplifier."
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0240.jpg",
+        "frame_0241.jpg",
+        "frame_0242.jpg"
+      ],
+      "transcript": "[13:19] The LM324 is a very popular quad operational amplifier.\n[13:24] This device uses a single supply and can handle 32 volts maximum VCC."
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0243.jpg",
+        "frame_0244.jpg",
+        "frame_0245.jpg"
+      ],
+      "transcript": "[13:30] The LM324 is used in a lot of equipment, especially because of its low, low price.\n[13:36] Currently this retails on DigiKey for 40 cents per unit,\n[13:39] and so when you consider you get 4 op amps in it,"
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0246.jpg",
+        "frame_0247.jpg",
+        "frame_0248.jpg"
+      ],
+      "transcript": "[13:39] and so when you consider you get 4 op amps in it,\n[13:42] they work out to about a dime per op amp.\n[13:47] The NE5532 is another very popular operational amplifier."
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0249.jpg",
+        "frame_0250.jpg",
+        "frame_0251.jpg"
+      ],
+      "transcript": "[13:47] The NE5532 is another very popular operational amplifier.\n[13:53] This is a dual op amp, and it uses a dual power supply.\n[13:57] Each power supply can have a maximum of 15 volts."
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0252.jpg",
+        "frame_0253.jpg",
+        "frame_0254.jpg"
+      ],
+      "transcript": "[13:57] Each power supply can have a maximum of 15 volts.\n[14:01] This is a high performance operational amplifier with very low noise and distortion,\n[14:06] so it can be used in audio equipment designs."
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0255.jpg",
+        "frame_0256.jpg",
+        "frame_0257.jpg"
+      ],
+      "transcript": "[14:11] Another popular operational amplifier is the LM358.\n[14:16] It's also a dual op amp, and has essentially the same pinout as the NE5532."
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0258.jpg",
+        "frame_0259.jpg",
+        "frame_0260.jpg"
+      ],
+      "transcript": "[14:16] It's also a dual op amp, and has essentially the same pinout as the NE5532.\n[14:23] However, the LM358 has been wired to use a single power supply.\n[14:27] This is a very common operational amplifier,"
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0261.jpg",
+        "frame_0262.jpg",
+        "frame_0263.jpg"
+      ],
+      "transcript": "[14:27] This is a very common operational amplifier,\n[14:31] and as its power supply can range from 3 to 32 volts DC,\n[14:35] it can also be used to interface analog and digital circuitry."
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0264.jpg",
+        "frame_0265.jpg",
+        "frame_0266.jpg"
+      ],
+      "transcript": "[14:41] The TL072 is a dual operational amplifier that uses dual power supplies.\n[14:47] This is a very popular audio amplifier for audio designs,"
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 900,
+      "frames": [
+        "frame_0267.jpg",
+        "frame_0268.jpg",
+        "frame_0269.jpg"
+      ],
+      "transcript": "[14:47] This is a very popular audio amplifier for audio designs,\n[14:51] as it has a very high GBP, and a very high slew rate,\n[14:55] and very, very low noise and distortion."
+    },
+    {
+      "segment_index": 91,
+      "start_time": 900,
+      "end_time": 910,
+      "frames": [
+        "frame_0270.jpg",
+        "frame_0271.jpg",
+        "frame_0272.jpg"
+      ],
+      "transcript": "[15:00] The CA3140 is a single operational amplifier that uses a dual power supply,\n[15:07] and has a maximum GBP of 4.5 MHz."
+    },
+    {
+      "segment_index": 92,
+      "start_time": 910,
+      "end_time": 920,
+      "frames": [
+        "frame_0273.jpg",
+        "frame_0274.jpg",
+        "frame_0275.jpg"
+      ],
+      "transcript": "[15:07] and has a maximum GBP of 4.5 MHz.\n[15:11] The CA3240 is the same operational amplifier in a dual op amp pack.\n[15:19] These op amps are often used in automotive and industrial designs,"
+    },
+    {
+      "segment_index": 93,
+      "start_time": 920,
+      "end_time": 930,
+      "frames": [
+        "frame_0276.jpg",
+        "frame_0277.jpg",
+        "frame_0278.jpg"
+      ],
+      "transcript": "[15:19] These op amps are often used in automotive and industrial designs,\n[15:23] as they incorporate both MOS and bipolar transistors\n[15:26] for a very high input impedance,\n[15:29] and a very high current output capability."
+    },
+    {
+      "segment_index": 94,
+      "start_time": 930,
+      "end_time": 940,
+      "frames": [
+        "frame_0279.jpg",
+        "frame_0280.jpg",
+        "frame_0281.jpg"
+      ],
+      "transcript": "[15:29] and a very high current output capability.\n[15:33] The MCP6002 is a dual operational amplifier\n[15:38] that uses a single power supply,"
+    },
+    {
+      "segment_index": 95,
+      "start_time": 940,
+      "end_time": 950,
+      "frames": [
+        "frame_0282.jpg",
+        "frame_0283.jpg",
+        "frame_0284.jpg"
+      ],
+      "transcript": "[15:38] that uses a single power supply,\n[15:40] and that power supply has a maximum of only 6 volts.\n[15:45] It has a 1 MHz GBP.\n[15:48] The MCP6022 is the same operational amplifier with a much higher GBP."
+    },
+    {
+      "segment_index": 96,
+      "start_time": 950,
+      "end_time": 960,
+      "frames": [
+        "frame_0285.jpg",
+        "frame_0286.jpg",
+        "frame_0287.jpg"
+      ],
+      "transcript": "[15:48] The MCP6022 is the same operational amplifier with a much higher GBP.\n[15:55] Because of the voltages these operational amplifiers use,\n[15:59] they have been designed to be used with logic circuits,"
+    },
+    {
+      "segment_index": 97,
+      "start_time": 960,
+      "end_time": 970,
+      "frames": [
+        "frame_0288.jpg",
+        "frame_0289.jpg",
+        "frame_0290.jpg"
+      ],
+      "transcript": "[15:59] they have been designed to be used with logic circuits,\n[16:02] as they're perfect for both 3.3 and 5 volt logic.\n[16:06] They also use rail-to-rail input-to-output,\n[16:09] so they can swing all the way up to their power supply voltage."
+    },
+    {
+      "segment_index": 98,
+      "start_time": 970,
+      "end_time": 980,
+      "frames": [
+        "frame_0291.jpg",
+        "frame_0292.jpg",
+        "frame_0293.jpg"
+      ],
+      "transcript": "[16:09] so they can swing all the way up to their power supply voltage.\n[16:12] They're very low noise and distortion,\n[16:15] and they consume very little current.\n[16:18] Okay, enough of the op amp theory."
+    },
+    {
+      "segment_index": 99,
+      "start_time": 980,
+      "end_time": 990,
+      "frames": [
+        "frame_0294.jpg",
+        "frame_0295.jpg",
+        "frame_0296.jpg"
+      ],
+      "transcript": "[16:18] Okay, enough of the op amp theory.\n[16:20] Let's put some of it into practice.\n[16:22] We're going to take an op amp and put it onto a SOTELIS breadboard,\n[16:26] and wire it in a number of different configurations,\n[16:28] so we can see how these building blocks are really created."
+    },
+    {
+      "segment_index": 100,
+      "start_time": 990,
+      "end_time": 1000,
+      "frames": [
+        "frame_0297.jpg",
+        "frame_0298.jpg",
+        "frame_0299.jpg"
+      ],
+      "transcript": "[16:28] so we can see how these building blocks are really created.\n[16:32] Now, the op amp we're going to be using is the NE5532,\n[16:36] which is a very common operational amplifier.\n[16:39] It requires a dual power supply, but don't worry about it."
+    },
+    {
+      "segment_index": 101,
+      "start_time": 1000,
+      "end_time": 1010,
+      "frames": [
+        "frame_0300.jpg",
+        "frame_0301.jpg",
+        "frame_0302.jpg"
+      ],
+      "transcript": "[16:39] It requires a dual power supply, but don't worry about it.\n[16:42] You can just use a couple of 9 volt batteries for these experiments.\n[16:46] So let's see how the NE5532 is wired up,"
+    },
+    {
+      "segment_index": 102,
+      "start_time": 1010,
+      "end_time": 1020,
+      "frames": [
+        "frame_0303.jpg",
+        "frame_0304.jpg",
+        "frame_0305.jpg"
+      ],
+      "transcript": "[16:46] So let's see how the NE5532 is wired up,\n[16:50] and then we'll proceed to use it in a number of basic configurations.\n[16:55] I'll be basing all of my experiments around an NE5532 operational amplifier."
+    },
+    {
+      "segment_index": 103,
+      "start_time": 1020,
+      "end_time": 1030,
+      "frames": [
+        "frame_0306.jpg",
+        "frame_0307.jpg",
+        "frame_0308.jpg"
+      ],
+      "transcript": "[16:55] I'll be basing all of my experiments around an NE5532 operational amplifier.\n[17:01] This is a very inexpensive and easy to obtain device.\n[17:05] This is a dual op amp,\n[17:07] and it contains two operational amplifiers that are wired as follows."
+    },
+    {
+      "segment_index": 104,
+      "start_time": 1030,
+      "end_time": 1040,
+      "frames": [
+        "frame_0309.jpg",
+        "frame_0310.jpg",
+        "frame_0311.jpg"
+      ],
+      "transcript": "[17:07] and it contains two operational amplifiers that are wired as follows.\n[17:12] Pin 3 of the device is connected to the non-inverting input on amplifier 1.\n[17:17] Pin 2 is connected to the inverting input on that amplifier,"
+    },
+    {
+      "segment_index": 105,
+      "start_time": 1040,
+      "end_time": 1050,
+      "frames": [
+        "frame_0312.jpg",
+        "frame_0313.jpg",
+        "frame_0314.jpg"
+      ],
+      "transcript": "[17:17] Pin 2 is connected to the inverting input on that amplifier,\n[17:22] and pin 1 is connected to the output of op amp 1.\n[17:26] Pin 5 is connected to the non-inverting input of amplifier 2."
+    },
+    {
+      "segment_index": 106,
+      "start_time": 1050,
+      "end_time": 1060,
+      "frames": [
+        "frame_0315.jpg",
+        "frame_0316.jpg",
+        "frame_0317.jpg"
+      ],
+      "transcript": "[17:26] Pin 5 is connected to the non-inverting input of amplifier 2.\n[17:32] Pin 6 is its inverting input,\n[17:35] and pin 7 is the output of op amp 2.\n[17:39] The positive end of the power supply is connected to pin 8,"
+    },
+    {
+      "segment_index": 107,
+      "start_time": 1060,
+      "end_time": 1070,
+      "frames": [
+        "frame_0318.jpg",
+        "frame_0319.jpg",
+        "frame_0320.jpg"
+      ],
+      "transcript": "[17:39] The positive end of the power supply is connected to pin 8,\n[17:43] and the negative end to pin 4.\n[17:46] Note that there is no connection on the op amp for ground."
+    },
+    {
+      "segment_index": 108,
+      "start_time": 1070,
+      "end_time": 1080,
+      "frames": [
+        "frame_0321.jpg",
+        "frame_0322.jpg",
+        "frame_0323.jpg"
+      ],
+      "transcript": "[17:50] The positive and negative power supply for NE5532 can be up to 15 volts,\n[17:56] and a very convenient way of powering these for our experiments is just to use two 9-volt batteries."
+    },
+    {
+      "segment_index": 109,
+      "start_time": 1080,
+      "end_time": 1090,
+      "frames": [
+        "frame_0324.jpg",
+        "frame_0325.jpg",
+        "frame_0326.jpg"
+      ],
+      "transcript": "[17:56] and a very convenient way of powering these for our experiments is just to use two 9-volt batteries.\n[18:03] Connect the positive side of one of the 9-volt batteries to pin 8, which is the positive VCC,\n[18:09] and connect the negative side to pin 4, which is the negative VCC."
+    },
+    {
+      "segment_index": 110,
+      "start_time": 1090,
+      "end_time": 1100,
+      "frames": [
+        "frame_0327.jpg",
+        "frame_0328.jpg",
+        "frame_0329.jpg"
+      ],
+      "transcript": "[18:09] and connect the negative side to pin 4, which is the negative VCC.\n[18:14] The remaining two battery terminals are tied together, and this is our ground point."
+    },
+    {
+      "segment_index": 111,
+      "start_time": 1100,
+      "end_time": 1110,
+      "frames": [
+        "frame_0330.jpg",
+        "frame_0331.jpg",
+        "frame_0332.jpg"
+      ],
+      "transcript": "[18:14] The remaining two battery terminals are tied together, and this is our ground point.\n[18:20] Again, there is no ground connection to the NE5532.\n[18:24] We will be using this basic circuit with all of the different configurations that I am about to show you."
+    },
+    {
+      "segment_index": 112,
+      "start_time": 1110,
+      "end_time": 1120,
+      "frames": [
+        "frame_0333.jpg",
+        "frame_0334.jpg",
+        "frame_0335.jpg"
+      ],
+      "transcript": "[18:24] We will be using this basic circuit with all of the different configurations that I am about to show you.\n[18:32] Now the first configuration that we will examine with the NE5532 is obviously the simplest configuration there is,"
+    },
+    {
+      "segment_index": 113,
+      "start_time": 1120,
+      "end_time": 1130,
+      "frames": [
+        "frame_0336.jpg",
+        "frame_0337.jpg",
+        "frame_0338.jpg"
+      ],
+      "transcript": "[18:32] Now the first configuration that we will examine with the NE5532 is obviously the simplest configuration there is,\n[18:40] and that is the unity gain buffer.\n[18:42] You will notice that in this configuration the output of the op amp is fed back into its inverting input,\n[18:48] and that the input to the op amp is fed into the non-inverting input."
+    },
+    {
+      "segment_index": 114,
+      "start_time": 1130,
+      "end_time": 1140,
+      "frames": [
+        "frame_0339.jpg",
+        "frame_0340.jpg",
+        "frame_0341.jpg"
+      ],
+      "transcript": "[18:48] and that the input to the op amp is fed into the non-inverting input.\n[18:53] Wired like this, the op amp will have a gain of 1,\n[18:56] so what goes in is exactly what will go out."
+    },
+    {
+      "segment_index": 115,
+      "start_time": 1140,
+      "end_time": 1150,
+      "frames": [
+        "frame_0342.jpg",
+        "frame_0343.jpg",
+        "frame_0344.jpg"
+      ],
+      "transcript": "[19:00] And you might think that this is a pretty useless circuit, but it actually is not.\n[19:04] The unity gain buffer is also called a voltage follower,\n[19:08] and it can be used to take advantage of the fact that the op amp has a very high input impedance,"
+    },
+    {
+      "segment_index": 116,
+      "start_time": 1150,
+      "end_time": 1160,
+      "frames": [
+        "frame_0345.jpg",
+        "frame_0346.jpg",
+        "frame_0347.jpg"
+      ],
+      "transcript": "[19:08] and it can be used to take advantage of the fact that the op amp has a very high input impedance,\n[19:14] and a low output impedance.\n[19:17] If you want to mix several signals together,\n[19:19] you can proceed each one of these with a unity gain buffer,"
+    },
+    {
+      "segment_index": 117,
+      "start_time": 1160,
+      "end_time": 1170,
+      "frames": [
+        "frame_0348.jpg",
+        "frame_0349.jpg",
+        "frame_0350.jpg"
+      ],
+      "transcript": "[19:19] you can proceed each one of these with a unity gain buffer,\n[19:23] as though not to overload an input.\n[19:26] The unity gain buffer is a circuit that you will see used quite often in op amp designs."
+    },
+    {
+      "segment_index": 118,
+      "start_time": 1170,
+      "end_time": 1180,
+      "frames": [
+        "frame_0351.jpg",
+        "frame_0352.jpg",
+        "frame_0353.jpg"
+      ],
+      "transcript": "[19:26] The unity gain buffer is a circuit that you will see used quite often in op amp designs.\n[19:31] And so here we have our first experiment, the voltage follower,\n[19:36] and of course the very simple circuit that it is.\n[19:39] You can take a look at how I've got it on the breadboard."
+    },
+    {
+      "segment_index": 119,
+      "start_time": 1180,
+      "end_time": 1190,
+      "frames": [
+        "frame_0354.jpg",
+        "frame_0355.jpg",
+        "frame_0356.jpg"
+      ],
+      "transcript": "[19:39] You can take a look at how I've got it on the breadboard.\n[19:42] I've got my two batteries each going to the different rails,\n[19:45] and I've also got a jumper over here,\n[19:48] and that connects the negative of the positive supply to the positive of the negative supply,"
+    },
+    {
+      "segment_index": 120,
+      "start_time": 1190,
+      "end_time": 1200,
+      "frames": [
+        "frame_0357.jpg",
+        "frame_0358.jpg",
+        "frame_0359.jpg"
+      ],
+      "transcript": "[19:48] and that connects the negative of the positive supply to the positive of the negative supply,\n[19:54] if that makes sense to you.\n[19:55] And that is the common ground.\n[19:57] So just make certain that you realize that on the bottom over here,"
+    },
+    {
+      "segment_index": 121,
+      "start_time": 1200,
+      "end_time": 1210,
+      "frames": [
+        "frame_0360.jpg",
+        "frame_0361.jpg",
+        "frame_0362.jpg"
+      ],
+      "transcript": "[19:57] So just make certain that you realize that on the bottom over here,\n[20:01] the red is actually a ground, and the blue is the negative voltage.\n[20:05] Otherwise, it's a very simple circuit, just wired up with a few jumpers.\n[20:09] When you're working with analog electronics on a soddeless breadboard,"
+    },
+    {
+      "segment_index": 122,
+      "start_time": 1210,
+      "end_time": 1220,
+      "frames": [
+        "frame_0363.jpg",
+        "frame_0364.jpg",
+        "frame_0365.jpg"
+      ],
+      "transcript": "[20:09] When you're working with analog electronics on a soddeless breadboard,\n[20:13] you will find out that the breadboard does pick up a little bit of noise, etc.\n[20:17] Now these breadboards I have on the bottom of them,"
+    },
+    {
+      "segment_index": 123,
+      "start_time": 1220,
+      "end_time": 1230,
+      "frames": [
+        "frame_0366.jpg",
+        "frame_0367.jpg",
+        "frame_0368.jpg"
+      ],
+      "transcript": "[20:17] Now these breadboards I have on the bottom of them,\n[20:20] they have a little aluminum plate that's supposed to help shield them,\n[20:24] but since it isn't grounded, I don't know if it's working or if it's even adding to the problem.\n[20:29] But you try to keep all your leads as short as you can."
+    },
+    {
+      "segment_index": 124,
+      "start_time": 1230,
+      "end_time": 1240,
+      "frames": [
+        "frame_0369.jpg",
+        "frame_0370.jpg",
+        "frame_0371.jpg"
+      ],
+      "transcript": "[20:29] But you try to keep all your leads as short as you can.\n[20:32] If you're using resistors and capacitors,\n[20:34] try to use those to make the connections without any additional jumpers,\n[20:38] just so you get a more stable circuit.\n[20:39] So if you take a look on the oscilloscope,"
+    },
+    {
+      "segment_index": 125,
+      "start_time": 1240,
+      "end_time": 1250,
+      "frames": [
+        "frame_0372.jpg",
+        "frame_0373.jpg",
+        "frame_0374.jpg"
+      ],
+      "transcript": "[20:39] So if you take a look on the oscilloscope,\n[20:41] you'll see what we've got are two sine waves.\n[20:43] The yellow one on the top is the input,\n[20:46] and the blue one on the bottom is the output.\n[20:48] And of course, they're exactly the same,"
+    },
+    {
+      "segment_index": 126,
+      "start_time": 1250,
+      "end_time": 1260,
+      "frames": [
+        "frame_0375.jpg",
+        "frame_0376.jpg",
+        "frame_0377.jpg"
+      ],
+      "transcript": "[20:48] And of course, they're exactly the same,\n[20:50] and that's what you would expect with a voltage buffer.\n[20:53] It just has a gain of one, so what goes in is what comes out.\n[20:57] And of course, the high impedance input can be used to buffer sections within your design."
+    },
+    {
+      "segment_index": 127,
+      "start_time": 1260,
+      "end_time": 1270,
+      "frames": [
+        "frame_0378.jpg",
+        "frame_0379.jpg",
+        "frame_0380.jpg"
+      ],
+      "transcript": "[20:57] And of course, the high impedance input can be used to buffer sections within your design.\n[21:04] Probably the most common configuration that you'll see an op amp used in\n[21:08] is as an inverting amplifier."
+    },
+    {
+      "segment_index": 128,
+      "start_time": 1270,
+      "end_time": 1280,
+      "frames": [
+        "frame_0381.jpg",
+        "frame_0382.jpg",
+        "frame_0383.jpg"
+      ],
+      "transcript": "[21:10] You'll see this used throughout audio equipment designs, for example.\n[21:13] Now this is how we're going to wire our NE5532 up as an inverting amplifier,\n[21:19] and we'll need two additional components."
+    },
+    {
+      "segment_index": 129,
+      "start_time": 1280,
+      "end_time": 1290,
+      "frames": [
+        "frame_0384.jpg",
+        "frame_0385.jpg",
+        "frame_0386.jpg"
+      ],
+      "transcript": "[21:19] and we'll need two additional components.\n[21:21] An input resistor that's labeled as Rn,\n[21:24] and a feedback resistor that's labeled as Rf.\n[21:27] And both of these resistors in our case are going to be 1k."
+    },
+    {
+      "segment_index": 130,
+      "start_time": 1290,
+      "end_time": 1300,
+      "frames": [
+        "frame_0387.jpg",
+        "frame_0388.jpg",
+        "frame_0389.jpg"
+      ],
+      "transcript": "[21:27] And both of these resistors in our case are going to be 1k.\n[21:31] Now you can see from the formula here that the gain of the amplifier\n[21:35] depends upon the ratio of these two resistors.\n[21:38] So with each of them being the same value,"
+    },
+    {
+      "segment_index": 131,
+      "start_time": 1300,
+      "end_time": 1310,
+      "frames": [
+        "frame_0390.jpg",
+        "frame_0391.jpg",
+        "frame_0392.jpg"
+      ],
+      "transcript": "[21:38] So with each of them being the same value,\n[21:40] our amplifier will have a gain of one.\n[21:42] If you want to change the gain of the amplifier,\n[21:45] you can do so by altering the values of the resistors.\n[21:49] And it is common to leave the value of Rn in place"
+    },
+    {
+      "segment_index": 132,
+      "start_time": 1310,
+      "end_time": 1320,
+      "frames": [
+        "frame_0393.jpg",
+        "frame_0394.jpg",
+        "frame_0395.jpg"
+      ],
+      "transcript": "[21:49] And it is common to leave the value of Rn in place\n[21:52] and change the value of the feedback resistor, Rf.\n[21:56] If you wish, you could use a potentiometer for Rf instead of a fixed resistor,"
+    },
+    {
+      "segment_index": 133,
+      "start_time": 1320,
+      "end_time": 1330,
+      "frames": [
+        "frame_0396.jpg",
+        "frame_0397.jpg",
+        "frame_0398.jpg"
+      ],
+      "transcript": "[21:56] If you wish, you could use a potentiometer for Rf instead of a fixed resistor,\n[22:01] so you could have a variable gain amplifier.\n[22:03] So let's wire this up and test it out.\n[22:06] Now here's the demo of our inverting amplifier.\n[22:09] I'm applying a 1kHz sine wave,"
+    },
+    {
+      "segment_index": 134,
+      "start_time": 1330,
+      "end_time": 1340,
+      "frames": [
+        "frame_0399.jpg",
+        "frame_0400.jpg",
+        "frame_0401.jpg"
+      ],
+      "transcript": "[22:09] I'm applying a 1kHz sine wave,\n[22:12] and that is the yellow one that you see over here on my A channel.\n[22:16] And the output channel is this one over here.\n[22:19] And as we can see, the output has been inverted 180 degrees,"
+    },
+    {
+      "segment_index": 135,
+      "start_time": 1340,
+      "end_time": 1350,
+      "frames": [
+        "frame_0402.jpg",
+        "frame_0403.jpg",
+        "frame_0404.jpg"
+      ],
+      "transcript": "[22:19] And as we can see, the output has been inverted 180 degrees,\n[22:23] thus an inverting amplifier.\n[22:25] But otherwise, it looks very good.\n[22:27] It's a very nice sine wave.\n[22:29] And again, this is one of the most popular configurations of an amplifier"
+    },
+    {
+      "segment_index": 136,
+      "start_time": 1350,
+      "end_time": 1360,
+      "frames": [
+        "frame_0405.jpg",
+        "frame_0406.jpg",
+        "frame_0407.jpg"
+      ],
+      "transcript": "[22:29] And again, this is one of the most popular configurations of an amplifier\n[22:33] that you can have using an op-amp.\n[22:36] Now the opposite of the inverting amplifier would of course be the non-inverting amplifier,"
+    },
+    {
+      "segment_index": 137,
+      "start_time": 1360,
+      "end_time": 1370,
+      "frames": [
+        "frame_0408.jpg",
+        "frame_0409.jpg",
+        "frame_0410.jpg"
+      ],
+      "transcript": "[22:36] Now the opposite of the inverting amplifier would of course be the non-inverting amplifier,\n[22:42] an amplifier whose output is in phase with its input.\n[22:46] And this is how we would wire up our NE5532 as a non-inverting amplifier."
+    },
+    {
+      "segment_index": 138,
+      "start_time": 1370,
+      "end_time": 1380,
+      "frames": [
+        "frame_0411.jpg",
+        "frame_0412.jpg",
+        "frame_0413.jpg"
+      ],
+      "transcript": "[22:46] And this is how we would wire up our NE5532 as a non-inverting amplifier.\n[22:51] Note that we're using the same two components,\n[22:54] the same resistors as we did with the inverting amplifier,\n[22:57] and that once again, the gain is dependent upon the ratio of the values of these resistors."
+    },
+    {
+      "segment_index": 139,
+      "start_time": 1380,
+      "end_time": 1390,
+      "frames": [
+        "frame_0414.jpg",
+        "frame_0415.jpg",
+        "frame_0416.jpg"
+      ],
+      "transcript": "[22:57] and that once again, the gain is dependent upon the ratio of the values of these resistors.\n[23:02] As with the previous design, you could change the feedback resistor if you wish\n[23:07] to change the gain of the amplifier,\n[23:09] or you could use a potentiometer to build a variable gain amplifier."
+    },
+    {
+      "segment_index": 140,
+      "start_time": 1390,
+      "end_time": 1400,
+      "frames": [
+        "frame_0417.jpg",
+        "frame_0418.jpg",
+        "frame_0419.jpg"
+      ],
+      "transcript": "[23:09] or you could use a potentiometer to build a variable gain amplifier.\n[23:14] I should point out that the formulas I'm giving you for gain are actually approximations\n[23:18] because true formulas for amplifier gain"
+    },
+    {
+      "segment_index": 141,
+      "start_time": 1400,
+      "end_time": 1410,
+      "frames": [
+        "frame_0420.jpg",
+        "frame_0421.jpg",
+        "frame_0422.jpg"
+      ],
+      "transcript": "[23:18] because true formulas for amplifier gain\n[23:21] need to include the impedance of both the input and output devices.\n[23:26] But for most cases, these formulas should work fine\n[23:29] for you to calculate the gain of your op-amps."
+    },
+    {
+      "segment_index": 142,
+      "start_time": 1410,
+      "end_time": 1420,
+      "frames": [
+        "frame_0423.jpg",
+        "frame_0424.jpg",
+        "frame_0425.jpg"
+      ],
+      "transcript": "[23:29] for you to calculate the gain of your op-amps.\n[23:31] So let's wire up our non-inverting amplifier and test it out.\n[23:35] And so now we have our non-inverting amplifier demonstration,\n[23:39] and as you can see, it's pretty well the same as the inverting amplifier,"
+    },
+    {
+      "segment_index": 143,
+      "start_time": 1420,
+      "end_time": 1430,
+      "frames": [
+        "frame_0426.jpg",
+        "frame_0427.jpg",
+        "frame_0428.jpg"
+      ],
+      "transcript": "[23:39] and as you can see, it's pretty well the same as the inverting amplifier,\n[23:42] with one obvious difference.\n[23:44] The output signal here is in phase with the input signal,\n[23:49] so it has not been inverted."
+    },
+    {
+      "segment_index": 144,
+      "start_time": 1430,
+      "end_time": 1440,
+      "frames": [
+        "frame_0429.jpg",
+        "frame_0430.jpg",
+        "frame_0431.jpg"
+      ],
+      "transcript": "[23:49] so it has not been inverted.\n[23:51] And between inverting and non-inverting amplifiers,\n[23:54] you can pretty well control the phase of the signal throughout your design,\n[23:58] and it's not uncommon to use a combination of both of these"
+    },
+    {
+      "segment_index": 145,
+      "start_time": 1440,
+      "end_time": 1450,
+      "frames": [
+        "frame_0432.jpg",
+        "frame_0433.jpg",
+        "frame_0434.jpg"
+      ],
+      "transcript": "[23:58] and it's not uncommon to use a combination of both of these\n[24:01] in an audio design or in other op-amp circuitry.\n[24:07] Now the next circuit that we're going to look at\n[24:09] is also a very commonly used audio circuit,"
+    },
+    {
+      "segment_index": 146,
+      "start_time": 1450,
+      "end_time": 1460,
+      "frames": [
+        "frame_0435.jpg",
+        "frame_0436.jpg",
+        "frame_0437.jpg"
+      ],
+      "transcript": "[24:09] is also a very commonly used audio circuit,\n[24:12] and that's the low-pass active filter.\n[24:14] This is a filter that will allow low frequencies to pass\n[24:17] while attenuating the higher frequencies.\n[24:19] And this one is a very simple filter"
+    },
+    {
+      "segment_index": 147,
+      "start_time": 1460,
+      "end_time": 1470,
+      "frames": [
+        "frame_0438.jpg",
+        "frame_0439.jpg",
+        "frame_0440.jpg"
+      ],
+      "transcript": "[24:19] And this one is a very simple filter\n[24:21] that attenuates at a rate of 3 decibels per octave.\n[24:25] We can calculate the frequency that it operates as\n[24:28] by using the formula in the corner,"
+    },
+    {
+      "segment_index": 148,
+      "start_time": 1470,
+      "end_time": 1480,
+      "frames": [
+        "frame_0441.jpg",
+        "frame_0442.jpg",
+        "frame_0443.jpg"
+      ],
+      "transcript": "[24:28] by using the formula in the corner,\n[24:30] and you'll see that with the values that we have here,\n[24:33] it'll cut off at about 1592 hertz.\n[24:37] Now you can change the frequency, of course,\n[24:39] by changing the value of both the resistor and capacitor,"
+    },
+    {
+      "segment_index": 149,
+      "start_time": 1480,
+      "end_time": 1490,
+      "frames": [
+        "frame_0444.jpg",
+        "frame_0445.jpg",
+        "frame_0446.jpg"
+      ],
+      "transcript": "[24:39] by changing the value of both the resistor and capacitor,\n[24:42] and in practice it's easier to change the capacitor to a fixed value,\n[24:46] and then trim the value of the resistor.\n[24:49] So let's wire this one up on the breadboard,"
+    },
+    {
+      "segment_index": 150,
+      "start_time": 1490,
+      "end_time": 1500,
+      "frames": [
+        "frame_0447.jpg",
+        "frame_0448.jpg",
+        "frame_0449.jpg"
+      ],
+      "transcript": "[24:49] So let's wire this one up on the breadboard,\n[24:51] and check it out.\n[24:52] And so here's our low-pass filter demonstration\n[24:56] hooked up and visualized on the oscilloscope once again."
+    },
+    {
+      "segment_index": 151,
+      "start_time": 1500,
+      "end_time": 1510,
+      "frames": [
+        "frame_0450.jpg",
+        "frame_0451.jpg",
+        "frame_0452.jpg"
+      ],
+      "transcript": "[24:56] hooked up and visualized on the oscilloscope once again.\n[25:00] Now a low-pass filter, of course, will attenuate higher frequencies.\n[25:05] So right now we have a 1 kilohertz sine wave being fed into it.\n[25:09] The top waveform, the yellow one, is the input,"
+    },
+    {
+      "segment_index": 152,
+      "start_time": 1510,
+      "end_time": 1520,
+      "frames": [
+        "frame_0453.jpg",
+        "frame_0454.jpg",
+        "frame_0455.jpg"
+      ],
+      "transcript": "[25:09] The top waveform, the yellow one, is the input,\n[25:12] and the blue one at the bottom is the output.\n[25:14] So let's increase the frequency up a little bit.\n[25:18] And we'll go to 2 kilohertz,\n[25:19] and you'll notice the bottom has started to attenuate."
+    },
+    {
+      "segment_index": 153,
+      "start_time": 1520,
+      "end_time": 1530,
+      "frames": [
+        "frame_0456.jpg",
+        "frame_0457.jpg",
+        "frame_0458.jpg"
+      ],
+      "transcript": "[25:19] and you'll notice the bottom has started to attenuate.\n[25:21] And as I go higher in frequency,\n[25:25] the top stays the same, but the bottom goes down.\n[25:29] And so now we're at 10 kilohertz over here,"
+    },
+    {
+      "segment_index": 154,
+      "start_time": 1530,
+      "end_time": 1540,
+      "frames": [
+        "frame_0459.jpg",
+        "frame_0460.jpg",
+        "frame_0461.jpg"
+      ],
+      "transcript": "[25:29] And so now we're at 10 kilohertz over here,\n[25:32] and you can see it's quite a bit less than if I back off to 1 kilohertz.\n[25:36] And so our filter is working.\n[25:38] Now a simple filter like this only attenuates at about 3 decibels per octave,"
+    },
+    {
+      "segment_index": 155,
+      "start_time": 1540,
+      "end_time": 1550,
+      "frames": [
+        "frame_0462.jpg",
+        "frame_0463.jpg",
+        "frame_0464.jpg"
+      ],
+      "transcript": "[25:38] Now a simple filter like this only attenuates at about 3 decibels per octave,\n[25:42] but you can build more advanced filters that can attenuate at a higher rate or a sharper rate\n[25:48] using the same basic circuitry that we just used over here."
+    },
+    {
+      "segment_index": 156,
+      "start_time": 1550,
+      "end_time": 1560,
+      "frames": [
+        "frame_0465.jpg",
+        "frame_0466.jpg",
+        "frame_0467.jpg"
+      ],
+      "transcript": "[25:48] using the same basic circuitry that we just used over here.\n[25:51] Now if we exchange the position of the capacitor and the resistor in our filter,\n[25:57] we can turn it into a high-pass active filter,"
+    },
+    {
+      "segment_index": 157,
+      "start_time": 1560,
+      "end_time": 1570,
+      "frames": [
+        "frame_0468.jpg",
+        "frame_0469.jpg",
+        "frame_0470.jpg"
+      ],
+      "transcript": "[25:57] we can turn it into a high-pass active filter,\n[26:00] a filter that allows higher frequencies to pass while attenuating lower frequencies.\n[26:05] Once again, the formula for the filter is essentially the same,\n[26:09] and ours has a crossover of 1592 hertz."
+    },
+    {
+      "segment_index": 158,
+      "start_time": 1570,
+      "end_time": 1580,
+      "frames": [
+        "frame_0471.jpg",
+        "frame_0472.jpg",
+        "frame_0473.jpg"
+      ],
+      "transcript": "[26:09] and ours has a crossover of 1592 hertz.\n[26:12] Now high-pass and low-pass filters can be used to build things like tone controls,\n[26:17] equalizers, crossover networks, and to eliminate noise and circuits."
+    },
+    {
+      "segment_index": 159,
+      "start_time": 1580,
+      "end_time": 1590,
+      "frames": [
+        "frame_0474.jpg",
+        "frame_0475.jpg",
+        "frame_0476.jpg"
+      ],
+      "transcript": "[26:17] equalizers, crossover networks, and to eliminate noise and circuits.\n[26:22] So they're very useful things to be able to know how to construct.\n[26:26] So let's wire this one up on our breadboard and check it out.\n[26:29] And here's the demonstration of the high-pass filter,"
+    },
+    {
+      "segment_index": 160,
+      "start_time": 1590,
+      "end_time": 1600,
+      "frames": [
+        "frame_0477.jpg",
+        "frame_0478.jpg",
+        "frame_0479.jpg"
+      ],
+      "transcript": "[26:29] And here's the demonstration of the high-pass filter,\n[26:33] which of course has the opposite effect of the low-pass filter.\n[26:37] The higher the frequency is, the more of it it will permit through,"
+    },
+    {
+      "segment_index": 161,
+      "start_time": 1600,
+      "end_time": 1610,
+      "frames": [
+        "frame_0480.jpg",
+        "frame_0481.jpg",
+        "frame_0482.jpg"
+      ],
+      "transcript": "[26:37] The higher the frequency is, the more of it it will permit through,\n[26:41] and low frequencies will be attenuated.\n[26:43] Now once again for the demo, the input waveform is the top one,\n[26:47] and the bottom one, the blue one, is the output."
+    },
+    {
+      "segment_index": 162,
+      "start_time": 1610,
+      "end_time": 1620,
+      "frames": [
+        "frame_0483.jpg",
+        "frame_0484.jpg",
+        "frame_0485.jpg"
+      ],
+      "transcript": "[26:50] And we're at 500 hertz right now.\n[26:52] We're going to go up in increments of 100 hertz this time so that you can see it.\n[26:56] And take a look at the level on the bottom as I increase the frequency."
+    },
+    {
+      "segment_index": 163,
+      "start_time": 1620,
+      "end_time": 1630,
+      "frames": [
+        "frame_0486.jpg",
+        "frame_0487.jpg",
+        "frame_0488.jpg"
+      ],
+      "transcript": "[26:56] And take a look at the level on the bottom as I increase the frequency.\n[27:01] So I'm going up in frequency now.\n[27:05] And as you can see, the level is increasing the higher I go in frequency."
+    },
+    {
+      "segment_index": 164,
+      "start_time": 1630,
+      "end_time": 1640,
+      "frames": [
+        "frame_0489.jpg",
+        "frame_0490.jpg",
+        "frame_0491.jpg"
+      ],
+      "transcript": "[27:05] And as you can see, the level is increasing the higher I go in frequency.\n[27:11] And now I'm at 5 kilohertz, and the level is quite a bit higher.\n[27:14] I'll go back down so you can watch the effect in reverse.\n[27:19] And so a high-pass filter basically just lets high frequencies through"
+    },
+    {
+      "segment_index": 165,
+      "start_time": 1640,
+      "end_time": 1650,
+      "frames": [
+        "frame_0492.jpg",
+        "frame_0493.jpg",
+        "frame_0494.jpg"
+      ],
+      "transcript": "[27:19] And so a high-pass filter basically just lets high frequencies through\n[27:23] and attenuates the lower one.\n[27:25] And again, this is a very simple filter, 3 decibels per octave,\n[27:29] but you can cascade these to get a sharper filter."
+    },
+    {
+      "segment_index": 166,
+      "start_time": 1650,
+      "end_time": 1660,
+      "frames": [
+        "frame_0495.jpg",
+        "frame_0496.jpg",
+        "frame_0497.jpg"
+      ],
+      "transcript": "[27:29] but you can cascade these to get a sharper filter.\n[27:33] Now in our final basic experiment,\n[27:35] we're going to use both of the op-amps in the NE5532.\n[27:39] And we're going to wire the first one as a multivibrator"
+    },
+    {
+      "segment_index": 167,
+      "start_time": 1660,
+      "end_time": 1670,
+      "frames": [
+        "frame_0498.jpg",
+        "frame_0499.jpg",
+        "frame_0500.jpg"
+      ],
+      "transcript": "[27:39] And we're going to wire the first one as a multivibrator\n[27:43] that will produce a square wave.\n[27:45] The frequency of our square wave is going to be determined\n[27:48] by capacitors CF and resistor RF."
+    },
+    {
+      "segment_index": 168,
+      "start_time": 1670,
+      "end_time": 1680,
+      "frames": [
+        "frame_0501.jpg",
+        "frame_0502.jpg",
+        "frame_0503.jpg"
+      ],
+      "transcript": "[27:48] by capacitors CF and resistor RF.\n[27:51] And so you could use a potentiometer for RF\n[27:55] if you want to make a variable frequency oscillator.\n[27:58] Resistors R2 and R1 will determine both the pulse width"
+    },
+    {
+      "segment_index": 169,
+      "start_time": 1680,
+      "end_time": 1690,
+      "frames": [
+        "frame_0504.jpg",
+        "frame_0505.jpg",
+        "frame_0506.jpg"
+      ],
+      "transcript": "[27:58] Resistors R2 and R1 will determine both the pulse width\n[28:03] and the amplitude of our square wave.\n[28:05] We're going to take the second op-amp in the NE5532"
+    },
+    {
+      "segment_index": 170,
+      "start_time": 1690,
+      "end_time": 1700,
+      "frames": [
+        "frame_0507.jpg",
+        "frame_0508.jpg",
+        "frame_0509.jpg"
+      ],
+      "transcript": "[28:05] We're going to take the second op-amp in the NE5532\n[28:10] and wire it up as an integrator.\n[28:13] As you recall, an integrator performs a mathematical integration on a waveform.\n[28:19] We'll be using the value of 10k for R3,"
+    },
+    {
+      "segment_index": 171,
+      "start_time": 1700,
+      "end_time": 1710,
+      "frames": [
+        "frame_0510.jpg",
+        "frame_0511.jpg",
+        "frame_0512.jpg"
+      ],
+      "transcript": "[28:19] We'll be using the value of 10k for R3,\n[28:23] 100k for R1,\n[28:25] and C1 will be using 100 nanofarads.\n[28:28] Connect everything up"
+    },
+    {
+      "segment_index": 172,
+      "start_time": 1710,
+      "end_time": 1720,
+      "frames": [
+        "frame_0513.jpg",
+        "frame_0514.jpg",
+        "frame_0515.jpg"
+      ],
+      "transcript": "[28:28] Connect everything up\n[28:30] and connect it to the square wave oscillator that we created earlier.\n[28:34] We can then monitor both the square wave\n[28:36] and the output of the integrator,\n[28:38] which should be a triangle wave."
+    },
+    {
+      "segment_index": 173,
+      "start_time": 1720,
+      "end_time": 1730,
+      "frames": [
+        "frame_0516.jpg",
+        "frame_0517.jpg",
+        "frame_0518.jpg"
+      ],
+      "transcript": "[28:38] which should be a triangle wave.\n[28:41] And here's a quick demonstration of our waveform generator.\n[28:44] And as you can see, the top waveform is the square wave\n[28:48] and the bottom one is the triangle wave."
+    },
+    {
+      "segment_index": 174,
+      "start_time": 1730,
+      "end_time": 1740,
+      "frames": [
+        "frame_0519.jpg",
+        "frame_0520.jpg",
+        "frame_0521.jpg"
+      ],
+      "transcript": "[28:48] and the bottom one is the triangle wave.\n[28:50] The square is tilted a little bit at the top,\n[28:52] but the triangle wave is just about perfect.\n[28:56] And actually the tilting on the square\n[28:57] could probably be fixed just by adjusting the capacitance on my scope probe."
+    },
+    {
+      "segment_index": 175,
+      "start_time": 1740,
+      "end_time": 1750,
+      "frames": [
+        "frame_0522.jpg",
+        "frame_0523.jpg",
+        "frame_0524.jpg"
+      ],
+      "transcript": "[28:57] could probably be fixed just by adjusting the capacitance on my scope probe.\n[29:02] That may not be exactly accurate.\n[29:04] And so it works very well as a generator.\n[29:07] It's generating a frequency now of 1.88 kHz,"
+    },
+    {
+      "segment_index": 176,
+      "start_time": 1750,
+      "end_time": 1760,
+      "frames": [
+        "frame_0525.jpg",
+        "frame_0526.jpg",
+        "frame_0527.jpg"
+      ],
+      "transcript": "[29:07] It's generating a frequency now of 1.88 kHz,\n[29:10] but of course you could alter that frequency\n[29:12] by changing the resistor and capacitor values.\n[29:16] So if you need to generate a waveform,\n[29:18] an operational amplifier is actually a great way to do it."
+    },
+    {
+      "segment_index": 177,
+      "start_time": 1760,
+      "end_time": 1770,
+      "frames": [
+        "frame_0528.jpg",
+        "frame_0529.jpg",
+        "frame_0530.jpg"
+      ],
+      "transcript": "[29:18] an operational amplifier is actually a great way to do it.\n[29:22] Now although they are analog circuits,\n[29:24] its operational amplifiers can also be used to glue together\n[29:28] analog and digital circuitry."
+    },
+    {
+      "segment_index": 178,
+      "start_time": 1770,
+      "end_time": 1780,
+      "frames": [
+        "frame_0531.jpg",
+        "frame_0532.jpg",
+        "frame_0533.jpg"
+      ],
+      "transcript": "[29:28] analog and digital circuitry.\n[29:30] And there's a couple of methods they can use to do this.\n[29:33] One method that we've used before is to run an op amp as a comparator\n[29:37] and use the comparator with a digital input pin on a microcontroller."
+    },
+    {
+      "segment_index": 179,
+      "start_time": 1780,
+      "end_time": 1790,
+      "frames": [
+        "frame_0534.jpg",
+        "frame_0535.jpg",
+        "frame_0536.jpg"
+      ],
+      "transcript": "[29:37] and use the comparator with a digital input pin on a microcontroller.\n[29:42] Another thing you can do with an op amp is to use it as an amplifier\n[29:46] to amplify the signal for the analog to digital converter.\n[29:49] And that's what we're going to do right now."
+    },
+    {
+      "segment_index": 180,
+      "start_time": 1790,
+      "end_time": 1800,
+      "frames": [
+        "frame_0537.jpg",
+        "frame_0538.jpg",
+        "frame_0539.jpg"
+      ],
+      "transcript": "[29:49] And that's what we're going to do right now.\n[29:51] We're going to take an op amp and use it to amplify a very small signal\n[29:56] and read it with the A to D converter on an Arduino Uno."
+    },
+    {
+      "segment_index": 181,
+      "start_time": 1800,
+      "end_time": 1810,
+      "frames": [
+        "frame_0540.jpg",
+        "frame_0541.jpg",
+        "frame_0542.jpg"
+      ],
+      "transcript": "[29:56] and read it with the A to D converter on an Arduino Uno.\n[30:00] So let's go and see how we hook that up and then we'll put it to use.\n[30:04] Now here's the circuit that we're going to be using\n[30:06] to amplify the signal for our Arduino.\n[30:09] And we're building our amplifier around an MCP6002 op amp."
+    },
+    {
+      "segment_index": 182,
+      "start_time": 1810,
+      "end_time": 1820,
+      "frames": [
+        "frame_0543.jpg",
+        "frame_0544.jpg",
+        "frame_0545.jpg"
+      ],
+      "transcript": "[30:09] And we're building our amplifier around an MCP6002 op amp.\n[30:15] This op amp is an excellent choice\n[30:17] when you're working with digital circuitry as it is a single supply op amp"
+    },
+    {
+      "segment_index": 183,
+      "start_time": 1820,
+      "end_time": 1830,
+      "frames": [
+        "frame_0546.jpg",
+        "frame_0547.jpg",
+        "frame_0548.jpg"
+      ],
+      "transcript": "[30:17] when you're working with digital circuitry as it is a single supply op amp\n[30:21] and it has a maximum supply voltage of only 6 volts.\n[30:25] It works perfectly with 3.3 and 5 volt logic.\n[30:29] So again, it's ideal for working with digital circuitry."
+    },
+    {
+      "segment_index": 184,
+      "start_time": 1830,
+      "end_time": 1840,
+      "frames": [
+        "frame_0549.jpg",
+        "frame_0550.jpg",
+        "frame_0551.jpg"
+      ],
+      "transcript": "[30:29] So again, it's ideal for working with digital circuitry.\n[30:33] Now what we have here is essentially a classic amplifier design.\n[30:37] You can see the feedback loop in the light blue up there."
+    },
+    {
+      "segment_index": 185,
+      "start_time": 1840,
+      "end_time": 1850,
+      "frames": [
+        "frame_0552.jpg",
+        "frame_0553.jpg",
+        "frame_0554.jpg"
+      ],
+      "transcript": "[30:37] You can see the feedback loop in the light blue up there.\n[30:40] The capacitor across the resistor is just for stability\n[30:44] and to prevent it from going into oscillation.\n[30:46] The 100k pot you can use to control the gain of the amplifier."
+    },
+    {
+      "segment_index": 186,
+      "start_time": 1850,
+      "end_time": 1860,
+      "frames": [
+        "frame_0555.jpg",
+        "frame_0556.jpg",
+        "frame_0557.jpg"
+      ],
+      "transcript": "[30:46] The 100k pot you can use to control the gain of the amplifier.\n[30:51] And the output of the amplifier you'll also notice\n[30:54] is a 220 pF capacitor across it just for a little bit of noise reduction."
+    },
+    {
+      "segment_index": 187,
+      "start_time": 1860,
+      "end_time": 1870,
+      "frames": [
+        "frame_0558.jpg",
+        "frame_0559.jpg",
+        "frame_0560.jpg"
+      ],
+      "transcript": "[31:00] Now the input has a 100 nF capacitor.\n[31:03] You can see it on the yellow on the left side.\n[31:06] If you were going to be amplifying DC voltages,\n[31:09] you can eliminate the capacitor and just connect them directly."
+    },
+    {
+      "segment_index": 188,
+      "start_time": 1870,
+      "end_time": 1880,
+      "frames": [
+        "frame_0561.jpg",
+        "frame_0562.jpg",
+        "frame_0563.jpg"
+      ],
+      "transcript": "[31:09] you can eliminate the capacitor and just connect them directly.\n[31:12] But I've got this set up so that you could use audio voltages\n[31:15] from something like, let's say, a microphone for example."
+    },
+    {
+      "segment_index": 189,
+      "start_time": 1880,
+      "end_time": 1890,
+      "frames": [
+        "frame_0564.jpg",
+        "frame_0565.jpg",
+        "frame_0566.jpg"
+      ],
+      "transcript": "[31:20] Otherwise, it's a fairly basic circuit.\n[31:23] Note the 2.2 microfarad capacitor\n[31:25] that sits across the 5 volt and ground line.\n[31:29] You want to get that capacitor as close as you possibly can physically to the chip."
+    },
+    {
+      "segment_index": 190,
+      "start_time": 1890,
+      "end_time": 1900,
+      "frames": [
+        "frame_0567.jpg",
+        "frame_0568.jpg",
+        "frame_0569.jpg"
+      ],
+      "transcript": "[31:29] You want to get that capacitor as close as you possibly can physically to the chip.\n[31:35] Ideally, you'll straddle the chip with that capacitor.\n[31:38] And the function of that capacitor"
+    },
+    {
+      "segment_index": 191,
+      "start_time": 1900,
+      "end_time": 1910,
+      "frames": [
+        "frame_0570.jpg",
+        "frame_0571.jpg",
+        "frame_0572.jpg"
+      ],
+      "transcript": "[31:38] And the function of that capacitor\n[31:40] is to take some of the noise that might be on the line.\n[31:43] Remember, you're sharing 5 volts with an Arduino.\n[31:46] And microcontrollers and their peripherals\n[31:48] can sometimes put noise onto the line."
+    },
+    {
+      "segment_index": 192,
+      "start_time": 1910,
+      "end_time": 1920,
+      "frames": [
+        "frame_0573.jpg",
+        "frame_0574.jpg",
+        "frame_0575.jpg"
+      ],
+      "transcript": "[31:48] can sometimes put noise onto the line.\n[31:50] Now after you've got this all wired up in the breadboard,\n[31:53] you'll need to hook it up, of course, to the Arduino.\n[31:56] And the hookup is very simple.\n[31:57] The power supply for the circuit, the 5 volts,"
+    },
+    {
+      "segment_index": 193,
+      "start_time": 1920,
+      "end_time": 1930,
+      "frames": [
+        "frame_0576.jpg",
+        "frame_0577.jpg",
+        "frame_0578.jpg"
+      ],
+      "transcript": "[31:57] The power supply for the circuit, the 5 volts,\n[32:00] will connect to the Arduino's 5 volts.\n[32:03] The ground will, of course, connect to the Arduino's ground.\n[32:07] And we're going to feed the output into analog input A0."
+    },
+    {
+      "segment_index": 194,
+      "start_time": 1930,
+      "end_time": 1940,
+      "frames": [
+        "frame_0579.jpg",
+        "frame_0580.jpg",
+        "frame_0581.jpg"
+      ],
+      "transcript": "[32:07] And we're going to feed the output into analog input A0.\n[32:12] And so once you've got that wired up,\n[32:14] you can feed a signal into it and run a bit of code\n[32:18] and look at it with the Arduino."
+    },
+    {
+      "segment_index": 195,
+      "start_time": 1940,
+      "end_time": 1950,
+      "frames": [
+        "frame_0582.jpg",
+        "frame_0583.jpg",
+        "frame_0584.jpg"
+      ],
+      "transcript": "[32:20] So let's go and do that right now.\n[32:21] Okay, here's our demonstration of the Arduino\n[32:25] with the op-amp amplifier.\n[32:27] And you'll notice I've also added a signal generator"
+    },
+    {
+      "segment_index": 196,
+      "start_time": 1950,
+      "end_time": 1960,
+      "frames": [
+        "frame_0585.jpg",
+        "frame_0586.jpg",
+        "frame_0587.jpg"
+      ],
+      "transcript": "[32:27] And you'll notice I've also added a signal generator\n[32:30] and an oscilloscope to the mix right now.\n[32:32] Now the signal generator is currently giving out\n[32:35] a 2 kilohertz sine wave at half a volt."
+    },
+    {
+      "segment_index": 197,
+      "start_time": 1960,
+      "end_time": 1970,
+      "frames": [
+        "frame_0588.jpg",
+        "frame_0589.jpg",
+        "frame_0590.jpg"
+      ],
+      "transcript": "[32:40] And it's being amplified by the amplifier.\n[32:43] What I've got the scope set to here right now\n[32:45] is one volt per division.\n[32:47] And so I've got just about a full output over here."
+    },
+    {
+      "segment_index": 198,
+      "start_time": 1970,
+      "end_time": 1980,
+      "frames": [
+        "frame_0591.jpg",
+        "frame_0592.jpg",
+        "frame_0593.jpg"
+      ],
+      "transcript": "[32:47] And so I've got just about a full output over here.\n[32:50] It's amplifying just about 10 times.\n[32:53] Now I'm going to reduce the level of the input over here.\n[32:58] And now we're at 0.1 of a volt."
+    },
+    {
+      "segment_index": 199,
+      "start_time": 1980,
+      "end_time": 1990,
+      "frames": [
+        "frame_0594.jpg",
+        "frame_0595.jpg",
+        "frame_0596.jpg"
+      ],
+      "transcript": "[32:58] And now we're at 0.1 of a volt.\n[33:00] And we've still got about a 1 volt sine wave over here.\n[33:04] I'm just going to play with the gain control a bit\n[33:06] just to see the effect that has.\n[33:09] And over here, I can get it so high,"
+    },
+    {
+      "segment_index": 200,
+      "start_time": 1990,
+      "end_time": 2000,
+      "frames": [
+        "frame_0597.jpg",
+        "frame_0598.jpg",
+        "frame_0599.jpg"
+      ],
+      "transcript": "[33:09] And over here, I can get it so high,\n[33:12] I can clip it right now, if you can see that.\n[33:15] And I can also adjust it down.\n[33:16] So I've got a lot of gain over here,\n[33:19] a lot of potential gain."
+    },
+    {
+      "segment_index": 201,
+      "start_time": 2000,
+      "end_time": 2010,
+      "frames": [
+        "frame_0600.jpg",
+        "frame_0601.jpg",
+        "frame_0602.jpg"
+      ],
+      "transcript": "[33:19] a lot of potential gain.\n[33:20] This is a 0.1 volt signal that I'm getting in here.\n[33:24] And I'm amplifying it almost to the full voltage right now.\n[33:28] Now if we take a look at the Arduino side of things,"
+    },
+    {
+      "segment_index": 202,
+      "start_time": 2010,
+      "end_time": 2020,
+      "frames": [
+        "frame_0603.jpg",
+        "frame_0604.jpg",
+        "frame_0605.jpg"
+      ],
+      "transcript": "[33:28] Now if we take a look at the Arduino side of things,\n[33:31] the sketch is very, very simple.\n[33:33] We start off by defining the pin that we're using,\n[33:35] analog pin A0,\n[33:36] and a variable just to hold the value of that."
+    },
+    {
+      "segment_index": 203,
+      "start_time": 2020,
+      "end_time": 2030,
+      "frames": [
+        "frame_0606.jpg",
+        "frame_0607.jpg",
+        "frame_0608.jpg"
+      ],
+      "transcript": "[33:40] In the setup, we'll set up the serial monitor.\n[33:43] That's all we do.\n[33:44] And then in the loop,\n[33:45] we're just going to do an analog read to that pin,\n[33:47] assign the value to that variable.\n[33:49] And then we're going to do a serial print lin"
+    },
+    {
+      "segment_index": 204,
+      "start_time": 2030,
+      "end_time": 2040,
+      "frames": [
+        "frame_0609.jpg",
+        "frame_0610.jpg",
+        "frame_0611.jpg"
+      ],
+      "transcript": "[33:49] And then we're going to do a serial print lin\n[33:52] of that variable to the display.\n[33:55] And then we're going to delay for 50 milliseconds\n[33:58] and do the whole thing over and over again."
+    },
+    {
+      "segment_index": 205,
+      "start_time": 2040,
+      "end_time": 2050,
+      "frames": [
+        "frame_0612.jpg",
+        "frame_0613.jpg",
+        "frame_0614.jpg"
+      ],
+      "transcript": "[33:58] and do the whole thing over and over again.\n[34:00] And actually, it looks better running on the plotter,\n[34:03] which is what I really wrote it for.\n[34:05] So let's put the plotter on.\n[34:06] And as you can see on the plotter,\n[34:08] you can see we do have a representation of our sine wave."
+    },
+    {
+      "segment_index": 206,
+      "start_time": 2050,
+      "end_time": 2060,
+      "frames": [
+        "frame_0615.jpg",
+        "frame_0616.jpg",
+        "frame_0617.jpg"
+      ],
+      "transcript": "[34:08] you can see we do have a representation of our sine wave.\n[34:12] And the level is much, much higher\n[34:14] than you would expect from a 0.1 of a volt signal.\n[34:18] So this is a really great way of amplifying"
+    },
+    {
+      "segment_index": 207,
+      "start_time": 2060,
+      "end_time": 2070,
+      "frames": [
+        "frame_0618.jpg",
+        "frame_0619.jpg",
+        "frame_0620.jpg"
+      ],
+      "transcript": "[34:18] So this is a really great way of amplifying\n[34:21] and extending the analog to digital converter,\n[34:24] not just in an Arduino Uno,\n[34:26] but on any microcontroller,\n[34:28] because this op amp will work fine with 3.3 volts as well."
+    },
+    {
+      "segment_index": 208,
+      "start_time": 2070,
+      "end_time": 2080,
+      "frames": [
+        "frame_0621.jpg",
+        "frame_0622.jpg",
+        "frame_0623.jpg"
+      ],
+      "transcript": "[34:28] because this op amp will work fine with 3.3 volts as well.\n[34:33] It's got a very good frequency response.\n[34:35] It's audio capable,\n[34:37] so you could use it with a very high quality\n[34:39] analog to digital converter."
+    },
+    {
+      "segment_index": 209,
+      "start_time": 2080,
+      "end_time": 2090,
+      "frames": [
+        "frame_0624.jpg",
+        "frame_0625.jpg",
+        "frame_0626.jpg"
+      ],
+      "transcript": "[34:39] analog to digital converter.\n[34:42] And also there are two op amps in the package,\n[34:45] so you could actually build a second circuit\n[34:47] and amplify a second one of the A to D inputs"
+    },
+    {
+      "segment_index": 210,
+      "start_time": 2090,
+      "end_time": 2100,
+      "frames": [
+        "frame_0627.jpg",
+        "frame_0628.jpg",
+        "frame_0629.jpg"
+      ],
+      "transcript": "[34:47] and amplify a second one of the A to D inputs\n[34:51] and really add a lot of versatility to your projects\n[34:54] with an op amp and a microcontroller.\n[34:58] Now, if I gave you the task of designing"
+    },
+    {
+      "segment_index": 211,
+      "start_time": 2100,
+      "end_time": 2110,
+      "frames": [
+        "frame_0630.jpg",
+        "frame_0631.jpg",
+        "frame_0632.jpg"
+      ],
+      "transcript": "[34:58] Now, if I gave you the task of designing\n[35:00] a light sensitive switch,\n[35:01] one that would turn something on or off\n[35:04] based upon the absence or presence of light,\n[35:07] chances are you would probably start thinking\n[35:09] about using a microcontroller"
+    },
+    {
+      "segment_index": 212,
+      "start_time": 2110,
+      "end_time": 2120,
+      "frames": [
+        "frame_0633.jpg",
+        "frame_0634.jpg",
+        "frame_0635.jpg"
+      ],
+      "transcript": "[35:09] about using a microcontroller\n[35:11] with perhaps an LDR or a photo transistor on it.\n[35:14] And while that will certainly work,\n[35:16] there is a much easier way of doing this,\n[35:19] and that is, of course,"
+    },
+    {
+      "segment_index": 213,
+      "start_time": 2120,
+      "end_time": 2130,
+      "frames": [
+        "frame_0636.jpg",
+        "frame_0637.jpg",
+        "frame_0638.jpg"
+      ],
+      "transcript": "[35:19] and that is, of course,\n[35:20] to use an operational amplifier.\n[35:22] We're going to build a small light sensitive switch\n[35:25] with an op amp that's just going to control an LED,\n[35:28] but you could extend it to use a relay"
+    },
+    {
+      "segment_index": 214,
+      "start_time": 2130,
+      "end_time": 2140,
+      "frames": [
+        "frame_0639.jpg",
+        "frame_0640.jpg",
+        "frame_0641.jpg"
+      ],
+      "transcript": "[35:28] but you could extend it to use a relay\n[35:30] or a power transistor to control something else.\n[35:34] The best deal is that this entire design\n[35:36] is going to take about $2 worth of parts\n[35:39] and no programming required."
+    },
+    {
+      "segment_index": 215,
+      "start_time": 2140,
+      "end_time": 2150,
+      "frames": [
+        "frame_0642.jpg",
+        "frame_0643.jpg",
+        "frame_0644.jpg"
+      ],
+      "transcript": "[35:39] and no programming required.\n[35:41] So let's go and take a look at the hookup for that.\n[35:44] Now here's the schematic for our light activated switch,\n[35:47] and we're building this around an LM358 op amp."
+    },
+    {
+      "segment_index": 216,
+      "start_time": 2150,
+      "end_time": 2160,
+      "frames": [
+        "frame_0645.jpg",
+        "frame_0646.jpg",
+        "frame_0647.jpg"
+      ],
+      "transcript": "[35:47] and we're building this around an LM358 op amp.\n[35:51] The LM358 is a very inexpensive\n[35:53] and commonly available device,\n[35:55] and it has an advantage in that it can work off\n[35:58] of a single power supply.\n[35:59] So we're going to power everything"
+    },
+    {
+      "segment_index": 217,
+      "start_time": 2160,
+      "end_time": 2170,
+      "frames": [
+        "frame_0648.jpg",
+        "frame_0649.jpg",
+        "frame_0650.jpg"
+      ],
+      "transcript": "[35:59] So we're going to power everything\n[36:01] with one 9-volt battery.\n[36:03] Now the output of the LM358\n[36:05] is going to a 220-ohm dropping resistor\n[36:08] and then to an LED."
+    },
+    {
+      "segment_index": 218,
+      "start_time": 2170,
+      "end_time": 2180,
+      "frames": [
+        "frame_0651.jpg",
+        "frame_0652.jpg",
+        "frame_0653.jpg"
+      ],
+      "transcript": "[36:08] and then to an LED.\n[36:10] So we're just going to be turning an LED on and off,\n[36:13] but of course you could change this for a relay\n[36:15] or a power transistor to drive something else.\n[36:19] Now essentially what we're doing here"
+    },
+    {
+      "segment_index": 219,
+      "start_time": 2180,
+      "end_time": 2190,
+      "frames": [
+        "frame_0654.jpg",
+        "frame_0655.jpg",
+        "frame_0656.jpg"
+      ],
+      "transcript": "[36:19] Now essentially what we're doing here\n[36:20] is running this as a comparator\n[36:22] with a voltage divider consisting of the two 10k resistors\n[36:26] attached to the inverting input.\n[36:29] On the non-inverting input,"
+    },
+    {
+      "segment_index": 220,
+      "start_time": 2190,
+      "end_time": 2200,
+      "frames": [
+        "frame_0657.jpg",
+        "frame_0658.jpg",
+        "frame_0659.jpg"
+      ],
+      "transcript": "[36:29] On the non-inverting input,\n[36:30] we have another voltage divider\n[36:32] which consists of the light dependent resistor\n[36:34] or photo cell and a 20k potentiometer.\n[36:38] You can adjust a 20k pot"
+    },
+    {
+      "segment_index": 221,
+      "start_time": 2200,
+      "end_time": 2210,
+      "frames": [
+        "frame_0660.jpg",
+        "frame_0661.jpg",
+        "frame_0662.jpg"
+      ],
+      "transcript": "[36:38] You can adjust a 20k pot\n[36:40] to adjust the trip point over here.\n[36:42] So this is a very simple circuit.\n[36:44] Let's wire it up and give it a test.\n[36:48] And here's our light sensitive switch."
+    },
+    {
+      "segment_index": 222,
+      "start_time": 2210,
+      "end_time": 2220,
+      "frames": [
+        "frame_0663.jpg",
+        "frame_0664.jpg",
+        "frame_0665.jpg"
+      ],
+      "transcript": "[36:48] And here's our light sensitive switch.\n[36:50] You can see the LED is on right now.\n[36:52] And if I go and cover the photo cell,\n[36:55] the LED goes off.\n[36:57] And so basically it's being triggered\n[36:59] whenever it sees light."
+    },
+    {
+      "segment_index": 223,
+      "start_time": 2220,
+      "end_time": 2230,
+      "frames": [
+        "frame_0666.jpg",
+        "frame_0667.jpg",
+        "frame_0668.jpg"
+      ],
+      "transcript": "[36:59] whenever it sees light.\n[37:00] Now of course the LED is just an indicator.\n[37:03] You could replace the LED with a transistor\n[37:06] and a relay to drive something if you wanted to.\n[37:09] There's also another trick you can do with this."
+    },
+    {
+      "segment_index": 224,
+      "start_time": 2230,
+      "end_time": 2240,
+      "frames": [
+        "frame_0669.jpg",
+        "frame_0670.jpg",
+        "frame_0671.jpg"
+      ],
+      "transcript": "[37:09] There's also another trick you can do with this.\n[37:11] So let me show that to you.\n[37:12] Right now I'm going to disconnect my LED\n[37:14] and connect it up another way.\n[37:17] I'm going to now put the anode\n[37:19] up to the positive power supply instead."
+    },
+    {
+      "segment_index": 225,
+      "start_time": 2240,
+      "end_time": 2250,
+      "frames": [
+        "frame_0672.jpg",
+        "frame_0673.jpg",
+        "frame_0674.jpg"
+      ],
+      "transcript": "[37:19] up to the positive power supply instead.\n[37:26] And now what we've got is the LED is off.\n[37:29] If I cover the photo cell,"
+    },
+    {
+      "segment_index": 226,
+      "start_time": 2250,
+      "end_time": 2260,
+      "frames": [
+        "frame_0675.jpg",
+        "frame_0676.jpg",
+        "frame_0677.jpg"
+      ],
+      "transcript": "[37:29] If I cover the photo cell,\n[37:31] the LED goes on.\n[37:32] So we've got the opposite arrangement right now.\n[37:35] It's detecting dark instead of light.\n[37:37] So you can wire it up either way that you want to,"
+    },
+    {
+      "segment_index": 227,
+      "start_time": 2260,
+      "end_time": 2270,
+      "frames": [
+        "frame_0678.jpg",
+        "frame_0679.jpg",
+        "frame_0680.jpg"
+      ],
+      "transcript": "[37:40] which is pretty versatile.\n[37:41] And as I said, if you want to tie a transistor\n[37:44] or a relay onto the output,\n[37:45] you could drive something else.\n[37:47] So here we have a photoelectric controlled switch"
+    },
+    {
+      "segment_index": 228,
+      "start_time": 2270,
+      "end_time": 2280,
+      "frames": [
+        "frame_0681.jpg",
+        "frame_0682.jpg",
+        "frame_0683.jpg"
+      ],
+      "transcript": "[37:47] So here we have a photoelectric controlled switch\n[37:50] that is not dependent upon a microcontroller\n[37:54] and a very simple and inexpensive thing to build.\n[37:57] If you need something like this,\n[37:58] this is a great way to go."
+    },
+    {
+      "segment_index": 229,
+      "start_time": 2280,
+      "end_time": 2290,
+      "frames": [
+        "frame_0684.jpg",
+        "frame_0685.jpg",
+        "frame_0686.jpg"
+      ],
+      "transcript": "[37:58] this is a great way to go.\n[38:01] Now, as you've noticed,\n[38:02] many operational amplifiers require a dual power supply,\n[38:06] a power supply that has both a positive\n[38:08] and a negative component in reference to ground."
+    },
+    {
+      "segment_index": 230,
+      "start_time": 2290,
+      "end_time": 2300,
+      "frames": [
+        "frame_0687.jpg",
+        "frame_0688.jpg",
+        "frame_0689.jpg"
+      ],
+      "transcript": "[38:08] and a negative component in reference to ground.\n[38:10] And you may not own a dual power supply.\n[38:13] My workbench supply, for example,\n[38:16] is just a single output power supply.\n[38:18] But there is a converter that you can build"
+    },
+    {
+      "segment_index": 231,
+      "start_time": 2300,
+      "end_time": 2310,
+      "frames": [
+        "frame_0690.jpg",
+        "frame_0691.jpg",
+        "frame_0692.jpg"
+      ],
+      "transcript": "[38:18] But there is a converter that you can build\n[38:20] to convert a single supply into a dual supply.\n[38:24] And the converter is based around an op amp.\n[38:27] So let's go and see how easy this is to wire up"
+    },
+    {
+      "segment_index": 232,
+      "start_time": 2310,
+      "end_time": 2320,
+      "frames": [
+        "frame_0693.jpg",
+        "frame_0694.jpg",
+        "frame_0695.jpg"
+      ],
+      "transcript": "[38:27] So let's go and see how easy this is to wire up\n[38:30] and convert a single power supply\n[38:32] into a power supply we can use with operational amplifiers.\n[38:37] Now here's the circuit for our power supply converter."
+    },
+    {
+      "segment_index": 233,
+      "start_time": 2320,
+      "end_time": 2330,
+      "frames": [
+        "frame_0696.jpg",
+        "frame_0697.jpg",
+        "frame_0698.jpg"
+      ],
+      "transcript": "[38:37] Now here's the circuit for our power supply converter.\n[38:40] And this is being built around an NE5532 op amp.\n[38:44] You could use another op amp if you wish,\n[38:47] providing it is an op amp made for dual power supplies."
+    },
+    {
+      "segment_index": 234,
+      "start_time": 2330,
+      "end_time": 2340,
+      "frames": [
+        "frame_0699.jpg",
+        "frame_0700.jpg",
+        "frame_0701.jpg"
+      ],
+      "transcript": "[38:47] providing it is an op amp made for dual power supplies.\n[38:50] I'm also using two output transistors,\n[38:53] a tip 31C and a tip 32C.\n[38:57] Now you could use different output transistors if you wish."
+    },
+    {
+      "segment_index": 235,
+      "start_time": 2340,
+      "end_time": 2350,
+      "frames": [
+        "frame_0702.jpg",
+        "frame_0703.jpg",
+        "frame_0704.jpg"
+      ],
+      "transcript": "[38:57] Now you could use different output transistors if you wish.\n[39:00] The key here is to use complementary transistors,\n[39:04] an NPN and a PNP transistor\n[39:06] that have otherwise the same characteristics.\n[39:09] The tip 31C and tip 32C"
+    },
+    {
+      "segment_index": 236,
+      "start_time": 2350,
+      "end_time": 2360,
+      "frames": [
+        "frame_0705.jpg",
+        "frame_0706.jpg",
+        "frame_0707.jpg"
+      ],
+      "transcript": "[39:09] The tip 31C and tip 32C\n[39:12] are capable of handling three amperes of current.\n[39:16] So we can power something with up to three amps here.\n[39:18] Although if you're going to go anywhere near the current rating,"
+    },
+    {
+      "segment_index": 237,
+      "start_time": 2360,
+      "end_time": 2370,
+      "frames": [
+        "frame_0708.jpg",
+        "frame_0709.jpg",
+        "frame_0710.jpg"
+      ],
+      "transcript": "[39:18] Although if you're going to go anywhere near the current rating,\n[39:21] you should probably put a heat sink on those transistors.\n[39:24] If you wish,\n[39:25] you could substitute a tip 41C and 42C\n[39:28] and go to six amperes."
+    },
+    {
+      "segment_index": 238,
+      "start_time": 2370,
+      "end_time": 2380,
+      "frames": [
+        "frame_0711.jpg",
+        "frame_0712.jpg",
+        "frame_0713.jpg"
+      ],
+      "transcript": "[39:28] and go to six amperes.\n[39:31] You'll also need a couple of 100 microfarad filter capacitors\n[39:35] for the output.\n[39:36] And these need to be rated at at least the supply voltage.\n[39:39] So I would rate these at 35 volts or more."
+    },
+    {
+      "segment_index": 239,
+      "start_time": 2380,
+      "end_time": 2390,
+      "frames": [
+        "frame_0714.jpg",
+        "frame_0715.jpg",
+        "frame_0716.jpg"
+      ],
+      "transcript": "[39:39] So I would rate these at 35 volts or more.\n[39:43] Now the operational amplifier\n[39:44] has a voltage divider on the input\n[39:47] that is made of two 10k resistors.\n[39:49] And that's being applied to the non-inverting input."
+    },
+    {
+      "segment_index": 240,
+      "start_time": 2390,
+      "end_time": 2400,
+      "frames": [
+        "frame_0717.jpg",
+        "frame_0718.jpg",
+        "frame_0719.jpg"
+      ],
+      "transcript": "[39:49] And that's being applied to the non-inverting input.\n[39:52] And the inverting input is just taking feedback\n[39:55] from our reference or ground point on the output.\n[39:59] And it will adjust the operational amplifier"
+    },
+    {
+      "segment_index": 241,
+      "start_time": 2400,
+      "end_time": 2410,
+      "frames": [
+        "frame_0720.jpg",
+        "frame_0721.jpg",
+        "frame_0722.jpg"
+      ],
+      "transcript": "[39:59] And it will adjust the operational amplifier\n[40:02] if the op amp finds itself going at a different reference point.\n[40:06] And this will keep the voltages regulated on the output side."
+    },
+    {
+      "segment_index": 242,
+      "start_time": 2410,
+      "end_time": 2420,
+      "frames": [
+        "frame_0723.jpg",
+        "frame_0724.jpg",
+        "frame_0725.jpg"
+      ],
+      "transcript": "[40:06] And this will keep the voltages regulated on the output side.\n[40:10] So it's actually a pretty simple circuit to hook up.\n[40:13] Make sure you've got it all hooked up correctly though\n[40:16] because you are dealing with your power supply voltages.\n[40:19] So let's put ours onto a breadboard"
+    },
+    {
+      "segment_index": 243,
+      "start_time": 2420,
+      "end_time": 2430,
+      "frames": [
+        "frame_0726.jpg",
+        "frame_0727.jpg",
+        "frame_0728.jpg"
+      ],
+      "transcript": "[40:19] So let's put ours onto a breadboard\n[40:21] and check it out\n[40:22] and see if we can drive another op amp circuit\n[40:25] with our single to dual power supply converter.\n[40:29] And so here's a demonstration of my power supply splitter."
+    },
+    {
+      "segment_index": 244,
+      "start_time": 2430,
+      "end_time": 2440,
+      "frames": [
+        "frame_0729.jpg",
+        "frame_0730.jpg",
+        "frame_0731.jpg"
+      ],
+      "transcript": "[40:29] And so here's a demonstration of my power supply splitter.\n[40:33] Now I've got it connected\n[40:34] to the square and triangle wave multivibrator\n[40:38] that we created a little bit earlier."
+    },
+    {
+      "segment_index": 245,
+      "start_time": 2440,
+      "end_time": 2450,
+      "frames": [
+        "frame_0732.jpg",
+        "frame_0733.jpg",
+        "frame_0734.jpg"
+      ],
+      "transcript": "[40:38] that we created a little bit earlier.\n[40:40] So I'm driving one of our circuits with this circuit.\n[40:43] I'm using my bench power supply\n[40:45] and it's giving out 20 volts right now.\n[40:47] And it's important to note that the bench power supply"
+    },
+    {
+      "segment_index": 246,
+      "start_time": 2450,
+      "end_time": 2460,
+      "frames": [
+        "frame_0735.jpg",
+        "frame_0736.jpg",
+        "frame_0737.jpg"
+      ],
+      "transcript": "[40:47] And it's important to note that the bench power supply\n[40:50] has a floating output.\n[40:52] In other words, the negative side of the power supply\n[40:54] is not connected to ground.\n[40:56] And that's very important.\n[40:58] If this had been connected to ground,"
+    },
+    {
+      "segment_index": 247,
+      "start_time": 2460,
+      "end_time": 2470,
+      "frames": [
+        "frame_0738.jpg",
+        "frame_0739.jpg",
+        "frame_0740.jpg"
+      ],
+      "transcript": "[40:58] If this had been connected to ground,\n[41:00] I would have literally shorted everything out\n[41:02] when I connected my oscilloscope up over here.\n[41:05] And we certainly don't want that to happen.\n[41:07] But otherwise, this is the breadboard\n[41:08] with the splitter on it.\n[41:09] I think if you look very carefully down here,"
+    },
+    {
+      "segment_index": 248,
+      "start_time": 2470,
+      "end_time": 2480,
+      "frames": [
+        "frame_0741.jpg",
+        "frame_0742.jpg",
+        "frame_0743.jpg"
+      ],
+      "transcript": "[41:09] I think if you look very carefully down here,\n[41:12] you'll see the two power transistors.\n[41:14] And it is powering this circuit here.\n[41:16] And as you can see from the oscilloscope,\n[41:18] it is indeed working.\n[41:19] We've got the square wave and the triangle wave."
+    },
+    {
+      "segment_index": 249,
+      "start_time": 2480,
+      "end_time": 2490,
+      "frames": [
+        "frame_0744.jpg",
+        "frame_0745.jpg",
+        "frame_0746.jpg"
+      ],
+      "transcript": "[41:19] We've got the square wave and the triangle wave.\n[41:22] Now I've got a multimeter over here\n[41:24] and we'll measure a couple of voltage points.\n[41:26] Here is the positive voltage I've got right now."
+    },
+    {
+      "segment_index": 250,
+      "start_time": 2490,
+      "end_time": 2500,
+      "frames": [
+        "frame_0747.jpg",
+        "frame_0748.jpg",
+        "frame_0749.jpg"
+      ],
+      "transcript": "[41:26] Here is the positive voltage I've got right now.\n[41:30] The multimeter is tied to ground.\n[41:33] And I've got 9.98 volts.\n[41:36] So I'm not sure if you can see that.\n[41:38] And I'm going to go over to my negative side right now."
+    },
+    {
+      "segment_index": 251,
+      "start_time": 2500,
+      "end_time": 2510,
+      "frames": [
+        "frame_0750.jpg",
+        "frame_0751.jpg",
+        "frame_0752.jpg"
+      ],
+      "transcript": "[41:38] And I'm going to go over to my negative side right now.\n[41:43] And I've got negative 9.96 volts.\n[41:46] So it's regulated pretty well.\n[41:48] Now, as I said earlier, when I showed you the design,"
+    },
+    {
+      "segment_index": 252,
+      "start_time": 2510,
+      "end_time": 2520,
+      "frames": [
+        "frame_0753.jpg",
+        "frame_0754.jpg",
+        "frame_0755.jpg"
+      ],
+      "transcript": "[41:48] Now, as I said earlier, when I showed you the design,\n[41:51] if you wanted to,\n[41:52] you could also put a couple of three-pin voltage regulators\n[41:55] on the output to regulate it even further.\n[41:58] But it actually splits the supply pretty well."
+    },
+    {
+      "segment_index": 253,
+      "start_time": 2520,
+      "end_time": 2530,
+      "frames": [
+        "frame_0756.jpg",
+        "frame_0757.jpg",
+        "frame_0758.jpg"
+      ],
+      "transcript": "[41:58] But it actually splits the supply pretty well.\n[42:00] So this is a great solution\n[42:02] if you need a dual power supply for your op amps\n[42:05] and you don't have one.\n[42:07] Just use an op amp to take a single power supply\n[42:09] and make it into a dual one."
+    },
+    {
+      "segment_index": 254,
+      "start_time": 2530,
+      "end_time": 2540,
+      "frames": [
+        "frame_0759.jpg",
+        "frame_0760.jpg",
+        "frame_0761.jpg"
+      ],
+      "transcript": "[42:09] and make it into a dual one.\n[42:12] And so this concludes our look at operational amplifiers.\n[42:16] I do hope that you enjoyed the video.\n[42:18] And more importantly,\n[42:19] I hope it's opened up your eyes to the fact"
+    },
+    {
+      "segment_index": 255,
+      "start_time": 2540,
+      "end_time": 2550,
+      "frames": [
+        "frame_0762.jpg",
+        "frame_0763.jpg",
+        "frame_0764.jpg"
+      ],
+      "transcript": "[42:19] I hope it's opened up your eyes to the fact\n[42:21] that not everything has to be built\n[42:23] around the microcontroller.\n[42:24] You can build a lot of useful circuitry and projects\n[42:28] around analog components like operational amplifiers."
+    },
+    {
+      "segment_index": 256,
+      "start_time": 2550,
+      "end_time": 2560,
+      "frames": [
+        "frame_0765.jpg",
+        "frame_0766.jpg",
+        "frame_0767.jpg"
+      ],
+      "transcript": "[42:28] around analog components like operational amplifiers.\n[42:32] Now, if you want to get some more information about op amps\n[42:35] or if you want to get the circuits that I used today,\n[42:38] you will find all of that on the article"
+    },
+    {
+      "segment_index": 257,
+      "start_time": 2560,
+      "end_time": 2570,
+      "frames": [
+        "frame_0768.jpg",
+        "frame_0769.jpg",
+        "frame_0770.jpg"
+      ],
+      "transcript": "[42:38] you will find all of that on the article\n[42:40] that accompanies this video\n[42:41] on the dronebotworkshop.com website.\n[42:44] And there's a link right below the video to that article.\n[42:47] When you're on the website, if you haven't yet,"
+    },
+    {
+      "segment_index": 258,
+      "start_time": 2570,
+      "end_time": 2580,
+      "frames": [
+        "frame_0771.jpg",
+        "frame_0772.jpg",
+        "frame_0773.jpg"
+      ],
+      "transcript": "[42:47] When you're on the website, if you haven't yet,\n[42:50] please consider signing up for my newsletter.\n[42:52] It's not a sales letter.\n[42:53] It's something I send out now and then\n[42:54] to let you know about things that go on in the workshop\n[42:57] because sometimes things do go on in the workshop."
+    },
+    {
+      "segment_index": 259,
+      "start_time": 2580,
+      "end_time": 2590,
+      "frames": [
+        "frame_0774.jpg",
+        "frame_0775.jpg",
+        "frame_0776.jpg"
+      ],
+      "transcript": "[42:57] because sometimes things do go on in the workshop.\n[43:00] And the newsletter, of course, is absolutely free.\n[43:03] Another thing that's absolutely free\n[43:04] is the Dronebot Workshop Forum.\n[43:06] So if you're having a problem\n[43:07] with one of your op amp designs, get on the forum."
+    },
+    {
+      "segment_index": 260,
+      "start_time": 2590,
+      "end_time": 2600,
+      "frames": [
+        "frame_0777.jpg",
+        "frame_0778.jpg",
+        "frame_0779.jpg"
+      ],
+      "transcript": "[43:07] with one of your op amp designs, get on the forum.\n[43:10] There are a lot of great people on the forum\n[43:13] who can help you out with your electronics projects.\n[43:16] And finally, if you haven't yet,\n[43:18] please subscribe to the YouTube channel."
+    },
+    {
+      "segment_index": 261,
+      "start_time": 2600,
+      "end_time": 2610,
+      "frames": [
+        "frame_0780.jpg",
+        "frame_0781.jpg",
+        "frame_0782.jpg"
+      ],
+      "transcript": "[43:18] please subscribe to the YouTube channel.\n[43:20] I make videos about electronics, microcontrollers,\n[43:23] programming, and I think you would really enjoy them.\n[43:26] And all you need to do to subscribe\n[43:28] is to hit that little red subscribe button"
+    },
+    {
+      "segment_index": 262,
+      "start_time": 2610,
+      "end_time": 2620,
+      "frames": [
+        "frame_0783.jpg",
+        "frame_0784.jpg",
+        "frame_0785.jpg"
+      ],
+      "transcript": "[43:28] is to hit that little red subscribe button\n[43:30] that you'll find below the video.\n[43:32] And if you also hit the bell notification,\n[43:34] you will get notified every time that I make a new video,\n[43:38] assuming, of course, you enable notifications"
+    },
+    {
+      "segment_index": 263,
+      "start_time": 2620,
+      "end_time": 2630,
+      "frames": [
+        "frame_0786.jpg",
+        "frame_0787.jpg",
+        "frame_0788.jpg"
+      ],
+      "transcript": "[43:38] assuming, of course, you enable notifications\n[43:40] in your web browser.\n[43:42] And with that said, please take care of yourself.\n[43:45] Please stay safe out there.\n[43:46] And I will see you soon here in the Dronebot Workshop."
+    },
+    {
+      "segment_index": 264,
+      "start_time": 2630,
+      "end_time": 2640,
+      "frames": [
+        "frame_0789.jpg",
+        "frame_0790.jpg",
+        "frame_0791.jpg"
+      ],
+      "transcript": "[43:50] Goodbye for now.\n[43:50] lessons.\n[43:55] Life is en Summit"
+    },
+    {
+      "segment_index": 265,
+      "start_time": 2640,
+      "end_time": 2650,
+      "frames": [
+        "frame_0792.jpg",
+        "frame_0793.jpg",
+        "frame_0794.jpg"
+      ],
+      "transcript": "[44:02] Around theal mimics\n[44:07] principles"
+    },
+    {
+      "segment_index": 266,
+      "start_time": 2650,
+      "end_time": 2659.44,
+      "frames": [
+        "frame_0795.jpg",
+        "frame_0796.jpg",
+        "frame_0797.jpg"
+      ],
+      "transcript": "[44:07] principles\n[44:10] the\n[44:16] the\n[44:16] Music\n[44:18] Music"
+    }
+  ]
+}

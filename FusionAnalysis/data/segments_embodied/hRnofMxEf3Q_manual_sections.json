@@ -1,0 +1,1631 @@
+{
+  "video_id": "hRnofMxEf3Q",
+  "duration": 1472.7,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg",
+        "frame_0003.jpg"
+      ],
+      "transcript": "[0:00] Ah, the inverted pendulum.\n[0:02] Getting one of these to work is a little bit of a rite of passage if you're studying engineering or more specifically control theory.\n[0:09] The concept is fairly straightforward."
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0004.jpg",
+        "frame_0005.jpg",
+        "frame_0006.jpg"
+      ],
+      "transcript": "[0:09] The concept is fairly straightforward.\n[0:11] We have a weight or in this case a simple metal rod that can move freely about an axis.\n[0:17] And as you can see here, once the program stopped, it just freely fell over because it's in an unstable position when it's upright."
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0007.jpg",
+        "frame_0008.jpg",
+        "frame_0009.jpg"
+      ],
+      "transcript": "[0:17] And as you can see here, once the program stopped, it just freely fell over because it's in an unstable position when it's upright.\n[0:23] But our job is to create a controller that takes in encoder values that is the angle in which this rod is pointing and then controls the stepper motor so that it stays upright."
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:23] But our job is to create a controller that takes in encoder values that is the angle in which this rod is pointing and then controls the stepper motor so that it stays upright.\n[0:35] We won't try to do the swing up where it gets it into that position.\n[0:38] We'll just assume that it starts in the upright position in our controller."
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg",
+        "frame_0015.jpg"
+      ],
+      "transcript": "[0:38] We'll just assume that it starts in the upright position in our controller.\n[0:41] We'll need to keep it there.\n[0:43] The Arduino in this case is just going to act as an interface for us.\n[0:48] It's going to read in values from the encoder and then send commands to control the stepper motor."
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0016.jpg",
+        "frame_0017.jpg",
+        "frame_0018.jpg"
+      ],
+      "transcript": "[0:48] It's going to read in values from the encoder and then send commands to control the stepper motor.\n[0:53] All of our coding will be done in Python for the controller so that we can make pretty graphs and it will help us tune the controller more easily."
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0019.jpg",
+        "frame_0020.jpg",
+        "frame_0021.jpg"
+      ],
+      "transcript": "[0:53] All of our coding will be done in Python for the controller so that we can make pretty graphs and it will help us tune the controller more easily.\n[1:01] So with that in mind, let's get started.\n[1:09] A PID controller is an instrument device or code that uses feedback from a sensor to regulate a process or system."
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[1:09] A PID controller is an instrument device or code that uses feedback from a sensor to regulate a process or system.\n[1:18] PID stands for proportional integral derivative, which describes how the feedback information is used to create a control signal for the process."
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg",
+        "frame_0027.jpg"
+      ],
+      "transcript": "[1:18] PID stands for proportional integral derivative, which describes how the feedback information is used to create a control signal for the process.\n[1:29] If you would like to dive more into the theory behind PID controllers, I highly recommend checking out my previous video."
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0028.jpg",
+        "frame_0029.jpg",
+        "frame_0030.jpg"
+      ],
+      "transcript": "[1:29] If you would like to dive more into the theory behind PID controllers, I highly recommend checking out my previous video.\n[1:36] In our system, we want our pendulum to sit upright, which we're going to call 180 degrees, and we'll use a PID controller to make that happen."
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0031.jpg",
+        "frame_0032.jpg",
+        "frame_0033.jpg"
+      ],
+      "transcript": "[1:36] In our system, we want our pendulum to sit upright, which we're going to call 180 degrees, and we'll use a PID controller to make that happen.\n[1:45] The input to the controller is the error term, which is the difference between our desired set point and the actual sensor value or feedback."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[1:45] The input to the controller is the error term, which is the difference between our desired set point and the actual sensor value or feedback.\n[1:55] The output of the controller is used as the input signal to our process or plant."
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg",
+        "frame_0039.jpg"
+      ],
+      "transcript": "[1:55] The output of the controller is used as the input signal to our process or plant.\n[2:01] In this case, it will be how many degrees we want to move our stepper motor by.\n[2:06] The process gives us some kind of value to measure."
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0040.jpg",
+        "frame_0041.jpg",
+        "frame_0042.jpg"
+      ],
+      "transcript": "[2:06] The process gives us some kind of value to measure.\n[2:10] In this case, it is an encoder angle, which is used in the feedback loop to compute the error term.\n[2:17] In some cases, we can mathematically model the process."
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0043.jpg",
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:17] In some cases, we can mathematically model the process.\n[2:21] Many inverted pendulums can be modeled if you know the weight, size and so on.\n[2:26] However, in many real world situations, it is very difficult or impossible to model the system we want to control."
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[2:26] However, in many real world situations, it is very difficult or impossible to model the system we want to control.\n[2:34] So we turn to manual tuning methods for our controller.\n[2:38] While there are several tuning methods, we'll stick with the most basic."
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg",
+        "frame_0051.jpg"
+      ],
+      "transcript": "[2:38] While there are several tuning methods, we'll stick with the most basic.\n[2:42] First, we'll set the integral and derivative constants to zero and guess at some value for the proportional constant."
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0052.jpg",
+        "frame_0053.jpg",
+        "frame_0054.jpg"
+      ],
+      "transcript": "[2:42] First, we'll set the integral and derivative constants to zero and guess at some value for the proportional constant.\n[2:51] With a Kp too low, we won't get anywhere near our set point.\n[2:56] We then adjust it so that our output gets close to the set point with maybe some oscillations."
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0055.jpg",
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[2:56] We then adjust it so that our output gets close to the set point with maybe some oscillations.\n[3:03] From there, we tune Ki so that we oscillate around the set point without causing the system to become unstable."
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:03] From there, we tune Ki so that we oscillate around the set point without causing the system to become unstable.\n[3:10] In many cases, a Pi controller is enough.\n[3:14] However, we can often tune the Kd term to remove some of that overshoot."
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg",
+        "frame_0063.jpg"
+      ],
+      "transcript": "[3:14] However, we can often tune the Kd term to remove some of that overshoot.\n[3:20] With Kp, Ki, and Kd set, we have a fully tuned system.\n[3:25] Here, the output quickly approaches the set point without overshooting."
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0064.jpg",
+        "frame_0065.jpg",
+        "frame_0066.jpg"
+      ],
+      "transcript": "[3:25] Here, the output quickly approaches the set point without overshooting.\n[3:30] We'll run some code on the Arduino.\n[3:32] Remember that the Arduino is simply acting as an interface for us.\n[3:36] It's not doing any of the actual control code for us.\n[3:39] It's going to read in values from the encoder and send out information necessary to control the stepper motor."
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0067.jpg",
+        "frame_0068.jpg",
+        "frame_0069.jpg"
+      ],
+      "transcript": "[3:39] It's going to read in values from the encoder and send out information necessary to control the stepper motor.\n[3:46] If we scroll down to the top here of our code, we are using the L6474."
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[3:46] If we scroll down to the top here of our code, we are using the L6474.\n[3:52] That's an STMicroelectronics code.\n[3:55] That's a library for our Arduino that allows us to control the stepper motor.\n[3:59] We're also using a library called rotary encoder that just gives us angle information from that coder."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg",
+        "frame_0075.jpg"
+      ],
+      "transcript": "[3:59] We're also using a library called rotary encoder that just gives us angle information from that coder.\n[4:05] If we click over to the control comms interface file, scroll down a little bit."
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0076.jpg",
+        "frame_0077.jpg",
+        "frame_0078.jpg"
+      ],
+      "transcript": "[4:05] If we click over to the control comms interface file, scroll down a little bit.\n[4:10] You can see we have an object here control comms and there should be two basic functions.\n[4:15] Well, we have our constructor and our unit.\n[4:18] We also have send observation, which sends information back to the PC."
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0079.jpg",
+        "frame_0080.jpg",
+        "frame_0081.jpg"
+      ],
+      "transcript": "[4:18] We also have send observation, which sends information back to the PC.\n[4:24] In our case, it's just the angle of the encoder as well as the angle of the stepper motor.\n[4:28] In addition, we have receive action."
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[4:28] In addition, we have receive action.\n[4:30] This just waits for an action to come from the PC that says what to do.\n[4:34] We're going to put in this our angle that we want to move the stepper motor by, say, for example, move by three degrees or negative three degrees in the opposite direction."
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg",
+        "frame_0087.jpg"
+      ],
+      "transcript": "[4:34] We're going to put in this our angle that we want to move the stepper motor by, say, for example, move by three degrees or negative three degrees in the opposite direction.\n[4:46] So if we go to our main interface program here, scroll down to where we see setup, we configure everything."
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0088.jpg",
+        "frame_0089.jpg",
+        "frame_0090.jpg"
+      ],
+      "transcript": "[4:46] So if we go to our main interface program here, scroll down to where we see setup, we configure everything.\n[4:53] And then in loop, we simply wait for those actions to show up for us from the PC side."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0091.jpg",
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[4:53] And then in loop, we simply wait for those actions to show up for us from the PC side.\n[5:00] We move the stepper as requested, say, by a certain number of degrees.\n[5:05] We get the encoder and stepper angles.\n[5:08] We put those into an array and then we send that observation back to the PC."
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[5:08] We put those into an array and then we send that observation back to the PC.\n[5:14] And that is our entire loop and how we're going to control our inverted pendulum on the Python or the PC side of things."
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg",
+        "frame_0099.jpg"
+      ],
+      "transcript": "[5:14] And that is our entire loop and how we're going to control our inverted pendulum on the Python or the PC side of things.\n[5:22] We have our control comms interface.\n[5:24] This is the PC version of that control comms HPP file that we looked at.\n[5:29] In this case, we have a similar object called control comms."
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0100.jpg",
+        "frame_0101.jpg",
+        "frame_0102.jpg"
+      ],
+      "transcript": "[5:29] In this case, we have a similar object called control comms.\n[5:32] We can get a list of serial ports, which helps us figure out what we need to connect to.\n[5:37] We can connect to our serial port, which opens up a connection to the Arduino board."
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0103.jpg",
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[5:37] We can connect to our serial port, which opens up a connection to the Arduino board.\n[5:42] We can close that connection.\n[5:45] And then the important thing here is this step function for us."
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[5:45] And then the important thing here is this step function for us.\n[5:50] We give it an action and some sort of command, say, move by or move to or reset, which says to make whatever position the stepper motor is in home."
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg",
+        "frame_0111.jpg"
+      ],
+      "transcript": "[5:50] We give it an action and some sort of command, say, move by or move to or reset, which says to make whatever position the stepper motor is in home.\n[6:01] That information gets sent to the Arduino.\n[6:03] The Arduino performs that action and then returns an observation to us, which is a status.\n[6:09] In this case, it's just some user defined code that we're not going to use very much."
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0112.jpg",
+        "frame_0113.jpg",
+        "frame_0114.jpg"
+      ],
+      "transcript": "[6:09] In this case, it's just some user defined code that we're not going to use very much.\n[6:13] A timestamp, which is useful to see how long it takes to compute some things, whether it's terminated.\n[6:19] Once again, we're not really using that here."
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0115.jpg",
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[6:19] Once again, we're not really using that here.\n[6:20] And an observation.\n[6:21] In this case, it's going to be the angle of the encoder and the angle of the stepper motor.\n[6:26] You can see that code here where we send out the command along with the action."
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[6:26] You can see that code here where we send out the command along with the action.\n[6:31] We wait for a response.\n[6:32] We decode that in JSON format and then we return with those results.\n[6:37] Here's the status timestamp terminated and our observation array."
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg",
+        "frame_0123.jpg"
+      ],
+      "transcript": "[6:37] Here's the status timestamp terminated and our observation array.\n[6:41] And this is just for testing down here.\n[6:44] Now let's look at the actual PID controller code.\n[6:47] This is the part we care about.\n[6:49] I'm going to execute these cells, but I won't get into the code very much because I want to spend more time on tuning the controller where we fiddle with the constants in order to make the inverted pendulum work."
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0124.jpg",
+        "frame_0125.jpg",
+        "frame_0126.jpg"
+      ],
+      "transcript": "[6:49] I'm going to execute these cells, but I won't get into the code very much because I want to spend more time on tuning the controller where we fiddle with the constants in order to make the inverted pendulum work."
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0127.jpg",
+        "frame_0128.jpg",
+        "frame_0129.jpg"
+      ],
+      "transcript": "[6:49] I'm going to execute these cells, but I won't get into the code very much because I want to spend more time on tuning the controller where we fiddle with the constants in order to make the inverted pendulum work.\n[7:02] So from the top here, we're just going to import some libraries.\n[7:05] We're going to set our constants.\n[7:06] In this case, my Arduino is connected to com six.\n[7:09] I'm using a baud rate of 500 K and I have assigned a timeout of one second in case something doesn't work where I can't communicate with that Arduino board."
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0130.jpg",
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[7:09] I'm using a baud rate of 500 K and I have assigned a timeout of one second in case something doesn't work where I can't communicate with that Arduino board.\n[7:19] I also set my debug level here so that I can get some information from my control comms Python library that I've created."
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg",
+        "frame_0135.jpg"
+      ],
+      "transcript": "[7:19] I also set my debug level here so that I can get some information from my control comms Python library that I've created.\n[7:26] We've got some communication constants that we will be using."
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0136.jpg",
+        "frame_0137.jpg",
+        "frame_0138.jpg"
+      ],
+      "transcript": "[7:26] We've got some communication constants that we will be using.\n[7:32] In this case, we're going to be using stepper mode eight, which is eight divisions per step.\n[7:36] And we have some commands we can send out, such as setting home, move to move by and setting our stepper mode."
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0139.jpg",
+        "frame_0140.jpg",
+        "frame_0141.jpg"
+      ],
+      "transcript": "[7:36] And we have some commands we can send out, such as setting home, move to move by and setting our stepper mode.\n[7:43] I'm going to close that connection to the Arduino.\n[7:45] That's just a safety thing.\n[7:46] Make sure it is actually closed and then I'm going to reopen that connection."
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0142.jpg",
+        "frame_0143.jpg",
+        "frame_0144.jpg"
+      ],
+      "transcript": "[7:46] Make sure it is actually closed and then I'm going to reopen that connection.\n[7:50] So now I can talk to the Arduino board.\n[7:53] First, I'm going to test the control to make sure that it actually moves."
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0145.jpg",
+        "frame_0146.jpg",
+        "frame_0147.jpg"
+      ],
+      "transcript": "[7:53] First, I'm going to test the control to make sure that it actually moves.\n[8:01] The idea here is that the stepper motor should be able to move fast enough such that it can recover from a, say, plus or minus 10 degree offset from being vertical."
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0148.jpg",
+        "frame_0149.jpg",
+        "frame_0150.jpg"
+      ],
+      "transcript": "[8:01] The idea here is that the stepper motor should be able to move fast enough such that it can recover from a, say, plus or minus 10 degree offset from being vertical.\n[8:13] If we go back to our Arduino code here, you can see the configuration that I set up for the stepper motor."
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0151.jpg",
+        "frame_0152.jpg",
+        "frame_0153.jpg"
+      ],
+      "transcript": "[8:13] If we go back to our Arduino code here, you can see the configuration that I set up for the stepper motor.\n[8:20] I'm using the ST microelectronics L6474 library, and I've set the acceleration to very high.\n[8:29] It should get up to max speed very quickly."
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0154.jpg",
+        "frame_0155.jpg",
+        "frame_0156.jpg"
+      ],
+      "transcript": "[8:29] It should get up to max speed very quickly.\n[8:32] I've set the maximum speed to 5000, which is about half of their maximum.\n[8:37] That seems to be a good compromise between giving me a very high speed that it can correct for a 10 degree offset from vertical while not being very jittery in its motion."
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0157.jpg",
+        "frame_0158.jpg",
+        "frame_0159.jpg"
+      ],
+      "transcript": "[8:37] That seems to be a good compromise between giving me a very high speed that it can correct for a 10 degree offset from vertical while not being very jittery in its motion.\n[8:49] So you want to find that balance."
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0160.jpg",
+        "frame_0161.jpg",
+        "frame_0162.jpg"
+      ],
+      "transcript": "[8:49] So you want to find that balance.\n[8:50] So I played with these parameters to find a good balance.\n[8:54] Note that this can take some time.\n[8:56] And I was just doing this by feel before moving on and tuning the PID controller."
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0163.jpg",
+        "frame_0164.jpg",
+        "frame_0165.jpg"
+      ],
+      "transcript": "[8:56] And I was just doing this by feel before moving on and tuning the PID controller.\n[9:03] Once we verified that this control works, it's time to tune the controller.\n[9:09] Here I've set up my K constants."
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0166.jpg",
+        "frame_0167.jpg",
+        "frame_0168.jpg"
+      ],
+      "transcript": "[9:09] Here I've set up my K constants.\n[9:12] Here's PID.\n[9:13] Sometimes you will need a bias, which we just add to our output of the controller.\n[9:19] In many cases, a P controller is fine and you just need a simple bias and this will do it."
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0169.jpg",
+        "frame_0170.jpg",
+        "frame_0171.jpg"
+      ],
+      "transcript": "[9:19] In many cases, a P controller is fine and you just need a simple bias and this will do it.\n[9:24] Sometimes you'll find that even with PID, there's a little bit of an offset.\n[9:28] So you add a bias term."
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0172.jpg",
+        "frame_0173.jpg",
+        "frame_0174.jpg"
+      ],
+      "transcript": "[9:28] So you add a bias term.\n[9:30] We may not need that for this particular project, but just keep that in mind.\n[9:34] There are other constants that you should keep in mind.\n[9:38] Our set point is 180."
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0175.jpg",
+        "frame_0176.jpg",
+        "frame_0177.jpg"
+      ],
+      "transcript": "[9:38] Our set point is 180.\n[9:40] That's 180 degrees.\n[9:41] That's the rod facing up.\n[9:43] We're going to run this for, let's say, 5000 steps.\n[9:47] That's a good indication of whether this is working or not."
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0178.jpg",
+        "frame_0179.jpg",
+        "frame_0180.jpg"
+      ],
+      "transcript": "[9:47] That's a good indication of whether this is working or not.\n[9:50] We have guard degrees here.\n[9:53] So we want the rod at 180 degrees.\n[9:56] At 160 degrees or 200 degrees, we assume that the rod has fell over far enough and it's a lost cause."
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0181.jpg",
+        "frame_0182.jpg",
+        "frame_0183.jpg"
+      ],
+      "transcript": "[9:56] At 160 degrees or 200 degrees, we assume that the rod has fell over far enough and it's a lost cause.\n[10:03] And the program or in this case, this particular cell will just stop.\n[10:08] We're going to do eight divisions per step."
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0184.jpg",
+        "frame_0185.jpg",
+        "frame_0186.jpg"
+      ],
+      "transcript": "[10:08] We're going to do eight divisions per step.\n[10:11] That seems to be, once again, a good balance between having the stepper motor move quickly while still giving us enough control without having a lot of jitter."
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0187.jpg",
+        "frame_0188.jpg",
+        "frame_0189.jpg"
+      ],
+      "transcript": "[10:11] That seems to be, once again, a good balance between having the stepper motor move quickly while still giving us enough control without having a lot of jitter.\n[10:20] We're going to store the metrics so that we can plot them later.\n[10:25] The first thing we're going to do is set the stepper mode to those eight divisions per step."
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0190.jpg",
+        "frame_0191.jpg",
+        "frame_0192.jpg"
+      ],
+      "transcript": "[10:25] The first thing we're going to do is set the stepper mode to those eight divisions per step.\n[10:30] And then we're going to set home wherever the stepper motor is facing.\n[10:34] We're going to call that zero degrees.\n[10:36] We're going to send that out and get our first time step.\n[10:39] Then we'll try to keep the pendulum in the upright position."
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0193.jpg",
+        "frame_0194.jpg",
+        "frame_0195.jpg"
+      ],
+      "transcript": "[10:39] Then we'll try to keep the pendulum in the upright position.\n[10:42] This is the actual PID controller.\n[10:44] We'll first take a step and get that observation.\n[10:47] So we take a step by telling the stepper motor to move by some amount."
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0196.jpg",
+        "frame_0197.jpg",
+        "frame_0198.jpg"
+      ],
+      "transcript": "[10:47] So we take a step by telling the stepper motor to move by some amount.\n[10:51] This move degree starts off as zero and that's what gets updated as the output of our controller.\n[10:56] When we get our response, we're going to unpack that response to get status, time step terminated and our observation, which is an array."
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0199.jpg",
+        "frame_0200.jpg",
+        "frame_0201.jpg"
+      ],
+      "transcript": "[10:56] When we get our response, we're going to unpack that response to get status, time step terminated and our observation, which is an array.\n[11:05] We unpack that array here.\n[11:07] The first element of that array is the encoder degrees, and that's what we really care about."
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0202.jpg",
+        "frame_0203.jpg",
+        "frame_0204.jpg"
+      ],
+      "transcript": "[11:07] The first element of that array is the encoder degrees, and that's what we really care about.\n[11:12] The second is our stepper degrees.\n[11:14] Note that you could create a dual PID controller here, whether that's an inner and outer or side by side controllers, where you can then try to keep your stepper motor in the same spot rather than rotating."
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0205.jpg",
+        "frame_0206.jpg",
+        "frame_0207.jpg"
+      ],
+      "transcript": "[11:14] Note that you could create a dual PID controller here, whether that's an inner and outer or side by side controllers, where you can then try to keep your stepper motor in the same spot rather than rotating.\n[11:27] But instead of doing two controllers, we're going to keep it very simple and just do our one controller."
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0208.jpg",
+        "frame_0209.jpg",
+        "frame_0210.jpg"
+      ],
+      "transcript": "[11:27] But instead of doing two controllers, we're going to keep it very simple and just do our one controller.\n[11:32] Consider that a challenge for you.\n[11:34] If you want to take this further, try to keep the stepper motor in more or less one position rather than having it spin around that axis."
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0211.jpg",
+        "frame_0212.jpg",
+        "frame_0213.jpg"
+      ],
+      "transcript": "[11:34] If you want to take this further, try to keep the stepper motor in more or less one position rather than having it spin around that axis.\n[11:42] We're going to calculate the time between this step and the previous to get our interval, which we need in some of our calculations.\n[11:49] And then we're going to record the previous time step so that we can use it on the next iteration of this loop."
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0214.jpg",
+        "frame_0215.jpg",
+        "frame_0216.jpg"
+      ],
+      "transcript": "[11:49] And then we're going to record the previous time step so that we can use it on the next iteration of this loop.\n[11:55] Then we're going to calculate our PID terms.\n[11:57] We'll first find the error, which is the difference between our set point and the current encoder degrees, which we got from the observation."
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0217.jpg",
+        "frame_0218.jpg",
+        "frame_0219.jpg"
+      ],
+      "transcript": "[11:57] We'll first find the error, which is the difference between our set point and the current encoder degrees, which we got from the observation.\n[12:05] This error term is going to be used in our proportional calculations where we just multiply it by K P."
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0220.jpg",
+        "frame_0221.jpg",
+        "frame_0222.jpg"
+      ],
+      "transcript": "[12:05] This error term is going to be used in our proportional calculations where we just multiply it by K P.\n[12:13] Next up, we get the integral term, which takes the integral term from last time.\n[12:19] This starts at zero and we accumulate that value with the error times our interval."
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0223.jpg",
+        "frame_0224.jpg",
+        "frame_0225.jpg"
+      ],
+      "transcript": "[12:19] This starts at zero and we accumulate that value with the error times our interval.\n[12:25] From there, we get our derivative term, which is the previous error subtracted from the current error and divided by our time interval."
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0226.jpg",
+        "frame_0227.jpg",
+        "frame_0228.jpg"
+      ],
+      "transcript": "[12:25] From there, we get our derivative term, which is the previous error subtracted from the current error and divided by our time interval.\n[12:33] We then sum all of these terms up after we've multiplied them individually by their K constant."
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0229.jpg",
+        "frame_0230.jpg",
+        "frame_0231.jpg"
+      ],
+      "transcript": "[12:33] We then sum all of these terms up after we've multiplied them individually by their K constant.\n[12:40] So integral gets multiplied by K I, derivative gets multiplied by K D.\n[12:46] And as we saw earlier, error gets multiplied by K P or the proportional term."
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0232.jpg",
+        "frame_0233.jpg",
+        "frame_0234.jpg"
+      ],
+      "transcript": "[12:46] And as we saw earlier, error gets multiplied by K P or the proportional term.\n[12:50] We also add this bias term.\n[12:52] I would leave this at zero unless you absolutely need it.\n[12:55] Try to solve everything else and get that working.\n[12:57] If you still need that bias term, go ahead and add it."
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0235.jpg",
+        "frame_0236.jpg",
+        "frame_0237.jpg"
+      ],
+      "transcript": "[12:57] If you still need that bias term, go ahead and add it.\n[13:00] Finally, we save the error term for the next iteration.\n[13:04] So we have that previous ready to go for our derivative calculation.\n[13:08] Next, we're going to store these metrics in arrays so that we can plot them."
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0238.jpg",
+        "frame_0239.jpg",
+        "frame_0240.jpg"
+      ],
+      "transcript": "[13:08] Next, we're going to store these metrics in arrays so that we can plot them.\n[13:12] And we're going to check if the encoder goes past one of our set guard angles.\n[13:18] So if it's less than 160 or greater than what was it 200, I think."
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0241.jpg",
+        "frame_0242.jpg",
+        "frame_0243.jpg"
+      ],
+      "transcript": "[13:18] So if it's less than 160 or greater than what was it 200, I think.\n[13:23] Yeah, 200.\n[13:24] It's just going to stop the whole episode and break out of this loop.\n[13:28] Finally, we're going to use matplotlib to plot a whole bunch of stuff for us."
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0244.jpg",
+        "frame_0245.jpg",
+        "frame_0246.jpg"
+      ],
+      "transcript": "[13:28] Finally, we're going to use matplotlib to plot a whole bunch of stuff for us.\n[13:33] And we will take a look at that when we tune our controller.\n[13:36] Before we tune, I'd like to show you where you can go to get this code."
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0247.jpg",
+        "frame_0248.jpg",
+        "frame_0249.jpg"
+      ],
+      "transcript": "[13:36] Before we tune, I'd like to show you where you can go to get this code.\n[13:40] Head to github.com slash Sean email slash pendulum dash PID.\n[13:46] All of the code that I'm showing you is in here.\n[13:49] If you would like to try out your own version of this PID controller to control the inverted pendulum kit from ST micro electronics."
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0250.jpg",
+        "frame_0251.jpg",
+        "frame_0252.jpg"
+      ],
+      "transcript": "[13:49] If you would like to try out your own version of this PID controller to control the inverted pendulum kit from ST micro electronics.\n[13:57] Now, let's get to tuning our actual controller."
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0253.jpg",
+        "frame_0254.jpg",
+        "frame_0255.jpg"
+      ],
+      "transcript": "[13:57] Now, let's get to tuning our actual controller.\n[14:01] As I mentioned earlier, the first thing we want to do is make sure that our stepper motor can recover from about plus or minus 10 degrees."
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0256.jpg",
+        "frame_0257.jpg",
+        "frame_0258.jpg"
+      ],
+      "transcript": "[14:01] As I mentioned earlier, the first thing we want to do is make sure that our stepper motor can recover from about plus or minus 10 degrees.\n[14:11] So when I run this cell here, I'm going to offset this by about five or six degrees.\n[14:18] See, oops, wrong way."
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0259.jpg",
+        "frame_0260.jpg",
+        "frame_0261.jpg"
+      ],
+      "transcript": "[14:18] See, oops, wrong way.\n[14:21] Let's try that again.\n[14:22] So it's moving at negative 90.\n[14:25] So I'm going to hold it about here.\n[14:26] Yes, it goes the other way.\n[14:28] So that means the stepper motor is capable of correcting from that amount."
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0262.jpg",
+        "frame_0263.jpg",
+        "frame_0264.jpg"
+      ],
+      "transcript": "[14:28] So that means the stepper motor is capable of correcting from that amount.\n[14:34] Now let's get to tuning.\n[14:35] I'm going to start off with one for the proportional and zero for the others."
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0265.jpg",
+        "frame_0266.jpg",
+        "frame_0267.jpg"
+      ],
+      "transcript": "[14:35] I'm going to start off with one for the proportional and zero for the others.\n[14:41] I'm just going to guess at one and let's see where that gets us.\n[14:46] So I'm just going to hold this here and say go."
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 900,
+      "frames": [
+        "frame_0268.jpg",
+        "frame_0269.jpg",
+        "frame_0270.jpg"
+      ],
+      "transcript": "[14:46] So I'm just going to hold this here and say go.\n[14:51] Okay.\n[14:52] So it looks like it's jittering a lot and then it's struggling to keep up at the.\n[14:57] And there.\n[14:58] Let's take a look at our output."
+    },
+    {
+      "segment_index": 91,
+      "start_time": 900,
+      "end_time": 910,
+      "frames": [
+        "frame_0271.jpg",
+        "frame_0272.jpg",
+        "frame_0273.jpg"
+      ],
+      "transcript": "[14:58] Let's take a look at our output.\n[15:00] Sure enough, there's a lot of oscillations, which means that our value for KP is a little too high.\n[15:09] Let's try adjusting it."
+    },
+    {
+      "segment_index": 92,
+      "start_time": 910,
+      "end_time": 920,
+      "frames": [
+        "frame_0274.jpg",
+        "frame_0275.jpg",
+        "frame_0276.jpg"
+      ],
+      "transcript": "[15:09] Let's try adjusting it.\n[15:10] So we're going to go up here.\n[15:12] Let's move it to 0.1 and let's try again.\n[15:18] Okay.\n[15:19] So there weren't as many oscillations there, but you could see it struggling to keep up."
+    },
+    {
+      "segment_index": 93,
+      "start_time": 920,
+      "end_time": 930,
+      "frames": [
+        "frame_0277.jpg",
+        "frame_0278.jpg",
+        "frame_0279.jpg"
+      ],
+      "transcript": "[15:19] So there weren't as many oscillations there, but you could see it struggling to keep up.\n[15:28] And if we look at our plot, sure enough, it never quite reaches our set point and it just"
+    },
+    {
+      "segment_index": 94,
+      "start_time": 930,
+      "end_time": 940,
+      "frames": [
+        "frame_0280.jpg",
+        "frame_0281.jpg",
+        "frame_0282.jpg"
+      ],
+      "transcript": "[15:28] And if we look at our plot, sure enough, it never quite reaches our set point and it just\n[15:33] kind of struggles to keep up.\n[15:35] That means KP is too low.\n[15:39] Let's try 0.5 about halfway in between."
+    },
+    {
+      "segment_index": 95,
+      "start_time": 940,
+      "end_time": 950,
+      "frames": [
+        "frame_0283.jpg",
+        "frame_0284.jpg",
+        "frame_0285.jpg"
+      ],
+      "transcript": "[15:39] Let's try 0.5 about halfway in between.\n[15:43] We'll run this again.\n[15:47] Okay.\n[15:48] Not bad.\n[15:49] There's some oscillations."
+    },
+    {
+      "segment_index": 96,
+      "start_time": 950,
+      "end_time": 960,
+      "frames": [
+        "frame_0286.jpg",
+        "frame_0287.jpg",
+        "frame_0288.jpg"
+      ],
+      "transcript": "[15:49] There's some oscillations.\n[15:51] And in fact, I want to run this again.\n[15:53] Be prepared to run some of these cells multiple times.\n[15:56] Okay.\n[15:57] Still some oscillations."
+    },
+    {
+      "segment_index": 97,
+      "start_time": 960,
+      "end_time": 970,
+      "frames": [
+        "frame_0289.jpg",
+        "frame_0290.jpg",
+        "frame_0291.jpg"
+      ],
+      "transcript": "[15:57] Still some oscillations.\n[16:00] It's oscillating around that 180 point.\n[16:04] So it means it's a little too high.\n[16:06] Still let's bring it down just a notch."
+    },
+    {
+      "segment_index": 98,
+      "start_time": 970,
+      "end_time": 980,
+      "frames": [
+        "frame_0292.jpg",
+        "frame_0293.jpg",
+        "frame_0294.jpg"
+      ],
+      "transcript": "[16:06] Still let's bring it down just a notch.\n[16:10] We're going to take it to 0.3.\n[16:12] Let's see what happens.\n[16:13] Oh, that's really good.\n[16:18] That keeps it for a while."
+    },
+    {
+      "segment_index": 99,
+      "start_time": 980,
+      "end_time": 990,
+      "frames": [
+        "frame_0295.jpg",
+        "frame_0296.jpg",
+        "frame_0297.jpg"
+      ],
+      "transcript": "[16:18] That keeps it for a while.\n[16:21] Not much on the oscillations and it's just struggling to keep up.\n[16:26] This is what we want.\n[16:28] We want the integral term to make up this difference."
+    },
+    {
+      "segment_index": 100,
+      "start_time": 990,
+      "end_time": 1000,
+      "frames": [
+        "frame_0298.jpg",
+        "frame_0299.jpg",
+        "frame_0300.jpg"
+      ],
+      "transcript": "[16:28] We want the integral term to make up this difference.\n[16:30] This is that steady state offset between where the set point is and where it's trying\n[16:36] to get to or as best as it can get.\n[16:39] So we're going to keep it at 0.3 and see if we can get to KI, our integral term, to make"
+    },
+    {
+      "segment_index": 101,
+      "start_time": 1000,
+      "end_time": 1010,
+      "frames": [
+        "frame_0301.jpg",
+        "frame_0302.jpg",
+        "frame_0303.jpg"
+      ],
+      "transcript": "[16:39] So we're going to keep it at 0.3 and see if we can get to KI, our integral term, to make\n[16:45] up that difference.\n[16:47] I'm going to guess at 0.1."
+    },
+    {
+      "segment_index": 102,
+      "start_time": 1010,
+      "end_time": 1020,
+      "frames": [
+        "frame_0304.jpg",
+        "frame_0305.jpg",
+        "frame_0306.jpg"
+      ],
+      "transcript": "[16:47] I'm going to guess at 0.1.\n[16:50] It usually starts much lower than KP.\n[16:52] So let's try that and see what happens.\n[16:55] Oh, what just happened there?\n[16:59] Let's try that again."
+    },
+    {
+      "segment_index": 103,
+      "start_time": 1020,
+      "end_time": 1030,
+      "frames": [
+        "frame_0307.jpg",
+        "frame_0308.jpg",
+        "frame_0309.jpg"
+      ],
+      "transcript": "[16:59] Let's try that again.\n[17:02] Oh, it's oscillating badly and then it whips around.\n[17:07] Let's go take a look at our plot."
+    },
+    {
+      "segment_index": 104,
+      "start_time": 1030,
+      "end_time": 1040,
+      "frames": [
+        "frame_0310.jpg",
+        "frame_0311.jpg",
+        "frame_0312.jpg"
+      ],
+      "transcript": "[17:07] Let's go take a look at our plot.\n[17:10] And here we go.\n[17:13] Sure enough, it's unstable.\n[17:14] You can see it bouncing back and forth and getting larger and larger before it loses control.\n[17:19] That's unstable."
+    },
+    {
+      "segment_index": 105,
+      "start_time": 1040,
+      "end_time": 1050,
+      "frames": [
+        "frame_0313.jpg",
+        "frame_0314.jpg",
+        "frame_0315.jpg"
+      ],
+      "transcript": "[17:19] That's unstable.\n[17:20] That means that KI is definitely too large.\n[17:27] Let's move exponentially here.\n[17:29] So rather than say having this, let's go to 0.01 and see what happens."
+    },
+    {
+      "segment_index": 106,
+      "start_time": 1050,
+      "end_time": 1060,
+      "frames": [
+        "frame_0316.jpg",
+        "frame_0317.jpg",
+        "frame_0318.jpg"
+      ],
+      "transcript": "[17:29] So rather than say having this, let's go to 0.01 and see what happens.\n[17:39] Oh wow."
+    },
+    {
+      "segment_index": 107,
+      "start_time": 1060,
+      "end_time": 1070,
+      "frames": [
+        "frame_0319.jpg",
+        "frame_0320.jpg",
+        "frame_0321.jpg"
+      ],
+      "transcript": "[17:39] Oh wow.\n[17:40] That's really good.\n[17:41] Actually.\n[17:42] That's almost where we want it.\n[17:46] Still look like it's oscillating some."
+    },
+    {
+      "segment_index": 108,
+      "start_time": 1070,
+      "end_time": 1080,
+      "frames": [
+        "frame_0322.jpg",
+        "frame_0323.jpg",
+        "frame_0324.jpg"
+      ],
+      "transcript": "[17:46] Still look like it's oscillating some.\n[17:50] So let's stop that.\n[17:52] Go take a look at our code.\n[17:54] Yeah, there's still some oscillations here.\n[17:56] I don't see it hitting up too high in the beginning and then it's oscillating a bit."
+    },
+    {
+      "segment_index": 109,
+      "start_time": 1080,
+      "end_time": 1090,
+      "frames": [
+        "frame_0325.jpg",
+        "frame_0326.jpg",
+        "frame_0327.jpg"
+      ],
+      "transcript": "[17:56] I don't see it hitting up too high in the beginning and then it's oscillating a bit.\n[18:00] Let's see if we can bring that down just a little bit.\n[18:04] And in fact, let's go probably too low and see what happens.\n[18:09] Start it here."
+    },
+    {
+      "segment_index": 110,
+      "start_time": 1090,
+      "end_time": 1100,
+      "frames": [
+        "frame_0328.jpg",
+        "frame_0329.jpg",
+        "frame_0330.jpg"
+      ],
+      "transcript": "[18:09] Start it here.\n[18:10] That's not bad at all."
+    },
+    {
+      "segment_index": 111,
+      "start_time": 1100,
+      "end_time": 1110,
+      "frames": [
+        "frame_0331.jpg",
+        "frame_0332.jpg",
+        "frame_0333.jpg"
+      ],
+      "transcript": "[18:10] That's not bad at all.\n[18:20] Oh, it's losing it here.\n[18:23] Okay.\n[18:24] So something between 0.01, excuse me, 0.001 and 0.1 looks to be ideal."
+    },
+    {
+      "segment_index": 112,
+      "start_time": 1110,
+      "end_time": 1120,
+      "frames": [
+        "frame_0334.jpg",
+        "frame_0335.jpg",
+        "frame_0336.jpg"
+      ],
+      "transcript": "[18:24] So something between 0.01, excuse me, 0.001 and 0.1 looks to be ideal.\n[18:36] So let's say 0.005 for the sake of argument and try that."
+    },
+    {
+      "segment_index": 113,
+      "start_time": 1120,
+      "end_time": 1130,
+      "frames": [
+        "frame_0337.jpg",
+        "frame_0338.jpg",
+        "frame_0339.jpg"
+      ],
+      "transcript": "[18:36] So let's say 0.005 for the sake of argument and try that.\n[18:43] Oh, that's yes.\n[18:44] This is what we're looking for.\n[18:46] It's barely moving and it's keeping it upright and I can touch it and it corrects."
+    },
+    {
+      "segment_index": 114,
+      "start_time": 1130,
+      "end_time": 1140,
+      "frames": [
+        "frame_0340.jpg",
+        "frame_0341.jpg",
+        "frame_0342.jpg"
+      ],
+      "transcript": "[18:46] It's barely moving and it's keeping it upright and I can touch it and it corrects.\n[18:52] And let's see if it recovers from that.\n[18:54] Oh, I got to touch the other way before that gets too wound up around that axle.\n[18:58] And then it goes the other way."
+    },
+    {
+      "segment_index": 115,
+      "start_time": 1140,
+      "end_time": 1150,
+      "frames": [
+        "frame_0343.jpg",
+        "frame_0344.jpg",
+        "frame_0345.jpg"
+      ],
+      "transcript": "[18:58] And then it goes the other way.\n[19:00] So there's some larger level oscillations going on in here, but this should be okay.\n[19:04] Let's scroll up.\n[19:06] Yeah, 0.005 seems to be really good.\n[19:09] Now we can take some time and really tune these, but I think with a KP of 0.3 and a KI of 0.005, gonna be good enough for now and our demonstration."
+    },
+    {
+      "segment_index": 116,
+      "start_time": 1150,
+      "end_time": 1160,
+      "frames": [
+        "frame_0346.jpg",
+        "frame_0347.jpg",
+        "frame_0348.jpg"
+      ],
+      "transcript": "[19:09] Now we can take some time and really tune these, but I think with a KP of 0.3 and a KI of 0.005, gonna be good enough for now and our demonstration."
+    },
+    {
+      "segment_index": 117,
+      "start_time": 1160,
+      "end_time": 1170,
+      "frames": [
+        "frame_0349.jpg",
+        "frame_0350.jpg",
+        "frame_0351.jpg"
+      ],
+      "transcript": "[19:09] Now we can take some time and really tune these, but I think with a KP of 0.3 and a KI of 0.005, gonna be good enough for now and our demonstration.\n[19:21] As you can see, this PI controller pretty much does the job for us.\n[19:25] We probably don't even need a derivative term in here, but let's just play with it and see what happens."
+    },
+    {
+      "segment_index": 118,
+      "start_time": 1170,
+      "end_time": 1180,
+      "frames": [
+        "frame_0352.jpg",
+        "frame_0353.jpg",
+        "frame_0354.jpg"
+      ],
+      "transcript": "[19:25] We probably don't even need a derivative term in here, but let's just play with it and see what happens.\n[19:32] We started with zero, which is a good place to start.\n[19:35] I'm gonna guess 0.1 just to see what happens.\n[19:39] Once again, this is usually lower than the KP term."
+    },
+    {
+      "segment_index": 119,
+      "start_time": 1180,
+      "end_time": 1190,
+      "frames": [
+        "frame_0355.jpg",
+        "frame_0356.jpg",
+        "frame_0357.jpg"
+      ],
+      "transcript": "[19:39] Once again, this is usually lower than the KP term.\n[19:43] So let's try this.\n[19:44] This is actually not too bad."
+    },
+    {
+      "segment_index": 120,
+      "start_time": 1190,
+      "end_time": 1200,
+      "frames": [
+        "frame_0358.jpg",
+        "frame_0359.jpg",
+        "frame_0360.jpg"
+      ],
+      "transcript": "[19:44] This is actually not too bad.\n[19:50] Okay.\n[19:51] Let's take this down.\n[19:56] And take a look at our graph here."
+    },
+    {
+      "segment_index": 121,
+      "start_time": 1200,
+      "end_time": 1210,
+      "frames": [
+        "frame_0361.jpg",
+        "frame_0362.jpg",
+        "frame_0363.jpg"
+      ],
+      "transcript": "[19:56] And take a look at our graph here."
+    },
+    {
+      "segment_index": 122,
+      "start_time": 1210,
+      "end_time": 1220,
+      "frames": [
+        "frame_0364.jpg",
+        "frame_0365.jpg",
+        "frame_0366.jpg"
+      ],
+      "transcript": "[19:56] And take a look at our graph here.\n[20:11] It's looking pretty good.\n[20:13] And just for argument, what if we take it to 0.5?\n[20:19] What happens?"
+    },
+    {
+      "segment_index": 123,
+      "start_time": 1220,
+      "end_time": 1230,
+      "frames": [
+        "frame_0367.jpg",
+        "frame_0368.jpg",
+        "frame_0369.jpg"
+      ],
+      "transcript": "[20:19] What happens?\n[20:20] This thing's still a beast.\n[20:25] It's still going.\n[20:27] Looks like it's a little unstable."
+    },
+    {
+      "segment_index": 124,
+      "start_time": 1230,
+      "end_time": 1240,
+      "frames": [
+        "frame_0370.jpg",
+        "frame_0371.jpg",
+        "frame_0372.jpg"
+      ],
+      "transcript": "[20:27] Looks like it's a little unstable.\n[20:30] We're getting some of those oscillations, which is probably fine for this.\n[20:37] Okay.\n[20:38] That's fine."
+    },
+    {
+      "segment_index": 125,
+      "start_time": 1240,
+      "end_time": 1250,
+      "frames": [
+        "frame_0373.jpg",
+        "frame_0374.jpg",
+        "frame_0375.jpg"
+      ],
+      "transcript": "[20:41] And just so you can see what happens when we really crank this up, let's take it to five and really try to make this too high.\n[20:48] Yeah, there we go.\n[20:49] We're getting too many of the oscillations and it's pretty unstable."
+    },
+    {
+      "segment_index": 126,
+      "start_time": 1250,
+      "end_time": 1260,
+      "frames": [
+        "frame_0376.jpg",
+        "frame_0377.jpg",
+        "frame_0378.jpg"
+      ],
+      "transcript": "[20:49] We're getting too many of the oscillations and it's pretty unstable.\n[20:52] It can't control it.\n[20:53] So that means we are suppressing KI and KP a little too much.\n[20:59] And sure enough, you can see it with this encoder angle."
+    },
+    {
+      "segment_index": 127,
+      "start_time": 1260,
+      "end_time": 1270,
+      "frames": [
+        "frame_0379.jpg",
+        "frame_0380.jpg",
+        "frame_0381.jpg"
+      ],
+      "transcript": "[20:59] And sure enough, you can see it with this encoder angle.\n[21:03] It's struggling here.\n[21:04] Okay.\n[21:05] So we know we got to be less than five.\n[21:09] And what happens if we take it really low like point zero zero one?"
+    },
+    {
+      "segment_index": 128,
+      "start_time": 1270,
+      "end_time": 1280,
+      "frames": [
+        "frame_0382.jpg",
+        "frame_0383.jpg",
+        "frame_0384.jpg"
+      ],
+      "transcript": "[21:09] And what happens if we take it really low like point zero zero one?"
+    },
+    {
+      "segment_index": 129,
+      "start_time": 1280,
+      "end_time": 1290,
+      "frames": [
+        "frame_0385.jpg",
+        "frame_0386.jpg",
+        "frame_0387.jpg"
+      ],
+      "transcript": "[21:20] Once again, it's pretty good.\n[21:21] We can't really go too low with this.\n[21:23] I'm going to stop it there.\n[21:25] We can't really go too low.\n[21:26] We can't really go too low.\n[21:27] All we're trying to do is suppress this peak here or any of the peaks where it overshoots our set point."
+    },
+    {
+      "segment_index": 130,
+      "start_time": 1290,
+      "end_time": 1300,
+      "frames": [
+        "frame_0388.jpg",
+        "frame_0389.jpg",
+        "frame_0390.jpg"
+      ],
+      "transcript": "[21:27] All we're trying to do is suppress this peak here or any of the peaks where it overshoots our set point.\n[21:33] And in this particular system, an inverted pendulum, we don't mind a little bit of overshoot.\n[21:38] Sometimes you can't have this overshoot."
+    },
+    {
+      "segment_index": 131,
+      "start_time": 1300,
+      "end_time": 1310,
+      "frames": [
+        "frame_0391.jpg",
+        "frame_0392.jpg",
+        "frame_0393.jpg"
+      ],
+      "transcript": "[21:38] Sometimes you can't have this overshoot.\n[21:41] So you need KD to suppress that.\n[21:44] But for our system, it looks like anything between like zero and one is probably fine for your KD."
+    },
+    {
+      "segment_index": 132,
+      "start_time": 1310,
+      "end_time": 1320,
+      "frames": [
+        "frame_0394.jpg",
+        "frame_0395.jpg",
+        "frame_0396.jpg"
+      ],
+      "transcript": "[21:44] But for our system, it looks like anything between like zero and one is probably fine for your KD.\n[21:54] So I'm going to maybe make it a little higher.\n[21:58] I'm going to make it a little higher as we saw with one is not too bad."
+    },
+    {
+      "segment_index": 133,
+      "start_time": 1320,
+      "end_time": 1330,
+      "frames": [
+        "frame_0397.jpg",
+        "frame_0398.jpg",
+        "frame_0399.jpg"
+      ],
+      "transcript": "[21:58] I'm going to make it a little higher as we saw with one is not too bad.\n[22:04] Five was too high.\n[22:05] Let's see what happens with one.\n[22:07] Yeah, that's pretty good."
+    },
+    {
+      "segment_index": 134,
+      "start_time": 1330,
+      "end_time": 1340,
+      "frames": [
+        "frame_0400.jpg",
+        "frame_0401.jpg",
+        "frame_0402.jpg"
+      ],
+      "transcript": "[22:07] Yeah, that's pretty good.\n[22:12] There's still a little bit of jitter happening here.\n[22:14] But once again, I don't think that's because of the KD term."
+    },
+    {
+      "segment_index": 135,
+      "start_time": 1340,
+      "end_time": 1350,
+      "frames": [
+        "frame_0403.jpg",
+        "frame_0404.jpg",
+        "frame_0405.jpg"
+      ],
+      "transcript": "[22:20] Yeah, this is really good.\n[22:21] It's moving back and forth.\n[22:22] It's accomplishing its purpose of keeping the pendulum upright.\n[22:26] And from that, I think we can safely assume we have a fully tuned PID controller for our inverted pendulum."
+    },
+    {
+      "segment_index": 136,
+      "start_time": 1350,
+      "end_time": 1360,
+      "frames": [
+        "frame_0406.jpg",
+        "frame_0407.jpg",
+        "frame_0408.jpg"
+      ],
+      "transcript": "[22:26] And from that, I think we can safely assume we have a fully tuned PID controller for our inverted pendulum.\n[22:35] If we go and look at our plots, you can see the encoder angle stayed pretty static the whole time."
+    },
+    {
+      "segment_index": 137,
+      "start_time": 1360,
+      "end_time": 1370,
+      "frames": [
+        "frame_0409.jpg",
+        "frame_0410.jpg",
+        "frame_0411.jpg"
+      ],
+      "transcript": "[22:35] If we go and look at our plots, you can see the encoder angle stayed pretty static the whole time.\n[22:42] There's a little bit of an overshoot by about two and a half degrees on that first one, but it's really not bad.\n[22:49] And you can see the stepper slowly oscillating back and forth."
+    },
+    {
+      "segment_index": 138,
+      "start_time": 1370,
+      "end_time": 1380,
+      "frames": [
+        "frame_0412.jpg",
+        "frame_0413.jpg",
+        "frame_0414.jpg"
+      ],
+      "transcript": "[22:49] And you can see the stepper slowly oscillating back and forth.\n[22:54] That's something that can be corrected with a dual or nested PID controller, but not something we're going to get into right now."
+    },
+    {
+      "segment_index": 139,
+      "start_time": 1380,
+      "end_time": 1390,
+      "frames": [
+        "frame_0415.jpg",
+        "frame_0416.jpg",
+        "frame_0417.jpg"
+      ],
+      "transcript": "[22:54] That's something that can be corrected with a dual or nested PID controller, but not something we're going to get into right now.\n[23:01] Just so you see what happens, we're going to leave bias at zero.\n[23:06] It actually works very well.\n[23:08] Let's try 10 for the bias term and see what happens."
+    },
+    {
+      "segment_index": 140,
+      "start_time": 1390,
+      "end_time": 1400,
+      "frames": [
+        "frame_0418.jpg",
+        "frame_0419.jpg",
+        "frame_0420.jpg"
+      ],
+      "transcript": "[23:08] Let's try 10 for the bias term and see what happens.\n[23:11] So I'm going to.\n[23:12] Yeah, exactly.\n[23:13] Nothing.\n[23:14] It's trying to overcorrect for something.\n[23:15] That's not even a problem.\n[23:17] We might be able to bring this down."
+    },
+    {
+      "segment_index": 141,
+      "start_time": 1400,
+      "end_time": 1410,
+      "frames": [
+        "frame_0421.jpg",
+        "frame_0422.jpg",
+        "frame_0423.jpg"
+      ],
+      "transcript": "[23:17] We might be able to bring this down.\n[23:22] Let's say five.\n[23:23] Okay.\n[23:24] It's still working.\n[23:25] It's not particularly great.\n[23:27] As you saw, there's no real need for this bias term in this."
+    },
+    {
+      "segment_index": 142,
+      "start_time": 1410,
+      "end_time": 1420,
+      "frames": [
+        "frame_0424.jpg",
+        "frame_0425.jpg",
+        "frame_0426.jpg"
+      ],
+      "transcript": "[23:27] As you saw, there's no real need for this bias term in this.\n[23:30] So I'm just going to leave this at zero.\n[23:34] Let's put this bias term back at zero and we're going to call this pretty tuned for our needs."
+    },
+    {
+      "segment_index": 143,
+      "start_time": 1420,
+      "end_time": 1430,
+      "frames": [
+        "frame_0427.jpg",
+        "frame_0428.jpg",
+        "frame_0429.jpg"
+      ],
+      "transcript": "[23:34] Let's put this bias term back at zero and we're going to call this pretty tuned for our needs.\n[23:40] As you can see, it works pretty much most of the time.\n[23:44] It will move back and forth a little bit.\n[23:47] And that's something that could be corrected with additional control schemes."
+    },
+    {
+      "segment_index": 144,
+      "start_time": 1430,
+      "end_time": 1440,
+      "frames": [
+        "frame_0430.jpg",
+        "frame_0431.jpg",
+        "frame_0432.jpg"
+      ],
+      "transcript": "[23:47] And that's something that could be corrected with additional control schemes.\n[23:50] But for now, I'm going to call this good enough.\n[23:53] I think we can say we have a fully tuned system.\n[23:57] There's obviously some other tweaks, but let's go with that for now."
+    },
+    {
+      "segment_index": 145,
+      "start_time": 1440,
+      "end_time": 1450,
+      "frames": [
+        "frame_0433.jpg",
+        "frame_0434.jpg",
+        "frame_0435.jpg"
+      ],
+      "transcript": "[23:57] There's obviously some other tweaks, but let's go with that for now.\n[24:03] I hope this helps you get started creating your own PID controllers and then tuning them for things like inverted pendulums or self-balancing robots."
+    },
+    {
+      "segment_index": 146,
+      "start_time": 1450,
+      "end_time": 1460,
+      "frames": [
+        "frame_0436.jpg",
+        "frame_0437.jpg",
+        "frame_0438.jpg"
+      ],
+      "transcript": "[24:03] I hope this helps you get started creating your own PID controllers and then tuning them for things like inverted pendulums or self-balancing robots.\n[24:12] Obviously there are more complex control schemes out there, such as linear quadratic regulators and model predictive control."
+    },
+    {
+      "segment_index": 147,
+      "start_time": 1460,
+      "end_time": 1470,
+      "frames": [
+        "frame_0439.jpg",
+        "frame_0440.jpg",
+        "frame_0441.jpg"
+      ],
+      "transcript": "[24:12] Obviously there are more complex control schemes out there, such as linear quadratic regulators and model predictive control.\n[24:20] But PID controllers are a great introduction into control theory.\n[24:24] If this is something you would like to tinker with.\n[24:27] Good luck and happy hacking.\n[24:29] Beep!"
+    },
+    {
+      "segment_index": 148,
+      "start_time": 1470,
+      "end_time": 1472.7,
+      "frames": [],
+      "transcript": "[24:29] Beep!\n[24:31] Boop!"
+    }
+  ]
+}

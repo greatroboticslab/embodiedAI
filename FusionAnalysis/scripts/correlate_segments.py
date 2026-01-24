@@ -499,11 +499,11 @@ def generate_docx_report(video_id: str, segments: List[Dict], total_comments: in
 
 def main():
     parser = argparse.ArgumentParser(description="Correlate Segments (All Pairs)")
-    parser.add_argument("--segments_root", default="../data/manual_segmentation", help="Folder with <vid>_manual_sections.json")
+    parser.add_argument("--segments_root", default="../data/segments_embodied", help="Folder with <vid>_manual_sections.json")
     # Updated default path from user request history or keep generic
     parser.add_argument("--comments_root", default="../../Data For Classes-Analysis/final_merged_data/final_merged_class_data.docx", help="Dir (JSON) or File (DOCX)")
     parser.add_argument("--captions_root", default="../../CaptionAnalysis/data/integrated_caption/frames_embodied_captions_integrated", help="Path to CaptionAnalysis")
-    parser.add_argument("--output_dir", default="../results/segment_correlations")
+    parser.add_argument("--output_dir", default="../results/segment_correlations_embodied", help="Path to output directory")
     parser.add_argument("--model", default="llama3")
     parser.add_argument("--top_k", type=int, default=200, help="Number of comments to keep (Top-K max similarity).")
     

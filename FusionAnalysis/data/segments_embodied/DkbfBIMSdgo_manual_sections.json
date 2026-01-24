@@ -1,0 +1,415 @@
+{
+  "video_id": "DkbfBIMSdgo",
+  "duration": 381.52,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg"
+      ],
+      "transcript": "[0:00] Hi, welcome to Elonix.\n[0:02] In this episode, we'll see how to make a clap switch or sound triggered LED while simultaneously\n[0:08] learning how it works."
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0003.jpg",
+        "frame_0004.jpg",
+        "frame_0005.jpg"
+      ],
+      "transcript": "[0:08] learning how it works.\n[0:16] This circuit detected claps upto a distance of about 15 feet."
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0006.jpg",
+        "frame_0007.jpg"
+      ],
+      "transcript": "[0:16] This circuit detected claps upto a distance of about 15 feet."
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0008.jpg",
+        "frame_0009.jpg",
+        "frame_0010.jpg"
+      ],
+      "transcript": "[0:16] This circuit detected claps upto a distance of about 15 feet.\n[0:30] And if you are near, the LED turns on even with finger snaps.\n[0:37] You can also change the sensitivity so that it turns on the LED only when you clap near"
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:37] You can also change the sensitivity so that it turns on the LED only when you clap near\n[0:41] the circuit.\n[0:49] We'll be using a condenser or elaterate microphone as the sensing element and its capacitance"
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg",
+        "frame_0015.jpg"
+      ],
+      "transcript": "[0:49] We'll be using a condenser or elaterate microphone as the sensing element and its capacitance\n[0:55] changes in response to ambient sound.\n[0:58] So we'll start with the condenser microphone and a resistor in series so that the change"
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0016.jpg",
+        "frame_0017.jpg"
+      ],
+      "transcript": "[0:58] So we'll start with the condenser microphone and a resistor in series so that the change\n[1:03] in capacitance of the microphone is translated to change in voltage at this point.\n[1:09] One terminal of the 3.3kohm resistor is connected to negative rail and the other terminal is"
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0018.jpg",
+        "frame_0019.jpg",
+        "frame_0020.jpg"
+      ],
+      "transcript": "[1:09] One terminal of the 3.3kohm resistor is connected to negative rail and the other terminal is\n[1:15] connected to negative of condenser microphone which is the pin connected to outer casing."
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0021.jpg",
+        "frame_0022.jpg"
+      ],
+      "transcript": "[1:15] connected to negative of condenser microphone which is the pin connected to outer casing.\n[1:21] And the positive terminal of the microphone is connected to the positive rail.\n[1:25] The voltage at this point is normally near positive voltage but it drops whenever there"
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0023.jpg",
+        "frame_0024.jpg",
+        "frame_0025.jpg"
+      ],
+      "transcript": "[1:25] The voltage at this point is normally near positive voltage but it drops whenever there\n[1:30] is a sudden loud sound around the microphone.\n[1:32] We'll try to amplify this response by using BC547 and NPN transistor.\n[1:39] So connect this point to the base of BC547 which is at pin 2 and the emitter which is at pin"
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0026.jpg",
+        "frame_0027.jpg"
+      ],
+      "transcript": "[1:39] So connect this point to the base of BC547 which is at pin 2 and the emitter which is at pin\n[1:45] 3 should be connected to negative rail.\n[1:49] Connect a resistor between positive rail and the collector of transistor."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0028.jpg",
+        "frame_0029.jpg",
+        "frame_0030.jpg"
+      ],
+      "transcript": "[1:49] Connect a resistor between positive rail and the collector of transistor.\n[1:53] This resistor acts as a dummy load which keeps the collector base junction in reverse\n[1:57] bias and that's required for making the transistor amplify the input signal."
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0031.jpg",
+        "frame_0032.jpg"
+      ],
+      "transcript": "[1:57] bias and that's required for making the transistor amplify the input signal.\n[2:02] And because this resistance determines the voltage at the output, its value determines the sensitivity\n[2:08] and is dependent on the supply voltage."
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0033.jpg",
+        "frame_0034.jpg",
+        "frame_0035.jpg"
+      ],
+      "transcript": "[2:08] and is dependent on the supply voltage.\n[2:10] So if you are using a 5 or 6 volts of power supply, use a 270 ohm resistor.\n[2:15] 470 ohm for 9 volts and 1 kilo ohm for 12 volts of power supply."
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0036.jpg",
+        "frame_0037.jpg"
+      ],
+      "transcript": "[2:15] 470 ohm for 9 volts and 1 kilo ohm for 12 volts of power supply.\n[2:21] Increasing this resistance value reduces the sensitivity.\n[2:25] Now this is not required but if you place an LED between the output and negative rail, the"
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0038.jpg",
+        "frame_0039.jpg",
+        "frame_0040.jpg"
+      ],
+      "transcript": "[2:25] Now this is not required but if you place an LED between the output and negative rail, the\n[2:30] LED glows when you tap or blow air on the microphone.\n[2:34] But the output is not high enough to detect claps.\n[2:38] So we will use another NPN transistor and connect the output of the first transistor to the base"
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0041.jpg",
+        "frame_0042.jpg"
+      ],
+      "transcript": "[2:38] So we will use another NPN transistor and connect the output of the first transistor to the base\n[2:43] of the second transistor BC547.\n[2:46] Like you did for the first transistor, connect the emitter of the second transistor to negative"
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0043.jpg",
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:46] Like you did for the first transistor, connect the emitter of the second transistor to negative\n[2:50] rail and the collector to load.\n[2:55] At this moment we will be using an LED as a load to test the circuit.\n[2:59] So I have connected the collector of second transistor to negative terminal of the LED and"
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg"
+      ],
+      "transcript": "[2:59] So I have connected the collector of second transistor to negative terminal of the LED and\n[3:03] the positive of LED connects to positive rail via a 270 ohm resistor.\n[3:08] This resistor should be 470 ohms for 9 or 12 volts of power supply."
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0048.jpg",
+        "frame_0049.jpg",
+        "frame_0050.jpg"
+      ],
+      "transcript": "[3:08] This resistor should be 470 ohms for 9 or 12 volts of power supply.\n[3:13] Now turn on the power supply.\n[3:14] Normally the LED should stay off and it should turn on when you clap or do finger snaps near\n[3:19] the condenser microphone."
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0051.jpg",
+        "frame_0052.jpg"
+      ],
+      "transcript": "[3:19] the condenser microphone.\n[3:22] Or even if you tap or blow air on it.\n[3:25] Don't panic if the LED always stays on.\n[3:28] All you need to do is increase the load resistance of the first transistor."
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0053.jpg",
+        "frame_0054.jpg",
+        "frame_0055.jpg"
+      ],
+      "transcript": "[3:28] All you need to do is increase the load resistance of the first transistor.\n[3:33] For example if you are using a 270 ohm resistor, replace it with a higher one, say 330 ohm resistor\n[3:38] and keep increasing until the LED just turns off."
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[3:38] and keep increasing until the LED just turns off.\n[3:42] I advise you to purchase at least 3 resistors and start from the minimum.\n[3:47] If the LED stays on, you will use the next resistor and so on."
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:47] If the LED stays on, you will use the next resistor and so on.\n[3:52] Coming back to the main circuit, even though it turns on LED with a clap, it stays on only\n[3:57] for a moment and normally we would want to increase that duration."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg",
+        "frame_0063.jpg"
+      ],
+      "transcript": "[3:57] for a moment and normally we would want to increase that duration.\n[4:02] And obviously a 555 timer in mono stable mode is the best candidate for doing that.\n[4:07] What this arrangement does is, whenever the trigger pin detects a drop in voltage, the"
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0064.jpg",
+        "frame_0065.jpg"
+      ],
+      "transcript": "[4:07] What this arrangement does is, whenever the trigger pin detects a drop in voltage, the\n[4:13] 555 timer turns on the output for a duration determined by the value of capacitor and resistor.\n[4:19] We will first build this mono stable circuit and then couple the trigger pin with the output"
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0066.jpg",
+        "frame_0067.jpg",
+        "frame_0068.jpg"
+      ],
+      "transcript": "[4:19] We will first build this mono stable circuit and then couple the trigger pin with the output\n[4:24] of a primary circuit.\n[4:27] So let's place the 555 timer IC on the breadboard."
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0069.jpg",
+        "frame_0070.jpg"
+      ],
+      "transcript": "[4:27] So let's place the 555 timer IC on the breadboard.\n[4:30] Connect the pins 6 and 7 and pins 4 and 8.\n[4:34] Now connect a 100k ohm resistor between the pins 7 and 8.\n[4:39] Next goes the capacitor with its positive terminal connected to pin 6 and its negative terminal"
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0071.jpg",
+        "frame_0072.jpg",
+        "frame_0073.jpg"
+      ],
+      "transcript": "[4:39] Next goes the capacitor with its positive terminal connected to pin 6 and its negative terminal\n[4:44] connected to negative rail.\n[4:47] You can choose the capacitor's value depending on the amount of time you require the LED to"
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0074.jpg",
+        "frame_0075.jpg"
+      ],
+      "transcript": "[4:47] You can choose the capacitor's value depending on the amount of time you require the LED to\n[4:51] stay on.\n[4:53] Now connect the output of 555 timer which is at pin 3 to the positive of the LED and the\n[4:59] negative of the LED to negative rail via a 270 ohm resistor."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0076.jpg",
+        "frame_0077.jpg",
+        "frame_0078.jpg"
+      ],
+      "transcript": "[4:59] negative of the LED to negative rail via a 270 ohm resistor.\n[5:03] Connect pin 1 to negative rail and pin 4 to positive rail.\n[5:07] You can now test this mono stable circuit by applying 0V at the trigger pin."
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0079.jpg",
+        "frame_0080.jpg"
+      ],
+      "transcript": "[5:07] You can now test this mono stable circuit by applying 0V at the trigger pin.\n[5:12] Now it's time to couple output of a primary circuit with the trigger pin of this mono stable circuit."
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0081.jpg",
+        "frame_0082.jpg",
+        "frame_0083.jpg"
+      ],
+      "transcript": "[5:12] Now it's time to couple output of a primary circuit with the trigger pin of this mono stable circuit.\n[5:22] As we don't require LED at the output of a primary circuit, I am removing it along with\n[5:27] its series resistor."
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0084.jpg",
+        "frame_0085.jpg"
+      ],
+      "transcript": "[5:27] its series resistor.\n[5:31] Place a 1k ohm resistor between the collector of second transistor and positive rail.\n[5:37] This resistor acts as a load for the second transistor as well as keeps the output high when the"
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0086.jpg",
+        "frame_0087.jpg",
+        "frame_0088.jpg"
+      ],
+      "transcript": "[5:37] This resistor acts as a load for the second transistor as well as keeps the output high when the\n[5:42] transistor is not turned on.\n[5:44] After this, use a 100nF capacitor to couple the output of the second transistor to the trigger"
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0089.jpg",
+        "frame_0090.jpg"
+      ],
+      "transcript": "[5:44] After this, use a 100nF capacitor to couple the output of the second transistor to the trigger\n[5:50] pin of 555 timer ILC.\n[5:53] The capacitor acts as a filter and prevents continuous loud sounds from triggering the monostable\n[5:58] circuit.\n[5:59] So normally the voltage at the trigger pin will be near to positive voltage and it drops whenever"
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0091.jpg",
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[5:59] So normally the voltage at the trigger pin will be near to positive voltage and it drops whenever\n[6:04] you clap which triggers the monostable circuit and so the LED should glow.\n[6:09] Finally connect the power supply and here you go, the clap switch or sound triggered LED."
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg"
+      ],
+      "transcript": "[6:09] Finally connect the power supply and here you go, the clap switch or sound triggered LED.\n[6:18] Thanks for your time, do subscribe and have fun."
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 381.52,
+      "frames": [
+        "frame_0096.jpg"
+      ],
+      "transcript": "[6:18] Thanks for your time, do subscribe and have fun."
+    }
+  ]
+}
