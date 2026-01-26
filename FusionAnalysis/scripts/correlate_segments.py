@@ -96,9 +96,9 @@ def parse_comments_docx(docx_path: str) -> Dict[str, List[Dict[str, str]]]:
 
     def get_vid(text):
         if "youtu" not in text: return None
-        m = re.search(r"v=([A-Za-z0-9_-]{11})", text)
+        m = re.search(r"v=([A-Za-z0-9_-]{11,})", text)
         if m: return m.group(1)
-        m = re.search(r"youtu\.be/([A-Za-z0-9_-]{11})", text)
+        m = re.search(r"youtu\.be/([A-Za-z0-9_-]{11,})", text)
         if m: return m.group(1)
         return None
 
