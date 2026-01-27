@@ -158,9 +158,19 @@ def main():
     
     durations = load_durations(args.metrics_root)
     
-    # Discover videos in correlation root
-    # correlation_root typically has subfolders <video_id>
-    video_ids = [d for d in os.listdir(args.correlation_root) if os.path.isdir(os.path.join(args.correlation_root, d))]
+    # Discover videos in comments_root to cover all videos
+    # Filter based on label (Conventional requires 11-char ID check to skip broken files)
+    video_ids = []
+    for f in os.listdir(args.comments_root):
+        if not f.endswith(".json"):
+            continue
+        vid = f[:-5]
+        
+        if args.label == "Conventional":
+            if len(vid) != 11:
+                continue
+                
+        video_ids.append(vid)
     
     metrics_list = []
     
@@ -168,10 +178,9 @@ def main():
     
     for vid in video_ids:
         dur = durations.get(vid, 0)
-        # Assuming comments_root has <video_id>.json directly
+       # Assuming comments_root has <video_id>.json directly
         m = process_video(vid, dur, args.comments_root, args.correlation_root)
-        if m.total_comments > 0:
-             metrics_list.append(m)
+        metrics_list.append(m)
              
     # Aggregate
     agg = Aggregate(
@@ -192,6 +201,18 @@ def main():
         }, f, indent=2)
         
     print(f"Saved {out_file}")
+
+    # CSV Export
+    import csv
+    csv_file = os.path.join(args.out_dir, f"{args.label}_youtube_metrics.csv")
+    if metrics_list:
+        fieldnames = asdict(metrics_list[0]).keys()
+        with open(csv_file, "w", newline='', encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            for m in metrics_list:
+                writer.writerow(asdict(m))
+        print(f"Saved {csv_file}")
 
 if __name__ == "__main__":
     main()
