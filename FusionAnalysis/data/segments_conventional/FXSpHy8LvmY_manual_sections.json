@@ -1,0 +1,941 @@
+{
+  "video_id": "FXSpHy8LvmY",
+  "duration": 898.28,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg"
+      ],
+      "transcript": "[0:00] In this video, we're going to talk about a way to develop a feedback controller for\n[0:04] a model that's represented using state space equations.\n[0:06] And we're going to do that with a method called pole placement, or full state feedback."
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0003.jpg",
+        "frame_0004.jpg"
+      ],
+      "transcript": "[0:06] And we're going to do that with a method called pole placement, or full state feedback.\n[0:12] Now my experience is that pole placement itself isn't used extensively in industry.\n[0:17] You might find that you're using other methods like LQR or H infinity more often."
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0005.jpg",
+        "frame_0006.jpg",
+        "frame_0007.jpg"
+      ],
+      "transcript": "[0:17] You might find that you're using other methods like LQR or H infinity more often.\n[0:21] However, pole placement is worth spending some time on because it will give you a better\n[0:25] understanding of the general approach to feedback control using state space equations."
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0008.jpg",
+        "frame_0009.jpg"
+      ],
+      "transcript": "[0:25] understanding of the general approach to feedback control using state space equations.\n[0:30] And it's a stepping stone to getting to those other methods.\n[0:33] So I hope you stick around.\n[0:35] I'm Brian, and welcome to a MATLAB Tech Talk.\n[0:39] To start off, we have a plant with inputs U and outputs Y."
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:39] To start off, we have a plant with inputs U and outputs Y.\n[0:44] And the goal is to develop a feedback control system that drives the output to some desired\n[0:49] value."
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg"
+      ],
+      "transcript": "[0:49] value.\n[0:50] A way you might be familiar with doing this is to compare the output to a reference signal\n[0:54] to get the control error.\n[0:56] Then you can develop a controller that uses that error to generate the input signals into"
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0015.jpg",
+        "frame_0016.jpg"
+      ],
+      "transcript": "[0:56] Then you can develop a controller that uses that error to generate the input signals into\n[1:01] the plant with the goal of driving the error to zero.\n[1:04] This is the structure of the feedback control system that you would see if you were developing,\n[1:09] say, a PID controller."
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0017.jpg",
+        "frame_0018.jpg",
+        "frame_0019.jpg"
+      ],
+      "transcript": "[1:09] say, a PID controller.\n[1:11] But for pole placement, we're going to approach this problem in a different way.\n[1:16] Rather than feedback the output Y, we're going to feedback the value of every state variable"
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0020.jpg",
+        "frame_0021.jpg"
+      ],
+      "transcript": "[1:16] Rather than feedback the output Y, we're going to feedback the value of every state variable\n[1:20] in our state vector.\n[1:21] Now we're going to claim that we know the value of every state, even though it's not\n[1:25] necessarily part of the output Y.\n[1:27] And we'll get to that in a bit.\n[1:29] But for now, assume we have access to all of these values."
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[1:29] But for now, assume we have access to all of these values.\n[1:33] We then take the state vector and multiply it by a matrix that is made up of a bunch of\n[1:37] different gain values.\n[1:39] And the result is subtracted from a scaled reference signal."
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg"
+      ],
+      "transcript": "[1:39] And the result is subtracted from a scaled reference signal.\n[1:43] And this result is fed directly into our plant as the input.\n[1:48] Now, you'll notice that there isn't a block here labeled controller, like we have in the"
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0027.jpg",
+        "frame_0028.jpg"
+      ],
+      "transcript": "[1:48] Now, you'll notice that there isn't a block here labeled controller, like we have in the\n[1:53] top block diagram.\n[1:55] In this feedback structure, this whole section is the controller.\n[1:59] And pole placement is a method by which we can calculate the proper gain matrix to guarantee"
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0029.jpg",
+        "frame_0030.jpg",
+        "frame_0031.jpg"
+      ],
+      "transcript": "[1:59] And pole placement is a method by which we can calculate the proper gain matrix to guarantee\n[2:04] system stability.\n[2:06] And the scaling term on the reference is used to ensure that steady state error performance"
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0032.jpg",
+        "frame_0033.jpg"
+      ],
+      "transcript": "[2:06] And the scaling term on the reference is used to ensure that steady state error performance\n[2:11] is acceptable.\n[2:12] I'll cover both of these in this video.\n[2:15] But first we need some background information.\n[2:18] In the last video we introduced the state equation x dot equals ax plus bu."
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[2:18] In the last video we introduced the state equation x dot equals ax plus bu.\n[2:22] And we showed that the dynamics of a linear system are captured in this first part, ax.\n[2:28] The second part is how the system responds to inputs, but how the energy in the system"
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg"
+      ],
+      "transcript": "[2:28] The second part is how the system responds to inputs, but how the energy in the system\n[2:32] is stored and moves is captured by the ax term.\n[2:36] So, you might expect that there is something special about the A matrix when it comes to"
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0039.jpg",
+        "frame_0040.jpg"
+      ],
+      "transcript": "[2:36] So, you might expect that there is something special about the A matrix when it comes to\n[2:40] controller design.\n[2:42] And there is.\n[2:43] Any feedback controller has to modify the A matrix in order to change the dynamics of\n[2:48] the system.\n[2:49] And this is especially true when it comes to stability."
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0041.jpg",
+        "frame_0042.jpg",
+        "frame_0043.jpg"
+      ],
+      "transcript": "[2:49] And this is especially true when it comes to stability.\n[2:52] The eigenvalues of the A matrix are the poles of the system.\n[2:56] And the location of the poles dictate stability of a linear system."
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:56] And the location of the poles dictate stability of a linear system.\n[3:00] And that's the key to pole placement.\n[3:03] And then we can calculate the required closed loop stability by moving the poles, or the\n[3:07] eigenvalues, of the closed loop A matrix."
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[3:07] eigenvalues, of the closed loop A matrix.\n[3:10] Now I want to expand a bit more on the relationship between poles and eigenvalues and stability before\n[3:14] we go any further, because I think it will help you understand exactly how pole placement\n[3:19] works."
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg"
+      ],
+      "transcript": "[3:19] works.\n[3:21] For this example, let's just start with an arbitrary system and focus on the dynamics,\n[3:26] the A matrix.\n[3:28] We can rewrite this in non-matrix form so it's a little bit easier to see how the state derivatives"
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0051.jpg",
+        "frame_0052.jpg"
+      ],
+      "transcript": "[3:28] We can rewrite this in non-matrix form so it's a little bit easier to see how the state derivatives\n[3:32] relate to the states.\n[3:34] In general, each state can change as a function of the other states.\n[3:38] And that's the case here.\n[3:39] x.1 changes based on x2, and x.2 changes based on both x1 and x2."
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0053.jpg",
+        "frame_0054.jpg",
+        "frame_0055.jpg"
+      ],
+      "transcript": "[3:39] x.1 changes based on x2, and x.2 changes based on both x1 and x2.\n[3:46] And this is perfectly acceptable.\n[3:48] But it makes it a little hard to visualize how eigenvalues are contributing to the overall"
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[3:48] But it makes it a little hard to visualize how eigenvalues are contributing to the overall\n[3:52] dynamics.\n[3:53] So what we can do is transform the A matrix into one that uses a different set of state\n[3:59] variables to describe the system."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:59] variables to describe the system.\n[4:01] This transformation is accomplished using a transform matrix, whose columns are the eigenvectors\n[4:06] of the A matrix.\n[4:08] And what we end up with after the transformation is a modified A matrix consisting of the complex"
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg"
+      ],
+      "transcript": "[4:08] And what we end up with after the transformation is a modified A matrix consisting of the complex\n[4:14] eigenvalues along the diagonal and zeros everywhere else.\n[4:18] Now, these two models represent the exact same system."
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0063.jpg",
+        "frame_0064.jpg"
+      ],
+      "transcript": "[4:18] Now, these two models represent the exact same system.\n[4:22] They have the same eigenvalues and the same dynamics.\n[4:25] It's just the second one is described using a set of state variables that change independently"
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0065.jpg",
+        "frame_0066.jpg",
+        "frame_0067.jpg"
+      ],
+      "transcript": "[4:25] It's just the second one is described using a set of state variables that change independently\n[4:30] of each other.\n[4:32] When the A matrix is written in diagonal form, it's easy to see that what we're left with\n[4:36] is a set of first order differential equations where the derivative of each state is only affected"
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0068.jpg",
+        "frame_0069.jpg"
+      ],
+      "transcript": "[4:36] is a set of first order differential equations where the derivative of each state is only affected\n[4:41] by that state, and nothing else.\n[4:44] And here's the cool part.\n[4:46] The solution to a differential equation like this is in the form z equals a constant times"
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[4:46] The solution to a differential equation like this is in the form z equals a constant times\n[4:51] e to the lambda t, where lambda is the eigenvalue for that given state variable.\n[4:58] Okay, let's dive into this equation a little bit more."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg"
+      ],
+      "transcript": "[4:58] Okay, let's dive into this equation a little bit more.\n[5:03] z in shows how the state changes over time given some initial condition, c.\n[5:09] Or another way of thinking about this is that if you initialize the state with some energy,"
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0075.jpg",
+        "frame_0076.jpg"
+      ],
+      "transcript": "[5:09] Or another way of thinking about this is that if you initialize the state with some energy,\n[5:13] or you add energy from an external input, this equation shows how that energy changes.\n[5:18] And by changing lambda, you can affect how the energy is dissipated, or in the case of an"
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0077.jpg",
+        "frame_0078.jpg",
+        "frame_0079.jpg"
+      ],
+      "transcript": "[5:18] And by changing lambda, you can affect how the energy is dissipated, or in the case of an\n[5:24] unstable system, how the energy grows.\n[5:27] So let's go through a few different values of lambda so you can visually see how energy"
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0080.jpg",
+        "frame_0081.jpg"
+      ],
+      "transcript": "[5:27] So let's go through a few different values of lambda so you can visually see how energy\n[5:30] changes based on the location of the eigenvalue within the complex plane.\n[5:35] If lambda is a negative real number, then this is a stable eigenvalue since the solution"
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[5:35] If lambda is a negative real number, then this is a stable eigenvalue since the solution\n[5:42] is e raised to a negative number, and any initial energy will dissipate over time.\n[5:47] But if it's positive, then it's unstable because the energy will just grow over time."
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg"
+      ],
+      "transcript": "[5:47] But if it's positive, then it's unstable because the energy will just grow over time.\n[5:52] And if there's a pair of imaginary eigenvalues, then the energy in this mode will oscillate,\n[5:57] since e raised to an imaginary number produces sines and cosines."
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0087.jpg",
+        "frame_0088.jpg"
+      ],
+      "transcript": "[5:57] since e raised to an imaginary number produces sines and cosines.\n[6:02] And any combination of the two, of real and imaginary numbers, will produce a combination\n[6:07] of oscillations and exponential energy dissipation."
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0089.jpg",
+        "frame_0090.jpg",
+        "frame_0091.jpg"
+      ],
+      "transcript": "[6:07] of oscillations and exponential energy dissipation.\n[6:11] Now I know this was all very fast, but hopefully it made enough sense that now we can state the\n[6:16] problem we're trying to solve.\n[6:18] If our plant has eigenvalues that are at undesirable locations in the complex plane, then we can use"
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[6:18] If our plant has eigenvalues that are at undesirable locations in the complex plane, then we can use\n[6:23] pole placement to move them somewhere else.\n[6:27] Now certainly if they're in the right half plane it's undesirable since they'd be unstable,"
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[6:27] Now certainly if they're in the right half plane it's undesirable since they'd be unstable,\n[6:31] but undesirable could also mean there's oscillations you want to get rid of, or maybe just speed\n[6:36] up or slow down the dissipation of energy in a particular mode."
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg"
+      ],
+      "transcript": "[6:36] up or slow down the dissipation of energy in a particular mode.\n[6:41] With that behind us, we can now get into how pole placement moves the eigenvalues.\n[6:46] Remember the structure of the controller that we drew at the beginning?\n[6:49] Well this results in an input u equals rkr minus k times x, where rkr is the scaled reference,"
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0099.jpg",
+        "frame_0100.jpg"
+      ],
+      "transcript": "[6:49] Well this results in an input u equals rkr minus k times x, where rkr is the scaled reference,\n[6:58] which again we'll get to in a bit, and kx is the state vector that we're feeding back"
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0101.jpg",
+        "frame_0102.jpg",
+        "frame_0103.jpg"
+      ],
+      "transcript": "[6:58] which again we'll get to in a bit, and kx is the state vector that we're feeding back\n[7:03] multiplied by the gain matrix.\n[7:05] Now here's where the magic happens.\n[7:07] If we plug this control input into our state equation, we're closing the loop and we get"
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[7:07] If we plug this control input into our state equation, we're closing the loop and we get\n[7:12] the following state equation.\n[7:15] Notice that a and minus bk both act on the state vector, so we can combine them to get"
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[7:15] Notice that a and minus bk both act on the state vector, so we can combine them to get\n[7:21] a modified a matrix.\n[7:23] This is the closed loop a matrix, and we have the ability to move the eigenvalues by\n[7:27] choosing an appropriate k."
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg"
+      ],
+      "transcript": "[7:27] choosing an appropriate k.\n[7:30] And this is easy to do by hand for simple systems.\n[7:33] Let's try an example with a second order system with a single input.\n[7:37] We can find the eigenvalues by setting the determinant of a minus lambda i to 0, and then solve for"
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0111.jpg",
+        "frame_0112.jpg"
+      ],
+      "transcript": "[7:37] We can find the eigenvalues by setting the determinant of a minus lambda i to 0, and then solve for\n[7:43] lambda.\n[7:44] And they're at minus 2 and plus 1.\n[7:48] One of the modes will blow up to infinity because of the presence of the positive real eigenvalue,"
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0113.jpg",
+        "frame_0114.jpg",
+        "frame_0115.jpg"
+      ],
+      "transcript": "[7:48] One of the modes will blow up to infinity because of the presence of the positive real eigenvalue,\n[7:52] and so the system as a whole is unstable.\n[7:56] Let's use pole placement to design a feedback controller that will stabilize this system"
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[7:56] Let's use pole placement to design a feedback controller that will stabilize this system\n[8:00] by moving the unstable pole to the left half plane.\n[8:04] Our closed loop A matrix is A minus Bk, and the gain matrix k is a 1 by 2 since there's"
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[8:04] Our closed loop A matrix is A minus Bk, and the gain matrix k is a 1 by 2 since there's\n[8:10] one output in two states.\n[8:12] This results in minus k1, 1 minus k2, 2, and minus 1.\n[8:18] And we can solve for the eigenvalues of ACL like we did before, and we get this characteristic"
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg"
+      ],
+      "transcript": "[8:18] And we can solve for the eigenvalues of ACL like we did before, and we get this characteristic\n[8:23] equation that's a function of our two gain values.\n[8:28] Now let's say that we want our closed loop poles at minus 1 and minus 2."
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0123.jpg",
+        "frame_0124.jpg"
+      ],
+      "transcript": "[8:28] Now let's say that we want our closed loop poles at minus 1 and minus 2.\n[8:32] In this way, the characteristic equation needs to be lambda squared plus 3 times lambda plus\n[8:37] 2 equals 0."
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0125.jpg",
+        "frame_0126.jpg",
+        "frame_0127.jpg"
+      ],
+      "transcript": "[8:37] 2 equals 0.\n[8:40] And at this point, it's straightforward to find the appropriate k1 and k2 that make\n[8:44] these two equations equal.\n[8:47] We just set the coefficients equal to each other and solve."
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0128.jpg",
+        "frame_0129.jpg"
+      ],
+      "transcript": "[8:47] We just set the coefficients equal to each other and solve.\n[8:50] And we get k1 equals 2 and k2 equals 1.\n[8:55] And that's it.\n[8:57] If we place these two gains in the state feedback path of this system, it will be stabilized"
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0130.jpg",
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[8:57] If we place these two gains in the state feedback path of this system, it will be stabilized\n[9:02] with eigenvalues at minus 1 and minus 2.\n[9:06] Walking through an example by hand I think gives you a good understanding of pole placement"
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg"
+      ],
+      "transcript": "[9:06] Walking through an example by hand I think gives you a good understanding of pole placement\n[9:10] and how it works.\n[9:12] However, the math involved starts to become overwhelming for systems that have more than\n[9:16] two states.\n[9:18] The idea is the same, just solving the determinant becomes impractical."
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0135.jpg",
+        "frame_0136.jpg",
+        "frame_0137.jpg"
+      ],
+      "transcript": "[9:18] The idea is the same, just solving the determinant becomes impractical.\n[9:22] But we can do this exact same thing in MATLAB with pretty much a single command.\n[9:27] I'll show you quickly how to use the place command in MATLAB by recreating the same system"
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0138.jpg",
+        "frame_0139.jpg"
+      ],
+      "transcript": "[9:27] I'll show you quickly how to use the place command in MATLAB by recreating the same system\n[9:31] that we just did by hand.\n[9:33] I'll define the four matrices, and then create the open loop state space object.\n[9:38] I can check the eigenvalues of the open loop A matrix just to show you that there is in"
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0140.jpg",
+        "frame_0141.jpg"
+      ],
+      "transcript": "[9:38] I can check the eigenvalues of the open loop A matrix just to show you that there is in\n[9:42] fact that positive eigenvalue that causes the system to be unstable.\n[9:47] And that's no good.\n[9:48] So let's move the eigenvalues of the system to minus 2 and minus 1."
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0142.jpg",
+        "frame_0143.jpg",
+        "frame_0144.jpg"
+      ],
+      "transcript": "[9:48] So let's move the eigenvalues of the system to minus 2 and minus 1.\n[9:53] Now solving for the gain matrix using pole placement can be done with the place command.\n[9:58] And we get gain values of 2 and 1 just like we expected."
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0145.jpg",
+        "frame_0146.jpg"
+      ],
+      "transcript": "[9:58] And we get gain values of 2 and 1 just like we expected.\n[10:03] Now the new closed loop A matrix is A minus BK.\n[10:07] And just to double check, this is what ACL looks like, and it does have eigenvalues at"
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0147.jpg",
+        "frame_0148.jpg",
+        "frame_0149.jpg"
+      ],
+      "transcript": "[10:07] And just to double check, this is what ACL looks like, and it does have eigenvalues at\n[10:12] minus 1 and minus 2.\n[10:15] OK.\n[10:16] I'll create the closed loop system object, and now we can compare the step responses for"
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0150.jpg",
+        "frame_0151.jpg"
+      ],
+      "transcript": "[10:16] I'll create the closed loop system object, and now we can compare the step responses for\n[10:20] both.\n[10:21] The step response of the open loop system is predictably unstable.\n[10:26] And the step response of the closed loop system looks much better.\n[10:29] However, it's not perfect."
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0152.jpg",
+        "frame_0153.jpg"
+      ],
+      "transcript": "[10:29] However, it's not perfect.\n[10:32] Rather than rising to 1 like we would expect, the steady state output is only 0.5.\n[10:38] And this is finally where the scaling term comes in on the reference."
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0154.jpg",
+        "frame_0155.jpg",
+        "frame_0156.jpg"
+      ],
+      "transcript": "[10:38] And this is finally where the scaling term comes in on the reference.\n[10:43] So far we've only been concerned with stability, and have paid little attention to steady state\n[10:47] performance.\n[10:49] But even addressing this is pretty straightforward."
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0157.jpg",
+        "frame_0158.jpg"
+      ],
+      "transcript": "[10:49] But even addressing this is pretty straightforward.\n[10:52] If the response of the input is only half of what you would expect, why not just double\n[10:56] the input?\n[10:58] And that's pretty much what we do."
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0159.jpg",
+        "frame_0160.jpg",
+        "frame_0161.jpg"
+      ],
+      "transcript": "[10:58] And that's pretty much what we do.\n[11:00] Well, we're not just doubling it.\n[11:02] We scale the input by the inverse of the steady state value.\n[11:07] In MATLAB we can do this by inverting the DC gain of the system."
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0162.jpg",
+        "frame_0163.jpg"
+      ],
+      "transcript": "[11:07] In MATLAB we can do this by inverting the DC gain of the system.\n[11:11] You can see that the DC gain is 0.5, and so the inverse is 2.\n[11:16] Now we can rebuild our closed loop system by scaling the input by kr, or by 2, and checking"
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0164.jpg",
+        "frame_0165.jpg"
+      ],
+      "transcript": "[11:16] Now we can rebuild our closed loop system by scaling the input by kr, or by 2, and checking\n[11:22] the step response.\n[11:24] And no surprise, its steady state value is 1.\n[11:27] And that's pretty much what there is to basic pole placement."
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0166.jpg",
+        "frame_0167.jpg",
+        "frame_0168.jpg"
+      ],
+      "transcript": "[11:27] And that's pretty much what there is to basic pole placement.\n[11:30] We feedback every state variable and multiply them by a gain matrix in such a way that the\n[11:35] closed loop eigenvalues are what we want, and then we scale the input to make the steady\n[11:39] state response what we want."
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0169.jpg",
+        "frame_0170.jpg"
+      ],
+      "transcript": "[11:39] state response what we want.\n[11:42] Of course there's more to pole placement than what I could cover in this 12 minute video.\n[11:46] And I don't want to drag this on too long, but I also don't want to leave this video"
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0171.jpg",
+        "frame_0172.jpg",
+        "frame_0173.jpg"
+      ],
+      "transcript": "[11:46] And I don't want to drag this on too long, but I also don't want to leave this video\n[11:50] without addressing a few more interesting things for you to consider.\n[11:54] So in the interest of time, let's blast through these final thoughts lightning round style.\n[11:59] Are you ready?"
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0174.jpg",
+        "frame_0175.jpg"
+      ],
+      "transcript": "[11:59] Are you ready?\n[12:00] Let's go.\n[12:02] Pole placement is like fancy root locus.\n[12:05] With root locus, you have one gain that you can adjust that can only move the poles along\n[12:09] the locus lines."
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0176.jpg",
+        "frame_0177.jpg"
+      ],
+      "transcript": "[12:09] the locus lines.\n[12:10] But with pole placement, we have a gain matrix that gives us the ability to move the poles\n[12:14] anywhere in the complex plane, not just along single dimensional lines."
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0178.jpg",
+        "frame_0179.jpg",
+        "frame_0180.jpg"
+      ],
+      "transcript": "[12:14] anywhere in the complex plane, not just along single dimensional lines.\n[12:20] A two-state pole placement controller is very similar to a PD controller.\n[12:24] With PD, you feed back the output and generate the derivative within the controller.\n[12:29] With pole placement, you are feeding back the derivative as a state, but the results are"
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0181.jpg",
+        "frame_0182.jpg"
+      ],
+      "transcript": "[12:29] With pole placement, you are feeding back the derivative as a state, but the results are\n[12:33] essentially the same.\n[12:35] Two gains, one for a state, and one for its derivative.\n[12:39] Okay, we can move eigenvalues around, but where should we place them?"
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0183.jpg",
+        "frame_0184.jpg",
+        "frame_0185.jpg"
+      ],
+      "transcript": "[12:39] Okay, we can move eigenvalues around, but where should we place them?\n[12:44] The answer to that is a much longer video, but here are some things to think about.\n[12:48] If you have a high order system, consider keeping two poles closer to the imaginary axis than"
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0186.jpg",
+        "frame_0187.jpg"
+      ],
+      "transcript": "[12:48] If you have a high order system, consider keeping two poles closer to the imaginary axis than\n[12:53] the others so that the system will behave like a common second order system.\n[12:57] These are called dominant poles since they are slower and tend to dominate the response"
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0188.jpg",
+        "frame_0189.jpg"
+      ],
+      "transcript": "[12:57] These are called dominant poles since they are slower and tend to dominate the response\n[13:01] of the system.\n[13:02] Keep in mind that if you try to move a bunch of eigenvalues really far left in order to\n[13:08] get a super fast response, you may find that you don't have the speed or authority in"
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0190.jpg",
+        "frame_0191.jpg",
+        "frame_0192.jpg"
+      ],
+      "transcript": "[13:08] get a super fast response, you may find that you don't have the speed or authority in\n[13:12] your actuators to generate the necessary response.\n[13:15] This is because it takes more gain, or more actuator effort, to move the eigenvalues further"
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0193.jpg",
+        "frame_0194.jpg"
+      ],
+      "transcript": "[13:15] This is because it takes more gain, or more actuator effort, to move the eigenvalues further\n[13:20] from their open loop starting points.\n[13:24] Full state feedback is a bit of a misnomer.\n[13:27] You are feeding back every state in your mathematical model."
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0195.jpg",
+        "frame_0196.jpg",
+        "frame_0197.jpg"
+      ],
+      "transcript": "[13:27] You are feeding back every state in your mathematical model.\n[13:30] But you don't, and can't, feed back every state in a real system.\n[13:33] For just one example, at some level all mechanical hardware is flexible, which means additional\n[13:39] states, but you may choose to ignore those states in your model and develop your feedback"
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0198.jpg",
+        "frame_0199.jpg"
+      ],
+      "transcript": "[13:39] states, but you may choose to ignore those states in your model and develop your feedback\n[13:43] controller assuming a rigid system.\n[13:45] The important part is that you feed back all critical states to your design, so that your\n[13:49] controller will still work on the real hardware."
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0200.jpg",
+        "frame_0201.jpg"
+      ],
+      "transcript": "[13:49] controller will still work on the real hardware.\n[13:53] You have to have some kind of access to all of the critical states in order to feed them\n[13:57] back.\n[13:58] The output Y might include every state, in which case you're all set."
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0202.jpg",
+        "frame_0203.jpg",
+        "frame_0204.jpg"
+      ],
+      "transcript": "[13:58] The output Y might include every state, in which case you're all set.\n[14:02] However, if this isn't the case, you will either need to add more sensors to your system\n[14:06] to measure the missing states, or use the existing outputs to estimate or observe the states you"
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0205.jpg",
+        "frame_0206.jpg"
+      ],
+      "transcript": "[14:06] to measure the missing states, or use the existing outputs to estimate or observe the states you\n[14:11] aren't measuring directly.\n[14:13] In order to observe your system, it will need to be observable.\n[14:16] And similarly, in order to control your system, it needs to be controllable."
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0207.jpg",
+        "frame_0208.jpg",
+        "frame_0209.jpg"
+      ],
+      "transcript": "[14:16] And similarly, in order to control your system, it needs to be controllable.\n[14:20] "
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0210.jpg",
+        "frame_0211.jpg"
+      ],
+      "transcript": "[14:20] "
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0212.jpg",
+        "frame_0213.jpg"
+      ],
+      "transcript": "[14:20] "
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 898.28,
+      "frames": [
+        "frame_0214.jpg"
+      ],
+      "transcript": "[14:20] \n[14:50] I'll see you next time.\n[14:54] Thank you."
+    }
+  ]
+}

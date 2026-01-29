@@ -1,0 +1,1469 @@
+{
+  "video_id": "tFVAaUcOm4I",
+  "duration": 1326.42,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg",
+        "frame_0003.jpg"
+      ],
+      "transcript": "[0:00] A PID controller is a control structure that's used in many closed-loop systems.\n[0:05] It was developed by Nicholas Minorski in 1922.\n[0:09] PID stands for Proportional, Integral, and Derivative."
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0004.jpg",
+        "frame_0005.jpg",
+        "frame_0006.jpg"
+      ],
+      "transcript": "[0:09] PID stands for Proportional, Integral, and Derivative.\n[0:14] It's a way to compare the input and output of a system to generate a signal to control some process or machinery."
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0007.jpg",
+        "frame_0008.jpg",
+        "frame_0009.jpg"
+      ],
+      "transcript": "[0:14] It's a way to compare the input and output of a system to generate a signal to control some process or machinery.\n[0:21] Don't worry about understanding this diagram quite yet.\n[0:24] We'll work our way up to it throughout this video.\n[0:26] But know that PID controllers are one of the most popular control theory mechanisms."
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:26] But know that PID controllers are one of the most popular control theory mechanisms.\n[0:32] If you're not familiar with it, control theory is a field of engineering and mathematics dealing with the control of dynamic systems."
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg",
+        "frame_0015.jpg"
+      ],
+      "transcript": "[0:40] Often, these systems are mechanical and can be described entirely by math equations.\n[0:46] I'll give you an overview of how PID controllers work and some examples of them in everyday use."
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0016.jpg",
+        "frame_0017.jpg",
+        "frame_0018.jpg"
+      ],
+      "transcript": "[0:46] I'll give you an overview of how PID controllers work and some examples of them in everyday use.\n[0:56] Let's start with our system or subsystem that we want to control."
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0019.jpg",
+        "frame_0020.jpg",
+        "frame_0021.jpg"
+      ],
+      "transcript": "[0:56] Let's start with our system or subsystem that we want to control.\n[1:02] This can be any process, piece of machinery, actuator, or what have you.\n[1:07] In control theory, you'll often see this referred to as a plant,"
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[1:07] In control theory, you'll often see this referred to as a plant,\n[1:11] which is a term that comes from the Industrial Revolution in the late 1700s\n[1:15] to mean something that has been planted in the ground for industrial purposes, such as machinery or tools."
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg",
+        "frame_0027.jpg"
+      ],
+      "transcript": "[1:15] to mean something that has been planted in the ground for industrial purposes, such as machinery or tools.\n[1:21] The process receives some sort of input signal, and the output can be ideally measured.\n[1:27] While controllers are extremely popular in industrial settings, let's start with a more common example."
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0028.jpg",
+        "frame_0029.jpg",
+        "frame_0030.jpg"
+      ],
+      "transcript": "[1:27] While controllers are extremely popular in industrial settings, let's start with a more common example.\n[1:33] Most cars have an accelerator, also known as a gas pedal.\n[1:37] When you press the gas pedal, the car responds by allowing more air and fuel into the engine."
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0031.jpg",
+        "frame_0032.jpg",
+        "frame_0033.jpg"
+      ],
+      "transcript": "[1:37] When you press the gas pedal, the car responds by allowing more air and fuel into the engine.\n[1:42] As a result, your engine produces more power, which increases your speed.\n[1:46] Now, most accelerators are not binary.\n[1:49] You can control the amount you depress the pedal with your foot."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[1:49] You can control the amount you depress the pedal with your foot.\n[1:52] Press a little, and some air and fuel go into the engine,\n[1:55] and your car starts to accelerate slowly up to some speed.\n[1:59] Mash the pedal to the floor, and you'll start dumping a lot of air and fuel into the engine."
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg",
+        "frame_0039.jpg"
+      ],
+      "transcript": "[1:59] Mash the pedal to the floor, and you'll start dumping a lot of air and fuel into the engine.\n[2:03] You'll accelerate quickly, and at some point, you will reach the maximum speed for your car.\n[2:08] Our car is an example of a process or plant."
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0040.jpg",
+        "frame_0041.jpg",
+        "frame_0042.jpg"
+      ],
+      "transcript": "[2:08] Our car is an example of a process or plant.\n[2:12] We can give it an input signal, the accelerator position in this case.\n[2:15] The car will respond with motion, and we can read the speed of the car on our speedometer."
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0043.jpg",
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:15] The car will respond with motion, and we can read the speed of the car on our speedometer.\n[2:20] That's the output.\n[2:22] Let's say we want to maintain some constant speed.\n[2:25] As it turns out, our brains are very good controllers.\n[2:28] We can often read the speedometer and adjust the gas pedal as necessary to maintain that speed."
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[2:28] We can often read the speedometer and adjust the gas pedal as necessary to maintain that speed.\n[2:34] Keep in mind that on flat roads, you can just hold the pedal in one spot to maintain speed,\n[2:39] but you will need to adjust the accelerator position when going up and down hills and around turns."
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg",
+        "frame_0051.jpg"
+      ],
+      "transcript": "[2:39] but you will need to adjust the accelerator position when going up and down hills and around turns.\n[2:43] This is a closed-loop system.\n[2:47] We read the speedometer or judge speed by looking out the windshield and adjusting the input signal,"
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0052.jpg",
+        "frame_0053.jpg",
+        "frame_0054.jpg"
+      ],
+      "transcript": "[2:47] We read the speedometer or judge speed by looking out the windshield and adjusting the input signal,\n[2:52] the accelerometer in this case, as needed.\n[2:54] However, let's say that you, the engineer, have been tasked with designing a controller"
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0055.jpg",
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[2:54] However, let's say that you, the engineer, have been tasked with designing a controller\n[3:00] that will automatically adjust the accelerator as needed to maintain a consistent speed.\n[3:07] We'll call this cruise control.\n[3:09] That has a nice ring to it."
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:09] That has a nice ring to it.\n[3:10] Here's our initial pass at a control system.\n[3:14] Our controller takes some input or a set point.\n[3:17] In our example, this is like setting a particular value on our cruise control,"
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg",
+        "frame_0063.jpg"
+      ],
+      "transcript": "[3:17] In our example, this is like setting a particular value on our cruise control,\n[3:22] say 100 kilometers per hour.\n[3:24] The controller then figures out what value to send to the plant.\n[3:28] Remember that the plant in our example is the engine."
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0064.jpg",
+        "frame_0065.jpg",
+        "frame_0066.jpg"
+      ],
+      "transcript": "[3:28] Remember that the plant in our example is the engine.\n[3:30] So let's create a simple mapping from desired speed to accelerator position,\n[3:35] as we know that the car will reach a maximum speed based on that position.\n[3:39] The pedal position will in turn affect the engine, which will accelerate the car up to some speed."
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0067.jpg",
+        "frame_0068.jpg",
+        "frame_0069.jpg"
+      ],
+      "transcript": "[3:39] The pedal position will in turn affect the engine, which will accelerate the car up to some speed.\n[3:46] Seems simple enough.\n[3:47] This is known as an open-loop system."
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[3:50] There is no sensor or feedback loop.\n[3:53] While this might work in some cases,\n[3:55] I'm sure you can already see some issues with this control scheme for our cruise control device."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg",
+        "frame_0075.jpg"
+      ],
+      "transcript": "[3:55] I'm sure you can already see some issues with this control scheme for our cruise control device.\n[4:00] If we're going up a hill, the car is going to slow down thanks to the effects of gravity,\n[4:06] even though the accelerator is in the same position.\n[4:09] Similarly, if we're going down a hill, the car is going to speed up."
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0076.jpg",
+        "frame_0077.jpg",
+        "frame_0078.jpg"
+      ],
+      "transcript": "[4:09] Similarly, if we're going down a hill, the car is going to speed up.\n[4:13] So we need to let off the gas pedal in order to maintain that same speed.\n[4:18] This is something that our open-loop system cannot accommodate."
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0079.jpg",
+        "frame_0080.jpg",
+        "frame_0081.jpg"
+      ],
+      "transcript": "[4:18] This is something that our open-loop system cannot accommodate.\n[4:22] So we turn to a closed-loop system.\n[4:26] Here, the output is measured by some sort of sensor,\n[4:29] and that feedback is sent to our controller."
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[4:29] and that feedback is sent to our controller.\n[4:31] In most cases, we will compare the input setpoint to that feedback\n[4:35] to generate an error signal, which goes to the controller.\n[4:39] We'll label that error signal as E of T, as it's something that can vary over time."
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg",
+        "frame_0087.jpg"
+      ],
+      "transcript": "[4:39] We'll label that error signal as E of T, as it's something that can vary over time.\n[4:45] In our manual example, our brains acted as the controller.\n[4:49] We could adjust the gas pedal with our foot as needed to maintain our speed,"
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0088.jpg",
+        "frame_0089.jpg",
+        "frame_0090.jpg"
+      ],
+      "transcript": "[4:49] We could adjust the gas pedal with our foot as needed to maintain our speed,\n[4:53] regardless of road variations.\n[4:55] But we want to automate this process to take that pressure off the driver."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0091.jpg",
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[4:55] But we want to automate this process to take that pressure off the driver.\n[5:00] So we need to design a controller that accepts the error signal\n[5:04] and outputs some other signal to drive the process.\n[5:07] First, let's try simply multiplying our error value by some constant to get the output signal."
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[5:07] First, let's try simply multiplying our error value by some constant to get the output signal.\n[5:13] This is known as a proportional controller,\n[5:15] as the output signal is proportional to the error term.\n[5:19] We'll start with a very simple example before coming back to our cruise control system."
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg",
+        "frame_0099.jpg"
+      ],
+      "transcript": "[5:19] We'll start with a very simple example before coming back to our cruise control system.\n[5:24] Instead of speed, let's say that we want to move our car 10 kilometers.\n[5:28] So our setpoint is 10 kilometers."
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0100.jpg",
+        "frame_0101.jpg",
+        "frame_0102.jpg"
+      ],
+      "transcript": "[5:28] So our setpoint is 10 kilometers.\n[5:31] Our error is the difference between this setpoint and the actual position of the car.\n[5:35] Therefore, our error is a measurement of the distance to the goal.\n[5:39] We want the output to be the speed of our car in kilometers per hour."
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0103.jpg",
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[5:39] We want the output to be the speed of our car in kilometers per hour.\n[5:43] The plant is still our car or engine.\n[5:46] We give it a speed and it performs the movement for us.\n[5:49] Here's a diagram of our car moving toward its goal."
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[5:49] Here's a diagram of our car moving toward its goal.\n[5:52] At zero kilometers, the error is 10 minus zero, so 10 kilometers.\n[5:57] Let's set our constant, kp, to some arbitrary value like 5."
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg",
+        "frame_0111.jpg"
+      ],
+      "transcript": "[5:57] Let's set our constant, kp, to some arbitrary value like 5.\n[6:02] So we multiply 5 by that error to get our controller output, which is 50 kilometers per hour.\n[6:08] Our car starts moving very quickly at first."
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0112.jpg",
+        "frame_0113.jpg",
+        "frame_0114.jpg"
+      ],
+      "transcript": "[6:08] Our car starts moving very quickly at first.\n[6:11] Don't worry about acceleration and deceleration for this very simple example.\n[6:16] At 3 kilometers, the error is 7 kilometers.\n[6:19] So our speed slows to 5 times 7, or 35 kilometers per hour."
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0115.jpg",
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[6:19] So our speed slows to 5 times 7, or 35 kilometers per hour.\n[6:24] We continue with this pattern.\n[6:26] At 5 kilometers, the speed is 25 kilometers per hour, as the error is 5 kilometers."
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[6:26] At 5 kilometers, the speed is 25 kilometers per hour, as the error is 5 kilometers.\n[6:31] At 7 kilometers, the error is 3, so the speed slows even more to 15 kilometers per hour.\n[6:37] Similarly, at 8 kilometers, the speed drops to 10 kilometers per hour."
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg",
+        "frame_0123.jpg"
+      ],
+      "transcript": "[6:37] Similarly, at 8 kilometers, the speed drops to 10 kilometers per hour.\n[6:40] And at 9 kilometers, the speed slows all the way down to 5 kilometers per hour.\n[6:46] Finally, at our goal, the speed should be 0 kilometers per hour, as our error is 0 kilometers."
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0124.jpg",
+        "frame_0125.jpg",
+        "frame_0126.jpg"
+      ],
+      "transcript": "[6:46] Finally, at our goal, the speed should be 0 kilometers per hour, as our error is 0 kilometers.\n[6:52] If we graph our error and speed, we should see something like this.\n[6:57] The error starts at 10 kilometers, and the speed is proportionally high, at 50 kilometers per hour."
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0127.jpg",
+        "frame_0128.jpg",
+        "frame_0129.jpg"
+      ],
+      "transcript": "[6:57] The error starts at 10 kilometers, and the speed is proportionally high, at 50 kilometers per hour.\n[7:03] As we get closer to our goal, the speed also starts to drop.\n[7:07] As a result, we approach our goal more slowly, until we're barely moving at all."
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0130.jpg",
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[7:07] As a result, we approach our goal more slowly, until we're barely moving at all.\n[7:13] Assuming an ideal system, we should reach our goal at a snail's pace without overshooting.\n[7:18] Note that we can adjust our constant value."
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg",
+        "frame_0135.jpg"
+      ],
+      "transcript": "[7:18] Note that we can adjust our constant value.\n[7:20] For example, if we set it to 2, the speed will be slower, but still proportional to the distance error.\n[7:26] It will take longer to reach our goal.\n[7:28] If we increased the constant to, say, 10, we'll reach our goal much faster."
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0136.jpg",
+        "frame_0137.jpg",
+        "frame_0138.jpg"
+      ],
+      "transcript": "[7:28] If we increased the constant to, say, 10, we'll reach our goal much faster.\n[7:33] But we start risking overshoot in non-ideal systems, and possibly breaking some speeding laws.\n[7:39] Now, let's turn our attention back to the cruise control system that we're designing,"
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0139.jpg",
+        "frame_0140.jpg",
+        "frame_0141.jpg"
+      ],
+      "transcript": "[7:39] Now, let's turn our attention back to the cruise control system that we're designing,\n[7:44] as it's a little more complex than this distance problem.\n[7:47] Remember, we want our car speed to match our set point at 100 kilometers per hour,"
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0142.jpg",
+        "frame_0143.jpg",
+        "frame_0144.jpg"
+      ],
+      "transcript": "[7:47] Remember, we want our car speed to match our set point at 100 kilometers per hour,\n[7:53] and we need to design a controller that can take in this information and adjust the accelerator position.\n[7:59] We'll say our accelerator position can go from 0 to 10 centimeters."
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0145.jpg",
+        "frame_0146.jpg",
+        "frame_0147.jpg"
+      ],
+      "transcript": "[7:59] We'll say our accelerator position can go from 0 to 10 centimeters.\n[8:04] 0 is when we're not touching the pedal, and 10 centimeters is pushing it in as far as it will go."
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0148.jpg",
+        "frame_0149.jpg",
+        "frame_0150.jpg"
+      ],
+      "transcript": "[8:10] For the sake of argument, we'll say that we can cruise at 100 kilometers per hour on a flat road\n[8:15] when the accelerator is pressed in at 5 centimeters.\n[8:18] Now, let's choose an initial proportional constant, say, 0.1."
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0151.jpg",
+        "frame_0152.jpg",
+        "frame_0153.jpg"
+      ],
+      "transcript": "[8:18] Now, let's choose an initial proportional constant, say, 0.1.\n[8:24] At 0 kilometers per hour, the error is 100 kilometers per hour,\n[8:28] and the output of our controller is 0.1 times 100 to get 10 centimeters."
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0154.jpg",
+        "frame_0155.jpg",
+        "frame_0156.jpg"
+      ],
+      "transcript": "[8:28] and the output of our controller is 0.1 times 100 to get 10 centimeters.\n[8:34] That's pressing the accelerator all the way in, so we will accelerate quite quickly at first.\n[8:39] Then, at 30 kilometers per hour, our error is 70."
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0157.jpg",
+        "frame_0158.jpg",
+        "frame_0159.jpg"
+      ],
+      "transcript": "[8:39] Then, at 30 kilometers per hour, our error is 70.\n[8:43] Times our constant of 0.1, that means we begin to let off the gas pedal by a few centimeters.\n[8:49] At 50 kilometers per hour, we've moved the gas pedal to 5 centimeters."
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0160.jpg",
+        "frame_0161.jpg",
+        "frame_0162.jpg"
+      ],
+      "transcript": "[8:49] At 50 kilometers per hour, we've moved the gas pedal to 5 centimeters.\n[8:53] Remember, that is our assumed cruising pedal position.\n[8:57] Do you see the problem?\n[8:59] We're not at our desired speed."
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0163.jpg",
+        "frame_0164.jpg",
+        "frame_0165.jpg"
+      ],
+      "transcript": "[8:59] We're not at our desired speed.\n[9:02] At 50 kilometers per hour and a pedal position of 5 centimeters,\n[9:05] we'll continue to accelerate some.\n[9:07] However, once we reach 60 kilometers per hour, our pedal position will be at 4 centimeters."
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0166.jpg",
+        "frame_0167.jpg",
+        "frame_0168.jpg"
+      ],
+      "transcript": "[9:07] However, once we reach 60 kilometers per hour, our pedal position will be at 4 centimeters.\n[9:14] For the sake of this example, we'll say that we can cruise at 60 kilometers per hour\n[9:18] with the pedal position at 4 centimeters."
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0169.jpg",
+        "frame_0170.jpg",
+        "frame_0171.jpg"
+      ],
+      "transcript": "[9:18] with the pedal position at 4 centimeters.\n[9:21] But we'll never quite get to our desired speed.\n[9:24] If our error is 0, that means our proportional controller will set the accelerator position to 0,"
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0172.jpg",
+        "frame_0173.jpg",
+        "frame_0174.jpg"
+      ],
+      "transcript": "[9:24] If our error is 0, that means our proportional controller will set the accelerator position to 0,\n[9:31] which essentially means no power from our engine.\n[9:35] Let's graph our error and speed.\n[9:37] As you can see, we go from 0 up to 60 kilometers per hour,"
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0175.jpg",
+        "frame_0176.jpg",
+        "frame_0177.jpg"
+      ],
+      "transcript": "[9:37] As you can see, we go from 0 up to 60 kilometers per hour,\n[9:41] but we never quite reach our set point.\n[9:44] The difference between our set point and actual achieved cruising speed\n[9:47] is known as the steady state error."
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0178.jpg",
+        "frame_0179.jpg",
+        "frame_0180.jpg"
+      ],
+      "transcript": "[9:50] Many systems, like a cruise control, suffer from this steady state error.\n[9:55] No matter how we adjust KP, we'll never quite get to the set point.\n[9:59] We could include a constant offset,"
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0181.jpg",
+        "frame_0182.jpg",
+        "frame_0183.jpg"
+      ],
+      "transcript": "[9:59] We could include a constant offset,\n[10:02] but there's a better, more robust way to handle such errors.\n[10:05] Let's go back to our system diagram for a moment.\n[10:08] A common way to find steady state error is to look at how much error has accumulated over time."
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0184.jpg",
+        "frame_0185.jpg",
+        "frame_0186.jpg"
+      ],
+      "transcript": "[10:08] A common way to find steady state error is to look at how much error has accumulated over time.\n[10:14] We then multiply that amount by some new constant,\n[10:17] KI, before adding it to the output of our proportional controller."
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0187.jpg",
+        "frame_0188.jpg",
+        "frame_0189.jpg"
+      ],
+      "transcript": "[10:17] KI, before adding it to the output of our proportional controller.\n[10:21] In the math world, we would take the area under our error curve,\n[10:26] which would be an integral.\n[10:27] This is how we get to a PI controller."
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0190.jpg",
+        "frame_0191.jpg",
+        "frame_0192.jpg"
+      ],
+      "transcript": "[10:27] This is how we get to a PI controller.\n[10:30] Proportional and integral values are summed together to produce a single output.\n[10:35] However, integrating this unknown error function is often impossible for most real-world systems."
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0193.jpg",
+        "frame_0194.jpg",
+        "frame_0195.jpg"
+      ],
+      "transcript": "[10:35] However, integrating this unknown error function is often impossible for most real-world systems.\n[10:40] So we can take an approximation of that integral.\n[10:44] We simply sum each error term over time and then multiply that accumulated value by our KI constant."
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0196.jpg",
+        "frame_0197.jpg",
+        "frame_0198.jpg"
+      ],
+      "transcript": "[10:44] We simply sum each error term over time and then multiply that accumulated value by our KI constant.\n[10:51] Note that for a true summation approximation, you should multiply by a delta T interval time.\n[10:57] To make our calculations easier, we can assume that this is 1."
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0199.jpg",
+        "frame_0200.jpg",
+        "frame_0201.jpg"
+      ],
+      "transcript": "[10:57] To make our calculations easier, we can assume that this is 1.\n[11:02] For example, maybe we take an error reading every 1 second.\n[11:06] Or if we know that this interval time is constant, we can just say it's part of our KI value."
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0202.jpg",
+        "frame_0203.jpg",
+        "frame_0204.jpg"
+      ],
+      "transcript": "[11:06] Or if we know that this interval time is constant, we can just say it's part of our KI value.\n[11:12] Either way, we won't need to worry about this term in this example.\n[11:15] Now, let's see what happens if we include this integral term with our proportional term from the previous example."
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0205.jpg",
+        "frame_0206.jpg",
+        "frame_0207.jpg"
+      ],
+      "transcript": "[11:15] Now, let's see what happens if we include this integral term with our proportional term from the previous example.\n[11:21] We start at 0 kilometers per hour, so our error is 100.\n[11:26] From before, we know that our proportional controller wants to set the accelerator to 10 centimeters,"
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0208.jpg",
+        "frame_0209.jpg",
+        "frame_0210.jpg"
+      ],
+      "transcript": "[11:26] From before, we know that our proportional controller wants to set the accelerator to 10 centimeters,\n[11:32] assuming we have KP set to 0.1.\n[11:34] We'll set the KI term to 0.01.\n[11:38] As this is the start of the accumulation, the approximate integral is just 100."
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0211.jpg",
+        "frame_0212.jpg",
+        "frame_0213.jpg"
+      ],
+      "transcript": "[11:38] As this is the start of the accumulation, the approximate integral is just 100.\n[11:43] 100 times our KI of 0.01 is 1 centimeter.\n[11:47] We then add the two controller outputs together to get a sum of 11 centimeters."
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0214.jpg",
+        "frame_0215.jpg",
+        "frame_0216.jpg"
+      ],
+      "transcript": "[11:47] We then add the two controller outputs together to get a sum of 11 centimeters.\n[11:52] Our accelerator doesn't go to 11, so for now, we'll just say we max out the accelerator at 10 centimeters.\n[11:59] We start accelerating up to 30 kilometers per hour,"
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0217.jpg",
+        "frame_0218.jpg",
+        "frame_0219.jpg"
+      ],
+      "transcript": "[11:59] We start accelerating up to 30 kilometers per hour,\n[12:02] so our error term is now 70.\n[12:05] Our proportional controller sets the pedal to 7 centimeters.\n[12:09] In the integral controller, we accumulate 70 on top of 100 to get 170,"
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0220.jpg",
+        "frame_0221.jpg",
+        "frame_0222.jpg"
+      ],
+      "transcript": "[12:09] In the integral controller, we accumulate 70 on top of 100 to get 170,\n[12:15] and multiply that by our constant to get an output of 1.7 centimeters."
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0223.jpg",
+        "frame_0224.jpg",
+        "frame_0225.jpg"
+      ],
+      "transcript": "[12:15] and multiply that by our constant to get an output of 1.7 centimeters.\n[12:20] Our new PI controller output is 8.7 centimeters.\n[12:25] So, we keep the accelerator pressed farther than we did with just the P controller."
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0226.jpg",
+        "frame_0227.jpg",
+        "frame_0228.jpg"
+      ],
+      "transcript": "[12:25] So, we keep the accelerator pressed farther than we did with just the P controller.\n[12:30] We continue this trend to get a PI controller output of 7.2 centimeters when going 50 kilometers per hour.\n[12:37] Notice that the P controller is starting to contribute less,"
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0229.jpg",
+        "frame_0230.jpg",
+        "frame_0231.jpg"
+      ],
+      "transcript": "[12:37] Notice that the P controller is starting to contribute less,\n[12:41] but the I controller is contributing more as the area under the error curve grows.\n[12:46] At 70 kilometers per hour, the output is 5.5 centimeters."
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0232.jpg",
+        "frame_0233.jpg",
+        "frame_0234.jpg"
+      ],
+      "transcript": "[12:46] At 70 kilometers per hour, the output is 5.5 centimeters.\n[12:50] We've already passed our original limit of 60 kilometers per hour when we used just the P controller.\n[12:57] Even at 70 kilometers per hour, our controller is saying to continue accelerating."
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0235.jpg",
+        "frame_0236.jpg",
+        "frame_0237.jpg"
+      ],
+      "transcript": "[12:57] Even at 70 kilometers per hour, our controller is saying to continue accelerating.\n[13:02] However, when we reach 80 kilometers per hour, the total output has dipped below 5 centimeters,\n[13:08] which we know is a problem."
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0238.jpg",
+        "frame_0239.jpg",
+        "frame_0240.jpg"
+      ],
+      "transcript": "[13:08] which we know is a problem.\n[13:11] There's still an error.\n[13:12] But wait, let's see what happens next.\n[13:14] Next, assuming we continue at 80 kilometers per hour, the P controller will output the same amount."
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0241.jpg",
+        "frame_0242.jpg",
+        "frame_0243.jpg"
+      ],
+      "transcript": "[13:14] Next, assuming we continue at 80 kilometers per hour, the P controller will output the same amount.\n[13:20] However, the integral controller continues to accumulate.\n[13:24] It says to increase the value of the output to account for that error.\n[13:28] So, we press the accelerator a little more to start closing that error."
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0244.jpg",
+        "frame_0245.jpg",
+        "frame_0246.jpg"
+      ],
+      "transcript": "[13:28] So, we press the accelerator a little more to start closing that error.\n[13:32] It might look like the output will fluctuate as it approaches that steady state value,\n[13:36] but this example is just intended to show how the integral controller will account for that error."
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0247.jpg",
+        "frame_0248.jpg",
+        "frame_0249.jpg"
+      ],
+      "transcript": "[13:36] but this example is just intended to show how the integral controller will account for that error.\n[13:42] In reality, our example will look something like this.\n[13:45] The proportional and integral terms will reach a steady state when the error is zero,\n[13:49] which means we perfectly hit our mark."
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0250.jpg",
+        "frame_0251.jpg",
+        "frame_0252.jpg"
+      ],
+      "transcript": "[13:49] which means we perfectly hit our mark.\n[13:52] In fact, in many cases, a P.I. controller is all we need.\n[13:56] It's enough to move a process toward its goal while accounting for steady state error."
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0253.jpg",
+        "frame_0254.jpg",
+        "frame_0255.jpg"
+      ],
+      "transcript": "[13:56] It's enough to move a process toward its goal while accounting for steady state error.\n[14:01] However, you'll often run into other issues that can't be solved by proportional and integral terms alone.\n[14:06] A well-tuned P.I. controller looks something like this.\n[14:09] However, the rate of change might be too slow for you."
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0256.jpg",
+        "frame_0257.jpg",
+        "frame_0258.jpg"
+      ],
+      "transcript": "[14:09] However, the rate of change might be too slow for you.\n[14:13] This is known as an overdamped response.\n[14:16] You may want your process to approach the goal quickly.\n[14:19] So, you start playing with the K.P. and K.I. terms, and you end up with something like this."
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0259.jpg",
+        "frame_0260.jpg",
+        "frame_0261.jpg"
+      ],
+      "transcript": "[14:19] So, you start playing with the K.P. and K.I. terms, and you end up with something like this.\n[14:24] While the system approaches the set point quickly, it also overshoots.\n[14:29] The integral term will account for the negative error and eventually bring the output in line with the set point."
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0262.jpg",
+        "frame_0263.jpg",
+        "frame_0264.jpg"
+      ],
+      "transcript": "[14:29] The integral term will account for the negative error and eventually bring the output in line with the set point.\n[14:35] However, the system might oscillate for a while before it does that.\n[14:38] This is known as an underdamped response."
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0265.jpg",
+        "frame_0266.jpg",
+        "frame_0267.jpg"
+      ],
+      "transcript": "[14:38] This is known as an underdamped response.\n[14:41] In many cases, no matter how much you fiddle with the K.P. and K.I. terms,\n[14:45] you can't seem to find a good balance between an overdamped and an underdamped response."
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 900,
+      "frames": [
+        "frame_0268.jpg",
+        "frame_0269.jpg",
+        "frame_0270.jpg"
+      ],
+      "transcript": "[14:45] you can't seem to find a good balance between an overdamped and an underdamped response.\n[14:51] What you're after is a response curve that looks like this.\n[14:54] The process quickly approaches the set point and settles there with no overshoot.\n[14:59] This is known as a critically damped response."
+    },
+    {
+      "segment_index": 91,
+      "start_time": 900,
+      "end_time": 910,
+      "frames": [
+        "frame_0271.jpg",
+        "frame_0272.jpg",
+        "frame_0273.jpg"
+      ],
+      "transcript": "[14:59] This is known as a critically damped response.\n[15:02] To make this happen, we need to add one more component to our controller.\n[15:05] This is the derivative term.\n[15:08] We multiply the rate of change in the error by some constant, KD."
+    },
+    {
+      "segment_index": 92,
+      "start_time": 910,
+      "end_time": 920,
+      "frames": [
+        "frame_0274.jpg",
+        "frame_0275.jpg",
+        "frame_0276.jpg"
+      ],
+      "transcript": "[15:08] We multiply the rate of change in the error by some constant, KD.\n[15:12] We sum the proportional, integral, and derivative terms together to get the output.\n[15:17] This is known as a PID controller."
+    },
+    {
+      "segment_index": 93,
+      "start_time": 920,
+      "end_time": 930,
+      "frames": [
+        "frame_0277.jpg",
+        "frame_0278.jpg",
+        "frame_0279.jpg"
+      ],
+      "transcript": "[15:17] This is known as a PID controller.\n[15:20] Let's see how this works with an example.\n[15:23] The derivative of the error is the slope at that particular point.\n[15:26] That means if the error is decreasing quickly, meaning we are accelerating fast toward our target speed,"
+    },
+    {
+      "segment_index": 94,
+      "start_time": 930,
+      "end_time": 940,
+      "frames": [
+        "frame_0280.jpg",
+        "frame_0281.jpg",
+        "frame_0282.jpg"
+      ],
+      "transcript": "[15:26] That means if the error is decreasing quickly, meaning we are accelerating fast toward our target speed,\n[15:32] then the derivative term will be a negative number with a large magnitude.\n[15:36] Like with the integral term, this is often difficult or impossible to analytically solve"
+    },
+    {
+      "segment_index": 95,
+      "start_time": 940,
+      "end_time": 950,
+      "frames": [
+        "frame_0283.jpg",
+        "frame_0284.jpg",
+        "frame_0285.jpg"
+      ],
+      "transcript": "[15:36] Like with the integral term, this is often difficult or impossible to analytically solve\n[15:41] unless you have a mathematical model of your process.\n[15:44] So we turn to numerical estimations again to help us out.\n[15:48] We can approximate the derivative by simply subtracting the current error value"
+    },
+    {
+      "segment_index": 96,
+      "start_time": 950,
+      "end_time": 960,
+      "frames": [
+        "frame_0286.jpg",
+        "frame_0287.jpg",
+        "frame_0288.jpg"
+      ],
+      "transcript": "[15:48] We can approximate the derivative by simply subtracting the current error value\n[15:53] from the previous error value and dividing that by our sampling interval time.\n[15:57] That should give us the slope of the line between the current and previous values,"
+    },
+    {
+      "segment_index": 97,
+      "start_time": 960,
+      "end_time": 970,
+      "frames": [
+        "frame_0289.jpg",
+        "frame_0290.jpg",
+        "frame_0291.jpg"
+      ],
+      "transcript": "[15:57] That should give us the slope of the line between the current and previous values,\n[16:01] which is good enough for what we need in most cases.\n[16:04] And just like we did with the integral term, we can assume the sampling interval,\n[16:08] delta T, is 1, or we can assume it's part of our constant for now."
+    },
+    {
+      "segment_index": 98,
+      "start_time": 970,
+      "end_time": 980,
+      "frames": [
+        "frame_0292.jpg",
+        "frame_0293.jpg",
+        "frame_0294.jpg"
+      ],
+      "transcript": "[16:08] delta T, is 1, or we can assume it's part of our constant for now.\n[16:13] The difference between the current and previous error values will work in this instance.\n[16:17] The idea is that we want a term that can tell if we are approaching the goal too fast"
+    },
+    {
+      "segment_index": 99,
+      "start_time": 980,
+      "end_time": 990,
+      "frames": [
+        "frame_0295.jpg",
+        "frame_0296.jpg",
+        "frame_0297.jpg"
+      ],
+      "transcript": "[16:17] The idea is that we want a term that can tell if we are approaching the goal too fast\n[16:22] and dampen the response just enough so that we don't overshoot.\n[16:26] So let's work on another simple example.\n[16:29] Here we've added the proportional, integral, and derivative terms."
+    },
+    {
+      "segment_index": 100,
+      "start_time": 990,
+      "end_time": 1000,
+      "frames": [
+        "frame_0298.jpg",
+        "frame_0299.jpg",
+        "frame_0300.jpg"
+      ],
+      "transcript": "[16:29] Here we've added the proportional, integral, and derivative terms.\n[16:34] I've adjusted the ki coefficient to be a little higher.\n[16:38] That way our speed increases much more quickly toward our goal, at least in theory."
+    },
+    {
+      "segment_index": 101,
+      "start_time": 1000,
+      "end_time": 1010,
+      "frames": [
+        "frame_0301.jpg",
+        "frame_0302.jpg",
+        "frame_0303.jpg"
+      ],
+      "transcript": "[16:38] That way our speed increases much more quickly toward our goal, at least in theory.\n[16:43] It's not a perfect example, but it should illustrate how the p, i, and d terms work together.\n[16:49] At first, we accelerate very quickly from a stop."
+    },
+    {
+      "segment_index": 102,
+      "start_time": 1010,
+      "end_time": 1020,
+      "frames": [
+        "frame_0304.jpg",
+        "frame_0305.jpg",
+        "frame_0306.jpg"
+      ],
+      "transcript": "[16:49] At first, we accelerate very quickly from a stop.\n[16:53] Note here that the derivative term is zero as we do not have a slope yet.\n[16:57] Once again, we make the assumption that we can only push the pedal to 10 centimeters."
+    },
+    {
+      "segment_index": 103,
+      "start_time": 1020,
+      "end_time": 1030,
+      "frames": [
+        "frame_0307.jpg",
+        "frame_0308.jpg",
+        "frame_0309.jpg"
+      ],
+      "transcript": "[16:57] Once again, we make the assumption that we can only push the pedal to 10 centimeters.\n[17:02] At 30 kilometers per hour, the integral term starts to increase quickly.\n[17:07] However, because we are accelerating so fast,\n[17:09] the difference between this and the last error terms dampen the current pedal position to 7.1."
+    },
+    {
+      "segment_index": 104,
+      "start_time": 1030,
+      "end_time": 1040,
+      "frames": [
+        "frame_0310.jpg",
+        "frame_0311.jpg",
+        "frame_0312.jpg"
+      ],
+      "transcript": "[17:09] the difference between this and the last error terms dampen the current pedal position to 7.1.\n[17:15] We repeat this procedure and we see that we've dampened the pedal position again to 7 centimeters."
+    },
+    {
+      "segment_index": 105,
+      "start_time": 1040,
+      "end_time": 1050,
+      "frames": [
+        "frame_0313.jpg",
+        "frame_0314.jpg",
+        "frame_0315.jpg"
+      ],
+      "transcript": "[17:15] We repeat this procedure and we see that we've dampened the pedal position again to 7 centimeters.\n[17:21] At 70 kilometers per hour, our derivative controller output is again minus 2 centimeters,\n[17:27] which makes the total 5.5 centimeters."
+    },
+    {
+      "segment_index": 106,
+      "start_time": 1050,
+      "end_time": 1060,
+      "frames": [
+        "frame_0316.jpg",
+        "frame_0317.jpg",
+        "frame_0318.jpg"
+      ],
+      "transcript": "[17:27] which makes the total 5.5 centimeters.\n[17:30] We still have the pedal pressed more than what we want to cruise at,\n[17:34] but it means we're accelerating.\n[17:35] As we start to approach our goal,\n[17:37] you can see how the proportional term approaches zero and the integral term takes over."
+    },
+    {
+      "segment_index": 107,
+      "start_time": 1060,
+      "end_time": 1070,
+      "frames": [
+        "frame_0319.jpg",
+        "frame_0320.jpg",
+        "frame_0321.jpg"
+      ],
+      "transcript": "[17:37] you can see how the proportional term approaches zero and the integral term takes over.\n[17:42] The derivative term is no longer needed to dampen, so that also approaches zero.\n[17:47] In the ideal case, we land right at 100 kilometers per hour with the pedal at 5 centimeters."
+    },
+    {
+      "segment_index": 108,
+      "start_time": 1070,
+      "end_time": 1080,
+      "frames": [
+        "frame_0322.jpg",
+        "frame_0323.jpg",
+        "frame_0324.jpg"
+      ],
+      "transcript": "[17:47] In the ideal case, we land right at 100 kilometers per hour with the pedal at 5 centimeters.\n[17:54] We probably overshot a little as the pedal was pulled back to 4 centimeters for that second-to-last sample."
+    },
+    {
+      "segment_index": 109,
+      "start_time": 1080,
+      "end_time": 1090,
+      "frames": [
+        "frame_0325.jpg",
+        "frame_0326.jpg",
+        "frame_0327.jpg"
+      ],
+      "transcript": "[18:00] That's probably just indicative of my poor example here.\n[18:03] However, it shows that we need to tune the kp, ki, and kd terms\n[18:08] to make a system that is critically damped where we approach our goal quickly without overshooting."
+    },
+    {
+      "segment_index": 110,
+      "start_time": 1090,
+      "end_time": 1100,
+      "frames": [
+        "frame_0328.jpg",
+        "frame_0329.jpg",
+        "frame_0330.jpg"
+      ],
+      "transcript": "[18:08] to make a system that is critically damped where we approach our goal quickly without overshooting.\n[18:14] If you have a mathematical model that correctly describes the behavior of the plant,\n[18:18] you can solve for kp, ki, and kd to make the system critically damped."
+    },
+    {
+      "segment_index": 111,
+      "start_time": 1100,
+      "end_time": 1110,
+      "frames": [
+        "frame_0331.jpg",
+        "frame_0332.jpg",
+        "frame_0333.jpg"
+      ],
+      "transcript": "[18:18] you can solve for kp, ki, and kd to make the system critically damped.\n[18:24] This model is usually expressed as a transfer function,\n[18:27] which gives the plant's output for any given input."
+    },
+    {
+      "segment_index": 112,
+      "start_time": 1110,
+      "end_time": 1120,
+      "frames": [
+        "frame_0334.jpg",
+        "frame_0335.jpg",
+        "frame_0336.jpg"
+      ],
+      "transcript": "[18:27] which gives the plant's output for any given input.\n[18:31] This works well in academic settings with simple plants.\n[18:33] In most cases, it's either impossible or very difficult to know the exact transfer function of the plant."
+    },
+    {
+      "segment_index": 113,
+      "start_time": 1120,
+      "end_time": 1130,
+      "frames": [
+        "frame_0337.jpg",
+        "frame_0338.jpg",
+        "frame_0339.jpg"
+      ],
+      "transcript": "[18:40] So, we turn to other tuning methods.\n[18:42] There are a number of ways to tune a PID controller,\n[18:46] but we'll demonstrate a simple manual method here.\n[18:48] We measure the output as we vary each of the constants."
+    },
+    {
+      "segment_index": 114,
+      "start_time": 1130,
+      "end_time": 1140,
+      "frames": [
+        "frame_0340.jpg",
+        "frame_0341.jpg",
+        "frame_0342.jpg"
+      ],
+      "transcript": "[18:48] We measure the output as we vary each of the constants.\n[18:52] You set ki and kd to zero and leave kp at some low value.\n[18:56] You increase kp until the output oscillates with some steady state offset."
+    },
+    {
+      "segment_index": 115,
+      "start_time": 1140,
+      "end_time": 1150,
+      "frames": [
+        "frame_0343.jpg",
+        "frame_0344.jpg",
+        "frame_0345.jpg"
+      ],
+      "transcript": "[18:56] You increase kp until the output oscillates with some steady state offset.\n[19:01] You then increase ki until you correct the steady state offset,\n[19:05] even if that means more oscillation.\n[19:08] Just make sure the output does not become unstable and oscillates out of control."
+    },
+    {
+      "segment_index": 116,
+      "start_time": 1150,
+      "end_time": 1160,
+      "frames": [
+        "frame_0346.jpg",
+        "frame_0347.jpg",
+        "frame_0348.jpg"
+      ],
+      "transcript": "[19:08] Just make sure the output does not become unstable and oscillates out of control.\n[19:13] Finally, adjust kd to remove the oscillations.\n[19:16] At the end of the process, you should have an optimally tuned system."
+    },
+    {
+      "segment_index": 117,
+      "start_time": 1160,
+      "end_time": 1170,
+      "frames": [
+        "frame_0349.jpg",
+        "frame_0350.jpg",
+        "frame_0351.jpg"
+      ],
+      "transcript": "[19:20] Note there are other tuning schemes, such as the Ziegler-Nichols method,\n[19:24] where you can use some math to help you choose ki and kd\n[19:27] to reduce the amount of trial and error that's needed.\n[19:29] Early PID controllers were pneumatic, and then eventually electrical."
+    },
+    {
+      "segment_index": 118,
+      "start_time": 1170,
+      "end_time": 1180,
+      "frames": [
+        "frame_0352.jpg",
+        "frame_0353.jpg",
+        "frame_0354.jpg"
+      ],
+      "transcript": "[19:29] Early PID controllers were pneumatic, and then eventually electrical.\n[19:34] Here is an example of a classical electrical PID controller used in a research paper.\n[19:39] However, most modern PID controllers rely on code and microcontrollers rather than discrete components."
+    },
+    {
+      "segment_index": 119,
+      "start_time": 1180,
+      "end_time": 1190,
+      "frames": [
+        "frame_0355.jpg",
+        "frame_0356.jpg",
+        "frame_0357.jpg"
+      ],
+      "transcript": "[19:39] However, most modern PID controllers rely on code and microcontrollers rather than discrete components.\n[19:45] This is some pseudocode for how you might implement a PID controller.\n[19:49] We set the constants to some arbitrary values to be tuned later,"
+    },
+    {
+      "segment_index": 120,
+      "start_time": 1190,
+      "end_time": 1200,
+      "frames": [
+        "frame_0358.jpg",
+        "frame_0359.jpg",
+        "frame_0360.jpg"
+      ],
+      "transcript": "[19:49] We set the constants to some arbitrary values to be tuned later,\n[19:53] and we also need to know the interval time.\n[19:55] This corresponds to the sample rate, how often we will sample from our sensor,"
+    },
+    {
+      "segment_index": 121,
+      "start_time": 1200,
+      "end_time": 1210,
+      "frames": [
+        "frame_0361.jpg",
+        "frame_0362.jpg",
+        "frame_0363.jpg"
+      ],
+      "transcript": "[20:00] and perform some action on our plant.\n[20:02] We'll go with one millisecond.\n[20:04] We loop forever in this case.\n[20:06] At the beginning of the loop, we read our feedback value, which is often from a sensor."
+    },
+    {
+      "segment_index": 122,
+      "start_time": 1210,
+      "end_time": 1220,
+      "frames": [
+        "frame_0364.jpg",
+        "frame_0365.jpg",
+        "frame_0366.jpg"
+      ],
+      "transcript": "[20:06] At the beginning of the loop, we read our feedback value, which is often from a sensor.\n[20:11] We then calculate each of the PID terms.\n[20:13] To do that, we take the difference between the set point and the measured value to get the error term.\n[20:18] We then multiply it by the interval to accumulate in the integral term."
+    },
+    {
+      "segment_index": 123,
+      "start_time": 1220,
+      "end_time": 1230,
+      "frames": [
+        "frame_0367.jpg",
+        "frame_0368.jpg",
+        "frame_0369.jpg"
+      ],
+      "transcript": "[20:18] We then multiply it by the interval to accumulate in the integral term.\n[20:23] The derivative term takes the difference between the current and previous errors,\n[20:27] and then divides that value by the interval.\n[20:29] We then multiply each of these values by their respective k constants and add them together."
+    },
+    {
+      "segment_index": 124,
+      "start_time": 1230,
+      "end_time": 1240,
+      "frames": [
+        "frame_0370.jpg",
+        "frame_0371.jpg",
+        "frame_0372.jpg"
+      ],
+      "transcript": "[20:29] We then multiply each of these values by their respective k constants and add them together.\n[20:34] While not shown here, you would use that output value to drive whatever you needed.\n[20:39] This could be, say, adjusting the accelerator by some amount in centimeters."
+    },
+    {
+      "segment_index": 125,
+      "start_time": 1240,
+      "end_time": 1250,
+      "frames": [
+        "frame_0373.jpg",
+        "frame_0374.jpg",
+        "frame_0375.jpg"
+      ],
+      "transcript": "[20:39] This could be, say, adjusting the accelerator by some amount in centimeters.\n[20:44] Finally, we save the error value for the next iteration and then wait for the given interval time."
+    },
+    {
+      "segment_index": 126,
+      "start_time": 1250,
+      "end_time": 1260,
+      "frames": [
+        "frame_0376.jpg",
+        "frame_0377.jpg",
+        "frame_0378.jpg"
+      ],
+      "transcript": "[20:50] This is a very simple example.\n[20:52] You could obviously do this in a separate thread with timers or using a variable interval time.\n[20:58] You would also need to spend some time tuning the 3k constants,"
+    },
+    {
+      "segment_index": 127,
+      "start_time": 1260,
+      "end_time": 1270,
+      "frames": [
+        "frame_0379.jpg",
+        "frame_0380.jpg",
+        "frame_0381.jpg"
+      ],
+      "transcript": "[20:58] You would also need to spend some time tuning the 3k constants,\n[21:02] but this should be enough to get you started making your own PID controllers in code.\n[21:07] Now, where would you actually use such a controller?"
+    },
+    {
+      "segment_index": 128,
+      "start_time": 1270,
+      "end_time": 1280,
+      "frames": [
+        "frame_0382.jpg",
+        "frame_0383.jpg",
+        "frame_0384.jpg"
+      ],
+      "transcript": "[21:07] Now, where would you actually use such a controller?\n[21:11] PID controllers are used in countless applications.\n[21:14] And as you probably guessed, most cruise control systems in cars use PID controllers."
+    },
+    {
+      "segment_index": 129,
+      "start_time": 1280,
+      "end_time": 1290,
+      "frames": [
+        "frame_0385.jpg",
+        "frame_0386.jpg",
+        "frame_0387.jpg"
+      ],
+      "transcript": "[21:14] And as you probably guessed, most cruise control systems in cars use PID controllers.\n[21:20] In the 1920s, Minorski was researching methods for automatic ship steering\n[21:25] when he devised his theoretical analysis of PID controllers."
+    },
+    {
+      "segment_index": 130,
+      "start_time": 1290,
+      "end_time": 1300,
+      "frames": [
+        "frame_0388.jpg",
+        "frame_0389.jpg",
+        "frame_0390.jpg"
+      ],
+      "transcript": "[21:30] They are also heavily used in manufacturing and industrial equipment.\n[21:33] For example, many reflow ovens use PID controllers to adjust the heating elements as needed\n[21:39] to match the set points in the profile."
+    },
+    {
+      "segment_index": 131,
+      "start_time": 1300,
+      "end_time": 1310,
+      "frames": [
+        "frame_0391.jpg",
+        "frame_0392.jpg",
+        "frame_0393.jpg"
+      ],
+      "transcript": "[21:39] to match the set points in the profile.\n[21:41] This allows mass soldering of components without burning boards.\n[21:45] I hope this helps you understand the theory behind PID controllers\n[21:49] and how they can be used to regulate a system based on feedback from one or more sensors."
+    },
+    {
+      "segment_index": 132,
+      "start_time": 1310,
+      "end_time": 1320,
+      "frames": [
+        "frame_0394.jpg",
+        "frame_0395.jpg",
+        "frame_0396.jpg"
+      ],
+      "transcript": "[21:49] and how they can be used to regulate a system based on feedback from one or more sensors.\n[21:55] In a future episode, I'll demonstrate tuning a PID controller."
+    },
+    {
+      "segment_index": 133,
+      "start_time": 1320,
+      "end_time": 1326.42,
+      "frames": [
+        "frame_0397.jpg",
+        "frame_0398.jpg"
+      ],
+      "transcript": "[22:00] Stay tuned and happy hacking!\n[22:01] Stay tuned!\n[22:04] souvenirs\n[22:04] etten\u5317\n[22:05] \u5e97\n[22:06] \u5e97"
+    }
+  ]
+}

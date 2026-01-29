@@ -1,0 +1,2687 @@
+{
+  "video_id": "yctzuuGAm-E",
+  "duration": 2431.5,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg",
+        "frame_0003.jpg"
+      ],
+      "transcript": "[0:00] Several radio stations are broadcasting their programs at the same time in the same area.\n[0:06] Why don't those signals mix? It's not just radio stations. TV channels, Bluetooth, Wi-Fi,"
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0004.jpg",
+        "frame_0005.jpg",
+        "frame_0006.jpg"
+      ],
+      "transcript": "[0:06] Why don't those signals mix? It's not just radio stations. TV channels, Bluetooth, Wi-Fi,\n[0:13] RF remote controllers, radio transceivers, and many other devices are sending and receiving\n[0:19] data on radio waves. All of them are working at the same time and place and they are fine."
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0007.jpg",
+        "frame_0008.jpg",
+        "frame_0009.jpg"
+      ],
+      "transcript": "[0:19] data on radio waves. All of them are working at the same time and place and they are fine.\n[0:26] Also, there are a lot of noise signals on air which are added to all those signals."
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:26] Also, there are a lot of noise signals on air which are added to all those signals.\n[0:31] Wondering why don't those signals mix? In this video, I am going to talk about RLC filters.\n[0:38] After watching this video, you will find answers to many questions around this subject."
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg",
+        "frame_0015.jpg"
+      ],
+      "transcript": "[0:38] After watching this video, you will find answers to many questions around this subject.\n[0:44] In this video, you will see one of the most beautiful and important applications of inductors"
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0016.jpg",
+        "frame_0017.jpg",
+        "frame_0018.jpg"
+      ],
+      "transcript": "[0:44] In this video, you will see one of the most beautiful and important applications of inductors\n[0:50] in electronics, I mean in practical circuits. And also, you will see how inductors and capacitors\n[0:58] make love to remove a specific noise from your circuit. Get ready for this awesome hands-on"
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0019.jpg",
+        "frame_0020.jpg",
+        "frame_0021.jpg"
+      ],
+      "transcript": "[0:58] make love to remove a specific noise from your circuit. Get ready for this awesome hands-on\n[1:04] learning. Please stay with me until the end of this video. Let's answer this question first."
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[1:04] learning. Please stay with me until the end of this video. Let's answer this question first.\n[1:11] Why don't those signals mix? The answer is, they are mixed actually. Some newbies may think that\n[1:18] those signals are placed in separate frequency bands, so they exist on air separately and independently."
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg",
+        "frame_0027.jpg"
+      ],
+      "transcript": "[1:18] those signals are placed in separate frequency bands, so they exist on air separately and independently.\n[1:26] But this is not completely true. They are not separated. Frequency bands are abstract concepts."
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0028.jpg",
+        "frame_0029.jpg",
+        "frame_0030.jpg"
+      ],
+      "transcript": "[1:26] But this is not completely true. They are not separated. Frequency bands are abstract concepts.\n[1:32] They are not truly separated. Surprisingly, all those radio stations, TV broadcastings,\n[1:39] Wi-Fi, Bluetooth signals, RF remote controller signals, radio transceiver signals, and many other signals"
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0031.jpg",
+        "frame_0032.jpg",
+        "frame_0033.jpg"
+      ],
+      "transcript": "[1:39] Wi-Fi, Bluetooth signals, RF remote controller signals, radio transceiver signals, and many other signals\n[1:46] are mixed and form an integrated, blended and complicated signal. There is only one signal on air."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[1:46] are mixed and form an integrated, blended and complicated signal. There is only one signal on air.\n[1:55] I know, it is confusing. I want to do a simple experiment to demonstrate what I tried to say."
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg",
+        "frame_0039.jpg"
+      ],
+      "transcript": "[1:55] I know, it is confusing. I want to do a simple experiment to demonstrate what I tried to say.\n[2:06] I have generated these two signals using my function generator. Let's suppose that these two are radio"
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0040.jpg",
+        "frame_0041.jpg",
+        "frame_0042.jpg"
+      ],
+      "transcript": "[2:06] I have generated these two signals using my function generator. Let's suppose that these two are radio\n[2:12] signals from different radio stations broadcast at different frequencies. It's obvious that the"
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0043.jpg",
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:12] signals from different radio stations broadcast at different frequencies. It's obvious that the\n[2:21] frequency of this signal is higher than this because the cycles here are more than this in same time\n[2:29] period. What will happen if these two signals are released at the same time?"
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[2:29] period. What will happen if these two signals are released at the same time?\n[2:35] I have generated these two signals. This is a simple resistor-based signal mixer circuit. I am going to apply these two signals here to points A and B to see what will happen at point C."
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg",
+        "frame_0051.jpg"
+      ],
+      "transcript": "[2:35] I have generated these two signals. This is a simple resistor-based signal mixer circuit. I am going to apply these two signals here to points A and B to see what will happen at point C."
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0052.jpg",
+        "frame_0053.jpg",
+        "frame_0054.jpg"
+      ],
+      "transcript": "[2:35] I have generated these two signals. This is a simple resistor-based signal mixer circuit. I am going to apply these two signals here to points A and B to see what will happen at point C.\n[2:50] Look here. This trace is the result at point C. When two signals exist in the same medium,"
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0055.jpg",
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[2:50] Look here. This trace is the result at point C. When two signals exist in the same medium,\n[3:06] they will be added and form a new signal. Look here."
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:06] they will be added and form a new signal. Look here.\n[3:10] Look here. This is the signal at point A. And this is the signal at point B. And this yellow trace is the result at point C."
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg",
+        "frame_0063.jpg"
+      ],
+      "transcript": "[3:10] Look here. This is the signal at point A. And this is the signal at point B. And this yellow trace is the result at point C.\n[3:24] Two signals in previous experiments were not an exception. This is a general rule. When two or more signals share the same medium,"
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0064.jpg",
+        "frame_0065.jpg",
+        "frame_0066.jpg"
+      ],
+      "transcript": "[3:24] Two signals in previous experiments were not an exception. This is a general rule. When two or more signals share the same medium,\n[3:32] either the air or a wire, they will mix and form a new signal, usually very complex signal. In real-world applications, unwanted signals are added to signals too."
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0067.jpg",
+        "frame_0068.jpg",
+        "frame_0069.jpg"
+      ],
+      "transcript": "[3:32] either the air or a wire, they will mix and form a new signal, usually very complex signal. In real-world applications, unwanted signals are added to signals too.\n[3:44] The radio antenna captures only one signal, which consists of all of those signals at once. Radio station signals, TV broadcasting signals, radio transceiver signals, etc."
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[3:44] The radio antenna captures only one signal, which consists of all of those signals at once. Radio station signals, TV broadcasting signals, radio transceiver signals, etc.\n[3:56] I want to call the signal here mixed signal. I mean this yellow trace. Suppose that these two signals are radio signals and there is a radio transmitter at point C."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg",
+        "frame_0075.jpg"
+      ],
+      "transcript": "[3:56] I want to call the signal here mixed signal. I mean this yellow trace. Suppose that these two signals are radio signals and there is a radio transmitter at point C."
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0076.jpg",
+        "frame_0077.jpg",
+        "frame_0078.jpg"
+      ],
+      "transcript": "[4:10] So we will have the mixed signal on the air.\n[4:16] These two radio players are capturing the mixed signal, but the first radio player has to select the first signal"
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0079.jpg",
+        "frame_0080.jpg",
+        "frame_0081.jpg"
+      ],
+      "transcript": "[4:16] These two radio players are capturing the mixed signal, but the first radio player has to select the first signal\n[4:25] and the second device has to select the second signal.\n[4:28] Here you may ask, how can radio players select and play the signal from the desired radio station?"
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[4:28] Here you may ask, how can radio players select and play the signal from the desired radio station?\n[4:36] Nice question.\n[4:37] Here we need a circuit inside the radio player to select the desired signal from a mixed signal."
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg",
+        "frame_0087.jpg"
+      ],
+      "transcript": "[4:37] Here we need a circuit inside the radio player to select the desired signal from a mixed signal.\n[4:43] Such a circuit is called a filter. A filter is actually a pathway circuit that blocks specific frequencies and allows others to pass."
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0088.jpg",
+        "frame_0089.jpg",
+        "frame_0090.jpg"
+      ],
+      "transcript": "[4:43] Such a circuit is called a filter. A filter is actually a pathway circuit that blocks specific frequencies and allows others to pass.\n[4:52] So, RLC filters are one of them, actually the most simple ones.\n[4:59] In RLC filters, R stands for resistor, L stands for inductor, and C stands for capacitor."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0091.jpg",
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[4:59] In RLC filters, R stands for resistor, L stands for inductor, and C stands for capacitor.\n[5:07] So, RLC filters are made up of resistors, inductors, and capacitors."
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[5:07] So, RLC filters are made up of resistors, inductors, and capacitors.\n[5:12] This circuit filters high frequency and allows low frequency to pass to point E, and this circuit filters low frequency and allows high frequency to pass to point F."
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg",
+        "frame_0099.jpg"
+      ],
+      "transcript": "[5:12] This circuit filters high frequency and allows low frequency to pass to point E, and this circuit filters low frequency and allows high frequency to pass to point F."
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0100.jpg",
+        "frame_0101.jpg",
+        "frame_0102.jpg"
+      ],
+      "transcript": "[5:12] This circuit filters high frequency and allows low frequency to pass to point E, and this circuit filters low frequency and allows high frequency to pass to point F.\n[5:32] The frequency of the signal at point F.\n[5:34] The frequency of the signal at point F is 1 kHz and the frequency of the signal at point F is 15 kHz."
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0103.jpg",
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[5:34] The frequency of the signal at point F is 1 kHz and the frequency of the signal at point F is 15 kHz.\n[5:42] I want to apply this yellow trace to input of these two filters and probe points E and F.\n[5:49] So, RLC filters are one of them, which is the most important ones."
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[5:49] So, RLC filters are one of them, which is the most important ones.\n[5:55] Look here, when I probe the point E, this blue trace, I mean, you see the first signal is here and the second signal, the high frequency signal, is filtered."
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg",
+        "frame_0111.jpg"
+      ],
+      "transcript": "[5:55] Look here, when I probe the point E, this blue trace, I mean, you see the first signal is here and the second signal, the high frequency signal, is filtered.\n[6:09] There is only the first low frequency signal at point E."
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0112.jpg",
+        "frame_0113.jpg",
+        "frame_0114.jpg"
+      ],
+      "transcript": "[6:09] There is only the first low frequency signal at point E.\n[6:14] And when I probe the point F, you see there is only the second signal here and the first signal is filtered."
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0115.jpg",
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[6:14] And when I probe the point F, you see there is only the second signal here and the first signal is filtered.\n[6:26] I know you may have questions in mind about these circuits, I mean, this one and this one, particularly about the values of the capacitors and inductors."
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[6:26] I know you may have questions in mind about these circuits, I mean, this one and this one, particularly about the values of the capacitors and inductors.\n[6:39] Why did I use these specific values?"
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg",
+        "frame_0123.jpg"
+      ],
+      "transcript": "[6:39] Why did I use these specific values?\n[6:42] I will answer most of those questions later in this video.\n[6:46] Just let me start from basics.\n[6:48] I am going to explain the basics first and then I will talk about the capacitor, inductor and resistor rules in a filter circuit and discuss the effect of increasing or decreasing value of each component."
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0124.jpg",
+        "frame_0125.jpg",
+        "frame_0126.jpg"
+      ],
+      "transcript": "[6:48] I am going to explain the basics first and then I will talk about the capacitor, inductor and resistor rules in a filter circuit and discuss the effect of increasing or decreasing value of each component."
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0127.jpg",
+        "frame_0128.jpg",
+        "frame_0129.jpg"
+      ],
+      "transcript": "[6:48] I am going to explain the basics first and then I will talk about the capacitor, inductor and resistor rules in a filter circuit and discuss the effect of increasing or decreasing value of each component.\n[7:01] Anyway, a filter is a circuit that blocks unwanted signals like noises and allows others to pass.\n[7:08] A filter can be a high pass, low pass, band pass or a band stop filter."
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0130.jpg",
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[7:08] A filter can be a high pass, low pass, band pass or a band stop filter.\n[7:13] A notch filter is another name for a band stop filter.\n[7:16] This is a sine wave form.\n[7:18] This is a cycle."
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg",
+        "frame_0135.jpg"
+      ],
+      "transcript": "[7:18] This is a cycle.\n[7:20] Period indicates the time it takes for the wave to complete a cycle.\n[7:25] So, frequency is the number of cycles in time units, usually in one second."
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0136.jpg",
+        "frame_0137.jpg",
+        "frame_0138.jpg"
+      ],
+      "transcript": "[7:25] So, frequency is the number of cycles in time units, usually in one second.\n[7:31] So, the frequency of this wave is higher than this one because it has more cycles than the first one in same amount of time."
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0139.jpg",
+        "frame_0140.jpg",
+        "frame_0141.jpg"
+      ],
+      "transcript": "[7:31] So, the frequency of this wave is higher than this one because it has more cycles than the first one in same amount of time.\n[7:42] And these two waves have same frequency but the amplitude in the first one is greater than the second."
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0142.jpg",
+        "frame_0143.jpg",
+        "frame_0144.jpg"
+      ],
+      "transcript": "[7:42] And these two waves have same frequency but the amplitude in the first one is greater than the second.\n[7:53] I mean the second one is an attenuated version of the first one.\n[7:57] This is a sample frequency response."
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0145.jpg",
+        "frame_0146.jpg",
+        "frame_0147.jpg"
+      ],
+      "transcript": "[7:57] This is a sample frequency response.\n[8:07] This chart shows how the system will respond to incoming frequencies."
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0148.jpg",
+        "frame_0149.jpg",
+        "frame_0150.jpg"
+      ],
+      "transcript": "[8:07] This chart shows how the system will respond to incoming frequencies.\n[8:12] The x-axis indicates the frequency on a logarithmic scale.\n[8:17] The y-axis indicates the gain."
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0151.jpg",
+        "frame_0152.jpg",
+        "frame_0153.jpg"
+      ],
+      "transcript": "[8:17] The y-axis indicates the gain.\n[8:21] This system will multiply the frequencies in this range by one.\n[8:26] I mean between zero and omega one.\n[8:29] Which means that the system will not change or manipulate the frequencies in this range."
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0154.jpg",
+        "frame_0155.jpg",
+        "frame_0156.jpg"
+      ],
+      "transcript": "[8:29] Which means that the system will not change or manipulate the frequencies in this range.\n[8:36] Here in this range the gain is zero.\n[8:39] Which means that the system will multiply the frequencies in this range."
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0157.jpg",
+        "frame_0158.jpg",
+        "frame_0159.jpg"
+      ],
+      "transcript": "[8:39] Which means that the system will multiply the frequencies in this range.\n[8:44] I mean between omega one and omega two by zero.\n[8:48] I mean the system will eliminate frequencies in this range."
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0160.jpg",
+        "frame_0161.jpg",
+        "frame_0162.jpg"
+      ],
+      "transcript": "[8:48] I mean the system will eliminate frequencies in this range.\n[8:52] Here the gain is 0.5 in this range.\n[8:58] Which means that the system will attenuate the frequencies in this range."
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0163.jpg",
+        "frame_0164.jpg",
+        "frame_0165.jpg"
+      ],
+      "transcript": "[8:58] Which means that the system will attenuate the frequencies in this range.\n[9:03] I mean between omega two and omega three.\n[9:08] Because it is going to multiply the frequencies in this range by 0.5."
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0166.jpg",
+        "frame_0167.jpg",
+        "frame_0168.jpg"
+      ],
+      "transcript": "[9:08] Because it is going to multiply the frequencies in this range by 0.5.\n[9:14] I mean the system will cut the signals in this range in half."
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0169.jpg",
+        "frame_0170.jpg",
+        "frame_0171.jpg"
+      ],
+      "transcript": "[9:20] Finally the system will boost the signals in this frequency range.\n[9:25] I mean between omega three and omega four.\n[9:29] Because the gain here is two."
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0172.jpg",
+        "frame_0173.jpg",
+        "frame_0174.jpg"
+      ],
+      "transcript": "[9:29] Because the gain here is two.\n[9:32] Which means that the system will multiply the signals in this range by two.\n[9:37] A low pass filter has a parameter called omega zero."
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0175.jpg",
+        "frame_0176.jpg",
+        "frame_0177.jpg"
+      ],
+      "transcript": "[9:37] A low pass filter has a parameter called omega zero.\n[9:45] Which indicates a threshold frequency for the filter.\n[9:49] The low pass filter will allow frequencies lower than omega zero."
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0178.jpg",
+        "frame_0179.jpg",
+        "frame_0180.jpg"
+      ],
+      "transcript": "[9:49] The low pass filter will allow frequencies lower than omega zero.\n[9:54] And block frequencies higher than omega zero.\n[9:58] Look here.\n[9:59] This is the frequency response of a low pass filter."
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0181.jpg",
+        "frame_0182.jpg",
+        "frame_0183.jpg"
+      ],
+      "transcript": "[9:59] This is the frequency response of a low pass filter.\n[10:03] The low pass filter will multiply frequencies lower than omega zero by one.\n[10:09] Because the gain here is one."
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0184.jpg",
+        "frame_0185.jpg",
+        "frame_0186.jpg"
+      ],
+      "transcript": "[10:09] Because the gain here is one.\n[10:11] So the frequencies lower than omega zero will pass the filter without any change.\n[10:17] And it will multiply frequencies higher than omega zero by zero."
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0187.jpg",
+        "frame_0188.jpg",
+        "frame_0189.jpg"
+      ],
+      "transcript": "[10:17] And it will multiply frequencies higher than omega zero by zero.\n[10:22] Because the gain here is zero.\n[10:25] Which means that the frequencies higher than omega zero will be attenuated and eliminated."
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0190.jpg",
+        "frame_0191.jpg",
+        "frame_0192.jpg"
+      ],
+      "transcript": "[10:25] Which means that the frequencies higher than omega zero will be attenuated and eliminated.\n[10:33] The high pass filter is the opposite of a low pass filter.\n[10:39] I mean a high pass filter will allow frequencies higher than omega zero to pass."
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0193.jpg",
+        "frame_0194.jpg",
+        "frame_0195.jpg"
+      ],
+      "transcript": "[10:39] I mean a high pass filter will allow frequencies higher than omega zero to pass.\n[10:45] And block signals with a frequency lower than omega zero."
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0196.jpg",
+        "frame_0197.jpg",
+        "frame_0198.jpg"
+      ],
+      "transcript": "[10:53] A band pass filter has two tuning parameters.\n[10:57] Omega zero and omega one.\n[10:59] Which indicates two threshold frequencies."
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0199.jpg",
+        "frame_0200.jpg",
+        "frame_0201.jpg"
+      ],
+      "transcript": "[10:59] Which indicates two threshold frequencies.\n[11:02] The band pass filter will allow frequencies between omega zero and omega one.\n[11:08] To pass and block frequencies lower than omega zero or higher than omega one."
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0202.jpg",
+        "frame_0203.jpg",
+        "frame_0204.jpg"
+      ],
+      "transcript": "[11:08] To pass and block frequencies lower than omega zero or higher than omega one.\n[11:19] This is frequency response of a notch filter."
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0205.jpg",
+        "frame_0206.jpg",
+        "frame_0207.jpg"
+      ],
+      "transcript": "[11:19] This is frequency response of a notch filter.\n[11:22] A notch filter is the opposite of band pass filter.\n[11:26] I mean a notch filter will block frequencies between omega zero and omega one."
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0208.jpg",
+        "frame_0209.jpg",
+        "frame_0210.jpg"
+      ],
+      "transcript": "[11:26] I mean a notch filter will block frequencies between omega zero and omega one.\n[11:31] And allow others to pass.\n[11:36] Suppose that we have these signals on the medium with these frequencies."
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0211.jpg",
+        "frame_0212.jpg",
+        "frame_0213.jpg"
+      ],
+      "transcript": "[11:36] Suppose that we have these signals on the medium with these frequencies.\n[11:41] A 1 hertz.\n[11:42] B 5 hertz.\n[11:43] C 10 hertz.\n[11:44] D 20 hertz.\n[11:45] Actually this signal which is combination of signals a to d exists on the medium."
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0214.jpg",
+        "frame_0215.jpg",
+        "frame_0216.jpg"
+      ],
+      "transcript": "[11:45] Actually this signal which is combination of signals a to d exists on the medium.\n[11:56] A low pass filter with omega zero equals to 3."
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0217.jpg",
+        "frame_0218.jpg",
+        "frame_0219.jpg"
+      ],
+      "transcript": "[11:56] A low pass filter with omega zero equals to 3.\n[12:00] Will pass this one and blocks others.\n[12:04] Because the frequency of this signal is lower than 3 hertz.\n[12:08] I mean if I apply this mixed signal to this low pass filter input."
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0220.jpg",
+        "frame_0221.jpg",
+        "frame_0222.jpg"
+      ],
+      "transcript": "[12:08] I mean if I apply this mixed signal to this low pass filter input.\n[12:15] The output will be this signal."
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0223.jpg",
+        "frame_0224.jpg",
+        "frame_0225.jpg"
+      ],
+      "transcript": "[12:21] A low pass filter with omega zero equals to 8.\n[12:24] Will pass a and b signals.\n[12:28] And block c and d signals."
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0226.jpg",
+        "frame_0227.jpg",
+        "frame_0228.jpg"
+      ],
+      "transcript": "[12:28] And block c and d signals.\n[12:31] So the output of the low pass filter will be combination of signals a and b.\n[12:38] I mean if I apply this signal to input of this filter."
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0229.jpg",
+        "frame_0230.jpg",
+        "frame_0231.jpg"
+      ],
+      "transcript": "[12:38] I mean if I apply this signal to input of this filter.\n[12:43] The output will be something like this.\n[12:47] Which is combination of signals a and d."
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0232.jpg",
+        "frame_0233.jpg",
+        "frame_0234.jpg"
+      ],
+      "transcript": "[12:47] Which is combination of signals a and d.\n[12:50] A high pass filter is the opposite of a low pass filter.\n[12:59] A high pass filter with omega zero equals to 15."
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0235.jpg",
+        "frame_0236.jpg",
+        "frame_0237.jpg"
+      ],
+      "transcript": "[12:59] A high pass filter with omega zero equals to 15.\n[13:02] Will let the signal d to pass.\n[13:05] This one.\n[13:06] And blocks others."
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0238.jpg",
+        "frame_0239.jpg",
+        "frame_0240.jpg"
+      ],
+      "transcript": "[13:11] A band pass filter with omega zero equals to 8 hertz.\n[13:15] And omega one equals to 15 hertz.\n[13:17] And block others."
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0241.jpg",
+        "frame_0242.jpg",
+        "frame_0243.jpg"
+      ],
+      "transcript": "[13:17] And block others.\n[13:22] Because the frequency of the signal c.\n[13:25] Is 10 hertz.\n[13:26] Which is between 8 hertz and 15 hertz."
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0244.jpg",
+        "frame_0245.jpg",
+        "frame_0246.jpg"
+      ],
+      "transcript": "[13:26] Which is between 8 hertz and 15 hertz.\n[13:30] Remember.\n[13:31] These are frequency response of ideal filters.\n[13:35] In reality.\n[13:36] It is not possible to make an ideal filter."
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0247.jpg",
+        "frame_0248.jpg",
+        "frame_0249.jpg"
+      ],
+      "transcript": "[13:36] It is not possible to make an ideal filter.\n[13:40] This is why radio stations.\n[13:41] And in general radio transmitters.\n[13:43] Have to keep safe frequency distances.\n[13:46] Because we can't make ideal filters.\n[13:49] Anyway.\n[13:49] Inside every radio receiver."
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0250.jpg",
+        "frame_0251.jpg",
+        "frame_0252.jpg"
+      ],
+      "transcript": "[13:49] Inside every radio receiver.\n[13:52] There is a band pass filter.\n[13:53] With adjustable omega zero and omega one.\n[13:56] By turning the tuning potentiometer.\n[13:58] The device changes the value of omega zero and omega one."
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0253.jpg",
+        "frame_0254.jpg",
+        "frame_0255.jpg"
+      ],
+      "transcript": "[13:58] The device changes the value of omega zero and omega one.\n[14:02] To allow a specific radio station signal.\n[14:05] To pass to the amplification circuit.\n[14:07] It's that simple.\n[14:09] Now is the time for exploring."
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0256.jpg",
+        "frame_0257.jpg",
+        "frame_0258.jpg"
+      ],
+      "transcript": "[14:09] Now is the time for exploring.\n[14:11] The rule of each component.\n[14:13] In the filter circuit.\n[14:15] A capacitor will allow high frequencies to pass.\n[14:19] And block low frequencies."
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0259.jpg",
+        "frame_0260.jpg",
+        "frame_0261.jpg"
+      ],
+      "transcript": "[14:19] And block low frequencies.\n[14:21] This is why capacitors pass AC voltages.\n[14:24] And block DC.\n[14:25] Because the DC frequency is low.\n[14:27] Actually zero.\n[14:28] The capacitance of the capacitor."
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0262.jpg",
+        "frame_0263.jpg",
+        "frame_0264.jpg"
+      ],
+      "transcript": "[14:28] The capacitance of the capacitor.\n[14:30] Has a direct relationship.\n[14:32] With the frequency it can pass.\n[14:34] The higher the capacitance of the capacitor.\n[14:36] The lower the frequency it can pass."
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0265.jpg",
+        "frame_0266.jpg",
+        "frame_0267.jpg"
+      ],
+      "transcript": "[14:36] The lower the frequency it can pass.\n[14:42] If a capacitor is used like this.\n[14:44] In series with the signal.\n[14:46] Then it will pass the high frequencies.\n[14:48] And block low frequencies."
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 900,
+      "frames": [
+        "frame_0268.jpg",
+        "frame_0269.jpg",
+        "frame_0270.jpg"
+      ],
+      "transcript": "[14:48] And block low frequencies.\n[14:50] Like DC voltages.\n[14:51] And if the capacitor is used like this.\n[14:54] Then it will pass high frequencies to ground.\n[14:57] So it will allow low frequencies to pass."
+    },
+    {
+      "segment_index": 91,
+      "start_time": 900,
+      "end_time": 910,
+      "frames": [
+        "frame_0271.jpg",
+        "frame_0272.jpg",
+        "frame_0273.jpg"
+      ],
+      "transcript": "[14:57] So it will allow low frequencies to pass.\n[15:01] The capacitor in this structure.\n[15:03] Is called coupling capacitor.\n[15:05] And the capacitor in this structure.\n[15:07] Is called a bypass capacitor."
+    },
+    {
+      "segment_index": 92,
+      "start_time": 910,
+      "end_time": 920,
+      "frames": [
+        "frame_0274.jpg",
+        "frame_0275.jpg",
+        "frame_0276.jpg"
+      ],
+      "transcript": "[15:12] You may have seen some capacitors.\n[15:14] Near VCC or VDD pins on microcontrollers.\n[15:18] They are bypass capacitors."
+    },
+    {
+      "segment_index": 93,
+      "start_time": 920,
+      "end_time": 930,
+      "frames": [
+        "frame_0277.jpg",
+        "frame_0278.jpg",
+        "frame_0279.jpg"
+      ],
+      "transcript": "[15:18] They are bypass capacitors.\n[15:20] Used to filter high frequency noises.\n[15:23] Literally they are used as low pass filters.\n[15:27] There are similar things about inductors."
+    },
+    {
+      "segment_index": 94,
+      "start_time": 930,
+      "end_time": 940,
+      "frames": [
+        "frame_0280.jpg",
+        "frame_0281.jpg",
+        "frame_0282.jpg"
+      ],
+      "transcript": "[15:27] There are similar things about inductors.\n[15:32] But inductors work exactly opposite to capacitors.\n[15:36] I mean inductors pass low frequencies.\n[15:39] And block high frequencies."
+    },
+    {
+      "segment_index": 95,
+      "start_time": 940,
+      "end_time": 950,
+      "frames": [
+        "frame_0283.jpg",
+        "frame_0284.jpg",
+        "frame_0285.jpg"
+      ],
+      "transcript": "[15:39] And block high frequencies.\n[15:41] This one will act like a low pass filter.\n[15:44] Because high frequencies will be blocked by the inductor.\n[15:48] And only low frequencies will pass the inductor."
+    },
+    {
+      "segment_index": 96,
+      "start_time": 950,
+      "end_time": 960,
+      "frames": [
+        "frame_0286.jpg",
+        "frame_0287.jpg",
+        "frame_0288.jpg"
+      ],
+      "transcript": "[15:48] And only low frequencies will pass the inductor.\n[15:52] But this one will act like a high pass filter.\n[15:56] Because the inductor is going to pass the low frequencies to ground."
+    },
+    {
+      "segment_index": 97,
+      "start_time": 960,
+      "end_time": 970,
+      "frames": [
+        "frame_0289.jpg",
+        "frame_0290.jpg",
+        "frame_0291.jpg"
+      ],
+      "transcript": "[15:56] Because the inductor is going to pass the low frequencies to ground.\n[16:00] So high frequencies will reach the output.\n[16:04] Note that we are talking about ideal capacitors and inductors.\n[16:08] I will talk about real capacitor and inductor behavior later in this video."
+    },
+    {
+      "segment_index": 98,
+      "start_time": 970,
+      "end_time": 980,
+      "frames": [
+        "frame_0292.jpg",
+        "frame_0293.jpg",
+        "frame_0294.jpg"
+      ],
+      "transcript": "[16:08] I will talk about real capacitor and inductor behavior later in this video.\n[16:12] Anyway.\n[16:13] To make a low pass filter or a high pass filter.\n[16:16] We can use either a single capacitor or a single inductor."
+    },
+    {
+      "segment_index": 99,
+      "start_time": 980,
+      "end_time": 990,
+      "frames": [
+        "frame_0295.jpg",
+        "frame_0296.jpg",
+        "frame_0297.jpg"
+      ],
+      "transcript": "[16:16] We can use either a single capacitor or a single inductor.\n[16:20] But before moving further.\n[16:22] I think it would be better to do some experiments.\n[16:29] This is a very simple low pass filter."
+    },
+    {
+      "segment_index": 100,
+      "start_time": 990,
+      "end_time": 1000,
+      "frames": [
+        "frame_0298.jpg",
+        "frame_0299.jpg",
+        "frame_0300.jpg"
+      ],
+      "transcript": "[16:29] This is a very simple low pass filter.\n[16:32] Using a single capacitor and a resistor.\n[16:35] It is called an RC low pass filter.\n[16:38] Because it consists of only a resistor and a capacitor."
+    },
+    {
+      "segment_index": 101,
+      "start_time": 1000,
+      "end_time": 1010,
+      "frames": [
+        "frame_0301.jpg",
+        "frame_0302.jpg",
+        "frame_0303.jpg"
+      ],
+      "transcript": "[16:38] Because it consists of only a resistor and a capacitor.\n[16:42] I am going to apply several frequencies to its input.\n[16:45] And see its response on output."
+    },
+    {
+      "segment_index": 102,
+      "start_time": 1010,
+      "end_time": 1020,
+      "frames": [
+        "frame_0304.jpg",
+        "frame_0305.jpg",
+        "frame_0306.jpg"
+      ],
+      "transcript": "[16:57] This blue trace is the signal on input."
+    },
+    {
+      "segment_index": 103,
+      "start_time": 1020,
+      "end_time": 1030,
+      "frames": [
+        "frame_0307.jpg",
+        "frame_0308.jpg",
+        "frame_0309.jpg"
+      ],
+      "transcript": "[16:57] This blue trace is the signal on input.\n[17:00] Which is generated by this function generator.\n[17:03] And the yellow trace is the signal at output.\n[17:06] I mean the response of this low pass filter to input signal."
+    },
+    {
+      "segment_index": 104,
+      "start_time": 1030,
+      "end_time": 1040,
+      "frames": [
+        "frame_0310.jpg",
+        "frame_0311.jpg",
+        "frame_0312.jpg"
+      ],
+      "transcript": "[17:06] I mean the response of this low pass filter to input signal.\n[17:11] I am going to start from 10 hertz signal on input.\n[17:16] The amplitude of output signal is exactly equal to amplitude of input signal."
+    },
+    {
+      "segment_index": 105,
+      "start_time": 1040,
+      "end_time": 1050,
+      "frames": [
+        "frame_0313.jpg",
+        "frame_0314.jpg",
+        "frame_0315.jpg"
+      ],
+      "transcript": "[17:16] The amplitude of output signal is exactly equal to amplitude of input signal.\n[17:22] It means that this filter is passing 10 hertz signal perfectly.\n[17:27] So the amplitude of this filter is 1 at 10 hertz frequency."
+    },
+    {
+      "segment_index": 106,
+      "start_time": 1050,
+      "end_time": 1060,
+      "frames": [
+        "frame_0316.jpg",
+        "frame_0317.jpg",
+        "frame_0318.jpg"
+      ],
+      "transcript": "[17:27] So the amplitude of this filter is 1 at 10 hertz frequency.\n[17:37] I am going to increase the frequency to 20 hertz."
+    },
+    {
+      "segment_index": 107,
+      "start_time": 1060,
+      "end_time": 1070,
+      "frames": [
+        "frame_0319.jpg",
+        "frame_0320.jpg",
+        "frame_0321.jpg"
+      ],
+      "transcript": "[17:37] I am going to increase the frequency to 20 hertz.\n[17:42] It is still passing 20 hertz signal perfectly.\n[17:46] So the gain at 20 hertz is 1."
+    },
+    {
+      "segment_index": 108,
+      "start_time": 1070,
+      "end_time": 1080,
+      "frames": [
+        "frame_0322.jpg",
+        "frame_0323.jpg",
+        "frame_0324.jpg"
+      ],
+      "transcript": "[17:46] So the gain at 20 hertz is 1.\n[17:52] Let me increase the frequency to 100 hertz.\n[17:55] Still it is perfectly passing 100 hertz frequency."
+    },
+    {
+      "segment_index": 109,
+      "start_time": 1080,
+      "end_time": 1090,
+      "frames": [
+        "frame_0325.jpg",
+        "frame_0326.jpg",
+        "frame_0327.jpg"
+      ],
+      "transcript": "[17:55] Still it is perfectly passing 100 hertz frequency.\n[18:01] I am going to increase the frequency.\n[18:03] Until the amplitude of output signal starts to shrink."
+    },
+    {
+      "segment_index": 110,
+      "start_time": 1090,
+      "end_time": 1100,
+      "frames": [
+        "frame_0328.jpg",
+        "frame_0329.jpg",
+        "frame_0330.jpg"
+      ],
+      "transcript": "[18:13] Now at 20 kilohertz the output signal starts to shrink.\n[18:19] The gain is."
+    },
+    {
+      "segment_index": 111,
+      "start_time": 1100,
+      "end_time": 1110,
+      "frames": [
+        "frame_0331.jpg",
+        "frame_0332.jpg",
+        "frame_0333.jpg"
+      ],
+      "transcript": "[18:19] The gain is.\n[18:25] The gain is 0.92 at 20 kilohertz."
+    },
+    {
+      "segment_index": 112,
+      "start_time": 1110,
+      "end_time": 1120,
+      "frames": [
+        "frame_0334.jpg",
+        "frame_0335.jpg",
+        "frame_0336.jpg"
+      ],
+      "transcript": "[18:25] The gain is 0.92 at 20 kilohertz.\n[18:36] Now I am going to test 30 kilohertz."
+    },
+    {
+      "segment_index": 113,
+      "start_time": 1120,
+      "end_time": 1130,
+      "frames": [
+        "frame_0337.jpg",
+        "frame_0338.jpg",
+        "frame_0339.jpg"
+      ],
+      "transcript": "[18:40] The amplitude is.\n[18:44] The gain is.\n[18:49] Is 0.86."
+    },
+    {
+      "segment_index": 114,
+      "start_time": 1130,
+      "end_time": 1140,
+      "frames": [
+        "frame_0340.jpg",
+        "frame_0341.jpg",
+        "frame_0342.jpg"
+      ],
+      "transcript": "[18:49] Is 0.86.\n[18:55] Let me test 40 kilohertz."
+    },
+    {
+      "segment_index": 115,
+      "start_time": 1140,
+      "end_time": 1150,
+      "frames": [
+        "frame_0343.jpg",
+        "frame_0344.jpg",
+        "frame_0345.jpg"
+      ],
+      "transcript": "[19:02] The amplitude of the filter is 0.84 at 40 kilohertz.\n[19:09] Now I am testing 50 kilohertz."
+    },
+    {
+      "segment_index": 116,
+      "start_time": 1150,
+      "end_time": 1160,
+      "frames": [
+        "frame_0346.jpg",
+        "frame_0347.jpg",
+        "frame_0348.jpg"
+      ],
+      "transcript": "[19:09] Now I am testing 50 kilohertz.\n[19:15] The gain of the filter is 0.77 at 50 kilohertz."
+    },
+    {
+      "segment_index": 117,
+      "start_time": 1160,
+      "end_time": 1170,
+      "frames": [
+        "frame_0349.jpg",
+        "frame_0350.jpg",
+        "frame_0351.jpg"
+      ],
+      "transcript": "[19:15] The gain of the filter is 0.77 at 50 kilohertz.\n[19:23] By increasing the frequency and calculating the gain.\n[19:26] I have gotten the frequency response of this simple low-pass filter."
+    },
+    {
+      "segment_index": 118,
+      "start_time": 1170,
+      "end_time": 1180,
+      "frames": [
+        "frame_0352.jpg",
+        "frame_0353.jpg",
+        "frame_0354.jpg"
+      ],
+      "transcript": "[19:26] I have gotten the frequency response of this simple low-pass filter.\n[19:31] This simple filter is passing frequencies lower than 20 kilohertz perfectly.\n[19:37] 20 kilohertz perfectly.\n[19:39] And eliminating frequencies higher than 1 megahertz completely."
+    },
+    {
+      "segment_index": 119,
+      "start_time": 1180,
+      "end_time": 1190,
+      "frames": [
+        "frame_0355.jpg",
+        "frame_0356.jpg",
+        "frame_0357.jpg"
+      ],
+      "transcript": "[19:39] And eliminating frequencies higher than 1 megahertz completely.\n[19:43] But it is attenuating frequencies from 20 kilohertz to 1 megahertz.\n[19:49] This frequency range is called pass band."
+    },
+    {
+      "segment_index": 120,
+      "start_time": 1190,
+      "end_time": 1200,
+      "frames": [
+        "frame_0358.jpg",
+        "frame_0359.jpg",
+        "frame_0360.jpg"
+      ],
+      "transcript": "[19:49] This frequency range is called pass band.\n[19:57] Here is called stop band.\n[19:59] And the frequency range between them is called transition band."
+    },
+    {
+      "segment_index": 121,
+      "start_time": 1200,
+      "end_time": 1210,
+      "frames": [
+        "frame_0361.jpg",
+        "frame_0362.jpg",
+        "frame_0363.jpg"
+      ],
+      "transcript": "[19:59] And the frequency range between them is called transition band.\n[20:03] This is frequency response of an ideal low-pass filter.\n[20:07] And this is frequency response of a real low-pass filter."
+    },
+    {
+      "segment_index": 122,
+      "start_time": 1210,
+      "end_time": 1220,
+      "frames": [
+        "frame_0364.jpg",
+        "frame_0365.jpg",
+        "frame_0366.jpg"
+      ],
+      "transcript": "[20:07] And this is frequency response of a real low-pass filter.\n[20:10] Are they similar?\n[20:13] I don't think so.\n[20:14] Anyway, in some cases using a single capacitor is sufficient and okay.\n[20:19] For instance, we always put a capacitor beside VCCP in our microcontroller."
+    },
+    {
+      "segment_index": 123,
+      "start_time": 1220,
+      "end_time": 1230,
+      "frames": [
+        "frame_0367.jpg",
+        "frame_0368.jpg",
+        "frame_0369.jpg"
+      ],
+      "transcript": "[20:19] For instance, we always put a capacitor beside VCCP in our microcontroller.\n[20:24] But in some other cases, we have to make better filters.\n[20:29] A good filter is one that has minimal transition band."
+    },
+    {
+      "segment_index": 124,
+      "start_time": 1230,
+      "end_time": 1240,
+      "frames": [
+        "frame_0370.jpg",
+        "frame_0371.jpg",
+        "frame_0372.jpg"
+      ],
+      "transcript": "[20:29] A good filter is one that has minimal transition band.\n[20:33] We can use combination of resistors, capacitors, and inductors to make good enough low-pass,"
+    },
+    {
+      "segment_index": 125,
+      "start_time": 1240,
+      "end_time": 1250,
+      "frames": [
+        "frame_0373.jpg",
+        "frame_0374.jpg",
+        "frame_0375.jpg"
+      ],
+      "transcript": "[20:33] We can use combination of resistors, capacitors, and inductors to make good enough low-pass,\n[20:40] high-pass, band-pass, and notch filters.\n[20:49] In this circuit, the mixed input signal is coming through the resistor and reaching the inductor."
+    },
+    {
+      "segment_index": 126,
+      "start_time": 1250,
+      "end_time": 1260,
+      "frames": [
+        "frame_0376.jpg",
+        "frame_0377.jpg",
+        "frame_0378.jpg"
+      ],
+      "transcript": "[20:49] In this circuit, the mixed input signal is coming through the resistor and reaching the inductor.\n[20:54] The inductor will block or attenuate some high-frequency signals and pass lower frequencies to"
+    },
+    {
+      "segment_index": 127,
+      "start_time": 1260,
+      "end_time": 1270,
+      "frames": [
+        "frame_0379.jpg",
+        "frame_0380.jpg",
+        "frame_0381.jpg"
+      ],
+      "transcript": "[20:54] The inductor will block or attenuate some high-frequency signals and pass lower frequencies to\n[21:01] capacitor.\n[21:02] And then the capacitor will pass a portion of remaining high frequencies to ground\n[21:08] and let low frequencies to pass."
+    },
+    {
+      "segment_index": 128,
+      "start_time": 1270,
+      "end_time": 1280,
+      "frames": [
+        "frame_0382.jpg",
+        "frame_0383.jpg",
+        "frame_0384.jpg"
+      ],
+      "transcript": "[21:08] and let low frequencies to pass.\n[21:11] Maybe my demonstration of the circuit is not scientific, but it is easy to remember and easy to understand.\n[21:19] Anyway, I'm going to test this circuit to see the impact of the inductor on this low-pass filter."
+    },
+    {
+      "segment_index": 129,
+      "start_time": 1280,
+      "end_time": 1290,
+      "frames": [
+        "frame_0385.jpg",
+        "frame_0386.jpg",
+        "frame_0387.jpg"
+      ],
+      "transcript": "[21:19] Anyway, I'm going to test this circuit to see the impact of the inductor on this low-pass filter.\n[21:25] Let's see.\n[21:28] Look here.\n[21:29] At 500 kHz, the inductor is attenuating the output signal a bit."
+    },
+    {
+      "segment_index": 130,
+      "start_time": 1290,
+      "end_time": 1300,
+      "frames": [
+        "frame_0388.jpg",
+        "frame_0389.jpg",
+        "frame_0390.jpg"
+      ],
+      "transcript": "[21:29] At 500 kHz, the inductor is attenuating the output signal a bit.\n[21:36] By removing the inductor, by shorting its leads using this wire, you can see the output signal grows a bit."
+    },
+    {
+      "segment_index": 131,
+      "start_time": 1300,
+      "end_time": 1310,
+      "frames": [
+        "frame_0391.jpg",
+        "frame_0392.jpg",
+        "frame_0393.jpg"
+      ],
+      "transcript": "[21:36] By removing the inductor, by shorting its leads using this wire, you can see the output signal grows a bit.\n[21:47] At 500 kHz, this is the signal without inductor."
+    },
+    {
+      "segment_index": 132,
+      "start_time": 1310,
+      "end_time": 1320,
+      "frames": [
+        "frame_0394.jpg",
+        "frame_0395.jpg",
+        "frame_0396.jpg"
+      ],
+      "transcript": "[21:47] At 500 kHz, this is the signal without inductor.\n[21:50] And this is the signal with inductor.\n[21:54] Let me increase the frequency to 1 MHz."
+    },
+    {
+      "segment_index": 133,
+      "start_time": 1320,
+      "end_time": 1330,
+      "frames": [
+        "frame_0397.jpg",
+        "frame_0398.jpg",
+        "frame_0399.jpg"
+      ],
+      "transcript": "[22:00] Here, the impact of the inductor is more visible.\n[22:04] At 2 MHz.\n[22:05] This is the signal, output signal without inductor.\n[22:09] And this is the output signal with inductor."
+    },
+    {
+      "segment_index": 134,
+      "start_time": 1330,
+      "end_time": 1340,
+      "frames": [
+        "frame_0400.jpg",
+        "frame_0401.jpg",
+        "frame_0402.jpg"
+      ],
+      "transcript": "[22:09] And this is the output signal with inductor.\n[22:12] At 2 MHz, the impact of the inductor is more visible."
+    },
+    {
+      "segment_index": 135,
+      "start_time": 1340,
+      "end_time": 1350,
+      "frames": [
+        "frame_0403.jpg",
+        "frame_0404.jpg",
+        "frame_0405.jpg"
+      ],
+      "transcript": "[22:12] At 2 MHz, the impact of the inductor is more visible.\n[22:20] And it's really high.\n[22:23] This is the output signal without the inductor.\n[22:26] And this is the output signal with inductor."
+    },
+    {
+      "segment_index": 136,
+      "start_time": 1350,
+      "end_time": 1360,
+      "frames": [
+        "frame_0406.jpg",
+        "frame_0407.jpg",
+        "frame_0408.jpg"
+      ],
+      "transcript": "[22:30] At 2 MHz.\n[22:32] This is an RLC high-pass filter."
+    },
+    {
+      "segment_index": 137,
+      "start_time": 1360,
+      "end_time": 1370,
+      "frames": [
+        "frame_0409.jpg",
+        "frame_0410.jpg",
+        "frame_0411.jpg"
+      ],
+      "transcript": "[22:32] This is an RLC high-pass filter.\n[22:41] Likewise, in a high-pass filter, there is a capacitor, a resistor, and an inductor.\n[22:48] But this time, the capacitor is in series with the mixed signal coming through the resistor."
+    },
+    {
+      "segment_index": 138,
+      "start_time": 1370,
+      "end_time": 1380,
+      "frames": [
+        "frame_0412.jpg",
+        "frame_0413.jpg",
+        "frame_0414.jpg"
+      ],
+      "transcript": "[22:48] But this time, the capacitor is in series with the mixed signal coming through the resistor.\n[22:54] And the inductor is connecting the signal coming from the capacitor to the ground.\n[22:59] Here, the capacitor is blocking some low frequencies like DC and passing only high frequencies."
+    },
+    {
+      "segment_index": 139,
+      "start_time": 1380,
+      "end_time": 1390,
+      "frames": [
+        "frame_0415.jpg",
+        "frame_0416.jpg",
+        "frame_0417.jpg"
+      ],
+      "transcript": "[22:59] Here, the capacitor is blocking some low frequencies like DC and passing only high frequencies.\n[23:06] After that, the modified signal coming from the capacitor will reach the inductor."
+    },
+    {
+      "segment_index": 140,
+      "start_time": 1390,
+      "end_time": 1400,
+      "frames": [
+        "frame_0418.jpg",
+        "frame_0419.jpg",
+        "frame_0420.jpg"
+      ],
+      "transcript": "[23:06] After that, the modified signal coming from the capacitor will reach the inductor.\n[23:11] And the inductor will pass the remaining low frequencies to the ground and not touch the high frequencies.\n[23:18] I want to test this circuit."
+    },
+    {
+      "segment_index": 141,
+      "start_time": 1400,
+      "end_time": 1410,
+      "frames": [
+        "frame_0421.jpg",
+        "frame_0422.jpg",
+        "frame_0423.jpg"
+      ],
+      "transcript": "[23:18] I want to test this circuit.\n[23:27] Here, the inductor is passing frequencies higher than 100 kHz"
+    },
+    {
+      "segment_index": 142,
+      "start_time": 1410,
+      "end_time": 1420,
+      "frames": [
+        "frame_0424.jpg",
+        "frame_0425.jpg",
+        "frame_0426.jpg"
+      ],
+      "transcript": "[23:27] Here, the inductor is passing frequencies higher than 100 kHz\n[23:37] and blocking frequencies lower than 100 kHz."
+    },
+    {
+      "segment_index": 143,
+      "start_time": 1420,
+      "end_time": 1430,
+      "frames": [
+        "frame_0427.jpg",
+        "frame_0428.jpg",
+        "frame_0429.jpg"
+      ],
+      "transcript": "[23:37] and blocking frequencies lower than 100 kHz.\n[23:47] This frequency response is not even similar to a frequency response of an ideal high-pass filter."
+    },
+    {
+      "segment_index": 144,
+      "start_time": 1430,
+      "end_time": 1440,
+      "frames": [
+        "frame_0430.jpg",
+        "frame_0431.jpg",
+        "frame_0432.jpg"
+      ],
+      "transcript": "[23:47] This frequency response is not even similar to a frequency response of an ideal high-pass filter."
+    },
+    {
+      "segment_index": 145,
+      "start_time": 1440,
+      "end_time": 1450,
+      "frames": [
+        "frame_0433.jpg",
+        "frame_0434.jpg",
+        "frame_0435.jpg"
+      ],
+      "transcript": "[23:47] This frequency response is not even similar to a frequency response of an ideal high-pass filter.\n[24:07] But if you look attentively here, the gain here is 0."
+    },
+    {
+      "segment_index": 146,
+      "start_time": 1450,
+      "end_time": 1460,
+      "frames": [
+        "frame_0436.jpg",
+        "frame_0437.jpg",
+        "frame_0438.jpg"
+      ],
+      "transcript": "[24:07] But if you look attentively here, the gain here is 0.\n[24:15] But here, the gain is exactly 0.\n[24:19] So, this filter is passing frequencies higher than 10 MHz."
+    },
+    {
+      "segment_index": 147,
+      "start_time": 1460,
+      "end_time": 1470,
+      "frames": [
+        "frame_0439.jpg",
+        "frame_0440.jpg",
+        "frame_0441.jpg"
+      ],
+      "transcript": "[24:19] So, this filter is passing frequencies higher than 10 MHz.\n[24:27] And it is not 0.\n[24:29] Let me test it using my function generator."
+    },
+    {
+      "segment_index": 148,
+      "start_time": 1470,
+      "end_time": 1480,
+      "frames": [
+        "frame_0442.jpg",
+        "frame_0443.jpg",
+        "frame_0444.jpg"
+      ],
+      "transcript": "[24:29] Let me test it using my function generator.\n[24:31] Here, the frequency response is 0.\n[24:33] Here, the frequency is 10 MHz.\n[24:36] If you look here, you can see frequency is passing."
+    },
+    {
+      "segment_index": 149,
+      "start_time": 1480,
+      "end_time": 1490,
+      "frames": [
+        "frame_0445.jpg",
+        "frame_0446.jpg",
+        "frame_0447.jpg"
+      ],
+      "transcript": "[24:36] If you look here, you can see frequency is passing.\n[24:44] Actually, the frequency is passing the filter even in 15 MHz."
+    },
+    {
+      "segment_index": 150,
+      "start_time": 1490,
+      "end_time": 1500,
+      "frames": [
+        "frame_0448.jpg",
+        "frame_0449.jpg",
+        "frame_0450.jpg"
+      ],
+      "transcript": "[24:44] Actually, the frequency is passing the filter even in 15 MHz.\n[24:53] And this is 16 MHz.\n[24:57] So, this filter is passing frequencies higher than 100 kHz."
+    },
+    {
+      "segment_index": 151,
+      "start_time": 1500,
+      "end_time": 1510,
+      "frames": [
+        "frame_0451.jpg",
+        "frame_0452.jpg",
+        "frame_0453.jpg"
+      ],
+      "transcript": "[24:57] So, this filter is passing frequencies higher than 100 kHz.\n[25:04] And it is eliminating frequencies lower than 100 kHz.\n[25:09] We were expecting the high-pass filter frequency response to be something like this."
+    },
+    {
+      "segment_index": 152,
+      "start_time": 1510,
+      "end_time": 1520,
+      "frames": [
+        "frame_0454.jpg",
+        "frame_0455.jpg",
+        "frame_0456.jpg"
+      ],
+      "transcript": "[25:09] We were expecting the high-pass filter frequency response to be something like this.\n[25:14] But we got this.\n[25:17] You may ask me, why is this happening?\n[25:19] What is this?"
+    },
+    {
+      "segment_index": 153,
+      "start_time": 1520,
+      "end_time": 1530,
+      "frames": [
+        "frame_0457.jpg",
+        "frame_0458.jpg",
+        "frame_0459.jpg"
+      ],
+      "transcript": "[25:19] What is this?\n[25:20] This is a really difficult question.\n[25:23] To answer this question, I have to talk about the nature of those components.\n[25:28] I mean, I have to talk about the real capacitor and the real inductor."
+    },
+    {
+      "segment_index": 154,
+      "start_time": 1530,
+      "end_time": 1540,
+      "frames": [
+        "frame_0460.jpg",
+        "frame_0461.jpg",
+        "frame_0462.jpg"
+      ],
+      "transcript": "[25:28] I mean, I have to talk about the real capacitor and the real inductor.\n[25:36] Resistors are simple and they are almost linear.\n[25:39] We use resistors as an attenuator to boost the impact of capacitor and inductor filtering capabilities."
+    },
+    {
+      "segment_index": 155,
+      "start_time": 1540,
+      "end_time": 1550,
+      "frames": [
+        "frame_0463.jpg",
+        "frame_0464.jpg",
+        "frame_0465.jpg"
+      ],
+      "transcript": "[25:39] We use resistors as an attenuator to boost the impact of capacitor and inductor filtering capabilities.\n[25:46] When we are filtering signals to extract data or meaningful signals."
+    },
+    {
+      "segment_index": 156,
+      "start_time": 1550,
+      "end_time": 1560,
+      "frames": [
+        "frame_0466.jpg",
+        "frame_0467.jpg",
+        "frame_0468.jpg"
+      ],
+      "transcript": "[25:46] When we are filtering signals to extract data or meaningful signals.\n[25:55] This is what we are expecting the capacitor to be.\n[25:58] But this is what it is in reality."
+    },
+    {
+      "segment_index": 157,
+      "start_time": 1560,
+      "end_time": 1570,
+      "frames": [
+        "frame_0469.jpg",
+        "frame_0470.jpg",
+        "frame_0471.jpg"
+      ],
+      "transcript": "[25:58] But this is what it is in reality.\n[26:01] This is an ideal capacitor.\n[26:03] And this is a real capacitor.\n[26:05] See, there is an ideal capacitor inside a real capacitor along with other stuff."
+    },
+    {
+      "segment_index": 158,
+      "start_time": 1570,
+      "end_time": 1580,
+      "frames": [
+        "frame_0472.jpg",
+        "frame_0473.jpg",
+        "frame_0474.jpg"
+      ],
+      "transcript": "[26:05] See, there is an ideal capacitor inside a real capacitor along with other stuff.\n[26:11] Impedance of an ideal capacitor has to decrease by increasing the frequency of the signal and reach the zero impedance after reaching a specific frequency."
+    },
+    {
+      "segment_index": 159,
+      "start_time": 1580,
+      "end_time": 1590,
+      "frames": [
+        "frame_0475.jpg",
+        "frame_0476.jpg",
+        "frame_0477.jpg"
+      ],
+      "transcript": "[26:11] Impedance of an ideal capacitor has to decrease by increasing the frequency of the signal and reach the zero impedance after reaching a specific frequency.\n[26:22] But you see, there is a resistor here called ESR in series with the ideal capacitor inside the real capacitor."
+    },
+    {
+      "segment_index": 160,
+      "start_time": 1590,
+      "end_time": 1600,
+      "frames": [
+        "frame_0478.jpg",
+        "frame_0479.jpg",
+        "frame_0480.jpg"
+      ],
+      "transcript": "[26:22] But you see, there is a resistor here called ESR in series with the ideal capacitor inside the real capacitor.\n[26:31] So, impedance of a real capacitor will never reach zero.\n[26:36] In the best case, it will reach the ESR value."
+    },
+    {
+      "segment_index": 161,
+      "start_time": 1600,
+      "end_time": 1610,
+      "frames": [
+        "frame_0481.jpg",
+        "frame_0482.jpg",
+        "frame_0483.jpg"
+      ],
+      "transcript": "[26:36] In the best case, it will reach the ESR value.\n[26:40] On the other hand, there is an inductor here in series with the capacitor.\n[26:44] The impedance of this inductor will increase with increasing frequency.\n[26:48] It means that the total impedance of a real capacitor can't be lower than the ESR value."
+    },
+    {
+      "segment_index": 162,
+      "start_time": 1610,
+      "end_time": 1620,
+      "frames": [
+        "frame_0484.jpg",
+        "frame_0485.jpg",
+        "frame_0486.jpg"
+      ],
+      "transcript": "[26:48] It means that the total impedance of a real capacitor can't be lower than the ESR value.\n[26:55] And surprisingly, the total impedance will increase by exceeding a certain frequency because of this ESL inductor inside the capacitor."
+    },
+    {
+      "segment_index": 163,
+      "start_time": 1620,
+      "end_time": 1630,
+      "frames": [
+        "frame_0487.jpg",
+        "frame_0488.jpg",
+        "frame_0489.jpg"
+      ],
+      "transcript": "[26:55] And surprisingly, the total impedance will increase by exceeding a certain frequency because of this ESL inductor inside the capacitor.\n[27:05] So, this is frequency response of an ideal capacitor."
+    },
+    {
+      "segment_index": 164,
+      "start_time": 1630,
+      "end_time": 1640,
+      "frames": [
+        "frame_0490.jpg",
+        "frame_0491.jpg",
+        "frame_0492.jpg"
+      ],
+      "transcript": "[27:05] So, this is frequency response of an ideal capacitor.\n[27:12] And the frequency response of a real capacitor will be something like this.\n[27:16] The frequency at this point where the impedance of the capacitor is at its minimum is called the resonant frequency of the capacitor."
+    },
+    {
+      "segment_index": 165,
+      "start_time": 1640,
+      "end_time": 1650,
+      "frames": [
+        "frame_0493.jpg",
+        "frame_0494.jpg",
+        "frame_0495.jpg"
+      ],
+      "transcript": "[27:16] The frequency at this point where the impedance of the capacitor is at its minimum is called the resonant frequency of the capacitor.\n[27:27] At this point, this ideal capacitor and this ESL inductor are resonating, making the impedance of this path minimum at a specific frequency called the resonant frequency."
+    },
+    {
+      "segment_index": 166,
+      "start_time": 1650,
+      "end_time": 1660,
+      "frames": [
+        "frame_0496.jpg",
+        "frame_0497.jpg",
+        "frame_0498.jpg"
+      ],
+      "transcript": "[27:27] At this point, this ideal capacitor and this ESL inductor are resonating, making the impedance of this path minimum at a specific frequency called the resonant frequency."
+    },
+    {
+      "segment_index": 167,
+      "start_time": 1660,
+      "end_time": 1670,
+      "frames": [
+        "frame_0499.jpg",
+        "frame_0500.jpg",
+        "frame_0501.jpg"
+      ],
+      "transcript": "[27:27] At this point, this ideal capacitor and this ESL inductor are resonating, making the impedance of this path minimum at a specific frequency called the resonant frequency.\n[27:43] This resonant frequency differs from capacitor to capacitor.\n[27:47] So, you have to refer to data sheet or find it by trial and error."
+    },
+    {
+      "segment_index": 168,
+      "start_time": 1670,
+      "end_time": 1680,
+      "frames": [
+        "frame_0502.jpg",
+        "frame_0503.jpg",
+        "frame_0504.jpg"
+      ],
+      "transcript": "[27:47] So, you have to refer to data sheet or find it by trial and error.\n[27:52] There is a similar thing about inductors.\n[27:57] We always expect inductors to be something like this."
+    },
+    {
+      "segment_index": 169,
+      "start_time": 1680,
+      "end_time": 1690,
+      "frames": [
+        "frame_0505.jpg",
+        "frame_0506.jpg",
+        "frame_0507.jpg"
+      ],
+      "transcript": "[27:57] We always expect inductors to be something like this.\n[28:01] But a real inductor is something like this.\n[28:04] This one is an ideal inductor.\n[28:07] This is a tiny capacitance in parallel with the inductor."
+    },
+    {
+      "segment_index": 170,
+      "start_time": 1690,
+      "end_time": 1700,
+      "frames": [
+        "frame_0508.jpg",
+        "frame_0509.jpg",
+        "frame_0510.jpg"
+      ],
+      "transcript": "[28:07] This is a tiny capacitance in parallel with the inductor.\n[28:11] And this is a tiny resistor in series with the inductor.\n[28:18] This is frequency response of an ideal inductor."
+    },
+    {
+      "segment_index": 171,
+      "start_time": 1700,
+      "end_time": 1710,
+      "frames": [
+        "frame_0511.jpg",
+        "frame_0512.jpg",
+        "frame_0513.jpg"
+      ],
+      "transcript": "[28:18] This is frequency response of an ideal inductor.\n[28:21] And this is frequency response of a real inductor.\n[28:25] We always expect the frequency response of an inductor to be something like this."
+    },
+    {
+      "segment_index": 172,
+      "start_time": 1710,
+      "end_time": 1720,
+      "frames": [
+        "frame_0514.jpg",
+        "frame_0515.jpg",
+        "frame_0516.jpg"
+      ],
+      "transcript": "[28:25] We always expect the frequency response of an inductor to be something like this.\n[28:30] By increasing the frequency, we expect the impedance of the inductor to approach infinity.\n[28:37] But this tiny capacitance here in parallel with the inductor will surprise us."
+    },
+    {
+      "segment_index": 173,
+      "start_time": 1720,
+      "end_time": 1730,
+      "frames": [
+        "frame_0517.jpg",
+        "frame_0518.jpg",
+        "frame_0519.jpg"
+      ],
+      "transcript": "[28:37] But this tiny capacitance here in parallel with the inductor will surprise us.\n[28:44] Look here.\n[28:45] The impedance of the inductor will increase by increasing the frequency."
+    },
+    {
+      "segment_index": 174,
+      "start_time": 1730,
+      "end_time": 1740,
+      "frames": [
+        "frame_0520.jpg",
+        "frame_0521.jpg",
+        "frame_0522.jpg"
+      ],
+      "transcript": "[28:45] The impedance of the inductor will increase by increasing the frequency.\n[28:50] But after exceeding a specific frequency,\n[28:54] the effect of the parallel capacitor will come into play and it will decrease the impedance."
+    },
+    {
+      "segment_index": 175,
+      "start_time": 1740,
+      "end_time": 1750,
+      "frames": [
+        "frame_0523.jpg",
+        "frame_0524.jpg",
+        "frame_0525.jpg"
+      ],
+      "transcript": "[28:54] the effect of the parallel capacitor will come into play and it will decrease the impedance.\n[29:02] This specific frequency is called resonant frequency of the inductor.\n[29:07] This is why the frequency response of this bandpass filter is something like this,"
+    },
+    {
+      "segment_index": 176,
+      "start_time": 1750,
+      "end_time": 1760,
+      "frames": [
+        "frame_0526.jpg",
+        "frame_0527.jpg",
+        "frame_0528.jpg"
+      ],
+      "transcript": "[29:07] This is why the frequency response of this bandpass filter is something like this,\n[29:19] which is not similar to ideal bandpass filter frequency response,"
+    },
+    {
+      "segment_index": 177,
+      "start_time": 1760,
+      "end_time": 1770,
+      "frames": [
+        "frame_0529.jpg",
+        "frame_0530.jpg",
+        "frame_0531.jpg"
+      ],
+      "transcript": "[29:19] which is not similar to ideal bandpass filter frequency response,\n[29:24] because these components are not ideal."
+    },
+    {
+      "segment_index": 178,
+      "start_time": 1770,
+      "end_time": 1780,
+      "frames": [
+        "frame_0532.jpg",
+        "frame_0533.jpg",
+        "frame_0534.jpg"
+      ],
+      "transcript": "[29:31] If I replace the inductor with real inductor circuit and the capacitor with real capacitor circuit,\n[29:38] I will have this circuit."
+    },
+    {
+      "segment_index": 179,
+      "start_time": 1780,
+      "end_time": 1790,
+      "frames": [
+        "frame_0535.jpg",
+        "frame_0536.jpg",
+        "frame_0537.jpg"
+      ],
+      "transcript": "[29:38] I will have this circuit.\n[29:40] And this frequency response actually is frequency response of this circuit, not this.\n[29:47] In theory, this high-pass filter will block every signal with a frequency lower than omega 0,"
+    },
+    {
+      "segment_index": 180,
+      "start_time": 1790,
+      "end_time": 1800,
+      "frames": [
+        "frame_0538.jpg",
+        "frame_0539.jpg",
+        "frame_0540.jpg"
+      ],
+      "transcript": "[29:47] In theory, this high-pass filter will block every signal with a frequency lower than omega 0,\n[29:53] and it will allow signals with a frequency higher than omega 0 to pass through the filter untouched."
+    },
+    {
+      "segment_index": 181,
+      "start_time": 1800,
+      "end_time": 1810,
+      "frames": [
+        "frame_0541.jpg",
+        "frame_0542.jpg",
+        "frame_0543.jpg"
+      ],
+      "transcript": "[29:53] and it will allow signals with a frequency higher than omega 0 to pass through the filter untouched.\n[30:00] But this is not happening in reality, because the components are not ideal.\n[30:05] Anyway, now that we are familiar with the characteristics of those components,"
+    },
+    {
+      "segment_index": 182,
+      "start_time": 1810,
+      "end_time": 1820,
+      "frames": [
+        "frame_0544.jpg",
+        "frame_0545.jpg",
+        "frame_0546.jpg"
+      ],
+      "transcript": "[30:05] Anyway, now that we are familiar with the characteristics of those components,\n[30:10] it's time to move on to other filters.\n[30:15] This is the simplest RLC bandpass filter.\n[30:19] This capacitor works like a high-pass filter,"
+    },
+    {
+      "segment_index": 183,
+      "start_time": 1820,
+      "end_time": 1830,
+      "frames": [
+        "frame_0547.jpg",
+        "frame_0548.jpg",
+        "frame_0549.jpg"
+      ],
+      "transcript": "[30:19] This capacitor works like a high-pass filter,\n[30:22] and this inductor works like a low-pass filter.\n[30:26] Let me give you a numerical example.\n[30:28] If the inductor is passing frequencies lower than 3 kHz, and the capacitor is passing frequencies higher than 1 kHz,"
+    },
+    {
+      "segment_index": 184,
+      "start_time": 1830,
+      "end_time": 1840,
+      "frames": [
+        "frame_0550.jpg",
+        "frame_0551.jpg",
+        "frame_0552.jpg"
+      ],
+      "transcript": "[30:28] If the inductor is passing frequencies lower than 3 kHz, and the capacitor is passing frequencies higher than 1 kHz,\n[30:38] then signals with frequencies from 1 kHz to 3 kHz will pass through the filter from input to output."
+    },
+    {
+      "segment_index": 185,
+      "start_time": 1840,
+      "end_time": 1850,
+      "frames": [
+        "frame_0553.jpg",
+        "frame_0554.jpg",
+        "frame_0555.jpg"
+      ],
+      "transcript": "[30:38] then signals with frequencies from 1 kHz to 3 kHz will pass through the filter from input to output.\n[30:45] Let's consider a 2 kHz signal.\n[30:49] The 2 kHz signal will pass the inductor because 2 kHz is lower than 3 kHz,"
+    },
+    {
+      "segment_index": 186,
+      "start_time": 1850,
+      "end_time": 1860,
+      "frames": [
+        "frame_0556.jpg",
+        "frame_0557.jpg",
+        "frame_0558.jpg"
+      ],
+      "transcript": "[30:49] The 2 kHz signal will pass the inductor because 2 kHz is lower than 3 kHz,\n[30:55] and it will pass the capacitor because 2 kHz is higher than 1 kHz."
+    },
+    {
+      "segment_index": 187,
+      "start_time": 1860,
+      "end_time": 1870,
+      "frames": [
+        "frame_0559.jpg",
+        "frame_0560.jpg",
+        "frame_0561.jpg"
+      ],
+      "transcript": "[30:55] and it will pass the capacitor because 2 kHz is higher than 1 kHz.\n[31:00] But signals with frequencies higher than 3 kHz will be blocked by this inductor,\n[31:06] and signals with frequencies lower than 1 kHz will be blocked by this capacitor."
+    },
+    {
+      "segment_index": 188,
+      "start_time": 1870,
+      "end_time": 1880,
+      "frames": [
+        "frame_0562.jpg",
+        "frame_0563.jpg",
+        "frame_0564.jpg"
+      ],
+      "transcript": "[31:06] and signals with frequencies lower than 1 kHz will be blocked by this capacitor.\n[31:13] I'm going to test this circuit."
+    },
+    {
+      "segment_index": 189,
+      "start_time": 1880,
+      "end_time": 1890,
+      "frames": [
+        "frame_0565.jpg",
+        "frame_0566.jpg",
+        "frame_0567.jpg"
+      ],
+      "transcript": "[31:25] This is the frequency response of this filter."
+    },
+    {
+      "segment_index": 190,
+      "start_time": 1890,
+      "end_time": 1900,
+      "frames": [
+        "frame_0568.jpg",
+        "frame_0569.jpg",
+        "frame_0570.jpg"
+      ],
+      "transcript": "[31:25] This is the frequency response of this filter."
+    },
+    {
+      "segment_index": 191,
+      "start_time": 1900,
+      "end_time": 1910,
+      "frames": [
+        "frame_0571.jpg",
+        "frame_0572.jpg",
+        "frame_0573.jpg"
+      ],
+      "transcript": "[31:25] This is the frequency response of this filter.\n[31:41] The filter is passing frequencies from 200 Hz to 10 MHz, and blocking others.\n[31:48] This is the simplest RLC bandstop or notch filter."
+    },
+    {
+      "segment_index": 192,
+      "start_time": 1910,
+      "end_time": 1920,
+      "frames": [
+        "frame_0574.jpg",
+        "frame_0575.jpg",
+        "frame_0576.jpg"
+      ],
+      "transcript": "[31:48] This is the simplest RLC bandstop or notch filter.\n[31:56] Likewise, in a notch filter, this capacitor is working as a high-pass filter,"
+    },
+    {
+      "segment_index": 193,
+      "start_time": 1920,
+      "end_time": 1930,
+      "frames": [
+        "frame_0577.jpg",
+        "frame_0578.jpg",
+        "frame_0579.jpg"
+      ],
+      "transcript": "[31:56] Likewise, in a notch filter, this capacitor is working as a high-pass filter,\n[32:03] and this inductor is working as a low-pass filter.\n[32:06] But this structure makes them form a notch filter."
+    },
+    {
+      "segment_index": 194,
+      "start_time": 1930,
+      "end_time": 1940,
+      "frames": [
+        "frame_0580.jpg",
+        "frame_0581.jpg",
+        "frame_0582.jpg"
+      ],
+      "transcript": "[32:06] But this structure makes them form a notch filter.\n[32:10] High frequencies will pass the filter through the capacitor,\n[32:14] and low frequencies will pass the filter through the inductor.\n[32:18] But middling frequencies will be blocked by both of them."
+    },
+    {
+      "segment_index": 195,
+      "start_time": 1940,
+      "end_time": 1950,
+      "frames": [
+        "frame_0583.jpg",
+        "frame_0584.jpg",
+        "frame_0585.jpg"
+      ],
+      "transcript": "[32:18] But middling frequencies will be blocked by both of them.\n[32:22] I'm going to give you a numerical example for notch filters as well.\n[32:28] If the capacitor is passing frequencies higher than 3 kHz,"
+    },
+    {
+      "segment_index": 196,
+      "start_time": 1950,
+      "end_time": 1960,
+      "frames": [
+        "frame_0586.jpg",
+        "frame_0587.jpg",
+        "frame_0588.jpg"
+      ],
+      "transcript": "[32:28] If the capacitor is passing frequencies higher than 3 kHz,\n[32:32] and the inductor is passing frequencies lower than 1 kHz,\n[32:36] then frequencies higher than 3 kHz will find a way to output through the capacitor,"
+    },
+    {
+      "segment_index": 197,
+      "start_time": 1960,
+      "end_time": 1970,
+      "frames": [
+        "frame_0589.jpg",
+        "frame_0590.jpg",
+        "frame_0591.jpg"
+      ],
+      "transcript": "[32:36] then frequencies higher than 3 kHz will find a way to output through the capacitor,\n[32:42] and frequencies lower than 1 kHz will reach the output through the inductor.\n[32:48] But frequencies from 1 kHz to 3 kHz, like a 2 kHz sine wave, will never reach the output."
+    },
+    {
+      "segment_index": 198,
+      "start_time": 1970,
+      "end_time": 1980,
+      "frames": [
+        "frame_0592.jpg",
+        "frame_0593.jpg",
+        "frame_0594.jpg"
+      ],
+      "transcript": "[32:48] But frequencies from 1 kHz to 3 kHz, like a 2 kHz sine wave, will never reach the output.\n[32:56] There are other forms of RLC, low-pass, high-pass, band-pass, and notch filters,"
+    },
+    {
+      "segment_index": 199,
+      "start_time": 1980,
+      "end_time": 1990,
+      "frames": [
+        "frame_0595.jpg",
+        "frame_0596.jpg",
+        "frame_0597.jpg"
+      ],
+      "transcript": "[32:56] There are other forms of RLC, low-pass, high-pass, band-pass, and notch filters,\n[33:01] that I didn't cover them in this video.\n[33:04] Also, you can make more accurate filters by combining or repeating basic RLC filters."
+    },
+    {
+      "segment_index": 200,
+      "start_time": 1990,
+      "end_time": 2000,
+      "frames": [
+        "frame_0598.jpg",
+        "frame_0599.jpg",
+        "frame_0600.jpg"
+      ],
+      "transcript": "[33:04] Also, you can make more accurate filters by combining or repeating basic RLC filters.\n[33:11] Anyway, there are two more questions I guess you have in mind.\n[33:15] The first one is the resistor.\n[33:17] The resistor is present in all filters I introduced,"
+    },
+    {
+      "segment_index": 201,
+      "start_time": 2000,
+      "end_time": 2010,
+      "frames": [
+        "frame_0601.jpg",
+        "frame_0602.jpg",
+        "frame_0603.jpg"
+      ],
+      "transcript": "[33:17] The resistor is present in all filters I introduced,\n[33:21] but I didn't mention the purpose of its usage.\n[33:25] It seems that all the work is done by capacitors and inductors.\n[33:29] What is the resistor good for?"
+    },
+    {
+      "segment_index": 202,
+      "start_time": 2010,
+      "end_time": 2020,
+      "frames": [
+        "frame_0604.jpg",
+        "frame_0605.jpg",
+        "frame_0606.jpg"
+      ],
+      "transcript": "[33:29] What is the resistor good for?\n[33:31] Good question.\n[33:32] The second question is about the value of those components.\n[33:36] How to determine the exact values for resistors, capacitors, and inductors?"
+    },
+    {
+      "segment_index": 203,
+      "start_time": 2020,
+      "end_time": 2030,
+      "frames": [
+        "frame_0607.jpg",
+        "frame_0608.jpg",
+        "frame_0609.jpg"
+      ],
+      "transcript": "[33:36] How to determine the exact values for resistors, capacitors, and inductors?\n[33:42] Let me start with the first question.\n[33:46] If the resistor is not used here, a single capacitor can't do anything."
+    },
+    {
+      "segment_index": 204,
+      "start_time": 2030,
+      "end_time": 2040,
+      "frames": [
+        "frame_0610.jpg",
+        "frame_0611.jpg",
+        "frame_0612.jpg"
+      ],
+      "transcript": "[33:46] If the resistor is not used here, a single capacitor can't do anything.\n[33:51] You ask me why?\n[33:53] Look here.\n[33:54] If you apply a signal here, it will never change, because the input and output points are the same."
+    },
+    {
+      "segment_index": 205,
+      "start_time": 2040,
+      "end_time": 2050,
+      "frames": [
+        "frame_0613.jpg",
+        "frame_0614.jpg",
+        "frame_0615.jpg"
+      ],
+      "transcript": "[33:54] If you apply a signal here, it will never change, because the input and output points are the same.\n[34:02] How can the signal here be different from the signal here?\n[34:06] It's impossible, because these two points are directly connected."
+    },
+    {
+      "segment_index": 206,
+      "start_time": 2050,
+      "end_time": 2060,
+      "frames": [
+        "frame_0616.jpg",
+        "frame_0617.jpg",
+        "frame_0618.jpg"
+      ],
+      "transcript": "[34:06] It's impossible, because these two points are directly connected.\n[34:10] These two are in identical nodes.\n[34:13] So, we need the resistor here to separate the input and the output."
+    },
+    {
+      "segment_index": 207,
+      "start_time": 2060,
+      "end_time": 2070,
+      "frames": [
+        "frame_0619.jpg",
+        "frame_0620.jpg",
+        "frame_0621.jpg"
+      ],
+      "transcript": "[34:13] So, we need the resistor here to separate the input and the output.\n[34:20] Then the capacitor can manipulate the signal.\n[34:25] Also, there is another hidden resistor here.\n[34:28] We always select zero ohm for this resistor, so it is not present in the filter circuit."
+    },
+    {
+      "segment_index": 208,
+      "start_time": 2070,
+      "end_time": 2080,
+      "frames": [
+        "frame_0622.jpg",
+        "frame_0623.jpg",
+        "frame_0624.jpg"
+      ],
+      "transcript": "[34:28] We always select zero ohm for this resistor, so it is not present in the filter circuit.\n[34:34] I'm going to call this resistor Ri and this resistor Ro.\n[34:39] The higher the resistance of Ri, the easier the capacitor will manipulate the signal."
+    },
+    {
+      "segment_index": 209,
+      "start_time": 2080,
+      "end_time": 2090,
+      "frames": [
+        "frame_0625.jpg",
+        "frame_0626.jpg",
+        "frame_0627.jpg"
+      ],
+      "transcript": "[34:39] The higher the resistance of Ri, the easier the capacitor will manipulate the signal.\n[34:45] Also, the lower the resistance of Ro, the easier the manipulated signal will reach the output."
+    },
+    {
+      "segment_index": 210,
+      "start_time": 2090,
+      "end_time": 2100,
+      "frames": [
+        "frame_0628.jpg",
+        "frame_0629.jpg",
+        "frame_0630.jpg"
+      ],
+      "transcript": "[34:45] Also, the lower the resistance of Ro, the easier the manipulated signal will reach the output.\n[34:52] So, we always prefer to select zero ohm for our own.\n[34:56] As I told you before, a single capacitor without a resistor can't do anything."
+    },
+    {
+      "segment_index": 211,
+      "start_time": 2100,
+      "end_time": 2110,
+      "frames": [
+        "frame_0631.jpg",
+        "frame_0632.jpg",
+        "frame_0633.jpg"
+      ],
+      "transcript": "[34:56] As I told you before, a single capacitor without a resistor can't do anything.\n[35:01] Now, you may ask, if a filter can't do anything without a resistor,\n[35:07] why do we put a single capacitor near the VCC pin of a microcontroller?"
+    },
+    {
+      "segment_index": 212,
+      "start_time": 2110,
+      "end_time": 2120,
+      "frames": [
+        "frame_0634.jpg",
+        "frame_0635.jpg",
+        "frame_0636.jpg"
+      ],
+      "transcript": "[35:07] why do we put a single capacitor near the VCC pin of a microcontroller?\n[35:12] Nice question.\n[35:13] Here is where you will see the difference between theory and practice.\n[35:17] This is the simplest low-pass filter we are using beside any microcontroller."
+    },
+    {
+      "segment_index": 213,
+      "start_time": 2120,
+      "end_time": 2130,
+      "frames": [
+        "frame_0637.jpg",
+        "frame_0638.jpg",
+        "frame_0639.jpg"
+      ],
+      "transcript": "[35:17] This is the simplest low-pass filter we are using beside any microcontroller.\n[35:26] Is there only a capacitor here?\n[35:28] Absolutely not."
+    },
+    {
+      "segment_index": 214,
+      "start_time": 2130,
+      "end_time": 2140,
+      "frames": [
+        "frame_0640.jpg",
+        "frame_0641.jpg",
+        "frame_0642.jpg"
+      ],
+      "transcript": "[35:28] Absolutely not.\n[35:30] There are two more hidden resistors here.\n[35:34] These resistors are resistance of wires or traces connecting the power supply\n[35:39] to VCC pin of the microcontroller through the capacitor."
+    },
+    {
+      "segment_index": 215,
+      "start_time": 2140,
+      "end_time": 2150,
+      "frames": [
+        "frame_0643.jpg",
+        "frame_0644.jpg",
+        "frame_0645.jpg"
+      ],
+      "transcript": "[35:39] to VCC pin of the microcontroller through the capacitor.\n[35:43] That's why I always emphasize putting the bypass capacitor at the closest point to the VCC or VDD pin"
+    },
+    {
+      "segment_index": 216,
+      "start_time": 2150,
+      "end_time": 2160,
+      "frames": [
+        "frame_0646.jpg",
+        "frame_0647.jpg",
+        "frame_0648.jpg"
+      ],
+      "transcript": "[35:43] That's why I always emphasize putting the bypass capacitor at the closest point to the VCC or VDD pin\n[35:51] of the microcontroller.\n[35:52] By putting the capacitor near the microcontroller, the Ri will grow and Ro will shrink."
+    },
+    {
+      "segment_index": 217,
+      "start_time": 2160,
+      "end_time": 2170,
+      "frames": [
+        "frame_0649.jpg",
+        "frame_0650.jpg",
+        "frame_0651.jpg"
+      ],
+      "transcript": "[35:52] By putting the capacitor near the microcontroller, the Ri will grow and Ro will shrink.\n[36:00] To minimize the Ro and maximize the Ri, we have to put the capacitor as close as possible to the microcontroller.\n[36:08] And then the capacitor can do its job perfectly."
+    },
+    {
+      "segment_index": 218,
+      "start_time": 2170,
+      "end_time": 2180,
+      "frames": [
+        "frame_0652.jpg",
+        "frame_0653.jpg",
+        "frame_0654.jpg"
+      ],
+      "transcript": "[36:08] And then the capacitor can do its job perfectly.\n[36:12] Now is the time to move on to the last question.\n[36:15] How should I select right values for resistor, capacitor, inductor?"
+    },
+    {
+      "segment_index": 219,
+      "start_time": 2180,
+      "end_time": 2190,
+      "frames": [
+        "frame_0655.jpg",
+        "frame_0656.jpg",
+        "frame_0657.jpg"
+      ],
+      "transcript": "[36:15] How should I select right values for resistor, capacitor, inductor?\n[36:20] Suppose that you need to block a specific frequency in your circuit.\n[36:25] For instance, when you realize there is a noise in your circuit,\n[36:28] you have to use your oscilloscope to measure the frequency of that noise,"
+    },
+    {
+      "segment_index": 220,
+      "start_time": 2190,
+      "end_time": 2200,
+      "frames": [
+        "frame_0658.jpg",
+        "frame_0659.jpg",
+        "frame_0660.jpg"
+      ],
+      "transcript": "[36:28] you have to use your oscilloscope to measure the frequency of that noise,\n[36:32] and then set up a notch filter to remove that specific frequency, say 80 kHz."
+    },
+    {
+      "segment_index": 221,
+      "start_time": 2200,
+      "end_time": 2210,
+      "frames": [
+        "frame_0661.jpg",
+        "frame_0662.jpg",
+        "frame_0663.jpg"
+      ],
+      "transcript": "[36:40] This is a notch filter.\n[36:42] In this filter circuit, we have to select proper capacitor and inductor values to stop the frequency\n[36:48] we are intending to kill."
+    },
+    {
+      "segment_index": 222,
+      "start_time": 2210,
+      "end_time": 2220,
+      "frames": [
+        "frame_0664.jpg",
+        "frame_0665.jpg",
+        "frame_0666.jpg"
+      ],
+      "transcript": "[36:48] we are intending to kill.\n[36:50] I mean 80 kHz.\n[36:52] By using this formula, you can select capacitors and inductors to resonate at the desired frequency"
+    },
+    {
+      "segment_index": 223,
+      "start_time": 2220,
+      "end_time": 2230,
+      "frames": [
+        "frame_0667.jpg",
+        "frame_0668.jpg",
+        "frame_0669.jpg"
+      ],
+      "transcript": "[36:52] By using this formula, you can select capacitors and inductors to resonate at the desired frequency\n[37:01] to block the noise.\n[37:03] Remember, at the resonant frequency, the impedance of this structure will be infinite,\n[37:09] and it will block the 80 kHz frequency noise."
+    },
+    {
+      "segment_index": 224,
+      "start_time": 2230,
+      "end_time": 2240,
+      "frames": [
+        "frame_0670.jpg",
+        "frame_0671.jpg",
+        "frame_0672.jpg"
+      ],
+      "transcript": "[37:09] and it will block the 80 kHz frequency noise.\n[37:13] One simple option is to select the desired value for the capacitor,\n[37:18] and calculate the inductor value by using this formula."
+    },
+    {
+      "segment_index": 225,
+      "start_time": 2240,
+      "end_time": 2250,
+      "frames": [
+        "frame_0673.jpg",
+        "frame_0674.jpg",
+        "frame_0675.jpg"
+      ],
+      "transcript": "[37:18] and calculate the inductor value by using this formula.\n[37:24] For example, if I select 1 \u00b5F for the capacitor, then by using this formula,"
+    },
+    {
+      "segment_index": 226,
+      "start_time": 2250,
+      "end_time": 2260,
+      "frames": [
+        "frame_0676.jpg",
+        "frame_0677.jpg",
+        "frame_0678.jpg"
+      ],
+      "transcript": "[37:24] For example, if I select 1 \u00b5F for the capacitor, then by using this formula,\n[37:37] by choosing 1 \u00b5F for this capacitor, the value of this inductor has to be"
+    },
+    {
+      "segment_index": 227,
+      "start_time": 2260,
+      "end_time": 2270,
+      "frames": [
+        "frame_0679.jpg",
+        "frame_0680.jpg",
+        "frame_0681.jpg"
+      ],
+      "transcript": "[37:37] by choosing 1 \u00b5F for this capacitor, the value of this inductor has to be\n[37:43] 3.96 \u00b5F to block the noise perfectly.\n[37:49] 3.96 \u00b5F inductor is not a standard value, and it is not available."
+    },
+    {
+      "segment_index": 228,
+      "start_time": 2270,
+      "end_time": 2280,
+      "frames": [
+        "frame_0682.jpg",
+        "frame_0683.jpg",
+        "frame_0684.jpg"
+      ],
+      "transcript": "[37:49] 3.96 \u00b5F inductor is not a standard value, and it is not available.\n[37:55] You can use other values near 3.96 \u00b5F, or you can combine inductors to make something near the desired value."
+    },
+    {
+      "segment_index": 229,
+      "start_time": 2280,
+      "end_time": 2290,
+      "frames": [
+        "frame_0685.jpg",
+        "frame_0686.jpg",
+        "frame_0687.jpg"
+      ],
+      "transcript": "[37:55] You can use other values near 3.96 \u00b5F, or you can combine inductors to make something near the desired value.\n[38:04] 3.96 \u00b5F and 0.47 \u00b5F are standard values for inductors, and they are available in the market."
+    },
+    {
+      "segment_index": 230,
+      "start_time": 2290,
+      "end_time": 2300,
+      "frames": [
+        "frame_0688.jpg",
+        "frame_0689.jpg",
+        "frame_0690.jpg"
+      ],
+      "transcript": "[38:04] 3.96 \u00b5F and 0.47 \u00b5F are standard values for inductors, and they are available in the market.\n[38:18] The total inductance of these two is 3.77 \u00b5F, which is near the desired inductance."
+    },
+    {
+      "segment_index": 231,
+      "start_time": 2300,
+      "end_time": 2310,
+      "frames": [
+        "frame_0691.jpg",
+        "frame_0692.jpg",
+        "frame_0693.jpg"
+      ],
+      "transcript": "[38:18] The total inductance of these two is 3.77 \u00b5F, which is near the desired inductance.\n[38:25] If I replace this value here, and this value here, I will get a new frequency, the resonant frequency equal to..."
+    },
+    {
+      "segment_index": 232,
+      "start_time": 2310,
+      "end_time": 2320,
+      "frames": [
+        "frame_0694.jpg",
+        "frame_0695.jpg",
+        "frame_0696.jpg"
+      ],
+      "transcript": "[38:25] If I replace this value here, and this value here, I will get a new frequency, the resonant frequency equal to...\n[38:39] By using a 3.77 \u00b5H inductor along with 1 \u00b5F capacitor, the filter will block frequencies around 81.9 kHz,"
+    },
+    {
+      "segment_index": 233,
+      "start_time": 2320,
+      "end_time": 2330,
+      "frames": [
+        "frame_0697.jpg",
+        "frame_0698.jpg",
+        "frame_0699.jpg"
+      ],
+      "transcript": "[38:39] By using a 3.77 \u00b5H inductor along with 1 \u00b5F capacitor, the filter will block frequencies around 81.9 kHz,"
+    },
+    {
+      "segment_index": 234,
+      "start_time": 2330,
+      "end_time": 2340,
+      "frames": [
+        "frame_0700.jpg",
+        "frame_0701.jpg",
+        "frame_0702.jpg"
+      ],
+      "transcript": "[38:39] By using a 3.77 \u00b5H inductor along with 1 \u00b5F capacitor, the filter will block frequencies around 81.9 kHz,\n[38:50] which is close enough to the disturbing frequency. When an inductor and a capacitor are resonating,\n[38:57] actually they are making love. They are dancing. It's so beautiful. Anyway, in formulas like this,"
+    },
+    {
+      "segment_index": 235,
+      "start_time": 2340,
+      "end_time": 2350,
+      "frames": [
+        "frame_0703.jpg",
+        "frame_0704.jpg",
+        "frame_0705.jpg"
+      ],
+      "transcript": "[38:57] actually they are making love. They are dancing. It's so beautiful. Anyway, in formulas like this,\n[39:05] we always suppose that the inductors and capacitors are ideal. Real inductors and real capacitors may"
+    },
+    {
+      "segment_index": 236,
+      "start_time": 2350,
+      "end_time": 2360,
+      "frames": [
+        "frame_0706.jpg",
+        "frame_0707.jpg",
+        "frame_0708.jpg"
+      ],
+      "transcript": "[39:05] we always suppose that the inductors and capacitors are ideal. Real inductors and real capacitors may\n[39:13] behave a bit different. By the way, you can find formulas like this for every type of RLC."
+    },
+    {
+      "segment_index": 237,
+      "start_time": 2360,
+      "end_time": 2370,
+      "frames": [
+        "frame_0709.jpg",
+        "frame_0710.jpg",
+        "frame_0711.jpg"
+      ],
+      "transcript": "[39:13] behave a bit different. By the way, you can find formulas like this for every type of RLC.\n[39:20] RL and RC filters on the internet. Also, there are online filter calculators there. You can use them.\n[39:28] As the last point, I'm going to talk about the impact of resistor value."
+    },
+    {
+      "segment_index": 238,
+      "start_time": 2370,
+      "end_time": 2380,
+      "frames": [
+        "frame_0712.jpg",
+        "frame_0713.jpg",
+        "frame_0714.jpg"
+      ],
+      "transcript": "[39:28] As the last point, I'm going to talk about the impact of resistor value.\n[39:35] This resistor here is used to attenuate the power of the incoming signal, so the capacitor and the"
+    },
+    {
+      "segment_index": 239,
+      "start_time": 2380,
+      "end_time": 2390,
+      "frames": [
+        "frame_0715.jpg",
+        "frame_0716.jpg",
+        "frame_0717.jpg"
+      ],
+      "transcript": "[39:35] This resistor here is used to attenuate the power of the incoming signal, so the capacitor and the\n[39:41] inductor can do their jobs easily. By increasing the value of this resistor, the capacitors and inductor's\n[39:48] capabilities in filtering will be boosted, but the power of the output signal will be decreased. In"
+    },
+    {
+      "segment_index": 240,
+      "start_time": 2390,
+      "end_time": 2400,
+      "frames": [
+        "frame_0718.jpg",
+        "frame_0719.jpg",
+        "frame_0720.jpg"
+      ],
+      "transcript": "[39:48] capabilities in filtering will be boosted, but the power of the output signal will be decreased. In\n[39:55] contrast, by decreasing the value of this resistor, it will be hard for the capacitor and inductor to"
+    },
+    {
+      "segment_index": 241,
+      "start_time": 2400,
+      "end_time": 2410,
+      "frames": [
+        "frame_0721.jpg",
+        "frame_0722.jpg",
+        "frame_0723.jpg"
+      ],
+      "transcript": "[39:55] contrast, by decreasing the value of this resistor, it will be hard for the capacitor and inductor to\n[40:02] manipulate the incoming signal, but the output signal will remain strong. Even though RLC filters are nice,"
+    },
+    {
+      "segment_index": 242,
+      "start_time": 2410,
+      "end_time": 2420,
+      "frames": [
+        "frame_0724.jpg",
+        "frame_0725.jpg",
+        "frame_0726.jpg"
+      ],
+      "transcript": "[40:02] manipulate the incoming signal, but the output signal will remain strong. Even though RLC filters are nice,\n[40:10] there are other filters that are superior to RLC filters, and you have to learn about them.\n[40:15] Anyway, we have reached the final moments of this video. I hope you enjoyed this video and learned"
+    },
+    {
+      "segment_index": 243,
+      "start_time": 2420,
+      "end_time": 2430,
+      "frames": [
+        "frame_0727.jpg",
+        "frame_0728.jpg",
+        "frame_0729.jpg"
+      ],
+      "transcript": "[40:15] Anyway, we have reached the final moments of this video. I hope you enjoyed this video and learned\n[40:21] something new. Thanks for watching. If you found this video helpful, please give me a thumbs up,\n[40:27] and if you liked this video, make sure to subscribe for more."
+    },
+    {
+      "segment_index": 244,
+      "start_time": 2430,
+      "end_time": 2431.5,
+      "frames": [],
+      "transcript": "[40:27] and if you liked this video, make sure to subscribe for more."
+    }
+  ]
+}

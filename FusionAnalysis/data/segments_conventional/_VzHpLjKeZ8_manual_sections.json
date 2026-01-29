@@ -1,0 +1,4147 @@
+{
+  "video_id": "_VzHpLjKeZ8",
+  "duration": 2956.22,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg",
+        "frame_0003.jpg",
+        "frame_0004.jpg",
+        "frame_0005.jpg"
+      ],
+      "transcript": "[0:00] Hello everyone and welcome to another video. So today I'd like to introduce the\n[0:03] idea of PID control. So today we're going to keep the discussion fairly brief and\n[0:08] fairly high level because we're going to have several other dedicated videos"
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0006.jpg",
+        "frame_0007.jpg",
+        "frame_0008.jpg",
+        "frame_0009.jpg",
+        "frame_0010.jpg",
+        "frame_0011.jpg"
+      ],
+      "transcript": "[0:08] fairly high level because we're going to have several other dedicated videos\n[0:12] which explore various aspects of PID controls in much greater detail. So this\n[0:16] extended discussion is very well warranted because PID controllers are"
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0012.jpg",
+        "frame_0013.jpg",
+        "frame_0014.jpg",
+        "frame_0015.jpg",
+        "frame_0016.jpg",
+        "frame_0017.jpg"
+      ],
+      "transcript": "[0:16] extended discussion is very well warranted because PID controllers are\n[0:20] probably the most popular control scheme in history. So if you spend any amount of\n[0:25] time working with controllers or looking at control systems you're almost\n[0:28] guaranteed to run across at least one or two PID controllers throughout the"
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0018.jpg",
+        "frame_0019.jpg",
+        "frame_0020.jpg",
+        "frame_0021.jpg",
+        "frame_0022.jpg",
+        "frame_0023.jpg"
+      ],
+      "transcript": "[0:28] guaranteed to run across at least one or two PID controllers throughout the\n[0:32] course of your career. So for today I just want to get everyone comfortable with\n[0:36] some of the core concepts surrounding PID control. So if that sounds like fun let's"
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0024.jpg",
+        "frame_0025.jpg",
+        "frame_0026.jpg",
+        "frame_0027.jpg",
+        "frame_0028.jpg",
+        "frame_0029.jpg"
+      ],
+      "transcript": "[0:36] some of the core concepts surrounding PID control. So if that sounds like fun let's\n[0:40] take a look at the board over here. Alright so to set the stage for PID control\n[0:44] let's go back to our standard feedback control architecture that we've\n[0:48] discussed in previous videos. So in this scheme just to refresh your memory right"
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0030.jpg",
+        "frame_0031.jpg",
+        "frame_0032.jpg",
+        "frame_0033.jpg",
+        "frame_0034.jpg",
+        "frame_0035.jpg"
+      ],
+      "transcript": "[0:48] discussed in previous videos. So in this scheme just to refresh your memory right\n[0:52] we've got some kind of plant here G and the idea is that this plant produces some\n[0:57] kind of output and we would like this output to match some reference signal. If"
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0036.jpg",
+        "frame_0037.jpg",
+        "frame_0038.jpg",
+        "frame_0039.jpg",
+        "frame_0040.jpg",
+        "frame_0041.jpg"
+      ],
+      "transcript": "[0:57] kind of output and we would like this output to match some reference signal. If\n[1:01] they don't match we're going to take their difference to create some kind of\n[1:04] error signal and the controller is then going to look at this error signal and\n[1:08] compute a control signal which is applied to the plant so that hopefully in"
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0042.jpg",
+        "frame_0043.jpg",
+        "frame_0044.jpg",
+        "frame_0045.jpg",
+        "frame_0046.jpg",
+        "frame_0047.jpg"
+      ],
+      "transcript": "[1:08] compute a control signal which is applied to the plant so that hopefully in\n[1:13] closed loop this output signal Y will eventually match the input reference\n[1:18] signal R. So again that's the grand scheme that's the very general idea of a"
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0048.jpg",
+        "frame_0049.jpg",
+        "frame_0050.jpg",
+        "frame_0051.jpg",
+        "frame_0052.jpg",
+        "frame_0053.jpg"
+      ],
+      "transcript": "[1:18] signal R. So again that's the grand scheme that's the very general idea of a\n[1:22] simple sometimes referred to as an inner loop or a single loop controller right. So the\n[1:27] whole game at this point is what does this controller look like right. Let's"
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0054.jpg",
+        "frame_0055.jpg",
+        "frame_0056.jpg",
+        "frame_0057.jpg",
+        "frame_0058.jpg",
+        "frame_0059.jpg"
+      ],
+      "transcript": "[1:27] whole game at this point is what does this controller look like right. Let's\n[1:32] think about this what is probably the simplest thing that you can do here. Well\n[1:36] the simplest thing you could do is you can probably just take this E and run it"
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0060.jpg",
+        "frame_0061.jpg",
+        "frame_0062.jpg",
+        "frame_0063.jpg",
+        "frame_0064.jpg",
+        "frame_0065.jpg"
+      ],
+      "transcript": "[1:36] the simplest thing you could do is you can probably just take this E and run it\n[1:41] into a gain of some value let's call this gain K right. So something like this this is"
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0066.jpg",
+        "frame_0067.jpg",
+        "frame_0068.jpg",
+        "frame_0069.jpg",
+        "frame_0070.jpg",
+        "frame_0071.jpg"
+      ],
+      "transcript": "[1:41] into a gain of some value let's call this gain K right. So something like this this is\n[1:51] about the dumbest thing you could possibly do right. This is the simplest\n[1:55] controller and in this case let's think about what is the control law. Alright so"
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0072.jpg",
+        "frame_0073.jpg",
+        "frame_0074.jpg",
+        "frame_0075.jpg",
+        "frame_0076.jpg",
+        "frame_0077.jpg"
+      ],
+      "transcript": "[1:55] controller and in this case let's think about what is the control law. Alright so\n[2:00] the control law basically says that the control signal at any given time it's\n[2:05] just going to be here which is just nothing more than this gain K times the"
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0078.jpg",
+        "frame_0079.jpg",
+        "frame_0080.jpg",
+        "frame_0081.jpg",
+        "frame_0082.jpg",
+        "frame_0083.jpg"
+      ],
+      "transcript": "[2:05] just going to be here which is just nothing more than this gain K times the\n[2:10] error. Okay so you can see that the control signal it's just the error\n[2:16] multiplied by a number K. So you can say that the control signal is actually"
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0084.jpg",
+        "frame_0085.jpg",
+        "frame_0086.jpg",
+        "frame_0087.jpg",
+        "frame_0088.jpg",
+        "frame_0089.jpg"
+      ],
+      "transcript": "[2:16] multiplied by a number K. So you can say that the control signal is actually\n[2:21] directly proportional to the error right. It's proportional by this gain factor K.\n[2:26] So this is actually what's referred to as proportional control right. And this P here"
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0090.jpg",
+        "frame_0091.jpg",
+        "frame_0092.jpg",
+        "frame_0093.jpg",
+        "frame_0094.jpg",
+        "frame_0095.jpg"
+      ],
+      "transcript": "[2:26] So this is actually what's referred to as proportional control right. And this P here\n[2:35] is actually the same P in the PID scheme. So this is pretty much the simplest"
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0096.jpg",
+        "frame_0097.jpg",
+        "frame_0098.jpg",
+        "frame_0099.jpg",
+        "frame_0100.jpg",
+        "frame_0101.jpg"
+      ],
+      "transcript": "[2:35] is actually the same P in the PID scheme. So this is pretty much the simplest\n[2:42] scheme it's actually a P it's a type of PID controller is the simplest controller you\n[2:47] could come up with right. It's nothing more than take the error multiply it by a"
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0102.jpg",
+        "frame_0103.jpg",
+        "frame_0104.jpg",
+        "frame_0105.jpg",
+        "frame_0106.jpg",
+        "frame_0107.jpg"
+      ],
+      "transcript": "[2:47] could come up with right. It's nothing more than take the error multiply it by a\n[2:51] static gain K to compute your control U. Okay so that's the simplest thing you can\n[2:58] do and what PID control is and PID controllers is just extending on this. So"
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0108.jpg",
+        "frame_0109.jpg",
+        "frame_0110.jpg",
+        "frame_0111.jpg",
+        "frame_0112.jpg",
+        "frame_0113.jpg"
+      ],
+      "transcript": "[2:58] do and what PID control is and PID controllers is just extending on this. So\n[3:04] instead of just having one term what if we had multiple terms like what what else\n[3:08] could we potentially do. So the thing we could do is let's start adding on extra"
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0114.jpg",
+        "frame_0115.jpg",
+        "frame_0116.jpg",
+        "frame_0117.jpg",
+        "frame_0118.jpg",
+        "frame_0119.jpg"
+      ],
+      "transcript": "[3:08] could we potentially do. So the thing we could do is let's start adding on extra\n[3:14] terms to our control law. So to distinguish this we're gonna have multiple\n[3:18] gains. So I'm actually gonna call this KP. Okay and actually I'm gonna draw this in a"
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0120.jpg",
+        "frame_0121.jpg",
+        "frame_0122.jpg",
+        "frame_0123.jpg",
+        "frame_0124.jpg",
+        "frame_0125.jpg"
+      ],
+      "transcript": "[3:18] gains. So I'm actually gonna call this KP. Okay and actually I'm gonna draw this in a\n[3:23] slightly different fashion. I'm gonna move this up a little bit you're gonna see\n[3:27] why we're doing this in a second. I'm gonna do it like this. Okay so you've got"
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0126.jpg",
+        "frame_0127.jpg",
+        "frame_0128.jpg",
+        "frame_0129.jpg",
+        "frame_0130.jpg",
+        "frame_0131.jpg"
+      ],
+      "transcript": "[3:27] why we're doing this in a second. I'm gonna do it like this. Okay so you've got\n[3:32] this KP. Okay really I haven't done anything fancy yet right. But now what we're\n[3:39] gonna do is let's add on another term here. So the next term in my control law it's"
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0132.jpg",
+        "frame_0133.jpg",
+        "frame_0134.jpg",
+        "frame_0135.jpg",
+        "frame_0136.jpg",
+        "frame_0137.jpg"
+      ],
+      "transcript": "[3:39] gonna do is let's add on another term here. So the next term in my control law it's\n[3:44] actually going to be again KI multiplied by the integral of the error D tau from"
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0138.jpg",
+        "frame_0139.jpg",
+        "frame_0140.jpg",
+        "frame_0141.jpg",
+        "frame_0142.jpg",
+        "frame_0143.jpg"
+      ],
+      "transcript": "[3:44] actually going to be again KI multiplied by the integral of the error D tau from\n[3:52] times zero to time T. Okay so this term right here is sometimes referred to as an\n[3:57] integral component right. And again this I here is this I in the PID scheme right."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0144.jpg",
+        "frame_0145.jpg",
+        "frame_0146.jpg",
+        "frame_0147.jpg",
+        "frame_0148.jpg",
+        "frame_0149.jpg"
+      ],
+      "transcript": "[3:57] integral component right. And again this I here is this I in the PID scheme right.\n[4:05] And then what we're gonna do is let's add on a third term which is going to be KD times the"
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0150.jpg",
+        "frame_0151.jpg",
+        "frame_0152.jpg",
+        "frame_0153.jpg",
+        "frame_0154.jpg",
+        "frame_0155.jpg"
+      ],
+      "transcript": "[4:05] And then what we're gonna do is let's add on a third term which is going to be KD times the\n[4:16] time rate of change of the error right. And this is sometimes referred to as a"
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0156.jpg",
+        "frame_0157.jpg",
+        "frame_0158.jpg",
+        "frame_0159.jpg",
+        "frame_0160.jpg",
+        "frame_0161.jpg"
+      ],
+      "transcript": "[4:16] time rate of change of the error right. And this is sometimes referred to as a\n[4:21] derivative right. And again the D here is this D in PID control. So we can see that\n[4:28] PID control stands for proportional integral derivative because it basically has the"
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0162.jpg",
+        "frame_0163.jpg",
+        "frame_0164.jpg",
+        "frame_0165.jpg",
+        "frame_0166.jpg",
+        "frame_0167.jpg"
+      ],
+      "transcript": "[4:28] PID control stands for proportional integral derivative because it basically has the\n[4:35] control law being computed using three terms. So this term right here is the"
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0168.jpg",
+        "frame_0169.jpg",
+        "frame_0170.jpg",
+        "frame_0171.jpg",
+        "frame_0172.jpg",
+        "frame_0173.jpg"
+      ],
+      "transcript": "[4:35] control law being computed using three terms. So this term right here is the\n[4:40] proportional part. Let's go ahead and maybe I'm gonna put this here in blue.\n[4:47] Let's call this U proportional. Okay. Or sorry I'm gonna do this in green and then"
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0174.jpg",
+        "frame_0175.jpg",
+        "frame_0176.jpg",
+        "frame_0177.jpg",
+        "frame_0178.jpg",
+        "frame_0179.jpg"
+      ],
+      "transcript": "[4:47] Let's call this U proportional. Okay. Or sorry I'm gonna do this in green and then\n[4:53] let's go ahead and put this I term here this entire I term here is gonna be U I."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0180.jpg",
+        "frame_0181.jpg",
+        "frame_0182.jpg",
+        "frame_0183.jpg",
+        "frame_0184.jpg",
+        "frame_0185.jpg"
+      ],
+      "transcript": "[4:53] let's go ahead and put this I term here this entire I term here is gonna be U I.\n[5:02] Okay and then finally this term down here is U D. Okay so we see that the control"
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0186.jpg",
+        "frame_0187.jpg",
+        "frame_0188.jpg",
+        "frame_0189.jpg",
+        "frame_0190.jpg",
+        "frame_0191.jpg"
+      ],
+      "transcript": "[5:02] Okay and then finally this term down here is U D. Okay so we see that the control\n[5:13] signal here is made up of three components so maybe let's actually draw this in a\n[5:18] block diagram format because I I like to always see things in block diagram format."
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0192.jpg",
+        "frame_0193.jpg",
+        "frame_0194.jpg",
+        "frame_0195.jpg",
+        "frame_0196.jpg",
+        "frame_0197.jpg"
+      ],
+      "transcript": "[5:18] block diagram format because I I like to always see things in block diagram format.\n[5:23] I mean this is an explicit control law right. You could go ahead and implement\n[5:26] this in in a you know C++ or something like that but I like to think in terms of"
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0198.jpg",
+        "frame_0199.jpg",
+        "frame_0200.jpg",
+        "frame_0201.jpg",
+        "frame_0202.jpg",
+        "frame_0203.jpg"
+      ],
+      "transcript": "[5:26] this in in a you know C++ or something like that but I like to think in terms of\n[5:31] block diagram so let's translate this control law into a block diagram. So we\n[5:35] already have this term right here right. You can see clearly that right here this"
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0204.jpg",
+        "frame_0205.jpg",
+        "frame_0206.jpg",
+        "frame_0207.jpg",
+        "frame_0208.jpg",
+        "frame_0209.jpg"
+      ],
+      "transcript": "[5:35] already have this term right here right. You can see clearly that right here this\n[5:41] signal here is U P right. It's the green part right. It's nothing more than K P\n[5:47] times the error. Now we got to get this this blue part right. It's K I times the"
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0210.jpg",
+        "frame_0211.jpg",
+        "frame_0212.jpg",
+        "frame_0213.jpg",
+        "frame_0214.jpg",
+        "frame_0215.jpg"
+      ],
+      "transcript": "[5:47] times the error. Now we got to get this this blue part right. It's K I times the\n[5:52] integral of the error. So what we need to do here is we need to integrate and I'm"
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0216.jpg",
+        "frame_0217.jpg",
+        "frame_0218.jpg",
+        "frame_0219.jpg",
+        "frame_0220.jpg",
+        "frame_0221.jpg"
+      ],
+      "transcript": "[5:52] integral of the error. So what we need to do here is we need to integrate and I'm\n[6:00] going to write 1 over s for the Laplace version of an integral. So this is an\n[6:03] integrator right. So what this thing does is you give it E it just accumulates or"
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0222.jpg",
+        "frame_0223.jpg",
+        "frame_0224.jpg",
+        "frame_0225.jpg",
+        "frame_0226.jpg",
+        "frame_0227.jpg"
+      ],
+      "transcript": "[6:03] integrator right. So what this thing does is you give it E it just accumulates or\n[6:11] integrates all the error that's coming in. So coming out of this is basically this\n[6:15] term here integral of E tau D tau from 0 to time T right. That's what that"
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0228.jpg",
+        "frame_0229.jpg",
+        "frame_0230.jpg",
+        "frame_0231.jpg",
+        "frame_0232.jpg",
+        "frame_0233.jpg"
+      ],
+      "transcript": "[6:15] term here integral of E tau D tau from 0 to time T right. That's what that\n[6:20] integrator block does. It just does the the integration of the error signal. Now all I\n[6:24] got to do is multiply this by again K I right. So now here's your K I right and"
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0234.jpg",
+        "frame_0235.jpg",
+        "frame_0236.jpg",
+        "frame_0237.jpg",
+        "frame_0238.jpg",
+        "frame_0239.jpg"
+      ],
+      "transcript": "[6:24] got to do is multiply this by again K I right. So now here's your K I right and\n[6:30] then that goes into this summing block and right here we have the signal U I time T\n[6:39] right. That's this signal right here. Okay and then lastly what we've got to do"
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0240.jpg",
+        "frame_0241.jpg",
+        "frame_0242.jpg",
+        "frame_0243.jpg",
+        "frame_0244.jpg",
+        "frame_0245.jpg"
+      ],
+      "transcript": "[6:39] right. That's this signal right here. Okay and then lastly what we've got to do\n[6:44] is take into account this term right. So what this term says is you need to\n[6:48] compute the instantaneous time rate of change or the error dot right. So this is"
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0246.jpg",
+        "frame_0247.jpg",
+        "frame_0248.jpg",
+        "frame_0249.jpg",
+        "frame_0250.jpg",
+        "frame_0251.jpg"
+      ],
+      "transcript": "[6:48] compute the instantaneous time rate of change or the error dot right. So this is\n[6:54] the derivative of the error at time T. So again let's go ahead and branch this off\n[6:59] and I'm gonna go write it like this again. Let's just use the Laplace version of an"
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0252.jpg",
+        "frame_0253.jpg",
+        "frame_0254.jpg",
+        "frame_0255.jpg",
+        "frame_0256.jpg",
+        "frame_0257.jpg"
+      ],
+      "transcript": "[6:59] and I'm gonna go write it like this again. Let's just use the Laplace version of an\n[7:04] integrator. So this is a an S and you can think about this block is just a\n[7:08] different she a tour right whose sole job in life is you give it a signal it"
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0258.jpg",
+        "frame_0259.jpg",
+        "frame_0260.jpg",
+        "frame_0261.jpg",
+        "frame_0262.jpg",
+        "frame_0263.jpg"
+      ],
+      "transcript": "[7:08] different she a tour right whose sole job in life is you give it a signal it\n[7:14] computes its time rate of change of that signal. So coming out here is E dot this\n[7:19] term so I just need to now multiply it by K D. K D right and that goes into the"
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0264.jpg",
+        "frame_0265.jpg",
+        "frame_0266.jpg",
+        "frame_0267.jpg",
+        "frame_0268.jpg",
+        "frame_0269.jpg"
+      ],
+      "transcript": "[7:19] term so I just need to now multiply it by K D. K D right and that goes into the\n[7:26] summing block and now this signal here is our U D. Okay so this is what's great"
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0270.jpg",
+        "frame_0271.jpg",
+        "frame_0272.jpg",
+        "frame_0273.jpg",
+        "frame_0274.jpg",
+        "frame_0275.jpg"
+      ],
+      "transcript": "[7:26] summing block and now this signal here is our U D. Okay so this is what's great\n[7:36] about a PID controller is that it is actually surprisingly simple that's all"
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0276.jpg",
+        "frame_0277.jpg",
+        "frame_0278.jpg",
+        "frame_0279.jpg",
+        "frame_0280.jpg",
+        "frame_0281.jpg"
+      ],
+      "transcript": "[7:36] about a PID controller is that it is actually surprisingly simple that's all\n[7:40] there is to it. It's just a controller where you have the error coming in and\n[7:45] the error then gets sort of split into these three branches or these three\n[7:48] terms and that's all you do right. You just take the error multiply by K P that"
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0282.jpg",
+        "frame_0283.jpg",
+        "frame_0284.jpg",
+        "frame_0285.jpg",
+        "frame_0286.jpg",
+        "frame_0287.jpg"
+      ],
+      "transcript": "[7:48] terms and that's all you do right. You just take the error multiply by K P that\n[7:53] gives you the proportional component of control. There's also an integral\n[7:57] component of control which you get by basically integrating the error and then"
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0288.jpg",
+        "frame_0289.jpg",
+        "frame_0290.jpg",
+        "frame_0291.jpg",
+        "frame_0292.jpg",
+        "frame_0293.jpg"
+      ],
+      "transcript": "[7:57] component of control which you get by basically integrating the error and then\n[8:00] multiplying by K I or you can flip these around right from our block diagram\n[8:04] algebra discussion to the fact that this is a linear system you can actually it\n[8:07] doesn't matter if the K I comes before or after the integral right and then same"
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0294.jpg",
+        "frame_0295.jpg",
+        "frame_0296.jpg",
+        "frame_0297.jpg",
+        "frame_0298.jpg",
+        "frame_0299.jpg"
+      ],
+      "transcript": "[8:07] doesn't matter if the K I comes before or after the integral right and then same\n[8:12] thing for the derivative right you can basically switch this around it can be\n[8:15] K D times S or S times K D it doesn't matter but at the end of the day you have\n[8:19] this third branch here which is basically has something to do with the"
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0300.jpg",
+        "frame_0301.jpg",
+        "frame_0302.jpg",
+        "frame_0303.jpg",
+        "frame_0304.jpg",
+        "frame_0305.jpg"
+      ],
+      "transcript": "[8:19] this third branch here which is basically has something to do with the\n[8:23] derivative of the error right so in a nutshell that's pretty much what this does\n[8:29] right so computing it is really really simple okay now I'm gonna put in your mind"
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0306.jpg",
+        "frame_0307.jpg",
+        "frame_0308.jpg",
+        "frame_0309.jpg",
+        "frame_0310.jpg",
+        "frame_0311.jpg"
+      ],
+      "transcript": "[8:29] right so computing it is really really simple okay now I'm gonna put in your mind\n[8:35] right now just stick in the back your head that yes this seems simple but there\n[8:39] are a lot of ways this can go pear-shaped and we're gonna talk about that in other"
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0312.jpg",
+        "frame_0313.jpg",
+        "frame_0314.jpg",
+        "frame_0315.jpg",
+        "frame_0316.jpg",
+        "frame_0317.jpg"
+      ],
+      "transcript": "[8:39] are a lot of ways this can go pear-shaped and we're gonna talk about that in other\n[8:42] dedicated videos but for the time being let's assume everything is hunky-dory and\n[8:47] we're gonna go ahead and maybe let's examine each one of these terms this UP UI and UD"
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0318.jpg",
+        "frame_0319.jpg",
+        "frame_0320.jpg",
+        "frame_0321.jpg",
+        "frame_0322.jpg",
+        "frame_0323.jpg"
+      ],
+      "transcript": "[8:47] we're gonna go ahead and maybe let's examine each one of these terms this UP UI and UD\n[8:54] or the proportional control the integral control and the derivative control\n[8:58] portions in isolation by themselves just so we can get a better feel for what"
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0324.jpg",
+        "frame_0325.jpg",
+        "frame_0326.jpg",
+        "frame_0327.jpg",
+        "frame_0328.jpg",
+        "frame_0329.jpg"
+      ],
+      "transcript": "[8:58] portions in isolation by themselves just so we can get a better feel for what\n[9:02] they what they do and how they behave all right so to get a better feel for what\n[9:07] each of these terms do why don't we start with just the proportional control"
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0330.jpg",
+        "frame_0331.jpg",
+        "frame_0332.jpg",
+        "frame_0333.jpg",
+        "frame_0334.jpg",
+        "frame_0335.jpg"
+      ],
+      "transcript": "[9:07] each of these terms do why don't we start with just the proportional control\n[9:11] and what we can do is let's consider it by itself so in other words let's see if\n[9:16] we can ignore the integrator so I'm gonna have a little sticker here that says\n[9:19] just ignore that and let's also ignore the the derivative component so the only"
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0336.jpg",
+        "frame_0337.jpg",
+        "frame_0338.jpg",
+        "frame_0339.jpg",
+        "frame_0340.jpg",
+        "frame_0341.jpg"
+      ],
+      "transcript": "[9:19] just ignore that and let's also ignore the the derivative component so the only\n[9:24] thing we've got is this proportional control right and look again we said\n[9:29] earlier at the beginning of the discussion that this is probably the simplest"
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0342.jpg",
+        "frame_0343.jpg",
+        "frame_0344.jpg",
+        "frame_0345.jpg",
+        "frame_0346.jpg",
+        "frame_0347.jpg"
+      ],
+      "transcript": "[9:29] earlier at the beginning of the discussion that this is probably the simplest\n[9:31] controller you can have so let's see if we can understand how it behaves and\n[9:34] just some general characteristics about it right okay so what I've done here is\n[9:39] let's just look at since we're only caring about the controller let's look at the"
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0348.jpg",
+        "frame_0349.jpg",
+        "frame_0350.jpg",
+        "frame_0351.jpg",
+        "frame_0352.jpg",
+        "frame_0353.jpg"
+      ],
+      "transcript": "[9:39] let's just look at since we're only caring about the controller let's look at the\n[9:43] error signal going in and what the control signal coming out might be and\n[9:46] again the control signal is just UP right it's only that's the only component so"
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0354.jpg",
+        "frame_0355.jpg",
+        "frame_0356.jpg",
+        "frame_0357.jpg",
+        "frame_0358.jpg",
+        "frame_0359.jpg"
+      ],
+      "transcript": "[9:46] again the control signal is just UP right it's only that's the only component so\n[9:51] I'm gonna draw the error in purple and let's go ahead and say that\n[9:55] everything is fine everything is fine and we have zero steady state error or\n[9:59] excuse me zero error and then at some point we introduce some error so that"
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0360.jpg",
+        "frame_0361.jpg",
+        "frame_0362.jpg",
+        "frame_0363.jpg",
+        "frame_0364.jpg",
+        "frame_0365.jpg"
+      ],
+      "transcript": "[9:59] excuse me zero error and then at some point we introduce some error so that\n[10:04] what what that could mean is that suddenly you know everything is fine the output"
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0366.jpg",
+        "frame_0367.jpg",
+        "frame_0368.jpg",
+        "frame_0369.jpg",
+        "frame_0370.jpg",
+        "frame_0371.jpg"
+      ],
+      "transcript": "[10:04] what what that could mean is that suddenly you know everything is fine the output\n[10:10] is actually matching the reference and then at some point we maybe have a step\n[10:14] input of magnitude a at some time and that will create a jump in the reference"
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0372.jpg",
+        "frame_0373.jpg",
+        "frame_0374.jpg",
+        "frame_0375.jpg",
+        "frame_0376.jpg",
+        "frame_0377.jpg"
+      ],
+      "transcript": "[10:14] input of magnitude a at some time and that will create a jump in the reference\n[10:21] signal the plant can't respond instantaneously right so this signal Y is\n[10:27] still going to be at the old value so when you introduce this step there's"
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0378.jpg",
+        "frame_0379.jpg",
+        "frame_0380.jpg",
+        "frame_0381.jpg",
+        "frame_0382.jpg",
+        "frame_0383.jpg"
+      ],
+      "transcript": "[10:27] still going to be at the old value so when you introduce this step there's\n[10:32] going to be a step in the error right of also of magnitude a so what the error\n[10:36] signal is going to do is it's going to jump up to a okay and I'm going to just"
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0384.jpg",
+        "frame_0385.jpg",
+        "frame_0386.jpg",
+        "frame_0387.jpg",
+        "frame_0388.jpg",
+        "frame_0389.jpg"
+      ],
+      "transcript": "[10:36] signal is going to do is it's going to jump up to a okay and I'm going to just\n[10:42] label all of these about and I'm going to put a little dash the lines we can see\n[10:46] this kind of event horizon okay and this is now going to jump up to a value of a"
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0390.jpg",
+        "frame_0391.jpg",
+        "frame_0392.jpg",
+        "frame_0393.jpg",
+        "frame_0394.jpg",
+        "frame_0395.jpg"
+      ],
+      "transcript": "[10:46] this kind of event horizon okay and this is now going to jump up to a value of a\n[10:51] okay so let's now go ahead and draw in green what is the the proportional\n[10:58] control signal going to do so again we can see very easily what it's going to do in"
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0396.jpg",
+        "frame_0397.jpg",
+        "frame_0398.jpg",
+        "frame_0399.jpg",
+        "frame_0400.jpg",
+        "frame_0401.jpg"
+      ],
+      "transcript": "[10:58] control signal going to do so again we can see very easily what it's going to do in\n[11:02] this window right because there's zero error right there's going to be zero\n[11:07] control right because that's how this works the control is just the error"
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0402.jpg",
+        "frame_0403.jpg",
+        "frame_0404.jpg",
+        "frame_0405.jpg",
+        "frame_0406.jpg",
+        "frame_0407.jpg"
+      ],
+      "transcript": "[11:07] control right because that's how this works the control is just the error\n[11:11] multiplied by kp so I don't care what number kp you have if e is zero this is\n[11:16] going to be zero so the control signal is just zero zero zero zero zero zero until"
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0408.jpg",
+        "frame_0409.jpg",
+        "frame_0410.jpg",
+        "frame_0411.jpg",
+        "frame_0412.jpg",
+        "frame_0413.jpg"
+      ],
+      "transcript": "[11:16] going to be zero so the control signal is just zero zero zero zero zero zero until\n[11:22] this event horizon again and now this is now going to instantaneously jump up to\n[11:28] a value now of what this value is going to be a times kp right so this is what's"
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0414.jpg",
+        "frame_0415.jpg",
+        "frame_0416.jpg",
+        "frame_0417.jpg",
+        "frame_0418.jpg",
+        "frame_0419.jpg"
+      ],
+      "transcript": "[11:28] a value now of what this value is going to be a times kp right so this is what's\n[11:37] actually kind of nice about a proportional controller is a proportional"
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0420.jpg",
+        "frame_0421.jpg",
+        "frame_0422.jpg",
+        "frame_0423.jpg",
+        "frame_0424.jpg",
+        "frame_0425.jpg"
+      ],
+      "transcript": "[11:37] actually kind of nice about a proportional controller is a proportional\n[11:40] controller is going to respond instantaneously right this gain is just a\n[11:44] multiplication that happens right away there are no dynamics associated with\n[11:47] it so proportional controller is going to kind of freak out a little bit right"
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0426.jpg",
+        "frame_0427.jpg",
+        "frame_0428.jpg",
+        "frame_0429.jpg",
+        "frame_0430.jpg",
+        "frame_0431.jpg"
+      ],
+      "transcript": "[11:47] it so proportional controller is going to kind of freak out a little bit right\n[11:52] it's going to realize there's a large error and it's going to then apply a large\n[11:56] control signal right and hopefully you've got this control signal set up in in the"
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0432.jpg",
+        "frame_0433.jpg",
+        "frame_0434.jpg",
+        "frame_0435.jpg",
+        "frame_0436.jpg",
+        "frame_0437.jpg"
+      ],
+      "transcript": "[11:56] control signal right and hopefully you've got this control signal set up in in the\n[12:02] correct orientation in the sense that this positive number of a kp it's going to\n[12:07] start pushing this signal y to start matching this signal are so what the error is"
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0438.jpg",
+        "frame_0439.jpg",
+        "frame_0440.jpg",
+        "frame_0441.jpg",
+        "frame_0442.jpg",
+        "frame_0443.jpg"
+      ],
+      "transcript": "[12:07] start pushing this signal y to start matching this signal are so what the error is\n[12:13] probably going to do is it's going to probably start coming down right would\n[12:17] you agree right as the plant starts to respond it's going to start coming down"
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0444.jpg",
+        "frame_0445.jpg",
+        "frame_0446.jpg",
+        "frame_0447.jpg",
+        "frame_0448.jpg",
+        "frame_0449.jpg"
+      ],
+      "transcript": "[12:17] you agree right as the plant starts to respond it's going to start coming down\n[12:21] now what is the control signal going to do again the nice thing about this is to\n[12:28] get the green line we just multiply the purple line by a gain kp so this is going"
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0450.jpg",
+        "frame_0451.jpg",
+        "frame_0452.jpg",
+        "frame_0453.jpg",
+        "frame_0454.jpg",
+        "frame_0455.jpg"
+      ],
+      "transcript": "[12:28] get the green line we just multiply the purple line by a gain kp so this is going\n[12:33] to basically mirror it like that right so this is where it gets interesting though if"
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0456.jpg",
+        "frame_0457.jpg",
+        "frame_0458.jpg",
+        "frame_0459.jpg",
+        "frame_0460.jpg",
+        "frame_0461.jpg"
+      ],
+      "transcript": "[12:33] to basically mirror it like that right so this is where it gets interesting though if\n[12:41] you think about this long enough eventually this error is going to keep going down hopefully\n[12:46] you're getting closer and closer and closer and now what's going on is at the"
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0462.jpg",
+        "frame_0463.jpg",
+        "frame_0464.jpg",
+        "frame_0465.jpg",
+        "frame_0466.jpg",
+        "frame_0467.jpg"
+      ],
+      "transcript": "[12:46] you're getting closer and closer and closer and now what's going on is at the\n[12:50] same time the control signal is is getting smaller and smaller and smaller right at\n[12:56] some point for real systems what might end up happening is you might get stuck and there"
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0468.jpg",
+        "frame_0469.jpg",
+        "frame_0470.jpg",
+        "frame_0471.jpg",
+        "frame_0472.jpg",
+        "frame_0473.jpg"
+      ],
+      "transcript": "[12:56] some point for real systems what might end up happening is you might get stuck and there\n[13:05] might be some steady state error and the reason this occurs right is if you think"
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0474.jpg",
+        "frame_0475.jpg",
+        "frame_0476.jpg",
+        "frame_0477.jpg",
+        "frame_0478.jpg",
+        "frame_0479.jpg"
+      ],
+      "transcript": "[13:05] might be some steady state error and the reason this occurs right is if you think\n[13:12] about this what's going on is as the error starts going down so does the control signal\n[13:18] right the control signal also starts going down so the control starts getting weaker and"
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0480.jpg",
+        "frame_0481.jpg",
+        "frame_0482.jpg",
+        "frame_0483.jpg",
+        "frame_0484.jpg",
+        "frame_0485.jpg"
+      ],
+      "transcript": "[13:18] right the control signal also starts going down so the control starts getting weaker and\n[13:22] weaker and weaker so you're applying less and less control to the off to the plant so if you\n[13:27] think about like what if your system is a mass on some surface right and you're sitting here at the"
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0486.jpg",
+        "frame_0487.jpg",
+        "frame_0488.jpg",
+        "frame_0489.jpg",
+        "frame_0490.jpg",
+        "frame_0491.jpg"
+      ],
+      "transcript": "[13:27] think about like what if your system is a mass on some surface right and you're sitting here at the\n[13:36] location Y and now you want to move over here to a location R right there's a step input of magnitude"
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0492.jpg",
+        "frame_0493.jpg",
+        "frame_0494.jpg",
+        "frame_0495.jpg",
+        "frame_0496.jpg",
+        "frame_0497.jpg"
+      ],
+      "transcript": "[13:36] location Y and now you want to move over here to a location R right there's a step input of magnitude\n[13:43] A right so you are going to start applying some proportional control to this guy right and initially"
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0498.jpg",
+        "frame_0499.jpg",
+        "frame_0500.jpg",
+        "frame_0501.jpg",
+        "frame_0502.jpg",
+        "frame_0503.jpg"
+      ],
+      "transcript": "[13:43] A right so you are going to start applying some proportional control to this guy right and initially\n[13:50] when the error is large this signal is large so you're pushing the block hard the block is going to\n[13:55] start moving over and maybe it's going to get to over here right at this point here's your Y"
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0504.jpg",
+        "frame_0505.jpg",
+        "frame_0506.jpg",
+        "frame_0507.jpg",
+        "frame_0508.jpg",
+        "frame_0509.jpg"
+      ],
+      "transcript": "[13:55] start moving over and maybe it's going to get to over here right at this point here's your Y\n[14:02] here's your R the error is now much smaller right so the force on the block is going to be much smaller\n[14:09] do you see how like maybe if there are nonlinear effects like friction right friction might grab the"
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0510.jpg",
+        "frame_0511.jpg",
+        "frame_0512.jpg",
+        "frame_0513.jpg",
+        "frame_0514.jpg",
+        "frame_0515.jpg"
+      ],
+      "transcript": "[14:09] do you see how like maybe if there are nonlinear effects like friction right friction might grab the\n[14:15] block and at some point the control signal is going to be too weak to overcome friction and the block is"
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0516.jpg",
+        "frame_0517.jpg",
+        "frame_0518.jpg",
+        "frame_0519.jpg",
+        "frame_0520.jpg",
+        "frame_0521.jpg"
+      ],
+      "transcript": "[14:15] block and at some point the control signal is going to be too weak to overcome friction and the block is\n[14:20] going to stop and it's not going to move anymore so the problem that you may see with proportional\n[14:25] controllers is that at some point they become basically the control signal becomes too weak"
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0522.jpg",
+        "frame_0523.jpg",
+        "frame_0524.jpg",
+        "frame_0525.jpg",
+        "frame_0526.jpg",
+        "frame_0527.jpg"
+      ],
+      "transcript": "[14:25] controllers is that at some point they become basically the control signal becomes too weak\n[14:34] to drive this steady state error to zero right but it's actually quite simple though the reason why"
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0528.jpg",
+        "frame_0529.jpg",
+        "frame_0530.jpg",
+        "frame_0531.jpg",
+        "frame_0532.jpg",
+        "frame_0533.jpg"
+      ],
+      "transcript": "[14:34] to drive this steady state error to zero right but it's actually quite simple though the reason why\n[14:41] the proportional control it's easy to understand what's going on we get a good feel for what it's\n[14:45] doing all it's doing is it's exerting a control which is directly proportional to the amount of error"
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 900,
+      "frames": [
+        "frame_0534.jpg",
+        "frame_0535.jpg",
+        "frame_0536.jpg",
+        "frame_0537.jpg",
+        "frame_0538.jpg",
+        "frame_0539.jpg"
+      ],
+      "transcript": "[14:45] doing all it's doing is it's exerting a control which is directly proportional to the amount of error\n[14:50] right but one of the drawbacks of this is that in many situations a proportional control by itself is subject to this\n[14:57] this steady state error which leads us to the next component"
+    },
+    {
+      "segment_index": 91,
+      "start_time": 900,
+      "end_time": 910,
+      "frames": [
+        "frame_0540.jpg",
+        "frame_0541.jpg",
+        "frame_0542.jpg",
+        "frame_0543.jpg",
+        "frame_0544.jpg",
+        "frame_0545.jpg"
+      ],
+      "transcript": "[14:57] this steady state error which leads us to the next component\n[15:03] okay so let's modify our little diagram here and now instead let's ignore kp and kd and just look at an integral term"
+    },
+    {
+      "segment_index": 92,
+      "start_time": 910,
+      "end_time": 920,
+      "frames": [
+        "frame_0546.jpg",
+        "frame_0547.jpg",
+        "frame_0548.jpg",
+        "frame_0549.jpg",
+        "frame_0550.jpg",
+        "frame_0551.jpg"
+      ],
+      "transcript": "[15:03] okay so let's modify our little diagram here and now instead let's ignore kp and kd and just look at an integral term\n[15:11] like let's pretend like you decided to make a controller which just has an integrator so let's look at this integral control component and see what happens so again we've got\n[15:19] error on the top and now let's ask ourselves what is the integrator going to do right now remember all this integrator does this integral control component it's given by this equation right here right all you have to do is integrate the error and then multiply by some number kp"
+    },
+    {
+      "segment_index": 93,
+      "start_time": 920,
+      "end_time": 930,
+      "frames": [
+        "frame_0552.jpg",
+        "frame_0553.jpg",
+        "frame_0554.jpg",
+        "frame_0555.jpg",
+        "frame_0556.jpg",
+        "frame_0557.jpg"
+      ],
+      "transcript": "[15:19] error on the top and now let's ask ourselves what is the integrator going to do right now remember all this integrator does this integral control component it's given by this equation right here right all you have to do is integrate the error and then multiply by some number kp"
+    },
+    {
+      "segment_index": 94,
+      "start_time": 930,
+      "end_time": 940,
+      "frames": [
+        "frame_0558.jpg",
+        "frame_0559.jpg",
+        "frame_0560.jpg",
+        "frame_0561.jpg",
+        "frame_0562.jpg",
+        "frame_0563.jpg"
+      ],
+      "transcript": "[15:19] error on the top and now let's ask ourselves what is the integrator going to do right now remember all this integrator does this integral control component it's given by this equation right here right all you have to do is integrate the error and then multiply by some number kp\n[15:34] okay so let's take a look at this again um okay again the error is zero and then suddenly you give it some kind of input right or some step in reference to generate some step in error okay so again let's ask ourselves what is the integrator going to be"
+    },
+    {
+      "segment_index": 95,
+      "start_time": 940,
+      "end_time": 950,
+      "frames": [
+        "frame_0564.jpg",
+        "frame_0565.jpg",
+        "frame_0566.jpg",
+        "frame_0567.jpg",
+        "frame_0568.jpg",
+        "frame_0569.jpg"
+      ],
+      "transcript": "[15:34] okay so let's take a look at this again um okay again the error is zero and then suddenly you give it some kind of input right or some step in reference to generate some step in error okay so again let's ask ourselves what is the integrator going to be\n[15:49] doing here so again down here the integrator is doing nothing zero zero zero zero zero zero zero zero zero zero zero right until some action happens here when we introduce this this error step something happens now we got to ask ourselves what is that something okay so the way i like to think about this is let's go ahead and look at a little time here okay after this step gets introduced okay let's say that the error signal does something like that"
+    },
+    {
+      "segment_index": 96,
+      "start_time": 950,
+      "end_time": 960,
+      "frames": [
+        "frame_0570.jpg",
+        "frame_0571.jpg",
+        "frame_0572.jpg",
+        "frame_0573.jpg",
+        "frame_0574.jpg",
+        "frame_0575.jpg"
+      ],
+      "transcript": "[15:49] doing here so again down here the integrator is doing nothing zero zero zero zero zero zero zero zero zero zero zero right until some action happens here when we introduce this this error step something happens now we got to ask ourselves what is that something okay so the way i like to think about this is let's go ahead and look at a little time here okay after this step gets introduced okay let's say that the error signal does something like that"
+    },
+    {
+      "segment_index": 97,
+      "start_time": 960,
+      "end_time": 970,
+      "frames": [
+        "frame_0576.jpg",
+        "frame_0577.jpg",
+        "frame_0578.jpg",
+        "frame_0579.jpg",
+        "frame_0580.jpg",
+        "frame_0581.jpg"
+      ],
+      "transcript": "[15:49] doing here so again down here the integrator is doing nothing zero zero zero zero zero zero zero zero zero zero zero right until some action happens here when we introduce this this error step something happens now we got to ask ourselves what is that something okay so the way i like to think about this is let's go ahead and look at a little time here okay after this step gets introduced okay let's say that the error signal does something like that"
+    },
+    {
+      "segment_index": 98,
+      "start_time": 970,
+      "end_time": 980,
+      "frames": [
+        "frame_0582.jpg",
+        "frame_0583.jpg",
+        "frame_0584.jpg",
+        "frame_0585.jpg",
+        "frame_0586.jpg",
+        "frame_0587.jpg"
+      ],
+      "transcript": "[15:49] doing here so again down here the integrator is doing nothing zero zero zero zero zero zero zero zero zero zero zero right until some action happens here when we introduce this this error step something happens now we got to ask ourselves what is that something okay so the way i like to think about this is let's go ahead and look at a little time here okay after this step gets introduced okay let's say that the error signal does something like that\n[16:19] okay now we got to think about this okay now we got to think about this okay now we got to ask ourselves what is the control signal at this time well the way you get that control signal at this time t is apparently you integrate the error so let's just focus on this integral term where is this integral term in this picture well again the integral of the error signal it's just the area under the curve of the e of t right so in other words it's this area under here right"
+    },
+    {
+      "segment_index": 99,
+      "start_time": 980,
+      "end_time": 990,
+      "frames": [
+        "frame_0588.jpg",
+        "frame_0589.jpg",
+        "frame_0590.jpg",
+        "frame_0591.jpg",
+        "frame_0592.jpg",
+        "frame_0593.jpg"
+      ],
+      "transcript": "[16:19] okay now we got to think about this okay now we got to think about this okay now we got to ask ourselves what is the control signal at this time well the way you get that control signal at this time t is apparently you integrate the error so let's just focus on this integral term where is this integral term in this picture well again the integral of the error signal it's just the area under the curve of the e of t right so in other words it's this area under here right"
+    },
+    {
+      "segment_index": 100,
+      "start_time": 990,
+      "end_time": 1000,
+      "frames": [
+        "frame_0594.jpg",
+        "frame_0595.jpg",
+        "frame_0596.jpg",
+        "frame_0597.jpg",
+        "frame_0598.jpg",
+        "frame_0599.jpg"
+      ],
+      "transcript": "[16:19] okay now we got to think about this okay now we got to think about this okay now we got to ask ourselves what is the control signal at this time well the way you get that control signal at this time t is apparently you integrate the error so let's just focus on this integral term where is this integral term in this picture well again the integral of the error signal it's just the area under the curve of the e of t right so in other words it's this area under here right"
+    },
+    {
+      "segment_index": 101,
+      "start_time": 1000,
+      "end_time": 1010,
+      "frames": [
+        "frame_0600.jpg",
+        "frame_0601.jpg",
+        "frame_0602.jpg",
+        "frame_0603.jpg",
+        "frame_0604.jpg",
+        "frame_0605.jpg"
+      ],
+      "transcript": "[16:19] okay now we got to think about this okay now we got to think about this okay now we got to ask ourselves what is the control signal at this time well the way you get that control signal at this time t is apparently you integrate the error so let's just focus on this integral term where is this integral term in this picture well again the integral of the error signal it's just the area under the curve of the e of t right so in other words it's this area under here right\n[16:49] this amount of area this amount of area is what this integral term is it's how much the error the integrator has accumulated right so that is this area multiplied by the number ki that's going to tell you what the output of your system of the integral of the integral control component is at this time and as you can see because there hasn't been a large time this area is small right sure it might have a large"
+    },
+    {
+      "segment_index": 102,
+      "start_time": 1010,
+      "end_time": 1020,
+      "frames": [
+        "frame_0606.jpg",
+        "frame_0607.jpg",
+        "frame_0608.jpg",
+        "frame_0609.jpg",
+        "frame_0610.jpg",
+        "frame_0611.jpg"
+      ],
+      "transcript": "[16:49] this amount of area this amount of area is what this integral term is it's how much the error the integrator has accumulated right so that is this area multiplied by the number ki that's going to tell you what the output of your system of the integral of the integral control component is at this time and as you can see because there hasn't been a large time this area is small right sure it might have a large"
+    },
+    {
+      "segment_index": 103,
+      "start_time": 1020,
+      "end_time": 1030,
+      "frames": [
+        "frame_0612.jpg",
+        "frame_0613.jpg",
+        "frame_0614.jpg",
+        "frame_0615.jpg",
+        "frame_0616.jpg",
+        "frame_0617.jpg"
+      ],
+      "transcript": "[16:49] this amount of area this amount of area is what this integral term is it's how much the error the integrator has accumulated right so that is this area multiplied by the number ki that's going to tell you what the output of your system of the integral of the integral control component is at this time and as you can see because there hasn't been a large time this area is small right sure it might have a large"
+    },
+    {
+      "segment_index": 104,
+      "start_time": 1030,
+      "end_time": 1040,
+      "frames": [
+        "frame_0618.jpg",
+        "frame_0619.jpg",
+        "frame_0620.jpg",
+        "frame_0621.jpg",
+        "frame_0622.jpg",
+        "frame_0623.jpg"
+      ],
+      "transcript": "[16:49] this amount of area this amount of area is what this integral term is it's how much the error the integrator has accumulated right so that is this area multiplied by the number ki that's going to tell you what the output of your system of the integral of the integral control component is at this time and as you can see because there hasn't been a large time this area is small right sure it might have a large\n[17:19] So this area is kind of small."
+    },
+    {
+      "segment_index": 105,
+      "start_time": 1040,
+      "end_time": 1050,
+      "frames": [
+        "frame_0624.jpg",
+        "frame_0625.jpg",
+        "frame_0626.jpg",
+        "frame_0627.jpg",
+        "frame_0628.jpg",
+        "frame_0629.jpg"
+      ],
+      "transcript": "[17:19] So this area is kind of small.\n[17:21] You multiply it by some Ki, you probably get some small numbers.\n[17:24] So it's probably something like this, right?\n[17:25] So the integrator is going to do something like this.\n[17:27] Does everyone see what's going on, right?\n[17:29] Now all we got to do is just march along a little bit further in time, right,"
+    },
+    {
+      "segment_index": 106,
+      "start_time": 1050,
+      "end_time": 1060,
+      "frames": [
+        "frame_0630.jpg",
+        "frame_0631.jpg",
+        "frame_0632.jpg",
+        "frame_0633.jpg",
+        "frame_0634.jpg",
+        "frame_0635.jpg"
+      ],
+      "transcript": "[17:29] Now all we got to do is just march along a little bit further in time, right,\n[17:34] and ask ourselves the same question, right?\n[17:36] So again, maybe the error signal is doing this, right?"
+    },
+    {
+      "segment_index": 107,
+      "start_time": 1060,
+      "end_time": 1070,
+      "frames": [
+        "frame_0636.jpg",
+        "frame_0637.jpg",
+        "frame_0638.jpg",
+        "frame_0639.jpg",
+        "frame_0640.jpg",
+        "frame_0641.jpg"
+      ],
+      "transcript": "[17:36] So again, maybe the error signal is doing this, right?\n[17:41] So now the total area is this.\n[17:44] So the total area is now bigger, right?\n[17:47] So the integrator keeps pushing harder, right?"
+    },
+    {
+      "segment_index": 108,
+      "start_time": 1070,
+      "end_time": 1080,
+      "frames": [
+        "frame_0642.jpg",
+        "frame_0643.jpg",
+        "frame_0644.jpg",
+        "frame_0645.jpg",
+        "frame_0646.jpg",
+        "frame_0647.jpg"
+      ],
+      "transcript": "[17:47] So the integrator keeps pushing harder, right?\n[17:52] And et cetera, et cetera.\n[17:53] You can see what this is going to be doing is it's going to keep going.\n[17:56] And let's say that this thing goes down to here."
+    },
+    {
+      "segment_index": 109,
+      "start_time": 1080,
+      "end_time": 1090,
+      "frames": [
+        "frame_0648.jpg",
+        "frame_0649.jpg",
+        "frame_0650.jpg",
+        "frame_0651.jpg",
+        "frame_0652.jpg",
+        "frame_0653.jpg"
+      ],
+      "transcript": "[17:56] And let's say that this thing goes down to here.\n[18:00] Let's say it does this.\n[18:01] At this point, the area looks like that, right?\n[18:05] And we can trace this exact same point down.\n[18:08] And we're going to see what's interesting is at this time T,"
+    },
+    {
+      "segment_index": 110,
+      "start_time": 1090,
+      "end_time": 1100,
+      "frames": [
+        "frame_0654.jpg",
+        "frame_0655.jpg",
+        "frame_0656.jpg",
+        "frame_0657.jpg",
+        "frame_0658.jpg",
+        "frame_0659.jpg"
+      ],
+      "transcript": "[18:08] And we're going to see what's interesting is at this time T,\n[18:13] the integrator has accumulated all of this green area.\n[18:17] So it's actually quite large at this point, right?"
+    },
+    {
+      "segment_index": 111,
+      "start_time": 1100,
+      "end_time": 1110,
+      "frames": [
+        "frame_0660.jpg",
+        "frame_0661.jpg",
+        "frame_0662.jpg",
+        "frame_0663.jpg",
+        "frame_0664.jpg",
+        "frame_0665.jpg"
+      ],
+      "transcript": "[18:17] So it's actually quite large at this point, right?\n[18:21] And here's the rub with integrators by themselves.\n[18:24] And this is one of the reasons why you usually never see an integrator by itself.\n[18:27] Think about what's happening right here.\n[18:29] Here, everything is fine, right?"
+    },
+    {
+      "segment_index": 112,
+      "start_time": 1110,
+      "end_time": 1120,
+      "frames": [
+        "frame_0666.jpg",
+        "frame_0667.jpg",
+        "frame_0668.jpg",
+        "frame_0669.jpg",
+        "frame_0670.jpg",
+        "frame_0671.jpg"
+      ],
+      "transcript": "[18:29] Here, everything is fine, right?\n[18:33] This is what you want, right?\n[18:35] You want error to be zero.\n[18:37] So at this point, you want to just say stop, right?"
+    },
+    {
+      "segment_index": 113,
+      "start_time": 1120,
+      "end_time": 1130,
+      "frames": [
+        "frame_0672.jpg",
+        "frame_0673.jpg",
+        "frame_0674.jpg",
+        "frame_0675.jpg",
+        "frame_0676.jpg",
+        "frame_0677.jpg"
+      ],
+      "transcript": "[18:37] So at this point, you want to just say stop, right?\n[18:40] If your controller was intelligent, you'd be like, okay, stop doing whatever you're doing.\n[18:44] The system is where it needs to be.\n[18:46] Let's quit, right?\n[18:49] But think about what the integrator is doing right here."
+    },
+    {
+      "segment_index": 114,
+      "start_time": 1130,
+      "end_time": 1140,
+      "frames": [
+        "frame_0678.jpg",
+        "frame_0679.jpg",
+        "frame_0680.jpg",
+        "frame_0681.jpg",
+        "frame_0682.jpg",
+        "frame_0683.jpg"
+      ],
+      "transcript": "[18:49] But think about what the integrator is doing right here.\n[18:52] The integrator has accumulated all of this green area.\n[18:55] So actually, it is still pushing.\n[18:58] In fact, it is pushing.\n[18:59] It's applying as much control as it ever is going to be doing."
+    },
+    {
+      "segment_index": 115,
+      "start_time": 1140,
+      "end_time": 1150,
+      "frames": [
+        "frame_0684.jpg",
+        "frame_0685.jpg",
+        "frame_0686.jpg",
+        "frame_0687.jpg",
+        "frame_0688.jpg",
+        "frame_0689.jpg"
+      ],
+      "transcript": "[18:59] It's applying as much control as it ever is going to be doing.\n[19:03] It's built up some, almost like some momentum, right?\n[19:07] It's almost got some mass.\n[19:08] And this integrator has got some momentum."
+    },
+    {
+      "segment_index": 116,
+      "start_time": 1150,
+      "end_time": 1160,
+      "frames": [
+        "frame_0690.jpg",
+        "frame_0691.jpg",
+        "frame_0692.jpg",
+        "frame_0693.jpg",
+        "frame_0694.jpg",
+        "frame_0695.jpg"
+      ],
+      "transcript": "[19:08] And this integrator has got some momentum.\n[19:10] And it's going along.\n[19:11] And actually, what's going to happen is it's going to keep pushing on the system, right?\n[19:17] It's going to keep applying control.\n[19:18] So the system error, it's probably going to overshoot, right?"
+    },
+    {
+      "segment_index": 117,
+      "start_time": 1160,
+      "end_time": 1170,
+      "frames": [
+        "frame_0696.jpg",
+        "frame_0697.jpg",
+        "frame_0698.jpg",
+        "frame_0699.jpg",
+        "frame_0700.jpg",
+        "frame_0701.jpg"
+      ],
+      "transcript": "[19:18] So the system error, it's probably going to overshoot, right?\n[19:22] The block is going to go, you know, if this was our mass spring system,\n[19:25] it's going to start going down, right?\n[19:27] It's going to overshoot the system.\n[19:29] And now what you've got is you actually have negative area here, right?"
+    },
+    {
+      "segment_index": 118,
+      "start_time": 1170,
+      "end_time": 1180,
+      "frames": [
+        "frame_0702.jpg",
+        "frame_0703.jpg",
+        "frame_0704.jpg",
+        "frame_0705.jpg",
+        "frame_0706.jpg",
+        "frame_0707.jpg"
+      ],
+      "transcript": "[19:29] And now what you've got is you actually have negative area here, right?\n[19:35] So again, if you think about this, what's going to happen is the error sign changes."
+    },
+    {
+      "segment_index": 119,
+      "start_time": 1180,
+      "end_time": 1190,
+      "frames": [
+        "frame_0708.jpg",
+        "frame_0709.jpg",
+        "frame_0710.jpg",
+        "frame_0711.jpg",
+        "frame_0712.jpg",
+        "frame_0713.jpg"
+      ],
+      "transcript": "[19:35] So again, if you think about this, what's going to happen is the error sign changes.\n[19:42] It becomes negative at this point, right?\n[19:44] So now that integral in the red component is negative area.\n[19:48] The green is positive area."
+    },
+    {
+      "segment_index": 120,
+      "start_time": 1190,
+      "end_time": 1200,
+      "frames": [
+        "frame_0714.jpg",
+        "frame_0715.jpg",
+        "frame_0716.jpg",
+        "frame_0717.jpg",
+        "frame_0718.jpg",
+        "frame_0719.jpg"
+      ],
+      "transcript": "[19:48] The green is positive area.\n[19:50] So maybe let's just label it.\n[19:52] So this is sort of positive area that the integrator has accumulated.\n[19:58] This red is negative area, right?"
+    },
+    {
+      "segment_index": 121,
+      "start_time": 1200,
+      "end_time": 1210,
+      "frames": [
+        "frame_0720.jpg",
+        "frame_0721.jpg",
+        "frame_0722.jpg",
+        "frame_0723.jpg",
+        "frame_0724.jpg",
+        "frame_0725.jpg"
+      ],
+      "transcript": "[19:58] This red is negative area, right?\n[20:03] So what's the net between the green and the red?\n[20:06] There's still much more green than there is red.\n[20:08] So this signal, it's going to start coming down, but it's still positive, right?"
+    },
+    {
+      "segment_index": 122,
+      "start_time": 1210,
+      "end_time": 1220,
+      "frames": [
+        "frame_0726.jpg",
+        "frame_0727.jpg",
+        "frame_0728.jpg",
+        "frame_0729.jpg",
+        "frame_0730.jpg",
+        "frame_0731.jpg"
+      ],
+      "transcript": "[20:08] So this signal, it's going to start coming down, but it's still positive, right?\n[20:16] So do you see what's going on?\n[20:17] You overshot where you wanted to be, but the integrator is still pushing in that same direction, right?"
+    },
+    {
+      "segment_index": 123,
+      "start_time": 1220,
+      "end_time": 1230,
+      "frames": [
+        "frame_0732.jpg",
+        "frame_0733.jpg",
+        "frame_0734.jpg",
+        "frame_0735.jpg",
+        "frame_0736.jpg",
+        "frame_0737.jpg"
+      ],
+      "transcript": "[20:17] You overshot where you wanted to be, but the integrator is still pushing in that same direction, right?\n[20:24] It's not pushing as hard as it used to, but it's still pushing in that same direction.\n[20:29] So this is probably going to get worse before it gets better, right?"
+    },
+    {
+      "segment_index": 124,
+      "start_time": 1230,
+      "end_time": 1240,
+      "frames": [
+        "frame_0738.jpg",
+        "frame_0739.jpg",
+        "frame_0740.jpg",
+        "frame_0741.jpg",
+        "frame_0742.jpg",
+        "frame_0743.jpg"
+      ],
+      "transcript": "[20:29] So this is probably going to get worse before it gets better, right?\n[20:33] Because at some point, you're going to have to accumulate a net difference between the positive and negative area such that you get something like this, right?"
+    },
+    {
+      "segment_index": 125,
+      "start_time": 1240,
+      "end_time": 1250,
+      "frames": [
+        "frame_0744.jpg",
+        "frame_0745.jpg",
+        "frame_0746.jpg",
+        "frame_0747.jpg",
+        "frame_0748.jpg",
+        "frame_0749.jpg"
+      ],
+      "transcript": "[20:33] Because at some point, you're going to have to accumulate a net difference between the positive and negative area such that you get something like this, right?\n[20:48] What's going to end up happening is that eventually this thing is going to get you zero steady state error."
+    },
+    {
+      "segment_index": 126,
+      "start_time": 1250,
+      "end_time": 1260,
+      "frames": [
+        "frame_0750.jpg",
+        "frame_0751.jpg",
+        "frame_0752.jpg",
+        "frame_0753.jpg",
+        "frame_0754.jpg",
+        "frame_0755.jpg"
+      ],
+      "transcript": "[20:48] What's going to end up happening is that eventually this thing is going to get you zero steady state error.\n[20:56] And that's what's actually the nice benefit of this integral control is that eventually, and I should make sure I draw this accurately, right?"
+    },
+    {
+      "segment_index": 127,
+      "start_time": 1260,
+      "end_time": 1270,
+      "frames": [
+        "frame_0756.jpg",
+        "frame_0757.jpg",
+        "frame_0758.jpg",
+        "frame_0759.jpg",
+        "frame_0760.jpg",
+        "frame_0761.jpg"
+      ],
+      "transcript": "[20:56] And that's what's actually the nice benefit of this integral control is that eventually, and I should make sure I draw this accurately, right?\n[21:06] Eventually, what you're going to end up with is zero steady state error."
+    },
+    {
+      "segment_index": 128,
+      "start_time": 1270,
+      "end_time": 1280,
+      "frames": [
+        "frame_0762.jpg",
+        "frame_0763.jpg",
+        "frame_0764.jpg",
+        "frame_0765.jpg",
+        "frame_0766.jpg",
+        "frame_0767.jpg"
+      ],
+      "transcript": "[21:06] Eventually, what you're going to end up with is zero steady state error.\n[21:10] Okay?\n[21:15] And what's going to end up happening is that the control needed to achieve that zero steady state error is going to be output by the integrator and the integrator alone."
+    },
+    {
+      "segment_index": 129,
+      "start_time": 1280,
+      "end_time": 1290,
+      "frames": [
+        "frame_0768.jpg",
+        "frame_0769.jpg",
+        "frame_0770.jpg",
+        "frame_0771.jpg",
+        "frame_0772.jpg",
+        "frame_0773.jpg"
+      ],
+      "transcript": "[21:15] And what's going to end up happening is that the control needed to achieve that zero steady state error is going to be output by the integrator and the integrator alone.\n[21:26] And again, we are going to explore that statement further in future lectures, future discussions."
+    },
+    {
+      "segment_index": 130,
+      "start_time": 1290,
+      "end_time": 1300,
+      "frames": [
+        "frame_0774.jpg",
+        "frame_0775.jpg",
+        "frame_0776.jpg",
+        "frame_0777.jpg",
+        "frame_0778.jpg",
+        "frame_0779.jpg"
+      ],
+      "transcript": "[21:26] And again, we are going to explore that statement further in future lectures, future discussions.\n[21:32] But I just want to state that right now.\n[21:34] Now, the thing to take away from this is that the integrator is going to eliminate steady state error.\n[21:39] The integrator will not allow your system to have steady state error, okay?"
+    },
+    {
+      "segment_index": 131,
+      "start_time": 1300,
+      "end_time": 1310,
+      "frames": [
+        "frame_0780.jpg",
+        "frame_0781.jpg",
+        "frame_0782.jpg",
+        "frame_0783.jpg",
+        "frame_0784.jpg",
+        "frame_0785.jpg"
+      ],
+      "transcript": "[21:39] The integrator will not allow your system to have steady state error, okay?\n[21:44] And it does so through this sort of exchange of positive area and negative area when you're integrating the error signal, right?"
+    },
+    {
+      "segment_index": 132,
+      "start_time": 1310,
+      "end_time": 1320,
+      "frames": [
+        "frame_0786.jpg",
+        "frame_0787.jpg",
+        "frame_0788.jpg",
+        "frame_0789.jpg",
+        "frame_0790.jpg",
+        "frame_0791.jpg"
+      ],
+      "transcript": "[21:44] And it does so through this sort of exchange of positive area and negative area when you're integrating the error signal, right?\n[21:54] And again, this is one of the reasons why often this is coupled with other components, the proportional and the derivative, to try to get rid of some of these oscillations because this is probably not great."
+    },
+    {
+      "segment_index": 133,
+      "start_time": 1320,
+      "end_time": 1330,
+      "frames": [
+        "frame_0792.jpg",
+        "frame_0793.jpg",
+        "frame_0794.jpg",
+        "frame_0795.jpg",
+        "frame_0796.jpg",
+        "frame_0797.jpg"
+      ],
+      "transcript": "[21:54] And again, this is one of the reasons why often this is coupled with other components, the proportional and the derivative, to try to get rid of some of these oscillations because this is probably not great.\n[22:05] Now, I do want to dwell a little bit further on this idea of this claim that we made here that you're going to have zero steady state error, right?"
+    },
+    {
+      "segment_index": 134,
+      "start_time": 1330,
+      "end_time": 1340,
+      "frames": [
+        "frame_0798.jpg",
+        "frame_0799.jpg",
+        "frame_0800.jpg",
+        "frame_0801.jpg",
+        "frame_0802.jpg",
+        "frame_0803.jpg"
+      ],
+      "transcript": "[22:05] Now, I do want to dwell a little bit further on this idea of this claim that we made here that you're going to have zero steady state error, right?\n[22:14] The way you can actually kind of think about it and prove that to yourself is almost sort of in a paradoxical sense, right?"
+    },
+    {
+      "segment_index": 135,
+      "start_time": 1340,
+      "end_time": 1350,
+      "frames": [
+        "frame_0804.jpg",
+        "frame_0805.jpg",
+        "frame_0806.jpg",
+        "frame_0807.jpg",
+        "frame_0808.jpg",
+        "frame_0809.jpg"
+      ],
+      "transcript": "[22:14] The way you can actually kind of think about it and prove that to yourself is almost sort of in a paradoxical sense, right?\n[22:20] What I mean by that is let's draw a quick picture, maybe a smaller picture of error versus time, like a smaller version of this picture up here because it's really quite simple, the idea."
+    },
+    {
+      "segment_index": 136,
+      "start_time": 1350,
+      "end_time": 1360,
+      "frames": [
+        "frame_0810.jpg",
+        "frame_0811.jpg",
+        "frame_0812.jpg",
+        "frame_0813.jpg",
+        "frame_0814.jpg",
+        "frame_0815.jpg"
+      ],
+      "transcript": "[22:20] What I mean by that is let's draw a quick picture, maybe a smaller picture of error versus time, like a smaller version of this picture up here because it's really quite simple, the idea.\n[22:32] Let's say that this thing is doing whatever, right?\n[22:34] And let's say you have steady state error, okay?\n[22:37] Let's assume that somehow you have a non-zero steady state error, okay?"
+    },
+    {
+      "segment_index": 137,
+      "start_time": 1360,
+      "end_time": 1370,
+      "frames": [
+        "frame_0816.jpg",
+        "frame_0817.jpg",
+        "frame_0818.jpg",
+        "frame_0819.jpg",
+        "frame_0820.jpg",
+        "frame_0821.jpg"
+      ],
+      "transcript": "[22:37] Let's assume that somehow you have a non-zero steady state error, okay?\n[22:44] What is the integrator going to do in this situation, right?\n[22:49] What does the UI component look like?"
+    },
+    {
+      "segment_index": 138,
+      "start_time": 1370,
+      "end_time": 1380,
+      "frames": [
+        "frame_0822.jpg",
+        "frame_0823.jpg",
+        "frame_0824.jpg",
+        "frame_0825.jpg",
+        "frame_0826.jpg",
+        "frame_0827.jpg"
+      ],
+      "transcript": "[22:49] What does the UI component look like?\n[22:53] Well, according to our discussion above, right, all we're doing is we are integrating the area under the curve, right?\n[22:59] So what the integrator is going to do, I think we're drawing it in blue, is it's going to do something like this and then it's going to start integrating error, right?"
+    },
+    {
+      "segment_index": 139,
+      "start_time": 1380,
+      "end_time": 1390,
+      "frames": [
+        "frame_0828.jpg",
+        "frame_0829.jpg",
+        "frame_0830.jpg",
+        "frame_0831.jpg",
+        "frame_0832.jpg",
+        "frame_0833.jpg"
+      ],
+      "transcript": "[22:59] So what the integrator is going to do, I think we're drawing it in blue, is it's going to do something like this and then it's going to start integrating error, right?\n[23:06] So this thing is increasing.\n[23:08] In fact, this is all monotonically increasing because I only have green positive area."
+    },
+    {
+      "segment_index": 140,
+      "start_time": 1390,
+      "end_time": 1400,
+      "frames": [
+        "frame_0834.jpg",
+        "frame_0835.jpg",
+        "frame_0836.jpg",
+        "frame_0837.jpg",
+        "frame_0838.jpg",
+        "frame_0839.jpg"
+      ],
+      "transcript": "[23:08] In fact, this is all monotonically increasing because I only have green positive area.\n[23:12] So this thing is going up, right?\n[23:14] Going up, going up, going up, going up, going up, going up.\n[23:16] Now, think about this, right?\n[23:18] And if you have a non-zero steady state error, what that means is the area under the curve is going to become unbounded, right?"
+    },
+    {
+      "segment_index": 141,
+      "start_time": 1400,
+      "end_time": 1410,
+      "frames": [
+        "frame_0840.jpg",
+        "frame_0841.jpg",
+        "frame_0842.jpg",
+        "frame_0843.jpg",
+        "frame_0844.jpg",
+        "frame_0845.jpg"
+      ],
+      "transcript": "[23:18] And if you have a non-zero steady state error, what that means is the area under the curve is going to become unbounded, right?\n[23:27] It's going to go to infinity.\n[23:28] Therefore, your control signal is also going to go to infinity."
+    },
+    {
+      "segment_index": 142,
+      "start_time": 1410,
+      "end_time": 1420,
+      "frames": [
+        "frame_0846.jpg",
+        "frame_0847.jpg",
+        "frame_0848.jpg",
+        "frame_0849.jpg",
+        "frame_0850.jpg",
+        "frame_0851.jpg"
+      ],
+      "transcript": "[23:28] Therefore, your control signal is also going to go to infinity.\n[23:32] So there is something really wrong with your system.\n[23:36] If you have an integrator in it and it keeps pushing harder and harder and harder and harder and exerting more and more control authority,"
+    },
+    {
+      "segment_index": 143,
+      "start_time": 1420,
+      "end_time": 1430,
+      "frames": [
+        "frame_0852.jpg",
+        "frame_0853.jpg",
+        "frame_0854.jpg",
+        "frame_0855.jpg",
+        "frame_0856.jpg",
+        "frame_0857.jpg"
+      ],
+      "transcript": "[23:36] If you have an integrator in it and it keeps pushing harder and harder and harder and harder and exerting more and more control authority,\n[23:44] eventually it has to be able to move the system towards the reference signal, right?"
+    },
+    {
+      "segment_index": 144,
+      "start_time": 1430,
+      "end_time": 1440,
+      "frames": [
+        "frame_0858.jpg",
+        "frame_0859.jpg",
+        "frame_0860.jpg",
+        "frame_0861.jpg",
+        "frame_0862.jpg",
+        "frame_0863.jpg"
+      ],
+      "transcript": "[23:50] If it's not, you've broken something, right?\n[23:52] Something else is going wrong.\n[23:53] But mathematically speaking, it should not be allowed to do that, right?\n[23:58] Because of this pair.\n[23:58] This is a paradox right here, right?"
+    },
+    {
+      "segment_index": 145,
+      "start_time": 1440,
+      "end_time": 1450,
+      "frames": [
+        "frame_0864.jpg",
+        "frame_0865.jpg",
+        "frame_0866.jpg",
+        "frame_0867.jpg",
+        "frame_0868.jpg",
+        "frame_0869.jpg"
+      ],
+      "transcript": "[23:58] This is a paradox right here, right?\n[24:01] You cannot have non-zero steady state error because that would lead to an unbounded infinite control signal,\n[24:09] which is sort of a catch-22 because if this control signal became large enough,"
+    },
+    {
+      "segment_index": 146,
+      "start_time": 1450,
+      "end_time": 1460,
+      "frames": [
+        "frame_0870.jpg",
+        "frame_0871.jpg",
+        "frame_0872.jpg",
+        "frame_0873.jpg",
+        "frame_0874.jpg",
+        "frame_0875.jpg"
+      ],
+      "transcript": "[24:09] which is sort of a catch-22 because if this control signal became large enough,\n[24:14] it has to be able to eventually move this signal Y towards the reference, right?\n[24:19] So this is one way you can kind of prove to yourself that the whole reason of adding an integrator is to get rid of steady state error."
+    },
+    {
+      "segment_index": 147,
+      "start_time": 1460,
+      "end_time": 1470,
+      "frames": [
+        "frame_0876.jpg",
+        "frame_0877.jpg",
+        "frame_0878.jpg",
+        "frame_0879.jpg",
+        "frame_0880.jpg",
+        "frame_0881.jpg"
+      ],
+      "transcript": "[24:19] So this is one way you can kind of prove to yourself that the whole reason of adding an integrator is to get rid of steady state error.\n[24:26] It does create some complications like you're seeing here.\n[24:29] And again, we are going to dig into some of the complications and problems of things that can go wrong with an integrator"
+    },
+    {
+      "segment_index": 148,
+      "start_time": 1470,
+      "end_time": 1480,
+      "frames": [
+        "frame_0882.jpg",
+        "frame_0883.jpg",
+        "frame_0884.jpg",
+        "frame_0885.jpg",
+        "frame_0886.jpg",
+        "frame_0887.jpg"
+      ],
+      "transcript": "[24:29] And again, we are going to dig into some of the complications and problems of things that can go wrong with an integrator\n[24:35] in a lot greater detail in a future video.\n[24:38] But I just want to throw this out here now just to kind of put it on your radar so people can start thinking about this idea here."
+    },
+    {
+      "segment_index": 149,
+      "start_time": 1480,
+      "end_time": 1490,
+      "frames": [
+        "frame_0888.jpg",
+        "frame_0889.jpg",
+        "frame_0890.jpg",
+        "frame_0891.jpg",
+        "frame_0892.jpg",
+        "frame_0893.jpg"
+      ],
+      "transcript": "[24:38] But I just want to throw this out here now just to kind of put it on your radar so people can start thinking about this idea here.\n[24:45] Okay, great.\n[24:45] So that's the integrator.\n[24:47] Give me a second to clean up the board and let's look at the last term.\n[24:49] All right, so the last term we want to look at is let's look at the derivative term."
+    },
+    {
+      "segment_index": 150,
+      "start_time": 1490,
+      "end_time": 1500,
+      "frames": [
+        "frame_0894.jpg",
+        "frame_0895.jpg",
+        "frame_0896.jpg",
+        "frame_0897.jpg",
+        "frame_0898.jpg",
+        "frame_0899.jpg"
+      ],
+      "transcript": "[24:49] All right, so the last term we want to look at is let's look at the derivative term.\n[24:53] So we'll kind of ignore the proportional in the integral.\n[24:56] And again, I'm going to say kind of because you're going to see in a second that the derivative control really cannot operate by itself."
+    },
+    {
+      "segment_index": 151,
+      "start_time": 1500,
+      "end_time": 1510,
+      "frames": [
+        "frame_0900.jpg",
+        "frame_0901.jpg",
+        "frame_0902.jpg",
+        "frame_0903.jpg",
+        "frame_0904.jpg",
+        "frame_0905.jpg"
+      ],
+      "transcript": "[24:56] And again, I'm going to say kind of because you're going to see in a second that the derivative control really cannot operate by itself.\n[25:03] That doesn't really make a lot of sense.\n[25:05] So maybe let me kind of halfway put the ignore on these.\n[25:09] Let's assume that there are other components that maybe drive the error signal."
+    },
+    {
+      "segment_index": 152,
+      "start_time": 1510,
+      "end_time": 1520,
+      "frames": [
+        "frame_0906.jpg",
+        "frame_0907.jpg",
+        "frame_0908.jpg",
+        "frame_0909.jpg",
+        "frame_0910.jpg",
+        "frame_0911.jpg"
+      ],
+      "transcript": "[25:09] Let's assume that there are other components that maybe drive the error signal.\n[25:13] But mostly I want to talk about what does this UD look like.\n[25:16] So let's just look at the derivative control portion and what does the UD signal look like."
+    },
+    {
+      "segment_index": 153,
+      "start_time": 1520,
+      "end_time": 1530,
+      "frames": [
+        "frame_0912.jpg",
+        "frame_0913.jpg",
+        "frame_0914.jpg",
+        "frame_0915.jpg",
+        "frame_0916.jpg",
+        "frame_0917.jpg"
+      ],
+      "transcript": "[25:16] So let's just look at the derivative control portion and what does the UD signal look like.\n[25:20] Okay.\n[25:21] So again, same idea.\n[25:23] Let's assume everything is hunky-dory until this time when we introduce some step in R, which generates a step in the error signal."
+    },
+    {
+      "segment_index": 154,
+      "start_time": 1530,
+      "end_time": 1540,
+      "frames": [
+        "frame_0918.jpg",
+        "frame_0919.jpg",
+        "frame_0920.jpg",
+        "frame_0921.jpg",
+        "frame_0922.jpg",
+        "frame_0923.jpg"
+      ],
+      "transcript": "[25:23] Let's assume everything is hunky-dory until this time when we introduce some step in R, which generates a step in the error signal.\n[25:33] Okay.\n[25:33] So again, let's ask ourselves, what is the derivative doing?\n[25:36] So again, the derivative is looking at basically the slope of the error plot."
+    },
+    {
+      "segment_index": 155,
+      "start_time": 1540,
+      "end_time": 1550,
+      "frames": [
+        "frame_0924.jpg",
+        "frame_0925.jpg",
+        "frame_0926.jpg",
+        "frame_0927.jpg",
+        "frame_0928.jpg",
+        "frame_0929.jpg"
+      ],
+      "transcript": "[25:36] So again, the derivative is looking at basically the slope of the error plot.\n[25:42] Right.\n[25:42] And then it's multiplying it by KD.\n[25:44] So you look at this slope here and you're like, oh, that's easy.\n[25:46] That's a big fat zero.\n[25:47] So again, it doesn't matter what your KD number is, your derivative gain."
+    },
+    {
+      "segment_index": 156,
+      "start_time": 1550,
+      "end_time": 1560,
+      "frames": [
+        "frame_0930.jpg",
+        "frame_0931.jpg",
+        "frame_0932.jpg",
+        "frame_0933.jpg",
+        "frame_0934.jpg",
+        "frame_0935.jpg"
+      ],
+      "transcript": "[25:47] So again, it doesn't matter what your KD number is, your derivative gain.\n[25:52] This is going to be zero.\n[25:54] Okay.\n[25:54] Now, at this point here when we introduce this step, you actually see that we have a little bit of a discontinuity."
+    },
+    {
+      "segment_index": 157,
+      "start_time": 1560,
+      "end_time": 1570,
+      "frames": [
+        "frame_0936.jpg",
+        "frame_0937.jpg",
+        "frame_0938.jpg",
+        "frame_0939.jpg",
+        "frame_0940.jpg",
+        "frame_0941.jpg"
+      ],
+      "transcript": "[25:54] Now, at this point here when we introduce this step, you actually see that we have a little bit of a discontinuity.\n[26:00] Right.\n[26:00] Because the slope here is infinite.\n[26:02] Right.\n[26:02] It just jumped from zero to something not zero instantaneously.\n[26:07] So actually the derivative control is going to be enormous."
+    },
+    {
+      "segment_index": 158,
+      "start_time": 1570,
+      "end_time": 1580,
+      "frames": [
+        "frame_0942.jpg",
+        "frame_0943.jpg",
+        "frame_0944.jpg",
+        "frame_0945.jpg",
+        "frame_0946.jpg",
+        "frame_0947.jpg"
+      ],
+      "transcript": "[26:07] So actually the derivative control is going to be enormous.\n[26:11] You're going to get some spike here.\n[26:13] Right.\n[26:14] You're going to get a giant number.\n[26:15] Okay.\n[26:16] And now what's going to happen is this is why, again, the derivative maybe doesn't work by itself."
+    },
+    {
+      "segment_index": 159,
+      "start_time": 1580,
+      "end_time": 1590,
+      "frames": [
+        "frame_0948.jpg",
+        "frame_0949.jpg",
+        "frame_0950.jpg",
+        "frame_0951.jpg",
+        "frame_0952.jpg",
+        "frame_0953.jpg"
+      ],
+      "transcript": "[26:16] And now what's going to happen is this is why, again, the derivative maybe doesn't work by itself.\n[26:20] Maybe the proportional control, the integral control, something starts driving the error down.\n[26:25] Right.\n[26:26] This thing starts going down towards the reference point.\n[26:29] Okay."
+    },
+    {
+      "segment_index": 160,
+      "start_time": 1590,
+      "end_time": 1600,
+      "frames": [
+        "frame_0954.jpg",
+        "frame_0955.jpg",
+        "frame_0956.jpg",
+        "frame_0957.jpg",
+        "frame_0958.jpg",
+        "frame_0959.jpg"
+      ],
+      "transcript": "[26:29] Okay.\n[26:30] So now what we can start asking is I can start looking at the slope here.\n[26:34] So the slope here is kind of, you know, something.\n[26:38] Right.\n[26:38] And it's small."
+    },
+    {
+      "segment_index": 161,
+      "start_time": 1600,
+      "end_time": 1610,
+      "frames": [
+        "frame_0960.jpg",
+        "frame_0961.jpg",
+        "frame_0962.jpg",
+        "frame_0963.jpg",
+        "frame_0964.jpg",
+        "frame_0965.jpg"
+      ],
+      "transcript": "[26:38] And it's small.\n[26:41] So let's just say that this is, I don't know, maybe this thing comes down.\n[26:45] Down nicely down to here or something like that.\n[26:48] Maybe your KD is negative."
+    },
+    {
+      "segment_index": 162,
+      "start_time": 1610,
+      "end_time": 1620,
+      "frames": [
+        "frame_0966.jpg",
+        "frame_0967.jpg",
+        "frame_0968.jpg",
+        "frame_0969.jpg",
+        "frame_0970.jpg",
+        "frame_0971.jpg"
+      ],
+      "transcript": "[26:48] Maybe your KD is negative.\n[26:50] So that even though this is a negative slope, by the time you multiply by a negative KD, you get a positive UD.\n[26:55] All right.\n[26:56] So again, the sign doesn't really matter.\n[26:57] I'm more interested in the concepts.\n[26:59] Right.\n[26:59] So the idea is, okay, that's like that."
+    },
+    {
+      "segment_index": 163,
+      "start_time": 1620,
+      "end_time": 1630,
+      "frames": [
+        "frame_0972.jpg",
+        "frame_0973.jpg",
+        "frame_0974.jpg",
+        "frame_0975.jpg",
+        "frame_0976.jpg",
+        "frame_0977.jpg"
+      ],
+      "transcript": "[26:59] So the idea is, okay, that's like that.\n[27:01] And then you see here the slope is a little bit steeper.\n[27:04] So now it's a little bit more.\n[27:06] And then it's even steeper.\n[27:07] So you get even more.\n[27:08] So I think everyone gets the idea.\n[27:09] Right."
+    },
+    {
+      "segment_index": 164,
+      "start_time": 1630,
+      "end_time": 1640,
+      "frames": [
+        "frame_0978.jpg",
+        "frame_0979.jpg",
+        "frame_0980.jpg",
+        "frame_0981.jpg",
+        "frame_0982.jpg",
+        "frame_0983.jpg"
+      ],
+      "transcript": "[27:09] Right.\n[27:10] What's happening is that this derivative signal is basically looking at the slope of the error to basically compute what it's going to do."
+    },
+    {
+      "segment_index": 165,
+      "start_time": 1640,
+      "end_time": 1650,
+      "frames": [
+        "frame_0984.jpg",
+        "frame_0985.jpg",
+        "frame_0986.jpg",
+        "frame_0987.jpg",
+        "frame_0988.jpg",
+        "frame_0989.jpg"
+      ],
+      "transcript": "[27:10] What's happening is that this derivative signal is basically looking at the slope of the error to basically compute what it's going to do.\n[27:24] Right.\n[27:24] So again, I'm not a great artist, but I think it's going to, you know, something like this.\n[27:29] Okay."
+    },
+    {
+      "segment_index": 166,
+      "start_time": 1650,
+      "end_time": 1660,
+      "frames": [
+        "frame_0990.jpg",
+        "frame_0991.jpg",
+        "frame_0992.jpg",
+        "frame_0993.jpg",
+        "frame_0994.jpg",
+        "frame_0995.jpg"
+      ],
+      "transcript": "[27:30] Okay.\n[27:32] So again, the other thing that is maybe interesting to mention here is that at steady state.\n[27:39] Right.\n[27:39] So here is where we have sort of steady state behavior."
+    },
+    {
+      "segment_index": 167,
+      "start_time": 1660,
+      "end_time": 1670,
+      "frames": [
+        "frame_0996.jpg",
+        "frame_0997.jpg",
+        "frame_0998.jpg",
+        "frame_0999.jpg",
+        "frame_1000.jpg",
+        "frame_1001.jpg"
+      ],
+      "transcript": "[27:39] So here is where we have sort of steady state behavior.\n[27:43] So maybe there's zero steady state error.\n[27:46] Maybe there's non-zero steady state error.\n[27:48] I don't really care.\n[27:49] All I care is that it's at steady state."
+    },
+    {
+      "segment_index": 168,
+      "start_time": 1670,
+      "end_time": 1680,
+      "frames": [
+        "frame_1002.jpg",
+        "frame_1003.jpg",
+        "frame_1004.jpg",
+        "frame_1005.jpg",
+        "frame_1006.jpg",
+        "frame_1007.jpg"
+      ],
+      "transcript": "[27:49] All I care is that it's at steady state.\n[27:51] And what that means, right, is that steady state, what's the slope here?\n[27:56] The slope is zero.\n[27:57] Right.\n[27:58] So at steady state behavior, the derivative is zero."
+    },
+    {
+      "segment_index": 169,
+      "start_time": 1680,
+      "end_time": 1690,
+      "frames": [
+        "frame_1008.jpg",
+        "frame_1009.jpg",
+        "frame_1010.jpg",
+        "frame_1011.jpg",
+        "frame_1012.jpg",
+        "frame_1013.jpg"
+      ],
+      "transcript": "[27:58] So at steady state behavior, the derivative is zero.\n[28:03] Right.\n[28:08] So interesting."
+    },
+    {
+      "segment_index": 170,
+      "start_time": 1690,
+      "end_time": 1700,
+      "frames": [
+        "frame_1014.jpg",
+        "frame_1015.jpg",
+        "frame_1016.jpg",
+        "frame_1017.jpg",
+        "frame_1018.jpg",
+        "frame_1019.jpg"
+      ],
+      "transcript": "[28:08] So interesting.\n[28:10] Right.\n[28:10] At steady state, the derivative does nothing.\n[28:14] Right.\n[28:14] So the derivative is really this D term.\n[28:16] This control comes into play only when the system has dynamics."
+    },
+    {
+      "segment_index": 171,
+      "start_time": 1700,
+      "end_time": 1710,
+      "frames": [
+        "frame_1020.jpg",
+        "frame_1021.jpg",
+        "frame_1022.jpg",
+        "frame_1023.jpg",
+        "frame_1024.jpg",
+        "frame_1025.jpg"
+      ],
+      "transcript": "[28:16] This control comes into play only when the system has dynamics.\n[28:20] Right.\n[28:20] When the error signal is changing, that's when this thing actually kicks in and contributes\n[28:25] something to your overall control signal.\n[28:27] Right.\n[28:27] Now, again, you couple that with the fact, as we talked about earlier, that if you had zero"
+    },
+    {
+      "segment_index": 172,
+      "start_time": 1710,
+      "end_time": 1720,
+      "frames": [
+        "frame_1026.jpg",
+        "frame_1027.jpg",
+        "frame_1028.jpg",
+        "frame_1029.jpg",
+        "frame_1030.jpg",
+        "frame_1031.jpg"
+      ],
+      "transcript": "[28:27] Now, again, you couple that with the fact, as we talked about earlier, that if you had zero\n[28:33] steady state error, let's draw maybe an alternate signal, maybe as like dashed.\n[28:37] Right.\n[28:38] Right.\n[28:39] And again, the derivative would look pretty darn close here."
+    },
+    {
+      "segment_index": 173,
+      "start_time": 1720,
+      "end_time": 1730,
+      "frames": [
+        "frame_1032.jpg",
+        "frame_1033.jpg",
+        "frame_1034.jpg",
+        "frame_1035.jpg",
+        "frame_1036.jpg",
+        "frame_1037.jpg"
+      ],
+      "transcript": "[28:39] And again, the derivative would look pretty darn close here.\n[28:42] So again, this is maybe a nice part to maybe mention.\n[28:45] You have steady state behavior and you have zero steady state error."
+    },
+    {
+      "segment_index": 174,
+      "start_time": 1730,
+      "end_time": 1740,
+      "frames": [
+        "frame_1038.jpg",
+        "frame_1039.jpg",
+        "frame_1040.jpg",
+        "frame_1041.jpg",
+        "frame_1042.jpg",
+        "frame_1043.jpg"
+      ],
+      "transcript": "[28:45] You have steady state behavior and you have zero steady state error.\n[28:52] Right.\n[28:53] This is the picture you want.\n[28:55] Right.\n[28:55] We want whatever control scheme to do.\n[28:58] We want the error signal to eventually settle out to zero."
+    },
+    {
+      "segment_index": 175,
+      "start_time": 1740,
+      "end_time": 1750,
+      "frames": [
+        "frame_1044.jpg",
+        "frame_1045.jpg",
+        "frame_1046.jpg",
+        "frame_1047.jpg",
+        "frame_1048.jpg",
+        "frame_1049.jpg"
+      ],
+      "transcript": "[28:58] We want the error signal to eventually settle out to zero.\n[29:01] OK.\n[29:02] Now, think about this.\n[29:04] If this is zero.\n[29:06] Right.\n[29:06] The slope of this is flat.\n[29:08] So the derivative controller is doing nothing."
+    },
+    {
+      "segment_index": 176,
+      "start_time": 1750,
+      "end_time": 1760,
+      "frames": [
+        "frame_1050.jpg",
+        "frame_1051.jpg",
+        "frame_1052.jpg",
+        "frame_1053.jpg",
+        "frame_1054.jpg",
+        "frame_1055.jpg"
+      ],
+      "transcript": "[29:08] So the derivative controller is doing nothing.\n[29:11] Right.\n[29:12] So this here is basically zero.\n[29:15] I mean, it is zero.\n[29:16] Right.\n[29:16] So this is zero.\n[29:17] And now let me take away these ignore things.\n[29:19] Because now really we can start talking about all of these together."
+    },
+    {
+      "segment_index": 177,
+      "start_time": 1760,
+      "end_time": 1770,
+      "frames": [
+        "frame_1056.jpg",
+        "frame_1057.jpg",
+        "frame_1058.jpg",
+        "frame_1059.jpg",
+        "frame_1060.jpg",
+        "frame_1061.jpg"
+      ],
+      "transcript": "[29:19] Because now really we can start talking about all of these together.\n[29:23] Because that's what a PID controller is.\n[29:25] It's when you've got interplay between all three of these components.\n[29:28] Right.\n[29:29] And we already talked about the UP idea."
+    },
+    {
+      "segment_index": 178,
+      "start_time": 1770,
+      "end_time": 1780,
+      "frames": [
+        "frame_1062.jpg",
+        "frame_1063.jpg",
+        "frame_1064.jpg",
+        "frame_1065.jpg",
+        "frame_1066.jpg",
+        "frame_1067.jpg"
+      ],
+      "transcript": "[29:29] And we already talked about the UP idea.\n[29:31] Right.\n[29:32] The proportional part, it's just the error multiplied by KP.\n[29:37] Well, if you have zero steady state error, you have zero error."
+    },
+    {
+      "segment_index": 179,
+      "start_time": 1780,
+      "end_time": 1790,
+      "frames": [
+        "frame_1068.jpg",
+        "frame_1069.jpg",
+        "frame_1070.jpg",
+        "frame_1071.jpg",
+        "frame_1072.jpg",
+        "frame_1073.jpg"
+      ],
+      "transcript": "[29:37] Well, if you have zero steady state error, you have zero error.\n[29:41] So therefore, this is actually also zero.\n[29:44] Right.\n[29:45] So again, this supports what I kind of briefly waved my hands on very quickly earlier."
+    },
+    {
+      "segment_index": 180,
+      "start_time": 1790,
+      "end_time": 1800,
+      "frames": [
+        "frame_1074.jpg",
+        "frame_1075.jpg",
+        "frame_1076.jpg",
+        "frame_1077.jpg",
+        "frame_1078.jpg",
+        "frame_1079.jpg"
+      ],
+      "transcript": "[29:45] So again, this supports what I kind of briefly waved my hands on very quickly earlier.\n[29:51] is that in a good situation where everything is, where things are behaving the way you\n[29:58] want it to when you have this picture, the integrator is the only thing that is non-zero."
+    },
+    {
+      "segment_index": 181,
+      "start_time": 1800,
+      "end_time": 1810,
+      "frames": [
+        "frame_1080.jpg",
+        "frame_1081.jpg",
+        "frame_1082.jpg",
+        "frame_1083.jpg",
+        "frame_1084.jpg",
+        "frame_1085.jpg"
+      ],
+      "transcript": "[29:58] want it to when you have this picture, the integrator is the only thing that is non-zero.\n[30:03] Right.\n[30:03] It is the only thing that is contributing to your controller or to your control signal in\n[30:07] this configuration.\n[30:08] So again, this is just, there's a lot more discussion to be had."
+    },
+    {
+      "segment_index": 182,
+      "start_time": 1810,
+      "end_time": 1820,
+      "frames": [
+        "frame_1086.jpg",
+        "frame_1087.jpg",
+        "frame_1088.jpg",
+        "frame_1089.jpg",
+        "frame_1090.jpg",
+        "frame_1091.jpg"
+      ],
+      "transcript": "[30:08] So again, this is just, there's a lot more discussion to be had.\n[30:13] But I just wanted to kind of give everyone some core ideas and get a rough feeling of how\n[30:17] all these little terms contribute, what they do, what they feel like."
+    },
+    {
+      "segment_index": 183,
+      "start_time": 1820,
+      "end_time": 1830,
+      "frames": [
+        "frame_1092.jpg",
+        "frame_1093.jpg",
+        "frame_1094.jpg",
+        "frame_1095.jpg",
+        "frame_1096.jpg",
+        "frame_1097.jpg"
+      ],
+      "transcript": "[30:17] all these little terms contribute, what they do, what they feel like.\n[30:21] And now the game is considering all of them simultaneously.\n[30:26] So to maybe get a little bit more intuitive feel for what these are, let me actually, let's"
+    },
+    {
+      "segment_index": 184,
+      "start_time": 1830,
+      "end_time": 1840,
+      "frames": [
+        "frame_1098.jpg",
+        "frame_1099.jpg",
+        "frame_1100.jpg",
+        "frame_1101.jpg",
+        "frame_1102.jpg",
+        "frame_1103.jpg"
+      ],
+      "transcript": "[30:26] So to maybe get a little bit more intuitive feel for what these are, let me actually, let's\n[30:34] jump outside.\n[30:35] And I've got a little demo that we can look at with a physical system to see how these\n[30:39] all interplay."
+    },
+    {
+      "segment_index": 185,
+      "start_time": 1840,
+      "end_time": 1850,
+      "frames": [
+        "frame_1104.jpg",
+        "frame_1105.jpg",
+        "frame_1106.jpg",
+        "frame_1107.jpg",
+        "frame_1108.jpg",
+        "frame_1109.jpg"
+      ],
+      "transcript": "[30:39] all interplay.\n[30:40] All right.\n[30:41] So I've got a little experimental setup here.\n[30:43] And what we'd like to do is think about, I've got this little weight here and you can\n[30:47] see, it might be a little hard to see on the camera, but I 3D printed this little green"
+    },
+    {
+      "segment_index": 186,
+      "start_time": 1850,
+      "end_time": 1860,
+      "frames": [
+        "frame_1110.jpg",
+        "frame_1111.jpg",
+        "frame_1112.jpg",
+        "frame_1113.jpg",
+        "frame_1114.jpg",
+        "frame_1115.jpg"
+      ],
+      "transcript": "[30:47] see, it might be a little hard to see on the camera, but I 3D printed this little green\n[30:51] piece of plastic.\n[30:52] That's going to be our variable of interest.\n[30:55] That's our position Y.\n[30:57] So let's track the position Y of this green disc on this weight."
+    },
+    {
+      "segment_index": 187,
+      "start_time": 1860,
+      "end_time": 1870,
+      "frames": [
+        "frame_1116.jpg",
+        "frame_1117.jpg",
+        "frame_1118.jpg",
+        "frame_1119.jpg",
+        "frame_1120.jpg",
+        "frame_1121.jpg"
+      ],
+      "transcript": "[30:57] So let's track the position Y of this green disc on this weight.\n[31:03] Okay.\n[31:03] So now what I'd like to do is, you know, let's just sit this down.\n[31:06] Okay.\n[31:06] So the weight is just hanging around here and the position Y is just, you know, down"
+    },
+    {
+      "segment_index": 188,
+      "start_time": 1870,
+      "end_time": 1880,
+      "frames": [
+        "frame_1122.jpg",
+        "frame_1123.jpg",
+        "frame_1124.jpg",
+        "frame_1125.jpg",
+        "frame_1126.jpg",
+        "frame_1127.jpg"
+      ],
+      "transcript": "[31:06] So the weight is just hanging around here and the position Y is just, you know, down\n[31:11] here at the floor right now.\n[31:13] And again, if the reference position of where I'm trying to track is also down here at the\n[31:19] floor, everything is fine, right?"
+    },
+    {
+      "segment_index": 189,
+      "start_time": 1880,
+      "end_time": 1890,
+      "frames": [
+        "frame_1128.jpg",
+        "frame_1129.jpg",
+        "frame_1130.jpg",
+        "frame_1131.jpg",
+        "frame_1132.jpg",
+        "frame_1133.jpg"
+      ],
+      "transcript": "[31:19] floor, everything is fine, right?\n[31:20] There's zero error, right?\n[31:22] Now, what makes this interesting is, okay, if this is all fine, what if we go ahead and\n[31:27] change this reference position?\n[31:29] So what if I want the reference position now to be, oh, I don't know, something up here"
+    },
+    {
+      "segment_index": 190,
+      "start_time": 1890,
+      "end_time": 1900,
+      "frames": [
+        "frame_1134.jpg",
+        "frame_1135.jpg",
+        "frame_1136.jpg",
+        "frame_1137.jpg",
+        "frame_1138.jpg",
+        "frame_1139.jpg"
+      ],
+      "transcript": "[31:29] So what if I want the reference position now to be, oh, I don't know, something up here\n[31:34] maybe, right?\n[31:37] So now you can very clearly see there is a difference between R and Y."
+    },
+    {
+      "segment_index": 191,
+      "start_time": 1900,
+      "end_time": 1910,
+      "frames": [
+        "frame_1140.jpg",
+        "frame_1141.jpg",
+        "frame_1142.jpg",
+        "frame_1143.jpg",
+        "frame_1144.jpg",
+        "frame_1145.jpg"
+      ],
+      "transcript": "[31:37] So now you can very clearly see there is a difference between R and Y.\n[31:41] So we have a non-zero error.\n[31:43] And now that's the job of the controller.\n[31:45] So we need the PID controller to try to fix this error and make this error go to zero."
+    },
+    {
+      "segment_index": 192,
+      "start_time": 1910,
+      "end_time": 1920,
+      "frames": [
+        "frame_1146.jpg",
+        "frame_1147.jpg",
+        "frame_1148.jpg",
+        "frame_1149.jpg",
+        "frame_1150.jpg",
+        "frame_1151.jpg"
+      ],
+      "transcript": "[31:45] So we need the PID controller to try to fix this error and make this error go to zero.\n[31:51] So now, right now you can see we have, there's no control.\n[31:54] The control in this case is going to be a force that we're going to apply on this mass to\n[31:57] try to move it to this position R."
+    },
+    {
+      "segment_index": 193,
+      "start_time": 1920,
+      "end_time": 1930,
+      "frames": [
+        "frame_1152.jpg",
+        "frame_1153.jpg",
+        "frame_1154.jpg",
+        "frame_1155.jpg",
+        "frame_1156.jpg",
+        "frame_1157.jpg"
+      ],
+      "transcript": "[32:00] So right now there's nothing, right?\n[32:02] There's no control input.\n[32:04] So let's again start simple.\n[32:06] Let's start with the proportional component.\n[32:08] So remember, the proportional component of the controller, it's going to be a control"
+    },
+    {
+      "segment_index": 194,
+      "start_time": 1930,
+      "end_time": 1940,
+      "frames": [
+        "frame_1158.jpg",
+        "frame_1159.jpg",
+        "frame_1160.jpg",
+        "frame_1161.jpg",
+        "frame_1162.jpg",
+        "frame_1163.jpg"
+      ],
+      "transcript": "[32:08] So remember, the proportional component of the controller, it's going to be a control\n[32:12] signal which is directly proportional to this error, right?\n[32:16] And if the error grows, then the force or the control on this is going to grow."
+    },
+    {
+      "segment_index": 195,
+      "start_time": 1940,
+      "end_time": 1950,
+      "frames": [
+        "frame_1164.jpg",
+        "frame_1165.jpg",
+        "frame_1166.jpg",
+        "frame_1167.jpg",
+        "frame_1168.jpg",
+        "frame_1169.jpg"
+      ],
+      "transcript": "[32:16] And if the error grows, then the force or the control on this is going to grow.\n[32:22] So now you got to think, is there some kind of thing that we can apply to this mass whose\n[32:27] force is proportional to this distance?"
+    },
+    {
+      "segment_index": 196,
+      "start_time": 1950,
+      "end_time": 1960,
+      "frames": [
+        "frame_1170.jpg",
+        "frame_1171.jpg",
+        "frame_1172.jpg",
+        "frame_1173.jpg",
+        "frame_1174.jpg",
+        "frame_1175.jpg"
+      ],
+      "transcript": "[32:27] force is proportional to this distance?\n[32:30] That's exactly what a spring is, right?\n[32:32] Or a spring or maybe like a rubber band or something like that, right?\n[32:36] So maybe what I'm going to do is I'm going to hook up this rubber band.\n[32:39] And I've measured this in such a way that, again, we need this to be, when this rubber"
+    },
+    {
+      "segment_index": 197,
+      "start_time": 1960,
+      "end_time": 1970,
+      "frames": [
+        "frame_1176.jpg",
+        "frame_1177.jpg",
+        "frame_1178.jpg",
+        "frame_1179.jpg",
+        "frame_1180.jpg",
+        "frame_1181.jpg"
+      ],
+      "transcript": "[32:39] And I've measured this in such a way that, again, we need this to be, when this rubber\n[32:44] band is not elongated, right?\n[32:47] When it is, when it is, yeah, basically not elongated, right?"
+    },
+    {
+      "segment_index": 198,
+      "start_time": 1970,
+      "end_time": 1980,
+      "frames": [
+        "frame_1182.jpg",
+        "frame_1183.jpg",
+        "frame_1184.jpg",
+        "frame_1185.jpg",
+        "frame_1186.jpg",
+        "frame_1187.jpg"
+      ],
+      "transcript": "[32:47] When it is, when it is, yeah, basically not elongated, right?\n[32:51] There's no force by the rubber band.\n[32:53] So this is perfect, right?\n[32:55] So when there's zero error, there's going to be zero force from this rubber band."
+    },
+    {
+      "segment_index": 199,
+      "start_time": 1980,
+      "end_time": 1990,
+      "frames": [
+        "frame_1188.jpg",
+        "frame_1189.jpg",
+        "frame_1190.jpg",
+        "frame_1191.jpg",
+        "frame_1192.jpg",
+        "frame_1193.jpg"
+      ],
+      "transcript": "[32:55] So when there's zero error, there's going to be zero force from this rubber band.\n[33:00] And now we should be able to let this thing go and see how does this proportional controller\n[33:05] work, right?\n[33:06] Because right now, if the position Y is right here at R, there's no force on the rubber band."
+    },
+    {
+      "segment_index": 200,
+      "start_time": 1990,
+      "end_time": 2000,
+      "frames": [
+        "frame_1194.jpg",
+        "frame_1195.jpg",
+        "frame_1196.jpg",
+        "frame_1197.jpg",
+        "frame_1198.jpg",
+        "frame_1199.jpg"
+      ],
+      "transcript": "[33:06] Because right now, if the position Y is right here at R, there's no force on the rubber band.\n[33:12] But the problem is, as you can kind of see, is that that's actually not the case, right?"
+    },
+    {
+      "segment_index": 201,
+      "start_time": 2000,
+      "end_time": 2010,
+      "frames": [
+        "frame_1200.jpg",
+        "frame_1201.jpg",
+        "frame_1202.jpg",
+        "frame_1203.jpg",
+        "frame_1204.jpg",
+        "frame_1205.jpg"
+      ],
+      "transcript": "[33:12] But the problem is, as you can kind of see, is that that's actually not the case, right?\n[33:20] Right?\n[33:20] So this thing, it's doing better than it was before, right?\n[33:25] It used to be all the way down on the floor.\n[33:26] But now this proportional controller is able to move the position Y to about, you know, something"
+    },
+    {
+      "segment_index": 202,
+      "start_time": 2010,
+      "end_time": 2020,
+      "frames": [
+        "frame_1206.jpg",
+        "frame_1207.jpg",
+        "frame_1208.jpg",
+        "frame_1209.jpg",
+        "frame_1210.jpg",
+        "frame_1211.jpg"
+      ],
+      "transcript": "[33:26] But now this proportional controller is able to move the position Y to about, you know, something\n[33:32] like that.\n[33:34] So we see there is steady state error in this case.\n[33:38] So it's trying to bring it up to this R."
+    },
+    {
+      "segment_index": 203,
+      "start_time": 2020,
+      "end_time": 2030,
+      "frames": [
+        "frame_1212.jpg",
+        "frame_1213.jpg",
+        "frame_1214.jpg",
+        "frame_1215.jpg",
+        "frame_1216.jpg",
+        "frame_1217.jpg"
+      ],
+      "transcript": "[33:38] So it's trying to bring it up to this R.\n[33:40] But the fact that you actually need some finite error in order to have a finite control\n[33:46] is what makes this problem with a proportional controller a little bit, it's not going to"
+    },
+    {
+      "segment_index": 204,
+      "start_time": 2030,
+      "end_time": 2040,
+      "frames": [
+        "frame_1218.jpg",
+        "frame_1219.jpg",
+        "frame_1220.jpg",
+        "frame_1221.jpg",
+        "frame_1222.jpg",
+        "frame_1223.jpg"
+      ],
+      "transcript": "[33:46] is what makes this problem with a proportional controller a little bit, it's not going to\n[33:51] solve the entire problem, right?\n[33:53] Now, you might ask, is there something better I can do?\n[33:56] How can I decrease this error, right?\n[33:59] We talked about that."
+    },
+    {
+      "segment_index": 205,
+      "start_time": 2040,
+      "end_time": 2050,
+      "frames": [
+        "frame_1224.jpg",
+        "frame_1225.jpg",
+        "frame_1226.jpg",
+        "frame_1227.jpg",
+        "frame_1228.jpg",
+        "frame_1229.jpg"
+      ],
+      "transcript": "[34:00] Well, that just means your first try might be to do something like just go ahead and\n[34:04] increase the gain on your proportional controller.\n[34:07] So in this case, what's the gain of the proportional controller?\n[34:09] What's the physical equivalent?"
+    },
+    {
+      "segment_index": 206,
+      "start_time": 2050,
+      "end_time": 2060,
+      "frames": [
+        "frame_1230.jpg",
+        "frame_1231.jpg",
+        "frame_1232.jpg",
+        "frame_1233.jpg",
+        "frame_1234.jpg",
+        "frame_1235.jpg"
+      ],
+      "transcript": "[34:09] What's the physical equivalent?\n[34:11] It's basically the spring constant, right?\n[34:13] If we increase the spring constant, we should increase the gain and therefore the behavior\n[34:19] should change."
+    },
+    {
+      "segment_index": 207,
+      "start_time": 2060,
+      "end_time": 2070,
+      "frames": [
+        "frame_1236.jpg",
+        "frame_1237.jpg",
+        "frame_1238.jpg",
+        "frame_1239.jpg",
+        "frame_1240.jpg",
+        "frame_1241.jpg"
+      ],
+      "transcript": "[34:19] should change.\n[34:20] So I've got a stiffer rubber band here.\n[34:22] Let's do the same thing.\n[34:23] Let's go ahead and add now our stiffer spring and see if that changes anything."
+    },
+    {
+      "segment_index": 208,
+      "start_time": 2070,
+      "end_time": 2080,
+      "frames": [
+        "frame_1242.jpg",
+        "frame_1243.jpg",
+        "frame_1244.jpg",
+        "frame_1245.jpg",
+        "frame_1246.jpg",
+        "frame_1247.jpg"
+      ],
+      "transcript": "[34:23] Let's go ahead and add now our stiffer spring and see if that changes anything.\n[34:31] Okay.\n[34:31] So again, now, aha.\n[34:35] Now look at this, right?\n[34:36] So again, we still don't make it all the way up to R, but we have reduced the amount"
+    },
+    {
+      "segment_index": 209,
+      "start_time": 2080,
+      "end_time": 2090,
+      "frames": [
+        "frame_1248.jpg",
+        "frame_1249.jpg",
+        "frame_1250.jpg",
+        "frame_1251.jpg",
+        "frame_1252.jpg"
+      ],
+      "transcript": "[34:36] So again, we still don't make it all the way up to R, but we have reduced the amount\n[34:44] of steady state error.\n[34:45] But again, the problem with the proportional controller is again, no matter how stiff you\n[34:49] make this spring, in other words, no matter how big you make that gain KP, you are not"
+    },
+    {
+      "segment_index": 210,
+      "start_time": 2090,
+      "end_time": 2100,
+      "frames": [
+        "frame_1253.jpg",
+        "frame_1254.jpg",
+        "frame_1255.jpg",
+        "frame_1256.jpg",
+        "frame_1257.jpg",
+        "frame_1258.jpg"
+      ],
+      "transcript": "[34:49] make this spring, in other words, no matter how big you make that gain KP, you are not\n[34:55] going to get zero steady state error, right?\n[34:57] That's the whole issue.\n[34:59] Now, what we talked about on the board is, all right, so if that's the problem with a"
+    },
+    {
+      "segment_index": 211,
+      "start_time": 2100,
+      "end_time": 2110,
+      "frames": [
+        "frame_1259.jpg",
+        "frame_1260.jpg",
+        "frame_1261.jpg",
+        "frame_1262.jpg",
+        "frame_1263.jpg",
+        "frame_1264.jpg"
+      ],
+      "transcript": "[34:59] Now, what we talked about on the board is, all right, so if that's the problem with a\n[35:02] proportional controller, maybe what we're going to do is start adding an integrator, right?\n[35:07] So now what I need is to add some type of control to this system where the control component,"
+    },
+    {
+      "segment_index": 212,
+      "start_time": 2110,
+      "end_time": 2120,
+      "frames": [
+        "frame_1265.jpg",
+        "frame_1266.jpg",
+        "frame_1267.jpg",
+        "frame_1268.jpg",
+        "frame_1269.jpg",
+        "frame_1270.jpg"
+      ],
+      "transcript": "[35:07] So now what I need is to add some type of control to this system where the control component,\n[35:14] right, the UI, it's somehow related to the integral of the error.\n[35:18] Because right now, with just a proportional controller, right, we can be sitting here at"
+    },
+    {
+      "segment_index": 213,
+      "start_time": 2120,
+      "end_time": 2130,
+      "frames": [
+        "frame_1271.jpg",
+        "frame_1272.jpg",
+        "frame_1273.jpg",
+        "frame_1274.jpg",
+        "frame_1275.jpg",
+        "frame_1276.jpg"
+      ],
+      "transcript": "[35:18] Because right now, with just a proportional controller, right, we can be sitting here at\n[35:21] steady state error like this forever and nothing is ever going to change, right?\n[35:25] That's what the integrator is going to do.\n[35:26] So I'm going to go ahead and add this pink string.\n[35:29] This pink string is supposed to represent the integral component of control."
+    },
+    {
+      "segment_index": 214,
+      "start_time": 2130,
+      "end_time": 2140,
+      "frames": [
+        "frame_1277.jpg",
+        "frame_1278.jpg",
+        "frame_1279.jpg",
+        "frame_1280.jpg",
+        "frame_1281.jpg",
+        "frame_1282.jpg"
+      ],
+      "transcript": "[35:29] This pink string is supposed to represent the integral component of control.\n[35:33] And right now it's slack.\n[35:35] You can see the integrator is doing nothing because we're going to pretend we start our\n[35:39] experiment right now."
+    },
+    {
+      "segment_index": 215,
+      "start_time": 2140,
+      "end_time": 2150,
+      "frames": [
+        "frame_1283.jpg",
+        "frame_1284.jpg",
+        "frame_1285.jpg",
+        "frame_1286.jpg",
+        "frame_1287.jpg",
+        "frame_1288.jpg"
+      ],
+      "transcript": "[35:39] experiment right now.\n[35:40] And now the integrator starts seeing there's some non-zero error, right?\n[35:45] So it's going to start integrating it.\n[35:47] So this string is going to start, whoops, hold on, it's stuck."
+    },
+    {
+      "segment_index": 216,
+      "start_time": 2150,
+      "end_time": 2160,
+      "frames": [
+        "frame_1289.jpg",
+        "frame_1290.jpg",
+        "frame_1291.jpg",
+        "frame_1292.jpg",
+        "frame_1293.jpg",
+        "frame_1294.jpg"
+      ],
+      "transcript": "[35:51] This integrator component of the force, it's going to add on top of the proportional part,\n[35:56] but it's going to start pulling harder and harder and harder.\n[35:59] So I'm going to have to play the part of the integrator and I'm going to have to integrate"
+    },
+    {
+      "segment_index": 217,
+      "start_time": 2160,
+      "end_time": 2170,
+      "frames": [
+        "frame_1295.jpg",
+        "frame_1296.jpg",
+        "frame_1297.jpg",
+        "frame_1298.jpg",
+        "frame_1299.jpg",
+        "frame_1300.jpg"
+      ],
+      "transcript": "[35:59] So I'm going to have to play the part of the integrator and I'm going to have to integrate\n[36:02] the area under this error curve.\n[36:06] And I'm going to have to start pulling and pulling and pulling.\n[36:09] And as I see that the error is still non-zero, right, I'm going to keep pulling harder and"
+    },
+    {
+      "segment_index": 218,
+      "start_time": 2170,
+      "end_time": 2180,
+      "frames": [
+        "frame_1301.jpg",
+        "frame_1302.jpg",
+        "frame_1303.jpg",
+        "frame_1304.jpg",
+        "frame_1305.jpg",
+        "frame_1306.jpg"
+      ],
+      "transcript": "[36:09] And as I see that the error is still non-zero, right, I'm going to keep pulling harder and\n[36:14] harder and harder until eventually it hits here.\n[36:18] But I've wound up so much error in my integrator that it might overshoot a little bit."
+    },
+    {
+      "segment_index": 219,
+      "start_time": 2180,
+      "end_time": 2190,
+      "frames": [
+        "frame_1307.jpg",
+        "frame_1308.jpg",
+        "frame_1309.jpg",
+        "frame_1310.jpg",
+        "frame_1311.jpg",
+        "frame_1312.jpg"
+      ],
+      "transcript": "[36:18] But I've wound up so much error in my integrator that it might overshoot a little bit.\n[36:23] And then it might come down and oscillate and whatnot.\n[36:26] But at some point, right, the pink string, which is the integrator component, you can"
+    },
+    {
+      "segment_index": 220,
+      "start_time": 2190,
+      "end_time": 2200,
+      "frames": [
+        "frame_1313.jpg",
+        "frame_1314.jpg",
+        "frame_1315.jpg",
+        "frame_1316.jpg",
+        "frame_1317.jpg",
+        "frame_1318.jpg"
+      ],
+      "transcript": "[36:26] But at some point, right, the pink string, which is the integrator component, you can\n[36:32] see brings the actual position of the weight up to R.\n[36:38] So now R and Y are the same thing and there's zero error."
+    },
+    {
+      "segment_index": 221,
+      "start_time": 2200,
+      "end_time": 2210,
+      "frames": [
+        "frame_1319.jpg",
+        "frame_1320.jpg",
+        "frame_1321.jpg",
+        "frame_1322.jpg",
+        "frame_1323.jpg",
+        "frame_1324.jpg"
+      ],
+      "transcript": "[36:38] So now R and Y are the same thing and there's zero error.\n[36:42] And what we said earlier is because there is zero error, right, this rubber band, the spring"
+    },
+    {
+      "segment_index": 222,
+      "start_time": 2210,
+      "end_time": 2220,
+      "frames": [
+        "frame_1325.jpg",
+        "frame_1326.jpg",
+        "frame_1327.jpg",
+        "frame_1328.jpg",
+        "frame_1329.jpg",
+        "frame_1330.jpg"
+      ],
+      "transcript": "[36:42] And what we said earlier is because there is zero error, right, this rubber band, the spring\n[36:51] or the proportional component is doing nothing, right?\n[36:54] The pink string is taking up all of the force, is generating all of the control, right?\n[36:59] So this is kind of interesting."
+    },
+    {
+      "segment_index": 223,
+      "start_time": 2220,
+      "end_time": 2230,
+      "frames": [
+        "frame_1331.jpg",
+        "frame_1332.jpg",
+        "frame_1333.jpg",
+        "frame_1334.jpg",
+        "frame_1335.jpg",
+        "frame_1336.jpg"
+      ],
+      "transcript": "[36:59] So this is kind of interesting.\n[37:01] So there you go.\n[37:01] Here's a physical demonstration of a PI controller.\n[37:04] Why don't we add the last component?\n[37:06] Let's go all the way to maybe PID.\n[37:08] And for giggles, let me go back to the weaker spring because this one is actually more interesting."
+    },
+    {
+      "segment_index": 224,
+      "start_time": 2230,
+      "end_time": 2240,
+      "frames": [
+        "frame_1337.jpg",
+        "frame_1338.jpg",
+        "frame_1339.jpg",
+        "frame_1340.jpg",
+        "frame_1341.jpg",
+        "frame_1342.jpg"
+      ],
+      "transcript": "[37:08] And for giggles, let me go back to the weaker spring because this one is actually more interesting.\n[37:16] So let's go back here.\n[37:19] If I can hook all this back up, okay."
+    },
+    {
+      "segment_index": 225,
+      "start_time": 2240,
+      "end_time": 2250,
+      "frames": [
+        "frame_1343.jpg",
+        "frame_1344.jpg",
+        "frame_1345.jpg",
+        "frame_1346.jpg",
+        "frame_1347.jpg",
+        "frame_1348.jpg"
+      ],
+      "transcript": "[37:19] If I can hook all this back up, okay.\n[37:21] All right.\n[37:21] Okay.\n[37:22] So now we're back here, right?\n[37:24] Here's our P only controller.\n[37:26] Again, we've got some error now.\n[37:28] Let's go ahead and make a mark where that is."
+    },
+    {
+      "segment_index": 226,
+      "start_time": 2250,
+      "end_time": 2260,
+      "frames": [
+        "frame_1349.jpg",
+        "frame_1350.jpg",
+        "frame_1351.jpg",
+        "frame_1352.jpg",
+        "frame_1353.jpg",
+        "frame_1354.jpg"
+      ],
+      "transcript": "[37:28] Let's go ahead and make a mark where that is.\n[37:31] Okay.\n[37:32] Again, we're trying to get up to this reference.\n[37:35] And now, you know, we made the claim earlier that this is a P controller only, right?"
+    },
+    {
+      "segment_index": 227,
+      "start_time": 2260,
+      "end_time": 2270,
+      "frames": [
+        "frame_1355.jpg",
+        "frame_1356.jpg",
+        "frame_1357.jpg",
+        "frame_1358.jpg",
+        "frame_1359.jpg",
+        "frame_1360.jpg"
+      ],
+      "transcript": "[37:35] And now, you know, we made the claim earlier that this is a P controller only, right?\n[37:41] Because right now there's only a force which is directly proportional to this distance, right?\n[37:48] Actually, if you think about this long enough, this is actually a P and a very weak D controller"
+    },
+    {
+      "segment_index": 228,
+      "start_time": 2270,
+      "end_time": 2280,
+      "frames": [
+        "frame_1361.jpg",
+        "frame_1362.jpg",
+        "frame_1363.jpg",
+        "frame_1364.jpg",
+        "frame_1365.jpg",
+        "frame_1366.jpg"
+      ],
+      "transcript": "[37:48] Actually, if you think about this long enough, this is actually a P and a very weak D controller\n[37:53] right now because there is a force that is acting on this weight which is proportional\n[37:59] to its velocity, right?"
+    },
+    {
+      "segment_index": 229,
+      "start_time": 2280,
+      "end_time": 2290,
+      "frames": [
+        "frame_1367.jpg",
+        "frame_1368.jpg",
+        "frame_1369.jpg",
+        "frame_1370.jpg",
+        "frame_1371.jpg",
+        "frame_1372.jpg"
+      ],
+      "transcript": "[37:59] to its velocity, right?\n[38:00] That's because we're sitting in a fluid, right?\n[38:03] We're sitting in air.\n[38:04] So there is some air resistance, right?\n[38:06] That the faster you try to go through the air, the more force it's going to put onto it."
+    },
+    {
+      "segment_index": 230,
+      "start_time": 2290,
+      "end_time": 2300,
+      "frames": [
+        "frame_1373.jpg",
+        "frame_1374.jpg",
+        "frame_1375.jpg",
+        "frame_1376.jpg",
+        "frame_1377.jpg",
+        "frame_1378.jpg"
+      ],
+      "transcript": "[38:06] That the faster you try to go through the air, the more force it's going to put onto it.\n[38:10] Of course, that magnitude is negligible, right?\n[38:14] Because the air is not very viscous.\n[38:16] There's not a lot of aerodynamic drag in this regime.\n[38:19] Okay.\n[38:19] But what if we increase that?"
+    },
+    {
+      "segment_index": 231,
+      "start_time": 2300,
+      "end_time": 2310,
+      "frames": [
+        "frame_1379.jpg",
+        "frame_1380.jpg",
+        "frame_1381.jpg",
+        "frame_1382.jpg",
+        "frame_1383.jpg",
+        "frame_1384.jpg"
+      ],
+      "transcript": "[38:19] But what if we increase that?\n[38:21] So for example, let me put this inside maybe this little graduated cylinder we've got here.\n[38:27] Okay.\n[38:27] Okay.\n[38:28] Okay.\n[38:28] Let me scoot this over just a little skosh just to make this line up a little bit more"
+    },
+    {
+      "segment_index": 232,
+      "start_time": 2310,
+      "end_time": 2320,
+      "frames": [
+        "frame_1385.jpg",
+        "frame_1386.jpg",
+        "frame_1387.jpg",
+        "frame_1388.jpg",
+        "frame_1389.jpg",
+        "frame_1390.jpg"
+      ],
+      "transcript": "[38:28] Let me scoot this over just a little skosh just to make this line up a little bit more\n[38:31] nicely.\n[38:32] Okay.\n[38:33] Okay.\n[38:34] So I want to add now or I guess to be technically correct, I want to increase the derivative component"
+    },
+    {
+      "segment_index": 233,
+      "start_time": 2320,
+      "end_time": 2330,
+      "frames": [
+        "frame_1391.jpg",
+        "frame_1392.jpg",
+        "frame_1393.jpg",
+        "frame_1394.jpg",
+        "frame_1395.jpg",
+        "frame_1396.jpg"
+      ],
+      "transcript": "[38:34] So I want to add now or I guess to be technically correct, I want to increase the derivative component\n[38:41] of the PID controller, right?\n[38:42] So what I need is I need to increase the amount of force that is applied to this which is proportional\n[38:48] to its velocity.\n[38:49] So if air is not a very good viscous fluid, why don't we try something a little bit more"
+    },
+    {
+      "segment_index": 234,
+      "start_time": 2330,
+      "end_time": 2340,
+      "frames": [
+        "frame_1397.jpg",
+        "frame_1398.jpg",
+        "frame_1399.jpg",
+        "frame_1400.jpg",
+        "frame_1401.jpg",
+        "frame_1402.jpg"
+      ],
+      "transcript": "[38:49] So if air is not a very good viscous fluid, why don't we try something a little bit more\n[38:54] viscous?\n[38:55] Like what about water?\n[38:56] So if I pour water in here, right?"
+    },
+    {
+      "segment_index": 235,
+      "start_time": 2340,
+      "end_time": 2350,
+      "frames": [
+        "frame_1403.jpg",
+        "frame_1404.jpg",
+        "frame_1405.jpg",
+        "frame_1406.jpg",
+        "frame_1407.jpg",
+        "frame_1408.jpg"
+      ],
+      "transcript": "[38:56] So if I pour water in here, right?\n[39:00] Now what we have is I have basically increased the D component of this controller, right?\n[39:07] Because now you see how much more damped out it is, right?"
+    },
+    {
+      "segment_index": 236,
+      "start_time": 2350,
+      "end_time": 2360,
+      "frames": [
+        "frame_1409.jpg",
+        "frame_1410.jpg",
+        "frame_1411.jpg",
+        "frame_1412.jpg",
+        "frame_1413.jpg",
+        "frame_1414.jpg"
+      ],
+      "transcript": "[39:07] Because now you see how much more damped out it is, right?\n[39:12] You see how this thing does not bounce around or oscillate as much, right?\n[39:18] Because there is now a lot more force."
+    },
+    {
+      "segment_index": 237,
+      "start_time": 2360,
+      "end_time": 2370,
+      "frames": [
+        "frame_1415.jpg",
+        "frame_1416.jpg",
+        "frame_1417.jpg",
+        "frame_1418.jpg",
+        "frame_1419.jpg",
+        "frame_1420.jpg"
+      ],
+      "transcript": "[39:18] Because there is now a lot more force.\n[39:21] It's much harder for that weight to move through the fluid quickly, right?\n[39:25] But what's interesting also is look at this.\n[39:29] Like we said earlier, at steady state, the derivative is doing nothing, right?"
+    },
+    {
+      "segment_index": 238,
+      "start_time": 2370,
+      "end_time": 2380,
+      "frames": [
+        "frame_1421.jpg",
+        "frame_1422.jpg",
+        "frame_1423.jpg",
+        "frame_1424.jpg",
+        "frame_1425.jpg",
+        "frame_1426.jpg"
+      ],
+      "transcript": "[39:29] Like we said earlier, at steady state, the derivative is doing nothing, right?\n[39:33] The velocity is zero, right?\n[39:35] Error dot is zero.\n[39:37] So the velocity is zero.\n[39:39] So, right, the derivative component actually isn't playing that much of a role in this situation,"
+    },
+    {
+      "segment_index": 239,
+      "start_time": 2380,
+      "end_time": 2390,
+      "frames": [
+        "frame_1427.jpg",
+        "frame_1428.jpg",
+        "frame_1429.jpg",
+        "frame_1430.jpg",
+        "frame_1431.jpg",
+        "frame_1432.jpg"
+      ],
+      "transcript": "[39:39] So, right, the derivative component actually isn't playing that much of a role in this situation,\n[39:45] right?\n[39:45] So again, just to maybe compare and contrast, let me oscillate this a few times.\n[39:48] And you can kind of see that when we increase the damping ratio or excuse me, increase the"
+    },
+    {
+      "segment_index": 240,
+      "start_time": 2390,
+      "end_time": 2400,
+      "frames": [
+        "frame_1433.jpg",
+        "frame_1434.jpg",
+        "frame_1435.jpg",
+        "frame_1436.jpg",
+        "frame_1437.jpg",
+        "frame_1438.jpg"
+      ],
+      "transcript": "[39:48] And you can kind of see that when we increase the damping ratio or excuse me, increase the\n[39:53] D component of the PID controller, you see there's a lot less oscillations, right?\n[39:58] And again, just to compare and contrast, that is like what it is with water."
+    },
+    {
+      "segment_index": 241,
+      "start_time": 2400,
+      "end_time": 2410,
+      "frames": [
+        "frame_1439.jpg",
+        "frame_1440.jpg",
+        "frame_1441.jpg",
+        "frame_1442.jpg",
+        "frame_1443.jpg",
+        "frame_1444.jpg"
+      ],
+      "transcript": "[39:58] And again, just to compare and contrast, that is like what it is with water.\n[40:02] Let's go ahead and pour this out.\n[40:04] And again, now you can kind of see with air, whoops, right?\n[40:09] There's a lot more, I guess it's kind of sticking now."
+    },
+    {
+      "segment_index": 242,
+      "start_time": 2410,
+      "end_time": 2420,
+      "frames": [
+        "frame_1445.jpg",
+        "frame_1446.jpg",
+        "frame_1447.jpg",
+        "frame_1448.jpg",
+        "frame_1449.jpg",
+        "frame_1450.jpg"
+      ],
+      "transcript": "[40:09] There's a lot more, I guess it's kind of sticking now.\n[40:12] Okay, this isn't quite the way I envisioned it, but you get the idea, right?\n[40:16] And we can even go even further, right?\n[40:17] What if I want something even more viscous?\n[40:19] What about like honey, right?"
+    },
+    {
+      "segment_index": 243,
+      "start_time": 2420,
+      "end_time": 2430,
+      "frames": [
+        "frame_1451.jpg",
+        "frame_1452.jpg",
+        "frame_1453.jpg",
+        "frame_1454.jpg",
+        "frame_1455.jpg",
+        "frame_1456.jpg"
+      ],
+      "transcript": "[40:19] What about like honey, right?\n[40:20] If I pour honey into here, this is going to really increase the D component of this controller,\n[40:27] actually probably to the point of it being a little bit ridiculous."
+    },
+    {
+      "segment_index": 244,
+      "start_time": 2430,
+      "end_time": 2440,
+      "frames": [
+        "frame_1457.jpg",
+        "frame_1458.jpg",
+        "frame_1459.jpg",
+        "frame_1460.jpg",
+        "frame_1461.jpg",
+        "frame_1462.jpg"
+      ],
+      "transcript": "[40:30] So give me a second to fill this up.\n[40:32] I'm just kind of curious to see if this is going to work.\n[40:35] Okay, let's try that."
+    },
+    {
+      "segment_index": 245,
+      "start_time": 2440,
+      "end_time": 2450,
+      "frames": [
+        "frame_1463.jpg",
+        "frame_1464.jpg",
+        "frame_1465.jpg",
+        "frame_1466.jpg",
+        "frame_1467.jpg",
+        "frame_1468.jpg"
+      ],
+      "transcript": "[40:40] Boy, oh boy.\n[40:40] Okay, so now we have really messed it up.\n[40:44] The D component is way too high.\n[40:47] So you can see the thing does not want to move, but it is moving, right?"
+    },
+    {
+      "segment_index": 246,
+      "start_time": 2450,
+      "end_time": 2460,
+      "frames": [
+        "frame_1469.jpg",
+        "frame_1470.jpg",
+        "frame_1471.jpg",
+        "frame_1472.jpg",
+        "frame_1473.jpg",
+        "frame_1474.jpg"
+      ],
+      "transcript": "[40:47] So you can see the thing does not want to move, but it is moving, right?\n[40:50] If we let this thing sit long enough, right?\n[40:53] That D component of the control is not going to affect it, right?\n[40:57] Because the velocity is going to be zero, so there's going to be no force on it."
+    },
+    {
+      "segment_index": 247,
+      "start_time": 2460,
+      "end_time": 2470,
+      "frames": [
+        "frame_1475.jpg",
+        "frame_1476.jpg",
+        "frame_1477.jpg",
+        "frame_1478.jpg",
+        "frame_1479.jpg",
+        "frame_1480.jpg"
+      ],
+      "transcript": "[40:57] Because the velocity is going to be zero, so there's going to be no force on it.\n[41:01] So all of that should work out.\n[41:02] And again, I guess in the interest of completeness, let's talk about the full thing now.\n[41:07] So we've got the proportional.\n[41:08] We've got the derivative, right?"
+    },
+    {
+      "segment_index": 248,
+      "start_time": 2470,
+      "end_time": 2480,
+      "frames": [
+        "frame_1481.jpg",
+        "frame_1482.jpg",
+        "frame_1483.jpg",
+        "frame_1484.jpg",
+        "frame_1485.jpg",
+        "frame_1486.jpg"
+      ],
+      "transcript": "[41:08] We've got the derivative, right?\n[41:11] Which is this viscous fluid.\n[41:11] Now let's add the integrator back into this picture.\n[41:14] Again, my integrator is this pink string.\n[41:16] And again, we can play this game.\n[41:19] So now this is sort of a, you can think of as a physical manifestation of this full PID controller."
+    },
+    {
+      "segment_index": 249,
+      "start_time": 2480,
+      "end_time": 2490,
+      "frames": [
+        "frame_1487.jpg",
+        "frame_1488.jpg",
+        "frame_1489.jpg",
+        "frame_1490.jpg",
+        "frame_1491.jpg",
+        "frame_1492.jpg"
+      ],
+      "transcript": "[41:19] So now this is sort of a, you can think of as a physical manifestation of this full PID controller.\n[41:24] So now, you know, it has moved around and now I'm going to start pulling on this integrator.\n[41:29] I'm going to start integrating this non-zero error and I'm going to start bringing this up"
+    },
+    {
+      "segment_index": 250,
+      "start_time": 2490,
+      "end_time": 2500,
+      "frames": [
+        "frame_1493.jpg",
+        "frame_1494.jpg",
+        "frame_1495.jpg",
+        "frame_1496.jpg",
+        "frame_1497.jpg",
+        "frame_1498.jpg"
+      ],
+      "transcript": "[41:29] I'm going to start integrating this non-zero error and I'm going to start bringing this up\n[41:35] to where it wants to be, right?\n[41:36] So now the integrator is doing the work.\n[41:39] The integrator is doing the work."
+    },
+    {
+      "segment_index": 251,
+      "start_time": 2500,
+      "end_time": 2510,
+      "frames": [
+        "frame_1499.jpg",
+        "frame_1500.jpg",
+        "frame_1501.jpg",
+        "frame_1502.jpg",
+        "frame_1503.jpg",
+        "frame_1504.jpg"
+      ],
+      "transcript": "[41:39] The integrator is doing the work.\n[41:40] The integrator is doing the work until we come up to around here, right?\n[41:44] And now again, you can see here at this point, even with the full PID controller, right?"
+    },
+    {
+      "segment_index": 252,
+      "start_time": 2510,
+      "end_time": 2520,
+      "frames": [
+        "frame_1505.jpg",
+        "frame_1506.jpg",
+        "frame_1507.jpg",
+        "frame_1508.jpg",
+        "frame_1509.jpg",
+        "frame_1510.jpg"
+      ],
+      "transcript": "[41:50] At steady state, when everything is where it wants to be, it's the pink string, which is\n[41:55] taking all of the work, right?\n[41:56] All the control authority is coming from the pink string.\n[41:59] The rubber band slash spring, which is the proportional component, is doing nothing."
+    },
+    {
+      "segment_index": 253,
+      "start_time": 2520,
+      "end_time": 2530,
+      "frames": [
+        "frame_1511.jpg",
+        "frame_1512.jpg",
+        "frame_1513.jpg",
+        "frame_1514.jpg",
+        "frame_1515.jpg",
+        "frame_1516.jpg"
+      ],
+      "transcript": "[41:59] The rubber band slash spring, which is the proportional component, is doing nothing.\n[42:03] And the derivative component, which is basically the viscous fluid, is doing nothing, right?\n[42:08] So that's my demo."
+    },
+    {
+      "segment_index": 254,
+      "start_time": 2530,
+      "end_time": 2540,
+      "frames": [
+        "frame_1517.jpg",
+        "frame_1518.jpg",
+        "frame_1519.jpg",
+        "frame_1520.jpg",
+        "frame_1521.jpg",
+        "frame_1522.jpg"
+      ],
+      "transcript": "[42:08] So that's my demo.\n[42:11] Hopefully this gives a little bit of an intuitive feel for what this PID controller is doing,\n[42:17] right?\n[42:17] You can almost think about it as a proportional component is adding some amount of springiness"
+    },
+    {
+      "segment_index": 255,
+      "start_time": 2540,
+      "end_time": 2550,
+      "frames": [
+        "frame_1523.jpg",
+        "frame_1524.jpg",
+        "frame_1525.jpg",
+        "frame_1526.jpg",
+        "frame_1527.jpg",
+        "frame_1528.jpg"
+      ],
+      "transcript": "[42:17] You can almost think about it as a proportional component is adding some amount of springiness\n[42:22] to your system.\n[42:24] Sometimes people refer to this as, you know, the proportional part is interested in the\n[42:29] present.\n[42:29] It cares about what's happening right now."
+    },
+    {
+      "segment_index": 256,
+      "start_time": 2550,
+      "end_time": 2560,
+      "frames": [
+        "frame_1529.jpg",
+        "frame_1530.jpg",
+        "frame_1531.jpg",
+        "frame_1532.jpg",
+        "frame_1533.jpg",
+        "frame_1534.jpg"
+      ],
+      "transcript": "[42:29] It cares about what's happening right now.\n[42:31] It cares about what is the amount of error right now in the present moment and it acts upon\n[42:35] that, right?\n[42:35] Then we saw the integral, right?\n[42:38] This pink string is, it kind of thinks about it like, it cares about the past error, right?"
+    },
+    {
+      "segment_index": 257,
+      "start_time": 2560,
+      "end_time": 2570,
+      "frames": [
+        "frame_1535.jpg",
+        "frame_1536.jpg",
+        "frame_1537.jpg",
+        "frame_1538.jpg",
+        "frame_1539.jpg",
+        "frame_1540.jpg"
+      ],
+      "transcript": "[42:38] This pink string is, it kind of thinks about it like, it cares about the past error, right?\n[42:45] It integrates all of the error that has occurred in the past and that's how you compute your\n[42:49] current control signal."
+    },
+    {
+      "segment_index": 258,
+      "start_time": 2570,
+      "end_time": 2580,
+      "frames": [
+        "frame_1541.jpg",
+        "frame_1542.jpg",
+        "frame_1543.jpg",
+        "frame_1544.jpg",
+        "frame_1545.jpg",
+        "frame_1546.jpg"
+      ],
+      "transcript": "[42:49] current control signal.\n[42:51] So the integral sort of thinks about the past.\n[42:53] And from this analogy, you can also see that, I guess, the integral, you can kind of think\n[42:59] about it as like adding inertia to your system, right?"
+    },
+    {
+      "segment_index": 259,
+      "start_time": 2580,
+      "end_time": 2590,
+      "frames": [
+        "frame_1547.jpg",
+        "frame_1548.jpg",
+        "frame_1549.jpg",
+        "frame_1550.jpg",
+        "frame_1551.jpg",
+        "frame_1552.jpg"
+      ],
+      "transcript": "[42:59] about it as like adding inertia to your system, right?\n[43:02] Because the integrator winds up all of this state error and it has a tendency to overshoot.\n[43:07] It's like this idea of momentum of inertia or inertia of your system, right?"
+    },
+    {
+      "segment_index": 260,
+      "start_time": 2590,
+      "end_time": 2600,
+      "frames": [
+        "frame_1553.jpg",
+        "frame_1554.jpg",
+        "frame_1555.jpg",
+        "frame_1556.jpg",
+        "frame_1557.jpg",
+        "frame_1558.jpg"
+      ],
+      "transcript": "[43:07] It's like this idea of momentum of inertia or inertia of your system, right?\n[43:11] And then finally we saw the D component or the derivative component, right?\n[43:15] And that is almost thinking about, you can kind of, again, think about like thinking about"
+    },
+    {
+      "segment_index": 261,
+      "start_time": 2600,
+      "end_time": 2610,
+      "frames": [
+        "frame_1559.jpg",
+        "frame_1560.jpg",
+        "frame_1561.jpg",
+        "frame_1562.jpg",
+        "frame_1563.jpg",
+        "frame_1564.jpg"
+      ],
+      "transcript": "[43:15] And that is almost thinking about, you can kind of, again, think about like thinking about\n[43:20] the future, right?\n[43:21] It thinks about, looks at time rates of change to kind of help predict where the system is\n[43:26] going to go.\n[43:27] So you can see the PID controller is sort of looking at the present, the past and the future"
+    },
+    {
+      "segment_index": 262,
+      "start_time": 2610,
+      "end_time": 2620,
+      "frames": [
+        "frame_1565.jpg",
+        "frame_1566.jpg",
+        "frame_1567.jpg",
+        "frame_1568.jpg",
+        "frame_1569.jpg",
+        "frame_1570.jpg"
+      ],
+      "transcript": "[43:27] So you can see the PID controller is sort of looking at the present, the past and the future\n[43:32] all at the same time in kind of a loose hand wavy sense.\n[43:36] And then lastly, the last analogy to maybe draw is that, again, we saw the derivative"
+    },
+    {
+      "segment_index": 263,
+      "start_time": 2620,
+      "end_time": 2630,
+      "frames": [
+        "frame_1571.jpg",
+        "frame_1572.jpg",
+        "frame_1573.jpg",
+        "frame_1574.jpg",
+        "frame_1575.jpg",
+        "frame_1576.jpg"
+      ],
+      "transcript": "[43:36] And then lastly, the last analogy to maybe draw is that, again, we saw the derivative\n[43:41] component is sort of related to, you can think about it as adding damping to your system,\n[43:46] right?\n[43:47] So there's a couple of ways you can think about this.\n[43:48] You can think about the PID controller as basically a past, present, or sorry, present, past,"
+    },
+    {
+      "segment_index": 264,
+      "start_time": 2630,
+      "end_time": 2640,
+      "frames": [
+        "frame_1577.jpg",
+        "frame_1578.jpg",
+        "frame_1579.jpg",
+        "frame_1580.jpg",
+        "frame_1581.jpg",
+        "frame_1582.jpg"
+      ],
+      "transcript": "[43:48] You can think about the PID controller as basically a past, present, or sorry, present, past,\n[43:53] future kind of system.\n[43:55] Or you can think of it as like adding a spring, mass, and damper to your system."
+    },
+    {
+      "segment_index": 265,
+      "start_time": 2640,
+      "end_time": 2650,
+      "frames": [
+        "frame_1583.jpg",
+        "frame_1584.jpg",
+        "frame_1585.jpg",
+        "frame_1586.jpg",
+        "frame_1587.jpg",
+        "frame_1588.jpg"
+      ],
+      "transcript": "[43:55] Or you can think of it as like adding a spring, mass, and damper to your system.\n[44:02] So there's a lot of nice kind of parallel analogies.\n[44:04] But again, I think the rigorous way to look at it is mathematically, as we saw earlier\n[44:09] on the board."
+    },
+    {
+      "segment_index": 266,
+      "start_time": 2650,
+      "end_time": 2660,
+      "frames": [
+        "frame_1589.jpg",
+        "frame_1590.jpg",
+        "frame_1591.jpg",
+        "frame_1592.jpg",
+        "frame_1593.jpg",
+        "frame_1594.jpg"
+      ],
+      "transcript": "[44:09] on the board.\n[44:10] I hope this demonstration just gives a little bit of a physical intuition of what all these\n[44:14] components are doing.\n[44:16] All right.\n[44:16] So now hopefully you've got a good intuitive feel for what all of these terms do."
+    },
+    {
+      "segment_index": 267,
+      "start_time": 2660,
+      "end_time": 2670,
+      "frames": [
+        "frame_1595.jpg",
+        "frame_1596.jpg",
+        "frame_1597.jpg",
+        "frame_1598.jpg",
+        "frame_1599.jpg",
+        "frame_1600.jpg"
+      ],
+      "transcript": "[44:16] So now hopefully you've got a good intuitive feel for what all of these terms do.\n[44:21] So maybe it might be helpful to just make a little quick table.\n[44:25] This is sort of some rules of thumb about how adjusting these parameters are going to affect"
+    },
+    {
+      "segment_index": 268,
+      "start_time": 2670,
+      "end_time": 2680,
+      "frames": [
+        "frame_1601.jpg",
+        "frame_1602.jpg",
+        "frame_1603.jpg",
+        "frame_1604.jpg",
+        "frame_1605.jpg",
+        "frame_1606.jpg"
+      ],
+      "transcript": "[44:25] This is sort of some rules of thumb about how adjusting these parameters are going to affect\n[44:30] different parts of your system.\n[44:31] So if you adjust KP, let's ask about how does that affect things like the rise time, overshoot,\n[44:37] settling time, steady state error, and the stability.\n[44:39] And again, keep in mind, these are real loose generalizations, shooting from the hip kind"
+    },
+    {
+      "segment_index": 269,
+      "start_time": 2680,
+      "end_time": 2690,
+      "frames": [
+        "frame_1607.jpg",
+        "frame_1608.jpg",
+        "frame_1609.jpg",
+        "frame_1610.jpg",
+        "frame_1611.jpg",
+        "frame_1612.jpg"
+      ],
+      "transcript": "[44:39] And again, keep in mind, these are real loose generalizations, shooting from the hip kind\n[44:44] of ideas.\n[44:45] Don't take any of these for gospel.\n[44:47] We will do the actual analysis down the road in other discussions so we can make quantitative"
+    },
+    {
+      "segment_index": 270,
+      "start_time": 2690,
+      "end_time": 2700,
+      "frames": [
+        "frame_1613.jpg",
+        "frame_1614.jpg",
+        "frame_1615.jpg",
+        "frame_1616.jpg",
+        "frame_1617.jpg",
+        "frame_1618.jpg"
+      ],
+      "transcript": "[44:47] We will do the actual analysis down the road in other discussions so we can make quantitative\n[44:52] and qualitative statements.\n[44:55] But for now, let's just look at these general ideas.\n[44:57] So again, what we're talking about here is if you make KP bigger, and again, maybe this"
+    },
+    {
+      "segment_index": 271,
+      "start_time": 2700,
+      "end_time": 2710,
+      "frames": [
+        "frame_1619.jpg",
+        "frame_1620.jpg",
+        "frame_1621.jpg",
+        "frame_1622.jpg",
+        "frame_1623.jpg",
+        "frame_1624.jpg"
+      ],
+      "transcript": "[44:57] So again, what we're talking about here is if you make KP bigger, and again, maybe this\n[45:01] is maybe really if you make the absolute value of these terms larger, right?\n[45:07] As these sort of increase, basically you're talking about making these components more"
+    },
+    {
+      "segment_index": 272,
+      "start_time": 2710,
+      "end_time": 2720,
+      "frames": [
+        "frame_1625.jpg",
+        "frame_1626.jpg",
+        "frame_1627.jpg",
+        "frame_1628.jpg",
+        "frame_1629.jpg",
+        "frame_1630.jpg"
+      ],
+      "transcript": "[45:07] As these sort of increase, basically you're talking about making these components more\n[45:12] aggressive.\n[45:14] What does that do to all these parameters?\n[45:15] So we saw that KP, right?\n[45:17] This is really like, it's kind of like you can think about as adding like a spring, right?"
+    },
+    {
+      "segment_index": 273,
+      "start_time": 2720,
+      "end_time": 2730,
+      "frames": [
+        "frame_1631.jpg",
+        "frame_1632.jpg",
+        "frame_1633.jpg",
+        "frame_1634.jpg",
+        "frame_1635.jpg",
+        "frame_1636.jpg"
+      ],
+      "transcript": "[45:17] This is really like, it's kind of like you can think about as adding like a spring, right?\n[45:22] A stiffer spring to your system, right?\n[45:24] So what this does for rise time is this is going to generally try to, it's going to decrease\n[45:28] your rise time, right?\n[45:29] You're going to get there faster."
+    },
+    {
+      "segment_index": 274,
+      "start_time": 2730,
+      "end_time": 2740,
+      "frames": [
+        "frame_1637.jpg",
+        "frame_1638.jpg",
+        "frame_1639.jpg",
+        "frame_1640.jpg",
+        "frame_1641.jpg",
+        "frame_1642.jpg"
+      ],
+      "transcript": "[45:29] You're going to get there faster.\n[45:31] The consequence of this is usually this is going to make your oscillations or your overshoot\n[45:35] go up.\n[45:36] Settling time, this is really a small change."
+    },
+    {
+      "segment_index": 275,
+      "start_time": 2740,
+      "end_time": 2750,
+      "frames": [
+        "frame_1643.jpg",
+        "frame_1644.jpg",
+        "frame_1645.jpg",
+        "frame_1646.jpg",
+        "frame_1647.jpg",
+        "frame_1648.jpg"
+      ],
+      "transcript": "[45:36] Settling time, this is really a small change.\n[45:41] It doesn't have much effect here, okay?\n[45:44] Steady state error, we saw that this is going to decrease your steady state error, right?\n[45:49] But you're still going to have steady state error with a proportional only."
+    },
+    {
+      "segment_index": 276,
+      "start_time": 2750,
+      "end_time": 2760,
+      "frames": [
+        "frame_1649.jpg",
+        "frame_1650.jpg",
+        "frame_1651.jpg",
+        "frame_1652.jpg",
+        "frame_1653.jpg",
+        "frame_1654.jpg"
+      ],
+      "transcript": "[45:49] But you're still going to have steady state error with a proportional only.\n[45:52] And instability, the problem with this is it sort of decreases your stability, right?\n[45:56] It degrades your stability.\n[45:57] It makes you more likely to have issues and become unstable, okay?"
+    },
+    {
+      "segment_index": 277,
+      "start_time": 2760,
+      "end_time": 2770,
+      "frames": [
+        "frame_1655.jpg",
+        "frame_1656.jpg",
+        "frame_1657.jpg",
+        "frame_1658.jpg",
+        "frame_1659.jpg",
+        "frame_1660.jpg"
+      ],
+      "transcript": "[45:57] It makes you more likely to have issues and become unstable, okay?\n[46:02] Let's talk about the integrator.\n[46:04] As you make the integrator magnitude larger, how does this affect it, okay?\n[46:08] So your rise time, this tends to go down."
+    },
+    {
+      "segment_index": 278,
+      "start_time": 2770,
+      "end_time": 2780,
+      "frames": [
+        "frame_1661.jpg",
+        "frame_1662.jpg",
+        "frame_1663.jpg",
+        "frame_1664.jpg",
+        "frame_1665.jpg",
+        "frame_1666.jpg"
+      ],
+      "transcript": "[46:08] So your rise time, this tends to go down.\n[46:11] Your overshoot, we saw the, you know, the integrator is one source of major overshoot in this case.\n[46:16] So this goes up.\n[46:17] Settling time, this also tends to go up, okay?"
+    },
+    {
+      "segment_index": 279,
+      "start_time": 2780,
+      "end_time": 2790,
+      "frames": [
+        "frame_1667.jpg",
+        "frame_1668.jpg",
+        "frame_1669.jpg",
+        "frame_1670.jpg",
+        "frame_1671.jpg",
+        "frame_1672.jpg"
+      ],
+      "transcript": "[46:17] Settling time, this also tends to go up, okay?\n[46:21] Now the nice thing about the integrator though is steady state error, this really, you know,\n[46:27] it eliminates it, right?\n[46:29] That's the whole point of the integrator."
+    },
+    {
+      "segment_index": 280,
+      "start_time": 2790,
+      "end_time": 2800,
+      "frames": [
+        "frame_1673.jpg",
+        "frame_1674.jpg",
+        "frame_1675.jpg",
+        "frame_1676.jpg",
+        "frame_1677.jpg",
+        "frame_1678.jpg"
+      ],
+      "transcript": "[46:29] That's the whole point of the integrator.\n[46:30] So let's just write eliminate here, okay?\n[46:32] And in terms of stability though, the price you pay for this is, again, you add the integrator,\n[46:37] you add some dynamics, and you're more likely to make this overall system unstable, okay?"
+    },
+    {
+      "segment_index": 281,
+      "start_time": 2800,
+      "end_time": 2810,
+      "frames": [
+        "frame_1679.jpg",
+        "frame_1680.jpg",
+        "frame_1681.jpg",
+        "frame_1682.jpg",
+        "frame_1683.jpg",
+        "frame_1684.jpg"
+      ],
+      "transcript": "[46:37] you add some dynamics, and you're more likely to make this overall system unstable, okay?\n[46:41] So you got to be careful with that, right?\n[46:44] Okay, let's talk about the derivative, okay?\n[46:46] So the derivative, again, this doesn't really do much to the rise time."
+    },
+    {
+      "segment_index": 282,
+      "start_time": 2810,
+      "end_time": 2820,
+      "frames": [
+        "frame_1685.jpg",
+        "frame_1686.jpg",
+        "frame_1687.jpg",
+        "frame_1688.jpg",
+        "frame_1689.jpg",
+        "frame_1690.jpg"
+      ],
+      "transcript": "[46:46] So the derivative, again, this doesn't really do much to the rise time.\n[46:51] So it's not going to matter a ton, right?\n[46:54] What it does do, right?\n[46:56] We saw that the derivative, it's like adding a damper to your system.\n[46:59] So actually this decreases your overshoot, right?"
+    },
+    {
+      "segment_index": 283,
+      "start_time": 2820,
+      "end_time": 2830,
+      "frames": [
+        "frame_1691.jpg",
+        "frame_1692.jpg",
+        "frame_1693.jpg",
+        "frame_1694.jpg",
+        "frame_1695.jpg",
+        "frame_1696.jpg"
+      ],
+      "transcript": "[46:59] So actually this decreases your overshoot, right?\n[47:03] It makes it like you're sitting there in honey and it's making it slower, so it's less likely to overshoot.\n[47:09] Okay, settling time, this also, if you increase KD, it usually makes your settling time a little bit less"
+    },
+    {
+      "segment_index": 284,
+      "start_time": 2830,
+      "end_time": 2840,
+      "frames": [
+        "frame_1697.jpg",
+        "frame_1698.jpg",
+        "frame_1699.jpg",
+        "frame_1700.jpg",
+        "frame_1701.jpg",
+        "frame_1702.jpg"
+      ],
+      "transcript": "[47:09] Okay, settling time, this also, if you increase KD, it usually makes your settling time a little bit less\n[47:15] because your oscillations go down.\n[47:17] Now, and we saw steady state error.\n[47:19] This is really no effect in theory."
+    },
+    {
+      "segment_index": 285,
+      "start_time": 2840,
+      "end_time": 2850,
+      "frames": [
+        "frame_1703.jpg",
+        "frame_1704.jpg",
+        "frame_1705.jpg",
+        "frame_1706.jpg",
+        "frame_1707.jpg",
+        "frame_1708.jpg"
+      ],
+      "transcript": "[47:19] This is really no effect in theory.\n[47:23] There are, we're going to see when we start looking at this from designing,\n[47:28] from a root locus perspective or other techniques, that this does sort of affect it."
+    },
+    {
+      "segment_index": 286,
+      "start_time": 2850,
+      "end_time": 2860,
+      "frames": [
+        "frame_1709.jpg",
+        "frame_1710.jpg",
+        "frame_1711.jpg",
+        "frame_1712.jpg",
+        "frame_1713.jpg",
+        "frame_1714.jpg"
+      ],
+      "transcript": "[47:28] from a root locus perspective or other techniques, that this does sort of affect it.\n[47:31] But really, right, we saw that at steady state, the derivative really is not playing a role, okay?\n[47:37] And this is also, the stability is, I don't know if I want to draw any hard conclusions here."
+    },
+    {
+      "segment_index": 287,
+      "start_time": 2860,
+      "end_time": 2870,
+      "frames": [
+        "frame_1715.jpg",
+        "frame_1716.jpg",
+        "frame_1717.jpg",
+        "frame_1718.jpg",
+        "frame_1719.jpg",
+        "frame_1720.jpg"
+      ],
+      "transcript": "[47:37] And this is also, the stability is, I don't know if I want to draw any hard conclusions here.\n[47:43] Let's just say that maybe this might improve stability if KD is small.\n[47:49] So it's, again, it's one of these things, everything in moderation."
+    },
+    {
+      "segment_index": 288,
+      "start_time": 2870,
+      "end_time": 2880,
+      "frames": [
+        "frame_1721.jpg",
+        "frame_1722.jpg",
+        "frame_1723.jpg",
+        "frame_1724.jpg",
+        "frame_1725.jpg",
+        "frame_1726.jpg"
+      ],
+      "transcript": "[47:49] So it's, again, it's one of these things, everything in moderation.\n[47:51] You don't want to go overboard because you definitely can drive things unstable with the large KD.\n[47:55] But if you keep them small, it's usually pretty reasonable.\n[47:58] So, again, these are some rules of thumb about how to tune these gains, again, right?"
+    },
+    {
+      "segment_index": 289,
+      "start_time": 2880,
+      "end_time": 2890,
+      "frames": [
+        "frame_1727.jpg",
+        "frame_1728.jpg",
+        "frame_1729.jpg",
+        "frame_1730.jpg",
+        "frame_1731.jpg",
+        "frame_1732.jpg"
+      ],
+      "transcript": "[47:58] So, again, these are some rules of thumb about how to tune these gains, again, right?\n[48:04] Because the whole game with the PID controller, we said it's incredibly versatile.\n[48:09] It's used all over the place."
+    },
+    {
+      "segment_index": 290,
+      "start_time": 2890,
+      "end_time": 2900,
+      "frames": [
+        "frame_1733.jpg",
+        "frame_1734.jpg",
+        "frame_1735.jpg",
+        "frame_1736.jpg",
+        "frame_1737.jpg",
+        "frame_1738.jpg"
+      ],
+      "transcript": "[48:09] It's used all over the place.\n[48:11] The only thing you've got to really do is pick these three numbers, KP, KI, and KD.\n[48:16] And this will hopefully get you a little bit of the way there."
+    },
+    {
+      "segment_index": 291,
+      "start_time": 2900,
+      "end_time": 2910,
+      "frames": [
+        "frame_1739.jpg",
+        "frame_1740.jpg",
+        "frame_1741.jpg",
+        "frame_1742.jpg",
+        "frame_1743.jpg",
+        "frame_1744.jpg"
+      ],
+      "transcript": "[48:16] And this will hopefully get you a little bit of the way there.\n[48:20] But hopefully there are, you know, there are warning bells going off in the back of your head that says,\n[48:25] I don't want to design an engineered system based on a rule of thumb table, right?\n[48:29] But this gives us some intuitive feel."
+    },
+    {
+      "segment_index": 292,
+      "start_time": 2910,
+      "end_time": 2920,
+      "frames": [
+        "frame_1745.jpg",
+        "frame_1746.jpg",
+        "frame_1747.jpg",
+        "frame_1748.jpg",
+        "frame_1749.jpg",
+        "frame_1750.jpg"
+      ],
+      "transcript": "[48:29] But this gives us some intuitive feel.\n[48:31] Well, what we instead want to do in some of our future discussions is look at mathematically rigorous ways to synthesize a PID controller,\n[48:39] a.k.a. pick those gains, using things like root locus or other techniques."
+    },
+    {
+      "segment_index": 293,
+      "start_time": 2920,
+      "end_time": 2930,
+      "frames": [
+        "frame_1751.jpg",
+        "frame_1752.jpg",
+        "frame_1753.jpg",
+        "frame_1754.jpg",
+        "frame_1755.jpg",
+        "frame_1756.jpg"
+      ],
+      "transcript": "[48:39] a.k.a. pick those gains, using things like root locus or other techniques.\n[48:44] So that hopefully sets the stage.\n[48:47] I think this is probably a good spot to leave it."
+    },
+    {
+      "segment_index": 294,
+      "start_time": 2930,
+      "end_time": 2940,
+      "frames": [
+        "frame_1757.jpg",
+        "frame_1758.jpg",
+        "frame_1759.jpg",
+        "frame_1760.jpg",
+        "frame_1761.jpg",
+        "frame_1762.jpg"
+      ],
+      "transcript": "[48:50] And like I said, we're going to have a ton of future other videos looking at a lot of topics in PID.\n[48:56] So please stay tuned.\n[48:57] So I hope you enjoyed the video.\n[48:58] If so, I also hope you'll consider subscribing to the channel."
+    },
+    {
+      "segment_index": 295,
+      "start_time": 2940,
+      "end_time": 2950,
+      "frames": [
+        "frame_1763.jpg",
+        "frame_1764.jpg",
+        "frame_1765.jpg",
+        "frame_1766.jpg",
+        "frame_1767.jpg",
+        "frame_1768.jpg"
+      ],
+      "transcript": "[48:58] If so, I also hope you'll consider subscribing to the channel.\n[49:01] It really does help me continue making these videos.\n[49:03] If you scroll a little ways down and click on that subscribe button.\n[49:06] Also, remember the new videos come out every Monday.\n[49:08] So I hope I'll be able to catch you at a future discussion and we can all learn something new together."
+    },
+    {
+      "segment_index": 296,
+      "start_time": 2950,
+      "end_time": 2956.22,
+      "frames": [
+        "frame_1769.jpg",
+        "frame_1770.jpg",
+        "frame_1771.jpg",
+        "frame_1772.jpg"
+      ],
+      "transcript": "[49:08] So I hope I'll be able to catch you at a future discussion and we can all learn something new together.\n[49:13] So until next time, I think I'll sign off.\n[49:15] Talk to you later.\n[49:15] Bye."
+    }
+  ]
+}

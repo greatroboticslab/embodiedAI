@@ -1,0 +1,2093 @@
+{
+  "video_id": "Sd6CcsCgFbg",
+  "duration": 2314.98,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg"
+      ],
+      "transcript": "[0:00] Hello and welcome to Enritsu's webinar entitled Network Extraction and De-Embedding Techniques\n[0:07] for Differential Printed Circuit Probe. My name is Arno Pettai. I'm a field applications engineer"
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0002.jpg"
+      ],
+      "transcript": "[0:07] for Differential Printed Circuit Probe. My name is Arno Pettai. I'm a field applications engineer\n[0:14] at Enritsu company and my specialty is in B&As and joining me today is Brian Shoemaker, president and"
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0003.jpg"
+      ],
+      "transcript": "[0:14] at Enritsu company and my specialty is in B&As and joining me today is Brian Shoemaker, president and\n[0:22] founder of DVT Solutions, a company that makes probing systems, solutions and probes and connectors."
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0004.jpg"
+      ],
+      "transcript": "[0:22] founder of DVT Solutions, a company that makes probing systems, solutions and probes and connectors.\n[0:32] I also want to recognize Bill Rosas of Signal Microwave for supplying the verification board"
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0005.jpg"
+      ],
+      "transcript": "[0:32] I also want to recognize Bill Rosas of Signal Microwave for supplying the verification board\n[0:40] that we're using today to perform the network extraction as well as the verification and\n[0:48] Dr. Jing Chao Wang of Atai Tech who has been so kind to allow us to use his ISD software"
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0006.jpg"
+      ],
+      "transcript": "[0:48] Dr. Jing Chao Wang of Atai Tech who has been so kind to allow us to use his ISD software\n[0:58] which allows us to do the network extraction of the probe."
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0007.jpg"
+      ],
+      "transcript": "[0:58] which allows us to do the network extraction of the probe.\n[1:03] So today we're going to cover first of all the basic topics of network extraction as well as"
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0008.jpg"
+      ],
+      "transcript": "[1:03] So today we're going to cover first of all the basic topics of network extraction as well as\n[1:10] embedding and de-embedding. These are common terms that are used in conjunction with VNAs but not\n[1:17] very well understood. So I want to spend a few minutes explaining these important concepts."
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0009.jpg"
+      ],
+      "transcript": "[1:17] very well understood. So I want to spend a few minutes explaining these important concepts.\n[1:24] After that I will turn over to Brian who will explain the DVT Solutions probing system and talk"
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0010.jpg"
+      ],
+      "transcript": "[1:24] After that I will turn over to Brian who will explain the DVT Solutions probing system and talk\n[1:31] about the probe in particular and some of the unique advantages and features of that. And Brian will also\n[1:38] take us through the ISD software and how we generate using that software the S4P model for a differential probe."
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0011.jpg"
+      ],
+      "transcript": "[1:38] take us through the ISD software and how we generate using that software the S4P model for a differential probe."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0012.jpg"
+      ],
+      "transcript": "[1:50] Then I will discuss Enritsu's VNA family and how we make differential measurements which is critical\n[1:56] here because we're trying to obviously get differential measurement results so we need a four port"
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0013.jpg"
+      ],
+      "transcript": "[1:56] here because we're trying to obviously get differential measurement results so we need a four port\n[2:02] VNA to do that. And at the end we'll apply and verify the probe model that we've extracted using the"
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0014.jpg"
+      ],
+      "transcript": "[2:02] VNA to do that. And at the end we'll apply and verify the probe model that we've extracted using the\n[2:10] Atai Tech software and display that on a VNA with both the embedding or de-embedding implied and de-embedding off\n[2:18] so we can actually see the difference which would be the probe loss that we're looking at. And we'll"
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0015.jpg"
+      ],
+      "transcript": "[2:18] so we can actually see the difference which would be the probe loss that we're looking at. And we'll\n[2:24] summarize all that with a live demonstration at the very end. So first of all what is network extraction?"
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0016.jpg"
+      ],
+      "transcript": "[2:24] summarize all that with a live demonstration at the very end. So first of all what is network extraction?\n[2:32] Well network extraction is a tool that we use to generate the S-parameters or the model for some\n[2:39] network that we want to then embed or de-embed later from a VNA test port. This model can be single-ended"
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0017.jpg"
+      ],
+      "transcript": "[2:39] network that we want to then embed or de-embed later from a VNA test port. This model can be single-ended\n[2:48] or differential. And as I said earlier in today's presentation we're going to use the Atai Tech ISD"
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0018.jpg"
+      ],
+      "transcript": "[2:48] or differential. And as I said earlier in today's presentation we're going to use the Atai Tech ISD\n[2:54] software to perform this network extraction in our example being a differential probe. But there's"
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0019.jpg"
+      ],
+      "transcript": "[2:54] software to perform this network extraction in our example being a differential probe. But there's\n[3:02] also other uses for network extraction. We can extract portions of a circuit on a PC board. We can\n[3:09] extract the launches for a test fixture. And it's an alternative to using time domain gating. That's"
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0020.jpg"
+      ],
+      "transcript": "[3:09] extract the launches for a test fixture. And it's an alternative to using time domain gating. That's\n[3:16] always been a technique used in the past as well for isolating a network in time and then going back"
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0021.jpg"
+      ],
+      "transcript": "[3:16] always been a technique used in the past as well for isolating a network in time and then going back\n[3:25] to frequency domain and capturing the characteristics in an S4P or S2P format. Or doing just simple test"
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0022.jpg"
+      ],
+      "transcript": "[3:25] to frequency domain and capturing the characteristics in an S4P or S2P format. Or doing just simple test\n[3:34] port extensions. But those of course don't always take into account loss and other characteristics."
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0023.jpg"
+      ],
+      "transcript": "[3:34] port extensions. But those of course don't always take into account loss and other characteristics.\n[3:41] So it's very important to use network extraction especially in cases where you don't have all\n[3:49] the CAL kits available at the various reference planes of interest or where you can't connect"
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0024.jpg"
+      ],
+      "transcript": "[3:49] the CAL kits available at the various reference planes of interest or where you can't connect\n[3:53] it through. And in our example today we simply cannot connect two probes together because it would be the\n[3:59] chance of damaging probe tips in that case. So we are using network extraction in this case"
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0025.jpg"
+      ],
+      "transcript": "[3:59] chance of damaging probe tips in that case. So we are using network extraction in this case\n[4:05] to avoid having to make that type of through measurement. And what we're trying to get of"
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0026.jpg"
+      ],
+      "transcript": "[4:05] to avoid having to make that type of through measurement. And what we're trying to get of\n[4:14] course is as a result is an SNP formatted file or model for the probe that we will then use in embedding"
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0027.jpg"
+      ],
+      "transcript": "[4:14] course is as a result is an SNP formatted file or model for the probe that we will then use in embedding\n[4:23] de-embedding. So then what is embedding de-embedding? Well much like in a circuit simulator it's useful to add or"
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0028.jpg"
+      ],
+      "transcript": "[4:23] de-embedding. So then what is embedding de-embedding? Well much like in a circuit simulator it's useful to add or\n[4:30] remove networks from a given measured results. So we're able to look at a live measurement on a VNA\n[4:36] and actually add a network and have that measurement display that network as if the matching network was"
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0029.jpg"
+      ],
+      "transcript": "[4:36] and actually add a network and have that measurement display that network as if the matching network was\n[4:44] present. Or in the case of de-embedding we can remove a fixture or in this case in our example a probe"
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0030.jpg"
+      ],
+      "transcript": "[4:44] present. Or in the case of de-embedding we can remove a fixture or in this case in our example a probe\n[4:52] from the measurement so that we can concentrate or or isolate a measurement to just the device\n[4:58] under test of interest. And an embedding de-embedding function is a standard feature in a VNA"
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0031.jpg"
+      ],
+      "transcript": "[4:58] under test of interest. And an embedding de-embedding function is a standard feature in a VNA\n[5:05] and basically it allows us to add that network or remove that network and measure that new data live on"
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0032.jpg"
+      ],
+      "transcript": "[5:05] and basically it allows us to add that network or remove that network and measure that new data live on\n[5:14] the instrument. Of course we need to have a standard VNA calibration performed first."
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0033.jpg"
+      ],
+      "transcript": "[5:14] the instrument. Of course we need to have a standard VNA calibration performed first.\n[5:20] So this would be your standard SOLT or other method that you choose to use. And then we can apply this\n[5:27] embedding de-embedding to two, three, and four port devices under test."
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0034.jpg"
+      ],
+      "transcript": "[5:27] embedding de-embedding to two, three, and four port devices under test.\n[5:34] Now what kind of networks can we mathematically add or remove from ports of a VNA? Well we can have"
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0035.jpg"
+      ],
+      "transcript": "[5:34] Now what kind of networks can we mathematically add or remove from ports of a VNA? Well we can have\n[5:41] standard circuit elements. These would be lumped elements such as shunt and series, inductors, resistors,\n[5:46] capacitors, and transmission lines. We can put in the characteristics of a transmission line"
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0036.jpg"
+      ],
+      "transcript": "[5:46] capacitors, and transmission lines. We can put in the characteristics of a transmission line\n[5:51] and add and subtract that. We can also in our case here today use S2P and S4P models of the networks"
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0037.jpg"
+      ],
+      "transcript": "[5:51] and add and subtract that. We can also in our case here today use S2P and S4P models of the networks\n[6:01] that we want to add and subtract. And so these would be created in network extraction and then applied\n[6:07] here in the embedding de-embedding. Now there's also another example of a very simplified case of"
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0038.jpg"
+      ],
+      "transcript": "[6:07] here in the embedding de-embedding. Now there's also another example of a very simplified case of\n[6:13] de-embedding and this applies to optoelectronic components where you only want to de-embed in\n[6:19] this case the transmission measurement portion. So you're not concerned with reflection here."
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0039.jpg"
+      ],
+      "transcript": "[6:19] this case the transmission measurement portion. So you're not concerned with reflection here.\n[6:25] So you're doing a subset of full de-embedding by just treating the transmission only so that we can"
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0040.jpg"
+      ],
+      "transcript": "[6:25] So you're doing a subset of full de-embedding by just treating the transmission only so that we can\n[6:31] isolate a measurement to either an optical modulator or a photo receiver. Assuming of course you have a\n[6:37] characterization file for one or the other that you intend to de-embed to isolate the measurement"
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0041.jpg"
+      ],
+      "transcript": "[6:37] characterization file for one or the other that you intend to de-embed to isolate the measurement\n[6:42] measurement on the device under test of choice. So this would be the same functionality as in a\n[6:47] lightweight component analyzer or something else that Enritsu offers as part of their VNAs."
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0042.jpg"
+      ],
+      "transcript": "[6:47] lightweight component analyzer or something else that Enritsu offers as part of their VNAs.\n[6:55] So to summarize embedding and de-embedding, we can view results as if a different launch structure"
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0043.jpg"
+      ],
+      "transcript": "[6:55] So to summarize embedding and de-embedding, we can view results as if a different launch structure\n[7:03] was present. So we can have an embedding task where we're adding something and we want to visualize it on"
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0044.jpg"
+      ],
+      "transcript": "[7:03] was present. So we can have an embedding task where we're adding something and we want to visualize it on\n[7:10] the screen live with that launch structure present. We can also look at measurements with some matching\n[7:18] circuit applied that we've gotten from our simulator and we can view that result live with that matching"
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0045.jpg"
+      ],
+      "transcript": "[7:18] circuit applied that we've gotten from our simulator and we can view that result live with that matching\n[7:24] circuit applied or we can add a cable length or a transmission length or launch as needed. So that's\n[7:29] in the case of the embedding where you're adding some network. In the case of de-embedding which is what"
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0046.jpg"
+      ],
+      "transcript": "[7:29] in the case of the embedding where you're adding some network. In the case of de-embedding which is what\n[7:34] we're demonstrating today, we're going to look at a probe but there's also other examples such as test\n[7:39] fixture or a transmission line that you may want to remove on a fixture or a matching circuit that you"
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0047.jpg"
+      ],
+      "transcript": "[7:39] fixture or a transmission line that you may want to remove on a fixture or a matching circuit that you\n[7:47] want to remove the effects of physically in the measurement case. Okay at this point I'm going to turn it"
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0048.jpg"
+      ],
+      "transcript": "[7:47] want to remove the effects of physically in the measurement case. Okay at this point I'm going to turn it\n[7:57] over to Brian. We'll explain the probing systems. First I want to discuss what is a differential probe so"
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0049.jpg"
+      ],
+      "transcript": "[7:57] over to Brian. We'll explain the probing systems. First I want to discuss what is a differential probe so\n[8:04] that it will become more relevant as to why we want to create de-embedding files and models in order to"
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0050.jpg"
+      ],
+      "transcript": "[8:04] that it will become more relevant as to why we want to create de-embedding files and models in order to\n[8:11] remove any artifacts within the probe for the measurements. So differential probe, we developed\n[8:17] the first differential true differential probe back in Brown in 2005 when the LVDS circuits started to come"
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0051.jpg"
+      ],
+      "transcript": "[8:17] the first differential true differential probe back in Brown in 2005 when the LVDS circuits started to come\n[8:24] out from National Semiconductor and a few other companies. This changed the entire architecture"
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0052.jpg"
+      ],
+      "transcript": "[8:24] out from National Semiconductor and a few other companies. This changed the entire architecture\n[8:31] at that time from point to point to a dual line differential interface and it was designed so that"
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0053.jpg"
+      ],
+      "transcript": "[8:31] at that time from point to point to a dual line differential interface and it was designed so that\n[8:40] you're able to reject common mode noise so the power supply glitch if it occurred would just wipe out\n[8:46] your data and your system crashes. It also allows you to use a lower voltage to define the ones and zeros"
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0054.jpg"
+      ],
+      "transcript": "[8:46] your data and your system crashes. It also allows you to use a lower voltage to define the ones and zeros\n[8:54] so that you can move data faster down the transmission line. In this slide set here I have an example of"
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0055.jpg"
+      ],
+      "transcript": "[8:54] so that you can move data faster down the transmission line. In this slide set here I have an example of\n[9:02] what an LVDS interface might look like. You've got your differential transmitter, your receiver. We had to\n[9:08] develop a probe to measure the impedance and the s parameters of this transmission line according to the"
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0056.jpg"
+      ],
+      "transcript": "[9:08] develop a probe to measure the impedance and the s parameters of this transmission line according to the\n[9:14] specifications of the specifications of the drivers. So in a true differential probe, as kind of describes the fields that are"
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0057.jpg"
+      ],
+      "transcript": "[9:14] specifications of the specifications of the drivers. So in a true differential probe, as kind of describes the fields that are\n[9:25] going up and down the transmission line on the bottom of the of the slide, is that it sends a positive and negative pulse down the"
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0058.jpg"
+      ],
+      "transcript": "[9:25] going up and down the transmission line on the bottom of the of the slide, is that it sends a positive and negative pulse down the\n[9:32] transmission line so that it creates a virtual ground and not not have to rely upon a common mode or a physical ground. So there's coupling there that has to be"
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0059.jpg"
+      ],
+      "transcript": "[9:32] transmission line so that it creates a virtual ground and not not have to rely upon a common mode or a physical ground. So there's coupling there that has to be\n[9:42] modeled later and I will just discuss how we do this with a software product but in order to create a good model of a"
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0060.jpg"
+      ],
+      "transcript": "[9:42] modeled later and I will just discuss how we do this with a software product but in order to create a good model of a\n[9:51] differential probe you have to be able to model the coupling between the two transmission lines. Next, let's discuss the model development.\n[9:59] Well, currently we have a partnership with a tie tech which is a company that makes the in situ de embedding or ISD software that allows us to create a differential probe"
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0061.jpg"
+      ],
+      "transcript": "[9:59] Well, currently we have a partnership with a tie tech which is a company that makes the in situ de embedding or ISD software that allows us to create a differential probe"
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0062.jpg"
+      ],
+      "transcript": "[9:59] Well, currently we have a partnership with a tie tech which is a company that makes the in situ de embedding or ISD software that allows us to create a differential probe\n[10:11] a differential probe to include the crosstalk or what we'd call if it's functional a virtual ground and it creates a S4P touchstone file that we can input into the VNA that allows us to then take this model and then de embed the probe from the model."
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0063.jpg"
+      ],
+      "transcript": "[10:11] a differential probe to include the crosstalk or what we'd call if it's functional a virtual ground and it creates a S4P touchstone file that we can input into the VNA that allows us to then take this model and then de embed the probe from the model."
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0064.jpg"
+      ],
+      "transcript": "[10:30] So the model contains coupling between the differential conductors. The model creates its own virtual ground so the probes do not require a ground between the signal pins. If you draw your attention to the picture at the lower right hand side, we've just introduced these differential probes."
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0065.jpg"
+      ],
+      "transcript": "[10:30] So the model contains coupling between the differential conductors. The model creates its own virtual ground so the probes do not require a ground between the signal pins. If you draw your attention to the picture at the lower right hand side, we've just introduced these differential probes.\n[10:48] These will go up to 70 gigahertz and as you can see the picture are kind of the center or a lot off to the left of the probe. There's only two signal pins. There is no ground so we're completely relying upon the coupling of the probe to carry the energy down back and forth through the probe."
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0066.jpg"
+      ],
+      "transcript": "[10:48] These will go up to 70 gigahertz and as you can see the picture are kind of the center or a lot off to the left of the probe. There's only two signal pins. There is no ground so we're completely relying upon the coupling of the probe to carry the energy down back and forth through the probe."
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0067.jpg"
+      ],
+      "transcript": "[10:48] These will go up to 70 gigahertz and as you can see the picture are kind of the center or a lot off to the left of the probe. There's only two signal pins. There is no ground so we're completely relying upon the coupling of the probe to carry the energy down back and forth through the probe.\n[11:06] And to model that is a really, really, really difficult thing to do. But we've been able to do that with the tie tech software that we will discuss later on and have a live model creation demonstration later."
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0068.jpg"
+      ],
+      "transcript": "[11:06] And to model that is a really, really, really difficult thing to do. But we've been able to do that with the tie tech software that we will discuss later on and have a live model creation demonstration later.\n[11:18] Now probe the embedding process. What we do to create the model itself of the tie tech software pretty much needs three different measurements and open a short and one that's a measurement called a we call a probe in situ."
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0069.jpg"
+      ],
+      "transcript": "[11:18] Now probe the embedding process. What we do to create the model itself of the tie tech software pretty much needs three different measurements and open a short and one that's a measurement called a we call a probe in situ."
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0070.jpg"
+      ],
+      "transcript": "[11:18] Now probe the embedding process. What we do to create the model itself of the tie tech software pretty much needs three different measurements and open a short and one that's a measurement called a we call a probe in situ.\n[11:35] It's basically it's a probe differential probing a differential line that connects to a connector and these three waveforms or S parameters are imported into I attack to create the S4P to create the S4P to create the S4P to create the S4P."
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0071.jpg"
+      ],
+      "transcript": "[11:35] It's basically it's a probe differential probing a differential line that connects to a connector and these three waveforms or S parameters are imported into I attack to create the S4P to create the S4P to create the S4P to create the S4P.\n[11:48] The S4P model. By doing this, it allows us to create a more accurate embedding model to model the differential crosstalk. You get more accurate S-parameter measurements by removing the probe loss from the measurements and it sets the measurement reference plane at the probe tips."
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0072.jpg"
+      ],
+      "transcript": "[11:48] The S4P model. By doing this, it allows us to create a more accurate embedding model to model the differential crosstalk. You get more accurate S-parameter measurements by removing the probe loss from the measurements and it sets the measurement reference plane at the probe tips."
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0073.jpg"
+      ],
+      "transcript": "[11:48] The S4P model. By doing this, it allows us to create a more accurate embedding model to model the differential crosstalk. You get more accurate S-parameter measurements by removing the probe loss from the measurements and it sets the measurement reference plane at the probe tips.\n[12:05] Now, lastly, I need to kind of define the differences between a differential probe and what the industry really calls a dual probe. Since we define a differential probe is that you have to have the"
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0074.jpg"
+      ],
+      "transcript": "[12:05] Now, lastly, I need to kind of define the differences between a differential probe and what the industry really calls a dual probe. Since we define a differential probe is that you have to have the\n[12:17] transmission lines in the differential lines coupled in most probes on a marketplace that believe we're the only company DVT solutions that do have a differential probe is that they just use two coax cables in a plastic box."
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0075.jpg"
+      ],
+      "transcript": "[12:17] transmission lines in the differential lines coupled in most probes on a marketplace that believe we're the only company DVT solutions that do have a differential probe is that they just use two coax cables in a plastic box."
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0076.jpg"
+      ],
+      "transcript": "[12:17] transmission lines in the differential lines coupled in most probes on a marketplace that believe we're the only company DVT solutions that do have a differential probe is that they just use two coax cables in a plastic box.\n[12:33] And with the shields around the conductors, the conductors are not coupled. So that very nature and that architecture."
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0077.jpg"
+      ],
+      "transcript": "[12:33] And with the shields around the conductors, the conductors are not coupled. So that very nature and that architecture.\n[12:43] It's impossible to create a virtual ground because the conductors are not coupled and are isolated. So in a sense, these are referred to as dual probes."
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0078.jpg"
+      ],
+      "transcript": "[12:43] It's impossible to create a virtual ground because the conductors are not coupled and are isolated. So in a sense, these are referred to as dual probes.\n[12:53] Now, I wanted to kind of since we build probe systems, a lot of people ask, well, I just need a quotation for some probes thinking that's all you really need."
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0079.jpg"
+      ],
+      "transcript": "[12:53] Now, I wanted to kind of since we build probe systems, a lot of people ask, well, I just need a quotation for some probes thinking that's all you really need.\n[13:02] But it's not practical to hold in your hand probes onto a board control your instrument at the same time without creating bad data."
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0080.jpg"
+      ],
+      "transcript": "[13:02] But it's not practical to hold in your hand probes onto a board control your instrument at the same time without creating bad data.\n[13:11] So essentially a probe system that that we put together, it's not a fixed platform.\n[13:18] They're basically components that consist of a probe positioner that you attach the probe."
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0081.jpg"
+      ],
+      "transcript": "[13:18] They're basically components that consist of a probe positioner that you attach the probe.\n[13:23] And what that does is it it holds it in place planar to the surface of the board, which allows us to go down onto the test pads with some maybe some minor planar adjustment controls."
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0082.jpg"
+      ],
+      "transcript": "[13:23] And what that does is it it holds it in place planar to the surface of the board, which allows us to go down onto the test pads with some maybe some minor planar adjustment controls.\n[13:37] Allows the probe tips and the test pads to make contact so that you get good data coming from it."
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0083.jpg"
+      ],
+      "transcript": "[13:37] Allows the probe tips and the test pads to make contact so that you get good data coming from it.\n[13:44] Secondly, in order to see that the probe tips are making contact with the test pads, you need a camera system."
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0084.jpg"
+      ],
+      "transcript": "[13:44] Secondly, in order to see that the probe tips are making contact with the test pads, you need a camera system.\n[13:50] And that allows us to view the probe tips making contact with the test pads and also to that they're planar.\n[13:57] Lastly, you know, if you're probing a board, you're most likely going to need to have some kind of fixed PCB fixturing to keep it from moving or bowing while you're measuring your data."
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0085.jpg"
+      ],
+      "transcript": "[13:57] Lastly, you know, if you're probing a board, you're most likely going to need to have some kind of fixed PCB fixturing to keep it from moving or bowing while you're measuring your data.\n[14:09] Now here's an example of a little more elaborate probe systems that we put these together for the last 18 years."
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0086.jpg"
+      ],
+      "transcript": "[14:09] Now here's an example of a little more elaborate probe systems that we put these together for the last 18 years.\n[14:16] The pro different dual probe system on the left just means that we've got two probes making contact and we're making a complete full full through measurement from one probe to the other."
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0087.jpg"
+      ],
+      "transcript": "[14:16] The pro different dual probe system on the left just means that we've got two probes making contact and we're making a complete full full through measurement from one probe to the other.\n[14:28] And that data is is going into a full port VNA."
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0088.jpg"
+      ],
+      "transcript": "[14:28] And that data is is going into a full port VNA.\n[14:31] We're using two cameras, one camera per probe, and we're using two manipulators.\n[14:37] And then in cases where we're probing larger boards, we've got a probe bridge that we're setting the probe manipulator on, as you can see on the left and on the right."
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0089.jpg"
+      ],
+      "transcript": "[14:37] And then in cases where we're probing larger boards, we've got a probe bridge that we're setting the probe manipulator on, as you can see on the left and on the right.\n[14:49] It raises it up high enough that I could slide the board underneath."
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 900,
+      "frames": [
+        "frame_0090.jpg"
+      ],
+      "transcript": "[14:49] It raises it up high enough that I could slide the board underneath.\n[14:54] That allows us to probe anywhere into that board that's necessary because primarily the length of the arm of the manipulator is about five inches."
+    },
+    {
+      "segment_index": 91,
+      "start_time": 900,
+      "end_time": 910,
+      "frames": [
+        "frame_0091.jpg"
+      ],
+      "transcript": "[14:54] That allows us to probe anywhere into that board that's necessary because primarily the length of the arm of the manipulator is about five inches.\n[15:05] So if you brought that right manipulator right up to the edge of the board, you're only going to be able to probe into it about five inches."
+    },
+    {
+      "segment_index": 92,
+      "start_time": 910,
+      "end_time": 920,
+      "frames": [
+        "frame_0092.jpg"
+      ],
+      "transcript": "[15:05] So if you brought that right manipulator right up to the edge of the board, you're only going to be able to probe into it about five inches.\n[15:14] So if your board is say longer than wider than five inches or 10 inches, then you might want to take a look at getting a probe bridge to assist the probing of it."
+    },
+    {
+      "segment_index": 93,
+      "start_time": 920,
+      "end_time": 930,
+      "frames": [
+        "frame_0093.jpg"
+      ],
+      "transcript": "[15:14] So if your board is say longer than wider than five inches or 10 inches, then you might want to take a look at getting a probe bridge to assist the probing of it.\n[15:25] Now, going back to the AtaiTech software, I mentioned earlier that it requires three different measurements."
+    },
+    {
+      "segment_index": 94,
+      "start_time": 930,
+      "end_time": 940,
+      "frames": [
+        "frame_0094.jpg"
+      ],
+      "transcript": "[15:25] Now, going back to the AtaiTech software, I mentioned earlier that it requires three different measurements.\n[15:31] So what we do initially is we set up the VNA so we have a time domain or harmonic cal that creates a time domain or like a TDR display."
+    },
+    {
+      "segment_index": 95,
+      "start_time": 940,
+      "end_time": 950,
+      "frames": [
+        "frame_0095.jpg"
+      ],
+      "transcript": "[15:31] So what we do initially is we set up the VNA so we have a time domain or harmonic cal that creates a time domain or like a TDR display.\n[15:41] So we'll start on the left hand side. The VNA is showing us the time domain of the probe making an open measurement."
+    },
+    {
+      "segment_index": 96,
+      "start_time": 950,
+      "end_time": 960,
+      "frames": [
+        "frame_0096.jpg"
+      ],
+      "transcript": "[15:41] So we'll start on the left hand side. The VNA is showing us the time domain of the probe making an open measurement.\n[15:51] And you can see at the end of that trace it goes up. So there's no contact at that point. The probes are raised.\n[15:59] And we use a copper plate that comes with the probes to allow you to make the short measurement, which is the next one on the right."
+    },
+    {
+      "segment_index": 97,
+      "start_time": 960,
+      "end_time": 970,
+      "frames": [
+        "frame_0097.jpg"
+      ],
+      "transcript": "[15:59] And we use a copper plate that comes with the probes to allow you to make the short measurement, which is the next one on the right.\n[16:08] And you can see at the end of the trace on the vector network and I understand it goes down. So it's shorting."
+    },
+    {
+      "segment_index": 98,
+      "start_time": 970,
+      "end_time": 980,
+      "frames": [
+        "frame_0098.jpg"
+      ],
+      "transcript": "[16:08] And you can see at the end of the trace on the vector network and I understand it goes down. So it's shorting.\n[16:14] And by putting the VNA into time domain mode, it gives us visual feedback to see that we are making contact with the short."
+    },
+    {
+      "segment_index": 99,
+      "start_time": 980,
+      "end_time": 990,
+      "frames": [
+        "frame_0099.jpg"
+      ],
+      "transcript": "[16:14] And by putting the VNA into time domain mode, it gives us visual feedback to see that we are making contact with the short.\n[16:24] And it is making an open measurement. You can see the probe tips on the camera that's viewing the probe tips at the top of the VNA."
+    },
+    {
+      "segment_index": 100,
+      "start_time": 990,
+      "end_time": 1000,
+      "frames": [
+        "frame_0100.jpg"
+      ],
+      "transcript": "[16:24] And it is making an open measurement. You can see the probe tips on the camera that's viewing the probe tips at the top of the VNA.\n[16:36] On the screen, you can see on the left, it's up, it's open, right? It's short. It's making contact across the copper pad."
+    },
+    {
+      "segment_index": 101,
+      "start_time": 1000,
+      "end_time": 1010,
+      "frames": [
+        "frame_0101.jpg"
+      ],
+      "transcript": "[16:36] On the screen, you can see on the left, it's up, it's open, right? It's short. It's making contact across the copper pad.\n[16:43] So lastly, the third measure we need to do is the probe SITU S4P file."
+    },
+    {
+      "segment_index": 102,
+      "start_time": 1010,
+      "end_time": 1020,
+      "frames": [
+        "frame_0102.jpg"
+      ],
+      "transcript": "[16:43] So lastly, the third measure we need to do is the probe SITU S4P file.\n[16:50] And so this is requires a board that has a probe pad on one end of a differential line that goes down to connectors, differential connectors on the end."
+    },
+    {
+      "segment_index": 103,
+      "start_time": 1020,
+      "end_time": 1030,
+      "frames": [
+        "frame_0103.jpg"
+      ],
+      "transcript": "[16:50] And so this is requires a board that has a probe pad on one end of a differential line that goes down to connectors, differential connectors on the end.\n[17:01] So we're going to make a full insertion loss and S4P measurement.\n[17:07] And this is our last file that we need in order to create a S4P model using a TITEC software."
+    },
+    {
+      "segment_index": 104,
+      "start_time": 1030,
+      "end_time": 1040,
+      "frames": [
+        "frame_0104.jpg"
+      ],
+      "transcript": "[17:07] And this is our last file that we need in order to create a S4P model using a TITEC software.\n[17:16] Here is a screenshot of the TITEC software on the left hand side."
+    },
+    {
+      "segment_index": 105,
+      "start_time": 1040,
+      "end_time": 1050,
+      "frames": [
+        "frame_0105.jpg"
+      ],
+      "transcript": "[17:16] Here is a screenshot of the TITEC software on the left hand side.\n[17:22] So we're going to make a look at the right side. We load the open, the short, the in situ.\n[17:27] And then we select auto, which kind of verifies that our ports are correct."
+    },
+    {
+      "segment_index": 106,
+      "start_time": 1050,
+      "end_time": 1060,
+      "frames": [
+        "frame_0106.jpg"
+      ],
+      "transcript": "[17:27] And then we select auto, which kind of verifies that our ports are correct.\n[17:32] And then ports to skip on the right, kind of the right side is on the left, meaning that it's going to be not developing a model for the left side."
+    },
+    {
+      "segment_index": 107,
+      "start_time": 1060,
+      "end_time": 1070,
+      "frames": [
+        "frame_0107.jpg"
+      ],
+      "transcript": "[17:32] And then ports to skip on the right, kind of the right side is on the left, meaning that it's going to be not developing a model for the left side.\n[17:44] This is going to be for the right side. The probe would be on the right side in this case.\n[17:48] Now on the right hand side is the probe model after it's completed its extraction, its model extraction."
+    },
+    {
+      "segment_index": 108,
+      "start_time": 1070,
+      "end_time": 1080,
+      "frames": [
+        "frame_0108.jpg"
+      ],
+      "transcript": "[17:48] Now on the right hand side is the probe model after it's completed its extraction, its model extraction.\n[17:55] And it's this is a 70 gigahertz, no ground probe model for our brand new differential probe to 70 gigahertz."
+    },
+    {
+      "segment_index": 109,
+      "start_time": 1080,
+      "end_time": 1090,
+      "frames": [
+        "frame_0109.jpg"
+      ],
+      "transcript": "[17:55] And it's this is a 70 gigahertz, no ground probe model for our brand new differential probe to 70 gigahertz.\n[18:04] OK, continuing on with the DNA, which is really the measurement engine behind the measurements that Brian was talking about that are required to build up the model for the probe."
+    },
+    {
+      "segment_index": 110,
+      "start_time": 1090,
+      "end_time": 1100,
+      "frames": [
+        "frame_0110.jpg"
+      ],
+      "transcript": "[18:04] OK, continuing on with the DNA, which is really the measurement engine behind the measurements that Brian was talking about that are required to build up the model for the probe.\n[18:18] We need a differential DNA. Of course, for the first two steps, it's an open and a short."
+    },
+    {
+      "segment_index": 111,
+      "start_time": 1100,
+      "end_time": 1110,
+      "frames": [
+        "frame_0111.jpg"
+      ],
+      "transcript": "[18:18] We need a differential DNA. Of course, for the first two steps, it's an open and a short.\n[18:23] That's a two port measurement. But we need the four port, obviously, to make the in situ measurement.\n[18:29] And then later on, when we're using the probe, of course, and de embedding it, we're talking about differential measurements."
+    },
+    {
+      "segment_index": 112,
+      "start_time": 1110,
+      "end_time": 1120,
+      "frames": [
+        "frame_0112.jpg"
+      ],
+      "transcript": "[18:29] And then later on, when we're using the probe, of course, and de embedding it, we're talking about differential measurements.\n[18:36] So once again, we need a four port. So and it's who has a quite a wide family portfolio of VNAs, ranging from the high performance vector star, which we're talking and demonstrating today."
+    },
+    {
+      "segment_index": 113,
+      "start_time": 1120,
+      "end_time": 1130,
+      "frames": [
+        "frame_0113.jpg"
+      ],
+      "transcript": "[18:36] So once again, we need a four port. So and it's who has a quite a wide family portfolio of VNAs, ranging from the high performance vector star, which we're talking and demonstrating today.\n[18:48] There's also a mid performance four port. It's called the shock line, and that goes up to 43 and a half gigahertz."
+    },
+    {
+      "segment_index": 114,
+      "start_time": 1130,
+      "end_time": 1140,
+      "frames": [
+        "frame_0114.jpg"
+      ],
+      "transcript": "[18:48] There's also a mid performance four port. It's called the shock line, and that goes up to 43 and a half gigahertz.\n[18:54] It's also has the de embedding software as standard on it as well."
+    },
+    {
+      "segment_index": 115,
+      "start_time": 1140,
+      "end_time": 1150,
+      "frames": [
+        "frame_0115.jpg"
+      ],
+      "transcript": "[18:54] It's also has the de embedding software as standard on it as well.\n[19:00] So much the same as what what Vector star has.\n[19:03] But we're using Vector star today because we're going up to 70 gigahertz.\n[19:06] And it's also possible to extend even higher with millimeter wave extenders to 110 gigahertz, 145 and even 220."
+    },
+    {
+      "segment_index": 116,
+      "start_time": 1150,
+      "end_time": 1160,
+      "frames": [
+        "frame_0116.jpg"
+      ],
+      "transcript": "[19:06] And it's also possible to extend even higher with millimeter wave extenders to 110 gigahertz, 145 and even 220.\n[19:15] We're the only company that has a single sweep vector network analyzer from 70 kilohertz all the way up to 220 gigahertz."
+    },
+    {
+      "segment_index": 117,
+      "start_time": 1160,
+      "end_time": 1170,
+      "frames": [
+        "frame_0117.jpg"
+      ],
+      "transcript": "[19:15] We're the only company that has a single sweep vector network analyzer from 70 kilohertz all the way up to 220 gigahertz.\n[19:23] So a lot of these concepts we're talking about can be extended, of course, into higher frequencies.\n[19:28] But we're going to concentrate on the picture that's in the middle and the bottom there."
+    },
+    {
+      "segment_index": 118,
+      "start_time": 1170,
+      "end_time": 1180,
+      "frames": [
+        "frame_0118.jpg"
+      ],
+      "transcript": "[19:28] But we're going to concentrate on the picture that's in the middle and the bottom there.\n[19:32] That's our four port system. And it consists of our two port mainframe VNA plus the multiport test set, which basically combines the two ports on the mainframe with the two ports on the test set to create a four port system."
+    },
+    {
+      "segment_index": 119,
+      "start_time": 1180,
+      "end_time": 1190,
+      "frames": [
+        "frame_0119.jpg"
+      ],
+      "transcript": "[19:32] That's our four port system. And it consists of our two port mainframe VNA plus the multiport test set, which basically combines the two ports on the mainframe with the two ports on the test set to create a four port system.\n[19:45] So this is our vector star with the test set.\n[19:49] Obviously, signal integrity application being that they are differential in nature."
+    },
+    {
+      "segment_index": 120,
+      "start_time": 1190,
+      "end_time": 1200,
+      "frames": [
+        "frame_0120.jpg"
+      ],
+      "transcript": "[19:49] Obviously, signal integrity application being that they are differential in nature.\n[19:53] They need a four port VNA to make all of those measurements possible.\n[19:59] So the test set is added. We have four ports."
+    },
+    {
+      "segment_index": 121,
+      "start_time": 1200,
+      "end_time": 1210,
+      "frames": [
+        "frame_0121.jpg"
+      ],
+      "transcript": "[19:59] So the test set is added. We have four ports.\n[20:02] We do the single ended and we have superposition mathematics that basically transform single ended S-paramers into differential S-paramers,"
+    },
+    {
+      "segment_index": 122,
+      "start_time": 1210,
+      "end_time": 1220,
+      "frames": [
+        "frame_0122.jpg"
+      ],
+      "transcript": "[20:02] We do the single ended and we have superposition mathematics that basically transform single ended S-paramers into differential S-paramers,\n[20:10] which is what we're after because we want the differential insertion loss and differential return loss of our probe as the final result when we do the network extraction."
+    },
+    {
+      "segment_index": 123,
+      "start_time": 1220,
+      "end_time": 1230,
+      "frames": [
+        "frame_0123.jpg"
+      ],
+      "transcript": "[20:10] which is what we're after because we want the differential insertion loss and differential return loss of our probe as the final result when we do the network extraction.\n[20:21] So embedding, de-embedding is a standard feature, as I said, on Enritsu VNAs.\n[20:26] And then we can also add a second source and we can add differential view in those cases where true mode differential stimulus is required."
+    },
+    {
+      "segment_index": 124,
+      "start_time": 1230,
+      "end_time": 1240,
+      "frames": [
+        "frame_0124.jpg"
+      ],
+      "transcript": "[20:26] And then we can also add a second source and we can add differential view in those cases where true mode differential stimulus is required.\n[20:34] In this case, since we're working with a passive device, we do not need true mode to do that since we're able to measure it with single ended and then use the mathematical transformation to get our differential results."
+    },
+    {
+      "segment_index": 125,
+      "start_time": 1240,
+      "end_time": 1250,
+      "frames": [
+        "frame_0125.jpg"
+      ],
+      "transcript": "[20:34] In this case, since we're working with a passive device, we do not need true mode to do that since we're able to measure it with single ended and then use the mathematical transformation to get our differential results.\n[20:49] So we don't need to have multiple sources as a result."
+    },
+    {
+      "segment_index": 126,
+      "start_time": 1250,
+      "end_time": 1260,
+      "frames": [
+        "frame_0126.jpg"
+      ],
+      "transcript": "[20:49] So we don't need to have multiple sources as a result.\n[20:52] The single source will allow us to make all of the necessary measurements for computing the differential S-parameter results."
+    },
+    {
+      "segment_index": 127,
+      "start_time": 1260,
+      "end_time": 1270,
+      "frames": [
+        "frame_0127.jpg"
+      ],
+      "transcript": "[20:52] The single source will allow us to make all of the necessary measurements for computing the differential S-parameter results.\n[21:01] These are the only systems that cover kilohertz to gigahertz.\n[21:04] So again, 70 kilohertz low end frequency all the way up to 70 gigahertz in the case of this VNA."
+    },
+    {
+      "segment_index": 128,
+      "start_time": 1270,
+      "end_time": 1280,
+      "frames": [
+        "frame_0128.jpg"
+      ],
+      "transcript": "[21:04] So again, 70 kilohertz low end frequency all the way up to 70 gigahertz in the case of this VNA.\n[21:10] So superposition is what we use to take the single ended S-parameters and convert them to differential S-parameters.\n[21:19] And the way superposition works basically is we're applying a signal one at a time, an incident stimulus one at a time to each port via switch matrix that's part of the system, part of the VNA system,"
+    },
+    {
+      "segment_index": 129,
+      "start_time": 1280,
+      "end_time": 1290,
+      "frames": [
+        "frame_0129.jpg"
+      ],
+      "transcript": "[21:19] And the way superposition works basically is we're applying a signal one at a time, an incident stimulus one at a time to each port via switch matrix that's part of the system, part of the VNA system,"
+    },
+    {
+      "segment_index": 130,
+      "start_time": 1290,
+      "end_time": 1300,
+      "frames": [
+        "frame_0130.jpg"
+      ],
+      "transcript": "[21:19] And the way superposition works basically is we're applying a signal one at a time, an incident stimulus one at a time to each port via switch matrix that's part of the system, part of the VNA system,\n[21:31] and measuring the response from all of the ports simultaneously.\n[21:35] And then we go to the next port and do the same thing.\n[21:37] So we collect all of these measurements, all these ratio measurements to form our S4P matrix of single ended S-parameters,"
+    },
+    {
+      "segment_index": 131,
+      "start_time": 1300,
+      "end_time": 1310,
+      "frames": [
+        "frame_0131.jpg"
+      ],
+      "transcript": "[21:37] So we collect all of these measurements, all these ratio measurements to form our S4P matrix of single ended S-parameters,\n[21:45] and then mathematically generate the differential common mode and mixed mode quantities based on that."
+    },
+    {
+      "segment_index": 132,
+      "start_time": 1310,
+      "end_time": 1320,
+      "frames": [
+        "frame_0132.jpg"
+      ],
+      "transcript": "[21:45] and then mathematically generate the differential common mode and mixed mode quantities based on that.\n[21:52] So as I said, this works perfectly well for passive devices and even linear active devices.\n[21:58] It's only in the non-linear case that you would actually need a true mode differential and thus a second source and all the phase synchronization required to get a full true mode differential stimulus."
+    },
+    {
+      "segment_index": 133,
+      "start_time": 1320,
+      "end_time": 1330,
+      "frames": [
+        "frame_0133.jpg"
+      ],
+      "transcript": "[21:58] It's only in the non-linear case that you would actually need a true mode differential and thus a second source and all the phase synchronization required to get a full true mode differential stimulus."
+    },
+    {
+      "segment_index": 134,
+      "start_time": 1330,
+      "end_time": 1340,
+      "frames": [
+        "frame_0134.jpg"
+      ],
+      "transcript": "[21:58] It's only in the non-linear case that you would actually need a true mode differential and thus a second source and all the phase synchronization required to get a full true mode differential stimulus.\n[22:12] So this is our single ended S-parameters on the left side.\n[22:15] That's our S-4P matrix basically, and we're mathematically transforming that to the differential quantities."
+    },
+    {
+      "segment_index": 135,
+      "start_time": 1340,
+      "end_time": 1350,
+      "frames": [
+        "frame_0135.jpg"
+      ],
+      "transcript": "[22:15] That's our S-4P matrix basically, and we're mathematically transforming that to the differential quantities.\n[22:23] And what matters here is basically the differential transmission.\n[22:27] So the SD2D1, the return loss, the SD1D1 or D2D2."
+    },
+    {
+      "segment_index": 136,
+      "start_time": 1350,
+      "end_time": 1360,
+      "frames": [
+        "frame_0136.jpg"
+      ],
+      "transcript": "[22:27] So the SD2D1, the return loss, the SD1D1 or D2D2.\n[22:33] Those are the return loss of reflection terms.\n[22:36] And then there's also common to differential, differential common, what we call mixed mode."
+    },
+    {
+      "segment_index": 137,
+      "start_time": 1360,
+      "end_time": 1370,
+      "frames": [
+        "frame_0137.jpg"
+      ],
+      "transcript": "[22:36] And then there's also common to differential, differential common, what we call mixed mode.\n[22:41] Some of that's important for common mode rejection type measurements.\n[22:45] And there's also common mode, which usually no one cares about because differential is what everyone wants."
+    },
+    {
+      "segment_index": 138,
+      "start_time": 1370,
+      "end_time": 1380,
+      "frames": [
+        "frame_0138.jpg"
+      ],
+      "transcript": "[22:45] And there's also common mode, which usually no one cares about because differential is what everyone wants.\n[22:50] So it's really the 180 degree out of phase that is of interest, which is how differential is defined.\n[22:56] So we're looking at insertion loss, as I mentioned, the D2D1 and in the reverse direction, that would be D1D2."
+    },
+    {
+      "segment_index": 139,
+      "start_time": 1380,
+      "end_time": 1390,
+      "frames": [
+        "frame_0139.jpg"
+      ],
+      "transcript": "[22:56] So we're looking at insertion loss, as I mentioned, the D2D1 and in the reverse direction, that would be D1D2.\n[23:05] Return loss at both ports, both differential ports."
+    },
+    {
+      "segment_index": 140,
+      "start_time": 1390,
+      "end_time": 1400,
+      "frames": [
+        "frame_0140.jpg"
+      ],
+      "transcript": "[23:05] Return loss at both ports, both differential ports.\n[23:10] And then the common mode rejection may be of interest in just looking at how well your design performs in a differential sense and how well it rejects the common mode."
+    },
+    {
+      "segment_index": 141,
+      "start_time": 1400,
+      "end_time": 1410,
+      "frames": [
+        "frame_0141.jpg"
+      ],
+      "transcript": "[23:10] And then the common mode rejection may be of interest in just looking at how well your design performs in a differential sense and how well it rejects the common mode.\n[23:20] Cross talk is really just single ended S-parameters.\n[23:23] We're looking at really the near end and the far end cross talk here.\n[23:26] So these are looked at in terms of single ended S-parameters.\n[23:29] These are the cross terms. These are not the direct through terms that you would have in the differential transmission."
+    },
+    {
+      "segment_index": 142,
+      "start_time": 1410,
+      "end_time": 1420,
+      "frames": [
+        "frame_0142.jpg"
+      ],
+      "transcript": "[23:29] These are the cross terms. These are not the direct through terms that you would have in the differential transmission.\n[23:36] That would be one to two and three to four.\n[23:38] So here we're looking at the cross terms and that would be the leakage across or the isolation."
+    },
+    {
+      "segment_index": 143,
+      "start_time": 1420,
+      "end_time": 1430,
+      "frames": [
+        "frame_0143.jpg"
+      ],
+      "transcript": "[23:38] So here we're looking at the cross terms and that would be the leakage across or the isolation.\n[23:46] And then we can use time domain and, as Brian mentioned, the low pass time domain step response to get our impedance profile."
+    },
+    {
+      "segment_index": 144,
+      "start_time": 1430,
+      "end_time": 1440,
+      "frames": [
+        "frame_0144.jpg"
+      ],
+      "transcript": "[23:46] And then we can use time domain and, as Brian mentioned, the low pass time domain step response to get our impedance profile.\n[23:56] And we actually see what is happening along the line.\n[23:59] And this is helpful when you're landing the probes as well to actually see the result that you expect if you're probing an open, probing a short or probing the line to make sure that you're touched down correctly and that the line impedance makes sense."
+    },
+    {
+      "segment_index": 145,
+      "start_time": 1440,
+      "end_time": 1450,
+      "frames": [
+        "frame_0145.jpg"
+      ],
+      "transcript": "[23:59] And this is helpful when you're landing the probes as well to actually see the result that you expect if you're probing an open, probing a short or probing the line to make sure that you're touched down correctly and that the line impedance makes sense."
+    },
+    {
+      "segment_index": 146,
+      "start_time": 1450,
+      "end_time": 1460,
+      "frames": [
+        "frame_0146.jpg"
+      ],
+      "transcript": "[23:59] And this is helpful when you're landing the probes as well to actually see the result that you expect if you're probing an open, probing a short or probing the line to make sure that you're touched down correctly and that the line impedance makes sense.\n[24:12] Remember, this is a hundred ohms because it's a differential.\n[24:15] So this is what we're looking at in our in our impedance profile."
+    },
+    {
+      "segment_index": 147,
+      "start_time": 1460,
+      "end_time": 1470,
+      "frames": [
+        "frame_0147.jpg"
+      ],
+      "transcript": "[24:15] So this is what we're looking at in our in our impedance profile.\n[24:20] So all of these measurements are possible with a four port VNA.\n[24:24] Now turning to the embedding, de-embedding menu.\n[24:28] This is after you've got your calibration and you're making measurements."
+    },
+    {
+      "segment_index": 148,
+      "start_time": 1470,
+      "end_time": 1480,
+      "frames": [
+        "frame_0148.jpg"
+      ],
+      "transcript": "[24:28] This is after you've got your calibration and you're making measurements.\n[24:32] And now you want to input the model that we've developed or extracted using the ATITEC software for the probe.\n[24:39] And you want to actually apply it to your measurement because at the end of the day, what you want to measure is your device under test and not anything outside of that."
+    },
+    {
+      "segment_index": 149,
+      "start_time": 1480,
+      "end_time": 1490,
+      "frames": [
+        "frame_0149.jpg"
+      ],
+      "transcript": "[24:39] And you want to actually apply it to your measurement because at the end of the day, what you want to measure is your device under test and not anything outside of that.\n[24:47] So everything else in the measurement path, including the probe, has to get removed if you want to isolate the measurement to your device under test."
+    },
+    {
+      "segment_index": 150,
+      "start_time": 1490,
+      "end_time": 1500,
+      "frames": [
+        "frame_0150.jpg"
+      ],
+      "transcript": "[24:47] So everything else in the measurement path, including the probe, has to get removed if you want to isolate the measurement to your device under test.\n[24:55] So this is the process that we use.\n[24:57] So we load the file.\n[24:58] If it's a two port S2P file, it would be the menu on the left."
+    },
+    {
+      "segment_index": 151,
+      "start_time": 1500,
+      "end_time": 1510,
+      "frames": [
+        "frame_0151.jpg"
+      ],
+      "transcript": "[24:58] If it's a two port S2P file, it would be the menu on the left.\n[25:04] If it's a four port, it would be the menu on the right.\n[25:07] You would load an S4P file.\n[25:09] You would add that to your network."
+    },
+    {
+      "segment_index": 152,
+      "start_time": 1510,
+      "end_time": 1520,
+      "frames": [
+        "frame_0152.jpg"
+      ],
+      "transcript": "[25:09] You would add that to your network.\n[25:11] If you have multiple layers of de-embedding that you wish to accomplish, then you would add an additional network to that table below.\n[25:19] And then when you've got everything set the way you want it, you apply it and turn the embedding on."
+    },
+    {
+      "segment_index": 153,
+      "start_time": 1520,
+      "end_time": 1530,
+      "frames": [
+        "frame_0153.jpg"
+      ],
+      "transcript": "[25:19] And then when you've got everything set the way you want it, you apply it and turn the embedding on.\n[25:26] And the Enritsu VNA menu has a way of toggling on and off.\n[25:29] So you can actually see very quickly what the result is after de-embedding."
+    },
+    {
+      "segment_index": 154,
+      "start_time": 1530,
+      "end_time": 1540,
+      "frames": [
+        "frame_0154.jpg"
+      ],
+      "transcript": "[25:29] So you can actually see very quickly what the result is after de-embedding.\n[25:33] And you can revert back to what it was before de-embedding and actually see the difference.\n[25:37] And we'll be demonstrating that when we do the verification portion of our demonstration."
+    },
+    {
+      "segment_index": 155,
+      "start_time": 1540,
+      "end_time": 1550,
+      "frames": [
+        "frame_0155.jpg"
+      ],
+      "transcript": "[25:37] And we'll be demonstrating that when we do the verification portion of our demonstration.\n[25:42] And this is what it looks like.\n[25:45] This is actually what I'm talking about here is where we're applying the probe model and the trace is the blue trace and the green trace is the original measurement with no probe de-embedding taking place."
+    },
+    {
+      "segment_index": 156,
+      "start_time": 1550,
+      "end_time": 1560,
+      "frames": [
+        "frame_0156.jpg"
+      ],
+      "transcript": "[25:45] This is actually what I'm talking about here is where we're applying the probe model and the trace is the blue trace and the green trace is the original measurement with no probe de-embedding taking place.\n[25:58] So you can see that the insertion loss of your device under test improves as you remove the probe because the net difference between these two traces is the actual insertion loss of the probe,"
+    },
+    {
+      "segment_index": 157,
+      "start_time": 1560,
+      "end_time": 1570,
+      "frames": [
+        "frame_0157.jpg"
+      ],
+      "transcript": "[25:58] So you can see that the insertion loss of your device under test improves as you remove the probe because the net difference between these two traces is the actual insertion loss of the probe,"
+    },
+    {
+      "segment_index": 158,
+      "start_time": 1570,
+      "end_time": 1580,
+      "frames": [
+        "frame_0158.jpg"
+      ],
+      "transcript": "[25:58] So you can see that the insertion loss of your device under test improves as you remove the probe because the net difference between these two traces is the actual insertion loss of the probe,\n[26:11] which is about 8 dB at 70 GHz.\n[26:15] So at this point, we're going to turn to the live demonstration and we'll be back with you in just a couple of minutes."
+    },
+    {
+      "segment_index": 159,
+      "start_time": 1580,
+      "end_time": 1590,
+      "frames": [
+        "frame_0159.jpg"
+      ],
+      "transcript": "[26:15] So at this point, we're going to turn to the live demonstration and we'll be back with you in just a couple of minutes.\n[26:23] Okay, now we're back for the live demo.\n[26:26] The live demo is going to consist of the systems that you see up on the slide."
+    },
+    {
+      "segment_index": 160,
+      "start_time": 1590,
+      "end_time": 1600,
+      "frames": [
+        "frame_0160.jpg"
+      ],
+      "transcript": "[26:26] The live demo is going to consist of the systems that you see up on the slide.\n[26:33] Starting with the left, what we're going to do, those shows the port assignments, how we're connected to the probe in situ board."
+    },
+    {
+      "segment_index": 161,
+      "start_time": 1600,
+      "end_time": 1610,
+      "frames": [
+        "frame_0161.jpg"
+      ],
+      "transcript": "[26:33] Starting with the left, what we're going to do, those shows the port assignments, how we're connected to the probe in situ board.\n[26:41] And then in the middle is the actual devices that we're using as the probe system.\n[26:47] This is kind of the half of a dual probe system, essentially."
+    },
+    {
+      "segment_index": 162,
+      "start_time": 1610,
+      "end_time": 1620,
+      "frames": [
+        "frame_0162.jpg"
+      ],
+      "transcript": "[26:47] This is kind of the half of a dual probe system, essentially.\n[26:53] You would need the camera system and the probe and the manipulator to hold it and a board to make measurements from.\n[26:59] And then on the right side is the full system, showing you the board to set up the DNA, the display."
+    },
+    {
+      "segment_index": 163,
+      "start_time": 1620,
+      "end_time": 1630,
+      "frames": [
+        "frame_0163.jpg"
+      ],
+      "transcript": "[26:59] And then on the right side is the full system, showing you the board to set up the DNA, the display.\n[27:05] And next we're going to do is we're going to go to a live demonstration of making the probe in situ measurement."
+    },
+    {
+      "segment_index": 164,
+      "start_time": 1630,
+      "end_time": 1640,
+      "frames": [
+        "frame_0164.jpg"
+      ],
+      "transcript": "[27:05] And next we're going to do is we're going to go to a live demonstration of making the probe in situ measurement.\n[27:11] All right. The picture on the left side, as you see in the camera, down at the bottom, the black thing down there is the probe positioner."
+    },
+    {
+      "segment_index": 165,
+      "start_time": 1640,
+      "end_time": 1650,
+      "frames": [
+        "frame_0165.jpg"
+      ],
+      "transcript": "[27:11] All right. The picture on the left side, as you see in the camera, down at the bottom, the black thing down there is the probe positioner.\n[27:23] And as I said earlier, you want a long arm on this thing."
+    },
+    {
+      "segment_index": 166,
+      "start_time": 1650,
+      "end_time": 1660,
+      "frames": [
+        "frame_0166.jpg"
+      ],
+      "transcript": "[27:23] And as I said earlier, you want a long arm on this thing.\n[27:30] And then this is connected to the probe.\n[27:33] Now this is the true differential 70 gigahertz probe.\n[27:36] And it's controlled by these controls back here, your X, Y, and Z."
+    },
+    {
+      "segment_index": 167,
+      "start_time": 1660,
+      "end_time": 1670,
+      "frames": [
+        "frame_0167.jpg"
+      ],
+      "transcript": "[27:36] And it's controlled by these controls back here, your X, Y, and Z.\n[27:41] And this one here is your planarization control.\n[27:45] If the probe tips are not planar to the test pads, you're not going to make good measurements."
+    },
+    {
+      "segment_index": 168,
+      "start_time": 1670,
+      "end_time": 1680,
+      "frames": [
+        "frame_0168.jpg"
+      ],
+      "transcript": "[27:45] If the probe tips are not planar to the test pads, you're not going to make good measurements.\n[27:50] And in order to verify they are or not, is that we have a camera here that's showing the probe tips very, expands it on the display, as you can see here by the display on the PC."
+    },
+    {
+      "segment_index": 169,
+      "start_time": 1680,
+      "end_time": 1690,
+      "frames": [
+        "frame_0169.jpg"
+      ],
+      "transcript": "[27:50] And in order to verify they are or not, is that we have a camera here that's showing the probe tips very, expands it on the display, as you can see here by the display on the PC.\n[28:06] So those are the two signal pins within the probe itself.\n[28:09] As you can see, there is no ground."
+    },
+    {
+      "segment_index": 170,
+      "start_time": 1690,
+      "end_time": 1700,
+      "frames": [
+        "frame_0170.jpg"
+      ],
+      "transcript": "[28:09] As you can see, there is no ground.\n[28:12] So we have no common mode path, just a differential path with crosstalk.\n[28:19] And they were making contact with the differential line, as you can see on the trace."
+    },
+    {
+      "segment_index": 171,
+      "start_time": 1700,
+      "end_time": 1710,
+      "frames": [
+        "frame_0171.jpg"
+      ],
+      "transcript": "[28:19] And they were making contact with the differential line, as you can see on the trace.\n[28:25] So this connection to the VNA is we have a differential port one on the left here, one and three connected to one side of the probe in situ board."
+    },
+    {
+      "segment_index": 172,
+      "start_time": 1710,
+      "end_time": 1720,
+      "frames": [
+        "frame_0172.jpg"
+      ],
+      "transcript": "[28:25] So this connection to the VNA is we have a differential port one on the left here, one and three connected to one side of the probe in situ board."
+    },
+    {
+      "segment_index": 173,
+      "start_time": 1720,
+      "end_time": 1730,
+      "frames": [
+        "frame_0173.jpg"
+      ],
+      "transcript": "[28:25] So this connection to the VNA is we have a differential port one on the left here, one and three connected to one side of the probe in situ board.\n[28:41] And then the other port, differential port two and four are connected to the probe.\n[28:47] And now that completes the path."
+    },
+    {
+      "segment_index": 174,
+      "start_time": 1730,
+      "end_time": 1740,
+      "frames": [
+        "frame_0174.jpg"
+      ],
+      "transcript": "[28:47] And now that completes the path.\n[28:50] So on the display to verify and help us kind of guide that we're making good contact is the time domain display on the VNA that shows the probe's making contact through the transmission line."
+    },
+    {
+      "segment_index": 175,
+      "start_time": 1740,
+      "end_time": 1750,
+      "frames": [
+        "frame_0175.jpg"
+      ],
+      "transcript": "[28:50] So on the display to verify and help us kind of guide that we're making good contact is the time domain display on the VNA that shows the probe's making contact through the transmission line.\n[29:04] And now the next thing we're going to do is we're going to make an S parameter measurement, return loss measurements."
+    },
+    {
+      "segment_index": 176,
+      "start_time": 1750,
+      "end_time": 1760,
+      "frames": [
+        "frame_0176.jpg"
+      ],
+      "transcript": "[29:04] And now the next thing we're going to do is we're going to make an S parameter measurement, return loss measurements.\n[29:11] And this is going to be our probe in situ measurement that we're going to be sending to Arno, who's going to do a live demonstration using a TIA-TECH software."
+    },
+    {
+      "segment_index": 177,
+      "start_time": 1760,
+      "end_time": 1770,
+      "frames": [
+        "frame_0177.jpg"
+      ],
+      "transcript": "[29:11] And this is going to be our probe in situ measurement that we're going to be sending to Arno, who's going to do a live demonstration using a TIA-TECH software.\n[29:23] And this insertion loss measurement, which is the last of the three waveforms that we need, the open, the short, and now the probe in situ measurement."
+    },
+    {
+      "segment_index": 178,
+      "start_time": 1770,
+      "end_time": 1780,
+      "frames": [
+        "frame_0178.jpg"
+      ],
+      "transcript": "[29:23] And this insertion loss measurement, which is the last of the three waveforms that we need, the open, the short, and now the probe in situ measurement.\n[29:35] So I'm going to pass this waveform off to Arno, who will next create the extraction that will give us our probe model."
+    },
+    {
+      "segment_index": 179,
+      "start_time": 1780,
+      "end_time": 1790,
+      "frames": [
+        "frame_0179.jpg"
+      ],
+      "transcript": "[29:35] So I'm going to pass this waveform off to Arno, who will next create the extraction that will give us our probe model.\n[29:46] We're going to use the TIA-TECH software next."
+    },
+    {
+      "segment_index": 180,
+      "start_time": 1790,
+      "end_time": 1800,
+      "frames": [
+        "frame_0180.jpg"
+      ],
+      "transcript": "[29:51] And for this, we're going to use a 1X open and short.\n[29:58] This is what we measured."
+    },
+    {
+      "segment_index": 181,
+      "start_time": 1800,
+      "end_time": 1810,
+      "frames": [
+        "frame_0181.jpg"
+      ],
+      "transcript": "[29:58] This is what we measured.\n[30:01] These are basically S2P files.\n[30:05] These were two port measurements we made with ports 1 and 2 of the VNA."
+    },
+    {
+      "segment_index": 182,
+      "start_time": 1810,
+      "end_time": 1820,
+      "frames": [
+        "frame_0182.jpg"
+      ],
+      "transcript": "[30:05] These were two port measurements we made with ports 1 and 2 of the VNA.\n[30:10] We probed the open, which was basically probes in the air.\n[30:13] And we probed the short, which is the probes touching down on the copper shorting plate.\n[30:19] And so we're going to select 1X open and 1X short."
+    },
+    {
+      "segment_index": 183,
+      "start_time": 1820,
+      "end_time": 1830,
+      "frames": [
+        "frame_0183.jpg"
+      ],
+      "transcript": "[30:19] And so we're going to select 1X open and 1X short.\n[30:24] And we're going to load the two S2P files.\n[30:28] So the first one is for the open."
+    },
+    {
+      "segment_index": 184,
+      "start_time": 1830,
+      "end_time": 1840,
+      "frames": [
+        "frame_0184.jpg"
+      ],
+      "transcript": "[30:28] So the first one is for the open.\n[30:31] And I have that one here in the directory.\n[30:34] And over here I have the short.\n[30:37] So we'll load that one.\n[30:39] And then finally, it's the measurement that Brian was just showing live, which is the in situ through measurement."
+    },
+    {
+      "segment_index": 185,
+      "start_time": 1840,
+      "end_time": 1850,
+      "frames": [
+        "frame_0185.jpg"
+      ],
+      "transcript": "[30:39] And then finally, it's the measurement that Brian was just showing live, which is the in situ through measurement.\n[30:47] And that is S4P because it's a full differential measurement that we're taking there from the connector to the probe through the transmission line on the board."
+    },
+    {
+      "segment_index": 186,
+      "start_time": 1850,
+      "end_time": 1860,
+      "frames": [
+        "frame_0186.jpg"
+      ],
+      "transcript": "[30:47] And that is S4P because it's a full differential measurement that we're taking there from the connector to the probe through the transmission line on the board."
+    },
+    {
+      "segment_index": 187,
+      "start_time": 1860,
+      "end_time": 1870,
+      "frames": [
+        "frame_0187.jpg"
+      ],
+      "transcript": "[30:47] And that is S4P because it's a full differential measurement that we're taking there from the connector to the probe through the transmission line on the board.\n[31:02] And so that's our in situ measurement, which is the one here.\n[31:07] It's the one inch board we're using to 70 gigahertz."
+    },
+    {
+      "segment_index": 188,
+      "start_time": 1870,
+      "end_time": 1880,
+      "frames": [
+        "frame_0188.jpg"
+      ],
+      "transcript": "[31:07] It's the one inch board we're using to 70 gigahertz.\n[31:10] So we'll load that measurement.\n[31:12] And then we perform an auto port sequence check.\n[31:16] This is just ensure that our through line or through connections are as we expect them to be."
+    },
+    {
+      "segment_index": 189,
+      "start_time": 1880,
+      "end_time": 1890,
+      "frames": [
+        "frame_0189.jpg"
+      ],
+      "transcript": "[31:16] This is just ensure that our through line or through connections are as we expect them to be.\n[31:23] So the port sequence for our through is one to two single ended and three to four single ended."
+    },
+    {
+      "segment_index": 190,
+      "start_time": 1890,
+      "end_time": 1900,
+      "frames": [
+        "frame_0190.jpg"
+      ],
+      "transcript": "[31:23] So the port sequence for our through is one to two single ended and three to four single ended.\n[31:31] And it also shows the frequency range where we're covering with 2000 data points from 35 megahertz to 70 gigahertz."
+    },
+    {
+      "segment_index": 191,
+      "start_time": 1900,
+      "end_time": 1910,
+      "frames": [
+        "frame_0191.jpg"
+      ],
+      "transcript": "[31:31] And it also shows the frequency range where we're covering with 2000 data points from 35 megahertz to 70 gigahertz.\n[31:40] And now another very important step is the port to skip.\n[31:43] Since we're not concerned about the left side, the left side is where the connectors are.\n[31:47] The probe is on the right side.\n[31:48] So we want to skip the side that has the connector."
+    },
+    {
+      "segment_index": 192,
+      "start_time": 1910,
+      "end_time": 1920,
+      "frames": [
+        "frame_0192.jpg"
+      ],
+      "transcript": "[31:48] So we want to skip the side that has the connector.\n[31:50] So that would be the left side.\n[31:52] So we select left and then we're ready to run the ISD software to extract the S4P model for the probe."
+    },
+    {
+      "segment_index": 193,
+      "start_time": 1920,
+      "end_time": 1930,
+      "frames": [
+        "frame_0193.jpg"
+      ],
+      "transcript": "[31:52] So we select left and then we're ready to run the ISD software to extract the S4P model for the probe.\n[32:04] So this takes just a few seconds.\n[32:07] And what you get is the single ended S parameters."
+    },
+    {
+      "segment_index": 194,
+      "start_time": 1930,
+      "end_time": 1940,
+      "frames": [
+        "frame_0194.jpg"
+      ],
+      "transcript": "[32:07] And what you get is the single ended S parameters.\n[32:11] Well, that's not all that interesting for us because we're after the differential S parameters.\n[32:17] So we come over here to plot S parameter."
+    },
+    {
+      "segment_index": 195,
+      "start_time": 1940,
+      "end_time": 1950,
+      "frames": [
+        "frame_0195.jpg"
+      ],
+      "transcript": "[32:17] So we come over here to plot S parameter.\n[32:20] And we de-embed from the right.\n[32:22] And it's basically the differential view that we want to see.\n[32:27] And so if I expand that, this is the actual differential S parameters of the probe by itself."
+    },
+    {
+      "segment_index": 196,
+      "start_time": 1950,
+      "end_time": 1960,
+      "frames": [
+        "frame_0196.jpg"
+      ],
+      "transcript": "[32:27] And so if I expand that, this is the actual differential S parameters of the probe by itself.\n[32:35] So it's extracted the probe from those three measurements that we supplied."
+    },
+    {
+      "segment_index": 197,
+      "start_time": 1960,
+      "end_time": 1970,
+      "frames": [
+        "frame_0197.jpg"
+      ],
+      "transcript": "[32:35] So it's extracted the probe from those three measurements that we supplied.\n[32:40] And it plots out the differential return loss, both the input side and the output side.\n[32:46] So that's the blue trace over here is the input return loss."
+    },
+    {
+      "segment_index": 198,
+      "start_time": 1970,
+      "end_time": 1980,
+      "frames": [
+        "frame_0198.jpg"
+      ],
+      "transcript": "[32:46] So that's the blue trace over here is the input return loss.\n[32:50] The red trace over here is the output return loss.\n[32:54] And we see over here the insertion loss, the differential insertion loss of the probe itself.\n[32:59] In the forward direction is the blue."
+    },
+    {
+      "segment_index": 199,
+      "start_time": 1980,
+      "end_time": 1990,
+      "frames": [
+        "frame_0199.jpg"
+      ],
+      "transcript": "[32:59] In the forward direction is the blue.\n[33:03] In the reverse direction is the red.\n[33:06] And they're the same as we would expect.\n[33:09] Because this is a symmetric and a passive device that we're extracting a model for."
+    },
+    {
+      "segment_index": 200,
+      "start_time": 1990,
+      "end_time": 2000,
+      "frames": [
+        "frame_0200.jpg"
+      ],
+      "transcript": "[33:09] Because this is a symmetric and a passive device that we're extracting a model for.\n[33:16] So once we have the model, we're ready to go over to the VNA and actually apply it to that measurement that Brian was showing just a moment ago."
+    },
+    {
+      "segment_index": 201,
+      "start_time": 2000,
+      "end_time": 2010,
+      "frames": [
+        "frame_0201.jpg"
+      ],
+      "transcript": "[33:16] So once we have the model, we're ready to go over to the VNA and actually apply it to that measurement that Brian was showing just a moment ago.\n[33:25] So I'm going to go ahead and close this window and bring up the VNA menu again."
+    },
+    {
+      "segment_index": 202,
+      "start_time": 2010,
+      "end_time": 2020,
+      "frames": [
+        "frame_0202.jpg"
+      ],
+      "transcript": "[33:25] So I'm going to go ahead and close this window and bring up the VNA menu again.\n[33:30] And look at the differential transmission.\n[33:37] And right now what we're measuring is the probe and the board all together."
+    },
+    {
+      "segment_index": 203,
+      "start_time": 2020,
+      "end_time": 2030,
+      "frames": [
+        "frame_0203.jpg"
+      ],
+      "transcript": "[33:37] And right now what we're measuring is the probe and the board all together.\n[33:46] But what we want to get to is basically just a measurement of the board and the connector on that board on the left side."
+    },
+    {
+      "segment_index": 204,
+      "start_time": 2030,
+      "end_time": 2040,
+      "frames": [
+        "frame_0204.jpg"
+      ],
+      "transcript": "[33:46] But what we want to get to is basically just a measurement of the board and the connector on that board on the left side.\n[33:55] But we're going to remove the probe that is on the right side.\n[33:59] So the first thing I'm going to do is place this trace into memory."
+    },
+    {
+      "segment_index": 205,
+      "start_time": 2040,
+      "end_time": 2050,
+      "frames": [
+        "frame_0205.jpg"
+      ],
+      "transcript": "[33:59] So the first thing I'm going to do is place this trace into memory.\n[34:04] So we have a record of what it looked like before we de-embed it.\n[34:09] So we're going to go ahead and store this trace to the memory."
+    },
+    {
+      "segment_index": 206,
+      "start_time": 2050,
+      "end_time": 2060,
+      "frames": [
+        "frame_0206.jpg"
+      ],
+      "transcript": "[34:09] So we're going to go ahead and store this trace to the memory.\n[34:13] And then we're going to put data and memory on.\n[34:18] And then we're going to go to the measurement menu, which is where we apply all our post-processing."
+    },
+    {
+      "segment_index": 207,
+      "start_time": 2060,
+      "end_time": 2070,
+      "frames": [
+        "frame_0207.jpg"
+      ],
+      "transcript": "[34:18] And then we're going to go to the measurement menu, which is where we apply all our post-processing.\n[34:24] So as I mentioned earlier in the presentation, all of this assumes that you've done a standard calibration, S-O-L-T type calibration,"
+    },
+    {
+      "segment_index": 208,
+      "start_time": 2070,
+      "end_time": 2080,
+      "frames": [
+        "frame_0208.jpg"
+      ],
+      "transcript": "[34:24] So as I mentioned earlier in the presentation, all of this assumes that you've done a standard calibration, S-O-L-T type calibration,\n[34:34] so that you're obviously measuring accurately.\n[34:37] But now what we want to do is apply that probe model and remove that probe from this combined measurement."
+    },
+    {
+      "segment_index": 209,
+      "start_time": 2080,
+      "end_time": 2090,
+      "frames": [
+        "frame_0209.jpg"
+      ],
+      "transcript": "[34:37] But now what we want to do is apply that probe model and remove that probe from this combined measurement.\n[34:44] So it becomes a post-processing step.\n[34:47] And we call that de-embedding.\n[34:49] And we want to go into the edit menu for de-embedding."
+    },
+    {
+      "segment_index": 210,
+      "start_time": 2090,
+      "end_time": 2100,
+      "frames": [
+        "frame_0210.jpg"
+      ],
+      "transcript": "[34:49] And we want to go into the edit menu for de-embedding.\n[34:54] And you'll see the menu that I showed earlier in the presentation where you can choose between embedding and de-embedding."
+    },
+    {
+      "segment_index": 211,
+      "start_time": 2100,
+      "end_time": 2110,
+      "frames": [
+        "frame_0211.jpg"
+      ],
+      "transcript": "[34:54] And you'll see the menu that I showed earlier in the presentation where you can choose between embedding and de-embedding.\n[35:03] Obviously the default is de-embedding.\n[35:05] Most of the time you want to remove things rather than add things.\n[35:08] But it can go both ways.\n[35:09] We have to decide what port we want to apply it to."
+    },
+    {
+      "segment_index": 212,
+      "start_time": 2110,
+      "end_time": 2120,
+      "frames": [
+        "frame_0212.jpg"
+      ],
+      "transcript": "[35:09] We have to decide what port we want to apply it to.\n[35:12] And this is very important because you can do S-2P embedding de-embedding, which would be on a single-ended port.\n[35:18] Or you can do differential embedding de-embedding, which would be on a differential port."
+    },
+    {
+      "segment_index": 213,
+      "start_time": 2120,
+      "end_time": 2130,
+      "frames": [
+        "frame_0213.jpg"
+      ],
+      "transcript": "[35:18] Or you can do differential embedding de-embedding, which would be on a differential port.\n[35:24] Obviously we're here to do differential measurements.\n[35:26] So we're going to pick ports two and four because that's what's on the right-hand side."
+    },
+    {
+      "segment_index": 214,
+      "start_time": 2130,
+      "end_time": 2140,
+      "frames": [
+        "frame_0214.jpg"
+      ],
+      "transcript": "[35:26] So we're going to pick ports two and four because that's what's on the right-hand side.\n[35:32] That's our output.\n[35:33] That's where our probe is.\n[35:35] And as I mentioned in the presentation, we can handle discrete components."
+    },
+    {
+      "segment_index": 215,
+      "start_time": 2140,
+      "end_time": 2150,
+      "frames": [
+        "frame_0215.jpg"
+      ],
+      "transcript": "[35:35] And as I mentioned in the presentation, we can handle discrete components.\n[35:44] We can also do transmission lines.\n[35:46] But really the most useful de-embedding network, of course, is the S-4P file itself."
+    },
+    {
+      "segment_index": 216,
+      "start_time": 2150,
+      "end_time": 2160,
+      "frames": [
+        "frame_0216.jpg"
+      ],
+      "transcript": "[35:46] But really the most useful de-embedding network, of course, is the S-4P file itself.\n[35:53] So that's what we're going to use here.\n[35:56] And we're going to load in the S-4P file."
+    },
+    {
+      "segment_index": 217,
+      "start_time": 2160,
+      "end_time": 2170,
+      "frames": [
+        "frame_0217.jpg"
+      ],
+      "transcript": "[35:56] And we're going to load in the S-4P file.\n[36:01] And so when the ISD software ran, it created a file in the same directory that's labeled write DUT."
+    },
+    {
+      "segment_index": 218,
+      "start_time": 2170,
+      "end_time": 2180,
+      "frames": [
+        "frame_0218.jpg"
+      ],
+      "transcript": "[36:01] And so when the ISD software ran, it created a file in the same directory that's labeled write DUT.\n[36:11] And that is basically distinguishing that we're removing what's on the right-hand side and creating a file for it.\n[36:18] And so what will be left is just the DUT measurement."
+    },
+    {
+      "segment_index": 219,
+      "start_time": 2180,
+      "end_time": 2190,
+      "frames": [
+        "frame_0219.jpg"
+      ],
+      "transcript": "[36:18] And so what will be left is just the DUT measurement.\n[36:22] So the actual probe file is this one, the one I'm pointing to that's called write DUT.\n[36:29] So this captures the probe model."
+    },
+    {
+      "segment_index": 220,
+      "start_time": 2190,
+      "end_time": 2200,
+      "frames": [
+        "frame_0220.jpg"
+      ],
+      "transcript": "[36:29] So this captures the probe model.\n[36:33] So we're going to go ahead and open that.\n[36:36] And we're going to apply that.\n[36:39] Sorry, we're going to apply that."
+    },
+    {
+      "segment_index": 221,
+      "start_time": 2200,
+      "end_time": 2210,
+      "frames": [
+        "frame_0221.jpg"
+      ],
+      "transcript": "[36:39] Sorry, we're going to apply that.\n[36:44] I had another one in there, so I'm going to remove that.\n[36:47] So now I have the file loaded in the table."
+    },
+    {
+      "segment_index": 222,
+      "start_time": 2210,
+      "end_time": 2220,
+      "frames": [
+        "frame_0222.jpg"
+      ],
+      "transcript": "[36:47] So now I have the file loaded in the table.\n[36:50] And we're going to apply it.\n[36:52] And we're going to close.\n[36:56] And now all that remains is to basically turn on the embedding."
+    },
+    {
+      "segment_index": 223,
+      "start_time": 2220,
+      "end_time": 2230,
+      "frames": [
+        "frame_0223.jpg"
+      ],
+      "transcript": "[36:56] And now all that remains is to basically turn on the embedding.\n[37:01] And what you'll notice right away, the memory trace still captures the combined measurement with the probe."
+    },
+    {
+      "segment_index": 224,
+      "start_time": 2230,
+      "end_time": 2240,
+      "frames": [
+        "frame_0224.jpg"
+      ],
+      "transcript": "[37:01] And what you'll notice right away, the memory trace still captures the combined measurement with the probe.\n[37:10] And the measurement in blue is now the D-embedded result.\n[37:14] So we remove the contribution to the probe.\n[37:17] And that's somewhere around 6 to 8 dB, depending on where you're looking at it, frequency."
+    },
+    {
+      "segment_index": 225,
+      "start_time": 2240,
+      "end_time": 2250,
+      "frames": [
+        "frame_0225.jpg"
+      ],
+      "transcript": "[37:17] And that's somewhere around 6 to 8 dB, depending on where you're looking at it, frequency.\n[37:23] But that's the result.\n[37:25] So this is where we end up after the probe is basically removed from the combined measurement."
+    },
+    {
+      "segment_index": 226,
+      "start_time": 2250,
+      "end_time": 2260,
+      "frames": [
+        "frame_0226.jpg"
+      ],
+      "transcript": "[37:25] So this is where we end up after the probe is basically removed from the combined measurement.\n[37:34] So that concludes our demonstration and also concludes our seminar for today."
+    },
+    {
+      "segment_index": 227,
+      "start_time": 2260,
+      "end_time": 2270,
+      "frames": [
+        "frame_0227.jpg"
+      ],
+      "transcript": "[37:34] So that concludes our demonstration and also concludes our seminar for today.\n[37:40] We hope it's been informative.\n[37:43] We do want to mention again, this was a collaborative effort with four companies involved."
+    },
+    {
+      "segment_index": 228,
+      "start_time": 2270,
+      "end_time": 2280,
+      "frames": [
+        "frame_0228.jpg"
+      ],
+      "transcript": "[37:43] We do want to mention again, this was a collaborative effort with four companies involved.\n[37:50] So we thank you today for your attention.\n[37:53] If you have any questions, feel free to reach out to any one of us.\n[37:59] I'm, of course, responsible for the V&A part."
+    },
+    {
+      "segment_index": 229,
+      "start_time": 2280,
+      "end_time": 2290,
+      "frames": [
+        "frame_0229.jpg"
+      ],
+      "transcript": "[37:59] I'm, of course, responsible for the V&A part.\n[38:02] Brian helped here with the probing part of it and probe systems.\n[38:07] And Bill Rosas manufactures the probes themselves as well as the verification board that we're using."
+    },
+    {
+      "segment_index": 230,
+      "start_time": 2290,
+      "end_time": 2300,
+      "frames": [
+        "frame_0230.jpg"
+      ],
+      "transcript": "[38:07] And Bill Rosas manufactures the probes themselves as well as the verification board that we're using.\n[38:15] And Dr. Jing Chao-Wong at the TITEC for the ISD network extraction software."
+    },
+    {
+      "segment_index": 231,
+      "start_time": 2300,
+      "end_time": 2310,
+      "frames": [
+        "frame_0231.jpg"
+      ],
+      "transcript": "[38:15] And Dr. Jing Chao-Wong at the TITEC for the ISD network extraction software.\n[38:23] So again, on behalf of Brian and myself, we want to thank you for your attendance today.\n[38:28] And feel free to contact us with any questions you may have."
+    },
+    {
+      "segment_index": 232,
+      "start_time": 2310,
+      "end_time": 2314.98,
+      "frames": [],
+      "transcript": "[38:28] And feel free to contact us with any questions you may have.\n[38:32] Thank you and good day."
+    }
+  ]
+}

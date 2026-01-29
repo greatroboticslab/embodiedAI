@@ -1,0 +1,1096 @@
+{
+  "video_id": "E_RDCFOlJx4",
+  "duration": 1042.9,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg"
+      ],
+      "transcript": "[0:00] Let's talk about the Linear Quadratic Regulator, or LQR control.\n[0:05] LQR is a type of optimal control that is based on state space representation."
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0003.jpg",
+        "frame_0004.jpg"
+      ],
+      "transcript": "[0:10] In this video I want to introduce this topic at a very high level so that you walk away\n[0:13] with a general understanding of the control problem and can build on this understanding\n[0:17] when you're studying the math behind it."
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0005.jpg",
+        "frame_0006.jpg",
+        "frame_0007.jpg"
+      ],
+      "transcript": "[0:17] when you're studying the math behind it.\n[0:20] I'll cover what it means to be optimal, how to think about the LQR problem, and then I'll\n[0:25] show you some examples in MATLAB that I think will help you gain a little intuition about\n[0:29] LQR."
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0008.jpg",
+        "frame_0009.jpg"
+      ],
+      "transcript": "[0:30] I'm Brian, and welcome to a MATLAB Tech Talk.\n[0:34] To begin, let's compare the structure of the pole placement controller that we covered\n[0:37] in the second video and an LQR controller."
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:37] in the second video and an LQR controller.\n[0:40] That way you have some kind of an idea of how they're different.\n[0:44] With pole placement we found that if we feed back every state in the state vector and multiply\n[0:48] them by a gain matrix K, we have the ability to place the closed loop poles anywhere we"
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg"
+      ],
+      "transcript": "[0:48] them by a gain matrix K, we have the ability to place the closed loop poles anywhere we\n[0:53] choose, assuming the system is controllable and observable.\n[0:57] Then we scaled the reference term to ensure that we have no steady state reference tracking"
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0015.jpg",
+        "frame_0016.jpg"
+      ],
+      "transcript": "[0:57] Then we scaled the reference term to ensure that we have no steady state reference tracking\n[1:01] error.\n[1:02] Now, the LQR structure on the other hand feeds back the full state vector, then multiplies\n[1:08] it by a gain matrix K and subtracts it from the scaled reference."
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0017.jpg",
+        "frame_0018.jpg",
+        "frame_0019.jpg"
+      ],
+      "transcript": "[1:08] it by a gain matrix K and subtracts it from the scaled reference.\n[1:12] So as you can see, the structure of these two control laws are completely diff- well, actually\n[1:18] no, they're exactly the same."
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0020.jpg",
+        "frame_0021.jpg"
+      ],
+      "transcript": "[1:18] no, they're exactly the same.\n[1:20] They are both full state feedback controllers, and we can implement the results with the same\n[1:25] structure from both LQR and pole placement.\n[1:29] Now, a quick side note about this structure."
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[1:29] Now, a quick side note about this structure.\n[1:31] We could have set it up to feed back the integral of the output, or we could have applied the\n[1:35] gain to the state error.\n[1:38] All three of these implementations can produce zero steady state error and can be used with"
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg"
+      ],
+      "transcript": "[1:38] All three of these implementations can produce zero steady state error and can be used with\n[1:43] the results from pole placement or LQR.\n[1:45] And if you want to learn more about these other two feedback structures, I left a good source\n[1:49] in the description."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0027.jpg",
+        "frame_0028.jpg"
+      ],
+      "transcript": "[1:49] in the description.\n[1:50] Okay, we're back.\n[1:53] So why are we giving these two controllers different names if they're implemented in\n[1:56] the exact same way?\n[1:58] Well here's the key.\n[1:59] The implementation is the same, but how we choose K is different."
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0029.jpg",
+        "frame_0030.jpg",
+        "frame_0031.jpg"
+      ],
+      "transcript": "[1:59] The implementation is the same, but how we choose K is different.\n[2:05] With pole placement, we solved for K by choosing where we want to put the closed loop poles."
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0032.jpg",
+        "frame_0033.jpg"
+      ],
+      "transcript": "[2:05] With pole placement, we solved for K by choosing where we want to put the closed loop poles.\n[2:10] We wanted to place them in a specific spot, and this was awesome.\n[2:14] But one problem with this method is figuring out where a good place is for those closed loop\n[2:18] poles.\n[2:19] And this might not be terribly intuitive for high order systems and systems with multiple"
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[2:19] And this might not be terribly intuitive for high order systems and systems with multiple\n[2:24] actuators.\n[2:25] So, with LQR we don't pick pole locations.\n[2:29] We find the optimal K matrix by choosing closed loop characteristics that are important to us."
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg"
+      ],
+      "transcript": "[2:29] We find the optimal K matrix by choosing closed loop characteristics that are important to us.\n[2:34] Specifically, how well the system performs and how much effort does it take to get that\n[2:39] performance."
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0039.jpg",
+        "frame_0040.jpg"
+      ],
+      "transcript": "[2:39] performance.\n[2:40] And this statement might not make a lot of sense, so let's walk through a quick thought exercise\n[2:45] that I think will help.\n[2:46] From borrowing and modifying this example from Christopher Lum, who has his own video on"
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0041.jpg",
+        "frame_0042.jpg",
+        "frame_0043.jpg"
+      ],
+      "transcript": "[2:46] From borrowing and modifying this example from Christopher Lum, who has his own video on\n[2:50] LQR that is worth watching if you want a more in-depth explanation of the mathematics.\n[2:54] I've linked to his video in the description.\n[2:57] But here's the general idea.\n[2:59] Let's say you're trying to figure out the best way, or the most optimal way, to get from"
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:59] Let's say you're trying to figure out the best way, or the most optimal way, to get from\n[3:03] your home to work.\n[3:04] And you have several transportation options to choose from.\n[3:08] You could drive your car, you could ride your bike, take the bus, or charter a helicopter."
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[3:08] You could drive your car, you could ride your bike, take the bus, or charter a helicopter.\n[3:12] And the question is, which is the most optimal choice?\n[3:16] Well, that question by itself can't be answered, because I haven't told you what a good outcome"
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg"
+      ],
+      "transcript": "[3:16] Well, that question by itself can't be answered, because I haven't told you what a good outcome\n[3:20] means.\n[3:21] All of those options can get us from home to work, but they do so differently, and we need\n[3:26] to figure out what's important to us.\n[3:28] If I said that time is the most important thing, get to work as fast as possible, then the optimal"
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0051.jpg",
+        "frame_0052.jpg"
+      ],
+      "transcript": "[3:28] If I said that time is the most important thing, get to work as fast as possible, then the optimal\n[3:34] solution would be to take the helicopter.\n[3:36] On the other hand, if I said that you don't have much money and getting to work as cheaply"
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0053.jpg",
+        "frame_0054.jpg",
+        "frame_0055.jpg"
+      ],
+      "transcript": "[3:36] On the other hand, if I said that you don't have much money and getting to work as cheaply\n[3:40] as possible was a good outcome, then riding your bike would be the optimal solution.\n[3:44] Of course, in real life you don't have infinite money to maximize performance, and you don't\n[3:48] have unlimited time to minimize spending."
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[3:48] have unlimited time to minimize spending.\n[3:51] But rather you're trying to find a balance between the two.\n[3:54] So maybe you'd reason that you have an early meeting, and therefore value the time it takes\n[3:58] to get to work.\n[3:59] But you're not independently wealthy, so you care about how much money it takes."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:59] But you're not independently wealthy, so you care about how much money it takes.\n[4:03] Therefore the optimal solution would be to take your car, or to take the bus.\n[4:09] Now if we wanted a fancy way to mathematically assess which mode of transportation is optimal,"
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg"
+      ],
+      "transcript": "[4:09] Now if we wanted a fancy way to mathematically assess which mode of transportation is optimal,\n[4:14] we could set up a function that adds together the travel time and the amount of money that\n[4:18] each option takes."
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0063.jpg",
+        "frame_0064.jpg"
+      ],
+      "transcript": "[4:18] each option takes.\n[4:20] And then we can set the importance of time versus money with a multiplier.\n[4:25] We'll weight each of these matrices based on our own personal preferences.\n[4:29] We'll call this the cost function, or the objective function."
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0065.jpg",
+        "frame_0066.jpg",
+        "frame_0067.jpg"
+      ],
+      "transcript": "[4:29] We'll call this the cost function, or the objective function.\n[4:33] And you can see that it's heavily influenced by these weighting parameters.\n[4:37] If Q is high, then we're penalizing options that take more time, and if R is high, then"
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0068.jpg",
+        "frame_0069.jpg"
+      ],
+      "transcript": "[4:37] If Q is high, then we're penalizing options that take more time, and if R is high, then\n[4:41] we're penalizing options that cost a lot of money.\n[4:44] And once we set the weights, we calculate the total cost for each option and choose the"
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[4:44] And once we set the weights, we calculate the total cost for each option and choose the\n[4:50] one that has the lowest overall cost.\n[4:52] And this is the optimal solution.\n[4:55] And what's interesting about this is that there's different optimal solutions based on\n[4:59] the relative weights you attach to performance and spending."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg"
+      ],
+      "transcript": "[4:59] the relative weights you attach to performance and spending.\n[5:02] There's no universal optimal solution, just the best one given the desires of the user.\n[5:08] A CEO might take a helicopter, whereas a college student might ride a bicycle."
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0075.jpg",
+        "frame_0076.jpg"
+      ],
+      "transcript": "[5:08] A CEO might take a helicopter, whereas a college student might ride a bicycle.\n[5:13] But both are optimal given their preferences.\n[5:16] And this is exactly the same kind of reasoning we do when designing a control system."
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0077.jpg",
+        "frame_0078.jpg",
+        "frame_0079.jpg"
+      ],
+      "transcript": "[5:16] And this is exactly the same kind of reasoning we do when designing a control system.\n[5:21] Rather than think about pole locations, we can think about and assess what is important\n[5:25] to us between how well the system performs and how much we want to spend to get that performance."
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0080.jpg",
+        "frame_0081.jpg"
+      ],
+      "transcript": "[5:25] to us between how well the system performs and how much we want to spend to get that performance.\n[5:32] Of course, usually how much we want to spend is not measured in dollars, but in actuator effort,\n[5:37] or the amount of energy it takes.\n[5:39] And this is how LQR approaches finding the optimal gain matrix."
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[5:39] And this is how LQR approaches finding the optimal gain matrix.\n[5:44] We set up a cost function that adds up the weighted sum of performance and effort over\n[5:48] all time.\n[5:49] And then by solving the LQR problem, it returns the gain matrix that produces the lowest cost,"
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg"
+      ],
+      "transcript": "[5:49] And then by solving the LQR problem, it returns the gain matrix that produces the lowest cost,\n[5:55] given the dynamics of the system.\n[5:57] Now, the cost function that we use with LQR looks a little different than the function"
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0087.jpg",
+        "frame_0088.jpg"
+      ],
+      "transcript": "[5:57] Now, the cost function that we use with LQR looks a little different than the function\n[6:01] we developed for the travel example.\n[6:03] But the concept is exactly the same.\n[6:05] We penalize bad performance by adjusting Q, and we penalize actuator effort by adjusting"
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0089.jpg",
+        "frame_0090.jpg",
+        "frame_0091.jpg"
+      ],
+      "transcript": "[6:05] We penalize bad performance by adjusting Q, and we penalize actuator effort by adjusting\n[6:10] R.\n[6:11] So let's look at what performance means for this cost function.\n[6:16] Performance is judged on the state vector.\n[6:18] For now, let's assume that we want every state to be zero, to be driven back to its starting"
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[6:18] For now, let's assume that we want every state to be zero, to be driven back to its starting\n[6:23] equilibrium point.\n[6:24] So if the system is initialized in some non-zero state, the faster it returns to zero, the better"
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[6:24] So if the system is initialized in some non-zero state, the faster it returns to zero, the better\n[6:30] the performance is, and the lower the cost.\n[6:33] And the way we can get a measure of how quickly it's returning to the desired state is by looking\n[6:37] at the area under the curve.\n[6:39] This is what the integral is doing."
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg"
+      ],
+      "transcript": "[6:39] This is what the integral is doing.\n[6:41] A curve with less area means that it spends more time closer to the goal than a curve with\n[6:46] more area.\n[6:47] However, states can be negative or positive, and we don't want negative values subtracting from"
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0099.jpg",
+        "frame_0100.jpg",
+        "frame_0101.jpg"
+      ],
+      "transcript": "[6:47] However, states can be negative or positive, and we don't want negative values subtracting from\n[6:52] the overall cost.\n[6:53] So we square the value to ensure that it's positive.\n[6:57] This has the effect of punishing larger errors disproportionately more than smaller ones."
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0102.jpg",
+        "frame_0103.jpg"
+      ],
+      "transcript": "[6:57] This has the effect of punishing larger errors disproportionately more than smaller ones.\n[7:02] But it's a good compromise because it turns our cost function into a quadratic function.\n[7:08] Quadratic functions like z equals x squared plus y squared are convexed, and therefore have"
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[7:08] Quadratic functions like z equals x squared plus y squared are convexed, and therefore have\n[7:13] a definite minimum value.\n[7:15] quadratic functions that are subject to linear dynamics remain quadratic, so our system will"
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[7:15] quadratic functions that are subject to linear dynamics remain quadratic, so our system will\n[7:20] also have a definite minimum value.\n[7:23] Lastly, we want to have the ability to weight the relative importance of each state.\n[7:28] And therefore, q isn't a single number, but a square matrix that has the same number of"
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg"
+      ],
+      "transcript": "[7:28] And therefore, q isn't a single number, but a square matrix that has the same number of\n[7:32] rows as states.\n[7:35] The q matrix needs to be positive definite so that when we multiply it with the state vectors,\n[7:39] the resulting value is positive and non-zero."
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0111.jpg",
+        "frame_0112.jpg",
+        "frame_0113.jpg"
+      ],
+      "transcript": "[7:39] the resulting value is positive and non-zero.\n[7:43] And often it's just a diagonal matrix with positive values along the diagonal.\n[7:48] With this matrix, we can target the states where we want really low error by making the corresponding value in the q"
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0114.jpg",
+        "frame_0115.jpg"
+      ],
+      "transcript": "[7:48] With this matrix, we can target the states where we want really low error by making the corresponding value in the q\n[7:54] matrix really large.\n[7:56] And the states that we don't care about as much make those values really small."
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[7:56] And the states that we don't care about as much make those values really small.\n[8:00] The other half of the cost function adds up the cost of actuation.\n[8:04] In a very similar fashion, we look at the input vector, and we square the terms to ensure that\n[8:08] they're positive, and then weight them with an r matrix that has positive multipliers along"
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[8:08] they're positive, and then weight them with an r matrix that has positive multipliers along\n[8:13] its diagonal.\n[8:15] We can write this in larger matrix form as follows.\n[8:18] And while you don't see the cost function written like this often, it helps us visualize"
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg"
+      ],
+      "transcript": "[8:18] And while you don't see the cost function written like this often, it helps us visualize\n[8:23] something.\n[8:24] q and r are part of this larger weighting matrix.\n[8:28] But the off-diagonal terms of this matrix are zero."
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0123.jpg",
+        "frame_0124.jpg",
+        "frame_0125.jpg"
+      ],
+      "transcript": "[8:28] But the off-diagonal terms of this matrix are zero.\n[8:31] And we can fill in those corners with n, such that the overall matrix is still positive definite,\n[8:37] but now the n matrix penalizes cross products of the input and the state."
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0126.jpg",
+        "frame_0127.jpg"
+      ],
+      "transcript": "[8:37] but now the n matrix penalizes cross products of the input and the state.\n[8:43] Now while there's uses for setting up your cost function with an n matrix, for us we're\n[8:47] going to keep things simple and just set it to zero and focus only on q and r."
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0128.jpg",
+        "frame_0129.jpg"
+      ],
+      "transcript": "[8:47] going to keep things simple and just set it to zero and focus only on q and r.\n[8:53] So by setting values of q and r, we now have a way to specify exactly what's important to\n[8:58] us.\n[8:59] If one of the actuators is really expensive and we're trying to save energy, then we"
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0130.jpg",
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[8:59] If one of the actuators is really expensive and we're trying to save energy, then we\n[9:03] penalize it by increasing the r matrix value that corresponds with it.\n[9:07] And this might be the case if you're using thrusters for satellite control, because they use up"
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg"
+      ],
+      "transcript": "[9:07] And this might be the case if you're using thrusters for satellite control, because they use up\n[9:12] fuel, which is a finite resource.\n[9:14] In that case, you may accept a slower reaction or more state error so that you can save fuel."
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0135.jpg",
+        "frame_0136.jpg",
+        "frame_0137.jpg"
+      ],
+      "transcript": "[9:14] In that case, you may accept a slower reaction or more state error so that you can save fuel.\n[9:21] On the other hand, if performance is really crucial, then we can penalize state error by\n[9:25] increasing the q matrix value that corresponds with the states that we care about.\n[9:29] And this might be the case when using reaction wheels for satellite control, because they"
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0138.jpg",
+        "frame_0139.jpg"
+      ],
+      "transcript": "[9:29] And this might be the case when using reaction wheels for satellite control, because they\n[9:33] use energy that can be stored in batteries and replenished with the solar panels.\n[9:38] So using more energy for low error control is probably a good tradeoff."
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0140.jpg",
+        "frame_0141.jpg"
+      ],
+      "transcript": "[9:38] So using more energy for low error control is probably a good tradeoff.\n[9:44] So now the big question.\n[9:46] How do we solve this optimization problem?\n[9:49] I think the big disappointing answer is that deriving the solution is beyond the scope of"
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0142.jpg",
+        "frame_0143.jpg",
+        "frame_0144.jpg"
+      ],
+      "transcript": "[9:49] I think the big disappointing answer is that deriving the solution is beyond the scope of\n[9:53] this video.\n[9:54] But I left a good link in the description if you want to read up on it.\n[9:57] The good news, however, is that as a control system designer, often the way you approach"
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0145.jpg",
+        "frame_0146.jpg"
+      ],
+      "transcript": "[9:57] The good news, however, is that as a control system designer, often the way you approach\n[10:01] LQR design is not by solving the optimization problem by hand, but by developing a linear model\n[10:07] of your system dynamics, then specifying what's important by adjusting the q and r weighting matrices,"
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0147.jpg",
+        "frame_0148.jpg",
+        "frame_0149.jpg"
+      ],
+      "transcript": "[10:07] of your system dynamics, then specifying what's important by adjusting the q and r weighting matrices,\n[10:13] then running the LQR command in MATLAB to solve the optimization problem and return the optimal\n[10:19] gain set, and then just simulate the system and adjust q and r again if necessary."
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0150.jpg",
+        "frame_0151.jpg"
+      ],
+      "transcript": "[10:19] gain set, and then just simulate the system and adjust q and r again if necessary.\n[10:25] So as long as you understand how q and r affects the closed loop behavior, how they punish state"
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0152.jpg",
+        "frame_0153.jpg"
+      ],
+      "transcript": "[10:25] So as long as you understand how q and r affects the closed loop behavior, how they punish state\n[10:30] errors and actuator effort, and you understand that this is a quadratic optimization problem,\n[10:35] then it's relatively simple to use the LQR command in MATLAB to find the optimal gain set."
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0154.jpg",
+        "frame_0155.jpg",
+        "frame_0156.jpg"
+      ],
+      "transcript": "[10:35] then it's relatively simple to use the LQR command in MATLAB to find the optimal gain set.\n[10:41] Now, with LQR, we've moved the design question away from where do we place poles to the question\n[10:47] how do we set q and r.\n[10:49] Unfortunately, there isn't a one-size-fits-all method for choosing these weights."
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0157.jpg",
+        "frame_0158.jpg"
+      ],
+      "transcript": "[10:49] Unfortunately, there isn't a one-size-fits-all method for choosing these weights.\n[10:53] However, I'd argue that setting q and r is more intuitive than picking pole locations.\n[10:59] For example, you can just start with the identity matrix for both q and r, and then tweak them"
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0159.jpg",
+        "frame_0160.jpg",
+        "frame_0161.jpg"
+      ],
+      "transcript": "[10:59] For example, you can just start with the identity matrix for both q and r, and then tweak them\n[11:03] through trial and error and intuition about your system.\n[11:07] So to help you develop some of that intuition, let's walk through a few examples in MATLAB."
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0162.jpg",
+        "frame_0163.jpg"
+      ],
+      "transcript": "[11:07] So to help you develop some of that intuition, let's walk through a few examples in MATLAB.\n[11:13] Alright, this needs a little explanation.\n[11:16] Let's start with the code.\n[11:18] I have a very simple model of a rotating mass in a frictionless environment, and the system"
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0164.jpg",
+        "frame_0165.jpg"
+      ],
+      "transcript": "[11:18] I have a very simple model of a rotating mass in a frictionless environment, and the system\n[11:22] has two states, angle and angular rate.\n[11:26] And I'm designing a full state feedback controller using LQR, and it really couldn't be simpler."
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0166.jpg",
+        "frame_0167.jpg",
+        "frame_0168.jpg"
+      ],
+      "transcript": "[11:26] And I'm designing a full state feedback controller using LQR, and it really couldn't be simpler.\n[11:32] I'll start with the identity matrix for q, where the first diagonal entry is tied to\n[11:37] angular error, and the second is tied to angular rate."
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0169.jpg",
+        "frame_0170.jpg"
+      ],
+      "transcript": "[11:37] angular error, and the second is tied to angular rate.\n[11:40] Now, there's only a single actuation input for this system, which are four rotation thrusters\n[11:46] that all act together to create a single torque command."
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0171.jpg",
+        "frame_0172.jpg",
+        "frame_0173.jpg"
+      ],
+      "transcript": "[11:46] that all act together to create a single torque command.\n[11:50] Therefore r is just a single value.\n[11:53] Now I solve for the optimal feedback gain using the LQR command and build a state space object\n[11:58] that represents the closed loop dynamics."
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0174.jpg",
+        "frame_0175.jpg"
+      ],
+      "transcript": "[11:58] that represents the closed loop dynamics.\n[12:01] With the controller designed, I can simulate the response to an initial condition, which\n[12:05] I'm setting to 3 radians.\n[12:07] And that's pretty much the whole thing.\n[12:09] Everything else in this script just makes this fancy plot so that it's easier to comprehend"
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0176.jpg",
+        "frame_0177.jpg"
+      ],
+      "transcript": "[12:09] Everything else in this script just makes this fancy plot so that it's easier to comprehend\n[12:13] the results.\n[12:14] Alright, let's run this script.\n[12:17] You can see the UFO gets initialized to 3 radians, as promised."
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0178.jpg",
+        "frame_0179.jpg",
+        "frame_0180.jpg"
+      ],
+      "transcript": "[12:17] You can see the UFO gets initialized to 3 radians, as promised.\n[12:22] And up at the top I'm keeping track of how long the maneuver takes, which is representative\n[12:26] of the performance, and how much fuel is used to complete the maneuver."
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0181.jpg",
+        "frame_0182.jpg"
+      ],
+      "transcript": "[12:26] of the performance, and how much fuel is used to complete the maneuver.\n[12:30] So let's kick it off and see how well the controller does."
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0183.jpg",
+        "frame_0184.jpg",
+        "frame_0185.jpg"
+      ],
+      "transcript": "[12:43] Hey, look at that.\n[12:44] It completed the maneuver in 5.8 seconds with 15 units of fuel, and it got the cow in the"
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0186.jpg",
+        "frame_0187.jpg"
+      ],
+      "transcript": "[12:44] It completed the maneuver in 5.8 seconds with 15 units of fuel, and it got the cow in the\n[12:51] process, which is the important part.\n[12:54] When the thrusters are active, they generate a torque that accelerates the UFO over time.\n[12:59] Therefore fuel usage is proportional to the integral of acceleration."
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0188.jpg",
+        "frame_0189.jpg"
+      ],
+      "transcript": "[12:59] Therefore fuel usage is proportional to the integral of acceleration.\n[13:03] So the longer we accelerate, the more fuel is used.\n[13:07] Now let's see if we can use less fuel for this maneuver by penalizing the thruster more."
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0190.jpg",
+        "frame_0191.jpg",
+        "frame_0192.jpg"
+      ],
+      "transcript": "[13:07] Now let's see if we can use less fuel for this maneuver by penalizing the thruster more.\n[13:12] I'll bump R up to 2 and rerun the simulation.\n[13:18] Well, we used two fewer units of fuel, but at the expense of over 3 additional seconds."
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0193.jpg",
+        "frame_0194.jpg"
+      ],
+      "transcript": "[13:18] Well, we used two fewer units of fuel, but at the expense of over 3 additional seconds."
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0195.jpg",
+        "frame_0196.jpg",
+        "frame_0197.jpg"
+      ],
+      "transcript": "[13:18] Well, we used two fewer units of fuel, but at the expense of over 3 additional seconds.\n[13:35] The problem is that with this combination, it overshot the target just a bit and had to waste"
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0198.jpg",
+        "frame_0199.jpg"
+      ],
+      "transcript": "[13:35] The problem is that with this combination, it overshot the target just a bit and had to waste\n[13:40] time coming back.\n[13:42] So let's try to slow down the max rotation speed with the hope that it won't overshoot.\n[13:46] And we're going to do that by penalizing the angular rate portion of the Q matrix."
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0200.jpg",
+        "frame_0201.jpg",
+        "frame_0202.jpg"
+      ],
+      "transcript": "[13:46] And we're going to do that by penalizing the angular rate portion of the Q matrix.\n[13:51] Now any non-zero rate costs double what it did before.\n[13:55] And let's give this a shot."
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0203.jpg",
+        "frame_0204.jpg"
+      ],
+      "transcript": "[13:55] And let's give this a shot.\n[14:07] Well we saved about a second since it didn't overshoot, and in the process managed to knock"
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0205.jpg",
+        "frame_0206.jpg"
+      ],
+      "transcript": "[14:07] Well we saved about a second since it didn't overshoot, and in the process managed to knock\n[14:11] another unit of fuel off.\n[14:14] Alright enough of this small stuff.\n[14:16] Let's really save fuel now by relaxing the angle error weight a bunch."
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0207.jpg",
+        "frame_0208.jpg",
+        "frame_0209.jpg"
+      ],
+      "transcript": "[14:16] Let's really save fuel now by relaxing the angle error weight a bunch.\n[14:28] Okay this is going really slowly now, so let me speed up the video to just get through it."
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0210.jpg",
+        "frame_0211.jpg"
+      ],
+      "transcript": "[14:28] Okay this is going really slowly now, so let me speed up the video to just get through it.\n[14:33] In the end we used 5 units of fuel, less than half of what was used before.\n[14:37] And we can go the other way as well and tune a really aggressive controller."
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0212.jpg",
+        "frame_0213.jpg",
+        "frame_0214.jpg"
+      ],
+      "transcript": "[14:37] And we can go the other way as well and tune a really aggressive controller.\n[14:42] Okay yeah, that's much faster.\n[14:46] Less than 2 seconds and our acceleration is off the charts."
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 900,
+      "frames": [
+        "frame_0215.jpg",
+        "frame_0216.jpg"
+      ],
+      "transcript": "[14:46] Less than 2 seconds and our acceleration is off the charts.\n[14:50] That's how you rotate to pick up a cow.\n[14:52] Unfortunately it's at the expense of almost 100 units of fuel, so there's downsides to everything.\n[14:58] Alright, so hopefully you're starting to see how we can tweak and tune our controller by"
+    },
+    {
+      "segment_index": 91,
+      "start_time": 900,
+      "end_time": 910,
+      "frames": [
+        "frame_0217.jpg",
+        "frame_0218.jpg"
+      ],
+      "transcript": "[14:58] Alright, so hopefully you're starting to see how we can tweak and tune our controller by\n[15:02] adjusting these two matrices.\n[15:04] And it's pretty simple.\n[15:07] Now I know this video is dragging on, but with a different script I want to show you one"
+    },
+    {
+      "segment_index": 92,
+      "start_time": 910,
+      "end_time": 920,
+      "frames": [
+        "frame_0219.jpg",
+        "frame_0220.jpg",
+        "frame_0221.jpg"
+      ],
+      "transcript": "[15:07] Now I know this video is dragging on, but with a different script I want to show you one\n[15:11] more thing real quickly.\n[15:12] And that's how LQR is more powerful than pole placement.\n[15:17] Here I have a different state space model, one that has 3 states in a single actuator."
+    },
+    {
+      "segment_index": 93,
+      "start_time": 920,
+      "end_time": 930,
+      "frames": [
+        "frame_0222.jpg",
+        "frame_0223.jpg"
+      ],
+      "transcript": "[15:17] Here I have a different state space model, one that has 3 states in a single actuator.\n[15:21] And I've defined my Q and R matrices and solved for the optimal gain.\n[15:25] And like before I'll generate the closed loop state space model, and then run the response\n[15:29] to an initial condition of 1, 0, 0."
+    },
+    {
+      "segment_index": 94,
+      "start_time": 930,
+      "end_time": 940,
+      "frames": [
+        "frame_0224.jpg",
+        "frame_0225.jpg",
+        "frame_0226.jpg"
+      ],
+      "transcript": "[15:29] to an initial condition of 1, 0, 0.\n[15:32] I then plot the response of the first state, that step from 1 back to 0, the actuator effort,\n[15:38] and the location of the closed loop poles and zeros."
+    },
+    {
+      "segment_index": 95,
+      "start_time": 940,
+      "end_time": 950,
+      "frames": [
+        "frame_0227.jpg",
+        "frame_0228.jpg"
+      ],
+      "transcript": "[15:38] and the location of the closed loop poles and zeros.\n[15:42] So let's run this and see what happens.\n[15:46] Well the first state tracks back to 0 nicely, but at the expense of a lot of actuation."
+    },
+    {
+      "segment_index": 96,
+      "start_time": 950,
+      "end_time": 960,
+      "frames": [
+        "frame_0229.jpg",
+        "frame_0230.jpg"
+      ],
+      "transcript": "[15:46] Well the first state tracks back to 0 nicely, but at the expense of a lot of actuation.\n[15:51] Now I didn't model anything in particular, but let's say that the actuator effort is thrust\n[15:56] required.\n[15:57] So this controller is requesting 10 units of thrust."
+    },
+    {
+      "segment_index": 97,
+      "start_time": 960,
+      "end_time": 970,
+      "frames": [
+        "frame_0231.jpg",
+        "frame_0232.jpg",
+        "frame_0233.jpg"
+      ],
+      "transcript": "[15:57] So this controller is requesting 10 units of thrust.\n[16:00] However, let's say our thruster is only capable of 2 units of thrust.\n[16:04] This controller design would saturate the thruster, and we wouldn't get the response that we're\n[16:08] looking for.\n[16:09] Now, had we developed this controller using pole placement, the question at this point"
+    },
+    {
+      "segment_index": 98,
+      "start_time": 970,
+      "end_time": 980,
+      "frames": [
+        "frame_0234.jpg",
+        "frame_0235.jpg"
+      ],
+      "transcript": "[16:09] Now, had we developed this controller using pole placement, the question at this point\n[16:13] would be which of these 3 poles should we move in order to reduce the actuator effort?\n[16:19] And that's not too intuitive, right?"
+    },
+    {
+      "segment_index": 99,
+      "start_time": 980,
+      "end_time": 990,
+      "frames": [
+        "frame_0236.jpg",
+        "frame_0237.jpg",
+        "frame_0238.jpg"
+      ],
+      "transcript": "[16:19] And that's not too intuitive, right?\n[16:22] But with LQR we can easily go to the R matrix and penalize actuator usage by raising a single\n[16:28] value.\n[16:29] And I'll re-run the script."
+    },
+    {
+      "segment_index": 100,
+      "start_time": 990,
+      "end_time": 1000,
+      "frames": [
+        "frame_0239.jpg",
+        "frame_0240.jpg"
+      ],
+      "transcript": "[16:29] And I'll re-run the script.\n[16:32] We see that the response is slower as expected, but the actuator is no longer saturated.\n[16:37] And check this out.\n[16:38] All 3 closed loop poles moved with this single adjustment of R. So if we were using pole placement,"
+    },
+    {
+      "segment_index": 101,
+      "start_time": 1000,
+      "end_time": 1010,
+      "frames": [
+        "frame_0241.jpg",
+        "frame_0242.jpg"
+      ],
+      "transcript": "[16:38] All 3 closed loop poles moved with this single adjustment of R. So if we were using pole placement,\n[16:44] we would have had to know how to move these poles just like this in order to reduce the\n[16:48] actuator effort."
+    },
+    {
+      "segment_index": 102,
+      "start_time": 1010,
+      "end_time": 1020,
+      "frames": [
+        "frame_0243.jpg",
+        "frame_0244.jpg",
+        "frame_0245.jpg"
+      ],
+      "transcript": "[16:48] actuator effort.\n[16:50] And that would be pretty tough.\n[16:52] So that's where I want to leave this video.\n[16:55] LQR control is pretty powerful, and hopefully you saw that it's simple to set up and relatively\n[16:59] intuitive to tune and tweak."
+    },
+    {
+      "segment_index": 103,
+      "start_time": 1020,
+      "end_time": 1030,
+      "frames": [
+        "frame_0246.jpg",
+        "frame_0247.jpg"
+      ],
+      "transcript": "[16:59] intuitive to tune and tweak.\n[17:01] And the best part is that it returns an optimal gain matrix based on how you weight, performance,\n[17:07] and effort.\n[17:07] So it's up to you how you want your system to behave in the end."
+    },
+    {
+      "segment_index": 104,
+      "start_time": 1030,
+      "end_time": 1040,
+      "frames": [
+        "frame_0248.jpg",
+        "frame_0249.jpg",
+        "frame_0250.jpg"
+      ],
+      "transcript": "[17:07] So it's up to you how you want your system to behave in the end.\n[17:10] Now if you don't want to miss the next Tech Talk video, don't forget to subscribe to this\n[17:14] channel.\n[17:15] Also if you want to check out my channel, Control System Lectures, I cover more control theory\n[17:19] topics there as well."
+    },
+    {
+      "segment_index": 105,
+      "start_time": 1040,
+      "end_time": 1042.9,
+      "frames": [],
+      "transcript": "[17:19] topics there as well.\n[17:20] Thanks for watching and I'll see you next time."
+    }
+  ]
+}

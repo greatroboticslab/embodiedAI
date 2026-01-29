@@ -1,0 +1,363 @@
+{
+  "video_id": "lAVYDUeqdW4",
+  "duration": 330.0,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg"
+      ],
+      "transcript": "[0:00] Now back to the quadrotor dynamics. The equations at the bottom tell us the net force and the\n[0:08] net moment. If we combine the net force and the net moment with the Newton-Euler equations,"
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0003.jpg",
+        "frame_0004.jpg",
+        "frame_0005.jpg"
+      ],
+      "transcript": "[0:08] net moment. If we combine the net force and the net moment with the Newton-Euler equations,\n[0:16] we get these two sets of equations. On the right side, you see the total thrust, which"
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0006.jpg",
+        "frame_0007.jpg",
+        "frame_0008.jpg"
+      ],
+      "transcript": "[0:16] we get these two sets of equations. On the right side, you see the total thrust, which\n[0:23] is U1, and remember this thrust vector is known in the body fixed frame. The matrix R is rotating"
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0009.jpg",
+        "frame_0010.jpg",
+        "frame_0011.jpg"
+      ],
+      "transcript": "[0:23] is U1, and remember this thrust vector is known in the body fixed frame. The matrix R is rotating\n[0:33] this thrust vector to an inertial frame. At the bottom, you see the net moment, also known"
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0012.jpg",
+        "frame_0013.jpg",
+        "frame_0014.jpg"
+      ],
+      "transcript": "[0:33] this thrust vector to an inertial frame. At the bottom, you see the net moment, also known\n[0:42] in the body fixed frame. But the equations, as they've been written, have components in the\n[0:49] inertial frame on the top and in a body fixed frame at the bottom. These are the Newton-Euler"
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0015.jpg",
+        "frame_0016.jpg",
+        "frame_0017.jpg"
+      ],
+      "transcript": "[0:49] inertial frame on the top and in a body fixed frame at the bottom. These are the Newton-Euler\n[0:57] equations, and these are the equations we'll use to develop controllers and planners for our vehicles."
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0018.jpg",
+        "frame_0019.jpg",
+        "frame_0020.jpg"
+      ],
+      "transcript": "[0:57] equations, and these are the equations we'll use to develop controllers and planners for our vehicles.\n[1:07] One question you can ask is how we actually calculate these parameters? Or in an online setting,"
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0021.jpg",
+        "frame_0022.jpg",
+        "frame_0023.jpg"
+      ],
+      "transcript": "[1:07] One question you can ask is how we actually calculate these parameters? Or in an online setting,\n[1:14] how do we estimate these parameters? If you think carefully, the parameters you really need to know are those"
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0024.jpg",
+        "frame_0025.jpg",
+        "frame_0026.jpg"
+      ],
+      "transcript": "[1:14] how do we estimate these parameters? If you think carefully, the parameters you really need to know are those\n[1:25] corresponding to the geometry, the length L, for example, and those corresponding to the physical properties,"
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0027.jpg",
+        "frame_0028.jpg",
+        "frame_0029.jpg"
+      ],
+      "transcript": "[1:25] corresponding to the geometry, the length L, for example, and those corresponding to the physical properties,\n[1:33] the mass M and the inertia I. You can also see that these parameters appear linearly in these equations."
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0030.jpg",
+        "frame_0031.jpg",
+        "frame_0032.jpg"
+      ],
+      "transcript": "[1:33] the mass M and the inertia I. You can also see that these parameters appear linearly in these equations.\n[1:47] So if you had a system that allowed you to measure positions, velocities, and accelerations,"
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0033.jpg",
+        "frame_0034.jpg",
+        "frame_0035.jpg"
+      ],
+      "transcript": "[1:47] So if you had a system that allowed you to measure positions, velocities, and accelerations,\n[1:53] it's actually not too hard to estimate the lengths, the masses, and the inertias.\n[1:58] You should also verify that it's quite easy to calculate the angular velocity in the body fixed frame."
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0036.jpg",
+        "frame_0037.jpg",
+        "frame_0038.jpg"
+      ],
+      "transcript": "[1:58] You should also verify that it's quite easy to calculate the angular velocity in the body fixed frame.\n[2:06] If you know the pitch, roll, and yaw angles, and you know the rate of change of the pitch, roll, and yaw angles on the right side,"
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0039.jpg",
+        "frame_0040.jpg",
+        "frame_0041.jpg"
+      ],
+      "transcript": "[2:06] If you know the pitch, roll, and yaw angles, and you know the rate of change of the pitch, roll, and yaw angles on the right side,\n[2:14] a simple transformation yields the angular velocity components p, q, and r along b1, b2, and b3."
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0042.jpg",
+        "frame_0043.jpg",
+        "frame_0044.jpg"
+      ],
+      "transcript": "[2:14] a simple transformation yields the angular velocity components p, q, and r along b1, b2, and b3.\n[2:21] So this model is quite complicated. It involves three components of position, velocity, and acceleration,"
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0045.jpg",
+        "frame_0046.jpg",
+        "frame_0047.jpg"
+      ],
+      "transcript": "[2:31] three components of rotations, angular velocities, and angular accelerations.\n[2:37] To get a feel for the control problem, I'd like to first look at the planar version of this model."
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0048.jpg",
+        "frame_0049.jpg",
+        "frame_0050.jpg"
+      ],
+      "transcript": "[2:37] To get a feel for the control problem, I'd like to first look at the planar version of this model.\n[2:45] So we'll look at the equations of motion in the yz plane. We will assume that the robot cannot move out of this plane."
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0051.jpg",
+        "frame_0052.jpg",
+        "frame_0053.jpg"
+      ],
+      "transcript": "[2:45] So we'll look at the equations of motion in the yz plane. We will assume that the robot cannot move out of this plane.\n[2:57] In other words, there's no motion in the x direction. And we'll also assume there is no yaw or pitch motions."
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0054.jpg",
+        "frame_0055.jpg",
+        "frame_0056.jpg"
+      ],
+      "transcript": "[2:57] In other words, there's no motion in the x direction. And we'll also assume there is no yaw or pitch motions.\n[3:06] As a result, we come up with the three equations that you see here. Equations that describe the rates of change of velocity in the y and the z direction,"
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0057.jpg",
+        "frame_0058.jpg",
+        "frame_0059.jpg"
+      ],
+      "transcript": "[3:06] As a result, we come up with the three equations that you see here. Equations that describe the rates of change of velocity in the y and the z direction,"
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0060.jpg",
+        "frame_0061.jpg",
+        "frame_0062.jpg"
+      ],
+      "transcript": "[3:21] and the rate of change of the angular velocity in the roll direction.\n[3:26] So we'll look at the same equation. To describe these kinds of systems, it is useful to define a state vector."
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0063.jpg",
+        "frame_0064.jpg",
+        "frame_0065.jpg"
+      ],
+      "transcript": "[3:26] So we'll look at the same equation. To describe these kinds of systems, it is useful to define a state vector.\n[3:36] In the three-dimensional case, we have six variables that describe the configuration of a robot,"
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0066.jpg",
+        "frame_0067.jpg",
+        "frame_0068.jpg"
+      ],
+      "transcript": "[3:36] In the three-dimensional case, we have six variables that describe the configuration of a robot,\n[3:42] and a state vector includes the configuration and its derivative.\n[3:46] the configuration vector is a state vector. So if q is the six-dimensional configuration vector,"
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0069.jpg",
+        "frame_0070.jpg",
+        "frame_0071.jpg"
+      ],
+      "transcript": "[3:46] the configuration vector is a state vector. So if q is the six-dimensional configuration vector,\n[3:52] q and q dot constitute a 12-dimensional description of the state.\n[3:57] The space of all such state vectors is called a state space."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0072.jpg",
+        "frame_0073.jpg",
+        "frame_0074.jpg"
+      ],
+      "transcript": "[3:57] The space of all such state vectors is called a state space.\n[4:03] If you look at the equilibrium configuration,\n[4:07] and that configuration is defined by the position x0, y0, and z0,"
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0075.jpg",
+        "frame_0076.jpg",
+        "frame_0077.jpg"
+      ],
+      "transcript": "[4:07] and that configuration is defined by the position x0, y0, and z0,\n[4:17] the configuration by definition also has a zero roll angle and a zero pitch angle."
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0078.jpg",
+        "frame_0079.jpg",
+        "frame_0080.jpg"
+      ],
+      "transcript": "[4:17] the configuration by definition also has a zero roll angle and a zero pitch angle.\n[4:25] It could, of course, have any yaw angle.\n[4:29] The equilibrium configuration must also correspond to zero velocity."
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0081.jpg",
+        "frame_0082.jpg",
+        "frame_0083.jpg"
+      ],
+      "transcript": "[4:29] The equilibrium configuration must also correspond to zero velocity.\n[4:35] If I write it down in terms of a state space vector,"
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0084.jpg",
+        "frame_0085.jpg",
+        "frame_0086.jpg"
+      ],
+      "transcript": "[4:40] you have the equilibrium configuration q sub e,\n[4:45] and you have a zero velocity vector,\n[4:48] and that gives you a 12-dimensional vector where the bottom six elements are all zero."
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0087.jpg",
+        "frame_0088.jpg",
+        "frame_0089.jpg"
+      ],
+      "transcript": "[4:48] and that gives you a 12-dimensional vector where the bottom six elements are all zero.\n[4:54] Similarly, for planar quadrotors,\n[4:58] you have a three-dimensional configuration space,"
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0090.jpg",
+        "frame_0091.jpg",
+        "frame_0092.jpg"
+      ],
+      "transcript": "[5:01] a six-dimensional state space,\n[5:02] and an equilibrium configuration and an equilibrium state that can be similarly defined.\n[5:09] thaticion\u0430\u0434 quadrotors,"
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0093.jpg"
+      ],
+      "transcript": "[5:09] thaticion\u0430\u0434 quadrotors,\n[5:16] you have one city called the tests and the president's"
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [],
+      "transcript": "[5:16] you have one city called the tests and the president's\n[5:29] as federally defined."
+    }
+  ]
+}

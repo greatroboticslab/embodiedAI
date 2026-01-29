@@ -1,0 +1,1431 @@
+{
+  "video_id": "4dmrahCJonM",
+  "duration": 1350.24,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg"
+      ],
+      "transcript": "[0:00] Hello and welcome to the video. This is a video all about flight controllers and it's aimed at\n[0:06] those of you that have had nothing to do with flight controllers but have been trying to watch"
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0003.jpg",
+        "frame_0004.jpg",
+        "frame_0005.jpg"
+      ],
+      "transcript": "[0:06] those of you that have had nothing to do with flight controllers but have been trying to watch\n[0:11] some of my other series and may be getting lost very quickly. Now this was really brought home\n[0:16] the need for this video over the past week or so with two incidents. First of all I've been working"
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0006.jpg",
+        "frame_0007.jpg"
+      ],
+      "transcript": "[0:16] the need for this video over the past week or so with two incidents. First of all I've been working\n[0:22] here in my man cave with a friend of mine and we're building him an autonomous wing. He's just\n[0:28] recently learnt to fly FPV and now he wants to have all that iNav goodness so he can do GPS return"
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0008.jpg",
+        "frame_0009.jpg",
+        "frame_0010.jpg"
+      ],
+      "transcript": "[0:28] recently learnt to fly FPV and now he wants to have all that iNav goodness so he can do GPS return\n[0:34] to home. He wants an on-screen display but we didn't have a model for him that would work like that."
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:34] to home. He wants an on-screen display but we didn't have a model for him that would work like that.\n[0:41] So what he asked was when you're building it can I kind of come and sit with you and you can explain\n[0:46] what you're doing and how it all works. I thought you know what that's really interesting because I"
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg",
+        "frame_0015.jpg"
+      ],
+      "transcript": "[0:46] what you're doing and how it all works. I thought you know what that's really interesting because I\n[0:50] don't have a video for that and that was followed up only the other day by a patron of mine kind of\n[0:55] getting in touch just saying look I love all the videos and stuff but the build videos I get"
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0016.jpg",
+        "frame_0017.jpg"
+      ],
+      "transcript": "[0:55] getting in touch just saying look I love all the videos and stuff but the build videos I get\n[1:00] completely lost. So if you know anything about flight controllers or have done any flight controller\n[1:06] setups and you've followed along and done any builds then you know what this video isn't for you go and"
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0018.jpg",
+        "frame_0019.jpg",
+        "frame_0020.jpg"
+      ],
+      "transcript": "[1:06] setups and you've followed along and done any builds then you know what this video isn't for you go and\n[1:11] do something else and watch something more useful. If however you are one of those pilots that watch a lot\n[1:18] are videos on things like flight controllers, iNav, Betaflight, ArduPilot with planes, quadcopters,"
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0021.jpg",
+        "frame_0022.jpg"
+      ],
+      "transcript": "[1:18] are videos on things like flight controllers, iNav, Betaflight, ArduPilot with planes, quadcopters,\n[1:26] multi-rotors and you're desperately trying to follow along but it's all not making a lot of sense"
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0023.jpg",
+        "frame_0024.jpg",
+        "frame_0025.jpg"
+      ],
+      "transcript": "[1:26] multi-rotors and you're desperately trying to follow along but it's all not making a lot of sense\n[1:32] then stay with me. This video is exactly aimed at you.\n[1:38] Now let's first of all talk about what a flight controller does. Now normally in let's take an example"
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0026.jpg",
+        "frame_0027.jpg"
+      ],
+      "transcript": "[1:38] Now let's first of all talk about what a flight controller does. Now normally in let's take an example\n[1:44] of a radio controlled plane. The way it works is that we have the receiver and then all the servos"
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0028.jpg",
+        "frame_0029.jpg",
+        "frame_0030.jpg"
+      ],
+      "transcript": "[1:44] of a radio controlled plane. The way it works is that we have the receiver and then all the servos\n[1:50] and the speed controller for the motor if it's electric plug into the receiver directly. Now with\n[1:56] a flight controller that is a little bit of electronics that sits between the receiver"
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0031.jpg",
+        "frame_0032.jpg"
+      ],
+      "transcript": "[1:56] a flight controller that is a little bit of electronics that sits between the receiver\n[2:00] and everything else on the model and the flight controller is pretty clever. It actually controls\n[2:06] all of the servos and ESCs and makes the model fly and what it's doing is it's listening to what you"
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0033.jpg",
+        "frame_0034.jpg",
+        "frame_0035.jpg"
+      ],
+      "transcript": "[2:06] all of the servos and ESCs and makes the model fly and what it's doing is it's listening to what you\n[2:13] want the model to do from the signals coming in from the radio receiver so it knows where all your\n[2:18] throttle, aileron, elevator, rudder and bits and pieces are and then it's feeling through its own"
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0036.jpg",
+        "frame_0037.jpg"
+      ],
+      "transcript": "[2:18] throttle, aileron, elevator, rudder and bits and pieces are and then it's feeling through its own\n[2:24] onboard sensors how the model is moving and then translating that into what needs to happen with"
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0038.jpg",
+        "frame_0039.jpg",
+        "frame_0040.jpg"
+      ],
+      "transcript": "[2:24] onboard sensors how the model is moving and then translating that into what needs to happen with\n[2:31] either the control surfaces or the speed controllers to actually give you what you're asking for on the\n[2:37] controls. Now simple stabilizers for fixed wing kind of do a mini light version of that but flight"
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0041.jpg",
+        "frame_0042.jpg"
+      ],
+      "transcript": "[2:37] controls. Now simple stabilizers for fixed wing kind of do a mini light version of that but flight\n[2:43] controllers modern flight controllers in particular are much more capable of doing some pretty\n[2:48] impressive stuff as well as basic flight stabilization. Some of the most advanced flight"
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0043.jpg",
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:48] impressive stuff as well as basic flight stabilization. Some of the most advanced flight\n[2:53] controllers out there so things that are running iNav flight and things that are running RD pilot\n[2:59] can be set up to fly completely autonomously so you can upload a mission to it and then it'll just fly"
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg"
+      ],
+      "transcript": "[2:59] can be set up to fly completely autonomously so you can upload a mission to it and then it'll just fly\n[3:07] it all itself and do everything. So there's a broad range of stuff here and again don't worry about the"
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0048.jpg",
+        "frame_0049.jpg",
+        "frame_0050.jpg"
+      ],
+      "transcript": "[3:07] it all itself and do everything. So there's a broad range of stuff here and again don't worry about the\n[3:13] jargon too much I'm going to try and keep it to a minimum as we go through the slides. So the flight\n[3:19] controller itself is a little bit of hardware it looks like a little circuit board normally but if"
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0051.jpg",
+        "frame_0052.jpg"
+      ],
+      "transcript": "[3:19] controller itself is a little bit of hardware it looks like a little circuit board normally but if\n[3:24] you're looking at the latest Pixhawk family it can look like a little black cube stuck on top of a board\n[3:29] full of connections. Now this is actually a little computer it has a CPU it has memory it has IO ports"
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0053.jpg",
+        "frame_0054.jpg",
+        "frame_0055.jpg"
+      ],
+      "transcript": "[3:29] full of connections. Now this is actually a little computer it has a CPU it has memory it has IO ports\n[3:37] so it is like a little computer that you would use every day to do your email or access the web or"
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[3:37] so it is like a little computer that you would use every day to do your email or access the web or\n[3:43] whatever but this hardware this little PCB board needs some firmware to run on it a program if you want"
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:43] whatever but this hardware this little PCB board needs some firmware to run on it a program if you want\n[3:52] to think of it like that that actually does all of the work. So the the flight controller has all of the\n[3:59] pieces of a computer and you're loading the software on it that software because it kind of lives on the"
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg"
+      ],
+      "transcript": "[3:59] pieces of a computer and you're loading the software on it that software because it kind of lives on the\n[4:04] board is called firmware and that's what things like iNav, Betaflight, RD pilot are actually that's"
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0063.jpg",
+        "frame_0064.jpg",
+        "frame_0065.jpg"
+      ],
+      "transcript": "[4:04] board is called firmware and that's what things like iNav, Betaflight, RD pilot are actually that's\n[4:10] actually the firmware that you have to flash or load onto the flight controller. Very few flight\n[4:16] controllers come with that stuff already on or if they do it's typically an older version that you need"
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0066.jpg",
+        "frame_0067.jpg"
+      ],
+      "transcript": "[4:16] controllers come with that stuff already on or if they do it's typically an older version that you need\n[4:21] to update anyway and that's commonly what I do in my build videos in the very early part I kind of update\n[4:27] the firmware or the software bit onto the hardware flight controller so that those two bits go together."
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0068.jpg",
+        "frame_0069.jpg",
+        "frame_0070.jpg"
+      ],
+      "transcript": "[4:27] the firmware or the software bit onto the hardware flight controller so that those two bits go together.\n[4:33] The third part in this trinity is usually a program that goes onto your computer and that program is"
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[4:33] The third part in this trinity is usually a program that goes onto your computer and that program is\n[4:40] used to flash or upload the firmware onto the hardware flight controller but then is also used to set\n[4:47] everything up and calibrate things like the radio and other pieces so when with those three things"
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg",
+        "frame_0075.jpg"
+      ],
+      "transcript": "[4:47] everything up and calibrate things like the radio and other pieces so when with those three things\n[4:53] together the hardware the firmware that's loaded onto the hardware and the pc application that you\n[4:59] run on your computer those three things work together to make the flight control system."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0076.jpg",
+        "frame_0077.jpg"
+      ],
+      "transcript": "[4:59] run on your computer those three things work together to make the flight control system.\n[5:05] Now there are loads and loads of flight controller options I started out in the very early days on this"
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0078.jpg",
+        "frame_0079.jpg",
+        "frame_0080.jpg"
+      ],
+      "transcript": "[5:05] Now there are loads and loads of flight controller options I started out in the very early days on this\n[5:11] channel with something called multi-Wii which sound rude but it isn't. So things like the multi-Wii,\n[5:16] APM, CC3D, NAZI32 they were stuff that was in vogue five six years ago you don't want to be using any of"
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0081.jpg",
+        "frame_0082.jpg"
+      ],
+      "transcript": "[5:16] APM, CC3D, NAZI32 they were stuff that was in vogue five six years ago you don't want to be using any of\n[5:25] those don't touch them with a barge pole. These days you want to be looking at flight controllers that"
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0083.jpg",
+        "frame_0084.jpg",
+        "frame_0085.jpg"
+      ],
+      "transcript": "[5:25] those don't touch them with a barge pole. These days you want to be looking at flight controllers that\n[5:30] have a relatively modern CPU so that's an F4 based flight controller and that's what the F4, F7 is\n[5:37] actually referring to it's how powerful the flight controller CPU is that's actually on the little"
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0086.jpg",
+        "frame_0087.jpg"
+      ],
+      "transcript": "[5:37] actually referring to it's how powerful the flight controller CPU is that's actually on the little\n[5:44] PCB board and with modern flight control firmware it needs more and more processing power in order to"
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0088.jpg",
+        "frame_0089.jpg",
+        "frame_0090.jpg"
+      ],
+      "transcript": "[5:44] PCB board and with modern flight control firmware it needs more and more processing power in order to\n[5:51] run so these days an F4 board is kind of the minimum F7 and H7 which is even more powerful\n[5:58] are becoming the norm so those are the kind of things that you need to look at. With the explosion of the"
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0091.jpg",
+        "frame_0092.jpg"
+      ],
+      "transcript": "[5:58] are becoming the norm so those are the kind of things that you need to look at. With the explosion of the\n[6:03] multicopter revolution lots and lots of flight controllers these days are built so that you can\n[6:08] attach the four ESCs on the corners and build a quadcopter and I've used quite a lot of them on the"
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0093.jpg",
+        "frame_0094.jpg",
+        "frame_0095.jpg"
+      ],
+      "transcript": "[6:08] attach the four ESCs on the corners and build a quadcopter and I've used quite a lot of them on the\n[6:15] channel and some flight controllers need a separate power distribution board or PDB that you connect all"
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0096.jpg",
+        "frame_0097.jpg"
+      ],
+      "transcript": "[6:15] channel and some flight controllers need a separate power distribution board or PDB that you connect all\n[6:23] the power into that's where the battery connects to and the ESCs connect to as well and it maybe\n[6:27] passes the voltage around and also typically that board then plugs into the flight controller"
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0098.jpg",
+        "frame_0099.jpg",
+        "frame_0100.jpg"
+      ],
+      "transcript": "[6:27] passes the voltage around and also typically that board then plugs into the flight controller\n[6:33] and the flight controller then can monitor the voltage and currents that are being used to keep\n[6:39] track of how much battery is left so that's the other part of the system that you might come across"
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0101.jpg",
+        "frame_0102.jpg"
+      ],
+      "transcript": "[6:39] track of how much battery is left so that's the other part of the system that you might come across\n[6:43] but most modern flight controllers these days are what are called all-in-one or AIO boards they have"
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0103.jpg",
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[6:43] but most modern flight controllers these days are what are called all-in-one or AIO boards they have\n[6:50] that power distribution board they have all the flight controller bits all the pads that you need\n[6:56] actually on board and some flight controllers are what are called all-in-one or AIO flight controllers"
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg"
+      ],
+      "transcript": "[6:56] actually on board and some flight controllers are what are called all-in-one or AIO flight controllers\n[7:03] and they have all the pieces on one little circuit board everywhere where you connect your servos or\n[7:09] your speed controllers or things like the battery power and the power connections for the ESCs inside"
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0108.jpg",
+        "frame_0109.jpg",
+        "frame_0110.jpg"
+      ],
+      "transcript": "[7:09] your speed controllers or things like the battery power and the power connections for the ESCs inside\n[7:15] the model as well all-in-one boards make for really clean simple installations and I'm a big fan of those"
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0111.jpg",
+        "frame_0112.jpg"
+      ],
+      "transcript": "[7:15] the model as well all-in-one boards make for really clean simple installations and I'm a big fan of those\n[7:21] because it means you have one board that does everything rather than two or three boards that\n[7:25] you have to try and fit inside your model there are different kinds of flight controllers and some"
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0113.jpg",
+        "frame_0114.jpg",
+        "frame_0115.jpg"
+      ],
+      "transcript": "[7:25] you have to try and fit inside your model there are different kinds of flight controllers and some\n[7:31] of them are suited as I've just mentioned to some applications rather than others some of them are\n[7:37] multi-purpose so if they've got lots of connections for outputs for things like servos and speed controllers"
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[7:37] multi-purpose so if they've got lots of connections for outputs for things like servos and speed controllers\n[7:43] then they could be used in pretty much anything but you tend to find that they tend to be specialized\n[7:48] so the all-in-one boards typically tend to be aimed at multi-rotors but some of the matek boards are"
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[7:48] so the all-in-one boards typically tend to be aimed at multi-rotors but some of the matek boards are\n[7:55] built specifically for wings so do watch the build videos on the channel for the ones that I'm using"
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg"
+      ],
+      "transcript": "[7:55] built specifically for wings so do watch the build videos on the channel for the ones that I'm using\n[8:02] because I'm always trying to use the latest and greatest and use flight controllers that I haven't\n[8:06] done before to show how they all go together some of the larger flight controllers that are designed for"
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0123.jpg",
+        "frame_0124.jpg",
+        "frame_0125.jpg"
+      ],
+      "transcript": "[8:06] done before to show how they all go together some of the larger flight controllers that are designed for\n[8:12] more complex installations where you're going to have things like GPS external compasses\n[8:17] airspeed sensors lidar sonar sensors those kind of things will have lots of what are called UARTs"
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0126.jpg",
+        "frame_0127.jpg"
+      ],
+      "transcript": "[8:17] airspeed sensors lidar sonar sensors those kind of things will have lots of what are called UARTs\n[8:24] I'm going to talk about some of the three and four letter acronyms on a slide in a minute and those are"
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0128.jpg",
+        "frame_0129.jpg",
+        "frame_0130.jpg"
+      ],
+      "transcript": "[8:24] I'm going to talk about some of the three and four letter acronyms on a slide in a minute and those are\n[8:30] just places where you can plug stuff in typically the smaller boards will only have pads or pins for a\n[8:37] very small number of those kind of UARTs or I squared C ports I squared C is a is another system again we'll talk"
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[8:37] very small number of those kind of UARTs or I squared C ports I squared C is a is another system again we'll talk\n[8:44] about this in a minute but it's just the way that you connect all these external parts onto it it may"
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg",
+        "frame_0135.jpg"
+      ],
+      "transcript": "[8:44] about this in a minute but it's just the way that you connect all these external parts onto it it may\n[8:50] be for a simple quadcopter you don't need any of that you just need to install the receiver on one\n[8:55] side and then you can connect the four ESC motor connections on the corner of an all-in-one flight"
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0136.jpg",
+        "frame_0137.jpg"
+      ],
+      "transcript": "[8:55] side and then you can connect the four ESC motor connections on the corner of an all-in-one flight\n[9:01] controller and you're done but typically you're going to add some FPV stuff and I'll talk about that\n[9:08] towards the end let me talk a little bit about what flight controllers actually do so we've talked"
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0138.jpg",
+        "frame_0139.jpg",
+        "frame_0140.jpg"
+      ],
+      "transcript": "[9:08] towards the end let me talk a little bit about what flight controllers actually do so we've talked\n[9:14] about the fact that the flight controller sits in the middle of the radio receiver and all of the\n[9:18] flight control systems on the plane so speed controllers servos or whatever now the flight"
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0141.jpg",
+        "frame_0142.jpg"
+      ],
+      "transcript": "[9:18] flight control systems on the plane so speed controllers servos or whatever now the flight\n[9:24] controller can do almost nothing and typically the way it works is the flight controller does all the\n[9:29] mixing for you so if you have a V-tail plane or you have a quadcopter you're only sending"
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0143.jpg",
+        "frame_0144.jpg",
+        "frame_0145.jpg"
+      ],
+      "transcript": "[9:29] mixing for you so if you have a V-tail plane or you have a quadcopter you're only sending\n[9:36] that you want to maybe roll to the right via the radio the flight controller is then figuring out"
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0146.jpg",
+        "frame_0147.jpg"
+      ],
+      "transcript": "[9:36] that you want to maybe roll to the right via the radio the flight controller is then figuring out\n[9:42] which motors need to slow down which ones need to speed up and feeling with its accelerometers and\n[9:49] gyroscopes on board how that movement is happening and comparing it to how you said you want it happening"
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0148.jpg",
+        "frame_0149.jpg",
+        "frame_0150.jpg"
+      ],
+      "transcript": "[9:49] gyroscopes on board how that movement is happening and comparing it to how you said you want it happening\n[9:55] in the software and all that comes together and it kind of does it now there are some common modes that"
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0151.jpg",
+        "frame_0152.jpg"
+      ],
+      "transcript": "[9:55] in the software and all that comes together and it kind of does it now there are some common modes that\n[10:00] you're going to come across when you're talking about flight controllers so let me talk about four of the\n[10:04] basic ones first one is what's called angle mode now angle mode is like a self-stabilization mode if"
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0153.jpg",
+        "frame_0154.jpg",
+        "frame_0155.jpg"
+      ],
+      "transcript": "[10:04] basic ones first one is what's called angle mode now angle mode is like a self-stabilization mode if\n[10:12] you want to think of it like that it usually has a limit on the pitch and roll of the aircraft so you\n[10:18] can't turn it over you can't get into too much trouble and with angle mode if you take your hands"
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0156.jpg",
+        "frame_0157.jpg"
+      ],
+      "transcript": "[10:18] can't turn it over you can't get into too much trouble and with angle mode if you take your hands\n[10:24] off the sticks it will normally auto level the vehicle whether that's a fixed wing model or it's a"
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0158.jpg",
+        "frame_0159.jpg",
+        "frame_0160.jpg"
+      ],
+      "transcript": "[10:24] off the sticks it will normally auto level the vehicle whether that's a fixed wing model or it's a\n[10:30] multi-motor horizon is angle mode with extras so horizon will act like angle mode if you're just\n[10:37] flying gently but if you push the sticks right to the edge of their travel on your radio then it will"
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0161.jpg",
+        "frame_0162.jpg"
+      ],
+      "transcript": "[10:37] flying gently but if you push the sticks right to the edge of their travel on your radio then it will\n[10:43] overcome that limit that you've got of pitch and roll and you're and it will actually then start to"
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0163.jpg",
+        "frame_0164.jpg",
+        "frame_0165.jpg"
+      ],
+      "transcript": "[10:43] overcome that limit that you've got of pitch and roll and you're and it will actually then start to\n[10:50] be able to flip and roll so angle is very much for beginners and for learning to fly I would suggest\n[10:55] or I still use it sometimes these days for gentle cruising horizon is when you want to start being a"
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0166.jpg",
+        "frame_0167.jpg"
+      ],
+      "transcript": "[10:55] or I still use it sometimes these days for gentle cruising horizon is when you want to start being a\n[11:02] little bit more aggressive maybe you want to do loops and rolls and flips in the model that you're\n[11:07] doing next one is sometimes called manual mode or rate mode that's where you don't want any real"
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0168.jpg",
+        "frame_0169.jpg",
+        "frame_0170.jpg"
+      ],
+      "transcript": "[11:07] doing next one is sometimes called manual mode or rate mode that's where you don't want any real\n[11:13] help from the flight controller apart from the mixing that it's doing again you know you're only using one\n[11:19] stick on the radio but it might be affecting several motors and a multi-rotor in fact it almost certainly"
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0171.jpg",
+        "frame_0172.jpg"
+      ],
+      "transcript": "[11:19] stick on the radio but it might be affecting several motors and a multi-rotor in fact it almost certainly\n[11:25] will be or it will be moving particular controls on the on the fixed wing model and in rate and"
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0173.jpg",
+        "frame_0174.jpg",
+        "frame_0175.jpg"
+      ],
+      "transcript": "[11:25] will be or it will be moving particular controls on the on the fixed wing model and in rate and\n[11:31] manual mode is doing the absolute basic for you so it's like the very basic stuff that a stabilizer\n[11:39] would do in a traditional fixed wing model and then finally if you are adding things like a gps and"
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0176.jpg",
+        "frame_0177.jpg"
+      ],
+      "transcript": "[11:39] would do in a traditional fixed wing model and then finally if you are adding things like a gps and\n[11:46] using stuff like iNav or iDoPilot then you can do some really cool stuff you can do things like gps loiter"
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0178.jpg",
+        "frame_0179.jpg",
+        "frame_0180.jpg"
+      ],
+      "transcript": "[11:46] using stuff like iNav or iDoPilot then you can do some really cool stuff you can do things like gps loiter\n[11:53] where you can kind of park the vehicle in the sky with a plane it will just circle around a particular\n[11:59] point it was at when you initiated gps hold or loiter you can also do gps return to home so in the"
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0181.jpg",
+        "frame_0182.jpg"
+      ],
+      "transcript": "[11:59] point it was at when you initiated gps hold or loiter you can also do gps return to home so in the\n[12:06] event of a problem or fail safe it'll actually fly back to you and with a multi-rotor with iNav or"
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0183.jpg",
+        "frame_0184.jpg",
+        "frame_0185.jpg"
+      ],
+      "transcript": "[12:06] event of a problem or fail safe it'll actually fly back to you and with a multi-rotor with iNav or\n[12:13] iDoPilot it'll actually then land automatically and disarm itself as well so again you don't have to"
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0186.jpg",
+        "frame_0187.jpg"
+      ],
+      "transcript": "[12:13] iDoPilot it'll actually then land automatically and disarm itself as well so again you don't have to\n[12:20] have really complicated systems with lots of things added onto it and plugged in you can be very basic\n[12:26] the builds that i tend to do i tend to like to show how you add all those extra things and then if you"
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0188.jpg",
+        "frame_0189.jpg",
+        "frame_0190.jpg"
+      ],
+      "transcript": "[12:26] the builds that i tend to do i tend to like to show how you add all those extra things and then if you\n[12:31] wanted to you could and we'll talk a little bit more about the differences between things like\n[12:36] Betaflight iNav and iDoPilot in a minute so let me cover some more of these three and four letter"
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0191.jpg",
+        "frame_0192.jpg"
+      ],
+      "transcript": "[12:36] Betaflight iNav and iDoPilot in a minute so let me cover some more of these three and four letter\n[12:43] acronyms first one we'll talk about what called uarts these uarts are usually four pads on a flight"
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0193.jpg",
+        "frame_0194.jpg",
+        "frame_0195.jpg"
+      ],
+      "transcript": "[12:43] acronyms first one we'll talk about what called uarts these uarts are usually four pads on a flight\n[12:51] controller these are the plus five volts of ground a transmitter receive typically you're going to plug\n[12:55] things like gps or telemetry radios into them they are universal so you can have them running at"
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0196.jpg",
+        "frame_0197.jpg"
+      ],
+      "transcript": "[12:55] things like gps or telemetry radios into them they are universal so you can have them running at\n[13:02] different speeds with different protocols they are fantastic so some of the really big modern flight\n[13:08] controllers have lots of uart ports available and you can plug lots of things into it the next one"
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0198.jpg",
+        "frame_0199.jpg",
+        "frame_0200.jpg"
+      ],
+      "transcript": "[13:08] controllers have lots of uart ports available and you can plug lots of things into it the next one\n[13:16] that you'll see me talk about is i squared c or iic it's a bus architecture that you can plug lots of"
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0201.jpg",
+        "frame_0202.jpg"
+      ],
+      "transcript": "[13:16] that you'll see me talk about is i squared c or iic it's a bus architecture that you can plug lots of\n[13:23] different things in now external compasses tend to run on i squared c but other sensors can now you can"
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0203.jpg",
+        "frame_0204.jpg",
+        "frame_0205.jpg"
+      ],
+      "transcript": "[13:23] different things in now external compasses tend to run on i squared c but other sensors can now you can\n[13:31] have multiple things connected into one i squared c connection because it's like a little computer network\n[13:37] with a uart that we've just talked about it tends to be a uart is dedicated for one specific peripheral"
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0206.jpg",
+        "frame_0207.jpg"
+      ],
+      "transcript": "[13:37] with a uart that we've just talked about it tends to be a uart is dedicated for one specific peripheral\n[13:43] whether that's a telemetry radio or a gps or something else but they're just both of them\n[13:49] just ways that you can connect other devices to your flight controller and get them to work"
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0208.jpg",
+        "frame_0209.jpg",
+        "frame_0210.jpg"
+      ],
+      "transcript": "[13:49] just ways that you can connect other devices to your flight controller and get them to work\n[13:54] s bus is the most common protocol you're going to come across these days it's the protocol or the way"
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0211.jpg",
+        "frame_0212.jpg"
+      ],
+      "transcript": "[13:54] s bus is the most common protocol you're going to come across these days it's the protocol or the way\n[14:00] that the receiver talks to the flight controller and sends the information about where all the controls\n[14:05] are on the radio that's in your hand there are lots of other options available there's fpaw i bus crsf"
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0213.jpg",
+        "frame_0214.jpg",
+        "frame_0215.jpg"
+      ],
+      "transcript": "[14:05] are on the radio that's in your hand there are lots of other options available there's fpaw i bus crsf\n[14:13] loads of other different ways that people can use but s bus is probably going to be the most common\n[14:19] and s bus is really only used in these days to just get the signals from your receiver"
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0216.jpg",
+        "frame_0217.jpg"
+      ],
+      "transcript": "[14:19] and s bus is really only used in these days to just get the signals from your receiver\n[14:25] into the flight controller s bus is really good because it's a digital signal and that digital signal"
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0218.jpg",
+        "frame_0219.jpg",
+        "frame_0220.jpg"
+      ],
+      "transcript": "[14:25] into the flight controller s bus is really good because it's a digital signal and that digital signal\n[14:32] means you can error check and there's also extra things around all the channel positions so the flight\n[14:37] controller can see when there's a problem an error or a fail safe condition and take appropriate action"
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0221.jpg",
+        "frame_0222.jpg"
+      ],
+      "transcript": "[14:37] controller can see when there's a problem an error or a fail safe condition and take appropriate action\n[14:43] and that fail safe condition might be return to home fly back to you and land at your feet if you've got\n[14:49] things like a gps connected so let me talk a little bit now about the different firmwares that you're probably"
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 900,
+      "frames": [
+        "frame_0223.jpg",
+        "frame_0224.jpg",
+        "frame_0225.jpg"
+      ],
+      "transcript": "[14:49] things like a gps connected so let me talk a little bit now about the different firmwares that you're probably\n[14:55] going to come across if you watch any of the builds on the series let me talk about the three most common"
+    },
+    {
+      "segment_index": 91,
+      "start_time": 900,
+      "end_time": 910,
+      "frames": [
+        "frame_0226.jpg",
+        "frame_0227.jpg"
+      ],
+      "transcript": "[14:55] going to come across if you watch any of the builds on the series let me talk about the three most common\n[15:00] ones that you're going to bump into watching stuff on youtube the first one and probably this one's\n[15:05] got the most video by far and away is going to be beta flight now beta flights been around for a while"
+    },
+    {
+      "segment_index": 92,
+      "start_time": 910,
+      "end_time": 920,
+      "frames": [
+        "frame_0228.jpg",
+        "frame_0229.jpg",
+        "frame_0230.jpg"
+      ],
+      "transcript": "[15:05] got the most video by far and away is going to be beta flight now beta flights been around for a while\n[15:10] and it tends to be focused on multi-rotor racing so it's really aimed at that it's all about giving\n[15:16] the most locked in feel and the fastest responses for flying a quadcopter typically very quickly"
+    },
+    {
+      "segment_index": 93,
+      "start_time": 920,
+      "end_time": 930,
+      "frames": [
+        "frame_0231.jpg",
+        "frame_0232.jpg"
+      ],
+      "transcript": "[15:16] the most locked in feel and the fastest responses for flying a quadcopter typically very quickly\n[15:24] it's not very good and lots of things outside of that so it doesn't really care about fixed wing"
+    },
+    {
+      "segment_index": 94,
+      "start_time": 930,
+      "end_time": 940,
+      "frames": [
+        "frame_0233.jpg",
+        "frame_0234.jpg",
+        "frame_0235.jpg"
+      ],
+      "transcript": "[15:24] it's not very good and lots of things outside of that so it doesn't really care about fixed wing\n[15:30] it has very limited gps functionality but if you are looking for a quadcopter and you want to fly it\n[15:38] without lots of extra sensors on it then beta flight with a little all-in-one flight controller is going to"
+    },
+    {
+      "segment_index": 95,
+      "start_time": 940,
+      "end_time": 950,
+      "frames": [
+        "frame_0236.jpg",
+        "frame_0237.jpg"
+      ],
+      "transcript": "[15:38] without lots of extra sensors on it then beta flight with a little all-in-one flight controller is going to\n[15:45] be a great choice next one is iNav flight commonly referred to as iNav now iNav and beta flight had a common"
+    },
+    {
+      "segment_index": 96,
+      "start_time": 950,
+      "end_time": 960,
+      "frames": [
+        "frame_0238.jpg",
+        "frame_0239.jpg",
+        "frame_0240.jpg"
+      ],
+      "transcript": "[15:45] be a great choice next one is iNav flight commonly referred to as iNav now iNav and beta flight had a common\n[15:54] ancestor and iNav rather than just focus on the quadcopter side went away to focus initially on"
+    },
+    {
+      "segment_index": 97,
+      "start_time": 960,
+      "end_time": 970,
+      "frames": [
+        "frame_0241.jpg",
+        "frame_0242.jpg"
+      ],
+      "transcript": "[15:54] ancestor and iNav rather than just focus on the quadcopter side went away to focus initially on\n[16:02] all the gps flight modes so in iNav if you want gps functionality it has an awful lot of that stuff\n[16:09] sorted out it's great for loitering return to home it'll even fly autonomous missions you can program"
+    },
+    {
+      "segment_index": 98,
+      "start_time": 970,
+      "end_time": 980,
+      "frames": [
+        "frame_0243.jpg",
+        "frame_0244.jpg",
+        "frame_0245.jpg"
+      ],
+      "transcript": "[16:09] sorted out it's great for loitering return to home it'll even fly autonomous missions you can program\n[16:15] that upload it into the flight controller and the flight controller will just take off and do its own"
+    },
+    {
+      "segment_index": 99,
+      "start_time": 980,
+      "end_time": 990,
+      "frames": [
+        "frame_0246.jpg",
+        "frame_0247.jpg"
+      ],
+      "transcript": "[16:15] that upload it into the flight controller and the flight controller will just take off and do its own\n[16:20] flight it is probably not as polished as beta flight in terms of the high-end performance for\n[16:28] things like quadcopter racing but it is absolutely great also at fixed wing and i tend to if i'm"
+    },
+    {
+      "segment_index": 100,
+      "start_time": 990,
+      "end_time": 1000,
+      "frames": [
+        "frame_0248.jpg",
+        "frame_0249.jpg",
+        "frame_0250.jpg"
+      ],
+      "transcript": "[16:28] things like quadcopter racing but it is absolutely great also at fixed wing and i tend to if i'm\n[16:35] building a fixed wing these days use iNav if if i just want a nice clean simple installation that"
+    },
+    {
+      "segment_index": 101,
+      "start_time": 1000,
+      "end_time": 1010,
+      "frames": [
+        "frame_0251.jpg",
+        "frame_0252.jpg"
+      ],
+      "transcript": "[16:35] building a fixed wing these days use iNav if if i just want a nice clean simple installation that\n[16:42] supports all the modern protocols the last one that you'll see on my channel is something called\n[16:48] ardupilot now ardupilot originally was just for things like the apm hardware and pixfork and the"
+    },
+    {
+      "segment_index": 102,
+      "start_time": 1010,
+      "end_time": 1020,
+      "frames": [
+        "frame_0253.jpg",
+        "frame_0254.jpg",
+        "frame_0255.jpg"
+      ],
+      "transcript": "[16:48] ardupilot now ardupilot originally was just for things like the apm hardware and pixfork and the\n[16:54] ardupilot family consists of things like arducopter ardurover arduplane ardusub so there's lots of"
+    },
+    {
+      "segment_index": 103,
+      "start_time": 1020,
+      "end_time": 1030,
+      "frames": [
+        "frame_0256.jpg",
+        "frame_0257.jpg"
+      ],
+      "transcript": "[16:54] ardupilot family consists of things like arducopter ardurover arduplane ardusub so there's lots of\n[17:02] different versions of it depending on what you want to fly so whereas with beta flight it's really just\n[17:08] quad well multi rotors with iNav it's fixed wing and multi rotors with ardupilot it is all kinds of"
+    },
+    {
+      "segment_index": 104,
+      "start_time": 1030,
+      "end_time": 1040,
+      "frames": [
+        "frame_0258.jpg",
+        "frame_0259.jpg",
+        "frame_0260.jpg"
+      ],
+      "transcript": "[17:08] quad well multi rotors with iNav it's fixed wing and multi rotors with ardupilot it is all kinds of\n[17:16] stuff now iNav at the moment are developing also for things like rovers and other platforms as"
+    },
+    {
+      "segment_index": 105,
+      "start_time": 1040,
+      "end_time": 1050,
+      "frames": [
+        "frame_0261.jpg",
+        "frame_0262.jpg"
+      ],
+      "transcript": "[17:16] stuff now iNav at the moment are developing also for things like rovers and other platforms as\n[17:21] well which is exciting but ardupilot has been doing it for a very long time now in terms of bulletproof\n[17:29] code ardupilot is right up there and i did a couple of builds last year putting ardupilot onto non-pixfork"
+    },
+    {
+      "segment_index": 106,
+      "start_time": 1050,
+      "end_time": 1060,
+      "frames": [
+        "frame_0263.jpg",
+        "frame_0264.jpg",
+        "frame_0265.jpg"
+      ],
+      "transcript": "[17:29] code ardupilot is right up there and i did a couple of builds last year putting ardupilot onto non-pixfork\n[17:36] technology because they support third-party boards now things like the omnibus and the matek flight"
+    },
+    {
+      "segment_index": 107,
+      "start_time": 1060,
+      "end_time": 1070,
+      "frames": [
+        "frame_0266.jpg",
+        "frame_0267.jpg"
+      ],
+      "transcript": "[17:36] technology because they support third-party boards now things like the omnibus and the matek flight\n[17:41] controllers and adding things like the uh telemetry radials adding things like the gps using things\n[17:49] like uarts and i squared c ports have been a fantastic experience for me here i'm a big fan of ardupilot"
+    },
+    {
+      "segment_index": 108,
+      "start_time": 1070,
+      "end_time": 1080,
+      "frames": [
+        "frame_0268.jpg",
+        "frame_0269.jpg",
+        "frame_0270.jpg"
+      ],
+      "transcript": "[17:49] like uarts and i squared c ports have been a fantastic experience for me here i'm a big fan of ardupilot\n[17:57] but it hasn't got the support for all the modern protocols and isn't as slick on things like fpv"
+    },
+    {
+      "segment_index": 109,
+      "start_time": 1080,
+      "end_time": 1090,
+      "frames": [
+        "frame_0271.jpg",
+        "frame_0272.jpg"
+      ],
+      "transcript": "[17:57] but it hasn't got the support for all the modern protocols and isn't as slick on things like fpv\n[18:03] where you're adding some kind of contextual information over the view from the camera in\n[18:08] your goggles all that stuff is relatively new and if you want to control your video transmitter using"
+    },
+    {
+      "segment_index": 110,
+      "start_time": 1090,
+      "end_time": 1100,
+      "frames": [
+        "frame_0273.jpg",
+        "frame_0274.jpg",
+        "frame_0275.jpg"
+      ],
+      "transcript": "[18:08] your goggles all that stuff is relatively new and if you want to control your video transmitter using\n[18:14] smartport or tramp or you want to support lots of the new technologies like crsf which is a low latency"
+    },
+    {
+      "segment_index": 111,
+      "start_time": 1100,
+      "end_time": 1110,
+      "frames": [
+        "frame_0276.jpg",
+        "frame_0277.jpg"
+      ],
+      "transcript": "[18:14] smartport or tramp or you want to support lots of the new technologies like crsf which is a low latency\n[18:21] connection that team black sheep developed the other two support that stuff ardupilot doesn't yet\n[18:29] if you're interested in knowing more about that hopefully that gives you a bit of context and you"
+    },
+    {
+      "segment_index": 112,
+      "start_time": 1110,
+      "end_time": 1120,
+      "frames": [
+        "frame_0278.jpg",
+        "frame_0279.jpg",
+        "frame_0280.jpg"
+      ],
+      "transcript": "[18:29] if you're interested in knowing more about that hopefully that gives you a bit of context and you\n[18:33] can go and watch the series on the channel go and have a look in the playlist and there's lots and\n[18:38] lots of builds using all this technology to show you the differences last thing i'll talk about which"
+    },
+    {
+      "segment_index": 113,
+      "start_time": 1120,
+      "end_time": 1130,
+      "frames": [
+        "frame_0281.jpg",
+        "frame_0282.jpg"
+      ],
+      "transcript": "[18:38] lots of builds using all this technology to show you the differences last thing i'll talk about which\n[18:44] i've touched on a little bit is fpv now fpv is where you are going to fly by looking out live through a"
+    },
+    {
+      "segment_index": 114,
+      "start_time": 1130,
+      "end_time": 1140,
+      "frames": [
+        "frame_0283.jpg",
+        "frame_0284.jpg",
+        "frame_0285.jpg"
+      ],
+      "transcript": "[18:44] i've touched on a little bit is fpv now fpv is where you are going to fly by looking out live through a\n[18:51] little camera mounted at the front of the model now in planes or multi rotors you can just have the\n[18:58] camera connected to a video transmitter that sends the signal to your goggles and you can watch it and"
+    },
+    {
+      "segment_index": 115,
+      "start_time": 1140,
+      "end_time": 1150,
+      "frames": [
+        "frame_0286.jpg",
+        "frame_0287.jpg"
+      ],
+      "transcript": "[18:58] camera connected to a video transmitter that sends the signal to your goggles and you can watch it and\n[19:02] fly it first person view which is fpv stands for most modern flight controllers though are smarter than\n[19:08] that you connect the video from the camera into the flight controller and then you connect a video out"
+    },
+    {
+      "segment_index": 116,
+      "start_time": 1150,
+      "end_time": 1160,
+      "frames": [
+        "frame_0288.jpg",
+        "frame_0289.jpg",
+        "frame_0290.jpg"
+      ],
+      "transcript": "[19:08] that you connect the video from the camera into the flight controller and then you connect a video out\n[19:16] from the flight controller into the video transmitter that then sends it to the goggles and what the"
+    },
+    {
+      "segment_index": 117,
+      "start_time": 1160,
+      "end_time": 1170,
+      "frames": [
+        "frame_0291.jpg",
+        "frame_0292.jpg"
+      ],
+      "transcript": "[19:16] from the flight controller into the video transmitter that then sends it to the goggles and what the\n[19:22] flight controller does very cleverly is overlays key flight information so flight time battery voltage\n[19:28] distance from home if you have things like gps ground speed all the the flight mode that you're in"
+    },
+    {
+      "segment_index": 118,
+      "start_time": 1170,
+      "end_time": 1180,
+      "frames": [
+        "frame_0293.jpg",
+        "frame_0294.jpg",
+        "frame_0295.jpg"
+      ],
+      "transcript": "[19:28] distance from home if you have things like gps ground speed all the the flight mode that you're in\n[19:34] all that goodness can be popped around the outside of the image and it's great for keeping an eye on how"
+    },
+    {
+      "segment_index": 119,
+      "start_time": 1180,
+      "end_time": 1190,
+      "frames": [
+        "frame_0296.jpg",
+        "frame_0297.jpg"
+      ],
+      "transcript": "[19:34] all that goodness can be popped around the outside of the image and it's great for keeping an eye on how\n[19:40] much time you've got left or whereabouts you are related to way to cough some flight controllers are more\n[19:47] advanced with this than others so one of the flight controllers that i really like for example is the"
+    },
+    {
+      "segment_index": 120,
+      "start_time": 1190,
+      "end_time": 1200,
+      "frames": [
+        "frame_0298.jpg",
+        "frame_0299.jpg",
+        "frame_0300.jpg"
+      ],
+      "transcript": "[19:47] advanced with this than others so one of the flight controllers that i really like for example is the\n[19:52] brain fpv flight controller that has a graphical on-screen display but flight controllers from\n[19:58] people like matek holibro all those guys actually have an on-screen display and again it's the on-screen"
+    },
+    {
+      "segment_index": 121,
+      "start_time": 1200,
+      "end_time": 1210,
+      "frames": [
+        "frame_0301.jpg",
+        "frame_0302.jpg"
+      ],
+      "transcript": "[19:58] people like matek holibro all those guys actually have an on-screen display and again it's the on-screen\n[20:05] display supported by all three of the firmwares i've just talked about that's inav beta flight and"
+    },
+    {
+      "segment_index": 122,
+      "start_time": 1210,
+      "end_time": 1220,
+      "frames": [
+        "frame_0303.jpg",
+        "frame_0304.jpg",
+        "frame_0305.jpg"
+      ],
+      "transcript": "[20:05] display supported by all three of the firmwares i've just talked about that's inav beta flight and\n[20:12] ardupilot as well couple last things to think about the dji air unit doesn't work in exactly that way it\n[20:18] works slightly differently at the moment the only support is really for beta flight for the dji air"
+    },
+    {
+      "segment_index": 123,
+      "start_time": 1220,
+      "end_time": 1230,
+      "frames": [
+        "frame_0306.jpg",
+        "frame_0307.jpg"
+      ],
+      "transcript": "[20:18] works slightly differently at the moment the only support is really for beta flight for the dji air\n[20:24] unit i'll link to the video that talks about that and the last point in this video is there are some\n[20:29] flight controllers that have been around for a long time things like the pixhawk family don't have in"
+    },
+    {
+      "segment_index": 124,
+      "start_time": 1230,
+      "end_time": 1240,
+      "frames": [
+        "frame_0308.jpg",
+        "frame_0309.jpg",
+        "frame_0310.jpg"
+      ],
+      "transcript": "[20:29] flight controllers that have been around for a long time things like the pixhawk family don't have in\n[20:34] built support for an on-screen display for fpv so unfortunately if you want that kind of stuff with fpv you"
+    },
+    {
+      "segment_index": 125,
+      "start_time": 1240,
+      "end_time": 1250,
+      "frames": [
+        "frame_0311.jpg",
+        "frame_0312.jpg"
+      ],
+      "transcript": "[20:34] built support for an on-screen display for fpv so unfortunately if you want that kind of stuff with fpv you\n[20:40] have to use additional boards again see my builds with pixhawk where i show you how to do that\n[20:47] so i'm going to stop there hopefully that's enough information for those of you new pilots who are"
+    },
+    {
+      "segment_index": 126,
+      "start_time": 1250,
+      "end_time": 1260,
+      "frames": [
+        "frame_0313.jpg",
+        "frame_0314.jpg",
+        "frame_0315.jpg"
+      ],
+      "transcript": "[20:47] so i'm going to stop there hopefully that's enough information for those of you new pilots who are\n[20:52] interested in flight controllers but we're just getting lost in the build series and enough context\n[20:56] so that you can go and watch them and it will make more sense a flight controller is just a little"
+    },
+    {
+      "segment_index": 127,
+      "start_time": 1260,
+      "end_time": 1270,
+      "frames": [
+        "frame_0316.jpg",
+        "frame_0317.jpg"
+      ],
+      "transcript": "[20:56] so that you can go and watch them and it will make more sense a flight controller is just a little\n[21:01] computer running some firmware on there that is then doing a lot of the flying for you how much of that\n[21:08] you can decide by flicking a switch on your radio that selects the flight mode it can be very basic"
+    },
+    {
+      "segment_index": 128,
+      "start_time": 1270,
+      "end_time": 1280,
+      "frames": [
+        "frame_0318.jpg",
+        "frame_0319.jpg",
+        "frame_0320.jpg"
+      ],
+      "transcript": "[21:08] you can decide by flicking a switch on your radio that selects the flight mode it can be very basic\n[21:15] and just do the essentially what a stabilizer would do if you use that in a fixed wing or it can be"
+    },
+    {
+      "segment_index": 129,
+      "start_time": 1280,
+      "end_time": 1290,
+      "frames": [
+        "frame_0321.jpg",
+        "frame_0322.jpg"
+      ],
+      "transcript": "[21:15] and just do the essentially what a stabilizer would do if you use that in a fixed wing or it can be\n[21:21] super duper complex with gps airspeed sensors lidar and all those kind of other things and fly\n[21:27] everything autonomously and you can get stuff that will do everything in between so if you have any"
+    },
+    {
+      "segment_index": 130,
+      "start_time": 1290,
+      "end_time": 1300,
+      "frames": [
+        "frame_0323.jpg",
+        "frame_0324.jpg",
+        "frame_0325.jpg"
+      ],
+      "transcript": "[21:27] everything autonomously and you can get stuff that will do everything in between so if you have any\n[21:33] questions or comments please pop them down below and i'll put links down below to some of my most recent\n[21:39] build series so now hopefully armed with that understanding you can watch them and they'll make more sense"
+    },
+    {
+      "segment_index": 131,
+      "start_time": 1300,
+      "end_time": 1310,
+      "frames": [
+        "frame_0326.jpg",
+        "frame_0327.jpg"
+      ],
+      "transcript": "[21:39] build series so now hopefully armed with that understanding you can watch them and they'll make more sense\n[21:45] thank you for watching my video and watching right to the very end if you want to find out what i'm"
+    },
+    {
+      "segment_index": 132,
+      "start_time": 1310,
+      "end_time": 1320,
+      "frames": [
+        "frame_0328.jpg",
+        "frame_0329.jpg",
+        "frame_0330.jpg"
+      ],
+      "transcript": "[21:45] thank you for watching my video and watching right to the very end if you want to find out what i'm\n[21:50] currently working on you can follow me on social media by searching for painless 360 in the usual\n[21:55] places if you'd like to become part of the inner circle then you can become a patreon details are in"
+    },
+    {
+      "segment_index": 133,
+      "start_time": 1320,
+      "end_time": 1330,
+      "frames": [
+        "frame_0331.jpg",
+        "frame_0332.jpg"
+      ],
+      "transcript": "[21:55] places if you'd like to become part of the inner circle then you can become a patreon details are in\n[22:00] the description and you get lots of additional benefits check out the playlist section on the channel\n[22:06] too i organize all of my videos into playlists and it's called something like introduction to or for"
+    },
+    {
+      "segment_index": 134,
+      "start_time": 1330,
+      "end_time": 1340,
+      "frames": [
+        "frame_0333.jpg",
+        "frame_0334.jpg",
+        "frame_0335.jpg"
+      ],
+      "transcript": "[22:06] too i organize all of my videos into playlists and it's called something like introduction to or for\n[22:11] beginners all of the content is aimed so that you can start the very beginning and it teaches you that\n[22:16] subject starting with simple principles and moving up to teach you everything you need to know"
+    },
+    {
+      "segment_index": 135,
+      "start_time": 1340,
+      "end_time": 1350,
+      "frames": [
+        "frame_0336.jpg",
+        "frame_0337.jpg"
+      ],
+      "transcript": "[22:16] subject starting with simple principles and moving up to teach you everything you need to know\n[22:29] you"
+    },
+    {
+      "segment_index": 136,
+      "start_time": 1350,
+      "end_time": 1350.24,
+      "frames": [],
+      "transcript": "[22:29] you"
+    }
+  ]
+}

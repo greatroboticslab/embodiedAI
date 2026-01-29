@@ -174,11 +174,11 @@ def generate_docx_report(video_id: str, segments: List[SegmentSection], video_fr
 
 def main():
     parser = argparse.ArgumentParser(description="Manual Video Segmentation (10s intervals)")
-    parser.add_argument("--transcripts_root", default="../../TranscriptAnalysis/data/transcripts_embodied", help="Directory containing transcripts")
-    parser.add_argument("--captions_root", default="../../CaptionAnalysis/data/integrated_caption/frames_embodied_captions_integrated", help="Used only for video discovery if needed, or ignored")
-    parser.add_argument("--frames_root", default="../../VideoAnalysis/data/frames/frames_embodied", help="Root dir containing <video_id>/raw_frames")
-    parser.add_argument("--metrics_csv", default=["../../CaptionAnalysis/output/Embodied_metrics.csv"], nargs='+', help="CSVs for FPS")
-    parser.add_argument("--output_dir", default="../data/manual_segmentation")
+    parser.add_argument("--transcripts_root", default="../../TranscriptAnalysis/data/transcripts_conventional", help="Directory containing transcripts")
+    parser.add_argument("--captions_root", default="../../CaptionAnalysis/data/integrated_caption/frames_conventional_captions_integrated", help="Used only for video discovery if needed, or ignored")
+    parser.add_argument("--frames_root", default="../../VideoAnalysis/data/frames/frames_conventional", help="Root dir containing <video_id>/raw_frames")
+    parser.add_argument("--metrics_csv", default=["../../CaptionAnalysis/output/Conventional_metrics.csv"], nargs='+', help="CSVs for FPS")
+    parser.add_argument("--output_dir", default="../data/segments_conventional")
     parser.add_argument("--interval", type=int, default=10, help="Segment length in seconds")
     
     args = parser.parse_args()

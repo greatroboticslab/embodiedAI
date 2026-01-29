@@ -1,0 +1,848 @@
+{
+  "video_id": "BYvTEfNAi38",
+  "duration": 808.38,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg"
+      ],
+      "transcript": "[0:00] There are two really important questions in control systems engineering.\n[0:05] Is your system controllable, and is it observable?\n[0:08] Now, assuming you have a good linear model of your system,"
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0003.jpg",
+        "frame_0004.jpg"
+      ],
+      "transcript": "[0:08] Now, assuming you have a good linear model of your system,\n[0:11] you can answer both of those questions using some simple matrix operations\n[0:14] and the A, B, and C matrices of your state space model.\n[0:19] My experience, though, is in the aerospace industry,"
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0005.jpg",
+        "frame_0006.jpg",
+        "frame_0007.jpg"
+      ],
+      "transcript": "[0:19] My experience, though, is in the aerospace industry,\n[0:22] and I'll be honest, I've never actually used these equations at my job to analyze my system.\n[0:26] Now, I'm not saying other industries or other systems within aerospace won't use them."
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0008.jpg",
+        "frame_0009.jpg"
+      ],
+      "transcript": "[0:26] Now, I'm not saying other industries or other systems within aerospace won't use them.\n[0:31] It's just for the projects I've worked on,\n[0:33] we've relied mostly on just having a good understanding of the system\n[0:36] and then reasoning through the design to determine whether it was controllable or observable."
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0010.jpg",
+        "frame_0011.jpg"
+      ],
+      "transcript": "[0:36] and then reasoning through the design to determine whether it was controllable or observable.\n[0:42] But with that being said, in order to develop that intuition,\n[0:46] you have to have an understanding of the concept of controllability and observability."
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0012.jpg",
+        "frame_0013.jpg",
+        "frame_0014.jpg"
+      ],
+      "transcript": "[0:46] you have to have an understanding of the concept of controllability and observability.\n[0:50] And part of gaining that understanding comes from studying these equations.\n[0:54] So they're worth spending some time on.\n[0:57] Just not in this video."
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0015.jpg",
+        "frame_0016.jpg"
+      ],
+      "transcript": "[1:00] We're not going to cover them at all, and I think with good reason.\n[1:03] I feel that Steve Brunton already has done a fantastic job describing the math\n[1:07] behind these equations in his Control Bootcamp series that I've linked to below."
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0017.jpg",
+        "frame_0018.jpg",
+        "frame_0019.jpg"
+      ],
+      "transcript": "[1:07] behind these equations in his Control Bootcamp series that I've linked to below.\n[1:12] And rather than just duplicate what he's already done,\n[1:14] I want to approach this topic from a more intuitive and conceptual direction.\n[1:18] That way, combined with the math, you'll have a deeper understanding of controllability and observability"
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0020.jpg",
+        "frame_0021.jpg"
+      ],
+      "transcript": "[1:18] That way, combined with the math, you'll have a deeper understanding of controllability and observability\n[1:23] that I think will help you be a better control systems engineer.\n[1:27] I'm Brian, and welcome to a MATLAB Tech Talk."
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0022.jpg",
+        "frame_0023.jpg"
+      ],
+      "transcript": "[1:30] To begin, let's look at what control system design requires at a very high level.\n[1:36] It starts with the system that you want to control.\n[1:38] And you're able to poke and prod the system with actuators that impart control forces and energy."
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0024.jpg",
+        "frame_0025.jpg",
+        "frame_0026.jpg"
+      ],
+      "transcript": "[1:38] And you're able to poke and prod the system with actuators that impart control forces and energy.\n[1:44] And then you can measure specific states of the system, like voltage, position, and temperature,\n[1:49] with sensors that produce the output of the system."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0027.jpg",
+        "frame_0028.jpg"
+      ],
+      "transcript": "[1:49] with sensors that produce the output of the system.\n[1:52] And controller design comes down to figuring out how to use the sensor data,\n[1:56] along with a reference signal or some kind of command,\n[1:59] to generate the correct actuator commands."
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0029.jpg",
+        "frame_0030.jpg",
+        "frame_0031.jpg"
+      ],
+      "transcript": "[1:59] to generate the correct actuator commands.\n[2:02] And that's essentially all we're trying to do.\n[2:05] However, your controller design is bound to fail if your system doesn't have the appropriate actuators"
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0032.jpg",
+        "frame_0033.jpg"
+      ],
+      "transcript": "[2:05] However, your controller design is bound to fail if your system doesn't have the appropriate actuators\n[2:10] that can affect the right parts of the system,\n[2:12] or if you don't have the appropriate sensors in place that can measure the right states.\n[2:17] Without both of those, you won't be able to adequately influence the system."
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0034.jpg",
+        "frame_0035.jpg"
+      ],
+      "transcript": "[2:17] Without both of those, you won't be able to adequately influence the system.\n[2:21] It won't be controllable.\n[2:22] Or you won't know how the system is changing.\n[2:25] It won't be observable.\n[2:27] In this way, controllability and observability are conditions of how the system works with the actuators"
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0036.jpg",
+        "frame_0037.jpg",
+        "frame_0038.jpg"
+      ],
+      "transcript": "[2:27] In this way, controllability and observability are conditions of how the system works with the actuators\n[2:33] and sensors, and it's not tied to a specific control technique like PID or pole placement.\n[2:39] If it's uncontrollable, you have to address that problem by changing the system or the actuators."
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0039.jpg",
+        "frame_0040.jpg"
+      ],
+      "transcript": "[2:39] If it's uncontrollable, you have to address that problem by changing the system or the actuators.\n[2:44] And the same goes for observability and the sensors.\n[2:48] Let's look at sort of a formal written definition of the two."
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0041.jpg",
+        "frame_0042.jpg",
+        "frame_0043.jpg"
+      ],
+      "transcript": "[2:48] Let's look at sort of a formal written definition of the two.\n[2:52] Controllability means that there exist control signals which allows the system to reach any state\n[2:57] in a finite amount of time.\n[2:59] This is also called reachability."
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:59] This is also called reachability.\n[3:00] Now, an important thing to realize is that controllability does not mean that the state\n[3:06] must be maintained or held at that condition, just that it can be reached."
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg"
+      ],
+      "transcript": "[3:06] must be maintained or held at that condition, just that it can be reached.\n[3:10] Now, to understand what this means, let's look at a nicely constrained problem like a monorail.\n[3:16] There are two states, position and velocity.\n[3:19] And we'll assume that the monorail is controllable, so by accelerating and braking,"
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0048.jpg",
+        "frame_0049.jpg",
+        "frame_0050.jpg"
+      ],
+      "transcript": "[3:19] And we'll assume that the monorail is controllable, so by accelerating and braking,\n[3:24] the monorail can get to any position on the track,\n[3:26] and it can speed up to any velocity within the state space."
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0051.jpg",
+        "frame_0052.jpg"
+      ],
+      "transcript": "[3:26] and it can speed up to any velocity within the state space.\n[3:30] Here's the key about reachability.\n[3:32] Not only can each state variable be achieved individually,\n[3:36] each combination of variables can also be achieved.\n[3:39] For example, we could accelerate in a way that could get us to a position of 1 kilometer"
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0053.jpg",
+        "frame_0054.jpg",
+        "frame_0055.jpg"
+      ],
+      "transcript": "[3:39] For example, we could accelerate in a way that could get us to a position of 1 kilometer\n[3:43] at 50 kilometers per hour.\n[3:45] Hence, it can reach that state in the state space.\n[3:48] However, it should be obvious that it's physically impossible to maintain that state."
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[3:48] However, it should be obvious that it's physically impossible to maintain that state.\n[3:51] This is why controllability requires the system to be able to reach a state,\n[3:56] but not necessarily maintain it."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg"
+      ],
+      "transcript": "[4:00] Okay, let's move on to observability.\n[4:03] Observability means that all states can be known from the outputs of the system.\n[4:07] That is, we can know the value of every state in the system"
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0060.jpg",
+        "frame_0061.jpg",
+        "frame_0062.jpg"
+      ],
+      "transcript": "[4:07] That is, we can know the value of every state in the system\n[4:10] by using an appropriate selection of sensors and sensor locations.\n[4:14] Now, a quick side note about this, though.\n[4:16] As I mentioned in the last video on pole placement,\n[4:18] it's impractical to impose the requirement that you know every state in a system."
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0063.jpg",
+        "frame_0064.jpg"
+      ],
+      "transcript": "[4:18] it's impractical to impose the requirement that you know every state in a system.\n[4:22] There's just too many, and most don't impact the system in any meaningful way.\n[4:27] For example, the temperature of the monorail is a state,"
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0065.jpg",
+        "frame_0066.jpg",
+        "frame_0067.jpg"
+      ],
+      "transcript": "[4:27] For example, the temperature of the monorail is a state,\n[4:30] but knowing it is not necessary for controlling the position and velocity.\n[4:35] So when I say states, I'm really referring to all critical states.\n[4:38] And often the critical states are the ones that are in the state vector of your model,"
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0068.jpg",
+        "frame_0069.jpg"
+      ],
+      "transcript": "[4:38] And often the critical states are the ones that are in the state vector of your model,\n[4:42] since your goal in modeling is usually to include only the relevant dynamics\n[4:46] and leave out the rest.\n[4:48] Therefore, for observability, we want to know every state in our state vector."
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0070.jpg",
+        "frame_0071.jpg"
+      ],
+      "transcript": "[4:48] Therefore, for observability, we want to know every state in our state vector.\n[4:53] Okay, with these definitions out of the way,\n[4:56] let's see if we can make more sense of these concepts by looking at a few examples."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0072.jpg",
+        "frame_0073.jpg",
+        "frame_0074.jpg"
+      ],
+      "transcript": "[5:00] For now, let's ditch the constrained monorail problem\n[5:03] and look at the higher dimensional state space of a car.\n[5:06] We'll say the states we care about are the xy position,\n[5:09] the xy velocity, and the yaw angle and yaw rate."
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0075.jpg",
+        "frame_0076.jpg"
+      ],
+      "transcript": "[5:09] the xy velocity, and the yaw angle and yaw rate.\n[5:12] And let's say for our sensors, we have a speedometer to measure velocity,\n[5:16] and our eyes to assess pretty much everything else.\n[5:19] The actuators are the steering wheel and the gas and brake pedals."
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0077.jpg",
+        "frame_0078.jpg",
+        "frame_0079.jpg"
+      ],
+      "transcript": "[5:19] The actuators are the steering wheel and the gas and brake pedals.\n[5:24] It's essentially the actuators and sensors that you're using when you drive your car,\n[5:27] and we can reason that with this setup,"
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0080.jpg",
+        "frame_0081.jpg"
+      ],
+      "transcript": "[5:30] we'd be able to control the car to a specific position,\n[5:32] at a given velocity and yaw angle.\n[5:35] Let's look at the concept of observability first\n[5:38] and start with an extreme example to help illustrate its importance."
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0082.jpg",
+        "frame_0083.jpg"
+      ],
+      "transcript": "[5:38] and start with an extreme example to help illustrate its importance.\n[5:41] We remove all sensor information by closing our eyes.\n[5:45] This has the effect of zeroing out the C matrix,\n[5:48] and basically we have no way of knowing any of the states."
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0084.jpg",
+        "frame_0085.jpg",
+        "frame_0086.jpg"
+      ],
+      "transcript": "[5:48] and basically we have no way of knowing any of the states.\n[5:51] You don't know where you are, what speed you're going, or the direction you're facing.\n[5:55] And let's assume for this example that you can't feel acceleration or hear the engine or anything."
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0087.jpg",
+        "frame_0088.jpg"
+      ],
+      "transcript": "[6:00] Now, you can still control the car.\n[6:02] This hasn't been impacted since you're able to move the steering wheel and press on the pedals.\n[6:06] So, in this way, lack of observability made it so you can't control the car"
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0089.jpg",
+        "frame_0090.jpg",
+        "frame_0091.jpg"
+      ],
+      "transcript": "[6:06] So, in this way, lack of observability made it so you can't control the car\n[6:12] in the sense that you can't drive it safely to a destination.\n[6:15] However, the car is controllable within the definition that we said earlier."
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[6:20] So, that's something to keep in mind when you're talking about control and controllability.\n[6:25] Now, let's imagine the opposite situation.\n[6:27] We remove the steering wheel and the pedals,"
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg"
+      ],
+      "transcript": "[6:27] We remove the steering wheel and the pedals,\n[6:30] which has the effect of zeroing out the B matrix.\n[6:32] You can imagine how this could happen if you hit a large icy patch\n[6:36] and the car skids along with no effect from steering or braking."
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0096.jpg",
+        "frame_0097.jpg",
+        "frame_0098.jpg"
+      ],
+      "transcript": "[6:40] Even though you can't affect the state of the car,\n[6:43] this system is still observable since you can watch the speedometer\n[6:46] and you can track your position by looking outside."
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0099.jpg",
+        "frame_0100.jpg"
+      ],
+      "transcript": "[6:50] So, you can see how it's necessary to have a system that is capable of being observed and controlled.\n[6:55] They work together.\n[6:56] I mean, it should be pretty obvious that without any actuators or without any sensors,"
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0101.jpg",
+        "frame_0102.jpg",
+        "frame_0103.jpg"
+      ],
+      "transcript": "[6:56] I mean, it should be pretty obvious that without any actuators or without any sensors,\n[7:03] your system is doomed to fail.\n[7:04] But what might not be obvious at first is that even a system that is partially uncontrollable\n[7:09] or unobservable is still troublesome."
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[7:09] or unobservable is still troublesome.\n[7:13] Imagine trying to drive your car with the steering wheel detached.\n[7:16] Even though you can still change its speed with the pedals,\n[7:19] I bet you'd consider that an uncontrollable car since you'd have no way to change the yaw state."
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg"
+      ],
+      "transcript": "[7:19] I bet you'd consider that an uncontrollable car since you'd have no way to change the yaw state.\n[7:23] And this is a common sentiment with all control systems.\n[7:27] If any one critical state is uncontrollable, then the entire system is deemed to be uncontrollable."
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0108.jpg",
+        "frame_0109.jpg",
+        "frame_0110.jpg"
+      ],
+      "transcript": "[7:27] If any one critical state is uncontrollable, then the entire system is deemed to be uncontrollable.\n[7:33] And if any one critical state is unobservable, then the entire system is deemed to be unobservable.\n[7:39] Okay, let's now focus on what it means to observe a state."
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0111.jpg",
+        "frame_0112.jpg"
+      ],
+      "transcript": "[7:39] Okay, let's now focus on what it means to observe a state.\n[7:44] Clearly, directly measuring a state is one way of knowing it.\n[7:47] However, we don't have to measure every state to infer its value."
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0113.jpg",
+        "frame_0114.jpg",
+        "frame_0115.jpg"
+      ],
+      "transcript": "[7:47] However, we don't have to measure every state to infer its value.\n[7:51] Being able to estimate a state using available information is good enough to claim that the system is observable.\n[7:57] For example, with the monorail, we wouldn't have to install a speedometer and a position sensor in order to know both of those states."
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[7:57] For example, with the monorail, we wouldn't have to install a speedometer and a position sensor in order to know both of those states.\n[8:05] Velocity can be estimated by differentiating position, and position can be estimated by integrating velocity."
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg"
+      ],
+      "transcript": "[8:05] Velocity can be estimated by differentiating position, and position can be estimated by integrating velocity.\n[8:12] So you'd only need to measure one of those states and you can infer the other.\n[8:15] This is why a system can still be observable even if the output y isn't full state."
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0120.jpg",
+        "frame_0121.jpg",
+        "frame_0122.jpg"
+      ],
+      "transcript": "[8:15] This is why a system can still be observable even if the output y isn't full state.\n[8:21] That is, it doesn't contain a direct measurement of every state variable.\n[8:26] Estimating states is a good way to reduce the hardware complexity of your system."
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0123.jpg",
+        "frame_0124.jpg"
+      ],
+      "transcript": "[8:26] Estimating states is a good way to reduce the hardware complexity of your system.\n[8:31] Strategically measure only the necessary states with sensors, and then just estimate the rest using an observer, like a Kalman filter.\n[8:38] With that being said, even if you can estimate a state, some states could be highly sensitive to modeling and measurement errors."
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0125.jpg",
+        "frame_0126.jpg",
+        "frame_0127.jpg"
+      ],
+      "transcript": "[8:38] With that being said, even if you can estimate a state, some states could be highly sensitive to modeling and measurement errors.\n[8:46] For example, differentiating a noisy position creates an even noisier velocity."
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0128.jpg",
+        "frame_0129.jpg"
+      ],
+      "transcript": "[8:46] For example, differentiating a noisy position creates an even noisier velocity.\n[8:52] Or a small bias in velocity measurement would cause an ever-growing error in position.\n[8:57] So we have this trade-off.\n[8:58] Observations can be sensitive to errors, but adding additional sensors all over your system can be expensive in cost, or weight, or complexity, or whatever metric it is that's important to your design."
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0130.jpg",
+        "frame_0131.jpg"
+      ],
+      "transcript": "[8:58] Observations can be sensitive to errors, but adding additional sensors all over your system can be expensive in cost, or weight, or complexity, or whatever metric it is that's important to your design."
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0132.jpg",
+        "frame_0133.jpg",
+        "frame_0134.jpg"
+      ],
+      "transcript": "[8:58] Observations can be sensitive to errors, but adding additional sensors all over your system can be expensive in cost, or weight, or complexity, or whatever metric it is that's important to your design.\n[9:10] So we need to find a way to balance that trade-off.\n[9:13] Which states should we measure, and which states should we estimate?\n[9:17] Now if your system is difficult to reason through, the observability equations provide a methodical way to assess whether the states can be observed from the given outputs, and a measure of their effectiveness."
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0135.jpg",
+        "frame_0136.jpg"
+      ],
+      "transcript": "[9:17] Now if your system is difficult to reason through, the observability equations provide a methodical way to assess whether the states can be observed from the given outputs, and a measure of their effectiveness.\n[9:29] So you do have a way of determining whether you have the right sensors in the right places."
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0137.jpg",
+        "frame_0138.jpg",
+        "frame_0139.jpg"
+      ],
+      "transcript": "[9:29] So you do have a way of determining whether you have the right sensors in the right places.\n[9:34] There are a few more things that I want to cover here, and to do so let's consider a flexible cantilevered beam."
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0140.jpg",
+        "frame_0141.jpg"
+      ],
+      "transcript": "[9:34] There are a few more things that I want to cover here, and to do so let's consider a flexible cantilevered beam.\n[9:40] If you imagine pulling down on the end of the beam and letting it flick back up, it'll vibrate in some way that's governed by the mechanical properties of the beam.\n[9:48] And it'll eventually come to rest on its own after all of the energy has been damped out."
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0142.jpg",
+        "frame_0143.jpg"
+      ],
+      "transcript": "[9:48] And it'll eventually come to rest on its own after all of the energy has been damped out.\n[9:53] Now your job is to develop an active damping system that will stop the vibration faster.\n[9:58] You have access to accelerometers to measure the motion, and actuators that move a countermass with a damper to remove energy from the system."
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0144.jpg",
+        "frame_0145.jpg",
+        "frame_0146.jpg"
+      ],
+      "transcript": "[9:58] You have access to accelerometers to measure the motion, and actuators that move a countermass with a damper to remove energy from the system.\n[10:06] And for simplicity, we'll say that a sensor and actuator comes in a single package, so they have to be placed in the same location."
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0147.jpg",
+        "frame_0148.jpg"
+      ],
+      "transcript": "[10:06] And for simplicity, we'll say that a sensor and actuator comes in a single package, so they have to be placed in the same location.\n[10:13] But where you place them along the beam is up to you.\n[10:17] Well, with the exception that you can't place it at the tip of the beam due to other engineering constraints."
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0149.jpg",
+        "frame_0150.jpg",
+        "frame_0151.jpg"
+      ],
+      "transcript": "[10:17] Well, with the exception that you can't place it at the tip of the beam due to other engineering constraints.\n[10:23] So the question is, where should you place it, and how does that placement affect controllability and observability?\n[10:29] Well, we might reason that the beam motion will be larger the closer we get to the tip of the beam."
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0152.jpg",
+        "frame_0153.jpg"
+      ],
+      "transcript": "[10:29] Well, we might reason that the beam motion will be larger the closer we get to the tip of the beam.\n[10:33] So if we place our hardware as close as we can to the end, it would produce the most motion for the sensor.\n[10:39] So it'll be easier to sense and allow the actuator to damp more energy."
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0154.jpg",
+        "frame_0155.jpg"
+      ],
+      "transcript": "[10:39] So it'll be easier to sense and allow the actuator to damp more energy.\n[10:44] And visually, this looks like it might work.\n[10:47] However, the motion of the beam consists of contributions from a number of distinct bending modes."
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0156.jpg",
+        "frame_0157.jpg",
+        "frame_0158.jpg"
+      ],
+      "transcript": "[10:47] However, the motion of the beam consists of contributions from a number of distinct bending modes.\n[10:52] The first bending mode waves up and down, maybe like you'd expect.\n[10:56] And then the second and third modes have slightly more complicated mode shapes.\n[10:59] But the thing to notice is that our sensor and actuator location is placed directly at a node for the second bending mode."
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0159.jpg",
+        "frame_0160.jpg"
+      ],
+      "transcript": "[10:59] But the thing to notice is that our sensor and actuator location is placed directly at a node for the second bending mode.\n[11:08] In this case, our original ideal placement is fantastic for the first and third bending modes,"
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0161.jpg",
+        "frame_0162.jpg",
+        "frame_0163.jpg"
+      ],
+      "transcript": "[11:08] In this case, our original ideal placement is fantastic for the first and third bending modes,\n[11:13] but makes the second bending mode both unobservable, since the sensor wouldn't measure any motion,\n[11:18] and uncontrollable, since the actuator would have no impact on this mode."
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0164.jpg",
+        "frame_0165.jpg"
+      ],
+      "transcript": "[11:18] and uncontrollable, since the actuator would have no impact on this mode.\n[11:22] If we designed a controller with this hardware location, we'd find that no matter how hard we tuned the controller or came up with fancy mathematics,"
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0166.jpg",
+        "frame_0167.jpg"
+      ],
+      "transcript": "[11:22] If we designed a controller with this hardware location, we'd find that no matter how hard we tuned the controller or came up with fancy mathematics,\n[11:31] the beam would still vibrate at the second bending mode.\n[11:34] So rather than adding a second sensor and actuator at a location that's ideal for the second mode,"
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0168.jpg",
+        "frame_0169.jpg",
+        "frame_0170.jpg"
+      ],
+      "transcript": "[11:34] So rather than adding a second sensor and actuator at a location that's ideal for the second mode,\n[11:40] a cheaper alternative might be to just move the sensor and actuator to a place that can observe and control all of the critical bending modes.\n[11:47] In doing this, however, we've reduced our ability to control the first mode and increased the cost of actuation,"
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0171.jpg",
+        "frame_0172.jpg"
+      ],
+      "transcript": "[11:47] In doing this, however, we've reduced our ability to control the first mode and increased the cost of actuation,\n[11:55] since the beam doesn't physically move as much at this new location for the first bending mode."
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0173.jpg",
+        "frame_0174.jpg",
+        "frame_0175.jpg"
+      ],
+      "transcript": "[11:55] since the beam doesn't physically move as much at this new location for the first bending mode.\n[12:00] That is, it takes more effort for our actuator to dump the first mode from this location than it would the other.\n[12:06] So we get the benefit of handling the first three bending modes, but at the expense of effectiveness."
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0176.jpg",
+        "frame_0177.jpg"
+      ],
+      "transcript": "[12:06] So we get the benefit of handling the first three bending modes, but at the expense of effectiveness.\n[12:11] Perhaps that's a good compromise, though.\n[12:13] Okay, hopefully you now have a better understanding of why controllability and observability are concepts that you need to understand and consider"
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0178.jpg",
+        "frame_0179.jpg"
+      ],
+      "transcript": "[12:13] Okay, hopefully you now have a better understanding of why controllability and observability are concepts that you need to understand and consider\n[12:22] when analyzing your system and your actuators and your sensors.\n[12:27] Now, the equations I showed earlier provide a systematic way of assessing everything I just talked about."
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0180.jpg",
+        "frame_0181.jpg",
+        "frame_0182.jpg"
+      ],
+      "transcript": "[12:27] Now, the equations I showed earlier provide a systematic way of assessing everything I just talked about.\n[12:33] They can check for observability and controllability.\n[12:35] They can help you think about the most effective places to add sensors and actuators,\n[12:39] and to determine which states you should measure and which you should just estimate."
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0183.jpg",
+        "frame_0184.jpg"
+      ],
+      "transcript": "[12:39] and to determine which states you should measure and which you should just estimate.\n[12:45] And again, I do think it's important to understand these equations in detail and how you can perform these analyses in MATLAB,"
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0185.jpg",
+        "frame_0186.jpg",
+        "frame_0187.jpg"
+      ],
+      "transcript": "[12:45] And again, I do think it's important to understand these equations in detail and how you can perform these analyses in MATLAB,\n[12:51] because even if you don't use them, it will be a good foundation on which you can build your intuition.\n[12:57] MathWorks has put together a page with links to videos and other resources showing how to analyze controllability"
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0188.jpg",
+        "frame_0189.jpg"
+      ],
+      "transcript": "[12:57] MathWorks has put together a page with links to videos and other resources showing how to analyze controllability\n[13:03] and, in general, work with states-based models.\n[13:06] And if you want to learn more about why these equations work, definitely check out Steve Brunton's Control Boot Camp videos."
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0190.jpg",
+        "frame_0191.jpg"
+      ],
+      "transcript": "[13:06] And if you want to learn more about why these equations work, definitely check out Steve Brunton's Control Boot Camp videos.\n[13:13] Links are in the description for everything I just talked about.\n[13:16] Now, if you don't want to miss the next Tech Talk video, don't forget to subscribe to this channel."
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 808.38,
+      "frames": [
+        "frame_0192.jpg",
+        "frame_0193.jpg"
+      ],
+      "transcript": "[13:16] Now, if you don't want to miss the next Tech Talk video, don't forget to subscribe to this channel.\n[13:20] Also, if you want to check out my channel, Control System Lectures, I cover more control theory topics there as well.\n[13:26] Thanks for watching, and I'll see you next time."
+    }
+  ]
+}

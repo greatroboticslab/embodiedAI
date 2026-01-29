@@ -1,0 +1,1014 @@
+{
+  "video_id": "lBC1nEq0_nk",
+  "duration": 967.02,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg"
+      ],
+      "transcript": "[0:00] An important question that has to be answered when you're designing an autonomous system is how do you get that system to do what you want?\n[0:08] I mean, how do you get a car to drive on its own?"
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0003.jpg",
+        "frame_0004.jpg"
+      ],
+      "transcript": "[0:08] I mean, how do you get a car to drive on its own?\n[0:11] How do you manage the temperature of a building?\n[0:13] Or how do you separate liquids into their component parts efficiently with a distillation column?"
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0005.jpg",
+        "frame_0006.jpg",
+        "frame_0007.jpg"
+      ],
+      "transcript": "[0:20] And to answer those questions, we need control theory.\n[0:23] Control theory is a mathematical framework that gives us the tools to develop autonomous systems."
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0008.jpg",
+        "frame_0009.jpg"
+      ],
+      "transcript": "[0:23] Control theory is a mathematical framework that gives us the tools to develop autonomous systems.\n[0:31] And in this video, I want to walk through everything you need to know about control theory.\n[0:35] So I hope you stick around for it.\n[0:37] I'm Brian, and welcome to a MATLAB Tech Talk."
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0010.jpg",
+        "frame_0011.jpg"
+      ],
+      "transcript": "[0:42] We can understand all of control theory using a simple diagram.\n[0:47] And to begin, let's just start with a single dynamical system."
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0012.jpg",
+        "frame_0013.jpg",
+        "frame_0014.jpg"
+      ],
+      "transcript": "[0:47] And to begin, let's just start with a single dynamical system.\n[0:50] This system is the thing that we want to automatically control, like a building or a distillation column or a car.\n[0:58] It can really be anything."
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0015.jpg",
+        "frame_0016.jpg"
+      ],
+      "transcript": "[0:58] It can really be anything.\n[1:00] But the important thing is that the system can be affected by external inputs.\n[1:05] And in general, we can think of the inputs as coming from two different sources.\n[1:09] There are the control inputs, U, that we intentionally use to affect the system."
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0017.jpg",
+        "frame_0018.jpg",
+        "frame_0019.jpg"
+      ],
+      "transcript": "[1:09] There are the control inputs, U, that we intentionally use to affect the system.\n[1:15] For a car, these are things like moving the steering wheel and hitting the brake and pressing on the accelerator pedal."
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0020.jpg",
+        "frame_0021.jpg"
+      ],
+      "transcript": "[1:15] For a car, these are things like moving the steering wheel and hitting the brake and pressing on the accelerator pedal.\n[1:21] And then there are unintentional inputs.\n[1:24] These are the disturbances, D, and they are forces that we don't want affecting the system, but they do anyway."
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0022.jpg",
+        "frame_0023.jpg"
+      ],
+      "transcript": "[1:24] These are the disturbances, D, and they are forces that we don't want affecting the system, but they do anyway.\n[1:31] These are things like wind and bumps in the road.\n[1:34] Now, the inputs into the system interact with the internal dynamics, and then the system state X changes over time."
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0024.jpg",
+        "frame_0025.jpg",
+        "frame_0026.jpg"
+      ],
+      "transcript": "[1:34] Now, the inputs into the system interact with the internal dynamics, and then the system state X changes over time.\n[1:42] So, for a car, we move the steering wheel and we press the pedals, which turn the wheels and revs the engine, producing forces and torques on that vehicle."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0027.jpg",
+        "frame_0028.jpg"
+      ],
+      "transcript": "[1:42] So, for a car, we move the steering wheel and we press the pedals, which turn the wheels and revs the engine, producing forces and torques on that vehicle.\n[1:51] And then combined with the forces and torques from the disturbances, the car changes its speed, position, and direction.\n[1:57] Now, if we want to automate this process, that is, we want the car to drive without a person determining the inputs, where do we go from here?"
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0029.jpg",
+        "frame_0030.jpg",
+        "frame_0031.jpg"
+      ],
+      "transcript": "[1:57] Now, if we want to automate this process, that is, we want the car to drive without a person determining the inputs, where do we go from here?\n[2:09] And the first question is, can an algorithm determine the necessary control inputs without constantly having to know the current state of the system?"
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0032.jpg",
+        "frame_0033.jpg"
+      ],
+      "transcript": "[2:09] And the first question is, can an algorithm determine the necessary control inputs without constantly having to know the current state of the system?\n[2:17] Or maybe a better way of putting it is, do you need to measure where the car is and how fast it's going in order to successfully drive the car with good control inputs?"
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0034.jpg",
+        "frame_0035.jpg"
+      ],
+      "transcript": "[2:17] Or maybe a better way of putting it is, do you need to measure where the car is and how fast it's going in order to successfully drive the car with good control inputs?\n[2:28] And the answer is actually no."
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0036.jpg",
+        "frame_0037.jpg",
+        "frame_0038.jpg"
+      ],
+      "transcript": "[2:28] And the answer is actually no.\n[2:30] Now, we can control a system with an open loop controller, also known as a feedforward controller.\n[2:37] A feedforward controller takes in what you want the system to do, called the reference R, and it generates the control signal without ever needing to measure the actual state."
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0039.jpg",
+        "frame_0040.jpg"
+      ],
+      "transcript": "[2:37] A feedforward controller takes in what you want the system to do, called the reference R, and it generates the control signal without ever needing to measure the actual state.\n[2:48] In this way, the signal from the reference is fed forward through the controller and then forward through the system, never looping back."
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0041.jpg",
+        "frame_0042.jpg",
+        "frame_0043.jpg"
+      ],
+      "transcript": "[2:48] In this way, the signal from the reference is fed forward through the controller and then forward through the system, never looping back.\n[2:56] Hence the name feedforward.\n[2:57] For example, let's say that we want the car to autonomously drive in a straight line and at some arbitrary constant speed."
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:57] For example, let's say that we want the car to autonomously drive in a straight line and at some arbitrary constant speed.\n[3:06] If the car is controllable, which means that we have the ability to actually affect the speed and direction of the car,"
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg"
+      ],
+      "transcript": "[3:06] If the car is controllable, which means that we have the ability to actually affect the speed and direction of the car,\n[3:12] then we could design a feedforward controller that accomplishes this.\n[3:17] The reference, drive straight, means that the steering wheel should be held at a fixed zero degrees."
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0048.jpg",
+        "frame_0049.jpg",
+        "frame_0050.jpg"
+      ],
+      "transcript": "[3:17] The reference, drive straight, means that the steering wheel should be held at a fixed zero degrees.\n[3:22] And drive at a constant speed means that we depress the accelerator pedal some non-zero amount.\n[3:29] The car would then accelerate to a constant speed and drive straight, exactly as we want."
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0051.jpg",
+        "frame_0052.jpg"
+      ],
+      "transcript": "[3:29] The car would then accelerate to a constant speed and drive straight, exactly as we want.\n[3:35] However, let's say that we want the car to reach a specific speed, like 30 miles an hour.\n[3:39] We can actually still do it with a feedforward controller, but now the controller needs to know how much to depress the accelerator pedal in order to reach that specific speed."
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0053.jpg",
+        "frame_0054.jpg",
+        "frame_0055.jpg"
+      ],
+      "transcript": "[3:39] We can actually still do it with a feedforward controller, but now the controller needs to know how much to depress the accelerator pedal in order to reach that specific speed.\n[3:49] And this requires knowledge about the dynamics of the system."
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[3:49] And this requires knowledge about the dynamics of the system.\n[3:53] And this knowledge can be captured in the form of a mathematical model.\n[3:58] Now, developing a model can be done using physics and first principles, where the mathematical equations are written out based on your understanding of the system dynamics."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg"
+      ],
+      "transcript": "[3:58] Now, developing a model can be done using physics and first principles, where the mathematical equations are written out based on your understanding of the system dynamics.\n[4:08] Or it can be done by using data and fitting a model to that data with a process called system identification."
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0060.jpg",
+        "frame_0061.jpg",
+        "frame_0062.jpg"
+      ],
+      "transcript": "[4:08] Or it can be done by using data and fitting a model to that data with a process called system identification.\n[4:15] Both of these modeling techniques are important concepts to understand because, as we'll get into, models are required for almost all aspects of control theory."
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0063.jpg",
+        "frame_0064.jpg"
+      ],
+      "transcript": "[4:15] Both of these modeling techniques are important concepts to understand because, as we'll get into, models are required for almost all aspects of control theory.\n[4:24] Now, as an example of system identification, we could test the real car and record the speed it reaches given different pedal positions."
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0065.jpg",
+        "frame_0066.jpg",
+        "frame_0067.jpg"
+      ],
+      "transcript": "[4:24] Now, as an example of system identification, we could test the real car and record the speed it reaches given different pedal positions.\n[4:35] And then we could just fit a mathematical model to that data.\n[4:39] Basically, speed is some function of the pedal position."
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0068.jpg",
+        "frame_0069.jpg"
+      ],
+      "transcript": "[4:39] Basically, speed is some function of the pedal position.\n[4:44] Now, for the feedforward controller itself, we could just use the inverse of that model to get pedal position as a function of speed."
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0070.jpg",
+        "frame_0071.jpg"
+      ],
+      "transcript": "[4:44] Now, for the feedforward controller itself, we could just use the inverse of that model to get pedal position as a function of speed.\n[4:52] So, given a reference speed, the feedforward controller would be able to calculate the necessary control input."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0072.jpg",
+        "frame_0073.jpg",
+        "frame_0074.jpg"
+      ],
+      "transcript": "[5:00] So, feedforward controllers are a pretty straightforward way to control a system.\n[5:05] However, as we can see, it requires a really good understanding of the system dynamics, since you have to invert them in the controller."
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0075.jpg",
+        "frame_0076.jpg"
+      ],
+      "transcript": "[5:05] However, as we can see, it requires a really good understanding of the system dynamics, since you have to invert them in the controller.\n[5:12] And any error in that inversion process will result in error in the system state.\n[5:16] Also, even if you know your system really well, the environment the system is operating in should have predictable behavior as well."
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0077.jpg",
+        "frame_0078.jpg",
+        "frame_0079.jpg"
+      ],
+      "transcript": "[5:16] Also, even if you know your system really well, the environment the system is operating in should have predictable behavior as well.\n[5:26] You know, so that there's not a lot of unknown disturbances entering the system that you're not accounting for in the controller."
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0080.jpg",
+        "frame_0081.jpg"
+      ],
+      "transcript": "[5:26] You know, so that there's not a lot of unknown disturbances entering the system that you're not accounting for in the controller.\n[5:32] Of course, it doesn't take much imagination to see that feedforward control breaks down for systems that aren't robust to disturbances and uncertainty."
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0082.jpg",
+        "frame_0083.jpg"
+      ],
+      "transcript": "[5:32] Of course, it doesn't take much imagination to see that feedforward control breaks down for systems that aren't robust to disturbances and uncertainty.\n[5:42] I mean, imagine wanting to autonomously drive a car across a city with feedforward control.\n[5:48] Theoretically, you could map the city well enough and know your car well enough that you could essentially pre-program in all of the steering wheel and pedal commands."
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0084.jpg",
+        "frame_0085.jpg",
+        "frame_0086.jpg"
+      ],
+      "transcript": "[5:48] Theoretically, you could map the city well enough and know your car well enough that you could essentially pre-program in all of the steering wheel and pedal commands.\n[5:57] And just let it go.\n[5:58] And if you had perfect knowledge ahead of time, then the car would execute those commands and then make its way across the city unharmed."
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0087.jpg",
+        "frame_0088.jpg"
+      ],
+      "transcript": "[5:58] And if you had perfect knowledge ahead of time, then the car would execute those commands and then make its way across the city unharmed.\n[6:07] Obviously, though, this is unrealistic."
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0089.jpg",
+        "frame_0090.jpg",
+        "frame_0091.jpg"
+      ],
+      "transcript": "[6:10] I mean, not only are other cars and pedestrians impossible to predict perfectly,\n[6:14] but even the smallest errors in the position and speed of your car will build over time and eventually deviate much too far from the intended path."
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[6:14] but even the smallest errors in the position and speed of your car will build over time and eventually deviate much too far from the intended path.\n[6:24] So this is where feedback control or closed loop control comes to the rescue."
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg"
+      ],
+      "transcript": "[6:24] So this is where feedback control or closed loop control comes to the rescue.\n[6:31] In feedback control, the controller uses both the reference and the current state of the system to determine the appropriate control inputs."
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0096.jpg",
+        "frame_0097.jpg",
+        "frame_0098.jpg"
+      ],
+      "transcript": "[6:40] That is, the output is fed back, making a closed loop.\n[6:46] Hence the name.\n[6:46] And in this way, if the system state starts to deviate from the reference, either because of disturbances or because of errors in our understanding of the system,"
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0099.jpg",
+        "frame_0100.jpg"
+      ],
+      "transcript": "[6:46] And in this way, if the system state starts to deviate from the reference, either because of disturbances or because of errors in our understanding of the system,\n[6:56] then the controller can recognize those deviations, those errors, and adjust the control inputs accordingly."
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0101.jpg",
+        "frame_0102.jpg",
+        "frame_0103.jpg"
+      ],
+      "transcript": "[6:56] then the controller can recognize those deviations, those errors, and adjust the control inputs accordingly.\n[7:03] So feedback control is a self-correcting mechanism.\n[7:07] And I like to think of feedback as a hack that we have to employ due to our inability to perfectly understand the system and its environment."
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[7:07] And I like to think of feedback as a hack that we have to employ due to our inability to perfectly understand the system and its environment.\n[7:17] We don't want to use feedback control, but we have to."
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg"
+      ],
+      "transcript": "[7:17] We don't want to use feedback control, but we have to.\n[7:22] All right.\n[7:22] So feedback control is powerful, but it's also a lot more dangerous than feed forward control.\n[7:28] And the reason for this is that feed forward changes the way we operate a system, but feedback changes the dynamics of the system."
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0108.jpg",
+        "frame_0109.jpg",
+        "frame_0110.jpg"
+      ],
+      "transcript": "[7:28] And the reason for this is that feed forward changes the way we operate a system, but feedback changes the dynamics of the system.\n[7:37] It changes its underlying behavior.\n[7:39] And this is because with feedback, the controller changes the system state as a function of the current state."
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0111.jpg",
+        "frame_0112.jpg"
+      ],
+      "transcript": "[7:39] And this is because with feedback, the controller changes the system state as a function of the current state.\n[7:47] And that relationship is producing new dynamics."
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0113.jpg",
+        "frame_0114.jpg",
+        "frame_0115.jpg"
+      ],
+      "transcript": "[7:47] And that relationship is producing new dynamics.\n[7:52] And changing dynamics means that we have the ability to change the stability of the system.\n[7:57] And on the plus side, we can take an unstable or marginally stable system and make it more stable with feedback control."
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[7:57] And on the plus side, we can take an unstable or marginally stable system and make it more stable with feedback control.\n[8:04] But on the negative side, we can also make a system less stable and even unstable."
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg"
+      ],
+      "transcript": "[8:04] But on the negative side, we can also make a system less stable and even unstable.\n[8:10] And this is why a lot of control theory is focused on designing and, importantly, analyzing feedback controllers.\n[8:17] Because if you do it wrong, you can cause more harm than good."
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0120.jpg",
+        "frame_0121.jpg",
+        "frame_0122.jpg"
+      ],
+      "transcript": "[8:17] Because if you do it wrong, you can cause more harm than good.\n[8:21] And since feedback control exists in many different types of systems, the control community over the years have developed many different types of feedback controllers."
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0123.jpg",
+        "frame_0124.jpg"
+      ],
+      "transcript": "[8:21] And since feedback control exists in many different types of systems, the control community over the years have developed many different types of feedback controllers.\n[8:31] There are linear controllers like PID and full state feedback that assume the general behavior of the system being controlled is linear in nature."
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0125.jpg",
+        "frame_0126.jpg",
+        "frame_0127.jpg"
+      ],
+      "transcript": "[8:31] There are linear controllers like PID and full state feedback that assume the general behavior of the system being controlled is linear in nature.\n[8:42] And if that's not the case, there are nonlinear controllers like on-off controllers and sliding mode controllers and gain scheduling.\n[8:49] Now, often thinking in terms of linear versus nonlinear isn't the best way to choose a controller."
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0128.jpg",
+        "frame_0129.jpg"
+      ],
+      "transcript": "[8:49] Now, often thinking in terms of linear versus nonlinear isn't the best way to choose a controller.\n[8:56] So we define them in other ways as well.\n[8:59] For example, there are robust controllers like mu synthesis and active disturbance rejection control,"
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0130.jpg",
+        "frame_0131.jpg"
+      ],
+      "transcript": "[8:59] For example, there are robust controllers like mu synthesis and active disturbance rejection control,\n[9:05] which focus on meeting requirements even in the face of uncertainty in the plant and in the environment."
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0132.jpg",
+        "frame_0133.jpg",
+        "frame_0134.jpg"
+      ],
+      "transcript": "[9:05] which focus on meeting requirements even in the face of uncertainty in the plant and in the environment.\n[9:10] So we can guarantee that they are robust to a certain amount of uncertainty.\n[9:16] There are adaptive controllers like extremum seeking and model reference adaptive control that adapt to changes in the system over time."
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0135.jpg",
+        "frame_0136.jpg"
+      ],
+      "transcript": "[9:16] There are adaptive controllers like extremum seeking and model reference adaptive control that adapt to changes in the system over time.\n[9:25] There are optimal controllers like LQR where a cost function is created,"
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0137.jpg",
+        "frame_0138.jpg",
+        "frame_0139.jpg"
+      ],
+      "transcript": "[9:25] There are optimal controllers like LQR where a cost function is created,\n[9:30] and then the controller tries to balance performance and effort by minimizing the total cost.\n[9:36] There are predictive controllers like model predictive control that use a model of the system inside the controller to simulate what the future state will be,"
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0140.jpg",
+        "frame_0141.jpg"
+      ],
+      "transcript": "[9:36] There are predictive controllers like model predictive control that use a model of the system inside the controller to simulate what the future state will be,\n[9:46] and therefore what the optimal control input should be in order to have that future state match the reference."
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0142.jpg",
+        "frame_0143.jpg"
+      ],
+      "transcript": "[9:46] and therefore what the optimal control input should be in order to have that future state match the reference.\n[9:52] There are intelligent controllers like fuzzy controllers or reinforcement learning that rely on data to learn the best controller."
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0144.jpg",
+        "frame_0145.jpg",
+        "frame_0146.jpg"
+      ],
+      "transcript": "[9:52] There are intelligent controllers like fuzzy controllers or reinforcement learning that rely on data to learn the best controller.\n[10:02] And there are many others.\n[10:04] And the point here isn't to list every control method.\n[10:07] I just wanted to highlight the fact that feedback control isn't just a single algorithm,"
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0147.jpg",
+        "frame_0148.jpg"
+      ],
+      "transcript": "[10:07] I just wanted to highlight the fact that feedback control isn't just a single algorithm,\n[10:12] but it's a family of algorithms.\n[10:14] And choosing which controller to use and how to set it up depends largely on what system you are controlling and what you want it to do."
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0149.jpg",
+        "frame_0150.jpg",
+        "frame_0151.jpg"
+      ],
+      "transcript": "[10:14] And choosing which controller to use and how to set it up depends largely on what system you are controlling and what you want it to do.\n[10:23] So what do you want your system to do?\n[10:26] What state do you want the system to be in?\n[10:29] What is the reference that you want it to follow?"
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0152.jpg",
+        "frame_0153.jpg"
+      ],
+      "transcript": "[10:29] What is the reference that you want it to follow?\n[10:30] And this might seem like a simple question if we're balancing an inverted pendulum,\n[10:35] or designing a simple cruise controller for a car.\n[10:39] The reference for the pendulum is vertical,"
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0154.jpg",
+        "frame_0155.jpg"
+      ],
+      "transcript": "[10:39] The reference for the pendulum is vertical,\n[10:42] and for the car it's the speed that the driver sets.\n[10:46] However, for many systems, understanding what it should do takes some effort,"
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0156.jpg",
+        "frame_0157.jpg",
+        "frame_0158.jpg"
+      ],
+      "transcript": "[10:46] However, for many systems, understanding what it should do takes some effort,\n[10:51] and this is where planning comes in.\n[10:54] The control system can't follow a reference if one doesn't exist,\n[10:58] and so planning is a very important aspect of designing a control system."
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0159.jpg",
+        "frame_0160.jpg"
+      ],
+      "transcript": "[10:58] and so planning is a very important aspect of designing a control system.\n[11:02] With a self-driving car, for example, planning has to figure out a path to the destination,\n[11:07] while avoiding obstacles, and it has to follow the rules of the road."
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0161.jpg",
+        "frame_0162.jpg",
+        "frame_0163.jpg"
+      ],
+      "transcript": "[11:07] while avoiding obstacles, and it has to follow the rules of the road.\n[11:10] Plus, it has to come up with a plan that the car is physically able to follow.\n[11:14] You know, it doesn't accelerate too fast, or it doesn't turn too quickly.\n[11:18] And if there are passengers, then planning has to account for their comfort and safety as well."
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0164.jpg",
+        "frame_0165.jpg"
+      ],
+      "transcript": "[11:18] And if there are passengers, then planning has to account for their comfort and safety as well.\n[11:23] And only after the plan has been created can the controller then generate the commands to follow it.\n[11:29] An example of two different graph-based planning methods are rapidly expanding random trees,"
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0166.jpg",
+        "frame_0167.jpg"
+      ],
+      "transcript": "[11:29] An example of two different graph-based planning methods are rapidly expanding random trees,\n[11:35] RRT and A star.\n[11:38] Once again, there are too many different algorithms to name,"
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0168.jpg",
+        "frame_0169.jpg",
+        "frame_0170.jpg"
+      ],
+      "transcript": "[11:38] Once again, there are too many different algorithms to name,\n[11:41] but the important thing is that you understand that you have to develop a plan\n[11:45] that your controller will then try to follow."
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0171.jpg",
+        "frame_0172.jpg"
+      ],
+      "transcript": "[11:50] All right, so once you know what you want the system to do,\n[11:52] and you have a feedback controller to do it,\n[11:55] now you need to actually execute this plan.\n[11:58] And as we know, for feedback controllers, this requires knowledge of the state of the system."
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0173.jpg",
+        "frame_0174.jpg",
+        "frame_0175.jpg"
+      ],
+      "transcript": "[11:58] And as we know, for feedback controllers, this requires knowledge of the state of the system.\n[12:03] That is, after all, what we are feeding back.\n[12:06] And the problem is that we don't actually know the state unless we measure it."
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0176.jpg",
+        "frame_0177.jpg"
+      ],
+      "transcript": "[12:06] And the problem is that we don't actually know the state unless we measure it.\n[12:10] And measuring it with a sensor introduces noise.\n[12:14] So for our car example, we're not feeding back the true speed of the car,\n[12:18] we're feeding back a noisy measurement of the speed."
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0178.jpg",
+        "frame_0179.jpg"
+      ],
+      "transcript": "[12:18] we're feeding back a noisy measurement of the speed.\n[12:21] And our controller is going to react to that noise.\n[12:24] So in this way, noise in a feedback system actually affects the true state of the system.\n[12:29] And so this is one additional problem that we're going to have to tackle with feedback control."
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0180.jpg",
+        "frame_0181.jpg",
+        "frame_0182.jpg"
+      ],
+      "transcript": "[12:29] And so this is one additional problem that we're going to have to tackle with feedback control.\n[12:34] A second problem is that of observability.\n[12:36] In order to feed back the state of the system,\n[12:39] we have to be able to observe the state of the system."
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0183.jpg",
+        "frame_0184.jpg"
+      ],
+      "transcript": "[12:39] we have to be able to observe the state of the system.\n[12:42] And this requires sensors in enough places that every state that is fed back can be observed.\n[12:49] Now, it's important to note that we don't have to measure every state directly."
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0185.jpg",
+        "frame_0186.jpg",
+        "frame_0187.jpg"
+      ],
+      "transcript": "[12:49] Now, it's important to note that we don't have to measure every state directly.\n[12:53] We just need to be able to observe every state.\n[12:55] For example, if our car only has a speedometer,\n[12:58] we can still observe acceleration by taking the derivative of the speed."
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0188.jpg",
+        "frame_0189.jpg"
+      ],
+      "transcript": "[12:58] we can still observe acceleration by taking the derivative of the speed.\n[13:02] So there are two things here.\n[13:05] We need to reduce measurement noise.\n[13:08] And we need to manipulate the measurements in such a way that allows us to accurately estimate the state of the system."
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0190.jpg",
+        "frame_0191.jpg"
+      ],
+      "transcript": "[13:08] And we need to manipulate the measurements in such a way that allows us to accurately estimate the state of the system.\n[13:15] State estimation is therefore another important area of control theory."
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0192.jpg",
+        "frame_0193.jpg",
+        "frame_0194.jpg"
+      ],
+      "transcript": "[13:20] And for this, we can use algorithms like the Kalman filter,\n[13:23] the particle filter, or even just run a simple running average.\n[13:28] And choosing an algorithm depends on which states you are directly measuring,"
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0195.jpg",
+        "frame_0196.jpg"
+      ],
+      "transcript": "[13:28] And choosing an algorithm depends on which states you are directly measuring,\n[13:32] and how much noise and what type of noise is present in those measurements.\n[13:38] Now, the last major part of control theory is responsible for ensuring the system that we just designed works."
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0197.jpg",
+        "frame_0198.jpg",
+        "frame_0199.jpg"
+      ],
+      "transcript": "[13:38] Now, the last major part of control theory is responsible for ensuring the system that we just designed works.\n[13:44] That it meets the requirements that we set for it.\n[13:47] And this comes down to analysis, simulation, and test."
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0200.jpg",
+        "frame_0201.jpg"
+      ],
+      "transcript": "[13:47] And this comes down to analysis, simulation, and test.\n[13:50] For this, we can plot data in different formats, like with a Bode diagram, a Nichols chart, or a Nyquist diagram.\n[13:59] We could check for stability and performance margins."
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0202.jpg",
+        "frame_0203.jpg"
+      ],
+      "transcript": "[13:59] We could check for stability and performance margins.\n[14:02] We could simulate the system using MATLAB and Simulink.\n[14:06] And all of these tools can be used to ensure that the system will function as intended."
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0204.jpg",
+        "frame_0205.jpg",
+        "frame_0206.jpg"
+      ],
+      "transcript": "[14:06] And all of these tools can be used to ensure that the system will function as intended.\n[14:12] And so this full diagram here, I think, represents everything you need to know about control theory.\n[14:19] You have to know about different control methods, both feedforward and feedback, depending on the system you're controlling."
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0207.jpg",
+        "frame_0208.jpg"
+      ],
+      "transcript": "[14:19] You have to know about different control methods, both feedforward and feedback, depending on the system you're controlling.\n[14:25] You have to know about state estimation so that you can take all of those noisy measurements\n[14:29] and be able to feed back an estimate of system state."
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0209.jpg",
+        "frame_0210.jpg",
+        "frame_0211.jpg"
+      ],
+      "transcript": "[14:29] and be able to feed back an estimate of system state.\n[14:33] You have to know about planning so that you can create the reference that you want your controller to follow.\n[14:39] You have to know how to analyze your system to ensure that it's meeting requirements."
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0212.jpg",
+        "frame_0213.jpg"
+      ],
+      "transcript": "[14:39] You have to know how to analyze your system to ensure that it's meeting requirements.\n[14:43] And finally, and possibly most importantly, you have to know about building mathematical models of your system."
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 900,
+      "frames": [
+        "frame_0214.jpg",
+        "frame_0215.jpg"
+      ],
+      "transcript": "[14:43] And finally, and possibly most importantly, you have to know about building mathematical models of your system.\n[14:51] Because models are often used for every part we just covered.\n[14:55] They are used for controller design.\n[14:57] They're used for state estimation.\n[14:59] They're used for planning."
+    },
+    {
+      "segment_index": 91,
+      "start_time": 900,
+      "end_time": 910,
+      "frames": [
+        "frame_0216.jpg",
+        "frame_0217.jpg",
+        "frame_0218.jpg"
+      ],
+      "transcript": "[14:59] They're used for planning.\n[15:01] And they are used for analysis.\n[15:03] All right, I always leave links below to other resources and references.\n[15:09] And this video is no exception."
+    },
+    {
+      "segment_index": 92,
+      "start_time": 910,
+      "end_time": 920,
+      "frames": [
+        "frame_0219.jpg",
+        "frame_0220.jpg"
+      ],
+      "transcript": "[15:09] And this video is no exception.\n[15:11] And there are a bunch for this video since I mentioned so many different topics.\n[15:16] And something I think is nice is that we already have MATLAB Tech Talks for almost every topic I mentioned."
+    },
+    {
+      "segment_index": 93,
+      "start_time": 920,
+      "end_time": 930,
+      "frames": [
+        "frame_0221.jpg",
+        "frame_0222.jpg",
+        "frame_0223.jpg"
+      ],
+      "transcript": "[15:16] And something I think is nice is that we already have MATLAB Tech Talks for almost every topic I mentioned.\n[15:22] We have feedforward and PID and gain scheduling and fuzzy logic and Kalman filters and particle filters\n[15:28] and planning algorithms and system identification and more."
+    },
+    {
+      "segment_index": 94,
+      "start_time": 930,
+      "end_time": 940,
+      "frames": [
+        "frame_0224.jpg",
+        "frame_0225.jpg"
+      ],
+      "transcript": "[15:28] and planning algorithms and system identification and more.\n[15:32] So if there's an area of control theory that you want to learn more about, I hope you check out the links below."
+    },
+    {
+      "segment_index": 95,
+      "start_time": 940,
+      "end_time": 950,
+      "frames": [
+        "frame_0226.jpg",
+        "frame_0227.jpg"
+      ],
+      "transcript": "[15:40] And to make it easier to browse through all of them, I put together a journey at resorcium.org\n[15:45] that organizes all of the references in this video.\n[15:49] Again, link to that is below as well."
+    },
+    {
+      "segment_index": 96,
+      "start_time": 950,
+      "end_time": 960,
+      "frames": [
+        "frame_0228.jpg",
+        "frame_0229.jpg",
+        "frame_0230.jpg"
+      ],
+      "transcript": "[15:49] Again, link to that is below as well.\n[15:52] So this is where I'm going to leave this video.\n[15:54] If you don't want to miss any other future Tech Talk videos, don't forget to subscribe to this channel.\n[15:59] And if you want to check out my channel, Control System Lectures,"
+    },
+    {
+      "segment_index": 97,
+      "start_time": 960,
+      "end_time": 967.02,
+      "frames": [
+        "frame_0231.jpg"
+      ],
+      "transcript": "[15:59] And if you want to check out my channel, Control System Lectures,\n[16:01] I cover more control theory topics there as well.\n[16:04] Thanks for watching, and I'll see you next time."
+    }
+  ]
+}

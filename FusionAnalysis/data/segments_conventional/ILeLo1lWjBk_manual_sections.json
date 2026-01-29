@@ -1,0 +1,1504 @@
+{
+  "video_id": "ILeLo1lWjBk",
+  "duration": 1069.22,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg",
+        "frame_0003.jpg",
+        "frame_0004.jpg",
+        "frame_0005.jpg",
+        "frame_0006.jpg"
+      ],
+      "transcript": "[0:00] This video is sponsored by Brilliant.org. More about them later.\n[0:04] Hi there everyone. Today we're going to be talking about Betaflight's angle mode.\n[0:09] And for those of you that fly both acro and angle mode, you'll know that Betaflight's acro mode is"
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0007.jpg",
+        "frame_0008.jpg",
+        "frame_0009.jpg",
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:09] And for those of you that fly both acro and angle mode, you'll know that Betaflight's acro mode is\n[0:15] fantastic. It's a joy to fly. It's very responsive, it's very precise, and it's very stable in the"
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg",
+        "frame_0015.jpg",
+        "frame_0016.jpg",
+        "frame_0017.jpg",
+        "frame_0018.jpg"
+      ],
+      "transcript": "[0:15] fantastic. It's a joy to fly. It's very responsive, it's very precise, and it's very stable in the\n[0:21] air. And you might also know that Betaflight's angle mode is kind of none of those things.\n[0:28] It's pretty wobbly, it's kind of imprecise, and it's very slow in comparison to acro mode."
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0019.jpg",
+        "frame_0020.jpg",
+        "frame_0021.jpg",
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[0:28] It's pretty wobbly, it's kind of imprecise, and it's very slow in comparison to acro mode.\n[0:34] I noticed this while I was flying Tiny Whoops over Christmas, and I decided to put some time\n[0:39] into figuring out what was going on with Betaflight's angle mode. And I think I've worked it out,"
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg",
+        "frame_0027.jpg",
+        "frame_0028.jpg",
+        "frame_0029.jpg",
+        "frame_0030.jpg"
+      ],
+      "transcript": "[0:39] into figuring out what was going on with Betaflight's angle mode. And I think I've worked it out,\n[0:44] and I'm excited to share that with you today. So in this video, we're going to be looking at\n[0:48] the problems with angle mode that Betaflight has currently, and some of the solutions that we can"
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0031.jpg",
+        "frame_0032.jpg",
+        "frame_0033.jpg",
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[0:48] the problems with angle mode that Betaflight has currently, and some of the solutions that we can\n[0:54] implement to fix it. And at the end of the video, I'm going to be showing you how you can test those\n[0:58] fixes for yourself, and enjoy a sneak peek of what Betaflight angle mode might be like in the future."
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg",
+        "frame_0039.jpg",
+        "frame_0040.jpg",
+        "frame_0041.jpg",
+        "frame_0042.jpg"
+      ],
+      "transcript": "[0:58] fixes for yourself, and enjoy a sneak peek of what Betaflight angle mode might be like in the future.\n[1:05] It's a lot to cover in one video, so let's not waste any more time. Let's dive right into it."
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0043.jpg",
+        "frame_0044.jpg",
+        "frame_0045.jpg",
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[1:10] If you fly Betaflight angle mode, I'd love to know how you think it compares to acro mode\n[1:15] and other firmwares like silverware. Please let me know what you think down in the comments.\n[1:19] The first problem I noticed was one of speed and responsiveness in angle mode compared to acro."
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg",
+        "frame_0051.jpg",
+        "frame_0052.jpg",
+        "frame_0053.jpg",
+        "frame_0054.jpg"
+      ],
+      "transcript": "[1:19] The first problem I noticed was one of speed and responsiveness in angle mode compared to acro.\n[1:25] Let me show you some flight footage so you can see exactly what I mean.\n[1:29] To make the comparison, let's start by looking at some sharp stick inputs in acro mode."
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0055.jpg",
+        "frame_0056.jpg",
+        "frame_0057.jpg",
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[1:29] To make the comparison, let's start by looking at some sharp stick inputs in acro mode.\n[1:35] And this is showing what Betaflight is capable of in terms of responsiveness."
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg",
+        "frame_0063.jpg",
+        "frame_0064.jpg",
+        "frame_0065.jpg",
+        "frame_0066.jpg"
+      ],
+      "transcript": "[1:40] You can see that the quad is snapping left and right instantly in response to my stick inputs,\n[1:45] and it's very precise as well. It's stopping dead at the end of each of the movements."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0067.jpg",
+        "frame_0068.jpg",
+        "frame_0069.jpg",
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[1:50] If I switch to angle mode now, you can see that the character is totally different.\n[1:54] The quad is much slower and much softer to respond, and a lot less precise."
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg",
+        "frame_0075.jpg",
+        "frame_0076.jpg",
+        "frame_0077.jpg",
+        "frame_0078.jpg"
+      ],
+      "transcript": "[1:54] The quad is much slower and much softer to respond, and a lot less precise.\n[2:00] Each of the moves takes a lot longer, and I'm moving the sticks just as fast on the radio,\n[2:06] it's just the quad is much slower to respond.\n[2:09] If we switch back to acro again, immediately that snappy response is back."
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0079.jpg",
+        "frame_0080.jpg",
+        "frame_0081.jpg",
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[2:09] If we switch back to acro again, immediately that snappy response is back.\n[2:14] So there's a big gap in flight performance between acro and angle mode.\n[2:19] So why is Betaflight's angle mode so much slower and less responsive than acro mode?"
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg",
+        "frame_0087.jpg",
+        "frame_0088.jpg",
+        "frame_0089.jpg",
+        "frame_0090.jpg"
+      ],
+      "transcript": "[2:19] So why is Betaflight's angle mode so much slower and less responsive than acro mode?\n[2:27] Well, to explain, we're going to have to look in detail at how the Betaflight angle controller actually works."
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0091.jpg",
+        "frame_0092.jpg",
+        "frame_0093.jpg",
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[2:27] Well, to explain, we're going to have to look in detail at how the Betaflight angle controller actually works.\n[2:32] In the blue line, we have the stick input from your controller, which is the requested angle of the quad.\n[2:39] And here it starts at centre, I move it over to the right hand side, and then back to centre again."
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg",
+        "frame_0099.jpg",
+        "frame_0100.jpg",
+        "frame_0101.jpg",
+        "frame_0102.jpg"
+      ],
+      "transcript": "[2:39] And here it starts at centre, I move it over to the right hand side, and then back to centre again.\n[2:45] The green line shows the angle the quad is actually at.\n[2:49] And the way the angle mode controller works is it looks at the difference between the requested angle and the actual angle,"
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0103.jpg",
+        "frame_0104.jpg",
+        "frame_0105.jpg",
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[2:49] And the way the angle mode controller works is it looks at the difference between the requested angle and the actual angle,\n[2:57] multiplies that by a factor, and that creates the gyro setpoint,"
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg",
+        "frame_0111.jpg",
+        "frame_0112.jpg",
+        "frame_0113.jpg",
+        "frame_0114.jpg"
+      ],
+      "transcript": "[2:57] multiplies that by a factor, and that creates the gyro setpoint,\n[3:01] which tells the quad how fast to rotate towards the requested angle.\n[3:07] So you might be able to see the problem here.\n[3:09] Initially, we don't have much error between the requested angle and the actual angle of the quad."
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0115.jpg",
+        "frame_0116.jpg",
+        "frame_0117.jpg",
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[3:09] Initially, we don't have much error between the requested angle and the actual angle of the quad.\n[3:16] So nothing much happens, the quad doesn't start to rotate.\n[3:19] Only once we have built up a lot of error,"
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg",
+        "frame_0123.jpg",
+        "frame_0124.jpg",
+        "frame_0125.jpg",
+        "frame_0126.jpg"
+      ],
+      "transcript": "[3:19] Only once we have built up a lot of error,\n[3:24] is there enough push to get the quad to rotate quickly towards the new angle.\n[3:29] But things get worse because once my stick stops moving, the error starts to reduce again."
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0127.jpg",
+        "frame_0128.jpg",
+        "frame_0129.jpg",
+        "frame_0130.jpg",
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[3:29] But things get worse because once my stick stops moving, the error starts to reduce again.\n[3:35] And so the quad slows down and takes a really long time to reach the requested angle."
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg",
+        "frame_0135.jpg",
+        "frame_0136.jpg",
+        "frame_0137.jpg",
+        "frame_0138.jpg"
+      ],
+      "transcript": "[3:35] And so the quad slows down and takes a really long time to reach the requested angle.\n[3:42] This whole process takes hundreds of milliseconds.\n[3:45] It's about 10 times as long as the typical latency of a video or controlling."
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0139.jpg",
+        "frame_0140.jpg",
+        "frame_0141.jpg",
+        "frame_0142.jpg",
+        "frame_0143.jpg",
+        "frame_0144.jpg"
+      ],
+      "transcript": "[3:45] It's about 10 times as long as the typical latency of a video or controlling.\n[3:50] So what can we do about angle mode being so slow?\n[3:56] Well, it turns out that Betaflight had already solved this problem in acro mode."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0145.jpg",
+        "frame_0146.jpg",
+        "frame_0147.jpg",
+        "frame_0148.jpg",
+        "frame_0149.jpg",
+        "frame_0150.jpg"
+      ],
+      "transcript": "[3:56] Well, it turns out that Betaflight had already solved this problem in acro mode.\n[4:02] In acro mode, there's an extra term in the controller called feedforward that is designed to reduce this delay.\n[4:09] And the way feedforward works is it looks at the movement of your sticks, how fast you're moving your sticks,"
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0151.jpg",
+        "frame_0152.jpg",
+        "frame_0153.jpg",
+        "frame_0154.jpg",
+        "frame_0155.jpg",
+        "frame_0156.jpg"
+      ],
+      "transcript": "[4:09] And the way feedforward works is it looks at the movement of your sticks, how fast you're moving your sticks,\n[4:15] and pushes the quad in that direction right away.\n[4:19] So let's take a look at what this chart looks like if we add feedforward in."
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0157.jpg",
+        "frame_0158.jpg",
+        "frame_0159.jpg",
+        "frame_0160.jpg",
+        "frame_0161.jpg",
+        "frame_0162.jpg"
+      ],
+      "transcript": "[4:19] So let's take a look at what this chart looks like if we add feedforward in.\n[4:24] Here's the same chart with feedforward in the mix.\n[4:26] You can see that immediately as we move the sticks, there's a big strong push here from feedforward,"
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0163.jpg",
+        "frame_0164.jpg",
+        "frame_0165.jpg",
+        "frame_0166.jpg",
+        "frame_0167.jpg",
+        "frame_0168.jpg"
+      ],
+      "transcript": "[4:26] You can see that immediately as we move the sticks, there's a big strong push here from feedforward,\n[4:34] which gets the quad moving in the right direction right away before any error has built up."
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0169.jpg",
+        "frame_0170.jpg",
+        "frame_0171.jpg",
+        "frame_0172.jpg",
+        "frame_0173.jpg",
+        "frame_0174.jpg"
+      ],
+      "transcript": "[4:41] Once the stick stops moving, that feedforward push stops as well.\n[4:45] But by that point, we have a lot less error and the quad is much closer to the requested angle than it was before."
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0175.jpg",
+        "frame_0176.jpg",
+        "frame_0177.jpg",
+        "frame_0178.jpg",
+        "frame_0179.jpg",
+        "frame_0180.jpg"
+      ],
+      "transcript": "[4:45] But by that point, we have a lot less error and the quad is much closer to the requested angle than it was before.\n[4:52] And so the end of the move finishes off nice and quickly.\n[4:58] Overall, this is so much faster and more responsive than what we had without feedforward."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0181.jpg",
+        "frame_0182.jpg",
+        "frame_0183.jpg",
+        "frame_0184.jpg",
+        "frame_0185.jpg",
+        "frame_0186.jpg"
+      ],
+      "transcript": "[4:58] Overall, this is so much faster and more responsive than what we had without feedforward.\n[5:04] I found that adding feedforward into angle mode made the biggest difference for me personally\n[5:08] when flying tiny loops around indoors in tight spaces."
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0187.jpg",
+        "frame_0188.jpg",
+        "frame_0189.jpg",
+        "frame_0190.jpg",
+        "frame_0191.jpg",
+        "frame_0192.jpg"
+      ],
+      "transcript": "[5:08] when flying tiny loops around indoors in tight spaces.\n[5:12] The reduction in effective latency of tens or even hundreds of milliseconds\n[5:16] from when you move the stick to when the quad responds in the air"
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0193.jpg",
+        "frame_0194.jpg",
+        "frame_0195.jpg",
+        "frame_0196.jpg",
+        "frame_0197.jpg",
+        "frame_0198.jpg"
+      ],
+      "transcript": "[5:16] from when you move the stick to when the quad responds in the air\n[5:20] just allows you to avoid obstacles so much more easily\n[5:23] and fly through tight gaps with a lot more precision.\n[5:27] I think the tiny races in particular are going to get a lot of value out of this new feature"
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0199.jpg",
+        "frame_0200.jpg",
+        "frame_0201.jpg",
+        "frame_0202.jpg",
+        "frame_0203.jpg",
+        "frame_0204.jpg"
+      ],
+      "transcript": "[5:27] I think the tiny races in particular are going to get a lot of value out of this new feature\n[5:33] and it's going to make them a lot faster around the track.\n[5:36] One of the challenges we faced with adding feedforward\n[5:39] is that it makes the quad very responsive to small stick inputs,"
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0205.jpg",
+        "frame_0206.jpg",
+        "frame_0207.jpg",
+        "frame_0208.jpg",
+        "frame_0209.jpg",
+        "frame_0210.jpg"
+      ],
+      "transcript": "[5:39] is that it makes the quad very responsive to small stick inputs,\n[5:43] which can make the quad feel a bit jittery, a bit on edge.\n[5:46] Fortunately, Chris Thompson came up with a great fix for this,"
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0211.jpg",
+        "frame_0212.jpg",
+        "frame_0213.jpg",
+        "frame_0214.jpg",
+        "frame_0215.jpg",
+        "frame_0216.jpg"
+      ],
+      "transcript": "[5:46] Fortunately, Chris Thompson came up with a great fix for this,\n[5:50] which is feedforward smoothing.\n[5:52] So this spreads out the push of feedforward in time\n[5:56] and makes it less responsive to small stick inputs."
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0217.jpg",
+        "frame_0218.jpg",
+        "frame_0219.jpg",
+        "frame_0220.jpg",
+        "frame_0221.jpg",
+        "frame_0222.jpg"
+      ],
+      "transcript": "[6:00] The result is that you can adjust the feedforward gain\n[6:03] to get the push you need to make the quad nice and responsive in angle mode.\n[6:07] And then separately, you can adjust the smoothing factor"
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0223.jpg",
+        "frame_0224.jpg",
+        "frame_0225.jpg",
+        "frame_0226.jpg",
+        "frame_0227.jpg",
+        "frame_0228.jpg"
+      ],
+      "transcript": "[6:07] And then separately, you can adjust the smoothing factor\n[6:10] so that it doesn't feel too jittery and on edge\n[6:13] in response to small stick inputs.\n[6:16] But that wasn't the only issue that I identified with angle mode."
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0229.jpg",
+        "frame_0230.jpg",
+        "frame_0231.jpg",
+        "frame_0232.jpg",
+        "frame_0233.jpg",
+        "frame_0234.jpg"
+      ],
+      "transcript": "[6:20] The second issue is one of wobbliness.\n[6:23] So let's take a look at what makes angle mode so wobbly in comparison to Acro.\n[6:29] To show you what I mean,"
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0235.jpg",
+        "frame_0236.jpg",
+        "frame_0237.jpg",
+        "frame_0238.jpg",
+        "frame_0239.jpg",
+        "frame_0240.jpg"
+      ],
+      "transcript": "[6:29] To show you what I mean,\n[6:31] here's some flight footage in angle mode\n[6:33] where I'm just making sharp your inputs.\n[6:36] I'm not doing anything else, just sharp your inputs.\n[6:38] And can you see how much the quad is wobbling around on pitch and roll as a result?"
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0241.jpg",
+        "frame_0242.jpg",
+        "frame_0243.jpg",
+        "frame_0244.jpg",
+        "frame_0245.jpg",
+        "frame_0246.jpg"
+      ],
+      "transcript": "[6:38] And can you see how much the quad is wobbling around on pitch and roll as a result?\n[6:44] That's really counterproductive for flying precisely in tight spaces.\n[6:49] If you're enjoying this video so far,"
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0247.jpg",
+        "frame_0248.jpg",
+        "frame_0249.jpg",
+        "frame_0250.jpg",
+        "frame_0251.jpg",
+        "frame_0252.jpg"
+      ],
+      "transcript": "[6:49] If you're enjoying this video so far,\n[6:52] please hit the like button to help other people find it on YouTube.\n[6:55] And if you haven't already, consider subscribing\n[6:57] so you don't miss out on future videos.\n[6:59] So what's going on here?"
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0253.jpg",
+        "frame_0254.jpg",
+        "frame_0255.jpg",
+        "frame_0256.jpg",
+        "frame_0257.jpg",
+        "frame_0258.jpg"
+      ],
+      "transcript": "[6:59] So what's going on here?\n[7:01] What's causing that really bad wobble on sharp your moves?\n[7:04] Well, I have here a little quad to show you what is happening."
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0259.jpg",
+        "frame_0260.jpg",
+        "frame_0261.jpg",
+        "frame_0262.jpg",
+        "frame_0263.jpg",
+        "frame_0264.jpg"
+      ],
+      "transcript": "[7:10] So here we have the quad and I'm just going to be flying forward\n[7:14] so the quad is pitched forward like that,\n[7:17] but absolutely flat, just pitched forward."
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0265.jpg",
+        "frame_0266.jpg",
+        "frame_0267.jpg",
+        "frame_0268.jpg",
+        "frame_0269.jpg",
+        "frame_0270.jpg"
+      ],
+      "transcript": "[7:17] but absolutely flat, just pitched forward.\n[7:20] Now I'm going to yaw the quad by 90 degrees.\n[7:24] Can you see that now the quad is no longer pitched forward at all?"
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0271.jpg",
+        "frame_0272.jpg",
+        "frame_0273.jpg",
+        "frame_0274.jpg",
+        "frame_0275.jpg",
+        "frame_0276.jpg"
+      ],
+      "transcript": "[7:24] Can you see that now the quad is no longer pitched forward at all?\n[7:30] It's rolled to the right.\n[7:33] That yaw move has converted the pitch that we used to have into roll."
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0277.jpg",
+        "frame_0278.jpg",
+        "frame_0279.jpg",
+        "frame_0280.jpg",
+        "frame_0281.jpg",
+        "frame_0282.jpg"
+      ],
+      "transcript": "[7:33] That yaw move has converted the pitch that we used to have into roll.\n[7:41] Now, once that happens, the angle controller freaks out a bit and goes,\n[7:45] I shouldn't have any roll.\n[7:47] I should just have pitch.\n[7:48] And so it then tries to correct to get the quad back on track."
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0283.jpg",
+        "frame_0284.jpg",
+        "frame_0285.jpg",
+        "frame_0286.jpg",
+        "frame_0287.jpg",
+        "frame_0288.jpg"
+      ],
+      "transcript": "[7:48] And so it then tries to correct to get the quad back on track.\n[7:54] And that happens very slowly because it's all error-based\n[7:57] and it creates a big wobble after the move."
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0289.jpg",
+        "frame_0290.jpg",
+        "frame_0291.jpg",
+        "frame_0292.jpg",
+        "frame_0293.jpg",
+        "frame_0294.jpg"
+      ],
+      "transcript": "[7:57] and it creates a big wobble after the move.\n[8:01] What's causing this problem and what can we do to fix it?\n[8:05] Well, the problem is being caused by the fact\n[8:07] we have two different coordinate systems at play here."
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0295.jpg",
+        "frame_0296.jpg",
+        "frame_0297.jpg",
+        "frame_0298.jpg",
+        "frame_0299.jpg",
+        "frame_0300.jpg"
+      ],
+      "transcript": "[8:10] The first is the angle mode coordinate system,\n[8:12] which is earth referenced.\n[8:13] And that means that the roll and the pitch axes\n[8:16] are always level with the horizon\n[8:18] and yaw is vertically up and down."
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0301.jpg",
+        "frame_0302.jpg",
+        "frame_0303.jpg",
+        "frame_0304.jpg",
+        "frame_0305.jpg",
+        "frame_0306.jpg"
+      ],
+      "transcript": "[8:18] and yaw is vertically up and down.\n[8:22] We also have a control coordinate system,\n[8:26] which is quad referenced.\n[8:28] It moves with the quad."
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0307.jpg",
+        "frame_0308.jpg",
+        "frame_0309.jpg",
+        "frame_0310.jpg",
+        "frame_0311.jpg",
+        "frame_0312.jpg"
+      ],
+      "transcript": "[8:30] So the yaw axis for the control of the quad\n[8:33] is always vertically up and down on the quad.\n[8:37] And when the quad pitches forward,\n[8:39] the yaw axis pitches forward."
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0313.jpg",
+        "frame_0314.jpg",
+        "frame_0315.jpg",
+        "frame_0316.jpg",
+        "frame_0317.jpg",
+        "frame_0318.jpg"
+      ],
+      "transcript": "[8:39] the yaw axis pitches forward.\n[8:40] Whenever these two coordinate systems are not aligned,\n[8:45] so whenever the quad coordinate system\n[8:47] is not aligned with the angle mode coordinate system,"
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0319.jpg",
+        "frame_0320.jpg",
+        "frame_0321.jpg",
+        "frame_0322.jpg",
+        "frame_0323.jpg",
+        "frame_0324.jpg"
+      ],
+      "transcript": "[8:47] is not aligned with the angle mode coordinate system,\n[8:50] we get error building up.\n[8:52] And that causes wobbles in the video feed that you see.\n[8:56] So how can we fix it?\n[8:57] Well, again, we have to think and look at acro mode."
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0325.jpg",
+        "frame_0326.jpg",
+        "frame_0327.jpg",
+        "frame_0328.jpg",
+        "frame_0329.jpg",
+        "frame_0330.jpg"
+      ],
+      "transcript": "[8:57] Well, again, we have to think and look at acro mode.\n[9:01] When we're flying in acro mode,\n[9:03] we automatically coordinate a little bit of roll\n[9:06] in with our yaw turns to make sure\n[9:08] that the quad stays nice and level"
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0331.jpg",
+        "frame_0332.jpg",
+        "frame_0333.jpg",
+        "frame_0334.jpg",
+        "frame_0335.jpg",
+        "frame_0336.jpg"
+      ],
+      "transcript": "[9:08] that the quad stays nice and level\n[9:10] through the yaw move.\n[9:12] And this is exactly the same thing\n[9:14] that we need to do in angle mode.\n[9:15] Unfortunately, it's a little bit more difficult\n[9:17] in angle mode.\n[9:19] To coordinate a turn,"
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0337.jpg",
+        "frame_0338.jpg",
+        "frame_0339.jpg",
+        "frame_0340.jpg",
+        "frame_0341.jpg",
+        "frame_0342.jpg"
+      ],
+      "transcript": "[9:19] To coordinate a turn,\n[9:20] we really need both the yaw and the roll sticks\n[9:23] to be rates of rotation.\n[9:25] And in angle mode, they're not.\n[9:27] The yaw stick is a rate of rotation,\n[9:28] but the roll stick is a requested angle."
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0343.jpg",
+        "frame_0344.jpg",
+        "frame_0345.jpg",
+        "frame_0346.jpg",
+        "frame_0347.jpg",
+        "frame_0348.jpg"
+      ],
+      "transcript": "[9:28] but the roll stick is a requested angle.\n[9:32] So we can't really coordinate the turn in the same way.\n[9:36] Fortunately, we can write some code\n[9:38] into the angle controller\n[9:39] to coordinate the turn for us"
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0349.jpg",
+        "frame_0350.jpg",
+        "frame_0351.jpg",
+        "frame_0352.jpg",
+        "frame_0353.jpg",
+        "frame_0354.jpg"
+      ],
+      "transcript": "[9:39] to coordinate the turn for us\n[9:41] so that when we do a pure yaw move,\n[9:45] the angle controller adds in\n[9:46] just the right amount of roll\n[9:48] for the quad to do a pure yaw move"
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0355.jpg",
+        "frame_0356.jpg",
+        "frame_0357.jpg",
+        "frame_0358.jpg",
+        "frame_0359.jpg",
+        "frame_0360.jpg"
+      ],
+      "transcript": "[9:48] for the quad to do a pure yaw move\n[9:51] in the earth reference coordinate system.\n[9:54] And when that happens,\n[9:55] we don't see any error build up on pitch or roll\n[9:58] during the fast yaw move."
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0361.jpg",
+        "frame_0362.jpg",
+        "frame_0363.jpg",
+        "frame_0364.jpg",
+        "frame_0365.jpg",
+        "frame_0366.jpg"
+      ],
+      "transcript": "[9:58] during the fast yaw move.\n[10:00] And if there's no error, there's no wobble.\n[10:03] Let's look at some flight footage now\n[10:04] to see how that affects the behavior of the quad.\n[10:07] Here's some flight footage\n[10:09] where we're doing sharp yaw moves as before,"
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0367.jpg",
+        "frame_0368.jpg",
+        "frame_0369.jpg",
+        "frame_0370.jpg",
+        "frame_0371.jpg",
+        "frame_0372.jpg"
+      ],
+      "transcript": "[10:09] where we're doing sharp yaw moves as before,\n[10:11] but the code in the angle controller\n[10:13] is coordinating the turn for us.\n[10:15] Sorry for the water on the lens.\n[10:17] That's an occupational hazard of flying in the UK."
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0373.jpg",
+        "frame_0374.jpg",
+        "frame_0375.jpg",
+        "frame_0376.jpg",
+        "frame_0377.jpg",
+        "frame_0378.jpg"
+      ],
+      "transcript": "[10:20] We can see that the quad is much flatter\n[10:22] on those yaw turns\n[10:23] and it's not wobbling around\n[10:25] after the yaw move anywhere near as much.\n[10:27] One of the things that I really noticed"
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0379.jpg",
+        "frame_0380.jpg",
+        "frame_0381.jpg",
+        "frame_0382.jpg",
+        "frame_0383.jpg",
+        "frame_0384.jpg"
+      ],
+      "transcript": "[10:27] One of the things that I really noticed\n[10:30] when flying this yaw coordination code\n[10:32] was how much less drift there was in the quad\n[10:36] and how much more precise it was at flying tight lines."
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0385.jpg",
+        "frame_0386.jpg",
+        "frame_0387.jpg",
+        "frame_0388.jpg",
+        "frame_0389.jpg",
+        "frame_0390.jpg"
+      ],
+      "transcript": "[10:40] Before, when I was flying along\n[10:42] and I yawed sharply,\n[10:44] the quad would keep drifting\n[10:45] in the direction that it was going in\n[10:47] until the angle controller kind of sorted everything out\n[10:49] and got it flying in the right direction,"
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0391.jpg",
+        "frame_0392.jpg",
+        "frame_0393.jpg",
+        "frame_0394.jpg",
+        "frame_0395.jpg",
+        "frame_0396.jpg"
+      ],
+      "transcript": "[10:49] and got it flying in the right direction,\n[10:51] which took a few hundred milliseconds.\n[10:53] With the yaw coordination code,\n[10:56] when the quad's flying along\n[10:57] and you yaw,\n[10:59] there's no component of thrust"
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0397.jpg",
+        "frame_0398.jpg",
+        "frame_0399.jpg",
+        "frame_0400.jpg",
+        "frame_0401.jpg",
+        "frame_0402.jpg"
+      ],
+      "transcript": "[10:59] there's no component of thrust\n[11:02] in the direction you were going in.\n[11:04] So the quad just flies straight forward\n[11:07] with a lot less sideways drift."
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0403.jpg",
+        "frame_0404.jpg",
+        "frame_0405.jpg",
+        "frame_0406.jpg",
+        "frame_0407.jpg",
+        "frame_0408.jpg"
+      ],
+      "transcript": "[11:07] with a lot less sideways drift.\n[11:10] And that really does make it feel\n[11:12] a lot more precise in my opinion.\n[11:14] Now that we've talked through the problems\n[11:16] with angle mode\n[11:16] and how we've addressed them,\n[11:18] I want to show you\n[11:19] how you can test this code out for yourself"
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0409.jpg",
+        "frame_0410.jpg",
+        "frame_0411.jpg",
+        "frame_0412.jpg",
+        "frame_0413.jpg",
+        "frame_0414.jpg"
+      ],
+      "transcript": "[11:19] how you can test this code out for yourself\n[11:21] and put it on your Tiny Whoops\n[11:23] to fly around today.\n[11:25] Before we start testing any new code,\n[11:27] it's very important\n[11:28] that we fully back up our configuration."
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0415.jpg",
+        "frame_0416.jpg",
+        "frame_0417.jpg",
+        "frame_0418.jpg",
+        "frame_0419.jpg",
+        "frame_0420.jpg"
+      ],
+      "transcript": "[11:30] So go into Betaflight Configurator,\n[11:32] go into the CLI\n[11:34] and type dump.\n[11:37] That will dump out your entire config\n[11:39] so that if you need to restore it later,"
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0421.jpg",
+        "frame_0422.jpg",
+        "frame_0423.jpg",
+        "frame_0424.jpg",
+        "frame_0425.jpg",
+        "frame_0426.jpg"
+      ],
+      "transcript": "[11:39] so that if you need to restore it later,\n[11:42] you've got everything that you need.\n[11:44] Make sure you save that to a file\n[11:46] in a place where you'll remember it\n[11:47] and call it something suitable."
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0427.jpg",
+        "frame_0428.jpg",
+        "frame_0429.jpg",
+        "frame_0430.jpg",
+        "frame_0431.jpg",
+        "frame_0432.jpg"
+      ],
+      "transcript": "[11:47] and call it something suitable.\n[11:50] I'm calling this AOS 3.5 dump.\n[11:54] Once you've got the dump,\n[11:56] clear your output history\n[11:57] and type diff.\n[11:59] That will give you the difference"
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0433.jpg",
+        "frame_0434.jpg",
+        "frame_0435.jpg",
+        "frame_0436.jpg",
+        "frame_0437.jpg",
+        "frame_0438.jpg"
+      ],
+      "transcript": "[11:59] That will give you the difference\n[12:01] between your configuration\n[12:03] and Betaflight defaults.\n[12:05] And save that to another file.\n[12:07] Call that one something memorable as well."
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0439.jpg",
+        "frame_0440.jpg",
+        "frame_0441.jpg",
+        "frame_0442.jpg",
+        "frame_0443.jpg",
+        "frame_0444.jpg"
+      ],
+      "transcript": "[12:07] Call that one something memorable as well.\n[12:12] Once you've got those two files saved,\n[12:14] if you have any issues\n[12:16] and you want to go back\n[12:17] to your old configuration,\n[12:18] all you'll need to do\n[12:19] is to reflash the same version of Betaflight"
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0445.jpg",
+        "frame_0446.jpg",
+        "frame_0447.jpg",
+        "frame_0448.jpg",
+        "frame_0449.jpg",
+        "frame_0450.jpg"
+      ],
+      "transcript": "[12:19] is to reflash the same version of Betaflight\n[12:22] that you currently have\n[12:24] and then just paste in your dump,\n[12:26] type save and hit enter.\n[12:28] And that will completely restore your config"
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0451.jpg",
+        "frame_0452.jpg",
+        "frame_0453.jpg",
+        "frame_0454.jpg",
+        "frame_0455.jpg",
+        "frame_0456.jpg"
+      ],
+      "transcript": "[12:28] And that will completely restore your config\n[12:30] to exactly what it is now.\n[12:32] That's really important\n[12:33] because you don't want to get into a situation\n[12:35] where stuff isn't working\n[12:37] and you can't get back\n[12:39] to a good working configuration."
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0457.jpg",
+        "frame_0458.jpg",
+        "frame_0459.jpg",
+        "frame_0460.jpg",
+        "frame_0461.jpg",
+        "frame_0462.jpg"
+      ],
+      "transcript": "[12:39] to a good working configuration.\n[12:40] So now that everything's backed up,\n[12:43] let's go and try out the test code.\n[12:46] Because this test code\n[12:47] is based on Betaflight 4.4,"
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0463.jpg",
+        "frame_0464.jpg",
+        "frame_0465.jpg",
+        "frame_0466.jpg",
+        "frame_0467.jpg",
+        "frame_0468.jpg"
+      ],
+      "transcript": "[12:50] you're going to need\n[12:51] at least version 10.9\n[12:53] of the configurator.\n[12:55] At the time of recording,\n[12:56] that isn't released yet.\n[12:57] So I'm going to be using\n[12:59] a nightly build"
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0469.jpg",
+        "frame_0470.jpg",
+        "frame_0471.jpg",
+        "frame_0472.jpg",
+        "frame_0473.jpg",
+        "frame_0474.jpg"
+      ],
+      "transcript": "[12:59] a nightly build\n[13:00] from this releases page\n[13:01] and I'll put a link to it\n[13:02] down in the video description.\n[13:04] If when you're looking at this video,\n[13:06] Betaflight Configurator 10.9\n[13:08] has been released,\n[13:09] you can just use the release build."
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0475.jpg",
+        "frame_0476.jpg",
+        "frame_0477.jpg",
+        "frame_0478.jpg",
+        "frame_0479.jpg",
+        "frame_0480.jpg"
+      ],
+      "transcript": "[13:09] you can just use the release build.\n[13:12] Once you have\n[13:13] Betaflight Configurator 10.9,\n[13:15] you're going to need\n[13:15] to get hold of the test code.\n[13:17] And the easiest way\n[13:18] is to go to the PR,\n[13:19] which is PR 12067."
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0481.jpg",
+        "frame_0482.jpg",
+        "frame_0483.jpg",
+        "frame_0484.jpg",
+        "frame_0485.jpg",
+        "frame_0486.jpg"
+      ],
+      "transcript": "[13:19] which is PR 12067.\n[13:21] There'll be a link\n[13:21] down in the video description.\n[13:23] Scroll down\n[13:24] and find the most recent\n[13:27] do you want to test this code?"
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0487.jpg",
+        "frame_0488.jpg",
+        "frame_0489.jpg",
+        "frame_0490.jpg",
+        "frame_0491.jpg",
+        "frame_0492.jpg"
+      ],
+      "transcript": "[13:30] Here you have\n[13:30] an automated build comment.\n[13:33] And inside there\n[13:34] is going to be\n[13:35] a bunch of assets\n[13:36] and you can download them.\n[13:38] Once you've downloaded"
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0493.jpg",
+        "frame_0494.jpg",
+        "frame_0495.jpg",
+        "frame_0496.jpg",
+        "frame_0497.jpg",
+        "frame_0498.jpg"
+      ],
+      "transcript": "[13:38] Once you've downloaded\n[13:40] the assets zip folder,\n[13:42] you can just extract it.\n[13:44] And inside,\n[13:44] you'll find a whole bunch\n[13:46] of hex files.\n[13:47] And each of these\n[13:47] is for a different target\n[13:49] of Betaflight."
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0499.jpg",
+        "frame_0500.jpg",
+        "frame_0501.jpg",
+        "frame_0502.jpg",
+        "frame_0503.jpg",
+        "frame_0504.jpg"
+      ],
+      "transcript": "[13:50] What you'll need to know\n[13:51] is exactly what chip\n[13:53] your flight controller has.\n[13:55] Does it have an F722?\n[13:56] In which case,\n[13:57] you'll use this F7X2 hex file."
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0505.jpg",
+        "frame_0506.jpg",
+        "frame_0507.jpg",
+        "frame_0508.jpg",
+        "frame_0509.jpg",
+        "frame_0510.jpg"
+      ],
+      "transcript": "[14:00] If you've got an F405,\n[14:01] it will be the F405 hex file.\n[14:04] You get the idea.\n[14:05] You need to match\n[14:06] the exact chip.\n[14:07] So you need to know\n[14:08] more than just\n[14:09] is it an F4 or an F7."
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0511.jpg",
+        "frame_0512.jpg",
+        "frame_0513.jpg",
+        "frame_0514.jpg",
+        "frame_0515.jpg",
+        "frame_0516.jpg"
+      ],
+      "transcript": "[14:09] is it an F4 or an F7.\n[14:10] You need to know\n[14:11] exactly what chip it is\n[14:13] and then pick\n[14:14] the right hex file\n[14:15] from this list.\n[14:16] Otherwise, it won't work.\n[14:17] When you know\n[14:18] exactly what hex file\n[14:19] you need,\n[14:19] you can jump into"
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0517.jpg",
+        "frame_0518.jpg",
+        "frame_0519.jpg",
+        "frame_0520.jpg",
+        "frame_0521.jpg",
+        "frame_0522.jpg"
+      ],
+      "transcript": "[14:19] you can jump into\n[14:20] Update Firmware\n[14:21] and then you're going\n[14:23] to want to select\n[14:24] your target.\n[14:25] So I'm just going\n[14:26] to hit Auto Detect\n[14:27] and it will find\n[14:28] the right target.\n[14:29] You can see\n[14:29] I've got an F745 here."
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0523.jpg",
+        "frame_0524.jpg",
+        "frame_0525.jpg",
+        "frame_0526.jpg",
+        "frame_0527.jpg",
+        "frame_0528.jpg"
+      ],
+      "transcript": "[14:29] I've got an F745 here.\n[14:31] So I'm going to be using\n[14:33] the F745 hex file.\n[14:36] Load firmware\n[14:36] from your local drive\n[14:38] and in this test code,"
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0529.jpg",
+        "frame_0530.jpg",
+        "frame_0531.jpg",
+        "frame_0532.jpg",
+        "frame_0533.jpg",
+        "frame_0534.jpg"
+      ],
+      "transcript": "[14:38] and in this test code,\n[14:41] you're going to select\n[14:42] the right hex file.\n[14:43] So for me,\n[14:44] that's F745\n[14:45] and then hit Flash Firmware."
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 900,
+      "frames": [
+        "frame_0535.jpg",
+        "frame_0536.jpg",
+        "frame_0537.jpg",
+        "frame_0538.jpg",
+        "frame_0539.jpg",
+        "frame_0540.jpg"
+      ],
+      "transcript": "[14:50] If you have any problems\n[14:51] during the flashing stage,\n[14:53] I find the best thing\n[14:54] to try first\n[14:55] is ImpulseRC Driver Fixer\n[14:57] because most of the time\n[14:59] that's going to be"
+    },
+    {
+      "segment_index": 91,
+      "start_time": 900,
+      "end_time": 910,
+      "frames": [
+        "frame_0541.jpg",
+        "frame_0542.jpg",
+        "frame_0543.jpg",
+        "frame_0544.jpg",
+        "frame_0545.jpg",
+        "frame_0546.jpg"
+      ],
+      "transcript": "[14:59] that's going to be\n[15:00] the cause of the problem.\n[15:01] I'll put a link\n[15:02] to that down in the video\n[15:02] description as well.\n[15:04] Once you've flashed\n[15:05] the firmware,\n[15:06] you can hit Connect\n[15:07] and you'll be asked\n[15:09] if you want to apply\n[15:09] custom defaults."
+    },
+    {
+      "segment_index": 92,
+      "start_time": 910,
+      "end_time": 920,
+      "frames": [
+        "frame_0547.jpg",
+        "frame_0548.jpg",
+        "frame_0549.jpg",
+        "frame_0550.jpg",
+        "frame_0551.jpg",
+        "frame_0552.jpg"
+      ],
+      "transcript": "[15:09] custom defaults.\n[15:10] Always select Yes.\n[15:12] The flight controller\n[15:13] will reboot\n[15:14] and then you can hit\n[15:15] Connect again\n[15:16] and go back into the CLI.\n[15:19] Now we're going to paste"
+    },
+    {
+      "segment_index": 93,
+      "start_time": 920,
+      "end_time": 930,
+      "frames": [
+        "frame_0553.jpg",
+        "frame_0554.jpg",
+        "frame_0555.jpg",
+        "frame_0556.jpg",
+        "frame_0557.jpg",
+        "frame_0558.jpg"
+      ],
+      "transcript": "[15:19] Now we're going to paste\n[15:20] in the diff\n[15:21] that we saved before.\n[15:22] So we can load from file,\n[15:24] select the diff,\n[15:26] hit Execute\n[15:27] and all of that\n[15:29] will be executed."
+    },
+    {
+      "segment_index": 94,
+      "start_time": 930,
+      "end_time": 940,
+      "frames": [
+        "frame_0559.jpg",
+        "frame_0560.jpg",
+        "frame_0561.jpg",
+        "frame_0562.jpg",
+        "frame_0563.jpg",
+        "frame_0564.jpg"
+      ],
+      "transcript": "[15:29] will be executed.\n[15:30] You may get\n[15:31] some invalid names\n[15:32] depending on\n[15:33] whether you're updating\n[15:34] from a different version\n[15:36] of Betaflight.\n[15:38] It's not usually a problem."
+    },
+    {
+      "segment_index": 95,
+      "start_time": 940,
+      "end_time": 950,
+      "frames": [
+        "frame_0565.jpg",
+        "frame_0566.jpg",
+        "frame_0567.jpg",
+        "frame_0568.jpg",
+        "frame_0569.jpg",
+        "frame_0570.jpg"
+      ],
+      "transcript": "[15:38] It's not usually a problem.\n[15:40] You can type Save\n[15:41] and then hit Enter.\n[15:43] At this point,\n[15:44] it's a good idea\n[15:45] just to check through\n[15:46] your config\n[15:46] to make sure everything's\n[15:47] set up as you want it."
+    },
+    {
+      "segment_index": 96,
+      "start_time": 950,
+      "end_time": 960,
+      "frames": [
+        "frame_0571.jpg",
+        "frame_0572.jpg",
+        "frame_0573.jpg",
+        "frame_0574.jpg",
+        "frame_0575.jpg",
+        "frame_0576.jpg"
+      ],
+      "transcript": "[15:52] If everything looks good,\n[15:53] you can jump to the CLI\n[15:54] and type Get Angle\n[15:58] and you should see"
+    },
+    {
+      "segment_index": 97,
+      "start_time": 960,
+      "end_time": 970,
+      "frames": [
+        "frame_0577.jpg",
+        "frame_0578.jpg",
+        "frame_0579.jpg",
+        "frame_0580.jpg",
+        "frame_0581.jpg",
+        "frame_0582.jpg"
+      ],
+      "transcript": "[15:58] and you should see\n[16:01] Angle P Gain,\n[16:02] Angle Feed Forward,\n[16:04] Angle Feed Forward Smoothing\n[16:05] and Angle Earth Ref\n[16:07] as new settings\n[16:09] which you can adjust."
+    },
+    {
+      "segment_index": 98,
+      "start_time": 970,
+      "end_time": 980,
+      "frames": [
+        "frame_0583.jpg",
+        "frame_0584.jpg",
+        "frame_0585.jpg",
+        "frame_0586.jpg",
+        "frame_0587.jpg",
+        "frame_0588.jpg"
+      ],
+      "transcript": "[16:09] which you can adjust.\n[16:11] And for more information\n[16:13] on tuning,\n[16:14] I'll let you read\n[16:15] the full PR 12067\n[16:17] and that will tell you\n[16:18] what all of these terms do\n[16:19] and how you should go"
+    },
+    {
+      "segment_index": 99,
+      "start_time": 980,
+      "end_time": 990,
+      "frames": [
+        "frame_0589.jpg",
+        "frame_0590.jpg",
+        "frame_0591.jpg",
+        "frame_0592.jpg",
+        "frame_0593.jpg",
+        "frame_0594.jpg"
+      ],
+      "transcript": "[16:19] and how you should go\n[16:21] about tuning them.\n[16:22] I hope that those\n[16:23] short instructions\n[16:23] give you what you need\n[16:25] to get started\n[16:25] trying out these new features.\n[16:27] If you're thinking\n[16:28] of playing around\n[16:29] with Betaflight test code,"
+    },
+    {
+      "segment_index": 100,
+      "start_time": 990,
+      "end_time": 1000,
+      "frames": [
+        "frame_0595.jpg",
+        "frame_0596.jpg",
+        "frame_0597.jpg",
+        "frame_0598.jpg",
+        "frame_0599.jpg",
+        "frame_0600.jpg"
+      ],
+      "transcript": "[16:29] with Betaflight test code,\n[16:30] you should definitely know\n[16:31] about the Betaflight Discord server.\n[16:33] I'll put a link to that\n[16:34] down in the video description.\n[16:35] It's a great place\n[16:36] to get help and support\n[16:37] if you need it\n[16:38] and also to leave"
+    },
+    {
+      "segment_index": 101,
+      "start_time": 1000,
+      "end_time": 1010,
+      "frames": [
+        "frame_0601.jpg",
+        "frame_0602.jpg",
+        "frame_0603.jpg",
+        "frame_0604.jpg",
+        "frame_0605.jpg",
+        "frame_0606.jpg"
+      ],
+      "transcript": "[16:38] and also to leave\n[16:40] your comments\n[16:40] and feedback\n[16:41] on these new features\n[16:42] to help inform\n[16:43] the further development of them.\n[16:45] Now it's time\n[16:46] for a word\n[16:46] from our sponsor,\n[16:47] Brilliant.org.\n[16:48] If you're like me,"
+    },
+    {
+      "segment_index": 102,
+      "start_time": 1010,
+      "end_time": 1020,
+      "frames": [
+        "frame_0607.jpg",
+        "frame_0608.jpg",
+        "frame_0609.jpg",
+        "frame_0610.jpg",
+        "frame_0611.jpg",
+        "frame_0612.jpg"
+      ],
+      "transcript": "[16:50] the FPV hobby\n[16:50] represents a fun\n[16:52] and exciting way\n[16:53] to apply maths,\n[16:54] science and engineering skills.\n[16:56] And whether you're\n[16:57] a young professional\n[16:58] looking to upskill\n[16:59] as you grow into your career"
+    },
+    {
+      "segment_index": 103,
+      "start_time": 1020,
+      "end_time": 1030,
+      "frames": [
+        "frame_0613.jpg",
+        "frame_0614.jpg",
+        "frame_0615.jpg",
+        "frame_0616.jpg",
+        "frame_0617.jpg",
+        "frame_0618.jpg"
+      ],
+      "transcript": "[16:59] as you grow into your career\n[17:00] or you're someone\n[17:01] who just loves\n[17:02] finding new hobbies\n[17:03] and exploring new ideas,\n[17:05] Brilliant offers\n[17:06] thousands of classes\n[17:07] on maths,\n[17:08] science and computer science"
+    },
+    {
+      "segment_index": 104,
+      "start_time": 1030,
+      "end_time": 1040,
+      "frames": [
+        "frame_0619.jpg",
+        "frame_0620.jpg",
+        "frame_0621.jpg",
+        "frame_0622.jpg",
+        "frame_0623.jpg",
+        "frame_0624.jpg"
+      ],
+      "transcript": "[17:08] science and computer science\n[17:10] with new ones\n[17:11] being added every single month.\n[17:13] If you're interested\n[17:14] in computer science\n[17:15] and maybe even looking forward\n[17:16] to contributing\n[17:17] to an open source project\n[17:19] like Betaflight\n[17:19] in the future,"
+    },
+    {
+      "segment_index": 105,
+      "start_time": 1040,
+      "end_time": 1050,
+      "frames": [
+        "frame_0625.jpg",
+        "frame_0626.jpg",
+        "frame_0627.jpg",
+        "frame_0628.jpg",
+        "frame_0629.jpg",
+        "frame_0630.jpg"
+      ],
+      "transcript": "[17:19] in the future,\n[17:20] then courses like this\n[17:22] on algorithm fundamentals\n[17:23] are a great place\n[17:24] to start building\n[17:25] the skills that you'll need.\n[17:27] To get started for free,\n[17:28] visit brilliant.org\n[17:29] slash ChrisRossa"
+    },
+    {
+      "segment_index": 106,
+      "start_time": 1050,
+      "end_time": 1060,
+      "frames": [
+        "frame_0631.jpg",
+        "frame_0632.jpg",
+        "frame_0633.jpg",
+        "frame_0634.jpg",
+        "frame_0635.jpg",
+        "frame_0636.jpg"
+      ],
+      "transcript": "[17:29] slash ChrisRossa\n[17:31] or click the link\n[17:32] in the video description.\n[17:33] The first 200 people\n[17:34] to do so\n[17:35] will also get 20% off\n[17:37] an annual premium subscription\n[17:38] with Brilliant\n[17:39] so you can reach"
+    },
+    {
+      "segment_index": 107,
+      "start_time": 1060,
+      "end_time": 1069.22,
+      "frames": [
+        "frame_0637.jpg",
+        "frame_0638.jpg",
+        "frame_0639.jpg",
+        "frame_0640.jpg",
+        "frame_0641.jpg"
+      ],
+      "transcript": "[17:39] so you can reach\n[17:40] your learning goals\n[17:41] and save a little bit\n[17:41] of money at the same time.\n[17:44] That's all I have\n[17:45] for you for today.\n[17:46] So until next time,\n[17:47] I wish you all\n[17:48] very, very happy flying."
+    }
+  ]
+}

@@ -1,0 +1,898 @@
+{
+  "video_id": "hpeKrMG-WP0",
+  "duration": 851.16,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg"
+      ],
+      "transcript": "[0:00] In this video, I'm going to introduce state space equations, the model representation\n[0:05] of choice for modern control.\n[0:07] However, before we begin, a quick warning."
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0003.jpg",
+        "frame_0004.jpg"
+      ],
+      "transcript": "[0:07] However, before we begin, a quick warning.\n[0:10] We're not going to go into depth on the mathematics of state space.\n[0:14] After this video, you're probably not going to be able to write out the equations for\n[0:17] any arbitrary system.\n[0:19] But what I think you will get is a good intuitive understanding of these equations, which can"
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0005.jpg",
+        "frame_0006.jpg",
+        "frame_0007.jpg"
+      ],
+      "transcript": "[0:19] But what I think you will get is a good intuitive understanding of these equations, which can\n[0:23] be a foundation that you can build on as you learn more.\n[0:27] At the very least, it might clear up a few lingering questions you might have."
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0008.jpg",
+        "frame_0009.jpg"
+      ],
+      "transcript": "[0:27] At the very least, it might clear up a few lingering questions you might have.\n[0:30] So with that in mind, let's get to it.\n[0:33] I'm Brian, and welcome to a MATLAB Tech Talk.\n[0:37] I think an interesting thing about dynamic systems is that they can be represented by"
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:37] I think an interesting thing about dynamic systems is that they can be represented by\n[0:41] ordinary differential equations.\n[0:43] This is because they have this property that how the system is changing at any given time\n[0:47] is a function of its current state."
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg"
+      ],
+      "transcript": "[0:47] is a function of its current state.\n[0:50] If we zip through the derivation for a spring-mass system real quick, you can see we end up with\n[0:54] a differential equation.\n[0:56] Now the way that the system is changing, acceleration, is a function of the current state, position."
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0015.jpg",
+        "frame_0016.jpg"
+      ],
+      "transcript": "[0:56] Now the way that the system is changing, acceleration, is a function of the current state, position.\n[1:02] If this dynamic system was initialized with some energy, it would continue to move on its\n[1:06] own because of this relationship between the derivative of the state and the state itself."
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0017.jpg",
+        "frame_0018.jpg",
+        "frame_0019.jpg"
+      ],
+      "transcript": "[1:06] own because of this relationship between the derivative of the state and the state itself.\n[1:11] Think about initializing this system by stretching the spring and letting it go.\n[1:16] Acceleration changes velocity, which changes position, and then that changes acceleration again."
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0020.jpg",
+        "frame_0021.jpg"
+      ],
+      "transcript": "[1:16] Acceleration changes velocity, which changes position, and then that changes acceleration again.\n[1:21] And it's going to oscillate back and forth without you having to add any external inputs.\n[1:26] Since there's no damping in this system, the energy is conserved, and this acceleration-velocity-position"
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[1:26] Since there's no damping in this system, the energy is conserved, and this acceleration-velocity-position\n[1:31] cycle will continue forever.\n[1:33] For any arbitrary dynamic system, if we look at how the energy changes by analyzing the relationship\n[1:38] between its states and their derivatives, we can make claims about things like the stability"
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg"
+      ],
+      "transcript": "[1:38] between its states and their derivatives, we can make claims about things like the stability\n[1:43] of the system.\n[1:44] Is the energy being dissipated over time?\n[1:47] Then the system is stable.\n[1:48] And the faster the energy is dissipated, the more stable it is."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0027.jpg",
+        "frame_0028.jpg"
+      ],
+      "transcript": "[1:48] And the faster the energy is dissipated, the more stable it is.\n[1:52] If the energy is growing unbounded over time, even for just a part of it, then the system\n[1:57] as a whole is unstable.\n[1:59] Energy is an inherent property of a system simply from the way that the states and their"
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0029.jpg",
+        "frame_0030.jpg",
+        "frame_0031.jpg"
+      ],
+      "transcript": "[1:59] Energy is an inherent property of a system simply from the way that the states and their\n[2:03] derivatives are connected to each other.\n[2:06] The way the system moves, however, can also be influenced by external energy being added"
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0032.jpg",
+        "frame_0033.jpg"
+      ],
+      "transcript": "[2:06] The way the system moves, however, can also be influenced by external energy being added\n[2:10] or removed over time.\n[2:12] So the derivatives of a dynamic system are a function of both the current state as well\n[2:17] as any external inputs.\n[2:19] In state space, representation is simply a repackaging of the high-order differential equations into"
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[2:19] In state space, representation is simply a repackaging of the high-order differential equations into\n[2:24] a set of first-order differential equations that focus on this relationship.\n[2:29] This repackaging can make the system easier to analyze because we can look at the underlying"
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg"
+      ],
+      "transcript": "[2:29] This repackaging can make the system easier to analyze because we can look at the underlying\n[2:33] behavior of the interconnected system as well as how the system is affected by external\n[2:38] inputs, even multiple external inputs, which is really powerful."
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0039.jpg",
+        "frame_0040.jpg"
+      ],
+      "transcript": "[2:38] inputs, even multiple external inputs, which is really powerful.\n[2:44] There are also a lot of control techniques that are built on state space models, like Kalman\n[2:48] filtering, LQR control, robust control, and model predictive control to just name a few."
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0041.jpg",
+        "frame_0042.jpg",
+        "frame_0043.jpg"
+      ],
+      "transcript": "[2:48] filtering, LQR control, robust control, and model predictive control to just name a few.\n[2:55] There are also numerical solution benefits when simulating your system as a state space model,\n[2:59] since you build the vector of the derivatives first and then integrate the whole vector to"
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:59] since you build the vector of the derivatives first and then integrate the whole vector to\n[3:04] get the states.\n[3:05] So all in all, they're pretty awesome and worth learning.\n[3:09] Now let's take a moment to look at the state space equations in more detail and try to make"
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[3:09] Now let's take a moment to look at the state space equations in more detail and try to make\n[3:13] a little sense of them.\n[3:15] For this, we'll focus on the continuous form for a linear time-invariant system."
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg"
+      ],
+      "transcript": "[3:15] For this, we'll focus on the continuous form for a linear time-invariant system.\n[3:20] There are two equations.\n[3:22] The first one is the state equation, which we've already developed a little intuition\n[3:26] around, and the second equation is the output equation, which I'll get to in just a bit."
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0051.jpg",
+        "frame_0052.jpg"
+      ],
+      "transcript": "[3:26] around, and the second equation is the output equation, which I'll get to in just a bit.\n[3:32] State space representation is built around the state vector x.\n[3:36] This is a vector of all of the state variables.\n[3:39] And how the state vector changes, or the derivative of the state vector, is a linear combination"
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0053.jpg",
+        "frame_0054.jpg",
+        "frame_0055.jpg"
+      ],
+      "transcript": "[3:39] And how the state vector changes, or the derivative of the state vector, is a linear combination\n[3:44] of the current state plus a linear combination of the external inputs.\n[3:49] In this way, we're not trying to look at the entire dynamics of the system end-to-end like"
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[3:49] In this way, we're not trying to look at the entire dynamics of the system end-to-end like\n[3:53] we would with a high-order differential equation or a transfer function, but rather focus on\n[3:57] the dynamics of each state variable, and how those variables relate to each other."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:57] the dynamics of each state variable, and how those variables relate to each other.\n[4:03] How does the first state change as a function of all of the states and all of the inputs?\n[4:07] How does the second state change as a function of all of the states and inputs?"
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg"
+      ],
+      "transcript": "[4:07] How does the second state change as a function of all of the states and inputs?\n[4:10] And so on.\n[4:12] And since we're only ever looking at the first derivative of each state, we end up with\n[4:15] a set of first-order differential equations.\n[4:18] What we're left with is a system of linear equations that we can package into matrix form."
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0063.jpg",
+        "frame_0064.jpg"
+      ],
+      "transcript": "[4:18] What we're left with is a system of linear equations that we can package into matrix form.\n[4:23] And if linear algebra is good for anything, it's definitely solving a system of linear\n[4:27] equations.\n[4:28] It is this repackaging into matrix form that gives us access to a lot of mathematical tools"
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0065.jpg",
+        "frame_0066.jpg",
+        "frame_0067.jpg"
+      ],
+      "transcript": "[4:28] It is this repackaging into matrix form that gives us access to a lot of mathematical tools\n[4:34] that we didn't have before.\n[4:36] The matrix form of the state equation has two matrices, A and B."
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0068.jpg",
+        "frame_0069.jpg"
+      ],
+      "transcript": "[4:36] The matrix form of the state equation has two matrices, A and B.\n[4:41] The A matrix describes how the internal states are all connected to each other, the underlying\n[4:46] dynamics of the system.\n[4:48] And the B matrix describes how the inputs enter into the system, which states are they affecting."
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[4:48] And the B matrix describes how the inputs enter into the system, which states are they affecting.\n[4:55] Now let's look at the output equation.\n[4:58] Y is a vector of the outputs of the system, or the part that you're interested in knowing."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg"
+      ],
+      "transcript": "[4:58] Y is a vector of the outputs of the system, or the part that you're interested in knowing.\n[5:03] The important thing to realize is that the outputs are not necessarily the state variables.\n[5:08] The C matrix describes how the states are combined to get the outputs."
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0075.jpg",
+        "frame_0076.jpg",
+        "frame_0077.jpg"
+      ],
+      "transcript": "[5:08] The C matrix describes how the states are combined to get the outputs.\n[5:12] And the D matrix is used to allow the inputs to bypass the system altogether and feed forward\n[5:17] to the output.\n[5:19] A real simple example of the D matrix in action would be the state space representation of a"
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0078.jpg",
+        "frame_0079.jpg"
+      ],
+      "transcript": "[5:19] A real simple example of the D matrix in action would be the state space representation of a\n[5:24] simple multiplier, a gain block.\n[5:27] The output equals the input times the gain."
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0080.jpg",
+        "frame_0081.jpg"
+      ],
+      "transcript": "[5:27] The output equals the input times the gain.\n[5:30] So in this way the A, B, and C matrices are all zero, since there are no derivatives and\n[5:35] no states.\n[5:36] And the D matrix is the value of the gain."
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[5:36] And the D matrix is the value of the gain.\n[5:40] Now the importance of the output equation will become obvious when we start feeding back\n[5:43] the outputs to develop a closed loop controller for our system.\n[5:47] But for now it's enough to understand the structure of the equation."
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg"
+      ],
+      "transcript": "[5:47] But for now it's enough to understand the structure of the equation.\n[5:50] And in the next video on feedback control we'll go into more depth on the relationship\n[5:53] between the output and state equations.\n[5:57] As you might have noticed, the state variables are the key to the whole thing."
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0087.jpg",
+        "frame_0088.jpg",
+        "frame_0089.jpg"
+      ],
+      "transcript": "[5:57] As you might have noticed, the state variables are the key to the whole thing.\n[6:01] They show up in three places and are the part of the representation that I think is the hardest\n[6:05] to conceptualize.\n[6:06] Therefore understanding what they are is really important."
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0090.jpg",
+        "frame_0091.jpg"
+      ],
+      "transcript": "[6:06] Therefore understanding what they are is really important.\n[6:10] The state variables are the minimum set of variables that fully describe the system.\n[6:15] Fully described means that we have enough information about the changing part of the system, or the"
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[6:15] Fully described means that we have enough information about the changing part of the system, or the\n[6:20] variable part, that we can predict the system's future behavior.\n[6:25] This will make more sense if we go back to the spring mass system and suss out what the\n[6:29] state variables are by starting with no information about the system."
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[6:29] state variables are by starting with no information about the system.\n[6:34] If I draw the spring and mass like this and asked you to predict where the system will be\n[6:38] in one second, what information would you need?"
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg"
+      ],
+      "transcript": "[6:38] in one second, what information would you need?\n[6:41] Well, you'd want to know the system constants, like the spring constant and mass, and we'd want\n[6:46] to know what the external force is that's acting on the mass, so the inputs."
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0099.jpg",
+        "frame_0100.jpg",
+        "frame_0101.jpg"
+      ],
+      "transcript": "[6:46] to know what the external force is that's acting on the mass, so the inputs.\n[6:50] But this only tells you part of the story because you don't know what you might call the initial\n[6:54] conditions for the variable parts of the system.\n[6:58] Is the mass currently moving?\n[6:59] And how hard is the spring pulling on the mass?"
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0102.jpg",
+        "frame_0103.jpg"
+      ],
+      "transcript": "[6:59] And how hard is the spring pulling on the mass?\n[7:02] Now if we knew these two starting conditions, along with the system constants and inputs,\n[7:07] then we would be able to predict where the mass would be after one second."
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[7:07] then we would be able to predict where the mass would be after one second.\n[7:11] So let's consider the first question.\n[7:14] Is the mass currently moving?\n[7:16] We would know this from the velocity of the mass.\n[7:19] And velocity is variable since the mass would be oscillating back and forth, assuming there"
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[7:19] And velocity is variable since the mass would be oscillating back and forth, assuming there\n[7:23] was some energy in the system.\n[7:25] So we need velocity in order to predict the future position, so we can say that velocity"
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg"
+      ],
+      "transcript": "[7:25] So we need velocity in order to predict the future position, so we can say that velocity\n[7:30] is a state variable.\n[7:31] It's necessary.\n[7:34] Now let's turn to the initial spring force.\n[7:36] Force is also a variable, but let's think about how we would derive it."
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0111.jpg",
+        "frame_0112.jpg",
+        "frame_0113.jpg"
+      ],
+      "transcript": "[7:36] Force is also a variable, but let's think about how we would derive it.\n[7:40] It's the spring constant times the distance that the spring is stretched.\n[7:44] So if we have that distance, or the position of the mass relative to the unstretched length\n[7:48] of spring, then we would be able to get spring force."
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0114.jpg",
+        "frame_0115.jpg"
+      ],
+      "transcript": "[7:48] of spring, then we would be able to get spring force.\n[7:52] So the minimum number of variables we need to fully describe this system is two, position\n[7:57] and velocity.\n[7:58] And since there are two, this is a second order system."
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[7:58] And since there are two, this is a second order system.\n[8:02] So a natural question now might be why not more states?\n[8:06] Why not three?\n[8:07] Well to answer that, let's consider acceleration."
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[8:07] Well to answer that, let's consider acceleration.\n[8:10] It's a variable since it's changing along with position and velocity.\n[8:14] However, we don't need to know acceleration to fully describe the system.\n[8:19] Acceleration is a result of force acting on a mass."
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg"
+      ],
+      "transcript": "[8:19] Acceleration is a result of force acting on a mass.\n[8:22] And force, in this case, is a byproduct of the position of the mass.\n[8:26] Therefore, we get acceleration through position, and adding acceleration to your list of state"
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0123.jpg",
+        "frame_0124.jpg",
+        "frame_0125.jpg"
+      ],
+      "transcript": "[8:26] Therefore, we get acceleration through position, and adding acceleration to your list of state\n[8:31] variables is just extra information.\n[8:33] Now something that might seem strange at first is that if we add a damper into the system,\n[8:38] we're not increasing the order of the system, because we don't need any additional state"
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0126.jpg",
+        "frame_0127.jpg"
+      ],
+      "transcript": "[8:38] we're not increasing the order of the system, because we don't need any additional state\n[8:42] variables to account for this additional element.\n[8:45] The force from the damper is determined by the velocity of the mass, which, again, we already\n[8:49] have in our state variable list."
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0128.jpg",
+        "frame_0129.jpg"
+      ],
+      "transcript": "[8:49] have in our state variable list.\n[8:52] So both of these systems have the same number of state variables, too.\n[8:57] Now a way you can verify that you have the right number of states needed to describe a"
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0130.jpg",
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[8:57] Now a way you can verify that you have the right number of states needed to describe a\n[9:01] system is to count the energy storage devices that your system has.\n[9:05] Now I'm not going to go into too much detail here, because I think Dr. Rick Hill has done\n[9:09] a great job of explaining it in his YouTube video that I've linked in the description below."
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg"
+      ],
+      "transcript": "[9:09] a great job of explaining it in his YouTube video that I've linked in the description below.\n[9:14] But the general idea is this.\n[9:17] A dynamic system stores energy in various ways."
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0135.jpg",
+        "frame_0136.jpg",
+        "frame_0137.jpg"
+      ],
+      "transcript": "[9:17] A dynamic system stores energy in various ways.\n[9:20] In our spring mass system, there's two energy storage elements.\n[9:24] The spring, which stores potential energy, and the mass, which stores kinetic energy."
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0138.jpg",
+        "frame_0139.jpg"
+      ],
+      "transcript": "[9:24] The spring, which stores potential energy, and the mass, which stores kinetic energy.\n[9:30] The dynamic system moves and changes on its own simply because the energy that exists within\n[9:35] the system transfers back and forth between storage elements and eventually dissipates through\n[9:39] heat, which is ultimately lost to the environment."
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0140.jpg",
+        "frame_0141.jpg",
+        "frame_0142.jpg"
+      ],
+      "transcript": "[9:39] heat, which is ultimately lost to the environment.\n[9:43] At any given time, if we know how much energy is stored in each element, then we know its state,\n[9:47] and have the information needed to fully understand the state of the system."
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0143.jpg",
+        "frame_0144.jpg"
+      ],
+      "transcript": "[9:47] and have the information needed to fully understand the state of the system.\n[9:51] Now, the states don't represent the energy directly.\n[9:55] They're just needed to determine the energy.\n[9:58] For the spring mass system, we know the energy in the mass from the velocity of the mass."
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0145.jpg",
+        "frame_0146.jpg"
+      ],
+      "transcript": "[9:58] For the spring mass system, we know the energy in the mass from the velocity of the mass.\n[10:02] And we know the energy in the spring from the position, or how far the spring is stretched.\n[10:07] And if we know how those energies are connected within the system, or another way of putting"
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0147.jpg",
+        "frame_0148.jpg",
+        "frame_0149.jpg"
+      ],
+      "transcript": "[10:07] And if we know how those energies are connected within the system, or another way of putting\n[10:12] it, how each state absorbs and loses energy based on the current state of the system, then\n[10:17] we fully understand the system itself."
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0150.jpg",
+        "frame_0151.jpg"
+      ],
+      "transcript": "[10:17] we fully understand the system itself.\n[10:20] And this is essentially what state space representation is doing for us.\n[10:24] It's looking at the state variables, how the energy is stored, and combining them according\n[10:28] to how energy is transferred between states, and adding in any additional energy from the"
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0152.jpg",
+        "frame_0153.jpg",
+        "frame_0154.jpg"
+      ],
+      "transcript": "[10:28] to how energy is transferred between states, and adding in any additional energy from the\n[10:33] external sources.\n[10:35] And with a few special caveats that Professor Hill describes, that is why the number of energy"
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0155.jpg",
+        "frame_0156.jpg"
+      ],
+      "transcript": "[10:35] And with a few special caveats that Professor Hill describes, that is why the number of energy\n[10:40] storage elements in your system equals the number of states.\n[10:43] So our spring mass damper is still a second order system, since a damper doesn't store energy,\n[10:49] it just dissipates it."
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0157.jpg",
+        "frame_0158.jpg"
+      ],
+      "transcript": "[10:49] it just dissipates it.\n[10:51] So, we know the order has to be 2, but why not 2 different states?\n[10:55] Why position and velocity?\n[10:57] Well, they don't have to be, and here's where things can get a little confusing."
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0159.jpg",
+        "frame_0160.jpg",
+        "frame_0161.jpg"
+      ],
+      "transcript": "[10:57] Well, they don't have to be, and here's where things can get a little confusing.\n[11:02] The state variables, position and velocity, can be thought of as coordinate systems within\n[11:07] a state space.\n[11:09] Go over 5 position units, and up 3 velocity units."
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0162.jpg",
+        "frame_0163.jpg"
+      ],
+      "transcript": "[11:09] Go over 5 position units, and up 3 velocity units.\n[11:13] This point in the state space is the current state of the system, and the state vector describes\n[11:18] that location.\n[11:19] So we can describe this location in the state space with any two linearly independent variables,"
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0164.jpg",
+        "frame_0165.jpg",
+        "frame_0166.jpg"
+      ],
+      "transcript": "[11:19] So we can describe this location in the state space with any two linearly independent variables,\n[11:25] some arbitrary state 1 and state 2.\n[11:28] We're going to end up with the same system state in the end, it's the same energy, just"
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0167.jpg",
+        "frame_0168.jpg"
+      ],
+      "transcript": "[11:28] We're going to end up with the same system state in the end, it's the same energy, just\n[11:32] with different coordinates.\n[11:36] And we do this redefining of state variables all the time with state space representation."
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0169.jpg",
+        "frame_0170.jpg"
+      ],
+      "transcript": "[11:36] And we do this redefining of state variables all the time with state space representation.\n[11:40] That's what we're doing, for example, when we diagonalize the A matrix to get it into so-called\n[11:45] modal form.\n[11:46] We've just chosen a different set of coordinates, a different basis for our state vector."
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0171.jpg",
+        "frame_0172.jpg",
+        "frame_0173.jpg"
+      ],
+      "transcript": "[11:46] We've just chosen a different set of coordinates, a different basis for our state vector.\n[11:54] So, state vector x is made up of position and velocity, and state vector z is made up"
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0174.jpg",
+        "frame_0175.jpg"
+      ],
+      "transcript": "[11:54] So, state vector x is made up of position and velocity, and state vector z is made up\n[12:00] of two modal states, and these particular states change as a function of just themselves.\n[12:06] That is, state 1 does not rely on the current value of state 2, and vice versa."
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0176.jpg",
+        "frame_0177.jpg",
+        "frame_0178.jpg"
+      ],
+      "transcript": "[12:06] That is, state 1 does not rely on the current value of state 2, and vice versa.\n[12:11] And if we were able to write out the state's base representation directly in modal form,\n[12:15] then maybe we would.\n[12:17] There's nothing really special about position and velocity for state variables, other than"
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0179.jpg",
+        "frame_0180.jpg"
+      ],
+      "transcript": "[12:17] There's nothing really special about position and velocity for state variables, other than\n[12:21] they are quantities that make intuitive sense to us.\n[12:25] However, since the states are no longer defined as position and velocity, the C matrix needs"
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0181.jpg",
+        "frame_0182.jpg"
+      ],
+      "transcript": "[12:25] However, since the states are no longer defined as position and velocity, the C matrix needs\n[12:30] to change if we want to keep the outputs position and velocity.\n[12:34] In this way we can see the benefit of the output equation.\n[12:37] We're not forced to output the states exactly as we define them, but rather have the ability"
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0183.jpg",
+        "frame_0184.jpg",
+        "frame_0185.jpg"
+      ],
+      "transcript": "[12:37] We're not forced to output the states exactly as we define them, but rather have the ability\n[12:42] to linearly combine them into variables that we're interested in.\n[12:46] Okay, that's where I'm going to leave this video for now."
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0186.jpg",
+        "frame_0187.jpg"
+      ],
+      "transcript": "[12:46] Okay, that's where I'm going to leave this video for now.\n[12:50] I hope this has helped you think about the state's base equations in a slightly different\n[12:53] way.\n[12:54] Rather than thinking of them as a set of matrices that repackage the model into arbitrary first\n[12:59] order differential equations, we can think about them as writing out the dynamics for"
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0188.jpg",
+        "frame_0189.jpg",
+        "frame_0190.jpg"
+      ],
+      "transcript": "[12:59] order differential equations, we can think about them as writing out the dynamics for\n[13:03] each state variable separately.\n[13:06] And the dynamics are tied to how energy is stored and transferred within the system."
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0191.jpg",
+        "frame_0192.jpg"
+      ],
+      "transcript": "[13:06] And the dynamics are tied to how energy is stored and transferred within the system.\n[13:11] By doing this we get the benefit of being able to understand how these internal states\n[13:14] change and relate to each other.\n[13:16] How the energy is moving around and we get to use the powerful tools in linear algebra"
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0193.jpg",
+        "frame_0194.jpg"
+      ],
+      "transcript": "[13:16] How the energy is moving around and we get to use the powerful tools in linear algebra\n[13:21] to analyze and solve the equations.\n[13:23] Now MATLAB and Simulink are great environments to work with states-based systems.\n[13:28] You can convert to states-based from a transfer function, manipulate the matrices, simulate them,"
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0195.jpg",
+        "frame_0196.jpg",
+        "frame_0197.jpg"
+      ],
+      "transcript": "[13:28] You can convert to states-based from a transfer function, manipulate the matrices, simulate them,\n[13:33] and design and analyze control systems using a number of built-in tools.\n[13:37] And I'm going to be using MATLAB to demonstrate control techniques with states-based equations for"
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0198.jpg",
+        "frame_0199.jpg"
+      ],
+      "transcript": "[13:37] And I'm going to be using MATLAB to demonstrate control techniques with states-based equations for\n[13:41] the rest of this series.\n[13:42] So if you're not familiar with using states-based in MATLAB, or if you're looking for a quick\n[13:47] refresher, I've linked a few videos in the description that are worth checking out."
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0200.jpg",
+        "frame_0201.jpg",
+        "frame_0202.jpg"
+      ],
+      "transcript": "[13:47] refresher, I've linked a few videos in the description that are worth checking out.\n[13:52] In the next video in this series, I'll go through the design of a simple feedback control\n[13:56] system using states-based representation.\n[13:59] If you don't want to miss the next Tech Talk video, don't forget to subscribe to this"
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0203.jpg",
+        "frame_0204.jpg"
+      ],
+      "transcript": "[13:59] If you don't want to miss the next Tech Talk video, don't forget to subscribe to this\n[14:03] channel.\n[14:04] Also, if you want to check out my channel, Control System Lectures, I cover more control\n[14:07] theory topics there as well.\n[14:09] Thanks for watching, and I'll see you next time."
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 851.16,
+      "frames": [],
+      "transcript": "[14:09] Thanks for watching, and I'll see you next time."
+    }
+  ]
+}

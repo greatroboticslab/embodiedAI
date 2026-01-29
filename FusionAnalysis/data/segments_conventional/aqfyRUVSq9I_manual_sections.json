@@ -1,0 +1,973 @@
+{
+  "video_id": "aqfyRUVSq9I",
+  "duration": 927.92,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg"
+      ],
+      "transcript": "[0:00] Hi guys, thanks for joining me. So this time we're going to build this.\n[0:08] A really gnarly sounding active filter that only takes one chip, one capacitor and a handful of"
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0003.jpg",
+        "frame_0004.jpg"
+      ],
+      "transcript": "[0:08] A really gnarly sounding active filter that only takes one chip, one capacitor and a handful of\n[0:14] resistors. So stay tuned. Hi folks, welcome back. So how are we going to do that? Well in previous\n[0:18] videos we've taken resistors and capacitors and used them together to make filters. Now we're"
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0005.jpg",
+        "frame_0006.jpg",
+        "frame_0007.jpg"
+      ],
+      "transcript": "[0:18] videos we've taken resistors and capacitors and used them together to make filters. Now we're\n[0:22] going to take resistors and capacitors again, only this time we're going to use them with active\n[0:26] circuitry which is going to boost the gain of the signal after it's been filtered. How we're going"
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0008.jpg",
+        "frame_0009.jpg"
+      ],
+      "transcript": "[0:26] circuitry which is going to boost the gain of the signal after it's been filtered. How we're going\n[0:31] to do that is with a little circuit called an op-amp. And an op-amp, or an operational amplifier,\n[0:36] is a type of configurable high-gain amplifier where you can set clever feedback networks with"
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:36] is a type of configurable high-gain amplifier where you can set clever feedback networks with\n[0:42] simple components like resistors and capacitors that can change the gain of the circuit depending\n[0:47] on what's going on. We're going to start with the most basic op-amp circuit that you can get. So let"
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg"
+      ],
+      "transcript": "[0:47] on what's going on. We're going to start with the most basic op-amp circuit that you can get. So let\n[0:52] me just explain this very quickly. This is an op-amp circuit symbol. So we've got two inputs,\n[0:57] we call this the non-inverting input, this is the inverting input, and this is the output. Okay,"
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0015.jpg",
+        "frame_0016.jpg"
+      ],
+      "transcript": "[0:57] we call this the non-inverting input, this is the inverting input, and this is the output. Okay,\n[1:02] so this is called a follower. And the really important thing about this, that's the number\n[1:07] one rule that you need to remember, when we have negative feedback, which is when the output is"
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0017.jpg",
+        "frame_0018.jpg",
+        "frame_0019.jpg"
+      ],
+      "transcript": "[1:07] one rule that you need to remember, when we have negative feedback, which is when the output is\n[1:11] connected back to the inverting input, that the op-amp will then do whatever it can to try and make\n[1:18] these two inputs equal. Okay, so why don't I put a input in here, and we'll have a look at what we're"
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0020.jpg",
+        "frame_0021.jpg"
+      ],
+      "transcript": "[1:18] these two inputs equal. Okay, so why don't I put a input in here, and we'll have a look at what we're\n[1:24] going to see in the output. We'll put a sine wave in. Rule number one, do we have negative feedback?\n[1:29] Yes, we do. Okay, so it's going to try and make these two inputs equal. If we've got positive feedback,"
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[1:29] Yes, we do. Okay, so it's going to try and make these two inputs equal. If we've got positive feedback,\n[1:35] that makes things a little bit more complicated, and we'll do that in further videos. But for now,\n[1:39] only looking at negative feedback will get us a long way. So the output will do whatever it can to"
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg"
+      ],
+      "transcript": "[1:39] only looking at negative feedback will get us a long way. So the output will do whatever it can to\n[1:44] make these two inputs equal. And what that means is, let's say this is one volt at the top and at the bottom."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0027.jpg",
+        "frame_0028.jpg"
+      ],
+      "transcript": "[1:44] make these two inputs equal. And what that means is, let's say this is one volt at the top and at the bottom.\n[1:51] So this is zero volts. That's why we call this a follower, because if you follow, if you think the\n[1:57] circuit through, if this is one volt, this wants to be one volt, there's no circuitry here, so the output"
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0029.jpg",
+        "frame_0030.jpg",
+        "frame_0031.jpg"
+      ],
+      "transcript": "[1:57] circuit through, if this is one volt, this wants to be one volt, there's no circuitry here, so the output\n[2:02] just needs to be one volt. So minus one volt, if this is minus one volt here, what does this one want to be?\n[2:08] It's going to be minus one volt. So very easy to see that the output just looks exactly the same as the input."
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0032.jpg",
+        "frame_0033.jpg"
+      ],
+      "transcript": "[2:08] It's going to be minus one volt. So very easy to see that the output just looks exactly the same as the input.\n[2:15] Easy peasy. So this is called a follower, and this is essentially what we can think of as a buffer."
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[2:15] Easy peasy. So this is called a follower, and this is essentially what we can think of as a buffer.\n[2:22] Okay, so that's all well and good. I'm sure you can see how that's useful, but it doesn't really do anything.\n[2:27] You just get the outputs the same as the input. How do we get up-amp circuits that do stuff?"
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg"
+      ],
+      "transcript": "[2:27] You just get the outputs the same as the input. How do we get up-amp circuits that do stuff?\n[2:31] Well, let's have a look what happens when we put some stuff in this feedback path.\n[2:35] Okay, so by putting two resistors in the feedback circuit, I think you can probably imagine that I've"
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0039.jpg",
+        "frame_0040.jpg"
+      ],
+      "transcript": "[2:35] Okay, so by putting two resistors in the feedback circuit, I think you can probably imagine that I've\n[2:42] changed how this circuit is going to work quite a lot. This is now a non-inverting amplifier. And we can"
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0041.jpg",
+        "frame_0042.jpg",
+        "frame_0043.jpg"
+      ],
+      "transcript": "[2:42] changed how this circuit is going to work quite a lot. This is now a non-inverting amplifier. And we can\n[2:51] imagine that the output is still going to look something like this input. Obviously I've already\n[2:56] given it away and told you that it's non-inverting. So how do we tell what the relationship is between"
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:56] given it away and told you that it's non-inverting. So how do we tell what the relationship is between\n[3:03] the output and the input? Well, we can see down here that what we've essentially done is we've made a voltage\n[3:07] divider from the output down to ground. I just put output, that's this point here, and this point here is"
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[3:07] divider from the output down to ground. I just put output, that's this point here, and this point here is\n[3:14] this point here. So the output of our voltage divider, this goes to our inverting input. Then we can see that"
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg"
+      ],
+      "transcript": "[3:14] this point here. So the output of our voltage divider, this goes to our inverting input. Then we can see that\n[3:22] the ratio of these two resistors is going to set the voltage at this point, which is then going to be\n[3:28] what's fed back into here. So the output is going to do what it can to make sure that the voltage at this"
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0051.jpg",
+        "frame_0052.jpg"
+      ],
+      "transcript": "[3:28] what's fed back into here. So the output is going to do what it can to make sure that the voltage at this\n[3:34] point here is the same as this point here. Remember our golden rule from before. And so what it needs to"
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0053.jpg",
+        "frame_0054.jpg",
+        "frame_0055.jpg"
+      ],
+      "transcript": "[3:34] point here is the same as this point here. Remember our golden rule from before. And so what it needs to\n[3:41] do is drop enough voltage across this whole voltage divider to make this point the same as this point.\n[3:49] Input is at one volt. Let's say this is 100 kilo ohms, this is R2, and let's say that R1 is one kilo ohm."
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[3:49] Input is at one volt. Let's say this is 100 kilo ohms, this is R2, and let's say that R1 is one kilo ohm.\n[3:58] To cut a long story short, this circuit has to output 101 volts at the output to make this part here"
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:58] To cut a long story short, this circuit has to output 101 volts at the output to make this part here\n[4:08] one volt, because there's a 100 to one ratio here, so there's going to be a hundred times more voltage"
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg"
+      ],
+      "transcript": "[4:08] one volt, because there's a 100 to one ratio here, so there's going to be a hundred times more voltage\n[4:14] dropped across this one than this one, so we need 101 to get that equal split."
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0063.jpg",
+        "frame_0064.jpg"
+      ],
+      "transcript": "[4:14] dropped across this one than this one, so we need 101 to get that equal split.\n[4:22] How that's represented in terms of gain is we say that this circuit has a gain,\n[4:27] this configuration always has a gain of 1 plus R2 over R1. So if this was 100k, this was 1k, the k's"
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0065.jpg",
+        "frame_0066.jpg",
+        "frame_0067.jpg"
+      ],
+      "transcript": "[4:27] this configuration always has a gain of 1 plus R2 over R1. So if this was 100k, this was 1k, the k's\n[4:37] cancel out, so we've essentially got 100 over 1, which is 100 plus 1, 101. Okay, so if this were 10k, then this output would have to be"
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0068.jpg",
+        "frame_0069.jpg"
+      ],
+      "transcript": "[4:37] cancel out, so we've essentially got 100 over 1, which is 100 plus 1, 101. Okay, so if this were 10k, then this output would have to be\n[4:46] 11 volts to get 1 volt here. And so we can see that, let's just leave it like this, that we're going to get an output"
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[4:46] 11 volts to get 1 volt here. And so we can see that, let's just leave it like this, that we're going to get an output\n[4:54] that is much bigger. We're going to have an output that's 10 times bigger than our input. That's how you make a"
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg"
+      ],
+      "transcript": "[4:54] that is much bigger. We're going to have an output that's 10 times bigger than our input. That's how you make a\n[5:00] non-inverting amplifier. So there's one more variation that I want to show you before we go on to building our active filter.\n[5:06] Okay, so this is a slightly more interesting configuration. Now this time we've still got negative feedback, see, so"
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0075.jpg",
+        "frame_0076.jpg",
+        "frame_0077.jpg"
+      ],
+      "transcript": "[5:06] Okay, so this is a slightly more interesting configuration. Now this time we've still got negative feedback, see, so\n[5:12] we can still use our first golden rule, but we're applying the input signal to the same input that we're\n[5:18] feeding back. So our feedback is going to kind of be"
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0078.jpg",
+        "frame_0079.jpg"
+      ],
+      "transcript": "[5:18] feeding back. So our feedback is going to kind of be\n[5:21] mixed with our input signal, which is going to be giving us some very interesting results. The second really interesting thing,\n[5:28] now we've got this non-inverting input connected to ground. So what does that do with our circuit?"
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0080.jpg",
+        "frame_0081.jpg"
+      ],
+      "transcript": "[5:28] now we've got this non-inverting input connected to ground. So what does that do with our circuit?\n[5:33] So if we now think about this point here, if this point here is connected to ground, we've got negative feedback,\n[5:39] so remember our rule number one, the op-amp will now try and make these two inputs the same."
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[5:39] so remember our rule number one, the op-amp will now try and make these two inputs the same.\n[5:45] So that means that it's going to try and make this input ground. This is a really special part of op-amp analysis,"
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg"
+      ],
+      "transcript": "[5:45] So that means that it's going to try and make this input ground. This is a really special part of op-amp analysis,\n[5:51] which is that this point is now called virtual ground, which means that this point will act\n[5:57] for all intents and purposes, like a second ground. If we have our input here and ground here,"
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0087.jpg",
+        "frame_0088.jpg",
+        "frame_0089.jpg"
+      ],
+      "transcript": "[5:57] for all intents and purposes, like a second ground. If we have our input here and ground here,\n[6:04] then our entire input signal is across this resistor. That makes it really easy to analyze, doesn't it?"
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0090.jpg",
+        "frame_0091.jpg"
+      ],
+      "transcript": "[6:10] Because now we know, let's say this is one volt peak to peak again, so we've got one milliamp\n[6:14] through this resistor. So now we need our second magical rule that no current flows in or out"
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[6:14] through this resistor. So now we need our second magical rule that no current flows in or out\n[6:22] of these terminals. So we've got this one milliamp current that flows this way.\n[6:29] So what happens to it? Well, I've just told you that it can't go in here, so we know it has to go this way."
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[6:29] So what happens to it? Well, I've just told you that it can't go in here, so we know it has to go this way.\n[6:34] And now if we've got current flowing this way, we've got a positive voltage drop in this direction,\n[6:39] and one milliamp times 10k is 10 volts. So now we've got, as far as the output is concerned,"
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg"
+      ],
+      "transcript": "[6:39] and one milliamp times 10k is 10 volts. So now we've got, as far as the output is concerned,\n[6:45] so if this point is ground, and there's then a 10 volts voltage drop across this resistor,"
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0099.jpg",
+        "frame_0100.jpg",
+        "frame_0101.jpg"
+      ],
+      "transcript": "[6:45] so if this point is ground, and there's then a 10 volts voltage drop across this resistor,\n[6:50] then that means that this point is 10 volts lower than this point. Now this is ground, so that's zero,\n[6:55] so this must be minus 10 volts. And then when this is negative, this is minus 1 volts, well this all"
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0102.jpg",
+        "frame_0103.jpg"
+      ],
+      "transcript": "[6:55] so this must be minus 10 volts. And then when this is negative, this is minus 1 volts, well this all\n[7:01] gets flipped around. This is minus 1 milliamps now. So now remember this is ground, we've got minus 10 volts,\n[7:09] so this place must be plus 10. So this time the gain is minus R2 over R1. This is R2, this is R1,"
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[7:09] so this place must be plus 10. So this time the gain is minus R2 over R1. This is R2, this is R1,\n[7:17] and this minus just shows us, just telling us mathematically that it's inverted. So this inverting"
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[7:17] and this minus just shows us, just telling us mathematically that it's inverted. So this inverting\n[7:24] amplifier configuration is the one that we're going to use to make our active filter. So we've taken the"
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg"
+      ],
+      "transcript": "[7:24] amplifier configuration is the one that we're going to use to make our active filter. So we've taken the\n[7:30] inverting op-amp configuration from before, and we just put a capacitor in parallel with the feedback\n[7:35] resistor. So how is that going to affect how this circuit works? In a sentence, a capacitor can be"
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0111.jpg",
+        "frame_0112.jpg",
+        "frame_0113.jpg"
+      ],
+      "transcript": "[7:35] resistor. So how is that going to affect how this circuit works? In a sentence, a capacitor can be\n[7:40] viewed as a resistor that's able to change its resistance depending on the frequency of the\n[7:45] signal across it. Watch my circuits one-on-one video if you want the whole story, but essentially\n[7:49] what's going to happen is that this capacitor is going to look like a very big or very small resistance"
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0114.jpg",
+        "frame_0115.jpg"
+      ],
+      "transcript": "[7:49] what's going to happen is that this capacitor is going to look like a very big or very small resistance\n[7:55] depending on what frequency we're looking at. So how is that going to change the behavior of the\n[7:59] circuit? Well let's have a look at this circuit in terms of the voltages instead of before how I looked at"
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[7:59] circuit? Well let's have a look at this circuit in terms of the voltages instead of before how I looked at\n[8:05] it with the currents. So for a second let's pretend that capacitor wasn't there, and let's see what"
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[8:10] happens when you apply one volt at the input. If we assume that the output begins at zero volts,\n[8:15] what we're doing is we're applying one volt to a voltage divider that looks like this. So let's say"
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg"
+      ],
+      "transcript": "[8:15] what we're doing is we're applying one volt to a voltage divider that looks like this. So let's say\n[8:20] that the output is ground, zero volts, so we've got one volt across 1k and then 10k, so we're going to\n[8:27] see about 0.9 volts at this inverting input. The op-amp now is going to try and make these two inputs"
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0123.jpg",
+        "frame_0124.jpg",
+        "frame_0125.jpg"
+      ],
+      "transcript": "[8:27] see about 0.9 volts at this inverting input. The op-amp now is going to try and make these two inputs\n[8:32] equal because this inputs at ground remember. This is exactly the same as what we've just done.\n[8:36] So now what does the output of the op-amp have to do to make this point zero? Well the op-amp"
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0126.jpg",
+        "frame_0127.jpg"
+      ],
+      "transcript": "[8:36] So now what does the output of the op-amp have to do to make this point zero? Well the op-amp\n[8:43] has to put minus 0.9 volts here, because if there's 0.9 volts here the op-amp wants to kind of oppose"
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0128.jpg",
+        "frame_0129.jpg"
+      ],
+      "transcript": "[8:43] has to put minus 0.9 volts here, because if there's 0.9 volts here the op-amp wants to kind of oppose\n[8:51] that. Okay so we know we want about minus 0.9 volts at this point because then minus 0.9 plus 0.9\n[8:58] will make this point zero. So what does the output have to do in order to do that? And to get about"
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0130.jpg",
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[8:58] will make this point zero. So what does the output have to do in order to do that? And to get about\n[9:04] minus 0.9 volts here, the output needs to push minus 10 volts this way. So either we've got a current"
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg"
+      ],
+      "transcript": "[9:04] minus 0.9 volts here, the output needs to push minus 10 volts this way. So either we've got a current\n[9:13] coming this way that drops voltage here and voltage here, or we can think about this as a kind of"
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0135.jpg",
+        "frame_0136.jpg",
+        "frame_0137.jpg"
+      ],
+      "transcript": "[9:13] coming this way that drops voltage here and voltage here, or we can think about this as a kind of\n[9:21] balancing act of these two resistances and the output opposing the input to make this point zero.\n[9:28] If we think of it in terms of those voltages and we put this capacitor back in, what we're essentially"
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0138.jpg",
+        "frame_0139.jpg"
+      ],
+      "transcript": "[9:28] If we think of it in terms of those voltages and we put this capacitor back in, what we're essentially\n[9:32] saying is that when at very low frequencies, when the capacitor looks like essentially an open circuit,\n[9:38] you've got that behaviour that we were just talking about. This just acts like an inverting amplifier."
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0140.jpg",
+        "frame_0141.jpg",
+        "frame_0142.jpg"
+      ],
+      "transcript": "[9:38] you've got that behaviour that we were just talking about. This just acts like an inverting amplifier.\n[9:44] But when we have the capacitor in and we think about the high frequencies, well that short circuits"
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0143.jpg",
+        "frame_0144.jpg"
+      ],
+      "transcript": "[9:44] But when we have the capacitor in and we think about the high frequencies, well that short circuits\n[9:50] this, and the op-amp output can bypass this resistor and oppose the input with almost no effort. So what\n[9:58] we're saying is that at high frequencies, the output can bypass this resistor because this capacitor looks"
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0145.jpg",
+        "frame_0146.jpg"
+      ],
+      "transcript": "[9:58] we're saying is that at high frequencies, the output can bypass this resistor because this capacitor looks\n[10:03] like a short circuit at high frequencies, and at low frequencies it behaves like an ordinary amplifier.\n[10:09] So we essentially get discrimination between low frequencies and high frequencies by simply just"
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0147.jpg",
+        "frame_0148.jpg",
+        "frame_0149.jpg"
+      ],
+      "transcript": "[10:09] So we essentially get discrimination between low frequencies and high frequencies by simply just\n[10:16] adding a capacitor in here. So in this context we're just thinking of this capacitor as a frequency"
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0150.jpg",
+        "frame_0151.jpg"
+      ],
+      "transcript": "[10:16] adding a capacitor in here. So in this context we're just thinking of this capacitor as a frequency\n[10:21] dependent resistor, and it's the frequency at which this resistance becomes comparable to this resistance\n[10:28] that is going to set the point at which it starts to filter. And we call that point the 3dB point, and again I'm not"
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0152.jpg",
+        "frame_0153.jpg",
+        "frame_0154.jpg"
+      ],
+      "transcript": "[10:28] that is going to set the point at which it starts to filter. And we call that point the 3dB point, and again I'm not\n[10:34] going to go into it now because I've done my circuits 101 video where I go through all of this stuff.\n[10:38] The point I'm trying to make is that if you vary this resistor, you can change the point at which those two resistances become"
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0155.jpg",
+        "frame_0156.jpg"
+      ],
+      "transcript": "[10:38] The point I'm trying to make is that if you vary this resistor, you can change the point at which those two resistances become\n[10:44] comparable, and that sets the threshold for the filter. Now if you're eagle-eyed you would have seen there's a huge problem with that,"
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0157.jpg",
+        "frame_0158.jpg"
+      ],
+      "transcript": "[10:44] comparable, and that sets the threshold for the filter. Now if you're eagle-eyed you would have seen there's a huge problem with that,\n[10:51] because if we change this resistance at low frequencies, remember, let's just ignore this because it's an open circuit,\n[10:59] now we've got a inverting amplifier, but it's these two resistances that sets the gain."
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0159.jpg",
+        "frame_0160.jpg",
+        "frame_0161.jpg"
+      ],
+      "transcript": "[10:59] now we've got a inverting amplifier, but it's these two resistances that sets the gain.\n[11:04] So we're simultaneously changing the cutoff frequency and the gain at the same time, and we don't want to do that.\n[11:09] So all we're going to do is replace these two resistances with a linked stereo potentiometer,"
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0162.jpg",
+        "frame_0163.jpg"
+      ],
+      "transcript": "[11:09] So all we're going to do is replace these two resistances with a linked stereo potentiometer,\n[11:16] which is basically a potentiometer where you turn one dial and it wipes two separate potentiometers at"
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0164.jpg",
+        "frame_0165.jpg",
+        "frame_0166.jpg"
+      ],
+      "transcript": "[11:16] which is basically a potentiometer where you turn one dial and it wipes two separate potentiometers at\n[11:22] the same time. So you can always keep these two resistances to be exactly equal, so the gain is always one.\n[11:29] Okay, so now the last consideration we have to make, this is setting our midpoint. Usually you see an op-amp"
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0167.jpg",
+        "frame_0168.jpg"
+      ],
+      "transcript": "[11:29] Okay, so now the last consideration we have to make, this is setting our midpoint. Usually you see an op-amp\n[11:37] like this, but this is plus V and this is minus V if we have a split supply, but we've been using batteries."
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0169.jpg",
+        "frame_0170.jpg"
+      ],
+      "transcript": "[11:37] like this, but this is plus V and this is minus V if we have a split supply, but we've been using batteries.\n[11:42] So this is going to be ground, the negative supply is going to be ground, this is going to be 9 volts.\n[11:47] So if we connect a disk to ground as well, our output circuit, our output signal sorry, would look like this."
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0171.jpg",
+        "frame_0172.jpg",
+        "frame_0173.jpg"
+      ],
+      "transcript": "[11:47] So if we connect a disk to ground as well, our output circuit, our output signal sorry, would look like this.\n[11:52] Because we can't go below ground, we need to set this point here to 4.5 volts, we want our output signal\n[11:59] to look like this, to be centred around the centre so there's no clipping at the top or at the bottom."
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0174.jpg",
+        "frame_0175.jpg"
+      ],
+      "transcript": "[11:59] to look like this, to be centred around the centre so there's no clipping at the top or at the bottom.\n[12:04] There's a couple of ways we could do this. Okay, so we could set up a circuit like this if we wanted to.\n[12:08] This is our low pass filter that we just looked at, remember this is a stereo potentiometer here,"
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0176.jpg",
+        "frame_0177.jpg",
+        "frame_0178.jpg"
+      ],
+      "transcript": "[12:08] This is our low pass filter that we just looked at, remember this is a stereo potentiometer here,\n[12:13] and then this is just a unity gain inverting amplifier, just as a buffer, and then you take the output out here."
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0179.jpg",
+        "frame_0180.jpg"
+      ],
+      "transcript": "[12:13] and then this is just a unity gain inverting amplifier, just as a buffer, and then you take the output out here.\n[12:20] We could also just do what we've been doing all along, which is to take advantage of our CMOS chips ability\n[12:28] to do all this stuff for us. This CD4069UB is an inverting amplifier with the midway point threshold"
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0181.jpg",
+        "frame_0182.jpg"
+      ],
+      "transcript": "[12:28] to do all this stuff for us. This CD4069UB is an inverting amplifier with the midway point threshold\n[12:38] set internally to the chip. Take rid of this stuff, get rid of this stuff. So these two inputs obviously"
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0183.jpg",
+        "frame_0184.jpg",
+        "frame_0185.jpg"
+      ],
+      "transcript": "[12:38] set internally to the chip. Take rid of this stuff, get rid of this stuff. So these two inputs obviously\n[12:45] still exist, but they're internal to the chip and they're setting that threshold for us. So with one,"
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0186.jpg",
+        "frame_0187.jpg"
+      ],
+      "transcript": "[12:45] still exist, but they're internal to the chip and they're setting that threshold for us. So with one,\n[12:51] two, three, four components and one chip, we can make ourselves a stable active filter. Right,\n[12:57] hello folks. What we're going to do now is we're going to build the circuit out. A bit of a 4106"
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0188.jpg",
+        "frame_0189.jpg",
+        "frame_0190.jpg"
+      ],
+      "transcript": "[12:57] hello folks. What we're going to do now is we're going to build the circuit out. A bit of a 4106\n[13:02] oscillator as a sound source, you can use any sound source you want. Okay, so now we're going to take\n[13:05] this and we're going to put it into our 4069, but we're going to do it via this stereo potentiometer."
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0191.jpg",
+        "frame_0192.jpg"
+      ],
+      "transcript": "[13:05] this and we're going to put it into our 4069, but we're going to do it via this stereo potentiometer.\n[13:12] So we're going to take one output of the 4106, and I'm going to feed it to one leg of the stereo\n[13:17] potentiometer. So this is a potentiometer with two potentiometers with only one wiper, and I'm putting it on"
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0193.jpg",
+        "frame_0194.jpg"
+      ],
+      "transcript": "[13:17] potentiometer. So this is a potentiometer with two potentiometers with only one wiper, and I'm putting it on\n[13:23] either side of the track like this so they're electrically isolated from one another. And then\n[13:27] I'm going to use them as two separate potentiometers. So I'm using this one as my input potentiometer."
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0195.jpg",
+        "frame_0196.jpg",
+        "frame_0197.jpg"
+      ],
+      "transcript": "[13:27] I'm going to use them as two separate potentiometers. So I'm using this one as my input potentiometer.\n[13:32] It goes through this right hand side first, and then to the 4069. And it's also serving as my feedback resistor.\n[13:39] Okay, so that should be a unity gain inverting amplifier now. And as I vary the potentiometer,"
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0198.jpg",
+        "frame_0199.jpg"
+      ],
+      "transcript": "[13:39] Okay, so that should be a unity gain inverting amplifier now. And as I vary the potentiometer,"
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0200.jpg",
+        "frame_0201.jpg",
+        "frame_0202.jpg"
+      ],
+      "transcript": "[13:39] Okay, so that should be a unity gain inverting amplifier now. And as I vary the potentiometer,\n[13:54] the gain shouldn't change. Good. Okay, so now what I'm going to do is I'm going to put a capacitor,"
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0203.jpg",
+        "frame_0204.jpg"
+      ],
+      "transcript": "[13:54] the gain shouldn't change. Good. Okay, so now what I'm going to do is I'm going to put a capacitor,\n[14:02] a small capacitor. I'm going to use a 0.033 microfarad capacitor in parallel with this. So one leg at the"
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0205.jpg",
+        "frame_0206.jpg"
+      ],
+      "transcript": "[14:02] a small capacitor. I'm going to use a 0.033 microfarad capacitor in parallel with this. So one leg at the\n[14:12] output of the op-amp and the other leg at the input. That's the input signal where it's just an ordinary\n[14:18] square wave, you know, it looks exactly the same as the input. And then as we filter it,"
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0207.jpg",
+        "frame_0208.jpg",
+        "frame_0209.jpg"
+      ],
+      "transcript": "[14:18] square wave, you know, it looks exactly the same as the input. And then as we filter it,\n[14:22] it becomes more like a triangle wave. Those high frequencies are filtered out. You can see on the"
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0210.jpg",
+        "frame_0211.jpg"
+      ],
+      "transcript": "[14:22] it becomes more like a triangle wave. Those high frequencies are filtered out. You can see on the\n[14:34] scope that the amplitude isn't changing. Okay, and then finally, I've just added another inverting buffer"
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0212.jpg",
+        "frame_0213.jpg",
+        "frame_0214.jpg"
+      ],
+      "transcript": "[14:34] scope that the amplitude isn't changing. Okay, and then finally, I've just added another inverting buffer\n[14:45] with just 100k, which is this resistor here, and then 100k feeding back. So that's just buffered the output."
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 900,
+      "frames": [
+        "frame_0215.jpg",
+        "frame_0216.jpg"
+      ],
+      "transcript": "[14:45] with just 100k, which is this resistor here, and then 100k feeding back. So that's just buffered the output.\n[14:52] So that we can't load it down."
+    },
+    {
+      "segment_index": 91,
+      "start_time": 900,
+      "end_time": 910,
+      "frames": [
+        "frame_0217.jpg",
+        "frame_0218.jpg",
+        "frame_0219.jpg"
+      ],
+      "transcript": "[15:01] Okay, so that's it for this one guys. Thanks for joining me today. We looked over\n[15:04] three super simple op-amp circuits. We learned how to analyze op-amp circuits in general, and we built"
+    },
+    {
+      "segment_index": 92,
+      "start_time": 910,
+      "end_time": 920,
+      "frames": [
+        "frame_0220.jpg",
+        "frame_0221.jpg"
+      ],
+      "transcript": "[15:04] three super simple op-amp circuits. We learned how to analyze op-amp circuits in general, and we built\n[15:10] ourselves this awesome sounding active filter. Thanks for watching. Make sure you like, share,\n[15:14] subscribe, do all that stuff. Ring the bell. Find me on social media on Facebook, Twitter,"
+    },
+    {
+      "segment_index": 93,
+      "start_time": 920,
+      "end_time": 927.92,
+      "frames": [
+        "frame_0222.jpg"
+      ],
+      "transcript": "[15:14] subscribe, do all that stuff. Ring the bell. Find me on social media on Facebook, Twitter,\n[15:20] Instagram, watch more of my videos here, some over here, and I'll see you all next time. Take care.\n[15:25] Amen."
+    }
+  ]
+}

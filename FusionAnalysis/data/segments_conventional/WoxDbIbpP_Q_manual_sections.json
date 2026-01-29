@@ -1,0 +1,2943 @@
+{
+  "video_id": "WoxDbIbpP_Q",
+  "duration": 2094.48,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg",
+        "frame_0003.jpg",
+        "frame_0004.jpg",
+        "frame_0005.jpg",
+        "frame_0006.jpg"
+      ],
+      "transcript": "[0:00] Hi everyone, this is the second in my series of videos on Betaflight filter and PID tuning.\n[0:07] In this video I'm going to take you through step by step everything you need to do and everything"
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0007.jpg",
+        "frame_0008.jpg",
+        "frame_0009.jpg",
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:07] In this video I'm going to take you through step by step everything you need to do and everything\n[0:13] you need to know to get the perfect PID tune on any Betaflight quad. It's quite a lot of material"
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg",
+        "frame_0015.jpg",
+        "frame_0016.jpg",
+        "frame_0017.jpg",
+        "frame_0018.jpg"
+      ],
+      "transcript": "[0:13] you need to know to get the perfect PID tune on any Betaflight quad. It's quite a lot of material\n[0:21] to get through so let's not waste any time. I have to start this video with a little bit of a health\n[0:28] warning. This video presumes that you are using my recommended filter tuning approach. Now I've done"
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0019.jpg",
+        "frame_0020.jpg",
+        "frame_0021.jpg",
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[0:28] warning. This video presumes that you are using my recommended filter tuning approach. Now I've done\n[0:34] another video where I look at filter tuning in Betaflight. This video assumes that you've completed"
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg",
+        "frame_0027.jpg",
+        "frame_0028.jpg",
+        "frame_0029.jpg",
+        "frame_0030.jpg"
+      ],
+      "transcript": "[0:34] another video where I look at filter tuning in Betaflight. This video assumes that you've completed\n[0:40] that video and that you've now got your filters correctly tuned. Don't proceed with this video\n[0:45] until you've completed steps one to three in that other video. So the next steps are PID tuning and"
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0031.jpg",
+        "frame_0032.jpg",
+        "frame_0033.jpg",
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[0:45] until you've completed steps one to three in that other video. So the next steps are PID tuning and\n[0:52] there are three steps here that we're going to cover in this video. Finding your max D gains that\n[0:58] you're comfortable with. Then finding the right P to D balance in order to get a critically damped PID"
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg",
+        "frame_0039.jpg",
+        "frame_0040.jpg",
+        "frame_0041.jpg",
+        "frame_0042.jpg"
+      ],
+      "transcript": "[0:58] you're comfortable with. Then finding the right P to D balance in order to get a critically damped PID\n[1:05] response. And then the final stage tuning feed forward for set point tracking so that we get"
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0043.jpg",
+        "frame_0044.jpg",
+        "frame_0045.jpg",
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[1:05] response. And then the final stage tuning feed forward for set point tracking so that we get\n[1:12] really really great responsiveness of the quad, really close tracking of your stick inputs.\n[1:18] Now in order to get a really good PID tune on your quadcopter it really helps if you understand"
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg",
+        "frame_0051.jpg",
+        "frame_0052.jpg",
+        "frame_0053.jpg",
+        "frame_0054.jpg"
+      ],
+      "transcript": "[1:18] Now in order to get a really good PID tune on your quadcopter it really helps if you understand\n[1:24] all the different elements of Betaflight's PID controller and what they all do. Now Betaflight's"
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0055.jpg",
+        "frame_0056.jpg",
+        "frame_0057.jpg",
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[1:24] all the different elements of Betaflight's PID controller and what they all do. Now Betaflight's\n[1:31] PID controller consists of four main parts. P is the proportional term of the PID controller.\n[1:39] I is the integral term of the PID controller. D is the derivative term of the PID controller."
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg",
+        "frame_0063.jpg",
+        "frame_0064.jpg",
+        "frame_0065.jpg",
+        "frame_0066.jpg"
+      ],
+      "transcript": "[1:39] I is the integral term of the PID controller. D is the derivative term of the PID controller.\n[1:46] And feed forward is used to push the quad into sharp moves and improve set point tracking."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0067.jpg",
+        "frame_0068.jpg",
+        "frame_0069.jpg",
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[1:46] And feed forward is used to push the quad into sharp moves and improve set point tracking.\n[1:51] Now don't worry if you don't understand all of these terms right away. We're going to go through\n[1:57] them all step by step and explain how they all work now. So let's look at a diagram of Betaflight's"
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg",
+        "frame_0075.jpg",
+        "frame_0076.jpg",
+        "frame_0077.jpg",
+        "frame_0078.jpg"
+      ],
+      "transcript": "[1:57] them all step by step and explain how they all work now. So let's look at a diagram of Betaflight's\n[2:05] PID controller. You can see that it takes two inputs. The first input is the input from the gyro which is"
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0079.jpg",
+        "frame_0080.jpg",
+        "frame_0081.jpg",
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[2:05] PID controller. You can see that it takes two inputs. The first input is the input from the gyro which is\n[2:12] telling the PID controller what the quad is doing at this instant. And then the second input is the set\n[2:18] point. Now this is your stick positions multiplied by your rates. So it's what you are telling the quad"
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg",
+        "frame_0087.jpg",
+        "frame_0088.jpg",
+        "frame_0089.jpg",
+        "frame_0090.jpg"
+      ],
+      "transcript": "[2:18] point. Now this is your stick positions multiplied by your rates. So it's what you are telling the quad\n[2:25] you want it to do at that instant. And these two input terms are combined in this sum here. So the"
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0091.jpg",
+        "frame_0092.jpg",
+        "frame_0093.jpg",
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[2:25] you want it to do at that instant. And these two input terms are combined in this sum here. So the\n[2:32] set point minus the gyro gives the PID error. So the PID error is the difference between what you told the"
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg",
+        "frame_0099.jpg",
+        "frame_0100.jpg",
+        "frame_0101.jpg",
+        "frame_0102.jpg"
+      ],
+      "transcript": "[2:32] set point minus the gyro gives the PID error. So the PID error is the difference between what you told the\n[2:40] quad you wanted it to do and what it is actually doing. And that PID error is fed into the derivative,\n[2:48] proportional and integral terms. And they do some maths on it which we'll talk about in a second."
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0103.jpg",
+        "frame_0104.jpg",
+        "frame_0105.jpg",
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[2:48] proportional and integral terms. And they do some maths on it which we'll talk about in a second.\n[2:53] And the results of those terms are all added together along with the feed forward term which"
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg",
+        "frame_0111.jpg",
+        "frame_0112.jpg",
+        "frame_0113.jpg",
+        "frame_0114.jpg"
+      ],
+      "transcript": "[2:53] And the results of those terms are all added together along with the feed forward term which\n[3:00] is based only on the set point. They're all added together here. And this is where the PID gains that\n[3:06] you set in beta flight are applied. So if you set a really big gain for the derivative term for example"
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0115.jpg",
+        "frame_0116.jpg",
+        "frame_0117.jpg",
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[3:06] you set in beta flight are applied. So if you set a really big gain for the derivative term for example\n[3:13] in this addition block here this gets multiplied by that gain. So if you double the derivative gain, the"
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg",
+        "frame_0123.jpg",
+        "frame_0124.jpg",
+        "frame_0125.jpg",
+        "frame_0126.jpg"
+      ],
+      "transcript": "[3:13] in this addition block here this gets multiplied by that gain. So if you double the derivative gain, the\n[3:21] D gain, then it will add twice as much into this block as before. If you halve the proportional gain, suddenly\n[3:29] this term only gets added half as much. So that's where all your PID gains live in this block here."
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0127.jpg",
+        "frame_0128.jpg",
+        "frame_0129.jpg",
+        "frame_0130.jpg",
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[3:29] this term only gets added half as much. So that's where all your PID gains live in this block here.\n[3:36] Once all of those have been added together, that gives a control signal telling the quad how to"
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg",
+        "frame_0135.jpg",
+        "frame_0136.jpg",
+        "frame_0137.jpg",
+        "frame_0138.jpg"
+      ],
+      "transcript": "[3:36] Once all of those have been added together, that gives a control signal telling the quad how to\n[3:42] change what it is doing. And that gets passed to the motor mixer. And the motor mixer determines,\n[3:49] ah well if you want me to roll left more quickly, then I need to increase the speed of the right motors"
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0139.jpg",
+        "frame_0140.jpg",
+        "frame_0141.jpg",
+        "frame_0142.jpg",
+        "frame_0143.jpg",
+        "frame_0144.jpg"
+      ],
+      "transcript": "[3:49] ah well if you want me to roll left more quickly, then I need to increase the speed of the right motors\n[3:56] and decrease the speed of the left motors. So it turns the control signal that's telling the quad what"
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0145.jpg",
+        "frame_0146.jpg",
+        "frame_0147.jpg",
+        "frame_0148.jpg",
+        "frame_0149.jpg",
+        "frame_0150.jpg"
+      ],
+      "transcript": "[3:56] and decrease the speed of the left motors. So it turns the control signal that's telling the quad what\n[4:01] to do into which motors do I speed up, which do I slow down. That's what the motor mixer does. So that"
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0151.jpg",
+        "frame_0152.jpg",
+        "frame_0153.jpg",
+        "frame_0154.jpg",
+        "frame_0155.jpg",
+        "frame_0156.jpg"
+      ],
+      "transcript": "[4:01] to do into which motors do I speed up, which do I slow down. That's what the motor mixer does. So that\n[4:10] is how the beta flight PID controller works in a very simple way. Now let's talk about the different\n[4:17] terms. And we'll start with the proportional term because I think it's easiest to understand."
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0157.jpg",
+        "frame_0158.jpg",
+        "frame_0159.jpg",
+        "frame_0160.jpg",
+        "frame_0161.jpg",
+        "frame_0162.jpg"
+      ],
+      "transcript": "[4:17] terms. And we'll start with the proportional term because I think it's easiest to understand.\n[4:22] Now the proportional term looks at the PID error. This blue line here represents zero PID error."
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0163.jpg",
+        "frame_0164.jpg",
+        "frame_0165.jpg",
+        "frame_0166.jpg",
+        "frame_0167.jpg",
+        "frame_0168.jpg"
+      ],
+      "transcript": "[4:22] Now the proportional term looks at the PID error. This blue line here represents zero PID error.\n[4:31] So if we have some positive PID error, then the proportional term pushes back against that and\n[4:37] tries to bring the PID error to zero. If that PID error gets bigger, the proportional term pushes harder."
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0169.jpg",
+        "frame_0170.jpg",
+        "frame_0171.jpg",
+        "frame_0172.jpg",
+        "frame_0173.jpg",
+        "frame_0174.jpg"
+      ],
+      "transcript": "[4:37] tries to bring the PID error to zero. If that PID error gets bigger, the proportional term pushes harder.\n[4:44] And if it's very big like this, you can see it's pushing really hard. If the PID error goes negative,"
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0175.jpg",
+        "frame_0176.jpg",
+        "frame_0177.jpg",
+        "frame_0178.jpg",
+        "frame_0179.jpg",
+        "frame_0180.jpg"
+      ],
+      "transcript": "[4:44] And if it's very big like this, you can see it's pushing really hard. If the PID error goes negative,\n[4:51] then the proportional term still pushes back towards zero. So it's pushing back towards zero the whole\n[4:57] time. And the bigger the PID error, the harder it pushes back. And so whatever size the PID error is,"
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0181.jpg",
+        "frame_0182.jpg",
+        "frame_0183.jpg",
+        "frame_0184.jpg",
+        "frame_0185.jpg",
+        "frame_0186.jpg"
+      ],
+      "transcript": "[4:57] time. And the bigger the PID error, the harder it pushes back. And so whatever size the PID error is,\n[5:04] and whether it's positive or negative, that proportional term is just acting to try and reduce\n[5:09] that PID error back towards that blue line, the zero line. Now let's talk about the derivative term."
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0187.jpg",
+        "frame_0188.jpg",
+        "frame_0189.jpg",
+        "frame_0190.jpg",
+        "frame_0191.jpg",
+        "frame_0192.jpg"
+      ],
+      "transcript": "[5:09] that PID error back towards that blue line, the zero line. Now let's talk about the derivative term.\n[5:17] Now the derivative term is a little bit different. Because all the derivative term wants is for the"
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0193.jpg",
+        "frame_0194.jpg",
+        "frame_0195.jpg",
+        "frame_0196.jpg",
+        "frame_0197.jpg",
+        "frame_0198.jpg"
+      ],
+      "transcript": "[5:17] Now the derivative term is a little bit different. Because all the derivative term wants is for the\n[5:24] PID error to stay the same from one minute to the next. It doesn't want it to be zero. It just wants it"
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0199.jpg",
+        "frame_0200.jpg",
+        "frame_0201.jpg",
+        "frame_0202.jpg",
+        "frame_0203.jpg",
+        "frame_0204.jpg"
+      ],
+      "transcript": "[5:24] PID error to stay the same from one minute to the next. It doesn't want it to be zero. It just wants it\n[5:31] to stay the same. So if the PID error increases, the derivative term doesn't like that because it\n[5:38] wants the PID error to stay the same. So it acts to try and stop the PID error increasing."
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0205.jpg",
+        "frame_0206.jpg",
+        "frame_0207.jpg",
+        "frame_0208.jpg",
+        "frame_0209.jpg",
+        "frame_0210.jpg"
+      ],
+      "transcript": "[5:38] wants the PID error to stay the same. So it acts to try and stop the PID error increasing.\n[5:45] But if the PID error starts to decrease, the derivative term doesn't like that either. It wants the PID error to stay the same."
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0211.jpg",
+        "frame_0212.jpg",
+        "frame_0213.jpg",
+        "frame_0214.jpg",
+        "frame_0215.jpg",
+        "frame_0216.jpg"
+      ],
+      "transcript": "[5:45] But if the PID error starts to decrease, the derivative term doesn't like that either. It wants the PID error to stay the same.\n[5:53] So it's pushing back against the PID error decreasing. So this is quite a strange behavior because you can see that"
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0217.jpg",
+        "frame_0218.jpg",
+        "frame_0219.jpg",
+        "frame_0220.jpg",
+        "frame_0221.jpg",
+        "frame_0222.jpg"
+      ],
+      "transcript": "[5:53] So it's pushing back against the PID error decreasing. So this is quite a strange behavior because you can see that\n[6:01] things appear to be getting better here. The PID error is decreasing. But the derivative term just is pushing back. It wants the PID error to stay the same and not decrease."
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0223.jpg",
+        "frame_0224.jpg",
+        "frame_0225.jpg",
+        "frame_0226.jpg",
+        "frame_0227.jpg",
+        "frame_0228.jpg"
+      ],
+      "transcript": "[6:01] things appear to be getting better here. The PID error is decreasing. But the derivative term just is pushing back. It wants the PID error to stay the same and not decrease.\n[6:11] So that's how the derivative term works. The integral term also has a bit of a different behavior."
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0229.jpg",
+        "frame_0230.jpg",
+        "frame_0231.jpg",
+        "frame_0232.jpg",
+        "frame_0233.jpg",
+        "frame_0234.jpg"
+      ],
+      "transcript": "[6:11] So that's how the derivative term works. The integral term also has a bit of a different behavior.\n[6:21] The integral term adds up the PID error over time. So here we have some small positive PID error. And initially, the integral term pushes back a little bit."
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0235.jpg",
+        "frame_0236.jpg",
+        "frame_0237.jpg",
+        "frame_0238.jpg",
+        "frame_0239.jpg",
+        "frame_0240.jpg"
+      ],
+      "transcript": "[6:21] The integral term adds up the PID error over time. So here we have some small positive PID error. And initially, the integral term pushes back a little bit.\n[6:32] But then if that error doesn't go away, the integral term says, ah, I'll push back twice as hard.\n[6:38] And then if there's another same amount of error again, three times as hard, four times as hard, five times as hard."
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0241.jpg",
+        "frame_0242.jpg",
+        "frame_0243.jpg",
+        "frame_0244.jpg",
+        "frame_0245.jpg",
+        "frame_0246.jpg"
+      ],
+      "transcript": "[6:38] And then if there's another same amount of error again, three times as hard, four times as hard, five times as hard.\n[6:46] It's adding up over time, that error. And the longer that error is there, the harder the integral term pushes back."
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0247.jpg",
+        "frame_0248.jpg",
+        "frame_0249.jpg",
+        "frame_0250.jpg",
+        "frame_0251.jpg",
+        "frame_0252.jpg"
+      ],
+      "transcript": "[6:46] It's adding up over time, that error. And the longer that error is there, the harder the integral term pushes back.\n[6:55] But then what if the error goes negative? Well, the integral term then says, oh, okay, well, you've been negative for a bit."
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0253.jpg",
+        "frame_0254.jpg",
+        "frame_0255.jpg",
+        "frame_0256.jpg",
+        "frame_0257.jpg",
+        "frame_0258.jpg"
+      ],
+      "transcript": "[6:55] But then what if the error goes negative? Well, the integral term then says, oh, okay, well, you've been negative for a bit.\n[7:02] So I guess I don't need to push as hard. Oh, you're still negative. I'm going to push even less.\n[7:09] Ah, still negative, even less. You can see it's adding up, but it's actually subtracting."
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0259.jpg",
+        "frame_0260.jpg",
+        "frame_0261.jpg",
+        "frame_0262.jpg",
+        "frame_0263.jpg",
+        "frame_0264.jpg"
+      ],
+      "transcript": "[7:09] Ah, still negative, even less. You can see it's adding up, but it's actually subtracting.\n[7:14] It's taking a little bit away from its push every time it sees that negative PID error."
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0265.jpg",
+        "frame_0266.jpg",
+        "frame_0267.jpg",
+        "frame_0268.jpg",
+        "frame_0269.jpg",
+        "frame_0270.jpg"
+      ],
+      "transcript": "[7:14] It's taking a little bit away from its push every time it sees that negative PID error.\n[7:20] So you can see the integral term is just counting. It's just adding up the error over time.\n[7:26] And it's pushing back towards zero, but it's pushing back based on how much error has accumulated over time."
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0271.jpg",
+        "frame_0272.jpg",
+        "frame_0273.jpg",
+        "frame_0274.jpg",
+        "frame_0275.jpg",
+        "frame_0276.jpg"
+      ],
+      "transcript": "[7:26] And it's pushing back towards zero, but it's pushing back based on how much error has accumulated over time.\n[7:36] And the feedforward term is completely different from the other terms in the PID controller,"
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0277.jpg",
+        "frame_0278.jpg",
+        "frame_0279.jpg",
+        "frame_0280.jpg",
+        "frame_0281.jpg",
+        "frame_0282.jpg"
+      ],
+      "transcript": "[7:36] And the feedforward term is completely different from the other terms in the PID controller,\n[7:42] because it does not act on the PID error. It acts on the set point.\n[7:47] And what it says is that if the set point is changing, I need to push the quad in the same direction to start it moving in the direction that the set point is changing."
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0283.jpg",
+        "frame_0284.jpg",
+        "frame_0285.jpg",
+        "frame_0286.jpg",
+        "frame_0287.jpg",
+        "frame_0288.jpg"
+      ],
+      "transcript": "[7:47] And what it says is that if the set point is changing, I need to push the quad in the same direction to start it moving in the direction that the set point is changing.\n[7:59] So if the set point is increasing, then the feedforward term pushes the quad to change in that direction."
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0289.jpg",
+        "frame_0290.jpg",
+        "frame_0291.jpg",
+        "frame_0292.jpg",
+        "frame_0293.jpg",
+        "frame_0294.jpg"
+      ],
+      "transcript": "[7:59] So if the set point is increasing, then the feedforward term pushes the quad to change in that direction.\n[8:07] If the set point is decreasing, the feedforward term again pushes back to try and get the quad to move in the direction that the set point is moving in."
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0295.jpg",
+        "frame_0296.jpg",
+        "frame_0297.jpg",
+        "frame_0298.jpg",
+        "frame_0299.jpg",
+        "frame_0300.jpg"
+      ],
+      "transcript": "[8:07] If the set point is decreasing, the feedforward term again pushes back to try and get the quad to move in the direction that the set point is moving in.\n[8:19] Let's say you've just commanded full stick right roll."
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0301.jpg",
+        "frame_0302.jpg",
+        "frame_0303.jpg",
+        "frame_0304.jpg",
+        "frame_0305.jpg",
+        "frame_0306.jpg"
+      ],
+      "transcript": "[8:19] Let's say you've just commanded full stick right roll.\n[8:23] You're doing a snap roll to the right.\n[8:26] The feedforward term sees that set point change and goes, ah, I need to start rolling right right now,"
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0307.jpg",
+        "frame_0308.jpg",
+        "frame_0309.jpg",
+        "frame_0310.jpg",
+        "frame_0311.jpg",
+        "frame_0312.jpg"
+      ],
+      "transcript": "[8:26] The feedforward term sees that set point change and goes, ah, I need to start rolling right right now,\n[8:32] because you've commanded a snap roll right.\n[8:34] I need to start that move now.\n[8:37] And it doesn't wait for the PID error to build up."
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0313.jpg",
+        "frame_0314.jpg",
+        "frame_0315.jpg",
+        "frame_0316.jpg",
+        "frame_0317.jpg",
+        "frame_0318.jpg"
+      ],
+      "transcript": "[8:37] And it doesn't wait for the PID error to build up.\n[8:40] It acts immediately.\n[8:42] And this allows the feedforward term to really reduce the amount of PID error that builds up,\n[8:48] because it gets the quad moving in the right direction straight away."
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0319.jpg",
+        "frame_0320.jpg",
+        "frame_0321.jpg",
+        "frame_0322.jpg",
+        "frame_0323.jpg",
+        "frame_0324.jpg"
+      ],
+      "transcript": "[8:48] because it gets the quad moving in the right direction straight away.\n[8:54] There are three of these PID controllers in Betaflight, and they all work the same way.\n[8:59] There's one each for roll, pitch and yaw axis, and they're all separate."
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0325.jpg",
+        "frame_0326.jpg",
+        "frame_0327.jpg",
+        "frame_0328.jpg",
+        "frame_0329.jpg",
+        "frame_0330.jpg"
+      ],
+      "transcript": "[8:59] There's one each for roll, pitch and yaw axis, and they're all separate.\n[9:05] The only difference with the yaw axis is that it doesn't have a derivative term,\n[9:09] because the nature of the yaw axis for multirotors means that a derivative term isn't required."
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0331.jpg",
+        "frame_0332.jpg",
+        "frame_0333.jpg",
+        "frame_0334.jpg",
+        "frame_0335.jpg",
+        "frame_0336.jpg"
+      ],
+      "transcript": "[9:09] because the nature of the yaw axis for multirotors means that a derivative term isn't required.\n[9:17] So with that said, let's jump into step four, finding your max D gains."
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0337.jpg",
+        "frame_0338.jpg",
+        "frame_0339.jpg",
+        "frame_0340.jpg",
+        "frame_0341.jpg",
+        "frame_0342.jpg"
+      ],
+      "transcript": "[9:17] So with that said, let's jump into step four, finding your max D gains.\n[9:22] Now the foundation, in my opinion, of a good PID tune is the right D gain.\n[9:28] And the right D gain is as much as you feel comfortable that you can get away with."
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0343.jpg",
+        "frame_0344.jpg",
+        "frame_0345.jpg",
+        "frame_0346.jpg",
+        "frame_0347.jpg",
+        "frame_0348.jpg"
+      ],
+      "transcript": "[9:28] And the right D gain is as much as you feel comfortable that you can get away with.\n[9:34] The more D gain you have, the hotter your motors are going to get,\n[9:38] the more likely you are to get D term oscillations, especially if you bend a prop."
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0349.jpg",
+        "frame_0350.jpg",
+        "frame_0351.jpg",
+        "frame_0352.jpg",
+        "frame_0353.jpg",
+        "frame_0354.jpg"
+      ],
+      "transcript": "[9:38] the more likely you are to get D term oscillations, especially if you bend a prop.\n[9:44] However, the more D gain you can tolerate without getting motors that are too hot or D term oscillations,"
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0355.jpg",
+        "frame_0356.jpg",
+        "frame_0357.jpg",
+        "frame_0358.jpg",
+        "frame_0359.jpg",
+        "frame_0360.jpg"
+      ],
+      "transcript": "[9:44] However, the more D gain you can tolerate without getting motors that are too hot or D term oscillations,\n[9:53] the better your final tune is going to be.\n[9:55] Now, before tuning D term, make sure your build is in a representative state."
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0361.jpg",
+        "frame_0362.jpg",
+        "frame_0363.jpg",
+        "frame_0364.jpg",
+        "frame_0365.jpg",
+        "frame_0366.jpg"
+      ],
+      "transcript": "[9:55] Now, before tuning D term, make sure your build is in a representative state.\n[10:02] So if you typically fly with bent props, make sure that you've got bent props on.\n[10:08] If you typically fly a very clean build, make sure that that's how it's set up."
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0367.jpg",
+        "frame_0368.jpg",
+        "frame_0369.jpg",
+        "frame_0370.jpg",
+        "frame_0371.jpg",
+        "frame_0372.jpg"
+      ],
+      "transcript": "[10:08] If you typically fly a very clean build, make sure that that's how it's set up.\n[10:13] If you usually fly with a GoPro, make sure that you've got a GoPro on the build.\n[10:17] All of these things.\n[10:17] Just make sure that your build is in the same state that you would normally fly it before you tune it."
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0373.jpg",
+        "frame_0374.jpg",
+        "frame_0375.jpg",
+        "frame_0376.jpg",
+        "frame_0377.jpg",
+        "frame_0378.jpg"
+      ],
+      "transcript": "[10:17] Just make sure that your build is in the same state that you would normally fly it before you tune it.\n[10:24] So we have these three boxes on the right.\n[10:26] Now, if we start down here with too little D gain, we're going to have worse prop wash handling."
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0379.jpg",
+        "frame_0380.jpg",
+        "frame_0381.jpg",
+        "frame_0382.jpg",
+        "frame_0383.jpg",
+        "frame_0384.jpg"
+      ],
+      "transcript": "[10:26] Now, if we start down here with too little D gain, we're going to have worse prop wash handling.\n[10:32] We're going to have worse set point tracking.\n[10:35] So the quad isn't going to follow the sticks as closely.\n[10:37] We're going to have a bit of a flight feel, you know, not great."
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0385.jpg",
+        "frame_0386.jpg",
+        "frame_0387.jpg",
+        "frame_0388.jpg",
+        "frame_0389.jpg",
+        "frame_0390.jpg"
+      ],
+      "transcript": "[10:37] We're going to have a bit of a flight feel, you know, not great.\n[10:42] But the quad is going to be much more tolerant of vibrations.\n[10:45] It's going to be more tolerant of damage, more tolerant of bent props, that sort of thing."
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0391.jpg",
+        "frame_0392.jpg",
+        "frame_0393.jpg",
+        "frame_0394.jpg",
+        "frame_0395.jpg",
+        "frame_0396.jpg"
+      ],
+      "transcript": "[10:51] If we have more D gain, we're going to have better prop wash handling, better set point tracking,\n[10:57] that more responsive feel that we all want."
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0397.jpg",
+        "frame_0398.jpg",
+        "frame_0399.jpg",
+        "frame_0400.jpg",
+        "frame_0401.jpg",
+        "frame_0402.jpg"
+      ],
+      "transcript": "[10:57] that more responsive feel that we all want.\n[11:00] And the quad is going to be overall less tolerant of vibration.\n[11:04] So you're more likely to get hot motors and maybe even oscillations.\n[11:09] If you damage the quad in flight, you bend a prop, something like that."
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0403.jpg",
+        "frame_0404.jpg",
+        "frame_0405.jpg",
+        "frame_0406.jpg",
+        "frame_0407.jpg",
+        "frame_0408.jpg"
+      ],
+      "transcript": "[11:09] If you damage the quad in flight, you bend a prop, something like that.\n[11:13] And then at the top here, we have too much D gain.\n[11:16] There's a real risk with too much D gain of overheating your motors, smoking motors and blowing ESCs."
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0409.jpg",
+        "frame_0410.jpg",
+        "frame_0411.jpg",
+        "frame_0412.jpg",
+        "frame_0413.jpg",
+        "frame_0414.jpg"
+      ],
+      "transcript": "[11:16] There's a real risk with too much D gain of overheating your motors, smoking motors and blowing ESCs.\n[11:23] Getting flyaways, oscillations and overall sadness.\n[11:28] So we definitely don't want too much D gain, but we also don't want too little."
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0415.jpg",
+        "frame_0416.jpg",
+        "frame_0417.jpg",
+        "frame_0418.jpg",
+        "frame_0419.jpg",
+        "frame_0420.jpg"
+      ],
+      "transcript": "[11:28] So we definitely don't want too much D gain, but we also don't want too little.\n[11:32] We want to try and aim for that maximum comfortable amount of D gain.\n[11:38] So the amount of D gain that you want to run really depends on you as a pilot."
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0421.jpg",
+        "frame_0422.jpg",
+        "frame_0423.jpg",
+        "frame_0424.jpg",
+        "frame_0425.jpg",
+        "frame_0426.jpg"
+      ],
+      "transcript": "[11:38] So the amount of D gain that you want to run really depends on you as a pilot.\n[11:43] And so I put together this little chart of trying to show what might be the right D gain for different\n[11:49] kinds of pilots."
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0427.jpg",
+        "frame_0428.jpg",
+        "frame_0429.jpg",
+        "frame_0430.jpg",
+        "frame_0431.jpg",
+        "frame_0432.jpg"
+      ],
+      "transcript": "[11:49] kinds of pilots.\n[11:50] So if you're a new pilot, you've got an unproven build, or you've got a build with known vibration\n[11:56] issues, stick to stock D gains of about 30."
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0433.jpg",
+        "frame_0434.jpg",
+        "frame_0435.jpg",
+        "frame_0436.jpg",
+        "frame_0437.jpg",
+        "frame_0438.jpg"
+      ],
+      "transcript": "[11:56] issues, stick to stock D gains of about 30.\n[12:01] This is for a five inch freestyle.\n[12:03] If you are a bandeau basher and you know you're going to need to fly home after having a big crash,"
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0439.jpg",
+        "frame_0440.jpg",
+        "frame_0441.jpg",
+        "frame_0442.jpg",
+        "frame_0443.jpg",
+        "frame_0444.jpg"
+      ],
+      "transcript": "[12:03] If you are a bandeau basher and you know you're going to need to fly home after having a big crash,\n[12:11] or perhaps you've got a build with rough motor bearings because you've had a big crash,\n[12:16] then maybe stick with a D gain of about 35, a little bit more than stock."
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0445.jpg",
+        "frame_0446.jpg",
+        "frame_0447.jpg",
+        "frame_0448.jpg",
+        "frame_0449.jpg",
+        "frame_0450.jpg"
+      ],
+      "transcript": "[12:16] then maybe stick with a D gain of about 35, a little bit more than stock.\n[12:20] If you're an experienced pilot who builds nice clean quads, and you know that you rarely need to\n[12:28] fly home from crashes, and more importantly, you know when you shouldn't fly home after a crash,"
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0451.jpg",
+        "frame_0452.jpg",
+        "frame_0453.jpg",
+        "frame_0454.jpg",
+        "frame_0455.jpg",
+        "frame_0456.jpg"
+      ],
+      "transcript": "[12:28] fly home from crashes, and more importantly, you know when you shouldn't fly home after a crash,\n[12:35] you know when a prop is badly bent enough that you shouldn't fly at home,"
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0457.jpg",
+        "frame_0458.jpg",
+        "frame_0459.jpg",
+        "frame_0460.jpg",
+        "frame_0461.jpg",
+        "frame_0462.jpg"
+      ],
+      "transcript": "[12:35] you know when a prop is badly bent enough that you shouldn't fly at home,\n[12:40] then perhaps you could tolerate a D gain of about 40.\n[12:44] If you are a very experienced pilot with a very low vibration build, for example,"
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0463.jpg",
+        "frame_0464.jpg",
+        "frame_0465.jpg",
+        "frame_0466.jpg",
+        "frame_0467.jpg",
+        "frame_0468.jpg"
+      ],
+      "transcript": "[12:44] If you are a very experienced pilot with a very low vibration build, for example,\n[12:51] an AOS 5 frame with PG44A mechanical damping grease applied to it,\n[12:57] you've got your filters really dialed in, and you're the kind of pilot who goes,"
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0469.jpg",
+        "frame_0470.jpg",
+        "frame_0471.jpg",
+        "frame_0472.jpg",
+        "frame_0473.jpg",
+        "frame_0474.jpg"
+      ],
+      "transcript": "[12:57] you've got your filters really dialed in, and you're the kind of pilot who goes,\n[13:02] no, no, no, it's a lovely day and I'm going to go and walk and get my quad.\n[13:06] I am not going to risk flying it back with a bent prop and smoking motors.\n[13:09] And you're the kind of pilot who wants the best possible flight feel, that kind of fly-by telepathy"
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0475.jpg",
+        "frame_0476.jpg",
+        "frame_0477.jpg",
+        "frame_0478.jpg",
+        "frame_0479.jpg",
+        "frame_0480.jpg"
+      ],
+      "transcript": "[13:09] And you're the kind of pilot who wants the best possible flight feel, that kind of fly-by telepathy\n[13:17] responsiveness, then you might be able to tolerate even higher D gains, 45, 50, even 55."
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0481.jpg",
+        "frame_0482.jpg",
+        "frame_0483.jpg",
+        "frame_0484.jpg",
+        "frame_0485.jpg",
+        "frame_0486.jpg"
+      ],
+      "transcript": "[13:17] responsiveness, then you might be able to tolerate even higher D gains, 45, 50, even 55.\n[13:26] On my perfect AOS 5 build, I'm running D gains between 50 and 55. So it's doable,"
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0487.jpg",
+        "frame_0488.jpg",
+        "frame_0489.jpg",
+        "frame_0490.jpg",
+        "frame_0491.jpg",
+        "frame_0492.jpg"
+      ],
+      "transcript": "[13:26] On my perfect AOS 5 build, I'm running D gains between 50 and 55. So it's doable,\n[13:34] but you do need to have the right build and the right filter tune.\n[13:36] Before starting, you need to unleash your PID controller."
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0493.jpg",
+        "frame_0494.jpg",
+        "frame_0495.jpg",
+        "frame_0496.jpg",
+        "frame_0497.jpg",
+        "frame_0498.jpg"
+      ],
+      "transcript": "[13:36] Before starting, you need to unleash your PID controller.\n[13:42] You need to enter the following into the Betaflight CLI to increase the PID sum limit\n[13:47] to 100% of maximum. And what this allows the PID controller to do is to push even harder to try"
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0499.jpg",
+        "frame_0500.jpg",
+        "frame_0501.jpg",
+        "frame_0502.jpg",
+        "frame_0503.jpg",
+        "frame_0504.jpg"
+      ],
+      "transcript": "[13:47] to 100% of maximum. And what this allows the PID controller to do is to push even harder to try\n[13:54] and follow setpoint. So these are the commands you need to enter. Set PID sum limit equals 1000,"
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0505.jpg",
+        "frame_0506.jpg",
+        "frame_0507.jpg",
+        "frame_0508.jpg",
+        "frame_0509.jpg",
+        "frame_0510.jpg"
+      ],
+      "transcript": "[13:54] and follow setpoint. So these are the commands you need to enter. Set PID sum limit equals 1000,\n[14:01] and hit enter. Set PID sum limit equals 1000, and hit enter. And then finally type save and hit enter.\n[14:09] And that will save and reboot your flight controller and store those settings."
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0511.jpg",
+        "frame_0512.jpg",
+        "frame_0513.jpg",
+        "frame_0514.jpg",
+        "frame_0515.jpg",
+        "frame_0516.jpg"
+      ],
+      "transcript": "[14:09] And that will save and reboot your flight controller and store those settings.\n[14:14] So now that you know roughly what you might be aiming at in terms of D gains,\n[14:18] you need a method to find your perfect D gains. And this is my method. There are other equally good"
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0517.jpg",
+        "frame_0518.jpg",
+        "frame_0519.jpg",
+        "frame_0520.jpg",
+        "frame_0521.jpg",
+        "frame_0522.jpg"
+      ],
+      "transcript": "[14:18] you need a method to find your perfect D gains. And this is my method. There are other equally good\n[14:27] methods. I know Mark Spatz at UAV Tech has another really good method, but this one's my one. So step"
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0523.jpg",
+        "frame_0524.jpg",
+        "frame_0525.jpg",
+        "frame_0526.jpg",
+        "frame_0527.jpg",
+        "frame_0528.jpg"
+      ],
+      "transcript": "[14:27] methods. I know Mark Spatz at UAV Tech has another really good method, but this one's my one. So step\n[14:34] one is to turn off D-Min. So go into the Betaflight PID tuning tab and turn off D-Min."
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0529.jpg",
+        "frame_0530.jpg",
+        "frame_0531.jpg",
+        "frame_0532.jpg",
+        "frame_0533.jpg",
+        "frame_0534.jpg"
+      ],
+      "transcript": "[14:34] one is to turn off D-Min. So go into the Betaflight PID tuning tab and turn off D-Min.\n[14:42] The next step is to gradually turn up the master multiplier slider, 0.1 to 0.2 at a time.\n[14:49] Every time you turn it up, do a tuning flight with some full throttle punch outs, some hard pylon turns,"
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 900,
+      "frames": [
+        "frame_0535.jpg",
+        "frame_0536.jpg",
+        "frame_0537.jpg",
+        "frame_0538.jpg",
+        "frame_0539.jpg",
+        "frame_0540.jpg"
+      ],
+      "transcript": "[14:49] Every time you turn it up, do a tuning flight with some full throttle punch outs, some hard pylon turns,\n[14:56] some aggressive flying, and come in and land and check for hot motors. And during the flight, listen"
+    },
+    {
+      "segment_index": 91,
+      "start_time": 900,
+      "end_time": 910,
+      "frames": [
+        "frame_0541.jpg",
+        "frame_0542.jpg",
+        "frame_0543.jpg",
+        "frame_0544.jpg",
+        "frame_0545.jpg",
+        "frame_0546.jpg"
+      ],
+      "transcript": "[14:56] some aggressive flying, and come in and land and check for hot motors. And during the flight, listen\n[15:03] for any kind of growling oscillations or any ticks or jerks from the motors. Repeat these steps, steps"
+    },
+    {
+      "segment_index": 92,
+      "start_time": 910,
+      "end_time": 920,
+      "frames": [
+        "frame_0547.jpg",
+        "frame_0548.jpg",
+        "frame_0549.jpg",
+        "frame_0550.jpg",
+        "frame_0551.jpg",
+        "frame_0552.jpg"
+      ],
+      "transcript": "[15:03] for any kind of growling oscillations or any ticks or jerks from the motors. Repeat these steps, steps\n[15:10] two to four, until you have a D gain that you're comfortable with. A D gain where you don't have motors\n[15:17] that are too hot. So really if your motors feel hot to the touch, I would say that's too hot. If your"
+    },
+    {
+      "segment_index": 93,
+      "start_time": 920,
+      "end_time": 930,
+      "frames": [
+        "frame_0553.jpg",
+        "frame_0554.jpg",
+        "frame_0555.jpg",
+        "frame_0556.jpg",
+        "frame_0557.jpg",
+        "frame_0558.jpg"
+      ],
+      "transcript": "[15:17] that are too hot. So really if your motors feel hot to the touch, I would say that's too hot. If your\n[15:25] motors feel just slightly warm to the touch, that's fine. And make sure that you don't have any ticks"
+    },
+    {
+      "segment_index": 94,
+      "start_time": 930,
+      "end_time": 940,
+      "frames": [
+        "frame_0559.jpg",
+        "frame_0560.jpg",
+        "frame_0561.jpg",
+        "frame_0562.jpg",
+        "frame_0563.jpg",
+        "frame_0564.jpg"
+      ],
+      "transcript": "[15:25] motors feel just slightly warm to the touch, that's fine. And make sure that you don't have any ticks\n[15:31] or oscillations. And if both of those things are true and you're comfortable with the amount of D\n[15:36] gain you have, you've found your perfect D gains. I'd like to take a minute to try and explain why I"
+    },
+    {
+      "segment_index": 95,
+      "start_time": 940,
+      "end_time": 950,
+      "frames": [
+        "frame_0565.jpg",
+        "frame_0566.jpg",
+        "frame_0567.jpg",
+        "frame_0568.jpg",
+        "frame_0569.jpg",
+        "frame_0570.jpg"
+      ],
+      "transcript": "[15:36] gain you have, you've found your perfect D gains. I'd like to take a minute to try and explain why I\n[15:43] prefer to use the master slider and not the P and D gain slider when I'm starting out tuning a quad.\n[15:49] I think that for most five inch quads, the beta flight defaults have a really nice balance between"
+    },
+    {
+      "segment_index": 96,
+      "start_time": 950,
+      "end_time": 960,
+      "frames": [
+        "frame_0571.jpg",
+        "frame_0572.jpg",
+        "frame_0573.jpg",
+        "frame_0574.jpg",
+        "frame_0575.jpg",
+        "frame_0576.jpg"
+      ],
+      "transcript": "[15:49] I think that for most five inch quads, the beta flight defaults have a really nice balance between\n[15:56] the P, I and D terms. Using the master slider maintains that balance because all of the terms"
+    },
+    {
+      "segment_index": 97,
+      "start_time": 960,
+      "end_time": 970,
+      "frames": [
+        "frame_0577.jpg",
+        "frame_0578.jpg",
+        "frame_0579.jpg",
+        "frame_0580.jpg",
+        "frame_0581.jpg",
+        "frame_0582.jpg"
+      ],
+      "transcript": "[15:56] the P, I and D terms. Using the master slider maintains that balance because all of the terms\n[16:04] increase together, while it also increases the response to PID error, which is obviously what"
+    },
+    {
+      "segment_index": 98,
+      "start_time": 970,
+      "end_time": 980,
+      "frames": [
+        "frame_0583.jpg",
+        "frame_0584.jpg",
+        "frame_0585.jpg",
+        "frame_0586.jpg",
+        "frame_0587.jpg",
+        "frame_0588.jpg"
+      ],
+      "transcript": "[16:04] increase together, while it also increases the response to PID error, which is obviously what\n[16:10] we're wanting to do. A really well tuned quad that follows setpoint closely and has iTerm Relax enabled,\n[16:18] in my experience does not tend to suffer too badly with iTerm windup and associated overshooting."
+    },
+    {
+      "segment_index": 99,
+      "start_time": 980,
+      "end_time": 990,
+      "frames": [
+        "frame_0589.jpg",
+        "frame_0590.jpg",
+        "frame_0591.jpg",
+        "frame_0592.jpg",
+        "frame_0593.jpg",
+        "frame_0594.jpg"
+      ],
+      "transcript": "[16:18] in my experience does not tend to suffer too badly with iTerm windup and associated overshooting.\n[16:27] I also really like the way high i gains keep the quad very stable at speed, and I don't feel I get that"
+    },
+    {
+      "segment_index": 100,
+      "start_time": 990,
+      "end_time": 1000,
+      "frames": [
+        "frame_0595.jpg",
+        "frame_0596.jpg",
+        "frame_0597.jpg",
+        "frame_0598.jpg",
+        "frame_0599.jpg",
+        "frame_0600.jpg"
+      ],
+      "transcript": "[16:27] I also really like the way high i gains keep the quad very stable at speed, and I don't feel I get that\n[16:34] same feel with the default level of i in beta flight. So on the AOS 5 for example with the master slider at"
+    },
+    {
+      "segment_index": 101,
+      "start_time": 1000,
+      "end_time": 1010,
+      "frames": [
+        "frame_0601.jpg",
+        "frame_0602.jpg",
+        "frame_0603.jpg",
+        "frame_0604.jpg",
+        "frame_0605.jpg",
+        "frame_0606.jpg"
+      ],
+      "transcript": "[16:34] same feel with the default level of i in beta flight. So on the AOS 5 for example with the master slider at\n[16:42] 2.0, I have twice as much i gain as the default and I really like the way that feels. I know this is quite\n[16:48] a personal thing, so I'd love to hear your thoughts in the comments. What are your experiences? How much"
+    },
+    {
+      "segment_index": 102,
+      "start_time": 1010,
+      "end_time": 1020,
+      "frames": [
+        "frame_0607.jpg",
+        "frame_0608.jpg",
+        "frame_0609.jpg",
+        "frame_0610.jpg",
+        "frame_0611.jpg",
+        "frame_0612.jpg"
+      ],
+      "transcript": "[16:48] a personal thing, so I'd love to hear your thoughts in the comments. What are your experiences? How much\n[16:54] i gain do you typically like to run? Once you've found your perfect D gain, which is the maximum D gain"
+    },
+    {
+      "segment_index": 103,
+      "start_time": 1020,
+      "end_time": 1030,
+      "frames": [
+        "frame_0613.jpg",
+        "frame_0614.jpg",
+        "frame_0615.jpg",
+        "frame_0616.jpg",
+        "frame_0617.jpg",
+        "frame_0618.jpg"
+      ],
+      "transcript": "[16:54] i gain do you typically like to run? Once you've found your perfect D gain, which is the maximum D gain\n[17:03] that you as a pilot are comfortable with, the next step, step five, is to find your P to D balance.\n[17:09] The best way to do this is to look at logs using PID Toolbox. Don't worry if you've never used PID"
+    },
+    {
+      "segment_index": 104,
+      "start_time": 1030,
+      "end_time": 1040,
+      "frames": [
+        "frame_0619.jpg",
+        "frame_0620.jpg",
+        "frame_0621.jpg",
+        "frame_0622.jpg",
+        "frame_0623.jpg",
+        "frame_0624.jpg"
+      ],
+      "transcript": "[17:09] The best way to do this is to look at logs using PID Toolbox. Don't worry if you've never used PID\n[17:15] Toolbox before, I'm going to take you through it step by step. Before that you need to do some tuning"
+    },
+    {
+      "segment_index": 105,
+      "start_time": 1040,
+      "end_time": 1050,
+      "frames": [
+        "frame_0625.jpg",
+        "frame_0626.jpg",
+        "frame_0627.jpg",
+        "frame_0628.jpg",
+        "frame_0629.jpg",
+        "frame_0630.jpg"
+      ],
+      "transcript": "[17:15] Toolbox before, I'm going to take you through it step by step. Before that you need to do some tuning\n[17:20] flights with lots of full stick snap flips and rolls, and that's because that's what we're going to need\n[17:26] to look at the step response. So let's look at an example step response here. Now this is the type of"
+    },
+    {
+      "segment_index": 106,
+      "start_time": 1050,
+      "end_time": 1060,
+      "frames": [
+        "frame_0631.jpg",
+        "frame_0632.jpg",
+        "frame_0633.jpg",
+        "frame_0634.jpg",
+        "frame_0635.jpg",
+        "frame_0636.jpg"
+      ],
+      "transcript": "[17:26] to look at the step response. So let's look at an example step response here. Now this is the type of\n[17:32] graph that we're going to see in PID Toolbox in a second. If your log looks like the green curve\n[17:39] or the purple curve here that wiggle up and down for a while, that means you have too much P gain."
+    },
+    {
+      "segment_index": 107,
+      "start_time": 1060,
+      "end_time": 1070,
+      "frames": [
+        "frame_0637.jpg",
+        "frame_0638.jpg",
+        "frame_0639.jpg",
+        "frame_0640.jpg",
+        "frame_0641.jpg",
+        "frame_0642.jpg"
+      ],
+      "transcript": "[17:39] or the purple curve here that wiggle up and down for a while, that means you have too much P gain.\n[17:46] And to fix that you're going to want to decrease your P gain. And the easiest way to do that in my"
+    },
+    {
+      "segment_index": 108,
+      "start_time": 1070,
+      "end_time": 1080,
+      "frames": [
+        "frame_0643.jpg",
+        "frame_0644.jpg",
+        "frame_0645.jpg",
+        "frame_0646.jpg",
+        "frame_0647.jpg",
+        "frame_0648.jpg"
+      ],
+      "transcript": "[17:46] And to fix that you're going to want to decrease your P gain. And the easiest way to do that in my\n[17:50] opinion is to use the sliders. You increase the PD balance by one or two notches, and you reduce the\n[17:59] PD gain by the exact same amount. And that's important because you want your D gain to stay"
+    },
+    {
+      "segment_index": 109,
+      "start_time": 1080,
+      "end_time": 1090,
+      "frames": [
+        "frame_0649.jpg",
+        "frame_0650.jpg",
+        "frame_0651.jpg",
+        "frame_0652.jpg",
+        "frame_0653.jpg",
+        "frame_0654.jpg"
+      ],
+      "transcript": "[17:59] PD gain by the exact same amount. And that's important because you want your D gain to stay\n[18:04] the same and your P gain to reduce. If however you have a log that looks more like this purple line"
+    },
+    {
+      "segment_index": 110,
+      "start_time": 1090,
+      "end_time": 1100,
+      "frames": [
+        "frame_0655.jpg",
+        "frame_0656.jpg",
+        "frame_0657.jpg",
+        "frame_0658.jpg",
+        "frame_0659.jpg",
+        "frame_0660.jpg"
+      ],
+      "transcript": "[18:04] the same and your P gain to reduce. If however you have a log that looks more like this purple line\n[18:13] here where it's kind of very slow to reach the center, then you're going to want to increase your"
+    },
+    {
+      "segment_index": 111,
+      "start_time": 1100,
+      "end_time": 1110,
+      "frames": [
+        "frame_0661.jpg",
+        "frame_0662.jpg",
+        "frame_0663.jpg",
+        "frame_0664.jpg",
+        "frame_0665.jpg",
+        "frame_0666.jpg"
+      ],
+      "transcript": "[18:13] here where it's kind of very slow to reach the center, then you're going to want to increase your\n[18:20] P gain. And you do that by doing the opposite. So you reduce the PD balance by 0.1 or 0.2,\n[18:27] one or two notches. And you increase your PD gain by the exact same amount. So 0.1 or 0.2. But it's got"
+    },
+    {
+      "segment_index": 112,
+      "start_time": 1110,
+      "end_time": 1120,
+      "frames": [
+        "frame_0667.jpg",
+        "frame_0668.jpg",
+        "frame_0669.jpg",
+        "frame_0670.jpg",
+        "frame_0671.jpg",
+        "frame_0672.jpg"
+      ],
+      "transcript": "[18:27] one or two notches. And you increase your PD gain by the exact same amount. So 0.1 or 0.2. But it's got\n[18:36] to be the exact same amount you reduce the PD balance by. And the goal in my opinion is the red line here."
+    },
+    {
+      "segment_index": 113,
+      "start_time": 1120,
+      "end_time": 1130,
+      "frames": [
+        "frame_0673.jpg",
+        "frame_0674.jpg",
+        "frame_0675.jpg",
+        "frame_0676.jpg",
+        "frame_0677.jpg",
+        "frame_0678.jpg"
+      ],
+      "transcript": "[18:36] to be the exact same amount you reduce the PD balance by. And the goal in my opinion is the red line here.\n[18:44] You can see that there is just a tiny bit of overshoot, but there's no undershoot afterwards."
+    },
+    {
+      "segment_index": 114,
+      "start_time": 1130,
+      "end_time": 1140,
+      "frames": [
+        "frame_0679.jpg",
+        "frame_0680.jpg",
+        "frame_0681.jpg",
+        "frame_0682.jpg",
+        "frame_0683.jpg",
+        "frame_0684.jpg"
+      ],
+      "transcript": "[18:44] You can see that there is just a tiny bit of overshoot, but there's no undershoot afterwards.\n[18:50] That's the key. You see that brown line, it has an overshoot and then an undershoot. That's bad.\n[18:56] We don't really want that. But that red line that just has a tiny overshoot, but gets up to the line"
+    },
+    {
+      "segment_index": 115,
+      "start_time": 1140,
+      "end_time": 1150,
+      "frames": [
+        "frame_0685.jpg",
+        "frame_0686.jpg",
+        "frame_0687.jpg",
+        "frame_0688.jpg",
+        "frame_0689.jpg",
+        "frame_0690.jpg"
+      ],
+      "transcript": "[18:56] We don't really want that. But that red line that just has a tiny overshoot, but gets up to the line\n[19:02] as quickly as possible is exactly what we want. So that red line is what it should look like.\n[19:07] I'm going to use this platform to make a request of the Betaflight developers now. I know Mark Spatz,"
+    },
+    {
+      "segment_index": 116,
+      "start_time": 1150,
+      "end_time": 1160,
+      "frames": [
+        "frame_0691.jpg",
+        "frame_0692.jpg",
+        "frame_0693.jpg",
+        "frame_0694.jpg",
+        "frame_0695.jpg",
+        "frame_0696.jpg"
+      ],
+      "transcript": "[19:07] I'm going to use this platform to make a request of the Betaflight developers now. I know Mark Spatz,\n[19:15] UAV tech has made the same request. Please change the way the PD balance slider in Betaflight works."
+    },
+    {
+      "segment_index": 117,
+      "start_time": 1160,
+      "end_time": 1170,
+      "frames": [
+        "frame_0697.jpg",
+        "frame_0698.jpg",
+        "frame_0699.jpg",
+        "frame_0700.jpg",
+        "frame_0701.jpg",
+        "frame_0702.jpg"
+      ],
+      "transcript": "[19:15] UAV tech has made the same request. Please change the way the PD balance slider in Betaflight works.\n[19:24] The goal with the tune is to keep D gain the same because you found your maximum D gain by now,"
+    },
+    {
+      "segment_index": 118,
+      "start_time": 1170,
+      "end_time": 1180,
+      "frames": [
+        "frame_0703.jpg",
+        "frame_0704.jpg",
+        "frame_0705.jpg",
+        "frame_0706.jpg",
+        "frame_0707.jpg",
+        "frame_0708.jpg"
+      ],
+      "transcript": "[19:24] The goal with the tune is to keep D gain the same because you found your maximum D gain by now,\n[19:30] and just change your P gain to get a critically damped response.\n[19:35] To do this with the sliders currently, you need to move the PD balance and P and D gain in opposite"
+    },
+    {
+      "segment_index": 119,
+      "start_time": 1180,
+      "end_time": 1190,
+      "frames": [
+        "frame_0709.jpg",
+        "frame_0710.jpg",
+        "frame_0711.jpg",
+        "frame_0712.jpg",
+        "frame_0713.jpg",
+        "frame_0714.jpg"
+      ],
+      "transcript": "[19:35] To do this with the sliders currently, you need to move the PD balance and P and D gain in opposite\n[19:41] directions by the exact same amount. If the PD balance slider was adjusted so that it altered the\n[19:49] P gain rather than the D gain, you would only have one slider to move and it would be much simpler."
+    },
+    {
+      "segment_index": 120,
+      "start_time": 1190,
+      "end_time": 1200,
+      "frames": [
+        "frame_0715.jpg",
+        "frame_0716.jpg",
+        "frame_0717.jpg",
+        "frame_0718.jpg",
+        "frame_0719.jpg",
+        "frame_0720.jpg"
+      ],
+      "transcript": "[19:49] P gain rather than the D gain, you would only have one slider to move and it would be much simpler.\n[19:55] So Betaflight devs, if you're listening, please, please, please change the PD balance slider"
+    },
+    {
+      "segment_index": 121,
+      "start_time": 1200,
+      "end_time": 1210,
+      "frames": [
+        "frame_0721.jpg",
+        "frame_0722.jpg",
+        "frame_0723.jpg",
+        "frame_0724.jpg",
+        "frame_0725.jpg",
+        "frame_0726.jpg"
+      ],
+      "transcript": "[19:55] So Betaflight devs, if you're listening, please, please, please change the PD balance slider\n[20:00] to adjust P gain only and not D gain. Thanks very much.\n[20:08] Okay, now the next sections of this video all require you to have black box logging enabled on"
+    },
+    {
+      "segment_index": 122,
+      "start_time": 1210,
+      "end_time": 1220,
+      "frames": [
+        "frame_0727.jpg",
+        "frame_0728.jpg",
+        "frame_0729.jpg",
+        "frame_0730.jpg",
+        "frame_0731.jpg",
+        "frame_0732.jpg"
+      ],
+      "transcript": "[20:08] Okay, now the next sections of this video all require you to have black box logging enabled on\n[20:15] your quad. Now I know that not everyone has black box logging on their quad because maybe they're flying"
+    },
+    {
+      "segment_index": 123,
+      "start_time": 1220,
+      "end_time": 1230,
+      "frames": [
+        "frame_0733.jpg",
+        "frame_0734.jpg",
+        "frame_0735.jpg",
+        "frame_0736.jpg",
+        "frame_0737.jpg",
+        "frame_0738.jpg"
+      ],
+      "transcript": "[20:15] your quad. Now I know that not everyone has black box logging on their quad because maybe they're flying\n[20:22] an all-in-one board or something that doesn't have black box logging. If you do not have logging on your\n[20:29] quad, you can still tune PD balance, which is what we're going to do next, by listening to the quad."
+    },
+    {
+      "segment_index": 124,
+      "start_time": 1230,
+      "end_time": 1240,
+      "frames": [
+        "frame_0739.jpg",
+        "frame_0740.jpg",
+        "frame_0741.jpg",
+        "frame_0742.jpg",
+        "frame_0743.jpg",
+        "frame_0744.jpg"
+      ],
+      "transcript": "[20:29] quad, you can still tune PD balance, which is what we're going to do next, by listening to the quad.\n[20:37] But this can be quite tricky. What you're listening for is the motor zipping at the start and end of a"
+    },
+    {
+      "segment_index": 125,
+      "start_time": 1240,
+      "end_time": 1250,
+      "frames": [
+        "frame_0745.jpg",
+        "frame_0746.jpg",
+        "frame_0747.jpg",
+        "frame_0748.jpg",
+        "frame_0749.jpg",
+        "frame_0750.jpg"
+      ],
+      "transcript": "[20:37] But this can be quite tricky. What you're listening for is the motor zipping at the start and end of a\n[20:47] snap flip or roll. So if everything is going well, when you do a snap roll, you'll hear zip, zip,"
+    },
+    {
+      "segment_index": 126,
+      "start_time": 1250,
+      "end_time": 1260,
+      "frames": [
+        "frame_0751.jpg",
+        "frame_0752.jpg",
+        "frame_0753.jpg",
+        "frame_0754.jpg",
+        "frame_0755.jpg",
+        "frame_0756.jpg"
+      ],
+      "transcript": "[20:47] snap flip or roll. So if everything is going well, when you do a snap roll, you'll hear zip, zip,\n[20:57] and that first zip will be at the start of the move, and the second zip will be at the end of the move."
+    },
+    {
+      "segment_index": 127,
+      "start_time": 1260,
+      "end_time": 1270,
+      "frames": [
+        "frame_0757.jpg",
+        "frame_0758.jpg",
+        "frame_0759.jpg",
+        "frame_0760.jpg",
+        "frame_0761.jpg",
+        "frame_0762.jpg"
+      ],
+      "transcript": "[20:57] and that first zip will be at the start of the move, and the second zip will be at the end of the move.\n[21:03] Now decrease the PD balance by one tick and increase the PD gain by one tick and try again."
+    },
+    {
+      "segment_index": 128,
+      "start_time": 1270,
+      "end_time": 1280,
+      "frames": [
+        "frame_0763.jpg",
+        "frame_0764.jpg",
+        "frame_0765.jpg",
+        "frame_0766.jpg",
+        "frame_0767.jpg",
+        "frame_0768.jpg"
+      ],
+      "transcript": "[21:03] Now decrease the PD balance by one tick and increase the PD gain by one tick and try again.\n[21:11] Again, listen to the start and the end of the roll or flip. You should again hear zip, zip, two zips,"
+    },
+    {
+      "segment_index": 129,
+      "start_time": 1280,
+      "end_time": 1290,
+      "frames": [
+        "frame_0769.jpg",
+        "frame_0770.jpg",
+        "frame_0771.jpg",
+        "frame_0772.jpg",
+        "frame_0773.jpg",
+        "frame_0774.jpg"
+      ],
+      "transcript": "[21:11] Again, listen to the start and the end of the roll or flip. You should again hear zip, zip, two zips,\n[21:20] one at the start of the move, one at the end of the move. Now if you keep going, if you keep decreasing\n[21:26] your PD balance and increasing your PD gain, eventually you will start to hear a double zip"
+    },
+    {
+      "segment_index": 130,
+      "start_time": 1290,
+      "end_time": 1300,
+      "frames": [
+        "frame_0775.jpg",
+        "frame_0776.jpg",
+        "frame_0777.jpg",
+        "frame_0778.jpg",
+        "frame_0779.jpg",
+        "frame_0780.jpg"
+      ],
+      "transcript": "[21:26] your PD balance and increasing your PD gain, eventually you will start to hear a double zip\n[21:34] at the start or more likely the end of the move. So you might hear something like this, zip, zip, zip."
+    },
+    {
+      "segment_index": 131,
+      "start_time": 1300,
+      "end_time": 1310,
+      "frames": [
+        "frame_0781.jpg",
+        "frame_0782.jpg",
+        "frame_0783.jpg",
+        "frame_0784.jpg",
+        "frame_0785.jpg",
+        "frame_0786.jpg"
+      ],
+      "transcript": "[21:34] at the start or more likely the end of the move. So you might hear something like this, zip, zip, zip.\n[21:42] If you hear a double zip at the end of the move, that means that you've started to get bounce back\n[21:49] overshoot. So you need to go back one. So what you want is to get to the lowest"
+    },
+    {
+      "segment_index": 132,
+      "start_time": 1310,
+      "end_time": 1320,
+      "frames": [
+        "frame_0787.jpg",
+        "frame_0788.jpg",
+        "frame_0789.jpg",
+        "frame_0790.jpg",
+        "frame_0791.jpg",
+        "frame_0792.jpg"
+      ],
+      "transcript": "[21:49] overshoot. So you need to go back one. So what you want is to get to the lowest\n[21:56] PD balance and highest PD gain, obviously moving them together, before you hear a double zip"
+    },
+    {
+      "segment_index": 133,
+      "start_time": 1320,
+      "end_time": 1330,
+      "frames": [
+        "frame_0793.jpg",
+        "frame_0794.jpg",
+        "frame_0795.jpg",
+        "frame_0796.jpg",
+        "frame_0797.jpg",
+        "frame_0798.jpg"
+      ],
+      "transcript": "[21:56] PD balance and highest PD gain, obviously moving them together, before you hear a double zip\n[22:04] at the end of a move or the start of a move. Hopefully that's clear. If you've got any questions,"
+    },
+    {
+      "segment_index": 134,
+      "start_time": 1330,
+      "end_time": 1340,
+      "frames": [
+        "frame_0799.jpg",
+        "frame_0800.jpg",
+        "frame_0801.jpg",
+        "frame_0802.jpg",
+        "frame_0803.jpg",
+        "frame_0804.jpg"
+      ],
+      "transcript": "[22:04] at the end of a move or the start of a move. Hopefully that's clear. If you've got any questions,\n[22:10] please ask them in the comments. Once you've done that, set your stick response gain slider equal to your"
+    },
+    {
+      "segment_index": 135,
+      "start_time": 1340,
+      "end_time": 1350,
+      "frames": [
+        "frame_0805.jpg",
+        "frame_0806.jpg",
+        "frame_0807.jpg",
+        "frame_0808.jpg",
+        "frame_0809.jpg",
+        "frame_0810.jpg"
+      ],
+      "transcript": "[22:10] please ask them in the comments. Once you've done that, set your stick response gain slider equal to your\n[22:20] master multiplier that you found in the previous step. That should get you most of the way to a\n[22:26] great tune. If you want to go all the way, you'll need logging and I'll put links to some inexpensive"
+    },
+    {
+      "segment_index": 136,
+      "start_time": 1350,
+      "end_time": 1360,
+      "frames": [
+        "frame_0811.jpg",
+        "frame_0812.jpg",
+        "frame_0813.jpg",
+        "frame_0814.jpg",
+        "frame_0815.jpg",
+        "frame_0816.jpg"
+      ],
+      "transcript": "[22:26] great tune. If you want to go all the way, you'll need logging and I'll put links to some inexpensive\n[22:32] flight controllers with logging in the video description. So let's get set up with PID Toolbox."
+    },
+    {
+      "segment_index": 137,
+      "start_time": 1360,
+      "end_time": 1370,
+      "frames": [
+        "frame_0817.jpg",
+        "frame_0818.jpg",
+        "frame_0819.jpg",
+        "frame_0820.jpg",
+        "frame_0821.jpg",
+        "frame_0822.jpg"
+      ],
+      "transcript": "[22:32] flight controllers with logging in the video description. So let's get set up with PID Toolbox.\n[22:41] If you follow the link in the video description, you'll end up here on the PID Toolbox releases page\n[22:47] in GitHub. You can see that the latest version at the time of this video is 0.42. If you scroll down,"
+    },
+    {
+      "segment_index": 138,
+      "start_time": 1370,
+      "end_time": 1380,
+      "frames": [
+        "frame_0823.jpg",
+        "frame_0824.jpg",
+        "frame_0825.jpg",
+        "frame_0826.jpg",
+        "frame_0827.jpg",
+        "frame_0828.jpg"
+      ],
+      "transcript": "[22:47] in GitHub. You can see that the latest version at the time of this video is 0.42. If you scroll down,\n[22:54] you'll see the various files here. You want the underscore win.zip if you're running Windows like"
+    },
+    {
+      "segment_index": 139,
+      "start_time": 1380,
+      "end_time": 1390,
+      "frames": [
+        "frame_0829.jpg",
+        "frame_0830.jpg",
+        "frame_0831.jpg",
+        "frame_0832.jpg",
+        "frame_0833.jpg",
+        "frame_0834.jpg"
+      ],
+      "transcript": "[22:54] you'll see the various files here. You want the underscore win.zip if you're running Windows like\n[23:02] I am. So download this folder here. See that's downloading. If we look at the folder, we can see"
+    },
+    {
+      "segment_index": 140,
+      "start_time": 1390,
+      "end_time": 1400,
+      "frames": [
+        "frame_0835.jpg",
+        "frame_0836.jpg",
+        "frame_0837.jpg",
+        "frame_0838.jpg",
+        "frame_0839.jpg",
+        "frame_0840.jpg"
+      ],
+      "transcript": "[23:02] I am. So download this folder here. See that's downloading. If we look at the folder, we can see\n[23:10] that it's a zip folder. So we extract that with any tool and you can see that inside that extracted\n[23:18] folder are two other folders. If this is the first time that you're running PID Toolbox, you will need"
+    },
+    {
+      "segment_index": 141,
+      "start_time": 1400,
+      "end_time": 1410,
+      "frames": [
+        "frame_0841.jpg",
+        "frame_0842.jpg",
+        "frame_0843.jpg",
+        "frame_0844.jpg",
+        "frame_0845.jpg",
+        "frame_0846.jpg"
+      ],
+      "transcript": "[23:18] folder are two other folders. If this is the first time that you're running PID Toolbox, you will need\n[23:25] to install the runtime. So let's go into the runtime installation file. You'll see there's just one"
+    },
+    {
+      "segment_index": 142,
+      "start_time": 1410,
+      "end_time": 1420,
+      "frames": [
+        "frame_0847.jpg",
+        "frame_0848.jpg",
+        "frame_0849.jpg",
+        "frame_0850.jpg",
+        "frame_0851.jpg",
+        "frame_0852.jpg"
+      ],
+      "transcript": "[23:25] to install the runtime. So let's go into the runtime installation file. You'll see there's just one\n[23:30] file in here. Double click that, go through the installation process and then once that's finished,\n[23:37] you can come out of that folder, go into the main folder. Now you'll see that there's a file called"
+    },
+    {
+      "segment_index": 143,
+      "start_time": 1420,
+      "end_time": 1430,
+      "frames": [
+        "frame_0853.jpg",
+        "frame_0854.jpg",
+        "frame_0855.jpg",
+        "frame_0856.jpg",
+        "frame_0857.jpg",
+        "frame_0858.jpg"
+      ],
+      "transcript": "[23:37] you can come out of that folder, go into the main folder. Now you'll see that there's a file called\n[23:45] blackbox decode. Now this is the file that's needed to allow PID Toolbox to understand your blackbox log."
+    },
+    {
+      "segment_index": 144,
+      "start_time": 1430,
+      "end_time": 1440,
+      "frames": [
+        "frame_0859.jpg",
+        "frame_0860.jpg",
+        "frame_0861.jpg",
+        "frame_0862.jpg",
+        "frame_0863.jpg",
+        "frame_0864.jpg"
+      ],
+      "transcript": "[23:45] blackbox decode. Now this is the file that's needed to allow PID Toolbox to understand your blackbox log.\n[23:55] So what we need to do here is select that, copy it, control c, come out of the folder again,"
+    },
+    {
+      "segment_index": 145,
+      "start_time": 1440,
+      "end_time": 1450,
+      "frames": [
+        "frame_0865.jpg",
+        "frame_0866.jpg",
+        "frame_0867.jpg",
+        "frame_0868.jpg",
+        "frame_0869.jpg",
+        "frame_0870.jpg"
+      ],
+      "transcript": "[23:55] So what we need to do here is select that, copy it, control c, come out of the folder again,\n[24:02] go into our logs folder, mine is here, and just paste the blackbox decode in there."
+    },
+    {
+      "segment_index": 146,
+      "start_time": 1450,
+      "end_time": 1460,
+      "frames": [
+        "frame_0871.jpg",
+        "frame_0872.jpg",
+        "frame_0873.jpg",
+        "frame_0874.jpg",
+        "frame_0875.jpg",
+        "frame_0876.jpg"
+      ],
+      "transcript": "[24:02] go into our logs folder, mine is here, and just paste the blackbox decode in there.\n[24:11] Obviously I've done that before so I replace, but that's the file that you need in order to decode\n[24:16] the logs and it needs to be in the folder where your log files are. Okay, so it needs to be pasted in"
+    },
+    {
+      "segment_index": 147,
+      "start_time": 1460,
+      "end_time": 1470,
+      "frames": [
+        "frame_0877.jpg",
+        "frame_0878.jpg",
+        "frame_0879.jpg",
+        "frame_0880.jpg",
+        "frame_0881.jpg",
+        "frame_0882.jpg"
+      ],
+      "transcript": "[24:16] the logs and it needs to be in the folder where your log files are. Okay, so it needs to be pasted in\n[24:23] with all your logs as I've done here. Once you've done that, you can come out of your logs folder and go\n[24:29] back into the PID Toolbox main folder and run PID Toolbox. That will open this window here,"
+    },
+    {
+      "segment_index": 148,
+      "start_time": 1470,
+      "end_time": 1480,
+      "frames": [
+        "frame_0883.jpg",
+        "frame_0884.jpg",
+        "frame_0885.jpg",
+        "frame_0886.jpg",
+        "frame_0887.jpg",
+        "frame_0888.jpg"
+      ],
+      "transcript": "[24:29] back into the PID Toolbox main folder and run PID Toolbox. That will open this window here,\n[24:38] a kind of blank window. If you go over onto the right hand side, there's a green select button."
+    },
+    {
+      "segment_index": 149,
+      "start_time": 1480,
+      "end_time": 1490,
+      "frames": [
+        "frame_0889.jpg",
+        "frame_0890.jpg",
+        "frame_0891.jpg",
+        "frame_0892.jpg",
+        "frame_0893.jpg",
+        "frame_0894.jpg"
+      ],
+      "transcript": "[24:38] a kind of blank window. If you go over onto the right hand side, there's a green select button.\n[24:44] So we click that and now we select the log file. So I'm just going to select this master 200 log here."
+    },
+    {
+      "segment_index": 150,
+      "start_time": 1490,
+      "end_time": 1500,
+      "frames": [
+        "frame_0895.jpg",
+        "frame_0896.jpg",
+        "frame_0897.jpg",
+        "frame_0898.jpg",
+        "frame_0899.jpg",
+        "frame_0900.jpg"
+      ],
+      "transcript": "[24:44] So we click that and now we select the log file. So I'm just going to select this master 200 log here.\n[24:53] I click OK. And if everything works, you should see some converting and importing status messages pop"
+    },
+    {
+      "segment_index": 151,
+      "start_time": 1500,
+      "end_time": 1510,
+      "frames": [
+        "frame_0901.jpg",
+        "frame_0902.jpg",
+        "frame_0903.jpg",
+        "frame_0904.jpg",
+        "frame_0905.jpg",
+        "frame_0906.jpg"
+      ],
+      "transcript": "[24:53] I click OK. And if everything works, you should see some converting and importing status messages pop\n[25:02] up and that will load in. Once that's loaded in, you should be able to see the log there on the screen."
+    },
+    {
+      "segment_index": 152,
+      "start_time": 1510,
+      "end_time": 1520,
+      "frames": [
+        "frame_0907.jpg",
+        "frame_0908.jpg",
+        "frame_0909.jpg",
+        "frame_0910.jpg",
+        "frame_0911.jpg",
+        "frame_0912.jpg"
+      ],
+      "transcript": "[25:10] What we're going to be using for the next part of this video is the Step Response Tool. So that's\n[25:16] again over on the right hand side. Click that blue button Step Response Tool. That opens this new blank"
+    },
+    {
+      "segment_index": 153,
+      "start_time": 1520,
+      "end_time": 1530,
+      "frames": [
+        "frame_0913.jpg",
+        "frame_0914.jpg",
+        "frame_0915.jpg",
+        "frame_0916.jpg",
+        "frame_0917.jpg",
+        "frame_0918.jpg"
+      ],
+      "transcript": "[25:16] again over on the right hand side. Click that blue button Step Response Tool. That opens this new blank\n[25:23] window and just click the green run button. And that will produce the step response functions for that\n[25:29] log. And that's where we're going to see if we have an underdamped, overdamped or critically damped system."
+    },
+    {
+      "segment_index": 154,
+      "start_time": 1530,
+      "end_time": 1540,
+      "frames": [
+        "frame_0919.jpg",
+        "frame_0920.jpg",
+        "frame_0921.jpg",
+        "frame_0922.jpg",
+        "frame_0923.jpg",
+        "frame_0924.jpg"
+      ],
+      "transcript": "[25:29] log. And that's where we're going to see if we have an underdamped, overdamped or critically damped system.\n[25:38] Okay, so now you've seen exactly how to get a step response graph for your own log. Here's one that I did"
+    },
+    {
+      "segment_index": 155,
+      "start_time": 1540,
+      "end_time": 1550,
+      "frames": [
+        "frame_0925.jpg",
+        "frame_0926.jpg",
+        "frame_0927.jpg",
+        "frame_0928.jpg",
+        "frame_0929.jpg",
+        "frame_0930.jpg"
+      ],
+      "transcript": "[25:38] Okay, so now you've seen exactly how to get a step response graph for your own log. Here's one that I did\n[25:45] on the AOS 5. Now this is on the Betaflight default PD balance and all I've done in this log is turn the"
+    },
+    {
+      "segment_index": 156,
+      "start_time": 1550,
+      "end_time": 1560,
+      "frames": [
+        "frame_0931.jpg",
+        "frame_0932.jpg",
+        "frame_0933.jpg",
+        "frame_0934.jpg",
+        "frame_0935.jpg",
+        "frame_0936.jpg"
+      ],
+      "transcript": "[25:45] on the AOS 5. Now this is on the Betaflight default PD balance and all I've done in this log is turn the\n[25:52] master slider up to 2.0. And you can see that the step response is pretty much perfect on roll and pitch."
+    },
+    {
+      "segment_index": 157,
+      "start_time": 1560,
+      "end_time": 1570,
+      "frames": [
+        "frame_0937.jpg",
+        "frame_0938.jpg",
+        "frame_0939.jpg",
+        "frame_0940.jpg",
+        "frame_0941.jpg",
+        "frame_0942.jpg"
+      ],
+      "transcript": "[25:52] master slider up to 2.0. And you can see that the step response is pretty much perfect on roll and pitch.\n[26:02] I'm very happy with these. I'm not going to change the PD balance at all from the Betaflight defaults\n[26:07] on this build. It looks great. And you can see that your as well is a nice straight step up and then a"
+    },
+    {
+      "segment_index": 158,
+      "start_time": 1570,
+      "end_time": 1580,
+      "frames": [
+        "frame_0943.jpg",
+        "frame_0944.jpg",
+        "frame_0945.jpg",
+        "frame_0946.jpg",
+        "frame_0947.jpg",
+        "frame_0948.jpg"
+      ],
+      "transcript": "[26:07] on this build. It looks great. And you can see that your as well is a nice straight step up and then a\n[26:13] flat line. So overall very happy with all three of these. And if your step response graphs look like\n[26:19] this, then you're done. You don't need to make any adjustments to your PD balance at all."
+    },
+    {
+      "segment_index": 159,
+      "start_time": 1580,
+      "end_time": 1590,
+      "frames": [
+        "frame_0949.jpg",
+        "frame_0950.jpg",
+        "frame_0951.jpg",
+        "frame_0952.jpg",
+        "frame_0953.jpg",
+        "frame_0954.jpg"
+      ],
+      "transcript": "[26:19] this, then you're done. You don't need to make any adjustments to your PD balance at all.\n[26:28] Now that we have our PIDs pretty much locked in, the next step, step six, is tuning feed forward."
+    },
+    {
+      "segment_index": 160,
+      "start_time": 1590,
+      "end_time": 1600,
+      "frames": [
+        "frame_0955.jpg",
+        "frame_0956.jpg",
+        "frame_0957.jpg",
+        "frame_0958.jpg",
+        "frame_0959.jpg",
+        "frame_0960.jpg"
+      ],
+      "transcript": "[26:28] Now that we have our PIDs pretty much locked in, the next step, step six, is tuning feed forward.\n[26:34] The first thing to do is to check that feed forward transition equals zero. Once that's been set,"
+    },
+    {
+      "segment_index": 161,
+      "start_time": 1600,
+      "end_time": 1610,
+      "frames": [
+        "frame_0961.jpg",
+        "frame_0962.jpg",
+        "frame_0963.jpg",
+        "frame_0964.jpg",
+        "frame_0965.jpg",
+        "frame_0966.jpg"
+      ],
+      "transcript": "[26:34] The first thing to do is to check that feed forward transition equals zero. Once that's been set,\n[26:40] do a tuning flight with lots of full stick snap rolls and snap flips. We also need to install\n[26:47] UAV text trace templates and open the log in Blackbox Explorer and look at the flips and rolls"
+    },
+    {
+      "segment_index": 162,
+      "start_time": 1610,
+      "end_time": 1620,
+      "frames": [
+        "frame_0967.jpg",
+        "frame_0968.jpg",
+        "frame_0969.jpg",
+        "frame_0970.jpg",
+        "frame_0971.jpg",
+        "frame_0972.jpg"
+      ],
+      "transcript": "[26:47] UAV text trace templates and open the log in Blackbox Explorer and look at the flips and rolls\n[26:53] that we've done. Don't worry if you've never done this before. I'm going to take you through it again\n[26:57] step by step. Okay, so let's get set up with Blackbox Explorer so that we can check our set point"
+    },
+    {
+      "segment_index": 163,
+      "start_time": 1620,
+      "end_time": 1630,
+      "frames": [
+        "frame_0973.jpg",
+        "frame_0974.jpg",
+        "frame_0975.jpg",
+        "frame_0976.jpg",
+        "frame_0977.jpg",
+        "frame_0978.jpg"
+      ],
+      "transcript": "[26:57] step by step. Okay, so let's get set up with Blackbox Explorer so that we can check our set point\n[27:04] tracking from our logs. The first thing you'll need is Blackbox Explorer. So if you follow the link in"
+    },
+    {
+      "segment_index": 164,
+      "start_time": 1630,
+      "end_time": 1640,
+      "frames": [
+        "frame_0979.jpg",
+        "frame_0980.jpg",
+        "frame_0981.jpg",
+        "frame_0982.jpg",
+        "frame_0983.jpg",
+        "frame_0984.jpg"
+      ],
+      "transcript": "[27:04] tracking from our logs. The first thing you'll need is Blackbox Explorer. So if you follow the link in\n[27:10] the video description, you'll end up here to the releases page of the Blackbox Log Viewer, latest version\n[27:16] 3.5 as of this video. You need the underscore win32 version .exe. You're on Windows, so just click that and"
+    },
+    {
+      "segment_index": 165,
+      "start_time": 1640,
+      "end_time": 1650,
+      "frames": [
+        "frame_0985.jpg",
+        "frame_0986.jpg",
+        "frame_0987.jpg",
+        "frame_0988.jpg",
+        "frame_0989.jpg",
+        "frame_0990.jpg"
+      ],
+      "transcript": "[27:16] 3.5 as of this video. You need the underscore win32 version .exe. You're on Windows, so just click that and\n[27:26] download it. And once it's downloaded, run that file and it will install Blackbox Explorer for you."
+    },
+    {
+      "segment_index": 166,
+      "start_time": 1650,
+      "end_time": 1660,
+      "frames": [
+        "frame_0991.jpg",
+        "frame_0992.jpg",
+        "frame_0993.jpg",
+        "frame_0994.jpg",
+        "frame_0995.jpg",
+        "frame_0996.jpg"
+      ],
+      "transcript": "[27:26] download it. And once it's downloaded, run that file and it will install Blackbox Explorer for you.\n[27:33] Once that's done, open Blackbox Explorer. And if you see this page when you open it, then you know that"
+    },
+    {
+      "segment_index": 167,
+      "start_time": 1660,
+      "end_time": 1670,
+      "frames": [
+        "frame_0997.jpg",
+        "frame_0998.jpg",
+        "frame_0999.jpg",
+        "frame_1000.jpg",
+        "frame_1001.jpg",
+        "frame_1002.jpg"
+      ],
+      "transcript": "[27:33] Once that's done, open Blackbox Explorer. And if you see this page when you open it, then you know that\n[27:40] you've done the right thing and that everything's installed correctly. The next thing you need is\n[27:45] UAV text Blackbox Explorer trace templates. So again, if you follow the link in the video description for"
+    },
+    {
+      "segment_index": 168,
+      "start_time": 1670,
+      "end_time": 1680,
+      "frames": [
+        "frame_1003.jpg",
+        "frame_1004.jpg",
+        "frame_1005.jpg",
+        "frame_1006.jpg",
+        "frame_1007.jpg",
+        "frame_1008.jpg"
+      ],
+      "transcript": "[27:45] UAV text Blackbox Explorer trace templates. So again, if you follow the link in the video description for\n[27:51] the trace template, it'll take you to here. You can see that there are a few different versions. We want\n[27:58] 3.5 version because that's the version of Blackbox Explorer that we have. So right click on that and"
+    },
+    {
+      "segment_index": 169,
+      "start_time": 1680,
+      "end_time": 1690,
+      "frames": [
+        "frame_1009.jpg",
+        "frame_1010.jpg",
+        "frame_1011.jpg",
+        "frame_1012.jpg",
+        "frame_1013.jpg",
+        "frame_1014.jpg"
+      ],
+      "transcript": "[27:58] 3.5 version because that's the version of Blackbox Explorer that we have. So right click on that and\n[28:05] download and that will download it. Then what we're going to do is we're going to open in Blackbox Explorer,"
+    },
+    {
+      "segment_index": 170,
+      "start_time": 1690,
+      "end_time": 1700,
+      "frames": [
+        "frame_1015.jpg",
+        "frame_1016.jpg",
+        "frame_1017.jpg",
+        "frame_1018.jpg",
+        "frame_1019.jpg",
+        "frame_1020.jpg"
+      ],
+      "transcript": "[28:05] download and that will download it. Then what we're going to do is we're going to open in Blackbox Explorer,\n[28:15] go into the folder where we downloaded the trace template and simply select the trace template as a"
+    },
+    {
+      "segment_index": 171,
+      "start_time": 1700,
+      "end_time": 1710,
+      "frames": [
+        "frame_1021.jpg",
+        "frame_1022.jpg",
+        "frame_1023.jpg",
+        "frame_1024.jpg",
+        "frame_1025.jpg",
+        "frame_1026.jpg"
+      ],
+      "transcript": "[28:15] go into the folder where we downloaded the trace template and simply select the trace template as a\n[28:21] file that we want to open. And it will tell us that workspaces have been loaded and that's perfect.\n[28:28] Then the next thing to do is to go into our logs folder. Again, just trying to open a log. Select a"
+    },
+    {
+      "segment_index": 172,
+      "start_time": 1710,
+      "end_time": 1720,
+      "frames": [
+        "frame_1027.jpg",
+        "frame_1028.jpg",
+        "frame_1029.jpg",
+        "frame_1030.jpg",
+        "frame_1031.jpg",
+        "frame_1032.jpg"
+      ],
+      "transcript": "[28:28] Then the next thing to do is to go into our logs folder. Again, just trying to open a log. Select a\n[28:35] log in this case. I'm going to open master 200. Let's open and you can see that that's opened there and"
+    },
+    {
+      "segment_index": 173,
+      "start_time": 1720,
+      "end_time": 1730,
+      "frames": [
+        "frame_1033.jpg",
+        "frame_1034.jpg",
+        "frame_1035.jpg",
+        "frame_1036.jpg",
+        "frame_1037.jpg",
+        "frame_1038.jpg"
+      ],
+      "transcript": "[28:35] log in this case. I'm going to open master 200. Let's open and you can see that that's opened there and\n[28:43] the log is, that whole log is here. Now, if we're wanting to look at stick tracking, we need to use a\n[28:49] particular trace template. So go up here to workspace and select number four, stick tracking. So that's"
+    },
+    {
+      "segment_index": 174,
+      "start_time": 1730,
+      "end_time": 1740,
+      "frames": [
+        "frame_1039.jpg",
+        "frame_1040.jpg",
+        "frame_1041.jpg",
+        "frame_1042.jpg",
+        "frame_1043.jpg",
+        "frame_1044.jpg"
+      ],
+      "transcript": "[28:49] particular trace template. So go up here to workspace and select number four, stick tracking. So that's\n[28:58] good. The next thing you'll want to do is turn off Expo in the display. So we go down here to Expo on"
+    },
+    {
+      "segment_index": 175,
+      "start_time": 1740,
+      "end_time": 1750,
+      "frames": [
+        "frame_1045.jpg",
+        "frame_1046.jpg",
+        "frame_1047.jpg",
+        "frame_1048.jpg",
+        "frame_1049.jpg",
+        "frame_1050.jpg"
+      ],
+      "transcript": "[28:58] good. The next thing you'll want to do is turn off Expo in the display. So we go down here to Expo on\n[29:06] off and turn it off. And that is all there is to it. Now you can scroll through the log to your heart's"
+    },
+    {
+      "segment_index": 176,
+      "start_time": 1750,
+      "end_time": 1760,
+      "frames": [
+        "frame_1051.jpg",
+        "frame_1052.jpg",
+        "frame_1053.jpg",
+        "frame_1054.jpg",
+        "frame_1055.jpg",
+        "frame_1056.jpg"
+      ],
+      "transcript": "[29:06] off and turn it off. And that is all there is to it. Now you can scroll through the log to your heart's\n[29:16] content and find the information that you want to look at. So here's, for example, a sharp roll one"
+    },
+    {
+      "segment_index": 177,
+      "start_time": 1760,
+      "end_time": 1770,
+      "frames": [
+        "frame_1057.jpg",
+        "frame_1058.jpg",
+        "frame_1059.jpg",
+        "frame_1060.jpg",
+        "frame_1061.jpg",
+        "frame_1062.jpg"
+      ],
+      "transcript": "[29:16] content and find the information that you want to look at. So here's, for example, a sharp roll one\n[29:24] way and then the other. And I'm sure a little further on I've done something similar on pitch."
+    },
+    {
+      "segment_index": 178,
+      "start_time": 1770,
+      "end_time": 1780,
+      "frames": [
+        "frame_1063.jpg",
+        "frame_1064.jpg",
+        "frame_1065.jpg",
+        "frame_1066.jpg",
+        "frame_1067.jpg",
+        "frame_1068.jpg"
+      ],
+      "transcript": "[29:30] Yeah, sharp pitch move forward and back.\n[29:36] And a full throttle punch out. You can see the motors go up. So if you're seeing all of this,"
+    },
+    {
+      "segment_index": 179,
+      "start_time": 1780,
+      "end_time": 1790,
+      "frames": [
+        "frame_1069.jpg",
+        "frame_1070.jpg",
+        "frame_1071.jpg",
+        "frame_1072.jpg",
+        "frame_1073.jpg",
+        "frame_1074.jpg"
+      ],
+      "transcript": "[29:40] that means you have everything correctly configured. And now you can look at your stick tracking and let's\n[29:44] see what you should be looking for in your stick tracking to show that you have a good tune for\n[29:49] your feed forward. So now that you've got your traces open in Black Box Explorer, the next step is to"
+    },
+    {
+      "segment_index": 180,
+      "start_time": 1790,
+      "end_time": 1800,
+      "frames": [
+        "frame_1075.jpg",
+        "frame_1076.jpg",
+        "frame_1077.jpg",
+        "frame_1078.jpg",
+        "frame_1079.jpg",
+        "frame_1080.jpg"
+      ],
+      "transcript": "[29:49] your feed forward. So now that you've got your traces open in Black Box Explorer, the next step is to\n[29:58] show you what too little feed forward looks like. So you're probably going to start off with too little"
+    },
+    {
+      "segment_index": 181,
+      "start_time": 1800,
+      "end_time": 1810,
+      "frames": [
+        "frame_1081.jpg",
+        "frame_1082.jpg",
+        "frame_1083.jpg",
+        "frame_1084.jpg",
+        "frame_1085.jpg",
+        "frame_1086.jpg"
+      ],
+      "transcript": "[29:58] show you what too little feed forward looks like. So you're probably going to start off with too little\n[30:04] feed forward because the beta flight defaults are quite conservative. If you have too little feed forward,"
+    },
+    {
+      "segment_index": 182,
+      "start_time": 1810,
+      "end_time": 1820,
+      "frames": [
+        "frame_1087.jpg",
+        "frame_1088.jpg",
+        "frame_1089.jpg",
+        "frame_1090.jpg",
+        "frame_1091.jpg",
+        "frame_1092.jpg"
+      ],
+      "transcript": "[30:04] feed forward because the beta flight defaults are quite conservative. If you have too little feed forward,\n[30:11] you'll see that the gyro line, which is this bluish purplish line here,\n[30:18] lags behind the green line, which is a set point. And you can see it lags behind by quite a lot."
+    },
+    {
+      "segment_index": 183,
+      "start_time": 1820,
+      "end_time": 1830,
+      "frames": [
+        "frame_1093.jpg",
+        "frame_1094.jpg",
+        "frame_1095.jpg",
+        "frame_1096.jpg",
+        "frame_1097.jpg",
+        "frame_1098.jpg"
+      ],
+      "transcript": "[30:18] lags behind the green line, which is a set point. And you can see it lags behind by quite a lot.\n[30:26] It's always behind. And that's because we don't have enough feed forward. You'll also see if you look"
+    },
+    {
+      "segment_index": 184,
+      "start_time": 1830,
+      "end_time": 1840,
+      "frames": [
+        "frame_1099.jpg",
+        "frame_1100.jpg",
+        "frame_1101.jpg",
+        "frame_1102.jpg",
+        "frame_1103.jpg",
+        "frame_1104.jpg"
+      ],
+      "transcript": "[30:26] It's always behind. And that's because we don't have enough feed forward. You'll also see if you look\n[30:34] at the motors that the motors aren't really working that hard. They never really get up to 100% throttle."
+    },
+    {
+      "segment_index": 185,
+      "start_time": 1840,
+      "end_time": 1850,
+      "frames": [
+        "frame_1105.jpg",
+        "frame_1106.jpg",
+        "frame_1107.jpg",
+        "frame_1108.jpg",
+        "frame_1109.jpg",
+        "frame_1110.jpg"
+      ],
+      "transcript": "[30:34] at the motors that the motors aren't really working that hard. They never really get up to 100% throttle.\n[30:41] And so that means that the quad is kind of being lazy. It knows that it's not doing what you've told\n[30:47] it to do because that blue line isn't on top of the green line, but it's not doing anything about it."
+    },
+    {
+      "segment_index": 186,
+      "start_time": 1850,
+      "end_time": 1860,
+      "frames": [
+        "frame_1111.jpg",
+        "frame_1112.jpg",
+        "frame_1113.jpg",
+        "frame_1114.jpg",
+        "frame_1115.jpg",
+        "frame_1116.jpg"
+      ],
+      "transcript": "[30:47] it to do because that blue line isn't on top of the green line, but it's not doing anything about it.\n[30:53] It's just kind of lazing around with the motors at a modest amount of load. So that's what we need to fix."
+    },
+    {
+      "segment_index": 187,
+      "start_time": 1860,
+      "end_time": 1870,
+      "frames": [
+        "frame_1117.jpg",
+        "frame_1118.jpg",
+        "frame_1119.jpg",
+        "frame_1120.jpg",
+        "frame_1121.jpg",
+        "frame_1122.jpg"
+      ],
+      "transcript": "[30:53] It's just kind of lazing around with the motors at a modest amount of load. So that's what we need to fix.\n[31:00] Now you might be tempted just to crank feed forward all the way up. If you do that, you might end up\n[31:09] with too much feed forward. And it's really important to know what too much feed forward looks like."
+    },
+    {
+      "segment_index": 188,
+      "start_time": 1870,
+      "end_time": 1880,
+      "frames": [
+        "frame_1123.jpg",
+        "frame_1124.jpg",
+        "frame_1125.jpg",
+        "frame_1126.jpg",
+        "frame_1127.jpg",
+        "frame_1128.jpg"
+      ],
+      "transcript": "[31:09] with too much feed forward. And it's really important to know what too much feed forward looks like.\n[31:15] If we look at the start of this roll, you can see that everything looks really good. I mean, the gyro is"
+    },
+    {
+      "segment_index": 189,
+      "start_time": 1880,
+      "end_time": 1890,
+      "frames": [
+        "frame_1129.jpg",
+        "frame_1130.jpg",
+        "frame_1131.jpg",
+        "frame_1132.jpg",
+        "frame_1133.jpg",
+        "frame_1134.jpg"
+      ],
+      "transcript": "[31:15] If we look at the start of this roll, you can see that everything looks really good. I mean, the gyro is\n[31:21] right on top of the set point the whole way and everything looks great. But if we now look at the\n[31:27] end of the roll, do you see how the gyro trace suddenly dips way below set point just here?"
+    },
+    {
+      "segment_index": 190,
+      "start_time": 1890,
+      "end_time": 1900,
+      "frames": [
+        "frame_1135.jpg",
+        "frame_1136.jpg",
+        "frame_1137.jpg",
+        "frame_1138.jpg",
+        "frame_1139.jpg",
+        "frame_1140.jpg"
+      ],
+      "transcript": "[31:27] end of the roll, do you see how the gyro trace suddenly dips way below set point just here?\n[31:36] That is because feed forward is too high and the quad is actually overshooting the end of the move."
+    },
+    {
+      "segment_index": 191,
+      "start_time": 1900,
+      "end_time": 1910,
+      "frames": [
+        "frame_1141.jpg",
+        "frame_1142.jpg",
+        "frame_1143.jpg",
+        "frame_1144.jpg",
+        "frame_1145.jpg",
+        "frame_1146.jpg"
+      ],
+      "transcript": "[31:36] That is because feed forward is too high and the quad is actually overshooting the end of the move.\n[31:47] The other thing you'll notice is that now that we've got loads more feed forward,"
+    },
+    {
+      "segment_index": 192,
+      "start_time": 1910,
+      "end_time": 1920,
+      "frames": [
+        "frame_1147.jpg",
+        "frame_1148.jpg",
+        "frame_1149.jpg",
+        "frame_1150.jpg",
+        "frame_1151.jpg",
+        "frame_1152.jpg"
+      ],
+      "transcript": "[31:47] The other thing you'll notice is that now that we've got loads more feed forward,\n[31:51] we've actually got motor saturation. So we're hitting 100% on the motor power for one motor.\n[31:58] So the quad is working as hard as it possibly can to track set point. And you can see that the,"
+    },
+    {
+      "segment_index": 193,
+      "start_time": 1920,
+      "end_time": 1930,
+      "frames": [
+        "frame_1153.jpg",
+        "frame_1154.jpg",
+        "frame_1155.jpg",
+        "frame_1156.jpg",
+        "frame_1157.jpg",
+        "frame_1158.jpg"
+      ],
+      "transcript": "[31:58] So the quad is working as hard as it possibly can to track set point. And you can see that the,\n[32:04] even though the gyro is lagging behind the set point in this part of the move here,\n[32:09] there's nothing we can do about that because a motor has reached 100%, it's saturated and there's"
+    },
+    {
+      "segment_index": 194,
+      "start_time": 1930,
+      "end_time": 1940,
+      "frames": [
+        "frame_1159.jpg",
+        "frame_1160.jpg",
+        "frame_1161.jpg",
+        "frame_1162.jpg",
+        "frame_1163.jpg",
+        "frame_1164.jpg"
+      ],
+      "transcript": "[32:09] there's nothing we can do about that because a motor has reached 100%, it's saturated and there's\n[32:15] nothing more to do. So if you have that situation where gyro and set point aren't on top of each"
+    },
+    {
+      "segment_index": 195,
+      "start_time": 1940,
+      "end_time": 1950,
+      "frames": [
+        "frame_1165.jpg",
+        "frame_1166.jpg",
+        "frame_1167.jpg",
+        "frame_1168.jpg",
+        "frame_1169.jpg",
+        "frame_1170.jpg"
+      ],
+      "transcript": "[32:15] nothing more to do. So if you have that situation where gyro and set point aren't on top of each\n[32:21] other, but you have a motor at 100%, then there's nothing more you can do, I'm afraid. That's as good\n[32:26] as it's going to get. Finally, let's look at what I settled on for my final feed forward value for the"
+    },
+    {
+      "segment_index": 196,
+      "start_time": 1950,
+      "end_time": 1960,
+      "frames": [
+        "frame_1171.jpg",
+        "frame_1172.jpg",
+        "frame_1173.jpg",
+        "frame_1174.jpg",
+        "frame_1175.jpg",
+        "frame_1176.jpg"
+      ],
+      "transcript": "[32:26] as it's going to get. Finally, let's look at what I settled on for my final feed forward value for the\n[32:34] AOS 5. This is what I think is about the right amount of feed forward. So you'll notice that, you know,"
+    },
+    {
+      "segment_index": 197,
+      "start_time": 1960,
+      "end_time": 1970,
+      "frames": [
+        "frame_1177.jpg",
+        "frame_1178.jpg",
+        "frame_1179.jpg",
+        "frame_1180.jpg",
+        "frame_1181.jpg",
+        "frame_1182.jpg"
+      ],
+      "transcript": "[32:34] AOS 5. This is what I think is about the right amount of feed forward. So you'll notice that, you know,\n[32:41] we're not quite tracking set point perfectly at the start of the move. There's possibly some more\n[32:47] that I can do there to be fair. But for this rough tune, it's absolutely fine. And at the end of the"
+    },
+    {
+      "segment_index": 198,
+      "start_time": 1970,
+      "end_time": 1980,
+      "frames": [
+        "frame_1183.jpg",
+        "frame_1184.jpg",
+        "frame_1185.jpg",
+        "frame_1186.jpg",
+        "frame_1187.jpg",
+        "frame_1188.jpg"
+      ],
+      "transcript": "[32:47] that I can do there to be fair. But for this rough tune, it's absolutely fine. And at the end of the\n[32:53] move, there's no overshooting. You can see that the gyro doesn't really overshoot like it did in the"
+    },
+    {
+      "segment_index": 199,
+      "start_time": 1980,
+      "end_time": 1990,
+      "frames": [
+        "frame_1189.jpg",
+        "frame_1190.jpg",
+        "frame_1191.jpg",
+        "frame_1192.jpg",
+        "frame_1193.jpg",
+        "frame_1194.jpg"
+      ],
+      "transcript": "[32:53] move, there's no overshooting. You can see that the gyro doesn't really overshoot like it did in the\n[33:01] last slide. So that's good too. There is just the hint of an overshoot here, which tells me that I can't\n[33:08] increase feed forward anymore. Notice that we're still hitting motor saturation at the end of the"
+    },
+    {
+      "segment_index": 200,
+      "start_time": 1990,
+      "end_time": 2000,
+      "frames": [
+        "frame_1195.jpg",
+        "frame_1196.jpg",
+        "frame_1197.jpg",
+        "frame_1198.jpg",
+        "frame_1199.jpg",
+        "frame_1200.jpg"
+      ],
+      "transcript": "[33:08] increase feed forward anymore. Notice that we're still hitting motor saturation at the end of the\n[33:14] move here. So there is enough feed forward to saturate the motors and have the quad working as"
+    },
+    {
+      "segment_index": 201,
+      "start_time": 2000,
+      "end_time": 2010,
+      "frames": [
+        "frame_1201.jpg",
+        "frame_1202.jpg",
+        "frame_1203.jpg",
+        "frame_1204.jpg",
+        "frame_1205.jpg",
+        "frame_1206.jpg"
+      ],
+      "transcript": "[33:14] move here. So there is enough feed forward to saturate the motors and have the quad working as\n[33:22] hard as it can to stay on set point. And that's really what we want to see. We want to see that\n[33:26] we have enough feed forward to make the motors max out on sharp moves. And then we know that we can do"
+    },
+    {
+      "segment_index": 202,
+      "start_time": 2010,
+      "end_time": 2020,
+      "frames": [
+        "frame_1207.jpg",
+        "frame_1208.jpg",
+        "frame_1209.jpg",
+        "frame_1210.jpg",
+        "frame_1211.jpg",
+        "frame_1212.jpg"
+      ],
+      "transcript": "[33:26] we have enough feed forward to make the motors max out on sharp moves. And then we know that we can do\n[33:34] no more. The motors are doing all they can. If the quad can't track set point, that's just a\n[33:39] mechanical limitation of the motors, the props, all of that kind of stuff. And we've done all we can"
+    },
+    {
+      "segment_index": 203,
+      "start_time": 2020,
+      "end_time": 2030,
+      "frames": [
+        "frame_1213.jpg",
+        "frame_1214.jpg",
+        "frame_1215.jpg",
+        "frame_1216.jpg",
+        "frame_1217.jpg",
+        "frame_1218.jpg"
+      ],
+      "transcript": "[33:39] mechanical limitation of the motors, the props, all of that kind of stuff. And we've done all we can\n[33:47] in the PID controller. I hope you found this video interesting. You'll have noticed that we didn't make"
+    },
+    {
+      "segment_index": 204,
+      "start_time": 2030,
+      "end_time": 2040,
+      "frames": [
+        "frame_1219.jpg",
+        "frame_1220.jpg",
+        "frame_1221.jpg",
+        "frame_1222.jpg",
+        "frame_1223.jpg",
+        "frame_1224.jpg"
+      ],
+      "transcript": "[33:47] in the PID controller. I hope you found this video interesting. You'll have noticed that we didn't make\n[33:54] it to the end of my tuning process in this video. And that's because I have follow-up videos planned on"
+    },
+    {
+      "segment_index": 205,
+      "start_time": 2040,
+      "end_time": 2050,
+      "frames": [
+        "frame_1225.jpg",
+        "frame_1226.jpg",
+        "frame_1227.jpg",
+        "frame_1228.jpg",
+        "frame_1229.jpg",
+        "frame_1230.jpg"
+      ],
+      "transcript": "[33:54] it to the end of my tuning process in this video. And that's because I have follow-up videos planned on\n[34:00] how to tune your rates and how to fine tune your PIDs for the ultimate in flight performance.\n[34:06] Make sure you're subscribed so you don't miss those videos when they're ready. If you like the work that"
+    },
+    {
+      "segment_index": 206,
+      "start_time": 2050,
+      "end_time": 2060,
+      "frames": [
+        "frame_1231.jpg",
+        "frame_1232.jpg",
+        "frame_1233.jpg",
+        "frame_1234.jpg",
+        "frame_1235.jpg",
+        "frame_1236.jpg"
+      ],
+      "transcript": "[34:06] Make sure you're subscribed so you don't miss those videos when they're ready. If you like the work that\n[34:11] I'm doing, please consider joining my Patreon. For less than $5 a month, you can get early access to the\n[34:18] designs that I'm working on and have an opportunity to give feedback to make them even better."
+    },
+    {
+      "segment_index": 207,
+      "start_time": 2060,
+      "end_time": 2070,
+      "frames": [
+        "frame_1237.jpg",
+        "frame_1238.jpg",
+        "frame_1239.jpg",
+        "frame_1240.jpg",
+        "frame_1241.jpg",
+        "frame_1242.jpg"
+      ],
+      "transcript": "[34:18] designs that I'm working on and have an opportunity to give feedback to make them even better.\n[34:23] If you'd like the best possible platform to start your filter and PID tune from, please consider"
+    },
+    {
+      "segment_index": 208,
+      "start_time": 2070,
+      "end_time": 2080,
+      "frames": [
+        "frame_1243.jpg",
+        "frame_1244.jpg",
+        "frame_1245.jpg",
+        "frame_1246.jpg",
+        "frame_1247.jpg",
+        "frame_1248.jpg"
+      ],
+      "transcript": "[34:23] If you'd like the best possible platform to start your filter and PID tune from, please consider\n[34:30] checking out my frame, the AOS 5. I'll put a link for that down in the video description as well.\n[34:35] It's been designed from the ground up to give the absolute best possible vibration and resonance"
+    },
+    {
+      "segment_index": 209,
+      "start_time": 2080,
+      "end_time": 2090,
+      "frames": [
+        "frame_1249.jpg",
+        "frame_1250.jpg",
+        "frame_1251.jpg",
+        "frame_1252.jpg",
+        "frame_1253.jpg",
+        "frame_1254.jpg"
+      ],
+      "transcript": "[34:35] It's been designed from the ground up to give the absolute best possible vibration and resonance\n[34:41] performance. And that's going to allow you to push your filters and PIDs further than ever before.\n[34:47] That's all I have for you for today. So until next time, all that remains is for me to wish you all"
+    },
+    {
+      "segment_index": 210,
+      "start_time": 2090,
+      "end_time": 2094.48,
+      "frames": [
+        "frame_1255.jpg",
+        "frame_1256.jpg"
+      ],
+      "transcript": "[34:47] That's all I have for you for today. So until next time, all that remains is for me to wish you all\n[34:52] very, very happy flying."
+    }
+  ]
+}

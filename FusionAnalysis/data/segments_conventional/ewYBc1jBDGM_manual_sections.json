@@ -1,0 +1,1139 @@
+{
+  "video_id": "ewYBc1jBDGM",
+  "duration": 1029.06,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg",
+        "frame_0003.jpg"
+      ],
+      "transcript": "[0:00] Hey guys! Welcome to Allotronics! I'm Gregory and in this video we are going to take a look on an IF amplifier with variable gain.\n[0:08] I designed this IF amplifier for an SSB transceiver where the gain can be controlled."
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0004.jpg",
+        "frame_0005.jpg",
+        "frame_0006.jpg"
+      ],
+      "transcript": "[0:08] I designed this IF amplifier for an SSB transceiver where the gain can be controlled.\n[0:13] We are going to see it working here on the bench and we're going to go to the whiteboard to understand how it works.\n[0:19] Take your coffee and come with me."
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0007.jpg",
+        "frame_0008.jpg",
+        "frame_0009.jpg"
+      ],
+      "transcript": "[0:19] Take your coffee and come with me.\n[0:22] So guys, here we have the prototype. I'm going to show it later.\n[0:26] And I'm using the tracking generator of the spectrum analyzer to plot here the gain."
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:26] And I'm using the tracking generator of the spectrum analyzer to plot here the gain.\n[0:31] So this trace here over frequency is the gain of the amplifier.\n[0:36] And you can see that if I change the control voltage, we can change the gain of the amplifier."
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg",
+        "frame_0015.jpg"
+      ],
+      "transcript": "[0:36] And you can see that if I change the control voltage, we can change the gain of the amplifier.\n[0:44] If I change the control voltage, we change the gain.\n[0:48] Let's go to the maximum gain here."
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0016.jpg",
+        "frame_0017.jpg",
+        "frame_0018.jpg"
+      ],
+      "transcript": "[0:48] Let's go to the maximum gain here.\n[0:51] Around 28 dB.\n[0:53] And if we go down, we can reduce the gain.\n[0:58] Even having a gain lower than 0 dB."
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0019.jpg",
+        "frame_0020.jpg",
+        "frame_0021.jpg"
+      ],
+      "transcript": "[0:58] Even having a gain lower than 0 dB.\n[1:01] So this amplifier can actually work as an attenuator also.\n[1:07] Look at this.\n[1:08] Here you can see the prototype using my favorite technique, the SPIDER technique, as I called."
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[1:08] Here you can see the prototype using my favorite technique, the SPIDER technique, as I called.\n[1:14] We have the input signal here on this connector where we connected the tracking generator.\n[1:19] And this is the output connector where we are measuring the output power, plotting the gain on the spectrum analyzer."
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg",
+        "frame_0027.jpg"
+      ],
+      "transcript": "[1:19] And this is the output connector where we are measuring the output power, plotting the gain on the spectrum analyzer.\n[1:26] Construction is very simple.\n[1:28] Using a single transistor, a BJT transistor, a BC547 here."
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0028.jpg",
+        "frame_0029.jpg",
+        "frame_0030.jpg"
+      ],
+      "transcript": "[1:28] Using a single transistor, a BJT transistor, a BC547 here.\n[1:32] And what is important for this design is that we are using a diode as a variable resistor to control the gain.\n[1:39] This mouse signal resistance of the diode is being used as this mouse signal emitter resistor of the transistor."
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0031.jpg",
+        "frame_0032.jpg",
+        "frame_0033.jpg"
+      ],
+      "transcript": "[1:39] This mouse signal resistance of the diode is being used as this mouse signal emitter resistor of the transistor.\n[1:47] And we can control this mouse signal resistance, changing the voltage over this 10k resistor here, generating an almost constant current on the diode."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[1:47] And we can control this mouse signal resistance, changing the voltage over this 10k resistor here, generating an almost constant current on the diode.\n[1:58] And the other important thing of this design is the auto transformer on the output that is converting the fifth ohm impedance of the output to a much higher impedance to the collector of the transistor."
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg",
+        "frame_0039.jpg"
+      ],
+      "transcript": "[1:58] And the other important thing of this design is the auto transformer on the output that is converting the fifth ohm impedance of the output to a much higher impedance to the collector of the transistor."
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0040.jpg",
+        "frame_0041.jpg",
+        "frame_0042.jpg"
+      ],
+      "transcript": "[1:58] And the other important thing of this design is the auto transformer on the output that is converting the fifth ohm impedance of the output to a much higher impedance to the collector of the transistor.\n[2:10] So we can get the maximum gain of this stage.\n[2:14] And guys, to plot the gain of this stage here, it's very easy.\n[2:18] We only need to go to the amplitude menu of the spectrum analyzer."
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0043.jpg",
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:18] We only need to go to the amplitude menu of the spectrum analyzer.\n[2:23] And we need to generate a reference offset of the same value as the power we are using on the tracking generator."
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[2:23] And we need to generate a reference offset of the same value as the power we are using on the tracking generator.\n[2:32] So if we are using negative 20 dB as the input power and we are offsetting the line 20 dB, we are actually plotting here the gain of this stage."
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg",
+        "frame_0051.jpg"
+      ],
+      "transcript": "[2:32] So if we are using negative 20 dB as the input power and we are offsetting the line 20 dB, we are actually plotting here the gain of this stage.\n[2:44] My cable setup here has 0.8 dB of attenuation.\n[2:49] So we can add it there."
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0052.jpg",
+        "frame_0053.jpg",
+        "frame_0054.jpg"
+      ],
+      "transcript": "[2:49] So we can add it there.\n[2:51] And we're gonna have a little higher trace here because now we are compensating for the losses of the cable.\n[2:56] The assumption that the diode is working with a constant current only works for very high control voltage."
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0055.jpg",
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[2:56] The assumption that the diode is working with a constant current only works for very high control voltage.\n[3:03] If the control voltage is very low, now the voltage drop over the diode becomes significant.\n[3:08] And of course, if we have changes in the diode temperature, we are going to have changes on the current and on the gain of this stage."
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:08] And of course, if we have changes in the diode temperature, we are going to have changes on the current and on the gain of this stage.\n[3:16] Here I configure this stage for a very low gain, 5 dB."
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg",
+        "frame_0063.jpg"
+      ],
+      "transcript": "[3:16] Here I configure this stage for a very low gain, 5 dB.\n[3:20] And take a look at what happens if I touch the diode hitting it.\n[3:23] Take a look at the gain increasing."
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0064.jpg",
+        "frame_0065.jpg",
+        "frame_0066.jpg"
+      ],
+      "transcript": "[3:30] So for controlling the gain of this stage with precision, we need a constant current source.\n[3:36] Using this, I will have very precise gain control, so I can grab some data of the amplifier to show you in the next video."
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0067.jpg",
+        "frame_0068.jpg",
+        "frame_0069.jpg"
+      ],
+      "transcript": "[3:36] Using this, I will have very precise gain control, so I can grab some data of the amplifier to show you in the next video.\n[3:44] I wanna plot the third order intercept, the 1 dB compression point.\n[3:47] And for this, we need to have very well controlled current to stabilize the gain in a precise level of the measurement."
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[3:47] And for this, we need to have very well controlled current to stabilize the gain in a precise level of the measurement.\n[3:55] And you can see that I thermocoupled the three transistors of the current source.\n[3:59] And this approach here worked very well."
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg",
+        "frame_0075.jpg"
+      ],
+      "transcript": "[3:59] And this approach here worked very well.\n[4:02] Very well. Very nice.\n[4:03] So guys, let's understand how the circuit works.\n[4:07] And as we can see here, it's a very simple circuit."
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0076.jpg",
+        "frame_0077.jpg",
+        "frame_0078.jpg"
+      ],
+      "transcript": "[4:07] And as we can see here, it's a very simple circuit.\n[4:10] A single BJT amplifier, common emitter amplifier.\n[4:14] But I played some tricks here to have its gain controlled by a voltage or actually by a current."
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0079.jpg",
+        "frame_0080.jpg",
+        "frame_0081.jpg"
+      ],
+      "transcript": "[4:14] But I played some tricks here to have its gain controlled by a voltage or actually by a current.\n[4:21] As we are using this mouse signal resistance of the diode as a variable resistor,\n[4:27] actually the gain here is controlled by current."
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[4:27] actually the gain here is controlled by current.\n[4:30] Very interesting.\n[4:32] Because the resistance, the mouse signal resistance of the diode is proportional to current.\n[4:38] Actually, it is inverted."
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg",
+        "frame_0087.jpg"
+      ],
+      "transcript": "[4:38] Actually, it is inverted.\n[4:40] As the current increases, the mouse signal resistance decreases.\n[4:45] We see that we have a very simple circuit.\n[4:47] We have the 5th ohm output here being transformed to a higher impedance to the collector."
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0088.jpg",
+        "frame_0089.jpg",
+        "frame_0090.jpg"
+      ],
+      "transcript": "[4:47] We have the 5th ohm output here being transformed to a higher impedance to the collector.\n[4:54] We are going to understand why I did this and how the turn ratio of this auto transformer was"
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0091.jpg",
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[4:54] We are going to understand why I did this and how the turn ratio of this auto transformer was\n[5:00] chosen.\n[5:00] And we have common biasing of the transistor here with a voltage divider generating a constant voltage\n[5:08] over the base, generating an almost constant voltage on the emitter."
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[5:08] over the base, generating an almost constant voltage on the emitter.\n[5:13] So we can control the current of the amplifier using an emitter resistor.\n[5:19] This resistance here is controlling the stage current that I'm using here, 12 milliamps."
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg",
+        "frame_0099.jpg"
+      ],
+      "transcript": "[5:19] This resistance here is controlling the stage current that I'm using here, 12 milliamps.\n[5:26] So we know that here we have 12 milliamps."
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0100.jpg",
+        "frame_0101.jpg",
+        "frame_0102.jpg"
+      ],
+      "transcript": "[5:26] So we know that here we have 12 milliamps.\n[5:30] And why 12 milliamps guys?\n[5:32] This comes a little more from experience because I have developed a lot of amplifiers like this one.\n[5:39] And I know really by experience by going to the bench that it works very very well with 12 milliamps."
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0103.jpg",
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[5:39] And I know really by experience by going to the bench that it works very very well with 12 milliamps.\n[5:46] Actually something between 10 and 12 milliamps works very well for this kind of transistor here."
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[5:46] Actually something between 10 and 12 milliamps works very well for this kind of transistor here.\n[5:53] And guys, before we proceed, do you know why a transistor amplifier like this one amplifies?\n[5:59] It's actually very very easy to understand."
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg",
+        "frame_0111.jpg"
+      ],
+      "transcript": "[5:59] It's actually very very easy to understand.\n[6:02] We know that by the working principle, the working behavior of the transistor, the BJT transistor,\n[6:08] is to have a very similar current on the emitter and on the collector."
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0112.jpg",
+        "frame_0113.jpg",
+        "frame_0114.jpg"
+      ],
+      "transcript": "[6:08] is to have a very similar current on the emitter and on the collector.\n[6:14] We know that any current that flows into the collector will flow into the emitter."
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0115.jpg",
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[6:14] We know that any current that flows into the collector will flow into the emitter.\n[6:20] So any current entering the collector will go out on the emitter.\n[6:24] And we have very little current on the base.\n[6:27] So we can assume here that any current flowing here on the emitter will be flowing here on the collector."
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[6:27] So we can assume here that any current flowing here on the emitter will be flowing here on the collector.\n[6:35] And knowing this first order behavior, it's very easy to see that this setup here will amplify"
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg",
+        "frame_0123.jpg"
+      ],
+      "transcript": "[6:35] And knowing this first order behavior, it's very easy to see that this setup here will amplify\n[6:41] if we place different impedance on the emitter and on the collector.\n[6:47] Because the same current will flow on both."
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0124.jpg",
+        "frame_0125.jpg",
+        "frame_0126.jpg"
+      ],
+      "transcript": "[6:47] Because the same current will flow on both.\n[6:50] So if we have here 39 ohms, let's say we don't have this inductor here.\n[6:54] We have here 39 ohms on the emitter.\n[6:57] Any voltage fluctuation here will generate a current fluctuation on this resistor here."
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0127.jpg",
+        "frame_0128.jpg",
+        "frame_0129.jpg"
+      ],
+      "transcript": "[6:57] Any voltage fluctuation here will generate a current fluctuation on this resistor here.\n[7:05] And this current here will flow on the collector.\n[7:08] So if I place a 10 times higher resistor here, I'm gonna have 10 times higher voltage here."
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0130.jpg",
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[7:08] So if I place a 10 times higher resistor here, I'm gonna have 10 times higher voltage here.\n[7:16] Because the resistor here is transforming the current on voltage."
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg",
+        "frame_0135.jpg"
+      ],
+      "transcript": "[7:16] Because the resistor here is transforming the current on voltage.\n[7:20] And we have the same current on the collector than in the emitter.\n[7:24] So it becomes very clear that an approximation for the gain of any common emitter amplifier"
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0136.jpg",
+        "frame_0137.jpg",
+        "frame_0138.jpg"
+      ],
+      "transcript": "[7:24] So it becomes very clear that an approximation for the gain of any common emitter amplifier\n[7:31] is the ratio between the collector impedance and the emitter impedance.\n[7:37] The emitter impedance will set the current flowing here by the fluctuation in voltage on the base."
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0139.jpg",
+        "frame_0140.jpg",
+        "frame_0141.jpg"
+      ],
+      "transcript": "[7:37] The emitter impedance will set the current flowing here by the fluctuation in voltage on the base.\n[7:45] Imagine the signal changing here the voltage of the base.\n[7:49] Changing in voltage of the base will appear here as a changing in voltage of the emitter."
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0142.jpg",
+        "frame_0143.jpg",
+        "frame_0144.jpg"
+      ],
+      "transcript": "[7:49] Changing in voltage of the base will appear here as a changing in voltage of the emitter.\n[7:55] Okay?\n[7:56] Because we have a constant voltage drop, this fluctuation here of voltage will generate"
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0145.jpg",
+        "frame_0146.jpg",
+        "frame_0147.jpg"
+      ],
+      "transcript": "[7:56] Because we have a constant voltage drop, this fluctuation here of voltage will generate\n[8:02] a current fluctuation here on the impedance of the emitter.\n[8:07] And the same current fluctuation will happen here on the collector."
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0148.jpg",
+        "frame_0149.jpg",
+        "frame_0150.jpg"
+      ],
+      "transcript": "[8:07] And the same current fluctuation will happen here on the collector.\n[8:11] So if the impedance are different, of course the voltage here can be higher than the input voltage.\n[8:18] Very nice.\n[8:19] Understanding this behavior, it becomes very clear what I did here."
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0151.jpg",
+        "frame_0152.jpg",
+        "frame_0153.jpg"
+      ],
+      "transcript": "[8:19] Understanding this behavior, it becomes very clear what I did here.\n[8:23] I first placed an inductor in series with this resistor here.\n[8:28] So now any AC fluctuation of voltage will see a very high impedance here."
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0154.jpg",
+        "frame_0155.jpg",
+        "frame_0156.jpg"
+      ],
+      "transcript": "[8:28] So now any AC fluctuation of voltage will see a very high impedance here.\n[8:36] Much more than 10 kilo ohms.\n[8:38] Because this inductor here for AC will have very high impedance."
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0157.jpg",
+        "frame_0158.jpg",
+        "frame_0159.jpg"
+      ],
+      "transcript": "[8:38] Because this inductor here for AC will have very high impedance.\n[8:43] So this transistor will not work as an amplifier.\n[8:46] Because any AC voltage here will not generate fluctuations of current here,"
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0160.jpg",
+        "frame_0161.jpg",
+        "frame_0162.jpg"
+      ],
+      "transcript": "[8:46] Because any AC voltage here will not generate fluctuations of current here,\n[8:52] because the impedance is very high.\n[8:54] So we don't have any fluctuation of current here on the collector and we have no amplification."
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0163.jpg",
+        "frame_0164.jpg",
+        "frame_0165.jpg"
+      ],
+      "transcript": "[8:54] So we don't have any fluctuation of current here on the collector and we have no amplification.\n[9:00] But now we can AC couple a diode here only in the AC path using a capacitor here.\n[9:08] So voltage fluctuation on the base generates voltage fluctuation on the emitter."
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0166.jpg",
+        "frame_0167.jpg",
+        "frame_0168.jpg"
+      ],
+      "transcript": "[9:08] So voltage fluctuation on the base generates voltage fluctuation on the emitter.\n[9:13] And now this voltage fluctuation can generate an AC current flowing through the diode."
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0169.jpg",
+        "frame_0170.jpg",
+        "frame_0171.jpg"
+      ],
+      "transcript": "[9:13] And now this voltage fluctuation can generate an AC current flowing through the diode.\n[9:21] Very, very nice.\n[9:22] And remember, as we are biasing this diode here with a constant current,\n[9:28] I gain control, IGC, I gain control."
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0172.jpg",
+        "frame_0173.jpg",
+        "frame_0174.jpg"
+      ],
+      "transcript": "[9:28] I gain control, IGC, I gain control.\n[9:33] This diode here is being biased, so it behaves like a resistor.\n[9:39] The small signal resistance of the diode, we're gonna call it here, AirD."
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0175.jpg",
+        "frame_0176.jpg",
+        "frame_0177.jpg"
+      ],
+      "transcript": "[9:39] The small signal resistance of the diode, we're gonna call it here, AirD.\n[9:44] Small signal resistance of the diode.\n[9:47] Any fluctuation here in the base generates fluctuation in the emitter,"
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0178.jpg",
+        "frame_0179.jpg",
+        "frame_0180.jpg"
+      ],
+      "transcript": "[9:47] Any fluctuation here in the base generates fluctuation in the emitter,\n[9:51] and generates AC current on the small signal resistance of the diode.\n[9:56] And this fluctuation of current here is reflected back to the collector,"
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0181.jpg",
+        "frame_0182.jpg",
+        "frame_0183.jpg"
+      ],
+      "transcript": "[9:56] And this fluctuation of current here is reflected back to the collector,\n[10:01] and generates a signal here on the collector.\n[10:03] So using this arrangement here, the gain of the stage now is controlled by the resistance of the diode,"
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0184.jpg",
+        "frame_0185.jpg",
+        "frame_0186.jpg"
+      ],
+      "transcript": "[10:03] So using this arrangement here, the gain of the stage now is controlled by the resistance of the diode,\n[10:11] that is controlled by the current flowing in the diode.\n[10:17] The DC current flowing in the diode.\n[10:19] So changing the voltage here, gain control, we change the biasing current of the diode,"
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0187.jpg",
+        "frame_0188.jpg",
+        "frame_0189.jpg"
+      ],
+      "transcript": "[10:19] So changing the voltage here, gain control, we change the biasing current of the diode,\n[10:25] and we change the gain of the stage.\n[10:29] Before we understand the auto transformer here, let's think we have a constant resistance here."
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0190.jpg",
+        "frame_0191.jpg",
+        "frame_0192.jpg"
+      ],
+      "transcript": "[10:29] Before we understand the auto transformer here, let's think we have a constant resistance here.\n[10:36] It becomes very easy to see that the collector current pumped to the resistor here,"
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0193.jpg",
+        "frame_0194.jpg",
+        "frame_0195.jpg"
+      ],
+      "transcript": "[10:36] It becomes very easy to see that the collector current pumped to the resistor here,\n[10:41] will generate a voltage here on the collector.\n[10:44] So it's important to see that here is the impedance that matters to the collector."
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0196.jpg",
+        "frame_0197.jpg",
+        "frame_0198.jpg"
+      ],
+      "transcript": "[10:44] So it's important to see that here is the impedance that matters to the collector.\n[10:50] The impedance at this node here is what matters for the collector of the transistor.\n[10:55] The gain of the stage here will be proportional to this impedance over the small signal resistance of the diode."
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0199.jpg",
+        "frame_0200.jpg",
+        "frame_0201.jpg"
+      ],
+      "transcript": "[10:55] The gain of the stage here will be proportional to this impedance over the small signal resistance of the diode.\n[11:04] So the gain of the stage will be approximated by a constant, a non-ideality constant here,"
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0202.jpg",
+        "frame_0203.jpg",
+        "frame_0204.jpg"
+      ],
+      "transcript": "[11:04] So the gain of the stage will be approximated by a constant, a non-ideality constant here,\n[11:11] times the impedance of the collector over the small signal resistance of the diode.\n[11:18] That is a value proportional to the IGC."
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0205.jpg",
+        "frame_0206.jpg",
+        "frame_0207.jpg"
+      ],
+      "transcript": "[11:18] That is a value proportional to the IGC.\n[11:22] If we change the current, we change the small signal resistance and we change the gain of the stage.\n[11:28] This is the gain from the base to the collector, from a signal applied here on the base,"
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0208.jpg",
+        "frame_0209.jpg",
+        "frame_0210.jpg"
+      ],
+      "transcript": "[11:28] This is the gain from the base to the collector, from a signal applied here on the base,\n[11:32] to this node here of the transistor.\n[11:35] Now let's understand why I placed here an auto transformer."
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0211.jpg",
+        "frame_0212.jpg",
+        "frame_0213.jpg"
+      ],
+      "transcript": "[11:35] Now let's understand why I placed here an auto transformer.\n[11:40] We can see that this capacitor here is shorting this node, so this node here actually is an AC ground, okay?\n[11:49] And we have less turns here on the upper winding of the auto transformer than here on the bottom winding of the auto transformer."
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0214.jpg",
+        "frame_0215.jpg",
+        "frame_0216.jpg"
+      ],
+      "transcript": "[11:49] And we have less turns here on the upper winding of the auto transformer than here on the bottom winding of the auto transformer.\n[11:57] So as we're gonna connect here in that side a load that has 5th ON, we have the 5th ON connected to the lower part of the auto transformer."
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0217.jpg",
+        "frame_0218.jpg",
+        "frame_0219.jpg"
+      ],
+      "transcript": "[11:57] So as we're gonna connect here in that side a load that has 5th ON, we have the 5th ON connected to the lower part of the auto transformer.\n[12:09] We call this the cold side."
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0220.jpg",
+        "frame_0221.jpg",
+        "frame_0222.jpg"
+      ],
+      "transcript": "[12:09] We call this the cold side.\n[12:11] Cold side because it is connected to the GND, to the ground.\n[12:15] Here on the collector we have a higher impedance.\n[12:18] So here on the collector we have a higher impedance than 5th ON."
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0223.jpg",
+        "frame_0224.jpg",
+        "frame_0225.jpg"
+      ],
+      "transcript": "[12:18] So here on the collector we have a higher impedance than 5th ON.\n[12:23] And this will make sense now.\n[12:24] To bias the transistor to 12mA, I choose here to have 0.5V here,"
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0226.jpg",
+        "frame_0227.jpg",
+        "frame_0228.jpg"
+      ],
+      "transcript": "[12:24] To bias the transistor to 12mA, I choose here to have 0.5V here,\n[12:30] 500mV of drop from the 8V supply here,\n[12:34] and also to have here 0.5V.\n[12:36] So the voltage available here on the collector is 7V."
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0229.jpg",
+        "frame_0230.jpg",
+        "frame_0231.jpg"
+      ],
+      "transcript": "[12:36] So the voltage available here on the collector is 7V.\n[12:40] This voltage here is 7.5V.\n[12:47] The biasing voltage is the average of voltage, the DC level."
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0232.jpg",
+        "frame_0233.jpg",
+        "frame_0234.jpg"
+      ],
+      "transcript": "[12:47] The biasing voltage is the average of voltage, the DC level.\n[12:53] We have 7.5V here on the collector, 0.5V here on the emitter.\n[12:57] So we see that the voltage excursion here can be around 7V."
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0235.jpg",
+        "frame_0236.jpg",
+        "frame_0237.jpg"
+      ],
+      "transcript": "[12:57] So we see that the voltage excursion here can be around 7V.\n[13:02] The transistor here can have its collector changed by 7V.\n[13:07] And we know that the biasing current is 12mA."
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0238.jpg",
+        "frame_0239.jpg",
+        "frame_0240.jpg"
+      ],
+      "transcript": "[13:07] And we know that the biasing current is 12mA.\n[13:11] And for linearity reasons, I don't want the current to go to 0.\n[13:15] I want at least 2mA of current always flowing on the transistor."
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0241.jpg",
+        "frame_0242.jpg",
+        "frame_0243.jpg"
+      ],
+      "transcript": "[13:15] I want at least 2mA of current always flowing on the transistor.\n[13:22] So we can have 7V of variation and 10mA of variation.\n[13:27] Because from 12, the minimum current possible here can be only 2mA."
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0244.jpg",
+        "frame_0245.jpg",
+        "frame_0246.jpg"
+      ],
+      "transcript": "[13:27] Because from 12, the minimum current possible here can be only 2mA.\n[13:34] And of course guys, understanding the maximum current and voltage\n[13:38] we can have here on the collector of the transistor,"
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0247.jpg",
+        "frame_0248.jpg",
+        "frame_0249.jpg"
+      ],
+      "transcript": "[13:38] we can have here on the collector of the transistor,\n[13:41] we can calculate the ideal load impedance that the collector needs to see.\n[13:46] And of course, it is the voltage over the current."
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0250.jpg",
+        "frame_0251.jpg",
+        "frame_0252.jpg"
+      ],
+      "transcript": "[13:46] And of course, it is the voltage over the current.\n[13:50] So the ideal Z collector will be 7V over 10mA.\n[13:58] And of course, this is 700 ohms."
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0253.jpg",
+        "frame_0254.jpg",
+        "frame_0255.jpg"
+      ],
+      "transcript": "[13:58] And of course, this is 700 ohms.\n[14:00] Very interesting guys.\n[14:02] In the case of connecting 5\u03a9 directly to the collector of the transistor,\n[14:06] we would be saturating the transistor much earlier.\n[14:09] Because the biasing condition will not have current enough"
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0256.jpg",
+        "frame_0257.jpg",
+        "frame_0258.jpg"
+      ],
+      "transcript": "[14:09] Because the biasing condition will not have current enough\n[14:13] to generate the maximum possible voltage drop here on the collector,\n[14:18] to have the maximum output power."
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0259.jpg",
+        "frame_0260.jpg",
+        "frame_0261.jpg"
+      ],
+      "transcript": "[14:18] to have the maximum output power.\n[14:20] Very interesting.\n[14:21] So using the proper impedance here on the collector,\n[14:25] we're gonna have the maximum power on the output,\n[14:28] because we are using all the current and all the voltage available on the biasing condition."
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0262.jpg",
+        "frame_0263.jpg",
+        "frame_0264.jpg"
+      ],
+      "transcript": "[14:28] because we are using all the current and all the voltage available on the biasing condition.\n[14:35] Very, very, very interesting.\n[14:37] And to have a transformation from 5\u03a9 to 700\u03a9,"
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0265.jpg",
+        "frame_0266.jpg",
+        "frame_0267.jpg"
+      ],
+      "transcript": "[14:37] And to have a transformation from 5\u03a9 to 700\u03a9,\n[14:41] I choose here a ratio of 3 and here 7.\n[14:46] I'm not reaching exactly 700.\n[14:49] Probably we could use here 8, an N of 8."
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 900,
+      "frames": [
+        "frame_0268.jpg",
+        "frame_0269.jpg",
+        "frame_0270.jpg"
+      ],
+      "transcript": "[14:49] Probably we could use here 8, an N of 8.\n[14:53] But I use it 7.\n[14:54] All the other components here guys,\n[14:57] this voltage divider here is setting a constant voltage on the base"
+    },
+    {
+      "segment_index": 91,
+      "start_time": 900,
+      "end_time": 910,
+      "frames": [
+        "frame_0271.jpg",
+        "frame_0272.jpg",
+        "frame_0273.jpg"
+      ],
+      "transcript": "[14:57] this voltage divider here is setting a constant voltage on the base\n[15:01] to have the constant voltage here on the emitter,\n[15:04] the average voltage, the biasing voltage.\n[15:06] We have this resistor here setting the 12 mA biasing current,"
+    },
+    {
+      "segment_index": 92,
+      "start_time": 910,
+      "end_time": 920,
+      "frames": [
+        "frame_0274.jpg",
+        "frame_0275.jpg",
+        "frame_0276.jpg"
+      ],
+      "transcript": "[15:06] We have this resistor here setting the 12 mA biasing current,\n[15:12] the inductor is isolating the resistor here from AC fluctuations,\n[15:18] and in this way we can deviate all the fluctuations of current in the emitter"
+    },
+    {
+      "segment_index": 93,
+      "start_time": 920,
+      "end_time": 930,
+      "frames": [
+        "frame_0277.jpg",
+        "frame_0278.jpg",
+        "frame_0279.jpg"
+      ],
+      "transcript": "[15:18] and in this way we can deviate all the fluctuations of current in the emitter\n[15:23] directly to this mouse signal resistance of the diode here.\n[15:27] Very, very interesting.\n[15:28] And the autotransformer is transforming the impedance,"
+    },
+    {
+      "segment_index": 94,
+      "start_time": 930,
+      "end_time": 940,
+      "frames": [
+        "frame_0280.jpg",
+        "frame_0281.jpg",
+        "frame_0282.jpg"
+      ],
+      "transcript": "[15:28] And the autotransformer is transforming the impedance,\n[15:31] the low impedance output to a higher impedance here,\n[15:34] a proper impedance for the functioning of the transistor.\n[15:38] This voltage drop here, this resistance here guys,"
+    },
+    {
+      "segment_index": 95,
+      "start_time": 940,
+      "end_time": 950,
+      "frames": [
+        "frame_0283.jpg",
+        "frame_0284.jpg",
+        "frame_0285.jpg"
+      ],
+      "transcript": "[15:38] This voltage drop here, this resistance here guys,\n[15:41] the 39\u03a9 resistor is only here to help a little more stabilizing the stage.\n[15:48] Because think with me, if the temperature here changes and the transistor tries to sink more current,"
+    },
+    {
+      "segment_index": 96,
+      "start_time": 950,
+      "end_time": 960,
+      "frames": [
+        "frame_0286.jpg",
+        "frame_0287.jpg",
+        "frame_0288.jpg"
+      ],
+      "transcript": "[15:48] Because think with me, if the temperature here changes and the transistor tries to sink more current,\n[15:54] the voltage here will drop and the biasing voltage will also drop to compensate a little."
+    },
+    {
+      "segment_index": 97,
+      "start_time": 960,
+      "end_time": 970,
+      "frames": [
+        "frame_0289.jpg",
+        "frame_0290.jpg",
+        "frame_0291.jpg"
+      ],
+      "transcript": "[15:54] the voltage here will drop and the biasing voltage will also drop to compensate a little.\n[16:00] So we use this technique where we get the voltage from the biasing divider from a voltage drop here of a series resistance."
+    },
+    {
+      "segment_index": 98,
+      "start_time": 970,
+      "end_time": 980,
+      "frames": [
+        "frame_0292.jpg",
+        "frame_0293.jpg",
+        "frame_0294.jpg"
+      ],
+      "transcript": "[16:00] So we use this technique where we get the voltage from the biasing divider from a voltage drop here of a series resistance.\n[16:10] This needs to be a very low resistor to have very low voltage drop here,\n[16:14] so we are not losing power here, available power of the signal, of the output signal."
+    },
+    {
+      "segment_index": 99,
+      "start_time": 980,
+      "end_time": 990,
+      "frames": [
+        "frame_0295.jpg",
+        "frame_0296.jpg",
+        "frame_0297.jpg"
+      ],
+      "transcript": "[16:14] so we are not losing power here, available power of the signal, of the output signal.\n[16:21] And here I use a 39 because I was already using 39 here on the emitter, so I use the same value here.\n[16:28] And this resistor also works as a filter, isolating a little fluctuations of voltage noise from the power supply into the stage,"
+    },
+    {
+      "segment_index": 100,
+      "start_time": 990,
+      "end_time": 1000,
+      "frames": [
+        "frame_0298.jpg",
+        "frame_0299.jpg",
+        "frame_0300.jpg"
+      ],
+      "transcript": "[16:28] And this resistor also works as a filter, isolating a little fluctuations of voltage noise from the power supply into the stage,\n[16:37] and also fluctuations from this stage to the power supply."
+    },
+    {
+      "segment_index": 101,
+      "start_time": 1000,
+      "end_time": 1010,
+      "frames": [
+        "frame_0301.jpg",
+        "frame_0302.jpg",
+        "frame_0303.jpg"
+      ],
+      "transcript": "[16:37] and also fluctuations from this stage to the power supply.\n[16:43] So if we have a lot of these stages in cascade, as an example,\n[16:47] it's very nice to have this air-sea filter here to isolate a little more all these stages."
+    },
+    {
+      "segment_index": 102,
+      "start_time": 1010,
+      "end_time": 1020,
+      "frames": [
+        "frame_0304.jpg",
+        "frame_0305.jpg",
+        "frame_0306.jpg"
+      ],
+      "transcript": "[16:47] it's very nice to have this air-sea filter here to isolate a little more all these stages.\n[16:55] Well guys, thank you for watching the video, I hope you like it.\n[16:57] If so, subscribe to the channel, give it a thumbs up."
+    },
+    {
+      "segment_index": 103,
+      "start_time": 1020,
+      "end_time": 1029.06,
+      "frames": [
+        "frame_0307.jpg",
+        "frame_0308.jpg"
+      ],
+      "transcript": "[16:57] If so, subscribe to the channel, give it a thumbs up.\n[17:00] And remember you can support the channel becoming a Patreon, link here on the description.\n[17:05] I see you in the next video of Aulatronics."
+    }
+  ]
+}

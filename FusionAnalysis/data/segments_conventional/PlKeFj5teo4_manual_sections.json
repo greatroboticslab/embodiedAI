@@ -1,0 +1,385 @@
+{
+  "video_id": "PlKeFj5teo4",
+  "duration": 419.4,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg"
+      ],
+      "transcript": "[0:00] There's two very critical pieces of hardware on a drone that allows it to fly autonomously.\n[0:07] Today we're going to cover what the difference is between a flight controller and a flight computer"
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0002.jpg"
+      ],
+      "transcript": "[0:07] Today we're going to cover what the difference is between a flight controller and a flight computer\n[0:11] in the context of an autonomous drone, and why you might want to keep them separate for your particular project.\n[0:17] There's two key levels of control that are going on behind the scenes in an autonomous drone."
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0003.jpg"
+      ],
+      "transcript": "[0:17] There's two key levels of control that are going on behind the scenes in an autonomous drone.\n[0:22] Of course, much more complex systems have many levels with specific functionality,\n[0:26] but I want to focus on the bare minimum in order to have a drone do something useful entirely on its own."
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0004.jpg"
+      ],
+      "transcript": "[0:26] but I want to focus on the bare minimum in order to have a drone do something useful entirely on its own.\n[0:32] The interloop controller is what stabilizes the vehicle either at a specified angle or vehicle body rate.\n[0:39] Drones are inherently unstable."
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0005.jpg"
+      ],
+      "transcript": "[0:39] Drones are inherently unstable.\n[0:40] They require active stabilization to the motors to keep it in the air at all.\n[0:44] Without this, even the most skilled of pilots could not keep them in the air for more than a few seconds.\n[0:49] The outerloop controller can be thought of as a simulated pilot that is generating pilot commands."
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0006.jpg"
+      ],
+      "transcript": "[0:49] The outerloop controller can be thought of as a simulated pilot that is generating pilot commands.\n[0:54] It does this in response to various sensor data used to figure out where the drone is in space\n[0:59] to get it from point A to B without crashing."
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0007.jpg"
+      ],
+      "transcript": "[0:59] to get it from point A to B without crashing.\n[1:03] We call the board that handles interloop control the flight controller.\n[1:06] This is the heart of the drone that allows a pilot to talk to it with a requested vehicle state"
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0008.jpg"
+      ],
+      "transcript": "[1:06] This is the heart of the drone that allows a pilot to talk to it with a requested vehicle state\n[1:11] and output stabilized commands to the motors to achieve that state.\n[1:15] A flight computer is what is used to conduct all outerloop control\n[1:18] and requests a vehicle state from the flight controller just like a pilot does."
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0009.jpg"
+      ],
+      "transcript": "[1:18] and requests a vehicle state from the flight controller just like a pilot does.\n[1:22] The flight computer is the decision-making brain of a drone that makes this request\n[1:27] as it is informed by various onboard sensor data combined with what specific task it should be carrying out."
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0010.jpg"
+      ],
+      "transcript": "[1:27] as it is informed by various onboard sensor data combined with what specific task it should be carrying out.\n[1:33] For example, GPS data tells the flight computer where it is in space.\n[1:38] If the mission is to travel from point A to B,"
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0011.jpg"
+      ],
+      "transcript": "[1:38] If the mission is to travel from point A to B,\n[1:40] then the flight computer must generate the required commands to the flight controller\n[1:44] to navigate the drone accordingly.\n[1:45] Let's take a look at what processes are occurring in the flight controller or interloop."
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0012.jpg"
+      ],
+      "transcript": "[1:45] Let's take a look at what processes are occurring in the flight controller or interloop.\n[1:51] First, accelerometer and gyro data is pulled from the flight controller's inertial measurement unit.\n[1:56] This data must be processed with some sort of filter in order to estimate the drone's orientation,"
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0013.jpg"
+      ],
+      "transcript": "[1:56] This data must be processed with some sort of filter in order to estimate the drone's orientation,\n[2:01] as individual accelerometer or gyro data cannot do this alone.\n[2:05] The simplest and least accurate filtering technique is called a complementary filter.\n[2:09] The most accurate filter may be a Kalman-type filter, though it is very computationally costly."
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0014.jpg"
+      ],
+      "transcript": "[2:09] The most accurate filter may be a Kalman-type filter, though it is very computationally costly.\n[2:16] A magic filter is a good compromise between the other two.\n[2:19] Next, the flight controller needs to know the desired vehicle state,"
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0015.jpg"
+      ],
+      "transcript": "[2:19] Next, the flight controller needs to know the desired vehicle state,\n[2:23] or setpoint, commanded by the pilot or flight computer.\n[2:26] This setpoint is used to compute the error in the drone's current orientation from where it is desired to be."
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0016.jpg"
+      ],
+      "transcript": "[2:26] This setpoint is used to compute the error in the drone's current orientation from where it is desired to be.\n[2:31] A PID controller is used to generate stabilized signals based on this error.\n[2:36] These signals for each vehicle axis of rotation can be applied to the drone's motors"
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0017.jpg"
+      ],
+      "transcript": "[2:36] These signals for each vehicle axis of rotation can be applied to the drone's motors\n[2:40] according to the dynamic configuration in the control mixer.\n[2:43] For example, to stabilize pitch, the forward motors and rear motors must receive opposite stabilized signals."
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0018.jpg"
+      ],
+      "transcript": "[2:50] We then write these signals out to the motors, which in turn generates a vehicle response.\n[2:54] This response is again measured by the IMU, and we have created a feedback loop.\n[2:58] Typically on a flight controller, this process runs at 1000 or more cycles per second."
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0019.jpg"
+      ],
+      "transcript": "[2:58] Typically on a flight controller, this process runs at 1000 or more cycles per second.\n[3:04] So now that we can see all of the challenges that must be solved in order to complete this loop,\n[3:08] let's see what this looks like in action."
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0020.jpg"
+      ],
+      "transcript": "[3:08] let's see what this looks like in action.\n[3:12] The previous flight controller loop diagram can be supplemented with additional filtering,\n[3:16] control techniques, or safety measures.\n[3:18] With a properly designed and tuned controller, a very fast and accurate response is possible."
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0021.jpg"
+      ],
+      "transcript": "[3:18] With a properly designed and tuned controller, a very fast and accurate response is possible.\n[3:24] Next, we will look at the operation of the flight computer.\n[3:27] This is a very broad overview of what could be happening on board,"
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0022.jpg"
+      ],
+      "transcript": "[3:27] This is a very broad overview of what could be happening on board,\n[3:31] though the specifics vary based on the application.\n[3:34] Because there is so much going on, it is not necessarily a loop either,\n[3:37] but a continuously updated stream of input and output data."
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0023.jpg"
+      ],
+      "transcript": "[3:37] but a continuously updated stream of input and output data.\n[3:41] The flight computer needs an interrupt handler to process sensor data as it becomes available.\n[3:46] The popular system used is ROS,\n[3:49] which allows for easy access across multiple sensors, computations, and outputs."
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0024.jpg"
+      ],
+      "transcript": "[3:49] which allows for easy access across multiple sensors, computations, and outputs.\n[3:53] An autonomous drone might have a combination of cameras, LIDAR, or GPS on board.\n[3:59] This sensor data is used to estimate the drone's position in space"
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0025.jpg"
+      ],
+      "transcript": "[3:59] This sensor data is used to estimate the drone's position in space\n[4:02] from information about its surroundings or movement, which is known as odometry.\n[4:07] Once the drone knows where it is, a mission planner can be used to decide where to go next."
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0026.jpg"
+      ],
+      "transcript": "[4:07] Once the drone knows where it is, a mission planner can be used to decide where to go next.\n[4:11] A typical mission planner might look something like this.\n[4:15] It must first decide what the current task is, for example, flying through a window.\n[4:19] Next, the mission planner may request that the drone search for the target"
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0027.jpg"
+      ],
+      "transcript": "[4:19] Next, the mission planner may request that the drone search for the target\n[4:22] by either flying forward or turning around.\n[4:25] Then once the target is identified,\n[4:27] it must converge on it to ensure that it has actually found the target and not something else."
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0028.jpg"
+      ],
+      "transcript": "[4:27] it must converge on it to ensure that it has actually found the target and not something else.\n[4:32] Finally, the desired maneuver for that target can be executed.\n[4:36] Once this is complete, the mission planner decides what to do next.\n[4:39] The mission planner conducts its operations and in the process requests that the drone moves around."
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0029.jpg"
+      ],
+      "transcript": "[4:39] The mission planner conducts its operations and in the process requests that the drone moves around.\n[4:45] A controller is used to generate requested vehicle state set points\n[4:48] based on where the mission planner wants the drone to be"
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0030.jpg"
+      ],
+      "transcript": "[4:48] based on where the mission planner wants the drone to be\n[4:50] and where the odometry thinks the drone is.\n[4:53] These requests are then sent to the flight controller at a rate of about 50 to 100 times per second.\n[4:59] Here we can see that full and complicated process in action in a simple autonomous landing demo."
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0031.jpg"
+      ],
+      "transcript": "[4:59] Here we can see that full and complicated process in action in a simple autonomous landing demo.\n[5:05] The mission planner's goal here is to land on the target.\n[5:07] It first performs a forward search and then once the target is identified by a downward-facing camera,"
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0032.jpg"
+      ],
+      "transcript": "[5:07] It first performs a forward search and then once the target is identified by a downward-facing camera,\n[5:13] requests that the vehicle begins to descend as the detection algorithm converges on the target.\n[5:18] You might rightfully be asking,"
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0033.jpg"
+      ],
+      "transcript": "[5:18] You might rightfully be asking,"
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0034.jpg"
+      ],
+      "transcript": "[5:18] You might rightfully be asking,\n[5:32] why not just do everything on the flight computer?\n[5:34] My answer to that is you certainly can,\n[5:37] and many companies such as DJI do that with their custom boards to save power and weight,"
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0035.jpg"
+      ],
+      "transcript": "[5:37] and many companies such as DJI do that with their custom boards to save power and weight,\n[5:41] but if you are assembling your own system, you may run into some problems.\n[5:45] First, the flight computer speed is not guaranteed constant,\n[5:48] which is a problem for stabilizing a vehicle which requires constant, high-speed operation to stay in the air."
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0036.jpg"
+      ],
+      "transcript": "[5:48] which is a problem for stabilizing a vehicle which requires constant, high-speed operation to stay in the air.\n[5:54] A flight computer's CPU may become overloaded if excessive computations are being demanded from computer vision algorithms,"
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0037.jpg"
+      ],
+      "transcript": "[5:54] A flight computer's CPU may become overloaded if excessive computations are being demanded from computer vision algorithms,\n[6:00] which slow down the whole system or even crash it entirely.\n[6:03] So generally speaking, it is best to have a dedicated single-task microcontroller for stabilization\n[6:09] that guarantees the vehicle will be stabilized regardless of the health of the flight computer."
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0038.jpg"
+      ],
+      "transcript": "[6:09] that guarantees the vehicle will be stabilized regardless of the health of the flight computer.\n[6:14] In the event that the flight computer encounters an error,\n[6:17] you can always switch back to the pilot transmitter to safely land the vehicle."
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0039.jpg"
+      ],
+      "transcript": "[6:17] you can always switch back to the pilot transmitter to safely land the vehicle.\n[6:20] So to answer our original question,\n[6:24] the flight controller is a dedicated board to simply stabilize the vehicle,\n[6:27] whereas the flight computer performs all the onboard decision-making and sensing, much like a pilot."
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0040.jpg"
+      ],
+      "transcript": "[6:27] whereas the flight computer performs all the onboard decision-making and sensing, much like a pilot.\n[6:33] Both are very important for safe and reliable autonomous drone operation.\n[6:38] This was a very broad overview of some of the things going on inside an autonomous drone,"
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0041.jpg"
+      ],
+      "transcript": "[6:38] This was a very broad overview of some of the things going on inside an autonomous drone,\n[6:43] and is by no means comprehensive.\n[6:45] I hope you've learned something,\n[6:46] and you now have a better understanding of some of the topics that need to be addressed"
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 419.4,
+      "frames": [
+        "frame_0042.jpg"
+      ],
+      "transcript": "[6:46] and you now have a better understanding of some of the topics that need to be addressed\n[6:50] to create a fully autonomous drone.\n[6:52] If you're interested in some more of the nitty-gritty,\n[6:54] check out my other video on a fully autonomous drone completing an obstacle course,\n[6:58] and how we did it."
+    }
+  ]
+}

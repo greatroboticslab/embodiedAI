@@ -1,0 +1,1376 @@
+{
+  "video_id": "AOf-i2vLd2o",
+  "duration": 1241.38,
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_time": 0,
+      "end_time": 10,
+      "frames": [
+        "frame_0000.jpg",
+        "frame_0001.jpg",
+        "frame_0002.jpg",
+        "frame_0003.jpg"
+      ],
+      "transcript": "[0:00] Welcome! The subject of this video is connecting power MOSFETs in parallel. I got an email from"
+    },
+    {
+      "segment_index": 2,
+      "start_time": 10,
+      "end_time": 20,
+      "frames": [
+        "frame_0004.jpg",
+        "frame_0005.jpg",
+        "frame_0006.jpg"
+      ],
+      "transcript": "[0:00] Welcome! The subject of this video is connecting power MOSFETs in parallel. I got an email from\n[0:17] a visitor who was having all kinds of problems using one of my circuits when he connected"
+    },
+    {
+      "segment_index": 3,
+      "start_time": 20,
+      "end_time": 30,
+      "frames": [
+        "frame_0007.jpg",
+        "frame_0008.jpg",
+        "frame_0009.jpg"
+      ],
+      "transcript": "[0:17] a visitor who was having all kinds of problems using one of my circuits when he connected\n[0:24] MOSFETs in parallel. The question became with RG. RG is used with these MOSFETs to bleed off any static"
+    },
+    {
+      "segment_index": 4,
+      "start_time": 30,
+      "end_time": 40,
+      "frames": [
+        "frame_0010.jpg",
+        "frame_0011.jpg",
+        "frame_0012.jpg"
+      ],
+      "transcript": "[0:24] MOSFETs in parallel. The question became with RG. RG is used with these MOSFETs to bleed off any static"
+    },
+    {
+      "segment_index": 5,
+      "start_time": 40,
+      "end_time": 50,
+      "frames": [
+        "frame_0013.jpg",
+        "frame_0014.jpg",
+        "frame_0015.jpg"
+      ],
+      "transcript": "[0:24] MOSFETs in parallel. The question became with RG. RG is used with these MOSFETs to bleed off any static\n[0:40] charge and thus enabling the MOSFET to cut completely off. Using them for one MOSFET is fine. I was using"
+    },
+    {
+      "segment_index": 6,
+      "start_time": 50,
+      "end_time": 60,
+      "frames": [
+        "frame_0016.jpg",
+        "frame_0017.jpg",
+        "frame_0018.jpg"
+      ],
+      "transcript": "[0:40] charge and thus enabling the MOSFET to cut completely off. Using them for one MOSFET is fine. I was using\n[0:52] a value of 10k. That could of course be lowered. Here I'm going to explain the problems you're going"
+    },
+    {
+      "segment_index": 7,
+      "start_time": 60,
+      "end_time": 70,
+      "frames": [
+        "frame_0019.jpg",
+        "frame_0020.jpg",
+        "frame_0021.jpg"
+      ],
+      "transcript": "[0:52] a value of 10k. That could of course be lowered. Here I'm going to explain the problems you're going\n[1:00] to run into when you connect MOSFETs in parallel. Let's look at a value here. This is RG. But we\n[1:09] have something else in here that's hidden that most people don't think of much. But it's in"
+    },
+    {
+      "segment_index": 8,
+      "start_time": 70,
+      "end_time": 80,
+      "frames": [
+        "frame_0022.jpg",
+        "frame_0023.jpg",
+        "frame_0024.jpg"
+      ],
+      "transcript": "[1:09] have something else in here that's hidden that most people don't think of much. But it's in\n[1:15] the spec sheets. It's called CGS or Capacitance Gate Source. We'll look a little closer at the"
+    },
+    {
+      "segment_index": 9,
+      "start_time": 80,
+      "end_time": 90,
+      "frames": [
+        "frame_0025.jpg",
+        "frame_0026.jpg",
+        "frame_0027.jpg"
+      ],
+      "transcript": "[1:15] the spec sheets. It's called CGS or Capacitance Gate Source. We'll look a little closer at the\n[1:24] structure of a MOSFET in a minute. But if you go to the IRF 630 spec sheet, CGS is 600 PF. On an IRF 520,"
+    },
+    {
+      "segment_index": 10,
+      "start_time": 90,
+      "end_time": 100,
+      "frames": [
+        "frame_0028.jpg",
+        "frame_0029.jpg",
+        "frame_0030.jpg"
+      ],
+      "transcript": "[1:24] structure of a MOSFET in a minute. But if you go to the IRF 630 spec sheet, CGS is 600 PF. On an IRF 520,\n[1:37] CGS is 350 PF. Now, when you connect these MOSFETs in parallel, you've also connected this capacitance or this"
+    },
+    {
+      "segment_index": 11,
+      "start_time": 100,
+      "end_time": 110,
+      "frames": [
+        "frame_0031.jpg",
+        "frame_0032.jpg",
+        "frame_0033.jpg"
+      ],
+      "transcript": "[1:37] CGS is 350 PF. Now, when you connect these MOSFETs in parallel, you've also connected this capacitance or this"
+    },
+    {
+      "segment_index": 12,
+      "start_time": 110,
+      "end_time": 120,
+      "frames": [
+        "frame_0034.jpg",
+        "frame_0035.jpg",
+        "frame_0036.jpg"
+      ],
+      "transcript": "[1:37] CGS is 350 PF. Now, when you connect these MOSFETs in parallel, you've also connected this capacitance or this\n[1:52] de facto capacitor that exists within these devices. You've connected all of those in parallel. And if you"
+    },
+    {
+      "segment_index": 13,
+      "start_time": 120,
+      "end_time": 130,
+      "frames": [
+        "frame_0037.jpg",
+        "frame_0038.jpg",
+        "frame_0039.jpg"
+      ],
+      "transcript": "[1:52] de facto capacitor that exists within these devices. You've connected all of those in parallel. And if you\n[2:01] remember your circuit theory, parallel connected capacitors add. Why is this like that? Let's take a look."
+    },
+    {
+      "segment_index": 14,
+      "start_time": 130,
+      "end_time": 140,
+      "frames": [
+        "frame_0040.jpg",
+        "frame_0041.jpg",
+        "frame_0042.jpg"
+      ],
+      "transcript": "[2:01] remember your circuit theory, parallel connected capacitors add. Why is this like that? Let's take a look.\n[2:13] This I got from International Rectifier. And you can see it on the website. This shows an"
+    },
+    {
+      "segment_index": 15,
+      "start_time": 140,
+      "end_time": 150,
+      "frames": [
+        "frame_0043.jpg",
+        "frame_0044.jpg",
+        "frame_0045.jpg"
+      ],
+      "transcript": "[2:13] This I got from International Rectifier. And you can see it on the website. This shows an\n[2:20] in-channel MOSFET. You have an input resistance of some kind. You have a drive pulse or whatever they're\n[2:29] using. And you notice something here. You have capacitance from the gate to the drain and gate"
+    },
+    {
+      "segment_index": 16,
+      "start_time": 150,
+      "end_time": 160,
+      "frames": [
+        "frame_0046.jpg",
+        "frame_0047.jpg",
+        "frame_0048.jpg"
+      ],
+      "transcript": "[2:29] using. And you notice something here. You have capacitance from the gate to the drain and gate\n[2:38] to the source. And this creates all kinds of problems when you're putting in switching signals."
+    },
+    {
+      "segment_index": 17,
+      "start_time": 160,
+      "end_time": 170,
+      "frames": [
+        "frame_0049.jpg",
+        "frame_0050.jpg",
+        "frame_0051.jpg"
+      ],
+      "transcript": "[2:38] to the source. And this creates all kinds of problems when you're putting in switching signals.\n[2:46] If you parallel these MOSFETs, well, you've multiplied your problem. Four of them in parallel. You've got four"
+    },
+    {
+      "segment_index": 18,
+      "start_time": 170,
+      "end_time": 180,
+      "frames": [
+        "frame_0052.jpg",
+        "frame_0053.jpg",
+        "frame_0054.jpg"
+      ],
+      "transcript": "[2:46] If you parallel these MOSFETs, well, you've multiplied your problem. Four of them in parallel. You've got four\n[2:55] four times the capacitance. This interferes and distorts your drive signal. How did we get to this?"
+    },
+    {
+      "segment_index": 19,
+      "start_time": 180,
+      "end_time": 190,
+      "frames": [
+        "frame_0055.jpg",
+        "frame_0056.jpg",
+        "frame_0057.jpg"
+      ],
+      "transcript": "[2:55] four times the capacitance. This interferes and distorts your drive signal. How did we get to this?\n[3:07] Look at this drawing of a MOSFET from a silicon wafer point of view. The gate electrode is separated from"
+    },
+    {
+      "segment_index": 20,
+      "start_time": 190,
+      "end_time": 200,
+      "frames": [
+        "frame_0058.jpg",
+        "frame_0059.jpg",
+        "frame_0060.jpg"
+      ],
+      "transcript": "[3:07] Look at this drawing of a MOSFET from a silicon wafer point of view. The gate electrode is separated from\n[3:16] the rest of the MOSFET by a very, very thin layer of silicon dioxide. It's a non-conductor. By definition,"
+    },
+    {
+      "segment_index": 21,
+      "start_time": 200,
+      "end_time": 210,
+      "frames": [
+        "frame_0061.jpg",
+        "frame_0062.jpg",
+        "frame_0063.jpg"
+      ],
+      "transcript": "[3:16] the rest of the MOSFET by a very, very thin layer of silicon dioxide. It's a non-conductor. By definition,\n[3:27] what is a capacitor? Two conductors separated by an insulator. So here you've got a capacitor formed from"
+    },
+    {
+      "segment_index": 22,
+      "start_time": 210,
+      "end_time": 220,
+      "frames": [
+        "frame_0064.jpg",
+        "frame_0065.jpg",
+        "frame_0066.jpg"
+      ],
+      "transcript": "[3:27] what is a capacitor? Two conductors separated by an insulator. So here you've got a capacitor formed from\n[3:37] gate to source. When you turn it on and you create a region, a conductive region from source to drain."
+    },
+    {
+      "segment_index": 23,
+      "start_time": 220,
+      "end_time": 230,
+      "frames": [
+        "frame_0067.jpg",
+        "frame_0068.jpg",
+        "frame_0069.jpg"
+      ],
+      "transcript": "[3:37] gate to source. When you turn it on and you create a region, a conductive region from source to drain."
+    },
+    {
+      "segment_index": 24,
+      "start_time": 230,
+      "end_time": 240,
+      "frames": [
+        "frame_0070.jpg",
+        "frame_0071.jpg",
+        "frame_0072.jpg"
+      ],
+      "transcript": "[3:37] gate to source. When you turn it on and you create a region, a conductive region from source to drain.\n[3:54] Now you've got a gate separated by an insulator, which they even come out and call a dielectric,"
+    },
+    {
+      "segment_index": 25,
+      "start_time": 240,
+      "end_time": 250,
+      "frames": [
+        "frame_0073.jpg",
+        "frame_0074.jpg",
+        "frame_0075.jpg"
+      ],
+      "transcript": "[3:54] Now you've got a gate separated by an insulator, which they even come out and call a dielectric,\n[4:01] a conductive region. So there's what forms your capacitor. And that doesn't count stray inductance and"
+    },
+    {
+      "segment_index": 26,
+      "start_time": 250,
+      "end_time": 260,
+      "frames": [
+        "frame_0076.jpg",
+        "frame_0077.jpg",
+        "frame_0078.jpg"
+      ],
+      "transcript": "[4:01] a conductive region. So there's what forms your capacitor. And that doesn't count stray inductance and\n[4:11] other problems.\n[4:17] All right, before we get into the rest of this, I need to give you a brief review on how an I.O. pin"
+    },
+    {
+      "segment_index": 27,
+      "start_time": 260,
+      "end_time": 270,
+      "frames": [
+        "frame_0079.jpg",
+        "frame_0080.jpg",
+        "frame_0081.jpg"
+      ],
+      "transcript": "[4:17] All right, before we get into the rest of this, I need to give you a brief review on how an I.O. pin\n[4:24] in a typical microcontroller, such as Arduino or microchip pick, whatever you're using. I'm going to use a"
+    },
+    {
+      "segment_index": 28,
+      "start_time": 270,
+      "end_time": 280,
+      "frames": [
+        "frame_0082.jpg",
+        "frame_0083.jpg",
+        "frame_0084.jpg"
+      ],
+      "transcript": "[4:24] in a typical microcontroller, such as Arduino or microchip pick, whatever you're using. I'm going to use a\n[4:34] 7414 to illustrate this. What we're interested in is the two output transistors. They're connected between"
+    },
+    {
+      "segment_index": 29,
+      "start_time": 280,
+      "end_time": 290,
+      "frames": [
+        "frame_0085.jpg",
+        "frame_0086.jpg",
+        "frame_0087.jpg"
+      ],
+      "transcript": "[4:34] 7414 to illustrate this. What we're interested in is the two output transistors. They're connected between\n[4:44] VCC and ground. And how an I.O. pin works. If I want a high out, I'm going to switch on this."
+    },
+    {
+      "segment_index": 30,
+      "start_time": 290,
+      "end_time": 300,
+      "frames": [
+        "frame_0088.jpg",
+        "frame_0089.jpg",
+        "frame_0090.jpg"
+      ],
+      "transcript": "[4:44] VCC and ground. And how an I.O. pin works. If I want a high out, I'm going to switch on this.\n[4:54] upper transistor. And of course, there's going to be some kind of resistance through"
+    },
+    {
+      "segment_index": 31,
+      "start_time": 300,
+      "end_time": 310,
+      "frames": [
+        "frame_0091.jpg",
+        "frame_0092.jpg",
+        "frame_0093.jpg"
+      ],
+      "transcript": "[4:54] upper transistor. And of course, there's going to be some kind of resistance through\n[5:01] through the circuit, including the transistor itself. And the output's going to go high,\n[5:07] and it should be near VCC. If I want to switch the output low, I'm going to switch on this lower"
+    },
+    {
+      "segment_index": 32,
+      "start_time": 310,
+      "end_time": 320,
+      "frames": [
+        "frame_0094.jpg",
+        "frame_0095.jpg",
+        "frame_0096.jpg"
+      ],
+      "transcript": "[5:07] and it should be near VCC. If I want to switch the output low, I'm going to switch on this lower\n[5:17] transistor. And it's going to tie and it's going to connect this to ground. Of course, there's going"
+    },
+    {
+      "segment_index": 33,
+      "start_time": 320,
+      "end_time": 330,
+      "frames": [
+        "frame_0097.jpg",
+        "frame_0098.jpg",
+        "frame_0099.jpg"
+      ],
+      "transcript": "[5:17] transistor. And it's going to tie and it's going to connect this to ground. Of course, there's going\n[5:25] to be some resistance through the transistor junctions, both high and low. And so this is not"
+    },
+    {
+      "segment_index": 34,
+      "start_time": 330,
+      "end_time": 340,
+      "frames": [
+        "frame_0100.jpg",
+        "frame_0101.jpg",
+        "frame_0102.jpg"
+      ],
+      "transcript": "[5:25] to be some resistance through the transistor junctions, both high and low. And so this is not\n[5:36] perfectly zero. This is not a zero path either to ground or to VCC. There is going to be some"
+    },
+    {
+      "segment_index": 35,
+      "start_time": 340,
+      "end_time": 350,
+      "frames": [
+        "frame_0103.jpg",
+        "frame_0104.jpg",
+        "frame_0105.jpg"
+      ],
+      "transcript": "[5:36] perfectly zero. This is not a zero path either to ground or to VCC. There is going to be some\n[5:44] resistance. That's how a typical I.O. pin works, or transistor switch in general. So keep that in mind"
+    },
+    {
+      "segment_index": 36,
+      "start_time": 350,
+      "end_time": 360,
+      "frames": [
+        "frame_0106.jpg",
+        "frame_0107.jpg",
+        "frame_0108.jpg"
+      ],
+      "transcript": "[5:44] resistance. That's how a typical I.O. pin works, or transistor switch in general. So keep that in mind\n[5:53] as I explain the next part of this. When you switch that I.O. pin on and off, and you're feeding the"
+    },
+    {
+      "segment_index": 37,
+      "start_time": 360,
+      "end_time": 370,
+      "frames": [
+        "frame_0109.jpg",
+        "frame_0110.jpg",
+        "frame_0111.jpg"
+      ],
+      "transcript": "[5:53] as I explain the next part of this. When you switch that I.O. pin on and off, and you're feeding the\n[6:03] gate circuits of a bunch of MOSFETs, what you thought started out as a square wave due to capacitive"
+    },
+    {
+      "segment_index": 38,
+      "start_time": 370,
+      "end_time": 380,
+      "frames": [
+        "frame_0112.jpg",
+        "frame_0113.jpg",
+        "frame_0114.jpg"
+      ],
+      "transcript": "[6:03] gate circuits of a bunch of MOSFETs, what you thought started out as a square wave due to capacitive\n[6:13] charge and discharge is going to look like this. It's not going to turn on in a linear fashion. It's"
+    },
+    {
+      "segment_index": 39,
+      "start_time": 380,
+      "end_time": 390,
+      "frames": [
+        "frame_0115.jpg",
+        "frame_0116.jpg",
+        "frame_0117.jpg"
+      ],
+      "transcript": "[6:13] charge and discharge is going to look like this. It's not going to turn on in a linear fashion. It's\n[6:20] going to have a charge curve. This charge curve depends on the internal resistance of the transistors used in the\n[6:29] drive source times the value of the input capacitance. Well, the more input capacitance you got,"
+    },
+    {
+      "segment_index": 40,
+      "start_time": 390,
+      "end_time": 400,
+      "frames": [
+        "frame_0118.jpg",
+        "frame_0119.jpg",
+        "frame_0120.jpg"
+      ],
+      "transcript": "[6:29] drive source times the value of the input capacitance. Well, the more input capacitance you got,\n[6:39] the longer and drawn out this charge curve is going to be. When you go to zero and switch on that lower"
+    },
+    {
+      "segment_index": 41,
+      "start_time": 400,
+      "end_time": 410,
+      "frames": [
+        "frame_0121.jpg",
+        "frame_0122.jpg",
+        "frame_0123.jpg"
+      ],
+      "transcript": "[6:39] the longer and drawn out this charge curve is going to be. When you go to zero and switch on that lower\n[6:48] transistor that we discussed, it's also going to have some kind of resistance and the capacitors that"
+    },
+    {
+      "segment_index": 42,
+      "start_time": 410,
+      "end_time": 420,
+      "frames": [
+        "frame_0124.jpg",
+        "frame_0125.jpg",
+        "frame_0126.jpg"
+      ],
+      "transcript": "[6:48] transistor that we discussed, it's also going to have some kind of resistance and the capacitors that\n[6:55] were charged up when it went high are going to also discharge, but not in a linear fashion. So due to all"
+    },
+    {
+      "segment_index": 43,
+      "start_time": 420,
+      "end_time": 430,
+      "frames": [
+        "frame_0127.jpg",
+        "frame_0128.jpg",
+        "frame_0129.jpg"
+      ],
+      "transcript": "[6:55] were charged up when it went high are going to also discharge, but not in a linear fashion. So due to all\n[7:04] this input capacitance and other issues within the microcontroller I.O. pin, you're going to produce a"
+    },
+    {
+      "segment_index": 44,
+      "start_time": 430,
+      "end_time": 440,
+      "frames": [
+        "frame_0130.jpg",
+        "frame_0131.jpg",
+        "frame_0132.jpg"
+      ],
+      "transcript": "[7:04] this input capacitance and other issues within the microcontroller I.O. pin, you're going to produce a\n[7:14] charge curve which is going to play games with switching on the MOSFETs. Then you're going to have"
+    },
+    {
+      "segment_index": 45,
+      "start_time": 440,
+      "end_time": 450,
+      "frames": [
+        "frame_0133.jpg",
+        "frame_0134.jpg",
+        "frame_0135.jpg"
+      ],
+      "transcript": "[7:14] charge curve which is going to play games with switching on the MOSFETs. Then you're going to have\n[7:21] a discharge curve that's going to play games again with the MOSFETs, and the faster you try to switch\n[7:28] it, the more problems you will have. Let's look at the chart that we're looking at now, and this is"
+    },
+    {
+      "segment_index": 46,
+      "start_time": 450,
+      "end_time": 460,
+      "frames": [
+        "frame_0136.jpg",
+        "frame_0137.jpg",
+        "frame_0138.jpg"
+      ],
+      "transcript": "[7:28] it, the more problems you will have. Let's look at the chart that we're looking at now, and this is\n[7:36] RC charge and discharge curves on how this works. You have a time period, we call it T, and that's based on the resistance times the capacitance."
+    },
+    {
+      "segment_index": 47,
+      "start_time": 460,
+      "end_time": 470,
+      "frames": [
+        "frame_0139.jpg",
+        "frame_0140.jpg",
+        "frame_0141.jpg"
+      ],
+      "transcript": "[7:36] RC charge and discharge curves on how this works. You have a time period, we call it T, and that's based on the resistance times the capacitance."
+    },
+    {
+      "segment_index": 48,
+      "start_time": 470,
+      "end_time": 480,
+      "frames": [
+        "frame_0142.jpg",
+        "frame_0143.jpg",
+        "frame_0144.jpg"
+      ],
+      "transcript": "[7:36] RC charge and discharge curves on how this works. You have a time period, we call it T, and that's based on the resistance times the capacitance.\n[7:52] The red line shows a charge curve, and a green line shows the discharge curve.\n[7:59] And you notice here on the bottom it goes from zero to five. Because this is a non-linear curve,"
+    },
+    {
+      "segment_index": 49,
+      "start_time": 480,
+      "end_time": 490,
+      "frames": [
+        "frame_0145.jpg",
+        "frame_0146.jpg",
+        "frame_0147.jpg"
+      ],
+      "transcript": "[7:59] And you notice here on the bottom it goes from zero to five. Because this is a non-linear curve,"
+    },
+    {
+      "segment_index": 50,
+      "start_time": 490,
+      "end_time": 500,
+      "frames": [
+        "frame_0148.jpg",
+        "frame_0149.jpg",
+        "frame_0150.jpg"
+      ],
+      "transcript": "[7:59] And you notice here on the bottom it goes from zero to five. Because this is a non-linear curve,\n[8:12] this occurs, what you're doing is charging a capacitor essentially through a resistance,\n[8:18] and discharging a capacitor through a resistance. What happens is your greatest current flow,"
+    },
+    {
+      "segment_index": 51,
+      "start_time": 500,
+      "end_time": 510,
+      "frames": [
+        "frame_0151.jpg",
+        "frame_0152.jpg",
+        "frame_0153.jpg"
+      ],
+      "transcript": "[8:18] and discharging a capacitor through a resistance. What happens is your greatest current flow,\n[8:26] zero, in fact about 62 percent of it, is going to be occurring during the first time period."
+    },
+    {
+      "segment_index": 52,
+      "start_time": 510,
+      "end_time": 520,
+      "frames": [
+        "frame_0154.jpg",
+        "frame_0155.jpg",
+        "frame_0156.jpg"
+      ],
+      "transcript": "[8:26] zero, in fact about 62 percent of it, is going to be occurring during the first time period.\n[8:34] Because why? There's the greatest difference in voltage between the capacitor that started as zero,"
+    },
+    {
+      "segment_index": 53,
+      "start_time": 520,
+      "end_time": 530,
+      "frames": [
+        "frame_0157.jpg",
+        "frame_0158.jpg",
+        "frame_0159.jpg"
+      ],
+      "transcript": "[8:34] Because why? There's the greatest difference in voltage between the capacitor that started as zero,\n[8:42] and the charging voltage which started at say VCC.\n[8:45] And one time period, R times C, you're going to charge up about 62, 63 percent of the way."
+    },
+    {
+      "segment_index": 54,
+      "start_time": 530,
+      "end_time": 540,
+      "frames": [
+        "frame_0160.jpg",
+        "frame_0161.jpg",
+        "frame_0162.jpg"
+      ],
+      "transcript": "[8:45] And one time period, R times C, you're going to charge up about 62, 63 percent of the way.\n[8:56] But now the charging rate drops steeply. By the time you get into 2T, that's two time periods,"
+    },
+    {
+      "segment_index": 55,
+      "start_time": 540,
+      "end_time": 550,
+      "frames": [
+        "frame_0163.jpg",
+        "frame_0164.jpg",
+        "frame_0165.jpg"
+      ],
+      "transcript": "[8:56] But now the charging rate drops steeply. By the time you get into 2T, that's two time periods,\n[9:09] you've only charged up to about 80 something percent. In most electronics they teach you that it takes 5T,"
+    },
+    {
+      "segment_index": 56,
+      "start_time": 550,
+      "end_time": 560,
+      "frames": [
+        "frame_0166.jpg",
+        "frame_0167.jpg",
+        "frame_0168.jpg"
+      ],
+      "transcript": "[9:09] you've only charged up to about 80 something percent. In most electronics they teach you that it takes 5T,"
+    },
+    {
+      "segment_index": 57,
+      "start_time": 560,
+      "end_time": 570,
+      "frames": [
+        "frame_0169.jpg",
+        "frame_0170.jpg",
+        "frame_0171.jpg"
+      ],
+      "transcript": "[9:20] which is 90 something 98, 99 percent, is considered fully charged. So it isn't as simple as R times C."
+    },
+    {
+      "segment_index": 58,
+      "start_time": 570,
+      "end_time": 580,
+      "frames": [
+        "frame_0172.jpg",
+        "frame_0173.jpg",
+        "frame_0174.jpg"
+      ],
+      "transcript": "[9:20] which is 90 something 98, 99 percent, is considered fully charged. So it isn't as simple as R times C.\n[9:31] So the more T's you have the slower the charge rate. What does this mean when we're trying to turn on a collection of MOSFETs"
+    },
+    {
+      "segment_index": 59,
+      "start_time": 580,
+      "end_time": 590,
+      "frames": [
+        "frame_0175.jpg",
+        "frame_0176.jpg",
+        "frame_0177.jpg"
+      ],
+      "transcript": "[9:31] So the more T's you have the slower the charge rate. What does this mean when we're trying to turn on a collection of MOSFETs\n[9:43] that accumulated a lot of input capacitance? Let's look at what people normally use. Some Arduinos and Raspberry Pi put out, what, 3.3 volts? I'm going to call it 3 volts."
+    },
+    {
+      "segment_index": 60,
+      "start_time": 590,
+      "end_time": 600,
+      "frames": [
+        "frame_0178.jpg",
+        "frame_0179.jpg",
+        "frame_0180.jpg"
+      ],
+      "transcript": "[9:43] that accumulated a lot of input capacitance? Let's look at what people normally use. Some Arduinos and Raspberry Pi put out, what, 3.3 volts? I'm going to call it 3 volts.\n[9:59] So in a time period of 1T, and I don't know exactly what the R and C values for a Raspberry Pi versus how many MOSFETs you are, but this is what you're dealing with."
+    },
+    {
+      "segment_index": 61,
+      "start_time": 600,
+      "end_time": 610,
+      "frames": [
+        "frame_0181.jpg",
+        "frame_0182.jpg",
+        "frame_0183.jpg"
+      ],
+      "transcript": "[9:59] So in a time period of 1T, and I don't know exactly what the R and C values for a Raspberry Pi versus how many MOSFETs you are, but this is what you're dealing with."
+    },
+    {
+      "segment_index": 62,
+      "start_time": 610,
+      "end_time": 620,
+      "frames": [
+        "frame_0184.jpg",
+        "frame_0185.jpg",
+        "frame_0186.jpg"
+      ],
+      "transcript": "[9:59] So in a time period of 1T, and I don't know exactly what the R and C values for a Raspberry Pi versus how many MOSFETs you are, but this is what you're dealing with.\n[10:17] For R times C to get to 3 volts. From 0 to 1T, you're going to go to 63 percent, 63.2 percent."
+    },
+    {
+      "segment_index": 63,
+      "start_time": 620,
+      "end_time": 630,
+      "frames": [
+        "frame_0187.jpg",
+        "frame_0188.jpg",
+        "frame_0189.jpg"
+      ],
+      "transcript": "[10:17] For R times C to get to 3 volts. From 0 to 1T, you're going to go to 63 percent, 63.2 percent."
+    },
+    {
+      "segment_index": 64,
+      "start_time": 630,
+      "end_time": 640,
+      "frames": [
+        "frame_0190.jpg",
+        "frame_0191.jpg",
+        "frame_0192.jpg"
+      ],
+      "transcript": "[10:17] For R times C to get to 3 volts. From 0 to 1T, you're going to go to 63 percent, 63.2 percent."
+    },
+    {
+      "segment_index": 65,
+      "start_time": 640,
+      "end_time": 650,
+      "frames": [
+        "frame_0193.jpg",
+        "frame_0194.jpg",
+        "frame_0195.jpg"
+      ],
+      "transcript": "[10:17] For R times C to get to 3 volts. From 0 to 1T, you're going to go to 63 percent, 63.2 percent.\n[10:43] But 63.2 percent of 3 volts is 1.9 volts. When we go to 2T, that's 86.5 volts, and I've come up to 2.6 volts."
+    },
+    {
+      "segment_index": 66,
+      "start_time": 650,
+      "end_time": 660,
+      "frames": [
+        "frame_0196.jpg",
+        "frame_0197.jpg",
+        "frame_0198.jpg"
+      ],
+      "transcript": "[10:43] But 63.2 percent of 3 volts is 1.9 volts. When we go to 2T, that's 86.5 volts, and I've come up to 2.6 volts.\n[10:59] Are most MOSFETs really going to turn on at 1.9 or 2.6 volts? Probably not."
+    },
+    {
+      "segment_index": 67,
+      "start_time": 660,
+      "end_time": 670,
+      "frames": [
+        "frame_0199.jpg",
+        "frame_0200.jpg",
+        "frame_0201.jpg"
+      ],
+      "transcript": "[10:59] Are most MOSFETs really going to turn on at 1.9 or 2.6 volts? Probably not.\n[11:07] You're going to have to wait for a minimum of three time periods to get up just to 2.85 volts or 3 volts or so."
+    },
+    {
+      "segment_index": 68,
+      "start_time": 670,
+      "end_time": 680,
+      "frames": [
+        "frame_0202.jpg",
+        "frame_0203.jpg",
+        "frame_0204.jpg"
+      ],
+      "transcript": "[11:07] You're going to have to wait for a minimum of three time periods to get up just to 2.85 volts or 3 volts or so.\n[11:19] What is the additional problem? Maybe you have some really good MOSFETs, and they cut on somewhere around 2T right here."
+    },
+    {
+      "segment_index": 69,
+      "start_time": 680,
+      "end_time": 690,
+      "frames": [
+        "frame_0205.jpg",
+        "frame_0206.jpg",
+        "frame_0207.jpg"
+      ],
+      "transcript": "[11:19] What is the additional problem? Maybe you have some really good MOSFETs, and they cut on somewhere around 2T right here.\n[11:29] But what if you had four MOSFETs in parallel like I showed earlier?"
+    },
+    {
+      "segment_index": 70,
+      "start_time": 690,
+      "end_time": 700,
+      "frames": [
+        "frame_0208.jpg",
+        "frame_0209.jpg",
+        "frame_0210.jpg"
+      ],
+      "transcript": "[11:29] But what if you had four MOSFETs in parallel like I showed earlier?\n[11:38] MOSFET 1 fires here. MOSFET 2 fires there. MOSFET 3 fires here."
+    },
+    {
+      "segment_index": 71,
+      "start_time": 700,
+      "end_time": 710,
+      "frames": [
+        "frame_0211.jpg",
+        "frame_0212.jpg",
+        "frame_0213.jpg"
+      ],
+      "transcript": "[11:38] MOSFET 1 fires here. MOSFET 2 fires there. MOSFET 3 fires here.\n[11:45] And finally, they're all firing when we reach here. What's happened?\n[11:49] I've got some super heavy load on those four parallel MOSFETs, and they're not firing off close enough at the same time."
+    },
+    {
+      "segment_index": 72,
+      "start_time": 710,
+      "end_time": 720,
+      "frames": [
+        "frame_0214.jpg",
+        "frame_0215.jpg",
+        "frame_0216.jpg"
+      ],
+      "transcript": "[11:49] I've got some super heavy load on those four parallel MOSFETs, and they're not firing off close enough at the same time."
+    },
+    {
+      "segment_index": 73,
+      "start_time": 720,
+      "end_time": 730,
+      "frames": [
+        "frame_0217.jpg",
+        "frame_0218.jpg",
+        "frame_0219.jpg"
+      ],
+      "transcript": "[11:49] I've got some super heavy load on those four parallel MOSFETs, and they're not firing off close enough at the same time.\n[12:00] You might overload one or two of the MOSFETs.\n[12:04] One of the MOSFETs is conducting like crazy by the time the other three could cut in."
+    },
+    {
+      "segment_index": 74,
+      "start_time": 730,
+      "end_time": 740,
+      "frames": [
+        "frame_0220.jpg",
+        "frame_0221.jpg",
+        "frame_0222.jpg"
+      ],
+      "transcript": "[12:04] One of the MOSFETs is conducting like crazy by the time the other three could cut in.\n[12:11] See the problem I'm talking about?\n[12:14] Let's look at this problem again.\n[12:18] But now we're going to go to 5 volts."
+    },
+    {
+      "segment_index": 75,
+      "start_time": 740,
+      "end_time": 750,
+      "frames": [
+        "frame_0223.jpg",
+        "frame_0224.jpg",
+        "frame_0225.jpg"
+      ],
+      "transcript": "[12:18] But now we're going to go to 5 volts.\n[12:22] 1T, 63% of 5 volts, is 3.16 volts.\n[12:29] Aha! Big difference."
+    },
+    {
+      "segment_index": 76,
+      "start_time": 750,
+      "end_time": 760,
+      "frames": [
+        "frame_0226.jpg",
+        "frame_0227.jpg",
+        "frame_0228.jpg"
+      ],
+      "transcript": "[12:29] Aha! Big difference.\n[12:32] So most of your MOSFETs, if they're designed to fire right at 3 volts, should have turned on pretty well."
+    },
+    {
+      "segment_index": 77,
+      "start_time": 760,
+      "end_time": 770,
+      "frames": [
+        "frame_0229.jpg",
+        "frame_0230.jpg",
+        "frame_0231.jpg"
+      ],
+      "transcript": "[12:32] So most of your MOSFETs, if they're designed to fire right at 3 volts, should have turned on pretty well.\n[12:42] But a lot of MOSFETs take a little higher voltage to turn completely on.\n[12:49] You could still have the danger of cutting on 2 or 3, and maybe number 4 cuts on out here."
+    },
+    {
+      "segment_index": 78,
+      "start_time": 770,
+      "end_time": 780,
+      "frames": [
+        "frame_0232.jpg",
+        "frame_0233.jpg",
+        "frame_0234.jpg"
+      ],
+      "transcript": "[12:49] You could still have the danger of cutting on 2 or 3, and maybe number 4 cuts on out here.\n[12:57] See the problems? You've got noise.\n[12:59] They're not firing together."
+    },
+    {
+      "segment_index": 79,
+      "start_time": 780,
+      "end_time": 790,
+      "frames": [
+        "frame_0235.jpg",
+        "frame_0236.jpg",
+        "frame_0237.jpg"
+      ],
+      "transcript": "[12:59] They're not firing together.\n[13:01] Some of them might be taking more of a load than the rest of them.\n[13:05] But let's take a look at this.\n[13:07] 1T, I get 3.16 volts."
+    },
+    {
+      "segment_index": 80,
+      "start_time": 790,
+      "end_time": 800,
+      "frames": [
+        "frame_0238.jpg",
+        "frame_0239.jpg",
+        "frame_0240.jpg"
+      ],
+      "transcript": "[13:07] 1T, I get 3.16 volts.\n[13:13] At 2T, or two time periods, it's 4.3.\n[13:17] For the time you hit 2T, surely all the MOSFETs will be turned on by 4.3."
+    },
+    {
+      "segment_index": 81,
+      "start_time": 800,
+      "end_time": 810,
+      "frames": [
+        "frame_0241.jpg",
+        "frame_0242.jpg",
+        "frame_0243.jpg"
+      ],
+      "transcript": "[13:17] For the time you hit 2T, surely all the MOSFETs will be turned on by 4.3.\n[13:25] But I did find some MOSFETs when I checked them that were cutting on around 4.3."
+    },
+    {
+      "segment_index": 82,
+      "start_time": 810,
+      "end_time": 820,
+      "frames": [
+        "frame_0244.jpg",
+        "frame_0245.jpg",
+        "frame_0246.jpg"
+      ],
+      "transcript": "[13:25] But I did find some MOSFETs when I checked them that were cutting on around 4.3.\n[13:31] Understand something.\n[13:34] You can order a bag of MOSFETs.\n[13:37] You can pull them out.\n[13:39] But that doesn't mean that they have exactly the same specs."
+    },
+    {
+      "segment_index": 83,
+      "start_time": 820,
+      "end_time": 830,
+      "frames": [
+        "frame_0247.jpg",
+        "frame_0248.jpg",
+        "frame_0249.jpg"
+      ],
+      "transcript": "[13:39] But that doesn't mean that they have exactly the same specs.\n[13:45] There might be a couple of tenths of a volt difference in the way they fire."
+    },
+    {
+      "segment_index": 84,
+      "start_time": 830,
+      "end_time": 840,
+      "frames": [
+        "frame_0250.jpg",
+        "frame_0251.jpg",
+        "frame_0252.jpg"
+      ],
+      "transcript": "[13:45] There might be a couple of tenths of a volt difference in the way they fire.\n[13:50] Of course, by three time periods, I'm up to 3.75 volts.\n[13:57] So, this is beginning to suggest a solution."
+    },
+    {
+      "segment_index": 85,
+      "start_time": 840,
+      "end_time": 850,
+      "frames": [
+        "frame_0253.jpg",
+        "frame_0254.jpg",
+        "frame_0255.jpg"
+      ],
+      "transcript": "[13:57] So, this is beginning to suggest a solution.\n[14:03] If you're going to do this kind of switching with parallel MOSFETs, you need to go to a higher voltage."
+    },
+    {
+      "segment_index": 86,
+      "start_time": 850,
+      "end_time": 860,
+      "frames": [
+        "frame_0256.jpg",
+        "frame_0257.jpg",
+        "frame_0258.jpg"
+      ],
+      "transcript": "[14:03] If you're going to do this kind of switching with parallel MOSFETs, you need to go to a higher voltage.\n[14:10] But even 5 volts on stuff that fires between 3 and 4.3 volts is still an iffy proposition."
+    },
+    {
+      "segment_index": 87,
+      "start_time": 860,
+      "end_time": 870,
+      "frames": [
+        "frame_0259.jpg",
+        "frame_0260.jpg",
+        "frame_0261.jpg"
+      ],
+      "transcript": "[14:10] But even 5 volts on stuff that fires between 3 and 4.3 volts is still an iffy proposition.\n[14:21] And look how much time I was strung over.\n[14:25] I was strung over, even if they all fired from the end of 1T to the beginning of 2T,"
+    },
+    {
+      "segment_index": 88,
+      "start_time": 870,
+      "end_time": 880,
+      "frames": [
+        "frame_0262.jpg",
+        "frame_0263.jpg",
+        "frame_0264.jpg"
+      ],
+      "transcript": "[14:25] I was strung over, even if they all fired from the end of 1T to the beginning of 2T,\n[14:34] that's still stringing it out over this time period, is it?\n[14:37] One time period.\n[14:38] Let's take another look at this problem."
+    },
+    {
+      "segment_index": 89,
+      "start_time": 880,
+      "end_time": 890,
+      "frames": [
+        "frame_0265.jpg",
+        "frame_0266.jpg",
+        "frame_0267.jpg"
+      ],
+      "transcript": "[14:38] Let's take another look at this problem.\n[14:44] Now, I'm driving them with 12 volts."
+    },
+    {
+      "segment_index": 90,
+      "start_time": 890,
+      "end_time": 900,
+      "frames": [
+        "frame_0268.jpg",
+        "frame_0269.jpg",
+        "frame_0270.jpg"
+      ],
+      "transcript": "[14:50] 1T, that's 12 volts times 63.2% is 7.6 volts.\n[14:58] All right.\n[14:58] I have switched off."
+    },
+    {
+      "segment_index": 91,
+      "start_time": 900,
+      "end_time": 910,
+      "frames": [
+        "frame_0271.jpg",
+        "frame_0272.jpg",
+        "frame_0273.jpg"
+      ],
+      "transcript": "[14:58] I have switched off.\n[15:00] They're all surely going to be switched on.\n[15:03] But the important part is, if you look here at 1T at 12 volts, they all switched on somewhere in this little steep curve here."
+    },
+    {
+      "segment_index": 92,
+      "start_time": 910,
+      "end_time": 920,
+      "frames": [
+        "frame_0274.jpg",
+        "frame_0275.jpg",
+        "frame_0276.jpg"
+      ],
+      "transcript": "[15:03] But the important part is, if you look here at 1T at 12 volts, they all switched on somewhere in this little steep curve here.\n[15:15] So, that's your best bet.\n[15:17] Drive these things.\n[15:19] Remember VGS."
+    },
+    {
+      "segment_index": 93,
+      "start_time": 920,
+      "end_time": 930,
+      "frames": [
+        "frame_0277.jpg",
+        "frame_0278.jpg",
+        "frame_0279.jpg"
+      ],
+      "transcript": "[15:19] Remember VGS.\n[15:21] Do not exceed VGS.\n[15:23] But with a higher voltage, you will switch on all of those MOSFETs very close together."
+    },
+    {
+      "segment_index": 94,
+      "start_time": 930,
+      "end_time": 940,
+      "frames": [
+        "frame_0280.jpg",
+        "frame_0281.jpg",
+        "frame_0282.jpg"
+      ],
+      "transcript": "[15:23] But with a higher voltage, you will switch on all of those MOSFETs very close together.\n[15:30] And they'll be switched on fully and hard.\n[15:34] Down in here at a fraction of T.\n[15:36] Or you can sit here at 3 volts and take up to 3T, three time periods, to try to switch it on."
+    },
+    {
+      "segment_index": 95,
+      "start_time": 940,
+      "end_time": 950,
+      "frames": [
+        "frame_0283.jpg",
+        "frame_0284.jpg",
+        "frame_0285.jpg"
+      ],
+      "transcript": "[15:36] Or you can sit here at 3 volts and take up to 3T, three time periods, to try to switch it on.\n[15:45] It's up to you on that."
+    },
+    {
+      "segment_index": 96,
+      "start_time": 950,
+      "end_time": 960,
+      "frames": [
+        "frame_0286.jpg",
+        "frame_0287.jpg",
+        "frame_0288.jpg"
+      ],
+      "transcript": "[15:51] What about a drive circuit?\n[15:53] When you put MOSFETs in parallel, of course, the capacitance is going to add."
+    },
+    {
+      "segment_index": 97,
+      "start_time": 960,
+      "end_time": 970,
+      "frames": [
+        "frame_0289.jpg",
+        "frame_0290.jpg",
+        "frame_0291.jpg"
+      ],
+      "transcript": "[15:53] When you put MOSFETs in parallel, of course, the capacitance is going to add.\n[16:00] You cannot change that.\n[16:02] But you might be able to change R.\n[16:05] Go back into your drive circuit.\n[16:09] If you're wondering what this circuit is, it's half of one of my H-bridge circuits that I've had around for years."
+    },
+    {
+      "segment_index": 98,
+      "start_time": 970,
+      "end_time": 980,
+      "frames": [
+        "frame_0292.jpg",
+        "frame_0293.jpg",
+        "frame_0294.jpg"
+      ],
+      "transcript": "[16:09] If you're wondering what this circuit is, it's half of one of my H-bridge circuits that I've had around for years.\n[16:16] But it would be excellent for this application."
+    },
+    {
+      "segment_index": 99,
+      "start_time": 980,
+      "end_time": 990,
+      "frames": [
+        "frame_0295.jpg",
+        "frame_0296.jpg",
+        "frame_0297.jpg"
+      ],
+      "transcript": "[16:21] Let's look at it this way.\n[16:22] This goes to your MOSFETs.\n[16:26] Your gates that are all connected together."
+    },
+    {
+      "segment_index": 100,
+      "start_time": 990,
+      "end_time": 1000,
+      "frames": [
+        "frame_0298.jpg",
+        "frame_0299.jpg",
+        "frame_0300.jpg"
+      ],
+      "transcript": "[16:30] When there's no input on Q5, the gates of the transistors are high.\n[16:36] Q2 is turned off.\n[16:38] But Q1 is turned on hard."
+    },
+    {
+      "segment_index": 101,
+      "start_time": 1000,
+      "end_time": 1010,
+      "frames": [
+        "frame_0301.jpg",
+        "frame_0302.jpg",
+        "frame_0303.jpg"
+      ],
+      "transcript": "[16:38] But Q1 is turned on hard.\n[16:42] Okay.\n[16:43] When Q2, in this case an IRF630, has a turn-on resistance of 0.4 ohm."
+    },
+    {
+      "segment_index": 102,
+      "start_time": 1010,
+      "end_time": 1020,
+      "frames": [
+        "frame_0304.jpg",
+        "frame_0305.jpg",
+        "frame_0306.jpg"
+      ],
+      "transcript": "[16:43] When Q2, in this case an IRF630, has a turn-on resistance of 0.4 ohm.\n[16:52] So whatever capacitance I had on those parallel gates is quickly discharged through that very, very low turn-on resistance."
+    },
+    {
+      "segment_index": 103,
+      "start_time": 1020,
+      "end_time": 1030,
+      "frames": [
+        "frame_0307.jpg",
+        "frame_0308.jpg",
+        "frame_0309.jpg"
+      ],
+      "transcript": "[16:52] So whatever capacitance I had on those parallel gates is quickly discharged through that very, very low turn-on resistance.\n[17:04] I put a high in E.\n[17:08] I turn on Q5."
+    },
+    {
+      "segment_index": 104,
+      "start_time": 1030,
+      "end_time": 1040,
+      "frames": [
+        "frame_0310.jpg",
+        "frame_0311.jpg",
+        "frame_0312.jpg"
+      ],
+      "transcript": "[17:08] I turn on Q5.\n[17:10] The gate voltage drops to 0.\n[17:14] And Q2 will switch on.\n[17:16] And it switches on hard and fast.\n[17:19] It has very little."
+    },
+    {
+      "segment_index": 105,
+      "start_time": 1040,
+      "end_time": 1050,
+      "frames": [
+        "frame_0313.jpg",
+        "frame_0314.jpg",
+        "frame_0315.jpg"
+      ],
+      "transcript": "[17:19] It has very little.\n[17:22] It has 0.8 ohm drain source resistance.\n[17:28] So by reducing R again."
+    },
+    {
+      "segment_index": 106,
+      "start_time": 1050,
+      "end_time": 1060,
+      "frames": [
+        "frame_0316.jpg",
+        "frame_0317.jpg",
+        "frame_0318.jpg"
+      ],
+      "transcript": "[17:28] So by reducing R again.\n[17:32] By having a very low conduction resistance on Q2, I have really massively reduced T to something back here."
+    },
+    {
+      "segment_index": 107,
+      "start_time": 1060,
+      "end_time": 1070,
+      "frames": [
+        "frame_0319.jpg",
+        "frame_0320.jpg",
+        "frame_0321.jpg"
+      ],
+      "transcript": "[17:32] By having a very low conduction resistance on Q2, I have really massively reduced T to something back here.\n[17:46] That's how I reduce T is because my turn-on and turn-off resistance are so much lower than a regular bipolar transistor."
+    },
+    {
+      "segment_index": 108,
+      "start_time": 1070,
+      "end_time": 1080,
+      "frames": [
+        "frame_0322.jpg",
+        "frame_0323.jpg",
+        "frame_0324.jpg"
+      ],
+      "transcript": "[17:46] That's how I reduce T is because my turn-on and turn-off resistance are so much lower than a regular bipolar transistor.\n[17:55] So keep this in mind.\n[17:57] You can use MOSFETs.\n[17:59] RG, make it about 1 or 2K."
+    },
+    {
+      "segment_index": 109,
+      "start_time": 1080,
+      "end_time": 1090,
+      "frames": [
+        "frame_0325.jpg",
+        "frame_0326.jpg",
+        "frame_0327.jpg"
+      ],
+      "transcript": "[17:59] RG, make it about 1 or 2K.\n[18:04] And the 1N914 serves to clean up any noise generated by RG charging and discharging."
+    },
+    {
+      "segment_index": 110,
+      "start_time": 1090,
+      "end_time": 1100,
+      "frames": [
+        "frame_0328.jpg",
+        "frame_0329.jpg",
+        "frame_0330.jpg"
+      ],
+      "transcript": "[18:04] And the 1N914 serves to clean up any noise generated by RG charging and discharging.\n[18:13] Here is another variation of connecting the MOSFETs in parallel."
+    },
+    {
+      "segment_index": 111,
+      "start_time": 1100,
+      "end_time": 1110,
+      "frames": [
+        "frame_0331.jpg",
+        "frame_0332.jpg",
+        "frame_0333.jpg"
+      ],
+      "transcript": "[18:13] Here is another variation of connecting the MOSFETs in parallel.\n[18:23] You can put this resistor in the gate circuit.\n[18:26] This would slow down the discharge surge.\n[18:29] You might even reduce it to a lower value such as 10 ohms, 22 ohms, whatever you want to."
+    },
+    {
+      "segment_index": 112,
+      "start_time": 1110,
+      "end_time": 1120,
+      "frames": [
+        "frame_0334.jpg",
+        "frame_0335.jpg",
+        "frame_0336.jpg"
+      ],
+      "transcript": "[18:29] You might even reduce it to a lower value such as 10 ohms, 22 ohms, whatever you want to.\n[18:36] You can do that to connect it to a gate or whatever."
+    },
+    {
+      "segment_index": 113,
+      "start_time": 1120,
+      "end_time": 1130,
+      "frames": [
+        "frame_0337.jpg",
+        "frame_0338.jpg",
+        "frame_0339.jpg"
+      ],
+      "transcript": "[18:36] You can do that to connect it to a gate or whatever.\n[18:44] The 1N914 serves the purpose again as current rushes through the 47 ohm."
+    },
+    {
+      "segment_index": 114,
+      "start_time": 1130,
+      "end_time": 1140,
+      "frames": [
+        "frame_0340.jpg",
+        "frame_0341.jpg",
+        "frame_0342.jpg"
+      ],
+      "transcript": "[18:44] The 1N914 serves the purpose again as current rushes through the 47 ohm.\n[18:51] The induced, the generated voltage spike is taken care of by the 1N914.\n[18:57] Here is another variation."
+    },
+    {
+      "segment_index": 115,
+      "start_time": 1140,
+      "end_time": 1150,
+      "frames": [
+        "frame_0343.jpg",
+        "frame_0344.jpg",
+        "frame_0345.jpg"
+      ],
+      "transcript": "[18:57] Here is another variation.\n[19:01] You can connect an individual resistor to each gate and then connect them to common."
+    },
+    {
+      "segment_index": 116,
+      "start_time": 1150,
+      "end_time": 1160,
+      "frames": [
+        "frame_0346.jpg",
+        "frame_0347.jpg",
+        "frame_0348.jpg"
+      ],
+      "transcript": "[19:01] You can connect an individual resistor to each gate and then connect them to common.\n[19:11] You'll still have the CGS problem.\n[19:14] 27 ohms might be a bit high.\n[19:16] You might want to go to 10 ohms each.\n[19:19] That serves to slow down the huge rush of discharge current."
+    },
+    {
+      "segment_index": 117,
+      "start_time": 1160,
+      "end_time": 1170,
+      "frames": [
+        "frame_0349.jpg",
+        "frame_0350.jpg",
+        "frame_0351.jpg"
+      ],
+      "transcript": "[19:19] That serves to slow down the huge rush of discharge current.\n[19:25] On the preceding frame and this one, I highly recommend keeping in RG."
+    },
+    {
+      "segment_index": 118,
+      "start_time": 1170,
+      "end_time": 1180,
+      "frames": [
+        "frame_0352.jpg",
+        "frame_0353.jpg",
+        "frame_0354.jpg"
+      ],
+      "transcript": "[19:25] On the preceding frame and this one, I highly recommend keeping in RG.\n[19:33] The reason I say do this is because when you power up, if you happen to have this,"
+    },
+    {
+      "segment_index": 119,
+      "start_time": 1180,
+      "end_time": 1190,
+      "frames": [
+        "frame_0355.jpg",
+        "frame_0356.jpg",
+        "frame_0357.jpg"
+      ],
+      "transcript": "[19:33] The reason I say do this is because when you power up, if you happen to have this,\n[19:41] for some reason, connected to a microcontroller gate or whatever,\n[19:46] and the gate is floating, you could have these turn on when they're not supposed to."
+    },
+    {
+      "segment_index": 120,
+      "start_time": 1190,
+      "end_time": 1200,
+      "frames": [
+        "frame_0358.jpg",
+        "frame_0359.jpg",
+        "frame_0360.jpg"
+      ],
+      "transcript": "[19:46] and the gate is floating, you could have these turn on when they're not supposed to.\n[19:53] So with the preceding circuits, it does not hurt to leave the RG resistor in."
+    },
+    {
+      "segment_index": 121,
+      "start_time": 1200,
+      "end_time": 1210,
+      "frames": [
+        "frame_0361.jpg",
+        "frame_0362.jpg",
+        "frame_0363.jpg"
+      ],
+      "transcript": "[19:53] So with the preceding circuits, it does not hurt to leave the RG resistor in.\n[20:00] It helps assure on power up that they are turned off.\n[20:04] So these are possible solutions to look at when you are dealing with parallel MOSFETs."
+    },
+    {
+      "segment_index": 122,
+      "start_time": 1210,
+      "end_time": 1220,
+      "frames": [
+        "frame_0364.jpg",
+        "frame_0365.jpg",
+        "frame_0366.jpg"
+      ],
+      "transcript": "[20:04] So these are possible solutions to look at when you are dealing with parallel MOSFETs.\n[20:13] I hope this was useful.\n[20:15] Give it a try.\n[20:17] Let me know how it works out.\n[20:19] This is your host, Lewis Laughlin."
+    },
+    {
+      "segment_index": 123,
+      "start_time": 1220,
+      "end_time": 1230,
+      "frames": [
+        "frame_0367.jpg",
+        "frame_0368.jpg",
+        "frame_0369.jpg"
+      ],
+      "transcript": "[20:19] This is your host, Lewis Laughlin.\n[20:21] Visit my website at www.bristolwatch.com.\n[20:26] Thanks for listening."
+    },
+    {
+      "segment_index": 124,
+      "start_time": 1230,
+      "end_time": 1240,
+      "frames": [
+        "frame_0370.jpg"
+      ],
+      "transcript": "[20:34] Thank you."
+    },
+    {
+      "segment_index": 125,
+      "start_time": 1240,
+      "end_time": 1241.38,
+      "frames": [],
+      "transcript": "[20:34] Thank you."
+    }
+  ]
+}
