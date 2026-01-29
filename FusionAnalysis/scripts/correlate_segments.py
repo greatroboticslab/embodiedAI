@@ -283,23 +283,34 @@ def construct_transcript_prompt(segment_text: str, comments_batch: List[str]) ->
 
 def correlate_single_batch(prompt: str, model_name: str) -> List[Dict]:
     """
-    Executes the LLM call with a pre-constructed prompt.
+    Executes the LLM call with a pre-constructed prompt, with retries.
     """
-    try:
-        stream = generate_response(model_name, prompt)
-        resp_text = "".join(stream_parser(stream)).strip()
-        
-        # Extract JSON
-        m = re.search(r'\[.*\]', resp_text, flags=re.DOTALL)
-        if m:
-            try:
-                results = json.loads(m.group(0))
-                return results
-            except json.JSONDecodeError:
-                pass 
-    except Exception as e:
-        print(f"[ERR] Batch failed: {e}")
-        
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            stream = generate_response(model_name, prompt)
+            resp_text = "".join(stream_parser(stream)).strip()
+            
+            # Extract JSON
+            m = re.search(r'\[.*\]', resp_text, flags=re.DOTALL)
+            if m:
+                try:
+                    results = json.loads(m.group(0))
+                    if isinstance(results, list):
+                        # valid list found
+                        return [x for x in results if isinstance(x, dict)]
+                except json.JSONDecodeError:
+                    pass 
+            
+            # If we get here, output was invalid
+            if attempt < max_retries - 1:
+                print(f"[WARN] Batch attempt {attempt+1}/{max_retries} failed to parse JSON. Retrying...")
+                print(f"       Response snippet: {resp_text[:100].replace(chr(10), ' ')}...")
+                
+        except Exception as e:
+            print(f"[ERR] Batch attempt {attempt+1}/{max_retries} raised exception: {e}")
+            
+    print(f"[ERR] Batch failed after {max_retries} attempts.")
     return []
 
 def run_all_pairs_correlation(segments: List[Dict], comments: List[Dict], model_name: str):
@@ -380,6 +391,7 @@ def generate_docx_report(video_id: str, segments: List[Dict], total_comments: in
         c_map = {}
         
         for r in vis_list:
+            if not isinstance(r, dict): continue
             t = r.get('comment')
             if isinstance(t, list): 
                 t = " ".join([str(x) for x in t])
@@ -390,6 +402,7 @@ def generate_docx_report(video_id: str, segments: List[Dict], total_comments: in
             c_map[t]['v'] = r
             
         for r in trans_list:
+            if not isinstance(r, dict): continue
             t = r.get('comment')
             if isinstance(t, list): 
                 t = " ".join([str(x) for x in t])
