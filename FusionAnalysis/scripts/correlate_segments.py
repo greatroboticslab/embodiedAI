@@ -229,61 +229,63 @@ def filter_comments_by_relevance(segments: List[Dict], comments: List[Dict], top
 
 # -------------------- Correlation Logic (All Pairs) --------------------
 
-def construct_visual_prompt(segment_text: str, comments_batch: List[str]) -> str:
-    batch_json = json.dumps(comments_batch, indent=2)
+def construct_visual_prompt(segment_text: str, comment_text: str) -> str:
     return f"""
-    You are matching user comments to a 10-second VIDEO SEGMENT based on its visual content.
+    You are matching a user comment to a 10-second VIDEO SEGMENT based on its visual content.
     
     VISUAL CONTEXT (Captions of frames sampled from this 10s segment):
     {segment_text}
     
-    COMMENTS TO CHECK:
-    {batch_json}
+    COMMENT TO CHECK:
+    "{comment_text}"
     
     TASK:
-    For EACH comment, determine if it correlates to the visual actions or objects shown in this specific segment.
+    Determine if this comment correlates to the visual actions or objects shown in this specific segment.
     
     DEFINITIONS:
     - Correlated (true/false): Is the comment referring to or engaging with the visual content shown in these frames?
     - Score (0-100): How related is the comment to the visual content? (High = direct reference, Low = unrelated).
     - Explanation: A brief reason for the correlated value and score.
     
-    OUTPUT FORMAT (Strict JSON list, same order as input):
-    [
-      {{"comment": "...", "correlated": true, "score": 90, "explanation": "Directly comments on the [object] seen in Frame 2"}},
-      {{"comment": "...", "correlated": false, "score": 10, "explanation": "Generic comment, not engaging with visual content"}}
-    ]
+    OUTPUT FORMAT (Strict JSON object):
+    {{
+      "correlated": true,
+      "score": 90,
+      "explanation": "Directly comments on the [object] seen in Frame 2"
+    }}
     """
 
-def construct_transcript_prompt(segment_text: str, comments_batch: List[str]) -> str:
-    batch_json = json.dumps(comments_batch, indent=2)
+def construct_transcript_prompt(segment_text: str, comment_text: str) -> str:
     return f"""
-    You are matching user comments to a 10-second VIDEO SEGMENT based on its audio/speech.
+    You are matching a user comment to a 10-second VIDEO SEGMENT based on its audio/speech.
     
     TRANSCRIPT CONTEXT (Spoken audio from this 10s segment):
     {segment_text}
     
-    COMMENTS TO CHECK:
-    {batch_json}
+    COMMENT TO CHECK:
+    "{comment_text}"
     
     TASK:
-    For EACH comment, determine if it correlates to the speech or topic discussed in this specific segment.
+    Determine if this comment correlates to the speech or topic discussed in this specific segment.
     
     DEFINITIONS:
     - Correlated (true/false): Is the comment referring to or engaging with the speech/audio content of this segment?
     - Score (0-100): How related is the comment to the spoken content? (High = discusses the topic/quote, Low = unrelated).
     - Explanation: A brief reason for the correlated value and score.
     
-    OUTPUT FORMAT (Strict JSON list, same order as input):
-    [
-      {{"comment": "...", "correlated": true, "score": 85, "explanation": "Responds primarily to the speaker's point about [topic]"}},
-      {{"comment": "...", "correlated": false, "score": 0, "explanation": "Unrelated to the speech text"}}
-    ]
+    OUTPUT FORMAT (Strict JSON object):
+    {{
+      "correlated": true,
+      "score": 85,
+      "explanation": "Responds primarily to the speaker's point about [topic]"
+    }}
     """
 
-def correlate_single_batch(prompt: str, model_name: str) -> List[Dict]:
+def correlate_single_comment(prompt: str, model_name: str) -> Dict:
     """
-    Executes the LLM call with a pre-constructed prompt, with retries.
+    Executes the LLM call for a single comment.
+    Returns a dict with keys: correlated, score, explanation.
+    Returns default (False, 0, "Error") if failed.
     """
     max_retries = 3
     for attempt in range(max_retries):
@@ -292,34 +294,33 @@ def correlate_single_batch(prompt: str, model_name: str) -> List[Dict]:
             resp_text = "".join(stream_parser(stream)).strip()
             
             # Extract JSON
-            m = re.search(r'\[.*\]', resp_text, flags=re.DOTALL)
+            # Look for curly braces
+            m = re.search(r'\{.*\}', resp_text, flags=re.DOTALL)
             if m:
                 try:
-                    results = json.loads(m.group(0))
-                    if isinstance(results, list):
-                        # valid list found
-                        return [x for x in results if isinstance(x, dict)]
+                    result = json.loads(m.group(0))
+                    if isinstance(result, dict):
+                        # Validate keys
+                        if 'correlated' in result and 'score' in result:
+                            return result
                 except json.JSONDecodeError:
                     pass 
             
             # If we get here, output was invalid
             if attempt < max_retries - 1:
-                print(f"[WARN] Batch attempt {attempt+1}/{max_retries} failed to parse JSON. Retrying...")
-                print(f"       Response snippet: {resp_text[:100].replace(chr(10), ' ')}...")
-                
+                print(f"[WARN] Attempt {attempt+1}/{max_retries} failed to parse JSON. Retrying...")
         except Exception as e:
-            print(f"[ERR] Batch attempt {attempt+1}/{max_retries} raised exception: {e}")
+            print(f"[ERR] Attempt {attempt+1}/{max_retries} raised exception: {e}")
             
-    print(f"[ERR] Batch failed after {max_retries} attempts.")
-    return []
+    # Default fail info
+    return {"correlated": False, "score": 0, "explanation": "Failed to parse LLM response after retries."}
 
 def run_all_pairs_correlation(segments: List[Dict], comments: List[Dict], model_name: str):
     """
-    Iterates Segments -> Comments.
+    Iterates Segments -> Comments (Single Pass).
     Updates segments in-place with 'visual_correlations' and 'transcript_correlations'.
     """
     comment_texts = [c['comment'] for c in comments]
-    batch_size = 5 # Small batch to ensure accuracy per segment
     
     for seg in segments:
         seg_idx = seg['segment_index']
@@ -333,24 +334,25 @@ def run_all_pairs_correlation(segments: List[Dict], comments: List[Dict], model_
         # --- Visual Pass ---
         if vis_text and vis_text != "(No visual info)":
             print(f"  [Seg {seg_idx}] Visual Check ({len(comment_texts)} comments)...")
-            all_vis_results = []
-            for i in range(0, len(comment_texts), batch_size):
-                batch = comment_texts[i:i+batch_size]
-                prompt = construct_visual_prompt(vis_text, batch)
-                res = correlate_single_batch(prompt, model_name)
-                all_vis_results.extend(res)
-            seg['visual_correlations'] = all_vis_results
+            count = 0
+            for c_text in comment_texts:
+                count += 1
+                # Progress every 10 comments or so if needed, but let's keep it clean
+                prompt = construct_visual_prompt(vis_text, c_text)
+                res = correlate_single_comment(prompt, model_name)
+                # Inject comment text manually
+                res['comment'] = c_text
+                seg['visual_correlations'].append(res)
         
         # --- Transcript Pass ---
         if trans_text and trans_text != "(No speech)":
             print(f"  [Seg {seg_idx}] Transcript Check ({len(comment_texts)} comments)...")
-            all_trans_results = []
-            for i in range(0, len(comment_texts), batch_size):
-                batch = comment_texts[i:i+batch_size]
-                prompt = construct_transcript_prompt(trans_text, batch)
-                res = correlate_single_batch(prompt, model_name)
-                all_trans_results.extend(res)
-            seg['transcript_correlations'] = all_trans_results
+            for c_text in comment_texts:
+                prompt = construct_transcript_prompt(trans_text, c_text)
+                res = correlate_single_comment(prompt, model_name)
+                # Inject comment text manually
+                res['comment'] = c_text
+                seg['transcript_correlations'].append(res)
 
 # -------------------- Reporting --------------------
 
@@ -517,7 +519,7 @@ def main():
     parser.add_argument("--comments_root", default="../../Data For Classes-Analysis/final_merged_data/final_merged_class_data.docx", help="Dir (JSON) or File (DOCX)")
     parser.add_argument("--captions_root", default="../../CaptionAnalysis/data/integrated_caption/frames_conventional_captions_integrated", help="Path to CaptionAnalysis")
     parser.add_argument("--output_dir", default="../results/segment_correlations_conventional", help="Path to output directory")
-    parser.add_argument("--model", default="llama3")
+    parser.add_argument("--model", default="llama3.1")
     parser.add_argument("--top_k", type=int, default=200, help="Number of comments to keep (Top-K max similarity).")
     
     args = parser.parse_args()
