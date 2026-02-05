@@ -302,6 +302,15 @@ def correlate_single_comment(prompt: str, model_name: str) -> Dict:
                     if isinstance(result, dict):
                         # Validate keys
                         if 'correlated' in result and 'score' in result:
+                            # Sanitize score (ensure it's an int, handle list/string)
+                            raw_score = result['score']
+                            if isinstance(raw_score, list):
+                                raw_score = raw_score[0] if raw_score else 0
+                            try:
+                                result['score'] = int(float(raw_score))
+                            except (ValueError, TypeError):
+                                result['score'] = 0
+                            
                             return result
                 except json.JSONDecodeError:
                     pass 
@@ -422,8 +431,17 @@ def generate_docx_report(video_id: str, segments: List[Dict], total_comments: in
             is_v_corr = v and v.get('correlated')
             is_t_corr = t and t.get('correlated')
             
-            v_score = v.get('score', 0) if v else 0
-            t_score = t.get('score', 0) if t else 0
+            # Sanitize scores for report
+            def _get_int_score(s):
+                if isinstance(s, list):
+                    s = s[0] if s else 0
+                try:
+                    return int(float(s))
+                except (ValueError, TypeError):
+                    return 0
+
+            v_score = _get_int_score(v.get('score', 0)) if v else 0
+            t_score = _get_int_score(t.get('score', 0)) if t else 0
             
             if is_v_corr: total_vis_correlated += 1
             if is_t_corr: total_trans_correlated += 1
@@ -486,8 +504,18 @@ def generate_docx_report(video_id: str, segments: List[Dict], total_comments: in
         # Function to process lists
         def collect(src_list, type_lbl):
             for m in src_list:
-                if m.get('score', 0) >= 60:
-                    matches.append((m, type_lbl))
+                s_val = m.get('score', 0)
+                # Local sanitize
+                if isinstance(s_val, list): s_val = s_val[0] if s_val else 0
+                try: s_val = int(float(s_val))
+                except: s_val = 0
+                
+                if s_val >= 60:
+                    # Update the object in place or just use for sorting?
+                    # Better to update a copy or just use tuple
+                    m_copy = m.copy()
+                    m_copy['score'] = s_val
+                    matches.append((m_copy, type_lbl))
                     
         collect(seg.get('visual_correlations', []), "Visual")
         collect(seg.get('transcript_correlations', []), "Transcript")
@@ -545,9 +573,24 @@ def main():
         vid = f.replace('_manual_sections.json', '')
         
         # Resume Check
+        # Resume Check
         out_json = os.path.join(args.output_dir, f"{vid}_segment_correlation.json")
+        out_docx = os.path.join(args.output_dir, f"{vid}_segment_correlation.docx")
+        
         if os.path.exists(out_json):
-            print(f"[SKIP] Results already exist for {vid}")
+            if not os.path.exists(out_docx):
+                print(f"[INFO] JSON exists but DOCX missing for {vid}. Generating report...")
+                try:
+                    data = load_json(out_json)
+                    if 'segments' in data:
+                        # Try to get total_comments from stats or infer
+                        stats = data.get('stats', {})
+                        t_comments = stats.get('total_comments', 0)
+                        generate_docx_report(vid, data['segments'], t_comments, out_docx)
+                except Exception as e:
+                    print(f"[ERR] Failed to recover DOCX for {vid}: {e}")
+            else:
+                print(f"[SKIP] Results already exist for {vid}")
             continue
 
         print(f"\n=== Processing {vid} ===")
