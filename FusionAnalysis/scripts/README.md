@@ -70,3 +70,39 @@ python correlate_sections.py \
 *   `.../correlation/<VideoID>_correlation.docx`:
     *   **Student (DOCX input)**: "Coverage Analysis" report showing matched/unmatched comments and top matches per section.
     *   **YouTube (Dir input)**: "Statistical Summary" report with top 10 matches per section.
+
+---
+
+### Step 3: Collect Metrics
+
+Run `collect_fusion_metrics.py` to aggregate comprehensive metrics from the correlation results into Excel files.
+
+**Usage:**
+
+```bash
+# Generate both embodied and conventional metrics in one run
+python collect_fusion_metrics.py --label both --output_dir ../results
+
+# Or generate them separately
+python collect_fusion_metrics.py --label embodied --output ../results/fusion_metrics_embodied.xlsx
+python collect_fusion_metrics.py --label conventional --output ../results/fusion_metrics_conventional.xlsx
+```
+
+**Arguments:**
+*   `--results_dir`: Path to results directory containing correlation subdirectories (default: `../results`)
+*   `--label`: Which label to process: `embodied`, `conventional`, or `both` (default: `both`)
+*   `--output`: Output Excel file path (used when label is not "both")
+*   `--output_dir`: Output directory for Excel files (used when label is "both")
+*   `--score_threshold`: Score threshold for "high score" classification (default: 60)
+
+**Outputs:**
+*   `fusion_metrics_embodied.xlsx`: Excel file with comprehensive metrics for all embodied videos
+*   `fusion_metrics_conventional.xlsx`: Excel file with comprehensive metrics for all conventional videos
+
+**Metrics Included:**
+*   **Video Info**: video_id, label, duration, number of segments, comments used
+*   **Comment Stats**: average/median comment word count
+*   **Visual Correlation**: total pairs, correlated count/percentage, high score count/percentage, average/median scores
+*   **Transcript Correlation**: total pairs, correlated count/percentage, high score count/percentage, average/median scores
+*   **Union Metrics**: pairs where visual OR transcript is correlated, high score statistics
+*   **Segment Statistics**: average correlations per segment, segments with correlations
