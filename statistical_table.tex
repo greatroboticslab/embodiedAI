@@ -1,0 +1,30 @@
+\begin{table}[H]
+    \centering
+    \caption{Statistical Comparison of Embodied vs.\ Conventional Videos}
+    \label{tab:stat_tests}
+    \scriptsize
+    \begin{tabular}{l c c c c c c}
+        \toprule
+        \textbf{Metric} & \textbf{Emb.\ Mean$\pm$SD} & \textbf{Con.\ Mean$\pm$SD} & \textbf{Test} & \textbf{$p$-value} & \textbf{Cohen's $d$} & \textbf{Sig.} \\
+        \midrule
+        \multicolumn{7}{l}{\textbf{User Study (130 Videos)}} \\
+        \midrule
+        Avg. Correlation Score & $57.31 \pm 19.76$ & $53.51 \pm 20.99$ & U & $0.3269$ & $0.187$ (Negligible) & n.s. \\
+        Caption Word Count & $54510.35 \pm 43490.73$ & $73842.86 \pm 80246.33$ & U & $0.1180$ & $-0.312$ (Small) & n.s. \\
+        Comment Count & $2.07 \pm 1.53$ & $1.91 \pm 1.75$ & U & $0.2057$ & $0.096$ (Negligible) & n.s. \\
+        Video Duration (s) & $699.44 \pm 416.96$ & $963.97 \pm 891.19$ & U & $0.1318$ & $-0.399$ (Small) & n.s. \\
+        Caption Density (words/s) & $74.06 \pm 26.23$ & $77.65 \pm 29.80$ & U & $0.0799$ & $-0.129$ (Negligible) & n.s. \\
+        Engagement Rate (comm/min) & $0.27 \pm 0.34$ & $0.19 \pm 0.21$ & U & $0.1259$ & $0.275$ (Small) & n.s. \\
+        Correlation Efficiency & $0.62 \pm 0.27$ & $0.55 \pm 0.28$ & U & $0.2154$ & $0.230$ (Small) & n.s. \\
+        \midrule
+        \multicolumn{7}{l}{\textbf{YouTube Comment Analysis (20 Videos)}} \\
+        \midrule
+        Corr. Ratio (LLaVA) & $0.6738 \pm 0.1113$ & $0.5072 \pm 0.2419$ & t & $0.0701$ & $0.885$ (Large) & n.s. \\
+        Corr. Ratio (MiniCPM) & $0.6392 \pm 0.1173$ & $0.5781 \pm 0.1525$ & t & $0.3295$ & $0.449$ (Small) & n.s. \\
+        Corr. Ratio (Integrated) & $0.8438 \pm 0.0669$ & $0.6264 \pm 0.2004$ & t & $0.0077$ & $1.455$ (Large) & ** \\
+        Positive Sent. Ratio & $0.5595 \pm 0.1356$ & $0.5985 \pm 0.2515$ & t & $0.6723$ & $-0.193$ (Negligible) & n.s. \\
+        Neutral Sent. Ratio & $0.3603 \pm 0.1063$ & $0.3145 \pm 0.1850$ & t & $0.5080$ & $0.304$ (Small) & n.s. \\
+        Negative Sent. Ratio & $0.0803 \pm 0.0535$ & $0.0992 \pm 0.1186$ & U & $1.0000$ & $-0.206$ (Small) & n.s. \\
+        \bottomrule
+    \end{tabular}
+\end{table}

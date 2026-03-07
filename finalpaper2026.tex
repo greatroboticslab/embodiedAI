@@ -1,0 +1,1003 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+%\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage{changepage}
+\usepackage{titlesec}
+\usepackage[parfill]{parskip}
+\usepackage[margin=1in]{geometry}
+\usepackage{times}
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage[numbers,super]{natbib}
+\usepackage{comment}
+\usepackage{lipsum} % Package to generate dummy text throughout this template. Remove for real use.
+
+\renewcommand{\dbltopfraction}{0.9}    % Allow tables to take up 90% of the page top
+\renewcommand{\dblfloatpagefraction}{0.8} % Ensure float pages are well-filled
+\renewcommand{\textfraction}{0.07}     % Allow as little as 7% text on the page
+
+\usepackage{booktabs}
+\usepackage{siunitx}
+\hyphenation{resour-ces}
+%\definecolor{light-gray}{gray}{0.9}
+\usepackage{pgf-pie} 
+
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{caption}
+
+\usepackage[cmex10]{amsmath}
+%Mathabx do not work on ScribTex => Removed
+%\usepackage{mathabx}
+%\usepackage{array}
+\usepackage{mdwmath}
+\usepackage{mdwtab}
+\usepackage{eqparbox}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{lipsum}
+\usepackage{array}
+\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage[utf8]{inputenc}
+%\usepackage{array}
+\usepackage{longtable}
+\usepackage{geometry}
+\usepackage{booktabs} 
+\usepackage{colortbl} % For row coloring
+%\usepackage{xcolor}   % For defining custom colors
+
+
+%\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage{stfloats}
+\usepackage[table]{xcolor}
+
+
+\usepackage{pgfplots}
+\usepackage{subcaption} 
+\usepackage{filecontents} 
+\pgfplotsset{compat=1.18}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs} % For professional table lines
+\usepackage{xcolor}   % For row and cell coloring
+\usepackage{colortbl} 
+\usepackage[table,xcdraw]{xcolor} % Ensure the table option is loaded for xcolor
+%\usepackage[retainorgcmds]{IEEEtrantools}
+%\usepackage{bibentry}  
+\usepackage{xcolor,soul,framed} %,caption
+\usepackage{subcaption} % Add this line in the preamble
+\colorlet{shadecolor}{yellow}
+\usepackage{graphicx} % For including graphics
+% \usepackage{color,soul}
+\usepackage[pdftex]{graphicx}
+%\graphicspath{{../pdf/}{../jpeg/}}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+
+
+\titleformat*{\section}{\normalsize\bfseries} % Makes section titles 12 pt font
+
+
+%----------------------------------------------------------------------------------------
+%  TITLE SECTION
+%----------------------------------------------------------------------------------------
+\title{\large \textbf{LLM Based Analysis of Using Videos in Teaching Robotics}} % using \large makes the title approximately 14 pt.
+% Author info isn't included for the Annual Conference but some regional conferences might request it.
+
+
+
+%\author{Hongbo Zhang, Benjamin Li \\ hbzhang@mtsu.edu, benjaminliyo@gmail.com \\ Department of Engineering Technology,
+%Middle Tennessee State University \\1301 E Main St, Murfreesboro, TN 37132,USA}
+
+%\author{\normalsize Author Name\\
+%\normalsize email@example.com\\
+%\normalsize Name of Your Department\\\
+%\normalsize Your Institution Name}
+\date{} % This leaves the date blank.
+
+\makeatletter % This gets the margins for the title set.
+\patchcmd{\@maketitle}{\begin{center}}{\begin{adjustwidth}{0.5in}{0.5in}\begin{center}}{}{}
+\patchcmd{\@maketitle}{\end{center}}{\end{center}\end{adjustwidth}}{}{}
+\makeatother
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\raggedright
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+%----------------------------------------------------------------------------------------
+%  PAPER CONTENTS
+%----------------------------------------------------------------------------------------
+\section*{Abstract}
+
+Embodied learning involves the use of hands-on and physical interaction with the underlying subjects. This research explored the use of the embodied learning-centered videos for robotics instruction. The engagement of the users with the videos was studied through the video user comments with LLM models. The correlation between video user comments and the video frames were also analyzed with LLM models. The research identified the learnable elements in the videos for users to interact and engage through the analysis the video frame captions. The results showed the evident advantages of using embodied learning videos in engaging user interests in learning robotics technology. Overall, users have shown enhanced positive comments on the embodied learning videos. A user study was also performed involving both embodied learning and conventional learning videos. The results of the user study showed that the use of the embodied learning elements in the videos has reinforced the learning effectiveness with positive user comments and feedback. The research has practical implications for the enhancement of robotics instruction and workforce training.           
+
+
+\section*{1. Introduction}
+
+\noindent 
+Learning robotics technology is challenging due to the multidisciplinary nature of the subject, which involves mathematics, electronics, software, mechanical engineering, and materials science. The use of videos has been shown effective in teaching robotics. Specifically, instructional videos is helpful to enhance the learning outcome in remote learning of robotics technology related classes \cite{eguchi2014robotics,berry2017robotics}. The use of videos is also crucial for the flipped classroom teaching, where the use of videos plays critical roles in preparing students for the relevant lectures \cite{perez2014flipped}.    
+
+Conventional learning approaches mainly rely on lectures, slides, or textbooks for learning underlying subjects. While conventional learning has been adopted for STEM education, its disadvantages are evident where learners are frequently disengaged through the learning process \cite{freeman2014active}.  In contrast, embodied learning paradigm emphasizes the integration of the cognitive, sensorial, affective and psychomotor functioning through the learning process \cite{jusslin2022embodied}. Embodied learning represents the use embodied elements including  physical objects and human gestures through learning \cite{stolz2015embodied,macedonia2019embodied,munro2018principles}. Embodied learning emphasizes the use of experiential learning through the learning process thus to achieve better learning outcomes in contrast to the conventional learning approach. 
+
+
+%Zhang et al. (2023) incorporated embodied learning in computer programming context in a LEGO Mindstorms EV3 robotics and conducted a quasi-experiment of 80 primary students. Findings indicated that the achievement of the experimental group who employed the embodied approach was higher in Robotics learning than that of the control group without augmenting the cognitive load. Furthermore, the experimental group showed higher level of intrinsic motivation to learn. This study points out that embodied learning can be effective in increasing achievement and motivation in robotics learning [].\\
+
+
+
+Previous studies showed that embodied learning has positively impacted the learning performance, which is shown able to promote the increased participation of the underlying learning process and motivates learners towards the learning subjects \cite{kontra2012embodied,ioannou2020technology}.Among them, Freeman et al. (2014) undertook a meta-analysis of 225 comparative research studies of conventional lecturing with studies of emphasis on embodied learning principles \cite{freeman2014active}. The study showed that the use of embodied learning has improved student performance by 6 percent for test scores and reduced failure rates by 55 percent, therefore making embodied learning more effective in improving overall class performance as compared to conventional learning approaches. Similarly, Kontra et al. (2015) showed that physical experience in science learning increases the understanding of challenging principles like angular momentum by thus engaging certain cerebral bodily systems \cite{kontra2015physical}. It is shown that the embodiment of physical interactions allows students to better gain performance on quizzes and presented learning outcome showing the effectiveness of embodied learning in science.  In the similar vein, Khodr et al. (2021) has leveraged the use of Cellulo robots for teaching the concept of virus propagation for  high school students \cite{khodr2021diseases}. Specifically, the embodied learning technique was applied through the process, where the combination of a physical robot interaction and software simulation was used to improve the learning performance. It also shows that the use of embodied learning has led to significant appreciation of students with the enhanced level of interest of the subjects and improved engagement in the learning activities. The use of embodied learning is not only able to engage student interests but also enhance subject concept clarity and encourage the participation of students in classrooms. 
+
+
+
+\noindent While the benefits are clear, it is challenging to effectively execute embodied learning in practice. Embodied learning requires stronger teaching skills in execution the learning paradigm, which requires physical interaction, sensory engagement, kinesthetic learning, and mind-body connections ~\cite{anderson2003embodied,barsalou2008grounded,skulmowski2018embodied}. Furthermore, embodied learning also requires the use of strong hands-on skills, effective visualization, and sensory engagement of students through the process ~\cite{dede2014role,poria2017review}. There is also lack of dedicated study for the investigation of the effectiveness of the embodied learning paradigm for learning of the robotics technology. Until present, there is no research investigating the comparable effectiveness of the use of embodied learning and conventional videos for remote learning and flipped classrooms through the active learning process. It therefore becomes difficult for instructors to choose videos for robotics instruction and workforce training.  This therefore has motivated our research to investigate the performance of embodied learning for robotics technology instruction using videos.  
+
+
+
+
+%This approach is most relevant to robotics education since students can interact and manipulate physical parts of the robots, which will enhance the achievement of learning outcomes. Thus, embodied learning involves the students in the process of the practical application of the theoretical material whose effect is amplified by involving the student in kinesthetic activity. This integration not only compounding helps in grasping of some concepts but also makes it easier to reinforce these concepts in the long-term memory thus making the understanding of the principles of robotics more robust.\\
+ 
+
+
+%The recent arising of Large Language Model (LLM) is known successful in answering learner's questions successfully. More particularly, the use of the LLM for summarizing videos is known successful \cite{huang2024vtimellm}. LLM is able to capture not only the high level summary but also the low level details of the videos \cite{huang2024multi,hua2024v2xum,argaw2024scaling}. The LLM is able to summarize the video using guidance of learners to specifically focus on the particular elements of the videos to obtain the desired summary \cite{huang2024multi}.  With LLM, it is possible to summarize the video content known associated with the embodied learning such as physical interaction and sensory engagement therefore to discover the effectiveness of the embodied learning strategy. Additionally, it is known that LLM is also able to offer unique strength in understanding the sentiment of learner's comments on the videos \cite{xing2024designing}. The use of LLM is known able to achieve over 90\% of accuracy for sentiment analysis \cite{xing2024designing}. LLM has also exhibited strong strength in sentiment analysis showing a strong generalization capabilities of the sentiment for the underlying of the tasks \cite{zhang2023sentiment}. As such, the use of LLM for both video summary and video comments sentiment analysis is able to understand learner's response to embodied robotics learning.
+
+
+\noindent The project aims to understand the user engagement of robotics instruction videos featured with embodied and conventional learning methods for learning robotics and workforce training. By systematically analyzing user engagement and sentiment toward the video content with the large language model (LLM) methods, this study is able to provide a comprehensive understanding of how the videos featured with embodied learning method impact the learning effectiveness of the robotics technology. For this purpose, through the utilization of the LLM based data extraction, transcription, and sentiment analysis, our research is able to ensure accurate and reliable video analysis for the desirable research outcomes. We seek to assess whether videos featured with embodied learning technique is able to better engage with learners in comparison to conventional learning videos. Through the process, the video comments were analyzed for assessing the interaction and participation of the learning process. Subsequently, the sentiment analysis of video comments was also performed to understand the emotional (positive, negative, neutral) and cognitive responses of both embodied learning and conventional learning to understand the differences of user engagement with the videos.  We have also performed the user study for understanding of the differences of the embodied centered learning videos versus the conventional learning centered videos. Systematic comparison between different LLM methods was also compared for non-biased analysis for the assessment of the effectiveness of the embodied learning in robotics instruction.  We have therefore concluded the effectiveness and reception of conventional and embodied robotics instruction videos. The research is expected to provide significant insights for robotics instructors to teach robotics technology effectively by selecting effective videos and also obtain instructional insights from the videos. 
+
+\section*{2. Methods}
+
+\subsection*{2.1 Overview}
+
+The research selected and categorized YouTube videos into conventional and embodied learning videos. The embodied learning videos represent the use of hands-on and physical interaction with objects. In contrast, conventional learning videos involve the demonstration and use of text, slides, graphics, maps across various topics related to robotics such as object manipulation, programming, and path planning for robots. We have made efforts in ensuring the representation of the videos. Diversified videos were studied in our research, which include programming, mathematics, AI, and hardware. Through the process, both formal and informal learning videos have been selected. Specifically, the video content range from introduction to expert level robotics technology so that the videos are more representative for learning robotics technology. The videos are also comprehensive for covering significant number of applications including agriculture, manufacturing, healthcare, logistics, construction, energy, and retails. These videos are representative so that it is able to be useful for robotics workforce training without suffering biased video selection. 
+
+
+\begin{table*}[!t]
+    \centering
+    \scriptsize % Smaller font to significantly reduce height
+    \caption{Data Collection of Robotics Instructional Videos (Conventional vs. Embodied)}
+    \label{tab:combined_robotics}
+    
+    % FIRST TABLE (Conventional)
+    \begin{tabularx}{\textwidth}{l l p{2.2cm} X c} 
+        \toprule
+        \multicolumn{5}{c}{\textbf{Table I: Conventional Robotics Instructional Videos}} \\
+        \midrule
+        \textbf{Category} & \textbf{Video ID} & \textbf{Subcategory} & \textbf{Content Description} & \textbf{Comments} \\
+        \midrule
+        Applications & V1\_con & Comp. Vision & AI-based virtual mouse using OpenCV and Mediapipe. & 980 \\
+        & V2\_con & Deep Learning & Robotics advancements via training datasets and adaptation. & 6 \\
+        \addlinespace
+        Foundation & V4\_con & Electronics & Arduino basics: circuits, IDE setup, and beginner projects. & 1408 \\
+        & V6\_con & ROS Prog. & ROS basics and Gazebo simulations for robotic systems. & 112 \\
+        & V8\_con & Industrial & ABB robot programming fundamentals with virtual controllers. & 15 \\
+        & V7\_con & ROS Setup & Installing/configuring ROS Noetic on Ubuntu 20.04. & 62 \\
+        \addlinespace
+        Special Robots & V3\_con & Grippers & Designing robotic grippers for drones and aerial navigation. & 3 \\
+        & V5\_con & Combat & Beginner's guide to combat robots and RC electronics. & 129 \\
+        & V10\_con & FRC & FRC roles/mechanics highlighting SolidWorks tools. & 22 \\
+        & V9\_con & Quadcopter & Quadcopter mechanics: thrust, torque, and motion control. & 29 \\
+        \bottomrule
+    \end{tabularx}
+
+    \vspace{2.5em} % Controlled gap between the two tables
+
+    % SECOND TABLE (Embodied)
+    \begin{tabularx}{\textwidth}{l l p{2.2cm} X c} 
+        \toprule
+        \multicolumn{5}{c}{\textbf{Table II: Embodied Robotics Videos}} \\
+        \midrule
+        \textbf{Category} & \textbf{Video ID} & \textbf{Subcategory} & \textbf{Content Description} & \textbf{Comments} \\
+        \midrule
+        Foundation & V6\_emb & Electronics & Guides on using breadboards, multimeters, and Arduino. & 281 \\
+        & V2\_emb & ROS & AMR with enhanced odometry and ROS-based navigation. & 271 \\
+        & V1\_emb & AMR & Waypoint guidance and 360-degree obstacle avoidance. & 54 \\
+        \addlinespace
+        Special Robots & V3\_emb & Combat & Guide to building combat robots and channel mixing. & 128 \\
+        & V4\_emb & Combat & Electronics for beetleweight robots: ESCs and batteries. & 24 \\
+        & V5\_emb & Robotic Arm & Mark 1 arm with hand gesture glove control via Bluetooth. & 623 \\
+        & V9\_emb & Intel Robot & Jetson Nano/TurtleBot 3 for mapping and recognition. & 248 \\
+        \addlinespace
+        Applications & V7\_emb & Fire Fighting & Automated firefighting robot with flame sensors and pump. & xxx \\
+        & V8\_emb & DIY Drone & Custom drone build with KK2.1.5 flight controller. & 559 \\
+        & V10\_emb & Comp. Vision & Vision with Arduino: face tracking and object detection. & 506 \\
+        \bottomrule
+    \end{tabularx}
+\end{table*}
+
+  
+
+We have also enforced the random selection of the videos for foundational robotics topics, robotics applications, and special robots. Given the list of the searched results of the videos on Youtube, we have selected the videos by following the definition of the conventional learning and embodied learning. It means that the embodied learning and conventional learning videos were selected randomly based on the learning content rather than the quality and experiences of the teaching and the level of user engagement with the videos.  % The second criteria of the video selection is to select the videos either focusing on conventional learning or embodied learning but not both.  We have purposely avoided the biased selection of either over engaged or under engaged video comments for both embodied learning and conventional learning videos. We have also purposely avoided the selection of the videos involving balanced conventional and embodied learning equivalently thus potential causing the biases of the video selection.      
+
+The balanced selection of the videos in terms of user comments was also performed. Specifically, the videos with balanced comments such as very few numbers (1 - 10), somewhat (10+), and large number (100+) user comments were selected. Other balanced concern of video comments includes the selection of the sentiment of the videos, where both positive, neutral, and negative comments are all in need of presence in the conventional and embodied videos. Through the use of positive, neutral, and negative user comments for the videos, it is able to ensure the fair comparison between the conventional and embodied videos.          
+
+
+The descriptive statistics of the video length and total comments is shown in Table 1. Specifically, it shows the minium, maximum, and average video length and total comments. Specifically, the the minimum video length is 1 minute with maximum video length of 34 minutes, and average video length of  4 minutes. The number user comments per video has minimum value of 1 comment, maximum of 128 comments, and average of 20 comments.       
+
+
+
+
+
+Following the video data collection，each frame of the video was extracted for further analysis of the video content. Specifically, these frames were captioned with vision-language models, LLaVA (Large Language and Vision Assistant), and MiniCPM (Mini Chinese Pre-trained Language Model) to provide textual description of the video frames. The correlation analysis between frame captions and video user comments to understand user learning and engagement with videos, where the correlation analysis was performed with the LLaMA-2 LLM model. %This systematic approach is used in an effort to express, in numerical terms, the degree of relevance and interaction with the learning methods in order to provide information on the comparative advantages of embodied and conventional robotics education.
+
+
+
+
+
+%The research involved a systematic approach to examine viewer engagement and content correlation between embodied and non-embodied learning approaches in robotics education. Robotics-related videos were selected and categorized into embodied and non-embodied types from YouTube. Frames representing visual content were extracted from these videos, and advanced large language models (LLMs), specifically LLaVA (Large Language and Vision Assistant) and MiniCPM (Mini Comprehensive Pretrained Model), were employed to generate captions for the frames. 
+
+Among the LLM models used for the analysis of the videos, LLaVA is the state-of-the-art multimodal model, combines natural language processing with computer vision to produce detailed and semantically accurate captions. On the other hand, MiniCPM, a lightweight yet robust pretrained model, focuses on generating concise and contextually relevant descriptions with high efficiency. For obtaining accurate LLM analysis results, both models were compared for their captioning performance. Additionally, user comments were extracted, and a correlation analysis was performed to evaluate the alignment between video content, generated captions, and user feedback. This integrated approach provided insights into the relationship between video content, descriptive accuracy, and user engagement. The following sections outline the methods and tools used in this study.
+
+
+
+\subsection*{2.2 Data Collection}
+
+The identified Youtube videos were categorized into two distinct groups, videos featuring embodied learning methods, characterized by hands-on activities and physical interaction with robotic components, and videos featuring conventional learning methods, which primarily involve text-centered instruction along with visual demonstration. The selection of robotics videos in the two categories was based on topics such as robotic manipulation, kinematics of robots, robotic programming, deep reinforcement learning in robotics, autonomous navigation, and related subjects.
+
+Both conventional and embodied learning videos are shown in Figure 1 and Figure 2, which show the examples of conventional and embodied videos selected respectively for the research. In Figure 1, videos demonstrated detailed explanations about electronics used in the building of compact robots starting from basic steps to more complicated configurations. The tutorial has explained the concepts verbally and visually while the tutorial provides the instructions, it doesn’t involve the physical construction of robots through the video. The emphasis is however on understanding the principles of building the compact robot with text and images rather than hands-on activities. In contrast, Figure 2 shows the tutorial in a step-by-step fashion for how to build the robotic arm allowing viewers to follow along and actively participate in the creation process. Other hands-on and physical interaction driven robotics learning related videos were also included in the video dataset. The interactive nature of the embodied learning tutorial to control the robotic arm wirelessly and achieve automated functions showing the physical interaction nature of the learning process. 
+
+
+
+         
+
+\begin{figure}[htbp]
+    \centering
+    % Row 1: Three subfigures to save a vertical row
+    \begin{subfigure}{0.31\linewidth}
+        \includegraphics[width=\linewidth]{figure/video_1_con_robo mouse.jpg}
+        \caption{}
+        \label{fig:subfig_con_a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.31\linewidth}
+        \includegraphics[width=\linewidth]{figure/blurred_face.jpg}
+        \caption{}
+        \label{fig:subfig_con_b}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.31\linewidth}
+        \includegraphics[width=\linewidth]{figure/video_3_con_gripper.jpg}
+        \caption{}
+        \label{fig:subfig_con_c}
+    \end{subfigure}
+
+    \vspace{0.1cm} % Tighten vertical gap
+    
+    % Row 2: Remaining two subfigures
+    \begin{subfigure}{0.31\linewidth}
+        \includegraphics[width=\linewidth]{figure/ideo_4_con_arduino_beg.jpg}
+        \caption{}
+        \label{fig:subfig_con_d}
+    \end{subfigure}
+    \quad 
+    \begin{subfigure}{0.31\linewidth}
+        \includegraphics[width=\linewidth]{figure/video_6_con.jpg}
+        \caption{}
+        \label{fig:subfig_con_e}
+    \end{subfigure}
+    
+    \caption{\footnotesize \textbf{Conventional Learning Video Dataset:} (a) AI-based virtual mouse controller, (b) Deep reinforcement learning adaptation, (c) Aerial grasping and ReachBot grippers, (d) Arduino microcontroller fundamentals, (e) ROS nodes and architecture simulation.}
+    \label{fig:conventional_data}
+\end{figure}
+
+
+
+\begin{figure}[htbp]
+    \centering
+    % Row 1: Three subfigures to save vertical space
+    \begin{subfigure}{0.31\linewidth}
+        \includegraphics[width=\linewidth]{figure/video_1_hd_ANMR.jpg}
+        \caption{}
+        \label{fig:subfig_hd_a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.31\linewidth}
+        \includegraphics[width=\linewidth]{figure/video_2_hd_ROS robot.jpg}
+        \caption{}
+        \label{fig:subfig_hd_b}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.31\linewidth}
+        \includegraphics[width=\linewidth]{figure/video_3_hd_combat robotics.jpg}
+        \caption{}
+        \label{fig:subfig_hd_c}
+    \end{subfigure}
+
+    \vspace{0.1cm} % Tighten vertical gap
+    
+    % Row 2: Remaining two subfigures centered
+    \begin{subfigure}{0.31\linewidth}
+        \includegraphics[width=\linewidth]{figure/video_4_hd_combat robo2.jpg}
+        \caption{}
+        \label{fig:subfig_hd_d}
+    \end{subfigure}
+    \quad 
+    \begin{subfigure}{0.31\linewidth}
+        \includegraphics[width=\linewidth]{figure/video_5_hd_diy robot arm.jpg}
+        \caption{}
+        \label{fig:subfig_hd_e}
+    \end{subfigure}
+    
+    \caption{\footnotesize \textbf{Embodied Learning Video Dataset:} (a) Humanoid robot dynamic tasks, (b) Autonomous navigation/mapping (c) Quadruped agility and terrain traversal, (d) Humanoid motion planning, (e) Arduino robotic arm with gesture control}
+    \label{fig:embodied_hd}
+\end{figure}
+
+
+
+Following the identification and categorization of the videos, the research utilized youtube-comment-downloader, which is a python tool to download the comments of the users systematically from YouTube videos. The tool effectively searches the comments by taking the URL of the targeted video and the comments fetched from the mentioned video are stored into a JSON file. All of the comment data of the comments is included in the resulting JSON output file such as comment ID, comment text, comment timestamp, comment author, channel ID, comment votes, and reply status. It was also observed that with JSON format, the extracted data can easily be processed and analyzed by different data analysis tools so as to derive meaningful insights from the user generated content.The text comments were extracted from a JSON file using a Python script. Such approach was rather beneficial in terms of the fact that it allowed to extract and store the comments in a way that would be convenient for further analysis and finally the comments of the selected videos are stored in separate documents for further analysis.
+
+\subsection *{2.3 Frame Extraction}
+Frames were systematically extracted from conventional and embodied robotics videos shown in Figure 3. A total of 100 frames were extracted from each video, providing a representative overview of the visual content. The frame extraction process used OpenCV, a robust library for computer vision, to process video files efficiently. The extraction relied on metadata such as frame count, resolution, and frame rate to ensure consistent sampling across all videos. The frames were stored in high-quality formats to preserve their visual details, ensuring suitability for subsequent processes such as caption generation and analysis. This standardized approach ensues that the extracted dataset will be consistent and comprehensive, supporting detailed comparisons between the hands-on and conventional videos.
+
+\begin{figure}[htbp]
+    \centering
+    % Row 1: Three subfigures (3-up saves a whole row of space)
+    \begin{subfigure}{0.31\linewidth}
+        \includegraphics[width=\linewidth]{figure/1_N.jpg}
+        \caption{}
+        \label{fig:subfig_a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.31\linewidth}
+        \includegraphics[width=\linewidth]{figure/2_N.jpg}
+        \caption{}
+        \label{fig:subfig_b}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.31\linewidth}
+        \includegraphics[width=\linewidth]{figure/3_N.jpg}
+        \caption{}
+        \label{fig:subfig_c}
+    \end{subfigure}
+
+    \vspace{0.1cm} % Minimal space between rows
+    
+    % Row 2: Two subfigures centered
+    \begin{subfigure}{0.31\linewidth}
+        \includegraphics[width=\linewidth]{figure/4_N.jpg}
+        \caption{}
+        \label{fig:subfig_d}
+    \end{subfigure}
+    \quad % Small horizontal gap
+    \begin{subfigure}{0.31\linewidth}
+        \includegraphics[width=\linewidth]{figure/5_N.jpg}
+        \caption{}
+        \label{fig:subfig_e}
+    \end{subfigure}
+    
+    \caption{\footnotesize \textbf{Video Frames Data:} (a) Video\_1\_emb (AMR mapping), (b) Video\_2\_emb (ROS hardware), (c) Video\_3\_emb (Combat robot wiring), (d) Video\_4\_emb (Beetleweight electronics), (e) Video\_5\_emb (Mark 1 robotic arm with gesture control).}
+    \label{fig:main}
+\end{figure}
+
+
+\subsection*{2.4 Frame Captioning}
+ Larger language model, LLaVA and MiniCPM were used to generate caption for the extracted frames shown in Figure \ref{fig:llava_caption}. These models were chosen for their ability to generate accurate and contextually rich captions that give further insight into the visual elements of both embodied and conventional videos. 
+
+
+%\subsubsection{LLaVA-Generated Captions}
+To generate captions for the extracted frames, the LLaVA model was applied to process each video frame to obtain the description of the frame benefiting from the model capability of analyzing and captioning a visual content. This involved loading the frames from video and parsing each image through the LLaVA model. The captions for all the frames were processed where the results were stored  to enable subsequent analyses including content and user engagement correlation analysis. 
+
+%\subsubsection{MiniCPM Generated Captions}
+For ensuring the non-biased LLM analysis, the frames extracted from videos were also captioned using the MiniCPM-V model, a vision-language model that is trained for fine-grained image description. MiniCPM-V also has strong multimodal analysis and can analyze the visual content and generate descriptive captions. Through the use of another LLM model, we can obtain the comparable analysis of the video frame caption dataset to ensure robustness of the analysis. In the process, for each frame, the model was used to generate captions that described the video frame scene in detail as well as provided a summary of the scene. The process involved loading and pre-processing each video frame, then used a structured dialogue-based approach to interact with the model and the prompt to generate video frame captions. The model employed sampling strategies with a regulated temperature to ensure the variety and applicability of the produced captions. The obtained captions reflected the fine-grained details of the visual content, providing a dense textual description for further analysis. This approach ensured the creation of accurate and high-quality captions for all video frames.\\
+
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=2.8in]{figure/caption examples.png}
+  %\vspace{-15pt}
+  %\caption{\hl{Frame along with the caption generated by MiniCPM and LLaVA model from video\_1\_emb}}\label{llava_caption}
+
+    \caption{The example of video frame along with the frame caption generated by MiniCPM and LLaVA model from video\_1\_emb}\label{fig:llava_caption}
+
+    
+  \end{center}
+\end{figure}
+
+\subsection*{2.5 Sentiment Analysis of User Comments and Correlation of User Comments with Frame Caption}
+
+To reveal the user learning experiences of the robotics instructional videos. For the user comments of both conventional and embodied learning videos, the sentiment of the user comments were analyzed through the use of LLaMA-2 model to determine the positive, neutral, and negative user comments. The sentiment analysis of the user comments is expected to reveal the user perception of the video content and their sentimental reaction toward the video content and overall learning experiences through the learning process.  
+
+
+A correlation analysis was also conducted using the LLaMA-2 model to assess the relationship between the generated frame captions and user comments shown in Table \ref{table:full_page_combined_analysis}. This analysis aimed to identify how effectively the captions, derived from video frames, aligned with the topics and technical details discussed in the user comments. By evaluating this correlation between user comments and video content, the study measured the user engagement of the videos through the learning process.
+
+
+\begin{table*}[p] % [p] suggests a dedicated page for these floats
+\centering
+\scriptsize 
+\renewcommand{\arraystretch}{1.0} 
+\setlength{\tabcolsep}{4pt}
+
+% ==========================================
+% SECTION 1: EMBODIED VIDEO ANALYSIS
+% ==========================================
+
+% --- LLaVA EMBODIED ---
+
+\caption{Comprehensive LLaVA and MiniCPM caption correlation analysis for Embodied and Conventional robotics instructional video content.}
+\begin{tabularx}{0.95\textwidth}{|X|}
+\hline
+
+\begin{center}
+ \textbf{Embodied Video (LLaVA Analysis)} \\ 
+  \end{center}
+
+\centering
+\vspace{2pt}
+\includegraphics[width=0.20\textwidth]{figure/frame_0075.jpg} \hfill
+\includegraphics[width=0.20\textwidth]{figure/frame_0076.jpg} \hfill
+\includegraphics[width=0.20\textwidth]{figure/frame_0077 (1).jpg} 
+\vspace{2pt} \\
+\textbf{User Comment:} "Man, I swear there is a button more brushless ESCs than brushed ones at 6 cells battery... might be worth considering if you want to build a brushed motor system for 60 lbs robots." \\
+
+\textbf{Correlated Captions:} 1. Workspace featuring hand holding motor part, soldering iron. 2. DC motors with wiring harnesses and ESCs. 3. Detail of electronic device; text discusses peak power (420W). \\
+\hline
+\textbf{Reason for Correlation:} Correlation between mentioned \textbf{brushless ESCs/motors} and LLaVA identifying \textbf{DC motors/controllers}. Technical discussion aligns with visual assembly context. \\
+\hline 
+\end{tabularx}
+
+\vspace{6pt} 
+
+% --- MiniCPM EMBODIED ---
+\begin{tabularx}{0.95\textwidth}{|X|}
+\hline
+\begin{center}
+ \textbf{Embodied Video (MiniCPM Analysis)} \\ 
+ \end{center}
+\centering
+\vspace{2pt}
+\includegraphics[width=0.20\textwidth]{figure/mini1.jpg} \hfill
+\includegraphics[width=0.20\textwidth]{figure/mini2.jpg} \hfill
+\includegraphics[width=0.20\textwidth]{figure/mini3.jpg} 
+\vspace{2pt} \\
+
+\textbf{User Comment:} "Can I use the MG 996R that rotates 180 degrees, or does it have to be 360?" \\
+
+\textbf{Correlated Captions:} $\bullet$ Robotic arm wrist joint assembly. $\bullet$ DIY setup with blue servo motor and breadboard. $\bullet$ Network of wires connecting battery and circuit board to a robot arm. \\
+\hline
+\textbf{Reason for Correlation:} Query regarding \textbf{MG 996R servo} correlates with the "blue motor" (servo) identified in frames. Visual data of the joint assembly matches the technical query. \\
+\hline
+\end{tabularx}
+
+\vspace{12pt}
+\hrule
+\vspace{12pt}
+
+% ==========================================
+% SECTION 2: CONVENTIONAL VIDEO ANALYSIS
+% ==========================================
+
+% --- LLaVA CONVENTIONAL ---
+\begin{tabularx}{0.95\textwidth}{|X|}
+\hline
+\begin{center}
+ \textbf{Conventional Video Analysis (LLaVA Model)} \\ 
+  \end{center}
+\centering
+\vspace{2pt}
+\includegraphics[width=0.20\textwidth]{figure/frame_0063.jpg} \hfill
+\includegraphics[width=0.20\textwidth]{figure/frame_0064.jpg} \hfill
+\includegraphics[width=0.20\textwidth]{figure/frame_0036.jpg} 
+\vspace{2pt} \\
+
+\textbf{User Comment:} "For CAD I would recommend: 1. Onshape, 2. Solidworks, 3. Autodesk Inventor, 4. Autodesk Fusion360." \\
+
+\textbf{Correlated Captions:} $\bullet$ 3D modeling software featuring "PART BEING DESIGNED". $\bullet$ CAD interface with wireframe geometry and modeling functions. $\bullet$ Industrial workshop showing a CNC mill for manufacturing. \\
+\hline
+\textbf{Reason for Correlation:} The \textbf{CAD software recommendations} correlate with visual evidence of 3D modeling environments and the transition to industrial manufacturing (CNC milling). \\
+\hline
+\end{tabularx}
+
+\vspace{6pt}
+
+% --- MiniCPM CONVENTIONAL ---
+\begin{tabularx}{0.95\textwidth}{|X|}
+\hline
+\begin{center}
+ \textbf{Conventional Video Analysis (MiniCPM Model)} \\ 
+  \end{center}
+\centering
+\vspace{2pt}
+\includegraphics[width=0.20\textwidth]{figure/frame_0066.jpg} \hfill
+\includegraphics[width=0.20\textwidth]{figure/frame_0067.jpg} \hfill
+\includegraphics[width=0.20\textwidth]{figure/frame_0068.jpg} 
+\vspace{2pt} \\
+
+\textbf{User Comment:} "Great introduction to C programming. Not much Arduino though." \\
+
+\textbf{Correlated Captions:} $\bullet$ Diagram illustrating \texttt{while} loop logic and flow. $\bullet$ Screenshot of text editor with "C++ Arduino code". $\bullet$ Flow diagram explaining iterative \texttt{do-while} loops and \texttt{if} statements. \\
+\hline
+\textbf{Reason for Correlation:} Connection is direct; frames provide instruction on core \textbf{C/C++ programming constructs} (loops and logic) as applied to Arduino. \\
+\hline
+\end{tabularx}
+
+
+\label{table:full_page_combined_analysis}
+\end{table*}
+
+
+
+To obtain the video content reliably, the captions corresponding to three successive frames were combined. It therefore made it possible to have a continuous view of the video segment to correlate to the video comments. The concatenation enabled the model to capture sequential information of the video frames. For example, the video frames dedicated to the elaborations of robotics platform DIY steps and procedures that requires more than one frame of the video. Therefore, our approach will ensure summarized in a much better way.The process involved comparing each user comment with captions corresponding to three consecutive frames.
+
+The LLaMA-2 model was utilized to determine the correlation between user comments and video frame captions, where the user comment and frame caption were used as the input for the model. The LLaMA-2 model provided a confidence score (0 to 100), quantifying the strength of the correlation. High correlation scores indicated strong coherence between user comments and video content. The correlation was applied separately to the video frame captions generated by LLAVA and MiniCPM for ensuring the robustness and comparison of the results, providing insights into the comparative analysis of the video visual content and user engagement with videos. 
+
+
+
+\subsection*{2.6 User Study Data and Results Analysis}
+
+We performed the user study involving 20 participants for learning from 130 Youtube videos. The videos were categorized conventional and embodied videos. The 130 videos consisted of 74 embodied videos
+and 56 conventional videos. Videos were presented to the users, and user engagement and learning outcomes were assessed by and analyzing user feedback after watching the videos. With the user feedback and video frame captions, the correlation analysis was computed between these user comments and the video frame captions to quantify the user engagement of the videos.
+
+
+We have performed the analysis of the videos characteristics as well as analyzing the relationship between video content and user engagement. For this, seven quantitative metrics were defined. Specifically, we have defined the following metrics for evaluating the videos and user engagement with the videos.   
+
+\begin{itemize}
+
+    \item \textbf{Per Video Caption Word Count ($W_{cap}$):} The total number of words in the video caption, serving as an indicator for the volume of verbal instructional content.
+
+    \item \textbf{Per Video Duration ($T$):} The temporal length of the video in seconds.
+
+    \item \textbf{Per Video Caption Density ($\rho_{cap}$):} The rate of verbal information delivery, defined as the number of per video caption words dividing by video length (words/seconds). This metric indicates the informational intensity of the video.
+    \begin{equation}
+        \rho_{cap} = \frac{W_{cap}}{T}
+    \end{equation}
+    
+\end{itemize}
+
+The results of video user comments are also shown in below.
+
+\begin{itemize}
+
+    \item \textbf{Per Video Comments Count ($N_{com}$):} The total number of student comments collected for each video, quantifying the volume of learner feedback.
+
+
+    \item \textbf{Engagement Rate ($R_{eng}$):} The engagement of users for video, measured by comments per minute.
+    \begin{equation}
+        R_{eng} = \frac{N_{com}}{T/60}
+    \end{equation}
+    
+\end{itemize}
+
+The results of correlation between video content and user comments are shown in below. 
+
+\begin{itemize}
+
+    \textbf{Correlation Score ($S_{corr}$):} The average correlation between user comments and captions across user comments and video captions. It is calculated as:
+    \begin{equation}
+        S_{corr} = \frac{1}{N_c} \sum_{i=1}^{N_c} s(c_i, v)
+    \end{equation}
+    where $N_c$ is the total number of comments and $s(c_i, v)$ denotes the relevance score of the $i$-th comment $c_i$ to video $v$.
+
+    \item \textbf{Correlation Efficiency ($\eta_{corr}$):} The percentage of the correlation score greater than the set threshold score $\tau$ (set to 60\%). This metric reflects the strength of the correlation between the user comment and the video frame caption.
+    \begin{equation}
+        \eta_{corr} = \frac{|\{s_i \mid s_i \ge \tau\}|}{N_{total}}
+    \end{equation}
+    where $N_{total}$ is the total number of candidate correlations evaluated and $s_i$ represents the confidence score of the $i$-th candidate.
+
+    
+\end{itemize}
+
+
+
+\section*{3. Results}
+
+
+
+%\subsection{Correlation and Relevance Assessment}
+Table \ref{tab:emb_llava} presents the correlation results for embodied videos using the LLaVA-generated captions. The results indicate a generally high level of alignment between user comments and the visual content analyzed by LLaVA. For instance, for the video of Video\_8\_emb, which focuses on a DIY drone, it shows a robust correlation with 899 out of 1332 comments being relevant to the video frame captions. Similarly, Video\_5\_emb (Robotic Arm) demonstrates strong engagement with 465 correlated comments out of 623. This suggests that LLaVA is effective at identifying the key visual elements in hands-on robotics tasks that users are actively discussing. However, there is some variability. As shown in Video\_1\_emb, where fewer comments are shown correlated,  is possibly attributed to the specific nature of the discussions not relevant to video content.
+Table \ref{tab:con_llava} summarizes the results for conventional videos using LLaVA captions. Here, the performance varies significantly depending on the video content. Video\_1\_con (Computer Vision) and Video\_4\_con (Electronics Basics) show decent correlation counts of 615 and 422 respectively, reflecting the popularity of these foundational topics. However, many other videos in this category, such as Video\_2\_con and Video\_3\_con, show almost negligible correlation (1 correlated comment). This highlights a potential limitation of LLaVA in understanding the abstract or theoretical concepts often presented in conventional lecture-style videos, or simply a lack of relevant user engagement with those visual elements. 
+
+
+Specifically, the overall ratio of the correlated comments versus total comment is more pronounced (Embodied: 266.4/395.9=0.67 versus Conventional: 127.3/275.3=0.46) for the embodied learning videos in comparison to the conventional learning videos. This has therefore suggests the overall effectiveness of the use of embodied learning videos for robotics instruction. The results were obtained through the use of videos with wide range of user comments from 3 - 1332, hence reinforcing that for both less engaging and engaging videos, they showed a similar patterns for the user engagement.  
+
+\begin{table}[H] % Forced placement
+    \centering
+    \caption{Total and Correlated Comments for Embodied Learning Videos (LLaVA Captions)}
+    \label{tab:emb_llava}
+   % \rowcolors{2}{gray!15}{white} % Starts coloring from the second row
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Video Id} & \textbf{Total Comments} & \textbf{Correlated Comments} \\
+        \midrule
+        Video\_1\_emb\_LLaVA  & 54   & 44  \\
+        Video\_2\_emb\_LLaVA  & 271  & 180 \\
+        Video\_3\_emb\_LLaVA  & 128  & 67  \\
+        Video\_4\_emb\_LLaVA  & 24   & 19  \\
+        Video\_5\_emb\_LLaVA  & 623  & 465 \\
+        Video\_6\_emb\_LLaVA  & 214  & 129 \\
+        Video\_7\_emb\_LLaVA  & 559  & 448 \\
+        Video\_8\_emb\_LLaVA  & 1332 & 899 \\
+        Video\_9\_emb\_LLaVA  & 248  & 147 \\
+        Video\_10\_emb\_LLaVA & 506  & 266 \\
+        \textbf{Average} & 395.9 & 266.4 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+
+\begin{table}[H] % Forced placement: "Stay Here"
+    \centering
+    \caption{Total and Correlated Comments for Conventional Learning Videos (LLaVA Generated Captions)}
+    \label{tab:con_llava}
+    %\rowcolors{2}{gray!15}{white} % Alternate row colors
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Video Id} & \textbf{Total Comments} & \textbf{Correlated Comments} \\
+        \midrule
+        Video\_1\_con\_LLaVA  & 980  & 615 \\
+        Video\_2\_con\_LLaVA  & 6    & 1   \\
+        Video\_3\_con\_LLaVA  & 3    & 1   \\
+        Video\_4\_con\_LLaVA  & 1408 & 422 \\
+        Video\_5\_con\_LLaVA  & 129  & 75  \\
+        Video\_6\_con\_LLaVA  & 109  & 83  \\
+        Video\_7\_con\_LLaVA  & 54   & 47  \\
+        Video\_8\_con\_LLaVA  & 15   & 11  \\
+        Video\_9\_con\_LLaVA  & 29   & 13  \\
+        Video\_10\_con\_LLaVA & 20   & 5   \\
+        \textbf{Average} & 275.3 & 127.3 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+Table \ref{tab:emb_minicpm} displays the correlation metrics for embodied videos when using MiniCPM for captioning. The results are comparable to LLaVA but with some notable differences. For Video\_8\_emb, MiniCPM achieved 829 correlated comments, slightly lower than LLaVA's 899. Conversely, for Video\_2\_emb, MiniCPM identified 182 correlated comments, marginally outperforming LLaVA. This indicates that MiniCPM produces captions that are competitive in describing physical robotics activities. The consistency across most embodied videos suggests that MiniCPM is a viable lightweight alternative LLM model for processing hands-on instructional content. Table \ref{tab:con_minicpm} presents the performance of MiniCPM on conventional videos. Interestingly, MiniCPM demonstrates a distinct advantage in this category compared to LLaVA. For Video\_1\_con video, it achieved 809 correlated comments, significantly higher than LLaVA's 615. Similarly, for Video\_4\_con, the correlated count has increased to 700. This suggests that MiniCPM's captioning style might be better suited for the static slides or specific visual formats common in conventional tutorials, allowing it to capture more of the text-heavy or schematic information in users comments of the videos. The contrasted differences (Embodied: 251.7/395.9, Conventional: 174.4/275.3) of the ratio of the correlated comments between embodied learning and conventional learning videos shows slightly stronger user engagement for the embodied learning videos. 
+
+
+\begin{table}[H] % Forced placement: "Stay Here"
+    \centering
+    \caption{Total and Correlated Comments for Embodied Learning Videos (MiniCPM Generated Captions)}
+    \label{tab:emb_minicpm}
+    %\rowcolors{2}{gray!15}{white} % Alternate row colors
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Video Id} & \textbf{Total Comments} & \textbf{Correlated Comments} \\
+        \midrule
+        Video\_1\_emb\_MiniCPM  & 54   & 32  \\
+        Video\_2\_emb\_MiniCPM  & 271  & 182 \\
+        Video\_3\_emb\_MiniCPM  & 128  & 80  \\
+        Video\_4\_emb\_MiniCPM  & 24   & 21  \\
+        Video\_5\_emb\_MiniCPM  & 623  & 438 \\
+        Video\_6\_emb\_MiniCPM  & 214  & 100 \\
+        Video\_7\_emb\_MiniCPM  & 559  & 417 \\
+        Video\_8\_emb\_MiniCPM  & 1332 & 829 \\
+        Video\_9\_emb\_MiniCPM  & 248  & 128 \\
+        Video\_10\_emb\_MiniCPM & 506  & 290 \\
+        \textbf{Average} & 395.9 & 251.7 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+
+
+\begin{table}[H] % Forced placement: "Stay Here"
+    \centering
+    \caption{Total and Correlated Comments for Conventional Learning Videos (MiniCPM Generated Captions)}
+    \label{tab:con_minicpm}
+    %\rowcolors{2}{gray!15}{white} % Alternate row colors
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Video Id} & \textbf{Total Comments} & \textbf{Correlated Comments} \\
+        \midrule
+        Video\_1\_con\_MiniCPM  & 980  & 809 \\
+        Video\_2\_con\_MiniCPM  & 6    & 3   \\
+        Video\_3\_con\_MiniCPM  & 3    & 1   \\
+        Video\_4\_con\_MiniCPM  & 1408 & 700 \\
+        Video\_5\_con\_MiniCPM  & 129  & 85  \\
+        Video\_6\_con\_MiniCPM  & 109  & 76  \\
+        Video\_7\_con\_MiniCPM  & 54   & 37  \\
+        Video\_8\_con\_MiniCPM  & 15   & 10  \\
+        Video\_9\_con\_MiniCPM  & 29   & 15  \\
+        Video\_10\_con\_MiniCPM & 20   & 8   \\
+        \textbf{Average} & 275.3 & 174.4 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+Table \ref{tab:em_integrated} illustrates the results for conventional videos using the integrated approach, which combines insights from both LLaVA and MiniCPM. This method yields the most comprehensive correlation results. For Video\_4\_con, the number of correlated comments peaked at 911, and Video\_1\_con saw an increase to 834. This improvement confirms that the integrated model successfully bridges the gaps left by individual models, showing a wider array of relevant content. The breakdown of the sentiment has revealed that a significant portion of these correlated comments are positive (e.g., 513 positive for Video\_4\_con), indicating that when the content is accurately identified, it aligns well with learner appreciation. Table \ref{tab:emb_integrated} shows the results for embodied videos using the integrated captioning approach. This method consistently maximizes the matching between captions and user feedback. For example, for the video of video\_8\_emb, there are 1090 correlated comments, the highest specific value observed, with a strong positive sentiment ratio. % Similarly, for the video of Video\_5\_emb, it is associated with 551 correlated comments. The detailed sentiment analysis provided in this table shows high counts of positive and neutral comments compared to negative ones, reinforcing the observation that embodied learning videos are associated with constructive and relevant engagement.
+
+\begin{table}[H] % Forced placement: "Stay Here"
+    \centering
+    \caption{Total Comments and Correlated Comments for Conventional Learning Videos (Integrated Captions)}
+    \label{tab:em_integrated}
+   % \rowcolors{2}{gray!15}{white} 
+   % \resizebox{\textwidth}{!}{ % Ensures the 6-column table fits the page width
+    \begin{tabular}{lccccc} 
+        \toprule
+        \textbf{Video ID} & \textbf{Total} & \textbf{Correlated} & \textbf{Positive} & \textbf{Neutral} & \textbf{Negative} \\
+        \midrule
+        Video\_1\_con  & 980  & 834  & 215 & 310 & 309 \\
+        Video\_2\_con  & 6    & 4    & 3   & 1   & 0   \\
+        Video\_3\_con  & 3    & 1    & 1   & 0   & 0   \\
+        Video\_4\_con  & 1408 & 911  & 513 & 313 & 85  \\
+        Video\_5\_con  & 129  & 82   & 35  & 47  & 10  \\
+        Video\_6\_con  & 109  & 81   & 39  & 30  & 12  \\
+        Video\_7\_con  & 54   & 46   & 17  & 20  & 9   \\ 
+        Video\_8\_con  & 15   & 11   & 7   & 4   & 0   \\
+        Video\_9\_con  & 29   & 16   & 8   & 7   & 1   \\
+        Video\_10\_con & 20   & 5    & 5   & 0   & 0   \\
+        \textbf{Average} & 275.3 & 199.1 & 84.3 & 73.2 & 42.6 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+
+
+\begin{table}[H] % Forced placement: "Stay Here"
+    \centering
+    \caption{Sentiment Distribution for Correlated Comments in Embodied Learning Videos}
+    \label{tab:emb_integrated}
+    \small % Slightly smaller font to ensure fit
+    \begin{tabularx}{\linewidth}{l @{\extracolsep{\fill}} ccccc}
+        \toprule
+        \textbf{Video ID} & \textbf{Total} & \textbf{Corr.} & \textbf{Pos.} & \textbf{Neu.} & \textbf{Neg.} \\
+        \midrule
+        Video\_1\_emb  & 54   & 49   & 33  & 16  & 0   \\
+        Video\_2\_emb  & 271  & 240  & 124 & 89  & 27  \\
+        Video\_3\_emb  & 128  & 96   & 41  & 42  & 13  \\
+        Video\_4\_emb  & 24   & 23   & 16  & 7   & 0   \\
+        Video\_5\_emb  & 623  & 551  & 318 & 204 & 29  \\
+        Video\_6\_emb  & 214  & 166  & 113 & 39  & 14  \\
+        Video\_7\_emb  & 559  & 486  & 141 & 273 & 72  \\ 
+        Video\_8\_emb  & 1332 & 1090 & 515 & 514 & 61  \\
+        Video\_9\_emb  & 248  & 199  & 139 & 44  & 16  \\
+        Video\_10\_emb & 506  & 398  & 224 & 121 & 53  \\
+        \textbf{Average} & 395.9 & 329.8 & 166.4 & 134.9 & 28.5 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+
+\subsection*{3.1 Statistical Analysis}
+
+To rigorously assess differences between embodied and conventional learning videos, statistical hypothesis tests were performed across the key metrics. The Shapiro-Wilk test was first applied to each group to assess the normality of the data distributions. For metrics satisfying the normality assumption ($p > 0.05$), an independent samples t-test (Welch's variant) was used. For non-normally distributed metrics, the non-parametric Mann-Whitney U test was employed. Cohen's $d$ was computed as the effect size measure, where $|d| < 0.2$ is considered negligible, $0.2 \le |d| < 0.5$ is small, $0.5 \le |d| < 0.8$ is medium, and $|d| \ge 0.8$ is large~\cite{cohen1988statistical}. The significance level was set at $\alpha = 0.05$. The results are summarized in Table~\ref{tab:stat_tests}.
+
+For the user study involving 130 videos (74 embodied, 56 conventional), the engagement rate showed a small positive effect ($d = 0.275$, $p = 0.126$) favoring embodied videos, and the correlation efficiency metric also showed a small positive effect ($d = 0.230$, $p = 0.215$) in the same direction. Video duration showed a small negative effect ($d = -0.399$, $p = 0.132$), indicating that embodied videos tended to be shorter. While these differences did not reach statistical significance at $\alpha = 0.05$, the consistent directional trends across all engagement-related metrics support the descriptive observations.
+
+For the YouTube comment analysis involving 20 curated videos (10 embodied, 10 conventional), the integrated correlation ratio demonstrated a statistically significant difference ($t = 3.254$, $p = 0.008$, $d = 1.455$, large effect), confirming that the integrated LLaVA-MiniCPM approach captured significantly higher content--comment alignment for embodied videos (M = 0.844) compared to conventional videos (M = 0.626). The LLaVA correlation ratio also approached significance ($p = 0.070$) with a large effect size ($d = 0.885$). These results provide strong statistical evidence that embodied learning videos generate higher content-aligned user engagement.
+
+
+\begin{table}[H]
+    \centering
+    \caption{Statistical Comparison of Embodied vs.\ Conventional Videos}
+    \label{tab:stat_tests}
+    \scriptsize
+    \begin{tabular}{l c c c c c c}
+        \toprule
+        \textbf{Metric} & \textbf{Emb.\ Mean$\pm$SD} & \textbf{Con.\ Mean$\pm$SD} & \textbf{Test} & \textbf{$p$-value} & \textbf{Cohen's $d$} & \textbf{Sig.} \\
+        \midrule
+        \multicolumn{7}{l}{\textbf{User Study (130 Videos)}} \\
+        \midrule
+        Avg. Corr. Score & $57.31 \pm 19.76$ & $53.51 \pm 20.99$ & U & $0.327$ & $0.187$ (Neg.) & n.s. \\
+        Caption Words & $54510 \pm 43491$ & $73843 \pm 80246$ & U & $0.118$ & $-0.312$ (S) & n.s. \\
+        Comment Count & $2.07 \pm 1.53$ & $1.91 \pm 1.75$ & U & $0.206$ & $0.096$ (Neg.) & n.s. \\
+        Duration (s) & $699 \pm 417$ & $964 \pm 891$ & U & $0.132$ & $-0.399$ (S) & n.s. \\
+        Caption Density & $74.06 \pm 26.23$ & $77.65 \pm 29.80$ & U & $0.080$ & $-0.129$ (Neg.) & n.s. \\
+        Engagement Rate & $0.27 \pm 0.34$ & $0.19 \pm 0.21$ & U & $0.126$ & $0.275$ (S) & n.s. \\
+        Corr. Efficiency & $0.62 \pm 0.27$ & $0.55 \pm 0.28$ & U & $0.215$ & $0.230$ (S) & n.s. \\
+        \midrule
+        \multicolumn{7}{l}{\textbf{YouTube Comment Analysis (20 Videos)}} \\
+        \midrule
+        Corr. Ratio (LLaVA) & $0.674 \pm 0.111$ & $0.507 \pm 0.242$ & t & $0.070$ & $0.885$ (L) & n.s. \\
+        Corr. Ratio (MiniCPM) & $0.639 \pm 0.117$ & $0.578 \pm 0.153$ & t & $0.330$ & $0.449$ (S) & n.s. \\
+        Corr. Ratio (Integ.) & $0.844 \pm 0.067$ & $0.626 \pm 0.200$ & t & $0.008$ & $1.455$ (L) & ** \\
+        Pos.\ Sent.\ Ratio & $0.560 \pm 0.136$ & $0.599 \pm 0.252$ & t & $0.672$ & $-0.193$ (Neg.) & n.s. \\
+        Neu.\ Sent.\ Ratio & $0.360 \pm 0.106$ & $0.314 \pm 0.185$ & t & $0.508$ & $0.304$ (S) & n.s. \\
+        Neg.\ Sent.\ Ratio & $0.080 \pm 0.053$ & $0.099 \pm 0.119$ & U & $1.000$ & $-0.206$ (S) & n.s. \\
+        \bottomrule
+        \multicolumn{7}{l}{\scriptsize Neg.\ = Negligible, S = Small, L = Large. * $p<0.05$, ** $p<0.01$, n.s.\ = not significant.}
+    \end{tabular}
+\end{table}
+
+
+
+\subsection*{3.2 User Study Results}
+
+\pgfplotstableread[col sep=comma]{metrics_summary.csv}\datatable
+
+
+% =======
+% FIG. 01
+% =======
+
+%\subsection{Overview of Experimental Results}
+%This section presents a comparative analysis of embodied versus conventional robotics learning videos based on the quantitative metrics defined previously. The results, summarized in Figure \ref{fig:combined_metrics}, highlight significant differences in user engagement and content delivery characteristics.
+
+
+%\subsection{Engagement Analysis}
+User study results showed the user engagement differences between the embodied versus conventional learning videos shown in Figure 5 and 6. Embodied robotics videos are associated with a higher level of user interaction, where users frequently discuss specific mechanical or programming details shown in the videos. For example, video Video\_8\_emb has engaged 1332 comments, indicating user interests in the DIY drone assembly process. In contrast, conventional videos showed higher variance in engagement, while video Video\_4\_con (Arduino basics) is associated with 1408 comments. Other conventional videos such as Video\_2\_con and Video\_3\_con have received negligible feedback (6 and 3 comments respectively). 
+
+There is a clear difference between the conventional learning videos and the embodied learning videos in terms of the user engagement. Such difference suggests that while foundational theory class of robotics can be used for robotics instruction, hands-on embodied demonstrations consistently foster more active learner's participation. The User study also yielded the descriptive statistics of the videos through the metrics of video frame caption word counts and video frame caption density.
+
+
+The user study has also revealed the results of the user engagement with the videos. Specifically, Figure 5 shows a clear correlation between the user comments and video content, where the embodied learning videos are associated with stronger correlation between the user comments and video content, whereas the conventional learning videos shows less correlation between them. The results support the hypothesis that embodied learning is more supportive in engaging users through the video visual content. Specifically, embodied learning videos have provided rich visual context that generated detailed captions, further supporting the hypothesis that physical interaction has provided a more engaging learning experiences for users compared to sole theoretical-based robotics learning process.
+
+
+\bigskip\par
+\noindent
+\begin{minipage}{\textwidth}
+    \centering
+    \pgfplotsset{
+        every axis/.append style={
+            scale only axis,
+            height=4.5cm,       % Significantly taller
+            width=0.75\linewidth, % Fills the subfigure width
+            baseline=(current axis.south),
+            tick label style={font=\small}, 
+            label style={font=\small},            
+            title style={font=\normalsize, yshift=2pt}, 
+            ylabel shift=-3pt,
+            clip=false,
+        }
+    }
+    
+    \begin{subfigure}[t]{0.32\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                ybar, symbolic x coords={Conv, Emb}, xtick=data,
+                ylabel={Score}, ymin=0, ymax=80, enlarge x limits=0.6,
+                nodes near coords, nodes near coords style={font=\small, yshift=4pt, color=blue},
+                title={Avg. Correlation}, ymajorgrids=true, grid style=dashed,
+            ]
+                \addplot+[error bars/.cd, y dir=both, y explicit] table [x=Label, y=CorrMean, y error=CorrSEM] {\datatable};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{\small Correlation}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.32\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                ybar, symbolic x coords={Conv, Emb}, xtick=data,
+                ylabel={Count}, ymin=0, ymax=100000, enlarge x limits=0.6,
+                yticklabel={\pgfmathprintnumber{\tick}k},
+                nodes near coords, nodes near coords style={font=\small, yshift=10pt, color=blue},
+                title={Avg. Words}, ymajorgrids=true, grid style=dashed,
+            ]
+                \addplot+[error bars/.cd, y dir=both, y explicit] table [x=Label, y=WordMean, y error=WordSEM] {\datatable};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{\small Word Count}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.32\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                ybar, symbolic x coords={Conv, Emb}, xtick=data,
+                ylabel={Count}, ymin=0, ymax=3, enlarge x limits=0.6,
+                nodes near coords, nodes near coords style={font=\small, yshift=8pt, color=blue},
+                title={Avg. Comments}, ymajorgrids=true, grid style=dashed,
+            ]
+                \addplot+[error bars/.cd, y dir=both, y explicit] table [x=Label, y=CommMean, y error=CommSEM] {\datatable};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{\small Comments}
+    \end{subfigure}
+    \vspace{0.8em}
+    \captionof{figure}{User study results for correlation between user comments and video content, caption density, user engagement, and efficiency in user engagement with video content.}
+\end{minipage}
+
+
+\vspace{4em} % Large vertical gap for clear separation
+\noindent
+\begin{minipage}{\textwidth}
+    \centering
+    \pgfplotsset{
+        every axis/.append style={
+            scale only axis,
+            height=4.5cm, 
+            width=0.65\linewidth, 
+            baseline=(current axis.south),
+            tick label style={font=\small}, 
+            label style={font=\small},            
+            title style={font=\normalsize, yshift=6pt}, 
+            ylabel shift=-3pt,
+            clip=false,
+        }
+    }
+    
+    \begin{subfigure}[t]{0.24\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                ybar, symbolic x coords={Conv, Emb}, xtick=data,
+                ylabel={Seconds}, ymin=0, ymax=1300, enlarge x limits=0.7,
+                title={Duration}, nodes near coords, nodes near coords style={font=\small, yshift=10pt, color=blue},
+                ymajorgrids=true, grid style=dashed,
+            ]
+                \addplot+[error bars/.cd, y dir=both, y explicit] table [x=Label, y=DurMean, y error=DurSEM] {\datatable};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{\small Duration}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.24\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                ybar, symbolic x coords={Conv, Emb}, xtick=data,
+                ylabel={Words/s}, ymin=0, ymax=100, enlarge x limits=0.7,
+                title={Density}, nodes near coords, nodes near coords style={font=\small, yshift=4pt, color=blue},
+                ymajorgrids=true, grid style=dashed,
+            ]
+                \addplot+[error bars/.cd, y dir=both, y explicit] table [x=Label, y=DensMean, y error=DensSEM] {\datatable};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{\small Density}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.24\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                ybar, symbolic x coords={Conv, Emb}, xtick=data,
+                ylabel={Comm/min}, ymin=0, ymax=0.35, enlarge x limits=0.7,
+                title={Engagement}, nodes near coords, nodes near coords style={font=\small, yshift=15pt, color=blue, /pgf/number format/precision=3},
+                ymajorgrids=true, grid style=dashed,
+            ]
+                \addplot+[error bars/.cd, y dir=both, y explicit] table [x=Label, y=EngMean, y error=EngSEM] {\datatable};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{\small Engagement}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.24\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                ybar, symbolic x coords={Conv, Emb}, xtick=data,
+                ylabel={Ratio}, ymin=0, ymax=1, enlarge x limits=0.7,
+                title={Efficiency}, nodes near coords, nodes near coords style={font=\small, yshift=4pt, color=blue},
+                ymajorgrids=true, grid style=dashed,
+            ]
+                \addplot+[error bars/.cd, y dir=both, y explicit] table [x=Label, y=EffMean, y error=EffSEM] {\datatable};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{\small Efficiency}
+    \end{subfigure}
+    \vspace{0.8em}
+    \captionof{figure}{User study results for video duration, caption density, user engagement, and efficiency in user engagement with video content.}
+\end{minipage}
+
+%\bibliographystyle{IEEEtran}
+%bibliography{main}
+
+
+\section*{Conclusions}
+
+Our study has shown the difference of the user engagement for the conventional and embodied learning robotics instructional videos. The results have demonstrated the contrastable differences between the two videos in terms of the user engagement. The results are evident in showing the enhanced engagement among embodied learning videos.
+
+Overall, in contrast to conventional videos, the embodied learning videos have more user comments showing that the embodied learning videos are more popular among learners. Furthermore, the ratio of the correlated user engagement versus the entire comments is slightly more pronounced among embodied learning videos in comparison with the conventional videos. Such results have been verified through both LLaVA and MiniCPM LLMs further reinforcing the results and conclusions.  
+
+The integration of both LLaVA and MiniCPM LLMs is also able to show promising results with higher confidence. The integration of the results have demonstrated the advantages and reliability of the results showing more correlated user comments with video content for both conventional and embodied learning videos. Notably, the integrated correlation ratio showed a statistically significant difference between embodied and conventional videos ($p = 0.008$, Cohen's $d = 1.455$, large effect), providing strong evidence that embodied learning videos achieve higher content--comment alignment. The LLaVA correlation ratio also exhibited a large effect size ($d = 0.885$), approaching significance ($p = 0.070$). It also shows that the embodied learning videos are associated with more positive reviews in comparison with the conventional videos. Fewer number of negative reviews are evident among the embodied learning videos. It thus shows the effectiveness of the use of embodied learning videos in comparison with the conventional videos.  
+
+The user study shows that there is increased user engagement with the embodied learning videos in comparison with the conventional learning videos. Across the 130-video user study, the engagement rate ($d = 0.275$) and correlation efficiency ($d = 0.230$) both exhibited small positive effects favoring embodied videos. While these individual metrics did not reach statistical significance at $\alpha = 0.05$, the consistent directional trends across all engagement-related metrics collectively support the advantage of embodied learning videos. A stronger correlation between user comments and video content is evident. Furthermore, it is clear that there is increased user engagement efficiency among embodied learning videos, where the number of significant correlation (more than 60\% correlation score) has been shown evident thus reinforcing the advantages in using the embodied learning videos for robotics instruction and workforce training.  
+
+\section*{Acknowledgment}
+
+This work was funded by National Science Foundation, Division Of Engineering Education and Centers, Grant/Award Number: 2306285.
+
+\section*{Conflict of Interest}
+We do not declare the conflict of interests through the research.
+
+\bibliographystyle{unsrtnat} %Can use a different style as long as it is one which uses numbered references in the text.
+\bibliography{ASEEpaper}
+
+
+
+\end{document}
