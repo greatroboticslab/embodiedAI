@@ -1,0 +1,1201 @@
+%
+% IEEE Transactions on Microwave Theory and Techniques example
+% Tibault Reveyrand - http://www.microwave.fr
+%
+% http://www.microwave.fr/LaTeX.html
+% ---------------------------------------
+
+
+
+% ================================================
+% Please HIGHLIGHT the new inputs such like this :
+% Text :
+%  \hl{comment}
+% Aligned Eq. 
+% \begin{shaded}
+% \end{shaded}
+% ================================================
+
+% ================================================
+
+\documentclass[journal]{IEEEtran}
+\usepackage{pgfplots}
+\usepackage{subcaption} 
+\usepackage{filecontents} 
+\pgfplotsset{compat=1.18}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs} % For professional table lines
+\usepackage{xcolor}   % For row and cell coloring
+\usepackage{colortbl} 
+\usepackage[table,xcdraw]{xcolor} % Ensure the table option is loaded for xcolor
+%\usepackage[retainorgcmds]{IEEEtrantools}
+%\usepackage{bibentry}  
+\usepackage{xcolor,soul,framed} %,caption
+%\usepackage{subcaption} % REMOVED DUPLICATE
+\colorlet{shadecolor}{yellow}
+\usepackage{graphicx} % For including graphics
+% \usepackage{color,soul}
+\usepackage[pdftex]{graphicx}
+\graphicspath{{../pdf/}{../jpeg/}}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+
+\usepackage[cmex10]{amsmath}
+%Mathabx do not work on ScribTex => Removed
+%\usepackage{mathabx}
+\usepackage{array}
+\usepackage{mdwmath}
+\usepackage{mdwtab}
+\usepackage{eqparbox}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{lipsum}
+\usepackage{array}
+\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{geometry}
+\usepackage{booktabs} 
+\usepackage{colortbl} % For row coloring
+\usepackage{xcolor}   % For defining custom colors
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage{stfloats} % For placing table* at the bottom of the page if needed
+%\bstctlcite{IEEE:BSTcontrol}
+
+
+%=== TITLE & AUTHORS ====================================================================
+
+\begin{filecontents*}{metrics_summary_v2.csv}
+Label,CorrMean,CorrSEM,WordMean,WordSEM,TopicMean,TopicSEM,CommMean,CommSEM,DurMean,DurSEM,DensMean,DensSEM,TopDensMean,TopDensSEM,EngMean,EngSEM,EffMean,EffSEM
+Conv,51.7498,3.6918,2636.8750,354.6209,4.3750,0.3434,1.7857,0.2454,963.9678,119.0904,159.9367,4.3504,0.4159,0.0492,0.1715,0.0295,0.4709,0.0519
+Emb,37.7158,3.5042,1530.8378,179.7932,3.7027,0.2954,1.6892,0.1731,695.9578,49.0129,111.5617,9.2031,0.3539,0.0330,0.2044,0.0359,0.3221,0.0406
+\end{filecontents*}
+
+\begin{document}
+\bstctlcite{IEEEexample:BSTcontrol}
+    \title{A Comparative Study of Embodied and Non-Embodied Learning Approaches in Learning Robotics with LLM (Draft)}
+  \author{Hongbo Zhang,~\IEEEmembership{ Member,~IEEE,} Reshma Rajan \\
+      Benjamin Li,
+      Natalie Galvan% <-this % stops a space
+
+  \thanks{Manuscript received March 10, 2025. This work was funded  by National Science Foundation, Division Of Engineering Education and Centers, Grant/Award Number: 2306285}
+  \thanks{H. Zhang is with Department of Engineering Technology, Middle Tennessee State University, City, Murfreesboro, TN, 37132, USA (e-mail: hbzhang@mtsu.edu).}% <-this % stops a space
+  \thanks{R. Rajan is with Data Science of Middle Tennessee State University, City, Murfreesboro, TN, 37132, USA (e-mail: rr6e@mtmail.mtsu.edu).} 
+  \thanks{B. Li is with Department of Engineering Technology, Middle Tennessee State University, City, Murfreesboro, TN, 37132, USA (e-mail:
+benjaminliyo@gmail.com).}%
+ \thanks{N. Galvan is with Department of Engineering Technology, Middle Tennessee State University, City, Murfreesboro, TN, 37132, USA (e-mail: ngp2j@mtmail.mtsu.edu).}}
+ % <-this % stops a space
+
+
+% The paper headers
+\markboth{IEEE TRANSACTIONS ON LEARNING TECHNOLOGY
+}{Roberg \MakeLowercase{\textit{et al.}}: High-Efficiency Diode and Transistor Rectifiers}
+
+
+% ====================================================================
+\maketitle
+
+
+
+% === ABSTRACT ====================================================================
+% =================================================================================
+\begin{abstract}
+%\boldmath
+This research explored the use of the embodied learning-centered videos for robotics instruction. The engagement of the videos is studied through the video user comments. The correlation between video user comments and the video frames were analyzed. The strong correlation between the user comments and video frame captions were identified. Specifically, the research has identified the learnable elements in the videos for users to interact and engage. The engagement with the learning elements of the videos have been also demonstrated. User study was also performed with both embodied learning videos and conventional learning videos. The results of the user study show that the use of the embodied learning elements in the videos have reinforced the learning effectiveness with positive learning outcomes. The research has practical implications for the enhancement of the robotics workforce training for robotics technology.           
+
+\end{abstract}
+
+
+% === KEYWORDS ====================================================================
+% =================================================================================
+\begin{IEEEkeywords}
+\hl{Embodied Learning, Robotics, AI}
+\end{IEEEkeywords}
+
+
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+% ====================================================================
+% ====================================================================
+% ====================================================================
+
+
+% === I. INTRODUCTION =============================================================
+% =================================================================================
+\section{Introduction}
+
+\IEEEPARstart{T}{he} cognitive interest in the relation between mind and body has developed in different fields since the 1990’s and the concept of embodied knowing has postulated over the last decade. Embodied learning is a perspective in learning, which captures the physical way of learning and participation of learners within their socio material context. On the other hand, conventional approaches of learning are mainly based on imparting of knowledge through cognitive skills learned via lectures or text books whereby it is accepted that learning occurs in isolation.Embodied learning paradigm places the entire learning process within the overlapping plane of cognitive, sensorial, affective and psychomotor functioning while placing the learner within his/her contextual environment [].This approach is most relevant to robotics education since students can interact and manipulate physical parts of the robots, which will enhance the achievement of learning outcomes. Thus, embodied learning involves the students in the process of the practical application of the theoretical material whose effect is amplified by involving the student in kinesthetic activity. This integration not only compounding helps in grasping of some concepts but also makes it easier to reinforce these concepts in the long-term memory thus making the understanding of the principles of robotics more robust.\\
+
+
+
+
+
+
+% === II. METHODOLOGY ========================
+% =================================================================================
+\section{METHODOLOGY}
+
+
+
+
+% =======
+% FIG. 01
+% =======
+
+This study employed a structured workflow to investigate student engagement and the relationship between instructional content and learner feedback across embodied and non-embodied robotics videos. The methodological pipeline contains three major components: (1) systematic data collection and categorization of instructional videos, (2) transcription and topic extraction using advanced language models, and (3) semantic correlation analysis between extracted topics and student comments. A total of 130 YouTube videos were processed, and all videos were analyzed under a unified framework to ensure consistency between the two learning modalities. The following subsections describe each stage in detail.
+
+
+
+
+\begin{table*}[ht]
+    \centering
+    \caption{Data Collection of Conventional Robotics Videos}
+    \rowcolors{2}{gray!15}{white} % Alternate row colors: Light gray and white
+    \begin{tabular}{p{3cm} p{3cm} p{7cm}}
+        \toprule
+        \textbf{Category} & \textbf{Subcategories} & \textbf{Content Summary} \\
+        \midrule
+        
+        Robotics Applications 
+        & Computer Vision, Deep Learning, AI-Based Robotics 
+        & Videos focus on applied AI techniques such as object detection, image processing, and machine-learning pipelines used in robotics. Includes demonstrations of OpenCV workflows, dataset preparation, model inference, and algorithm comparisons. \\[6pt]
+        
+        Robotics Fundamentals
+        & Electronics Basics, ROS Programming, Industrial Robotics Programming 
+        & Covers foundational robotics concepts including Arduino electronics, circuits, sensor integration, robot motion basics, and programming with ROS (installation, simulation, and navigation). Includes teaching-oriented technical walkthroughs. \\[6pt]
+        
+        Specialized Robotics
+        & Robotic Grippers, Combat Robots, FRC Robotics, Quadcopters 
+        & Contains domain-specific robotics topics such as gripper mechanisms, combat robot construction, FRC design workflows, and quadcopter dynamics. Focuses on mechanical design principles, controllers, and hardware demonstrations. \\
+        
+        \bottomrule
+    \end{tabular}
+    \label{tab:categorized_videos}
+\end{table*}
+
+\subsection{Video Selection and Categorization}
+
+Robotics-related videos that were used during lecture was selected in this project. Candidate videos were screened for instructional relevance and categorized into two learning modalities:
+
+\begin{itemize}
+\item \textbf{Conventional videos:} Lecture-oriented content delivered through slides, diagrams, equations, or screen-recorded programming. These videos emphasize conceptual explanation without physical hardware interaction.
+\item \textbf{Embodied videos:} Hands-on tutorials involving hardware assembly, wiring, calibration, testing, and real-time robot operation. These videos present stepwise procedures and direct manipulation of physical components.
+\end{itemize}
+
+Videos were further grouped into higher-level categories (e.g., robotics fundamentals, robotics applications, specialized robotics systems). Representative examples of both modalities are provided in Fig.~\ref{fig:con} and Fig.~\ref{fig:hd}.
+
+\subsection {Data Collection}
+
+A comprehensive selection procedure was implemented to construct a dataset representative of the instructional diversity found within robotics education. Videos were obtained from public YouTube channels that produce technical content related to robotics hardware, robotic manipulation, embedded systems, drone construction, sensors, and autonomous navigation. Each candidate video was manually reviewed to verify its educational relevance, clarity of presentation, and appropriateness for undergraduate-level robotics instruction.
+
+The final dataset consisted of 74 embodied videos and 56 conventional videos. Videos within each category covered major robotics domains including robotic arm assembly, mobile robot navigation, electronic circuit construction, robot programming, embedded computer vision, deep learning for robotics, reinforcement learning for control, and drone systems. This ensured that both learning modalities spanned comparable ranges of robotics topics.
+
+Figures~\ref{fig:con} and \ref{fig:hd} illustrate representative frames from both video types. Conventional videos commonly feature lecture slides, mathematical content, and hardware diagrams, while embodied videos display active manipulation of components and physical assembly procedures.
+
+\subsubsection{Student Comment Collection}
+
+To measure student perspectives, the selected videos were presented during scheduled lecture sessions in robotics-related courses. After viewing each video, students were instructed to write short reflective comments summarizing the content, identifying key concepts, and describing what they learned. Students were not prompted with predefined categories, allowing comments to capture naturally occurring points of interest or confusion.
+
+These comments were compiled into a structured DOCX file, organized by video link and video identifier. The collected feedback served as the qualitative dataset used to quantify semantic alignment between video content and student understanding. The organization of comments ensured traceability back to individual videos, enabling consistent correlation analysis across the dataset.
+
+\begin{table*}[ht]
+    \centering
+    \caption{Data Collection of Embodied Robotics Videos}
+    \rowcolors{2}{gray!15}{white} % Alternate row colors: Light gray and white
+    \begin{tabular}{p{3cm} p{3cm} p{7cm}}
+        \toprule
+        \textbf{Category} & \textbf{Subcategories} & \textbf{Content Summary} \\
+        \midrule
+        
+        Robotics Fundamentals 
+        & Electronics for Robotics, ROS Navigation, Mobile Robot Setup 
+        & Videos demonstrate hands-on robotics procedures including wiring, sensor installation, calibration, physical robot assembly, and ROS-based navigation on real robots. Provides beginner-friendly step-by-step hardware and software integration. \\[6pt]
+        
+        Specialized Robotics
+        & Combat Robots, Robotic Arm Assembly, Intelligent Robots 
+        & Includes embodied tutorials on building and testing combat robots, assembling servo-driven robotic arms, configuring microcontrollers, and integrating onboard AI modules. Emphasizes physical interaction, mechanical design, and testing robotics systems in real environments. \\[6pt]
+        
+        Robotics Applications
+        & Fire-Fighting Robot, DIY Drone Building, Embedded Computer Vision 
+        & Focuses on applied robotics projects such as assembling firefighting robots, constructing DIY drones, and implementing vision pipelines on embedded systems. Demonstrates real-world deployment, sensor fusion, and mobile robot behaviors. \\
+        
+        \bottomrule
+    \end{tabular}
+    \label{tab:categorized_videos}
+\end{table*}
+         
+
+\begin{figure}[htbp]
+    \centering
+    % Row 1: Two subfigures
+    \begin{subfigure}{0.45\linewidth}
+        \includegraphics[width=\linewidth]{figures/video_1_con_1.png}
+        \caption{Illustration of a LC circuit.}
+        \label{fig:subfig_a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\linewidth}
+        \includegraphics[width=\linewidth]{figures/video_1_con_2.png}
+        \caption{Data in a table of an LM386 audio amplifier circuit}
+        \label{fig:subfig_b}
+    \end{subfigure}
+    
+    \vspace{0.5cm} % Space between rows
+    
+    % Row 2: Two subfigures
+    \begin{subfigure}{0.45\linewidth}
+        \includegraphics[width=\linewidth]{figures/video_1_con_3.png}
+        \caption{Handwritten notes on the design of a bandpass filter}
+        \label{fig:subfig_c}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\linewidth}
+        \includegraphics[width=\linewidth]{figures/video_1_con_4.png}
+        \caption{A diagram of a motor-driving circuit with four N-channel MOSFETs with shared gate components connecting in parallel.
+         }
+        \label{fig:subfig_d}
+    \end{subfigure}
+    
+    \vspace{0.5cm} % Space between rows
+    
+    % Row 3: Single subfigure centered
+    \begin{subfigure}{0.45\linewidth}
+        \includegraphics[width=\linewidth]{figures/video_1_con_5.png}
+        \caption{A lecture slide showing the structure of a PN junction, including the p-type region, n-type region, and the depletion region at the interface.}
+        \label{fig:subfig_e}
+    \end{subfigure}
+    
+    \caption{Data collection for conventional videos}
+    \label{fig:con}
+\end{figure}
+
+
+
+
+\begin{figure}[htbp]
+    \centering
+    % Row 1: Two subfigures
+    \begin{subfigure}{0.45\linewidth}
+        \includegraphics[width=\linewidth]{figures/video_hd_1.png}
+        \caption{Instruction to bind Fs-i6X receiver to its transmitter. }
+        \label{fig:subfig_a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\linewidth}
+        \includegraphics[width=\linewidth]{figures/video_hd_2.png}
+        \caption{Building and testing the efficiency of a spinning drone.}
+        \label{fig:subfig_b}
+    \end{subfigure}
+    
+    \vspace{0.5cm} % Space between rows
+    
+    % Row 2: Two subfigures
+    \begin{subfigure}{0.45\linewidth}
+        \includegraphics[width=\linewidth]{figures/video_hd_3.png}
+        \caption{Breakdown of T-Motor F722 Mini Stack 20020}
+        \label{fig:subfig_c}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\linewidth}
+        \includegraphics[width=\linewidth]{figures/video_hd_4.png}
+        \caption{Construction of a Zobel network for audio amplifier}
+        \label{fig:subfig_d}
+    \end{subfigure}
+    
+    \vspace{0.5cm} % Space between rows
+    
+    % Row 3: Single subfigure centered
+    \begin{subfigure}{0.45\linewidth}
+        \includegraphics[width=\linewidth]{figures/video_hd_5.png}
+        \caption{T-Motor Pacer F7 Flight Controller & Mini F45A 20mm Stack - Setup & Ovreview}
+        \label{fig:subfig_e}
+    \end{subfigure}
+    
+    \caption{Data collection for embodied videos}
+    \label{fig:hd}
+\end{figure}
+
+To gather student perspectives, the selected YouTube videos were shown during lecture sessions. After viewing each video, students wrote short comments describing the content, key concepts, and what they learned from the material. All comments were compiled into a DOCX file, organized by the associated video link. This qualitative feedback served as an input source for the later correlation analysis between viewer comments and content of the video.
+
+
+% \begin{figure}[htbp]
+%     \centering
+%     % Row 1: Two subfigures
+%     \begin{subfigure}{0.45\linewidth}
+%         \includegraphics[width=\linewidth]{figure/1_N.jpg}
+%         \caption{}
+%         \label{fig:subfig_a}
+%     \end{subfigure}
+%     \hfill
+%     \begin{subfigure}{0.45\linewidth}
+%         \includegraphics[width=\linewidth]{figure/2_N.jpg}
+%         \caption{}
+%         \label{fig:subfig_b}
+%     \end{subfigure}
+    
+%     \vspace{0.5cm} % Space between rows
+    
+%     % Row 2: Two subfigures
+%     \begin{subfigure}{0.45\linewidth}
+%         \includegraphics[width=\linewidth]{figure/3_N.jpg}
+%         \caption{}
+%         \label{fig:subfig_c}
+%     \end{subfigure}
+%     \hfill
+%     \begin{subfigure}{0.45\linewidth}
+%         \includegraphics[width=\linewidth]{figure/4_N.jpg}
+%         \caption{}
+%         \label{fig:subfig_d}
+%     \end{subfigure}
+    
+%     \vspace{0.5cm} % Space between rows
+    
+%     % Row 3: Single subfigure centered
+%     \begin{subfigure}{0.45\linewidth}
+%         \includegraphics[width=\linewidth]{figure/5_N.jpg}
+%         \caption{}
+%         \label{fig:subfig_e}
+%     \end{subfigure}
+    
+%     \caption{Frame collected from (a)Video\_1\_emb sshowing the Autonomous Mobile Robot (ANMR) with real-time mapping and Jetson Nano-based processing, (b) Video\_2\_emb showing hardware setup of a minimal ROS-enabled robot with Raspberry Pi 4, LiDAR module, and USB-to-serial interface for motor controller communication, (c) Video\_3\_emb showing wiring diagram of an RC-controlled combat robot showing receiver, motor controllers, motors for tank drive, and torque/force calculations,(d) Video\_4\_emb showing internal electronics of a beetleweight combat robot with 3-cell LiPo battery, FS-iA6B receiver, ESCs, and brushed gear motors for driving and weapon operation, (e) Video\_5\_emb showing Mark 1 robotic arm prototype powered by Arduino, featuring six servo motors, a stepper motor, and wireless control via hand gestures using a Bluetooth-enabled glove.
+%   }
+%     \label{fig:main}
+% \end{figure}
+
+
+
+
+
+
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=2.8in]{figures/example_topic.png}
+  %\vspace{-15pt}
+  \caption{\hl{Example of the list of topics extracted from an embodied video using LLaMA-3}}\label{llava_caption}
+  \end{center}
+\end{figure}
+
+\subsection{Transcription and Topic Extraction}
+
+To capture the linguistic and conceptual dimensions of the videos, full transcripts were generated using OpenAI Whisper-Turbo, a state-of-the-art automatic speech recognition (ASR) model known for high accuracy in technical and multi-speaker environments. Each transcript was reviewed for formatting and timestamp alignment to ensure accurate mapping between narration segments and corresponding visual frames.
+
+Subsequently, the cleaned transcripts were analyzed using the LLaMA-3 model for topic extraction. The model was prompted to identify the primary instructional topics and provide a concise description for each. When the entire transcript exceeded model input limits, an adaptive chunking strategy was employed: the transcript was divided into semantically coherent segments, each processed individually to extract segment-level topics. The resulting topic lists were then aggregated, merging semantically similar topics and removing duplicates to produce a concise, high-level summary of 2–10 key themes per video. This approach preserved both global and local thematic coverage, enabling a structured representation of each video’s instructional content.
+
+\subsection{Correlation Analysis}
+
+
+To quantify students’ engagement with different aspects of each video, the researcher performed a comment–topic correlation analysis using the LLaMA-2 language model. For each video, topics were first extracted from the transcript using a large-language-model–based topic extraction procedure. Student comments collected during lecture were then individually compared against this topic list.
+
+LLaMA-2 was prompted to judge whether a given student comment was semantically related to each topic. For every comment–topic pair, the model produced (1) a binary relevance label (“Yes” if the comment reflects the topic, “No” otherwise) and (2) a confidence score ranging from 0 to 100. These relevance scores were aggregated across all comments for each topic, providing a quantitative measure of how strongly students engaged with or learned from specific content sections of the video. This analysis enabled the study to link students’ written reflections to the underlying instructional structure of the videos.
+
+\subsection{Quantitative Metrics Definition}
+
+To formally characterize the relationship between instructional content and student engagement, seven quantitative metrics were defined. These metrics correspond to the data visualizations presented in Section III.
+
+\begin{itemize}
+    \item \textbf{Correlation Score ($S_{corr}$):} The average semantic similarity score across all student comments for a given video, representing the degree of alignment between learner feedback and instructional topics. It is calculated as:
+    \begin{equation}
+        S_{corr} = \frac{1}{N_c} \sum_{i=1}^{N_c} s(c_i, v)
+    \end{equation}
+    where $N_c$ is the total number of comments and $s(c_i, v)$ denotes the relevance score of the $i$-th comment $c_i$ to video $v$.
+
+    \item \textbf{Transcript Word Count ($W_{trans}$):} The total number of words in the video transcript generated by the ASR system, used to quantify the volume of verbal instructional content.
+
+    \item \textbf{Topic Count ($N_{top}$):} The total number of distinct instructional topics extracted from the video transcript using the LLM. This metric reflects the breadth of content covered in the video.
+
+    \item \textbf{Comments Count ($N_{com}$):} The total number of student comments collected for each video, quantifying the volume of learner feedback.
+
+    \item \textbf{Duration ($T$):} The temporal length of the video in seconds.
+
+    \item \textbf{Transcript Density ($\rho_{trans}$):} The rate of verbal information delivery, defined as the number of transcript words per minute. This metric indicates the informational intensity of the video.
+    \begin{equation}
+        \rho_{trans} = \frac{W_{trans}}{T / 60}
+    \end{equation}
+
+    \item \textbf{Topic Density ($\rho_{top}$):} The density of instructional topics per minute of video duration, representing how rapidly new concepts are introduced.
+    \begin{equation}
+        \rho_{top} = \frac{N_{top}}{T / 60}
+    \end{equation}
+
+    \item \textbf{Engagement Rate ($R_{eng}$):} The frequency of student interaction normalized by video duration, measured in comments per minute.
+    \begin{equation}
+        R_{eng} = \frac{N_{com}}{T / 60}
+    \end{equation}
+
+    \item \textbf{Correlation Efficiency ($\eta_{corr}$):} The proportion of evaluated comment-topic pairs that met or exceeded the high-confidence threshold $\tau$ (set to 60\%). This metric reflects the effectiveness of the content in eliciting topic-aligned student responses.
+    \begin{equation}
+        \eta_{corr} = \frac{|\{s_i \mid s_i \ge \tau\}|}{N_{total}}
+    \end{equation}
+    where $N_{total}$ is the total number of candidate correlations evaluated and $s_i$ represents the confidence score of the $i$-th candidate.
+
+    \item \textbf{YouTube Percent Correlated ($P_{corr}$):} The percentage of unique comments that are correlated to at least one topic.
+    \begin{equation}
+        P_{corr} = \frac{N_{unique\_corr}}{N_{total}}
+    \end{equation}
+
+    \item \textbf{YouTube Engagement Rate ($E_{yt}$):} The frequency of viewer interaction normalized by video duration, measured in comments per minute.
+    \begin{equation}
+        E_{yt} = \frac{N_{total}}{T / 60}
+    \end{equation}
+
+    \item \textbf{Top Topic Percentage ($P_{top}$):} The percentage of total comments that are correlated to the video's single most popular topic (with score $> 60$).
+    \begin{equation}
+        P_{top} = \frac{N_{top\_topic}}{N_{total}}
+    \end{equation}
+\end{itemize}
+
+
+
+\begin{comment}
+    \begin{table*}[h!]
+\centering
+\renewcommand{\arraystretch}{1.5} % Adjust row height
+\setlength{\tabcolsep}{5pt} % Adjust column spacing
+\begin{tabular}{|m{0.9\linewidth}|}
+\hline
+\textbf{Frames:} \\ 
+\centering
+\includegraphics[width=0.3\linewidth]{figure/frame_0075.jpg} 
+\includegraphics[width=0.3\linewidth]{figure/frame_0076.jpg} 
+\includegraphics[width=0.3\linewidth]{figure/frame_0077 (1).jpg} \\
+\hline
+\textbf{User Comment:} \\ 
+Man, I swear there is a button more brushless ESCs than brushed ones at 6 cells battery (15v motors and up). Brushless ESCs are about 2 to 3 times cheaper when you need a 6S one. So might be worth considering if you want to build a brushed motor system for 60 lbs robots. \\
+\hline
+\textbf{Correlated Frame Captions:} \\ 
+The image shows a hand holding a small motor or rotor, which appears to be part of an electric device. In the background, there's a collection of electronic components and equipment, including what looks like a soldering iron, wires, a power supply unit, and possibly other electronic devices or components. It seems like a workspace for repairing, assembling, or modifying electronics. The person holding the motor is wearing a glove, which might be due to the nature of the work being done.
+
+In the image, I see a collection of electronic components and tools. There are two DC motors with their respective wiring harnesses and motor controllers connected to them. The motor controllers appear to be of the type that is used in RC cars or drones, as indicated by the circuit board with various integrated circuits (ICs) on it. There's also a small soldering iron next to the motors, suggesting someone might be working on a hobbyist electronics project or repairing some equipment. The background looks like a workspace or a room where such activities could take place.
+
+The image shows a person holding an electronic device with wires connected to it. It appears to be some kind of small electronic gadget, possibly a model of an automotive or other mechanical system given the presence of a gear and what looks like a motor or coil. There is text overlaying the image that reads "in short for a motor of a fixed size VV peak power when using a variable pulley or geared to use the highest available for that size VV 100\% 420W 375rpm." The device seems to be related to electronics or hobbyist mechanics, and the person is likely engaging in some form of repair, assembly, or modification process. The specific context or purpose of the device is not clear from the image alone. \\
+\hline
+\textbf{Reason for Correlation:} \\ 
+The comment mentions brushless ESCs (Electronic Speed Controllers) and brushed motors, which are directly related to the paragraph's discussion of DC motors, motor controllers, and wiring harnesses. The mention of 6S battery voltage (15v) and 60 lbs robots is also relevant to the paragraph's context of electronics project development. The connection is strong because both the comment and paragraph deal with robotics projects that involve electronic components, motors, and motor controllers. The comment provides a technical detail about ESCs, which is directly applicable to the paragraph's discussion of DC motors and their controllers. However, the confidence score is not 100\% because the comment does not explicitly mention specific project details or requirements mentioned in the paragraph (e.g., soldering iron, power supply unit). Nonetheless, the connection between brushless ESCs and motor control is a crucial aspect of robotics projects, making the correlation relatively strong. \\
+\hline
+\end{tabular}
+\caption{An example which shows one of the captions generated by LLaVA model is correlated with the user comment and the corresponding frames for a Embodied video}
+\label{table:frames}
+\end{table*}
+
+
+
+
+
+\begin{table*}[h!]
+\centering
+\renewcommand{\arraystretch}{1.5} % Adjust row height
+\setlength{\tabcolsep}{5pt} % Adjust column spacing
+\begin{tabular}{|m{0.9\linewidth}|}
+\hline
+\textbf{Frames:} \\ 
+\centering
+\includegraphics[width=0.3\linewidth]{figure/mini1.jpg} 
+\includegraphics[width=0.3\linewidth]{figure/mini2.jpg} 
+\includegraphics[width=0.3\linewidth]{figure/mini3.jpg} \\
+\hline
+\textbf{User Comment:} \\ 
+can I use the MG 996R that rotates 180 degrees, or does it have to be 360? \\
+\hline
+\textbf{Correlated Frame Captions:} \\ 
+The image presents a detailed view of a wrist joint, a part of a robotic arm. The wrist joint is made up of four distinct parts: the shoulder joint, the gripper joint, the elbow joint, and the wrist joint. Each part is clearly labeled with its corresponding name, indicating its specific function within the robotic arm. The wrist joint is positioned in the center of the image, with the other joints positioned around it. The image also includes a blue and white background, adding a contrast to the white robot arm and the black wires. The image does not contain any text or other objects. The overall layout and labeling of the parts suggest a well-structured and organized robotic arm.  T
+This image captures a moment of a DIY electronics project in progress. At the center of the image is a breadboard, a versatile tool used in electronics for prototyping and testing circuits. Attached to the breadboard are a red wire and a black wire, which are connected to a blue motor. The motor is a servo, a type of motor used in robotics and automation. It is attached to a black plate, which is part of the breadboard. The plate is connected to a green board, which is also part of the breadboard. The green board is connected to a black board, which is part of the breadboard. The image also contains text that reads "LAGOGO", which could be the name of the project or the company that made the components. The overall image gives a sense of the creativity and craftsmanship involved in such a project.  
+The image captures a close-up view of a green tabletop, adorned with various electronic components and a robot arm. The tabletop is a patchwork of wires, each one connecting different components, creating a complex network of electronic devices. The robot arm, a marvel of engineering, is the centerpiece of the image. It is composed of several parts, each serving a unique function. The arm is equipped with a motor, a sensor, and a series of motors, each one contributing to the overall functionality of the robot arm. The robot arm is not alone on the tabletop. It is surrounded by a variety of other components, each one playing a crucial role in the robot arm's operation. These components include a battery, a circuit board, and a control box, all of which are integral to the robot arm's functionality. The tabletop itself is a testament to the complexity of the robot arm's design. It is a patchwork of wires, each one a testament to the intricate network of components that make up the robot arm. The wires are a testament to the ingenuity of the engineer who designed the robot arm, each one serving a unique function in the robot's operation. Overall, the image provides a detailed view of the robot arm's components and the intricate network of wires that connect them, providing a glimpse into the complex world of robotics. \\
+\hline
+\textbf{Reason for Correlation:} \\ 
+The commenter is asking about the motor used in the robotics project (specifically, whether it needs to be able to rotate 360 degrees or if 180 degrees would suffice). Paragraph 2 mentions a "blue motor" that is attached to a breadboard, which matches the topic of the comment. While the commenter doesn't mention the specific blue motor, the context and technical relevance between the comment and paragraph are strong. The commenter's question about the motor's rotational range is directly related to the project's requirements and components discussed \\
+\hline
+\end{tabular}
+\caption{An example which shows one of the captions generated by MiniCPM model is correlated with the user comment and the corresponding frames for a Embodied video}
+\label{table:frames}
+\end{table*}
+
+
+\begin{table*}[h!]
+\centering
+\renewcommand{\arraystretch}{1.5} % Adjust row height
+\setlength{\tabcolsep}{5pt} % Adjust column spacing
+\begin{tabular}{|m{0.9\linewidth}|}
+\hline
+\textbf{Frames:} \\ 
+\centering
+\includegraphics[width=0.3\linewidth]{figure/frame_0063.jpg} 
+\includegraphics[width=0.3\linewidth]{figure/frame_0064.jpg} 
+\includegraphics[width=0.3\linewidth]{figure/frame_0036.jpg} \\
+\hline
+\textbf{User Comment:} \\ 
+For CAD I would recommend:  1. Onshape - easy to learn and multiple people can work on the same model at the same time extremely easily. It’s also a good candidate for mechanical engineering  2. Solidworks - most common mechanical engineering CAD software used in CAD jobs and careers. It’s also very high quality but also very expensive to maintain the license if your career, school, or FRC team doesn’t give you one for free.  3. Autodesk Inventor Professional - good for mechanical engineering but not used as much in actual jobs or careers  4. Autodesk Fusion360 - easy to learn and applicable in mechanical engineering  It’s important to note that all of the software listed here can be accessed freely using a student license or FRC license. I am more experienced with Autodesk Inventor than the other software on this list, but I can attest to the quality of these programs. \\
+\hline
+\textbf{Correlated Frame Captions:} \\ 
+
+The image appears to show a screenshot of a computer program, which seems to be a 3D modeling or design software. There is a graphic representation of an object that looks like a part being designed. On the left side of the screen, there are tools and menus typical for such software.In the center of the image, overlaid on top of the 3D model, is a text that reads "A PART BEING DESIGNED," indicating that the user is working on creating or modifying a part within the program.The design itself looks like it could be related to mechanical engineering or architectural modeling. The software interface suggests it might be a CAD (Computer-Aided Design) application, used by engineers and designers for creating 3D models of various objects.  
+
+The image shows a computer screen with a software interface, displaying the creation of a 3D model in a CAD (Computer-Aided Design) environment. There are multiple tools and settings visible on the screen, indicating that it is a screenshot from a CAD modeling program. The CAD model appears to be in progress, showing wireframe geometry that has been manipulated using various CAD functions. The software interface includes tools for drawing lines, arcs, circles, and other shapes, as well as options for modifying the model's properties like color, line type, and layer management.  
+In the image, there is a person standing in front of a machine that appears to be a CNC mill. The person has one hand up as if they are posing for a photo or gesturing. To the left of the person, there's a red machine which could be related to the operation of the CNC mill. The environment suggests an industrial setting, possibly a workshop or factory where machines like these are used for manufacturing or prototyping.
+ \\
+\hline
+\textbf{Reason for Correlation:} \\ 
+The comment provides specific software recommendations, which is directly relevant to the discussion about CAD modeling in the paragraph. Additionally, both the comment and paragraph mention mechanical engineering and CAD modeling, providing a strong technical connection between the two. However, there isn't an exact match between the software mentioned in the comment and any specific details or requirements presented in the paragraph. 
+ \\
+\hline
+\end{tabular}
+\caption{An example which shows the captions generated by LLaVA model is correlated with the user comment and the corresponding frames for a Conventional Video}
+\label{table:frames}
+\end{table*}
+
+\begin{table*}[h!]
+\centering
+\renewcommand{\arraystretch}{1.5} % Adjust row height
+\setlength{\tabcolsep}{5pt} % Adjust column spacing
+\begin{tabular}{|m{0.9\linewidth}|}
+\hline
+\textbf{Frames:} \\ 
+\centering
+\includegraphics[width=0.3\linewidth]{figure/frame_0066.jpg} 
+\includegraphics[width=0.3\linewidth]{figure/frame_0067.jpg} 
+\includegraphics[width=0.3\linewidth]{figure/frame_0068.jpg} \\
+\hline
+\textbf{User Comment:} \\ 
+Great introduction to C programming. Not much Arduino though. \\
+\hline
+\textbf{Correlated Frame Captions:} \\ 
+
+The image shows a diagram of a while loop in a programming
+language. The loop starts with the condition, followed by the body of the loop, and then ends with the condition again.
+The image shows a screenshot of a computer scree displaying a text file. The text file appears to be written in C++, with a comment at the top indicating that it is a &quot;C++ Arduino code&quot;. The file is currently open in a text editor, and the cursor is positioned on the first line of the file.The file seems to be a simple C++ program, possibly for an Arduino board. The code is written in a standard C++ syntax, with the use of functions and variables. The file also contains a comment, which is a special type of text used to provide information about the code.The file is currently open in a text editor, and the cursor is positioned on the first line of the file. The cursor is visible in the image,indicating that the file is currently open and being edited.The image does not contain any other objects or text, and the focus is solely on the text file and the text editor. The file and
+the editor are the only objects visible in the image.
+The image shows a diagram of a program flow using a do-loop. The program starts with a while loop that executes the code inside it until a certain condition is met. The condition is represented by a if statement that checks whether the condition is true or false. If the condition is true, the code inside the if statement is executed, and if it&#39;s false, the program continues with the next line of code. The do-loop is used when the user doesn&#39;t know how many times an action has to be repeated,but it should be repeated at least once.
+ \\
+\hline
+\textbf{Reason for Correlation:} \\ 
+The connection is direct and technical, as both the paragraph and comment relate to programming concepts, specifically loops (while and do-loops). The paragraph describes a C++ program written for an Arduino board, while the comment provides feedback on the introduction to C programming, which indirectly relates to the paragraph's topic of
+programming.
+ \\
+\hline
+\end{tabular}
+\caption{An example which shows the captions generated by MiniCPM model is correlated with the user comment and the corresponding frames for a Conventional Video}
+\label{table:frames}
+\end{table*}
+
+\end{comment}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Results}
+\pgfplotstableread[col sep=comma]{metrics_summary_v2.csv}\datatable
+\pgfplotstableread[col sep=comma]{transcript_youtube_plot_data.csv}\ytdatatable
+
+\subsection{Overall Videos, Statistical Results}
+
+\subsubsection{Transcript Verbosity}
+We analyzed the total word count of the video transcripts to understand the verbal density of the content. Figure \ref{fig:res_words} illustrates that Conventional videos are significantly more verbose, with an average of 2636 words per video, compared to 1531 words for Embodied videos. This aligns with the nature of conventional tutorials which often rely heavily on spoken explanation, whereas embodied learning may rely more on visual demonstration.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conv, Emb},
+            xtick=data,
+            ylabel={Word Count},
+            ymin=0, ymax=3500,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt},
+            title={Avg. Transcript Word Count},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            % Conv=2636, Emb=1530
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
+            table [x=Label, y=WordMean, y error=WordSEM] {\datatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Average Transcript Word Count. Conventional videos contain significantly more spoken words than Embodied videos.}
+    \label{fig:res_words}
+\end{figure}
+
+\subsubsection{Transcript Density}
+Transcript density, defined as the number of words spoken per minute, is a measure of information pacing. Figure \ref{fig:res_dens} highlights that Conventional videos have a much higher transcript density (160 words/min) compared to Embodied videos (112 words/min). This reinforces the finding that Conventional videos rely on rapid verbal explanation, while Embodied videos likely include more pauses for physical demonstration or visual processing. It shows that conventional videos are faster-paced verbally, delivering more words per minute. 
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conv, Emb},
+            xtick=data,
+            ylabel={Words/Min},
+            ymin=0, ymax=200,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt},
+            title={Transcript Density (Words/Min)},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            % Conv=160, Emb=112
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
+            table [x=Label, y=DensMean, y error=DensSEM] {\datatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Transcript density of the videos. It represents the number of words per min of the video}
+    \label{fig:res_dens}
+\end{figure}
+
+\subsubsection{Topic Coverage}
+The number of distinct topics identified per video provides insight into the breadth of content covered. Figure \ref{fig:res_topics} shows a comparable number of topics between the two categories, with Conventional videos averaging 4.38 topics and Embodied videos averaging 3.70 topics. This suggests that while the delivery method differs, the complexity in terms of distinct subjects covered is relatively similar.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conv, Emb},
+            xtick=data,
+            ylabel={Topic Count},
+            ymin=0, ymax=6,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt, /pgf/number format/fixed, /pgf/number format/precision=2},
+            title={Avg. Topic Count},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            % Conv=4.38, Emb=3.70
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
+            table [x=Label, y=TopicMean, y error=TopicSEM] {\datatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Average number of identified topics per video. Both categories cover a similar breadth of sub-topics.}
+    \label{fig:res_topics}
+\end{figure}
+
+\subsection{Online User Results}
+We expanded our analysis to include YouTube comments to evaluate if the trends observed in student feedback persist in a broader public context.
+
+\subsubsection{YouTube Percent Correlated}
+Figure \ref{fig:yt_corr} shows the percentage of unique YouTube comments correlated to any video topic. Similar to the student results, Conventional videos show a higher correlation percentage (24.4\%) compared to Embodied videos (18.6\%). This reinforces that conventional tutorials tend to elicit more topic-focused discussions.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conventional, Embodied},
+            xtick=data,
+            xticklabels={Conv, Emb},
+            yticklabel style={/pgf/number format/fixed},
+            ylabel={Percent (0-1)},
+            ymin=0, ymax=0.35,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt, /pgf/number format/fixed, /pgf/number format/precision=3},
+            title={YouTube Percent Correlated},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            % Conv=0.2439, Emb=0.1855
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
+            table [x=Label, y=PctCorrMean, y error=PctCorrSEM] {\ytdatatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Percentage of YouTube comments correlated to at least one topic. Conventional videos evoke more relevant discourse.}
+    \label{fig:yt_corr}
+\end{figure}
+
+\subsubsection{YouTube Engagement Rate}
+The density of comments per minute on YouTube is presented in Figure \ref{fig:yt_eng}. In contrast to the student study where Embodied videos had only slightly higher engagement, on YouTube both categories show robust engagement (~25 comments/min), with Embodied videos maintaining a slight edge (25.8 vs 24.5). This suggests that for a general audience, both formats drive significant interaction.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conventional, Embodied},
+            xtick=data,
+            xticklabels={Conv, Emb},
+            ylabel={Comments/Min},
+            ymin=0, ymax=35,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=23pt, /pgf/number format/fixed, /pgf/number format/precision=1},
+            title={YouTube Engagement Rate},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            % Conv=24.51, Emb=25.81
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
+            table [x=Label, y=EngMean, y error=EngSEM] {\ytdatatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{YouTube Engagement Rate. Both video types drive high interaction, with Embodied videos slightly leading.}
+    \label{fig:yt_eng}
+\end{figure}
+
+\subsubsection{Top Topic Percentage}
+To assess topic focus, we measured the percentage of comments discussing the single most popular topic (Figure \ref{fig:yt_top}). Conventional videos have a higher concentration of comments on the top topic (19.8\%) compared to Embodied videos (14.9\%). This suggests that audience attention in Conventional videos is more unified around a central theme, whereas Embodied videos may encourage more diverse or scattered discussions.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conventional, Embodied},
+            xtick=data,
+            xticklabels={Conv, Emb},
+            ylabel={Percent (0-1)},
+            ymin=0, ymax=0.25,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt, /pgf/number format/fixed, /pgf/number format/precision=3},
+            title={Top Topic Percent},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            % Conv=0.1981, Emb=0.1492
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
+            table [x=Label, y=TopTopicPctMean, y error=TopTopicPctSEM] {\ytdatatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Percentage of comments on the top topic. Conventional videos show more focused audience engagement.}
+    \label{fig:yt_top}
+\end{figure}
+
+\subsection{User Study Results}
+
+\subsubsection{Correlation Analysis}
+The correlation analysis measures how closely user comments align with the video's stated topics. As shown in Figure \ref{fig:res_corr}, Conventional videos yield a higher average correlation score (51.75\%) compared to Embodied videos (37.72\%). This suggests that comments on Conventional videos tend to be more directly relevant to the specific topics discussed, possibly because the content is more structured or instructional in a traditional sense.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conv, Emb},
+            xtick=data,
+            yticklabel style={/pgf/number format/fixed},
+            ylabel={Score (0-100)},
+            ymin=0, ymax=80,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt},
+            title={Avg. Correlation Score},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            % Conv=51.75, Emb=37.72
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
+            table [x=Label, y=CorrMean, y error=CorrSEM] {\datatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Average Correlation Score comparing Conventional (Conv) and Embodied (Emb) videos. Conventional videos show stronger alignment between comments and topics.}
+    \label{fig:res_corr}
+\end{figure}
+
+\subsubsection{Engagement Rate}
+Engagement rate is measured as the number of comments per minute of video duration. Interestingly, as shown in Figure \ref{fig:res_eng}, Embodied videos show a slightly higher engagement rate (0.20 comments/min) compared to Conventional videos (0.17 comments/min). This implies that despite being less verbose, the visual and physical nature of embodied content may prompt more viewer interaction relative to the video's length.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conv, Emb},
+            xtick=data,
+            ylabel={Comments/Min},
+            ymin=0, ymax=0.3,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt, /pgf/number format/fixed, /pgf/number format/precision=2},
+            title={Engagement Rate (Comments/Min)},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            % Conv=0.17, Emb=0.20
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
+            table [x=Label, y=EngMean, y error=EngSEM] {\datatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Engagement Rate of the videos. The engagement rate represents the number of comments per minute of the video.}
+    \label{fig:res_eng}
+\end{figure}
+
+\subsubsection{Correlation Efficiency}
+Efficiency is defined as the ratio of high-confidence correlated comments to total comments. Conventional videos demonstrate higher efficiency (0.47) compared to Embodied videos (0.32), as shown in Figure \ref{fig:res_eff}. This indicates that nearly half of the comments on Conventional videos are highly relevant to the topics, whereas Embodied videos attract a broader range of comments, potentially including more general reactions or unrelated discussions.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conv, Emb},
+            xtick=data,
+            ylabel={Efficiency Ratio},
+            ymin=0, ymax=0.6,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt, /pgf/number format/fixed, /pgf/number format/precision=2},
+            title={Correlation Efficiency},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            % Conv=0.47, Emb=0.32
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
+            table [x=Label, y=EffMean, y error=EffSEM] {\datatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Correlation Efficiency. A higher ratio indicates a larger proportion of comments are strongly correlated with the video topics.}
+    \label{fig:res_eff}
+\end{figure}
+
+
+
+
+
+
+
+\begin{comment}
+    \begin{table}[ht]
+    \centering
+    \caption{Total Comments and Correlated Comments for Embodied Videos (LLaVA Generated Captions)}
+    \rowcolors{2}{gray!15}{white} % Alternate row colors: Light gray and white
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Video Id} & \textbf{Total Comments} & \textbf{Correlated Comments} \\
+        \midrule
+        Video\_1\_emb\_LLaVA & 54 & 44 \\
+        Video\_2\_emb\_LLaVA & 271 & 180 \\
+        Video\_3\_emb\_LLaVA & 128 & 67 \\
+        Video\_4\_emb\_LLaVA & 24 & 19 \\
+        Video\_5\_emb\_LLaVA & 623 & 465 \\
+        Video\_6\_emb\_LLaVA & 214 & 129 \\
+        Video\_7\_emb\_LLaVA & 559 & 448 \\ % Indicate missing data
+        Video\_8\_emb\_LLaVA & 1332 & 899 \\
+        Video\_9\_emb\_LLaVA & 248 & 147 \\
+        Video\_10\_emb\_LLaVA & 506 & 266 \\
+       
+        
+        \bottomrule
+    \end{tabular}
+    \label{tab:results}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \caption{Total Comments and Correlated Comments for Conventional Videos(LLaVA Generated Transcripts)}
+    \rowcolors{2}{gray!15}{white} % Alternate row colors: Light gray and white
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Video Id} & \textbf{Total Comments} & \textbf{Correlated Comments} \\
+        \midrule
+        Video\_1\_con\_LLaVA & 980 & 615 \\
+        Video\_2\_con\_LLaVA & 6 & 1 \\
+        Video\_3\_con\_LLaVA & 3 & 1 \\
+        Video\_4\_con\_LLaVA & 1408 & 422 \\
+        Video\_5\_con\_LLaVA & 129 & 75 \\
+        Video\_6\_con\_LLaVA & 109 & 83 \\
+        Video\_7\_con\_LLaVA & 54 & 47 \\ 
+        Video\_8\_con\_LLaVA & 15 & 11 \\
+        Video\_9\_con\_LLaVA & 29 & 13 \\
+        Video\_10\_con\_LLaVA & 20 & 5 \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:results}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \caption{Total Comments and Correlated Comments for Embodied Videos(MiniCPM Generated Transcripts)}
+    \rowcolors{2}{gray!15}{white} % Alternate row colors: Light gray and white
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Video Id} & \textbf{Total Comments} & \textbf{Correlated Comments} \\
+        \midrule
+        Video\_1\_emb\_MiniCPM & 54 & 32 \\
+        Video\_2\_emb\_MiniCPM & 271 & 182 \\
+        Video\_3\_emb\_MiniCPM & 128 & 80 \\
+        Video\_4\_emb\_MiniCPM & 24 & 21 \\
+        Video\_5\_emb\_MiniCPM & 623 & 438 \\
+        Video\_6\_emb\_MiniCPM & 214 & 100 \\
+        Video\_7\_emb\_MiniCPM & 559 & 417 \\ 
+        Video\_8\_emb\_MiniCPM & 1332 & 829 \\
+        Video\_9\_emb\_MiniCPM & 248 & 128 \\
+        Video\_10\_emb\_MiniCPM & 506 & 290 \\
+        
+        \bottomrule
+    \end{tabular}
+    \label{tab:results}
+\end{table}
+
+\clearpage
+\begin{table}[ht]
+    \centering
+    \caption{Total Comments and Correlated Comments for Conventional Videos(MiniCPM Generated Transcripts)}
+    \rowcolors{2}{gray!15}{white} % Alternate row colors: Light gray and white
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Video Id} & \textbf{Total Comments} & \textbf{Correlated Comments} \\
+        \midrule
+        Video\_1\_con\_MiniCPM & 980 & 809 \\
+        Video\_2\_con\_MiniCPM & 6 & 3 \\
+        Video\_3\_con\_MiniCPM & 3 & 1 \\
+        Video\_4\_con\_MiniCPM & 1408 & 700 \\
+        Video\_5\_con\_MiniCPM & 129 & 85 \\
+        Video\_6\_con\_MiniCPM & 109 & 76 \\
+        Video\_7\_con\_MiniCPM & 54 & 37 \\ 
+        Video\_8\_con\_MiniCPM & 15 & 10 \\
+        Video\_9\_con\_MiniCPM & 29 & 15 \\
+        Video\_10\_con\_MiniCPM & 20 & 8 \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:results}
+\end{table}
+\begin{table*}[ht]
+    \centering
+    \caption{Total Comments and Correlated Comments for Conventional Videos (Integrated Transcripts)}
+    \label{tab:results}
+    \rowcolors{2}{gray!15}{white} % Alternate row colors: Light gray and white
+    \begin{tabular}{lcccccc} % Adjusted column count
+        \toprule
+        \textbf{Video ID} & \textbf{Total Comments} & \textbf{Correlated Comments} & \textbf{Positive Comments} & \textbf{Neutral Comments} & \textbf{Negative Comments} \\
+        \midrule
+        Video\_1\_con  & 980  & 834  & 215 & 310 & 309 \\
+        Video\_2\_con  & 6    & 4    & 3   & 1   & 0   \\
+        Video\_3\_con  & 3    & 1    & 1   & 0   & 0   \\
+        Video\_4\_con  & 1408 & 911  & 513 & 313 & 85  \\
+        Video\_5\_con  & 129  & 82   & 35  & 47  & 10  \\
+        Video\_6\_con  & 109  & 81   & 39  & 30  & 12  \\
+        Video\_7\_con  & 54   & 46   & 17  & 20  & 9   \\ 
+        Video\_8\_con  & 15   & 11   & 7   & 4   & 0   \\
+        Video\_9\_con  & 29   & 16   & 8   & 7   & 1   \\
+        Video\_10\_con & 20   & 5    & 5   & 0   & 0   \\
+        \bottomrule
+    \end{tabular}
+\end{table*}
+
+
+\begin{table*}[ht]
+    \centering
+    \caption{Total Comments and Correlated Comments for Embodied Videos (Integrated Transcripts)}
+    \label{tab:results}
+    \rowcolors{2}{gray!15}{white} % Alternate row colors: Light gray and white
+    \begin{tabular}{lcccccc} % Adjusted column count
+        \toprule
+        \textbf{Video ID} & \textbf{Total Comments} & \textbf{Correlated Comments} & \textbf{Positive Comments} & \textbf{Neutral Comments} & \textbf{Negative Comments} \\
+        \midrule
+        Video\_1\_emb  & 54  & 49  & 33 & 16 & 0 \\
+        Video\_2\_emb  & 271    & 240    & 124   & 89   & 27   \\
+        Video\_3\_emb  & 128    & 96    & 41   & 42   & 13   \\
+        Video\_4\_emb  & 24 & 23  & 16 & 7 & 0  \\
+        Video\_5\_emb  & 623  & 551   & 318  & 204  & 29  \\
+        Video\_6\_emb  & 214 & 166   & 113  & 39  & 14  \\
+        Video\_7\_emb  & 559   & 486   & 141  & 273 & 72   \\ 
+        Video\_8\_emb  & 1332   & 1090   & 515   & 514   & 61   \\
+        Video\_9\_emb  & 248   & 199   & 139   & 44   & 16   \\
+        Video\_10\_emb & 506   & 398    & 224   & 121   & 53   \\
+        \bottomrule
+    \end{tabular}
+\end{table*}
+
+
+\end{comment}
+
+
+
+
+
+\end{document}
+
+
+%\section*{Acknowledgment}
+
+
+%Dr. Reveryrand would like to acknowledge the funding by XLIM, Limoges, France. 
+The authors would like to thank Dr. David Root and Dr. Jean-Pierre Teyssier at Agilent Technologies for the loan of the time-domain nonlinear measurement equipment and TriQuint Semiconductor for the donation of the transistors. 
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+% ============================================
+%\appendices
+%\section{Proof of the First Zonklar Equation}
+%Appendix one text goes here %\cite{Roberg2010}.
+
+% you can choose not to have a title for an appendix
+% if you want by leaving the argument blank
+%\section{}
+%Appendix two text goes here.
+
+
+% use section* for acknowledgement
+%\section*{Acknowledgment}
+
+
+%The authors would like to thank D. Root for the loan of the SWAP. The SWAP that can ONLY be usefull in Boulder...
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% ====== REFERENCE SECTION
+
+%\begin{thebibliography}{1}
+
+% IEEEabrv,
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,Bibliography}
+%\end{thebibliography}
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{biography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+% ==== SWITCH OFF the BIO for submission
+% ==== SWITCH OFF the BIO for submission
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{photo/mike.png}}]{Michael Roberg}
+(S'09) received the B.S.E.E degree from Bucknell University, Lewisburg, PA, in 2003, the M.S.E.E. degree from the University of Pennsylvania, Philadelphia, in 2006, and the Ph.D. degree from the University of Colorado at Boulder in 2012. From 2003 to 2009, he was an Engineer with Lockheed Martin–MS2, Moorestown, NJ, where he was involved with advanced phased-array radar systems. His current research interests include high efficiency microwave PA theory and design, microwave power rectifiers, MMIC design, and high-efficiency radar and communication system transmitters. He is currently employed by TriQuint Semiconductor - Defense Products and Foundry Services in Richardson, TX working on wideband high efficiency GaN MMIC PA design.
+\end{IEEEbiography}
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{photo/tibo.png}}]{Tibault Reveyrand}
+(M'07)  received the Ph.D. degree from the University of Limoges, France, in 2002.
+From 2002 to 2004, he was a Post-Doctoral Scientist with CNES (French Space Agency). In 2005, he became a CNRS engineer at XLIM. His research interests include the characterization and modeling of RF and microwave nonlinear components and devices.
+Dr. Reveyrand was the recipient of the 2002 European GaAs Best Paper Award and is a member of the IEEE MTT-11 "Microwave Measurements" Technical Committee.
+\end{IEEEbiography}
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{photo/ignacio.png}}]{Ignacio Ramos}
+(S'12) received the B.S. degree in electrical engineering from the University of Illinois at Chicago in 2009, and is currently working toward the Ph.D. degree at the University of Colorado at Boulder. From 2009 to 2011, he was with the Power and Electronic Systems Department at Raytheon IDS, Sudbury, MA. His research interests include high-efficiency microwave power amplifiers, microwave DC/DC converters, radar systems, and wireless power transmission.
+\end{IEEEbiography}
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{photo/erez.png}}]{Erez Avigdor Falkenstein}
+(S'07), Haifa, Israel in 1979. He earned a “Handesaie” degree (associate degree) in electronics from Amal Handesaim School Hadera, Israel in 1999. From 1999 to 2003 he served in the Israel Defense Force as part of a technological unit. He has been at the University of Colorado at Boulder 2004 – 2012. He received concurrent MS/BS degrees in Electrical engineering 2010 and a Ph.D 2012 from the University of Colorado at Boulder. Since 2007 he has been involved with research as part of the active antenna group. Research emphasis: far field wireless powering for low power densities. Interests include Antenna design and characterization, modeling and measurement of nonlinear devices at microwave frequencies and power management. He is currently employed at Qualcomm, Incorporated, Boulder, CO.
+\end{IEEEbiography}
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{photo/zoya.png}}]{Zoya Popovi\'c}
+(S'86-M'90-SM'99-F'02) received the Dipl.Ing. degree from the University of Belgrade, Belgrade, Serbia, Yugoslavia, in 1985, and the Ph.D. degree from the California Institute of Technology, Pasadena, in 1990.
+Since 1990, she has been with the University of Colorado at Boulder, where she is currently a Distinguished Professor and holds the Hudson Moore Jr. Chair with the Department of Electrical, Computer and Energy Engineering. In 2001, she was a Visiting Professor with the Technical University of Munich, Munich, Germany. 
+Since 1991, she has graduated 44 Ph.D. students. Her research interests include high-efficiency, low-noise, and broadband microwave and millimeter-wave circuits, quasi-optical millimeter-wave techniques, active
+antenna arrays, and wireless powering for batteryless sensors.
+Prof. Popovi\'c was the recipient of the 1993 and 2006 Microwave Prizes presented by the IEEE Microwave Theory and Techniques Society (IEEE MTT-S) for the best journal papers and the 1996 URSI Issac Koga Gold Medal. In 1997, Eta Kappa Nu students chose her as a Professor of the Year. She was the recipient of a 2000 Humboldt Research Award for Senior U.S. Scientists of the German Alexander von Humboldt Stiftung. She was elected a Foreign Member of the Serbian Academy of Sciences and Arts in 2006. She was also the recipient of the 2001 Hewlett-Packard (HP)/American Society for Engineering Education (ASEE) Terman Medal for combined teaching and research excellence.
+\end{IEEEbiography}
+
+%% if you will not have a photo at all:
+%\begin{IEEEbiographynophoto}{Ignacio Ramos}
+%(S'12) received the B.S. degree in electrical engineering from the University of Illinois at Chicago in 2009, and is currently working toward the Ph.D. degree at the University of Colorado at Boulder. From 2009 to 2011, he was with the Power and Electronic Systems Department at Raytheon IDS, Sudbury, MA. His research interests include high-efficiency microwave power amplifiers, microwave DC/DC converters, radar systems, and wireless power transmission.
+%\end{IEEEbiographynophoto}
+
+%% insert where needed to balance the two columns on the last page with
+%% biographies
+%%\newpage
+
+%\begin{IEEEbiographynophoto}{Jane Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+% ==== SWITCH OFF the BIO for submission
+% ==== SWITCH OFF the BIO for submission
+
+
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+% that's all folks
+\end{document}
+
+
