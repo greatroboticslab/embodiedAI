@@ -1,0 +1,150 @@
+{
+  "video_id": "sI5Ftm1-jik",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Full Bridge Rectifier",
+        "description": "The video explains what a full bridge rectifier is, how it works to convert AC to DC using four diodes, and its advantages over a single diode rectifier, particularly for high power applications and reverse polarity protection.",
+        "mention_count": 12,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The full bridge rectifier is the central topic. It is introduced early, explained in detail with comparisons, and revisited throughout the video, including towards the end when discussing applications.",
+        "representative_quotes": [
+          "Hi, I want to make a full bridge rectifier.",
+          "Now a full bridge rectifier converts both the positive and negative peaks into positive bumps at the output."
+        ]
+      },
+      {
+        "name": "AC to DC Conversion",
+        "description": "The video explains the process of converting alternating current (AC) to direct current (DC) using rectifiers, focusing on how diodes and capacitors are used to smooth the output voltage.",
+        "mention_count": 6,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 3,
+        "strength_reasoning": "While not the sole focus, the AC to DC conversion process is explained and revisited when discussing the full bridge rectifier and its components. The function of capacitors is mentioned throughout.",
+        "representative_quotes": [
+          "It basically converts AC alternating current into DC direct current.",
+          "Adding a capacitor at the output converts it into DC again."
+        ]
+      },
+      {
+        "name": "Electrical Safety",
+        "description": "The video covers electrical safety practices, including using fuses, insulation, and caution around high voltage circuits, particularly regarding capacitors holding charge even when unplugged.",
+        "mention_count": 7,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 3,
+        "strength_reasoning": "Electrical safety is an important topic that the speaker stresses throughout the video after an incident, making it a key takeaway for the viewer.",
+        "representative_quotes": [
+          "So insulate your circuit properly, wear safety gloves, and don't touch s*** with your bare hands.",
+          "Remember in such circuits although unplugged the capacitors hold charge for a long period of time so always discharge them with some resistor."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "Now let's plug it in.",
+        "category": "action_narration",
+        "position_pct": 22.7,
+        "context": "watts at best. Now let's plug it in. I have some loose wires"
+      },
+      {
+        "phrase": "As you can clearly see",
+        "category": "visual_reference",
+        "position_pct": 26.1,
+        "context": "power plug. As you can clearly see, I have no regards for safety"
+      },
+      {
+        "phrase": "touching live wire",
+        "category": "sensory_description",
+        "position_pct": 30.3,
+        "context": "voltage to jump. The only way you would get hurt is by touching live wire. So insulate your circuit"
+      },
+      {
+        "phrase": "I'm going to touch 170 volt DC with my bare hands.",
+        "category": "action_narration",
+        "position_pct": 36.4,
+        "context": "Baaah! Why do you call them bare hands? I'm going to touch 170 volt DC with my"
+      },
+      {
+        "phrase": "See, I can barely feel it.",
+        "category": "sensory_description",
+        "position_pct": 38.6,
+        "context": "There is 166 volt on the output. Now I'll put my finger across the output. See, I can barely feel it. DC is much less"
+      },
+      {
+        "phrase": "Now I will measure some waveforms.",
+        "category": "action_narration",
+        "position_pct": 46.2,
+        "context": "wall adapters contain one of these circuits. Now I will measure some waveforms. I connected the probe to"
+      },
+      {
+        "phrase": "I turn the power bar on.",
+        "category": "action_narration",
+        "position_pct": 54.5,
+        "context": "Kapton tape to insulate the earth of the power cord. I have the same setup again, and with the probe connected, I turn the power bar on. We are"
+      },
+      {
+        "phrase": "As you can see on the scope",
+        "category": "visual_reference",
+        "position_pct": 55.3,
+        "context": "We are safe now. As you can see on the scope, the output voltage is around 170"
+      },
+      {
+        "phrase": "connect it to the output",
+        "category": "action_narration",
+        "position_pct": 57.6,
+        "context": "170 volts. Now I like to use my 100 ohm resistor and connect it to the output to see how the"
+      },
+      {
+        "phrase": "It burns your skin very quickly.",
+        "category": "sensory_description",
+        "position_pct": 63.6,
+        "context": "across 100 ohm generates 300 watts of power. It's like having a 300 watt lamp within your fingers. It burns your skin very quickly. Now I use"
+      },
+      {
+        "phrase": "Now I use pliers to hold the resistor.",
+        "category": "action_narration",
+        "position_pct": 64.4,
+        "context": "It burns your skin very quickly. Now I use pliers to hold the resistor. S***! See the output voltage"
+      },
+      {
+        "phrase": "See the output voltage drops",
+        "category": "visual_reference",
+        "position_pct": 65.2,
+        "context": "quickly. Now I use pliers to hold the resistor. S***! See the output voltage drops, but with very small"
+      },
+      {
+        "phrase": "now you can see that the resistor is made of resistive wires",
+        "category": "visual_reference",
+        "position_pct": 70.5,
+        "context": "cool down, and now you can see that the resistor is made of resistive wires wound around the ceramic core. Anywho, this"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 13,
+      "by_category": {
+        "visual_reference": 4,
+        "action_narration": 6,
+        "sensory_description": 3,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The transcript shows moderate use of embodied language, with a good mix of action narration and visual references. The speaker frequently describes what they are doing and pointing out what the viewer can see."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Full Bridge Rectifier\",\n      \"description\": \"The video explains what a full bridge rectifier is, how it works to convert AC to DC using four diodes, and its advantages over a single diode rectifier, particularly for high power applications and reverse polarity protection.\",\n      \"mention_count\": 12,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The full bridge rectifier is the central topic. It is introduced early, explained in detail with comparisons, and revisited throughout the video, including towards the end when discussing applications.\",\n      \"representative_quotes\": [\n        \"Hi, I want to make a full bridge rectifier.\",\n        \"Now a full bridge rectifier converts both the positive and negative peaks into positive bumps at the output.\"\n      ]\n    },\n    {\n      \"name\": \"AC to DC Conversion\",\n      \"description\": \"The video explains the process of converting alternating current (AC) to direct current (DC) using rectifiers, focusing on how diodes and capacitors are used to smooth the output voltage.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"While not the sole focus, the AC to DC conversion process is explained and revisited when discussing the full bridge rectifier and its components. The function of capacitors is mentioned throughout.\",\n      \"representative_quotes\": [\n        \"It basically converts AC alternating current into DC direct current.\",\n        \"Adding a capacitor at the output converts it into DC again.\"\n      ]\n    },\n    {\n      \"name\": \"Electrical Safety\",\n      \"description\": \"The video covers electrical safety practices, including using fuses, insulation, and caution around high voltage circuits, particularly regarding capacitors holding charge even when unplugged.\",\n      \"mention_count\": 7,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Electrical safety is an important topic that the speaker stresses throughout the video after an incident, making it a key takeaway for the viewer.\",\n      \"representative_quotes\": [\n        \"So insulate your circuit properly, wear safety gloves, and don't touch s*** with your bare hands.\",\n        \"Remember in such circuits although unplugged the capacitors hold charge for a long period of time so always discharge them with some resistor.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"Now let's plug it in.\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 22.7,\n      \"context\": \"watts at best. Now let's plug it in. I have some loose wires\"\n    },\n    {\n      \"phrase\": \"As you can clearly see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 26.1,\n      \"context\": \"power plug. As you can clearly see, I have no regards for safety\"\n    },\n    {\n      \"phrase\": \"touching live wire\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 30.3,\n      \"context\": \"voltage to jump. The only way you would get hurt is by touching live wire. So insulate your circuit\"\n    },\n    {\n      \"phrase\": \"I'm going to touch 170 volt DC with my bare hands.\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 36.4,\n      \"context\": \"Baaah! Why do you call them bare hands? I'm going to touch 170 volt DC with my\"\n    },\n    {\n      \"phrase\": \"See, I can barely feel it.\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 38.6,\n      \"context\": \"There is 166 volt on the output. Now I'll put my finger across the output. See, I can barely feel it. DC is much less\"\n    },\n    {\n      \"phrase\": \"Now I will measure some waveforms.\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 46.2,\n      \"context\": \"wall adapters contain one of these circuits. Now I will measure some waveforms. I connected the probe to\"\n    },\n    {\n      \"phrase\": \"I turn the power bar on.\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 54.5,\n      \"context\": \"Kapton tape to insulate the earth of the power cord. I have the same setup again, and with the probe connected, I turn the power bar on. We are\"\n    },\n    {\n      \"phrase\": \"As you can see on the scope\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 55.3,\n      \"context\": \"We are safe now. As you can see on the scope, the output voltage is around 170\"\n    },\n    {\n      \"phrase\": \"connect it to the output\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 57.6,\n      \"context\": \"170 volts. Now I like to use my 100 ohm resistor and connect it to the output to see how the\"\n    },\n    {\n      \"phrase\": \"It burns your skin very quickly.\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 63.6,\n      \"context\": \"across 100 ohm generates 300 watts of power. It's like having a 300 watt lamp within your fingers. It burns your skin very quickly. Now I use\"\n    },\n    {\n      \"phrase\": \"Now I use pliers to hold the resistor.\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 64.4,\n      \"context\": \"It burns your skin very quickly. Now I use pliers to hold the resistor. S***! See the output voltage\"\n    },\n    {\n      \"phrase\": \"See the output voltage drops\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 65.2,\n      \"context\": \"quickly. Now I use pliers to hold the resistor. S***! See the output voltage drops, but with very small\"\n    },\n    {\n      \"phrase\": \"now you can see that the resistor is made of resistive wires\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 70.5,\n      \"context\": \"cool down, and now you can see that the resistor is made of resistive wires wound around the ceramic core. Anywho, this\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 13,\n    \"by_category\": {\n      \"visual_reference\": 4,\n      \"action_narration\": 6,\n      \"sensory_description\": 3,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The transcript shows moderate use of embodied language, with a good mix of action narration and visual references. The speaker frequently describes what they are doing and pointing out what the viewer can see.\"\n  }\n}\n```"
+}

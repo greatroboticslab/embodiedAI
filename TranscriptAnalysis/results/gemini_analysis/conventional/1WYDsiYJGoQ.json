@@ -1,0 +1,178 @@
+{
+  "video_id": "1WYDsiYJGoQ",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Mixer",
+        "description": "The mixer tells the Flight Controller how many motors there are, their location in space, and their spinning direction, which is crucial for translating stick inputs into quadcopter movement.",
+        "mention_count": 9,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The mixer is introduced early, explained in detail, and its importance is emphasized throughout the video. It is also returned to at the end in the recap.",
+        "representative_quotes": [
+          "the Mixer tells the Flight Controller how many motors there are",
+          "the Flight Controller's job is to translate your stick inputs into movement"
+        ]
+      },
+      {
+        "name": "Motor Direction",
+        "description": "The video covers setting the motor direction, including the common mistake of not checking against the diagram and how the 'motor direction is reversed' option functions. It also covers using a wizard in Betaflight 4.3.",
+        "mention_count": 14,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "Motor direction is discussed in a dedicated section, with examples of common mistakes and best practices. The new Betaflight 4.3 wizard is highlighted.",
+        "representative_quotes": [
+          "always do it based on the diagram that the Flight Controller is giving you",
+          "The motor direction wizard does the same thing"
+        ]
+      },
+      {
+        "name": "DSHOT Protocol",
+        "description": "DSHOT is explained as a digital protocol for communication between the Flight Controller and the ESC, including the different variants (150, 300, 600) and their impact on latency based on PID loop rate.",
+        "mention_count": 14,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The DSHOT protocol is covered in a dedicated section, explaining its function and the differences between the variants. The video also describes why you might choose one version over another. It is also returned to at the end in the recap.",
+        "representative_quotes": [
+          "DSHOT is a digital protocol that is used to communicate between the Flight Controller and the ESC",
+          "DSHOT 600 is the fastest that Betaflight supports."
+        ]
+      },
+      {
+        "name": "Bidirectional D-shot",
+        "description": "The benefit of bidirectional D-shot is covered including how it allows motor RPM feedback to the flight controller for improved filtering, and how to troubleshoot errors.",
+        "mention_count": 13,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "Bidirectional D-shot is presented as an important optimization, the function and reasons for enabling it are described, and troubleshooting is also covered. It is also returned to at the end in the recap.",
+        "representative_quotes": [
+          "Bidirectional D-shot allows the ESC to send motor RPM back to the flight controller",
+          "as a rule of thumb, you want to see this error percent be less than 1%"
+        ]
+      },
+      {
+        "name": "Motor Idle Percent",
+        "description": "This describes the lowest throttle value sent to motors, explaining how it affects hang time, drop speed, and prop wash handling.  The recommendation is to use dynamic idle value instead, in Betaflight 4.3.",
+        "mention_count": 10,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 3,
+        "strength_reasoning": "The motor idle percent is covered in a dedicated section explaining how it affects flight performance. The speaker's recommendation against using this is emphasized and it is returned to at the end in the recap.",
+        "representative_quotes": [
+          "this is the lowest throttle value that the flight controller will send to the motors.",
+          "I don't recommend that you use this because Betaflight 4.3 has a setting called dynamic idle value"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "look at this diagram here",
+        "category": "visual_reference",
+        "position_pct": 28.32,
+        "context": "I want you to look at this diagram here and look at which direction"
+      },
+      {
+        "phrase": "look at which direction the motors are spinning",
+        "category": "visual_reference",
+        "position_pct": 28.77,
+        "context": "I want you to look at this diagram here and look at which direction"
+      },
+      {
+        "phrase": "look at the RPM",
+        "category": "visual_reference",
+        "position_pct": 74.22,
+        "context": "motors. And that's what this R is here. And you can look at the RPM is moving slightly"
+      },
+      {
+        "phrase": "pick the quad up, turn it over, rotate the motor in your hands",
+        "category": "action_narration",
+        "position_pct": 60.06,
+        "context": "you're uncertain, just literally pick the quad up, turn it over, rotate the motor in"
+      },
+      {
+        "phrase": "count the magnets",
+        "category": "action_narration",
+        "position_pct": 60.62,
+        "context": "motor in your hands, and count the magnets on the inside of"
+      },
+      {
+        "phrase": "tap the table",
+        "category": "action_narration",
+        "position_pct": 84.51,
+        "context": "And that's just showing me, as if I move the quad or tap the table, we can see a readout"
+      },
+      {
+        "phrase": "look at the vibration",
+        "category": "visual_reference",
+        "position_pct": 86.04,
+        "context": "can do is you can look at the vibration that the motor creates. So"
+      },
+      {
+        "phrase": "raise the slider",
+        "category": "action_narration",
+        "position_pct": 87.93,
+        "context": "going to do is I'm going to raise the slider and bring it back down"
+      },
+      {
+        "phrase": "look at the amount of vibration",
+        "category": "visual_reference",
+        "position_pct": 88.3,
+        "context": "I'm going to look at the amount of vibration that that motor created. And"
+      },
+      {
+        "phrase": "do you see that we have 6.1 on the Z axis",
+        "category": "sensory_description",
+        "position_pct": 91.45,
+        "context": "reset that. Bingo. Do you see that we have 6.1 on the Z axis, 2.9"
+      },
+      {
+        "phrase": "put my finger against it",
+        "category": "action_narration",
+        "position_pct": 97.11,
+        "context": "Or sometimes if I can't tell, I'll just put my finger against it and see which way"
+      },
+      {
+        "phrase": "see which way it's dragging",
+        "category": "sensory_description",
+        "position_pct": 97.34,
+        "context": "I'll just put my finger against it and see which way it's dragging. Okay, so that's dragging that"
+      },
+      {
+        "phrase": "make sure they match the direction that we see here",
+        "category": "procedural_instruction",
+        "position_pct": 98.08,
+        "context": "it will change the direction. And we can do that for all four of the motors to make sure they match the direction that we see here in the diagram."
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 13,
+      "by_category": {
+        "visual_reference": 4,
+        "action_narration": 5,
+        "sensory_description": 2,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The transcript has a mix of visual references, action narration, and sensory descriptions. While not overwhelmingly abundant, they are present throughout the explanation, especially during the second half."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Mixer\",\n      \"description\": \"The mixer tells the Flight Controller how many motors there are, their location in space, and their spinning direction, which is crucial for translating stick inputs into quadcopter movement.\",\n      \"mention_count\": 9,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The mixer is introduced early, explained in detail, and its importance is emphasized throughout the video. It is also returned to at the end in the recap.\",\n      \"representative_quotes\": [\n        \"the Mixer tells the Flight Controller how many motors there are\",\n        \"the Flight Controller's job is to translate your stick inputs into movement\"\n      ]\n    },\n    {\n      \"name\": \"Motor Direction\",\n      \"description\": \"The video covers setting the motor direction, including the common mistake of not checking against the diagram and how the 'motor direction is reversed' option functions. It also covers using a wizard in Betaflight 4.3.\",\n      \"mention_count\": 14,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Motor direction is discussed in a dedicated section, with examples of common mistakes and best practices. The new Betaflight 4.3 wizard is highlighted.\",\n      \"representative_quotes\": [\n        \"always do it based on the diagram that the Flight Controller is giving you\",\n        \"The motor direction wizard does the same thing\"\n      ]\n    },\n    {\n      \"name\": \"DSHOT Protocol\",\n      \"description\": \"DSHOT is explained as a digital protocol for communication between the Flight Controller and the ESC, including the different variants (150, 300, 600) and their impact on latency based on PID loop rate.\",\n      \"mention_count\": 14,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The DSHOT protocol is covered in a dedicated section, explaining its function and the differences between the variants. The video also describes why you might choose one version over another. It is also returned to at the end in the recap.\",\n      \"representative_quotes\": [\n        \"DSHOT is a digital protocol that is used to communicate between the Flight Controller and the ESC\",\n        \"DSHOT 600 is the fastest that Betaflight supports.\"\n      ]\n    },\n    {\n      \"name\": \"Bidirectional D-shot\",\n      \"description\": \"The benefit of bidirectional D-shot is covered including how it allows motor RPM feedback to the flight controller for improved filtering, and how to troubleshoot errors.\",\n      \"mention_count\": 13,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Bidirectional D-shot is presented as an important optimization, the function and reasons for enabling it are described, and troubleshooting is also covered. It is also returned to at the end in the recap.\",\n      \"representative_quotes\": [\n        \"Bidirectional D-shot allows the ESC to send motor RPM back to the flight controller\",\n        \"as a rule of thumb, you want to see this error percent be less than 1%\"\n      ]\n    },\n    {\n      \"name\": \"Motor Idle Percent\",\n      \"description\": \"This describes the lowest throttle value sent to motors, explaining how it affects hang time, drop speed, and prop wash handling.  The recommendation is to use dynamic idle value instead, in Betaflight 4.3.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The motor idle percent is covered in a dedicated section explaining how it affects flight performance. The speaker's recommendation against using this is emphasized and it is returned to at the end in the recap.\",\n      \"representative_quotes\": [\n        \"this is the lowest throttle value that the flight controller will send to the motors.\",\n        \"I don't recommend that you use this because Betaflight 4.3 has a setting called dynamic idle value\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"look at this diagram here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 28.32,\n      \"context\": \"I want you to look at this diagram here and look at which direction\"\n    },\n    {\n      \"phrase\": \"look at which direction the motors are spinning\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 28.77,\n      \"context\": \"I want you to look at this diagram here and look at which direction\"\n    },\n    {\n      \"phrase\": \"look at the RPM\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 74.22,\n      \"context\": \"motors. And that's what this R is here. And you can look at the RPM is moving slightly\"\n    },\n    {\n      \"phrase\": \"pick the quad up, turn it over, rotate the motor in your hands\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 60.06,\n      \"context\": \"you're uncertain, just literally pick the quad up, turn it over, rotate the motor in\"\n    },\n    {\n      \"phrase\": \"count the magnets\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 60.62,\n      \"context\": \"motor in your hands, and count the magnets on the inside of\"\n    },\n    {\n      \"phrase\": \"tap the table\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 84.51,\n      \"context\": \"And that's just showing me, as if I move the quad or tap the table, we can see a readout\"\n    },\n    {\n      \"phrase\": \"look at the vibration\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 86.04,\n      \"context\": \"can do is you can look at the vibration that the motor creates. So\"\n    },\n    {\n      \"phrase\": \"raise the slider\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 87.93,\n      \"context\": \"going to do is I'm going to raise the slider and bring it back down\"\n    },\n    {\n      \"phrase\": \"look at the amount of vibration\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 88.3,\n      \"context\": \"I'm going to look at the amount of vibration that that motor created. And\"\n    },\n    {\n      \"phrase\": \"do you see that we have 6.1 on the Z axis\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 91.45,\n      \"context\": \"reset that. Bingo. Do you see that we have 6.1 on the Z axis, 2.9\"\n    },\n    {\n      \"phrase\": \"put my finger against it\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 97.11,\n      \"context\": \"Or sometimes if I can't tell, I'll just put my finger against it and see which way\"\n    },\n    {\n      \"phrase\": \"see which way it's dragging\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 97.34,\n      \"context\": \"I'll just put my finger against it and see which way it's dragging. Okay, so that's dragging that\"\n    },\n    {\n      \"phrase\": \"make sure they match the direction that we see here\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 98.08,\n      \"context\": \"it will change the direction. And we can do that for all four of the motors to make sure they match the direction that we see here in the diagram.\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 13,\n    \"by_category\": {\n      \"visual_reference\": 4,\n      \"action_narration\": 5,\n      \"sensory_description\": 2,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The transcript has a mix of visual references, action narration, and sensory descriptions. While not overwhelmingly abundant, they are present throughout the explanation, especially during the second half.\"\n  }\n}\n```"
+}

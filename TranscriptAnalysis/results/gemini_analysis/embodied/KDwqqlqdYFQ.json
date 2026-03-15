@@ -1,0 +1,90 @@
+{
+  "video_id": "KDwqqlqdYFQ",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "TDA2030 Amplifier Kit Build",
+        "description": "The video focuses on building a TDA2030 amplifier from a kit, highlighting the components and the assembly process.",
+        "mention_count": 5,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The amplifier is the central focus of the build, discussed throughout, but not demonstrated working fully due to missing speakers.",
+        "representative_quotes": [
+          "we're going to build that circuit",
+          "we're going to build it and have ourselves a nice TDA2030"
+        ]
+      },
+      {
+        "name": "Component Identification and Soldering",
+        "description": "The video involves identifying various electronic components on the circuit board and soldering them in place to assemble the amplifier kit.",
+        "mention_count": 5,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The act of assembly is highlighted, but the specific techniques aren't in focus.",
+        "representative_quotes": [
+          "you can see there are a few changes from the circuit",
+          "Last soldering for this guy."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "If we take a look here at the circuit board",
+        "category": "visual_reference",
+        "position_pct": 6.4,
+        "context": "TDA2030. If we take a look here at the circuit board, you can see there"
+      },
+      {
+        "phrase": "I'm just going to cut some wire",
+        "category": "action_narration",
+        "position_pct": 45.8,
+        "context": "those jacks. I don't have anything to use it with. So, for our purposes today, I'm just going to cut some wire. And,"
+      },
+      {
+        "phrase": "strip it",
+        "category": "action_narration",
+        "position_pct": 46.3,
+        "context": "today, I'm just going to cut some wire. And, strip it. And, we'll just hook"
+      },
+      {
+        "phrase": "hook it up with alligator clips",
+        "category": "action_narration",
+        "position_pct": 47.3,
+        "context": "wire. And, strip it. And, we'll just hook it up with alligator clips. Now,"
+      },
+      {
+        "phrase": "soldered everything in the right direction",
+        "category": "action_narration",
+        "position_pct": 78.2,
+        "context": "the LED. I got that set for 6 volts let me get in here and change it. Voltage boom boom zip and power. Okay so our LED is lit sniff testing nothing seems unreasonably hot yeah I guess I soldered everything in the right direction then"
+      },
+      {
+        "phrase": "look at the output",
+        "category": "visual_reference",
+        "position_pct": 90.5,
+        "context": "it on a scope and look at the output. So if you guys want"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 6,
+      "by_category": {
+        "visual_reference": 2,
+        "action_narration": 4,
+        "sensory_description": 0,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The transcript uses some embodied language, mostly centered on the action of building. There aren't any sensory descriptions or procedural instructions."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"TDA2030 Amplifier Kit Build\",\n      \"description\": \"The video focuses on building a TDA2030 amplifier from a kit, highlighting the components and the assembly process.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The amplifier is the central focus of the build, discussed throughout, but not demonstrated working fully due to missing speakers.\",\n      \"representative_quotes\": [\n        \"we're going to build that circuit\",\n        \"we're going to build it and have ourselves a nice TDA2030\"\n      ]\n    },\n    {\n      \"name\": \"Component Identification and Soldering\",\n      \"description\": \"The video involves identifying various electronic components on the circuit board and soldering them in place to assemble the amplifier kit.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The act of assembly is highlighted, but the specific techniques aren't in focus.\",\n      \"representative_quotes\": [\n        \"you can see there are a few changes from the circuit\",\n        \"Last soldering for this guy.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"If we take a look here at the circuit board\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 6.4,\n      \"context\": \"TDA2030. If we take a look here at the circuit board, you can see there\"\n    },\n    {\n      \"phrase\": \"I'm just going to cut some wire\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 45.8,\n      \"context\": \"those jacks. I don't have anything to use it with. So, for our purposes today, I'm just going to cut some wire. And,\"\n    },\n    {\n      \"phrase\": \"strip it\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 46.3,\n      \"context\": \"today, I'm just going to cut some wire. And, strip it. And, we'll just hook\"\n    },\n    {\n      \"phrase\": \"hook it up with alligator clips\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 47.3,\n      \"context\": \"wire. And, strip it. And, we'll just hook it up with alligator clips. Now,\"\n    },\n    {\n      \"phrase\": \"soldered everything in the right direction\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 78.2,\n      \"context\": \"the LED. I got that set for 6 volts let me get in here and change it. Voltage boom boom zip and power. Okay so our LED is lit sniff testing nothing seems unreasonably hot yeah I guess I soldered everything in the right direction then\"\n    },\n    {\n      \"phrase\": \"look at the output\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 90.5,\n      \"context\": \"it on a scope and look at the output. So if you guys want\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 6,\n    \"by_category\": {\n      \"visual_reference\": 2,\n      \"action_narration\": 4,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The transcript uses some embodied language, mostly centered on the action of building. There aren't any sensory descriptions or procedural instructions.\"\n  }\n}\n```"
+}

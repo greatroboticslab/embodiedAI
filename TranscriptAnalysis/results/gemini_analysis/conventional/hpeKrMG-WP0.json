@@ -1,0 +1,94 @@
+{
+  "video_id": "hpeKrMG-WP0",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "State Space Representation",
+        "description": "State space representation is a method of modeling dynamic systems using a set of first-order differential equations, focusing on the relationship between state variables, their derivatives, and external inputs, enabling easier analysis and control design.",
+        "mention_count": 15,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "The video is entirely dedicated to introducing state space representation, its benefits, and its components. It is mentioned throughout the video and reinforced in the conclusion.",
+        "representative_quotes": [
+          "In state space, representation is simply a repackaging of the high-order differential equations into a set of first-order differential equations that focus on this relationship.",
+          "State space representation is built around the state vector x."
+        ]
+      },
+      {
+        "name": "State Variables",
+        "description": "State variables are the minimum set of variables that fully describe a dynamic system, enabling prediction of its future behavior based on their current values and external inputs; they relate to the energy storage within the system.",
+        "mention_count": 10,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "The video spends a dedicated portion explaining what state variables are, using a spring-mass system as an example. The concept is developed and returned to throughout the middle and late portions of the transcript.",
+        "representative_quotes": [
+          "The state variables are the minimum set of variables that fully describe the system.",
+          "So the minimum number of variables we need to fully describe this system is two, position and velocity."
+        ]
+      },
+      {
+        "name": "State Space Equations",
+        "description": "State space equations consist of two primary equations: the state equation, which describes the relationship between the state vector's derivative, the current state, and external inputs, and the output equation, which defines how the states are combined to produce the system's outputs.",
+        "mention_count": 5,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "A dedicated section of the video covers the state space equations and their components (A, B, C, D matrices).",
+        "representative_quotes": [
+          "Now let's take a moment to look at the state space equations in more detail and try to make a little sense of them.",
+          "There are two equations. The first one is the state equation, which we've already developed a little intuition around, and the second equation is the output equation, which I'll get to in just a bit."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "look at how the energy changes",
+        "category": "visual_reference",
+        "position_pct": 11.11,
+        "context": "For any arbitrary dynamic system, if we look at how the energy changes by analyzing the relationship between"
+      },
+      {
+        "phrase": "Think about initializing this system by stretching the spring and letting it go.",
+        "category": "action_narration",
+        "position_pct": 7.41,
+        "context": "the state itself. Think about initializing this system by stretching the spring and letting it go. Acceleration changes velocity, which"
+      },
+      {
+        "phrase": "As you might have noticed",
+        "category": "visual_reference",
+        "position_pct": 50.0,
+        "context": "the output equation. As you might have noticed, the state variables are the key to"
+      },
+      {
+        "phrase": "If I draw the spring and mass like this",
+        "category": "visual_reference",
+        "position_pct": 55.56,
+        "context": "by starting with no information about the system. If I draw the spring and mass like this and asked you to predict"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 4,
+      "by_category": {
+        "visual_reference": 2,
+        "action_narration": 1,
+        "sensory_description": 0,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The transcript contains a low number of embodied phrases, with a slight focus on visual references and only one instance of action narration.  There are no sensory descriptions or procedural instructions."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"State Space Representation\",\n      \"description\": \"State space representation is a method of modeling dynamic systems using a set of first-order differential equations, focusing on the relationship between state variables, their derivatives, and external inputs, enabling easier analysis and control design.\",\n      \"mention_count\": 15,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"The video is entirely dedicated to introducing state space representation, its benefits, and its components. It is mentioned throughout the video and reinforced in the conclusion.\",\n      \"representative_quotes\": [\n        \"In state space, representation is simply a repackaging of the high-order differential equations into a set of first-order differential equations that focus on this relationship.\",\n        \"State space representation is built around the state vector x.\"\n      ]\n    },\n    {\n      \"name\": \"State Variables\",\n      \"description\": \"State variables are the minimum set of variables that fully describe a dynamic system, enabling prediction of its future behavior based on their current values and external inputs; they relate to the energy storage within the system.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The video spends a dedicated portion explaining what state variables are, using a spring-mass system as an example. The concept is developed and returned to throughout the middle and late portions of the transcript.\",\n      \"representative_quotes\": [\n        \"The state variables are the minimum set of variables that fully describe the system.\",\n        \"So the minimum number of variables we need to fully describe this system is two, position and velocity.\"\n      ]\n    },\n    {\n      \"name\": \"State Space Equations\",\n      \"description\": \"State space equations consist of two primary equations: the state equation, which describes the relationship between the state vector's derivative, the current state, and external inputs, and the output equation, which defines how the states are combined to produce the system's outputs.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"A dedicated section of the video covers the state space equations and their components (A, B, C, D matrices).\",\n      \"representative_quotes\": [\n        \"Now let's take a moment to look at the state space equations in more detail and try to make a little sense of them.\",\n        \"There are two equations. The first one is the state equation, which we've already developed a little intuition around, and the second equation is the output equation, which I'll get to in just a bit.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"look at how the energy changes\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 11.11,\n      \"context\": \"For any arbitrary dynamic system, if we look at how the energy changes by analyzing the relationship between\"\n    },\n    {\n      \"phrase\": \"Think about initializing this system by stretching the spring and letting it go.\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 7.41,\n      \"context\": \"the state itself. Think about initializing this system by stretching the spring and letting it go. Acceleration changes velocity, which\"\n    },\n    {\n      \"phrase\": \"As you might have noticed\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 50.0,\n      \"context\": \"the output equation. As you might have noticed, the state variables are the key to\"\n    },\n    {\n      \"phrase\": \"If I draw the spring and mass like this\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 55.56,\n      \"context\": \"by starting with no information about the system. If I draw the spring and mass like this and asked you to predict\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 4,\n    \"by_category\": {\n      \"visual_reference\": 2,\n      \"action_narration\": 1,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The transcript contains a low number of embodied phrases, with a slight focus on visual references and only one instance of action narration.  There are no sensory descriptions or procedural instructions.\"\n  }\n}\n```"
+}

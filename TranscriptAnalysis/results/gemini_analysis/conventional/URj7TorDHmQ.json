@@ -1,0 +1,101 @@
+{
+  "video_id": "URj7TorDHmQ",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Newton's Third Law",
+        "description": "Explains lift as a reaction to the wing deflecting air downwards. The equal and opposite reaction provides an upward force (lift).",
+        "mention_count": 5,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Dedicated section with clear examples (boat, rocket). Mentions its role in explaining lift.",
+        "representative_quotes": [
+          "for every action there's an equal and opposite reaction",
+          "resulting motion of the aircraft moving forward"
+        ]
+      },
+      {
+        "name": "Bernoulli's Principle",
+        "description": "Explains lift as a consequence of pressure differences created by airflow over the wing. Higher velocity air has lower pressure, contributing to an upward force.",
+        "mention_count": 8,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "Dedicated section, example of air nozzle, links to lift generation, reviewed and summarized.",
+        "representative_quotes": [
+          "as the velocity of a fluid increases, the pressure of that fluid decreases and vice versa",
+          "pressure below the wing is greater than the pressure above the wing"
+        ]
+      },
+      {
+        "name": "Airfoil and Angle of Attack",
+        "description": "The shape of the wing (airfoil) and its angle relative to the oncoming air (angle of attack) determine how air is split and pressure is distributed, leading to lift.",
+        "mention_count": 5,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in the explanation of lift, but not a standalone section. Shown in a diagram. Summarized at end.",
+        "representative_quotes": [
+          "shape of the wing, the airfoil and the angle of attack",
+          "splitting the air, causing that differential in pressure"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "look at the link in my description",
+        "category": "visual_reference",
+        "position_pct": 5.88,
+        "context": "good information. Just look at the link in my description. Go to that link and download"
+      },
+      {
+        "phrase": "you see a lot of people fall",
+        "category": "sensory_description",
+        "position_pct": 17.65,
+        "context": "the dock. That's why you see a lot of people fall into the water"
+      },
+      {
+        "phrase": "click on the video that's popping up",
+        "category": "visual_reference",
+        "position_pct": 44.12,
+        "context": "dynamic pressure, click on the video that's popping up in the top right. I"
+      },
+      {
+        "phrase": "let's look at this more visually",
+        "category": "visual_reference",
+        "position_pct": 47.06,
+        "context": "always the same. Let's look at this more visually. So here we have a hypothetical"
+      },
+      {
+        "phrase": "hang with me",
+        "category": "procedural_instruction",
+        "position_pct": 76.47,
+        "context": "by Bernoulli's principle. It gets a little tough, so hang with me. So the air above and"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 5,
+      "by_category": {
+        "visual_reference": 3,
+        "action_narration": 0,
+        "sensory_description": 1,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "Primarily visual references, with limited action narration or sensory descriptions, and one procedural instruction."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Newton's Third Law\",\n      \"description\": \"Explains lift as a reaction to the wing deflecting air downwards. The equal and opposite reaction provides an upward force (lift).\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Dedicated section with clear examples (boat, rocket). Mentions its role in explaining lift.\",\n      \"representative_quotes\": [\n        \"for every action there's an equal and opposite reaction\",\n        \"resulting motion of the aircraft moving forward\"\n      ]\n    },\n    {\n      \"name\": \"Bernoulli's Principle\",\n      \"description\": \"Explains lift as a consequence of pressure differences created by airflow over the wing. Higher velocity air has lower pressure, contributing to an upward force.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Dedicated section, example of air nozzle, links to lift generation, reviewed and summarized.\",\n      \"representative_quotes\": [\n        \"as the velocity of a fluid increases, the pressure of that fluid decreases and vice versa\",\n        \"pressure below the wing is greater than the pressure above the wing\"\n      ]\n    },\n    {\n      \"name\": \"Airfoil and Angle of Attack\",\n      \"description\": \"The shape of the wing (airfoil) and its angle relative to the oncoming air (angle of attack) determine how air is split and pressure is distributed, leading to lift.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in the explanation of lift, but not a standalone section. Shown in a diagram. Summarized at end.\",\n      \"representative_quotes\": [\n        \"shape of the wing, the airfoil and the angle of attack\",\n        \"splitting the air, causing that differential in pressure\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"look at the link in my description\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 5.88,\n      \"context\": \"good information. Just look at the link in my description. Go to that link and download\"\n    },\n    {\n      \"phrase\": \"you see a lot of people fall\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 17.65,\n      \"context\": \"the dock. That's why you see a lot of people fall into the water\"\n    },\n    {\n      \"phrase\": \"click on the video that's popping up\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 44.12,\n      \"context\": \"dynamic pressure, click on the video that's popping up in the top right. I\"\n    },\n    {\n      \"phrase\": \"let's look at this more visually\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 47.06,\n      \"context\": \"always the same. Let's look at this more visually. So here we have a hypothetical\"\n    },\n    {\n      \"phrase\": \"hang with me\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 76.47,\n      \"context\": \"by Bernoulli's principle. It gets a little tough, so hang with me. So the air above and\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 5,\n    \"by_category\": {\n      \"visual_reference\": 3,\n      \"action_narration\": 0,\n      \"sensory_description\": 1,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"Primarily visual references, with limited action narration or sensory descriptions, and one procedural instruction.\"\n  }\n}\n```"
+}

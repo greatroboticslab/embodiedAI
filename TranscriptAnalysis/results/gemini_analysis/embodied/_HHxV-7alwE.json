@@ -1,0 +1,205 @@
+{
+  "video_id": "_HHxV-7alwE",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Operational Amplifiers (Op Amps)",
+        "description": "The video introduces op amps, their versatility in analog design, use in interfacing analog and digital electronics, and their cost-effectiveness. It covers their function as high-gain differential amplifiers, key specifications, various configurations (inverting, non-inverting, etc.), and applications like filters and comparators.",
+        "mention_count": 25,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "The entire video is dedicated to explaining and demonstrating op amps, including their characteristics, configurations, and applications.  The video begins and ends by emphasizing the use and potential of op amps.",
+        "representative_quotes": [
+          "We're going to be working with operational amplifiers, more commonly known as op amps.",
+          "So this concludes our look at operational amplifiers."
+        ]
+      },
+      {
+        "name": "Op Amp Configurations",
+        "description": "The video explores several configurations of op amps, including inverting and non-inverting amplifiers, unity gain buffers, comparators, active filters (low-pass and high-pass), and multivibrators.  It covers the purpose and function of each.",
+        "mention_count": 12,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "Several different configurations are explained, demonstrated, and related to use cases, giving this keypoint significant development within the video.",
+        "representative_quotes": [
+          "A common configuration for an operational amplifier is as an inverting amplifier.",
+          "The next circuit that we're going to look at is also a very commonly used audio circuit, and that's the low-pass active filter."
+        ]
+      },
+      {
+        "name": "Interfacing Op Amps with Microcontrollers",
+        "description": "The video demonstrates how to use op amps to amplify signals for an Arduino's analog-to-digital converter (ADC) and how to use them as comparators for digital inputs. The configurations and example circuit are presented with clear instruction.",
+        "mention_count": 4,
+        "positions": [
+          "early",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "This keypoint is introduced and developed with a specific circuit example, and is related back to the overall function of op amps. However, it is not returned to after the initial description.",
+        "representative_quotes": [
+          "I'm going to show you how we can use an op amp with a microcontroller.",
+          "Operational amplifiers can also be used to glue together analog and digital circuitry."
+        ]
+      },
+      {
+        "name": "Light-Sensitive Switch",
+        "description": "The video explains how to build a light-sensitive switch using an op amp, illustrating its construction, component selection, and function.  It shows how to construct the circuit so that it triggers on light or darkness.",
+        "mention_count": 6,
+        "positions": [
+          "early",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "This is presented as a dedicated project with detailed construction and explanation, but is not integrated into the rest of the video in any way.",
+        "representative_quotes": [
+          "We're going to build a little project, a light-sensitive switch that is built with an op amp.",
+          "Here's our light sensitive switch."
+        ]
+      },
+      {
+        "name": "Single to Dual Power Supply Conversion",
+        "description": "The video teaches how to build a converter to create a dual power supply from a single supply using an op amp, output transistors, and filter capacitors.  It emphasizes the importance of complementary transistors and safety when dealing with power supplies.",
+        "mention_count": 5,
+        "positions": [
+          "early",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "This is presented as a solution to a practical limitation with using op amps, but is limited in overall coverage.",
+        "representative_quotes": [
+          "We're going to build a converter that converts a single supply to a dual supply, and, of course, that converter is going to be built with an op amp.",
+          "Just use an op amp to take a single power supply and make it into a dual one."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "you can see",
+        "category": "visual_reference",
+        "position_pct": 44.55,
+        "context": "from the formula here that the gain of the amplifier depends"
+      },
+      {
+        "phrase": "you can see",
+        "category": "visual_reference",
+        "position_pct": 95.5,
+        "context": "the LED is on right now. And if I go and"
+      },
+      {
+        "phrase": "wired like this",
+        "category": "action_narration",
+        "position_pct": 40.81,
+        "context": "input. Wired like this, the op amp will have a"
+      },
+      {
+        "phrase": "take a look",
+        "category": "visual_reference",
+        "position_pct": 21.17,
+        "context": "Now, in selecting an operational amplifier, you should go and take a look at the spec"
+      },
+      {
+        "phrase": "Let's put",
+        "category": "action_narration",
+        "position_pct": 29.67,
+        "context": "Okay, enough of the op amp theory. Let's put some of it into practice. We're"
+      },
+      {
+        "phrase": "connect one to",
+        "category": "action_narration",
+        "position_pct": 5.26,
+        "context": "After that, I'm going to show you how we can connect one to an Arduino Uno."
+      },
+      {
+        "phrase": "wire it in",
+        "category": "action_narration",
+        "position_pct": 29.92,
+        "context": "take an op amp and put it onto a SOTELIS breadboard, and wire it in a number of different configurations,"
+      },
+      {
+        "phrase": "this is how we're going to wire",
+        "category": "action_narration",
+        "position_pct": 44.0,
+        "context": "equipment designs, for example. Now this is how we're going to wire our NE5532 up as an inverting"
+      },
+      {
+        "phrase": "You will notice",
+        "category": "visual_reference",
+        "position_pct": 40.18,
+        "context": "NE5532 is obviously the simplest configuration there is, and that is the unity gain buffer. You will notice that in this configuration the output of"
+      },
+      {
+        "phrase": "You can take a look",
+        "category": "visual_reference",
+        "position_pct": 41.76,
+        "context": "follower, and of course the very simple circuit that it is. You can take a look at how I've got it on"
+      },
+      {
+        "phrase": "Let's wire this up",
+        "category": "action_narration",
+        "position_pct": 44.94,
+        "context": "fixed resistor, so you could have a variable gain amplifier. So let's wire this up and test it out."
+      },
+      {
+        "phrase": "Let's wire this one up",
+        "category": "action_narration",
+        "position_pct": 49.74,
+        "context": "of course, by changing the value of both the resistor and capacitor, and in practice it's easier to change the capacitor to a fixed value, and then trim the value of the resistor. So let's wire this one up on the breadboard, and check it out."
+      },
+      {
+        "phrase": "Let's wire this one up",
+        "category": "action_narration",
+        "position_pct": 53.17,
+        "context": "the same basic circuitry that we just used over here. Now if we exchange the position of the capacitor and the resistor in our filter, we can turn it into a high-pass active filter, a filter that allows higher frequencies to pass while attenuating lower frequencies. Once again, the formula for the filter is essentially the same, and ours has a crossover of 1592 hertz. Now high-pass and low-pass filters can be used to build things like tone controls, equalizers, crossover networks, and to eliminate noise and circuits. So they're very useful things to be able to know how to construct. So Let's wire this one up on our breadboard and check it out."
+      },
+      {
+        "phrase": "So let's go",
+        "category": "action_narration",
+        "position_pct": 68.34,
+        "context": "to do this. And that is, of course, to use an operational amplifier. We're going to build a small light sensitive switch with an op amp that's just going to control an LED, but you could extend it to use a relay or a power transistor to control something else. The best deal is that this entire design is going to take about $2 worth of parts and no programming required. So let's go and take a look at the hookup for that."
+      },
+      {
+        "phrase": "Let's wire it up",
+        "category": "action_narration",
+        "position_pct": 71.47,
+        "context": "Now essentially what we're doing here is running this as a comparator with a voltage divider consisting of the two 10k resistors attached to the inverting input. On the non-inverting input, we have another voltage divider which consists of the light dependent resistor or photo cell and a 20k potentiometer. You can adjust a 20k pot to adjust the trip point over here. So this is a very simple circuit. Let's wire it up and give it a test."
+      },
+      {
+        "phrase": "Let's put ours",
+        "category": "action_narration",
+        "position_pct": 81.6,
+        "context": "Now I'm going to disconnect my LED and connect it up another way. I'm going to now put the anode up to the positive power supply instead. And now what we've got is the LED is off. If I cover the photo cell, the LED goes on. So we've got the opposite arrangement right now. It's detecting dark instead of light. So you can wire it up either way that you want to, which is pretty versatile. And as I said, if you want to tie a transistor or a relay onto the output, you could drive something else. So here we have a photoelectric controlled switch that is not dependent upon a microcontroller and a very simple and inexpensive thing to build. If you need something like this, this is a great way to go. Now, as you've noticed, many operational amplifiers require a dual power supply, a power supply that has both a positive and a negative component in reference to ground. And you may not own a dual power supply. My workbench supply, for example, is just a single output power supply. But there is a converter that you can build to convert a single supply into a dual supply. And the converter is based around an op amp. So let's put ours onto a breadboard and check it out and see if we can drive another op amp circuit with our single to dual power supply converter."
+      },
+      {
+        "phrase": "So let's put",
+        "category": "action_narration",
+        "position_pct": 81.6,
+        "context": "disconnect my LED and connect it up another way. I'm going to now put the anode up to the positive power supply instead. And now what we've got is the LED is off. If I cover the photo cell, the LED goes on. So we've got the opposite arrangement right now. It's detecting dark instead of light. So you can wire it up either way that you want to, which is pretty versatile. And as I said, if you want to tie a transistor or a relay onto the output, you could drive something else. So here we have a photoelectric controlled switch that is not dependent upon a microcontroller and a very simple and inexpensive thing to build. If you need something like this, this is a great way to go. Now, as you've noticed, many operational amplifiers require a dual power supply, a power supply that has both a positive and a negative component in reference to ground. And you may not own a dual power supply. My workbench supply, for example, is just a single output power supply. But there is a converter that you can build to convert a single supply into a dual supply. And the converter is based around an op amp. So let's put ours onto a breadboard and check it out and see if we can drive another op amp circuit with our single to dual power supply converter."
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 17,
+      "by_category": {
+        "visual_reference": 6,
+        "action_narration": 11,
+        "sensory_description": 0,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The transcript contains multiple instances of embodied language. These are limited to visual reference and action narration, but are used with sufficient frequency to give this a medium richness score."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Operational Amplifiers (Op Amps)\",\n      \"description\": \"The video introduces op amps, their versatility in analog design, use in interfacing analog and digital electronics, and their cost-effectiveness. It covers their function as high-gain differential amplifiers, key specifications, various configurations (inverting, non-inverting, etc.), and applications like filters and comparators.\",\n      \"mention_count\": 25,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"The entire video is dedicated to explaining and demonstrating op amps, including their characteristics, configurations, and applications.  The video begins and ends by emphasizing the use and potential of op amps.\",\n      \"representative_quotes\": [\n        \"We're going to be working with operational amplifiers, more commonly known as op amps.\",\n        \"So this concludes our look at operational amplifiers.\"\n      ]\n    },\n    {\n      \"name\": \"Op Amp Configurations\",\n      \"description\": \"The video explores several configurations of op amps, including inverting and non-inverting amplifiers, unity gain buffers, comparators, active filters (low-pass and high-pass), and multivibrators.  It covers the purpose and function of each.\",\n      \"mention_count\": 12,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Several different configurations are explained, demonstrated, and related to use cases, giving this keypoint significant development within the video.\",\n      \"representative_quotes\": [\n        \"A common configuration for an operational amplifier is as an inverting amplifier.\",\n        \"The next circuit that we're going to look at is also a very commonly used audio circuit, and that's the low-pass active filter.\"\n      ]\n    },\n    {\n      \"name\": \"Interfacing Op Amps with Microcontrollers\",\n      \"description\": \"The video demonstrates how to use op amps to amplify signals for an Arduino's analog-to-digital converter (ADC) and how to use them as comparators for digital inputs. The configurations and example circuit are presented with clear instruction.\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"early\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"This keypoint is introduced and developed with a specific circuit example, and is related back to the overall function of op amps. However, it is not returned to after the initial description.\",\n      \"representative_quotes\": [\n        \"I'm going to show you how we can use an op amp with a microcontroller.\",\n        \"Operational amplifiers can also be used to glue together analog and digital circuitry.\"\n      ]\n    },\n    {\n      \"name\": \"Light-Sensitive Switch\",\n      \"description\": \"The video explains how to build a light-sensitive switch using an op amp, illustrating its construction, component selection, and function.  It shows how to construct the circuit so that it triggers on light or darkness.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"early\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"This is presented as a dedicated project with detailed construction and explanation, but is not integrated into the rest of the video in any way.\",\n      \"representative_quotes\": [\n        \"We're going to build a little project, a light-sensitive switch that is built with an op amp.\",\n        \"Here's our light sensitive switch.\"\n      ]\n    },\n    {\n      \"name\": \"Single to Dual Power Supply Conversion\",\n      \"description\": \"The video teaches how to build a converter to create a dual power supply from a single supply using an op amp, output transistors, and filter capacitors.  It emphasizes the importance of complementary transistors and safety when dealing with power supplies.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"early\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"This is presented as a solution to a practical limitation with using op amps, but is limited in overall coverage.\",\n      \"representative_quotes\": [\n        \"We're going to build a converter that converts a single supply to a dual supply, and, of course, that converter is going to be built with an op amp.\",\n        \"Just use an op amp to take a single power supply and make it into a dual one.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 44.55,\n      \"context\": \"from the formula here that the gain of the amplifier depends\"\n    },\n    {\n      \"phrase\": \"you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 95.5,\n      \"context\": \"the LED is on right now. And if I go and\"\n    },\n    {\n      \"phrase\": \"wired like this\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 40.81,\n      \"context\": \"input. Wired like this, the op amp will have a\"\n    },\n    {\n      \"phrase\": \"take a look\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 21.17,\n      \"context\": \"Now, in selecting an operational amplifier, you should go and take a look at the spec\"\n    },\n    {\n      \"phrase\": \"Let's put\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 29.67,\n      \"context\": \"Okay, enough of the op amp theory. Let's put some of it into practice. We're\"\n    },\n    {\n      \"phrase\": \"connect one to\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 5.26,\n      \"context\": \"After that, I'm going to show you how we can connect one to an Arduino Uno.\"\n    },\n    {\n      \"phrase\": \"wire it in\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 29.92,\n      \"context\": \"take an op amp and put it onto a SOTELIS breadboard, and wire it in a number of different configurations,\"\n    },\n    {\n      \"phrase\": \"this is how we're going to wire\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 44.0,\n      \"context\": \"equipment designs, for example. Now this is how we're going to wire our NE5532 up as an inverting\"\n    },\n    {\n      \"phrase\": \"You will notice\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 40.18,\n      \"context\": \"NE5532 is obviously the simplest configuration there is, and that is the unity gain buffer. You will notice that in this configuration the output of\"\n    },\n    {\n      \"phrase\": \"You can take a look\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 41.76,\n      \"context\": \"follower, and of course the very simple circuit that it is. You can take a look at how I've got it on\"\n    },\n    {\n      \"phrase\": \"Let's wire this up\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 44.94,\n      \"context\": \"fixed resistor, so you could have a variable gain amplifier. So let's wire this up and test it out.\"\n    },\n    {\n      \"phrase\": \"Let's wire this one up\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 49.74,\n      \"context\": \"of course, by changing the value of both the resistor and capacitor, and in practice it's easier to change the capacitor to a fixed value, and then trim the value of the resistor. So let's wire this one up on the breadboard, and check it out.\"\n    },\n    {\n      \"phrase\": \"Let's wire this one up\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 53.17,\n      \"context\": \"the same basic circuitry that we just used over here. Now if we exchange the position of the capacitor and the resistor in our filter, we can turn it into a high-pass active filter, a filter that allows higher frequencies to pass while attenuating lower frequencies. Once again, the formula for the filter is essentially the same, and ours has a crossover of 1592 hertz. Now high-pass and low-pass filters can be used to build things like tone controls, equalizers, crossover networks, and to eliminate noise and circuits. So they're very useful things to be able to know how to construct. So Let's wire this one up on our breadboard and check it out.\"\n    },\n    {\n      \"phrase\": \"So let's go\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 68.34,\n      \"context\": \"to do this. And that is, of course, to use an operational amplifier. We're going to build a small light sensitive switch with an op amp that's just going to control an LED, but you could extend it to use a relay or a power transistor to control something else. The best deal is that this entire design is going to take about $2 worth of parts and no programming required. So let's go and take a look at the hookup for that.\"\n    },\n    {\n      \"phrase\": \"Let's wire it up\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 71.47,\n      \"context\": \"Now essentially what we're doing here is running this as a comparator with a voltage divider consisting of the two 10k resistors attached to the inverting input. On the non-inverting input, we have another voltage divider which consists of the light dependent resistor or photo cell and a 20k potentiometer. You can adjust a 20k pot to adjust the trip point over here. So this is a very simple circuit. Let's wire it up and give it a test.\"\n    },\n    {\n      \"phrase\": \"Let's put ours\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 81.6,\n      \"context\": \"Now I'm going to disconnect my LED and connect it up another way. I'm going to now put the anode up to the positive power supply instead. And now what we've got is the LED is off. If I cover the photo cell, the LED goes on. So we've got the opposite arrangement right now. It's detecting dark instead of light. So you can wire it up either way that you want to, which is pretty versatile. And as I said, if you want to tie a transistor or a relay onto the output, you could drive something else. So here we have a photoelectric controlled switch that is not dependent upon a microcontroller and a very simple and inexpensive thing to build. If you need something like this, this is a great way to go. Now, as you've noticed, many operational amplifiers require a dual power supply, a power supply that has both a positive and a negative component in reference to ground. And you may not own a dual power supply. My workbench supply, for example, is just a single output power supply. But there is a converter that you can build to convert a single supply into a dual supply. And the converter is based around an op amp. So let's put ours onto a breadboard and check it out and see if we can drive another op amp circuit with our single to dual power supply converter.\"\n    },\n    {\n      \"phrase\": \"So let's put\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 81.6,\n      \"context\": \"disconnect my LED and connect it up another way. I'm going to now put the anode up to the positive power supply instead. And now what we've got is the LED is off. If I cover the photo cell, the LED goes on. So we've got the opposite arrangement right now. It's detecting dark instead of light. So you can wire it up either way that you want to, which is pretty versatile. And as I said, if you want to tie a transistor or a relay onto the output, you could drive something else. So here we have a photoelectric controlled switch that is not dependent upon a microcontroller and a very simple and inexpensive thing to build. If you need something like this, this is a great way to go. Now, as you've noticed, many operational amplifiers require a dual power supply, a power supply that has both a positive and a negative component in reference to ground. And you may not own a dual power supply. My workbench supply, for example, is just a single output power supply. But there is a converter that you can build to convert a single supply into a dual supply. And the converter is based around an op amp. So let's put ours onto a breadboard and check it out and see if we can drive another op amp circuit with our single to dual power supply converter.\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 17,\n    \"by_category\": {\n      \"visual_reference\": 6,\n      \"action_narration\": 11,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The transcript contains multiple instances of embodied language. These are limited to visual reference and action narration, but are used with sufficient frequency to give this a medium richness score.\"\n  }\n}\n```"
+}

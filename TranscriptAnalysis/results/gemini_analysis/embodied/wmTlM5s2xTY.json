@@ -1,0 +1,291 @@
+{
+  "video_id": "wmTlM5s2xTY",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "MyDAQ Setup & Registration",
+        "description": "Explains the initial setup of the MyDAQ device, including connecting cables, downloading software, and registering the device using the serial number.",
+        "mention_count": 5,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Setup and registration are covered in a dedicated section with multiple mentions, but not returned to.",
+        "representative_quotes": [
+          "this is where you find the zero number",
+          "after you follow the steps you just make an account"
+        ]
+      },
+      {
+        "name": "Using Multimeter & DC Level",
+        "description": "Demonstrates how to use the MyDAQ as a digital multimeter, specifically measuring voltage and current in a simple circuit using DC level output and setting appropriate values.",
+        "mention_count": 7,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section with multiple mentions, but is not a central focus of the *whole* video.",
+        "representative_quotes": [
+          "you plug the red cable right here otherwise if you want to calculate the current you plug it in here",
+          "multimeter dc level you put one you start it up it's running"
+        ]
+      },
+      {
+        "name": "Breadboard Usage & Circuit Construction",
+        "description": "Explains how to properly use a breadboard, including avoiding short circuits by not placing components on the same line, and how to use jump wires effectively.  Shows how to build circuits in the breadboard.",
+        "mention_count": 5,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section and revisited, although not with major emphasis.",
+        "representative_quotes": [
+          "a resistor cannot go just through its own line you short the circuit",
+          "switch from one side to another side you unscrew a little bit"
+        ]
+      },
+      {
+        "name": "Bode Analyzer Application",
+        "description": "Demonstrates how to use the Bode analyzer with MyDAQ for circuit analysis, setting start/stop frequencies and other parameters, and shows a simple circuit using a resistor and capacitor.",
+        "mention_count": 8,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Demonstrated with some explanation, but not returned to at the end.",
+        "representative_quotes": [
+          "i'm going to show you how to use the boat analyzer",
+          "you can see start frequencies right here"
+        ]
+      },
+      {
+        "name": "Op-Amp Circuit Implementation",
+        "description": "Explains how to set up and use an op-amp circuit with the MyDAQ, including identifying the pin numbers, setting voltage levels in the function generator, and interpreting the resulting signal output.",
+        "mention_count": 10,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "A longer section explaining how to connect the op-amp and read the signal, but only appears at the end.",
+        "representative_quotes": [
+          "it goes this way there's a little circle that you might be able to see in the camera",
+          "a one zero is right here it's a new concept"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "located right here",
+        "category": "visual_reference",
+        "position_pct": 6.41,
+        "context": "tell you personally the zero number is located right here it says sn zero number"
+      },
+      {
+        "phrase": "just click download",
+        "category": "procedural_instruction",
+        "position_pct": 8.97,
+        "context": "test settings except this 32-bit is fine english or whatever you prefer and just click download downloading the package manager after"
+      },
+      {
+        "phrase": "you click next",
+        "category": "procedural_instruction",
+        "position_pct": 15.38,
+        "context": "pre-selected you click next this is the software bundle i always"
+      },
+      {
+        "phrase": "you plug the red cable right here",
+        "category": "action_narration",
+        "position_pct": 18.59,
+        "context": "here for the my doc if you are looking to calculate voltage you plug the red cable right here otherwise if you want to"
+      },
+      {
+        "phrase": "plug it in",
+        "category": "action_narration",
+        "position_pct": 21.79,
+        "context": "black spot and then this one really it depends just plug it in we'll make it snug this is"
+      },
+      {
+        "phrase": "how it looks",
+        "category": "visual_reference",
+        "position_pct": 23.08,
+        "context": "is kind of tricky this is an up close shot of how it looks these are looking up and just"
+      },
+      {
+        "phrase": "press it hard",
+        "category": "procedural_instruction",
+        "position_pct": 24.36,
+        "context": "but you gotta press it hard until it kind of clicks make sure"
+      },
+      {
+        "phrase": "connect all the cables",
+        "category": "action_narration",
+        "position_pct": 28.21,
+        "context": "afraid and that's it this is where you would connect all the cables and stuff now we plug one"
+      },
+      {
+        "phrase": "plug it in",
+        "category": "action_narration",
+        "position_pct": 29.49,
+        "context": "usb cable and the actual usb cable goes to your computer this shows up as soon as you plug it in now go to the"
+      },
+      {
+        "phrase": "click on launch instruments",
+        "category": "procedural_instruction",
+        "position_pct": 30.77,
+        "context": "soon as you plug it in now go to the bottom and click on launch instruments and apps for this device"
+      },
+      {
+        "phrase": "click yes",
+        "category": "procedural_instruction",
+        "position_pct": 36.41,
+        "context": "this would happen so you click yet register i mean it knows"
+      },
+      {
+        "phrase": "put the serial number",
+        "category": "action_narration",
+        "position_pct": 39.74,
+        "context": "registration wizard that the papers here talk about just follow the instructions and put the serial number now that i put the serial"
+      },
+      {
+        "phrase": "you can see",
+        "category": "visual_reference",
+        "position_pct": 42.31,
+        "context": "a little while we reload this and we can see let's see it's still loading we can"
+      },
+      {
+        "phrase": "we start at yellow goes to the green",
+        "category": "action_narration",
+        "position_pct": 48.72,
+        "context": "the spread board so we start at yellow goes to the green goes to the resistor goes back"
+      },
+      {
+        "phrase": "this is exactly what is going on here",
+        "category": "visual_reference",
+        "position_pct": 50.0,
+        "context": "to ground a ground would be negative and this is exactly what is going on here now if we"
+      },
+      {
+        "phrase": "put it in the current",
+        "category": "procedural_instruction",
+        "position_pct": 55.13,
+        "context": "running for me remember to put it in the current click run and set this to the current this"
+      },
+      {
+        "phrase": "we're going to put the positive side red",
+        "category": "action_narration",
+        "position_pct": 56.41,
+        "context": "to the current and now all we have to do this does depend on which one goes first so we're going to put the positive side red and the negative"
+      },
+      {
+        "phrase": "put it right here",
+        "category": "action_narration",
+        "position_pct": 57.69,
+        "context": "the positive side red and the negative side black so we put it right here like so right there on"
+      },
+      {
+        "phrase": "take it off",
+        "category": "action_narration",
+        "position_pct": 58.97,
+        "context": "on each end and we can see a positive two milliamps and it might be a little volatile depending on you know the accuracy of this thing but if you take it off it's here and if you put"
+      },
+      {
+        "phrase": "you cannot do this",
+        "category": "procedural_instruction",
+        "position_pct": 62.82,
+        "context": "thing to point out is that you cannot do this a resistor cannot go just through its"
+      },
+      {
+        "phrase": "righty tighty lefty losing",
+        "category": "procedural_instruction",
+        "position_pct": 70.51,
+        "context": "this one where we wanted it and push it a little bit and we just righty tighty lefty losing and this is tight and we can"
+      },
+      {
+        "phrase": "you cannot just read from this",
+        "category": "procedural_instruction",
+        "position_pct": 73.72,
+        "context": "everything else most of the information you will be asked shows over here you know obviously you cannot just read from this because the graph"
+      },
+      {
+        "phrase": "you have to look at this",
+        "category": "procedural_instruction",
+        "position_pct": 74.36,
+        "context": "is not very accurate you have to look at this uh there's times you're gonna look at this"
+      },
+      {
+        "phrase": "we're gonna look at this",
+        "category": "procedural_instruction",
+        "position_pct": 75.0,
+        "context": "you have to look at this uh there's times you're gonna look at this and there's times we're gonna look at this so just letting you know"
+      },
+      {
+        "phrase": "touch this button",
+        "category": "action_narration",
+        "position_pct": 77.56,
+        "context": "this you don't have to unplug and plug back again don't like that you go to instruments and it will appear back again also we're going to be using at the very end the bottom analyzer boat analyzer yeah this so basically now i'm going to show you exactly an example of how you would use this in an assignment so now i'm going to show you how to use the boat analyzer oh sorry um um basically you're going to be given the resistor the resistance um the capacitor all the values for that the start frequency and the stop frequency if you go back over here let's pull this if you go back over here you can see start frequencies right here it's 10 in this example and then 20k"
+      },
+      {
+        "phrase": "as we can see here",
+        "category": "visual_reference",
+        "position_pct": 83.33,
+        "context": "and a resistor and this is in the middle of the resistor and the capacitor such as we can see here uh so this is resistor capacitor and"
+      },
+      {
+        "phrase": "we just run it",
+        "category": "action_narration",
+        "position_pct": 86.54,
+        "context": "the v in right here next to this uh ground which goes to zero plus now we just run it after we have all the values input"
+      },
+      {
+        "phrase": "this is what you're looking for",
+        "category": "visual_reference",
+        "position_pct": 89.1,
+        "context": "is what you have to input in the and for the answers once you do all of this these are the values that you're looking for right here in the x and"
+      },
+      {
+        "phrase": "you might be able to see in the camera",
+        "category": "visual_reference",
+        "position_pct": 92.31,
+        "context": "little circle that you might be able to see in the camera yep and so you identify which is"
+      },
+      {
+        "phrase": "is shown right here",
+        "category": "visual_reference",
+        "position_pct": 96.15,
+        "context": "this would be vee we're giving 15 which is exactly what is shown right here and we're gonna then assume that the v in"
+      },
+      {
+        "phrase": "you see that",
+        "category": "visual_reference",
+        "position_pct": 96.79,
+        "context": "two volts now when you go here in the function generator you see that you have the amps here's where you"
+      },
+      {
+        "phrase": "plug them in",
+        "category": "action_narration",
+        "position_pct": 100.0,
+        "context": "a better shape now these numbers are going to be given i'm just showing you where to plug in plug them in anyways yep that's basically it and"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 32,
+      "by_category": {
+        "visual_reference": 10,
+        "action_narration": 11,
+        "sensory_description": 0,
+        "procedural_instruction": 11
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "A fair number of embodied phrases are present in the form of procedural instructions, visual references and action narration, but zero descriptions invoking touch, sound, or other senses."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"MyDAQ Setup & Registration\",\n      \"description\": \"Explains the initial setup of the MyDAQ device, including connecting cables, downloading software, and registering the device using the serial number.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Setup and registration are covered in a dedicated section with multiple mentions, but not returned to.\",\n      \"representative_quotes\": [\n        \"this is where you find the zero number\",\n        \"after you follow the steps you just make an account\"\n      ]\n    },\n    {\n      \"name\": \"Using Multimeter & DC Level\",\n      \"description\": \"Demonstrates how to use the MyDAQ as a digital multimeter, specifically measuring voltage and current in a simple circuit using DC level output and setting appropriate values.\",\n      \"mention_count\": 7,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section with multiple mentions, but is not a central focus of the *whole* video.\",\n      \"representative_quotes\": [\n        \"you plug the red cable right here otherwise if you want to calculate the current you plug it in here\",\n        \"multimeter dc level you put one you start it up it's running\"\n      ]\n    },\n    {\n      \"name\": \"Breadboard Usage & Circuit Construction\",\n      \"description\": \"Explains how to properly use a breadboard, including avoiding short circuits by not placing components on the same line, and how to use jump wires effectively.  Shows how to build circuits in the breadboard.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section and revisited, although not with major emphasis.\",\n      \"representative_quotes\": [\n        \"a resistor cannot go just through its own line you short the circuit\",\n        \"switch from one side to another side you unscrew a little bit\"\n      ]\n    },\n    {\n      \"name\": \"Bode Analyzer Application\",\n      \"description\": \"Demonstrates how to use the Bode analyzer with MyDAQ for circuit analysis, setting start/stop frequencies and other parameters, and shows a simple circuit using a resistor and capacitor.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Demonstrated with some explanation, but not returned to at the end.\",\n      \"representative_quotes\": [\n        \"i'm going to show you how to use the boat analyzer\",\n        \"you can see start frequencies right here\"\n      ]\n    },\n    {\n      \"name\": \"Op-Amp Circuit Implementation\",\n      \"description\": \"Explains how to set up and use an op-amp circuit with the MyDAQ, including identifying the pin numbers, setting voltage levels in the function generator, and interpreting the resulting signal output.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"A longer section explaining how to connect the op-amp and read the signal, but only appears at the end.\",\n      \"representative_quotes\": [\n        \"it goes this way there's a little circle that you might be able to see in the camera\",\n        \"a one zero is right here it's a new concept\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"located right here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 6.41,\n      \"context\": \"tell you personally the zero number is located right here it says sn zero number\"\n    },\n    {\n      \"phrase\": \"just click download\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 8.97,\n      \"context\": \"test settings except this 32-bit is fine english or whatever you prefer and just click download downloading the package manager after\"\n    },\n    {\n      \"phrase\": \"you click next\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 15.38,\n      \"context\": \"pre-selected you click next this is the software bundle i always\"\n    },\n    {\n      \"phrase\": \"you plug the red cable right here\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 18.59,\n      \"context\": \"here for the my doc if you are looking to calculate voltage you plug the red cable right here otherwise if you want to\"\n    },\n    {\n      \"phrase\": \"plug it in\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 21.79,\n      \"context\": \"black spot and then this one really it depends just plug it in we'll make it snug this is\"\n    },\n    {\n      \"phrase\": \"how it looks\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 23.08,\n      \"context\": \"is kind of tricky this is an up close shot of how it looks these are looking up and just\"\n    },\n    {\n      \"phrase\": \"press it hard\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 24.36,\n      \"context\": \"but you gotta press it hard until it kind of clicks make sure\"\n    },\n    {\n      \"phrase\": \"connect all the cables\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 28.21,\n      \"context\": \"afraid and that's it this is where you would connect all the cables and stuff now we plug one\"\n    },\n    {\n      \"phrase\": \"plug it in\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 29.49,\n      \"context\": \"usb cable and the actual usb cable goes to your computer this shows up as soon as you plug it in now go to the\"\n    },\n    {\n      \"phrase\": \"click on launch instruments\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 30.77,\n      \"context\": \"soon as you plug it in now go to the bottom and click on launch instruments and apps for this device\"\n    },\n    {\n      \"phrase\": \"click yes\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 36.41,\n      \"context\": \"this would happen so you click yet register i mean it knows\"\n    },\n    {\n      \"phrase\": \"put the serial number\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 39.74,\n      \"context\": \"registration wizard that the papers here talk about just follow the instructions and put the serial number now that i put the serial\"\n    },\n    {\n      \"phrase\": \"you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 42.31,\n      \"context\": \"a little while we reload this and we can see let's see it's still loading we can\"\n    },\n    {\n      \"phrase\": \"we start at yellow goes to the green\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 48.72,\n      \"context\": \"the spread board so we start at yellow goes to the green goes to the resistor goes back\"\n    },\n    {\n      \"phrase\": \"this is exactly what is going on here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 50.0,\n      \"context\": \"to ground a ground would be negative and this is exactly what is going on here now if we\"\n    },\n    {\n      \"phrase\": \"put it in the current\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 55.13,\n      \"context\": \"running for me remember to put it in the current click run and set this to the current this\"\n    },\n    {\n      \"phrase\": \"we're going to put the positive side red\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 56.41,\n      \"context\": \"to the current and now all we have to do this does depend on which one goes first so we're going to put the positive side red and the negative\"\n    },\n    {\n      \"phrase\": \"put it right here\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 57.69,\n      \"context\": \"the positive side red and the negative side black so we put it right here like so right there on\"\n    },\n    {\n      \"phrase\": \"take it off\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 58.97,\n      \"context\": \"on each end and we can see a positive two milliamps and it might be a little volatile depending on you know the accuracy of this thing but if you take it off it's here and if you put\"\n    },\n    {\n      \"phrase\": \"you cannot do this\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 62.82,\n      \"context\": \"thing to point out is that you cannot do this a resistor cannot go just through its\"\n    },\n    {\n      \"phrase\": \"righty tighty lefty losing\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 70.51,\n      \"context\": \"this one where we wanted it and push it a little bit and we just righty tighty lefty losing and this is tight and we can\"\n    },\n    {\n      \"phrase\": \"you cannot just read from this\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 73.72,\n      \"context\": \"everything else most of the information you will be asked shows over here you know obviously you cannot just read from this because the graph\"\n    },\n    {\n      \"phrase\": \"you have to look at this\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 74.36,\n      \"context\": \"is not very accurate you have to look at this uh there's times you're gonna look at this\"\n    },\n    {\n      \"phrase\": \"we're gonna look at this\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 75.0,\n      \"context\": \"you have to look at this uh there's times you're gonna look at this and there's times we're gonna look at this so just letting you know\"\n    },\n    {\n      \"phrase\": \"touch this button\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 77.56,\n      \"context\": \"this you don't have to unplug and plug back again don't like that you go to instruments and it will appear back again also we're going to be using at the very end the bottom analyzer boat analyzer yeah this so basically now i'm going to show you exactly an example of how you would use this in an assignment so now i'm going to show you how to use the boat analyzer oh sorry um um basically you're going to be given the resistor the resistance um the capacitor all the values for that the start frequency and the stop frequency if you go back over here let's pull this if you go back over here you can see start frequencies right here it's 10 in this example and then 20k\"\n    },\n    {\n      \"phrase\": \"as we can see here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 83.33,\n      \"context\": \"and a resistor and this is in the middle of the resistor and the capacitor such as we can see here uh so this is resistor capacitor and\"\n    },\n    {\n      \"phrase\": \"we just run it\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 86.54,\n      \"context\": \"the v in right here next to this uh ground which goes to zero plus now we just run it after we have all the values input\"\n    },\n    {\n      \"phrase\": \"this is what you're looking for\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 89.1,\n      \"context\": \"is what you have to input in the and for the answers once you do all of this these are the values that you're looking for right here in the x and\"\n    },\n    {\n      \"phrase\": \"you might be able to see in the camera\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 92.31,\n      \"context\": \"little circle that you might be able to see in the camera yep and so you identify which is\"\n    },\n    {\n      \"phrase\": \"is shown right here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 96.15,\n      \"context\": \"this would be vee we're giving 15 which is exactly what is shown right here and we're gonna then assume that the v in\"\n    },\n    {\n      \"phrase\": \"you see that\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 96.79,\n      \"context\": \"two volts now when you go here in the function generator you see that you have the amps here's where you\"\n    },\n    {\n      \"phrase\": \"plug them in\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 100.0,\n      \"context\": \"a better shape now these numbers are going to be given i'm just showing you where to plug in plug them in anyways yep that's basically it and\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 32,\n    \"by_category\": {\n      \"visual_reference\": 10,\n      \"action_narration\": 11,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 11\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"A fair number of embodied phrases are present in the form of procedural instructions, visual references and action narration, but zero descriptions invoking touch, sound, or other senses.\"\n  }\n}\n```"
+}

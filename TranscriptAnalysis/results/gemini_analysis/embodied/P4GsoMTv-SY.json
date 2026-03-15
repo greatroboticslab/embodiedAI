@@ -1,0 +1,202 @@
+{
+  "video_id": "P4GsoMTv-SY",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "LM386 Amplifier Enhancements",
+        "description": "The video focuses on building an LM386 amplifier, but specifically with modifications to improve performance.  This includes a discussion of the schematic, parts list, and reasons behind component choices.",
+        "mention_count": 5,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The video is dedicated to detailing enhancements and modifications to the LM386 amplifier circuit, not just building a basic one. The video repeatedly discusses the modifications, and its impacts.",
+        "representative_quotes": [
+          "I want to do some things that will make the amplifier perform as best as it can.",
+          "First thing that I did is add a coupling capacitor on the input"
+        ]
+      },
+      {
+        "name": "Inverting Input Grounding",
+        "description": "The video emphasizes the importance of connecting the inverting input to ground via a capacitor rather than directly shorting it. This is explained in terms of biasing and output symmetry.",
+        "mention_count": 4,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The video provides a detailed explanation of why connecting the inverting input through a capacitor is beneficial.  It shows the difference in output power when shorting vs using the capacitor.",
+        "representative_quotes": [
+          "instead of shorting the inverting input to ground, I'm connecting it to ground through this capacitor.",
+          "having that capacitor there instead of just shorting that pin the ground allows the output to be a little more symmetrical"
+        ]
+      },
+      {
+        "name": "Load Impedance Considerations",
+        "description": "The video explains the importance of using an 8-ohm load with the LM386 and the limitations of using a 4-ohm load.  A solution using a series resistor is proposed.",
+        "mention_count": 4,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The video includes a dedicated section discussing load impedance, including graphs and explanations. He then presents a scenario and possible mitigation technique.",
+        "representative_quotes": [
+          "you can really only use this chip with 8 ohm loads. It just doesn't work very well with 4 ohm loads.",
+          "Well, you could add a resistor in series with that."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "here's the schematic that I've come up with",
+        "category": "visual_reference",
+        "position_pct": 4.17,
+        "context": "So without further ado, let's get started. Okay **here's the schematic that I've come up with** and I'll go through the changes"
+      },
+      {
+        "phrase": "I'm doing",
+        "category": "action_narration",
+        "position_pct": 15.28,
+        "context": "And the third thing **I'm doing** is instead of shorting the inverting input to"
+      },
+      {
+        "phrase": "You can see",
+        "category": "visual_reference",
+        "position_pct": 16.67,
+        "context": "input. And **you can see** from the bases of those input transistors to"
+      },
+      {
+        "phrase": "let me show you why",
+        "category": "visual_reference",
+        "position_pct": 43.06,
+        "context": "recommend 9 volts to get as much power out of it as you can. But you can really only use this chip with 8 ohm loads. It just doesn't work very well with 4 ohm loads. And **let me show you why**."
+      },
+      {
+        "phrase": "here is a graph showing",
+        "category": "visual_reference",
+        "position_pct": 43.75,
+        "context": "4 ohm loads. And let me show you why. Well, **here is a graph showing** the output's voltage swing versus the supply voltage. This"
+      },
+      {
+        "phrase": "you can see how they follow pretty close",
+        "category": "visual_reference",
+        "position_pct": 45.14,
+        "context": "showing infinity here. It just means no load connected to the output. This is with 16 ohms. And **you can see how they follow pretty close**, which is very good. With 8 ohm"
+      },
+      {
+        "phrase": "you can see",
+        "category": "visual_reference",
+        "position_pct": 47.22,
+        "context": "you increase the supply voltage, **you can see** it doesn't really increase that much, you know,"
+      },
+      {
+        "phrase": "here's the 4 ohm curve",
+        "category": "visual_reference",
+        "position_pct": 48.26,
+        "context": "extra power. So what do you do if you have a 4 ohm speaker? Let's say you don't have a choice. **Here's the 4 ohm curve**. It's pretty pathetic, really. You know,"
+      },
+      {
+        "phrase": "So here's the layout I've come up with",
+        "category": "visual_reference",
+        "position_pct": 55.56,
+        "context": "that case. **So here's the layout I've come up with**. I like to use this graph paper. The line"
+      },
+      {
+        "phrase": "What you're seeing here",
+        "category": "visual_reference",
+        "position_pct": 57.64,
+        "context": "so to speak of the perf board. **What you're seeing here** is the top view. You're looking down"
+      },
+      {
+        "phrase": "pause and screen grab if you want this",
+        "category": "procedural_instruction",
+        "position_pct": 64.58,
+        "context": "So this one will be omitted from the circuit that I come up with. **pause and screen grab if you want this**. And another little tip for you if"
+      },
+      {
+        "phrase": "this little drawing I have here shows",
+        "category": "visual_reference",
+        "position_pct": 66.67,
+        "context": "Just pause and screen grab if you want this. And another little tip for you if you want to put this in a box and use a potentiometer. For line level type use I would use a 10k audio taper type potentiometer. And **this little drawing I have here shows** a potentiometer with the control shaft facing out"
+      },
+      {
+        "phrase": "I did run the wires through the holes here",
+        "category": "action_narration",
+        "position_pct": 78.47,
+        "context": "And hopefully it's a neat little project you might want to build. And here it is you can see you know I can trim this board down quite a bit because I'm only using pretty much this corner of it. **I did run the wires through the holes here** to act a strain release because I'm not going"
+      },
+      {
+        "phrase": "Since I'm using the amplifier with line level signals",
+        "category": "action_narration",
+        "position_pct": 79.86,
+        "context": "sort. **Since I'm using the amplifier with line level signals** I did not use the capacitor across pin 1 and"
+      },
+      {
+        "phrase": "let's hook this up to some music",
+        "category": "action_narration",
+        "position_pct": 81.25,
+        "context": "need it. **let's hook this up to some music** and give you a little sample run through. Okay"
+      },
+      {
+        "phrase": "we'll get down here to the speaker",
+        "category": "action_narration",
+        "position_pct": 83.33,
+        "context": "Draws very low quiescent current. So **we'll get down here to the speaker**. And very low level hiss. It's pretty"
+      },
+      {
+        "phrase": "So let's give you a little music sample here",
+        "category": "action_narration",
+        "position_pct": 83.68,
+        "context": "current. So we'll get down here to the speaker. And very low level hiss. It's pretty quiet. Not quiet as some audio power amps but you know that's pretty good. **So let's give you a little music sample here**. YouTube safe music. The 40-80mm okay"
+      },
+      {
+        "phrase": "So I got you pointed at the scope here",
+        "category": "visual_reference",
+        "position_pct": 86.11,
+        "context": "hopefully it didn't get too loud okay **So I got you pointed at the scope here** you can see the clipping it's more symmetrical not"
+      },
+      {
+        "phrase": "see the flat top get rid of that flat topping there",
+        "category": "visual_reference",
+        "position_pct": 86.81,
+        "context": "but what I need to do is adjust the clipping out **see the flat top get rid of that flat topping there** so we just see a nice sine wave so"
+      },
+      {
+        "phrase": "let me show you the difference",
+        "category": "visual_reference",
+        "position_pct": 90.62,
+        "context": "amp up on number two I have that capacitor from inverting input to ground rather than shorting it so **let me show you the difference** if I short the inverting input to ground instead"
+      },
+      {
+        "phrase": "see what happens there",
+        "category": "visual_reference",
+        "position_pct": 91.32,
+        "context": "using the capacitor so now I'll short the inverting pin to ground **see what happens there** it starts clipping because it shifted the output a"
+      },
+      {
+        "phrase": "that's clipping",
+        "category": "sensory_description",
+        "position_pct": 94.79,
+        "context": "one kilohertz fundamental this is the 4.5 kilohertz pilot signal which is at 1% of the fundamental adjust this amp okay **that's clipping** bring it out of clipping so we'll get a nice"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 21,
+      "by_category": {
+        "visual_reference": 13,
+        "action_narration": 5,
+        "sensory_description": 1,
+        "procedural_instruction": 2
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "There is a regular use of embodied language, particularly visual references to the schematic and board layout.  Action narration occurs fairly frequently, too, but sensory descriptions are rare."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"LM386 Amplifier Enhancements\",\n      \"description\": \"The video focuses on building an LM386 amplifier, but specifically with modifications to improve performance.  This includes a discussion of the schematic, parts list, and reasons behind component choices.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The video is dedicated to detailing enhancements and modifications to the LM386 amplifier circuit, not just building a basic one. The video repeatedly discusses the modifications, and its impacts.\",\n      \"representative_quotes\": [\n        \"I want to do some things that will make the amplifier perform as best as it can.\",\n        \"First thing that I did is add a coupling capacitor on the input\"\n      ]\n    },\n    {\n      \"name\": \"Inverting Input Grounding\",\n      \"description\": \"The video emphasizes the importance of connecting the inverting input to ground via a capacitor rather than directly shorting it. This is explained in terms of biasing and output symmetry.\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The video provides a detailed explanation of why connecting the inverting input through a capacitor is beneficial.  It shows the difference in output power when shorting vs using the capacitor.\",\n      \"representative_quotes\": [\n        \"instead of shorting the inverting input to ground, I'm connecting it to ground through this capacitor.\",\n        \"having that capacitor there instead of just shorting that pin the ground allows the output to be a little more symmetrical\"\n      ]\n    },\n    {\n      \"name\": \"Load Impedance Considerations\",\n      \"description\": \"The video explains the importance of using an 8-ohm load with the LM386 and the limitations of using a 4-ohm load.  A solution using a series resistor is proposed.\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The video includes a dedicated section discussing load impedance, including graphs and explanations. He then presents a scenario and possible mitigation technique.\",\n      \"representative_quotes\": [\n        \"you can really only use this chip with 8 ohm loads. It just doesn't work very well with 4 ohm loads.\",\n        \"Well, you could add a resistor in series with that.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"here's the schematic that I've come up with\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 4.17,\n      \"context\": \"So without further ado, let's get started. Okay **here's the schematic that I've come up with** and I'll go through the changes\"\n    },\n    {\n      \"phrase\": \"I'm doing\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 15.28,\n      \"context\": \"And the third thing **I'm doing** is instead of shorting the inverting input to\"\n    },\n    {\n      \"phrase\": \"You can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 16.67,\n      \"context\": \"input. And **you can see** from the bases of those input transistors to\"\n    },\n    {\n      \"phrase\": \"let me show you why\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 43.06,\n      \"context\": \"recommend 9 volts to get as much power out of it as you can. But you can really only use this chip with 8 ohm loads. It just doesn't work very well with 4 ohm loads. And **let me show you why**.\"\n    },\n    {\n      \"phrase\": \"here is a graph showing\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 43.75,\n      \"context\": \"4 ohm loads. And let me show you why. Well, **here is a graph showing** the output's voltage swing versus the supply voltage. This\"\n    },\n    {\n      \"phrase\": \"you can see how they follow pretty close\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 45.14,\n      \"context\": \"showing infinity here. It just means no load connected to the output. This is with 16 ohms. And **you can see how they follow pretty close**, which is very good. With 8 ohm\"\n    },\n    {\n      \"phrase\": \"you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 47.22,\n      \"context\": \"you increase the supply voltage, **you can see** it doesn't really increase that much, you know,\"\n    },\n    {\n      \"phrase\": \"here's the 4 ohm curve\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 48.26,\n      \"context\": \"extra power. So what do you do if you have a 4 ohm speaker? Let's say you don't have a choice. **Here's the 4 ohm curve**. It's pretty pathetic, really. You know,\"\n    },\n    {\n      \"phrase\": \"So here's the layout I've come up with\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 55.56,\n      \"context\": \"that case. **So here's the layout I've come up with**. I like to use this graph paper. The line\"\n    },\n    {\n      \"phrase\": \"What you're seeing here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 57.64,\n      \"context\": \"so to speak of the perf board. **What you're seeing here** is the top view. You're looking down\"\n    },\n    {\n      \"phrase\": \"pause and screen grab if you want this\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 64.58,\n      \"context\": \"So this one will be omitted from the circuit that I come up with. **pause and screen grab if you want this**. And another little tip for you if\"\n    },\n    {\n      \"phrase\": \"this little drawing I have here shows\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 66.67,\n      \"context\": \"Just pause and screen grab if you want this. And another little tip for you if you want to put this in a box and use a potentiometer. For line level type use I would use a 10k audio taper type potentiometer. And **this little drawing I have here shows** a potentiometer with the control shaft facing out\"\n    },\n    {\n      \"phrase\": \"I did run the wires through the holes here\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 78.47,\n      \"context\": \"And hopefully it's a neat little project you might want to build. And here it is you can see you know I can trim this board down quite a bit because I'm only using pretty much this corner of it. **I did run the wires through the holes here** to act a strain release because I'm not going\"\n    },\n    {\n      \"phrase\": \"Since I'm using the amplifier with line level signals\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 79.86,\n      \"context\": \"sort. **Since I'm using the amplifier with line level signals** I did not use the capacitor across pin 1 and\"\n    },\n    {\n      \"phrase\": \"let's hook this up to some music\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 81.25,\n      \"context\": \"need it. **let's hook this up to some music** and give you a little sample run through. Okay\"\n    },\n    {\n      \"phrase\": \"we'll get down here to the speaker\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 83.33,\n      \"context\": \"Draws very low quiescent current. So **we'll get down here to the speaker**. And very low level hiss. It's pretty\"\n    },\n    {\n      \"phrase\": \"So let's give you a little music sample here\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 83.68,\n      \"context\": \"current. So we'll get down here to the speaker. And very low level hiss. It's pretty quiet. Not quiet as some audio power amps but you know that's pretty good. **So let's give you a little music sample here**. YouTube safe music. The 40-80mm okay\"\n    },\n    {\n      \"phrase\": \"So I got you pointed at the scope here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 86.11,\n      \"context\": \"hopefully it didn't get too loud okay **So I got you pointed at the scope here** you can see the clipping it's more symmetrical not\"\n    },\n    {\n      \"phrase\": \"see the flat top get rid of that flat topping there\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 86.81,\n      \"context\": \"but what I need to do is adjust the clipping out **see the flat top get rid of that flat topping there** so we just see a nice sine wave so\"\n    },\n    {\n      \"phrase\": \"let me show you the difference\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 90.62,\n      \"context\": \"amp up on number two I have that capacitor from inverting input to ground rather than shorting it so **let me show you the difference** if I short the inverting input to ground instead\"\n    },\n    {\n      \"phrase\": \"see what happens there\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 91.32,\n      \"context\": \"using the capacitor so now I'll short the inverting pin to ground **see what happens there** it starts clipping because it shifted the output a\"\n    },\n    {\n      \"phrase\": \"that's clipping\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 94.79,\n      \"context\": \"one kilohertz fundamental this is the 4.5 kilohertz pilot signal which is at 1% of the fundamental adjust this amp okay **that's clipping** bring it out of clipping so we'll get a nice\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 21,\n    \"by_category\": {\n      \"visual_reference\": 13,\n      \"action_narration\": 5,\n      \"sensory_description\": 1,\n      \"procedural_instruction\": 2\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"There is a regular use of embodied language, particularly visual references to the schematic and board layout.  Action narration occurs fairly frequently, too, but sensory descriptions are rare.\"\n  }\n}\n```"
+}

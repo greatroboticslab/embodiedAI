@@ -1,0 +1,174 @@
+{
+  "video_id": "BYvTEfNAi38",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Controllability",
+        "description": "The ability to reach any state in a finite amount of time, and influence the system through actuators.",
+        "mention_count": 18,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "Controllability is defined, explained with examples (monorail, car, beam), and revisited throughout the video.",
+        "representative_quotes": [
+          "Controllability means that there exist control signals which allows the system to reach any state in a finite amount of time.",
+          "If it's uncontrollable, you have to address that problem by changing the system or the actuators."
+        ]
+      },
+      {
+        "name": "Observability",
+        "description": "The ability to know all states from the outputs of the system, using sensors and sensor locations.",
+        "mention_count": 17,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "Observability is defined, explained with examples (car, monorail, beam), and its importance is stressed throughout the video.",
+        "representative_quotes": [
+          "Observability means that all states can be known from the outputs of the system.",
+          "If any one critical state is unobservable, then the entire system is deemed to be unobservable."
+        ]
+      },
+      {
+        "name": "State Estimation",
+        "description": "Inferring the values of unmeasured states using available information (sensors).  A trade-off between sensor cost and estimator sensitivity.",
+        "mention_count": 5,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section when discussing how to choose which states to measure directly.",
+        "representative_quotes": [
+          "Being able to estimate a state using available information is good enough to claim that the system is observable.",
+          "Estimating states is a good way to reduce the hardware complexity of your system."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "let's look at",
+        "category": "visual_reference",
+        "position_pct": 13.0,
+        "context": "To begin, let's look at what control system design requires"
+      },
+      {
+        "phrase": "Let's look at",
+        "category": "visual_reference",
+        "position_pct": 29.0,
+        "context": "goes for observability and the sensors. Let's look at sort of a formal written definition"
+      },
+      {
+        "phrase": "let's look at",
+        "category": "visual_reference",
+        "position_pct": 31.0,
+        "context": "this means, let's look at a nicely constrained problem like"
+      },
+      {
+        "phrase": "let's move on to",
+        "category": "action_narration",
+        "position_pct": 37.0,
+        "context": "maintained it. Okay, let's move on to observability. Observability means that all"
+      },
+      {
+        "phrase": "let's see if we can",
+        "category": "visual_reference",
+        "position_pct": 43.0,
+        "context": "of your model. Okay, with these definitions out of the way, let's see if we can make more sense"
+      },
+      {
+        "phrase": "Let's ditch",
+        "category": "action_narration",
+        "position_pct": 44.0,
+        "context": "the state vector. Okay, with these definitions out of the way, let's ditch the constrained monorail problem and look at"
+      },
+      {
+        "phrase": "Let's look at",
+        "category": "visual_reference",
+        "position_pct": 47.0,
+        "context": "and brake pedals. It's essentially the actuators and sensors that you're using when you drive your car, and let's look at the concept of observability first"
+      },
+      {
+        "phrase": "let's start with",
+        "category": "action_narration",
+        "position_pct": 47.0,
+        "context": "drive your car, and let's look at the concept of observability first and let's start with an extreme example to help illustrate"
+      },
+      {
+        "phrase": "remove",
+        "category": "action_narration",
+        "position_pct": 49.0,
+        "context": "importance. We remove all sensor information by closing our eyes"
+      },
+      {
+        "phrase": "remove",
+        "category": "action_narration",
+        "position_pct": 53.0,
+        "context": "Now, let's imagine the opposite situation. We remove the steering wheel and the pedals, which"
+      },
+      {
+        "phrase": "looking outside",
+        "category": "visual_reference",
+        "position_pct": 55.0,
+        "context": "observable since you can watch the speedometer and you can track your position by looking outside. So, you can see how it's"
+      },
+      {
+        "phrase": "let's now focus on",
+        "category": "action_narration",
+        "position_pct": 62.0,
+        "context": "is deemed to be unobservable. Okay, let's now focus on what it means to observe"
+      },
+      {
+        "phrase": "showed earlier",
+        "category": "visual_reference",
+        "position_pct": 80.0,
+        "context": "hopefully you now have a better understanding of why controllability and observability are concepts that you need to understand and consider when analyzing your system and your actuators and your sensors. Now, the equations I showed earlier provide a systematic way of assessing everything"
+      },
+      {
+        "phrase": "let's consider",
+        "category": "visual_reference",
+        "position_pct": 74.0,
+        "context": "There are a few more things that I want to cover here, and to do so let's consider a flexible cantilevered beam. If you imagine"
+      },
+      {
+        "phrase": "pulling down on",
+        "category": "action_narration",
+        "position_pct": 75.0,
+        "context": "to cover here, and to do so let's consider a flexible cantilevered beam. If you imagine pulling down on the end of the beam and letting"
+      },
+      {
+        "phrase": "looks like it might work",
+        "category": "visual_reference",
+        "position_pct": 78.0,
+        "context": "energy. And visually, this looks like it might work. However, the motion of the"
+      },
+      {
+        "phrase": "thing to notice",
+        "category": "visual_reference",
+        "position_pct": 79.0,
+        "context": "third modes have slightly more complicated mode shapes. But the thing to notice is that our sensor and actuator location"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 17,
+      "by_category": {
+        "visual_reference": 10,
+        "action_narration": 7,
+        "sensory_description": 0,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The speaker provides both visual and action-based cues throughout the lecture. But no sensory descriptions or explicit instructions."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Controllability\",\n      \"description\": \"The ability to reach any state in a finite amount of time, and influence the system through actuators.\",\n      \"mention_count\": 18,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"Controllability is defined, explained with examples (monorail, car, beam), and revisited throughout the video.\",\n      \"representative_quotes\": [\n        \"Controllability means that there exist control signals which allows the system to reach any state in a finite amount of time.\",\n        \"If it's uncontrollable, you have to address that problem by changing the system or the actuators.\"\n      ]\n    },\n    {\n      \"name\": \"Observability\",\n      \"description\": \"The ability to know all states from the outputs of the system, using sensors and sensor locations.\",\n      \"mention_count\": 17,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"Observability is defined, explained with examples (car, monorail, beam), and its importance is stressed throughout the video.\",\n      \"representative_quotes\": [\n        \"Observability means that all states can be known from the outputs of the system.\",\n        \"If any one critical state is unobservable, then the entire system is deemed to be unobservable.\"\n      ]\n    },\n    {\n      \"name\": \"State Estimation\",\n      \"description\": \"Inferring the values of unmeasured states using available information (sensors).  A trade-off between sensor cost and estimator sensitivity.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section when discussing how to choose which states to measure directly.\",\n      \"representative_quotes\": [\n        \"Being able to estimate a state using available information is good enough to claim that the system is observable.\",\n        \"Estimating states is a good way to reduce the hardware complexity of your system.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"let's look at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 13.0,\n      \"context\": \"To begin, let's look at what control system design requires\"\n    },\n    {\n      \"phrase\": \"Let's look at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 29.0,\n      \"context\": \"goes for observability and the sensors. Let's look at sort of a formal written definition\"\n    },\n    {\n      \"phrase\": \"let's look at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 31.0,\n      \"context\": \"this means, let's look at a nicely constrained problem like\"\n    },\n    {\n      \"phrase\": \"let's move on to\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 37.0,\n      \"context\": \"maintained it. Okay, let's move on to observability. Observability means that all\"\n    },\n    {\n      \"phrase\": \"let's see if we can\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 43.0,\n      \"context\": \"of your model. Okay, with these definitions out of the way, let's see if we can make more sense\"\n    },\n    {\n      \"phrase\": \"Let's ditch\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 44.0,\n      \"context\": \"the state vector. Okay, with these definitions out of the way, let's ditch the constrained monorail problem and look at\"\n    },\n    {\n      \"phrase\": \"Let's look at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 47.0,\n      \"context\": \"and brake pedals. It's essentially the actuators and sensors that you're using when you drive your car, and let's look at the concept of observability first\"\n    },\n    {\n      \"phrase\": \"let's start with\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 47.0,\n      \"context\": \"drive your car, and let's look at the concept of observability first and let's start with an extreme example to help illustrate\"\n    },\n    {\n      \"phrase\": \"remove\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 49.0,\n      \"context\": \"importance. We remove all sensor information by closing our eyes\"\n    },\n    {\n      \"phrase\": \"remove\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 53.0,\n      \"context\": \"Now, let's imagine the opposite situation. We remove the steering wheel and the pedals, which\"\n    },\n    {\n      \"phrase\": \"looking outside\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 55.0,\n      \"context\": \"observable since you can watch the speedometer and you can track your position by looking outside. So, you can see how it's\"\n    },\n    {\n      \"phrase\": \"let's now focus on\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 62.0,\n      \"context\": \"is deemed to be unobservable. Okay, let's now focus on what it means to observe\"\n    },\n    {\n      \"phrase\": \"showed earlier\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 80.0,\n      \"context\": \"hopefully you now have a better understanding of why controllability and observability are concepts that you need to understand and consider when analyzing your system and your actuators and your sensors. Now, the equations I showed earlier provide a systematic way of assessing everything\"\n    },\n    {\n      \"phrase\": \"let's consider\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 74.0,\n      \"context\": \"There are a few more things that I want to cover here, and to do so let's consider a flexible cantilevered beam. If you imagine\"\n    },\n    {\n      \"phrase\": \"pulling down on\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 75.0,\n      \"context\": \"to cover here, and to do so let's consider a flexible cantilevered beam. If you imagine pulling down on the end of the beam and letting\"\n    },\n    {\n      \"phrase\": \"looks like it might work\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 78.0,\n      \"context\": \"energy. And visually, this looks like it might work. However, the motion of the\"\n    },\n    {\n      \"phrase\": \"thing to notice\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 79.0,\n      \"context\": \"third modes have slightly more complicated mode shapes. But the thing to notice is that our sensor and actuator location\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 17,\n    \"by_category\": {\n      \"visual_reference\": 10,\n      \"action_narration\": 7,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The speaker provides both visual and action-based cues throughout the lecture. But no sensory descriptions or explicit instructions.\"\n  }\n}\n```"
+}

@@ -1,0 +1,121 @@
+{
+  "video_id": "E_RDCFOlJx4",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Linear Quadratic Regulator (LQR)",
+        "description": "LQR is an optimal control method that uses state-space representation to find the best gain matrix (K) by balancing system performance and actuator effort, determined by weighting matrices Q and R in a cost function.",
+        "mention_count": 21,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "LQR is the central topic of the entire video. It is introduced early, explained in detail with examples, and revisited throughout the video. The video concludes by emphasizing the power and ease of use of LQR.",
+        "representative_quotes": [
+          "LQR is a type of optimal control that is based on state space representation.",
+          "With LQR, we don't pick pole locations. We find the optimal K matrix by choosing closed loop characteristics that are important to us."
+        ]
+      },
+      {
+        "name": "Cost Function (Q and R matrices)",
+        "description": "The cost function is a mathematical expression that quantifies the trade-off between system performance (Q, state error) and control effort (R, actuator usage) in LQR. Adjusting the Q and R matrices allows designers to specify what's important to them in the control system's behavior.",
+        "mention_count": 21,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The cost function, and the Q and R matrices, are critical for understanding how LQR works. The speaker dedicates a significant portion of the video to explaining their purpose, effects, and how to adjust them, especially in the MATLAB examples. He emphasizes how to use them at the end.",
+        "representative_quotes": [
+          "If Q is high, then we're penalizing options that take more time, and if R is high, then we're penalizing options that cost a lot of money.",
+          "By setting values of q and r, we now have a way to specify exactly what's important to us."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "as you can see",
+        "category": "visual_reference",
+        "position_pct": 7.41,
+        "context": "reference. So as you can see, the structure of these control laws"
+      },
+      {
+        "phrase": "let's walk through",
+        "category": "action_narration",
+        "position_pct": 23.25,
+        "context": "make a lot of sense, so let's walk through a quick thought exercise that"
+      },
+      {
+        "phrase": "hold it steady",
+        "category": "procedural_instruction",
+        "position_pct": 0.0,
+        "context": ""
+      },
+      {
+        "phrase": "let's look at",
+        "category": "visual_reference",
+        "position_pct": 44.16,
+        "context": "R. So let's look at what performance means for this"
+      },
+      {
+        "phrase": "tweaked",
+        "category": "sensory_description",
+        "position_pct": 70.13,
+        "context": "Q and r, and then tweaked them through trial and error and"
+      },
+      {
+        "phrase": "let's walk through",
+        "category": "action_narration",
+        "position_pct": 71.23,
+        "context": "error and intuition about your system. So to help you develop some of that intuition, let's walk through a few examples in MATLAB"
+      },
+      {
+        "phrase": "You can see",
+        "category": "visual_reference",
+        "position_pct": 78.44,
+        "context": "Alright, let's run this script. You can see the UFO gets initialized to"
+      },
+      {
+        "phrase": "Let's kick it off",
+        "category": "action_narration",
+        "position_pct": 80.65,
+        "context": "much fuel is used to complete the maneuver. So let's kick it off and see how well"
+      },
+      {
+        "phrase": "Let's try",
+        "category": "action_narration",
+        "position_pct": 83.12,
+        "context": "the max rotation speed with the hope that it won't overshoot. And let's try to slow down the max rotation"
+      },
+      {
+        "phrase": "check this out",
+        "category": "visual_reference",
+        "position_pct": 94.81,
+        "context": "the actuator is no longer saturated. And check this out. All 3 closed loop"
+      },
+      {
+        "phrase": "hopefully you saw",
+        "category": "visual_reference",
+        "position_pct": 96.94,
+        "context": "pretty powerful, and hopefully you saw that it's simple to set"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 11,
+      "by_category": {
+        "visual_reference": 5,
+        "action_narration": 4,
+        "sensory_description": 1,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The speaker uses embodied language regularly, using action narration to guide the viewer, and visual references to draw attention to key elements. There are some sensory descriptions. Procedural instructions are rare."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Linear Quadratic Regulator (LQR)\",\n      \"description\": \"LQR is an optimal control method that uses state-space representation to find the best gain matrix (K) by balancing system performance and actuator effort, determined by weighting matrices Q and R in a cost function.\",\n      \"mention_count\": 21,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"LQR is the central topic of the entire video. It is introduced early, explained in detail with examples, and revisited throughout the video. The video concludes by emphasizing the power and ease of use of LQR.\",\n      \"representative_quotes\": [\n        \"LQR is a type of optimal control that is based on state space representation.\",\n        \"With LQR, we don't pick pole locations. We find the optimal K matrix by choosing closed loop characteristics that are important to us.\"\n      ]\n    },\n    {\n      \"name\": \"Cost Function (Q and R matrices)\",\n      \"description\": \"The cost function is a mathematical expression that quantifies the trade-off between system performance (Q, state error) and control effort (R, actuator usage) in LQR. Adjusting the Q and R matrices allows designers to specify what's important to them in the control system's behavior.\",\n      \"mention_count\": 21,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The cost function, and the Q and R matrices, are critical for understanding how LQR works. The speaker dedicates a significant portion of the video to explaining their purpose, effects, and how to adjust them, especially in the MATLAB examples. He emphasizes how to use them at the end.\",\n      \"representative_quotes\": [\n        \"If Q is high, then we're penalizing options that take more time, and if R is high, then we're penalizing options that cost a lot of money.\",\n        \"By setting values of q and r, we now have a way to specify exactly what's important to us.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"as you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 7.41,\n      \"context\": \"reference. So as you can see, the structure of these control laws\"\n    },\n    {\n      \"phrase\": \"let's walk through\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 23.25,\n      \"context\": \"make a lot of sense, so let's walk through a quick thought exercise that\"\n    },\n    {\n      \"phrase\": \"hold it steady\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 0.0,\n      \"context\": \"\"\n    },\n    {\n      \"phrase\": \"let's look at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 44.16,\n      \"context\": \"R. So let's look at what performance means for this\"\n    },\n    {\n      \"phrase\": \"tweaked\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 70.13,\n      \"context\": \"Q and r, and then tweaked them through trial and error and\"\n    },\n    {\n      \"phrase\": \"let's walk through\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 71.23,\n      \"context\": \"error and intuition about your system. So to help you develop some of that intuition, let's walk through a few examples in MATLAB\"\n    },\n    {\n      \"phrase\": \"You can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 78.44,\n      \"context\": \"Alright, let's run this script. You can see the UFO gets initialized to\"\n    },\n    {\n      \"phrase\": \"Let's kick it off\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 80.65,\n      \"context\": \"much fuel is used to complete the maneuver. So let's kick it off and see how well\"\n    },\n    {\n      \"phrase\": \"Let's try\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 83.12,\n      \"context\": \"the max rotation speed with the hope that it won't overshoot. And let's try to slow down the max rotation\"\n    },\n    {\n      \"phrase\": \"check this out\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 94.81,\n      \"context\": \"the actuator is no longer saturated. And check this out. All 3 closed loop\"\n    },\n    {\n      \"phrase\": \"hopefully you saw\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 96.94,\n      \"context\": \"pretty powerful, and hopefully you saw that it's simple to set\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 11,\n    \"by_category\": {\n      \"visual_reference\": 5,\n      \"action_narration\": 4,\n      \"sensory_description\": 1,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The speaker uses embodied language regularly, using action narration to guide the viewer, and visual references to draw attention to key elements. There are some sensory descriptions. Procedural instructions are rare.\"\n  }\n}\n```"
+}

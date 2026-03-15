@@ -1,0 +1,161 @@
+{
+  "video_id": "-AKD2Lv7XqI",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Band Pass Filter",
+        "description": "Band pass filters allow frequencies within a specific range to pass through while blocking frequencies outside that range.  They combine the properties of high-pass and low-pass filters.",
+        "mention_count": 12,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The band pass filter is the primary subject, explained with examples and demonstrated on a breadboard, and summarized at the end.",
+        "representative_quotes": [
+          "a band pass filter very simply passes frequencies within a certain frequency range and rejects frequencies that are outside of that range",
+          "what you see here is simply a combination of the high pass and the low pass, and therefore we have the band pass"
+        ]
+      },
+      {
+        "name": "High Pass & Low Pass Filters",
+        "description": "High pass filters allow high frequencies to pass while blocking low frequencies. Low pass filters do the opposite, allowing low frequencies through while blocking high frequencies.",
+        "mention_count": 8,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "These filters are described and shown visually to build an understanding of the keypoint, the band pass filter. Their characteristics and diagrams are explained.",
+        "representative_quotes": [
+          "anything below this line here is going to be attenuated. Anything above it is going to be passed.",
+          "Anything above here is going to be attenuated, and everything down here is going to be passed."
+        ]
+      },
+      {
+        "name": "Frequency Cutoff Calculation",
+        "description": "The video mentions the formula for calculating the cutoff frequency for high-pass and low-pass filters, which is also applicable to band pass filters. The formula is 1 / (2 * pi * R * C).",
+        "mention_count": 3,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 2,
+        "strength_reasoning": "The formula is mentioned briefly and its application is touched upon, but not elaborated in detail.",
+        "representative_quotes": [
+          "our frequency cutoff equals 1 over 2 pi r c times the hertz times the frequency.",
+          "Now you can use that formula I showed you on the other page to figure out how to do that."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "let's look at our high pass filter",
+        "category": "visual_reference",
+        "position_pct": 13.2,
+        "context": "minute. So first of all, let's look at our high pass filter. It consists of a sine"
+      },
+      {
+        "phrase": "what you see here",
+        "category": "visual_reference",
+        "position_pct": 36.8,
+        "context": "capacitor here. So what you see here is simply a combination of the high pass"
+      },
+      {
+        "phrase": "take our two Bode plots here",
+        "category": "visual_reference",
+        "position_pct": 39.5,
+        "context": "pass. So if we take our two Bode plots here of these two filters, the low pass"
+      },
+      {
+        "phrase": "put one together on the breadboard",
+        "category": "action_narration",
+        "position_pct": 45.4,
+        "context": "pass filter. Voila! A band pass filter. So let's put one together on the breadboard. All"
+      },
+      {
+        "phrase": "laid out here",
+        "category": "action_narration",
+        "position_pct": 47.4,
+        "context": "All right, so I've got our band pass filter laid out here, and here's the nuts and"
+      },
+      {
+        "phrase": "matches exactly what you see here",
+        "category": "visual_reference",
+        "position_pct": 56.6,
+        "context": "the layout of our filter. And it matches exactly what you see here. This first capacitor is"
+      },
+      {
+        "phrase": "zoom in here and take a better look",
+        "category": "action_narration",
+        "position_pct": 62.5,
+        "context": "560 picofarad. So we can zoom in here and take a better look. This is the input, this is"
+      },
+      {
+        "phrase": "rotate up here. Have a look",
+        "category": "action_narration",
+        "position_pct": 66.7,
+        "context": "oscilloscope. So let's rotate up here. Have a look at the oscilloscope. Now if"
+      },
+      {
+        "phrase": "look down at the bottom of the screen here",
+        "category": "visual_reference",
+        "position_pct": 68.1,
+        "context": "oscilloscope. Now if you look down at the bottom of the screen here, or you can"
+      },
+      {
+        "phrase": "look up there",
+        "category": "visual_reference",
+        "position_pct": 68.8,
+        "context": "the bottom of the screen here, or you can just look up there, you can see our frequency"
+      },
+      {
+        "phrase": "look at the peak to peak where the red triangle is there",
+        "category": "visual_reference",
+        "position_pct": 70.3,
+        "context": "sine wave. And if you look at the peak to peak where the red triangle is there, you"
+      },
+      {
+        "phrase": "drop down below that",
+        "category": "action_narration",
+        "position_pct": 73.2,
+        "context": "within our band. Now if we drop down below that, our frequency is now 530"
+      },
+      {
+        "phrase": "go back to our 5.43 kilohertz",
+        "category": "action_narration",
+        "position_pct": 76.4,
+        "context": "50 percent attenuation. We go back to our 5.43 kilohertz, and you can see we're"
+      },
+      {
+        "phrase": "jump above it",
+        "category": "action_narration",
+        "position_pct": 77.8,
+        "context": "into it. And then if we jump above it, we're now at 55 kilohertz. You can"
+      },
+      {
+        "phrase": "see that our amplitude decreases",
+        "category": "visual_reference",
+        "position_pct": 81.7,
+        "context": "attenuated back out of it. And as our frequency increases, you can see that our amplitude decreases. So"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 15,
+      "by_category": {
+        "visual_reference": 8,
+        "action_narration": 7,
+        "sensory_description": 0,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The video shows a circuit being built and scope readings. The embodied phrases are a mix of showing the filter diagrams and breadboard along with references to observed measurements."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Band Pass Filter\",\n      \"description\": \"Band pass filters allow frequencies within a specific range to pass through while blocking frequencies outside that range.  They combine the properties of high-pass and low-pass filters.\",\n      \"mention_count\": 12,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The band pass filter is the primary subject, explained with examples and demonstrated on a breadboard, and summarized at the end.\",\n      \"representative_quotes\": [\n        \"a band pass filter very simply passes frequencies within a certain frequency range and rejects frequencies that are outside of that range\",\n        \"what you see here is simply a combination of the high pass and the low pass, and therefore we have the band pass\"\n      ]\n    },\n    {\n      \"name\": \"High Pass & Low Pass Filters\",\n      \"description\": \"High pass filters allow high frequencies to pass while blocking low frequencies. Low pass filters do the opposite, allowing low frequencies through while blocking high frequencies.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"These filters are described and shown visually to build an understanding of the keypoint, the band pass filter. Their characteristics and diagrams are explained.\",\n      \"representative_quotes\": [\n        \"anything below this line here is going to be attenuated. Anything above it is going to be passed.\",\n        \"Anything above here is going to be attenuated, and everything down here is going to be passed.\"\n      ]\n    },\n    {\n      \"name\": \"Frequency Cutoff Calculation\",\n      \"description\": \"The video mentions the formula for calculating the cutoff frequency for high-pass and low-pass filters, which is also applicable to band pass filters. The formula is 1 / (2 * pi * R * C).\",\n      \"mention_count\": 3,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 2,\n      \"strength_reasoning\": \"The formula is mentioned briefly and its application is touched upon, but not elaborated in detail.\",\n      \"representative_quotes\": [\n        \"our frequency cutoff equals 1 over 2 pi r c times the hertz times the frequency.\",\n        \"Now you can use that formula I showed you on the other page to figure out how to do that.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"let's look at our high pass filter\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 13.2,\n      \"context\": \"minute. So first of all, let's look at our high pass filter. It consists of a sine\"\n    },\n    {\n      \"phrase\": \"what you see here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 36.8,\n      \"context\": \"capacitor here. So what you see here is simply a combination of the high pass\"\n    },\n    {\n      \"phrase\": \"take our two Bode plots here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 39.5,\n      \"context\": \"pass. So if we take our two Bode plots here of these two filters, the low pass\"\n    },\n    {\n      \"phrase\": \"put one together on the breadboard\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 45.4,\n      \"context\": \"pass filter. Voila! A band pass filter. So let's put one together on the breadboard. All\"\n    },\n    {\n      \"phrase\": \"laid out here\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 47.4,\n      \"context\": \"All right, so I've got our band pass filter laid out here, and here's the nuts and\"\n    },\n    {\n      \"phrase\": \"matches exactly what you see here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 56.6,\n      \"context\": \"the layout of our filter. And it matches exactly what you see here. This first capacitor is\"\n    },\n    {\n      \"phrase\": \"zoom in here and take a better look\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 62.5,\n      \"context\": \"560 picofarad. So we can zoom in here and take a better look. This is the input, this is\"\n    },\n    {\n      \"phrase\": \"rotate up here. Have a look\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 66.7,\n      \"context\": \"oscilloscope. So let's rotate up here. Have a look at the oscilloscope. Now if\"\n    },\n    {\n      \"phrase\": \"look down at the bottom of the screen here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 68.1,\n      \"context\": \"oscilloscope. Now if you look down at the bottom of the screen here, or you can\"\n    },\n    {\n      \"phrase\": \"look up there\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 68.8,\n      \"context\": \"the bottom of the screen here, or you can just look up there, you can see our frequency\"\n    },\n    {\n      \"phrase\": \"look at the peak to peak where the red triangle is there\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 70.3,\n      \"context\": \"sine wave. And if you look at the peak to peak where the red triangle is there, you\"\n    },\n    {\n      \"phrase\": \"drop down below that\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 73.2,\n      \"context\": \"within our band. Now if we drop down below that, our frequency is now 530\"\n    },\n    {\n      \"phrase\": \"go back to our 5.43 kilohertz\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 76.4,\n      \"context\": \"50 percent attenuation. We go back to our 5.43 kilohertz, and you can see we're\"\n    },\n    {\n      \"phrase\": \"jump above it\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 77.8,\n      \"context\": \"into it. And then if we jump above it, we're now at 55 kilohertz. You can\"\n    },\n    {\n      \"phrase\": \"see that our amplitude decreases\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 81.7,\n      \"context\": \"attenuated back out of it. And as our frequency increases, you can see that our amplitude decreases. So\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 15,\n    \"by_category\": {\n      \"visual_reference\": 8,\n      \"action_narration\": 7,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The video shows a circuit being built and scope readings. The embodied phrases are a mix of showing the filter diagrams and breadboard along with references to observed measurements.\"\n  }\n}\n```"
+}

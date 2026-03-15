@@ -1,0 +1,138 @@
+{
+  "video_id": "lBC1nEq0_nk",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Control Theory",
+        "description": "Control theory is a mathematical framework for developing autonomous systems.  The video introduces fundamental concepts like feedforward and feedback control.",
+        "mention_count": 9,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "Control theory is the central concept, introduced at the start, developed through the video, and summarized at the end as the core topic.",
+        "representative_quotes": [
+          "Control theory is a mathematical framework that gives us the tools to develop autonomous systems.",
+          "This full diagram here, I think, represents everything you need to know about control theory."
+        ]
+      },
+      {
+        "name": "Feedforward Control",
+        "description": "Feedforward control (open loop) uses a reference signal to generate a control signal without measuring the system state, requiring a good understanding of system dynamics.",
+        "mention_count": 10,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Feedforward control is introduced and explained in a dedicated section with multiple mentions, but it is not returned to or reinforced at the end.",
+        "representative_quotes": [
+          "A feedforward controller takes in what you want the system to do, called the reference R, and it generates the control signal without ever needing to measure the actual state.",
+          "So, feedforward controllers are a pretty straightforward way to control a system."
+        ]
+      },
+      {
+        "name": "Feedback Control",
+        "description": "Feedback control (closed loop) uses both the reference and the current state of the system to determine control inputs, acting as a self-correcting mechanism but also changing system dynamics and stability.",
+        "mention_count": 16,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "Feedback control is introduced as a contrasting concept to feedforward, is developed with discussion of its benefits and drawbacks, and is summarized as a key aspect of control theory.",
+        "representative_quotes": [
+          "In feedback control, the controller uses both the reference and the current state of the system to determine the appropriate control inputs.",
+          "And since feedback control exists in many different types of systems, the control community over the years have developed many different types of feedback controllers."
+        ]
+      },
+      {
+        "name": "State Estimation",
+        "description": "State estimation is needed to account for measurement noise and to manipulate the measurements to get accurate system state.",
+        "mention_count": 5,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 3,
+        "strength_reasoning": "State estimation is covered in a dedicated section of the video and mentioned multiple times. Is then summarized as an essential part of the overall process.",
+        "representative_quotes": [
+          "State estimation is therefore another important area of control theory.",
+          "You have to know about state estimation so that you can take all of those noisy measurements and be able to feed back an estimate of system state."
+        ]
+      },
+      {
+        "name": "System Modeling",
+        "description": "Building mathematical models of a system is crucial for controller design, state estimation, planning, and analysis.",
+        "mention_count": 5,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 3,
+        "strength_reasoning": "System modeling is covered in its own section, and then reinforced at the end as a necessary component to control theory.",
+        "representative_quotes": [
+          "Models are required for almost all aspects of control theory.",
+          "You have to know about building mathematical models of your system."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "stick around for it",
+        "category": "action_narration",
+        "position_pct": 5.0,
+        "context": "know about control theory. So I hope you stick around for it. I'm Brian, and"
+      },
+      {
+        "phrase": "as we can see",
+        "category": "visual_reference",
+        "position_pct": 41.0,
+        "context": "So, feedforward controllers are a pretty straightforward way to control a system. However, as we can see, it requires a really good understanding"
+      },
+      {
+        "phrase": "just let it go",
+        "category": "action_narration",
+        "position_pct": 53.0,
+        "context": "the steering wheel and pedal commands. And just let it go. And if you had perfect"
+      },
+      {
+        "phrase": "I like to think of",
+        "category": "sensory_description",
+        "position_pct": 65.0,
+        "context": "mechanism. And I like to think of feedback as a hack that we"
+      },
+      {
+        "phrase": "check out the links below",
+        "category": "visual_reference",
+        "position_pct": 95.0,
+        "context": "want to learn more about, I hope you check out the links below. And to make it easier"
+      },
+      {
+        "phrase": "I'll see you next time",
+        "category": "action_narration",
+        "position_pct": 99.0,
+        "context": "theory topics there as well. Thanks for watching, and I'll see you next time."
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 6,
+      "by_category": {
+        "visual_reference": 2,
+        "action_narration": 3,
+        "sensory_description": 1,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The use of embodied language is sporadic and not particularly vivid or descriptive. The phrases are largely functional, not adding significantly to the experience."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Control Theory\",\n      \"description\": \"Control theory is a mathematical framework for developing autonomous systems.  The video introduces fundamental concepts like feedforward and feedback control.\",\n      \"mention_count\": 9,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"Control theory is the central concept, introduced at the start, developed through the video, and summarized at the end as the core topic.\",\n      \"representative_quotes\": [\n        \"Control theory is a mathematical framework that gives us the tools to develop autonomous systems.\",\n        \"This full diagram here, I think, represents everything you need to know about control theory.\"\n      ]\n    },\n    {\n      \"name\": \"Feedforward Control\",\n      \"description\": \"Feedforward control (open loop) uses a reference signal to generate a control signal without measuring the system state, requiring a good understanding of system dynamics.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Feedforward control is introduced and explained in a dedicated section with multiple mentions, but it is not returned to or reinforced at the end.\",\n      \"representative_quotes\": [\n        \"A feedforward controller takes in what you want the system to do, called the reference R, and it generates the control signal without ever needing to measure the actual state.\",\n        \"So, feedforward controllers are a pretty straightforward way to control a system.\"\n      ]\n    },\n    {\n      \"name\": \"Feedback Control\",\n      \"description\": \"Feedback control (closed loop) uses both the reference and the current state of the system to determine control inputs, acting as a self-correcting mechanism but also changing system dynamics and stability.\",\n      \"mention_count\": 16,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Feedback control is introduced as a contrasting concept to feedforward, is developed with discussion of its benefits and drawbacks, and is summarized as a key aspect of control theory.\",\n      \"representative_quotes\": [\n        \"In feedback control, the controller uses both the reference and the current state of the system to determine the appropriate control inputs.\",\n        \"And since feedback control exists in many different types of systems, the control community over the years have developed many different types of feedback controllers.\"\n      ]\n    },\n    {\n      \"name\": \"State Estimation\",\n      \"description\": \"State estimation is needed to account for measurement noise and to manipulate the measurements to get accurate system state.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"State estimation is covered in a dedicated section of the video and mentioned multiple times. Is then summarized as an essential part of the overall process.\",\n      \"representative_quotes\": [\n        \"State estimation is therefore another important area of control theory.\",\n        \"You have to know about state estimation so that you can take all of those noisy measurements and be able to feed back an estimate of system state.\"\n      ]\n    },\n    {\n      \"name\": \"System Modeling\",\n      \"description\": \"Building mathematical models of a system is crucial for controller design, state estimation, planning, and analysis.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"System modeling is covered in its own section, and then reinforced at the end as a necessary component to control theory.\",\n      \"representative_quotes\": [\n        \"Models are required for almost all aspects of control theory.\",\n        \"You have to know about building mathematical models of your system.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"stick around for it\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 5.0,\n      \"context\": \"know about control theory. So I hope you stick around for it. I'm Brian, and\"\n    },\n    {\n      \"phrase\": \"as we can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 41.0,\n      \"context\": \"So, feedforward controllers are a pretty straightforward way to control a system. However, as we can see, it requires a really good understanding\"\n    },\n    {\n      \"phrase\": \"just let it go\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 53.0,\n      \"context\": \"the steering wheel and pedal commands. And just let it go. And if you had perfect\"\n    },\n    {\n      \"phrase\": \"I like to think of\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 65.0,\n      \"context\": \"mechanism. And I like to think of feedback as a hack that we\"\n    },\n    {\n      \"phrase\": \"check out the links below\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 95.0,\n      \"context\": \"want to learn more about, I hope you check out the links below. And to make it easier\"\n    },\n    {\n      \"phrase\": \"I'll see you next time\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 99.0,\n      \"context\": \"theory topics there as well. Thanks for watching, and I'll see you next time.\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 6,\n    \"by_category\": {\n      \"visual_reference\": 2,\n      \"action_narration\": 3,\n      \"sensory_description\": 1,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The use of embodied language is sporadic and not particularly vivid or descriptive. The phrases are largely functional, not adding significantly to the experience.\"\n  }\n}\n```"
+}

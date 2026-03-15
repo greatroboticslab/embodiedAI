@@ -1,0 +1,141 @@
+{
+  "video_id": "ZOuZWE_tfgQ",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Basic LM386 Amplifier",
+        "description": "Building a simple audio amplifier circuit using the LM386 chip with minimal components, focusing on basic functionality and connections.",
+        "mention_count": 4,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section with multiple mentions, although superseded by the improved version.",
+        "representative_quotes": [
+          "how to build a really basic amplifier with the minimal parts",
+          "all you need is a couple of capacitors and a resistor, a speaker, and some power"
+        ]
+      },
+      {
+        "name": "Improved LM386 Amplifier",
+        "description": "Creating a higher-quality audio amplifier circuit using additional capacitors, potentiometers, and decoupling techniques for enhanced sound, volume control, and gain control.",
+        "mention_count": 6,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "Introduced, developed, and used as a platform for adding bass boost, making it central to the latter half of the video.",
+        "representative_quotes": [
+          "how to make a better sounding amplifier",
+          "we have a gain control and a volume control"
+        ]
+      },
+      {
+        "name": "Bass Boost Control",
+        "description": "Adding a bass boost feature to the improved LM386 amplifier circuit using a potentiometer and capacitor network to adjust the low-frequency response.",
+        "mention_count": 3,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 2,
+        "strength_reasoning": "Covered in a single section, but not reinforced or mentioned extensively.",
+        "representative_quotes": [
+          "we're also going to add a bass boost control",
+          "I have another little mini breadboard over here with a 10k potentiometer inserted"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "follow along and we'll get going here",
+        "category": "action_narration",
+        "position_pct": 5.1,
+        "context": "So follow along and we'll get going here. I've got the LM386"
+      },
+      {
+        "phrase": "Now I'm going to bridge the power rails",
+        "category": "action_narration",
+        "position_pct": 7.1,
+        "context": "upper left hand corner. Now I'm going to bridge the power rails. So connect"
+      },
+      {
+        "phrase": "Now take a jumper wire from pin 2 of the LM386 and connect it to ground",
+        "category": "action_narration",
+        "position_pct": 8.1,
+        "context": "rails on both sides. Now take a jumper wire from pin 2 of the LM386 and connect it to ground"
+      },
+      {
+        "phrase": "And you can see it sounds pretty quiet",
+        "category": "sensory_description",
+        "position_pct": 40.4,
+        "context": "I mixed up a while ago. And you can see it sounds pretty quiet. We don't"
+      },
+      {
+        "phrase": "Now you can see it's a lot louder",
+        "category": "visual_reference",
+        "position_pct": 43.6,
+        "context": "make the gain 200. Now you can see it's a lot louder. It's a little"
+      },
+      {
+        "phrase": "So I'm starting out with an empty breadboard here",
+        "category": "action_narration",
+        "position_pct": 52.2,
+        "context": "audio amplifier. Let's try making one that sounds a lot better. So I'm starting out with an empty breadboard here"
+      },
+      {
+        "phrase": "Now I'm going to insert the LM386 in there",
+        "category": "action_narration",
+        "position_pct": 55.3,
+        "context": "negative to negative. Now I'm going to insert the LM386 in there. I've got"
+      },
+      {
+        "phrase": "Now you want to connect pin 1 down to another rail somewhere in the breadboard",
+        "category": "procedural_instruction",
+        "position_pct": 56.4,
+        "context": "upper left hand side. Now you want to connect pin 1 down to another rail somewhere"
+      },
+      {
+        "phrase": "Kind of hard to get in here",
+        "category": "sensory_description",
+        "position_pct": 71.9,
+        "context": "pin 4 and pin 6. Kind of hard to get in here. With all these"
+      },
+      {
+        "phrase": "make sure the polarity is correct for these capacitors",
+        "category": "procedural_instruction",
+        "position_pct": 77.3,
+        "context": "negative power rails. And make sure the polarity is correct for these capacitors. I"
+      },
+      {
+        "phrase": "you can hear it's got a lot better sound",
+        "category": "sensory_description",
+        "position_pct": 85.4,
+        "context": "test it out. So I'll connect up my iPhone. And you can hear it's got a lot better sound"
+      },
+      {
+        "phrase": "still have some distortion but we can balance it out with the gain and the volume",
+        "category": "sensory_description",
+        "position_pct": 86.1,
+        "context": "volume control. I still have some distortion but we can balance it out with the gain"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 12,
+      "by_category": {
+        "visual_reference": 1,
+        "action_narration": 5,
+        "sensory_description": 4,
+        "procedural_instruction": 2
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "There's a reasonable number of embodied phrases, with a good mix of action narration and sensory descriptions. Procedural instructions and visual references appear less often."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Basic LM386 Amplifier\",\n      \"description\": \"Building a simple audio amplifier circuit using the LM386 chip with minimal components, focusing on basic functionality and connections.\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section with multiple mentions, although superseded by the improved version.\",\n      \"representative_quotes\": [\n        \"how to build a really basic amplifier with the minimal parts\",\n        \"all you need is a couple of capacitors and a resistor, a speaker, and some power\"\n      ]\n    },\n    {\n      \"name\": \"Improved LM386 Amplifier\",\n      \"description\": \"Creating a higher-quality audio amplifier circuit using additional capacitors, potentiometers, and decoupling techniques for enhanced sound, volume control, and gain control.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Introduced, developed, and used as a platform for adding bass boost, making it central to the latter half of the video.\",\n      \"representative_quotes\": [\n        \"how to make a better sounding amplifier\",\n        \"we have a gain control and a volume control\"\n      ]\n    },\n    {\n      \"name\": \"Bass Boost Control\",\n      \"description\": \"Adding a bass boost feature to the improved LM386 amplifier circuit using a potentiometer and capacitor network to adjust the low-frequency response.\",\n      \"mention_count\": 3,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 2,\n      \"strength_reasoning\": \"Covered in a single section, but not reinforced or mentioned extensively.\",\n      \"representative_quotes\": [\n        \"we're also going to add a bass boost control\",\n        \"I have another little mini breadboard over here with a 10k potentiometer inserted\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"follow along and we'll get going here\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 5.1,\n      \"context\": \"So follow along and we'll get going here. I've got the LM386\"\n    },\n    {\n      \"phrase\": \"Now I'm going to bridge the power rails\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 7.1,\n      \"context\": \"upper left hand corner. Now I'm going to bridge the power rails. So connect\"\n    },\n    {\n      \"phrase\": \"Now take a jumper wire from pin 2 of the LM386 and connect it to ground\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 8.1,\n      \"context\": \"rails on both sides. Now take a jumper wire from pin 2 of the LM386 and connect it to ground\"\n    },\n    {\n      \"phrase\": \"And you can see it sounds pretty quiet\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 40.4,\n      \"context\": \"I mixed up a while ago. And you can see it sounds pretty quiet. We don't\"\n    },\n    {\n      \"phrase\": \"Now you can see it's a lot louder\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 43.6,\n      \"context\": \"make the gain 200. Now you can see it's a lot louder. It's a little\"\n    },\n    {\n      \"phrase\": \"So I'm starting out with an empty breadboard here\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 52.2,\n      \"context\": \"audio amplifier. Let's try making one that sounds a lot better. So I'm starting out with an empty breadboard here\"\n    },\n    {\n      \"phrase\": \"Now I'm going to insert the LM386 in there\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 55.3,\n      \"context\": \"negative to negative. Now I'm going to insert the LM386 in there. I've got\"\n    },\n    {\n      \"phrase\": \"Now you want to connect pin 1 down to another rail somewhere in the breadboard\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 56.4,\n      \"context\": \"upper left hand side. Now you want to connect pin 1 down to another rail somewhere\"\n    },\n    {\n      \"phrase\": \"Kind of hard to get in here\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 71.9,\n      \"context\": \"pin 4 and pin 6. Kind of hard to get in here. With all these\"\n    },\n    {\n      \"phrase\": \"make sure the polarity is correct for these capacitors\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 77.3,\n      \"context\": \"negative power rails. And make sure the polarity is correct for these capacitors. I\"\n    },\n    {\n      \"phrase\": \"you can hear it's got a lot better sound\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 85.4,\n      \"context\": \"test it out. So I'll connect up my iPhone. And you can hear it's got a lot better sound\"\n    },\n    {\n      \"phrase\": \"still have some distortion but we can balance it out with the gain and the volume\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 86.1,\n      \"context\": \"volume control. I still have some distortion but we can balance it out with the gain\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 12,\n    \"by_category\": {\n      \"visual_reference\": 1,\n      \"action_narration\": 5,\n      \"sensory_description\": 4,\n      \"procedural_instruction\": 2\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"There's a reasonable number of embodied phrases, with a good mix of action narration and sensory descriptions. Procedural instructions and visual references appear less often.\"\n  }\n}\n```"
+}

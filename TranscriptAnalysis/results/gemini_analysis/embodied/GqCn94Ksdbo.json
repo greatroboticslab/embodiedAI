@@ -1,0 +1,176 @@
+{
+  "video_id": "GqCn94Ksdbo",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Low Pass Filter",
+        "description": "A low pass filter is a circuit that allows signals with frequencies lower than a set cutoff frequency to pass through while attenuating higher frequencies. The video explains how it works and demonstrates building one using resistors and capacitors.",
+        "mention_count": 14,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "The entire video is dedicated to explaining and demonstrating the low pass filter, covering its definition, formula, setup, practical implementation, and how component values affect its behavior.",
+        "representative_quotes": [
+          "today's filter will be the low pass filter",
+          "that's the way you design a low pass filter"
+        ]
+      },
+      {
+        "name": "RC Time Constant",
+        "description": "The RC time constant, determined by the resistance and capacitance values, is used to define the cutoff frequency of the low pass filter. Changing the values impacts the filter's attenuation.",
+        "mention_count": 7,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The video explains how the RC time constant is related to the cutoff frequency and demonstrates the effects of changing resistance and capacitance on the filter's performance. It is referred to multiple times in different contexts.",
+        "representative_quotes": [
+          "RC time constant to determine our filter",
+          "changing the capacitance and the resistance has"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "We'll be using",
+        "category": "action_narration",
+        "position_pct": 7.69,
+        "context": "pi RC. So what's that tell you? We'll be using the RC time constant to"
+      },
+      {
+        "phrase": "how do we set it up",
+        "category": "procedural_instruction",
+        "position_pct": 9.62,
+        "context": "filter. We'll be using the RC time constant to determine our filter. So the next question is how do we set it up? Well, it's pretty simple."
+      },
+      {
+        "phrase": "Let's take a look",
+        "category": "visual_reference",
+        "position_pct": 23.08,
+        "context": "severely attenuated. Let's take a look at building one of these practically"
+      },
+      {
+        "phrase": "Let's take a look",
+        "category": "visual_reference",
+        "position_pct": 25.0,
+        "context": "building one of these practically on a breadboard. Alright, let's take a look at the setup. So we"
+      },
+      {
+        "phrase": "Let me zoom in",
+        "category": "visual_reference",
+        "position_pct": 26.92,
+        "context": "peak. And then we have our low pass filter set up here. Let me zoom in a bit. So our"
+      },
+      {
+        "phrase": "take a look",
+        "category": "visual_reference",
+        "position_pct": 32.69,
+        "context": "decade resistance box, and at the moment it is set on 1K. The signal then goes into this capacitor, which is a 1 nano. And at the divider point we're taking our output signal. So let's go now and take a look on the scope. Oh, I've got"
+      },
+      {
+        "phrase": "Let me get a good picture",
+        "category": "visual_reference",
+        "position_pct": 36.54,
+        "context": "coming directly off the function generator. And you can see we are at 2 volts per division. Let me get a good picture here for you guys. Alright, so here we have our"
+      },
+      {
+        "phrase": "Now, let's bring in",
+        "category": "action_narration",
+        "position_pct": 38.46,
+        "context": "peak, 50% duty cycle, blah, blah, blah. Now, let's bring in channel 2. Now if we take a"
+      },
+      {
+        "phrase": "take a look here",
+        "category": "visual_reference",
+        "position_pct": 38.46,
+        "context": "blah, blah, blah. Now, let's bring in channel 2. Now if we take a look here, you see channel 2 also at"
+      },
+      {
+        "phrase": "watch what happens",
+        "category": "visual_reference",
+        "position_pct": 40.38,
+        "context": "slightly shifted out of phase. But watch what happens as we increase the frequency to"
+      },
+      {
+        "phrase": "Let me zoom back out",
+        "category": "visual_reference",
+        "position_pct": 50.0,
+        "context": "is passed of the signal. Alright, let me zoom back out. We're going to go back down to"
+      },
+      {
+        "phrase": "Let's see if I can get this in the frame",
+        "category": "visual_reference",
+        "position_pct": 51.92,
+        "context": "back down to 100. Let's see if I can get this in the frame. Now, I'll just turn down here a"
+      },
+      {
+        "phrase": "what we're going to do",
+        "category": "action_narration",
+        "position_pct": 53.85,
+        "context": "And focus. So, what we're going to do now is we're going to take off our"
+      },
+      {
+        "phrase": "look at that",
+        "category": "visual_reference",
+        "position_pct": 57.69,
+        "context": "a serious difference. So look at that. There we are at 100 kilohertz. 10K"
+      },
+      {
+        "phrase": "We'll swap out",
+        "category": "action_narration",
+        "position_pct": 69.23,
+        "context": "And as soon as I find out what to do with my capacitors, here we go. We'll swap out our capacitor. We'll swap out our capacitor. It's in the right spot, no."
+      },
+      {
+        "phrase": "Got to get them right",
+        "category": "procedural_instruction",
+        "position_pct": 71.15,
+        "context": "here we go. We'll swap out our capacitor. We'll swap out our capacitor. It's in the right spot, no. Got to get them right. Or they don't work. Shocking,"
+      },
+      {
+        "phrase": "see the effect",
+        "category": "visual_reference",
+        "position_pct": 80.77,
+        "context": "00 hertz. There's 200. So you can see the effect changing the capacitance and the resistance"
+      },
+      {
+        "phrase": "we'll take out",
+        "category": "action_narration",
+        "position_pct": 82.69,
+        "context": "200. So you can see the effect changing the capacitance and the resistance has. So let's go back up here. And we'll take out our 1k, or 10k rather. And"
+      },
+      {
+        "phrase": "put our 1k back in, boom, look at that",
+        "category": "action_narration",
+        "position_pct": 84.62,
+        "context": "1k rather. And if we put our 1k back in, boom, look at that. Almost no attenuation at all. 200"
+      },
+      {
+        "phrase": "keep one thing in mind",
+        "category": "procedural_instruction",
+        "position_pct": 90.38,
+        "context": "So that is just about it. If you keep one thing in mind when you're thinking about"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 20,
+      "by_category": {
+        "visual_reference": 9,
+        "action_narration": 6,
+        "sensory_description": 0,
+        "procedural_instruction": 5
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The video uses a mix of action narration, visual references, and procedural instructions to guide the viewer through the concepts and practical implementation. The speaker frequently draws attention to elements on screen or describes their own actions."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Low Pass Filter\",\n      \"description\": \"A low pass filter is a circuit that allows signals with frequencies lower than a set cutoff frequency to pass through while attenuating higher frequencies. The video explains how it works and demonstrates building one using resistors and capacitors.\",\n      \"mention_count\": 14,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"The entire video is dedicated to explaining and demonstrating the low pass filter, covering its definition, formula, setup, practical implementation, and how component values affect its behavior.\",\n      \"representative_quotes\": [\n        \"today's filter will be the low pass filter\",\n        \"that's the way you design a low pass filter\"\n      ]\n    },\n    {\n      \"name\": \"RC Time Constant\",\n      \"description\": \"The RC time constant, determined by the resistance and capacitance values, is used to define the cutoff frequency of the low pass filter. Changing the values impacts the filter's attenuation.\",\n      \"mention_count\": 7,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The video explains how the RC time constant is related to the cutoff frequency and demonstrates the effects of changing resistance and capacitance on the filter's performance. It is referred to multiple times in different contexts.\",\n      \"representative_quotes\": [\n        \"RC time constant to determine our filter\",\n        \"changing the capacitance and the resistance has\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"We'll be using\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 7.69,\n      \"context\": \"pi RC. So what's that tell you? We'll be using the RC time constant to\"\n    },\n    {\n      \"phrase\": \"how do we set it up\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 9.62,\n      \"context\": \"filter. We'll be using the RC time constant to determine our filter. So the next question is how do we set it up? Well, it's pretty simple.\"\n    },\n    {\n      \"phrase\": \"Let's take a look\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 23.08,\n      \"context\": \"severely attenuated. Let's take a look at building one of these practically\"\n    },\n    {\n      \"phrase\": \"Let's take a look\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 25.0,\n      \"context\": \"building one of these practically on a breadboard. Alright, let's take a look at the setup. So we\"\n    },\n    {\n      \"phrase\": \"Let me zoom in\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 26.92,\n      \"context\": \"peak. And then we have our low pass filter set up here. Let me zoom in a bit. So our\"\n    },\n    {\n      \"phrase\": \"take a look\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 32.69,\n      \"context\": \"decade resistance box, and at the moment it is set on 1K. The signal then goes into this capacitor, which is a 1 nano. And at the divider point we're taking our output signal. So let's go now and take a look on the scope. Oh, I've got\"\n    },\n    {\n      \"phrase\": \"Let me get a good picture\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 36.54,\n      \"context\": \"coming directly off the function generator. And you can see we are at 2 volts per division. Let me get a good picture here for you guys. Alright, so here we have our\"\n    },\n    {\n      \"phrase\": \"Now, let's bring in\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 38.46,\n      \"context\": \"peak, 50% duty cycle, blah, blah, blah. Now, let's bring in channel 2. Now if we take a\"\n    },\n    {\n      \"phrase\": \"take a look here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 38.46,\n      \"context\": \"blah, blah, blah. Now, let's bring in channel 2. Now if we take a look here, you see channel 2 also at\"\n    },\n    {\n      \"phrase\": \"watch what happens\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 40.38,\n      \"context\": \"slightly shifted out of phase. But watch what happens as we increase the frequency to\"\n    },\n    {\n      \"phrase\": \"Let me zoom back out\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 50.0,\n      \"context\": \"is passed of the signal. Alright, let me zoom back out. We're going to go back down to\"\n    },\n    {\n      \"phrase\": \"Let's see if I can get this in the frame\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 51.92,\n      \"context\": \"back down to 100. Let's see if I can get this in the frame. Now, I'll just turn down here a\"\n    },\n    {\n      \"phrase\": \"what we're going to do\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 53.85,\n      \"context\": \"And focus. So, what we're going to do now is we're going to take off our\"\n    },\n    {\n      \"phrase\": \"look at that\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 57.69,\n      \"context\": \"a serious difference. So look at that. There we are at 100 kilohertz. 10K\"\n    },\n    {\n      \"phrase\": \"We'll swap out\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 69.23,\n      \"context\": \"And as soon as I find out what to do with my capacitors, here we go. We'll swap out our capacitor. We'll swap out our capacitor. It's in the right spot, no.\"\n    },\n    {\n      \"phrase\": \"Got to get them right\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 71.15,\n      \"context\": \"here we go. We'll swap out our capacitor. We'll swap out our capacitor. It's in the right spot, no. Got to get them right. Or they don't work. Shocking,\"\n    },\n    {\n      \"phrase\": \"see the effect\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 80.77,\n      \"context\": \"00 hertz. There's 200. So you can see the effect changing the capacitance and the resistance\"\n    },\n    {\n      \"phrase\": \"we'll take out\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 82.69,\n      \"context\": \"200. So you can see the effect changing the capacitance and the resistance has. So let's go back up here. And we'll take out our 1k, or 10k rather. And\"\n    },\n    {\n      \"phrase\": \"put our 1k back in, boom, look at that\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 84.62,\n      \"context\": \"1k rather. And if we put our 1k back in, boom, look at that. Almost no attenuation at all. 200\"\n    },\n    {\n      \"phrase\": \"keep one thing in mind\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 90.38,\n      \"context\": \"So that is just about it. If you keep one thing in mind when you're thinking about\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 20,\n    \"by_category\": {\n      \"visual_reference\": 9,\n      \"action_narration\": 6,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 5\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The video uses a mix of action narration, visual references, and procedural instructions to guide the viewer through the concepts and practical implementation. The speaker frequently draws attention to elements on screen or describes their own actions.\"\n  }\n}\n```"
+}

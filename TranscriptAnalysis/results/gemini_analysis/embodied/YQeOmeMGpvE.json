@@ -1,0 +1,108 @@
+{
+  "video_id": "YQeOmeMGpvE",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Connecting GPS Unit to Flight Controller",
+        "description": "Explains the physical connection of a GPS unit to a flight controller, including wiring considerations and potential pitfalls.",
+        "mention_count": 4,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section, with instructions and potential problems noted.",
+        "representative_quotes": [
+          "wire the GPS to the flight controller",
+          "avoid any potential mistake"
+        ]
+      },
+      {
+        "name": "Configuring GPS in Betaflight",
+        "description": "Details the process of configuring the GPS unit within the Betaflight software, including port settings, protocols, and GPS-related options.",
+        "mention_count": 8,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "A significant portion of the video is dedicated to this, with various settings and troubleshooting steps explained, revisited, and ultimately part of final outdoor steps.",
+        "representative_quotes": [
+          "configure the GPS under sensor inputs",
+          "Betaflight GPS-related options"
+        ]
+      },
+      {
+        "name": "GPS Rescue Feature",
+        "description": "Explains the GPS rescue feature in Betaflight, including settings, sanity checks, and testing procedures.",
+        "mention_count": 10,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "The entire video is structured around enabling and testing this feature, explaining its parameters, and cautioning around potential issues.",
+        "representative_quotes": [
+          "enable the GPS rescue feature",
+          "adjust the ground speed",
+          "test the rescue feature using an auxiliary switch"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "I'm going to show you",
+        "category": "action_narration",
+        "position_pct": 1.26,
+        "context": "channel. Today in this video I'm going to show you how to connect"
+      },
+      {
+        "phrase": "as far as I can tell",
+        "category": "sensory_description",
+        "position_pct": 6.07,
+        "context": "hours of continuous use. In addition, the headlamp is waterproof, as far as I can tell the lamp is very"
+      },
+      {
+        "phrase": "which I'm going to show you shortly",
+        "category": "action_narration",
+        "position_pct": 23.44,
+        "context": "rescue feature, and the quadcopter is going to return to the home point using the settings on Bitaflight, which I'm going to show you shortly"
+      },
+      {
+        "phrase": "Pay attention that",
+        "category": "procedural_instruction",
+        "position_pct": 36.54,
+        "context": "pins GST connector soldered to the flight controller. Pay attention that the soldering pads are well"
+      },
+      {
+        "phrase": "Now you can go ahead and connect",
+        "category": "action_narration",
+        "position_pct": 39.47,
+        "context": "the flight controller. Now you can go ahead and connect the GPS unit, and pay attention"
+      },
+      {
+        "phrase": "as you can see",
+        "category": "visual_reference",
+        "position_pct": 90.72,
+        "context": "using an auxiliary switch, and as you can see, after flipping it, the drone"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 6,
+      "by_category": {
+        "visual_reference": 1,
+        "action_narration": 3,
+        "sensory_description": 1,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "There is a mix of action narration as the speaker describes connecting things, some sensory descriptions, and procedural instructions, along with a visual reference."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Connecting GPS Unit to Flight Controller\",\n      \"description\": \"Explains the physical connection of a GPS unit to a flight controller, including wiring considerations and potential pitfalls.\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section, with instructions and potential problems noted.\",\n      \"representative_quotes\": [\n        \"wire the GPS to the flight controller\",\n        \"avoid any potential mistake\"\n      ]\n    },\n    {\n      \"name\": \"Configuring GPS in Betaflight\",\n      \"description\": \"Details the process of configuring the GPS unit within the Betaflight software, including port settings, protocols, and GPS-related options.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"A significant portion of the video is dedicated to this, with various settings and troubleshooting steps explained, revisited, and ultimately part of final outdoor steps.\",\n      \"representative_quotes\": [\n        \"configure the GPS under sensor inputs\",\n        \"Betaflight GPS-related options\"\n      ]\n    },\n    {\n      \"name\": \"GPS Rescue Feature\",\n      \"description\": \"Explains the GPS rescue feature in Betaflight, including settings, sanity checks, and testing procedures.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"The entire video is structured around enabling and testing this feature, explaining its parameters, and cautioning around potential issues.\",\n      \"representative_quotes\": [\n        \"enable the GPS rescue feature\",\n        \"adjust the ground speed\",\n        \"test the rescue feature using an auxiliary switch\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"I'm going to show you\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 1.26,\n      \"context\": \"channel. Today in this video I'm going to show you how to connect\"\n    },\n    {\n      \"phrase\": \"as far as I can tell\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 6.07,\n      \"context\": \"hours of continuous use. In addition, the headlamp is waterproof, as far as I can tell the lamp is very\"\n    },\n    {\n      \"phrase\": \"which I'm going to show you shortly\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 23.44,\n      \"context\": \"rescue feature, and the quadcopter is going to return to the home point using the settings on Bitaflight, which I'm going to show you shortly\"\n    },\n    {\n      \"phrase\": \"Pay attention that\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 36.54,\n      \"context\": \"pins GST connector soldered to the flight controller. Pay attention that the soldering pads are well\"\n    },\n    {\n      \"phrase\": \"Now you can go ahead and connect\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 39.47,\n      \"context\": \"the flight controller. Now you can go ahead and connect the GPS unit, and pay attention\"\n    },\n    {\n      \"phrase\": \"as you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 90.72,\n      \"context\": \"using an auxiliary switch, and as you can see, after flipping it, the drone\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 6,\n    \"by_category\": {\n      \"visual_reference\": 1,\n      \"action_narration\": 3,\n      \"sensory_description\": 1,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"There is a mix of action narration as the speaker describes connecting things, some sensory descriptions, and procedural instructions, along with a visual reference.\"\n  }\n}\n```"
+}

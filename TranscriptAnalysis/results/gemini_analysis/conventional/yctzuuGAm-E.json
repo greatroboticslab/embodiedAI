@@ -1,0 +1,152 @@
+{
+  "video_id": "yctzuuGAm-E",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "RLC Filters",
+        "description": "RLC filters are circuits composed of resistors, inductors, and capacitors used to block specific frequencies while allowing others to pass, serving as the foundation for more complex filter designs.",
+        "mention_count": 17,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "The video dedicates a significant portion to explaining the components of RLC filters, their function, how they work together, and examples of low-pass, high-pass, band-pass, and notch filters. It is the central topic.",
+        "representative_quotes": [
+          "In this video, I am going to talk about RLC filters.",
+          "So, RLC filters are one of them, actually the most simple ones.",
+          "This is the simplest RLC bandpass filter."
+        ]
+      },
+      {
+        "name": "Frequency Response",
+        "description": "Frequency response describes how a circuit or filter responds to different incoming frequencies, indicating the gain or attenuation at each frequency, influencing how the circuit alters signals.",
+        "mention_count": 25,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "Frequency response is a major concept used to explain and evaluate the performance of filters. The video returns to it repeatedly when describing filter behavior. A dedicated section explains it too.",
+        "representative_quotes": [
+          "This is a sample frequency response.",
+          "Look here. This is the frequency response of a low pass filter.",
+          "This frequency response is not even similar to a frequency response of an ideal high-pass filter."
+        ]
+      },
+      {
+        "name": "Ideal vs. Real Components",
+        "description": "The video contrasts the theoretical behavior of ideal capacitors and inductors with their real-world counterparts, accounting for parasitic elements like resistance and inductance that affect circuit performance.",
+        "mention_count": 17,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "A key section distinguishes between ideal and real components (capacitors and inductors), explaining how non-ideal properties impact circuit behavior. This is vital for understanding the limitations and performance of real-world filters.",
+        "representative_quotes": [
+          "Note that we are talking about ideal capacitors and inductors.",
+          "This is an ideal capacitor. And this is a real capacitor.",
+          "Real inductors and real capacitors may behave a bit different."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "Look here.",
+        "category": "visual_reference",
+        "position_pct": 17.0,
+        "context": "I am going to apply these two signals here to points A and B to see what will happen at point C. Look here. This trace is the result at point C"
+      },
+      {
+        "phrase": "Look here.",
+        "category": "visual_reference",
+        "position_pct": 18.0,
+        "context": "When two signals exist in the same medium, they will be added and form a new signal. Look here. Look here. This is the signal at point A."
+      },
+      {
+        "phrase": "Look here.",
+        "category": "visual_reference",
+        "position_pct": 18.0,
+        "context": "added and form a new signal. Look here. Look here. This is the signal at point A. And this is the signal at point B"
+      },
+      {
+        "phrase": "I want to apply",
+        "category": "action_narration",
+        "position_pct": 20.0,
+        "context": "radio transceiver signals, etc. I want to call the signal here mixed signal. I mean this yellow trace. Suppose that these two signals"
+      },
+      {
+        "phrase": "I want to apply",
+        "category": "action_narration",
+        "position_pct": 23.0,
+        "context": "F is 15 kHz. I want to apply this yellow trace to input of these two filters and probe points E and"
+      },
+      {
+        "phrase": "Look here",
+        "category": "visual_reference",
+        "position_pct": 23.0,
+        "context": "the most important ones. Look here, when I probe the point E, this blue trace, I mean, you see the first"
+      },
+      {
+        "phrase": "look here",
+        "category": "visual_reference",
+        "position_pct": 50.0,
+        "context": "Let's see. Look here. At 500 kHz, the inductor is attenuating the output signal a bit. By removing the inductor, by shorting"
+      },
+      {
+        "phrase": "You can see",
+        "category": "visual_reference",
+        "position_pct": 50.0,
+        "context": "using this wire, you can see the output signal grows a bit. At 500 kHz, this is the signal without inductor."
+      },
+      {
+        "phrase": "Look here.",
+        "category": "visual_reference",
+        "position_pct": 51.0,
+        "context": "At 2 MHz. Look here. The impact of the inductor is more visible. And it's really high. This is the"
+      },
+      {
+        "phrase": "If you look attentively",
+        "category": "visual_reference",
+        "position_pct": 52.0,
+        "context": "ideal high-pass filter. But if you look attentively here, the gain here is 0. But here, the gain is exactly"
+      },
+      {
+        "phrase": "If you look here,",
+        "category": "visual_reference",
+        "position_pct": 52.0,
+        "context": "frequency is 10 MHz. If you look here, you can see frequency is passing. Actually, the frequency is passing"
+      },
+      {
+        "phrase": "you can see",
+        "category": "visual_reference",
+        "position_pct": 52.0,
+        "context": "15 MHz. And this is 16 MHz. So, this filter is passing frequencies higher than 100 kHz. And it is eliminating"
+      },
+      {
+        "phrase": "Look here.",
+        "category": "visual_reference",
+        "position_pct": 56.0,
+        "context": "you ask me why? Look here. If you apply a signal here, it will never change, because the input and output"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 13,
+      "by_category": {
+        "visual_reference": 11,
+        "action_narration": 2,
+        "sensory_description": 0,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The speaker relies heavily on visual references, using \"look here\" frequently. Very few phrases describe actions performed or sensory input."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"RLC Filters\",\n      \"description\": \"RLC filters are circuits composed of resistors, inductors, and capacitors used to block specific frequencies while allowing others to pass, serving as the foundation for more complex filter designs.\",\n      \"mention_count\": 17,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"The video dedicates a significant portion to explaining the components of RLC filters, their function, how they work together, and examples of low-pass, high-pass, band-pass, and notch filters. It is the central topic.\",\n      \"representative_quotes\": [\n        \"In this video, I am going to talk about RLC filters.\",\n        \"So, RLC filters are one of them, actually the most simple ones.\",\n        \"This is the simplest RLC bandpass filter.\"\n      ]\n    },\n    {\n      \"name\": \"Frequency Response\",\n      \"description\": \"Frequency response describes how a circuit or filter responds to different incoming frequencies, indicating the gain or attenuation at each frequency, influencing how the circuit alters signals.\",\n      \"mention_count\": 25,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Frequency response is a major concept used to explain and evaluate the performance of filters. The video returns to it repeatedly when describing filter behavior. A dedicated section explains it too.\",\n      \"representative_quotes\": [\n        \"This is a sample frequency response.\",\n        \"Look here. This is the frequency response of a low pass filter.\",\n        \"This frequency response is not even similar to a frequency response of an ideal high-pass filter.\"\n      ]\n    },\n    {\n      \"name\": \"Ideal vs. Real Components\",\n      \"description\": \"The video contrasts the theoretical behavior of ideal capacitors and inductors with their real-world counterparts, accounting for parasitic elements like resistance and inductance that affect circuit performance.\",\n      \"mention_count\": 17,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"A key section distinguishes between ideal and real components (capacitors and inductors), explaining how non-ideal properties impact circuit behavior. This is vital for understanding the limitations and performance of real-world filters.\",\n      \"representative_quotes\": [\n        \"Note that we are talking about ideal capacitors and inductors.\",\n        \"This is an ideal capacitor. And this is a real capacitor.\",\n        \"Real inductors and real capacitors may behave a bit different.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"Look here.\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 17.0,\n      \"context\": \"I am going to apply these two signals here to points A and B to see what will happen at point C. Look here. This trace is the result at point C\"\n    },\n    {\n      \"phrase\": \"Look here.\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 18.0,\n      \"context\": \"When two signals exist in the same medium, they will be added and form a new signal. Look here. Look here. This is the signal at point A.\"\n    },\n    {\n      \"phrase\": \"Look here.\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 18.0,\n      \"context\": \"added and form a new signal. Look here. Look here. This is the signal at point A. And this is the signal at point B\"\n    },\n    {\n      \"phrase\": \"I want to apply\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 20.0,\n      \"context\": \"radio transceiver signals, etc. I want to call the signal here mixed signal. I mean this yellow trace. Suppose that these two signals\"\n    },\n    {\n      \"phrase\": \"I want to apply\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 23.0,\n      \"context\": \"F is 15 kHz. I want to apply this yellow trace to input of these two filters and probe points E and\"\n    },\n    {\n      \"phrase\": \"Look here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 23.0,\n      \"context\": \"the most important ones. Look here, when I probe the point E, this blue trace, I mean, you see the first\"\n    },\n    {\n      \"phrase\": \"look here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 50.0,\n      \"context\": \"Let's see. Look here. At 500 kHz, the inductor is attenuating the output signal a bit. By removing the inductor, by shorting\"\n    },\n    {\n      \"phrase\": \"You can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 50.0,\n      \"context\": \"using this wire, you can see the output signal grows a bit. At 500 kHz, this is the signal without inductor.\"\n    },\n    {\n      \"phrase\": \"Look here.\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 51.0,\n      \"context\": \"At 2 MHz. Look here. The impact of the inductor is more visible. And it's really high. This is the\"\n    },\n    {\n      \"phrase\": \"If you look attentively\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 52.0,\n      \"context\": \"ideal high-pass filter. But if you look attentively here, the gain here is 0. But here, the gain is exactly\"\n    },\n    {\n      \"phrase\": \"If you look here,\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 52.0,\n      \"context\": \"frequency is 10 MHz. If you look here, you can see frequency is passing. Actually, the frequency is passing\"\n    },\n    {\n      \"phrase\": \"you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 52.0,\n      \"context\": \"15 MHz. And this is 16 MHz. So, this filter is passing frequencies higher than 100 kHz. And it is eliminating\"\n    },\n    {\n      \"phrase\": \"Look here.\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 56.0,\n      \"context\": \"you ask me why? Look here. If you apply a signal here, it will never change, because the input and output\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 13,\n    \"by_category\": {\n      \"visual_reference\": 11,\n      \"action_narration\": 2,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The speaker relies heavily on visual references, using \\\"look here\\\" frequently. Very few phrases describe actions performed or sensory input.\"\n  }\n}\n```"
+}

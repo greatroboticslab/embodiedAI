@@ -1,0 +1,124 @@
+{
+  "video_id": "GrvvkYTW_0k",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "MOSFETs",
+        "description": "The video provides an overview of MOSFETs, including their function as voltage-controlled variable resistors, different modes (depletion and enhancement), and key datasheet parameters for their use in circuits.",
+        "mention_count": 14,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "MOSFETs are the core topic, covered from multiple angles including function, types, datasheet usage, and calculations. The video concludes with a review of key points.",
+        "representative_quotes": [
+          "we're going to take a look at MOSFETs, how they work, and how you can use them in your circuits",
+          "MOSFETs are cool little devices, but they're also a little bit complex"
+        ]
+      },
+      {
+        "name": "Datasheet Parameters (VGS, RDS-ON, R theta JA)",
+        "description": "The video explains how to read and apply MOSFET datasheet parameters such as gate-source voltage threshold (VGS), drain-source on-resistance (RDS-ON), junction-ambient thermal resistance (R theta JA), and maximum junction temperature to select and use MOSFETs safely.",
+        "mention_count": 8,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 3,
+        "strength_reasoning": "The video spends a dedicated section explaining these parameters, showing a sample datasheet, and reviewing the parameters at the end. The parameters are mentioned multiple times.",
+        "representative_quotes": [
+          "Let's take a look at its datasheet from Fairchild.",
+          "look at the datasheet to determine the threshold voltage, which is going to be shown as VGS or VTH"
+        ]
+      },
+      {
+        "name": "Calculating Power Dissipation and Heatsink Needs",
+        "description": "The video covers the formula for calculating power dissipation in a MOSFET and how to use datasheet parameters to determine if a heatsink is needed.",
+        "mention_count": 4,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The calculation is performed in a dedicated section, and all variables are explained. It is not reviewed at the end, but is mentioned more than once.",
+        "representative_quotes": [
+          "Here's how we calculate if we need a heatsink or not.",
+          "The formula to determine how much power the MOSFET dissipates is resistance times current squared."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "let's move on to MOSFETs",
+        "category": "action_narration",
+        "position_pct": 13.4,
+        "context": "For the video on BJTs, see atoms.com slash ep10. For now, let's move on to MOSFETs. MOS is a flowerless"
+      },
+      {
+        "phrase": "Hold on",
+        "category": "procedural_instruction",
+        "position_pct": 17.9,
+        "context": "Wait a minute, this is the wrong script. Hold on, the tree sounds right. Okay, here's"
+      },
+      {
+        "phrase": "let's try this again",
+        "category": "action_narration",
+        "position_pct": 19.4,
+        "context": "stuff. Okay, here's the other stuff. Okay, let's try this again. MOSFETs belong to a family"
+      },
+      {
+        "phrase": "let's focus in on them",
+        "category": "action_narration",
+        "position_pct": 33.3,
+        "context": "types. Enhancement mode FETs are by far the most common transistor used today, so let's focus in on them. Here's the symbol for"
+      },
+      {
+        "phrase": "Here's the symbol",
+        "category": "visual_reference",
+        "position_pct": 34.3,
+        "context": "let's focus in on them. Here's the symbol for an N-channel enhancement mode MOSFET, and here's a"
+      },
+      {
+        "phrase": "Here's a TO220 style transistor",
+        "category": "visual_reference",
+        "position_pct": 35.3,
+        "context": "symbol for an N-channel enhancement mode MOSFET, and here's a TO220 style transistor. The pins of a"
+      },
+      {
+        "phrase": "Let's take a look at its datasheet",
+        "category": "visual_reference",
+        "position_pct": 57.8,
+        "context": "is a FQP30N06L. Let's take a look at its datasheet from Fairchild. We can see that RDS"
+      },
+      {
+        "phrase": "let's use an example",
+        "category": "action_narration",
+        "position_pct": 70.1,
+        "context": "is whatever your load will draw. Let's use an example of a motor that draws 1 amp of current. This"
+      },
+      {
+        "phrase": "Let's review what you need to know",
+        "category": "action_narration",
+        "position_pct": 81.3,
+        "context": "a later video. Let's review what you need to know to use a MOSFET as a switch. Number"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 9,
+      "by_category": {
+        "visual_reference": 3,
+        "action_narration": 5,
+        "sensory_description": 0,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The video uses a moderate amount of embodied language, primarily focused on visual references to the transistor, symbol, and datasheet, and action narration as the speaker guides the viewer through explanations. There are no instances of sensory descriptions."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"MOSFETs\",\n      \"description\": \"The video provides an overview of MOSFETs, including their function as voltage-controlled variable resistors, different modes (depletion and enhancement), and key datasheet parameters for their use in circuits.\",\n      \"mention_count\": 14,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"MOSFETs are the core topic, covered from multiple angles including function, types, datasheet usage, and calculations. The video concludes with a review of key points.\",\n      \"representative_quotes\": [\n        \"we're going to take a look at MOSFETs, how they work, and how you can use them in your circuits\",\n        \"MOSFETs are cool little devices, but they're also a little bit complex\"\n      ]\n    },\n    {\n      \"name\": \"Datasheet Parameters (VGS, RDS-ON, R theta JA)\",\n      \"description\": \"The video explains how to read and apply MOSFET datasheet parameters such as gate-source voltage threshold (VGS), drain-source on-resistance (RDS-ON), junction-ambient thermal resistance (R theta JA), and maximum junction temperature to select and use MOSFETs safely.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The video spends a dedicated section explaining these parameters, showing a sample datasheet, and reviewing the parameters at the end. The parameters are mentioned multiple times.\",\n      \"representative_quotes\": [\n        \"Let's take a look at its datasheet from Fairchild.\",\n        \"look at the datasheet to determine the threshold voltage, which is going to be shown as VGS or VTH\"\n      ]\n    },\n    {\n      \"name\": \"Calculating Power Dissipation and Heatsink Needs\",\n      \"description\": \"The video covers the formula for calculating power dissipation in a MOSFET and how to use datasheet parameters to determine if a heatsink is needed.\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The calculation is performed in a dedicated section, and all variables are explained. It is not reviewed at the end, but is mentioned more than once.\",\n      \"representative_quotes\": [\n        \"Here's how we calculate if we need a heatsink or not.\",\n        \"The formula to determine how much power the MOSFET dissipates is resistance times current squared.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"let's move on to MOSFETs\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 13.4,\n      \"context\": \"For the video on BJTs, see atoms.com slash ep10. For now, let's move on to MOSFETs. MOS is a flowerless\"\n    },\n    {\n      \"phrase\": \"Hold on\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 17.9,\n      \"context\": \"Wait a minute, this is the wrong script. Hold on, the tree sounds right. Okay, here's\"\n    },\n    {\n      \"phrase\": \"let's try this again\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 19.4,\n      \"context\": \"stuff. Okay, here's the other stuff. Okay, let's try this again. MOSFETs belong to a family\"\n    },\n    {\n      \"phrase\": \"let's focus in on them\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 33.3,\n      \"context\": \"types. Enhancement mode FETs are by far the most common transistor used today, so let's focus in on them. Here's the symbol for\"\n    },\n    {\n      \"phrase\": \"Here's the symbol\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 34.3,\n      \"context\": \"let's focus in on them. Here's the symbol for an N-channel enhancement mode MOSFET, and here's a\"\n    },\n    {\n      \"phrase\": \"Here's a TO220 style transistor\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 35.3,\n      \"context\": \"symbol for an N-channel enhancement mode MOSFET, and here's a TO220 style transistor. The pins of a\"\n    },\n    {\n      \"phrase\": \"Let's take a look at its datasheet\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 57.8,\n      \"context\": \"is a FQP30N06L. Let's take a look at its datasheet from Fairchild. We can see that RDS\"\n    },\n    {\n      \"phrase\": \"let's use an example\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 70.1,\n      \"context\": \"is whatever your load will draw. Let's use an example of a motor that draws 1 amp of current. This\"\n    },\n    {\n      \"phrase\": \"Let's review what you need to know\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 81.3,\n      \"context\": \"a later video. Let's review what you need to know to use a MOSFET as a switch. Number\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 9,\n    \"by_category\": {\n      \"visual_reference\": 3,\n      \"action_narration\": 5,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The video uses a moderate amount of embodied language, primarily focused on visual references to the transistor, symbol, and datasheet, and action narration as the speaker guides the viewer through explanations. There are no instances of sensory descriptions.\"\n  }\n}\n```"
+}

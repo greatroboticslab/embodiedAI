@@ -1,0 +1,121 @@
+{
+  "video_id": "sL0LtyfNYkM",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "State-Space Representation",
+        "description": "The video explains how to determine the state-space representation of a circuit, including identifying state variables and expressing the derivatives of these variables as functions of other states and inputs.",
+        "mention_count": 10,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The concept is introduced early, explained in detail with multiple mentions throughout the video, and then the complete model is constructed at the end.",
+        "representative_quotes": [
+          "state space representation",
+          "X dot equals to Ax plus B times U"
+        ]
+      },
+      {
+        "name": "State Variables",
+        "description": "The video explains how to choose appropriate state variables (inductor currents and capacitor voltages) based on energy storage elements in the circuit.",
+        "mention_count": 6,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section. Multiple mentions of state variables, with explanation.",
+        "representative_quotes": [
+          "what are the state variables?",
+          "the current through these inductors and the voltage across the capacitor"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "look at elements",
+        "category": "visual_reference",
+        "position_pct": 8.6,
+        "context": "Again, a good first attempt is to look at elements in the circuit that"
+      },
+      {
+        "phrase": "let's start",
+        "category": "action_narration",
+        "position_pct": 33.4,
+        "context": "So that will make everything easier than when we have to put everything in a matrix form. Okay, so let's start. Now"
+      },
+      {
+        "phrase": "let's look",
+        "category": "visual_reference",
+        "position_pct": 33.4,
+        "context": "form. Okay, so let's start. Now let's look for a equation that gives"
+      },
+      {
+        "phrase": "let's think",
+        "category": "action_narration",
+        "position_pct": 46.1,
+        "context": "second state. Now let's think about this problem. We want something"
+      },
+      {
+        "phrase": "look at the current at this node",
+        "category": "visual_reference",
+        "position_pct": 52.4,
+        "context": "We can relate Ic to I2, to I1 and to the input Ia. That's easy. We can just look at the current at this node A."
+      },
+      {
+        "phrase": "if you now do Kirchhoff's law in this loop here",
+        "category": "procedural_instruction",
+        "position_pct": 66.8,
+        "context": "states. How can we do that? Now we could apply Kirchhoff's law to this loop. And if you now do Kirchhoff's law"
+      },
+      {
+        "phrase": "I'm going to erase",
+        "category": "action_narration",
+        "position_pct": 79.1,
+        "context": "Now that we have that, I'm going to erase everything, save these equations, and"
+      },
+      {
+        "phrase": "let's write",
+        "category": "action_narration",
+        "position_pct": 83.9,
+        "context": "VL, that is the same as Y, in the standard form for state space. Now let's write these equations in the standard"
+      },
+      {
+        "phrase": "let's look",
+        "category": "visual_reference",
+        "position_pct": 87.8,
+        "context": "IA. X dot is x1 dot, x2 dot, x3 dot, is A times x, x1, x2, x3, plus B times U. Which is IA. What goes in there? So let's look at x1 dot. For x1"
+      },
+      {
+        "phrase": "let's complete",
+        "category": "action_narration",
+        "position_pct": 91.0,
+        "context": "U. Which is IA. What goes in there? So let's look at x1 dot. For x1 dot, we're looking at this expression here. x1 dot only depends on x2, and it has this coefficient 1 over L2. So this is 0, 1 over L2, and 0. Now let's complete the third row here. That's"
+      },
+      {
+        "phrase": "let's look",
+        "category": "visual_reference",
+        "position_pct": 95.0,
+        "context": "And for x3 dot we have 0. Okay, so this is our first equation. Now we need an equation for the output. The equation for the output, which is y, will be C times x plus D times U. U is the input IA. So what goes in these matrices now? Now let's look at the output equation."
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 11,
+      "by_category": {
+        "visual_reference": 5,
+        "action_narration": 5,
+        "sensory_description": 0,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The transcript includes several visual references and action narrations guiding the viewer through the problem-solving process, but has no sensory descriptions. Procedural instructions occur rarely."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"State-Space Representation\",\n      \"description\": \"The video explains how to determine the state-space representation of a circuit, including identifying state variables and expressing the derivatives of these variables as functions of other states and inputs.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The concept is introduced early, explained in detail with multiple mentions throughout the video, and then the complete model is constructed at the end.\",\n      \"representative_quotes\": [\n        \"state space representation\",\n        \"X dot equals to Ax plus B times U\"\n      ]\n    },\n    {\n      \"name\": \"State Variables\",\n      \"description\": \"The video explains how to choose appropriate state variables (inductor currents and capacitor voltages) based on energy storage elements in the circuit.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section. Multiple mentions of state variables, with explanation.\",\n      \"representative_quotes\": [\n        \"what are the state variables?\",\n        \"the current through these inductors and the voltage across the capacitor\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"look at elements\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 8.6,\n      \"context\": \"Again, a good first attempt is to look at elements in the circuit that\"\n    },\n    {\n      \"phrase\": \"let's start\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 33.4,\n      \"context\": \"So that will make everything easier than when we have to put everything in a matrix form. Okay, so let's start. Now\"\n    },\n    {\n      \"phrase\": \"let's look\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 33.4,\n      \"context\": \"form. Okay, so let's start. Now let's look for a equation that gives\"\n    },\n    {\n      \"phrase\": \"let's think\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 46.1,\n      \"context\": \"second state. Now let's think about this problem. We want something\"\n    },\n    {\n      \"phrase\": \"look at the current at this node\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 52.4,\n      \"context\": \"We can relate Ic to I2, to I1 and to the input Ia. That's easy. We can just look at the current at this node A.\"\n    },\n    {\n      \"phrase\": \"if you now do Kirchhoff's law in this loop here\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 66.8,\n      \"context\": \"states. How can we do that? Now we could apply Kirchhoff's law to this loop. And if you now do Kirchhoff's law\"\n    },\n    {\n      \"phrase\": \"I'm going to erase\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 79.1,\n      \"context\": \"Now that we have that, I'm going to erase everything, save these equations, and\"\n    },\n    {\n      \"phrase\": \"let's write\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 83.9,\n      \"context\": \"VL, that is the same as Y, in the standard form for state space. Now let's write these equations in the standard\"\n    },\n    {\n      \"phrase\": \"let's look\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 87.8,\n      \"context\": \"IA. X dot is x1 dot, x2 dot, x3 dot, is A times x, x1, x2, x3, plus B times U. Which is IA. What goes in there? So let's look at x1 dot. For x1\"\n    },\n    {\n      \"phrase\": \"let's complete\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 91.0,\n      \"context\": \"U. Which is IA. What goes in there? So let's look at x1 dot. For x1 dot, we're looking at this expression here. x1 dot only depends on x2, and it has this coefficient 1 over L2. So this is 0, 1 over L2, and 0. Now let's complete the third row here. That's\"\n    },\n    {\n      \"phrase\": \"let's look\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 95.0,\n      \"context\": \"And for x3 dot we have 0. Okay, so this is our first equation. Now we need an equation for the output. The equation for the output, which is y, will be C times x plus D times U. U is the input IA. So what goes in these matrices now? Now let's look at the output equation.\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 11,\n    \"by_category\": {\n      \"visual_reference\": 5,\n      \"action_narration\": 5,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The transcript includes several visual references and action narrations guiding the viewer through the problem-solving process, but has no sensory descriptions. Procedural instructions occur rarely.\"\n  }\n}\n```"
+}

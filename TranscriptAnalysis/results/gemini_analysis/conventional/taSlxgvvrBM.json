@@ -1,0 +1,89 @@
+{
+  "video_id": "taSlxgvvrBM",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "PID Control",
+        "description": "The video explains the fundamentals of Proportional Integral Derivative (PID) control, a common feedback control algorithm used in robotics. It covers the role of sensor feedback, error calculation, and the individual contributions of proportional, integral, and derivative terms in determining the control signal.",
+        "mention_count": 10,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "PID control is the central topic, explained in detail with examples and pseudocode, even though the coverage is limited.",
+        "representative_quotes": [
+          "PID control for short",
+          "KP times E"
+        ]
+      },
+      {
+        "name": "PID terms: Proportional (P), Integral (I), Derivative (D)",
+        "description": "The video breaks down each of the P, I, and D components of the PID controller equation, explaining the mathematical formula, physical significance, and impact of each one.",
+        "mention_count": 9,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "These are each covered in dedicated sections of the explanation of PID, with multiple mentions and explanation of each term.",
+        "representative_quotes": [
+          "the proportional gain times the error",
+          "integral gain, KI, times the integral of the error",
+          "derivative gain, times the derivative of error"
+        ]
+      },
+      {
+        "name": "Pseudocode Implementation",
+        "description": "The video presents pseudocode to demonstrate how a PID controller can be implemented in a computer, including initialization, error calculation, numerical differentiation, and integration.",
+        "mention_count": 5,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "A dedicated section covers the pseudocode implementation, explaining variable initialization, error calculations and loop.",
+        "representative_quotes": [
+          "If we want to implement that in a computer",
+          "calculate the derivative of the error"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "I'm trying to control the angle of my arm",
+        "category": "action_narration",
+        "position_pct": 8.6,
+        "context": "As an example, let's say that I'm trying to control the angle of my arm, and"
+      },
+      {
+        "phrase": "I want to hold the arm at 90 degrees",
+        "category": "action_narration",
+        "position_pct": 11.1,
+        "context": "Maybe I want to hold the arm at 90 degrees, and it's currently"
+      },
+      {
+        "phrase": "sitting at 45 degrees",
+        "category": "sensory_description",
+        "position_pct": 12.1,
+        "context": "90 degrees, and it's currently sitting at 45 degrees. So then I"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 3,
+      "by_category": {
+        "visual_reference": 0,
+        "action_narration": 2,
+        "sensory_description": 1,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "Limited instances of embodied language, mostly in the early segment. Few references to demonstration or manipulation."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"PID Control\",\n      \"description\": \"The video explains the fundamentals of Proportional Integral Derivative (PID) control, a common feedback control algorithm used in robotics. It covers the role of sensor feedback, error calculation, and the individual contributions of proportional, integral, and derivative terms in determining the control signal.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"PID control is the central topic, explained in detail with examples and pseudocode, even though the coverage is limited.\",\n      \"representative_quotes\": [\n        \"PID control for short\",\n        \"KP times E\"\n      ]\n    },\n    {\n      \"name\": \"PID terms: Proportional (P), Integral (I), Derivative (D)\",\n      \"description\": \"The video breaks down each of the P, I, and D components of the PID controller equation, explaining the mathematical formula, physical significance, and impact of each one.\",\n      \"mention_count\": 9,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"These are each covered in dedicated sections of the explanation of PID, with multiple mentions and explanation of each term.\",\n      \"representative_quotes\": [\n        \"the proportional gain times the error\",\n        \"integral gain, KI, times the integral of the error\",\n        \"derivative gain, times the derivative of error\"\n      ]\n    },\n    {\n      \"name\": \"Pseudocode Implementation\",\n      \"description\": \"The video presents pseudocode to demonstrate how a PID controller can be implemented in a computer, including initialization, error calculation, numerical differentiation, and integration.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"A dedicated section covers the pseudocode implementation, explaining variable initialization, error calculations and loop.\",\n      \"representative_quotes\": [\n        \"If we want to implement that in a computer\",\n        \"calculate the derivative of the error\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"I'm trying to control the angle of my arm\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 8.6,\n      \"context\": \"As an example, let's say that I'm trying to control the angle of my arm, and\"\n    },\n    {\n      \"phrase\": \"I want to hold the arm at 90 degrees\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 11.1,\n      \"context\": \"Maybe I want to hold the arm at 90 degrees, and it's currently\"\n    },\n    {\n      \"phrase\": \"sitting at 45 degrees\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 12.1,\n      \"context\": \"90 degrees, and it's currently sitting at 45 degrees. So then I\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 3,\n    \"by_category\": {\n      \"visual_reference\": 0,\n      \"action_narration\": 2,\n      \"sensory_description\": 1,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"Limited instances of embodied language, mostly in the early segment. Few references to demonstration or manipulation.\"\n  }\n}\n```"
+}

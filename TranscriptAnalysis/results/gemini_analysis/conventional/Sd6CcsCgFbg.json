@@ -1,0 +1,293 @@
+{
+  "video_id": "Sd6CcsCgFbg",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Network Extraction",
+        "description": "Network extraction involves generating S-parameters or models for a network to later embed or de-embed from a VNA test port. It's useful for extracting circuit portions, test fixture launches, or in situations where CAL kits are unavailable.",
+        "mention_count": 10,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "Introduced early, covered in a dedicated section, and mentioned throughout the first half of the transcript; central to the video.",
+        "representative_quotes": [
+          "Network extraction is a tool that we use to generate the S-parameters or the model for some network",
+          "But there's also other uses for network extraction."
+        ]
+      },
+      {
+        "name": "Embedding and De-embedding",
+        "description": "Embedding and de-embedding are techniques for adding or removing networks from VNA measurements, such as matching networks or fixtures. It allows isolating the device under test and viewing results with or without the added/removed network.",
+        "mention_count": 17,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "Introduced early, developed with examples, demonstrated live, and reiterated, showing high importance.",
+        "representative_quotes": [
+          "it's useful to add or remove networks from a given measured results",
+          "Or in the case of de-embedding we can remove a fixture",
+          "You would load an S4P file. You would add that to your network"
+        ]
+      },
+      {
+        "name": "Differential Probes",
+        "description": "Differential probes are designed to measure differential signals by creating a virtual ground and rejecting common mode noise. True differential probes have coupled transmission lines, unlike dual probes which use isolated coax cables.",
+        "mention_count": 8,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section, mentioned multiple times by Brian, but not returned to at the end.",
+        "representative_quotes": [
+          "I want to discuss what is a differential probe",
+          "In a true differential probe...is that it sends a positive and negative pulse down the transmission line"
+        ]
+      },
+      {
+        "name": "Atai Tech ISD Software",
+        "description": "Atai Tech's ISD software is used for in situ de-embedding and creates S4P models for differential probes. It requires open, short, and in situ measurements to accurately model coupling and crosstalk.",
+        "mention_count": 12,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "Introduced early, demoed, and used throughout the presentation and demo, reinforcing its purpose.",
+        "representative_quotes": [
+          "we're going to use the Atai Tech ISD software to perform this network extraction",
+          "the in situ de embedding or ISD software that allows us to create a differential probe",
+          "We're going to use the TIA-TECH software next."
+        ]
+      },
+      {
+        "name": "VNA Four Port Differential Measurements",
+        "description": "A four-port VNA is essential for differential measurements because it enables differential signal measurements and de-embedding. Enritsu's VNA family offers features like superposition to convert single-ended S-parameters to differential S-parameters.",
+        "mention_count": 13,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "Introduced early and frequently explained throughout the presentation, underlining its use in differential probing.",
+        "representative_quotes": [
+          "we need a four port VNA to do that",
+          "We need a differential DNA",
+          "So all of these measurements are possible with a four port VNA."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "we're using today",
+        "category": "visual_reference",
+        "position_pct": 1.5,
+        "context": "Bill Rosas of Signal Microwave for supplying the verification board that we're using today to perform the network"
+      },
+      {
+        "phrase": "we're going to cover",
+        "category": "action_narration",
+        "position_pct": 2.6,
+        "context": "So today we're going to cover first of all the basic"
+      },
+      {
+        "phrase": "I will discuss",
+        "category": "action_narration",
+        "position_pct": 7.0,
+        "context": "probe. Then I will discuss Enritsu's VNA family and how"
+      },
+      {
+        "phrase": "see the difference",
+        "category": "visual_reference",
+        "position_pct": 10.0,
+        "context": "de-embedding off so we can actually see the difference which would be"
+      },
+      {
+        "phrase": "we're demonstrating today",
+        "category": "action_narration",
+        "position_pct": 36.0,
+        "context": "In the case of de-embedding which is what we're demonstrating today, we're going to look at a"
+      },
+      {
+        "phrase": "If you draw your attention",
+        "category": "visual_reference",
+        "position_pct": 45.0,
+        "context": "the signal pins. If you draw your attention to the picture at the"
+      },
+      {
+        "phrase": "you can see",
+        "category": "visual_reference",
+        "position_pct": 45.0,
+        "context": "to 70 gigahertz and as you can see the picture are kind of"
+      },
+      {
+        "phrase": "going back",
+        "category": "action_narration",
+        "position_pct": 57.0,
+        "context": "Now, going back to the AtaiTech software, I mentioned"
+      },
+      {
+        "phrase": "to see that",
+        "category": "visual_reference",
+        "position_pct": 61.0,
+        "context": "And in order to see that the probe tips are making"
+      },
+      {
+        "phrase": "as you can see",
+        "category": "visual_reference",
+        "position_pct": 68.0,
+        "context": "you can see at the top of the VNA. On the screen, you can see on the left, it's"
+      },
+      {
+        "phrase": "we load",
+        "category": "action_narration",
+        "position_pct": 70.0,
+        "context": "left side. We load the open, the short, the in"
+      },
+      {
+        "phrase": "we are measuring",
+        "category": "action_narration",
+        "position_pct": 75.0,
+        "context": "about can be extended, of course, into higher frequencies. But we're going to concentrate on the picture that"
+      },
+      {
+        "phrase": "as I said",
+        "category": "visual_reference",
+        "position_pct": 77.0,
+        "context": "de-embedding is a standard feature, as I said, on Enritsu VNAs. And then we"
+      },
+      {
+        "phrase": "as I said",
+        "category": "visual_reference",
+        "position_pct": 79.0,
+        "context": "S-parameters. So as I said, this works perfectly well for passive"
+      },
+      {
+        "phrase": "as Brian mentioned",
+        "category": "visual_reference",
+        "position_pct": 81.0,
+        "context": "S-parameters. And then we can use time domain and, as Brian mentioned, the low pass time domain"
+      },
+      {
+        "phrase": "see what is happening",
+        "category": "visual_reference",
+        "position_pct": 81.0,
+        "context": "And we actually see what is happening along the line. And this"
+      },
+      {
+        "phrase": "see the result",
+        "category": "visual_reference",
+        "position_pct": 81.0,
+        "context": "to actually see the result that you expect if you're"
+      },
+      {
+        "phrase": "This is what it looks like.",
+        "category": "visual_reference",
+        "position_pct": 84.0,
+        "context": "All right. This is what it looks like. This is actually what I'm talking"
+      },
+      {
+        "phrase": "you can see",
+        "category": "visual_reference",
+        "position_pct": 85.0,
+        "context": "taking place. So you can see that the insertion loss of your"
+      },
+      {
+        "phrase": "shows",
+        "category": "visual_reference",
+        "position_pct": 87.0,
+        "context": "slide. Starting with the left, what we're going to do, those shows the port assignments, how we're"
+      },
+      {
+        "phrase": "you see",
+        "category": "visual_reference",
+        "position_pct": 88.0,
+        "context": "the camera, down at the bottom, the black thing down there is the probe positioner"
+      },
+      {
+        "phrase": "as I said earlier",
+        "category": "visual_reference",
+        "position_pct": 88.0,
+        "context": "black thing down there is the probe positioner. And as I said earlier, you want a long arm"
+      },
+      {
+        "phrase": "As you can see",
+        "category": "visual_reference",
+        "position_pct": 89.0,
+        "context": "camera here that's showing the probe tips very, expands it on"
+      },
+      {
+        "phrase": "making contact",
+        "category": "sensory_description",
+        "position_pct": 90.0,
+        "context": "And they were making contact with the differential line, as you can see"
+      },
+      {
+        "phrase": "shows",
+        "category": "visual_reference",
+        "position_pct": 90.0,
+        "context": "And now the next thing we're going to do is we're going to make an S parameter measurement"
+      },
+      {
+        "phrase": "Brian was just showing live",
+        "category": "visual_reference",
+        "position_pct": 93.0,
+        "context": "Brian was just showing live, which is the in situ through"
+      },
+      {
+        "phrase": "This is what we measured.",
+        "category": "visual_reference",
+        "position_pct": 93.0,
+        "context": "TIA-TECH software next. And for this, we're going to use a 1X open and short. This is what we measured. These are basically S2P"
+      },
+      {
+        "phrase": "was just showing",
+        "category": "visual_reference",
+        "position_pct": 95.0,
+        "context": "we're ready to go over to the VNA and actually apply it to that measurement that Brian was just showing a moment ago. So I'm"
+      },
+      {
+        "phrase": "as I mentioned earlier",
+        "category": "visual_reference",
+        "position_pct": 96.0,
+        "context": "processing. So as I mentioned earlier in the presentation, all of this"
+      },
+      {
+        "phrase": "I showed earlier",
+        "category": "visual_reference",
+        "position_pct": 97.0,
+        "context": "de-embedding. And you'll see the menu that I showed earlier in the presentation where you can"
+      },
+      {
+        "phrase": "what you'll notice",
+        "category": "visual_reference",
+        "position_pct": 98.0,
+        "context": "And we're going to close. And now all that remains is to basically turn on the embedding. And what you'll notice right away, the"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 31,
+      "by_category": {
+        "visual_reference": 25,
+        "action_narration": 6,
+        "sensory_description": 1,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "There are a mix of action narration and visual references throughout the transcript.  Sensory descriptions and procedural instructions are less common."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Network Extraction\",\n      \"description\": \"Network extraction involves generating S-parameters or models for a network to later embed or de-embed from a VNA test port. It's useful for extracting circuit portions, test fixture launches, or in situations where CAL kits are unavailable.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Introduced early, covered in a dedicated section, and mentioned throughout the first half of the transcript; central to the video.\",\n      \"representative_quotes\": [\n        \"Network extraction is a tool that we use to generate the S-parameters or the model for some network\",\n        \"But there's also other uses for network extraction.\"\n      ]\n    },\n    {\n      \"name\": \"Embedding and De-embedding\",\n      \"description\": \"Embedding and de-embedding are techniques for adding or removing networks from VNA measurements, such as matching networks or fixtures. It allows isolating the device under test and viewing results with or without the added/removed network.\",\n      \"mention_count\": 17,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"Introduced early, developed with examples, demonstrated live, and reiterated, showing high importance.\",\n      \"representative_quotes\": [\n        \"it's useful to add or remove networks from a given measured results\",\n        \"Or in the case of de-embedding we can remove a fixture\",\n        \"You would load an S4P file. You would add that to your network\"\n      ]\n    },\n    {\n      \"name\": \"Differential Probes\",\n      \"description\": \"Differential probes are designed to measure differential signals by creating a virtual ground and rejecting common mode noise. True differential probes have coupled transmission lines, unlike dual probes which use isolated coax cables.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section, mentioned multiple times by Brian, but not returned to at the end.\",\n      \"representative_quotes\": [\n        \"I want to discuss what is a differential probe\",\n        \"In a true differential probe...is that it sends a positive and negative pulse down the transmission line\"\n      ]\n    },\n    {\n      \"name\": \"Atai Tech ISD Software\",\n      \"description\": \"Atai Tech's ISD software is used for in situ de-embedding and creates S4P models for differential probes. It requires open, short, and in situ measurements to accurately model coupling and crosstalk.\",\n      \"mention_count\": 12,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Introduced early, demoed, and used throughout the presentation and demo, reinforcing its purpose.\",\n      \"representative_quotes\": [\n        \"we're going to use the Atai Tech ISD software to perform this network extraction\",\n        \"the in situ de embedding or ISD software that allows us to create a differential probe\",\n        \"We're going to use the TIA-TECH software next.\"\n      ]\n    },\n    {\n      \"name\": \"VNA Four Port Differential Measurements\",\n      \"description\": \"A four-port VNA is essential for differential measurements because it enables differential signal measurements and de-embedding. Enritsu's VNA family offers features like superposition to convert single-ended S-parameters to differential S-parameters.\",\n      \"mention_count\": 13,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Introduced early and frequently explained throughout the presentation, underlining its use in differential probing.\",\n      \"representative_quotes\": [\n        \"we need a four port VNA to do that\",\n        \"We need a differential DNA\",\n        \"So all of these measurements are possible with a four port VNA.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"we're using today\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 1.5,\n      \"context\": \"Bill Rosas of Signal Microwave for supplying the verification board that we're using today to perform the network\"\n    },\n    {\n      \"phrase\": \"we're going to cover\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 2.6,\n      \"context\": \"So today we're going to cover first of all the basic\"\n    },\n    {\n      \"phrase\": \"I will discuss\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 7.0,\n      \"context\": \"probe. Then I will discuss Enritsu's VNA family and how\"\n    },\n    {\n      \"phrase\": \"see the difference\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 10.0,\n      \"context\": \"de-embedding off so we can actually see the difference which would be\"\n    },\n    {\n      \"phrase\": \"we're demonstrating today\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 36.0,\n      \"context\": \"In the case of de-embedding which is what we're demonstrating today, we're going to look at a\"\n    },\n    {\n      \"phrase\": \"If you draw your attention\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 45.0,\n      \"context\": \"the signal pins. If you draw your attention to the picture at the\"\n    },\n    {\n      \"phrase\": \"you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 45.0,\n      \"context\": \"to 70 gigahertz and as you can see the picture are kind of\"\n    },\n    {\n      \"phrase\": \"going back\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 57.0,\n      \"context\": \"Now, going back to the AtaiTech software, I mentioned\"\n    },\n    {\n      \"phrase\": \"to see that\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 61.0,\n      \"context\": \"And in order to see that the probe tips are making\"\n    },\n    {\n      \"phrase\": \"as you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 68.0,\n      \"context\": \"you can see at the top of the VNA. On the screen, you can see on the left, it's\"\n    },\n    {\n      \"phrase\": \"we load\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 70.0,\n      \"context\": \"left side. We load the open, the short, the in\"\n    },\n    {\n      \"phrase\": \"we are measuring\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 75.0,\n      \"context\": \"about can be extended, of course, into higher frequencies. But we're going to concentrate on the picture that\"\n    },\n    {\n      \"phrase\": \"as I said\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 77.0,\n      \"context\": \"de-embedding is a standard feature, as I said, on Enritsu VNAs. And then we\"\n    },\n    {\n      \"phrase\": \"as I said\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 79.0,\n      \"context\": \"S-parameters. So as I said, this works perfectly well for passive\"\n    },\n    {\n      \"phrase\": \"as Brian mentioned\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 81.0,\n      \"context\": \"S-parameters. And then we can use time domain and, as Brian mentioned, the low pass time domain\"\n    },\n    {\n      \"phrase\": \"see what is happening\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 81.0,\n      \"context\": \"And we actually see what is happening along the line. And this\"\n    },\n    {\n      \"phrase\": \"see the result\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 81.0,\n      \"context\": \"to actually see the result that you expect if you're\"\n    },\n    {\n      \"phrase\": \"This is what it looks like.\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 84.0,\n      \"context\": \"All right. This is what it looks like. This is actually what I'm talking\"\n    },\n    {\n      \"phrase\": \"you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 85.0,\n      \"context\": \"taking place. So you can see that the insertion loss of your\"\n    },\n    {\n      \"phrase\": \"shows\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 87.0,\n      \"context\": \"slide. Starting with the left, what we're going to do, those shows the port assignments, how we're\"\n    },\n    {\n      \"phrase\": \"you see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 88.0,\n      \"context\": \"the camera, down at the bottom, the black thing down there is the probe positioner\"\n    },\n    {\n      \"phrase\": \"as I said earlier\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 88.0,\n      \"context\": \"black thing down there is the probe positioner. And as I said earlier, you want a long arm\"\n    },\n    {\n      \"phrase\": \"As you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 89.0,\n      \"context\": \"camera here that's showing the probe tips very, expands it on\"\n    },\n    {\n      \"phrase\": \"making contact\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 90.0,\n      \"context\": \"And they were making contact with the differential line, as you can see\"\n    },\n    {\n      \"phrase\": \"shows\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 90.0,\n      \"context\": \"And now the next thing we're going to do is we're going to make an S parameter measurement\"\n    },\n    {\n      \"phrase\": \"Brian was just showing live\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 93.0,\n      \"context\": \"Brian was just showing live, which is the in situ through\"\n    },\n    {\n      \"phrase\": \"This is what we measured.\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 93.0,\n      \"context\": \"TIA-TECH software next. And for this, we're going to use a 1X open and short. This is what we measured. These are basically S2P\"\n    },\n    {\n      \"phrase\": \"was just showing\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 95.0,\n      \"context\": \"we're ready to go over to the VNA and actually apply it to that measurement that Brian was just showing a moment ago. So I'm\"\n    },\n    {\n      \"phrase\": \"as I mentioned earlier\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 96.0,\n      \"context\": \"processing. So as I mentioned earlier in the presentation, all of this\"\n    },\n    {\n      \"phrase\": \"I showed earlier\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 97.0,\n      \"context\": \"de-embedding. And you'll see the menu that I showed earlier in the presentation where you can\"\n    },\n    {\n      \"phrase\": \"what you'll notice\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 98.0,\n      \"context\": \"And we're going to close. And now all that remains is to basically turn on the embedding. And what you'll notice right away, the\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 31,\n    \"by_category\": {\n      \"visual_reference\": 25,\n      \"action_narration\": 6,\n      \"sensory_description\": 1,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"There are a mix of action narration and visual references throughout the transcript.  Sensory descriptions and procedural instructions are less common.\"\n  }\n}\n```"
+}

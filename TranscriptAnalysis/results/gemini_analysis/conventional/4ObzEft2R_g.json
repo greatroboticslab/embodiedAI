@@ -1,0 +1,110 @@
+{
+  "video_id": "4ObzEft2R_g",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "LM386 Audio Amplifier",
+        "description": "The video focuses on building a simple audio amplifier using the LM386 chip. It covers the necessary components, circuit design, and troubleshooting techniques to create a functional amplifier for speakers.",
+        "mention_count": 8,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "The LM386 amplifier is introduced early, explained in detail, and revisited throughout the video. The core purpose is building a working amplifier with this chip.",
+        "representative_quotes": [
+          "The LM 386 is an all-in-one class AB audio amplifier chip and it's the easiest way to power a speaker.",
+          "Next, you're going to need an LM386 chip."
+        ]
+      },
+      {
+        "name": "Stereo to Mono Conversion",
+        "description": "The video explains a simple method for converting a stereo audio signal to mono using resistors. It acknowledges limitations but emphasizes simplicity for the project's goals.",
+        "mention_count": 3,
+        "positions": [
+          "early"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "A dedicated section explains the stereo to mono conversion circuit. The speaker goes into why the method is adequate, though not optimal.",
+        "representative_quotes": [
+          "Next, we're going to implement the simplest possible stereo to mono conversion circuit.",
+          "Now, this is definitely not the best way to do stereo to mono, as we're just averaging the signals here"
+        ]
+      },
+      {
+        "name": "Oscillation Troubleshooting",
+        "description": "The video addresses the problem of unwanted oscillation in the amplifier circuit and presents a simple solution using a capacitor.",
+        "mention_count": 5,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "A significant portion of the video is dedicated to identifying and resolving the oscillation issue. Oscilloscope shown.",
+        "representative_quotes": [
+          "It turns out that our amplifier is oscillating, and we need to get all of this high frequency garbage out of our feedback loop",
+          "You can just put a 0.1uF capacitor in parallel with the output, and it'll stop all the unwanted oscillation."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "solder wires onto a plug",
+        "category": "action_narration",
+        "position_pct": 13.21,
+        "context": "There are many ways to get this. You could solder wires onto a plug, or cut up an"
+      },
+      {
+        "phrase": "soldered on some thicker wire",
+        "category": "action_narration",
+        "position_pct": 15.09,
+        "context": "the left and right signal wires. And I soldered on some thicker wire to make it"
+      },
+      {
+        "phrase": "crank up the supply voltage",
+        "category": "procedural_instruction",
+        "position_pct": 33.96,
+        "context": "using the LM386N-4. It'll give you the flexibility to crank up the supply voltage for the full"
+      },
+      {
+        "phrase": "Let's look at the output",
+        "category": "visual_reference",
+        "position_pct": 56.6,
+        "context": "everything you see on the internet. Let's look at the output on an oscilloscope to"
+      },
+      {
+        "phrase": "I'm showing you",
+        "category": "visual_reference",
+        "position_pct": 53.77,
+        "context": "Okay, so what's going on here? The schematic I'm showing you is very similar to other schematics"
+      },
+      {
+        "phrase": "you can see that",
+        "category": "visual_reference",
+        "position_pct": 64.15,
+        "context": "Now the amplifier sounds exactly as it should, and you can see that the high frequency oscillation is"
+      },
+      {
+        "phrase": "give you a couple of close-up shots",
+        "category": "visual_reference",
+        "position_pct": 70.75,
+        "context": "Now, to give you an idea of how loud this thing can go, I'm standing right next to the camera. And this is what you can just pop in with my piano, you can do it. And that's what you can do everywhere, you can do it now. Next, I'd like to give you a couple of close-up shots of the breadboard, to"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 7,
+      "by_category": {
+        "visual_reference": 3,
+        "action_narration": 2,
+        "sensory_description": 0,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The transcript incorporates several action-oriented phrases related to circuit building and visual prompts, leading to a medium level of embodied language."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"LM386 Audio Amplifier\",\n      \"description\": \"The video focuses on building a simple audio amplifier using the LM386 chip. It covers the necessary components, circuit design, and troubleshooting techniques to create a functional amplifier for speakers.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The LM386 amplifier is introduced early, explained in detail, and revisited throughout the video. The core purpose is building a working amplifier with this chip.\",\n      \"representative_quotes\": [\n        \"The LM 386 is an all-in-one class AB audio amplifier chip and it's the easiest way to power a speaker.\",\n        \"Next, you're going to need an LM386 chip.\"\n      ]\n    },\n    {\n      \"name\": \"Stereo to Mono Conversion\",\n      \"description\": \"The video explains a simple method for converting a stereo audio signal to mono using resistors. It acknowledges limitations but emphasizes simplicity for the project's goals.\",\n      \"mention_count\": 3,\n      \"positions\": [\n        \"early\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"A dedicated section explains the stereo to mono conversion circuit. The speaker goes into why the method is adequate, though not optimal.\",\n      \"representative_quotes\": [\n        \"Next, we're going to implement the simplest possible stereo to mono conversion circuit.\",\n        \"Now, this is definitely not the best way to do stereo to mono, as we're just averaging the signals here\"\n      ]\n    },\n    {\n      \"name\": \"Oscillation Troubleshooting\",\n      \"description\": \"The video addresses the problem of unwanted oscillation in the amplifier circuit and presents a simple solution using a capacitor.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"A significant portion of the video is dedicated to identifying and resolving the oscillation issue. Oscilloscope shown.\",\n      \"representative_quotes\": [\n        \"It turns out that our amplifier is oscillating, and we need to get all of this high frequency garbage out of our feedback loop\",\n        \"You can just put a 0.1uF capacitor in parallel with the output, and it'll stop all the unwanted oscillation.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"solder wires onto a plug\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 13.21,\n      \"context\": \"There are many ways to get this. You could solder wires onto a plug, or cut up an\"\n    },\n    {\n      \"phrase\": \"soldered on some thicker wire\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 15.09,\n      \"context\": \"the left and right signal wires. And I soldered on some thicker wire to make it\"\n    },\n    {\n      \"phrase\": \"crank up the supply voltage\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 33.96,\n      \"context\": \"using the LM386N-4. It'll give you the flexibility to crank up the supply voltage for the full\"\n    },\n    {\n      \"phrase\": \"Let's look at the output\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 56.6,\n      \"context\": \"everything you see on the internet. Let's look at the output on an oscilloscope to\"\n    },\n    {\n      \"phrase\": \"I'm showing you\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 53.77,\n      \"context\": \"Okay, so what's going on here? The schematic I'm showing you is very similar to other schematics\"\n    },\n    {\n      \"phrase\": \"you can see that\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 64.15,\n      \"context\": \"Now the amplifier sounds exactly as it should, and you can see that the high frequency oscillation is\"\n    },\n    {\n      \"phrase\": \"give you a couple of close-up shots\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 70.75,\n      \"context\": \"Now, to give you an idea of how loud this thing can go, I'm standing right next to the camera. And this is what you can just pop in with my piano, you can do it. And that's what you can do everywhere, you can do it now. Next, I'd like to give you a couple of close-up shots of the breadboard, to\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 7,\n    \"by_category\": {\n      \"visual_reference\": 3,\n      \"action_narration\": 2,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The transcript incorporates several action-oriented phrases related to circuit building and visual prompts, leading to a medium level of embodied language.\"\n  }\n}\n```"
+}

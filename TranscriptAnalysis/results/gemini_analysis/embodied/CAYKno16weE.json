@@ -1,0 +1,122 @@
+{
+  "video_id": "CAYKno16weE",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Full Bridge Rectifier Function",
+        "description": "The full bridge rectifier converts AC power to DC power using a configuration of diodes.  The video explains its basic operation.",
+        "mention_count": 11,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "The full bridge rectifier is introduced early and its function and use are explained in detail, with multiple mentions throughout the video.",
+        "representative_quotes": [
+          "its job is to convert AC to DC power",
+          "configured to rectify AC power into DC"
+        ]
+      },
+      {
+        "name": "Choosing a Full Bridge Rectifier",
+        "description": "The video explains how to select an appropriate full bridge rectifier based on voltage, current, and heat dissipation requirements using the data sheet.",
+        "mention_count": 10,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "This is a core skill taught in the video, with multiple considerations (voltage, current, heat) covered using the datasheet.",
+        "representative_quotes": [
+          "We need to look at how much voltage it can handle, how much current it can handle",
+          "We need to find the data sheet"
+        ]
+      },
+      {
+        "name": "Capacitor Function in Power Smoothing",
+        "description": "Explains the capacitor's role in smoothing rectified DC power, addressing voltage ripples to provide a more stable power supply.",
+        "mention_count": 6,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section, explaining the capacitor's role and impact, multiple mentions, though not a focus at the start.",
+        "representative_quotes": [
+          "The capacitor's job is to smooth out those ripples",
+          "so that we get much more stable power"
+        ]
+      },
+      {
+        "name": "Calculating Capacitor Size",
+        "description": "The video describes the formula for calculating the required capacitance based on current, half cycle time, and acceptable voltage drop.",
+        "mention_count": 6,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The formula is explained with an example, but is contained within a single section.",
+        "representative_quotes": [
+          "Current times half cycle time divided by acceptable voltage drop equals microfarads",
+          "chances are the capacitance you require is not going to be found"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "If we look at the top of this example you can see",
+        "category": "visual_reference",
+        "position_pct": 10.1,
+        "context": "to DC power. If we look at the top of this example you can see we've got in two"
+      },
+      {
+        "phrase": "input power would go on these two junctions here",
+        "category": "action_narration",
+        "position_pct": 13.0,
+        "context": "for our now rectified DC power output. So our input power would go on these two junctions here and"
+      },
+      {
+        "phrase": "I showed earlier for my up and coming project",
+        "category": "visual_reference",
+        "position_pct": 25.4,
+        "context": "this is the full bridge rectifier I chose to rectify the power output from my transformer I showed earlier for my up and coming project. And"
+      },
+      {
+        "phrase": "Now this is rated at 1.1 volts.",
+        "category": "sensory_description",
+        "position_pct": 40.3,
+        "context": "So again we're all good there. The next thing we need to look at is the forward voltage drop or VF. Now this is rated at 1.1 volts."
+      },
+      {
+        "phrase": "get a heat sink and we can bolt this full bridge rectifier to it",
+        "category": "action_narration",
+        "position_pct": 51.9,
+        "context": "we've got a metal surface here. And what we can do is get a heat sink and we can bolt this full bridge rectifier to it with"
+      },
+      {
+        "phrase": "make sure you wire them the correct way",
+        "category": "procedural_instruction",
+        "position_pct": 88.7,
+        "context": "When it comes to wiring your electrolytic capacitors. Make sure you wire them the correct way. Because most"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 6,
+      "by_category": {
+        "visual_reference": 2,
+        "action_narration": 2,
+        "sensory_description": 1,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "There is a mix of visual references, action narrations, a sensory description related to ratings, and a procedural instruction about wiring, indicating some embodied richness, though not pervasive."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Full Bridge Rectifier Function\",\n      \"description\": \"The full bridge rectifier converts AC power to DC power using a configuration of diodes.  The video explains its basic operation.\",\n      \"mention_count\": 11,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The full bridge rectifier is introduced early and its function and use are explained in detail, with multiple mentions throughout the video.\",\n      \"representative_quotes\": [\n        \"its job is to convert AC to DC power\",\n        \"configured to rectify AC power into DC\"\n      ]\n    },\n    {\n      \"name\": \"Choosing a Full Bridge Rectifier\",\n      \"description\": \"The video explains how to select an appropriate full bridge rectifier based on voltage, current, and heat dissipation requirements using the data sheet.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"This is a core skill taught in the video, with multiple considerations (voltage, current, heat) covered using the datasheet.\",\n      \"representative_quotes\": [\n        \"We need to look at how much voltage it can handle, how much current it can handle\",\n        \"We need to find the data sheet\"\n      ]\n    },\n    {\n      \"name\": \"Capacitor Function in Power Smoothing\",\n      \"description\": \"Explains the capacitor's role in smoothing rectified DC power, addressing voltage ripples to provide a more stable power supply.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section, explaining the capacitor's role and impact, multiple mentions, though not a focus at the start.\",\n      \"representative_quotes\": [\n        \"The capacitor's job is to smooth out those ripples\",\n        \"so that we get much more stable power\"\n      ]\n    },\n    {\n      \"name\": \"Calculating Capacitor Size\",\n      \"description\": \"The video describes the formula for calculating the required capacitance based on current, half cycle time, and acceptable voltage drop.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The formula is explained with an example, but is contained within a single section.\",\n      \"representative_quotes\": [\n        \"Current times half cycle time divided by acceptable voltage drop equals microfarads\",\n        \"chances are the capacitance you require is not going to be found\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"If we look at the top of this example you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 10.1,\n      \"context\": \"to DC power. If we look at the top of this example you can see we've got in two\"\n    },\n    {\n      \"phrase\": \"input power would go on these two junctions here\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 13.0,\n      \"context\": \"for our now rectified DC power output. So our input power would go on these two junctions here and\"\n    },\n    {\n      \"phrase\": \"I showed earlier for my up and coming project\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 25.4,\n      \"context\": \"this is the full bridge rectifier I chose to rectify the power output from my transformer I showed earlier for my up and coming project. And\"\n    },\n    {\n      \"phrase\": \"Now this is rated at 1.1 volts.\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 40.3,\n      \"context\": \"So again we're all good there. The next thing we need to look at is the forward voltage drop or VF. Now this is rated at 1.1 volts.\"\n    },\n    {\n      \"phrase\": \"get a heat sink and we can bolt this full bridge rectifier to it\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 51.9,\n      \"context\": \"we've got a metal surface here. And what we can do is get a heat sink and we can bolt this full bridge rectifier to it with\"\n    },\n    {\n      \"phrase\": \"make sure you wire them the correct way\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 88.7,\n      \"context\": \"When it comes to wiring your electrolytic capacitors. Make sure you wire them the correct way. Because most\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 6,\n    \"by_category\": {\n      \"visual_reference\": 2,\n      \"action_narration\": 2,\n      \"sensory_description\": 1,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"There is a mix of visual references, action narrations, a sensory description related to ratings, and a procedural instruction about wiring, indicating some embodied richness, though not pervasive.\"\n  }\n}\n```"
+}

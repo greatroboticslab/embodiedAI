@@ -1,0 +1,250 @@
+{
+  "video_id": "n3TeLpbw_jk",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Smoke Stopper Bench Testing",
+        "description": "The speaker explains that a smoke stopper, used to prevent damage during bench testing, can limit amps and cause the quad to shut down when armed, a common issue for beginners.",
+        "mention_count": 4,
+        "positions": [
+          "early"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section, explained with a cause and effect; appears multiple times.",
+        "representative_quotes": [
+          "if you've got the smoke stopper plugged in between your lipo and the quad, you're going to have a problem",
+          "testing it on the bench, don't plan on spinning your motors"
+        ]
+      },
+      {
+        "name": "Motor Throttling Without Props",
+        "description": "The speaker details why motors might not throttle down on the bench without props, explaining how the PID controller tries to compensate for the lack of lift.",
+        "mention_count": 5,
+        "positions": [
+          "early"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Addressed in a dedicated section with a specific explanation of the PID controller's behavior; appears multiple times.",
+        "representative_quotes": [
+          "motors will not throttle down after you arm the quad and throttle up unless you have props on.",
+          "the PID controller is active as soon as you lift the throttle on the quad."
+        ]
+      },
+      {
+        "name": "Props on Wrong (Orientation)",
+        "description": "The speaker describes two ways the props can be on incorrectly: props being on upside down, and props being in the wrong direction. Both cause issues like the quad being pinned or fluttering, or not lifting.",
+        "mention_count": 10,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "Central topic, described at length, with visual references and explanation of the leading edge.",
+        "representative_quotes": [
+          "If your quad appears to be stuck to the table, it might not be your props.",
+          "A lot of people know what modes are going on and if it's active or not.  But what is the most common thing and what causes that to happen more often than not is the props being on wrong."
+        ]
+      },
+      {
+        "name": "Motor Direction (Configuration)",
+        "description": "The speaker goes over how to check and correct motor direction in Betaflight, with props off, using the motor direction wizard, and ensuring it matches the diagrams.",
+        "mention_count": 10,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "Substantial explanation with hands-on instruction about using Betaflight's tools to get motor direction corrected.",
+        "representative_quotes": [
+          "go back through the motor direction wizard in Betaflight",
+          "Back in the motors tab with the LiPo plugged into our quad, as well as the USB, we can go to this motor direction button here."
+        ]
+      },
+      {
+        "name": "Flight Controller Board Orientation",
+        "description": "The speaker explains how to check and correct the flight controller board orientation using the accelerometer in Betaflight's setup tab to align the virtual model's movements with the physical quad's.",
+        "mention_count": 14,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "Extensively covered, using Betaflight and the accelerometer as a guide. Checking and adjusting board orientation is the primary solution to a \"death roll\"",
+        "representative_quotes": [
+          "Flight controllers do have a direction.",
+          "You have to deem the axis. And the only way to do that is with board orientation."
+        ]
+      },
+      {
+        "name": "Mechanical Failure / Flyaway",
+        "description": "The speaker discusses flyaways, usually caused by mechanical failures (frame cracks, loose assembly) or filtering problems leading to oscillations, recommending a thorough frame inspection and reverting to Betaflight defaults for maiden flights.",
+        "mention_count": 10,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "A final potential cause, mechanical or tuning, discussed at length with recommendations.",
+        "representative_quotes": [
+          "Usually what's wrong is mechanical failure.",
+          "And usually a flyaway is because the quad is under filtered."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "looks like this",
+        "category": "visual_reference",
+        "position_pct": 3.5,
+        "context": "doing something stupid and looks like this whenever it takes off for"
+      },
+      {
+        "phrase": "I showed you",
+        "category": "visual_reference",
+        "position_pct": 6.0,
+        "context": "the freak out flip out thing that I showed you at the"
+      },
+      {
+        "phrase": "Let me show you what that looks like again",
+        "category": "visual_reference",
+        "position_pct": 31.0,
+        "context": "doesn't lift off the ground. Let me show you what that looks like again. And there are"
+      },
+      {
+        "phrase": "Let me show you what that looks like",
+        "category": "visual_reference",
+        "position_pct": 38.0,
+        "context": "modes are active. Now let me show you what that looks like. And we're going"
+      },
+      {
+        "phrase": "if you look at these little spinny boy diagrams here",
+        "category": "visual_reference",
+        "position_pct": 52.0,
+        "context": "Betaflight, you can see that mine, if you look at these little spinny boy"
+      },
+      {
+        "phrase": "feel the direction it's spinning",
+        "category": "sensory_description",
+        "position_pct": 62.0,
+        "context": "what I'm actually going to do to check the direction is press that and then feel the direction it's spinning. And mine feels"
+      },
+      {
+        "phrase": "mine feels it's pulling my finger outward",
+        "category": "sensory_description",
+        "position_pct": 63.0,
+        "context": "And so when I press 1 in Betaflight, you can see that motor spins. And mine feels it's pulling my finger outward. That"
+      },
+      {
+        "phrase": "what I'm actually going to do",
+        "category": "action_narration",
+        "position_pct": 62.0,
+        "context": "This is a really small quad. So what I'm actually going to do to check the"
+      },
+      {
+        "phrase": "I'm going to go",
+        "category": "action_narration",
+        "position_pct": 63.0,
+        "context": "direction is correct, you don't have to do anything. You can just move on to the next motor. But if"
+      },
+      {
+        "phrase": "find it",
+        "category": "procedural_instruction",
+        "position_pct": 75.0,
+        "context": "controller have this handy dandy little arrow somewhere. It doesn't always look the same. Depends on the manufacturer. As long as"
+      },
+      {
+        "phrase": "I'm going to show you",
+        "category": "visual_reference",
+        "position_pct": 77.0,
+        "context": "forward, I haven't done anything funny with this board. It's actually set in the tab I'm going to show you in a second as"
+      },
+      {
+        "phrase": "I will show you",
+        "category": "visual_reference",
+        "position_pct": 80.0,
+        "context": "rebooted it. And let's get back in. And I will show you where to go to determine"
+      },
+      {
+        "phrase": "you can see",
+        "category": "visual_reference",
+        "position_pct": 83.0,
+        "context": "And what we're going to be looking for is when we turn the quad on its yaw axis, the little picture turns appropriately with the yaw axis. When"
+      },
+      {
+        "phrase": "mine turned appropriately",
+        "category": "visual_reference",
+        "position_pct": 84.0,
+        "context": "on the roll axis, the same thing. It turns appropriately. Now, you'll notice that mine turned appropriately. That's because mine is set"
+      },
+      {
+        "phrase": "you can see how it's actually using the roll axis",
+        "category": "visual_reference",
+        "position_pct": 85.0,
+        "context": "mine isn't set correctly, it may look something like this. So this is actually me pitching up. And you can see how it's actually"
+      },
+      {
+        "phrase": "mess with it and try some settings until it responds correctly",
+        "category": "procedural_instruction",
+        "position_pct": 87.0,
+        "context": "need to add a flip. You just need to mess with it and try some settings until it responds correctly. Or you can"
+      },
+      {
+        "phrase": "take a really, really good look at your frame",
+        "category": "procedural_instruction",
+        "position_pct": 93.0,
+        "context": "this video because those are things you have to kind of do with a fine tooth comb. What I would recommend you do is take a really, really good look at your frame. Sometimes"
+      },
+      {
+        "phrase": "wiggle it around and pay a lot of attention",
+        "category": "procedural_instruction",
+        "position_pct": 93.0,
+        "context": "crack. You just kind of have to wiggle it around and pay a lot of attention and do a lot of"
+      },
+      {
+        "phrase": "tightening and everything you can do to make sure it's buttoned up",
+        "category": "procedural_instruction",
+        "position_pct": 93.0,
+        "context": "crack. You just kind of have to wiggle it around and pay a lot of attention and do a lot of looking and tightening and everything you can do to make sure"
+      },
+      {
+        "phrase": "the way the prop crumbles",
+        "category": "sensory_description",
+        "position_pct": 99.0,
+        "context": "That's just the way the prop crumbles. Hopefully yours don't. Because that will"
+      },
+      {
+        "phrase": "My teeth feel a little funny today",
+        "category": "sensory_description",
+        "position_pct": 100.0,
+        "context": "Anyway, until next time, stay greasy. Flip your quads over. And I'll catch you later. Hello, I'm Vick and Ninja. My teeth feel a little funny today. They're a little"
+      },
+      {
+        "phrase": "they're scratching my gums",
+        "category": "sensory_description",
+        "position_pct": 100.0,
+        "context": "little bit brighter than usual. And, oh, god, they're scratching my gums. I can't do it. Scratching"
+      },
+      {
+        "phrase": "tasted like grass and shame",
+        "category": "sensory_description",
+        "position_pct": 100.0,
+        "context": "Scratching my gums. Gross. Ugh. Tasted like grass and shame. Ugh. Ugh. You're"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 23,
+      "by_category": {
+        "visual_reference": 8,
+        "action_narration": 2,
+        "sensory_description": 7,
+        "procedural_instruction": 6
+      },
+      "verbal_embodied_richness": "high",
+      "verbal_embodied_reasoning": "The speaker uses a high number of embodied phrases throughout the transcript, incorporating procedural instructions, visual references (especially with Betaflight), and vivid sensory language, to explain the complex topics being discussed. Instructions on how to check and manipulate physical parts, along with describing what the pilot might feel, hear, or see, makes the content more easily understood."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Smoke Stopper Bench Testing\",\n      \"description\": \"The speaker explains that a smoke stopper, used to prevent damage during bench testing, can limit amps and cause the quad to shut down when armed, a common issue for beginners.\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"early\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section, explained with a cause and effect; appears multiple times.\",\n      \"representative_quotes\": [\n        \"if you've got the smoke stopper plugged in between your lipo and the quad, you're going to have a problem\",\n        \"testing it on the bench, don't plan on spinning your motors\"\n      ]\n    },\n    {\n      \"name\": \"Motor Throttling Without Props\",\n      \"description\": \"The speaker details why motors might not throttle down on the bench without props, explaining how the PID controller tries to compensate for the lack of lift.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"early\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Addressed in a dedicated section with a specific explanation of the PID controller's behavior; appears multiple times.\",\n      \"representative_quotes\": [\n        \"motors will not throttle down after you arm the quad and throttle up unless you have props on.\",\n        \"the PID controller is active as soon as you lift the throttle on the quad.\"\n      ]\n    },\n    {\n      \"name\": \"Props on Wrong (Orientation)\",\n      \"description\": \"The speaker describes two ways the props can be on incorrectly: props being on upside down, and props being in the wrong direction. Both cause issues like the quad being pinned or fluttering, or not lifting.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Central topic, described at length, with visual references and explanation of the leading edge.\",\n      \"representative_quotes\": [\n        \"If your quad appears to be stuck to the table, it might not be your props.\",\n        \"A lot of people know what modes are going on and if it's active or not.  But what is the most common thing and what causes that to happen more often than not is the props being on wrong.\"\n      ]\n    },\n    {\n      \"name\": \"Motor Direction (Configuration)\",\n      \"description\": \"The speaker goes over how to check and correct motor direction in Betaflight, with props off, using the motor direction wizard, and ensuring it matches the diagrams.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Substantial explanation with hands-on instruction about using Betaflight's tools to get motor direction corrected.\",\n      \"representative_quotes\": [\n        \"go back through the motor direction wizard in Betaflight\",\n        \"Back in the motors tab with the LiPo plugged into our quad, as well as the USB, we can go to this motor direction button here.\"\n      ]\n    },\n    {\n      \"name\": \"Flight Controller Board Orientation\",\n      \"description\": \"The speaker explains how to check and correct the flight controller board orientation using the accelerometer in Betaflight's setup tab to align the virtual model's movements with the physical quad's.\",\n      \"mention_count\": 14,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Extensively covered, using Betaflight and the accelerometer as a guide. Checking and adjusting board orientation is the primary solution to a \\\"death roll\\\"\",\n      \"representative_quotes\": [\n        \"Flight controllers do have a direction.\",\n        \"You have to deem the axis. And the only way to do that is with board orientation.\"\n      ]\n    },\n    {\n      \"name\": \"Mechanical Failure / Flyaway\",\n      \"description\": \"The speaker discusses flyaways, usually caused by mechanical failures (frame cracks, loose assembly) or filtering problems leading to oscillations, recommending a thorough frame inspection and reverting to Betaflight defaults for maiden flights.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"A final potential cause, mechanical or tuning, discussed at length with recommendations.\",\n      \"representative_quotes\": [\n        \"Usually what's wrong is mechanical failure.\",\n        \"And usually a flyaway is because the quad is under filtered.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"looks like this\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 3.5,\n      \"context\": \"doing something stupid and looks like this whenever it takes off for\"\n    },\n    {\n      \"phrase\": \"I showed you\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 6.0,\n      \"context\": \"the freak out flip out thing that I showed you at the\"\n    },\n    {\n      \"phrase\": \"Let me show you what that looks like again\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 31.0,\n      \"context\": \"doesn't lift off the ground. Let me show you what that looks like again. And there are\"\n    },\n    {\n      \"phrase\": \"Let me show you what that looks like\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 38.0,\n      \"context\": \"modes are active. Now let me show you what that looks like. And we're going\"\n    },\n    {\n      \"phrase\": \"if you look at these little spinny boy diagrams here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 52.0,\n      \"context\": \"Betaflight, you can see that mine, if you look at these little spinny boy\"\n    },\n    {\n      \"phrase\": \"feel the direction it's spinning\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 62.0,\n      \"context\": \"what I'm actually going to do to check the direction is press that and then feel the direction it's spinning. And mine feels\"\n    },\n    {\n      \"phrase\": \"mine feels it's pulling my finger outward\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 63.0,\n      \"context\": \"And so when I press 1 in Betaflight, you can see that motor spins. And mine feels it's pulling my finger outward. That\"\n    },\n    {\n      \"phrase\": \"what I'm actually going to do\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 62.0,\n      \"context\": \"This is a really small quad. So what I'm actually going to do to check the\"\n    },\n    {\n      \"phrase\": \"I'm going to go\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 63.0,\n      \"context\": \"direction is correct, you don't have to do anything. You can just move on to the next motor. But if\"\n    },\n    {\n      \"phrase\": \"find it\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 75.0,\n      \"context\": \"controller have this handy dandy little arrow somewhere. It doesn't always look the same. Depends on the manufacturer. As long as\"\n    },\n    {\n      \"phrase\": \"I'm going to show you\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 77.0,\n      \"context\": \"forward, I haven't done anything funny with this board. It's actually set in the tab I'm going to show you in a second as\"\n    },\n    {\n      \"phrase\": \"I will show you\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 80.0,\n      \"context\": \"rebooted it. And let's get back in. And I will show you where to go to determine\"\n    },\n    {\n      \"phrase\": \"you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 83.0,\n      \"context\": \"And what we're going to be looking for is when we turn the quad on its yaw axis, the little picture turns appropriately with the yaw axis. When\"\n    },\n    {\n      \"phrase\": \"mine turned appropriately\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 84.0,\n      \"context\": \"on the roll axis, the same thing. It turns appropriately. Now, you'll notice that mine turned appropriately. That's because mine is set\"\n    },\n    {\n      \"phrase\": \"you can see how it's actually using the roll axis\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 85.0,\n      \"context\": \"mine isn't set correctly, it may look something like this. So this is actually me pitching up. And you can see how it's actually\"\n    },\n     {\n      \"phrase\": \"mess with it and try some settings until it responds correctly\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 87.0,\n      \"context\": \"need to add a flip. You just need to mess with it and try some settings until it responds correctly. Or you can\"\n    },\n    {\n      \"phrase\": \"take a really, really good look at your frame\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 93.0,\n      \"context\": \"this video because those are things you have to kind of do with a fine tooth comb. What I would recommend you do is take a really, really good look at your frame. Sometimes\"\n    },\n    {\n      \"phrase\": \"wiggle it around and pay a lot of attention\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 93.0,\n      \"context\": \"crack. You just kind of have to wiggle it around and pay a lot of attention and do a lot of\"\n    },\n    {\n      \"phrase\": \"tightening and everything you can do to make sure it's buttoned up\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 93.0,\n      \"context\": \"crack. You just kind of have to wiggle it around and pay a lot of attention and do a lot of looking and tightening and everything you can do to make sure\"\n    },\n    {\n      \"phrase\": \"the way the prop crumbles\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 99.0,\n      \"context\": \"That's just the way the prop crumbles. Hopefully yours don't. Because that will\"\n    },\n    {\n      \"phrase\": \"My teeth feel a little funny today\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 100.0,\n      \"context\": \"Anyway, until next time, stay greasy. Flip your quads over. And I'll catch you later. Hello, I'm Vick and Ninja. My teeth feel a little funny today. They're a little\"\n    },\n     {\n      \"phrase\": \"they're scratching my gums\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 100.0,\n      \"context\": \"little bit brighter than usual. And, oh, god, they're scratching my gums. I can't do it. Scratching\"\n    },\n    {\n      \"phrase\": \"tasted like grass and shame\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 100.0,\n      \"context\": \"Scratching my gums. Gross. Ugh. Tasted like grass and shame. Ugh. Ugh. You're\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 23,\n    \"by_category\": {\n      \"visual_reference\": 8,\n      \"action_narration\": 2,\n      \"sensory_description\": 7,\n      \"procedural_instruction\": 6\n    },\n    \"verbal_embodied_richness\": \"high\",\n    \"verbal_embodied_reasoning\": \"The speaker uses a high number of embodied phrases throughout the transcript, incorporating procedural instructions, visual references (especially with Betaflight), and vivid sensory language, to explain the complex topics being discussed. Instructions on how to check and manipulate physical parts, along with describing what the pilot might feel, hear, or see, makes the content more easily understood.\"\n  }\n}\n```"
+}

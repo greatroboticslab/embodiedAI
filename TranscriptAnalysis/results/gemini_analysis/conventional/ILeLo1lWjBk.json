@@ -1,0 +1,380 @@
+{
+  "video_id": "ILeLo1lWjBk",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Betaflight Angle Mode Problems",
+        "description": "The video identifies and explains two main problems with Betaflight's angle mode: slow speed/responsiveness compared to acro mode, and wobbliness during sharp yaw movements.",
+        "mention_count": 10,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "The video is structured around the problems and solutions for angle mode.  The presenter introduces, develops, and returns to the main issues throughout the video.",
+        "representative_quotes": [
+          "the problems with angle mode that Betaflight has currently",
+          "What's causing that really bad wobble"
+        ]
+      },
+      {
+        "name": "Feedforward in Angle Mode",
+        "description": "The video explains how implementing feedforward from acro mode into angle mode addresses the slow responsiveness issue by providing an initial push to the quad based on stick movement.",
+        "mention_count": 9,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Feedforward is covered in a dedicated section and its function is explained in detail with visual aids.  The benefits are discussed and later revisited in the context of testing the code.",
+        "representative_quotes": [
+          "adding feedforward into angle mode made the biggest difference",
+          "feedforward smoothing"
+        ]
+      },
+      {
+        "name": "Yaw Coordination",
+        "description": "The video describes how the wobbliness in angle mode during yaw movements is caused by coordinate system misalignment, and it demonstrates a code-based solution to coordinate yaw and roll to mitigate the issue.",
+        "mention_count": 8,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The yaw issue is covered in a dedicated section with a demonstration. The cause of the wobble and the code-based solution are explained in detail.",
+        "representative_quotes": [
+          "Yaw coordination code",
+          "Coordinate a turn"
+        ]
+      },
+      {
+        "name": "Testing Betaflight Test Code",
+        "description": "The video provides instructions on how to back up configuration, download the test code from a PR, flash the firmware, apply custom defaults, and adjust settings in Betaflight Configurator.",
+        "mention_count": 13,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The last third of the video walks through the steps for backing up configs and testing new firmware. The presenter goes step by step through finding, flashing, and implementing the code.",
+        "representative_quotes": [
+          "test this code out for yourself",
+          "back up our configuration"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "Let me show you",
+        "category": "visual_reference",
+        "position_pct": 9.4,
+        "context": "angle mode compared to acro. Let me show you some flight footage so"
+      },
+      {
+        "phrase": "looking at",
+        "category": "visual_reference",
+        "position_pct": 10.5,
+        "context": "To make the comparison, let's start by looking at some sharp stick inputs in"
+      },
+      {
+        "phrase": "You can see",
+        "category": "visual_reference",
+        "position_pct": 11.2,
+        "context": "terms of responsiveness. You can see that the quad is snapping"
+      },
+      {
+        "phrase": "switch to",
+        "category": "action_narration",
+        "position_pct": 13.1,
+        "context": "movements. If I switch to angle mode now, you can see"
+      },
+      {
+        "phrase": "switch back",
+        "category": "action_narration",
+        "position_pct": 14.9,
+        "context": "much slower to respond. If we switch back to acro again, immediately that"
+      },
+      {
+        "phrase": "look in detail at",
+        "category": "visual_reference",
+        "position_pct": 17.3,
+        "context": "less responsive than acro mode? Well, to explain, we're going to have to look in detail at how the Betaflight angle"
+      },
+      {
+        "phrase": "take a look at",
+        "category": "visual_reference",
+        "position_pct": 23.7,
+        "context": "delay. And the way feedforward works is it looks at the movement of your sticks,"
+      },
+      {
+        "phrase": "take a look at",
+        "category": "visual_reference",
+        "position_pct": 24.3,
+        "context": "sticks, how fast you're moving your sticks, and pushes the quad in that direction right away. So let's take a look at what this chart looks like"
+      },
+      {
+        "phrase": "You can see",
+        "category": "visual_reference",
+        "position_pct": 25.2,
+        "context": "feedforward in the mix. You can see that immediately as we move"
+      },
+      {
+        "phrase": "I found that adding",
+        "category": "action_narration",
+        "position_pct": 28.9,
+        "context": "Overall, this is so much faster and more responsive than what we had without feedforward. I found that adding feedforward into angle mode made"
+      },
+      {
+        "phrase": "feel",
+        "category": "sensory_description",
+        "position_pct": 32.6,
+        "context": "feel a bit jittery, a bit on edge. Fortunately, Chris Thompson came up with"
+      },
+      {
+        "phrase": "adjust",
+        "category": "procedural_instruction",
+        "position_pct": 33.8,
+        "context": "smoothing. The result is that you can adjust the feedforward gain to get the"
+      },
+      {
+        "phrase": "adjust",
+        "category": "procedural_instruction",
+        "position_pct": 34.4,
+        "context": "in angle mode. And then separately, you can adjust the smoothing factor so that it"
+      },
+      {
+        "phrase": "feel",
+        "category": "sensory_description",
+        "position_pct": 34.8,
+        "context": "smoothing factor so that it doesn't feel too jittery and on edge in"
+      },
+      {
+        "phrase": "take a look at",
+        "category": "visual_reference",
+        "position_pct": 37.0,
+        "context": "with angle mode. The second issue is one of wobbliness. So let's take a look at what makes angle mode so"
+      },
+      {
+        "phrase": "show you",
+        "category": "visual_reference",
+        "position_pct": 37.8,
+        "context": "comparison to Acro. To show you what I mean, here's some flight"
+      },
+      {
+        "phrase": "Can you see",
+        "category": "visual_reference",
+        "position_pct": 39.1,
+        "context": "else, just sharp your inputs. And can you see how much the quad is"
+      },
+      {
+        "phrase": "I have here",
+        "category": "visual_reference",
+        "position_pct": 43.2,
+        "context": "sharp your moves? Well, I have here a little quad to show"
+      },
+      {
+        "phrase": "show you",
+        "category": "visual_reference",
+        "position_pct": 43.3,
+        "context": "Well, I have here a little quad to show you what is happening. So here"
+      },
+      {
+        "phrase": "Can you see",
+        "category": "visual_reference",
+        "position_pct": 44.9,
+        "context": "forward. Now I'm going to yaw the quad by 90 degrees. Can you see that now the quad is no"
+      },
+      {
+        "phrase": "look at",
+        "category": "visual_reference",
+        "position_pct": 55.9,
+        "context": "again, we have to think and look at acro mode. When we're flying"
+      },
+      {
+        "phrase": "Let's look at",
+        "category": "visual_reference",
+        "position_pct": 64.3,
+        "context": "no wobble. Let's look at some flight footage now to see"
+      },
+      {
+        "phrase": "We can see",
+        "category": "visual_reference",
+        "position_pct": 66.2,
+        "context": "hazard of flying in the UK. We can see that the quad is much flatter"
+      },
+      {
+        "phrase": "test this code out",
+        "category": "action_narration",
+        "position_pct": 69.8,
+        "context": "how we've addressed them, I want to show you how you can test this code out for yourself and put it"
+      },
+      {
+        "phrase": "back up",
+        "category": "procedural_instruction",
+        "position_pct": 70.7,
+        "context": "testing any new code, it's very important that we fully back up our configuration. So go into Betaflight"
+      },
+      {
+        "phrase": "save",
+        "category": "procedural_instruction",
+        "position_pct": 72.3,
+        "context": "you'll remember it and call it something suitable. I'm calling this AOS 3.5 dump. Once you've got the dump, clear"
+      },
+      {
+        "phrase": "save",
+        "category": "procedural_instruction",
+        "position_pct": 73.3,
+        "context": "your configuration and Betaflight defaults. And save that to another file. Call that"
+      },
+      {
+        "phrase": "reflash",
+        "category": "action_narration",
+        "position_pct": 75.1,
+        "context": "old configuration, all you'll need to do is to reflash the same version of Betaflight that"
+      },
+      {
+        "phrase": "paste in",
+        "category": "action_narration",
+        "position_pct": 75.3,
+        "context": "currently have and then just paste in your dump, type save and"
+      },
+      {
+        "phrase": "save",
+        "category": "procedural_instruction",
+        "position_pct": 75.4,
+        "context": "paste in your dump, type save and hit enter. And that will"
+      },
+      {
+        "phrase": "backed up",
+        "category": "procedural_instruction",
+        "position_pct": 77.2,
+        "context": "stuff isn't working and you can't get back to a good working configuration. So now that everything's backed up, let's"
+      },
+      {
+        "phrase": "download",
+        "category": "action_narration",
+        "position_pct": 81.4,
+        "context": "going to be a bunch of assets and you can download them. Once you've downloaded the assets"
+      },
+      {
+        "phrase": "downloaded",
+        "category": "action_narration",
+        "position_pct": 81.5,
+        "context": "bunch of assets and you can download them. Once you've downloaded the assets zip folder, you can"
+      },
+      {
+        "phrase": "extract",
+        "category": "action_narration",
+        "position_pct": 81.7,
+        "context": "you can download them. Once you've downloaded the assets zip folder, you can just extract it. And inside, you'll find a"
+      },
+      {
+        "phrase": "select",
+        "category": "procedural_instruction",
+        "position_pct": 85.1,
+        "context": "going to want to select your target. So I'm just going"
+      },
+      {
+        "phrase": "Load",
+        "category": "procedural_instruction",
+        "position_pct": 85.7,
+        "context": "the F745 hex file. Load firmware from your local drive"
+      },
+      {
+        "phrase": "select",
+        "category": "procedural_instruction",
+        "position_pct": 86.0,
+        "context": "hex file. Load firmware from your local drive and in this test code, you're going to select the right hex file. So for"
+      },
+      {
+        "phrase": "hit",
+        "category": "action_narration",
+        "position_pct": 86.3,
+        "context": "for me, that's F745 and then hit Flash Firmware. If you have"
+      },
+      {
+        "phrase": "flashed",
+        "category": "action_narration",
+        "position_pct": 88.1,
+        "context": "the problem. I'll put a link to that down in the video description as well. Once you've flashed the firmware, you can hit Connect"
+      },
+      {
+        "phrase": "hit",
+        "category": "action_narration",
+        "position_pct": 88.2,
+        "context": "description as well. Once you've flashed the firmware, you can hit Connect and you'll be asked if"
+      },
+      {
+        "phrase": "hit",
+        "category": "action_narration",
+        "position_pct": 88.6,
+        "context": "flight controller will reboot and then you can hit Connect again and go back into"
+      },
+      {
+        "phrase": "paste in",
+        "category": "action_narration",
+        "position_pct": 89.0,
+        "context": "back into the CLI. Now we're going to paste in the diff that we saved"
+      },
+      {
+        "phrase": "load from",
+        "category": "action_narration",
+        "position_pct": 89.2,
+        "context": "Now we're going to paste in the diff that we saved before. So we can load from file, select the diff, hit Execute"
+      },
+      {
+        "phrase": "select",
+        "category": "procedural_instruction",
+        "position_pct": 89.3,
+        "context": "So we can load from file, select the diff, hit Execute and all"
+      },
+      {
+        "phrase": "hit",
+        "category": "action_narration",
+        "position_pct": 89.5,
+        "context": "diff, hit Execute and all of that will be"
+      },
+      {
+        "phrase": "save",
+        "category": "procedural_instruction",
+        "position_pct": 90.1,
+        "context": "version of Betaflight. It's not usually a problem. You can type Save and then hit Enter. At this"
+      },
+      {
+        "phrase": "check through",
+        "category": "procedural_instruction",
+        "position_pct": 90.5,
+        "context": "Enter. At this point, it's a good idea just to check through your config to make sure everything's"
+      },
+      {
+        "phrase": "Get",
+        "category": "procedural_instruction",
+        "position_pct": 91.5,
+        "context": "jump to the CLI and type Get Angle and you should see Angle"
+      },
+      {
+        "phrase": "tune",
+        "category": "procedural_instruction",
+        "position_pct": 92.0,
+        "context": "as new settings which you can adjust. And for more information on tuning, I'll let you read the"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 46,
+      "by_category": {
+        "visual_reference": 20,
+        "action_narration": 15,
+        "sensory_description": 3,
+        "procedural_instruction": 8
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The video uses embodied language often, primarily through visual references and narration of actions.  There is also clear step by step instruction in the back half of the video, and some sensory terms sprinkled throughout."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Betaflight Angle Mode Problems\",\n      \"description\": \"The video identifies and explains two main problems with Betaflight's angle mode: slow speed/responsiveness compared to acro mode, and wobbliness during sharp yaw movements.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The video is structured around the problems and solutions for angle mode.  The presenter introduces, develops, and returns to the main issues throughout the video.\",\n      \"representative_quotes\": [\n        \"the problems with angle mode that Betaflight has currently\",\n        \"What's causing that really bad wobble\"\n      ]\n    },\n    {\n      \"name\": \"Feedforward in Angle Mode\",\n      \"description\": \"The video explains how implementing feedforward from acro mode into angle mode addresses the slow responsiveness issue by providing an initial push to the quad based on stick movement.\",\n      \"mention_count\": 9,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Feedforward is covered in a dedicated section and its function is explained in detail with visual aids.  The benefits are discussed and later revisited in the context of testing the code.\",\n      \"representative_quotes\": [\n        \"adding feedforward into angle mode made the biggest difference\",\n        \"feedforward smoothing\"\n      ]\n    },\n    {\n      \"name\": \"Yaw Coordination\",\n      \"description\": \"The video describes how the wobbliness in angle mode during yaw movements is caused by coordinate system misalignment, and it demonstrates a code-based solution to coordinate yaw and roll to mitigate the issue.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The yaw issue is covered in a dedicated section with a demonstration. The cause of the wobble and the code-based solution are explained in detail.\",\n      \"representative_quotes\": [\n        \"Yaw coordination code\",\n        \"Coordinate a turn\"\n      ]\n    },\n    {\n      \"name\": \"Testing Betaflight Test Code\",\n      \"description\": \"The video provides instructions on how to back up configuration, download the test code from a PR, flash the firmware, apply custom defaults, and adjust settings in Betaflight Configurator.\",\n      \"mention_count\": 13,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The last third of the video walks through the steps for backing up configs and testing new firmware. The presenter goes step by step through finding, flashing, and implementing the code.\",\n      \"representative_quotes\": [\n        \"test this code out for yourself\",\n        \"back up our configuration\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"Let me show you\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 9.4,\n      \"context\": \"angle mode compared to acro. Let me show you some flight footage so\"\n    },\n    {\n      \"phrase\": \"looking at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 10.5,\n      \"context\": \"To make the comparison, let's start by looking at some sharp stick inputs in\"\n    },\n    {\n      \"phrase\": \"You can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 11.2,\n      \"context\": \"terms of responsiveness. You can see that the quad is snapping\"\n    },\n    {\n      \"phrase\": \"switch to\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 13.1,\n      \"context\": \"movements. If I switch to angle mode now, you can see\"\n    },\n    {\n      \"phrase\": \"switch back\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 14.9,\n      \"context\": \"much slower to respond. If we switch back to acro again, immediately that\"\n    },\n    {\n      \"phrase\": \"look in detail at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 17.3,\n      \"context\": \"less responsive than acro mode? Well, to explain, we're going to have to look in detail at how the Betaflight angle\"\n    },\n    {\n      \"phrase\": \"take a look at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 23.7,\n      \"context\": \"delay. And the way feedforward works is it looks at the movement of your sticks,\"\n    },\n    {\n      \"phrase\": \"take a look at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 24.3,\n      \"context\": \"sticks, how fast you're moving your sticks, and pushes the quad in that direction right away. So let's take a look at what this chart looks like\"\n    },\n    {\n      \"phrase\": \"You can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 25.2,\n      \"context\": \"feedforward in the mix. You can see that immediately as we move\"\n    },\n    {\n      \"phrase\": \"I found that adding\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 28.9,\n      \"context\": \"Overall, this is so much faster and more responsive than what we had without feedforward. I found that adding feedforward into angle mode made\"\n    },\n    {\n      \"phrase\": \"feel\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 32.6,\n      \"context\": \"feel a bit jittery, a bit on edge. Fortunately, Chris Thompson came up with\"\n    },\n    {\n      \"phrase\": \"adjust\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 33.8,\n      \"context\": \"smoothing. The result is that you can adjust the feedforward gain to get the\"\n    },\n    {\n      \"phrase\": \"adjust\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 34.4,\n      \"context\": \"in angle mode. And then separately, you can adjust the smoothing factor so that it\"\n    },\n    {\n      \"phrase\": \"feel\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 34.8,\n      \"context\": \"smoothing factor so that it doesn't feel too jittery and on edge in\"\n    },\n    {\n      \"phrase\": \"take a look at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 37.0,\n      \"context\": \"with angle mode. The second issue is one of wobbliness. So let's take a look at what makes angle mode so\"\n    },\n    {\n      \"phrase\": \"show you\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 37.8,\n      \"context\": \"comparison to Acro. To show you what I mean, here's some flight\"\n    },\n    {\n      \"phrase\": \"Can you see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 39.1,\n      \"context\": \"else, just sharp your inputs. And can you see how much the quad is\"\n    },\n    {\n      \"phrase\": \"I have here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 43.2,\n      \"context\": \"sharp your moves? Well, I have here a little quad to show\"\n    },\n    {\n      \"phrase\": \"show you\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 43.3,\n      \"context\": \"Well, I have here a little quad to show you what is happening. So here\"\n    },\n    {\n      \"phrase\": \"Can you see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 44.9,\n      \"context\": \"forward. Now I'm going to yaw the quad by 90 degrees. Can you see that now the quad is no\"\n    },\n    {\n      \"phrase\": \"look at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 55.9,\n      \"context\": \"again, we have to think and look at acro mode. When we're flying\"\n    },\n    {\n      \"phrase\": \"Let's look at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 64.3,\n      \"context\": \"no wobble. Let's look at some flight footage now to see\"\n    },\n    {\n      \"phrase\": \"We can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 66.2,\n      \"context\": \"hazard of flying in the UK. We can see that the quad is much flatter\"\n    },\n    {\n      \"phrase\": \"test this code out\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 69.8,\n      \"context\": \"how we've addressed them, I want to show you how you can test this code out for yourself and put it\"\n    },\n    {\n      \"phrase\": \"back up\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 70.7,\n      \"context\": \"testing any new code, it's very important that we fully back up our configuration. So go into Betaflight\"\n    },\n    {\n      \"phrase\": \"save\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 72.3,\n      \"context\": \"you'll remember it and call it something suitable. I'm calling this AOS 3.5 dump. Once you've got the dump, clear\"\n    },\n    {\n      \"phrase\": \"save\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 73.3,\n      \"context\": \"your configuration and Betaflight defaults. And save that to another file. Call that\"\n    },\n    {\n      \"phrase\": \"reflash\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 75.1,\n      \"context\": \"old configuration, all you'll need to do is to reflash the same version of Betaflight that\"\n    },\n    {\n      \"phrase\": \"paste in\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 75.3,\n      \"context\": \"currently have and then just paste in your dump, type save and\"\n    },\n    {\n      \"phrase\": \"save\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 75.4,\n      \"context\": \"paste in your dump, type save and hit enter. And that will\"\n    },\n    {\n      \"phrase\": \"backed up\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 77.2,\n      \"context\": \"stuff isn't working and you can't get back to a good working configuration. So now that everything's backed up, let's\"\n    },\n    {\n      \"phrase\": \"download\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 81.4,\n      \"context\": \"going to be a bunch of assets and you can download them. Once you've downloaded the assets\"\n    },\n    {\n      \"phrase\": \"downloaded\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 81.5,\n      \"context\": \"bunch of assets and you can download them. Once you've downloaded the assets zip folder, you can\"\n    },\n    {\n      \"phrase\": \"extract\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 81.7,\n      \"context\": \"you can download them. Once you've downloaded the assets zip folder, you can just extract it. And inside, you'll find a\"\n    },\n    {\n      \"phrase\": \"select\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 85.1,\n      \"context\": \"going to want to select your target. So I'm just going\"\n    },\n    {\n      \"phrase\": \"Load\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 85.7,\n      \"context\": \"the F745 hex file. Load firmware from your local drive\"\n    },\n    {\n      \"phrase\": \"select\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 86.0,\n      \"context\": \"hex file. Load firmware from your local drive and in this test code, you're going to select the right hex file. So for\"\n    },\n    {\n      \"phrase\": \"hit\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 86.3,\n      \"context\": \"for me, that's F745 and then hit Flash Firmware. If you have\"\n    },\n    {\n      \"phrase\": \"flashed\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 88.1,\n      \"context\": \"the problem. I'll put a link to that down in the video description as well. Once you've flashed the firmware, you can hit Connect\"\n    },\n    {\n      \"phrase\": \"hit\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 88.2,\n      \"context\": \"description as well. Once you've flashed the firmware, you can hit Connect and you'll be asked if\"\n    },\n    {\n      \"phrase\": \"hit\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 88.6,\n      \"context\": \"flight controller will reboot and then you can hit Connect again and go back into\"\n    },\n    {\n      \"phrase\": \"paste in\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 89.0,\n      \"context\": \"back into the CLI. Now we're going to paste in the diff that we saved\"\n    },\n    {\n      \"phrase\": \"load from\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 89.2,\n      \"context\": \"Now we're going to paste in the diff that we saved before. So we can load from file, select the diff, hit Execute\"\n    },\n    {\n      \"phrase\": \"select\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 89.3,\n      \"context\": \"So we can load from file, select the diff, hit Execute and all\"\n    },\n    {\n      \"phrase\": \"hit\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 89.5,\n      \"context\": \"diff, hit Execute and all of that will be\"\n    },\n    {\n      \"phrase\": \"save\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 90.1,\n      \"context\": \"version of Betaflight. It's not usually a problem. You can type Save and then hit Enter. At this\"\n    },\n    {\n      \"phrase\": \"check through\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 90.5,\n      \"context\": \"Enter. At this point, it's a good idea just to check through your config to make sure everything's\"\n    },\n    {\n      \"phrase\": \"Get\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 91.5,\n      \"context\": \"jump to the CLI and type Get Angle and you should see Angle\"\n    },\n    {\n      \"phrase\": \"tune\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 92.0,\n      \"context\": \"as new settings which you can adjust. And for more information on tuning, I'll let you read the\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 46,\n    \"by_category\": {\n      \"visual_reference\": 20,\n      \"action_narration\": 15,\n      \"sensory_description\": 3,\n      \"procedural_instruction\": 8\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The video uses embodied language often, primarily through visual references and narration of actions.  There is also clear step by step instruction in the back half of the video, and some sensory terms sprinkled throughout.\"\n  }\n}\n```"
+}

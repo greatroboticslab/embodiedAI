@@ -1,0 +1,99 @@
+{
+  "video_id": "KKjHZpNMeik",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Bypass Capacitors",
+        "description": "Explanation of bypass capacitors: what they are, why they are needed to mitigate noise in ICs, how they work, and selection considerations.",
+        "mention_count": 15,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "The entire video is dedicated to bypass capacitors. The video introduces the concept, explains its function, covers selection criteria, and provides a summary. It is clearly the central topic.",
+        "representative_quotes": [
+          "In this video, we'll see why do we need bypass capacitors, how does a bypass capacitor work",
+          "A capacitor is placed in the circuit where it will suppress or bypass signals.",
+          "So, now you can select a decoupling capacitor for your ices."
+        ]
+      },
+      {
+        "name": "Noise Mitigation",
+        "description": "The video discusses how bypass capacitors help in mitigating electrical noise (AC) from power supplies, preventing it from affecting the performance of integrated circuits.",
+        "mention_count": 10,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "Noise mitigation is a core reason why bypass capacitors are used, and it is discussed throughout the video in the context of protecting ICs. It is a major benefit the capacitors provide.",
+        "representative_quotes": [
+          "The performance of the ICs degrades if the input supply has some ripple or noise.",
+          "capacitors begin to act like a short circuit and don't let this noise enter in the digital device.",
+          "Noise through the power lines is completely unpredictable and changes in nature every time."
+        ]
+      },
+      {
+        "name": "Capacitor Selection",
+        "description": "The video explains the factors to consider when selecting bypass capacitors, including capacitor type (ceramic, electrolytic), ESR, ESL, impedance, frequency response, package size, and placement proximity to the IC.",
+        "mention_count": 8,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 3,
+        "strength_reasoning": "The video has a dedicated section where selection of capacitors is discussed.  The segment includes multiple parameters and criteria with mentions throughout the later half.",
+        "representative_quotes": [
+          "There are so many guidelines to consider while selecting a bypass capacitor.",
+          "So, generally, the engineers put different size and different values.",
+          "So, now you can select a decoupling capacitor for your ices."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "buckle up guys, let's go for a ride",
+        "category": "action_narration",
+        "position_pct": 2.0,
+        "context": "select them. So buckle up guys, let's go for a ride. We use"
+      },
+      {
+        "phrase": "as close as possible to the ICs",
+        "category": "procedural_instruction",
+        "position_pct": 58.0,
+        "context": "The capacitors should be placed as close as possible to the ICs. If"
+      },
+      {
+        "phrase": "when you see a capacitor",
+        "category": "visual_reference",
+        "position_pct": 78.0,
+        "context": "selecting a bypass capacitor. Because, when you see a capacitor, it has little"
+      },
+      {
+        "phrase": "Hit the like button",
+        "category": "action_narration",
+        "position_pct": 97.0,
+        "context": "the comment section. Hit the like button if you like"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 4,
+      "by_category": {
+        "visual_reference": 1,
+        "action_narration": 2,
+        "sensory_description": 0,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The transcript has a low amount of embodied language, with a few instances of action narration and procedural instruction. Visual reference is only used once."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Bypass Capacitors\",\n      \"description\": \"Explanation of bypass capacitors: what they are, why they are needed to mitigate noise in ICs, how they work, and selection considerations.\",\n      \"mention_count\": 15,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"The entire video is dedicated to bypass capacitors. The video introduces the concept, explains its function, covers selection criteria, and provides a summary. It is clearly the central topic.\",\n      \"representative_quotes\": [\n        \"In this video, we'll see why do we need bypass capacitors, how does a bypass capacitor work\",\n        \"A capacitor is placed in the circuit where it will suppress or bypass signals.\",\n        \"So, now you can select a decoupling capacitor for your ices.\"\n      ]\n    },\n    {\n      \"name\": \"Noise Mitigation\",\n      \"description\": \"The video discusses how bypass capacitors help in mitigating electrical noise (AC) from power supplies, preventing it from affecting the performance of integrated circuits.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Noise mitigation is a core reason why bypass capacitors are used, and it is discussed throughout the video in the context of protecting ICs. It is a major benefit the capacitors provide.\",\n      \"representative_quotes\": [\n        \"The performance of the ICs degrades if the input supply has some ripple or noise.\",\n        \"capacitors begin to act like a short circuit and don't let this noise enter in the digital device.\",\n        \"Noise through the power lines is completely unpredictable and changes in nature every time.\"\n      ]\n    },\n    {\n      \"name\": \"Capacitor Selection\",\n      \"description\": \"The video explains the factors to consider when selecting bypass capacitors, including capacitor type (ceramic, electrolytic), ESR, ESL, impedance, frequency response, package size, and placement proximity to the IC.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The video has a dedicated section where selection of capacitors is discussed.  The segment includes multiple parameters and criteria with mentions throughout the later half.\",\n      \"representative_quotes\": [\n        \"There are so many guidelines to consider while selecting a bypass capacitor.\",\n        \"So, generally, the engineers put different size and different values.\",\n        \"So, now you can select a decoupling capacitor for your ices.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"buckle up guys, let's go for a ride\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 2.0,\n      \"context\": \"select them. So buckle up guys, let's go for a ride. We use\"\n    },\n    {\n      \"phrase\": \"as close as possible to the ICs\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 58.0,\n      \"context\": \"The capacitors should be placed as close as possible to the ICs. If\"\n    },\n    {\n      \"phrase\": \"when you see a capacitor\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 78.0,\n      \"context\": \"selecting a bypass capacitor. Because, when you see a capacitor, it has little\"\n    },\n    {\n      \"phrase\": \"Hit the like button\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 97.0,\n      \"context\": \"the comment section. Hit the like button if you like\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 4,\n    \"by_category\": {\n      \"visual_reference\": 1,\n      \"action_narration\": 2,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The transcript has a low amount of embodied language, with a few instances of action narration and procedural instruction. Visual reference is only used once.\"\n  }\n}\n```"
+}

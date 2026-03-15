@@ -1,0 +1,133 @@
+{
+  "video_id": "ewYBc1jBDGM",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Variable Gain IF Amplifier",
+        "description": "The video focuses on the design and functionality of an intermediate frequency (IF) amplifier where the gain can be controlled via a voltage or current, suitable for SSB transceivers.",
+        "mention_count": 5,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "The amplifier is introduced at the beginning, demonstrated on the bench, its workings are explained in detail, and future measurements are mentioned.",
+        "representative_quotes": [
+          "in this video we are going to take a look on an IF amplifier with variable gain",
+          "I designed this IF amplifier for an SSB transceiver where the gain can be controlled"
+        ]
+      },
+      {
+        "name": "Diode as Variable Resistor",
+        "description": "The video explains how a diode's small-signal resistance is used as a variable resistor to control the gain of the amplifier by manipulating the current through the diode.",
+        "mention_count": 5,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "The concept is introduced early, explained with circuit diagrams, and its impact on gain control is discussed thoroughly.",
+        "representative_quotes": [
+          "we are using a diode as a variable resistor to control the gain",
+          "the gain of the stage now is controlled by the resistance of the diode"
+        ]
+      },
+      {
+        "name": "Autotransformer Impedance Matching",
+        "description": "The video details the use of an autotransformer to match the low output impedance (5 ohms) to a higher impedance suitable for the transistor's collector, maximizing power transfer and preventing saturation.",
+        "mention_count": 6,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "The autotransformer's role is introduced early, explained with calculations and justifications, and reiterated throughout the explanation of the circuit.",
+        "representative_quotes": [
+          "auto transformer on the output that is converting the fifth ohm impedance of the output to a much higher impedance",
+          "This is the cold side. Cold side because it is connected to the GND, to the ground."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "here we have the prototype",
+        "category": "visual_reference",
+        "position_pct": 6.5,
+        "context": "So guys, here we have the prototype. I'm going to show it"
+      },
+      {
+        "phrase": "you can see that",
+        "category": "visual_reference",
+        "position_pct": 9.7,
+        "context": "And you can see that if I change the control voltage"
+      },
+      {
+        "phrase": "Look at this",
+        "category": "visual_reference",
+        "position_pct": 17.1,
+        "context": "So this amplifier can actually work as an attenuator also. Look at this"
+      },
+      {
+        "phrase": "Here you can see the prototype",
+        "category": "visual_reference",
+        "position_pct": 18.4,
+        "context": "Look at this. Here you can see the prototype using my favorite"
+      },
+      {
+        "phrase": "we connected the tracking generator",
+        "category": "action_narration",
+        "position_pct": 20.2,
+        "context": "here on this connector where we connected the tracking generator. And this"
+      },
+      {
+        "phrase": "Take a look at what happens",
+        "category": "visual_reference",
+        "position_pct": 33.7,
+        "context": "5 dB. And take a look at what happens if I touch"
+      },
+      {
+        "phrase": "Take a look at the gain increasing",
+        "category": "visual_reference",
+        "position_pct": 34.4,
+        "context": "hitting it. Take a look at the gain increasing. So for"
+      },
+      {
+        "phrase": "hold it steady",
+        "category": "procedural_instruction",
+        "position_pct": 36.2,
+        "context": "very precise gain control, so I can grab some data of"
+      },
+      {
+        "phrase": "as we can see here",
+        "category": "visual_reference",
+        "position_pct": 41.6,
+        "context": "And as we can see here, it's a very simple circuit. A"
+      },
+      {
+        "phrase": "it feels firm",
+        "category": "sensory_description",
+        "position_pct": 48.4,
+        "context": "amps works very well for this kind of transistor here. And"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 10,
+      "by_category": {
+        "visual_reference": 6,
+        "action_narration": 1,
+        "sensory_description": 1,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The transcript contains several visual references and action narrations, grounding the theoretical explanations in tangible demonstrations. Some procedural instruction, and one sensory description, contribute to a moderate level of embodied language."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Variable Gain IF Amplifier\",\n      \"description\": \"The video focuses on the design and functionality of an intermediate frequency (IF) amplifier where the gain can be controlled via a voltage or current, suitable for SSB transceivers.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The amplifier is introduced at the beginning, demonstrated on the bench, its workings are explained in detail, and future measurements are mentioned.\",\n      \"representative_quotes\": [\n        \"in this video we are going to take a look on an IF amplifier with variable gain\",\n        \"I designed this IF amplifier for an SSB transceiver where the gain can be controlled\"\n      ]\n    },\n    {\n      \"name\": \"Diode as Variable Resistor\",\n      \"description\": \"The video explains how a diode's small-signal resistance is used as a variable resistor to control the gain of the amplifier by manipulating the current through the diode.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The concept is introduced early, explained with circuit diagrams, and its impact on gain control is discussed thoroughly.\",\n      \"representative_quotes\": [\n        \"we are using a diode as a variable resistor to control the gain\",\n        \"the gain of the stage now is controlled by the resistance of the diode\"\n      ]\n    },\n    {\n      \"name\": \"Autotransformer Impedance Matching\",\n      \"description\": \"The video details the use of an autotransformer to match the low output impedance (5 ohms) to a higher impedance suitable for the transistor's collector, maximizing power transfer and preventing saturation.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The autotransformer's role is introduced early, explained with calculations and justifications, and reiterated throughout the explanation of the circuit.\",\n      \"representative_quotes\": [\n        \"auto transformer on the output that is converting the fifth ohm impedance of the output to a much higher impedance\",\n        \"This is the cold side. Cold side because it is connected to the GND, to the ground.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"here we have the prototype\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 6.5,\n      \"context\": \"So guys, here we have the prototype. I'm going to show it\"\n    },\n    {\n      \"phrase\": \"you can see that\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 9.7,\n      \"context\": \"And you can see that if I change the control voltage\"\n    },\n    {\n      \"phrase\": \"Look at this\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 17.1,\n      \"context\": \"So this amplifier can actually work as an attenuator also. Look at this\"\n    },\n    {\n      \"phrase\": \"Here you can see the prototype\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 18.4,\n      \"context\": \"Look at this. Here you can see the prototype using my favorite\"\n    },\n    {\n      \"phrase\": \"we connected the tracking generator\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 20.2,\n      \"context\": \"here on this connector where we connected the tracking generator. And this\"\n    },\n    {\n      \"phrase\": \"Take a look at what happens\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 33.7,\n      \"context\": \"5 dB. And take a look at what happens if I touch\"\n    },\n    {\n      \"phrase\": \"Take a look at the gain increasing\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 34.4,\n      \"context\": \"hitting it. Take a look at the gain increasing. So for\"\n    },\n    {\n      \"phrase\": \"hold it steady\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 36.2,\n      \"context\": \"very precise gain control, so I can grab some data of\"\n    },\n     {\n      \"phrase\": \"as we can see here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 41.6,\n      \"context\": \"And as we can see here, it's a very simple circuit. A\"\n    },\n    {\n      \"phrase\": \"it feels firm\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 48.4,\n      \"context\": \"amps works very well for this kind of transistor here. And\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 10,\n    \"by_category\": {\n      \"visual_reference\": 6,\n      \"action_narration\": 1,\n      \"sensory_description\": 1,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The transcript contains several visual references and action narrations, grounding the theoretical explanations in tangible demonstrations. Some procedural instruction, and one sensory description, contribute to a moderate level of embodied language.\"\n  }\n}\n```"
+}

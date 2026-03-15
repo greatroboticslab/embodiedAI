@@ -1,0 +1,192 @@
+{
+  "video_id": "Gpm-TI21x9s",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Balancing Robot Project",
+        "description": "The video covers the construction of a balancing robot, highlighting the challenges and solutions encountered during the build, including motor selection, PCB design, and initial attempts at PID control.",
+        "mention_count": 12,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The balancing robot is the central project, with detailed explanations, problem-solving, and future plans discussed throughout the video. The project and its components are returned to repeatedly, and its overall success is directly related to the video's goals.",
+        "representative_quotes": [
+          "this is a balancing robot",
+          "make a mini balancing robot"
+        ]
+      },
+      {
+        "name": "PID Control",
+        "description": "The video explains the need for PID control to stabilize the robot, the initial struggles in finding good PID values, and plans for a future video dedicated to tuning PID values.",
+        "mention_count": 9,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "PID control is covered in a dedicated section, with multiple mentions and examples of how different PID values affect the robot's stability. The video dedicates much time to describing its use and importance.",
+        "representative_quotes": [
+          "getting the good PID values",
+          "tune the PID values"
+        ]
+      },
+      {
+        "name": "PCB Design and Manufacturing",
+        "description": "The video touches on the design and manufacturing of the custom PCB used in the robot, including features like motor driver slots, IMU connection, and Bluetooth module integration.",
+        "mention_count": 10,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The PCB design is covered in detail with explanations of each component and their purpose. The manufacturing process via PCBWay is also mentioned with suggestions for optimization.",
+        "representative_quotes": [
+          "this tiny PCB here",
+          "get the Gerber files from below"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "this tiny PCB here",
+        "category": "visual_reference",
+        "position_pct": 4.1,
+        "context": "make something special and make a mini balancing robot using this tiny PCB here. But I kind of failed"
+      },
+      {
+        "phrase": "if you push it around",
+        "category": "action_narration",
+        "position_pct": 8.2,
+        "context": "For now, this robot is pretty much stable even if you push it around. And I had a very hard"
+      },
+      {
+        "phrase": "IMU module here",
+        "category": "visual_reference",
+        "position_pct": 11.0,
+        "context": "But internally, it should also get information from this IMU module here and calculate a PID value for the"
+      },
+      {
+        "phrase": "upload the Gerber files directly",
+        "category": "procedural_instruction",
+        "position_pct": 20.8,
+        "context": "surface finish and more. So upload the Gerber files directly on PCBWay.com and make the order"
+      },
+      {
+        "phrase": "These motors here",
+        "category": "visual_reference",
+        "position_pct": 29.0,
+        "context": "very easy just as the other ones. So I had no other option but to use the NEMA 17 motors. These are one"
+      },
+      {
+        "phrase": "you can get the Gerber files from below",
+        "category": "procedural_instruction",
+        "position_pct": 36.0,
+        "context": "So let's see what we have on the PCB. If you want the same PCB, you can get the Gerber files from below and go to"
+      },
+      {
+        "phrase": "solder the motor",
+        "category": "action_narration",
+        "position_pct": 47.5,
+        "context": "If you manage to use them, just solder the motor and use a zip tie like this"
+      },
+      {
+        "phrase": "take a look on the back",
+        "category": "visual_reference",
+        "position_pct": 52.5,
+        "context": "I might add this as well. So now let's take a look on the back of the PCB. Actually the Bluetooth module"
+      },
+      {
+        "phrase": "download the STL files from below",
+        "category": "procedural_instruction",
+        "position_pct": 60.9,
+        "context": "As for the body, just download the STL files from below and print them using PLA material. I've used"
+      },
+      {
+        "phrase": "So let's assemble it.",
+        "category": "action_narration",
+        "position_pct": 66.9,
+        "context": "You have the full part list below on electronoops.com. So let's assemble it. It should end up something like"
+      },
+      {
+        "phrase": "download this schematic from below",
+        "category": "procedural_instruction",
+        "position_pct": 70.9,
+        "context": "Now let's assemble the PCB so download this schematic from below and have it in front of you. I first"
+      },
+      {
+        "phrase": "solder the 5V connection on the back",
+        "category": "action_narration",
+        "position_pct": 72.5,
+        "context": "we can remove it when we want. Now I get one of these small buck converters and solder the 5V connection on the back. I also"
+      },
+      {
+        "phrase": "solder that buzzer here on top",
+        "category": "action_narration",
+        "position_pct": 73.1,
+        "context": "5V. Now we can solder this on the PCB but we will do that later. Now solder that buzzer here on top and the LEDs on"
+      },
+      {
+        "phrase": "solder the MPU6050",
+        "category": "action_narration",
+        "position_pct": 76.5,
+        "context": "If the chip works, on the front side I solder the MPU6050. On the back I also add some"
+      },
+      {
+        "phrase": "upload it to the PCB",
+        "category": "action_narration",
+        "position_pct": 79.9,
+        "context": "At this point you can download the code from below and upload it to the PCB using the FTDI programmer connected"
+      },
+      {
+        "phrase": "But as you can see",
+        "category": "visual_reference",
+        "position_pct": 84.8,
+        "context": "inertia. This is a crucial part for this project. With the same code before, I now got better results but as you can see the robot is still wobbling around."
+      },
+      {
+        "phrase": "let's take a look at the code",
+        "category": "visual_reference",
+        "position_pct": 88.3,
+        "context": "algorithm. Before I end this video, let's take a look at the code. These here are the variables that you could"
+      },
+      {
+        "phrase": "take a look at my Arduino register control video",
+        "category": "visual_reference",
+        "position_pct": 94.4,
+        "context": "high. And for more about this, you can take a look at my Arduino register control video and the links"
+      },
+      {
+        "phrase": "Stay tuned for more.",
+        "category": "procedural_instruction",
+        "position_pct": 98.1,
+        "context": "this joystick. The schematic would be something like this with the battery and also a switch, the Arduino, the joystick analog outputs and the Bluetooth module. Stay tuned for more."
+      },
+      {
+        "phrase": "You have my PCB below for download",
+        "category": "procedural_instruction",
+        "position_pct": 99.0,
+        "context": "Stay tuned for more. So guys, that's how a balanced robot works and how you can make one. You have my PCB below for download, you also have the schematic"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 20,
+      "by_category": {
+        "visual_reference": 7,
+        "action_narration": 7,
+        "sensory_description": 0,
+        "procedural_instruction": 6
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The transcript contains a moderate number of embodied phrases, with a nearly even distribution between visual references, action narration, and procedural instructions. There are no sensory descriptions."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Balancing Robot Project\",\n      \"description\": \"The video covers the construction of a balancing robot, highlighting the challenges and solutions encountered during the build, including motor selection, PCB design, and initial attempts at PID control.\",\n      \"mention_count\": 12,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The balancing robot is the central project, with detailed explanations, problem-solving, and future plans discussed throughout the video. The project and its components are returned to repeatedly, and its overall success is directly related to the video's goals.\",\n      \"representative_quotes\": [\n        \"this is a balancing robot\",\n        \"make a mini balancing robot\"\n      ]\n    },\n    {\n      \"name\": \"PID Control\",\n      \"description\": \"The video explains the need for PID control to stabilize the robot, the initial struggles in finding good PID values, and plans for a future video dedicated to tuning PID values.\",\n      \"mention_count\": 9,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"PID control is covered in a dedicated section, with multiple mentions and examples of how different PID values affect the robot's stability. The video dedicates much time to describing its use and importance.\",\n      \"representative_quotes\": [\n        \"getting the good PID values\",\n        \"tune the PID values\"\n      ]\n    },\n    {\n      \"name\": \"PCB Design and Manufacturing\",\n      \"description\": \"The video touches on the design and manufacturing of the custom PCB used in the robot, including features like motor driver slots, IMU connection, and Bluetooth module integration.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The PCB design is covered in detail with explanations of each component and their purpose. The manufacturing process via PCBWay is also mentioned with suggestions for optimization.\",\n      \"representative_quotes\": [\n        \"this tiny PCB here\",\n        \"get the Gerber files from below\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"this tiny PCB here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 4.1,\n      \"context\": \"make something special and make a mini balancing robot using this tiny PCB here. But I kind of failed\"\n    },\n    {\n      \"phrase\": \"if you push it around\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 8.2,\n      \"context\": \"For now, this robot is pretty much stable even if you push it around. And I had a very hard\"\n    },\n    {\n      \"phrase\": \"IMU module here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 11.0,\n      \"context\": \"But internally, it should also get information from this IMU module here and calculate a PID value for the\"\n    },\n    {\n      \"phrase\": \"upload the Gerber files directly\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 20.8,\n      \"context\": \"surface finish and more. So upload the Gerber files directly on PCBWay.com and make the order\"\n    },\n    {\n      \"phrase\": \"These motors here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 29.0,\n      \"context\": \"very easy just as the other ones. So I had no other option but to use the NEMA 17 motors. These are one\"\n    },\n    {\n      \"phrase\": \"you can get the Gerber files from below\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 36.0,\n      \"context\": \"So let's see what we have on the PCB. If you want the same PCB, you can get the Gerber files from below and go to\"\n    },\n    {\n      \"phrase\": \"solder the motor\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 47.5,\n      \"context\": \"If you manage to use them, just solder the motor and use a zip tie like this\"\n    },\n    {\n      \"phrase\": \"take a look on the back\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 52.5,\n      \"context\": \"I might add this as well. So now let's take a look on the back of the PCB. Actually the Bluetooth module\"\n    },\n    {\n      \"phrase\": \"download the STL files from below\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 60.9,\n      \"context\": \"As for the body, just download the STL files from below and print them using PLA material. I've used\"\n    },\n    {\n      \"phrase\": \"So let's assemble it.\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 66.9,\n      \"context\": \"You have the full part list below on electronoops.com. So let's assemble it. It should end up something like\"\n    },\n    {\n      \"phrase\": \"download this schematic from below\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 70.9,\n      \"context\": \"Now let's assemble the PCB so download this schematic from below and have it in front of you. I first\"\n    },\n    {\n      \"phrase\": \"solder the 5V connection on the back\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 72.5,\n      \"context\": \"we can remove it when we want. Now I get one of these small buck converters and solder the 5V connection on the back. I also\"\n    },\n    {\n      \"phrase\": \"solder that buzzer here on top\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 73.1,\n      \"context\": \"5V. Now we can solder this on the PCB but we will do that later. Now solder that buzzer here on top and the LEDs on\"\n    },\n    {\n      \"phrase\": \"solder the MPU6050\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 76.5,\n      \"context\": \"If the chip works, on the front side I solder the MPU6050. On the back I also add some\"\n    },\n    {\n      \"phrase\": \"upload it to the PCB\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 79.9,\n      \"context\": \"At this point you can download the code from below and upload it to the PCB using the FTDI programmer connected\"\n    },\n    {\n      \"phrase\": \"But as you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 84.8,\n      \"context\": \"inertia. This is a crucial part for this project. With the same code before, I now got better results but as you can see the robot is still wobbling around.\"\n    },\n    {\n      \"phrase\": \"let's take a look at the code\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 88.3,\n      \"context\": \"algorithm. Before I end this video, let's take a look at the code. These here are the variables that you could\"\n    },\n    {\n      \"phrase\": \"take a look at my Arduino register control video\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 94.4,\n      \"context\": \"high. And for more about this, you can take a look at my Arduino register control video and the links\"\n    },\n    {\n      \"phrase\": \"Stay tuned for more.\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 98.1,\n      \"context\": \"this joystick. The schematic would be something like this with the battery and also a switch, the Arduino, the joystick analog outputs and the Bluetooth module. Stay tuned for more.\"\n    },\n    {\n      \"phrase\": \"You have my PCB below for download\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 99.0,\n      \"context\": \"Stay tuned for more. So guys, that's how a balanced robot works and how you can make one. You have my PCB below for download, you also have the schematic\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 20,\n    \"by_category\": {\n      \"visual_reference\": 7,\n      \"action_narration\": 7,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 6\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The transcript contains a moderate number of embodied phrases, with a nearly even distribution between visual references, action narration, and procedural instructions. There are no sensory descriptions.\"\n  }\n}\n```"
+}

@@ -1,0 +1,71 @@
+{
+  "video_id": "NQvVeLHzfSs",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "H-Bridge Motor Control",
+        "description": "The video discusses an improved H-Bridge motor control circuit, focusing on its components and operating voltage range.",
+        "mention_count": 3,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The H-Bridge is discussed throughout the video, with a schematic shown and its components described. While not extensively detailed, it is the central topic.",
+        "representative_quotes": [
+          "H-Bridge motor control",
+          "Here's my schematic for the H-Bridge"
+        ]
+      },
+      {
+        "name": "Circuit Components",
+        "description": "The video identifies and describes the main components of the H-Bridge circuit including MOSFETs, resistors, and Zener diodes.",
+        "mention_count": 5,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The components are named with part numbers, and their purpose is briefly mentioned. The selection of MOSFETs and the use of Zener diodes for gate protection are discussed.",
+        "representative_quotes": [
+          "four MOSFETs, four resistors, and two Zener diodes",
+          "U1 and U3 are P-channel MOSFETs"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "here is a mock-up",
+        "category": "visual_reference",
+        "position_pct": 3.0,
+        "context": "All right here is a mock-up of an H-Bridge motor control. It"
+      },
+      {
+        "phrase": "I'm controlling it",
+        "category": "action_narration",
+        "position_pct": 13.0,
+        "context": "24 volts and I'm controlling it with a pair of little low-power"
+      },
+      {
+        "phrase": "Here's my schematic",
+        "category": "visual_reference",
+        "position_pct": 16.0,
+        "context": "All right here's my schematic for the H-Bridge I demonstrated at the"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 3,
+      "by_category": {
+        "visual_reference": 2,
+        "action_narration": 1,
+        "sensory_description": 0,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The transcript contains a small number of embodied phrases, primarily visual references. There's little direct instruction or sensory description."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"H-Bridge Motor Control\",\n      \"description\": \"The video discusses an improved H-Bridge motor control circuit, focusing on its components and operating voltage range.\",\n      \"mention_count\": 3,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The H-Bridge is discussed throughout the video, with a schematic shown and its components described. While not extensively detailed, it is the central topic.\",\n      \"representative_quotes\": [\n        \"H-Bridge motor control\",\n        \"Here's my schematic for the H-Bridge\"\n      ]\n    },\n    {\n      \"name\": \"Circuit Components\",\n      \"description\": \"The video identifies and describes the main components of the H-Bridge circuit including MOSFETs, resistors, and Zener diodes.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The components are named with part numbers, and their purpose is briefly mentioned. The selection of MOSFETs and the use of Zener diodes for gate protection are discussed.\",\n      \"representative_quotes\": [\n        \"four MOSFETs, four resistors, and two Zener diodes\",\n        \"U1 and U3 are P-channel MOSFETs\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"here is a mock-up\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 3.0,\n      \"context\": \"All right here is a mock-up of an H-Bridge motor control. It\"\n    },\n    {\n      \"phrase\": \"I'm controlling it\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 13.0,\n      \"context\": \"24 volts and I'm controlling it with a pair of little low-power\"\n    },\n    {\n      \"phrase\": \"Here's my schematic\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 16.0,\n      \"context\": \"All right here's my schematic for the H-Bridge I demonstrated at the\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 3,\n    \"by_category\": {\n      \"visual_reference\": 2,\n      \"action_narration\": 1,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The transcript contains a small number of embodied phrases, primarily visual references. There's little direct instruction or sensory description.\"\n  }\n}\n```"
+}

@@ -1,0 +1,176 @@
+{
+  "video_id": "re-dSV_a0tM",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Wake Word Detection with TensorFlow Lite",
+        "description": "Using TensorFlow Lite on an ESP32 to create a system that continuously listens for a specific trigger word (\"Marvin\" in this case) to activate the system.",
+        "mention_count": 12,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The video dedicates a significant portion to explaining the process, from data acquisition to model training and conversion for the ESP32. It revisits the topic when discussing the ESP32 code.",
+        "representative_quotes": [
+          "We're going to be using TensorFlow Lite for our wake word detection.",
+          "We have a very lightweight wake word detection system."
+        ]
+      },
+      {
+        "name": "Intent Recognition with Wit.ai",
+        "description": "Leveraging Facebook's Wit.ai service to analyze recorded speech after the wake word detection and determine the user's intended action.",
+        "mention_count": 11,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The video provides a demonstration of using Wit.ai, including training the application with sample phrases and testing it with recorded audio. It's also included in the final recap.",
+        "representative_quotes": [
+          "So to do the heavy lifting of actually recognising the text we're going to be using a service from Facebook called Wit AI.",
+          "The witai system works very well and you can easily add your own intents and traits and build a very powerful system."
+        ]
+      },
+      {
+        "name": "ESP32 Code Integration",
+        "description": "Integrating the trained TensorFlow Lite model and Wit.ai service into the ESP32 microcontroller for a fully functional system.",
+        "mention_count": 8,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The video covers the ESP32 code structure, including libraries for TensorFlow Lite, audio input/output, and Wit.ai communication. The explanation comes late in the video.",
+        "representative_quotes": [
+          "Let's have a look at how this is all wired up on the ESP32 side of things.",
+          "In our setup function we do all the normal work of setting up the serial port, connecting to WiFi and starting up SPFs."
+        ]
+      },
+      {
+        "name": "Spectrogram Feature Extraction",
+        "description": "Converting audio samples into spectrograms to turn the audio into something that looks like an image, which is a common step in approaching audio processing as an image recognition problem.",
+        "mention_count": 6,
+        "positions": [
+          "early",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "This keypoint is given a dedicated explanation with code examples. The speaker also returns to it later when integrating it into the code running on the ESP32.",
+        "representative_quotes": [
+          "To do this we can take a spectrogram of the audio sample.",
+          "We then generate the spectrogram. This spectrogram is fed directly into the neural network's input buffer so we can run the prediction."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "Let's have a listen",
+        "category": "sensory_description",
+        "position_pct": 14.71,
+        "context": "Marvin. Let's have a listen to a couple of the files"
+      },
+      {
+        "phrase": "Let's have a look",
+        "category": "visual_reference",
+        "position_pct": 39.22,
+        "context": "So that's our training data prepared. Let's have a look at how we train our"
+      },
+      {
+        "phrase": "Let's jump into another workbook",
+        "category": "action_narration",
+        "position_pct": 61.76,
+        "context": "testing all combined into one large dataset. Let's jump into another workbook for this. We"
+      },
+      {
+        "phrase": "highlighting some of the bits of text",
+        "category": "action_narration",
+        "position_pct": 70.59,
+        "context": "an intent. And then we need to start highlighting some of the bits of text. So"
+      },
+      {
+        "phrase": "Let's try",
+        "category": "action_narration",
+        "position_pct": 72.55,
+        "context": "should be turned on. So let's train this. And now let's try adding another piece of text"
+      },
+      {
+        "phrase": "Let's try adding another one",
+        "category": "action_narration",
+        "position_pct": 74.51,
+        "context": "turn on and on intent. Let's try adding another one. So let's try turn on the kitchen"
+      },
+      {
+        "phrase": "Let's try and validate that",
+        "category": "action_narration",
+        "position_pct": 76.47,
+        "context": "So let's try another one. Turn off the kitchen. So it's improved its understanding. Now it can see the device is kitchen and the trait is off. So let's try and validate that. Now you"
+      },
+      {
+        "phrase": "Let's try this out",
+        "category": "action_narration",
+        "position_pct": 78.43,
+        "context": "I think for now that should be enough for our use case. So let's try this out with some real text. So"
+      },
+      {
+        "phrase": "So let's have a quick listen",
+        "category": "sensory_description",
+        "position_pct": 79.41,
+        "context": "on, and another example turn on. So let's have a quick listen to these files. So turn"
+      },
+      {
+        "phrase": "Let's try running this through wit",
+        "category": "action_narration",
+        "position_pct": 80.39,
+        "context": "bedroom. So hopefully that should turn off the bedroom. So let's try running this through wit. So I"
+      },
+      {
+        "phrase": "So let's try another one",
+        "category": "action_narration",
+        "position_pct": 81.37,
+        "context": "detected that we want to turn off the bedroom. So let's try another one. So we'll try turn on. Turn"
+      },
+      {
+        "phrase": "So let's try that",
+        "category": "action_narration",
+        "position_pct": 82.35,
+        "context": "device. It tells us that it's the light. It's found the intent, turn on device. But it says we want to turn it on. So let's try that. So we can see once"
+      },
+      {
+        "phrase": "So let's try our last sample",
+        "category": "action_narration",
+        "position_pct": 83.33,
+        "context": "want to turn it on. So let's try our last sample. So turn on two. Turn"
+      },
+      {
+        "phrase": "So let's check that works",
+        "category": "action_narration",
+        "position_pct": 84.31,
+        "context": "turn on the bedroom as well. So let's check that works. So yeah. So it's"
+      },
+      {
+        "phrase": "Let's have a look",
+        "category": "visual_reference",
+        "position_pct": 86.27,
+        "context": "was. Let's have a look at how this is all wired"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 15,
+      "by_category": {
+        "visual_reference": 2,
+        "action_narration": 11,
+        "sensory_description": 2,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The transcript contains a moderate amount of embodied language, mainly action narrations of setting up Wit.ai and testing different models. There are some sensory descriptions as well."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Wake Word Detection with TensorFlow Lite\",\n      \"description\": \"Using TensorFlow Lite on an ESP32 to create a system that continuously listens for a specific trigger word (\\\"Marvin\\\" in this case) to activate the system.\",\n      \"mention_count\": 12,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The video dedicates a significant portion to explaining the process, from data acquisition to model training and conversion for the ESP32. It revisits the topic when discussing the ESP32 code.\",\n      \"representative_quotes\": [\n        \"We're going to be using TensorFlow Lite for our wake word detection.\",\n        \"We have a very lightweight wake word detection system.\"\n      ]\n    },\n    {\n      \"name\": \"Intent Recognition with Wit.ai\",\n      \"description\": \"Leveraging Facebook's Wit.ai service to analyze recorded speech after the wake word detection and determine the user's intended action.\",\n      \"mention_count\": 11,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The video provides a demonstration of using Wit.ai, including training the application with sample phrases and testing it with recorded audio. It's also included in the final recap.\",\n      \"representative_quotes\": [\n        \"So to do the heavy lifting of actually recognising the text we're going to be using a service from Facebook called Wit AI.\",\n        \"The witai system works very well and you can easily add your own intents and traits and build a very powerful system.\"\n      ]\n    },\n    {\n      \"name\": \"ESP32 Code Integration\",\n      \"description\": \"Integrating the trained TensorFlow Lite model and Wit.ai service into the ESP32 microcontroller for a fully functional system.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The video covers the ESP32 code structure, including libraries for TensorFlow Lite, audio input/output, and Wit.ai communication. The explanation comes late in the video.\",\n      \"representative_quotes\": [\n        \"Let's have a look at how this is all wired up on the ESP32 side of things.\",\n        \"In our setup function we do all the normal work of setting up the serial port, connecting to WiFi and starting up SPFs.\"\n      ]\n    },\n    {\n      \"name\": \"Spectrogram Feature Extraction\",\n      \"description\": \"Converting audio samples into spectrograms to turn the audio into something that looks like an image, which is a common step in approaching audio processing as an image recognition problem.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"early\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"This keypoint is given a dedicated explanation with code examples. The speaker also returns to it later when integrating it into the code running on the ESP32.\",\n      \"representative_quotes\": [\n        \"To do this we can take a spectrogram of the audio sample.\",\n        \"We then generate the spectrogram. This spectrogram is fed directly into the neural network's input buffer so we can run the prediction.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"Let's have a listen\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 14.71,\n      \"context\": \"Marvin. Let's have a listen to a couple of the files\"\n    },\n    {\n      \"phrase\": \"Let's have a look\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 39.22,\n      \"context\": \"So that's our training data prepared. Let's have a look at how we train our\"\n    },\n    {\n      \"phrase\": \"Let's jump into another workbook\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 61.76,\n      \"context\": \"testing all combined into one large dataset. Let's jump into another workbook for this. We\"\n    },\n    {\n      \"phrase\": \"highlighting some of the bits of text\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 70.59,\n      \"context\": \"an intent. And then we need to start highlighting some of the bits of text. So\"\n    },\n    {\n      \"phrase\": \"Let's try\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 72.55,\n      \"context\": \"should be turned on. So let's train this. And now let's try adding another piece of text\"\n    },\n    {\n      \"phrase\": \"Let's try adding another one\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 74.51,\n      \"context\": \"turn on and on intent. Let's try adding another one. So let's try turn on the kitchen\"\n    },\n    {\n      \"phrase\": \"Let's try and validate that\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 76.47,\n      \"context\": \"So let's try another one. Turn off the kitchen. So it's improved its understanding. Now it can see the device is kitchen and the trait is off. So let's try and validate that. Now you\"\n    },\n    {\n      \"phrase\": \"Let's try this out\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 78.43,\n      \"context\": \"I think for now that should be enough for our use case. So let's try this out with some real text. So\"\n    },\n    {\n      \"phrase\": \"So let's have a quick listen\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 79.41,\n      \"context\": \"on, and another example turn on. So let's have a quick listen to these files. So turn\"\n    },\n    {\n      \"phrase\": \"Let's try running this through wit\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 80.39,\n      \"context\": \"bedroom. So hopefully that should turn off the bedroom. So let's try running this through wit. So I\"\n    },\n    {\n      \"phrase\": \"So let's try another one\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 81.37,\n      \"context\": \"detected that we want to turn off the bedroom. So let's try another one. So we'll try turn on. Turn\"\n    },\n    {\n      \"phrase\": \"So let's try that\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 82.35,\n      \"context\": \"device. It tells us that it's the light. It's found the intent, turn on device. But it says we want to turn it on. So let's try that. So we can see once\"\n    },\n    {\n      \"phrase\": \"So let's try our last sample\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 83.33,\n      \"context\": \"want to turn it on. So let's try our last sample. So turn on two. Turn\"\n    },\n    {\n      \"phrase\": \"So let's check that works\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 84.31,\n      \"context\": \"turn on the bedroom as well. So let's check that works. So yeah. So it's\"\n    },\n    {\n      \"phrase\": \"Let's have a look\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 86.27,\n      \"context\": \"was. Let's have a look at how this is all wired\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 15,\n    \"by_category\": {\n      \"visual_reference\": 2,\n      \"action_narration\": 11,\n      \"sensory_description\": 2,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The transcript contains a moderate amount of embodied language, mainly action narrations of setting up Wit.ai and testing different models. There are some sensory descriptions as well.\"\n  }\n}\n```"
+}

@@ -1,0 +1,91 @@
+{
+  "video_id": "2_y_3_3V-so",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "LC Circuit Oscillations",
+        "description": "Explains how energy oscillates between a capacitor and an inductor in an LC circuit, focusing on the exchange of energy and the reasons behind the oscillation.",
+        "mention_count": 10,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "The concept is introduced early, explained in detail with examples and visual aids, and revisited throughout the video, though it is not specifically reinforced at the very end.",
+        "representative_quotes": [
+          "If you connect the charged capacitor across an inductor, you will see a beautiful energy exchange take place between the two elements.",
+          "In an inductor capacitor circuit, the current flow variation has to be gradual, and here we can see that the current flow in the LC circuit is shaped like a sine curve."
+        ]
+      },
+      {
+        "name": "Role of Resistance",
+        "description": "Discusses the impact of resistance on LC circuits, explaining how it causes energy decay and the eventual damping of oscillations.",
+        "mention_count": 5,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "While not the primary focus, resistance is covered in a dedicated section of the video with multiple mentions and examples, demonstrating its effect on the oscillations.",
+        "representative_quotes": [
+          "However, practically, we can never achieve such ideal behavior due to the presence of resistance.",
+          "As we increase the resistance, the oscillations die out very quickly as shown."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "Let's have a look",
+        "category": "visual_reference",
+        "position_pct": 5.0,
+        "context": "become settled? Let's have a look at the interesting physics behind"
+      },
+      {
+        "phrase": "Here you can observe",
+        "category": "visual_reference",
+        "position_pct": 15.0,
+        "context": "into the circuit. Here you can observe that initially the current flow"
+      },
+      {
+        "phrase": "Now let's see",
+        "category": "visual_reference",
+        "position_pct": 20.0,
+        "context": "the maximum. Now let's see what will happen if the"
+      },
+      {
+        "phrase": "Let's look at",
+        "category": "visual_reference",
+        "position_pct": 40.0,
+        "context": "sine curve. Let's look at the electron flow animation once"
+      },
+      {
+        "phrase": "if you check",
+        "category": "procedural_instruction",
+        "position_pct": 50.0,
+        "context": "discharge, if you check the EMF across the inductor"
+      },
+      {
+        "phrase": "as shown",
+        "category": "visual_reference",
+        "position_pct": 75.0,
+        "context": "die out eventually. As we increase the resistance, the oscillations die out very quickly as shown."
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 6,
+      "by_category": {
+        "visual_reference": 4,
+        "action_narration": 0,
+        "sensory_description": 0,
+        "procedural_instruction": 2
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The transcript includes a limited number of embodied phrases. All are visual references or procedural instructions, with no action narration or sensory description."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"LC Circuit Oscillations\",\n      \"description\": \"Explains how energy oscillates between a capacitor and an inductor in an LC circuit, focusing on the exchange of energy and the reasons behind the oscillation.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The concept is introduced early, explained in detail with examples and visual aids, and revisited throughout the video, though it is not specifically reinforced at the very end.\",\n      \"representative_quotes\": [\n        \"If you connect the charged capacitor across an inductor, you will see a beautiful energy exchange take place between the two elements.\",\n        \"In an inductor capacitor circuit, the current flow variation has to be gradual, and here we can see that the current flow in the LC circuit is shaped like a sine curve.\"\n      ]\n    },\n    {\n      \"name\": \"Role of Resistance\",\n      \"description\": \"Discusses the impact of resistance on LC circuits, explaining how it causes energy decay and the eventual damping of oscillations.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"While not the primary focus, resistance is covered in a dedicated section of the video with multiple mentions and examples, demonstrating its effect on the oscillations.\",\n      \"representative_quotes\": [\n        \"However, practically, we can never achieve such ideal behavior due to the presence of resistance.\",\n        \"As we increase the resistance, the oscillations die out very quickly as shown.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"Let's have a look\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 5.0,\n      \"context\": \"become settled? Let's have a look at the interesting physics behind\"\n    },\n    {\n      \"phrase\": \"Here you can observe\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 15.0,\n      \"context\": \"into the circuit. Here you can observe that initially the current flow\"\n    },\n    {\n      \"phrase\": \"Now let's see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 20.0,\n      \"context\": \"the maximum. Now let's see what will happen if the\"\n    },\n    {\n      \"phrase\": \"Let's look at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 40.0,\n      \"context\": \"sine curve. Let's look at the electron flow animation once\"\n    },\n    {\n      \"phrase\": \"if you check\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 50.0,\n      \"context\": \"discharge, if you check the EMF across the inductor\"\n    },\n    {\n      \"phrase\": \"as shown\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 75.0,\n      \"context\": \"die out eventually. As we increase the resistance, the oscillations die out very quickly as shown.\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 6,\n    \"by_category\": {\n      \"visual_reference\": 4,\n      \"action_narration\": 0,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 2\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The transcript includes a limited number of embodied phrases. All are visual references or procedural instructions, with no action narration or sensory description.\"\n  }\n}\n```"
+}

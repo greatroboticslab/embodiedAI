@@ -1,0 +1,95 @@
+{
+  "video_id": "t1Q9_PlN4GU",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Coordinate Systems",
+        "description": "The video introduces two coordinate systems, one fixed to the moving robot (body-fixed) and one fixed to the inertial frame. It explains the unit vectors associated with each system (B1, B2, B3 and A1, A2, A3).",
+        "mention_count": 3,
+        "positions": [
+          "early"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The concept is introduced and revisited, with a dedicated section explaining the two coordinate systems.",
+        "representative_quotes": [
+          "we have two coordinate systems, one attached to the moving robot, and the other, the inertial coordinate system",
+          "B1, B2, B3 constitute the set of unit vectors that describe the body fixed coordinate system"
+        ]
+      },
+      {
+        "name": "Euler Angles and ZXY Convention",
+        "description": "The video explains how Euler angles, specifically using the ZXY convention, are used to represent rotations of the quadrotor. It defines the yaw, roll, and pitch angles and mentions the existence of singularities.",
+        "mention_count": 7,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "The video introduces and develops the concept of Euler angles, detailing the ZXY convention and also briefly addressing the singularities that can occur.",
+        "representative_quotes": [
+          "We've seen how Euler angles are used to represent rotations.",
+          "We will use the ZXY convention"
+        ]
+      },
+      {
+        "name": "Forces and Moments on Quadrotor",
+        "description": "The video describes the external forces and moments acting on the quadrotor's airframe, including thrusts from the four rotors and the gravity vector. It mentions the calculation of the sum of forces and moments as vector computations.",
+        "mention_count": 4,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The concepts of forces/moments are presented in a dedicated section, with some detail regarding how to calculate them.",
+        "representative_quotes": [
+          "Let's look at the external forces and moments that act on the airframe.",
+          "The sum of the forces is obtained by adding up the thrust vectors and the gravity vector."
+        ]
+      },
+      {
+        "name": "Newton-Euler Equations",
+        "description": "The video mentions that to predict the quadrotor's acceleration, the Newton-Euler equations are needed. These equations of motion come from Newton and Euler.",
+        "mention_count": 2,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 2,
+        "strength_reasoning": "The equations are mentioned briefly, but are not developed at all.",
+        "representative_quotes": [
+          "To predict the net acceleration, we have to write down the equations of motion.",
+          "These come from Newton and Euler, and they're called the Newton-Euler equations."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "Recall that you have four rotors",
+        "category": "visual_reference",
+        "position_pct": 8.6,
+        "context": "system that's fixed to the inertial frame. Recall that you have four rotors, each of which is independently"
+      },
+      {
+        "phrase": "Let's look at the external forces",
+        "category": "visual_reference",
+        "position_pct": 50.0,
+        "context": "for every rotation. Let's look at the external forces and moments that act on"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 2,
+      "by_category": {
+        "visual_reference": 2,
+        "action_narration": 0,
+        "sensory_description": 0,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "Embodied language is infrequent, consisting only of visual references to the quadrotor's components."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Coordinate Systems\",\n      \"description\": \"The video introduces two coordinate systems, one fixed to the moving robot (body-fixed) and one fixed to the inertial frame. It explains the unit vectors associated with each system (B1, B2, B3 and A1, A2, A3).\",\n      \"mention_count\": 3,\n      \"positions\": [\n        \"early\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The concept is introduced and revisited, with a dedicated section explaining the two coordinate systems.\",\n      \"representative_quotes\": [\n        \"we have two coordinate systems, one attached to the moving robot, and the other, the inertial coordinate system\",\n        \"B1, B2, B3 constitute the set of unit vectors that describe the body fixed coordinate system\"\n      ]\n    },\n    {\n      \"name\": \"Euler Angles and ZXY Convention\",\n      \"description\": \"The video explains how Euler angles, specifically using the ZXY convention, are used to represent rotations of the quadrotor. It defines the yaw, roll, and pitch angles and mentions the existence of singularities.\",\n      \"mention_count\": 7,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The video introduces and develops the concept of Euler angles, detailing the ZXY convention and also briefly addressing the singularities that can occur.\",\n      \"representative_quotes\": [\n        \"We've seen how Euler angles are used to represent rotations.\",\n        \"We will use the ZXY convention\"\n      ]\n    },\n    {\n      \"name\": \"Forces and Moments on Quadrotor\",\n      \"description\": \"The video describes the external forces and moments acting on the quadrotor's airframe, including thrusts from the four rotors and the gravity vector. It mentions the calculation of the sum of forces and moments as vector computations.\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The concepts of forces/moments are presented in a dedicated section, with some detail regarding how to calculate them.\",\n      \"representative_quotes\": [\n        \"Let's look at the external forces and moments that act on the airframe.\",\n        \"The sum of the forces is obtained by adding up the thrust vectors and the gravity vector.\"\n      ]\n    },\n    {\n      \"name\": \"Newton-Euler Equations\",\n      \"description\": \"The video mentions that to predict the quadrotor's acceleration, the Newton-Euler equations are needed. These equations of motion come from Newton and Euler.\",\n      \"mention_count\": 2,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 2,\n      \"strength_reasoning\": \"The equations are mentioned briefly, but are not developed at all.\",\n      \"representative_quotes\": [\n        \"To predict the net acceleration, we have to write down the equations of motion.\",\n        \"These come from Newton and Euler, and they're called the Newton-Euler equations.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"Recall that you have four rotors\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 8.6,\n      \"context\": \"system that's fixed to the inertial frame. Recall that you have four rotors, each of which is independently\"\n    },\n    {\n      \"phrase\": \"Let's look at the external forces\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 50.0,\n      \"context\": \"for every rotation. Let's look at the external forces and moments that act on\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 2,\n    \"by_category\": {\n      \"visual_reference\": 2,\n      \"action_narration\": 0,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"Embodied language is infrequent, consisting only of visual references to the quadrotor's components.\"\n  }\n}\n```"
+}

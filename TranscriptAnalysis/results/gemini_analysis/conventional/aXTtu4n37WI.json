@@ -1,0 +1,189 @@
+{
+  "video_id": "aXTtu4n37WI",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "GPS Module Comparison (880 vs 220)",
+        "description": "Comparing two GPS modules (880 and 220) based on size, telemetry capabilities, and suitability for sub-250g drones, including physical differences and plug-and-play.",
+        "mention_count": 8,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in the first third, differences are mentioned several times.",
+        "representative_quotes": [
+          "But the 880 GPS, this one actually has, you can see how much thicker that one is in comparison.",
+          "It's bigger, wider, and just thicker than the 220."
+        ]
+      },
+      {
+        "name": "Betaflight GPS Setup",
+        "description": "Configuring GPS in Betaflight, including setting up the correct UART port, protocol, and enabling GPS rescue mode. Also covers some troubleshooting tips.",
+        "mention_count": 12,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "A whole section is devoted to how to set up GPS in Betaflight.",
+        "representative_quotes": [
+          "Alright, so here we are. In Betaflight. And the first thing you want to do is go over to ports.",
+          "Then you can come over to your failsafe. And I'll get back to this here. This GPS rescue here."
+        ]
+      },
+      {
+        "name": "Telemetry Importance",
+        "description": "Discusses the importance of telemetry for GPS functionality, especially when using cheaper receivers and transmitters like FlySky. It shows how telemetry helps in accurate positioning.",
+        "mention_count": 6,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Telemetry comes up several times throughout the video.",
+        "representative_quotes": [
+          "But the 880 GPS, this one actually has, you can see how much thicker that one is in comparison. It's bigger and thicker. This one actually offers telemetry, has telemetry built into it.",
+          "So I wouldn't recommend using this along with a cheaper receiver and cheaper transmitter setup because you're just not going to have that extra telemetry between the receiver and your drone that's going to feed the information into the GPS to kind of lock everything in exactly where it needs to be."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "you can see how much thicker that one is in comparison",
+        "category": "visual_reference",
+        "position_pct": 6.4,
+        "context": "880 GPS, this one actually has, you can see how much thicker that one is in comparison. It's"
+      },
+      {
+        "phrase": "plug it into your SCA or, no, SDA or SCL pads.",
+        "category": "action_narration",
+        "position_pct": 8.2,
+        "context": "This one actually offers telemetry, has telemetry built into it. And you actually plug it into your SCA or, no, SDA or"
+      },
+      {
+        "phrase": "I'm going to show you guys the pinup on a Zeus",
+        "category": "visual_reference",
+        "position_pct": 30.8,
+        "context": "controller, which every flight controller pretty much has it. I'm going to show you guys the pinup on a Zeus, an HTMLRC"
+      },
+      {
+        "phrase": "You can see right here it has the pinup for your GPS",
+        "category": "visual_reference",
+        "position_pct": 31.3,
+        "context": "Zeus, an HTMLRC Zeus. You can see right here it has the pinup for your GPS, which this"
+      },
+      {
+        "phrase": "soldering directly to it helped",
+        "category": "action_narration",
+        "position_pct": 47.3,
+        "context": "And I couldn't find one that replicated this exact feature in my group of stuff. So, soldering directly to it helped. This one's just a basic"
+      },
+      {
+        "phrase": "I'm going to show you guys on my computer",
+        "category": "visual_reference",
+        "position_pct": 48.5,
+        "context": "out. Solder directly to this because it has a special, you can see the bumps on the top of it. It has a special connection thing just like some VTXs and stuff do. And I couldn't find one that replicated this exact feature in my group of stuff. So, soldering directly to it helped. This one's just a basic cord, a basic connection. So, it was really easy to swap that one out. I'm going to show you guys on my computer. Both of these"
+      },
+      {
+        "phrase": "I'm going to show you guys that and you guys can just follow along",
+        "category": "procedural_instruction",
+        "position_pct": 50.9,
+        "context": "working. I'm going to just show you guys that and you guys can just follow along and hook yours up. I hope you"
+      },
+      {
+        "phrase": "here we are",
+        "category": "visual_reference",
+        "position_pct": 55.6,
+        "context": "GPS. Alright, so here we are. In Betaflight. And the first thing you want"
+      },
+      {
+        "phrase": "You can see GPS here",
+        "category": "visual_reference",
+        "position_pct": 56.9,
+        "context": "the ports. And I've got mine hooked up to UART 2. It's the only one that I can plug a GPS to apparently on this. I mean, I could use a different one. But I would have to splice wires and solder and things like that. But it's just easier for the whole connection point to go on to. You can see GPS here. You just come over and it's"
+      },
+      {
+        "phrase": "you just click on GPS",
+        "category": "action_narration",
+        "position_pct": 57.3,
+        "context": "connection point to go on to. You can see GPS here. You just click on GPS. And then the, uh, this right here, you"
+      },
+      {
+        "phrase": "I saved and rebooted",
+        "category": "action_narration",
+        "position_pct": 57.9,
+        "context": "this right here, you can leave it on auto. And what it did for me is it picked the correct one. So, as soon as I saved and rebooted and went to configuration, I came back to the"
+      },
+      {
+        "phrase": "save and reboot",
+        "category": "procedural_instruction",
+        "position_pct": 60.1,
+        "context": "This was here. So, that is apparently the right one. I don't know exactly what these are for. So, my knowledge on this is a little slim. So, take it for what it is. I'm just showing you a basic setup. I'm not trying to tell you the, the, in details of how all this stuff works. I'm just trying to give you a quick thing. So, you can go through and, and hook your GPS too. And then, it's a little less troubleshooting for you in the end. So, then you just save and reboot. Go to configuration. And I think I need"
+      },
+      {
+        "phrase": "You can click Autobot if you want to",
+        "category": "procedural_instruction",
+        "position_pct": 63.9,
+        "context": "is the one that worked. You can click Autobot if you want to. And it will auto-generate that. But you can"
+      },
+      {
+        "phrase": "hit save and reboot",
+        "category": "procedural_instruction",
+        "position_pct": 69.6,
+        "context": "set all these. And hit save and reboot. And you can come to your modes. And you can set your"
+      },
+      {
+        "phrase": "check this out",
+        "category": "visual_reference",
+        "position_pct": 72.1,
+        "context": "mark, it will go in the GPS rescue. So, once you get your GPS rescue, you just hit save. And come down to GPS and check this out. You can see that it's already starting to work. We've"
+      },
+      {
+        "phrase": "you can see that it's already starting to work",
+        "category": "visual_reference",
+        "position_pct": 72.3,
+        "context": "just hit save. And come down to GPS and check this out. You can see that it's already starting to work. We've got"
+      },
+      {
+        "phrase": "Then you push save",
+        "category": "procedural_instruction",
+        "position_pct": 79.2,
+        "context": "Once you figure out your GPS, then you can come down to your OSD. You can set your, you know, you've got your GPS stuff here. So, you can see which one each of these are. So, this is your GPS stats, your home distance, your aero. And like I said, I couldn't get the aero to work correctly. I don't know if just not having the telemetry off knocks the compass off or something. But I'm fixing to go out there and retest it here in a second to make sure everything's working okay. But then you push save and that's everything."
+      },
+      {
+        "phrase": "check this out",
+        "category": "visual_reference",
+        "position_pct": 81.4,
+        "context": "or not your receiver, but your failsafe, and configuration and ports. So, that's all backwards. So, ports, configuration, your failsafe, modes, check your GPS. And this right here, you'll know if"
+      },
+      {
+        "phrase": "you can't see it right now",
+        "category": "visual_reference",
+        "position_pct": 82.2,
+        "context": "it's got, and you can't see it right now because of the light that's on it, but"
+      },
+      {
+        "phrase": "you can tell that this is communicating with your board is right here",
+        "category": "visual_reference",
+        "position_pct": 83.3,
+        "context": "working. The way that you can tell that this is communicating with your board is right here. That you'll start seeing numbers here. So,"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 20,
+      "by_category": {
+        "visual_reference": 11,
+        "action_narration": 4,
+        "sensory_description": 0,
+        "procedural_instruction": 5
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "Visual references are the strongest, due to him showing and talking through the setup process."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"GPS Module Comparison (880 vs 220)\",\n      \"description\": \"Comparing two GPS modules (880 and 220) based on size, telemetry capabilities, and suitability for sub-250g drones, including physical differences and plug-and-play.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in the first third, differences are mentioned several times.\",\n      \"representative_quotes\": [\n        \"But the 880 GPS, this one actually has, you can see how much thicker that one is in comparison.\",\n        \"It's bigger, wider, and just thicker than the 220.\"\n      ]\n    },\n    {\n      \"name\": \"Betaflight GPS Setup\",\n      \"description\": \"Configuring GPS in Betaflight, including setting up the correct UART port, protocol, and enabling GPS rescue mode. Also covers some troubleshooting tips.\",\n      \"mention_count\": 12,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"A whole section is devoted to how to set up GPS in Betaflight.\",\n      \"representative_quotes\": [\n        \"Alright, so here we are. In Betaflight. And the first thing you want to do is go over to ports.\",\n        \"Then you can come over to your failsafe. And I'll get back to this here. This GPS rescue here.\"\n      ]\n    },\n    {\n      \"name\": \"Telemetry Importance\",\n      \"description\": \"Discusses the importance of telemetry for GPS functionality, especially when using cheaper receivers and transmitters like FlySky. It shows how telemetry helps in accurate positioning.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Telemetry comes up several times throughout the video.\",\n      \"representative_quotes\": [\n        \"But the 880 GPS, this one actually has, you can see how much thicker that one is in comparison. It's bigger and thicker. This one actually offers telemetry, has telemetry built into it.\",\n        \"So I wouldn't recommend using this along with a cheaper receiver and cheaper transmitter setup because you're just not going to have that extra telemetry between the receiver and your drone that's going to feed the information into the GPS to kind of lock everything in exactly where it needs to be.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"you can see how much thicker that one is in comparison\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 6.4,\n      \"context\": \"880 GPS, this one actually has, you can see how much thicker that one is in comparison. It's\"\n    },\n    {\n      \"phrase\": \"plug it into your SCA or, no, SDA or SCL pads.\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 8.2,\n      \"context\": \"This one actually offers telemetry, has telemetry built into it. And you actually plug it into your SCA or, no, SDA or\"\n    },\n    {\n      \"phrase\": \"I'm going to show you guys the pinup on a Zeus\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 30.8,\n      \"context\": \"controller, which every flight controller pretty much has it. I'm going to show you guys the pinup on a Zeus, an HTMLRC\"\n    },\n    {\n      \"phrase\": \"You can see right here it has the pinup for your GPS\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 31.3,\n      \"context\": \"Zeus, an HTMLRC Zeus. You can see right here it has the pinup for your GPS, which this\"\n    },\n    {\n      \"phrase\": \"soldering directly to it helped\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 47.3,\n      \"context\": \"And I couldn't find one that replicated this exact feature in my group of stuff. So, soldering directly to it helped. This one's just a basic\"\n    },\n    {\n      \"phrase\": \"I'm going to show you guys on my computer\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 48.5,\n      \"context\": \"out. Solder directly to this because it has a special, you can see the bumps on the top of it. It has a special connection thing just like some VTXs and stuff do. And I couldn't find one that replicated this exact feature in my group of stuff. So, soldering directly to it helped. This one's just a basic cord, a basic connection. So, it was really easy to swap that one out. I'm going to show you guys on my computer. Both of these\"\n    },\n    {\n      \"phrase\": \"I'm going to show you guys that and you guys can just follow along\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 50.9,\n      \"context\": \"working. I'm going to just show you guys that and you guys can just follow along and hook yours up. I hope you\"\n    },\n    {\n      \"phrase\": \"here we are\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 55.6,\n      \"context\": \"GPS. Alright, so here we are. In Betaflight. And the first thing you want\"\n    },\n    {\n      \"phrase\": \"You can see GPS here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 56.9,\n      \"context\": \"the ports. And I've got mine hooked up to UART 2. It's the only one that I can plug a GPS to apparently on this. I mean, I could use a different one. But I would have to splice wires and solder and things like that. But it's just easier for the whole connection point to go on to. You can see GPS here. You just come over and it's\"\n    },\n    {\n      \"phrase\": \"you just click on GPS\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 57.3,\n      \"context\": \"connection point to go on to. You can see GPS here. You just click on GPS. And then the, uh, this right here, you\"\n    },\n    {\n      \"phrase\": \"I saved and rebooted\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 57.9,\n      \"context\": \"this right here, you can leave it on auto. And what it did for me is it picked the correct one. So, as soon as I saved and rebooted and went to configuration, I came back to the\"\n    },\n    {\n      \"phrase\": \"save and reboot\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 60.1,\n      \"context\": \"This was here. So, that is apparently the right one. I don't know exactly what these are for. So, my knowledge on this is a little slim. So, take it for what it is. I'm just showing you a basic setup. I'm not trying to tell you the, the, in details of how all this stuff works. I'm just trying to give you a quick thing. So, you can go through and, and hook your GPS too. And then, it's a little less troubleshooting for you in the end. So, then you just save and reboot. Go to configuration. And I think I need\"\n    },\n    {\n      \"phrase\": \"You can click Autobot if you want to\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 63.9,\n      \"context\": \"is the one that worked. You can click Autobot if you want to. And it will auto-generate that. But you can\"\n    },\n    {\n      \"phrase\": \"hit save and reboot\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 69.6,\n      \"context\": \"set all these. And hit save and reboot. And you can come to your modes. And you can set your\"\n    },\n    {\n      \"phrase\": \"check this out\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 72.1,\n      \"context\": \"mark, it will go in the GPS rescue. So, once you get your GPS rescue, you just hit save. And come down to GPS and check this out. You can see that it's already starting to work. We've\"\n    },\n    {\n      \"phrase\": \"you can see that it's already starting to work\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 72.3,\n      \"context\": \"just hit save. And come down to GPS and check this out. You can see that it's already starting to work. We've got\"\n    },\n    {\n      \"phrase\": \"Then you push save\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 79.2,\n      \"context\": \"Once you figure out your GPS, then you can come down to your OSD. You can set your, you know, you've got your GPS stuff here. So, you can see which one each of these are. So, this is your GPS stats, your home distance, your aero. And like I said, I couldn't get the aero to work correctly. I don't know if just not having the telemetry off knocks the compass off or something. But I'm fixing to go out there and retest it here in a second to make sure everything's working okay. But then you push save and that's everything.\"\n    },\n    {\n      \"phrase\": \"check this out\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 81.4,\n      \"context\": \"or not your receiver, but your failsafe, and configuration and ports. So, that's all backwards. So, ports, configuration, your failsafe, modes, check your GPS. And this right here, you'll know if\"\n    },\n    {\n      \"phrase\": \"you can't see it right now\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 82.2,\n      \"context\": \"it's got, and you can't see it right now because of the light that's on it, but\"\n    },\n    {\n      \"phrase\": \"you can tell that this is communicating with your board is right here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 83.3,\n      \"context\": \"working. The way that you can tell that this is communicating with your board is right here. That you'll start seeing numbers here. So,\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 20,\n    \"by_category\": {\n      \"visual_reference\": 11,\n      \"action_narration\": 4,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 5\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"Visual references are the strongest, due to him showing and talking through the setup process.\"\n  }\n}\n```"
+}

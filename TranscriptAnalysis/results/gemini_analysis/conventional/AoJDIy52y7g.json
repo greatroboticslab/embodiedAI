@@ -1,0 +1,131 @@
+{
+  "video_id": "AoJDIy52y7g",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "TDA 2030 Class AB Amplifier",
+        "description": "The video introduces the TDA 2030 chip, a Class AB amplifier, explaining its characteristics, advantages (linearity, efficiency), and how it bridges Class A and Class B amplifiers.",
+        "mention_count": 7,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "The TDA 2030 is the central component, its properties are explained in detail, and the circuit design is based on it.",
+        "representative_quotes": [
+          "this strange looking chip is the TDA 2030 which is a class AB amplifier chip",
+          "what we were talking about is this little guy here this is the TDA 2030"
+        ]
+      },
+      {
+        "name": "Class AB Amplifier Characteristics",
+        "description": "The video explains the electrical characteristics of the TDA 2030, including supply voltage, quiescent current, input bias, offset voltage, distortion, and frequency response.",
+        "mention_count": 6,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "A dedicated section explains the electrical characteristics, with multiple mentions throughout the discussion of the datasheet.",
+        "representative_quotes": [
+          "wide voltage supply up to 36 volts",
+          "its quiescent current drain is 40 milliamps"
+        ]
+      },
+      {
+        "name": "Circuit Design and Component Selection",
+        "description": "The video analyzes a single-supply Class AB amplifier circuit using the TDA 2030, explaining the function of each resistor and capacitor, and how their values affect the circuit's performance, including frequency response and gain.",
+        "mention_count": 12,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "The video has a dedicated section for this topic. It discusses each component (resistors, capacitors, diodes) individually, explaining their function and impact on the circuit.",
+        "representative_quotes": [
+          "I have drawn up a single supply class a B amplifier here and I thought we'd talk about it",
+          "R1 is our closed loop gain setting and the value we're going to put here is 150 K"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "this little guy right here",
+        "category": "visual_reference",
+        "position_pct": 2.0,
+        "context": "Hey what's happening guys I thought today we might talk about this little guy right here this chip this strange"
+      },
+      {
+        "phrase": "if you think back to",
+        "category": "sensory_description",
+        "position_pct": 5.0,
+        "context": "AB amplifier chip now if you think back to the times we've talked about amplifiers a"
+      },
+      {
+        "phrase": "this little guy here",
+        "category": "visual_reference",
+        "position_pct": 21.0,
+        "context": "well now what we were talking about is this little guy here this is the TDA 2030 and it's"
+      },
+      {
+        "phrase": "you can see",
+        "category": "visual_reference",
+        "position_pct": 55.0,
+        "context": "decrease in gain so you know you can see it's pretty easy all right let's talk capacitors"
+      },
+      {
+        "phrase": "you know",
+        "category": "sensory_description",
+        "position_pct": 63.0,
+        "context": "frequency cutoff so you know you can play around with those values a little bit C3"
+      },
+      {
+        "phrase": "we'll build",
+        "category": "action_narration",
+        "position_pct": 27.0,
+        "context": "supply voltage minimum six we'll build something we'll build with probably 12 volts and its quiescent"
+      },
+      {
+        "phrase": "drawn up",
+        "category": "action_narration",
+        "position_pct": 35.0,
+        "context": "okay so what I've done here is I have drawn up a single supply class a B amplifier here"
+      },
+      {
+        "phrase": "go over it",
+        "category": "action_narration",
+        "position_pct": 35.0,
+        "context": "a B amplifier here and I thought we'd talk about it and go over it so the first thing I"
+      },
+      {
+        "phrase": "we'll build the circuit",
+        "category": "action_narration",
+        "position_pct": 95.0,
+        "context": "for today, and tomorrow we'll build the circuit and try it out, alright? Alright. Hope"
+      },
+      {
+        "phrase": "try it out",
+        "category": "action_narration",
+        "position_pct": 95.0,
+        "context": "for today, and tomorrow we'll build the circuit and try it out, alright? Alright. Hope you"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 10,
+      "by_category": {
+        "visual_reference": 3,
+        "action_narration": 4,
+        "sensory_description": 3,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The transcript uses a mix of visual references, action narrations related to circuit building, and descriptions of how things work, indicating a medium level of embodied language richness."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"TDA 2030 Class AB Amplifier\",\n      \"description\": \"The video introduces the TDA 2030 chip, a Class AB amplifier, explaining its characteristics, advantages (linearity, efficiency), and how it bridges Class A and Class B amplifiers.\",\n      \"mention_count\": 7,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The TDA 2030 is the central component, its properties are explained in detail, and the circuit design is based on it.\",\n      \"representative_quotes\": [\n        \"this strange looking chip is the TDA 2030 which is a class AB amplifier chip\",\n        \"what we were talking about is this little guy here this is the TDA 2030\"\n      ]\n    },\n    {\n      \"name\": \"Class AB Amplifier Characteristics\",\n      \"description\": \"The video explains the electrical characteristics of the TDA 2030, including supply voltage, quiescent current, input bias, offset voltage, distortion, and frequency response.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"A dedicated section explains the electrical characteristics, with multiple mentions throughout the discussion of the datasheet.\",\n      \"representative_quotes\": [\n        \"wide voltage supply up to 36 volts\",\n        \"its quiescent current drain is 40 milliamps\"\n      ]\n    },\n    {\n      \"name\": \"Circuit Design and Component Selection\",\n      \"description\": \"The video analyzes a single-supply Class AB amplifier circuit using the TDA 2030, explaining the function of each resistor and capacitor, and how their values affect the circuit's performance, including frequency response and gain.\",\n      \"mention_count\": 12,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The video has a dedicated section for this topic. It discusses each component (resistors, capacitors, diodes) individually, explaining their function and impact on the circuit.\",\n      \"representative_quotes\": [\n        \"I have drawn up a single supply class a B amplifier here and I thought we'd talk about it\",\n        \"R1 is our closed loop gain setting and the value we're going to put here is 150 K\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"this little guy right here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 2.0,\n      \"context\": \"Hey what's happening guys I thought today we might talk about this little guy right here this chip this strange\"\n    },\n    {\n      \"phrase\": \"if you think back to\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 5.0,\n      \"context\": \"AB amplifier chip now if you think back to the times we've talked about amplifiers a\"\n    },\n    {\n      \"phrase\": \"this little guy here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 21.0,\n      \"context\": \"well now what we were talking about is this little guy here this is the TDA 2030 and it's\"\n    },\n    {\n      \"phrase\": \"you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 55.0,\n      \"context\": \"decrease in gain so you know you can see it's pretty easy all right let's talk capacitors\"\n    },\n    {\n      \"phrase\": \"you know\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 63.0,\n      \"context\": \"frequency cutoff so you know you can play around with those values a little bit C3\"\n    },\n    {\n      \"phrase\": \"we'll build\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 27.0,\n      \"context\": \"supply voltage minimum six we'll build something we'll build with probably 12 volts and its quiescent\"\n    },\n    {\n      \"phrase\": \"drawn up\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 35.0,\n      \"context\": \"okay so what I've done here is I have drawn up a single supply class a B amplifier here\"\n    },\n    {\n      \"phrase\": \"go over it\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 35.0,\n      \"context\": \"a B amplifier here and I thought we'd talk about it and go over it so the first thing I\"\n    },\n    {\n      \"phrase\": \"we'll build the circuit\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 95.0,\n      \"context\": \"for today, and tomorrow we'll build the circuit and try it out, alright? Alright. Hope\"\n    },\n    {\n      \"phrase\": \"try it out\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 95.0,\n      \"context\": \"for today, and tomorrow we'll build the circuit and try it out, alright? Alright. Hope you\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 10,\n    \"by_category\": {\n      \"visual_reference\": 3,\n      \"action_narration\": 4,\n      \"sensory_description\": 3,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The transcript uses a mix of visual references, action narrations related to circuit building, and descriptions of how things work, indicating a medium level of embodied language richness.\"\n  }\n}\n```"
+}

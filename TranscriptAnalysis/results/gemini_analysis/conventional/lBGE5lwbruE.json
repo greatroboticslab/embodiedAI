@@ -1,0 +1,126 @@
+{
+  "video_id": "lBGE5lwbruE",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "LM386 Audio Amplifier IC",
+        "description": "The video focuses on the LM386 audio amplifier IC, exploring its limitations, proper usage, and power measurements.",
+        "mention_count": 8,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The LM386 is the central topic, introduced early, discussed throughout, and revisited in the conclusion.",
+        "representative_quotes": [
+          "take a look at the ubiquitous LM386 audio amplifier IC",
+          "this chip is pretty sensitive to crappy grounding"
+        ]
+      },
+      {
+        "name": "Proper Grounding",
+        "description": "The video highlights the importance of proper grounding techniques for the LM386, including separating power and signal grounds to avoid distortion and oscillations.",
+        "mention_count": 10,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "Grounding is a core problem the speaker identifies and then devotes the most instruction and hands-on demonstration to. Poor grounding is shown to cause problems, and correct grounding fixes them.",
+        "representative_quotes": [
+          "I purposely neglected my signal in power grounds",
+          "split the grounds off into separate zones"
+        ]
+      },
+      {
+        "name": "Power Measurements",
+        "description": "The video includes power measurements of the LM386, demonstrating its performance at different voltages and loads, and discussing its limitations.",
+        "mention_count": 6,
+        "positions": [
+          "early",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 3,
+        "strength_reasoning": "Power measurements are mentioned early as a goal, and then they are physically demonstrated, however, not as completely or thoroughly as grounding.",
+        "representative_quotes": [
+          "going to do some power measurements",
+          "we're getting .46 watts"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "look at this",
+        "category": "visual_reference",
+        "position_pct": 27.27,
+        "context": "The Snickers. Take a look outside. But, as you see"
+      },
+      {
+        "phrase": "you can see that right here",
+        "category": "visual_reference",
+        "position_pct": 26.36,
+        "context": "loads. And you can see that right here. As you increase"
+      },
+      {
+        "phrase": "I'll rewire this thing",
+        "category": "action_narration",
+        "position_pct": 51.82,
+        "context": "really crappy. But, uh... This one... Wasn't as bad. I'll rewire this thing and come back and"
+      },
+      {
+        "phrase": "here's what I've done",
+        "category": "visual_reference",
+        "position_pct": 53.64,
+        "context": "come back and see what we get. Okay, so here's what I've done. At pin"
+      },
+      {
+        "phrase": "it's really hard to see",
+        "category": "visual_reference",
+        "position_pct": 65.45,
+        "context": "zone. Alright. Let's give it a listen. Okay. Well, it's really hard to see. But, here's"
+      },
+      {
+        "phrase": "give it a listen",
+        "category": "action_narration",
+        "position_pct": 43.18,
+        "context": "volts, eight ohms. We'll do some power measurements there. Give it a listen. And we'll talk about layout."
+      },
+      {
+        "phrase": "give it a listen",
+        "category": "action_narration",
+        "position_pct": 67.27,
+        "context": "zone. Alright. Let's give it a listen. Perfect. No buzzing. Perfect"
+      },
+      {
+        "phrase": "turn it back down",
+        "category": "procedural_instruction",
+        "position_pct": 81.82,
+        "context": "At 1 kHz, I turn it up. And, it's starting to clip. Turn it back down. Now, you can"
+      },
+      {
+        "phrase": "you can see there's a fairly large step",
+        "category": "visual_reference",
+        "position_pct": 81.82,
+        "context": "clipping level. I probably can get, um, somewhere between .6 and .7 watts out of this thing."
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 9,
+      "by_category": {
+        "visual_reference": 4,
+        "action_narration": 3,
+        "sensory_description": 0,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The transcript contains embodied phrases related to actions and visual references, but lacks any phrases related to sensory descriptions. The action and visual references help the viewer follow along and see the process the speaker is enacting."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"LM386 Audio Amplifier IC\",\n      \"description\": \"The video focuses on the LM386 audio amplifier IC, exploring its limitations, proper usage, and power measurements.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The LM386 is the central topic, introduced early, discussed throughout, and revisited in the conclusion.\",\n      \"representative_quotes\": [\n        \"take a look at the ubiquitous LM386 audio amplifier IC\",\n        \"this chip is pretty sensitive to crappy grounding\"\n      ]\n    },\n    {\n      \"name\": \"Proper Grounding\",\n      \"description\": \"The video highlights the importance of proper grounding techniques for the LM386, including separating power and signal grounds to avoid distortion and oscillations.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"Grounding is a core problem the speaker identifies and then devotes the most instruction and hands-on demonstration to. Poor grounding is shown to cause problems, and correct grounding fixes them.\",\n      \"representative_quotes\": [\n        \"I purposely neglected my signal in power grounds\",\n        \"split the grounds off into separate zones\"\n      ]\n    },\n    {\n      \"name\": \"Power Measurements\",\n      \"description\": \"The video includes power measurements of the LM386, demonstrating its performance at different voltages and loads, and discussing its limitations.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"early\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Power measurements are mentioned early as a goal, and then they are physically demonstrated, however, not as completely or thoroughly as grounding.\",\n      \"representative_quotes\": [\n        \"going to do some power measurements\",\n        \"we're getting .46 watts\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"look at this\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 27.27,\n      \"context\": \"The Snickers. Take a look outside. But, as you see\"\n    },\n    {\n      \"phrase\": \"you can see that right here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 26.36,\n      \"context\": \"loads. And you can see that right here. As you increase\"\n    },\n    {\n      \"phrase\": \"I'll rewire this thing\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 51.82,\n      \"context\": \"really crappy. But, uh... This one... Wasn't as bad. I'll rewire this thing and come back and\"\n    },\n    {\n      \"phrase\": \"here's what I've done\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 53.64,\n      \"context\": \"come back and see what we get. Okay, so here's what I've done. At pin\"\n    },\n    {\n      \"phrase\": \"it's really hard to see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 65.45,\n      \"context\": \"zone. Alright. Let's give it a listen. Okay. Well, it's really hard to see. But, here's\"\n    },\n    {\n      \"phrase\": \"give it a listen\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 43.18,\n      \"context\": \"volts, eight ohms. We'll do some power measurements there. Give it a listen. And we'll talk about layout.\"\n    },\n    {\n      \"phrase\": \"give it a listen\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 67.27,\n      \"context\": \"zone. Alright. Let's give it a listen. Perfect. No buzzing. Perfect\"\n    },\n    {\n      \"phrase\": \"turn it back down\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 81.82,\n      \"context\": \"At 1 kHz, I turn it up. And, it's starting to clip. Turn it back down. Now, you can\"\n    },\n    {\n      \"phrase\": \"you can see there's a fairly large step\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 81.82,\n      \"context\": \"clipping level. I probably can get, um, somewhere between .6 and .7 watts out of this thing.\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 9,\n    \"by_category\": {\n      \"visual_reference\": 4,\n      \"action_narration\": 3,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The transcript contains embodied phrases related to actions and visual references, but lacks any phrases related to sensory descriptions. The action and visual references help the viewer follow along and see the process the speaker is enacting.\"\n  }\n}\n```"
+}

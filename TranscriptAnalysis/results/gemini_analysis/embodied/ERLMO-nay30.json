@@ -1,0 +1,49 @@
+{
+  "video_id": "ERLMO-nay30",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Altium 365",
+        "description": "Altium 365 is presented as an electronic product design platform integrating PCB design, MCAT data management, and teamwork.",
+        "mention_count": 4,
+        "positions": [
+          "early"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section with multiple mentions, explaining its features and accessibility.",
+        "representative_quotes": [
+          "Altyum 365 PCB tasarımı, MCAT veri yönetimi ve ekip çalışmasını birleştiren elektronik ürün tasarım platformudur.",
+          "Altyum Designer içinden direkt bağlanabilirsiniz."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "Açıklamalar kısmında bulunan linki kullanarak",
+        "category": "visual_reference",
+        "position_pct": 80.0,
+        "context": "yorum ve değerlendirmelerde bulunabilir. Açıklamalar kısmında bulunan linki kullanarak Altyum"
+      },
+      {
+        "phrase": "bilgisayarınıza indirip kurarak denemeye hemen başlayabilirsiniz",
+        "category": "action_narration",
+        "position_pct": 85.0,
+        "context": "yazılımının ücretsiz versiyonunu bilgisayarınıza indirip kurarak denemeye hemen"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 2,
+      "by_category": {
+        "visual_reference": 1,
+        "action_narration": 1,
+        "sensory_description": 0,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "Limited embodied language, with only a few references to download and find the information."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Altium 365\",\n      \"description\": \"Altium 365 is presented as an electronic product design platform integrating PCB design, MCAT data management, and teamwork.\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"early\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section with multiple mentions, explaining its features and accessibility.\",\n      \"representative_quotes\": [\n        \"Altyum 365 PCB tasarımı, MCAT veri yönetimi ve ekip çalışmasını birleştiren elektronik ürün tasarım platformudur.\",\n        \"Altyum Designer içinden direkt bağlanabilirsiniz.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"Açıklamalar kısmında bulunan linki kullanarak\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 80.0,\n      \"context\": \"yorum ve değerlendirmelerde bulunabilir. Açıklamalar kısmında bulunan linki kullanarak Altyum\"\n    },\n    {\n      \"phrase\": \"bilgisayarınıza indirip kurarak denemeye hemen başlayabilirsiniz\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 85.0,\n      \"context\": \"yazılımının ücretsiz versiyonunu bilgisayarınıza indirip kurarak denemeye hemen\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 2,\n    \"by_category\": {\n      \"visual_reference\": 1,\n      \"action_narration\": 1,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"Limited embodied language, with only a few references to download and find the information.\"\n  }\n}\n```"
+}

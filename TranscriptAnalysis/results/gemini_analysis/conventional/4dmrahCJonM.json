@@ -1,0 +1,137 @@
+{
+  "video_id": "4dmrahCJonM",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Flight Controller Function",
+        "description": "The flight controller sits between the receiver and other components in a model aircraft, interpreting signals and controlling servos/ESCs based on pilot input and onboard sensors. It can provide stabilization and autonomous flight capabilities.",
+        "mention_count": 9,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The role of the flight controller is introduced early, explained in detail, and returned to in the conclusion. It is one of the primary topics, though not the *only* one.",
+        "representative_quotes": [
+          "a little bit of electronics that sits between the receiver and everything else on the model",
+          "the flight controller is listening to what you want the model to do from the signals coming in from the radio receiver"
+        ]
+      },
+      {
+        "name": "Flight Controller Components",
+        "description": "A flight controller is comprised of hardware, firmware, and a PC application. The hardware is the physical board, the firmware is the software that runs on it (like iNav or Betaflight), and the PC application is used for flashing the firmware and configuring settings.",
+        "mention_count": 5,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The three components are covered in a dedicated section, explained in terms of their relationship. However, the idea is not continually referenced throughout the video.",
+        "representative_quotes": [
+          "the flight controller itself is a little bit of hardware",
+          "that hardware this little PCB board needs some firmware to run on it"
+        ]
+      },
+      {
+        "name": "Flight Modes",
+        "description": "The video covers various flight modes such as angle mode (self-stabilization), horizon mode (more aggressive with flips and rolls), manual/rate mode (basic stabilization), and GPS-enabled modes like loiter and return to home.",
+        "mention_count": 6,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 3,
+        "strength_reasoning": "Flight modes are discussed in a dedicated section, with each mode explained, but they are not a core theme throughout the video.",
+        "representative_quotes": [
+          "angle mode is like a self-stabilization mode",
+          "gps loiter where you can kind of park the vehicle in the sky"
+        ]
+      },
+      {
+        "name": "Firmware Options",
+        "description": "The video discusses three primary firmware options: Betaflight (focused on multi-rotor racing), iNav (GPS functionality and fixed-wing support), and ArduPilot (versatile with support for various platforms).",
+        "mention_count": 10,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "The firmware options are covered in detail, with their specific strengths and weaknesses explained. This is a major focus area for the video.",
+        "representative_quotes": [
+          "beta flight now beta flights been around for a while and it tends to be focused on multi-rotor racing",
+          "iNav rather than just focus on the quadcopter side went away to focus initially on all the gps flight modes"
+        ]
+      },
+      {
+        "name": "FPV Integration",
+        "description": "FPV (first-person view) involves flying with a camera mounted on the model. Modern flight controllers overlay flight information onto the video feed, providing key metrics and flight data in the pilot's goggles.",
+        "mention_count": 7,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "FPV integration is explained in a dedicated section. While important, it's introduced later in the video and not a central focus throughout.",
+        "representative_quotes": [
+          "fpv is where you are going to fly by looking out live through a little camera mounted at the front of the model",
+          "key flight information so flight time battery voltage distance from home if you have things like gps ground speed"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "stay with me",
+        "category": "action_narration",
+        "position_pct": 4.9,
+        "context": "making a lot of sense then stay with me. This video is exactly aimed"
+      },
+      {
+        "phrase": "don't touch them with a barge pole",
+        "category": "action_narration",
+        "position_pct": 36.1,
+        "context": "six years ago you don't want to be using any of those don't touch them with a barge"
+      },
+      {
+        "phrase": "do watch",
+        "category": "action_narration",
+        "position_pct": 49.3,
+        "context": "specific for wings so do watch the build videos on the channel"
+      },
+      {
+        "phrase": "keeping an eye on",
+        "category": "visual_reference",
+        "position_pct": 82.0,
+        "context": "and it's great for keeping an eye on how much time you've"
+      },
+      {
+        "phrase": "pop them down below",
+        "category": "action_narration",
+        "position_pct": 92.1,
+        "context": "so if you have any questions or comments please pop them down below and i'll put"
+      },
+      {
+        "phrase": "check out the playlist section",
+        "category": "visual_reference",
+        "position_pct": 97.0,
+        "context": "benefits check out the playlist section on the channel too i organize"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 6,
+      "by_category": {
+        "visual_reference": 2,
+        "action_narration": 4,
+        "sensory_description": 0,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The video contains a small number of embodied phrases, primarily action narrations. There are no instances of sensory descriptions or procedural instructions."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Flight Controller Function\",\n      \"description\": \"The flight controller sits between the receiver and other components in a model aircraft, interpreting signals and controlling servos/ESCs based on pilot input and onboard sensors. It can provide stabilization and autonomous flight capabilities.\",\n      \"mention_count\": 9,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The role of the flight controller is introduced early, explained in detail, and returned to in the conclusion. It is one of the primary topics, though not the *only* one.\",\n      \"representative_quotes\": [\n        \"a little bit of electronics that sits between the receiver and everything else on the model\",\n        \"the flight controller is listening to what you want the model to do from the signals coming in from the radio receiver\"\n      ]\n    },\n    {\n      \"name\": \"Flight Controller Components\",\n      \"description\": \"A flight controller is comprised of hardware, firmware, and a PC application. The hardware is the physical board, the firmware is the software that runs on it (like iNav or Betaflight), and the PC application is used for flashing the firmware and configuring settings.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The three components are covered in a dedicated section, explained in terms of their relationship. However, the idea is not continually referenced throughout the video.\",\n      \"representative_quotes\": [\n        \"the flight controller itself is a little bit of hardware\",\n        \"that hardware this little PCB board needs some firmware to run on it\"\n      ]\n    },\n    {\n      \"name\": \"Flight Modes\",\n      \"description\": \"The video covers various flight modes such as angle mode (self-stabilization), horizon mode (more aggressive with flips and rolls), manual/rate mode (basic stabilization), and GPS-enabled modes like loiter and return to home.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Flight modes are discussed in a dedicated section, with each mode explained, but they are not a core theme throughout the video.\",\n      \"representative_quotes\": [\n        \"angle mode is like a self-stabilization mode\",\n        \"gps loiter where you can kind of park the vehicle in the sky\"\n      ]\n    },\n    {\n      \"name\": \"Firmware Options\",\n      \"description\": \"The video discusses three primary firmware options: Betaflight (focused on multi-rotor racing), iNav (GPS functionality and fixed-wing support), and ArduPilot (versatile with support for various platforms).\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The firmware options are covered in detail, with their specific strengths and weaknesses explained. This is a major focus area for the video.\",\n      \"representative_quotes\": [\n        \"beta flight now beta flights been around for a while and it tends to be focused on multi-rotor racing\",\n        \"iNav rather than just focus on the quadcopter side went away to focus initially on all the gps flight modes\"\n      ]\n    },\n    {\n      \"name\": \"FPV Integration\",\n      \"description\": \"FPV (first-person view) involves flying with a camera mounted on the model. Modern flight controllers overlay flight information onto the video feed, providing key metrics and flight data in the pilot's goggles.\",\n      \"mention_count\": 7,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"FPV integration is explained in a dedicated section. While important, it's introduced later in the video and not a central focus throughout.\",\n      \"representative_quotes\": [\n        \"fpv is where you are going to fly by looking out live through a little camera mounted at the front of the model\",\n        \"key flight information so flight time battery voltage distance from home if you have things like gps ground speed\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"stay with me\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 4.9,\n      \"context\": \"making a lot of sense then stay with me. This video is exactly aimed\"\n    },\n    {\n      \"phrase\": \"don't touch them with a barge pole\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 36.1,\n      \"context\": \"six years ago you don't want to be using any of those don't touch them with a barge\"\n    },\n    {\n      \"phrase\": \"do watch\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 49.3,\n      \"context\": \"specific for wings so do watch the build videos on the channel\"\n    },\n    {\n      \"phrase\": \"keeping an eye on\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 82.0,\n      \"context\": \"and it's great for keeping an eye on how much time you've\"\n    },\n    {\n      \"phrase\": \"pop them down below\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 92.1,\n      \"context\": \"so if you have any questions or comments please pop them down below and i'll put\"\n    },\n    {\n      \"phrase\": \"check out the playlist section\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 97.0,\n      \"context\": \"benefits check out the playlist section on the channel too i organize\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 6,\n    \"by_category\": {\n      \"visual_reference\": 2,\n      \"action_narration\": 4,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The video contains a small number of embodied phrases, primarily action narrations. There are no instances of sensory descriptions or procedural instructions.\"\n  }\n}\n```"
+}

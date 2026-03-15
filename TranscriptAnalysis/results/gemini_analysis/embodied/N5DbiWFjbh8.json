@@ -1,0 +1,158 @@
+{
+  "video_id": "N5DbiWFjbh8",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "PID Tuning",
+        "description": "The video focuses on PID (Proportional, Integral, Derivative) tuning for quadcopters using Betaflight, Blackbox Explorer, and PID Toolbox, aiming to achieve optimal flight performance.",
+        "mention_count": 12,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "PID tuning is the central theme of the video, with the entire tutorial dedicated to explaining and demonstrating the process, different parameters, and software tools.",
+        "representative_quotes": [
+          "perfect pid tune",
+          "heading over to the pid tuning"
+        ]
+      },
+      {
+        "name": "Blackbox Analysis",
+        "description": "The video teaches how to use blackbox data to analyze flight performance, identify issues like oscillations or underdamped behavior, and make adjustments to PID settings accordingly.",
+        "mention_count": 9,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The video devotes significant time explaining how to use Blackbox Explorer and PID Toolbox to interpret flight logs, analyze data, and inform tuning decisions.",
+        "representative_quotes": [
+          "head over to the black box tab",
+          "open it up in the regular black box explorer"
+        ]
+      },
+      {
+        "name": "Master Multiplier",
+        "description": "The video explores the concept of the master multiplier in Betaflight PID tuning, discussing its effect on responsiveness, latency, and motor temperature.",
+        "mention_count": 7,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The master multiplier is covered in a dedicated section of the video, with multiple mentions and explanations of its effects on flight characteristics.",
+        "representative_quotes": [
+          "messing with the master multiplier",
+          "more we moved up the master multiplier"
+        ]
+      },
+      {
+        "name": "Feed Forward",
+        "description": "The video explains feed forward and how to tune it using Blackbox Explorer by observing the P-term line, aiming for a flat P-term line.",
+        "mention_count": 8,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The feed forward is covered in a dedicated section of the video, with multiple mentions and explanations of its effects on flight characteristics, especially with flippy flops.",
+        "representative_quotes": [
+          "Next we have feet forward",
+          "Feet forward needs to do all the work"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "scroll down to these download links",
+        "category": "action_narration",
+        "position_pct": 7.69,
+        "context": "just going to scroll down to these download links um i have windows so"
+      },
+      {
+        "phrase": "open file location",
+        "category": "action_narration",
+        "position_pct": 10.26,
+        "context": "you want to do is right click open file location and then um open it from"
+      },
+      {
+        "phrase": "head back over to the pit tuning tab",
+        "category": "action_narration",
+        "position_pct": 20.51,
+        "context": "you have your black box settings in go ahead and head back over to the pit"
+      },
+      {
+        "phrase": "follow my mouse",
+        "category": "visual_reference",
+        "position_pct": 29.49,
+        "context": "essentially like in circles like if you just follow my mouse just move your stick"
+      },
+      {
+        "phrase": "head over to black box",
+        "category": "action_narration",
+        "position_pct": 32.82,
+        "context": "tests completed go ahead and plug your quad back in head over to black box and"
+      },
+      {
+        "phrase": "select the select button right here",
+        "category": "visual_reference",
+        "position_pct": 40.0,
+        "context": "toolbox is open simply select the select button right here and locate your black"
+      },
+      {
+        "phrase": "feel the motors",
+        "category": "sensory_description",
+        "position_pct": 54.87,
+        "context": "every time you land i would feel the motors and once they start feeling just"
+      },
+      {
+        "phrase": "plug your quad in",
+        "category": "action_narration",
+        "position_pct": 45.13,
+        "context": "we head back over into beta flight plug or quad in and 0.8 was my"
+      },
+      {
+        "phrase": "we're looking at this red line",
+        "category": "visual_reference",
+        "position_pct": 76.92,
+        "context": "let's go for one of these so essentially we're looking at this red line which is"
+      },
+      {
+        "phrase": "open it up in the regular black box explorer",
+        "category": "action_narration",
+        "position_pct": 75.38,
+        "context": "instead of opening up this file in pid toolbox we're just going to open it up in"
+      },
+      {
+        "phrase": "fly a full pack",
+        "category": "action_narration",
+        "position_pct": 89.74,
+        "context": "point where you're going to want to go fly a full pack um preferably with"
+      },
+      {
+        "phrase": "going to want to go fly",
+        "category": "action_narration",
+        "position_pct": 89.74,
+        "context": "now this is the point where you're going to want to go fly a full pack um"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 12,
+      "by_category": {
+        "visual_reference": 4,
+        "action_narration": 8,
+        "sensory_description": 1,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The transcript uses a moderate amount of embodied language, primarily focused on describing actions the viewer should take and visual references to guide them. Sensory description is low."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"PID Tuning\",\n      \"description\": \"The video focuses on PID (Proportional, Integral, Derivative) tuning for quadcopters using Betaflight, Blackbox Explorer, and PID Toolbox, aiming to achieve optimal flight performance.\",\n      \"mention_count\": 12,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"PID tuning is the central theme of the video, with the entire tutorial dedicated to explaining and demonstrating the process, different parameters, and software tools.\",\n      \"representative_quotes\": [\n        \"perfect pid tune\",\n        \"heading over to the pid tuning\"\n      ]\n    },\n    {\n      \"name\": \"Blackbox Analysis\",\n      \"description\": \"The video teaches how to use blackbox data to analyze flight performance, identify issues like oscillations or underdamped behavior, and make adjustments to PID settings accordingly.\",\n      \"mention_count\": 9,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The video devotes significant time explaining how to use Blackbox Explorer and PID Toolbox to interpret flight logs, analyze data, and inform tuning decisions.\",\n      \"representative_quotes\": [\n        \"head over to the black box tab\",\n        \"open it up in the regular black box explorer\"\n      ]\n    },\n    {\n      \"name\": \"Master Multiplier\",\n      \"description\": \"The video explores the concept of the master multiplier in Betaflight PID tuning, discussing its effect on responsiveness, latency, and motor temperature.\",\n      \"mention_count\": 7,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The master multiplier is covered in a dedicated section of the video, with multiple mentions and explanations of its effects on flight characteristics.\",\n      \"representative_quotes\": [\n        \"messing with the master multiplier\",\n        \"more we moved up the master multiplier\"\n      ]\n    },\n    {\n      \"name\": \"Feed Forward\",\n      \"description\": \"The video explains feed forward and how to tune it using Blackbox Explorer by observing the P-term line, aiming for a flat P-term line.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The feed forward is covered in a dedicated section of the video, with multiple mentions and explanations of its effects on flight characteristics, especially with flippy flops.\",\n      \"representative_quotes\": [\n        \"Next we have feet forward\",\n        \"Feet forward needs to do all the work\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"scroll down to these download links\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 7.69,\n      \"context\": \"just going to scroll down to these download links um i have windows so\"\n    },\n    {\n      \"phrase\": \"open file location\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 10.26,\n      \"context\": \"you want to do is right click open file location and then um open it from\"\n    },\n    {\n      \"phrase\": \"head back over to the pit tuning tab\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 20.51,\n      \"context\": \"you have your black box settings in go ahead and head back over to the pit\"\n    },\n    {\n      \"phrase\": \"follow my mouse\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 29.49,\n      \"context\": \"essentially like in circles like if you just follow my mouse just move your stick\"\n    },\n    {\n      \"phrase\": \"head over to black box\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 32.82,\n      \"context\": \"tests completed go ahead and plug your quad back in head over to black box and\"\n    },\n    {\n      \"phrase\": \"select the select button right here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 40.0,\n      \"context\": \"toolbox is open simply select the select button right here and locate your black\"\n    },\n    {\n      \"phrase\": \"feel the motors\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 54.87,\n      \"context\": \"every time you land i would feel the motors and once they start feeling just\"\n    },\n    {\n      \"phrase\": \"plug your quad in\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 45.13,\n      \"context\": \"we head back over into beta flight plug or quad in and 0.8 was my\"\n    },\n    {\n      \"phrase\": \"we're looking at this red line\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 76.92,\n      \"context\": \"let's go for one of these so essentially we're looking at this red line which is\"\n    },\n    {\n      \"phrase\": \"open it up in the regular black box explorer\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 75.38,\n      \"context\": \"instead of opening up this file in pid toolbox we're just going to open it up in\"\n    },\n    {\n      \"phrase\": \"fly a full pack\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 89.74,\n      \"context\": \"point where you're going to want to go fly a full pack um preferably with\"\n    },\n    {\n      \"phrase\": \"going to want to go fly\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 89.74,\n      \"context\": \"now this is the point where you're going to want to go fly a full pack um\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 12,\n    \"by_category\": {\n      \"visual_reference\": 4,\n      \"action_narration\": 8,\n      \"sensory_description\": 1,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The transcript uses a moderate amount of embodied language, primarily focused on describing actions the viewer should take and visual references to guide them. Sensory description is low.\"\n  }\n}\n```"
+}

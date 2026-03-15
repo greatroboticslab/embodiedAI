@@ -1,0 +1,102 @@
+{
+  "video_id": "PlKeFj5teo4",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Flight Controller",
+        "description": "The flight controller is the hardware responsible for the inner loop control of a drone, focusing on stabilizing the vehicle. It receives commands and sensor data, processes them quickly, and sends signals to the motors.",
+        "mention_count": 12,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "Introduced early and developed in a dedicated section. Mentioned multiple times and its role is contrasted with the flight computer.",
+        "representative_quotes": [
+          "We call the board that handles interloop control the flight controller.",
+          "The flight controller is a dedicated board to simply stabilize the vehicle"
+        ]
+      },
+      {
+        "name": "Flight Computer",
+        "description": "The flight computer handles outer loop control, acts as the 'brain' making decisions based on sensor data and mission objectives. It sends vehicle state requests to the flight controller, like a pilot.",
+        "mention_count": 13,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "Introduced early and developed in a dedicated section. Mentioned frequently and its role is contrasted with the flight controller.",
+        "representative_quotes": [
+          "A flight computer is what is used to conduct all outerloop control",
+          "the flight computer performs all the onboard decision-making and sensing, much like a pilot"
+        ]
+      },
+      {
+        "name": "Interloop vs Outerloop Control",
+        "description": "The video covers the concepts of inner and outer control loops in autonomous drones. The interloop stabilizes the drone and the outerloop handles decision-making and navigation.",
+        "mention_count": 7,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section, with multiple mentions of the two loops and their differences.",
+        "representative_quotes": [
+          "The interloop controller is what stabilizes the vehicle",
+          "The outerloop controller can be thought of as a simulated pilot"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "let's take a look at",
+        "category": "visual_reference",
+        "position_pct": 26.32,
+        "context": "controller just like a pilot does. Let's take a look at what processes are occurring"
+      },
+      {
+        "phrase": "see what this looks like in action",
+        "category": "visual_reference",
+        "position_pct": 50.0,
+        "context": "cycles per second. So now that we can see all of the challenges that must be solved in order to complete this loop, let's see what this looks like in action"
+      },
+      {
+        "phrase": "we will look at",
+        "category": "visual_reference",
+        "position_pct": 54.39,
+        "context": "and accurate response is possible. Next, we will look at the operation of the flight"
+      },
+      {
+        "phrase": "Here we can see",
+        "category": "visual_reference",
+        "position_pct": 76.32,
+        "context": "50 to 100 times per second. Here we can see that full and complicated process"
+      },
+      {
+        "phrase": "switch back",
+        "category": "action_narration",
+        "position_pct": 88.16,
+        "context": "flight computer encounters an error, you can always switch back to the pilot transmitter to safely"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 5,
+      "by_category": {
+        "visual_reference": 4,
+        "action_narration": 1,
+        "sensory_description": 0,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The transcript includes a small number of embodied phrases, mainly visual references to diagrams and processes. There are a couple action phrases, and there's a lack of sensory descriptions or procedural instructions."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Flight Controller\",\n      \"description\": \"The flight controller is the hardware responsible for the inner loop control of a drone, focusing on stabilizing the vehicle. It receives commands and sensor data, processes them quickly, and sends signals to the motors.\",\n      \"mention_count\": 12,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Introduced early and developed in a dedicated section. Mentioned multiple times and its role is contrasted with the flight computer.\",\n      \"representative_quotes\": [\n        \"We call the board that handles interloop control the flight controller.\",\n        \"The flight controller is a dedicated board to simply stabilize the vehicle\"\n      ]\n    },\n    {\n      \"name\": \"Flight Computer\",\n      \"description\": \"The flight computer handles outer loop control, acts as the 'brain' making decisions based on sensor data and mission objectives. It sends vehicle state requests to the flight controller, like a pilot.\",\n      \"mention_count\": 13,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Introduced early and developed in a dedicated section. Mentioned frequently and its role is contrasted with the flight controller.\",\n      \"representative_quotes\": [\n        \"A flight computer is what is used to conduct all outerloop control\",\n        \"the flight computer performs all the onboard decision-making and sensing, much like a pilot\"\n      ]\n    },\n    {\n      \"name\": \"Interloop vs Outerloop Control\",\n      \"description\": \"The video covers the concepts of inner and outer control loops in autonomous drones. The interloop stabilizes the drone and the outerloop handles decision-making and navigation.\",\n      \"mention_count\": 7,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section, with multiple mentions of the two loops and their differences.\",\n      \"representative_quotes\": [\n        \"The interloop controller is what stabilizes the vehicle\",\n        \"The outerloop controller can be thought of as a simulated pilot\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"let's take a look at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 26.32,\n      \"context\": \"controller just like a pilot does. Let's take a look at what processes are occurring\"\n    },\n    {\n      \"phrase\": \"see what this looks like in action\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 50.0,\n      \"context\": \"cycles per second. So now that we can see all of the challenges that must be solved in order to complete this loop, let's see what this looks like in action\"\n    },\n    {\n      \"phrase\": \"we will look at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 54.39,\n      \"context\": \"and accurate response is possible. Next, we will look at the operation of the flight\"\n    },\n    {\n      \"phrase\": \"Here we can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 76.32,\n      \"context\": \"50 to 100 times per second. Here we can see that full and complicated process\"\n    },\n    {\n      \"phrase\": \"switch back\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 88.16,\n      \"context\": \"flight computer encounters an error, you can always switch back to the pilot transmitter to safely\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 5,\n    \"by_category\": {\n      \"visual_reference\": 4,\n      \"action_narration\": 1,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The transcript includes a small number of embodied phrases, mainly visual references to diagrams and processes. There are a couple action phrases, and there's a lack of sensory descriptions or procedural instructions.\"\n  }\n}\n```"
+}

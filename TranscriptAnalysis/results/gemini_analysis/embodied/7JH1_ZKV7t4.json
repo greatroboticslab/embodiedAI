@@ -1,0 +1,105 @@
+{
+  "video_id": "7JH1_ZKV7t4",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Spinning VTOL Efficiency",
+        "description": "The video explores the seemingly paradoxical concept of a spinning VTOL drone that requires less power to hover than a traditional tricopter. This is achieved by using wings and tilting motors to create a spinning motion, increasing efficiency.",
+        "mention_count": 10,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "The entire video revolves around this concept, explaining it from multiple angles, presenting data, and concluding with a summary of the underlying principles. It's the primary focus.",
+        "representative_quotes": [
+          "it actually requires substantially less power to hover",
+          "the power required goes way down"
+        ]
+      },
+      {
+        "name": "Propeller Efficiency & Inflow",
+        "description": "The video explains how propeller efficiency is affected by incoming airspeed (inflow) and how this plays a role in the spinning VTOL's improved hover performance. There is an optimal inflow.",
+        "mention_count": 4,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section with supporting data, and the speaker returns to the concept at the end, even though it does not drive the entire video.",
+        "representative_quotes": [
+          "Propeller efficiency actually changes as a function of incoming airspeed, or inflow.",
+          "small drone propellers operating much more efficiently in hover"
+        ]
+      },
+      {
+        "name": "LIDAR-based Altitude Hold",
+        "description": "The video briefly mentions the use of a LIDAR sensor and PID controller to implement altitude hold, which is crucial for obtaining consistent power draw data during testing.",
+        "mention_count": 4,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section where the speaker showed the process. It is not mentioned later in the video.",
+        "representative_quotes": [
+          "Mounting this to the side facing down gives a good altitude reading",
+          "Since it now holds altitude on its own"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "look at the power data",
+        "category": "visual_reference",
+        "position_pct": 56.0,
+        "context": "Speaking of data, let's look at the power data for the no wings"
+      },
+      {
+        "phrase": "you can see that it's difficult",
+        "category": "visual_reference",
+        "position_pct": 33.0,
+        "context": "For reference, here I'm trying to hold a hover with the wings on, and you can see that it's difficult to keep a constant"
+      },
+      {
+        "phrase": "take a look at the power data now",
+        "category": "visual_reference",
+        "position_pct": 67.0,
+        "context": "So let's get the wings on and take a look at the power data now. But first"
+      },
+      {
+        "phrase": "you can even hear the motor start to spool down",
+        "category": "sensory_description",
+        "position_pct": 73.0,
+        "context": "But as we start spinning, the power required goes way down. You can even hear the motor start to spool down as"
+      },
+      {
+        "phrase": "don't put your hand over the lidar sensor",
+        "category": "procedural_instruction",
+        "position_pct": 42.0,
+        "context": "But note to self, don't put your hand over the lidar sensor that it's using"
+      },
+      {
+        "phrase": "this is your friendly reminder to tighten your props",
+        "category": "procedural_instruction",
+        "position_pct": 69.0,
+        "context": "over flat pavement. And this is your friendly reminder to tighten your props. Now we can finally look at"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 6,
+      "by_category": {
+        "visual_reference": 3,
+        "action_narration": 0,
+        "sensory_description": 1,
+        "procedural_instruction": 2
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The transcript contains a few instances of embodied phrases, mostly visual references and procedural instructions, but not many action narrations or sensory descriptions."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Spinning VTOL Efficiency\",\n      \"description\": \"The video explores the seemingly paradoxical concept of a spinning VTOL drone that requires less power to hover than a traditional tricopter. This is achieved by using wings and tilting motors to create a spinning motion, increasing efficiency.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"The entire video revolves around this concept, explaining it from multiple angles, presenting data, and concluding with a summary of the underlying principles. It's the primary focus.\",\n      \"representative_quotes\": [\n        \"it actually requires substantially less power to hover\",\n        \"the power required goes way down\"\n      ]\n    },\n    {\n      \"name\": \"Propeller Efficiency & Inflow\",\n      \"description\": \"The video explains how propeller efficiency is affected by incoming airspeed (inflow) and how this plays a role in the spinning VTOL's improved hover performance. There is an optimal inflow.\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section with supporting data, and the speaker returns to the concept at the end, even though it does not drive the entire video.\",\n      \"representative_quotes\": [\n        \"Propeller efficiency actually changes as a function of incoming airspeed, or inflow.\",\n        \"small drone propellers operating much more efficiently in hover\"\n      ]\n    },\n    {\n      \"name\": \"LIDAR-based Altitude Hold\",\n      \"description\": \"The video briefly mentions the use of a LIDAR sensor and PID controller to implement altitude hold, which is crucial for obtaining consistent power draw data during testing.\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section where the speaker showed the process. It is not mentioned later in the video.\",\n      \"representative_quotes\": [\n        \"Mounting this to the side facing down gives a good altitude reading\",\n        \"Since it now holds altitude on its own\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"look at the power data\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 56.0,\n      \"context\": \"Speaking of data, let's look at the power data for the no wings\"\n    },\n    {\n      \"phrase\": \"you can see that it's difficult\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 33.0,\n      \"context\": \"For reference, here I'm trying to hold a hover with the wings on, and you can see that it's difficult to keep a constant\"\n    },\n    {\n      \"phrase\": \"take a look at the power data now\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 67.0,\n      \"context\": \"So let's get the wings on and take a look at the power data now. But first\"\n    },\n    {\n      \"phrase\": \"you can even hear the motor start to spool down\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 73.0,\n      \"context\": \"But as we start spinning, the power required goes way down. You can even hear the motor start to spool down as\"\n    },\n    {\n      \"phrase\": \"don't put your hand over the lidar sensor\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 42.0,\n      \"context\": \"But note to self, don't put your hand over the lidar sensor that it's using\"\n    },\n    {\n      \"phrase\": \"this is your friendly reminder to tighten your props\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 69.0,\n      \"context\": \"over flat pavement. And this is your friendly reminder to tighten your props. Now we can finally look at\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 6,\n    \"by_category\": {\n      \"visual_reference\": 3,\n      \"action_narration\": 0,\n      \"sensory_description\": 1,\n      \"procedural_instruction\": 2\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The transcript contains a few instances of embodied phrases, mostly visual references and procedural instructions, but not many action narrations or sensory descriptions.\"\n  }\n}\n```"
+}

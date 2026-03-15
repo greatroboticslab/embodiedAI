@@ -1,0 +1,225 @@
+{
+  "video_id": "tFVAaUcOm4I",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "PID Controller Definition",
+        "description": "Defines what a PID controller is: a control structure used in closed-loop systems to compare input and output to generate a control signal.",
+        "mention_count": 5,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The PID controller definition is introduced at the start, exemplified with the car example, revisited when introducing the individual P, I, and D components, and summarized at the end.",
+        "representative_quotes": [
+          "A PID controller is a control structure that's used in many closed-loop systems.",
+          "PID stands for Proportional, Integral, and Derivative."
+        ]
+      },
+      {
+        "name": "Proportional (P) Controller",
+        "description": "Explains the concept of a proportional controller, where the output signal is proportional to the error term, and discusses its limitations, such as steady-state error.",
+        "mention_count": 7,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The proportional controller is explained in a dedicated section with multiple mentions and examples but isn't returned to at the end of the video.",
+        "representative_quotes": [
+          "This is known as a proportional controller, as the output signal is proportional to the error term.",
+          "Many systems, like a cruise control, suffer from this steady state error."
+        ]
+      },
+      {
+        "name": "Integral (I) Controller",
+        "description": "Explains the integral controller and how it is used to eliminate the steady-state error by accumulating error over time. It also explains PI controllers.",
+        "mention_count": 8,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The integral controller is explained in a dedicated section with multiple mentions, examples, and math approximations, but isn't returned to at the end of the video. PI controller is mentioned.",
+        "representative_quotes": [
+          "We then multiply that amount by some new constant, KI, before adding it to the output of our proportional controller.",
+          "This is how we get to a PI controller."
+        ]
+      },
+      {
+        "name": "Derivative (D) Controller",
+        "description": "Explains the derivative controller and how it can dampen a response to eliminate overshoot. It is introduced as part of the overall PID controller scheme.",
+        "mention_count": 8,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The derivative controller is explained in a dedicated section with multiple mentions, examples, and math approximations, but isn't returned to at the end of the video. It is part of the overall PID explanation, tying back into the primary concept.",
+        "representative_quotes": [
+          "This is the derivative term. We multiply the rate of change in the error by some constant, KD.",
+          "This is known as a PID controller."
+        ]
+      },
+      {
+        "name": "PID Controller Tuning",
+        "description": "Describes the tuning process of PID controllers using a manual method and other tuning schemes, such as the Ziegler-Nichols method.",
+        "mention_count": 5,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "PID tuning is explained in a dedicated section. The tuning process is explained but not performed. The video references a future episode dedicated to the tuning process.",
+        "representative_quotes": [
+          "There are a number of ways to tune a PID controller, but we'll demonstrate a simple manual method here.",
+          "Note there are other tuning schemes, such as the Ziegler-Nichols method"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "Don't worry about understanding this diagram quite yet.",
+        "category": "visual_reference",
+        "position_pct": 2.5,
+        "context": "or machinery. Don't worry about understanding this diagram quite yet. We'll work our way up"
+      },
+      {
+        "phrase": "When you press the gas pedal, the car responds by allowing more air and fuel into the engine.",
+        "category": "action_narration",
+        "position_pct": 16.5,
+        "context": "example. Most cars have an accelerator, also known as a gas pedal. When you press the gas pedal, the car responds by allowing more"
+      },
+      {
+        "phrase": "Press a little, and some air and fuel go into the engine",
+        "category": "action_narration",
+        "position_pct": 17.5,
+        "context": "accelerators are not binary. You can control the amount you depress the pedal with your foot. Press a little, and some air and fuel go into"
+      },
+      {
+        "phrase": "Mash the pedal to the floor, and you'll start dumping a lot of air and fuel into the engine.",
+        "category": "action_narration",
+        "position_pct": 18.0,
+        "context": "accelerate slowly up to some speed. Mash the pedal to the floor, and you'll start dumping a lot of air"
+      },
+      {
+        "phrase": "We read the speedometer or judge speed by looking out the windshield",
+        "category": "visual_reference",
+        "position_pct": 24.5,
+        "context": "system. We read the speedometer or judge speed by looking out the windshield and adjusting the input signal, the accelerometer"
+      },
+      {
+        "phrase": "We could adjust the gas pedal with our foot as needed to maintain our speed, regardless of road variations.",
+        "category": "action_narration",
+        "position_pct": 30.0,
+        "context": "example, our brains acted as the controller. We could adjust the gas pedal with our foot as needed to maintain our speed, regardless"
+      },
+      {
+        "phrase": "We give it a speed and it performs the movement for us.",
+        "category": "action_narration",
+        "position_pct": 35.0,
+        "context": "the speed of our car in kilometers per hour. The plant is still our car or engine. We give it a speed and it performs the movement"
+      },
+      {
+        "phrase": "Don't worry about acceleration and deceleration for this very simple example.",
+        "category": "procedural_instruction",
+        "position_pct": 36.5,
+        "context": "at first. Don't worry about acceleration and deceleration for this very simple example. At 3 kilometers, the error is 7"
+      },
+      {
+        "phrase": "Remember, we want our car speed to match our set point at 100 kilometers per hour,",
+        "category": "visual_reference",
+        "position_pct": 45.0,
+        "context": "distance problem. Remember, we want our car speed to match our set point at 100 kilometers per"
+      },
+      {
+        "phrase": "0 is when we're not touching the pedal, and 10 centimeters is pushing it in as far as it will go.",
+        "category": "action_narration",
+        "position_pct": 45.5,
+        "context": "pedal position can go from 0 to 10 centimeters. 0 is when we're not touching the pedal, and 10 centimeters is pushing it in"
+      },
+      {
+        "phrase": "let off the gas pedal by a few centimeters",
+        "category": "action_narration",
+        "position_pct": 48.0,
+        "context": "At 30 kilometers per hour, our error is 70. Times our constant of 0.1, that means we begin to let off the gas pedal by a few centimeters."
+      },
+      {
+        "phrase": "We keep the accelerator pressed farther than we did with just the P controller.",
+        "category": "action_narration",
+        "position_pct": 55.5,
+        "context": "controller output is 8.7 centimeters. So, we keep the accelerator pressed farther than we did with just the P"
+      },
+      {
+        "phrase": "It says to increase the value of the output to account for that error.",
+        "category": "procedural_instruction",
+        "position_pct": 59.0,
+        "context": "error. However, the integral controller continues to accumulate. It says to increase the value of the output to account"
+      },
+      {
+        "phrase": "So, we press the accelerator a little more to start closing that error.",
+        "category": "action_narration",
+        "position_pct": 59.5,
+        "context": "accelerating. So, we press the accelerator a little more to start closing that error. It might look like the output"
+      },
+      {
+        "phrase": "You set ki and kd to zero and leave kp at some low value.",
+        "category": "procedural_instruction",
+        "position_pct": 78.0,
+        "context": "a system. You set ki and kd to zero and leave kp at some low value. You"
+      },
+      {
+        "phrase": "You increase kp until the output oscillates with some steady state offset.",
+        "category": "procedural_instruction",
+        "position_pct": 78.5,
+        "context": "low value. You increase kp until the output oscillates with some steady state offset. You"
+      },
+      {
+        "phrase": "You then increase ki until you correct the steady state offset, even if that means more oscillation.",
+        "category": "procedural_instruction",
+        "position_pct": 79.0,
+        "context": "state offset. You then increase ki until you correct the steady state offset, even if that means more"
+      },
+      {
+        "phrase": "Just make sure the output does not become unstable and oscillates out of control.",
+        "category": "procedural_instruction",
+        "position_pct": 79.5,
+        "context": "more oscillation. Just make sure the output does not become unstable and oscillates out of control."
+      },
+      {
+        "phrase": "Finally, adjust kd to remove the oscillations.",
+        "category": "procedural_instruction",
+        "position_pct": 80.0,
+        "context": "of control. Finally, adjust kd to remove the oscillations. At the end of the process"
+      },
+      {
+        "phrase": "we will sample from our sensor, and perform some action on our plant.",
+        "category": "action_narration",
+        "position_pct": 84.0,
+        "context": "the interval time. This corresponds to the sample rate, how often we will sample from our sensor, and perform some action"
+      },
+      {
+        "phrase": "This could be, say, adjusting the accelerator by some amount in centimeters.",
+        "category": "action_narration",
+        "position_pct": 87.5,
+        "context": "k constants and add them together. While not shown here, you would use that output value to drive whatever you needed. This could be, say, adjusting the accelerator by some amount"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 21,
+      "by_category": {
+        "visual_reference": 3,
+        "action_narration": 9,
+        "sensory_description": 0,
+        "procedural_instruction": 9
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The video relies heavily on action narration and procedural instructions, particularly using the example of driving a car.  However, there are few visual references, and no sensory descriptions."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"PID Controller Definition\",\n      \"description\": \"Defines what a PID controller is: a control structure used in closed-loop systems to compare input and output to generate a control signal.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The PID controller definition is introduced at the start, exemplified with the car example, revisited when introducing the individual P, I, and D components, and summarized at the end.\",\n      \"representative_quotes\": [\n        \"A PID controller is a control structure that's used in many closed-loop systems.\",\n        \"PID stands for Proportional, Integral, and Derivative.\"\n      ]\n    },\n    {\n      \"name\": \"Proportional (P) Controller\",\n      \"description\": \"Explains the concept of a proportional controller, where the output signal is proportional to the error term, and discusses its limitations, such as steady-state error.\",\n      \"mention_count\": 7,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The proportional controller is explained in a dedicated section with multiple mentions and examples but isn't returned to at the end of the video.\",\n      \"representative_quotes\": [\n        \"This is known as a proportional controller, as the output signal is proportional to the error term.\",\n        \"Many systems, like a cruise control, suffer from this steady state error.\"\n      ]\n    },\n    {\n      \"name\": \"Integral (I) Controller\",\n      \"description\": \"Explains the integral controller and how it is used to eliminate the steady-state error by accumulating error over time. It also explains PI controllers.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The integral controller is explained in a dedicated section with multiple mentions, examples, and math approximations, but isn't returned to at the end of the video. PI controller is mentioned.\",\n      \"representative_quotes\": [\n        \"We then multiply that amount by some new constant, KI, before adding it to the output of our proportional controller.\",\n        \"This is how we get to a PI controller.\"\n      ]\n    },\n    {\n      \"name\": \"Derivative (D) Controller\",\n      \"description\": \"Explains the derivative controller and how it can dampen a response to eliminate overshoot. It is introduced as part of the overall PID controller scheme.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The derivative controller is explained in a dedicated section with multiple mentions, examples, and math approximations, but isn't returned to at the end of the video. It is part of the overall PID explanation, tying back into the primary concept.\",\n      \"representative_quotes\": [\n        \"This is the derivative term. We multiply the rate of change in the error by some constant, KD.\",\n        \"This is known as a PID controller.\"\n      ]\n    },\n    {\n      \"name\": \"PID Controller Tuning\",\n      \"description\": \"Describes the tuning process of PID controllers using a manual method and other tuning schemes, such as the Ziegler-Nichols method.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"PID tuning is explained in a dedicated section. The tuning process is explained but not performed. The video references a future episode dedicated to the tuning process.\",\n      \"representative_quotes\": [\n        \"There are a number of ways to tune a PID controller, but we'll demonstrate a simple manual method here.\",\n        \"Note there are other tuning schemes, such as the Ziegler-Nichols method\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"Don't worry about understanding this diagram quite yet.\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 2.5,\n      \"context\": \"or machinery. Don't worry about understanding this diagram quite yet. We'll work our way up\"\n    },\n    {\n      \"phrase\": \"When you press the gas pedal, the car responds by allowing more air and fuel into the engine.\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 16.5,\n      \"context\": \"example. Most cars have an accelerator, also known as a gas pedal. When you press the gas pedal, the car responds by allowing more\"\n    },\n    {\n      \"phrase\": \"Press a little, and some air and fuel go into the engine\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 17.5,\n      \"context\": \"accelerators are not binary. You can control the amount you depress the pedal with your foot. Press a little, and some air and fuel go into\"\n    },\n    {\n      \"phrase\": \"Mash the pedal to the floor, and you'll start dumping a lot of air and fuel into the engine.\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 18.0,\n      \"context\": \"accelerate slowly up to some speed. Mash the pedal to the floor, and you'll start dumping a lot of air\"\n    },\n    {\n      \"phrase\": \"We read the speedometer or judge speed by looking out the windshield\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 24.5,\n      \"context\": \"system. We read the speedometer or judge speed by looking out the windshield and adjusting the input signal, the accelerometer\"\n    },\n    {\n      \"phrase\": \"We could adjust the gas pedal with our foot as needed to maintain our speed, regardless of road variations.\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 30.0,\n      \"context\": \"example, our brains acted as the controller. We could adjust the gas pedal with our foot as needed to maintain our speed, regardless\"\n    },\n    {\n      \"phrase\": \"We give it a speed and it performs the movement for us.\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 35.0,\n      \"context\": \"the speed of our car in kilometers per hour. The plant is still our car or engine. We give it a speed and it performs the movement\"\n    },\n    {\n      \"phrase\": \"Don't worry about acceleration and deceleration for this very simple example.\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 36.5,\n      \"context\": \"at first. Don't worry about acceleration and deceleration for this very simple example. At 3 kilometers, the error is 7\"\n    },\n    {\n      \"phrase\": \"Remember, we want our car speed to match our set point at 100 kilometers per hour,\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 45.0,\n      \"context\": \"distance problem. Remember, we want our car speed to match our set point at 100 kilometers per\"\n    },\n    {\n      \"phrase\": \"0 is when we're not touching the pedal, and 10 centimeters is pushing it in as far as it will go.\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 45.5,\n      \"context\": \"pedal position can go from 0 to 10 centimeters. 0 is when we're not touching the pedal, and 10 centimeters is pushing it in\"\n    },\n    {\n      \"phrase\": \"let off the gas pedal by a few centimeters\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 48.0,\n      \"context\": \"At 30 kilometers per hour, our error is 70. Times our constant of 0.1, that means we begin to let off the gas pedal by a few centimeters.\"\n    },\n    {\n      \"phrase\": \"We keep the accelerator pressed farther than we did with just the P controller.\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 55.5,\n      \"context\": \"controller output is 8.7 centimeters. So, we keep the accelerator pressed farther than we did with just the P\"\n    },\n    {\n      \"phrase\": \"It says to increase the value of the output to account for that error.\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 59.0,\n      \"context\": \"error. However, the integral controller continues to accumulate. It says to increase the value of the output to account\"\n    },\n    {\n      \"phrase\": \"So, we press the accelerator a little more to start closing that error.\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 59.5,\n      \"context\": \"accelerating. So, we press the accelerator a little more to start closing that error. It might look like the output\"\n    },\n    {\n      \"phrase\": \"You set ki and kd to zero and leave kp at some low value.\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 78.0,\n      \"context\": \"a system. You set ki and kd to zero and leave kp at some low value. You\"\n    },\n    {\n      \"phrase\": \"You increase kp until the output oscillates with some steady state offset.\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 78.5,\n      \"context\": \"low value. You increase kp until the output oscillates with some steady state offset. You\"\n    },\n    {\n      \"phrase\": \"You then increase ki until you correct the steady state offset, even if that means more oscillation.\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 79.0,\n      \"context\": \"state offset. You then increase ki until you correct the steady state offset, even if that means more\"\n    },\n    {\n      \"phrase\": \"Just make sure the output does not become unstable and oscillates out of control.\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 79.5,\n      \"context\": \"more oscillation. Just make sure the output does not become unstable and oscillates out of control.\"\n    },\n    {\n      \"phrase\": \"Finally, adjust kd to remove the oscillations.\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 80.0,\n      \"context\": \"of control. Finally, adjust kd to remove the oscillations. At the end of the process\"\n    },\n    {\n      \"phrase\": \"we will sample from our sensor, and perform some action on our plant.\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 84.0,\n      \"context\": \"the interval time. This corresponds to the sample rate, how often we will sample from our sensor, and perform some action\"\n    },\n    {\n      \"phrase\": \"This could be, say, adjusting the accelerator by some amount in centimeters.\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 87.5,\n      \"context\": \"k constants and add them together. While not shown here, you would use that output value to drive whatever you needed. This could be, say, adjusting the accelerator by some amount\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 21,\n    \"by_category\": {\n      \"visual_reference\": 3,\n      \"action_narration\": 9,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 9\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The video relies heavily on action narration and procedural instructions, particularly using the example of driving a car.  However, there are few visual references, and no sensory descriptions.\"\n  }\n}\n```"
+}

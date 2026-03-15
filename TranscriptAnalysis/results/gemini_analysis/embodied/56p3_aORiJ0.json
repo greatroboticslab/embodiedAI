@@ -1,0 +1,111 @@
+{
+  "video_id": "56p3_aORiJ0",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "MOSFET Selection",
+        "description": "The video primarily focuses on how to choose the appropriate MOSFET for a given application, especially high-power designs, covering key specifications and calculations.",
+        "mention_count": 15,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "This is the central theme. It's introduced early, developed through examples and calculations, and summarized at the end. The whole video is basically about MOSFET selection.",
+        "representative_quotes": [
+          "how to choose and select different mosfets",
+          "selecting a mosfet and designing a circuit for it"
+        ]
+      },
+      {
+        "name": "Gate Resistors",
+        "description": "The video explains the purpose and importance of gate resistors in MOSFET circuits, including limiting current, improving calculation accuracy, and preventing oscillation.",
+        "mention_count": 9,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Gate resistors are discussed in a dedicated section, and the reasons for using them are explained with some detail, even if not returned to later.",
+        "representative_quotes": [
+          "this resistor right here this is what's called a gate resistor",
+          "a gate resistor acts to limit that"
+        ]
+      },
+      {
+        "name": "Logic Level vs. Standard MOSFETs",
+        "description": "The video contrasts logic level MOSFETs with standard power MOSFETs, highlighting the trade-offs in performance (rds on, gate charge) and recommending standard MOSFETs for most high-power applications.",
+        "mention_count": 6,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The difference is explained in a dedicated segment, with multiple points of comparison made. Limited further development.",
+        "representative_quotes": [
+          "logic level mosfets are the way to go",
+          "logic level are a newer type of mosfet"
+        ]
+      },
+      {
+        "name": "MOSFET Datasheet Specs",
+        "description": "The video explains how to read and interpret key MOSFET datasheet specifications, such as rds(on), vdss, id, vgs, and r theta j a, and how to use these in circuit calculations.",
+        "mention_count": 10,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "The video devotes a section to several MOSFET datasheet specifications, illustrating their importance with formulas and example calculations. It is very thoroughly explained.",
+        "representative_quotes": [
+          "other important data sheet specs",
+          "the rds max we don't care about the typical"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "if you look at",
+        "category": "visual_reference",
+        "position_pct": 13.16,
+        "context": "source so if you look at the gate to source voltage"
+      },
+      {
+        "phrase": "right here",
+        "category": "visual_reference",
+        "position_pct": 14.21,
+        "context": "that is right there simple as that so this is"
+      },
+      {
+        "phrase": "add a 10k resistor right here",
+        "category": "action_narration",
+        "position_pct": 40.0,
+        "context": "a default state so if we add a 10k resistor right here that means no matter what"
+      },
+      {
+        "phrase": "making sure you have enough",
+        "category": "procedural_instruction",
+        "position_pct": 95.79,
+        "context": "driver the back emf having sure making sure you have enough bulk capacitance but"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 4,
+      "by_category": {
+        "visual_reference": 2,
+        "action_narration": 1,
+        "sensory_description": 0,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The transcript contains a small number of embodied phrases, with emphasis on visual references and some action narration. There is no reference to sensory information."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"MOSFET Selection\",\n      \"description\": \"The video primarily focuses on how to choose the appropriate MOSFET for a given application, especially high-power designs, covering key specifications and calculations.\",\n      \"mention_count\": 15,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"This is the central theme. It's introduced early, developed through examples and calculations, and summarized at the end. The whole video is basically about MOSFET selection.\",\n      \"representative_quotes\": [\n        \"how to choose and select different mosfets\",\n        \"selecting a mosfet and designing a circuit for it\"\n      ]\n    },\n    {\n      \"name\": \"Gate Resistors\",\n      \"description\": \"The video explains the purpose and importance of gate resistors in MOSFET circuits, including limiting current, improving calculation accuracy, and preventing oscillation.\",\n      \"mention_count\": 9,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Gate resistors are discussed in a dedicated section, and the reasons for using them are explained with some detail, even if not returned to later.\",\n      \"representative_quotes\": [\n        \"this resistor right here this is what's called a gate resistor\",\n        \"a gate resistor acts to limit that\"\n      ]\n    },\n    {\n      \"name\": \"Logic Level vs. Standard MOSFETs\",\n      \"description\": \"The video contrasts logic level MOSFETs with standard power MOSFETs, highlighting the trade-offs in performance (rds on, gate charge) and recommending standard MOSFETs for most high-power applications.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The difference is explained in a dedicated segment, with multiple points of comparison made. Limited further development.\",\n      \"representative_quotes\": [\n        \"logic level mosfets are the way to go\",\n        \"logic level are a newer type of mosfet\"\n      ]\n    },\n    {\n      \"name\": \"MOSFET Datasheet Specs\",\n      \"description\": \"The video explains how to read and interpret key MOSFET datasheet specifications, such as rds(on), vdss, id, vgs, and r theta j a, and how to use these in circuit calculations.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The video devotes a section to several MOSFET datasheet specifications, illustrating their importance with formulas and example calculations. It is very thoroughly explained.\",\n      \"representative_quotes\": [\n        \"other important data sheet specs\",\n        \"the rds max we don't care about the typical\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"if you look at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 13.16,\n      \"context\": \"source so if you look at the gate to source voltage\"\n    },\n    {\n      \"phrase\": \"right here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 14.21,\n      \"context\": \"that is right there simple as that so this is\"\n    },\n    {\n      \"phrase\": \"add a 10k resistor right here\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 40.0,\n      \"context\": \"a default state so if we add a 10k resistor right here that means no matter what\"\n    },\n    {\n      \"phrase\": \"making sure you have enough\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 95.79,\n      \"context\": \"driver the back emf having sure making sure you have enough bulk capacitance but\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 4,\n    \"by_category\": {\n      \"visual_reference\": 2,\n      \"action_narration\": 1,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The transcript contains a small number of embodied phrases, with emphasis on visual references and some action narration. There is no reference to sensory information.\"\n  }\n}\n```"
+}

@@ -1,0 +1,107 @@
+{
+  "video_id": "DQOt-m7rg80",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Dual-Switch Arming",
+        "description": "Setting up arming on a drone using two switches on the transmitter instead of just one, providing an extra layer of safety and preventing accidental arming.",
+        "mention_count": 6,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "The video is dedicated to dual switch arming. It introduces the concept, explains how to configure it in the transmitter and Betaflight, and shows a demonstration.",
+        "representative_quotes": [
+          "arming on multiple switches",
+          "how to actually set that up"
+        ]
+      },
+      {
+        "name": "Transmitter Configuration",
+        "description": "Modifying the transmitter settings to assign two switches to the same channel, effectively creating multiple positions on a single channel to control different functions.",
+        "mention_count": 7,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The video spends a dedicated portion going through how to configure aux channels in the transmitter.",
+        "representative_quotes": [
+          "change your aux channels",
+          "switch a plus b"
+        ]
+      },
+      {
+        "name": "Betaflight Configuration",
+        "description": "Configuring the modes tab in Betaflight to recognize the different positions created by the dual switches on the transmitter, and assigning functions like arming and beeper to those positions.",
+        "mention_count": 7,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The video is devoted to how to set up the dual switch arming in betaflight.",
+        "representative_quotes": [
+          "set it up in beta flight",
+          "modes tab"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "you can see here",
+        "category": "visual_reference",
+        "position_pct": 20.27,
+        "context": "let me show you this let's go into the display and you can see here this is channel five this"
+      },
+      {
+        "phrase": "we'll see what that looks like in beta flight",
+        "category": "visual_reference",
+        "position_pct": 46.58,
+        "context": "so those are the only three states that we're really looking for so let's go ahead over to beta flight and we'll see what that looks like"
+      },
+      {
+        "phrase": "I'm gonna plug in the quad",
+        "category": "action_narration",
+        "position_pct": 48.63,
+        "context": "plug in so here let me plug in I'm gonna plug in the quad there we go"
+      },
+      {
+        "phrase": "you'll notice that if I flip switch one",
+        "category": "visual_reference",
+        "position_pct": 56.16,
+        "context": "connect up and you can see if we go over to the receiver tab here that you'll notice that if I flip switch"
+      },
+      {
+        "phrase": "slide up",
+        "category": "procedural_instruction",
+        "position_pct": 69.86,
+        "context": "that's 1500 there so we're just gonna slide up and why isn't it letting"
+      },
+      {
+        "phrase": "save",
+        "category": "procedural_instruction",
+        "position_pct": 72.6,
+        "context": "fine all right so save we are armed yeah we should"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 6,
+      "by_category": {
+        "visual_reference": 2,
+        "action_narration": 1,
+        "sensory_description": 0,
+        "procedural_instruction": 2
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The transcript contains some embodied language, but it is infrequent and not particularly vivid. Most of the references are visual and about direct action."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Dual-Switch Arming\",\n      \"description\": \"Setting up arming on a drone using two switches on the transmitter instead of just one, providing an extra layer of safety and preventing accidental arming.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The video is dedicated to dual switch arming. It introduces the concept, explains how to configure it in the transmitter and Betaflight, and shows a demonstration.\",\n      \"representative_quotes\": [\n        \"arming on multiple switches\",\n        \"how to actually set that up\"\n      ]\n    },\n    {\n      \"name\": \"Transmitter Configuration\",\n      \"description\": \"Modifying the transmitter settings to assign two switches to the same channel, effectively creating multiple positions on a single channel to control different functions.\",\n      \"mention_count\": 7,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The video spends a dedicated portion going through how to configure aux channels in the transmitter.\",\n      \"representative_quotes\": [\n        \"change your aux channels\",\n        \"switch a plus b\"\n      ]\n    },\n    {\n      \"name\": \"Betaflight Configuration\",\n      \"description\": \"Configuring the modes tab in Betaflight to recognize the different positions created by the dual switches on the transmitter, and assigning functions like arming and beeper to those positions.\",\n      \"mention_count\": 7,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The video is devoted to how to set up the dual switch arming in betaflight.\",\n      \"representative_quotes\": [\n        \"set it up in beta flight\",\n        \"modes tab\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"you can see here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 20.27,\n      \"context\": \"let me show you this let's go into the display and you can see here this is channel five this\"\n    },\n    {\n      \"phrase\": \"we'll see what that looks like in beta flight\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 46.58,\n      \"context\": \"so those are the only three states that we're really looking for so let's go ahead over to beta flight and we'll see what that looks like\"\n    },\n    {\n      \"phrase\": \"I'm gonna plug in the quad\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 48.63,\n      \"context\": \"plug in so here let me plug in I'm gonna plug in the quad there we go\"\n    },\n    {\n      \"phrase\": \"you'll notice that if I flip switch one\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 56.16,\n      \"context\": \"connect up and you can see if we go over to the receiver tab here that you'll notice that if I flip switch\"\n    },\n    {\n      \"phrase\": \"slide up\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 69.86,\n      \"context\": \"that's 1500 there so we're just gonna slide up and why isn't it letting\"\n    },\n    {\n      \"phrase\": \"save\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 72.6,\n      \"context\": \"fine all right so save we are armed yeah we should\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 6,\n    \"by_category\": {\n      \"visual_reference\": 2,\n      \"action_narration\": 1,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 2\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The transcript contains some embodied language, but it is infrequent and not particularly vivid. Most of the references are visual and about direct action.\"\n  }\n}\n```"
+}

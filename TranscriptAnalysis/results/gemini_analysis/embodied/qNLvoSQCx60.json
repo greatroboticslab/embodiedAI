@@ -1,0 +1,91 @@
+{
+  "video_id": "qNLvoSQCx60",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "I2S Communication",
+        "description": "This keypoint covers the Inter-IC Sound (I2S) serial bus interface, explaining its purpose, how it works for audio data transmission, and its advantages over alternatives like R2R DAC or I2C for audio applications.",
+        "mention_count": 15,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "I2S is the core focus. The video introduces it, explains its function in detail, demonstrates its use with both microphone and amplifier boards, and reinforces its usefulness at the end.",
+        "representative_quotes": [
+          "So in this video we will find out what I2S is and why it is pretty handy to use.",
+          "I2S stands for Inter-IC Sound and it is an electrical serial bus interface used for obviously connecting digital audio devices."
+        ]
+      },
+      {
+        "name": "Microphone and Amplifier Board Implementation",
+        "description": "This keypoint covers the practical implementation of I2S using a microphone breakout board (INMP441) and an amplifier breakout board (MAX98357A) with an ESP32, including soldering, wiring, and basic code setup to read data from the microphone and play audio through the amplifier.",
+        "mention_count": 8,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The video dedicates a substantial portion to demonstrating the I2S implementation, specifically with the microphone and amplifier. While important, it serves as a practical illustration of the broader I2S concept.",
+        "representative_quotes": [
+          "For first practical example however let's not start off with the amplifier board but instead with this INMP441 microphone breakout board.",
+          "Instead I soldered wires to my I2S amplifier board as well as the microSD card board and hooked it all up to the ESP32 according to this wiring diagram."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "sounds like this",
+        "category": "sensory_description",
+        "position_pct": 2.27,
+        "context": "clip which sounds like this. Stay creative! Now of course"
+      },
+      {
+        "phrase": "First off we can see",
+        "category": "visual_reference",
+        "position_pct": 52.27,
+        "context": "at the oscilloscope. First off we can see that the word select line"
+      },
+      {
+        "phrase": "soldered wires to",
+        "category": "action_narration",
+        "position_pct": 34.09,
+        "context": "So as a first test I soldered wires to the 5 important pins"
+      },
+      {
+        "phrase": "connecting a speaker",
+        "category": "action_narration",
+        "position_pct": 81.82,
+        "context": "uploading the code, connecting a speaker and inserting the microSD card"
+      },
+      {
+        "phrase": "tapping it",
+        "category": "action_narration",
+        "position_pct": 47.73,
+        "context": "by whistling into the microphone or tapping it the Serial Monitor or even"
+      },
+      {
+        "phrase": "hooked it all up",
+        "category": "action_narration",
+        "position_pct": 77.27,
+        "context": "board as well as the microSD card board and hooked it all up to the"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 6,
+      "by_category": {
+        "visual_reference": 1,
+        "action_narration": 4,
+        "sensory_description": 1,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The transcript uses some action narration, but lacks procedural instructions and has limited visual references and sensory description. The embodied language is not very prominent."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"I2S Communication\",\n      \"description\": \"This keypoint covers the Inter-IC Sound (I2S) serial bus interface, explaining its purpose, how it works for audio data transmission, and its advantages over alternatives like R2R DAC or I2C for audio applications.\",\n      \"mention_count\": 15,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"I2S is the core focus. The video introduces it, explains its function in detail, demonstrates its use with both microphone and amplifier boards, and reinforces its usefulness at the end.\",\n      \"representative_quotes\": [\n        \"So in this video we will find out what I2S is and why it is pretty handy to use.\",\n        \"I2S stands for Inter-IC Sound and it is an electrical serial bus interface used for obviously connecting digital audio devices.\"\n      ]\n    },\n    {\n      \"name\": \"Microphone and Amplifier Board Implementation\",\n      \"description\": \"This keypoint covers the practical implementation of I2S using a microphone breakout board (INMP441) and an amplifier breakout board (MAX98357A) with an ESP32, including soldering, wiring, and basic code setup to read data from the microphone and play audio through the amplifier.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The video dedicates a substantial portion to demonstrating the I2S implementation, specifically with the microphone and amplifier. While important, it serves as a practical illustration of the broader I2S concept.\",\n      \"representative_quotes\": [\n        \"For first practical example however let's not start off with the amplifier board but instead with this INMP441 microphone breakout board.\",\n        \"Instead I soldered wires to my I2S amplifier board as well as the microSD card board and hooked it all up to the ESP32 according to this wiring diagram.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"sounds like this\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 2.27,\n      \"context\": \"clip which sounds like this. Stay creative! Now of course\"\n    },\n    {\n      \"phrase\": \"First off we can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 52.27,\n      \"context\": \"at the oscilloscope. First off we can see that the word select line\"\n    },\n    {\n      \"phrase\": \"soldered wires to\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 34.09,\n      \"context\": \"So as a first test I soldered wires to the 5 important pins\"\n    },\n    {\n      \"phrase\": \"connecting a speaker\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 81.82,\n      \"context\": \"uploading the code, connecting a speaker and inserting the microSD card\"\n    },\n    {\n      \"phrase\": \"tapping it\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 47.73,\n      \"context\": \"by whistling into the microphone or tapping it the Serial Monitor or even\"\n    },\n    {\n      \"phrase\": \"hooked it all up\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 77.27,\n      \"context\": \"board as well as the microSD card board and hooked it all up to the\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 6,\n    \"by_category\": {\n      \"visual_reference\": 1,\n      \"action_narration\": 4,\n      \"sensory_description\": 1,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The transcript uses some action narration, but lacks procedural instructions and has limited visual references and sensory description. The embodied language is not very prominent.\"\n  }\n}\n```"
+}

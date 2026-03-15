@@ -1,0 +1,92 @@
+{
+  "video_id": "AN3yxIBAxTA",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "PID Control",
+        "description": "The video focuses on PID (Proportional, Integral, Derivative) control as a feedback mechanism for stabilizing a one-axis system, which is analogous to drone flight control.  It explains the error calculation, the proportional, integral, and derivative constants, and how they contribute to motor control.",
+        "mention_count": 25,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "PID control is the central concept, thoroughly explained with examples, code snippets, and adjustments to the constants for optimal performance, and reinforced at the end when the code is demonstrated.",
+        "representative_quotes": [
+          "Ok, so let's understand what PID control is.",
+          "Now that I've explained you how each part of the PID control works"
+        ]
+      },
+      {
+        "name": "MPU6050 IMU",
+        "description": "The video explains how to use the MPU6050 Inertial Measurement Unit (IMU) to obtain gyro and accelerometer data, which is then filtered and used to calculate the real inclination angle of the system. This angle serves as feedback for the PID control loop.",
+        "mention_count": 12,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The IMU is a crucial component, covered in a dedicated section explaining its data output and filtering. It's discussed throughout the video in relation to the feedback loop but not explicitly reinforced at the end.",
+        "representative_quotes": [
+          "To control the inclination angle, the system uses the MPU6050 gyro and accelerometer",
+          "If we study the NPU6050 datasheet and the register map"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "I've soldered",
+        "category": "action_narration",
+        "position_pct": 9.3,
+        "context": "schematic. I've soldered the ESCs to each motor and make sure that"
+      },
+      {
+        "phrase": "make sure that",
+        "category": "procedural_instruction",
+        "position_pct": 9.3,
+        "context": "each motor and make sure that the motors will spin in these directions"
+      },
+      {
+        "phrase": "screw in place",
+        "category": "action_narration",
+        "position_pct": 7.9,
+        "context": "support to a wood base. The only thing left is to screw in place"
+      },
+      {
+        "phrase": "as you can see",
+        "category": "visual_reference",
+        "position_pct": 27.8,
+        "context": "that you could find. As you can see, we have our process that in"
+      },
+      {
+        "phrase": "hold it steady",
+        "category": "procedural_instruction",
+        "position_pct": 57.9,
+        "context": "set it to low and it won't affect. To cancel both effects I'll"
+      },
+      {
+        "phrase": "Now take a look at",
+        "category": "visual_reference",
+        "position_pct": 64.6,
+        "context": "values will definitely change. Ok, so let's now take a look at the code that I've"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 6,
+      "by_category": {
+        "visual_reference": 2,
+        "action_narration": 2,
+        "sensory_description": 0,
+        "procedural_instruction": 2
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The transcript includes some phrases related to action narration (soldering, screwing) and visual reference (as you can see), but lacks any phrases describing sensory experiences. The ratio of embodied phrases to total words is quite low."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"PID Control\",\n      \"description\": \"The video focuses on PID (Proportional, Integral, Derivative) control as a feedback mechanism for stabilizing a one-axis system, which is analogous to drone flight control.  It explains the error calculation, the proportional, integral, and derivative constants, and how they contribute to motor control.\",\n      \"mention_count\": 25,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"PID control is the central concept, thoroughly explained with examples, code snippets, and adjustments to the constants for optimal performance, and reinforced at the end when the code is demonstrated.\",\n      \"representative_quotes\": [\n        \"Ok, so let's understand what PID control is.\",\n        \"Now that I've explained you how each part of the PID control works\"\n      ]\n    },\n    {\n      \"name\": \"MPU6050 IMU\",\n      \"description\": \"The video explains how to use the MPU6050 Inertial Measurement Unit (IMU) to obtain gyro and accelerometer data, which is then filtered and used to calculate the real inclination angle of the system. This angle serves as feedback for the PID control loop.\",\n      \"mention_count\": 12,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The IMU is a crucial component, covered in a dedicated section explaining its data output and filtering. It's discussed throughout the video in relation to the feedback loop but not explicitly reinforced at the end.\",\n      \"representative_quotes\": [\n        \"To control the inclination angle, the system uses the MPU6050 gyro and accelerometer\",\n        \"If we study the NPU6050 datasheet and the register map\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"I've soldered\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 9.3,\n      \"context\": \"schematic. I've soldered the ESCs to each motor and make sure that\"\n    },\n    {\n      \"phrase\": \"make sure that\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 9.3,\n      \"context\": \"each motor and make sure that the motors will spin in these directions\"\n    },\n    {\n      \"phrase\": \"screw in place\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 7.9,\n      \"context\": \"support to a wood base. The only thing left is to screw in place\"\n    },\n    {\n      \"phrase\": \"as you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 27.8,\n      \"context\": \"that you could find. As you can see, we have our process that in\"\n    },\n    {\n      \"phrase\": \"hold it steady\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 57.9,\n      \"context\": \"set it to low and it won't affect. To cancel both effects I'll\"\n    },\n    {\n      \"phrase\": \"Now take a look at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 64.6,\n      \"context\": \"values will definitely change. Ok, so let's now take a look at the code that I've\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 6,\n    \"by_category\": {\n      \"visual_reference\": 2,\n      \"action_narration\": 2,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 2\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The transcript includes some phrases related to action narration (soldering, screwing) and visual reference (as you can see), but lacks any phrases describing sensory experiences. The ratio of embodied phrases to total words is quite low.\"\n  }\n}\n```"
+}

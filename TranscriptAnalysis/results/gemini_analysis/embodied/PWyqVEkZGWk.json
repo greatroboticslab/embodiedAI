@@ -1,0 +1,102 @@
+{
+  "video_id": "PWyqVEkZGWk",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "ESC protocol setup",
+        "description": "Configuring the electronic speed controller (ESC) protocol in Betaflight, which involves selecting the correct protocol (e.g., DShot600) to ensure proper communication between the flight controller and ESCs.",
+        "mention_count": 6,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section, with multiple mentions and clear instructions on finding the correct protocol.",
+        "representative_quotes": [
+          "we're going to cover how to set up the ESC protocol, which is not very hard.",
+          "your ESC protocol has not been set"
+        ]
+      },
+      {
+        "name": "Motor order (motor mapping)",
+        "description": "Determining and configuring the correct motor order or mapping in Betaflight, ensuring that each motor corresponds to its intended position on the quadcopter frame.",
+        "mention_count": 9,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "Introduced early, developed in a dedicated section with a practical demonstration, and revisited to confirm success.",
+        "representative_quotes": [
+          "we're going to cover motor order, or used to be called motor mapping",
+          "we have the motor order taken care of"
+        ]
+      },
+      {
+        "name": "Motor direction",
+        "description": "Setting the correct motor direction (props in vs. props out) in Betaflight to achieve desired flight characteristics and prevent issues like camera lens obstruction.",
+        "mention_count": 12,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "Introduced early, has a dedicated section explaining prop directionality, and includes setup in Betaflight. Motor direction is the last topic before summary.",
+        "representative_quotes": [
+          "we're going to cover... motor direction. And that's going to be how it spins.",
+          "Now at this point, we need to decide if we want to have our propellers spinning in or outward."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "look at the in the little section that says mixer",
+        "category": "visual_reference",
+        "position_pct": 37.9,
+        "context": "Now, if we look at the in the little section that says mixer, we have a little diagram of the quadcopter"
+      },
+      {
+        "phrase": "take them off completely",
+        "category": "procedural_instruction",
+        "position_pct": 39.2,
+        "context": "plug in a battery, make sure your propellers are not connected to your motors, like take them off completely. Okay, because we have"
+      },
+      {
+        "phrase": "we can slide the motors",
+        "category": "action_narration",
+        "position_pct": 41.7,
+        "context": "going to give us these motor sliders right here. And we can slide the motors. And so we have motor 123"
+      },
+      {
+        "phrase": "spin these motors here",
+        "category": "action_narration",
+        "position_pct": 42.1,
+        "context": "So the goal is when we spin these motors here, I'm just going to spin one, we want that motor to"
+      },
+      {
+        "phrase": "I can just feel it",
+        "category": "sensory_description",
+        "position_pct": 73.4,
+        "context": "we're going to start with motor one, we're going to spin it up. And it is spinning, I can just feel it with you know, feel the motor"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 5,
+      "by_category": {
+        "visual_reference": 1,
+        "action_narration": 2,
+        "sensory_description": 1,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The transcript includes a few instances of visual references, action narrations, and sensory descriptions, but they are not very frequent. Procedural instruction also appears only once."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"ESC protocol setup\",\n      \"description\": \"Configuring the electronic speed controller (ESC) protocol in Betaflight, which involves selecting the correct protocol (e.g., DShot600) to ensure proper communication between the flight controller and ESCs.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section, with multiple mentions and clear instructions on finding the correct protocol.\",\n      \"representative_quotes\": [\n        \"we're going to cover how to set up the ESC protocol, which is not very hard.\",\n        \"your ESC protocol has not been set\"\n      ]\n    },\n    {\n      \"name\": \"Motor order (motor mapping)\",\n      \"description\": \"Determining and configuring the correct motor order or mapping in Betaflight, ensuring that each motor corresponds to its intended position on the quadcopter frame.\",\n      \"mention_count\": 9,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Introduced early, developed in a dedicated section with a practical demonstration, and revisited to confirm success.\",\n      \"representative_quotes\": [\n        \"we're going to cover motor order, or used to be called motor mapping\",\n        \"we have the motor order taken care of\"\n      ]\n    },\n    {\n      \"name\": \"Motor direction\",\n      \"description\": \"Setting the correct motor direction (props in vs. props out) in Betaflight to achieve desired flight characteristics and prevent issues like camera lens obstruction.\",\n      \"mention_count\": 12,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Introduced early, has a dedicated section explaining prop directionality, and includes setup in Betaflight. Motor direction is the last topic before summary.\",\n      \"representative_quotes\": [\n        \"we're going to cover... motor direction. And that's going to be how it spins.\",\n        \"Now at this point, we need to decide if we want to have our propellers spinning in or outward.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"look at the in the little section that says mixer\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 37.9,\n      \"context\": \"Now, if we look at the in the little section that says mixer, we have a little diagram of the quadcopter\"\n    },\n    {\n      \"phrase\": \"take them off completely\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 39.2,\n      \"context\": \"plug in a battery, make sure your propellers are not connected to your motors, like take them off completely. Okay, because we have\"\n    },\n    {\n      \"phrase\": \"we can slide the motors\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 41.7,\n      \"context\": \"going to give us these motor sliders right here. And we can slide the motors. And so we have motor 123\"\n    },\n    {\n      \"phrase\": \"spin these motors here\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 42.1,\n      \"context\": \"So the goal is when we spin these motors here, I'm just going to spin one, we want that motor to\"\n    },\n    {\n      \"phrase\": \"I can just feel it\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 73.4,\n      \"context\": \"we're going to start with motor one, we're going to spin it up. And it is spinning, I can just feel it with you know, feel the motor\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 5,\n    \"by_category\": {\n      \"visual_reference\": 1,\n      \"action_narration\": 2,\n      \"sensory_description\": 1,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The transcript includes a few instances of visual references, action narrations, and sensory descriptions, but they are not very frequent. Procedural instruction also appears only once.\"\n  }\n}\n```"
+}

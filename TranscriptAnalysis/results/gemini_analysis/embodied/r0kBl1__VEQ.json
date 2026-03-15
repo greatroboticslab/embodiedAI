@@ -1,0 +1,121 @@
+{
+  "video_id": "r0kBl1__VEQ",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "F7 Flight Controller",
+        "description": "The video introduces and explores the features of the Team Motor F7 flight controller, emphasizing its capabilities, including the F722 processor and pit mode. It also points out design choices like the absence of a 10-volt regulator and the presence of pads for a second gyro that was removed.",
+        "mention_count": 10,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "The flight controller is the central subject, discussed throughout, with its features and design choices explored in detail.",
+        "representative_quotes": [
+          "The flight controller is pretty interesting.",
+          "So now we're going to take a look at the flight controller."
+        ]
+      },
+      {
+        "name": "Connecting Peripherals",
+        "description": "The video provides detailed instructions on connecting peripherals like cameras, video transmitters, and receivers to the flight controller, including considerations for voltage, signal protocols, and potential conflicts between features.",
+        "mention_count": 9,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "A substantial portion of the video is dedicated to explaining how to connect different components, covering multiple scenarios and potential issues.",
+        "representative_quotes": [
+          "So now let's cover how we would go about connecting him.",
+          "Next, let's cover the receiver. How would we connect our receiver?"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "looking at",
+        "category": "visual_reference",
+        "position_pct": 2.5,
+        "context": "Today's video, we're going to be looking at a new stack from"
+      },
+      {
+        "phrase": "as you can see",
+        "category": "visual_reference",
+        "position_pct": 38.0,
+        "context": "board layout. And what we can see is there's some change of"
+      },
+      {
+        "phrase": "Let's put this to the side",
+        "category": "action_narration",
+        "position_pct": 8.0,
+        "context": "So let's put this to the side. Then we get to the"
+      },
+      {
+        "phrase": "let's take a closer look",
+        "category": "visual_reference",
+        "position_pct": 21.0,
+        "context": "So let's take a closer look at the flight controller. And"
+      },
+      {
+        "phrase": "blow this whole thing up",
+        "category": "action_narration",
+        "position_pct": 18.0,
+        "context": "mind. You could blow this whole thing up if you put"
+      },
+      {
+        "phrase": "The link's down below",
+        "category": "visual_reference",
+        "position_pct": 43.0,
+        "context": "the documentation. The link's down below. You can go ahead"
+      },
+      {
+        "phrase": "if you plug it like that",
+        "category": "action_narration",
+        "position_pct": 46.0,
+        "context": "Keep that in mind. However, if you plug it like that, the"
+      },
+      {
+        "phrase": "take your red wire, put it",
+        "category": "action_narration",
+        "position_pct": 55.0,
+        "context": "did, then you could just take your red wire, put it to"
+      },
+      {
+        "phrase": "take a closer look here",
+        "category": "visual_reference",
+        "position_pct": 59.0,
+        "context": "PPM, you just take it right there and you're good"
+      },
+      {
+        "phrase": "take a look at the pads",
+        "category": "visual_reference",
+        "position_pct": 82.0,
+        "context": "If you have to solder, it's very simple. Everything is really well labeled here. For example, here's the RX4. This would be for the ESC telemetry. Then the current wire, motors 1, 2, 3, and 4. And then we have positive. This would be battery voltage. So up to 6S. So keep that in mind, not 5 volt. This would be battery voltage. And then this would be a ground here. And here we have another ground 5 volt buzzer and LED. These are separate here. These are, if you wanted to connect a buzzer and or LEDs, this is where you'd connect them right here. So for example, for connecting a buzzer, I'd put the buzzer positive on 5 volt and the negative on buzz minus. It's very important because the buzzers get initialized through the ground here. LED, kind of the same thing, but I wouldn't use the buzzer ground. I would give it ground, which is a black wire. Red wire is the 5 volt. And then the LED signal here. This is the signal that's going to change the color on the LED. So keep that in mind."
+      },
+      {
+        "phrase": "Let me know what you guys think down in the comment section",
+        "category": "visual_reference",
+        "position_pct": 96.0,
+        "context": "Everything here is linked down below. Let me know what you guys think down in"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 11,
+      "by_category": {
+        "visual_reference": 5,
+        "action_narration": 5,
+        "sensory_description": 0,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The transcript contains a decent amount of embodied phrases, primarily focusing on visual references and action narration related to the hardware setup and connections. There is only one instance of procedural instruction and no sensory description."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"F7 Flight Controller\",\n      \"description\": \"The video introduces and explores the features of the Team Motor F7 flight controller, emphasizing its capabilities, including the F722 processor and pit mode. It also points out design choices like the absence of a 10-volt regulator and the presence of pads for a second gyro that was removed.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The flight controller is the central subject, discussed throughout, with its features and design choices explored in detail.\",\n      \"representative_quotes\": [\n        \"The flight controller is pretty interesting.\",\n        \"So now we're going to take a look at the flight controller.\"\n      ]\n    },\n    {\n      \"name\": \"Connecting Peripherals\",\n      \"description\": \"The video provides detailed instructions on connecting peripherals like cameras, video transmitters, and receivers to the flight controller, including considerations for voltage, signal protocols, and potential conflicts between features.\",\n      \"mention_count\": 9,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"A substantial portion of the video is dedicated to explaining how to connect different components, covering multiple scenarios and potential issues.\",\n      \"representative_quotes\": [\n        \"So now let's cover how we would go about connecting him.\",\n        \"Next, let's cover the receiver. How would we connect our receiver?\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"looking at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 2.5,\n      \"context\": \"Today's video, we're going to be looking at a new stack from\"\n    },\n    {\n      \"phrase\": \"as you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 38.0,\n      \"context\": \"board layout. And what we can see is there's some change of\"\n    },\n    {\n      \"phrase\": \"Let's put this to the side\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 8.0,\n      \"context\": \"So let's put this to the side. Then we get to the\"\n    },\n    {\n      \"phrase\": \"let's take a closer look\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 21.0,\n      \"context\": \"So let's take a closer look at the flight controller. And\"\n    },\n    {\n      \"phrase\": \"blow this whole thing up\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 18.0,\n      \"context\": \"mind. You could blow this whole thing up if you put\"\n    },\n    {\n      \"phrase\": \"The link's down below\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 43.0,\n      \"context\": \"the documentation. The link's down below. You can go ahead\"\n    },\n    {\n      \"phrase\": \"if you plug it like that\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 46.0,\n      \"context\": \"Keep that in mind. However, if you plug it like that, the\"\n    },\n    {\n      \"phrase\": \"take your red wire, put it\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 55.0,\n      \"context\": \"did, then you could just take your red wire, put it to\"\n    },\n    {\n      \"phrase\": \"take a closer look here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 59.0,\n      \"context\": \"PPM, you just take it right there and you're good\"\n    },\n    {\n      \"phrase\": \"take a look at the pads\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 82.0,\n      \"context\": \"If you have to solder, it's very simple. Everything is really well labeled here. For example, here's the RX4. This would be for the ESC telemetry. Then the current wire, motors 1, 2, 3, and 4. And then we have positive. This would be battery voltage. So up to 6S. So keep that in mind, not 5 volt. This would be battery voltage. And then this would be a ground here. And here we have another ground 5 volt buzzer and LED. These are separate here. These are, if you wanted to connect a buzzer and or LEDs, this is where you'd connect them right here. So for example, for connecting a buzzer, I'd put the buzzer positive on 5 volt and the negative on buzz minus. It's very important because the buzzers get initialized through the ground here. LED, kind of the same thing, but I wouldn't use the buzzer ground. I would give it ground, which is a black wire. Red wire is the 5 volt. And then the LED signal here. This is the signal that's going to change the color on the LED. So keep that in mind.\"\n    },\n    {\n      \"phrase\": \"Let me know what you guys think down in the comment section\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 96.0,\n      \"context\": \"Everything here is linked down below. Let me know what you guys think down in\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 11,\n    \"by_category\": {\n      \"visual_reference\": 5,\n      \"action_narration\": 5,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The transcript contains a decent amount of embodied phrases, primarily focusing on visual references and action narration related to the hardware setup and connections. There is only one instance of procedural instruction and no sensory description.\"\n  }\n}\n```"
+}

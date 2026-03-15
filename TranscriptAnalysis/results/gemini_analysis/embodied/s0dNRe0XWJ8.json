@@ -1,0 +1,195 @@
+{
+  "video_id": "s0dNRe0XWJ8",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Mechanical Soundness",
+        "description": "The video emphasizes ensuring the quadcopter is mechanically sound before PID tuning, checking for issues like cracks, loose screws, and motor problems. This is presented as foundational.",
+        "mention_count": 6,
+        "positions": [
+          "early",
+          "early",
+          "early"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "Covered in a dedicated section early in the video, revisited multiple times, and presented as a prerequisite for effective PID tuning.",
+        "representative_quotes": [
+          "make sure your aircraft is mechanically sound",
+          "If your quadcopter is not mechanically sound, then you can't really start PID tuning"
+        ]
+      },
+      {
+        "name": "PID Tuning Methodology (Chris Rosser's)",
+        "description": "The video outlines a specific PID tuning approach based on Chris Rosser's method, involving setting filters, maximizing D gain, and then balancing P gain.  It contrasts this with other methods.",
+        "mention_count": 11,
+        "positions": [
+          "early",
+          "mid",
+          "mid",
+          "mid",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "Presented as the core technique of the video, with multiple steps and explanations. The video sets out to demonstrate this methodology.",
+        "representative_quotes": [
+          "Chris's tutorials have really laid out PID tuning",
+          "Chris says to turn off the gyro low-pass filters",
+          "Chris gives a range of recommended D gains"
+        ]
+      },
+      {
+        "name": "Filter Tuning",
+        "description": "The video discusses filter tuning, with specific suggestions based on black box log analysis and Chris Rosser's recommendations. It addresses the use of dynamic notch filters and static bi-quad filters.",
+        "mention_count": 6,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section, including specific filter values and reasoning. Mentioned multiple times in relation to PID tuning.",
+        "representative_quotes": [
+          "how to tune filters in Betaflight",
+          "implement these filter suggestions as shown here"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "see how I got there",
+        "category": "visual_reference",
+        "position_pct": 7.0,
+        "context": "That's a pretty good PID tune. Let's see how I got there. The very"
+      },
+      {
+        "phrase": "check these things",
+        "category": "procedural_instruction",
+        "position_pct": 15.0,
+        "context": "Chris has some suggestions for specific things that you want to check. These are"
+      },
+      {
+        "phrase": "look at it",
+        "category": "visual_reference",
+        "position_pct": 18.0,
+        "context": "you just got to kind of just look at it and make sure you don't"
+      },
+      {
+        "phrase": "fly the quad",
+        "category": "action_narration",
+        "position_pct": 20.0,
+        "context": "The next thing Chris advises is to fly the quad on default PIDs and"
+      },
+      {
+        "phrase": "fly your quad",
+        "category": "action_narration",
+        "position_pct": 22.0,
+        "context": "You're going to want to fly your quad in the same setup, in the"
+      },
+      {
+        "phrase": "tuning flight",
+        "category": "action_narration",
+        "position_pct": 31.0,
+        "context": "As we do the tuning flight, we're going to make sure that"
+      },
+      {
+        "phrase": "motors don't sound completely smooth",
+        "category": "sensory_description",
+        "position_pct": 34.0,
+        "context": "Now at this point, if your motors don't sound completely smooth on"
+      },
+      {
+        "phrase": "open up this black box log",
+        "category": "action_narration",
+        "position_pct": 38.0,
+        "context": "So let's open up this black box log in black box viewer and"
+      },
+      {
+        "phrase": "click there",
+        "category": "action_narration",
+        "position_pct": 40.0,
+        "context": "scaled. And we're going to click there. And that brings up this. We're"
+      },
+      {
+        "phrase": "see it a little better",
+        "category": "visual_reference",
+        "position_pct": 41.0,
+        "context": "turn that up a little bit so we can see it a little better. We"
+      },
+      {
+        "phrase": "we can see a little more resonance",
+        "category": "visual_reference",
+        "position_pct": 43.0,
+        "context": "On pitch, we can see a little more resonance. But nothing too"
+      },
+      {
+        "phrase": "as shown here",
+        "category": "visual_reference",
+        "position_pct": 46.0,
+        "context": "filter suggestions as shown here, and then we'll move on. We'll"
+      },
+      {
+        "phrase": "go ahead and save that",
+        "category": "action_narration",
+        "position_pct": 48.0,
+        "context": "And we'll go ahead and save that. But the next thing Chris"
+      },
+      {
+        "phrase": "listen for signs",
+        "category": "sensory_description",
+        "position_pct": 64.0,
+        "context": "fly and we're just going to try to make the motors as hot as possible by doing sharp turns, by doing full throttle punches, and we're going to listen for signs of runaway, signs of warbling,"
+      },
+      {
+        "phrase": "feel for hot motors",
+        "category": "sensory_description",
+        "position_pct": 64.0,
+        "context": "signs of warbling, oscillation, unsmooth motors, or we're going to feel for hot motors at the end of each"
+      },
+      {
+        "phrase": "dialing that back down",
+        "category": "action_narration",
+        "position_pct": 72.0,
+        "context": "Motors still aren't super hot, but that's too far. Let's try dialing that back down a little bit. Here on"
+      },
+      {
+        "phrase": "see those little hitches",
+        "category": "visual_reference",
+        "position_pct": 73.0,
+        "context": "Little hitches there. You see those little hitches? Yeah, so that's too"
+      },
+      {
+        "phrase": "see if 1.4 clears that up",
+        "category": "visual_reference",
+        "position_pct": 75.0,
+        "context": "to do. That's also stuff. We're going to take that down to 1.4, and we're going to see if 1.4 clears that up. Also,"
+      },
+      {
+        "phrase": "see?",
+        "category": "visual_reference",
+        "position_pct": 79.0,
+        "context": "No, see? No. See? Already... I feel like we're flying really"
+      },
+      {
+        "phrase": "see that there's no hitches here",
+        "category": "visual_reference",
+        "position_pct": 81.0,
+        "context": "It's still pretty smooth. Like, you can see that there's no hitches here. Even if"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 20,
+      "by_category": {
+        "visual_reference": 9,
+        "action_narration": 8,
+        "sensory_description": 3,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The transcript includes a mix of visual references, action narration, and sensory descriptions, showing moderate reliance on embodied language to explain concepts and actions. Procedural instructions are less common."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Mechanical Soundness\",\n      \"description\": \"The video emphasizes ensuring the quadcopter is mechanically sound before PID tuning, checking for issues like cracks, loose screws, and motor problems. This is presented as foundational.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"early\",\n        \"early\",\n        \"early\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Covered in a dedicated section early in the video, revisited multiple times, and presented as a prerequisite for effective PID tuning.\",\n      \"representative_quotes\": [\n        \"make sure your aircraft is mechanically sound\",\n        \"If your quadcopter is not mechanically sound, then you can't really start PID tuning\"\n      ]\n    },\n    {\n      \"name\": \"PID Tuning Methodology (Chris Rosser's)\",\n      \"description\": \"The video outlines a specific PID tuning approach based on Chris Rosser's method, involving setting filters, maximizing D gain, and then balancing P gain.  It contrasts this with other methods.\",\n      \"mention_count\": 11,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"mid\",\n        \"mid\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Presented as the core technique of the video, with multiple steps and explanations. The video sets out to demonstrate this methodology.\",\n      \"representative_quotes\": [\n        \"Chris's tutorials have really laid out PID tuning\",\n        \"Chris says to turn off the gyro low-pass filters\",\n        \"Chris gives a range of recommended D gains\"\n      ]\n    },\n    {\n      \"name\": \"Filter Tuning\",\n      \"description\": \"The video discusses filter tuning, with specific suggestions based on black box log analysis and Chris Rosser's recommendations. It addresses the use of dynamic notch filters and static bi-quad filters.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section, including specific filter values and reasoning. Mentioned multiple times in relation to PID tuning.\",\n      \"representative_quotes\": [\n        \"how to tune filters in Betaflight\",\n        \"implement these filter suggestions as shown here\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"see how I got there\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 7.0,\n      \"context\": \"That's a pretty good PID tune. Let's see how I got there. The very\"\n    },\n    {\n      \"phrase\": \"check these things\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 15.0,\n      \"context\": \"Chris has some suggestions for specific things that you want to check. These are\"\n    },\n    {\n      \"phrase\": \"look at it\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 18.0,\n      \"context\": \"you just got to kind of just look at it and make sure you don't\"\n    },\n    {\n      \"phrase\": \"fly the quad\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 20.0,\n      \"context\": \"The next thing Chris advises is to fly the quad on default PIDs and\"\n    },\n    {\n      \"phrase\": \"fly your quad\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 22.0,\n      \"context\": \"You're going to want to fly your quad in the same setup, in the\"\n    },\n    {\n      \"phrase\": \"tuning flight\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 31.0,\n      \"context\": \"As we do the tuning flight, we're going to make sure that\"\n    },\n    {\n      \"phrase\": \"motors don't sound completely smooth\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 34.0,\n      \"context\": \"Now at this point, if your motors don't sound completely smooth on\"\n    },\n    {\n      \"phrase\": \"open up this black box log\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 38.0,\n      \"context\": \"So let's open up this black box log in black box viewer and\"\n    },\n    {\n      \"phrase\": \"click there\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 40.0,\n      \"context\": \"scaled. And we're going to click there. And that brings up this. We're\"\n    },\n    {\n      \"phrase\": \"see it a little better\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 41.0,\n      \"context\": \"turn that up a little bit so we can see it a little better. We\"\n    },\n    {\n      \"phrase\": \"we can see a little more resonance\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 43.0,\n      \"context\": \"On pitch, we can see a little more resonance. But nothing too\"\n    },\n    {\n      \"phrase\": \"as shown here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 46.0,\n      \"context\": \"filter suggestions as shown here, and then we'll move on. We'll\"\n    },\n    {\n      \"phrase\": \"go ahead and save that\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 48.0,\n      \"context\": \"And we'll go ahead and save that. But the next thing Chris\"\n    },\n    {\n      \"phrase\": \"listen for signs\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 64.0,\n      \"context\": \"fly and we're just going to try to make the motors as hot as possible by doing sharp turns, by doing full throttle punches, and we're going to listen for signs of runaway, signs of warbling,\"\n    },\n    {\n      \"phrase\": \"feel for hot motors\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 64.0,\n      \"context\": \"signs of warbling, oscillation, unsmooth motors, or we're going to feel for hot motors at the end of each\"\n    },\n    {\n      \"phrase\": \"dialing that back down\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 72.0,\n      \"context\": \"Motors still aren't super hot, but that's too far. Let's try dialing that back down a little bit. Here on\"\n    },\n    {\n      \"phrase\": \"see those little hitches\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 73.0,\n      \"context\": \"Little hitches there. You see those little hitches? Yeah, so that's too\"\n    },\n    {\n      \"phrase\": \"see if 1.4 clears that up\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 75.0,\n      \"context\": \"to do. That's also stuff. We're going to take that down to 1.4, and we're going to see if 1.4 clears that up. Also,\"\n    },\n    {\n      \"phrase\": \"see?\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 79.0,\n      \"context\": \"No, see? No. See? Already... I feel like we're flying really\"\n    },\n    {\n      \"phrase\": \"see that there's no hitches here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 81.0,\n      \"context\": \"It's still pretty smooth. Like, you can see that there's no hitches here. Even if\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 20,\n    \"by_category\": {\n      \"visual_reference\": 9,\n      \"action_narration\": 8,\n      \"sensory_description\": 3,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The transcript includes a mix of visual references, action narration, and sensory descriptions, showing moderate reliance on embodied language to explain concepts and actions. Procedural instructions are less common.\"\n  }\n}\n```"
+}

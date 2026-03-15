@@ -1,0 +1,135 @@
+{
+  "video_id": "S0j4xOuRzD4",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Full Bridge Rectifiers",
+        "description": "Explains the function of full bridge rectifiers in converting AC to DC voltage and their importance in modern electronics, including their voltage drop and power loss issues.",
+        "mention_count": 11,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The topic is introduced, developed with explanations of its function and issues, and is returned to throughout the video.",
+        "representative_quotes": [
+          "full bridge rectifiers are a big deal and make our modern electronics world possible",
+          "the old school full bridge rectifier is definitely good enough for most of the mains voltage rectification"
+        ]
+      },
+      {
+        "name": "Active Rectifiers",
+        "description": "Details the use of MOSFETs to replace diodes in a full bridge rectifier to decrease voltage drop and improve efficiency, including the challenges of implementing this.",
+        "mention_count": 13,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The concept is introduced, compared to standard rectifiers, and has a practical experiment/test conducted to evaluate its efficacy.",
+        "representative_quotes": [
+          "active rectifier board on the internet which apparently replaces the old school diodes of a full bridge rectifier with MOSFETs",
+          "the active rectifier is once again more efficient"
+        ]
+      },
+      {
+        "name": "TEA2206/TEA2208 ICs",
+        "description": "Explains the use of active bridge rectifier controller ICs (TEA2206 and TEA2208) to manage MOSFETs and replicate the functionality of a full bridge rectifier.",
+        "mention_count": 6,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section, with explanations of its usage, and reasons for selection.",
+        "representative_quotes": [
+          "I found the TEA2206 and TEA2208IC on the internet. They are active bridge rectifier controllers",
+          "soldered the TEA2208IC to a breakout board"
+        ]
+      },
+      {
+        "name": "Power Factor Correction (PFC)",
+        "description": "Briefly explains the purpose of a Power Factor Correction (PFC) circuit in distributing current draw evenly across the AC mains voltage.",
+        "mention_count": 3,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 2,
+        "strength_reasoning": "Mentioned 2-3 times in the context of the IC datasheets, with a brief description of its function.",
+        "representative_quotes": [
+          "TEA2206 datasheet that states that it is intended for applications followed by a PFC",
+          "it basically prevents that mains current only gets drawn near the peak of the AC mains voltage."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "This little component right here",
+        "category": "visual_reference",
+        "position_pct": 0.0,
+        "context": "This little component right here is a full bridge rectifier which converts"
+      },
+      {
+        "phrase": "as you can see in this schematic",
+        "category": "visual_reference",
+        "position_pct": 18.7,
+        "context": "First off we need to understand how a traditional full bridge rectifier functions. As you can see in this schematic it only"
+      },
+      {
+        "phrase": "I like to draw like this",
+        "category": "action_narration",
+        "position_pct": 20.0,
+        "context": "diodes positioned in a particular arrangement which I personally like to draw like this because this way it is easier"
+      },
+      {
+        "phrase": "lets current flow this way",
+        "category": "action_narration",
+        "position_pct": 24.2,
+        "context": "voltage is in the positive region we got a voltage potential here which lets current flow this way. And when the AC mains voltage"
+      },
+      {
+        "phrase": "lets current flow this way",
+        "category": "action_narration",
+        "position_pct": 26.0,
+        "context": "the negative region we got the opposite voltage potential here which this time lets current flow this way. So in both cases"
+      },
+      {
+        "phrase": "soldered the TEA2208IC to a breakout board",
+        "category": "action_narration",
+        "position_pct": 60.8,
+        "context": "increase the efficiency even more. To do that I soldered the TEA2208IC to a breakout board and afterwards to a"
+      },
+      {
+        "phrase": "as you can see on the oscilloscope",
+        "category": "visual_reference",
+        "position_pct": 63.1,
+        "context": "first test with lowered mains voltage. But as you can see on the oscilloscope this active rectifier also seems"
+      },
+      {
+        "phrase": "desoldered its original full bridge rectifier",
+        "category": "action_narration",
+        "position_pct": 84.2,
+        "context": "measurement test with it, I desoldered its original full bridge rectifier and simply replaced it with the leads"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 8,
+      "by_category": {
+        "visual_reference": 3,
+        "action_narration": 5,
+        "sensory_description": 0,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The transcript contains both action narration and visual references, contributing to a noticeable but not overwhelming use of embodied language."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Full Bridge Rectifiers\",\n      \"description\": \"Explains the function of full bridge rectifiers in converting AC to DC voltage and their importance in modern electronics, including their voltage drop and power loss issues.\",\n      \"mention_count\": 11,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The topic is introduced, developed with explanations of its function and issues, and is returned to throughout the video.\",\n      \"representative_quotes\": [\n        \"full bridge rectifiers are a big deal and make our modern electronics world possible\",\n        \"the old school full bridge rectifier is definitely good enough for most of the mains voltage rectification\"\n      ]\n    },\n    {\n      \"name\": \"Active Rectifiers\",\n      \"description\": \"Details the use of MOSFETs to replace diodes in a full bridge rectifier to decrease voltage drop and improve efficiency, including the challenges of implementing this.\",\n      \"mention_count\": 13,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The concept is introduced, compared to standard rectifiers, and has a practical experiment/test conducted to evaluate its efficacy.\",\n      \"representative_quotes\": [\n        \"active rectifier board on the internet which apparently replaces the old school diodes of a full bridge rectifier with MOSFETs\",\n        \"the active rectifier is once again more efficient\"\n      ]\n    },\n    {\n      \"name\": \"TEA2206/TEA2208 ICs\",\n      \"description\": \"Explains the use of active bridge rectifier controller ICs (TEA2206 and TEA2208) to manage MOSFETs and replicate the functionality of a full bridge rectifier.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section, with explanations of its usage, and reasons for selection.\",\n      \"representative_quotes\": [\n        \"I found the TEA2206 and TEA2208IC on the internet. They are active bridge rectifier controllers\",\n        \"soldered the TEA2208IC to a breakout board\"\n      ]\n    },\n    {\n      \"name\": \"Power Factor Correction (PFC)\",\n      \"description\": \"Briefly explains the purpose of a Power Factor Correction (PFC) circuit in distributing current draw evenly across the AC mains voltage.\",\n      \"mention_count\": 3,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 2,\n      \"strength_reasoning\": \"Mentioned 2-3 times in the context of the IC datasheets, with a brief description of its function.\",\n      \"representative_quotes\": [\n        \"TEA2206 datasheet that states that it is intended for applications followed by a PFC\",\n        \"it basically prevents that mains current only gets drawn near the peak of the AC mains voltage.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"This little component right here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 0.0,\n      \"context\": \"This little component right here is a full bridge rectifier which converts\"\n    },\n    {\n      \"phrase\": \"as you can see in this schematic\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 18.7,\n      \"context\": \"First off we need to understand how a traditional full bridge rectifier functions. As you can see in this schematic it only\"\n    },\n    {\n      \"phrase\": \"I like to draw like this\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 20.0,\n      \"context\": \"diodes positioned in a particular arrangement which I personally like to draw like this because this way it is easier\"\n    },\n    {\n      \"phrase\": \"lets current flow this way\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 24.2,\n      \"context\": \"voltage is in the positive region we got a voltage potential here which lets current flow this way. And when the AC mains voltage\"\n    },\n    {\n      \"phrase\": \"lets current flow this way\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 26.0,\n      \"context\": \"the negative region we got the opposite voltage potential here which this time lets current flow this way. So in both cases\"\n    },\n    {\n      \"phrase\": \"soldered the TEA2208IC to a breakout board\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 60.8,\n      \"context\": \"increase the efficiency even more. To do that I soldered the TEA2208IC to a breakout board and afterwards to a\"\n    },\n    {\n      \"phrase\": \"as you can see on the oscilloscope\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 63.1,\n      \"context\": \"first test with lowered mains voltage. But as you can see on the oscilloscope this active rectifier also seems\"\n    },\n    {\n      \"phrase\": \"desoldered its original full bridge rectifier\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 84.2,\n      \"context\": \"measurement test with it, I desoldered its original full bridge rectifier and simply replaced it with the leads\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 8,\n    \"by_category\": {\n      \"visual_reference\": 3,\n      \"action_narration\": 5,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The transcript contains both action narration and visual references, contributing to a noticeable but not overwhelming use of embodied language.\"\n  }\n}\n```"
+}

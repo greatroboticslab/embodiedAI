@@ -1,0 +1,174 @@
+{
+  "video_id": "35YuILUlfGs",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Planning PCB Functionality",
+        "description": "The initial and crucial step of determining the circuit's purpose and desired functionalities before component selection or schematic design. This dictates the necessary components and layout considerations.",
+        "mention_count": 2,
+        "positions": [
+          "early"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section early in the video and mentioned a second time, establishing it as a foundation for the rest of the process.",
+        "representative_quotes": [
+          "Planning the function of the circuits.",
+          "I knew that I wanted to create a microcontroller based circuit."
+        ]
+      },
+      {
+        "name": "Component Selection",
+        "description": "The process of choosing appropriate electronic components based on their specifications, package types (THT or SMD), and availability, considering factors like cost, size, and soldering feasibility.",
+        "mention_count": 6,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "Introduced early, developed with specific examples, and returned to during the discussion of package sizes and soldering.",
+        "representative_quotes": [
+          "searching for suitable components",
+          "The package basically describes how the IC will physically look like"
+        ]
+      },
+      {
+        "name": "Schematic Creation",
+        "description": "The process of designing the electrical connections between components using schematic capture software (EasyEDA), including component placement, wiring, and adding essential elements like ground and power supply flags.",
+        "mention_count": 8,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "Introduced, developed with a dedicated section on using EasyEDA, and revisited in the context of converting to PCB layout.",
+        "representative_quotes": [
+          "Creating a proper schematic.",
+          "I then used the left aligned resistors with the right package."
+        ]
+      },
+      {
+        "name": "PCB Design and Ordering",
+        "description": "The process of laying out components on a PCB, routing traces, creating ground planes, and generating Gerber files for manufacturing, including considerations for trace width, via placement, and component positioning for optimal performance.",
+        "mention_count": 15,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 5,
+        "strength_reasoning": "Primary focus of the video's latter half, with detailed explanations of each step. Multiple considerations are discussed.",
+        "representative_quotes": [
+          "Step 4. Which is PCB design and ordering.",
+          "To simply connect all the components to one another."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "look out for",
+        "category": "visual_reference",
+        "position_pct": 7.32,
+        "context": "So in this video I will be showing you step by step what to look out for when creating the schematic"
+      },
+      {
+        "phrase": "I will be using",
+        "category": "action_narration",
+        "position_pct": 10.19,
+        "context": "Let's get started! As a practical example for this video I will be using this relatively simple double-sided PCB"
+      },
+      {
+        "phrase": "connect the battery voltage to",
+        "category": "action_narration",
+        "position_pct": 13.7,
+        "context": "charge controller IC, a micro USB port to deliver the power for charging. And a power switch to connect the battery voltage to a 3.3V regulator."
+      },
+      {
+        "phrase": "closer look",
+        "category": "visual_reference",
+        "position_pct": 25.96,
+        "context": "To find that out. I had a closer look at all the data sheets of"
+      },
+      {
+        "phrase": "we can arrange them to logical blocks",
+        "category": "procedural_instruction",
+        "position_pct": 43.65,
+        "context": "In the editor. We can arrange them to logical blocks. Which in my case is the power"
+      },
+      {
+        "phrase": "click the convert to PCB button",
+        "category": "action_narration",
+        "position_pct": 51.92,
+        "context": "For that. We firstly have to click the convert to PCB button. Which automatically throws all the component"
+      },
+      {
+        "phrase": "moved",
+        "category": "action_narration",
+        "position_pct": 57.5,
+        "context": "To create the correct size for the PCB. Then I moved the micro USB port. The main power"
+      },
+      {
+        "phrase": "make sure",
+        "category": "procedural_instruction",
+        "position_pct": 60.29,
+        "context": "Of course. You want to separate the power parts. And microcontroller part a bit. And also make sure. That the pins slash"
+      },
+      {
+        "phrase": "looks logical",
+        "category": "visual_reference",
+        "position_pct": 61.92,
+        "context": "As soon as you think. Your layout looks logical. We could use the given auto router."
+      },
+      {
+        "phrase": "connect all the components",
+        "category": "action_narration",
+        "position_pct": 64.23,
+        "context": "By selecting the top layer. And using the track tool. To simply connect all the components. To one another."
+      },
+      {
+        "phrase": "We can switch to",
+        "category": "action_narration",
+        "position_pct": 73.56,
+        "context": "Were made yet. But don't worry. Since we can switch to the bottom layer. And do the"
+      },
+      {
+        "phrase": "is basically",
+        "category": "visual_reference",
+        "position_pct": 85.38,
+        "context": "At this point. The PCB design. Is basically complete. Which means. We can click."
+      },
+      {
+        "phrase": "look promising",
+        "category": "sensory_description",
+        "position_pct": 89.33,
+        "context": "Of my board. Which did not only look promising. Under the microscope. But also worked. Without"
+      },
+      {
+        "phrase": "make sure",
+        "category": "procedural_instruction",
+        "position_pct": 91.06,
+        "context": "How to solder the components. To such a PCB. Then definitely. Make sure. To watch my soldering tutorial."
+      },
+      {
+        "phrase": "see you",
+        "category": "visual_reference",
+        "position_pct": 95.91,
+        "context": "Stay creative. And I will see you. Next time."
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 15,
+      "by_category": {
+        "visual_reference": 6,
+        "action_narration": 6,
+        "sensory_description": 1,
+        "procedural_instruction": 2
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The transcript contains a moderate number of embodied phrases, covering multiple categories, but with visual references and action narration being most prominent. Some sections have many, but others are absent."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Planning PCB Functionality\",\n      \"description\": \"The initial and crucial step of determining the circuit's purpose and desired functionalities before component selection or schematic design. This dictates the necessary components and layout considerations.\",\n      \"mention_count\": 2,\n      \"positions\": [\n        \"early\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section early in the video and mentioned a second time, establishing it as a foundation for the rest of the process.\",\n      \"representative_quotes\": [\n        \"Planning the function of the circuits.\",\n        \"I knew that I wanted to create a microcontroller based circuit.\"\n      ]\n    },\n    {\n      \"name\": \"Component Selection\",\n      \"description\": \"The process of choosing appropriate electronic components based on their specifications, package types (THT or SMD), and availability, considering factors like cost, size, and soldering feasibility.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Introduced early, developed with specific examples, and returned to during the discussion of package sizes and soldering.\",\n      \"representative_quotes\": [\n        \"searching for suitable components\",\n        \"The package basically describes how the IC will physically look like\"\n      ]\n    },\n    {\n      \"name\": \"Schematic Creation\",\n      \"description\": \"The process of designing the electrical connections between components using schematic capture software (EasyEDA), including component placement, wiring, and adding essential elements like ground and power supply flags.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Introduced, developed with a dedicated section on using EasyEDA, and revisited in the context of converting to PCB layout.\",\n      \"representative_quotes\": [\n        \"Creating a proper schematic.\",\n        \"I then used the left aligned resistors with the right package.\"\n      ]\n    },\n    {\n      \"name\": \"PCB Design and Ordering\",\n      \"description\": \"The process of laying out components on a PCB, routing traces, creating ground planes, and generating Gerber files for manufacturing, including considerations for trace width, via placement, and component positioning for optimal performance.\",\n      \"mention_count\": 15,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"Primary focus of the video's latter half, with detailed explanations of each step. Multiple considerations are discussed.\",\n      \"representative_quotes\": [\n        \"Step 4. Which is PCB design and ordering.\",\n        \"To simply connect all the components to one another.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"look out for\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 7.32,\n      \"context\": \"So in this video I will be showing you step by step what to look out for when creating the schematic\"\n    },\n    {\n      \"phrase\": \"I will be using\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 10.19,\n      \"context\": \"Let's get started! As a practical example for this video I will be using this relatively simple double-sided PCB\"\n    },\n    {\n      \"phrase\": \"connect the battery voltage to\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 13.7,\n      \"context\": \"charge controller IC, a micro USB port to deliver the power for charging. And a power switch to connect the battery voltage to a 3.3V regulator.\"\n    },\n    {\n      \"phrase\": \"closer look\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 25.96,\n      \"context\": \"To find that out. I had a closer look at all the data sheets of\"\n    },\n    {\n      \"phrase\": \"we can arrange them to logical blocks\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 43.65,\n      \"context\": \"In the editor. We can arrange them to logical blocks. Which in my case is the power\"\n    },\n    {\n      \"phrase\": \"click the convert to PCB button\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 51.92,\n      \"context\": \"For that. We firstly have to click the convert to PCB button. Which automatically throws all the component\"\n    },\n    {\n      \"phrase\": \"moved\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 57.5,\n      \"context\": \"To create the correct size for the PCB. Then I moved the micro USB port. The main power\"\n    },\n    {\n      \"phrase\": \"make sure\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 60.29,\n      \"context\": \"Of course. You want to separate the power parts. And microcontroller part a bit. And also make sure. That the pins slash\"\n    },\n    {\n      \"phrase\": \"looks logical\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 61.92,\n      \"context\": \"As soon as you think. Your layout looks logical. We could use the given auto router.\"\n    },\n    {\n      \"phrase\": \"connect all the components\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 64.23,\n      \"context\": \"By selecting the top layer. And using the track tool. To simply connect all the components. To one another.\"\n    },\n    {\n      \"phrase\": \"We can switch to\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 73.56,\n      \"context\": \"Were made yet. But don't worry. Since we can switch to the bottom layer. And do the\"\n    },\n    {\n      \"phrase\": \"is basically\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 85.38,\n      \"context\": \"At this point. The PCB design. Is basically complete. Which means. We can click.\"\n    },\n    {\n      \"phrase\": \"look promising\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 89.33,\n      \"context\": \"Of my board. Which did not only look promising. Under the microscope. But also worked. Without\"\n    },\n    {\n      \"phrase\": \"make sure\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 91.06,\n      \"context\": \"How to solder the components. To such a PCB. Then definitely. Make sure. To watch my soldering tutorial.\"\n    },\n    {\n      \"phrase\": \"see you\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 95.91,\n      \"context\": \"Stay creative. And I will see you. Next time.\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 15,\n    \"by_category\": {\n      \"visual_reference\": 6,\n      \"action_narration\": 6,\n      \"sensory_description\": 1,\n      \"procedural_instruction\": 2\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The transcript contains a moderate number of embodied phrases, covering multiple categories, but with visual references and action narration being most prominent. Some sections have many, but others are absent.\"\n  }\n}\n```"
+}

@@ -1,0 +1,166 @@
+{
+  "video_id": "AOf-i2vLd2o",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Parallel MOSFETs: capacitance issues",
+        "description": "Explains how connecting MOSFETs in parallel increases capacitance, distorting drive signals and causing uneven switching due to the additive nature of capacitance in parallel circuits.",
+        "mention_count": 8,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "Addressed throughout the video with detailed explanations and examples; however, not returned to explicitly at the end.",
+        "representative_quotes": [
+          "When you connect these MOSFETs in parallel, you've also connected this capacitance.",
+          "If you parallel these MOSFETs, well, you've multiplied your problem."
+        ]
+      },
+      {
+        "name": "RC charge/discharge curves",
+        "description": "Discusses how the RC charge and discharge curves affect MOSFET switching, explaining the non-linear charging and discharging behavior and how it leads to delays and uneven switching of MOSFETs in parallel.",
+        "mention_count": 5,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Dedicated section explaining the curves and their implications, with multiple mentions and an on-screen diagram.",
+        "representative_quotes": [
+          "Let's look at the chart that we're looking at now, and this is RC charge and discharge curves on how this works.",
+          "The red line shows a charge curve, and a green line shows the discharge curve."
+        ]
+      },
+      {
+        "name": "Higher Voltage as Solution",
+        "description": "Presents using a higher gate voltage as a solution to achieve faster and more uniform switching of parallel MOSFETs, explaining how it reduces the time constant and ensures complete turn-on.",
+        "mention_count": 6,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Addressed in a dedicated segment and reiterated multiple times; lacks reinforcement at end.",
+        "representative_quotes": [
+          "If you're going to do this kind of switching with parallel MOSFETs, you need to go to a higher voltage.",
+          "With a higher voltage, you will switch on all of those MOSFETs very close together."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "Let's look at a value here.",
+        "category": "visual_reference",
+        "position_pct": 6.6,
+        "context": "problems you're going to run into when you connect MOSFETs in parallel. Let's look at a value here. This is RG. But"
+      },
+      {
+        "phrase": "As you can see it on the website.",
+        "category": "visual_reference",
+        "position_pct": 16.6,
+        "context": "This I got from International Rectifier. And as you can see it on the website. This shows an in-channel"
+      },
+      {
+        "phrase": "notice something here",
+        "category": "visual_reference",
+        "position_pct": 17.4,
+        "context": "pulse or whatever they're using. And you notice something here. You have capacitance from the"
+      },
+      {
+        "phrase": "Look at this drawing of a MOSFET",
+        "category": "visual_reference",
+        "position_pct": 21.0,
+        "context": "How did we get to this? Look at this drawing of a MOSFET from a silicon wafer point of"
+      },
+      {
+        "phrase": "hold that in mind",
+        "category": "procedural_instruction",
+        "position_pct": 31.0,
+        "context": "junctions, both high and low. And so hold that in mind as I explain the next part"
+      },
+      {
+        "phrase": "Let's look at the chart that we're looking at now",
+        "category": "visual_reference",
+        "position_pct": 37.9,
+        "context": "the more problems you will have. Let's look at the chart that we're looking at now, and this is RC"
+      },
+      {
+        "phrase": "you notice here on the bottom it goes from zero to five",
+        "category": "visual_reference",
+        "position_pct": 39.4,
+        "context": "the discharge curve. And you notice here on the bottom it goes from zero to five. Because this"
+      },
+      {
+        "phrase": "Let's look at what people normally use.",
+        "category": "visual_reference",
+        "position_pct": 49.1,
+        "context": "capacitor? Let's look at this. What does this mean when we're trying to turn on a collection of MOSFETs? Let's look at what people normally use."
+      },
+      {
+        "phrase": "Let's look at this problem again.",
+        "category": "visual_reference",
+        "position_pct": 54.6,
+        "context": "they could cut in. See the problem I'm talking about? Let's look at this problem again. But now we're"
+      },
+      {
+        "phrase": "let's take a look at this",
+        "category": "visual_reference",
+        "position_pct": 59.9,
+        "context": "2T, surely all the MOSFETs will be turned on by 4.3. But let's take a look at this. 1T, I get"
+      },
+      {
+        "phrase": "Let's take another look at this problem.",
+        "category": "visual_reference",
+        "position_pct": 67.7,
+        "context": "on that. What about a drive circuit? Let's take another look at this problem. Now, I'm driving them"
+      },
+      {
+        "phrase": "If you look here at 1T at 12 volts, they all switched on",
+        "category": "visual_reference",
+        "position_pct": 70.9,
+        "context": "the steep curve here. So, that's your best bet. Drive these things. Remember VGS. Do not exceed VGS. But if you look here at 1T at 12 volts, they all switched on"
+      },
+      {
+        "phrase": "Let's look at it this way.",
+        "category": "visual_reference",
+        "position_pct": 76.2,
+        "context": "is. It's half of one of my H-bridge circuits that I've had around for years. But it would be excellent for this application. Let's look at it this way. This goes to your MOSFETs."
+      },
+      {
+        "phrase": "connect an individual resistor to each gate",
+        "category": "action_narration",
+        "position_pct": 87.1,
+        "context": "variation of connecting the MOSFETs in parallel. You can connect an individual resistor to each gate and then connect them to"
+      },
+      {
+        "phrase": "I highly recommend keeping in RG.",
+        "category": "procedural_instruction",
+        "position_pct": 90.3,
+        "context": "current. On the preceding frame and this one, I highly recommend keeping in RG. The reason I say do"
+      },
+      {
+        "phrase": "Give it a try.",
+        "category": "procedural_instruction",
+        "position_pct": 95.0,
+        "context": "So these are possible solutions to look at when you are dealing with parallel MOSFETs. Give it a try. Let me know how it works"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 16,
+      "by_category": {
+        "visual_reference": 12,
+        "action_narration": 1,
+        "sensory_description": 0,
+        "procedural_instruction": 3
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The video relies heavily on visual references ('look at this', 'as you can see') due to its explanatory nature. Action narration is limited and sensory descriptions are entirely absent."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Parallel MOSFETs: capacitance issues\",\n      \"description\": \"Explains how connecting MOSFETs in parallel increases capacitance, distorting drive signals and causing uneven switching due to the additive nature of capacitance in parallel circuits.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Addressed throughout the video with detailed explanations and examples; however, not returned to explicitly at the end.\",\n      \"representative_quotes\": [\n        \"When you connect these MOSFETs in parallel, you've also connected this capacitance.\",\n        \"If you parallel these MOSFETs, well, you've multiplied your problem.\"\n      ]\n    },\n    {\n      \"name\": \"RC charge/discharge curves\",\n      \"description\": \"Discusses how the RC charge and discharge curves affect MOSFET switching, explaining the non-linear charging and discharging behavior and how it leads to delays and uneven switching of MOSFETs in parallel.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Dedicated section explaining the curves and their implications, with multiple mentions and an on-screen diagram.\",\n      \"representative_quotes\": [\n        \"Let's look at the chart that we're looking at now, and this is RC charge and discharge curves on how this works.\",\n        \"The red line shows a charge curve, and a green line shows the discharge curve.\"\n      ]\n    },\n    {\n      \"name\": \"Higher Voltage as Solution\",\n      \"description\": \"Presents using a higher gate voltage as a solution to achieve faster and more uniform switching of parallel MOSFETs, explaining how it reduces the time constant and ensures complete turn-on.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Addressed in a dedicated segment and reiterated multiple times; lacks reinforcement at end.\",\n      \"representative_quotes\": [\n        \"If you're going to do this kind of switching with parallel MOSFETs, you need to go to a higher voltage.\",\n        \"With a higher voltage, you will switch on all of those MOSFETs very close together.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"Let's look at a value here.\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 6.6,\n      \"context\": \"problems you're going to run into when you connect MOSFETs in parallel. Let's look at a value here. This is RG. But\"\n    },\n    {\n      \"phrase\": \"As you can see it on the website.\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 16.6,\n      \"context\": \"This I got from International Rectifier. And as you can see it on the website. This shows an in-channel\"\n    },\n    {\n      \"phrase\": \"notice something here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 17.4,\n      \"context\": \"pulse or whatever they're using. And you notice something here. You have capacitance from the\"\n    },\n    {\n      \"phrase\": \"Look at this drawing of a MOSFET\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 21.0,\n      \"context\": \"How did we get to this? Look at this drawing of a MOSFET from a silicon wafer point of\"\n    },\n    {\n      \"phrase\": \"hold that in mind\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 31.0,\n      \"context\": \"junctions, both high and low. And so hold that in mind as I explain the next part\"\n    },\n    {\n      \"phrase\": \"Let's look at the chart that we're looking at now\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 37.9,\n      \"context\": \"the more problems you will have. Let's look at the chart that we're looking at now, and this is RC\"\n    },\n    {\n      \"phrase\": \"you notice here on the bottom it goes from zero to five\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 39.4,\n      \"context\": \"the discharge curve. And you notice here on the bottom it goes from zero to five. Because this\"\n    },\n    {\n      \"phrase\": \"Let's look at what people normally use.\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 49.1,\n      \"context\": \"capacitor? Let's look at this. What does this mean when we're trying to turn on a collection of MOSFETs? Let's look at what people normally use.\"\n    },\n    {\n      \"phrase\": \"Let's look at this problem again.\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 54.6,\n      \"context\": \"they could cut in. See the problem I'm talking about? Let's look at this problem again. But now we're\"\n    },\n    {\n      \"phrase\": \"let's take a look at this\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 59.9,\n      \"context\": \"2T, surely all the MOSFETs will be turned on by 4.3. But let's take a look at this. 1T, I get\"\n    },\n    {\n      \"phrase\": \"Let's take another look at this problem.\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 67.7,\n      \"context\": \"on that. What about a drive circuit? Let's take another look at this problem. Now, I'm driving them\"\n    },\n    {\n      \"phrase\": \"If you look here at 1T at 12 volts, they all switched on\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 70.9,\n      \"context\": \"the steep curve here. So, that's your best bet. Drive these things. Remember VGS. Do not exceed VGS. But if you look here at 1T at 12 volts, they all switched on\"\n    },\n    {\n      \"phrase\": \"Let's look at it this way.\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 76.2,\n      \"context\": \"is. It's half of one of my H-bridge circuits that I've had around for years. But it would be excellent for this application. Let's look at it this way. This goes to your MOSFETs.\"\n    },\n    {\n      \"phrase\": \"connect an individual resistor to each gate\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 87.1,\n      \"context\": \"variation of connecting the MOSFETs in parallel. You can connect an individual resistor to each gate and then connect them to\"\n    },\n    {\n      \"phrase\": \"I highly recommend keeping in RG.\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 90.3,\n      \"context\": \"current. On the preceding frame and this one, I highly recommend keeping in RG. The reason I say do\"\n    },\n    {\n      \"phrase\": \"Give it a try.\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 95.0,\n      \"context\": \"So these are possible solutions to look at when you are dealing with parallel MOSFETs. Give it a try. Let me know how it works\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 16,\n    \"by_category\": {\n      \"visual_reference\": 12,\n      \"action_narration\": 1,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 3\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The video relies heavily on visual references ('look at this', 'as you can see') due to its explanatory nature. Action narration is limited and sensory descriptions are entirely absent.\"\n  }\n}\n```"
+}

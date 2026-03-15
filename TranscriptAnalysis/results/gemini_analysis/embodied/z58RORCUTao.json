@@ -1,0 +1,91 @@
+{
+  "video_id": "z58RORCUTao",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Uneven blade spacing",
+        "description": "This keypoint covers the concept of uneven blade spacing on propellers and how it reduces noise by spreading acoustic energy into lower, less perceptible frequencies. It discusses the physics behind the phenomenon and its applications in drone and aircraft design.",
+        "mention_count": 15,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "This is the central concept of the video. It is introduced early, explained in detail with examples and experiments, and then revisited and summarized at the end. The entire video builds around understanding and demonstrating this principle.",
+        "representative_quotes": [
+          "something really interesting happens if you don't space out the blades evenly",
+          "when you space the blades unevenly, it creates a lower frequency that we perceive as quieter"
+        ]
+      },
+      {
+        "name": "Toroidal propellers",
+        "description": "This keypoint covers the concept of toroidal propellers as an alternative approach to reduce noise, focusing on reducing vortices and improving turbulent flow, leading to an overall quieter operation.",
+        "mention_count": 5,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "This concept is covered in a dedicated section and mentioned multiple times with a simulation. While important, it is secondary to the primary focus on uneven blade spacing.",
+        "representative_quotes": [
+          "MIT came up with a propeller called the toroidal propeller.",
+          "this detached vortex is contained within the ring of the prop, and the overall jet of air is much more coherent, so it's quieter"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "Look at these propellers",
+        "category": "visual_reference",
+        "position_pct": 5.0,
+        "context": "Rwanda. As cool as this is, he kind of glossed over one of the most interesting features of these drones. Look at these propellers. He mentions that they're"
+      },
+      {
+        "phrase": "before we listen to these",
+        "category": "action_narration",
+        "position_pct": 8.0,
+        "context": "these to see how much quieter they actually are. And that's exactly what I have here. But before we listen to these, let me explain why these propellers are"
+      },
+      {
+        "phrase": "You can see this here.",
+        "category": "visual_reference",
+        "position_pct": 31.0,
+        "context": "of the blade passage frequency. You can see this here. So first we'll start with this"
+      },
+      {
+        "phrase": "let's listen to both of their sounds",
+        "category": "action_narration",
+        "position_pct": 63.0,
+        "context": "10,200 RPM. So they're really close to the same RPM. Okay, let's listen to both of their sounds. Now in front."
+      },
+      {
+        "phrase": "You can see that",
+        "category": "visual_reference",
+        "position_pct": 66.0,
+        "context": "10,300 RPM. Now behind. The high pitch tones are still there with this one, but they're a lot less because of the acoustic noise has been spread out to that lower frequency as well as the high one. You can see that the uneven space blades have a noticeably"
+      },
+      {
+        "phrase": "You can actually see what the flow looks like",
+        "category": "visual_reference",
+        "position_pct": 74.0,
+        "context": "overall sound levels. You can actually see what the flow looks like between a toroidal propeller and a regular"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 6,
+      "by_category": {
+        "visual_reference": 4,
+        "action_narration": 2,
+        "sensory_description": 0,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The script relies mainly on visual references related to the props and some action narration when turning them on/off. There is no sensory description or procedural instructions to further enrich the embodied qualities of the language."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Uneven blade spacing\",\n      \"description\": \"This keypoint covers the concept of uneven blade spacing on propellers and how it reduces noise by spreading acoustic energy into lower, less perceptible frequencies. It discusses the physics behind the phenomenon and its applications in drone and aircraft design.\",\n      \"mention_count\": 15,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"This is the central concept of the video. It is introduced early, explained in detail with examples and experiments, and then revisited and summarized at the end. The entire video builds around understanding and demonstrating this principle.\",\n      \"representative_quotes\": [\n        \"something really interesting happens if you don't space out the blades evenly\",\n        \"when you space the blades unevenly, it creates a lower frequency that we perceive as quieter\"\n      ]\n    },\n    {\n      \"name\": \"Toroidal propellers\",\n      \"description\": \"This keypoint covers the concept of toroidal propellers as an alternative approach to reduce noise, focusing on reducing vortices and improving turbulent flow, leading to an overall quieter operation.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"This concept is covered in a dedicated section and mentioned multiple times with a simulation. While important, it is secondary to the primary focus on uneven blade spacing.\",\n      \"representative_quotes\": [\n        \"MIT came up with a propeller called the toroidal propeller.\",\n        \"this detached vortex is contained within the ring of the prop, and the overall jet of air is much more coherent, so it's quieter\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"Look at these propellers\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 5.0,\n      \"context\": \"Rwanda. As cool as this is, he kind of glossed over one of the most interesting features of these drones. Look at these propellers. He mentions that they're\"\n    },\n    {\n      \"phrase\": \"before we listen to these\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 8.0,\n      \"context\": \"these to see how much quieter they actually are. And that's exactly what I have here. But before we listen to these, let me explain why these propellers are\"\n    },\n    {\n      \"phrase\": \"You can see this here.\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 31.0,\n      \"context\": \"of the blade passage frequency. You can see this here. So first we'll start with this\"\n    },\n    {\n      \"phrase\": \"let's listen to both of their sounds\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 63.0,\n      \"context\": \"10,200 RPM. So they're really close to the same RPM. Okay, let's listen to both of their sounds. Now in front.\"\n    },\n    {\n      \"phrase\": \"You can see that\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 66.0,\n      \"context\": \"10,300 RPM. Now behind. The high pitch tones are still there with this one, but they're a lot less because of the acoustic noise has been spread out to that lower frequency as well as the high one. You can see that the uneven space blades have a noticeably\"\n    },\n    {\n      \"phrase\": \"You can actually see what the flow looks like\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 74.0,\n      \"context\": \"overall sound levels. You can actually see what the flow looks like between a toroidal propeller and a regular\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 6,\n    \"by_category\": {\n      \"visual_reference\": 4,\n      \"action_narration\": 2,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The script relies mainly on visual references related to the props and some action narration when turning them on/off. There is no sensory description or procedural instructions to further enrich the embodied qualities of the language.\"\n  }\n}\n```"
+}

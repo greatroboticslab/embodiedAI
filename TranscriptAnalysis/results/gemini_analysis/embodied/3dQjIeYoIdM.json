@@ -1,0 +1,90 @@
+{
+  "video_id": "3dQjIeYoIdM",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Class D Amplifier",
+        "description": "The video explains how a Class D amplifier works and demonstrates building a DIY version, focusing on its efficiency compared to Class AB amplifiers, and how it modulates the audio signal into a high-frequency square wave.",
+        "mention_count": 11,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The video is centered around explaining and building a Class D amplifier, detailing its advantages, components, and implementation.  It's mentioned throughout and forms the core topic.",
+        "representative_quotes": [
+          "So in this video, I will show you how such an audio amp works and how we can create our own DIY version",
+          "To increase this efficiency though, we can utilize another audio amp kind, a class D amp to be precise, with an efficiency of up to 95%"
+        ]
+      },
+      {
+        "name": "LC Low-Pass Filter",
+        "description": "The video discusses the need for an LC low-pass filter in a Class D amplifier to recreate the original audio signal by filtering out high frequencies after the MOSFET stage.",
+        "mention_count": 7,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The LC filter is given a dedicated section explaining its purpose, component selection, and calculations. It's not a recurring theme, but receives sufficient dedicated coverage.",
+        "representative_quotes": [
+          "Now we can recreate the original audio signal by adding an LC low-pass filter",
+          "The only question left to answer, was what kind of values should be used for the LC filter."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "taking a look at the simplified functional block diagram",
+        "category": "visual_reference",
+        "position_pct": 6.0,
+        "context": "We can identify its cause by taking a look at the simplified functional block diagram. Firstly, our originally applied audio signal"
+      },
+      {
+        "phrase": "I will show you how such an audio amp works",
+        "category": "action_narration",
+        "position_pct": 14.0,
+        "context": "of around 50 to 60%. To increase this efficiency though, I will show you how such an audio amp"
+      },
+      {
+        "phrase": "let's have a look at the simplified functional block diagram",
+        "category": "visual_reference",
+        "position_pct": 16.0,
+        "context": "started! First off, let's have a look at the simplified functional block diagram of"
+      },
+      {
+        "phrase": "connect a 15V power supply to the input",
+        "category": "action_narration",
+        "position_pct": 67.0,
+        "context": "was complete, and it was time to insert all the ICs, connect a 15V power supply to the input, and"
+      },
+      {
+        "phrase": "take a look at the output of the comparator",
+        "category": "visual_reference",
+        "position_pct": 72.0,
+        "context": "potentiometer to add a DC offset to the sine wave. If we now take a look at the output of the comparator, we"
+      },
+      {
+        "phrase": "started soldering them to a piece of perfboard",
+        "category": "action_narration",
+        "position_pct": 60.0,
+        "context": "that the schematic was complete, I gathered all the required components, and started soldering them to a piece of perfboard."
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 6,
+      "by_category": {
+        "visual_reference": 3,
+        "action_narration": 3,
+        "sensory_description": 0,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The transcript contains a small number of embodied phrases, primarily focused on visual references and the actions of building the circuit.  There is no sensory description or procedural instruction."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Class D Amplifier\",\n      \"description\": \"The video explains how a Class D amplifier works and demonstrates building a DIY version, focusing on its efficiency compared to Class AB amplifiers, and how it modulates the audio signal into a high-frequency square wave.\",\n      \"mention_count\": 11,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The video is centered around explaining and building a Class D amplifier, detailing its advantages, components, and implementation.  It's mentioned throughout and forms the core topic.\",\n      \"representative_quotes\": [\n        \"So in this video, I will show you how such an audio amp works and how we can create our own DIY version\",\n        \"To increase this efficiency though, we can utilize another audio amp kind, a class D amp to be precise, with an efficiency of up to 95%\"\n      ]\n    },\n    {\n      \"name\": \"LC Low-Pass Filter\",\n      \"description\": \"The video discusses the need for an LC low-pass filter in a Class D amplifier to recreate the original audio signal by filtering out high frequencies after the MOSFET stage.\",\n      \"mention_count\": 7,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The LC filter is given a dedicated section explaining its purpose, component selection, and calculations. It's not a recurring theme, but receives sufficient dedicated coverage.\",\n      \"representative_quotes\": [\n        \"Now we can recreate the original audio signal by adding an LC low-pass filter\",\n        \"The only question left to answer, was what kind of values should be used for the LC filter.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"taking a look at the simplified functional block diagram\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 6.0,\n      \"context\": \"We can identify its cause by taking a look at the simplified functional block diagram. Firstly, our originally applied audio signal\"\n    },\n    {\n      \"phrase\": \"I will show you how such an audio amp works\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 14.0,\n      \"context\": \"of around 50 to 60%. To increase this efficiency though, I will show you how such an audio amp\"\n    },\n    {\n      \"phrase\": \"let's have a look at the simplified functional block diagram\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 16.0,\n      \"context\": \"started! First off, let's have a look at the simplified functional block diagram of\"\n    },\n    {\n      \"phrase\": \"connect a 15V power supply to the input\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 67.0,\n      \"context\": \"was complete, and it was time to insert all the ICs, connect a 15V power supply to the input, and\"\n    },\n    {\n      \"phrase\": \"take a look at the output of the comparator\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 72.0,\n      \"context\": \"potentiometer to add a DC offset to the sine wave. If we now take a look at the output of the comparator, we\"\n    },\n    {\n      \"phrase\": \"started soldering them to a piece of perfboard\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 60.0,\n      \"context\": \"that the schematic was complete, I gathered all the required components, and started soldering them to a piece of perfboard.\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 6,\n    \"by_category\": {\n      \"visual_reference\": 3,\n      \"action_narration\": 3,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The transcript contains a small number of embodied phrases, primarily focused on visual references and the actions of building the circuit.  There is no sensory description or procedural instruction.\"\n  }\n}\n```"
+}

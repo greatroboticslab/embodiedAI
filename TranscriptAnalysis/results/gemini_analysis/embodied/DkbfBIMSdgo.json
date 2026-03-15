@@ -1,0 +1,113 @@
+{
+  "video_id": "DkbfBIMSdgo",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Clap Switch Circuit",
+        "description": "The video focuses on building a clap switch circuit using transistors, a condenser microphone, and a 555 timer to trigger an LED upon detecting a clapping sound. It teaches how each component works and how to connect them.",
+        "mention_count": 6,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The core circuit is explained at length, revisited with multiple components, and named at the beginning and end.",
+        "representative_quotes": [
+          "In this episode, we'll see how to make a clap switch or sound triggered LED",
+          "Finally connect the power supply and here you go, the clap switch or sound triggered LED"
+        ]
+      },
+      {
+        "name": "Transistor Amplification",
+        "description": "The video describes using transistors (BC547) to amplify the signal from the condenser microphone. It explains how the resistor values affect the sensitivity of the circuit.",
+        "mention_count": 8,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The role of the transistor as an amplifier is explored in a dedicated section with practical concerns of resistor values.",
+        "representative_quotes": [
+          "We'll try to amplify this response by using BC547 and NPN transistor.",
+          "This resistor acts as a dummy load which keeps the collector base junction in reverse bias and that's required for making the transistor amplify the input signal."
+        ]
+      },
+      {
+        "name": "555 Timer in Monostable Mode",
+        "description": "The video introduces the 555 timer in monostable mode to extend the duration of the LED being lit after a clap.  It explains how to connect the components and how the capacitor and resistor values affect the on-time.",
+        "mention_count": 8,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The function of the 555 timer as a switch is described in a dedicated section, and how to set it up.",
+        "representative_quotes": [
+          "And obviously a 555 timer in mono stable mode is the best candidate for doing that.",
+          "You can now test this mono stable circuit by applying 0V at the trigger pin."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "you can feel it click",
+        "category": "sensory_description",
+        "position_pct": 0.0,
+        "context": "Hi, welcome to Elonix. In this episode, we'll see how to make a clap"
+      },
+      {
+        "phrase": "as you can see",
+        "category": "visual_reference",
+        "position_pct": 3.3,
+        "context": "And if you are near, the LED turns on even with finger snaps. as you can see, You can also change the sensitivity"
+      },
+      {
+        "phrase": "connect the wire to",
+        "category": "action_narration",
+        "position_pct": 12.7,
+        "context": "of condenser microphone which is the pin connected to outer casing. And the positive terminal of the microphone is connected to"
+      },
+      {
+        "phrase": "you are using a 5",
+        "category": "procedural_instruction",
+        "position_pct": 22.3,
+        "context": "on the supply voltage. So if you are using a 5 or 6 volts of power supply, use"
+      },
+      {
+        "phrase": "Don't panic if",
+        "category": "procedural_instruction",
+        "position_pct": 37.3,
+        "context": "power supply. Normally the LED should stay off and it should turn on when you clap or do finger snaps near the condenser"
+      },
+      {
+        "phrase": "I am removing it",
+        "category": "action_narration",
+        "position_pct": 65.9,
+        "context": "trigger pin of this mono stable circuit. As we don't require LED at the output of a primary circuit, I am removing it along with its series resistor. Place"
+      },
+      {
+        "phrase": "here you go",
+        "category": "visual_reference",
+        "position_pct": 84.4,
+        "context": "voltage and it drops whenever you clap which triggers the monostable circuit and so the LED should glow. Finally connect the power supply and here you go, the clap switch or sound triggered"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 7,
+      "by_category": {
+        "visual_reference": 2,
+        "action_narration": 2,
+        "sensory_description": 1,
+        "procedural_instruction": 2
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "There are multiple types of embodied phrases present, with action and visual references being the most common, but it's not saturated with embodied language."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Clap Switch Circuit\",\n      \"description\": \"The video focuses on building a clap switch circuit using transistors, a condenser microphone, and a 555 timer to trigger an LED upon detecting a clapping sound. It teaches how each component works and how to connect them.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The core circuit is explained at length, revisited with multiple components, and named at the beginning and end.\",\n      \"representative_quotes\": [\n        \"In this episode, we'll see how to make a clap switch or sound triggered LED\",\n        \"Finally connect the power supply and here you go, the clap switch or sound triggered LED\"\n      ]\n    },\n    {\n      \"name\": \"Transistor Amplification\",\n      \"description\": \"The video describes using transistors (BC547) to amplify the signal from the condenser microphone. It explains how the resistor values affect the sensitivity of the circuit.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The role of the transistor as an amplifier is explored in a dedicated section with practical concerns of resistor values.\",\n      \"representative_quotes\": [\n        \"We'll try to amplify this response by using BC547 and NPN transistor.\",\n        \"This resistor acts as a dummy load which keeps the collector base junction in reverse bias and that's required for making the transistor amplify the input signal.\"\n      ]\n    },\n    {\n      \"name\": \"555 Timer in Monostable Mode\",\n      \"description\": \"The video introduces the 555 timer in monostable mode to extend the duration of the LED being lit after a clap.  It explains how to connect the components and how the capacitor and resistor values affect the on-time.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The function of the 555 timer as a switch is described in a dedicated section, and how to set it up.\",\n      \"representative_quotes\": [\n        \"And obviously a 555 timer in mono stable mode is the best candidate for doing that.\",\n        \"You can now test this mono stable circuit by applying 0V at the trigger pin.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"you can feel it click\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 0.0,\n      \"context\": \"Hi, welcome to Elonix. In this episode, we'll see how to make a clap\"\n    },\n    {\n      \"phrase\": \"as you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 3.3,\n      \"context\": \"And if you are near, the LED turns on even with finger snaps. as you can see, You can also change the sensitivity\"\n    },\n    {\n      \"phrase\": \"connect the wire to\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 12.7,\n      \"context\": \"of condenser microphone which is the pin connected to outer casing. And the positive terminal of the microphone is connected to\"\n    },\n    {\n      \"phrase\": \"you are using a 5\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 22.3,\n      \"context\": \"on the supply voltage. So if you are using a 5 or 6 volts of power supply, use\"\n    },\n    {\n      \"phrase\": \"Don't panic if\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 37.3,\n      \"context\": \"power supply. Normally the LED should stay off and it should turn on when you clap or do finger snaps near the condenser\"\n    },\n    {\n      \"phrase\": \"I am removing it\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 65.9,\n      \"context\": \"trigger pin of this mono stable circuit. As we don't require LED at the output of a primary circuit, I am removing it along with its series resistor. Place\"\n    },\n    {\n      \"phrase\": \"here you go\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 84.4,\n      \"context\": \"voltage and it drops whenever you clap which triggers the monostable circuit and so the LED should glow. Finally connect the power supply and here you go, the clap switch or sound triggered\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 7,\n    \"by_category\": {\n      \"visual_reference\": 2,\n      \"action_narration\": 2,\n      \"sensory_description\": 1,\n      \"procedural_instruction\": 2\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"There are multiple types of embodied phrases present, with action and visual references being the most common, but it's not saturated with embodied language.\"\n  }\n}\n```"
+}

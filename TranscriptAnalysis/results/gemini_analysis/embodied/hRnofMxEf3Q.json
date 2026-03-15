@@ -1,0 +1,192 @@
+{
+  "video_id": "hRnofMxEf3Q",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Inverted Pendulum Control",
+        "description": "The video demonstrates how to control an inverted pendulum, a classic control theory problem. It involves keeping a rod balanced upright using a stepper motor and feedback from an encoder.",
+        "mention_count": 10,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The inverted pendulum is introduced at the beginning, demonstrated throughout the video with code and hardware, and referenced at the end as a good learning project.",
+        "representative_quotes": [
+          "Ah, the inverted pendulum. Getting one of these to work is a little bit of a rite of passage",
+          "It involves keeping a rod balanced upright"
+        ]
+      },
+      {
+        "name": "PID Controller Tuning",
+        "description": "The video focuses on manually tuning a PID controller for the inverted pendulum.  It covers adjusting proportional, integral, and derivative constants (Kp, Ki, Kd) to achieve stable control.",
+        "mention_count": 22,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "Tuning the PID is the primary practical task of the video; it's explained step-by-step with examples and graphs. The whole back end of the video is dedicated to this.",
+        "representative_quotes": [
+          "We'll stick with the most basic. First, we'll set the integral and derivative constants to zero",
+          "Here I've set up my K constants. Here's PID."
+        ]
+      },
+      {
+        "name": "Arduino as Interface",
+        "description": "The video explains how the Arduino is used as an interface to read encoder values and control the stepper motor. The core controller logic runs on a PC using Python.",
+        "mention_count": 6,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Arduino is explained as a data capture device only, not the main controller. Covered in a dedicated section with several mentions.",
+        "representative_quotes": [
+          "The Arduino in this case is just going to act as an interface for us.",
+          "Remember that the Arduino is simply acting as an interface for us."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "as you can see here",
+        "category": "visual_reference",
+        "position_pct": 3.3,
+        "context": "axis. And as you can see here, once the program stopped, it"
+      },
+      {
+        "phrase": "We'll need to keep it there",
+        "category": "procedural_instruction",
+        "position_pct": 5.5,
+        "context": "upright position in our controller. We'll need to keep it there. The Arduino in this"
+      },
+      {
+        "phrase": "scroll down",
+        "category": "visual_reference",
+        "position_pct": 20.8,
+        "context": "If we click over to the control comms interface file, scroll down a little bit. You can see"
+      },
+      {
+        "phrase": "move by three degrees",
+        "category": "action_narration",
+        "position_pct": 23.2,
+        "context": "what to do. We're going to put in this our angle that we want to move the stepper motor by, say, for example, move by three degrees or"
+      },
+      {
+        "phrase": "scroll down",
+        "category": "visual_reference",
+        "position_pct": 25.6,
+        "context": "program here, scroll down to where we see setup, we configure"
+      },
+      {
+        "phrase": "move the stepper",
+        "category": "action_narration",
+        "position_pct": 26.0,
+        "context": "from the PC side. We move the stepper as requested, say, by a"
+      },
+      {
+        "phrase": "we looked at",
+        "category": "visual_reference",
+        "position_pct": 30.4,
+        "context": "the PC version of that control comms HPP file that we looked at. In this case, we have"
+      },
+      {
+        "phrase": "move to",
+        "category": "action_narration",
+        "position_pct": 32.9,
+        "context": "port, which opens up a connection to the Arduino board. We can close that connection. And then the important thing here is this step function for us. We give it an action and some sort of command, say, move to move by and reset, which says"
+      },
+      {
+        "phrase": "we can go",
+        "category": "visual_reference",
+        "position_pct": 49.9,
+        "context": "like inverted pendulums or self-balancing robots. Obviously there are more complex control schemes out there, such as linear quadratic regulators and model predictive control. But PID controllers are a great introduction into control theory. If this is something you would like to tinker with. Good luck and happy hacking. Beep!"
+      },
+      {
+        "phrase": "If we go back to our Arduino code here",
+        "category": "visual_reference",
+        "position_pct": 41.1,
+        "context": "closed and then I'm going to reopen that connection. So now I can talk to the Arduino board. First, I'm going to test the control to make sure that it actually moves. The idea here is that the stepper motor should be able to move fast enough such that it can recover from a, say, plus or minus 10 degree offset from being vertical. If we go back to our Arduino code here, you"
+      },
+      {
+        "phrase": "So when I run this cell here, I'm going to offset this",
+        "category": "action_narration",
+        "position_pct": 52.1,
+        "context": "tuning our actual controller. As I mentioned earlier, the first thing we want to do is make sure that our stepper motor can recover from about plus or minus 10 degrees. So when I run this cell here, I'm going to offset this by about five"
+      },
+      {
+        "phrase": "I'm going to hold it about here",
+        "category": "action_narration",
+        "position_pct": 52.8,
+        "context": "moving at negative 90. So I'm going to hold it about here. Yes, it goes the other way. So"
+      },
+      {
+        "phrase": "Let's take a look at our output",
+        "category": "visual_reference",
+        "position_pct": 54.2,
+        "context": "gets us. So I'm just going to hold this here and say go. Okay. So it looks like it's jittering a lot and then it's struggling to keep up at the. And there. Let's take a look at our output. Sure enough, there's a lot of oscillations, which"
+      },
+      {
+        "phrase": "Let's take a look at our plot",
+        "category": "visual_reference",
+        "position_pct": 55.9,
+        "context": "Let's try 0.5 about halfway in between. We'll run this again. Okay. Not bad. There's some oscillations. And in fact, I want to run this again. Be prepared to run some of these cells multiple times. Okay. Still some oscillations. It's oscillating around that 180 point. So it means it's a little too high. Let's take a look at our plot. And here we go. Sure enough, it's unstable. You"
+      },
+      {
+        "phrase": "Let's stop that",
+        "category": "procedural_instruction",
+        "position_pct": 59.8,
+        "context": "That's almost where we want it. Still look like it's oscillating some. So let's stop that. Go take a look at our code. Yeah,"
+      },
+      {
+        "phrase": "Go take a look at our code",
+        "category": "visual_reference",
+        "position_pct": 59.9,
+        "context": "some. So let's stop that. Go take a look at our code. Yeah, there's still some oscillations here. I"
+      },
+      {
+        "phrase": "I can touch it and it corrects",
+        "category": "action_narration",
+        "position_pct": 62.2,
+        "context": "This is what we're looking for. It's barely moving and it's keeping it upright and I can touch it and it corrects. And let's see if it recovers from that. Oh,"
+      },
+      {
+        "phrase": "scroll up",
+        "category": "visual_reference",
+        "position_pct": 63.4,
+        "context": "So there's some larger level oscillations going on in here, but this should be okay. Let's scroll up. Yeah, 0.005 seems to be really good. Now"
+      },
+      {
+        "phrase": "leave bias at zero",
+        "category": "procedural_instruction",
+        "position_pct": 74.7,
+        "context": "There's obviously some other tweaks, but let's go with that for now. I hope this helps you get started creating your own PID controllers and then tuning them for things like inverted pendulums or self-balancing robots. Obviously there are more complex control schemes out there, such as linear quadratic regulators and model predictive control. But PID controllers are a great introduction into control theory. If this is something you would like to tinker with. Good luck and happy hacking. Beep!"
+      },
+      {
+        "phrase": "As you can see, it works pretty much most of the time.",
+        "category": "visual_reference",
+        "position_pct": 77.1,
+        "context": "Obviously some other tweaks, but let's go with that for now. I hope this helps you get started creating your own PID controllers and then tuning them for things like inverted pendulums or self-balancing robots. Obviously there are more complex control schemes out there, such as linear quadratic regulators and model predictive control. But PID controllers are a great introduction into control theory. If this is something you would like to tinker with. Good luck and happy hacking. Beep!"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 20,
+      "by_category": {
+        "visual_reference": 10,
+        "action_narration": 6,
+        "sensory_description": 0,
+        "procedural_instruction": 4
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "There are a moderate amount of embodied phrases, mostly visual cues (look at this, scroll down) and action narration (I'm going to hold it, move by). No sensory descriptions are present."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Inverted Pendulum Control\",\n      \"description\": \"The video demonstrates how to control an inverted pendulum, a classic control theory problem. It involves keeping a rod balanced upright using a stepper motor and feedback from an encoder.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The inverted pendulum is introduced at the beginning, demonstrated throughout the video with code and hardware, and referenced at the end as a good learning project.\",\n      \"representative_quotes\": [\n        \"Ah, the inverted pendulum. Getting one of these to work is a little bit of a rite of passage\",\n        \"It involves keeping a rod balanced upright\"\n      ]\n    },\n    {\n      \"name\": \"PID Controller Tuning\",\n      \"description\": \"The video focuses on manually tuning a PID controller for the inverted pendulum.  It covers adjusting proportional, integral, and derivative constants (Kp, Ki, Kd) to achieve stable control.\",\n      \"mention_count\": 22,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"Tuning the PID is the primary practical task of the video; it's explained step-by-step with examples and graphs. The whole back end of the video is dedicated to this.\",\n      \"representative_quotes\": [\n        \"We'll stick with the most basic. First, we'll set the integral and derivative constants to zero\",\n        \"Here I've set up my K constants. Here's PID.\"\n      ]\n    },\n    {\n      \"name\": \"Arduino as Interface\",\n      \"description\": \"The video explains how the Arduino is used as an interface to read encoder values and control the stepper motor. The core controller logic runs on a PC using Python.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Arduino is explained as a data capture device only, not the main controller. Covered in a dedicated section with several mentions.\",\n      \"representative_quotes\": [\n        \"The Arduino in this case is just going to act as an interface for us.\",\n        \"Remember that the Arduino is simply acting as an interface for us.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"as you can see here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 3.3,\n      \"context\": \"axis. And as you can see here, once the program stopped, it\"\n    },\n    {\n      \"phrase\": \"We'll need to keep it there\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 5.5,\n      \"context\": \"upright position in our controller. We'll need to keep it there. The Arduino in this\"\n    },\n    {\n      \"phrase\": \"scroll down\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 20.8,\n      \"context\": \"If we click over to the control comms interface file, scroll down a little bit. You can see\"\n    },\n    {\n      \"phrase\": \"move by three degrees\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 23.2,\n      \"context\": \"what to do. We're going to put in this our angle that we want to move the stepper motor by, say, for example, move by three degrees or\"\n    },\n    {\n      \"phrase\": \"scroll down\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 25.6,\n      \"context\": \"program here, scroll down to where we see setup, we configure\"\n    },\n    {\n      \"phrase\": \"move the stepper\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 26.0,\n      \"context\": \"from the PC side. We move the stepper as requested, say, by a\"\n    },\n    {\n      \"phrase\": \"we looked at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 30.4,\n      \"context\": \"the PC version of that control comms HPP file that we looked at. In this case, we have\"\n    },\n    {\n      \"phrase\": \"move to\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 32.9,\n      \"context\": \"port, which opens up a connection to the Arduino board. We can close that connection. And then the important thing here is this step function for us. We give it an action and some sort of command, say, move to move by and reset, which says\"\n    },\n    {\n      \"phrase\": \"we can go\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 49.9,\n      \"context\": \"like inverted pendulums or self-balancing robots. Obviously there are more complex control schemes out there, such as linear quadratic regulators and model predictive control. But PID controllers are a great introduction into control theory. If this is something you would like to tinker with. Good luck and happy hacking. Beep!\"\n    },\n    {\n      \"phrase\": \"If we go back to our Arduino code here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 41.1,\n      \"context\": \"closed and then I'm going to reopen that connection. So now I can talk to the Arduino board. First, I'm going to test the control to make sure that it actually moves. The idea here is that the stepper motor should be able to move fast enough such that it can recover from a, say, plus or minus 10 degree offset from being vertical. If we go back to our Arduino code here, you\"\n    },\n    {\n      \"phrase\": \"So when I run this cell here, I'm going to offset this\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 52.1,\n      \"context\": \"tuning our actual controller. As I mentioned earlier, the first thing we want to do is make sure that our stepper motor can recover from about plus or minus 10 degrees. So when I run this cell here, I'm going to offset this by about five\"\n    },\n    {\n      \"phrase\": \"I'm going to hold it about here\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 52.8,\n      \"context\": \"moving at negative 90. So I'm going to hold it about here. Yes, it goes the other way. So\"\n    },\n    {\n      \"phrase\": \"Let's take a look at our output\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 54.2,\n      \"context\": \"gets us. So I'm just going to hold this here and say go. Okay. So it looks like it's jittering a lot and then it's struggling to keep up at the. And there. Let's take a look at our output. Sure enough, there's a lot of oscillations, which\"\n    },\n    {\n      \"phrase\": \"Let's take a look at our plot\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 55.9,\n      \"context\": \"Let's try 0.5 about halfway in between. We'll run this again. Okay. Not bad. There's some oscillations. And in fact, I want to run this again. Be prepared to run some of these cells multiple times. Okay. Still some oscillations. It's oscillating around that 180 point. So it means it's a little too high. Let's take a look at our plot. And here we go. Sure enough, it's unstable. You\"\n    },\n    {\n      \"phrase\": \"Let's stop that\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 59.8,\n      \"context\": \"That's almost where we want it. Still look like it's oscillating some. So let's stop that. Go take a look at our code. Yeah,\"\n    },\n    {\n      \"phrase\": \"Go take a look at our code\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 59.9,\n      \"context\": \"some. So let's stop that. Go take a look at our code. Yeah, there's still some oscillations here. I\"\n    },\n    {\n      \"phrase\": \"I can touch it and it corrects\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 62.2,\n      \"context\": \"This is what we're looking for. It's barely moving and it's keeping it upright and I can touch it and it corrects. And let's see if it recovers from that. Oh,\"\n    },\n    {\n      \"phrase\": \"scroll up\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 63.4,\n      \"context\": \"So there's some larger level oscillations going on in here, but this should be okay. Let's scroll up. Yeah, 0.005 seems to be really good. Now\"\n    },\n    {\n      \"phrase\": \"leave bias at zero\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 74.7,\n      \"context\": \"There's obviously some other tweaks, but let's go with that for now. I hope this helps you get started creating your own PID controllers and then tuning them for things like inverted pendulums or self-balancing robots. Obviously there are more complex control schemes out there, such as linear quadratic regulators and model predictive control. But PID controllers are a great introduction into control theory. If this is something you would like to tinker with. Good luck and happy hacking. Beep!\"\n    },\n    {\n      \"phrase\": \"As you can see, it works pretty much most of the time.\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 77.1,\n      \"context\": \"Obviously some other tweaks, but let's go with that for now. I hope this helps you get started creating your own PID controllers and then tuning them for things like inverted pendulums or self-balancing robots. Obviously there are more complex control schemes out there, such as linear quadratic regulators and model predictive control. But PID controllers are a great introduction into control theory. If this is something you would like to tinker with. Good luck and happy hacking. Beep!\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 20,\n    \"by_category\": {\n      \"visual_reference\": 10,\n      \"action_narration\": 6,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 4\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"There are a moderate amount of embodied phrases, mostly visual cues (look at this, scroll down) and action narration (I'm going to hold it, move by). No sensory descriptions are present.\"\n  }\n}\n```"
+}

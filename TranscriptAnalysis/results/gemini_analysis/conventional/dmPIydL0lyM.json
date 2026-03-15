@@ -1,0 +1,103 @@
+{
+  "video_id": "dmPIydL0lyM",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Bandpass Filter",
+        "description": "The video covers the design and characteristics of bandpass filters, focusing on how they pass a specific range of frequencies while rejecting others.  The video explains how to design them by cascading high-pass and low-pass filters.",
+        "mention_count": 20,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "The bandpass filter is the first topic introduced and is a central topic throughout the video, developed with examples and comparisons.  It's mentioned frequently and reinforced at the end.",
+        "representative_quotes": [
+          "this bandpass filter passes only certain band of frequencies",
+          "just by cascading this high pass and the low pass filter, we can design this bandpass filter"
+        ]
+      },
+      {
+        "name": "Bandstop Filter",
+        "description": "The video explains bandstop filters (also called band-reject filters), which reject a specific range of frequencies while passing all others. The video also explains how to design them by using low-pass and high-pass filters combined with an op-amp circuit.",
+        "mention_count": 14,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The bandstop filter is introduced as a contrast to the bandpass filter, is developed in a dedicated section, and reinforced at the end. Multiple examples given.",
+        "representative_quotes": [
+          "this filter is known as the band stop filter or a band reject filter",
+          "just by adding the responses of this low pass filter and the high pass filter, we can design this band stop filter"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "as you can see",
+        "category": "visual_reference",
+        "position_pct": 4.7,
+        "context": "So, for such applications, we can use this bandpass filter. So as you can see, this bandpass filter passes only"
+      },
+      {
+        "phrase": "if you see",
+        "category": "visual_reference",
+        "position_pct": 13.2,
+        "context": "So now if you see the frequency response of this bandpass"
+      },
+      {
+        "phrase": "as you can see",
+        "category": "visual_reference",
+        "position_pct": 17.3,
+        "context": "So as you can see, at zero frequency, the output"
+      },
+      {
+        "phrase": "as you can see",
+        "category": "visual_reference",
+        "position_pct": 24.6,
+        "context": "So as you can see in this example, the high"
+      },
+      {
+        "phrase": "if you see",
+        "category": "visual_reference",
+        "position_pct": 34.1,
+        "context": "So in this example, now if you see here, we have designed this band"
+      },
+      {
+        "phrase": "hold it steady",
+        "category": "procedural_instruction",
+        "position_pct": 38.5,
+        "context": "hold steady, make sure this is aligned, tighten until"
+      },
+      {
+        "phrase": "as you can see",
+        "category": "visual_reference",
+        "position_pct": 50.1,
+        "context": "So as you can see here, this portion is nothing"
+      },
+      {
+        "phrase": "as you can see",
+        "category": "visual_reference",
+        "position_pct": 50.9,
+        "context": "So as you can see here, we have given the same"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 8,
+      "by_category": {
+        "visual_reference": 7,
+        "action_narration": 0,
+        "sensory_description": 0,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The transcript mainly uses visual references like 'as you can see' to guide the viewer. There is only one procedural instruction and no sensory descriptions or action narrations."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Bandpass Filter\",\n      \"description\": \"The video covers the design and characteristics of bandpass filters, focusing on how they pass a specific range of frequencies while rejecting others.  The video explains how to design them by cascading high-pass and low-pass filters.\",\n      \"mention_count\": 20,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"The bandpass filter is the first topic introduced and is a central topic throughout the video, developed with examples and comparisons.  It's mentioned frequently and reinforced at the end.\",\n      \"representative_quotes\": [\n        \"this bandpass filter passes only certain band of frequencies\",\n        \"just by cascading this high pass and the low pass filter, we can design this bandpass filter\"\n      ]\n    },\n    {\n      \"name\": \"Bandstop Filter\",\n      \"description\": \"The video explains bandstop filters (also called band-reject filters), which reject a specific range of frequencies while passing all others. The video also explains how to design them by using low-pass and high-pass filters combined with an op-amp circuit.\",\n      \"mention_count\": 14,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The bandstop filter is introduced as a contrast to the bandpass filter, is developed in a dedicated section, and reinforced at the end. Multiple examples given.\",\n      \"representative_quotes\": [\n        \"this filter is known as the band stop filter or a band reject filter\",\n        \"just by adding the responses of this low pass filter and the high pass filter, we can design this band stop filter\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"as you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 4.7,\n      \"context\": \"So, for such applications, we can use this bandpass filter. So as you can see, this bandpass filter passes only\"\n    },\n    {\n      \"phrase\": \"if you see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 13.2,\n      \"context\": \"So now if you see the frequency response of this bandpass\"\n    },\n    {\n      \"phrase\": \"as you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 17.3,\n      \"context\": \"So as you can see, at zero frequency, the output\"\n    },\n    {\n      \"phrase\": \"as you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 24.6,\n      \"context\": \"So as you can see in this example, the high\"\n    },\n    {\n      \"phrase\": \"if you see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 34.1,\n      \"context\": \"So in this example, now if you see here, we have designed this band\"\n    },\n    {\n      \"phrase\": \"hold it steady\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 38.5,\n      \"context\": \"hold steady, make sure this is aligned, tighten until\"\n    },\n    {\n      \"phrase\": \"as you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 50.1,\n      \"context\": \"So as you can see here, this portion is nothing\"\n    },\n    {\n      \"phrase\": \"as you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 50.9,\n      \"context\": \"So as you can see here, we have given the same\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 8,\n    \"by_category\": {\n      \"visual_reference\": 7,\n      \"action_narration\": 0,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The transcript mainly uses visual references like 'as you can see' to guide the viewer. There is only one procedural instruction and no sensory descriptions or action narrations.\"\n  }\n}\n```"
+}

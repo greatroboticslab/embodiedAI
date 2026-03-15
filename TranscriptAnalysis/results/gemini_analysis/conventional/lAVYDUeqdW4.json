@@ -1,0 +1,98 @@
+{
+  "video_id": "lAVYDUeqdW4",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Quadrotor Dynamics Equations",
+        "description": "The equations governing quadrotor motion, including net force, net moment, and the Newton-Euler equations, expressed in both inertial and body-fixed frames. These equations relate thrust, mass, inertia, and angular velocity.",
+        "mention_count": 4,
+        "positions": [
+          "early"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The equations are discussed in a dedicated section, with multiple mentions and explanations of their components, but the video doesn't return to this topic later.",
+        "representative_quotes": [
+          "The equations at the bottom tell us the net force and the net moment.",
+          "If we combine the net force and the net moment with the Newton-Euler equations, we get these two sets of equations."
+        ]
+      },
+      {
+        "name": "State Space Representation",
+        "description": "Defining the state vector and state space for both 3D and planar quadrotors, including configuration and its derivative, and equilibrium configurations.",
+        "mention_count": 7,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "The concept is introduced and developed, including examples for both 3D and planar quadrotors, and equilibrium conditions are defined. However, it's not a central focus throughout the video.",
+        "representative_quotes": [
+          "To describe these kinds of systems, it is useful to define a state vector.",
+          "The space of all such state vectors is called a state space."
+        ]
+      },
+      {
+        "name": "Planar Quadrotor Model",
+        "description": "Simplifying the 3D quadrotor model to a 2D (planar) version by constraining motion to the yz-plane and eliminating yaw and pitch.",
+        "mention_count": 4,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The concept is covered in a dedicated section, explaining the assumptions and resulting equations, but not revisited later in the video.",
+        "representative_quotes": [
+          "To get a feel for the control problem, I'd like to first look at the planar version of this model.",
+          "We will assume that the robot cannot move out of this plane."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "you see",
+        "category": "visual_reference",
+        "position_pct": 8.6,
+        "context": "On the right side, you see the total thrust, which"
+      },
+      {
+        "phrase": "you can see",
+        "category": "visual_reference",
+        "position_pct": 28.6,
+        "context": "You can also see that these parameters appear"
+      },
+      {
+        "phrase": "look at",
+        "category": "visual_reference",
+        "position_pct": 51.4,
+        "context": "I'd like to first look at the planar version"
+      },
+      {
+        "phrase": "you see",
+        "category": "visual_reference",
+        "position_pct": 59.1,
+        "context": "that direction, and the rate of change you see here."
+      },
+      {
+        "phrase": "look at",
+        "category": "visual_reference",
+        "position_pct": 75.2,
+        "context": "If you look at the equilibrium configuration, and"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 5,
+      "by_category": {
+        "visual_reference": 5,
+        "action_narration": 0,
+        "sensory_description": 0,
+        "procedural_instruction": 0
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "Only visual references are present. There's no action narration, sensory descriptions, or procedural instruction in the provided transcript."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Quadrotor Dynamics Equations\",\n      \"description\": \"The equations governing quadrotor motion, including net force, net moment, and the Newton-Euler equations, expressed in both inertial and body-fixed frames. These equations relate thrust, mass, inertia, and angular velocity.\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"early\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The equations are discussed in a dedicated section, with multiple mentions and explanations of their components, but the video doesn't return to this topic later.\",\n      \"representative_quotes\": [\n        \"The equations at the bottom tell us the net force and the net moment.\",\n        \"If we combine the net force and the net moment with the Newton-Euler equations, we get these two sets of equations.\"\n      ]\n    },\n    {\n      \"name\": \"State Space Representation\",\n      \"description\": \"Defining the state vector and state space for both 3D and planar quadrotors, including configuration and its derivative, and equilibrium configurations.\",\n      \"mention_count\": 7,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The concept is introduced and developed, including examples for both 3D and planar quadrotors, and equilibrium conditions are defined. However, it's not a central focus throughout the video.\",\n      \"representative_quotes\": [\n        \"To describe these kinds of systems, it is useful to define a state vector.\",\n        \"The space of all such state vectors is called a state space.\"\n      ]\n    },\n    {\n      \"name\": \"Planar Quadrotor Model\",\n      \"description\": \"Simplifying the 3D quadrotor model to a 2D (planar) version by constraining motion to the yz-plane and eliminating yaw and pitch.\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The concept is covered in a dedicated section, explaining the assumptions and resulting equations, but not revisited later in the video.\",\n      \"representative_quotes\": [\n        \"To get a feel for the control problem, I'd like to first look at the planar version of this model.\",\n        \"We will assume that the robot cannot move out of this plane.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"you see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 8.6,\n      \"context\": \"On the right side, you see the total thrust, which\"\n    },\n    {\n      \"phrase\": \"you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 28.6,\n      \"context\": \"You can also see that these parameters appear\"\n    },\n    {\n      \"phrase\": \"look at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 51.4,\n      \"context\": \"I'd like to first look at the planar version\"\n    },\n    {\n      \"phrase\": \"you see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 59.1,\n      \"context\": \"that direction, and the rate of change you see here.\"\n    },\n    {\n      \"phrase\": \"look at\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 75.2,\n      \"context\": \"If you look at the equilibrium configuration, and\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 5,\n    \"by_category\": {\n      \"visual_reference\": 5,\n      \"action_narration\": 0,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 0\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"Only visual references are present. There's no action narration, sensory descriptions, or procedural instruction in the provided transcript.\"\n  }\n}\n```"
+}

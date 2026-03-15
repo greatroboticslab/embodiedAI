@@ -1,0 +1,250 @@
+{
+  "video_id": "EdUAecpYVWQ",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Diode Definition and Symbol",
+        "description": "Explains what a diode is, contrasting it with a resistor, and introduces the diode's symbol, anode, and cathode. It also notes that current flows in one direction based on polarity.",
+        "mention_count": 4,
+        "positions": [
+          "early"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section at the beginning of the video, with multiple mentions. Key to understanding the rest of the material.",
+        "representative_quotes": [
+          "diode is a two-terminal semiconductor device which allows the flow of current only in one direction",
+          "this arrow indicates the direction in which this diode allows the flow of current"
+        ]
+      },
+      {
+        "name": "VI Characteristic of a Diode",
+        "description": "Explains the nonlinear relationship between voltage and current in a diode, including forward and reverse bias. Also addresses how to interpret the graph, including the different scales of the x and y axes.",
+        "mention_count": 9,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "Addressed repeatedly throughout the video, with dedicated sections, and practical examples. The video emphasizes the importance of understanding this characteristic for circuit analysis.",
+        "representative_quotes": [
+          "the relationship between the voltage and current for the diode is nonlinear",
+          "using this VI characteristic of the diode, we can easily find the voltage and current that is flowing through the diode"
+        ]
+      },
+      {
+        "name": "Diode Approximations",
+        "description": "Presents different approximations of diode behavior (ideal, with threshold voltage, with bulk resistance) to simplify circuit analysis, and explains how these approximations affect calculations.",
+        "mention_count": 12,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "A primary focus of the second half of the video, with multiple examples illustrating each approximation.  Builds from simple to complex models.",
+        "representative_quotes": [
+          "consider this diode as an ideal diode",
+          "we are also considering that the diode has some finite resistance"
+        ]
+      },
+      {
+        "name": "Diode Operating Regions",
+        "description": "Describes the forward region, reverse region (including reverse saturation current), and breakdown region of diode operation.",
+        "mention_count": 5,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section towards the end of the video. The regions are explained with reference to the diode curve, and advice about safe operation is provided.",
+        "representative_quotes": [
+          "this region is known as the forward region",
+          "this region of operation is known as the breakdown region"
+        ]
+      },
+      {
+        "name": "Datasheet Parameters",
+        "description": "Mentions key diode parameters found in datasheets, like maximum breakdown voltage and maximum allowable forward current.",
+        "mention_count": 2,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 2,
+        "strength_reasoning": "Briefly mentions datasheet parameters near the end of the video. It is covered in one short section.",
+        "representative_quotes": [
+          "maximum breakdown voltage for the diode has been mentioned",
+          "maximum allowable forward current"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "if you see the symbol of the diode, then it looks like this",
+        "category": "visual_reference",
+        "position_pct": 7.1,
+        "context": "in both directions. Similarly, this diode is a two-terminal semiconductor device. And if you see the symbol of the diode, then it looks like this. So here"
+      },
+      {
+        "phrase": "it looks like this",
+        "category": "visual_reference",
+        "position_pct": 28.6,
+        "context": "the Ohm's law, we can easily find the voltage and current through this resistor. But if you look this graph, then it looks like this. But don't get confused"
+      },
+      {
+        "phrase": "if you see",
+        "category": "visual_reference",
+        "position_pct": 29.3,
+        "context": "both axes. But if we keep the same scale on both axes, then the diode characteristic will look like this. So as you can see, in the"
+      },
+      {
+        "phrase": "as you can see",
+        "category": "visual_reference",
+        "position_pct": 30.0,
+        "context": "axes, then the diode characteristic will look like this. So as you can see, in the reverse direction, the current that"
+      },
+      {
+        "phrase": "as you can see",
+        "category": "visual_reference",
+        "position_pct": 47.1,
+        "context": "closed switch. And as you can see over here, the applied voltage across the"
+      },
+      {
+        "phrase": "you need to remove this diode from the circuit",
+        "category": "procedural_instruction",
+        "position_pct": 52.9,
+        "context": "the diode. So, that can be found by finding the Thevenin's equivalent voltage between these two terminals. So, simply you need to remove this diode from the circuit and you need to"
+      },
+      {
+        "phrase": "if you see the VI characteristic of this ideal diode",
+        "category": "visual_reference",
+        "position_pct": 54.3,
+        "context": "the diode will be non-conducting. On the other hand, whenever the 10V is appearing between these two terminals, then if you see the VI characteristic of this ideal diode, then you"
+      },
+      {
+        "phrase": "if you see the actual diode, it will start conducting",
+        "category": "visual_reference",
+        "position_pct": 58.6,
+        "context": "start conducting. But if you see the actual diode, it will start conducting only after the"
+      },
+      {
+        "phrase": "it will look like this",
+        "category": "visual_reference",
+        "position_pct": 59.3,
+        "context": "should start conducting. But if you see the actual diode, it will start conducting only after the applied voltage cross some threshold voltage. And if you see the VI characteristic, then it will look like this."
+      },
+      {
+        "phrase": "the equivalent circuit will look like this",
+        "category": "visual_reference",
+        "position_pct": 66.4,
+        "context": "voltage. And before that, it will not allow any flow of current. So, this is the first approximation for the diode curve. So, here in this approximation, we are considering this diode as an ideal diode. But it will only allow the flow of current once the applied voltage crosses this threshold voltage. And the equivalent circuit will look like this."
+      },
+      {
+        "phrase": "the equivalent circuit will look like this",
+        "category": "visual_reference",
+        "position_pct": 72.1,
+        "context": "crosses this 0.7V barrier, then only it will allow the flow of current. And the equivalent circuit will look like this. So, now if you find the current"
+      },
+      {
+        "phrase": "if you see",
+        "category": "visual_reference",
+        "position_pct": 74.3,
+        "context": "switch. And it will not allow any flow of current. So, the current that is flowing through this resistor will be equal to 0A. Now, in this first approximation also, we have considered that the diode has a 0 resistance. And that can be also visible from the VI characteristic of this diode. Because if you observe over here, once the applied voltage crosses this threshold voltage, then if you see, now the actual current that"
+      },
+      {
+        "phrase": "if you observe over here",
+        "category": "visual_reference",
+        "position_pct": 74.3,
+        "context": "equal to 0A. Now, in this first approximation also, we have considered that the diode has a 0 resistance. And that can be also visible from the VI characteristic of this diode. Because if you observe over here, once the applied voltage crosses this threshold voltage, then if you see, now the actual current that"
+      },
+      {
+        "phrase": "if you see the VI characteristic",
+        "category": "visual_reference",
+        "position_pct": 76.4,
+        "context": "finite resistance. So, now let's consider the second approximation, where we are also considering that the diode has some finite resistance. And in that case, if you see the VI characteristic, then it will look like this. So,"
+      },
+      {
+        "phrase": "the equivalent circuit for this second approximation",
+        "category": "visual_reference",
+        "position_pct": 78.6,
+        "context": "some finite resistance. So, now let's see the equivalent circuit for this second approximation. So, whenever the diode is reversed biased, in that"
+      },
+      {
+        "phrase": "if we consider this diode resistance",
+        "category": "conditional",
+        "position_pct": 84.3,
+        "context": "So, if we consider this diode resistance, then the current that is flowing through this"
+      },
+      {
+        "phrase": "if you see",
+        "category": "visual_reference",
+        "position_pct": 85.0,
+        "context": "divided by 125 ohm. And if you see the current, it will be equal to 0.074 ampere."
+      },
+      {
+        "phrase": "if you see",
+        "category": "conditional",
+        "position_pct": 85.0,
+        "context": "divided by 125 ohm. And if you see the current, it will be equal to 0.074 ampere. So,"
+      },
+      {
+        "phrase": "if you see",
+        "category": "conditional",
+        "position_pct": 85.7,
+        "context": "this diode resistance, if you see, now the actual current that is flowing through this"
+      },
+      {
+        "phrase": "if you see this type of characteristic",
+        "category": "visual_reference",
+        "position_pct": 87.9,
+        "context": "diode resistance. So, in this second approximation of this diode, we have assumed that the diode is non-conducting till the point the applied voltage crosses the threshold voltage. And then after it offers some finite resistance. So, if you see this type of characteristic, then it is known as"
+      },
+      {
+        "phrase": "let's talk about the actual curve of this diode",
+        "category": "action_narration",
+        "position_pct": 89.3,
+        "context": "we have segmented the actual characteristic of this diode into the piecewise linear characteristic. So, up to the threshold voltage, we have assumed that the diode is non-conducting. And after the threshold voltage, it will offer some finite resistance. Okay, so now let's talk about the actual curve of this diode."
+      },
+      {
+        "phrase": "as you can see from the graph",
+        "category": "visual_reference",
+        "position_pct": 92.9,
+        "context": "the reverse region of operation. And in this region, the current that is flowing through the diode used to be very small. And this current is known as the reverse saturation current of the diode. So, as you can see from the graph, even if we increase this"
+      },
+      {
+        "phrase": "if you see the datasheet",
+        "category": "visual_reference",
+        "position_pct": 95.7,
+        "context": "breakdown voltage. So if you see the datasheet, you will find that the maximum breakdown voltage"
+      },
+      {
+        "phrase": "if you observe",
+        "category": "visual_reference",
+        "position_pct": 96.4,
+        "context": "the forward region of this diode characteristic curve, if you observe, as the voltage across the diode increases, the"
+      },
+      {
+        "phrase": "If you like this video, hit the like button",
+        "category": "action_narration",
+        "position_pct": 99.3,
+        "context": "let me know in the comment section below. If you like this video, hit the like button and subscribe to the channel"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 25,
+      "by_category": {
+        "visual_reference": 17,
+        "action_narration": 2,
+        "sensory_description": 0,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The video uses embodied language at a moderate rate, mainly relying on visual references to graphs, symbols, and circuit diagrams.  There are also a few instructions and calls to action."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Diode Definition and Symbol\",\n      \"description\": \"Explains what a diode is, contrasting it with a resistor, and introduces the diode's symbol, anode, and cathode. It also notes that current flows in one direction based on polarity.\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"early\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section at the beginning of the video, with multiple mentions. Key to understanding the rest of the material.\",\n      \"representative_quotes\": [\n        \"diode is a two-terminal semiconductor device which allows the flow of current only in one direction\",\n        \"this arrow indicates the direction in which this diode allows the flow of current\"\n      ]\n    },\n    {\n      \"name\": \"VI Characteristic of a Diode\",\n      \"description\": \"Explains the nonlinear relationship between voltage and current in a diode, including forward and reverse bias. Also addresses how to interpret the graph, including the different scales of the x and y axes.\",\n      \"mention_count\": 9,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Addressed repeatedly throughout the video, with dedicated sections, and practical examples. The video emphasizes the importance of understanding this characteristic for circuit analysis.\",\n      \"representative_quotes\": [\n        \"the relationship between the voltage and current for the diode is nonlinear\",\n        \"using this VI characteristic of the diode, we can easily find the voltage and current that is flowing through the diode\"\n      ]\n    },\n    {\n      \"name\": \"Diode Approximations\",\n      \"description\": \"Presents different approximations of diode behavior (ideal, with threshold voltage, with bulk resistance) to simplify circuit analysis, and explains how these approximations affect calculations.\",\n      \"mention_count\": 12,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"A primary focus of the second half of the video, with multiple examples illustrating each approximation.  Builds from simple to complex models.\",\n      \"representative_quotes\": [\n        \"consider this diode as an ideal diode\",\n        \"we are also considering that the diode has some finite resistance\"\n      ]\n    },\n    {\n      \"name\": \"Diode Operating Regions\",\n      \"description\": \"Describes the forward region, reverse region (including reverse saturation current), and breakdown region of diode operation.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section towards the end of the video. The regions are explained with reference to the diode curve, and advice about safe operation is provided.\",\n      \"representative_quotes\": [\n        \"this region is known as the forward region\",\n        \"this region of operation is known as the breakdown region\"\n      ]\n    },\n    {\n      \"name\": \"Datasheet Parameters\",\n      \"description\": \"Mentions key diode parameters found in datasheets, like maximum breakdown voltage and maximum allowable forward current.\",\n      \"mention_count\": 2,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 2,\n      \"strength_reasoning\": \"Briefly mentions datasheet parameters near the end of the video. It is covered in one short section.\",\n      \"representative_quotes\": [\n        \"maximum breakdown voltage for the diode has been mentioned\",\n        \"maximum allowable forward current\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"if you see the symbol of the diode, then it looks like this\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 7.1,\n      \"context\": \"in both directions. Similarly, this diode is a two-terminal semiconductor device. And if you see the symbol of the diode, then it looks like this. So here\"\n    },\n    {\n      \"phrase\": \"it looks like this\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 28.6,\n      \"context\": \"the Ohm's law, we can easily find the voltage and current through this resistor. But if you look this graph, then it looks like this. But don't get confused\"\n    },\n    {\n      \"phrase\": \"if you see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 29.3,\n      \"context\": \"both axes. But if we keep the same scale on both axes, then the diode characteristic will look like this. So as you can see, in the\"\n    },\n    {\n      \"phrase\": \"as you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 30.0,\n      \"context\": \"axes, then the diode characteristic will look like this. So as you can see, in the reverse direction, the current that\"\n    },\n    {\n      \"phrase\": \"as you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 47.1,\n      \"context\": \"closed switch. And as you can see over here, the applied voltage across the\"\n    },\n    {\n      \"phrase\": \"you need to remove this diode from the circuit\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 52.9,\n      \"context\": \"the diode. So, that can be found by finding the Thevenin's equivalent voltage between these two terminals. So, simply you need to remove this diode from the circuit and you need to\"\n    },\n    {\n      \"phrase\": \"if you see the VI characteristic of this ideal diode\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 54.3,\n      \"context\": \"the diode will be non-conducting. On the other hand, whenever the 10V is appearing between these two terminals, then if you see the VI characteristic of this ideal diode, then you\"\n    },\n    {\n      \"phrase\": \"if you see the actual diode, it will start conducting\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 58.6,\n      \"context\": \"start conducting. But if you see the actual diode, it will start conducting only after the\"\n    },\n    {\n      \"phrase\": \"it will look like this\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 59.3,\n      \"context\": \"should start conducting. But if you see the actual diode, it will start conducting only after the applied voltage cross some threshold voltage. And if you see the VI characteristic, then it will look like this.\"\n    },\n    {\n      \"phrase\": \"the equivalent circuit will look like this\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 66.4,\n      \"context\": \"voltage. And before that, it will not allow any flow of current. So, this is the first approximation for the diode curve. So, here in this approximation, we are considering this diode as an ideal diode. But it will only allow the flow of current once the applied voltage crosses this threshold voltage. And the equivalent circuit will look like this.\"\n    },\n    {\n      \"phrase\": \"the equivalent circuit will look like this\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 72.1,\n      \"context\": \"crosses this 0.7V barrier, then only it will allow the flow of current. And the equivalent circuit will look like this. So, now if you find the current\"\n    },\n    {\n      \"phrase\": \"if you see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 74.3,\n      \"context\": \"switch. And it will not allow any flow of current. So, the current that is flowing through this resistor will be equal to 0A. Now, in this first approximation also, we have considered that the diode has a 0 resistance. And that can be also visible from the VI characteristic of this diode. Because if you observe over here, once the applied voltage crosses this threshold voltage, then if you see, now the actual current that\"\n    },\n    {\n      \"phrase\": \"if you observe over here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 74.3,\n      \"context\": \"equal to 0A. Now, in this first approximation also, we have considered that the diode has a 0 resistance. And that can be also visible from the VI characteristic of this diode. Because if you observe over here, once the applied voltage crosses this threshold voltage, then if you see, now the actual current that\"\n    },\n    {\n      \"phrase\": \"if you see the VI characteristic\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 76.4,\n      \"context\": \"finite resistance. So, now let's consider the second approximation, where we are also considering that the diode has some finite resistance. And in that case, if you see the VI characteristic, then it will look like this. So,\"\n    },\n    {\n      \"phrase\": \"the equivalent circuit for this second approximation\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 78.6,\n      \"context\": \"some finite resistance. So, now let's see the equivalent circuit for this second approximation. So, whenever the diode is reversed biased, in that\"\n    },\n    {\n      \"phrase\": \"if we consider this diode resistance\",\n      \"category\": \"conditional\",\n      \"position_pct\": 84.3,\n      \"context\": \"So, if we consider this diode resistance, then the current that is flowing through this\"\n    },\n    {\n      \"phrase\": \"if you see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 85.0,\n      \"context\": \"divided by 125 ohm. And if you see the current, it will be equal to 0.074 ampere.\"\n    },\n    {\n      \"phrase\": \"if you see\",\n      \"category\": \"conditional\",\n      \"position_pct\": 85.0,\n      \"context\": \"divided by 125 ohm. And if you see the current, it will be equal to 0.074 ampere. So,\"\n    },\n    {\n      \"phrase\": \"if you see\",\n      \"category\": \"conditional\",\n      \"position_pct\": 85.7,\n      \"context\": \"this diode resistance, if you see, now the actual current that is flowing through this\"\n    },\n    {\n      \"phrase\": \"if you see this type of characteristic\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 87.9,\n      \"context\": \"diode resistance. So, in this second approximation of this diode, we have assumed that the diode is non-conducting till the point the applied voltage crosses the threshold voltage. And then after it offers some finite resistance. So, if you see this type of characteristic, then it is known as\"\n    },\n    {\n      \"phrase\": \"let's talk about the actual curve of this diode\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 89.3,\n      \"context\": \"we have segmented the actual characteristic of this diode into the piecewise linear characteristic. So, up to the threshold voltage, we have assumed that the diode is non-conducting. And after the threshold voltage, it will offer some finite resistance. Okay, so now let's talk about the actual curve of this diode.\"\n    },\n    {\n      \"phrase\": \"as you can see from the graph\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 92.9,\n      \"context\": \"the reverse region of operation. And in this region, the current that is flowing through the diode used to be very small. And this current is known as the reverse saturation current of the diode. So, as you can see from the graph, even if we increase this\"\n    },\n    {\n      \"phrase\": \"if you see the datasheet\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 95.7,\n      \"context\": \"breakdown voltage. So if you see the datasheet, you will find that the maximum breakdown voltage\"\n    },\n    {\n      \"phrase\": \"if you observe\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 96.4,\n      \"context\": \"the forward region of this diode characteristic curve, if you observe, as the voltage across the diode increases, the\"\n    },\n    {\n      \"phrase\": \"If you like this video, hit the like button\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 99.3,\n      \"context\": \"let me know in the comment section below. If you like this video, hit the like button and subscribe to the channel\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 25,\n    \"by_category\": {\n      \"visual_reference\": 17,\n      \"action_narration\": 2,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The video uses embodied language at a moderate rate, mainly relying on visual references to graphs, symbols, and circuit diagrams.  There are also a few instructions and calls to action.\"\n  }\n}\n```"
+}

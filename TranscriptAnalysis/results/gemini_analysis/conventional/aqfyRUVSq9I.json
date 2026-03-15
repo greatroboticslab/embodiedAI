@@ -1,0 +1,154 @@
+{
+  "video_id": "aqfyRUVSq9I",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Op-Amp Follower/Buffer",
+        "description": "The video introduces the most basic op-amp circuit, the follower, and explains how it works as a buffer, where the output mirrors the input.",
+        "mention_count": 5,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 3,
+        "strength_reasoning": "Dedicated section explaining its function, multiple mentions, and a good level of detail.",
+        "representative_quotes": [
+          "this is called a follower",
+          "the output just looks exactly the same as the input"
+        ]
+      },
+      {
+        "name": "Non-Inverting Amplifier",
+        "description": "The video explains how adding resistors in the feedback path creates a non-inverting amplifier and how to calculate the gain based on the resistor values.",
+        "mention_count": 4,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Covered in a dedicated section with formulas and examples, making it a key concept.",
+        "representative_quotes": [
+          "This is now a non-inverting amplifier",
+          "this configuration always has a gain of 1 plus R2 over R1"
+        ]
+      },
+      {
+        "name": "Inverting Amplifier",
+        "description": "The video details how to create an inverting amplifier, the concept of virtual ground, and calculating gain. This is later used for the active filter.",
+        "mention_count": 6,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "Central to understanding the final active filter and is explained with good detail.",
+        "representative_quotes": [
+          "This point is now called virtual ground",
+          "This time the gain is minus R2 over R1"
+        ]
+      },
+      {
+        "name": "Active Filter",
+        "description": "The video explains how to create an active filter by adding a capacitor to an inverting amplifier, resulting in frequency-dependent behavior that is later built out physically.",
+        "mention_count": 7,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "Primary focus of the video. Multiple explanations and examples.",
+        "representative_quotes": [
+          "we're going to build this. A really gnarly sounding active filter",
+          "This CD4069UB is an inverting amplifier with the midway point threshold set internally to the chip"
+        ]
+      },
+      {
+        "name": "Op-Amp Analysis (Negative Feedback)",
+        "description": "The video describes general techniques for analyzing op-amp circuits including the 'golden rule' (negative feedback strives to equalize inputs) and virtual ground.",
+        "mention_count": 4,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "Recurring theme throughout; it's fundamental to understanding how the other circuits work.",
+        "representative_quotes": [
+          "when we have negative feedback, which is when the output is connected back to the inverting input",
+          "the op-amp will then do whatever it can to try and make these two inputs equal"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "look at what we're going to see",
+        "category": "visual_reference",
+        "position_pct": 11.23,
+        "context": "why don't I put a input in here, and we'll have a look at what we're going to see in the"
+      },
+      {
+        "phrase": "think the circuit through",
+        "category": "procedural_instruction",
+        "position_pct": 15.38,
+        "context": "think the circuit through, if this is one volt, this wants to be"
+      },
+      {
+        "phrase": "see down here",
+        "category": "visual_reference",
+        "position_pct": 28.16,
+        "context": "amplifier. And we can imagine that the output is still going to look something like this input. Well, we can see down here that what we've essentially done is"
+      },
+      {
+        "phrase": "can see that",
+        "category": "visual_reference",
+        "position_pct": 34.64,
+        "context": "is 11 volts to get 1 volt here. And so we can see that, let's just leave it like this, that"
+      },
+      {
+        "phrase": "see, so we can still use our first golden rule",
+        "category": "visual_reference",
+        "position_pct": 38.76,
+        "context": "more variation that I want to show you before we go on to building our active filter. Okay, so this is a slightly more interesting configuration. Now this time we've still got negative feedback, see, so we can still use our first golden rule"
+      },
+      {
+        "phrase": "the sound source",
+        "category": "sensory_description",
+        "position_pct": 77.11,
+        "context": "Right, hello folks. What we're going to do now is we're going to build the circuit out. A bit of a 4106 oscillator as a sound source, you can use any sound source you"
+      },
+      {
+        "phrase": "You can see on the scope",
+        "category": "visual_reference",
+        "position_pct": 86.22,
+        "context": "filtered out. You can see on the scope that the amplitude isn't changing. Okay, and then finally, I've"
+      },
+      {
+        "phrase": "looked over",
+        "category": "visual_reference",
+        "position_pct": 91.67,
+        "context": "Okay, so that's it for this one guys. Thanks for joining me today. We looked over three super simple op-amp circuits. We learned how to analyze"
+      },
+      {
+        "phrase": "we built ourselves",
+        "category": "action_narration",
+        "position_pct": 92.35,
+        "context": "op-amp circuits in general, and we built ourselves this awesome sounding active filter. Thanks for watching. Make sure"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 9,
+      "by_category": {
+        "visual_reference": 4,
+        "action_narration": 1,
+        "sensory_description": 1,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "There are a handful of action-oriented and sensory phrases, combined with visual references. Overall, the embodied language is solid."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Op-Amp Follower/Buffer\",\n      \"description\": \"The video introduces the most basic op-amp circuit, the follower, and explains how it works as a buffer, where the output mirrors the input.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Dedicated section explaining its function, multiple mentions, and a good level of detail.\",\n      \"representative_quotes\": [\n        \"this is called a follower\",\n        \"the output just looks exactly the same as the input\"\n      ]\n    },\n    {\n      \"name\": \"Non-Inverting Amplifier\",\n      \"description\": \"The video explains how adding resistors in the feedback path creates a non-inverting amplifier and how to calculate the gain based on the resistor values.\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Covered in a dedicated section with formulas and examples, making it a key concept.\",\n      \"representative_quotes\": [\n        \"This is now a non-inverting amplifier\",\n        \"this configuration always has a gain of 1 plus R2 over R1\"\n      ]\n    },\n    {\n      \"name\": \"Inverting Amplifier\",\n      \"description\": \"The video details how to create an inverting amplifier, the concept of virtual ground, and calculating gain. This is later used for the active filter.\",\n      \"mention_count\": 6,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Central to understanding the final active filter and is explained with good detail.\",\n      \"representative_quotes\": [\n        \"This point is now called virtual ground\",\n        \"This time the gain is minus R2 over R1\"\n      ]\n    },\n    {\n      \"name\": \"Active Filter\",\n      \"description\": \"The video explains how to create an active filter by adding a capacitor to an inverting amplifier, resulting in frequency-dependent behavior that is later built out physically.\",\n      \"mention_count\": 7,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"Primary focus of the video. Multiple explanations and examples.\",\n      \"representative_quotes\": [\n        \"we're going to build this. A really gnarly sounding active filter\",\n        \"This CD4069UB is an inverting amplifier with the midway point threshold set internally to the chip\"\n      ]\n    },\n    {\n      \"name\": \"Op-Amp Analysis (Negative Feedback)\",\n      \"description\": \"The video describes general techniques for analyzing op-amp circuits including the 'golden rule' (negative feedback strives to equalize inputs) and virtual ground.\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Recurring theme throughout; it's fundamental to understanding how the other circuits work.\",\n      \"representative_quotes\": [\n        \"when we have negative feedback, which is when the output is connected back to the inverting input\",\n        \"the op-amp will then do whatever it can to try and make these two inputs equal\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"look at what we're going to see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 11.23,\n      \"context\": \"why don't I put a input in here, and we'll have a look at what we're going to see in the\"\n    },\n    {\n      \"phrase\": \"think the circuit through\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 15.38,\n      \"context\": \"think the circuit through, if this is one volt, this wants to be\"\n    },\n    {\n      \"phrase\": \"see down here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 28.16,\n      \"context\": \"amplifier. And we can imagine that the output is still going to look something like this input. Well, we can see down here that what we've essentially done is\"\n    },\n    {\n      \"phrase\": \"can see that\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 34.64,\n      \"context\": \"is 11 volts to get 1 volt here. And so we can see that, let's just leave it like this, that\"\n    },\n    {\n      \"phrase\": \"see, so we can still use our first golden rule\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 38.76,\n      \"context\": \"more variation that I want to show you before we go on to building our active filter. Okay, so this is a slightly more interesting configuration. Now this time we've still got negative feedback, see, so we can still use our first golden rule\"\n    },\n    {\n      \"phrase\": \"the sound source\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 77.11,\n      \"context\": \"Right, hello folks. What we're going to do now is we're going to build the circuit out. A bit of a 4106 oscillator as a sound source, you can use any sound source you\"\n    },\n    {\n      \"phrase\": \"You can see on the scope\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 86.22,\n      \"context\": \"filtered out. You can see on the scope that the amplitude isn't changing. Okay, and then finally, I've\"\n    },\n    {\n      \"phrase\": \"looked over\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 91.67,\n      \"context\": \"Okay, so that's it for this one guys. Thanks for joining me today. We looked over three super simple op-amp circuits. We learned how to analyze\"\n    },\n    {\n      \"phrase\": \"we built ourselves\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 92.35,\n      \"context\": \"op-amp circuits in general, and we built ourselves this awesome sounding active filter. Thanks for watching. Make sure\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 9,\n    \"by_category\": {\n      \"visual_reference\": 4,\n      \"action_narration\": 1,\n      \"sensory_description\": 1,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"There are a handful of action-oriented and sensory phrases, combined with visual references. Overall, the embodied language is solid.\"\n  }\n}\n```"
+}

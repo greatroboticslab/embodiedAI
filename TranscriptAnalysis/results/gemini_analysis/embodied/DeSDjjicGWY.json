@@ -1,0 +1,111 @@
+{
+  "video_id": "DeSDjjicGWY",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "FPV Drone Components",
+        "description": "Explanation of the core hardware components needed for an FPV drone, including frame, motors, battery, receiver, camera, VTX, FC (flight controller), and ESC (electronic speed controller).",
+        "mention_count": 4,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "The components are introduced in a dedicated section, with individual explanations and connections to overall functionality. This is a core concept developed throughout.",
+        "representative_quotes": [
+          "The first obvious part is of course a frame onto which all other components get mounted on.",
+          "And those were all in all the basic components required for an FPV drone"
+        ]
+      },
+      {
+        "name": "Betaflight Configuration",
+        "description": "Setting up and configuring the Betaflight software on the flight controller, including accelerometer calibration, receiver configuration, board alignment, controller channel mapping, mode assignment, and motor direction checking.",
+        "mention_count": 3,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "It gets a dedicated section covering key configuration steps and linking to external resources, though not explicitly returned to.",
+        "representative_quotes": [
+          "And next I had to connect it to a computer and use the Betaflight configurator software to get all the settings right.",
+          "And if you want more information about all of the Betaflight settings then I would highly recommend checking out the Joshua Boutwell channel who made a video series about this."
+        ]
+      },
+      {
+        "name": "Component Selection Considerations",
+        "description": "Factors involved in choosing the right components, such as frame size influencing other components, motor quality, battery specifications (voltage and C rating), receiver protocol (ELRS), ESC current handling, and balancing power and weight.",
+        "mention_count": 5,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "Component selection is a consistent theme throughout the build process, including specifics (motors, batteries) and concluding with general advice to 'downgrade component parameters.'",
+        "representative_quotes": [
+          "The reason is that depending on whether you choose a small or big frame all the other components have to be smaller or bigger too.",
+          "always keep in mind that you can easily downgrade component parameters to not only save money but also make your drone lighter and less powerful"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "let me show you",
+        "category": "visual_reference",
+        "position_pct": 8.6,
+        "context": "before that though let me show you my journey of building"
+      },
+      {
+        "phrase": "look at the link",
+        "category": "visual_reference",
+        "position_pct": 15.7,
+        "context": "interesting to you then look at the link in the video"
+      },
+      {
+        "phrase": "let's get started!",
+        "category": "action_narration",
+        "position_pct": 10.7,
+        "context": "similar. So, let's get started! This video is sponsored by"
+      },
+      {
+        "phrase": "see that later",
+        "category": "visual_reference",
+        "position_pct": 8.1,
+        "context": "I went overboard here but you will see that later. Before that though"
+      },
+      {
+        "phrase": "you can hear",
+        "category": "sensory_description",
+        "position_pct": 62.6,
+        "context": "bench power supply which as you can hear and also see was a"
+      },
+      {
+        "phrase": "find out",
+        "category": "procedural_instruction",
+        "position_pct": 85.9,
+        "context": "the frame to find out how I had to modify it"
+      },
+      {
+        "phrase": "making sure",
+        "category": "procedural_instruction",
+        "position_pct": 91.6,
+        "context": "motors while making sure which ones are the clockwise"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 7,
+      "by_category": {
+        "visual_reference": 3,
+        "action_narration": 1,
+        "sensory_description": 1,
+        "procedural_instruction": 2
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "There are phrases from multiple categories of embodied language, but the overall count is relatively low, meaning embodied descriptions are not a central component of the speaker's style."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"FPV Drone Components\",\n      \"description\": \"Explanation of the core hardware components needed for an FPV drone, including frame, motors, battery, receiver, camera, VTX, FC (flight controller), and ESC (electronic speed controller).\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The components are introduced in a dedicated section, with individual explanations and connections to overall functionality. This is a core concept developed throughout.\",\n      \"representative_quotes\": [\n        \"The first obvious part is of course a frame onto which all other components get mounted on.\",\n        \"And those were all in all the basic components required for an FPV drone\"\n      ]\n    },\n    {\n      \"name\": \"Betaflight Configuration\",\n      \"description\": \"Setting up and configuring the Betaflight software on the flight controller, including accelerometer calibration, receiver configuration, board alignment, controller channel mapping, mode assignment, and motor direction checking.\",\n      \"mention_count\": 3,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"It gets a dedicated section covering key configuration steps and linking to external resources, though not explicitly returned to.\",\n      \"representative_quotes\": [\n        \"And next I had to connect it to a computer and use the Betaflight configurator software to get all the settings right.\",\n        \"And if you want more information about all of the Betaflight settings then I would highly recommend checking out the Joshua Boutwell channel who made a video series about this.\"\n      ]\n    },\n    {\n      \"name\": \"Component Selection Considerations\",\n      \"description\": \"Factors involved in choosing the right components, such as frame size influencing other components, motor quality, battery specifications (voltage and C rating), receiver protocol (ELRS), ESC current handling, and balancing power and weight.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Component selection is a consistent theme throughout the build process, including specifics (motors, batteries) and concluding with general advice to 'downgrade component parameters.'\",\n      \"representative_quotes\": [\n        \"The reason is that depending on whether you choose a small or big frame all the other components have to be smaller or bigger too.\",\n        \"always keep in mind that you can easily downgrade component parameters to not only save money but also make your drone lighter and less powerful\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"let me show you\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 8.6,\n      \"context\": \"before that though let me show you my journey of building\"\n    },\n    {\n      \"phrase\": \"look at the link\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 15.7,\n      \"context\": \"interesting to you then look at the link in the video\"\n    },\n    {\n      \"phrase\": \"let's get started!\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 10.7,\n      \"context\": \"similar. So, let's get started! This video is sponsored by\"\n    },\n    {\n      \"phrase\": \"see that later\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 8.1,\n      \"context\": \"I went overboard here but you will see that later. Before that though\"\n    },\n    {\n      \"phrase\": \"you can hear\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 62.6,\n      \"context\": \"bench power supply which as you can hear and also see was a\"\n    },\n    {\n      \"phrase\": \"find out\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 85.9,\n      \"context\": \"the frame to find out how I had to modify it\"\n    },\n    {\n      \"phrase\": \"making sure\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 91.6,\n      \"context\": \"motors while making sure which ones are the clockwise\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 7,\n    \"by_category\": {\n      \"visual_reference\": 3,\n      \"action_narration\": 1,\n      \"sensory_description\": 1,\n      \"procedural_instruction\": 2\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"There are phrases from multiple categories of embodied language, but the overall count is relatively low, meaning embodied descriptions are not a central component of the speaker's style.\"\n  }\n}\n```"
+}

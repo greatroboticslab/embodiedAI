@@ -1,0 +1,79 @@
+{
+  "video_id": "AmlmkTPqZrk",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "FlySky FSIA6B Communication Protocols",
+        "description": "The video explains the three communication protocols of the FlySky FSIA6B receiver: PWM, PPM, and IBIS, focusing on the serial protocols (PPM and IBIS) used with flight controllers.",
+        "mention_count": 8,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The video dedicates a significant portion to explaining the different protocols and their connections, although it doesn't return to it at the end.",
+        "representative_quotes": [
+          "The FlySky FSIA6B receiver has three types of communication protocols, the classic PWM, and two serial protocols, PPM and IBIS.",
+          "The RX line by IBIS protocol is in the horizontal slot on the right."
+        ]
+      },
+      {
+        "name": "UART Serial Ports",
+        "description": "The video describes how flight controllers use UART serial ports (RX and TX lines) for communication with the receiver and sensors.",
+        "mention_count": 5,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The video explains the purpose of RX and TX lines and how they're connected, referencing them in the INAB configurator section as well.",
+        "representative_quotes": [
+          "The flight controllers have so-called UART serial ports, where one line is used to receive information from the radio, and another line is used to send information from the controller to the radio.",
+          "We use UART2 for the TX line, and UART3 for the RX line."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "located in the first vertical slot",
+        "category": "visual_reference",
+        "position_pct": 29.41,
+        "context": "controller to the radio. The PPM connection is located in the first vertical slot of the receiver"
+      },
+      {
+        "phrase": "is in the horizontal slot",
+        "category": "visual_reference",
+        "position_pct": 47.06,
+        "context": "The RX line by IBIS protocol is in the horizontal slot on the right. The rightmost pin"
+      },
+      {
+        "phrase": "must be connected to",
+        "category": "procedural_instruction",
+        "position_pct": 64.71,
+        "context": "The rightmost pin is used to receive information from the controller, and must be connected to some TX pin of"
+      },
+      {
+        "phrase": "we see that the radio sends",
+        "category": "visual_reference",
+        "position_pct": 82.35,
+        "context": "In the iNAB configurator, the communications for the UART ports are configured. We see that the radio sends information of"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 4,
+      "by_category": {
+        "visual_reference": 2,
+        "action_narration": 0,
+        "sensory_description": 0,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The transcript has a low number of embodied phrases, primarily visual references to the slot positions. There's only one procedural instruction and no sensory descriptions or action narrations."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"FlySky FSIA6B Communication Protocols\",\n      \"description\": \"The video explains the three communication protocols of the FlySky FSIA6B receiver: PWM, PPM, and IBIS, focusing on the serial protocols (PPM and IBIS) used with flight controllers.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The video dedicates a significant portion to explaining the different protocols and their connections, although it doesn't return to it at the end.\",\n      \"representative_quotes\": [\n        \"The FlySky FSIA6B receiver has three types of communication protocols, the classic PWM, and two serial protocols, PPM and IBIS.\",\n        \"The RX line by IBIS protocol is in the horizontal slot on the right.\"\n      ]\n    },\n    {\n      \"name\": \"UART Serial Ports\",\n      \"description\": \"The video describes how flight controllers use UART serial ports (RX and TX lines) for communication with the receiver and sensors.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The video explains the purpose of RX and TX lines and how they're connected, referencing them in the INAB configurator section as well.\",\n      \"representative_quotes\": [\n        \"The flight controllers have so-called UART serial ports, where one line is used to receive information from the radio, and another line is used to send information from the controller to the radio.\",\n        \"We use UART2 for the TX line, and UART3 for the RX line.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"located in the first vertical slot\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 29.41,\n      \"context\": \"controller to the radio. The PPM connection is located in the first vertical slot of the receiver\"\n    },\n    {\n      \"phrase\": \"is in the horizontal slot\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 47.06,\n      \"context\": \"The RX line by IBIS protocol is in the horizontal slot on the right. The rightmost pin\"\n    },\n    {\n      \"phrase\": \"must be connected to\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 64.71,\n      \"context\": \"The rightmost pin is used to receive information from the controller, and must be connected to some TX pin of\"\n    },\n    {\n      \"phrase\": \"we see that the radio sends\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 82.35,\n      \"context\": \"In the iNAB configurator, the communications for the UART ports are configured. We see that the radio sends information of\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 4,\n    \"by_category\": {\n      \"visual_reference\": 2,\n      \"action_narration\": 0,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The transcript has a low number of embodied phrases, primarily visual references to the slot positions. There's only one procedural instruction and no sensory descriptions or action narrations.\"\n  }\n}\n```"
+}

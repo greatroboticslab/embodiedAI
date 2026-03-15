@@ -1,0 +1,106 @@
+{
+  "video_id": "yPwYNUDkkZs",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Diode Types and Applications",
+        "description": "The video introduces three main types of diodes (ordinary, Zener, and LED) and explains eight different applications of diodes in electronic circuits, focusing on practical uses rather than internal structure.",
+        "mention_count": 12,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "The video's primary focus is on diode types and applications, covering several examples and returning to the central theme throughout.",
+        "representative_quotes": [
+          "In this video, I will talk about diodes and their application.",
+          "We considered three main types of diodes with eight applications of them."
+        ]
+      },
+      {
+        "name": "Rectifier Circuits",
+        "description": "The video explains how diodes are used to rectify AC current, demonstrating half-wave and full-wave rectifier circuits, and emphasizes the importance of selecting diodes based on their reverse blocking voltage.",
+        "mention_count": 7,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "A dedicated section covers rectifier circuits, with multiple mentions and visual examples. The importance of diode selection is highlighted.",
+        "representative_quotes": [
+          "Application number one, using diode as rectifier.",
+          "Look here, this is a half-wave rectifier."
+        ]
+      },
+      {
+        "name": "Reverse Polarity Protection",
+        "description": "The video details how to use a Schottky diode to protect circuits from damage caused by reverse polarity connections, highlighting the advantage of using Schottky diodes due to their lower voltage drop.",
+        "mention_count": 5,
+        "positions": [
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The video contains a dedicated section on reverse polarity protection, explaining how to implement it with Schottky diodes and the benefit of their low voltage drop.",
+        "representative_quotes": [
+          "Application number two. Using diode for reverse polarity protection.",
+          "But if you use a Schottky diode here in this way, it will protect entire project from reverse polarity."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "Look here",
+        "category": "visual_reference",
+        "position_pct": 11.5,
+        "context": "There is a line in the cathode side of real diodes to specify a negative or cathode side. Look here, this silver line here and this"
+      },
+      {
+        "phrase": "I am going to",
+        "category": "action_narration",
+        "position_pct": 9.6,
+        "context": "To begin with, I am going to take a brief look at ideal"
+      },
+      {
+        "phrase": "If you change this line",
+        "category": "procedural_instruction",
+        "position_pct": 12.5,
+        "context": "There is a line in the cathode side of real diodes to specify a negative or cathode side. If you change this line to a shape like S, first"
+      },
+      {
+        "phrase": "look at this data sheet",
+        "category": "visual_reference",
+        "position_pct": 63.6,
+        "context": "Exact draft voltage is available on data sheet of each part number. For example, look at this data sheet. Draft voltage of 1N5822"
+      },
+      {
+        "phrase": "Look here",
+        "category": "visual_reference",
+        "position_pct": 90.9,
+        "context": "This is a simple remote controller. If I press any button, it will make infrared pulses here with this IR LED. Look here. If you look"
+      },
+      {
+        "phrase": "you can see it",
+        "category": "visual_reference",
+        "position_pct": 94.2,
+        "context": "This is sample circuit of three-pin infrared receiver. If I press any button on remote controller, pulses come into LED and we can see it. In one"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 6,
+      "by_category": {
+        "visual_reference": 3,
+        "action_narration": 1,
+        "sensory_description": 0,
+        "procedural_instruction": 1
+      },
+      "verbal_embodied_richness": "low",
+      "verbal_embodied_reasoning": "The transcript features some embodied language, primarily visual references. However, the overall use of embodied phrases is limited."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Diode Types and Applications\",\n      \"description\": \"The video introduces three main types of diodes (ordinary, Zener, and LED) and explains eight different applications of diodes in electronic circuits, focusing on practical uses rather than internal structure.\",\n      \"mention_count\": 12,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"The video's primary focus is on diode types and applications, covering several examples and returning to the central theme throughout.\",\n      \"representative_quotes\": [\n        \"In this video, I will talk about diodes and their application.\",\n        \"We considered three main types of diodes with eight applications of them.\"\n      ]\n    },\n    {\n      \"name\": \"Rectifier Circuits\",\n      \"description\": \"The video explains how diodes are used to rectify AC current, demonstrating half-wave and full-wave rectifier circuits, and emphasizes the importance of selecting diodes based on their reverse blocking voltage.\",\n      \"mention_count\": 7,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"A dedicated section covers rectifier circuits, with multiple mentions and visual examples. The importance of diode selection is highlighted.\",\n      \"representative_quotes\": [\n        \"Application number one, using diode as rectifier.\",\n        \"Look here, this is a half-wave rectifier.\"\n      ]\n    },\n    {\n      \"name\": \"Reverse Polarity Protection\",\n      \"description\": \"The video details how to use a Schottky diode to protect circuits from damage caused by reverse polarity connections, highlighting the advantage of using Schottky diodes due to their lower voltage drop.\",\n      \"mention_count\": 5,\n      \"positions\": [\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The video contains a dedicated section on reverse polarity protection, explaining how to implement it with Schottky diodes and the benefit of their low voltage drop.\",\n      \"representative_quotes\": [\n        \"Application number two. Using diode for reverse polarity protection.\",\n        \"But if you use a Schottky diode here in this way, it will protect entire project from reverse polarity.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"Look here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 11.5,\n      \"context\": \"There is a line in the cathode side of real diodes to specify a negative or cathode side. Look here, this silver line here and this\"\n    },\n    {\n      \"phrase\": \"I am going to\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 9.6,\n      \"context\": \"To begin with, I am going to take a brief look at ideal\"\n    },\n    {\n      \"phrase\": \"If you change this line\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 12.5,\n      \"context\": \"There is a line in the cathode side of real diodes to specify a negative or cathode side. If you change this line to a shape like S, first\"\n    },\n    {\n      \"phrase\": \"look at this data sheet\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 63.6,\n      \"context\": \"Exact draft voltage is available on data sheet of each part number. For example, look at this data sheet. Draft voltage of 1N5822\"\n    },\n    {\n      \"phrase\": \"Look here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 90.9,\n      \"context\": \"This is a simple remote controller. If I press any button, it will make infrared pulses here with this IR LED. Look here. If you look\"\n    },\n    {\n      \"phrase\": \"you can see it\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 94.2,\n      \"context\": \"This is sample circuit of three-pin infrared receiver. If I press any button on remote controller, pulses come into LED and we can see it. In one\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 6,\n    \"by_category\": {\n      \"visual_reference\": 3,\n      \"action_narration\": 1,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 1\n    },\n    \"verbal_embodied_richness\": \"low\",\n    \"verbal_embodied_reasoning\": \"The transcript features some embodied language, primarily visual references. However, the overall use of embodied phrases is limited.\"\n  }\n}\n```"
+}

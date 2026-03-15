@@ -1,0 +1,252 @@
+{
+  "video_id": "wEevt2a4SKI",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Linear Quadratic Regulator (LQR)",
+        "description": "LQR is a control design technique that involves finding an optimal full state feedback controller by minimizing a cost function that penalizes both state deviations and control effort. The gain matrix K is computed in a way that balances these costs based on weighting matrices Q and R.",
+        "mention_count": 21,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 5,
+        "strength_reasoning": "The entire video is focused on explaining LQR: its definition, setup, solution, and application. It introduces the concept early, develops it throughout, and reinforces it at the end with a summary.",
+        "representative_quotes": [
+          "Today I'd like to talk about one of the most popular and powerful control design techniques around the linear quadratic regulator or LQR controller.",
+          "lqr gives us two knobs to directly penalize states or controls"
+        ]
+      },
+      {
+        "name": "Optimization Problem Setup",
+        "description": "The video details how to set up an optimization problem within the context of LQR by defining a cost function (J) that balances state error (X) and control effort (U) using weighting matrices (Q and R), and then finding a control law that minimizes this cost function subject to the system's dynamic constraints (x_dot = Ax + Bu).",
+        "mention_count": 9,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The video covers optimization problems in a dedicated section, with multiple mentions. It is introduced, developed, and returned to when solving for the LQR controller.",
+        "representative_quotes": [
+          "What we're going to do here is try to pose this entire problem here in an optimization framework.",
+          "the optimization problem here is let's go ahead and consider a cost function"
+        ]
+      },
+      {
+        "name": "Q and R Weighting Matrices",
+        "description": "Q and R are weighting matrices used to tune the LQR controller by specifying how much to penalize deviations in the states (Q) versus the control effort (R). Adjusting these matrices allows for balancing performance and control effort, leading to aggressive or conservative control strategies.",
+        "mention_count": 22,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The Q and R matrices are covered in a dedicated section, are central to the explanation of LQR, and are returned to repeatedly. The impact of changing them is demonstrated.",
+        "representative_quotes": [
+          "In this case we see that x obviously is your n by one state vector right u is our usual m by one control vector and here q is a n by n symmetric positive semi-definite",
+          "what q and r do or q and r are these knobs that allow you to determine how much do you care about the state being zero versus how much do you care about the control not being zero here"
+        ]
+      },
+      {
+        "name": "Solving the Algebraic Riccati Equation (ARE)",
+        "description": "The ARE is solved to determine the optimal gain matrix K for the LQR controller. The solution to the ARE, denoted by S, is used in the formula K = R^-1 B^T S. The video shows how to solve this using MATLAB's lqr function.",
+        "mention_count": 11,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "The video covers the ARE in a dedicated section, but only within the context of describing the math. It is mentioned multiple times, but not revisited as central to the overall concept.",
+        "representative_quotes": [
+          "s is the solution to what's called the algebraic ricotti equation of this",
+          "we got to go ahead and solve ourselves the algebraic ricotti equation here"
+        ]
+      },
+      {
+        "name": "Full State Feedback and Practical Issues",
+        "description": "The video highlights how LQR can be used to address practical implementation issues associated with full state feedback control, specifically control saturation (by tuning R) and the inability to measure all states (by tuning Q).",
+        "mention_count": 4,
+        "positions": [
+          "early",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "This is a key motivation for using LQR. It's presented in the introduction and then returned to at the end. It's covered in a dedicated section, and is referenced more than briefly.",
+        "representative_quotes": [
+          "We're also going to see today that LQR controllers address some of the practical implementation issues we encountered when designing full state feedback controllers.",
+          "i can use q right that q matrix to directly um specify which states are important or measurable in the sense that i have a sensor to measure certain states here"
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "check out this previous video",
+        "category": "visual_reference",
+        "position_pct": 3.2,
+        "context": "full state feedback control but if you'd like a quick refresher please check out this previous video where we introduced"
+      },
+      {
+        "phrase": "to get the most out of the discussion today I recommend that you also check out this other previous video",
+        "category": "visual_reference",
+        "position_pct": 4.5,
+        "context": "state feedback controllers. So to get the most out of the discussion today I recommend that you also check"
+      },
+      {
+        "phrase": "Links to both of those videos are in the description below",
+        "category": "visual_reference",
+        "position_pct": 6.3,
+        "context": "implementation problems. Links to both of those videos are in the description below. So if all of this sounds"
+      },
+      {
+        "phrase": "jump over to the whiteboard and get started",
+        "category": "action_narration",
+        "position_pct": 6.8,
+        "context": "clown on fire let's jump over to the whiteboard and get started. Alright so let's talk a little"
+      },
+      {
+        "phrase": "look at this here",
+        "category": "visual_reference",
+        "position_pct": 19.6,
+        "context": "so to do here. Right so if you look at this what the optimization problem says is"
+      },
+      {
+        "phrase": "look at this here",
+        "category": "visual_reference",
+        "position_pct": 37.4,
+        "context": "we're trading off time and money let's look at case four case four is basically i'd"
+      },
+      {
+        "phrase": "we can keep them",
+        "category": "procedural_instruction",
+        "position_pct": 21.4,
+        "context": "case two maybe let's underline these so we can keep them uh apart case two here how"
+      },
+      {
+        "phrase": "let's erase some of this we can get a little bit of space",
+        "category": "action_narration",
+        "position_pct": 18.8,
+        "context": "Z5 is optimal right. Okay well um how about let's erase some of this we can get a little bit of space so"
+      },
+      {
+        "phrase": "just keep in keep in your head",
+        "category": "procedural_instruction",
+        "position_pct": 41.5,
+        "context": "the back of your head so just keep in keep in your head that you know the state vector"
+      },
+      {
+        "phrase": "let's erase this",
+        "category": "action_narration",
+        "position_pct": 45.7,
+        "context": "of us here okay all right so now that we understand positive definite and positive semi definite let's erase this i think we got the got the picture here okay"
+      },
+      {
+        "phrase": "it's beyond the scope of this lecture today to derive it here but I think we can use their results here",
+        "category": "sensory_description",
+        "position_pct": 58.2,
+        "context": "system here um optimal here right so um it's beyond the scope of this lecture today to derive it here but I think we"
+      },
+      {
+        "phrase": "take that back",
+        "category": "action_narration",
+        "position_pct": 61.3,
+        "context": "the algebraic ricotti equation for s here right okay so you solve the algebraic ricotti equation for s all right what you're going to end up seeing here is that once you solve for s there's actually going to be multiple solutions to s we'll take a look at this in a second here but if you follow a couple of steps you'll be able to find out which is the one you want here once you know that here um well actually no i take that back let's just say solve this thing for s you're going to get multiple solutions therefore you can then compute k you're going to get multiple solutions for k here right so you can go ahead and compute your optimal gain k using our expression over there right r inverse b transfer transfer transpose s here right and again since there are multiple solutions of s you'll get multiple solutions for k here the last thing that you have to do then is typically there's only going to be one solution here that yields a stable situation here so"
+      },
+      {
+        "phrase": "take a quick refresher here",
+        "category": "visual_reference",
+        "position_pct": 63.6,
+        "context": "this is brand new to you here maybe take a quick refresher here to our video where we discuss full"
+      },
+      {
+        "phrase": "uh again I love concrete examples let's look at a concrete example right now to try to implement all this",
+        "category": "visual_reference",
+        "position_pct": 64.8,
+        "context": "is the workflow that we need to go through so uh again I love concrete examples let's look at a concrete example right now to try to implement all"
+      },
+      {
+        "phrase": "Let's run over to mathematica and have it do this for us",
+        "category": "action_narration",
+        "position_pct": 66.4,
+        "context": "for s here so um that's a little bit of a pain in the neck here right because if you remember that's this long matrix equation we got to set it equal to zero and solve for s here so I don't want to do that on the board let's run over to mathematica and have it do this for"
+      },
+      {
+        "phrase": "I'll meet you over on mathematica",
+        "category": "action_narration",
+        "position_pct": 66.7,
+        "context": "see how can we compute this gain k all right so I'm going to pause the video and I'll meet you over on mathematica"
+      },
+      {
+        "phrase": "keep this plot up so we can compare",
+        "category": "procedural_instruction",
+        "position_pct": 84.2,
+        "context": "a cheap control so we see that what cheap control means here is that the system or the controller decides that I better make sure that the states go to zero fairly quickly so you see that in just five seconds both the position and the velocity of the system have gone to zero here and we spent around I don't know what is that minus nine minus 10 units of force in order to do that here so let's compare this now with maybe scenario two and maybe what we should do is let's keep this plot up so we can compare so maybe let's"
+      },
+      {
+        "phrase": "you can see the differences in control",
+        "category": "visual_reference",
+        "position_pct": 85.3,
+        "context": "left here and let's put scenario two on the right you can see the differences in control right so now the control system"
+      },
+      {
+        "phrase": "so now take a look at this this is pretty awesome",
+        "category": "visual_reference",
+        "position_pct": 86.7,
+        "context": "velocity and if I rerun this thing again again you see that the controller changes and more importantly the behavior"
+      },
+      {
+        "phrase": "back through",
+        "category": "action_narration",
+        "position_pct": 79.1,
+        "context": "what the resulting matrix k is and then why don't we simulate that using uh our full state feedback controller right because we said that once you get this this this gain matrix k the optimal thing to do here is to have your plant right your x dot is equal to ax plus bu right and we're just going to wrap this back through a minus k and let's use some initial conditions"
+      },
+      {
+        "phrase": "if you haven't done so here because I think it will set the stage for this discussion now and you'll have a better understanding of the context",
+        "category": "sensory_description",
+        "position_pct": 89.7,
+        "context": "lqr to address some of these practical full state feedback control issues so if you remember this is actually what we discussed in uh our previous lecture here so again I I would encourage you to check out that video if you haven't done so here because I think it will set the stage for this discussion now and you'll have a better understanding of the context"
+      },
+      {
+        "phrase": "Let's make a quick table to show what this ends up being here",
+        "category": "action_narration",
+        "position_pct": 93.5,
+        "context": "as Peter should have just sat here and cranked this number up and see what happens so if you crank up r you're basically saying control gets more expensive so what happens to the controller well it goes down right it starts getting smaller here right so you can see it's getting less aggressive and if and if and if and if uncle ben is still yelling at him for eat it for for costing him too much electricity he just cranks this thing up again right here so one you would get something like 1.0 0.93 and 0.34 right and then again you just for giggles let's crank it up even more so 0.32 0.25 and 0.05 here right so you basically see we get this trend here as r increases right the aggressiveness of the controller decreases right decreases so we see r is this knob it's literally the knob of depending you can tell the system how much do you care about each different control um when trying to drive the state to zero great okay so that's one issue what about what about the second issue this inability to measure the full state of the system um maybe let's leave this up here let's just tell you what let's just erase this and we'll go back do the same thing here uh we'll start from this location and you can see that it's it's it's a very similar story here right so problem number two here right was the uh inability to measure full state so"
+      },
+      {
+        "phrase": "Let's look at",
+        "category": "action_narration",
+        "position_pct": 69.2,
+        "context": "let's set up the entire optimization problem here right now the thing that's interesting here is now if we start coming back and thinking about um the the constraint here right this is the interesting part we i think we understand the cost function at this point right we understand how to tailor or to to tune this cost function using this q and this r matrix here right but the thing that we have to do now is we have to solve this overall problem now here subject to the linear dynamics of this system here right so that's where it gets interesting so why don't i pause the video I'll erase the board and now let's look at after we set up the optimization problem how can we solve this optimization problem okay so now what we'd like to do here is look at solving the optimization problem so graphically what this means here is again here we've got"
+      },
+      {
+        "phrase": "look at this here",
+        "category": "visual_reference",
+        "position_pct": 95.7,
+        "context": "So let's write that down so k2 over k1 uh 1 in this column and k2 over i'm sorry k3 this should be k3 over k1 right because this gives us an idea of how big are k2 and k3 relative to k1 here right so in this case I think you end up with this is about being 0.19 or 19 here and 0.014 here okay so in this case I don't know if I would say this is is is super great here because you see that the second gain is almost 20 percent of the first one yeah this third gain is nice I think you could safely neglect it because it's only 1.4 percent of it but"
+      },
+      {
+        "phrase": "Hope you enjoyed this video on lqr",
+        "category": "sensory_description",
+        "position_pct": 99.7,
+        "context": "and or whatnot here right so um I think that's a good spot to leave it here uh I hope you enjoyed this video on lqr here some of these things set the stage for"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 25,
+      "by_category": {
+        "visual_reference": 10,
+        "action_narration": 6,
+        "sensory_description": 4,
+        "procedural_instruction": 5
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "There's a good mix of embodied language throughout the video, including visual references, action narration, and procedural instructions. This contributes to a medium degree of embodied richness."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Linear Quadratic Regulator (LQR)\",\n      \"description\": \"LQR is a control design technique that involves finding an optimal full state feedback controller by minimizing a cost function that penalizes both state deviations and control effort. The gain matrix K is computed in a way that balances these costs based on weighting matrices Q and R.\",\n      \"mention_count\": 21,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 5,\n      \"strength_reasoning\": \"The entire video is focused on explaining LQR: its definition, setup, solution, and application. It introduces the concept early, develops it throughout, and reinforces it at the end with a summary.\",\n      \"representative_quotes\": [\n        \"Today I'd like to talk about one of the most popular and powerful control design techniques around the linear quadratic regulator or LQR controller.\",\n        \"lqr gives us two knobs to directly penalize states or controls\"\n      ]\n    },\n    {\n      \"name\": \"Optimization Problem Setup\",\n      \"description\": \"The video details how to set up an optimization problem within the context of LQR by defining a cost function (J) that balances state error (X) and control effort (U) using weighting matrices (Q and R), and then finding a control law that minimizes this cost function subject to the system's dynamic constraints (x_dot = Ax + Bu).\",\n      \"mention_count\": 9,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The video covers optimization problems in a dedicated section, with multiple mentions. It is introduced, developed, and returned to when solving for the LQR controller.\",\n      \"representative_quotes\": [\n        \"What we're going to do here is try to pose this entire problem here in an optimization framework.\",\n        \"the optimization problem here is let's go ahead and consider a cost function\"\n      ]\n    },\n    {\n      \"name\": \"Q and R Weighting Matrices\",\n      \"description\": \"Q and R are weighting matrices used to tune the LQR controller by specifying how much to penalize deviations in the states (Q) versus the control effort (R). Adjusting these matrices allows for balancing performance and control effort, leading to aggressive or conservative control strategies.\",\n      \"mention_count\": 22,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The Q and R matrices are covered in a dedicated section, are central to the explanation of LQR, and are returned to repeatedly. The impact of changing them is demonstrated.\",\n      \"representative_quotes\": [\n        \"In this case we see that x obviously is your n by one state vector right u is our usual m by one control vector and here q is a n by n symmetric positive semi-definite\",\n        \"what q and r do or q and r are these knobs that allow you to determine how much do you care about the state being zero versus how much do you care about the control not being zero here\"\n      ]\n    },\n    {\n      \"name\": \"Solving the Algebraic Riccati Equation (ARE)\",\n      \"description\": \"The ARE is solved to determine the optimal gain matrix K for the LQR controller. The solution to the ARE, denoted by S, is used in the formula K = R^-1 B^T S. The video shows how to solve this using MATLAB's lqr function.\",\n      \"mention_count\": 11,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"The video covers the ARE in a dedicated section, but only within the context of describing the math. It is mentioned multiple times, but not revisited as central to the overall concept.\",\n      \"representative_quotes\": [\n        \"s is the solution to what's called the algebraic ricotti equation of this\",\n        \"we got to go ahead and solve ourselves the algebraic ricotti equation here\"\n      ]\n    },\n    {\n      \"name\": \"Full State Feedback and Practical Issues\",\n      \"description\": \"The video highlights how LQR can be used to address practical implementation issues associated with full state feedback control, specifically control saturation (by tuning R) and the inability to measure all states (by tuning Q).\",\n      \"mention_count\": 4,\n      \"positions\": [\n        \"early\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"This is a key motivation for using LQR. It's presented in the introduction and then returned to at the end. It's covered in a dedicated section, and is referenced more than briefly.\",\n      \"representative_quotes\": [\n        \"We're also going to see today that LQR controllers address some of the practical implementation issues we encountered when designing full state feedback controllers.\",\n        \"i can use q right that q matrix to directly um specify which states are important or measurable in the sense that i have a sensor to measure certain states here\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"check out this previous video\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 3.2,\n      \"context\": \"full state feedback control but if you'd like a quick refresher please check out this previous video where we introduced\"\n    },\n    {\n      \"phrase\": \"to get the most out of the discussion today I recommend that you also check out this other previous video\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 4.5,\n      \"context\": \"state feedback controllers. So to get the most out of the discussion today I recommend that you also check\"\n    },\n    {\n      \"phrase\": \"Links to both of those videos are in the description below\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 6.3,\n      \"context\": \"implementation problems. Links to both of those videos are in the description below. So if all of this sounds\"\n    },\n    {\n      \"phrase\": \"jump over to the whiteboard and get started\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 6.8,\n      \"context\": \"clown on fire let's jump over to the whiteboard and get started. Alright so let's talk a little\"\n    },\n    {\n      \"phrase\": \"look at this here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 19.6,\n      \"context\": \"so to do here. Right so if you look at this what the optimization problem says is\"\n    },\n    {\n      \"phrase\": \"look at this here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 37.4,\n      \"context\": \"we're trading off time and money let's look at case four case four is basically i'd\"\n    },\n    {\n      \"phrase\": \"we can keep them\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 21.4,\n      \"context\": \"case two maybe let's underline these so we can keep them uh apart case two here how\"\n    },\n    {\n      \"phrase\": \"let's erase some of this we can get a little bit of space\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 18.8,\n      \"context\": \"Z5 is optimal right. Okay well um how about let's erase some of this we can get a little bit of space so\"\n    },\n    {\n      \"phrase\": \"just keep in keep in your head\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 41.5,\n      \"context\": \"the back of your head so just keep in keep in your head that you know the state vector\"\n    },\n    {\n      \"phrase\": \"let's erase this\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 45.7,\n      \"context\": \"of us here okay all right so now that we understand positive definite and positive semi definite let's erase this i think we got the got the picture here okay\"\n    },\n    {\n      \"phrase\": \"it's beyond the scope of this lecture today to derive it here but I think we can use their results here\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 58.2,\n      \"context\": \"system here um optimal here right so um it's beyond the scope of this lecture today to derive it here but I think we\"\n    },\n    {\n      \"phrase\": \"take that back\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 61.3,\n      \"context\": \"the algebraic ricotti equation for s here right okay so you solve the algebraic ricotti equation for s all right what you're going to end up seeing here is that once you solve for s there's actually going to be multiple solutions to s we'll take a look at this in a second here but if you follow a couple of steps you'll be able to find out which is the one you want here once you know that here um well actually no i take that back let's just say solve this thing for s you're going to get multiple solutions therefore you can then compute k you're going to get multiple solutions for k here right so you can go ahead and compute your optimal gain k using our expression over there right r inverse b transfer transfer transpose s here right and again since there are multiple solutions of s you'll get multiple solutions for k here the last thing that you have to do then is typically there's only going to be one solution here that yields a stable situation here so\"\n    },\n    {\n      \"phrase\": \"take a quick refresher here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 63.6,\n      \"context\": \"this is brand new to you here maybe take a quick refresher here to our video where we discuss full\"\n    },\n    {\n      \"phrase\": \"uh again I love concrete examples let's look at a concrete example right now to try to implement all this\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 64.8,\n      \"context\": \"is the workflow that we need to go through so uh again I love concrete examples let's look at a concrete example right now to try to implement all\"\n    },\n    {\n      \"phrase\": \"Let's run over to mathematica and have it do this for us\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 66.4,\n      \"context\": \"for s here so um that's a little bit of a pain in the neck here right because if you remember that's this long matrix equation we got to set it equal to zero and solve for s here so I don't want to do that on the board let's run over to mathematica and have it do this for\"\n    },\n    {\n      \"phrase\": \"I'll meet you over on mathematica\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 66.7,\n      \"context\": \"see how can we compute this gain k all right so I'm going to pause the video and I'll meet you over on mathematica\"\n    },\n    {\n      \"phrase\": \"keep this plot up so we can compare\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 84.2,\n      \"context\": \"a cheap control so we see that what cheap control means here is that the system or the controller decides that I better make sure that the states go to zero fairly quickly so you see that in just five seconds both the position and the velocity of the system have gone to zero here and we spent around I don't know what is that minus nine minus 10 units of force in order to do that here so let's compare this now with maybe scenario two and maybe what we should do is let's keep this plot up so we can compare so maybe let's\"\n    },\n    {\n      \"phrase\": \"you can see the differences in control\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 85.3,\n      \"context\": \"left here and let's put scenario two on the right you can see the differences in control right so now the control system\"\n    },\n    {\n      \"phrase\": \"so now take a look at this this is pretty awesome\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 86.7,\n      \"context\": \"velocity and if I rerun this thing again again you see that the controller changes and more importantly the behavior\"\n    },\n    {\n      \"phrase\": \"back through\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 79.1,\n      \"context\": \"what the resulting matrix k is and then why don't we simulate that using uh our full state feedback controller right because we said that once you get this this this gain matrix k the optimal thing to do here is to have your plant right your x dot is equal to ax plus bu right and we're just going to wrap this back through a minus k and let's use some initial conditions\"\n    },\n    {\n      \"phrase\": \"if you haven't done so here because I think it will set the stage for this discussion now and you'll have a better understanding of the context\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 89.7,\n      \"context\": \"lqr to address some of these practical full state feedback control issues so if you remember this is actually what we discussed in uh our previous lecture here so again I I would encourage you to check out that video if you haven't done so here because I think it will set the stage for this discussion now and you'll have a better understanding of the context\"\n    },\n    {\n      \"phrase\": \"Let's make a quick table to show what this ends up being here\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 93.5,\n      \"context\": \"as Peter should have just sat here and cranked this number up and see what happens so if you crank up r you're basically saying control gets more expensive so what happens to the controller well it goes down right it starts getting smaller here right so you can see it's getting less aggressive and if and if and if and if uncle ben is still yelling at him for eat it for for costing him too much electricity he just cranks this thing up again right here so one you would get something like 1.0 0.93 and 0.34 right and then again you just for giggles let's crank it up even more so 0.32 0.25 and 0.05 here right so you basically see we get this trend here as r increases right the aggressiveness of the controller decreases right decreases so we see r is this knob it's literally the knob of depending you can tell the system how much do you care about each different control um when trying to drive the state to zero great okay so that's one issue what about what about the second issue this inability to measure the full state of the system um maybe let's leave this up here let's just tell you what let's just erase this and we'll go back do the same thing here uh we'll start from this location and you can see that it's it's it's a very similar story here right so problem number two here right was the uh inability to measure full state so\"\n    },\n    {\n      \"phrase\": \"Let's look at\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 69.2,\n      \"context\": \"let's set up the entire optimization problem here right now the thing that's interesting here is now if we start coming back and thinking about um the the constraint here right this is the interesting part we i think we understand the cost function at this point right we understand how to tailor or to to tune this cost function using this q and this r matrix here right but the thing that we have to do now is we have to solve this overall problem now here subject to the linear dynamics of this system here right so that's where it gets interesting so why don't i pause the video I'll erase the board and now let's look at after we set up the optimization problem how can we solve this optimization problem okay so now what we'd like to do here is look at solving the optimization problem so graphically what this means here is again here we've got\"\n    },\n    {\n      \"phrase\": \"look at this here\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 95.7,\n      \"context\": \"So let's write that down so k2 over k1 uh 1 in this column and k2 over i'm sorry k3 this should be k3 over k1 right because this gives us an idea of how big are k2 and k3 relative to k1 here right so in this case I think you end up with this is about being 0.19 or 19 here and 0.014 here okay so in this case I don't know if I would say this is is is super great here because you see that the second gain is almost 20 percent of the first one yeah this third gain is nice I think you could safely neglect it because it's only 1.4 percent of it but\"\n    },\n    {\n      \"phrase\": \"Hope you enjoyed this video on lqr\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 99.7,\n      \"context\": \"and or whatnot here right so um I think that's a good spot to leave it here uh I hope you enjoyed this video on lqr here some of these things set the stage for\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 25,\n    \"by_category\": {\n      \"visual_reference\": 10,\n      \"action_narration\": 6,\n      \"sensory_description\": 4,\n      \"procedural_instruction\": 5\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"There's a good mix of embodied language throughout the video, including visual references, action narration, and procedural instructions. This contributes to a medium degree of embodied richness.\"\n  }\n}\n```"
+}

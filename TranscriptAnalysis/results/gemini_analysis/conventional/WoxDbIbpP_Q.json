@@ -1,0 +1,271 @@
+{
+  "video_id": "WoxDbIbpP_Q",
+  "label": "conventional",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "Betaflight PID Controller Elements",
+        "description": "Explains the four main parts (P, I, D, feed forward) of the Betaflight PID controller and their roles in controlling the quadcopter's movement.",
+        "mention_count": 7,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Dedicated section explaining each element in detail, multiple mentions but not the central focus.",
+        "representative_quotes": [
+          "P is the proportional term of the PID controller.",
+          "D is the derivative term of the PID controller."
+        ]
+      },
+      {
+        "name": "Finding Max D Gains",
+        "description": "Describes the process of finding the maximum comfortable D gain for a quadcopter, balancing performance with motor temperature and potential oscillations.",
+        "mention_count": 10,
+        "positions": [
+          "early",
+          "mid"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "Introduced as a crucial step, developed with pilot-specific recommendations, and revisited throughout the section, though not consistently reinforced.",
+        "representative_quotes": [
+          "Finding your max D gains that you're comfortable with.",
+          "The right D gain is as much as you feel comfortable that you can get away with."
+        ]
+      },
+      {
+        "name": "Finding P to D Balance",
+        "description": "Explains how to find the right balance between P and D gains for a critically damped PID response using PID Toolbox and blackbox logs.",
+        "mention_count": 8,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 4,
+        "strength_reasoning": "Explains how to adjust P and D gains to achieve the best performance.",
+        "representative_quotes": [
+          "Finding the right P to D balance in order to get a critically damped PID response.",
+          "The best way to do this is to look at logs using PID Toolbox."
+        ]
+      },
+      {
+        "name": "Tuning Feed Forward",
+        "description": "Covers tuning feed forward to improve set point tracking and responsiveness, using Blackbox Explorer and UAV Tech trace templates.",
+        "mention_count": 7,
+        "positions": [
+          "late"
+        ],
+        "reinforced_at_end": false,
+        "strength_score": 3,
+        "strength_reasoning": "Dedicated section with step-by-step instructions, multiple mentions, not explicitly reinforced at end.",
+        "representative_quotes": [
+          "Tuning feed forward for set point tracking so that we get really really great responsiveness of the quad.",
+          "We also need to install UAV text trace templates and open the log in Blackbox Explorer and look at the flips and rolls that we've done."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "look at this diagram",
+        "category": "visual_reference",
+        "position_pct": 12.0,
+        "context": "So let's look at this diagram of Betaflight's PID controller. You"
+      },
+      {
+        "phrase": "You can see that",
+        "category": "visual_reference",
+        "position_pct": 12.5,
+        "context": "flight's PID controller. You can see that it takes two inputs. The"
+      },
+      {
+        "phrase": "You can see that",
+        "category": "visual_reference",
+        "position_pct": 29.0,
+        "context": "very big like this, you can see it's pushing really hard. If"
+      },
+      {
+        "phrase": "You can see that",
+        "category": "visual_reference",
+        "position_pct": 31.0,
+        "context": "derivative term works. You can see that things appear to be getting"
+      },
+      {
+        "phrase": "You can see it's adding up",
+        "category": "visual_reference",
+        "position_pct": 34.5,
+        "context": "still negative, even less. You can see it's adding up, but it's actually"
+      },
+      {
+        "phrase": "you can see",
+        "category": "visual_reference",
+        "position_pct": 36.5,
+        "context": "error over time. You can see the integral term is just counting"
+      },
+      {
+        "phrase": "make sure that you've got bent props on",
+        "category": "procedural_instruction",
+        "position_pct": 41.0,
+        "context": "tuning D term, make sure that you've got bent props on. If"
+      },
+      {
+        "phrase": "motors feel hot to the touch",
+        "category": "sensory_description",
+        "position_pct": 51.0,
+        "context": "gain where you don't have motors that are too hot. So really if your motors feel hot to the touch, I"
+      },
+      {
+        "phrase": "motors feel just slightly warm to the touch",
+        "category": "sensory_description",
+        "position_pct": 51.0,
+        "context": "too hot. If your motors feel just slightly warm to the touch, that's fine."
+      },
+      {
+        "phrase": "look at logs",
+        "category": "visual_reference",
+        "position_pct": 55.0,
+        "context": "step five, is to find your P to D balance. The best way to do this is to look at logs using PID Toolbox. Don't worry"
+      },
+      {
+        "phrase": "Let's look at an example",
+        "category": "visual_reference",
+        "position_pct": 55.0,
+        "context": "PID Toolbox before, I'm going to take you through it step by step. Before that you need to do some tuning flights with lots of full stick snap flips and rolls, and that's because that's what we're going to need to look at an example step response here. Now"
+      },
+      {
+        "phrase": "log looks like",
+        "category": "visual_reference",
+        "position_pct": 56.0,
+        "context": "Toolbox in a second. If your log looks like the green curve or the"
+      },
+      {
+        "phrase": "You can see that",
+        "category": "visual_reference",
+        "position_pct": 56.0,
+        "context": "wiggling at all. You can see that there is just a tiny bit"
+      },
+      {
+        "phrase": "run PID Toolbox",
+        "category": "action_narration",
+        "position_pct": 70.0,
+        "context": "logs folder and go back into the PID Toolbox main folder and run PID Toolbox. That will open this window"
+      },
+      {
+        "phrase": "click that",
+        "category": "action_narration",
+        "position_pct": 70.0,
+        "context": "side, there's a green select button. So we click that and now we select the log"
+      },
+      {
+        "phrase": "You can see that",
+        "category": "visual_reference",
+        "position_pct": 71.0,
+        "context": "log file. So I'm just going to select this master 200 log here. I click OK. And if everything works, you can see that some converting and importing status messages"
+      },
+      {
+        "phrase": "that's loaded in",
+        "category": "action_narration",
+        "position_pct": 71.0,
+        "context": "pop up and that will load in. Once that's loaded in, you should be able to see the log"
+      },
+      {
+        "phrase": "You should be able to see the log",
+        "category": "visual_reference",
+        "position_pct": 71.0,
+        "context": "pop up and that will load in. Once that's loaded in, you should be able to see the log there on the screen."
+      },
+      {
+        "phrase": "Here's one that I did",
+        "category": "visual_reference",
+        "position_pct": 72.0,
+        "context": "System. Okay, so now you've seen exactly how to get a step response graph for your own log. Here's one that I did on the AOS 5."
+      },
+      {
+        "phrase": "You can see that",
+        "category": "visual_reference",
+        "position_pct": 72.0,
+        "context": "and all I've done in this log is turn the master slider up to 2.0. And you can see that the step response is pretty much perfect"
+      },
+      {
+        "phrase": "You can see that",
+        "category": "visual_reference",
+        "position_pct": 73.0,
+        "context": "build. It looks great. And you can see that your as well is a nice"
+      },
+      {
+        "phrase": "check that feed forward transition equals zero",
+        "category": "procedural_instruction",
+        "position_pct": 74.0,
+        "context": "locked in, the next step, step six, is tuning feed forward. The first thing to do is to check that feed forward transition equals zero. Once that's"
+      },
+      {
+        "phrase": "open the log in Blackbox Explorer",
+        "category": "action_narration",
+        "position_pct": 74.0,
+        "context": "We also need to install UAV text trace templates and open the log in Blackbox Explorer and look at the flips and rolls that we've done."
+      },
+      {
+        "phrase": "scroll through the log",
+        "category": "action_narration",
+        "position_pct": 78.0,
+        "context": "the right thing and that everything's installed correctly. Then you can scroll through the log to your heart's content and find the information"
+      },
+      {
+        "phrase": "motors go up",
+        "category": "visual_reference",
+        "position_pct": 78.0,
+        "context": "back. And a full throttle punch out. You can see the motors go up. So if you're seeing"
+      },
+      {
+        "phrase": "If you have too little feed forward, you'll see that",
+        "category": "visual_reference",
+        "position_pct": 79.0,
+        "context": "defaults are quite conservative. If you have too little feed forward, you'll see that the gyro line, which is this bluish"
+      },
+      {
+        "phrase": "If we look at the start of this roll",
+        "category": "visual_reference",
+        "position_pct": 80.0,
+        "context": "crank feed forward all the way up. If you do that, you might end up with too much feed forward. And it's really important to know what too much feed forward looks like. If we look at the start of this roll, you"
+      },
+      {
+        "phrase": "Do you see how the gyro trace suddenly dips",
+        "category": "visual_reference",
+        "position_pct": 80.0,
+        "context": "the end of the roll, do you see how the gyro trace suddenly dips way below"
+      },
+      {
+        "phrase": "The other thing you'll notice",
+        "category": "visual_reference",
+        "position_pct": 81.0,
+        "context": "the end of the move. The other thing you'll notice is that now that we've got loads"
+      },
+      {
+        "phrase": "Notice that we're still hitting motor saturation",
+        "category": "visual_reference",
+        "position_pct": 82.0,
+        "context": "value for the AOS 5. This is what I think is about the right amount of feed forward. So you'll notice that, you know, we're not quite tracking set point perfectly at the start of the move. There's possibly some more that I can do there to be fair. But for this rough tune, it's absolutely fine. And at the end of the move, there's no overshooting. You can see that the gyro doesn't really overshoot like it did in the last slide. So that's good too. There is just the hint of an overshoot here, which tells me that I can't increase feed forward anymore. Notice that we're still hitting motor saturation at the end of the move here."
+      },
+      {
+        "phrase": "You can see that the gyro doesn't really overshoot",
+        "category": "visual_reference",
+        "position_pct": 82.0,
+        "context": "tune, it's absolutely fine. And at the end of the move, there's no overshooting. You can see that the gyro doesn't really overshoot like it did in"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 30,
+      "by_category": {
+        "visual_reference": 22,
+        "action_narration": 4,
+        "sensory_description": 2,
+        "procedural_instruction": 2
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The speaker frequently uses visual cues when describing graphs and procedures, and also some narration of actions. Sensory descriptions and procedural instructions are less common."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"Betaflight PID Controller Elements\",\n      \"description\": \"Explains the four main parts (P, I, D, feed forward) of the Betaflight PID controller and their roles in controlling the quadcopter's movement.\",\n      \"mention_count\": 7,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Dedicated section explaining each element in detail, multiple mentions but not the central focus.\",\n      \"representative_quotes\": [\n        \"P is the proportional term of the PID controller.\",\n        \"D is the derivative term of the PID controller.\"\n      ]\n    },\n    {\n      \"name\": \"Finding Max D Gains\",\n      \"description\": \"Describes the process of finding the maximum comfortable D gain for a quadcopter, balancing performance with motor temperature and potential oscillations.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"early\",\n        \"mid\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Introduced as a crucial step, developed with pilot-specific recommendations, and revisited throughout the section, though not consistently reinforced.\",\n      \"representative_quotes\": [\n        \"Finding your max D gains that you're comfortable with.\",\n        \"The right D gain is as much as you feel comfortable that you can get away with.\"\n      ]\n    },\n    {\n      \"name\": \"Finding P to D Balance\",\n      \"description\": \"Explains how to find the right balance between P and D gains for a critically damped PID response using PID Toolbox and blackbox logs.\",\n      \"mention_count\": 8,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"Explains how to adjust P and D gains to achieve the best performance.\",\n      \"representative_quotes\": [\n        \"Finding the right P to D balance in order to get a critically damped PID response.\",\n        \"The best way to do this is to look at logs using PID Toolbox.\"\n      ]\n    },\n    {\n      \"name\": \"Tuning Feed Forward\",\n      \"description\": \"Covers tuning feed forward to improve set point tracking and responsiveness, using Blackbox Explorer and UAV Tech trace templates.\",\n      \"mention_count\": 7,\n      \"positions\": [\n        \"late\"\n      ],\n      \"reinforced_at_end\": false,\n      \"strength_score\": 3,\n      \"strength_reasoning\": \"Dedicated section with step-by-step instructions, multiple mentions, not explicitly reinforced at end.\",\n      \"representative_quotes\": [\n        \"Tuning feed forward for set point tracking so that we get really really great responsiveness of the quad.\",\n        \"We also need to install UAV text trace templates and open the log in Blackbox Explorer and look at the flips and rolls that we've done.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"look at this diagram\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 12.0,\n      \"context\": \"So let's look at this diagram of Betaflight's PID controller. You\"\n    },\n    {\n      \"phrase\": \"You can see that\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 12.5,\n      \"context\": \"flight's PID controller. You can see that it takes two inputs. The\"\n    },\n    {\n      \"phrase\": \"You can see that\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 29.0,\n      \"context\": \"very big like this, you can see it's pushing really hard. If\"\n    },\n    {\n      \"phrase\": \"You can see that\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 31.0,\n      \"context\": \"derivative term works. You can see that things appear to be getting\"\n    },\n    {\n      \"phrase\": \"You can see it's adding up\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 34.5,\n      \"context\": \"still negative, even less. You can see it's adding up, but it's actually\"\n    },\n    {\n      \"phrase\": \"you can see\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 36.5,\n      \"context\": \"error over time. You can see the integral term is just counting\"\n    },\n    {\n      \"phrase\": \"make sure that you've got bent props on\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 41.0,\n      \"context\": \"tuning D term, make sure that you've got bent props on. If\"\n    },\n    {\n      \"phrase\": \"motors feel hot to the touch\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 51.0,\n      \"context\": \"gain where you don't have motors that are too hot. So really if your motors feel hot to the touch, I\"\n    },\n    {\n      \"phrase\": \"motors feel just slightly warm to the touch\",\n      \"category\": \"sensory_description\",\n      \"position_pct\": 51.0,\n      \"context\": \"too hot. If your motors feel just slightly warm to the touch, that's fine.\"\n    },\n    {\n      \"phrase\": \"look at logs\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 55.0,\n      \"context\": \"step five, is to find your P to D balance. The best way to do this is to look at logs using PID Toolbox. Don't worry\"\n    },\n    {\n      \"phrase\": \"Let's look at an example\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 55.0,\n      \"context\": \"PID Toolbox before, I'm going to take you through it step by step. Before that you need to do some tuning flights with lots of full stick snap flips and rolls, and that's because that's what we're going to need to look at an example step response here. Now\"\n    },\n    {\n      \"phrase\": \"log looks like\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 56.0,\n      \"context\": \"Toolbox in a second. If your log looks like the green curve or the\"\n    },\n    {\n      \"phrase\": \"You can see that\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 56.0,\n      \"context\": \"wiggling at all. You can see that there is just a tiny bit\"\n    },\n    {\n      \"phrase\": \"run PID Toolbox\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 70.0,\n      \"context\": \"logs folder and go back into the PID Toolbox main folder and run PID Toolbox. That will open this window\"\n    },\n    {\n      \"phrase\": \"click that\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 70.0,\n      \"context\": \"side, there's a green select button. So we click that and now we select the log\"\n    },\n    {\n      \"phrase\": \"You can see that\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 71.0,\n      \"context\": \"log file. So I'm just going to select this master 200 log here. I click OK. And if everything works, you can see that some converting and importing status messages\"\n    },\n    {\n      \"phrase\": \"that's loaded in\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 71.0,\n      \"context\": \"pop up and that will load in. Once that's loaded in, you should be able to see the log\"\n    },\n    {\n      \"phrase\": \"You should be able to see the log\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 71.0,\n      \"context\": \"pop up and that will load in. Once that's loaded in, you should be able to see the log there on the screen.\"\n    },\n    {\n      \"phrase\": \"Here's one that I did\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 72.0,\n      \"context\": \"System. Okay, so now you've seen exactly how to get a step response graph for your own log. Here's one that I did on the AOS 5.\"\n    },\n    {\n      \"phrase\": \"You can see that\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 72.0,\n      \"context\": \"and all I've done in this log is turn the master slider up to 2.0. And you can see that the step response is pretty much perfect\"\n    },\n    {\n      \"phrase\": \"You can see that\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 73.0,\n      \"context\": \"build. It looks great. And you can see that your as well is a nice\"\n    },\n    {\n      \"phrase\": \"check that feed forward transition equals zero\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 74.0,\n      \"context\": \"locked in, the next step, step six, is tuning feed forward. The first thing to do is to check that feed forward transition equals zero. Once that's\"\n    },\n    {\n      \"phrase\": \"open the log in Blackbox Explorer\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 74.0,\n      \"context\": \"We also need to install UAV text trace templates and open the log in Blackbox Explorer and look at the flips and rolls that we've done.\"\n    },\n    {\n      \"phrase\": \"scroll through the log\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 78.0,\n      \"context\": \"the right thing and that everything's installed correctly. Then you can scroll through the log to your heart's content and find the information\"\n    },\n    {\n      \"phrase\": \"motors go up\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 78.0,\n      \"context\": \"back. And a full throttle punch out. You can see the motors go up. So if you're seeing\"\n    },\n    {\n      \"phrase\": \"If you have too little feed forward, you'll see that\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 79.0,\n      \"context\": \"defaults are quite conservative. If you have too little feed forward, you'll see that the gyro line, which is this bluish\"\n    },\n    {\n      \"phrase\": \"If we look at the start of this roll\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 80.0,\n      \"context\": \"crank feed forward all the way up. If you do that, you might end up with too much feed forward. And it's really important to know what too much feed forward looks like. If we look at the start of this roll, you\"\n    },\n    {\n      \"phrase\": \"Do you see how the gyro trace suddenly dips\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 80.0,\n      \"context\": \"the end of the roll, do you see how the gyro trace suddenly dips way below\"\n    },\n    {\n      \"phrase\": \"The other thing you'll notice\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 81.0,\n      \"context\": \"the end of the move. The other thing you'll notice is that now that we've got loads\"\n    },\n    {\n      \"phrase\": \"Notice that we're still hitting motor saturation\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 82.0,\n      \"context\": \"value for the AOS 5. This is what I think is about the right amount of feed forward. So you'll notice that, you know, we're not quite tracking set point perfectly at the start of the move. There's possibly some more that I can do there to be fair. But for this rough tune, it's absolutely fine. And at the end of the move, there's no overshooting. You can see that the gyro doesn't really overshoot like it did in the last slide. So that's good too. There is just the hint of an overshoot here, which tells me that I can't increase feed forward anymore. Notice that we're still hitting motor saturation at the end of the move here.\"\n    },\n    {\n      \"phrase\": \"You can see that the gyro doesn't really overshoot\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 82.0,\n      \"context\": \"tune, it's absolutely fine. And at the end of the move, there's no overshooting. You can see that the gyro doesn't really overshoot like it did in\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 30,\n    \"by_category\": {\n      \"visual_reference\": 22,\n      \"action_narration\": 4,\n      \"sensory_description\": 2,\n      \"procedural_instruction\": 2\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The speaker frequently uses visual cues when describing graphs and procedures, and also some narration of actions. Sensory descriptions and procedural instructions are less common.\"\n  }\n}\n```"
+}

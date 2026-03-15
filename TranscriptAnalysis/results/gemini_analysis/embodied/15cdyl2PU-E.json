@@ -1,0 +1,145 @@
+{
+  "video_id": "15cdyl2PU-E",
+  "label": "embodied",
+  "parsed": {
+    "keypoints": [
+      {
+        "name": "T-Motor 20x20mm Stack",
+        "description": "This stack features a flight controller and a 4-in-1 ESC designed for smaller builds. It's capable of powering a 5-inch 6S build and has a GST connector for easy DJI air unit connection.",
+        "mention_count": 10,
+        "positions": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The 20x20mm stack is introduced, its features are described, installation guidelines provided, and it's revisited at the end as a good option for light 5-inch builds.",
+        "representative_quotes": [
+          "Let's start with the 20x20mm stack.",
+          "The weight of the flight controller is 5.3 grams."
+        ]
+      },
+      {
+        "name": "T-Motor Pacer F7 Flight Controller",
+        "description": "This flight controller is designed for use with DJI air units and requires a compatible 4-in-1 ESC for 10V BEC functionality. It offers multiple UO ports and a dedicated connector for DJI air units.",
+        "mention_count": 10,
+        "positions": [
+          "mid",
+          "late"
+        ],
+        "reinforced_at_end": true,
+        "strength_score": 4,
+        "strength_reasoning": "The Pacer F7 flight controller is introduced, its specs and compatibility requirements are discussed, and it's concluded to be a good option for DJI air unit setups with a compatible ESC.",
+        "representative_quotes": [
+          "Pacer F7 flight controller.",
+          "You need to match it with a compatible 4-in-1 ESC."
+        ]
+      }
+    ],
+    "embodied_phrases": [
+      {
+        "phrase": "you can find",
+        "category": "visual_reference",
+        "position_pct": 7.14,
+        "context": "packaging, inside the box you can find the flight controller. The 4-in-1"
+      },
+      {
+        "phrase": "pre-soldered",
+        "category": "action_narration",
+        "position_pct": 8.33,
+        "context": "ESC which comes with a pre-soldered 35V 470μF capacitor. A bag with"
+      },
+      {
+        "phrase": "hooking it up",
+        "category": "action_narration",
+        "position_pct": 14.29,
+        "context": "a 10V BEC which is useful for powering a DJI air unit and a dedicated connector for hooking it up"
+      },
+      {
+        "phrase": "you can find",
+        "category": "visual_reference",
+        "position_pct": 22.62,
+        "context": "Now let's quickly go over a couple of guidelines when installing the stack. Next to the micro USB port, you can find dedicated pads for connecting a ready receiver"
+      },
+      {
+        "phrase": "bridging the center pad",
+        "category": "action_narration",
+        "position_pct": 25.0,
+        "context": "using 3.3 or 5 volts by bridging the center pad with the right one or with"
+      },
+      {
+        "phrase": "you can solder",
+        "category": "action_narration",
+        "position_pct": 36.9,
+        "context": "would like to control the 10V BAC using an auxiliary switch, you can solder these two pads over here and"
+      },
+      {
+        "phrase": "Here you can see what it looks like",
+        "category": "visual_reference",
+        "position_pct": 42.86,
+        "context": "voltage of 5V. Here you can see what it looks like when the stack is"
+      },
+      {
+        "phrase": "you can find",
+        "category": "visual_reference",
+        "position_pct": 55.95,
+        "context": "ESC, you can find the matching pads on the bottom of the flight controller"
+      },
+      {
+        "phrase": "pay attention",
+        "category": "procedural_instruction",
+        "position_pct": 63.09,
+        "context": "air unit and connect it to the dedicated connector, pay attention that in case you are going"
+      },
+      {
+        "phrase": "keep in mind",
+        "category": "procedural_instruction",
+        "position_pct": 68.45,
+        "context": "the MSP switch on your 3D. And remember that as I just mentioned, the 10V pad is just a pass-through, so in case you are not going to use a supported 4-in-1 ESC, the DJI air unit is not going to be powered up, so what you can do is to bridge the VBAT and 10V pads, but keep in mind that the DJI air unit can"
+      },
+      {
+        "phrase": "you can wire",
+        "category": "action_narration",
+        "position_pct": 74.4,
+        "context": "As for the rest of the setup, you can wire the ready receiver to the pads which"
+      },
+      {
+        "phrase": "you will need to use",
+        "category": "procedural_instruction",
+        "position_pct": 76.79,
+        "context": "case you are going to use an S-Bus receiver, you will need to use the RX5 pin of"
+      },
+      {
+        "phrase": "are going to be wired",
+        "category": "action_narration",
+        "position_pct": 78.57,
+        "context": "Finally, in case you are going to use an analog setup, the VTX and FEB camera are going to be wired to the pads which are located"
+      },
+      {
+        "phrase": "you can power them",
+        "category": "action_narration",
+        "position_pct": 79.76,
+        "context": "flight controller. You can power them either using 10V, 5V and VBAT"
+      },
+      {
+        "phrase": "keep in mind",
+        "category": "procedural_instruction",
+        "position_pct": 85.12,
+        "context": "a DJI air unit setup, but keep in mind that you need to match it with"
+      }
+    ],
+    "embodied_summary": {
+      "total_count": 15,
+      "by_category": {
+        "visual_reference": 4,
+        "action_narration": 8,
+        "sensory_description": 0,
+        "procedural_instruction": 3
+      },
+      "verbal_embodied_richness": "medium",
+      "verbal_embodied_reasoning": "The transcript includes action-oriented phrases ('pre-soldered', 'you can wire') and visual cues ('you can find'). While some procedural instructions are present ('keep in mind'), sensory descriptions are absent."
+    }
+  },
+  "raw_response": "```json\n{\n  \"keypoints\": [\n    {\n      \"name\": \"T-Motor 20x20mm Stack\",\n      \"description\": \"This stack features a flight controller and a 4-in-1 ESC designed for smaller builds. It's capable of powering a 5-inch 6S build and has a GST connector for easy DJI air unit connection.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"early\",\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The 20x20mm stack is introduced, its features are described, installation guidelines provided, and it's revisited at the end as a good option for light 5-inch builds.\",\n      \"representative_quotes\": [\n        \"Let's start with the 20x20mm stack.\",\n        \"The weight of the flight controller is 5.3 grams.\"\n      ]\n    },\n    {\n      \"name\": \"T-Motor Pacer F7 Flight Controller\",\n      \"description\": \"This flight controller is designed for use with DJI air units and requires a compatible 4-in-1 ESC for 10V BEC functionality. It offers multiple UO ports and a dedicated connector for DJI air units.\",\n      \"mention_count\": 10,\n      \"positions\": [\n        \"mid\",\n        \"late\"\n      ],\n      \"reinforced_at_end\": true,\n      \"strength_score\": 4,\n      \"strength_reasoning\": \"The Pacer F7 flight controller is introduced, its specs and compatibility requirements are discussed, and it's concluded to be a good option for DJI air unit setups with a compatible ESC.\",\n      \"representative_quotes\": [\n        \"Pacer F7 flight controller.\",\n        \"You need to match it with a compatible 4-in-1 ESC.\"\n      ]\n    }\n  ],\n  \"embodied_phrases\": [\n    {\n      \"phrase\": \"you can find\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 7.14,\n      \"context\": \"packaging, inside the box you can find the flight controller. The 4-in-1\"\n    },\n    {\n      \"phrase\": \"pre-soldered\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 8.33,\n      \"context\": \"ESC which comes with a pre-soldered 35V 470μF capacitor. A bag with\"\n    },\n    {\n      \"phrase\": \"hooking it up\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 14.29,\n      \"context\": \"a 10V BEC which is useful for powering a DJI air unit and a dedicated connector for hooking it up\"\n    },\n    {\n      \"phrase\": \"you can find\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 22.62,\n      \"context\": \"Now let's quickly go over a couple of guidelines when installing the stack. Next to the micro USB port, you can find dedicated pads for connecting a ready receiver\"\n    },\n    {\n      \"phrase\": \"bridging the center pad\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 25.0,\n      \"context\": \"using 3.3 or 5 volts by bridging the center pad with the right one or with\"\n    },\n    {\n      \"phrase\": \"you can solder\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 36.9,\n      \"context\": \"would like to control the 10V BAC using an auxiliary switch, you can solder these two pads over here and\"\n    },\n    {\n      \"phrase\": \"Here you can see what it looks like\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 42.86,\n      \"context\": \"voltage of 5V. Here you can see what it looks like when the stack is\"\n    },\n    {\n      \"phrase\": \"you can find\",\n      \"category\": \"visual_reference\",\n      \"position_pct\": 55.95,\n      \"context\": \"ESC, you can find the matching pads on the bottom of the flight controller\"\n    },\n    {\n      \"phrase\": \"pay attention\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 63.09,\n      \"context\": \"air unit and connect it to the dedicated connector, pay attention that in case you are going\"\n    },\n    {\n      \"phrase\": \"keep in mind\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 68.45,\n      \"context\": \"the MSP switch on your 3D. And remember that as I just mentioned, the 10V pad is just a pass-through, so in case you are not going to use a supported 4-in-1 ESC, the DJI air unit is not going to be powered up, so what you can do is to bridge the VBAT and 10V pads, but keep in mind that the DJI air unit can\"\n    },\n    {\n      \"phrase\": \"you can wire\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 74.4,\n      \"context\": \"As for the rest of the setup, you can wire the ready receiver to the pads which\"\n    },\n    {\n      \"phrase\": \"you will need to use\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 76.79,\n      \"context\": \"case you are going to use an S-Bus receiver, you will need to use the RX5 pin of\"\n    },\n    {\n      \"phrase\": \"are going to be wired\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 78.57,\n      \"context\": \"Finally, in case you are going to use an analog setup, the VTX and FEB camera are going to be wired to the pads which are located\"\n    },\n    {\n      \"phrase\": \"you can power them\",\n      \"category\": \"action_narration\",\n      \"position_pct\": 79.76,\n      \"context\": \"flight controller. You can power them either using 10V, 5V and VBAT\"\n    },\n    {\n      \"phrase\": \"keep in mind\",\n      \"category\": \"procedural_instruction\",\n      \"position_pct\": 85.12,\n      \"context\": \"a DJI air unit setup, but keep in mind that you need to match it with\"\n    }\n  ],\n  \"embodied_summary\": {\n    \"total_count\": 15,\n    \"by_category\": {\n      \"visual_reference\": 4,\n      \"action_narration\": 8,\n      \"sensory_description\": 0,\n      \"procedural_instruction\": 3\n    },\n    \"verbal_embodied_richness\": \"medium\",\n    \"verbal_embodied_reasoning\": \"The transcript includes action-oriented phrases ('pre-soldered', 'you can wire') and visual cues ('you can find'). While some procedural instructions are present ('keep in mind'), sensory descriptions are absent.\"\n  }\n}\n```"
+}
