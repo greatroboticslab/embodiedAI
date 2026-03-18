@@ -378,6 +378,63 @@ def make_plots(rows):
 
 # ── CSV export ────────────────────────────────────────────────────────────────
 
+def export_position_distribution_csv(rows):
+    """
+    Export binned position distribution data as CSV.
+    One row per bin per label — ready for plotting in Excel, R, or LaTeX pgfplots.
+
+    Columns: bin_index, bin_label (e.g. "0-10%"), conventional_density, embodied_density,
+             conventional_n_videos, embodied_n_videos
+    """
+    path = os.path.join(GEMINI_DIR, "position_distribution.csv")
+
+    def get_bin_vectors(label_filter):
+        vectors = []
+        for r in rows:
+            if r["label"] != label_filter:
+                continue
+            phrases = r["embodied_phrases_raw"]
+            if not phrases:
+                continue
+            bins = [0] * N_BINS
+            for p in phrases:
+                pct = p.get("position_pct")
+                if pct is None:
+                    continue
+                try:
+                    idx = min(int(float(pct) / (100.0 / N_BINS)), N_BINS - 1)
+                    bins[idx] += 1
+                except (ValueError, TypeError):
+                    pass
+            total = sum(bins)
+            if total > 0:
+                vectors.append([b / total for b in bins])
+        return vectors
+
+    conv_vecs = get_bin_vectors("conventional")
+    emb_vecs  = get_bin_vectors("embodied")
+
+    conv_dist = [sum(v[i] for v in conv_vecs) / len(conv_vecs) for i in range(N_BINS)] if conv_vecs else [0.0] * N_BINS
+    emb_dist  = [sum(v[i] for v in emb_vecs)  / len(emb_vecs)  for i in range(N_BINS)] if emb_vecs  else [0.0] * N_BINS
+
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["bin_index", "bin_label",
+                         "conventional_density", "embodied_density",
+                         "conventional_n_videos", "embodied_n_videos"])
+        for i in range(N_BINS):
+            writer.writerow([
+                i,
+                f"{i*10}-{i*10+10}%",
+                round(conv_dist[i], 4),
+                round(emb_dist[i], 4),
+                len(conv_vecs),
+                len(emb_vecs),
+            ])
+    print(f"Wrote position distribution → {path}")
+    return path
+
+
 def export_master_csv(rows):
     path = os.path.join(GEMINI_DIR, "master_analysis.csv")
     export_keys = [
@@ -414,8 +471,9 @@ def main():
     # Print summary statistics
     print_summary_table(rows)
 
-    # Export master CSV
+    # Export master CSV and position distribution
     export_master_csv(rows)
+    export_position_distribution_csv(rows)
 
     # Generate plots
     make_plots(rows)
