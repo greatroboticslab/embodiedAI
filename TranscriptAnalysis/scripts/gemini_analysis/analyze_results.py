@@ -91,7 +91,7 @@ def load_gemini_results():
             if not fn.endswith(".json"):
                 continue
             vid = fn[:-5]
-            with open(os.path.join(set_dir, fn)) as f:
+            with open(os.path.join(set_dir, fn), encoding="utf-8") as f:
                 data = json.load(f)
             parsed = data.get("parsed") or {}
             records.append({
