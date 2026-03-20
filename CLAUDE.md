@@ -178,7 +178,83 @@ Write new results sections in the paper integrating these three analyses. Propos
 
 ---
 
-## New File Locations (Session 2)
+## Session 3 Progress (2026-03-18) — Three-Way Subgroup Split
+
+### Bimodal Split Formalized
+Embodied videos have a clear bimodal distribution in words-per-minute. Some have very few transcript words with hallucinated speech (silent demos — teaching is purely visual), while others have real narration describing the physical actions. These are fundamentally different teaching modalities and should be analyzed separately.
+
+**Threshold:** 60 wpm (clean gap between 58.3 and 96.3 wpm — no ambiguous cases)
+
+**Subgroup sizes:**
+- 56 conventional
+- 48 verbally embodied (≥60 wpm, real narration)
+- 26 visually embodied (<60 wpm, silent demos with hallucinated/minimal transcripts)
+
+The `subgroup` column was added to `master_analysis.csv`. The `analyze_results.py` script now produces both three-way and filtered (conv vs verbally embodied) comparisons.
+
+### Conventional Videos — No Split Needed
+Checked conventional videos for a similar bimodal pattern: **none found**. 55 of 56 conventional videos are 120–231 wpm (stdev=33.7, tight continuous distribution). Only 1 outlier (`zUyj7Xn9-sk`, 25 wpm, hallucination-flagged) but it still has corr_avg=88.4. Conventional videos are lecture-style by definition, so they are inherently verbal — no silent-demo modality exists.
+
+### Key Findings — Three-Way Comparison
+
+| Metric | Conventional | Verbally Embodied | Visually Embodied |
+|---|---|---|---|
+| Corr avg | 61.2 | 51.3 | 11.2 |
+| Keypoint count | 3.36 | 2.94 | 0.35 |
+| Avg keypoint strength | 3.58 | **3.67** | 0.40 |
+| Embodied phrase count | 12.6 | 12.3 | 1.3 |
+| Phrase rate (per 1000w) | 5.98 | **7.18** | 1.14 |
+| visual_reference | **6.68** | 4.08 | 0.42 |
+| action_narration | 3.41 | **5.56** | 0.58 |
+| sensory_description | 0.71 | 0.79 | 0.04 |
+| procedural_instruction | 1.59 | 1.92 | 0.31 |
+| Transcript words | 2,637 | 2,267 | 96 |
+| Words per min | 167 | 174 | 13.6 |
+
+### Key Findings — Filtered (Conventional vs Verbally Embodied)
+
+**Finding 5 — Correlation gap shrinks dramatically:**
+When silent demos are removed, corr_avg gap shrinks from 23.5 points (61.2 vs 37.7) to just 10 points (61.2 vs 51.3). Most of the original gap was caused by visually embodied videos dragging down the embodied average.
+
+**Finding 6 — Verbally embodied teachers have HIGHER keypoint strength:**
+Avg keypoint strength is 3.67 for verbally embodied vs 3.58 for conventional. When embodied teachers do narrate, they reinforce their key teaching points more effectively than conventional lecturers.
+
+**Finding 7 — Verbally embodied teachers use MORE embodied language per word:**
+Phrase rate is 7.18 per 1000 words (verbally embodied) vs 5.98 (conventional). They pack more embodied action descriptions into their speech.
+
+**Finding 8 — action_narration is 1.6x higher in verbally embodied:**
+5.56 vs 3.41 action narration phrases per video. Verbally embodied teachers actively describe physical manipulations ("I'm connecting this wire", "now I'm screwing this in") far more than conventional teachers.
+
+**Finding 9 — visual_reference explains the remaining corr gap:**
+Conventional teachers use 6.68 visual reference phrases vs 4.08 for verbally embodied. These "look at this" / "as you can see" anchors point to slides/diagrams on screen, making student comments more likely to match transcript language. This inflates conventional correlation but doesn't indicate better teaching.
+
+**Finding 10 — WPM is virtually identical when silent demos excluded:**
+167 wpm (conventional) vs 174 wpm (verbally embodied). There is no speech rate difference — the original gap was entirely caused by silent demos.
+
+### Plots Generated (Session 3)
+All in `TranscriptAnalysis/results/gemini_analysis/plots/`:
+
+**Three-way plots (3 colors: blue/green/orange):**
+- `scatter_phrase_rate_vs_corr_3way.png`
+- `scatter_keypoint_strength_vs_corr_3way.png`
+- `scatter_wpm_vs_corr_3way.png`
+- `position_distribution_3way.png`
+- `category_breakdown_3way.png`
+
+**Filtered plots (conv vs verbally embodied only):**
+- `scatter_phrase_rate_vs_corr_filtered.png`
+- `scatter_keypoint_strength_vs_corr_filtered.png`
+- `scatter_wpm_vs_corr_filtered.png`
+- `category_breakdown_filtered.png`
+
+**Bimodal distribution visualization:**
+- `wpm_bimodal_histogram.png` — histogram of embodied video WPM showing clean two-cluster split with 60 wpm threshold line
+
+Note: `.gitignore` excludes `*.png`, so plots are local only (not pushed to GitHub).
+
+---
+
+## New File Locations (Sessions 2–3)
 
 | What | Path |
 |---|---|
@@ -187,8 +263,8 @@ Write new results sections in the paper integrating these three analyses. Propos
 | Gemini analysis script | `TranscriptAnalysis/scripts/gemini_analysis/gemini_analyze_transcripts.py` |
 | Gemini analysis + plots | `TranscriptAnalysis/scripts/gemini_analysis/analyze_results.py` |
 | Per-video Gemini JSON | `TranscriptAnalysis/results/gemini_analysis/conventional/` and `embodied/` |
-| Master analysis CSV | `TranscriptAnalysis/results/gemini_analysis/master_analysis.csv` |
-| Plots | `TranscriptAnalysis/results/gemini_analysis/plots/` |
+| Master analysis CSV | `TranscriptAnalysis/results/gemini_analysis/master_analysis.csv` (includes `subgroup` column) |
+| Plots | `TranscriptAnalysis/results/gemini_analysis/plots/` (15 plots, local only — .gitignore excludes *.png) |
 
 ---
 
