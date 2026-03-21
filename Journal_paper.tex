@@ -36,7 +36,7 @@
 \colorlet{shadecolor}{yellow}
 \usepackage{graphicx} % For including graphics
 % \usepackage{color,soul}
-\usepackage[pdftex]{graphicx}
+%\usepackage[pdftex]{graphicx} % REMOVED: duplicate/option clash with graphicx above
 \graphicspath{{../pdf/}{../jpeg/}}
 \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
 
@@ -77,7 +77,7 @@ Emb,37.7158,3.5042,1530.8378,179.7932,3.7027,0.2954,1.6892,0.1731,695.9578,49.01
 \end{filecontents*}
 
 \begin{document}
-\bstctlcite{IEEEexample:BSTcontrol}
+%\bstctlcite{IEEEexample:BSTcontrol} % REMOVED: key not defined in any .bib file
     \title{A Comparative Study of Embodied and Non-Embodied Learning Approaches in Learning Robotics with LLM (Draft)}
   \author{Hongbo Zhang,~\IEEEmembership{ Member,~IEEE,} Reshma Rajan \\
       Benjamin Li,
@@ -296,13 +296,13 @@ These comments were compiled into a structured DOCX file, organized by video lin
     \begin{subfigure}{0.45\linewidth}
         \includegraphics[width=\linewidth]{figures/video_hd_1.png}
         \caption{Instruction to bind Fs-i6X receiver to its transmitter. }
-        \label{fig:subfig_a}
+        \label{fig:hd_subfig_a}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.45\linewidth}
         \includegraphics[width=\linewidth]{figures/video_hd_2.png}
         \caption{Building and testing the efficiency of a spinning drone.}
-        \label{fig:subfig_b}
+        \label{fig:hd_subfig_b}
     \end{subfigure}
     
     \vspace{0.5cm} % Space between rows
@@ -311,13 +311,13 @@ These comments were compiled into a structured DOCX file, organized by video lin
     \begin{subfigure}{0.45\linewidth}
         \includegraphics[width=\linewidth]{figures/video_hd_3.png}
         \caption{Breakdown of T-Motor F722 Mini Stack 20020}
-        \label{fig:subfig_c}
+        \label{fig:hd_subfig_c}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.45\linewidth}
         \includegraphics[width=\linewidth]{figures/video_hd_4.png}
         \caption{Construction of a Zobel network for audio amplifier}
-        \label{fig:subfig_d}
+        \label{fig:hd_subfig_d}
     \end{subfigure}
     
     \vspace{0.5cm} % Space between rows
@@ -325,8 +325,8 @@ These comments were compiled into a structured DOCX file, organized by video lin
     % Row 3: Single subfigure centered
     \begin{subfigure}{0.45\linewidth}
         \includegraphics[width=\linewidth]{figures/video_hd_5.png}
-        \caption{T-Motor Pacer F7 Flight Controller & Mini F45A 20mm Stack - Setup & Ovreview}
-        \label{fig:subfig_e}
+        \caption{T-Motor Pacer F7 Flight Controller \& Mini F45A 20mm Stack - Setup \& Overview}
+        \label{fig:hd_subfig_e}
     \end{subfigure}
     
     \caption{Data collection for embodied videos}
