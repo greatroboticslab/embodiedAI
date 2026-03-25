@@ -72,8 +72,8 @@
 
 \begin{filecontents*}{metrics_summary_v2.csv}
 Label,CorrMean,CorrSEM,WordMean,WordSEM,TopicMean,TopicSEM,CommMean,CommSEM,DurMean,DurSEM,DensMean,DensSEM,TopDensMean,TopDensSEM,EngMean,EngSEM,EffMean,EffSEM
-Conv,51.7498,3.6918,2636.8750,354.6209,4.3750,0.3434,1.7857,0.2454,963.9678,119.0904,159.9367,4.3504,0.4159,0.0492,0.1715,0.0295,0.4709,0.0519
-Emb,37.7158,3.5042,1530.8378,179.7932,3.7027,0.2954,1.6892,0.1731,695.9578,49.0129,111.5617,9.2031,0.3539,0.0330,0.2044,0.0359,0.3221,0.0406
+Conv,61.2316,2.5389,2636.8750,354.6209,4.3750,0.3434,1.7857,0.2454,963.9678,119.0904,159.9367,4.3504,0.4159,0.0492,0.1715,0.0295,0.4709,0.0519
+VerbEmb,51.2939,3.5497,2266.8542,207.2508,4.6458,0.3517,1.6892,0.1731,695.9578,49.0129,163.0899,5.5677,0.3539,0.0330,0.1853,0.0506,0.4627,0.0491
 \end{filecontents*}
 
 \begin{document}
@@ -106,7 +106,7 @@ benjaminliyo@gmail.com).}%
 % =================================================================================
 \begin{abstract}
 %\boldmath
-This research explored the use of embodied learning-centered videos for robotics instruction. The engagement of the videos is studied through the video user comments. The correlation between video user comments and the video transcripts were analyzed, and the strong correlation between user comments and instructional topics were identified. Specifically, the research has identified the learnable elements in the videos for users to interact and engage. User study was also performed with both embodied learning videos and conventional learning videos. Further analysis of speech rate, keypoint structure, and embodied language revealed two distinct modalities within embodied videos---verbally narrated tutorials and visually demonstrated silent tutorials---and accounting for this distinction substantially closes the observed correlation gap between the two video categories. The results show that verbally embodied instructors match or exceed conventional instructors in keypoint reinforcement and embodied language density. The research has practical implications for the enhancement of the robotics workforce training for robotics technology.           
+This research explored the use of embodied learning-centered videos for robotics instruction. The engagement of the videos is studied through the video user comments. The correlation between video user comments and the video transcripts were analyzed, and the strong correlation between user comments and instructional topics were identified. Specifically, the research has identified the learnable elements in the videos for users to interact and engage. User study was also performed with both embodied learning videos and conventional learning videos. Preliminary analysis revealed that embodied videos as a whole appeared to underperform conventional videos on transcript-based correlation metrics; however, examination of the speech rate distribution uncovered a bimodal pattern within the embodied category, indicating two distinct modalities---verbally narrated tutorials and visually demonstrated silent tutorials. After separating the silent demonstrations, the comparative analysis focused on conventional versus verbally embodied videos. The results show that verbally embodied instructors match or exceed conventional instructors in speech rate, keypoint reinforcement, and embodied language density, with comparable correlation scores across both student and YouTube comment analyses. The research has practical implications for the enhancement of the robotics workforce training for robotics technology.           
 
 \end{abstract}
 
@@ -493,14 +493,13 @@ The model identified verbatim phrases in the transcript that convey embodied or 
 
 Analysis of the speech rate distribution across embodied videos revealed a clear bimodal pattern. A cluster of videos exhibited very low speech rates ($R_{wpm} < 30$), corresponding to tutorials conducted primarily through silent visual demonstration with minimal narration. These videos produced hallucinated or negligible transcripts. A second cluster exhibited speech rates comparable to conventional videos ($R_{wpm} > 96$), corresponding to tutorials where the instructor actively narrated the physical procedures.
 
-A threshold of 60~WPM was selected to partition the embodied videos, chosen at the midpoint of a natural gap in the distribution (no videos fell between 58.3 and 96.3~WPM). This yielded three subgroups for subsequent analysis:
+A threshold of 60~WPM was selected to partition the embodied videos, chosen at the midpoint of a natural gap in the distribution (no videos fell between 58.3 and 96.3~WPM). This yielded two subgroups within the embodied category:
 \begin{itemize}
-    \item \textbf{Conventional} ($n = 56$): Lecture-oriented videos with verbal explanations.
     \item \textbf{Verbally embodied} ($n = 48$): Hands-on tutorials with active verbal narration ($R_{wpm} \geq 60$).
     \item \textbf{Visually embodied} ($n = 26$): Hands-on tutorials conducted primarily through silent demonstration ($R_{wpm} < 60$).
 \end{itemize}
 
-\noindent Conventional videos were examined for a similar bimodal pattern but exhibited a tight, unimodal distribution (120--231~WPM, $\sigma = 33.7$), confirming that the subgroup split is specific to the embodied category.
+\noindent Because the visually embodied videos produced hallucinated or negligible transcripts (mean 96 words), transcript-based analysis is unreliable for this subgroup. The comparative analyses in Section~III therefore focus on conventional videos ($n = 56$) versus verbally embodied videos ($n = 48$), ensuring that both groups contain substantive verbal content for meaningful comparison. Conventional videos were examined for a similar bimodal pattern but exhibited a tight, unimodal distribution (120--231~WPM, $\sigma = 33.7$), confirming that the subgroup split is specific to the embodied category.
 
 
 \begin{comment}
@@ -651,301 +650,9 @@ programming.
 \pgfplotstableread[col sep=comma]{metrics_summary_v2.csv}\datatable
 \pgfplotstableread[col sep=comma]{transcript_youtube_plot_data.csv}\ytdatatable
 
-\subsection{Overall Videos, Statistical Results}
-
-\subsubsection{Transcript Verbosity}
-We analyzed the total word count of the video transcripts to understand the verbal density of the content. Figure \ref{fig:res_words} illustrates that Conventional videos are significantly more verbose, with an average of 2636 words per video, compared to 1531 words for Embodied videos. This aligns with the nature of conventional tutorials which often rely heavily on spoken explanation, whereas embodied learning may rely more on visual demonstration.
-
-\begin{figure}[h!]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            ybar,
-            bar width=25pt,
-            width=0.6\linewidth,
-            height=6cm,
-            symbolic x coords={Conv, Emb},
-            xtick=data,
-            ylabel={Word Count},
-            ymin=0, ymax=3500,
-            enlarge x limits=0.5,
-            nodes near coords,
-            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt},
-            title={Avg. Transcript Word Count},
-            ymajorgrids=true,
-            grid style=dashed,
-        ]
-            % Conv=2636, Emb=1530
-            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
-            table [x=Label, y=WordMean, y error=WordSEM] {\datatable};
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Average Transcript Word Count. Conventional videos contain significantly more spoken words than Embodied videos.}
-    \label{fig:res_words}
-\end{figure}
-
-\subsubsection{Transcript Density}
-Transcript density, defined as the number of words spoken per minute, is a measure of information pacing. Figure \ref{fig:res_dens} highlights that Conventional videos have a much higher transcript density (160 words/min) compared to Embodied videos (112 words/min). This reinforces the finding that Conventional videos rely on rapid verbal explanation, while Embodied videos likely include more pauses for physical demonstration or visual processing. It shows that conventional videos are faster-paced verbally, delivering more words per minute. 
-
-\begin{figure}[h!]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            ybar,
-            bar width=25pt,
-            width=0.6\linewidth,
-            height=6cm,
-            symbolic x coords={Conv, Emb},
-            xtick=data,
-            ylabel={Words/Min},
-            ymin=0, ymax=200,
-            enlarge x limits=0.5,
-            nodes near coords,
-            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt},
-            title={Transcript Density (Words/Min)},
-            ymajorgrids=true,
-            grid style=dashed,
-        ]
-            % Conv=160, Emb=112
-            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
-            table [x=Label, y=DensMean, y error=DensSEM] {\datatable};
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Transcript density of the videos. It represents the number of words per min of the video}
-    \label{fig:res_dens}
-\end{figure}
-
-\subsubsection{Topic Coverage}
-The number of distinct topics identified per video provides insight into the breadth of content covered. Figure \ref{fig:res_topics} shows a comparable number of topics between the two categories, with Conventional videos averaging 4.38 topics and Embodied videos averaging 3.70 topics. This suggests that while the delivery method differs, the complexity in terms of distinct subjects covered is relatively similar.
-
-\begin{figure}[h!]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            ybar,
-            bar width=25pt,
-            width=0.6\linewidth,
-            height=6cm,
-            symbolic x coords={Conv, Emb},
-            xtick=data,
-            ylabel={Topic Count},
-            ymin=0, ymax=6,
-            enlarge x limits=0.5,
-            nodes near coords,
-            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt, /pgf/number format/fixed, /pgf/number format/precision=2},
-            title={Avg. Topic Count},
-            ymajorgrids=true,
-            grid style=dashed,
-        ]
-            % Conv=4.38, Emb=3.70
-            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
-            table [x=Label, y=TopicMean, y error=TopicSEM] {\datatable};
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Average number of identified topics per video. Both categories cover a similar breadth of sub-topics.}
-    \label{fig:res_topics}
-\end{figure}
-
-\subsection{Online User Results}
-We expanded our analysis to include YouTube comments to evaluate if the trends observed in student feedback persist in a broader public context.
-
-\subsubsection{YouTube Percent Correlated}
-Figure \ref{fig:yt_corr} shows the percentage of unique YouTube comments correlated to any video topic. Similar to the student results, Conventional videos show a higher correlation percentage (24.4\%) compared to Embodied videos (18.6\%). This reinforces that conventional tutorials tend to elicit more topic-focused discussions.
-
-\begin{figure}[h!]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            ybar,
-            bar width=25pt,
-            width=0.6\linewidth,
-            height=6cm,
-            symbolic x coords={Conventional, Embodied},
-            xtick=data,
-            xticklabels={Conv, Emb},
-            yticklabel style={/pgf/number format/fixed},
-            ylabel={Percent (0-1)},
-            ymin=0, ymax=0.35,
-            enlarge x limits=0.5,
-            nodes near coords,
-            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt, /pgf/number format/fixed, /pgf/number format/precision=3},
-            title={YouTube Percent Correlated},
-            ymajorgrids=true,
-            grid style=dashed,
-        ]
-            % Conv=0.2439, Emb=0.1855
-            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
-            table [x=Label, y=PctCorrMean, y error=PctCorrSEM] {\ytdatatable};
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Percentage of YouTube comments correlated to at least one topic. Conventional videos evoke more relevant discourse.}
-    \label{fig:yt_corr}
-\end{figure}
-
-\subsubsection{YouTube Engagement Rate}
-The density of comments per minute on YouTube is presented in Figure \ref{fig:yt_eng}. In contrast to the student study where Embodied videos had only slightly higher engagement, on YouTube both categories show robust engagement (~25 comments/min), with Embodied videos maintaining a slight edge (25.8 vs 24.5). This suggests that for a general audience, both formats drive significant interaction.
-
-\begin{figure}[h!]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            ybar,
-            bar width=25pt,
-            width=0.6\linewidth,
-            height=6cm,
-            symbolic x coords={Conventional, Embodied},
-            xtick=data,
-            xticklabels={Conv, Emb},
-            ylabel={Comments/Min},
-            ymin=0, ymax=35,
-            enlarge x limits=0.5,
-            nodes near coords,
-            nodes near coords style={font=\bfseries\footnotesize, yshift=23pt, /pgf/number format/fixed, /pgf/number format/precision=1},
-            title={YouTube Engagement Rate},
-            ymajorgrids=true,
-            grid style=dashed,
-        ]
-            % Conv=24.51, Emb=25.81
-            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
-            table [x=Label, y=EngMean, y error=EngSEM] {\ytdatatable};
-        \end{axis}
-    \end{tikzpicture}
-    \caption{YouTube Engagement Rate. Both video types drive high interaction, with Embodied videos slightly leading.}
-    \label{fig:yt_eng}
-\end{figure}
-
-\subsubsection{Top Topic Percentage}
-To assess topic focus, we measured the percentage of comments discussing the single most popular topic (Figure \ref{fig:yt_top}). Conventional videos have a higher concentration of comments on the top topic (19.8\%) compared to Embodied videos (14.9\%). This suggests that audience attention in Conventional videos is more unified around a central theme, whereas Embodied videos may encourage more diverse or scattered discussions.
-
-\begin{figure}[h!]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            ybar,
-            bar width=25pt,
-            width=0.6\linewidth,
-            height=6cm,
-            symbolic x coords={Conventional, Embodied},
-            xtick=data,
-            xticklabels={Conv, Emb},
-            ylabel={Percent (0-1)},
-            ymin=0, ymax=0.25,
-            enlarge x limits=0.5,
-            nodes near coords,
-            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt, /pgf/number format/fixed, /pgf/number format/precision=3},
-            title={Top Topic Percent},
-            ymajorgrids=true,
-            grid style=dashed,
-        ]
-            % Conv=0.1981, Emb=0.1492
-            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
-            table [x=Label, y=TopTopicPctMean, y error=TopTopicPctSEM] {\ytdatatable};
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Percentage of comments on the top topic. Conventional videos show more focused audience engagement.}
-    \label{fig:yt_top}
-\end{figure}
-
-\subsection{User Study Results}
-
-\subsubsection{Correlation Analysis}
-The correlation analysis measures how closely user comments align with the video's stated topics. As shown in Figure \ref{fig:res_corr}, Conventional videos yield a higher average correlation score (51.75\%) compared to Embodied videos (37.72\%). This suggests that comments on Conventional videos tend to be more directly relevant to the specific topics discussed, possibly because the content is more structured or instructional in a traditional sense.
-
-\begin{figure}[h!]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            ybar,
-            bar width=25pt,
-            width=0.6\linewidth,
-            height=6cm,
-            symbolic x coords={Conv, Emb},
-            xtick=data,
-            yticklabel style={/pgf/number format/fixed},
-            ylabel={Score (0-100)},
-            ymin=0, ymax=80,
-            enlarge x limits=0.5,
-            nodes near coords,
-            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt},
-            title={Avg. Correlation Score},
-            ymajorgrids=true,
-            grid style=dashed,
-        ]
-            % Conv=51.75, Emb=37.72
-            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
-            table [x=Label, y=CorrMean, y error=CorrSEM] {\datatable};
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Average Correlation Score comparing Conventional (Conv) and Embodied (Emb) videos. Conventional videos show stronger alignment between comments and topics.}
-    \label{fig:res_corr}
-\end{figure}
-
-\subsubsection{Engagement Rate}
-Engagement rate is measured as the number of comments per minute of video duration. Interestingly, as shown in Figure \ref{fig:res_eng}, Embodied videos show a slightly higher engagement rate (0.20 comments/min) compared to Conventional videos (0.17 comments/min). This implies that despite being less verbose, the visual and physical nature of embodied content may prompt more viewer interaction relative to the video's length.
-
-\begin{figure}[h!]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            ybar,
-            bar width=25pt,
-            width=0.6\linewidth,
-            height=6cm,
-            symbolic x coords={Conv, Emb},
-            xtick=data,
-            ylabel={Comments/Min},
-            ymin=0, ymax=0.3,
-            enlarge x limits=0.5,
-            nodes near coords,
-            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt, /pgf/number format/fixed, /pgf/number format/precision=2},
-            title={Engagement Rate (Comments/Min)},
-            ymajorgrids=true,
-            grid style=dashed,
-        ]
-            % Conv=0.17, Emb=0.20
-            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
-            table [x=Label, y=EngMean, y error=EngSEM] {\datatable};
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Engagement Rate of the videos. The engagement rate represents the number of comments per minute of the video.}
-    \label{fig:res_eng}
-\end{figure}
-
-\subsubsection{Correlation Efficiency}
-Efficiency is defined as the ratio of high-confidence correlated comments to total comments. Conventional videos demonstrate higher efficiency (0.47) compared to Embodied videos (0.32), as shown in Figure \ref{fig:res_eff}. This indicates that nearly half of the comments on Conventional videos are highly relevant to the topics, whereas Embodied videos attract a broader range of comments, potentially including more general reactions or unrelated discussions.
-
-\begin{figure}[h!]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            ybar,
-            bar width=25pt,
-            width=0.6\linewidth,
-            height=6cm,
-            symbolic x coords={Conv, Emb},
-            xtick=data,
-            ylabel={Efficiency Ratio},
-            ymin=0, ymax=0.6,
-            enlarge x limits=0.5,
-            nodes near coords,
-            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt, /pgf/number format/fixed, /pgf/number format/precision=2},
-            title={Correlation Efficiency},
-            ymajorgrids=true,
-            grid style=dashed,
-        ]
-            % Conv=0.47, Emb=0.32
-            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}] 
-            table [x=Label, y=EffMean, y error=EffSEM] {\datatable};
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Correlation Efficiency. A higher ratio indicates a larger proportion of comments are strongly correlated with the video topics.}
-    \label{fig:res_eff}
-\end{figure}
-
-
 \subsection{Speech Rate Distribution and Subgroup Identification}
 
-The preceding results consistently show conventional videos outperforming embodied videos across correlation, efficiency, and verbal density metrics. However, inspection of the speech rate ($R_{wpm}$) distribution across embodied videos revealed a structural confound: the embodied category is not homogeneous. As shown in Fig.~\ref{fig:wpm_bimodal}, the distribution exhibits a clear bimodal pattern, with one cluster below 30~WPM and another ranging from approximately 96 to 262~WPM, separated by a gap containing no observations.
+Before conducting the comparative analysis, we examined the speech rate ($R_{wpm}$) distribution across all videos to characterize the verbal content of each instructional category. Initial exploratory comparisons between the full conventional and embodied groups revealed confounding results: embodied videos appeared to consistently underperform on transcript-based metrics such as correlation score, word count, and transcript density. However, these aggregate results were misleading because the embodied category is not homogeneous. As shown in Fig.~\ref{fig:wpm_bimodal}, the speech rate distribution of embodied videos exhibits a clear bimodal pattern, with one cluster below 30~WPM and another ranging from approximately 96 to 262~WPM, separated by a gap containing no observations.
 
 \begin{figure}[h!]
     \centering
@@ -1051,58 +758,299 @@ The preceding results consistently show conventional videos outperforming embodi
     \label{fig:wpm_bimodal}
 \end{figure}
 
-The low-WPM cluster ($n = 26$) corresponds to silent demonstration videos in which the instructor performs physical procedures with little or no verbal narration. In these cases, the ASR system produced hallucinated or negligible transcripts (mean 96 words), rendering transcript-based analysis unreliable. The high-WPM cluster ($n = 48$) corresponds to verbally narrated embodied tutorials in which instructors actively describe their physical actions while performing them, with speech rates comparable to conventional videos (174 vs.\ 167~WPM). Including the silent demonstration videos in the embodied average substantially depressed all transcript-based metrics. To account for this, we repeated the correlation and content analyses with a three-way subgroup comparison.
+The low-WPM cluster ($n = 26$) corresponds to silent demonstration videos in which the instructor performs physical procedures with little or no verbal narration. In these cases, the ASR system produced hallucinated or negligible transcripts (mean 96 words), rendering transcript-based analysis unreliable. The high-WPM cluster ($n = 48$) corresponds to verbally narrated embodied tutorials in which instructors actively describe their physical actions while performing them, with speech rates comparable to conventional videos (174 vs.\ 167~WPM). Including the silent demonstration videos in the embodied average substantially depressed all transcript-based metrics, producing confounding results in which embodied videos appeared to consistently underperform. Conventional videos were examined for a similar bimodal pattern but exhibited a tight, unimodal distribution (120--231~WPM, $\sigma = 33.7$), confirming that the split is specific to the embodied category.
+
+Based on this finding, the silent demonstration videos were excluded from subsequent analyses, and all comparisons reported below are between conventional videos ($n = 56$) and verbally embodied videos ($n = 48$). This ensures that both groups contain videos with substantive verbal content, enabling a meaningful transcript-based comparison.
 
 
-\subsection{Three-Way Student Correlation Analysis}
+\subsection{Transcript Verbosity and Density}
 
-Table~\ref{tab:threeway_student} presents the student comment correlation metrics disaggregated by the three subgroups. The results reveal that the correlation gap observed in the two-way comparison is largely attributable to the visually embodied subgroup.
+With the verbally embodied subgroup isolated, we first compared the basic transcript characteristics of the two groups. Figure~\ref{fig:res_words} presents the average transcript word count and Figure~\ref{fig:res_dens} presents the transcript density.
 
-\begin{table}[h!]
+Conventional videos average 2{,}637 words per video compared to 2{,}267 words for verbally embodied videos (Fig.~\ref{fig:res_words}), a modest difference of 370 words. Transcript density is similarly close: conventional videos deliver 160 words per minute compared to 163 words per minute for verbally embodied videos (Fig.~\ref{fig:res_dens}). These results confirm that once the silent demonstrations are excluded, verbally embodied instructors produce verbal content at rates comparable to conventional lecturers.
+
+\begin{figure}[h!]
     \centering
-    \caption{Student correlation metrics by subgroup. Values are mean $\pm$ SEM.}
-    \rowcolors{2}{gray!15}{white}
-    \begin{tabular}{l r r r}
-        \toprule
-        \textbf{Metric} & \textbf{Conv} & \textbf{Verb.\ Emb.} & \textbf{Vis.\ Emb.} \\
-        & ($n{=}56$) & ($n{=}48$) & ($n{=}26$) \\
-        \midrule
-        $S_{corr}$ & 61.2 $\pm$ 2.5 & 51.3 $\pm$ 3.6 & 11.2 $\pm$ 3.3 \\
-        $W_{trans}$ & 2637 $\pm$ 355 & 2267 $\pm$ 207 & 96 $\pm$ 24 \\
-        $R_{wpm}$ & 167 $\pm$ 4.5 & 174 $\pm$ 6.0 & 13.6 $\pm$ 2.5 \\
-        \bottomrule
-    \end{tabular}
-    \label{tab:threeway_student}
-\end{table}
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conv, VerbEmb},
+            xtick=data,
+            xticklabels={Conv, Verb.\ Emb.},
+            ylabel={Word Count},
+            ymin=0, ymax=3500,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt},
+            title={Avg. Transcript Word Count},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}]
+            table [x=Label, y=WordMean, y error=WordSEM] {\datatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Average transcript word count. Conventional and verbally embodied videos contain comparable amounts of spoken content.}
+    \label{fig:res_words}
+\end{figure}
 
-When restricted to conventional versus verbally embodied videos, the correlation gap narrows from 23.5 points ($61.2 - 37.7$) to 9.9 points ($61.2 - 51.3$), a 58\% reduction. Speech rate, which showed a large difference in the two-way comparison (167 vs.\ 112~WPM), becomes nearly identical once the silent demonstrations are excluded (167 vs.\ 174~WPM). Similarly, the transcript word count gap narrows from 1{,}106 words to 370 words. These results demonstrate that verbally embodied instructors produce verbal content at rates comparable to conventional lecturers; the apparent deficit in the two-way comparison was driven by the inclusion of videos that rely on a fundamentally different, non-verbal instructional modality.
-
-
-\subsection{Three-Way YouTube Correlation Analysis}
-
-To evaluate whether the subgroup effect generalizes beyond the student study, the three-way analysis was applied to YouTube comment data. Table~\ref{tab:threeway_youtube} summarizes the results.
-
-\begin{table}[h!]
+\begin{figure}[h!]
     \centering
-    \caption{YouTube comment metrics by subgroup. Values are mean $\pm$ SEM.}
-    \rowcolors{2}{gray!15}{white}
-    \begin{tabular}{l r r r}
-        \toprule
-        \textbf{Metric} & \textbf{Conv} & \textbf{Verb.\ Emb.} & \textbf{Vis.\ Emb.} \\
-        & ($n{=}56$) & ($n{=}48$) & ($n{=}26$) \\
-        \midrule
-        $P_{corr}$ (\%) & 20.0 $\pm$ 2.0 & 21.0 $\pm$ 2.0 & 7.0 $\pm$ 4.0 \\
-        $E_{yt}$ & 22.8 $\pm$ 5.9 & 38.2 $\pm$ 9.9 & 23.9 $\pm$ 5.2 \\
-        $P_{top}$ (\%) & 16.6 $\pm$ 1.7 & 16.1 $\pm$ 1.7 & 7.5 $\pm$ 4.0 \\
-        \bottomrule
-    \end{tabular}
-    \label{tab:threeway_youtube}
-\end{table}
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conv, VerbEmb},
+            xtick=data,
+            xticklabels={Conv, Verb.\ Emb.},
+            ylabel={Words/Min},
+            ymin=0, ymax=200,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt},
+            title={Transcript Density (Words/Min)},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}]
+            table [x=Label, y=DensMean, y error=DensSEM] {\datatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Transcript density. Both groups deliver verbal content at nearly identical rates.}
+    \label{fig:res_dens}
+\end{figure}
 
-The YouTube results are striking. The percentage of correlated comments, which favored conventional videos in the two-way comparison (24.4\% vs.\ 18.6\%), becomes virtually identical when comparing conventional to verbally embodied videos (20.0\% vs.\ 21.0\%). The top topic percentage likewise converges (16.6\% vs.\ 16.1\%). Meanwhile, the YouTube engagement rate is substantially higher for verbally embodied videos (38.2 vs.\ 22.8 comments per minute), suggesting that narrated hands-on tutorials generate more viewer interaction than lecture-style content in a public audience context. Both student and YouTube analyses converge on the same conclusion: once the silent demonstration videos are separated, verbally embodied tutorials achieve parity with---or exceed---conventional videos on engagement and correlation measures.
+\subsection{Topic Coverage}
+The number of distinct topics identified per video provides insight into the breadth of content covered. Figure~\ref{fig:res_topics} shows that both groups cover a comparable number of topics, with conventional videos averaging 4.38 topics and verbally embodied videos averaging 4.65 topics. This indicates that when embodied instructors narrate their procedures, they address a similar breadth of instructional themes as conventional lecturers.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conv, VerbEmb},
+            xtick=data,
+            xticklabels={Conv, Verb.\ Emb.},
+            ylabel={Topic Count},
+            ymin=0, ymax=6,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt, /pgf/number format/fixed, /pgf/number format/precision=2},
+            title={Avg. Topic Count},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}]
+            table [x=Label, y=TopicMean, y error=TopicSEM] {\datatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Average number of identified topics per video. Both groups cover a comparable breadth of instructional sub-topics.}
+    \label{fig:res_topics}
+\end{figure}
+
+\subsection{User Study Results}
+
+\subsubsection{Correlation Analysis}
+The correlation analysis measures how closely student comments align with the video's stated topics. As shown in Figure~\ref{fig:res_corr}, conventional videos yield an average correlation score of 61.2 compared to 51.3 for verbally embodied videos. This remaining gap of 9.9 points is substantially smaller than the 23.5-point gap observed when all embodied videos (including silent demonstrations) were aggregated, representing a 58\% reduction. The narrowed gap suggests that transcript-based correlation is largely comparable between the two groups when both contain substantive verbal content.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conv, VerbEmb},
+            xtick=data,
+            xticklabels={Conv, Verb.\ Emb.},
+            yticklabel style={/pgf/number format/fixed},
+            ylabel={Score (0-100)},
+            ymin=0, ymax=80,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt},
+            title={Avg. Correlation Score},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}]
+            table [x=Label, y=CorrMean, y error=CorrSEM] {\datatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Average correlation score comparing conventional and verbally embodied videos. The two groups show comparable alignment between student comments and instructional topics.}
+    \label{fig:res_corr}
+\end{figure}
+
+\subsubsection{Engagement Rate}
+Engagement rate is measured as the number of student comments per minute of video duration. As shown in Figure~\ref{fig:res_eng}, verbally embodied videos show a slightly higher engagement rate (0.19 comments/min) compared to conventional videos (0.17 comments/min). This suggests that the physical, hands-on nature of embodied content may prompt slightly more viewer interaction relative to the video's length, even when both groups have comparable verbal density.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conv, VerbEmb},
+            xtick=data,
+            xticklabels={Conv, Verb.\ Emb.},
+            ylabel={Comments/Min},
+            ymin=0, ymax=0.3,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt, /pgf/number format/fixed, /pgf/number format/precision=2},
+            title={Engagement Rate (Comments/Min)},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}]
+            table [x=Label, y=EngMean, y error=EngSEM] {\datatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Engagement rate. Verbally embodied videos generate slightly more student comments per minute than conventional videos.}
+    \label{fig:res_eng}
+\end{figure}
+
+\subsubsection{Correlation Efficiency}
+Efficiency is defined as the ratio of high-confidence correlated comments to total comments. As shown in Figure~\ref{fig:res_eff}, the two groups exhibit nearly identical correlation efficiency: conventional videos score 0.47 and verbally embodied videos score 0.46. This indicates that both instructional modalities are equally effective at eliciting topic-relevant student responses when both contain substantive verbal content.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conv, VerbEmb},
+            xtick=data,
+            xticklabels={Conv, Verb.\ Emb.},
+            ylabel={Efficiency Ratio},
+            ymin=0, ymax=0.6,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt, /pgf/number format/fixed, /pgf/number format/precision=2},
+            title={Correlation Efficiency},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}]
+            table [x=Label, y=EffMean, y error=EffSEM] {\datatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Correlation efficiency. Both groups produce comparable proportions of high-confidence correlated comments.}
+    \label{fig:res_eff}
+\end{figure}
+
+\subsection{Online User Results}
+To evaluate whether the trends observed in the student study persist in a broader public context, we analyzed YouTube comments for the same videos.
+
+\subsubsection{YouTube Percent Correlated}
+Figure~\ref{fig:yt_corr} shows the percentage of unique YouTube comments correlated to any video topic. Conventional and verbally embodied videos show virtually identical correlation percentages (20.5\% vs.\ 21.1\%), indicating that both instructional formats elicit comparably topic-focused discussions from a general audience.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conventional, VerbEmb},
+            xtick=data,
+            xticklabels={Conv, Verb.\ Emb.},
+            yticklabel style={/pgf/number format/fixed},
+            ylabel={Percent (0-1)},
+            ymin=0, ymax=0.35,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt, /pgf/number format/fixed, /pgf/number format/precision=3},
+            title={YouTube Percent Correlated},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}]
+            table [x=Label, y=PctCorrMean, y error=PctCorrSEM] {\ytdatatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Percentage of YouTube comments correlated to at least one topic. Both groups evoke comparably relevant discourse.}
+    \label{fig:yt_corr}
+\end{figure}
+
+\subsubsection{YouTube Engagement Rate}
+The density of comments per minute on YouTube is presented in Figure~\ref{fig:yt_eng}. Verbally embodied videos generate substantially higher engagement (38.2 comments/min) compared to conventional videos (22.8 comments/min). This suggests that narrated hands-on tutorials generate more viewer interaction than lecture-style content in a public audience context.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conventional, VerbEmb},
+            xtick=data,
+            xticklabels={Conv, Verb.\ Emb.},
+            ylabel={Comments/Min},
+            ymin=0, ymax=55,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=23pt, /pgf/number format/fixed, /pgf/number format/precision=1},
+            title={YouTube Engagement Rate},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}]
+            table [x=Label, y=EngMean, y error=EngSEM] {\ytdatatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{YouTube engagement rate. Verbally embodied videos drive substantially higher viewer interaction.}
+    \label{fig:yt_eng}
+\end{figure}
+
+\subsubsection{Top Topic Percentage}
+To assess topic focus, we measured the percentage of comments discussing the single most popular topic (Figure~\ref{fig:yt_top}). Conventional and verbally embodied videos show nearly identical top topic percentages (16.6\% vs.\ 16.1\%), indicating that audience attention is comparably focused around central themes in both instructional formats.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Conventional, VerbEmb},
+            xtick=data,
+            xticklabels={Conv, Verb.\ Emb.},
+            ylabel={Percent (0-1)},
+            ymin=0, ymax=0.25,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=15pt, /pgf/number format/fixed, /pgf/number format/precision=3},
+            title={Top Topic Percent},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            \addplot+[fill=gray!60, draw=black, error bars/.cd, y dir=both, y explicit, error bar style={line width=1pt}]
+            table [x=Label, y=TopTopicPctMean, y error=TopTopicPctSEM] {\ytdatatable};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Percentage of comments on the top topic. Both groups show comparably focused audience engagement.}
+    \label{fig:yt_top}
+\end{figure}
 
 
-\subsection{Keypoint Analysis by Subgroup}
+\subsection{Keypoint Analysis}
 
 To investigate whether the remaining correlation gap between conventional and verbally embodied videos reflects differences in instructional structure, we examined the keypoint metrics extracted by the content analysis model. Fig.~\ref{fig:kp_count} and Fig.~\ref{fig:kp_strength} present the average keypoint count and average keypoint strength score, respectively.
 
@@ -1111,15 +1059,15 @@ To investigate whether the remaining correlation gap between conventional and ve
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
-            xticklabel style={font=\footnotesize, rotate=15, anchor=north east},
-            bar width=20pt,
-            width=0.7\linewidth,
+            bar width=25pt,
+            width=0.6\linewidth,
             height=6cm,
-            symbolic x coords={Conv, Verb Emb, Vis Emb},
+            symbolic x coords={Conv, Verb Emb},
             xtick=data,
+            xticklabels={Conv, Verb.\ Emb.},
             ylabel={Keypoint Count},
             ymin=0, ymax=5,
-            enlarge x limits=0.3,
+            enlarge x limits=0.5,
             nodes near coords,
             nodes near coords style={font=\bfseries\footnotesize, yshift=10pt, /pgf/number format/fixed, /pgf/number format/precision=2},
             title={Avg. Keypoint Count},
@@ -1130,11 +1078,10 @@ To investigate whether the remaining correlation gap between conventional and ve
             coordinates {
                 (Conv, 3.36) +- (0, 0.15)
                 (Verb Emb, 2.94) +- (0, 0.12)
-                (Vis Emb, 0.35) +- (0, 0.18)
             };
         \end{axis}
     \end{tikzpicture}
-    \caption{Average number of keypoints identified per video by subgroup. Verbally embodied videos approach conventional levels, while visually embodied videos have near-zero identifiable keypoints due to the absence of verbal content.}
+    \caption{Average number of keypoints identified per video. Verbally embodied videos approach conventional levels in keypoint count.}
     \label{fig:kp_count}
 \end{figure}
 
@@ -1143,15 +1090,15 @@ To investigate whether the remaining correlation gap between conventional and ve
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
-            xticklabel style={font=\footnotesize, rotate=15, anchor=north east},
-            bar width=20pt,
-            width=0.7\linewidth,
+            bar width=25pt,
+            width=0.6\linewidth,
             height=6cm,
-            symbolic x coords={Conv, Verb Emb, Vis Emb},
+            symbolic x coords={Conv, Verb Emb},
             xtick=data,
+            xticklabels={Conv, Verb.\ Emb.},
             ylabel={Strength Score (1--5)},
             ymin=0, ymax=5,
-            enlarge x limits=0.3,
+            enlarge x limits=0.5,
             nodes near coords,
             nodes near coords style={font=\bfseries\footnotesize, yshift=10pt, /pgf/number format/fixed, /pgf/number format/precision=2},
             title={Avg. Keypoint Strength Score},
@@ -1162,18 +1109,17 @@ To investigate whether the remaining correlation gap between conventional and ve
             coordinates {
                 (Conv, 3.58) +- (0, 0.07)
                 (Verb Emb, 3.67) +- (0, 0.06)
-                (Vis Emb, 0.40) +- (0, 0.19)
             };
         \end{axis}
     \end{tikzpicture}
-    \caption{Average keypoint strength score by subgroup. Verbally embodied videos slightly exceed conventional videos in keypoint reinforcement.}
+    \caption{Average keypoint strength score. Verbally embodied videos slightly exceed conventional videos in keypoint reinforcement.}
     \label{fig:kp_strength}
 \end{figure}
 
-Conventional videos contain more keypoints on average (3.36 vs.\ 2.94), reflecting the broader topical coverage typical of lecture-style delivery. However, the average keypoint strength---which captures how effectively each keypoint is communicated through repetition and structural reinforcement---is slightly higher for verbally embodied videos (3.67 vs.\ 3.58). This indicates that when embodied instructors do narrate, they reinforce their core teaching points at least as effectively as conventional lecturers, despite covering fewer distinct topics. The visually embodied subgroup has near-zero values on both metrics (0.35 keypoints, 0.40 strength), confirming that keypoint extraction requires meaningful verbal content.
+Conventional videos contain more keypoints on average (3.36 vs.\ 2.94), reflecting the broader topical coverage typical of lecture-style delivery. However, the average keypoint strength---which captures how effectively each keypoint is communicated through repetition and structural reinforcement---is slightly higher for verbally embodied videos (3.67 vs.\ 3.58). This indicates that when embodied instructors narrate, they reinforce their core teaching points at least as effectively as conventional lecturers, despite covering fewer distinct topics.
 
 
-\subsection{Embodied Phrase Analysis by Subgroup}
+\subsection{Embodied Phrase Analysis}
 
 The embodied phrase analysis quantifies the frequency and type of physical action language present in each video's transcript. Fig.~\ref{fig:phrase_rate} presents the overall embodied phrase rate, and Fig.~\ref{fig:cat_breakdown} presents the per-category breakdown.
 
@@ -1182,15 +1128,15 @@ The embodied phrase analysis quantifies the frequency and type of physical actio
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
-            xticklabel style={font=\footnotesize, rotate=15, anchor=north east},
-            bar width=20pt,
-            width=0.7\linewidth,
+            bar width=25pt,
+            width=0.6\linewidth,
             height=6cm,
-            symbolic x coords={Conv, Verb Emb, Vis Emb},
+            symbolic x coords={Conv, Verb Emb},
             xtick=data,
+            xticklabels={Conv, Verb.\ Emb.},
             ylabel={Phrases per 1{,}000 Words},
             ymin=0, ymax=10,
-            enlarge x limits=0.3,
+            enlarge x limits=0.5,
             nodes near coords,
             nodes near coords style={font=\bfseries\footnotesize, yshift=10pt, /pgf/number format/fixed, /pgf/number format/precision=2},
             title={Embodied Phrase Rate},
@@ -1201,11 +1147,10 @@ The embodied phrase analysis quantifies the frequency and type of physical actio
             coordinates {
                 (Conv, 5.98) +- (0, 0.54)
                 (Verb Emb, 7.18) +- (0, 0.69)
-                (Vis Emb, 1.14) +- (0, 0.79)
             };
         \end{axis}
     \end{tikzpicture}
-    \caption{Embodied phrase rate (phrases per 1{,}000 transcript words) by subgroup. Verbally embodied videos contain a higher density of embodied language than conventional videos.}
+    \caption{Embodied phrase rate (phrases per 1{,}000 transcript words). Verbally embodied videos contain a higher density of embodied language than conventional videos.}
     \label{fig:phrase_rate}
 \end{figure}
 
@@ -1214,7 +1159,7 @@ The embodied phrase analysis quantifies the frequency and type of physical actio
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
-            bar width=8pt,
+            bar width=12pt,
             width=\linewidth,
             height=7cm,
             symbolic x coords={Visual Ref, Action Narr, Sensory Desc, Procedural},
@@ -1225,7 +1170,7 @@ The embodied phrase analysis quantifies the frequency and type of physical actio
             enlarge x limits=0.2,
             nodes near coords,
             nodes near coords style={font=\scriptsize, yshift=6pt, /pgf/number format/fixed, /pgf/number format/precision=1},
-            title={Embodied Phrase Categories by Subgroup},
+            title={Embodied Phrase Categories},
             ymajorgrids=true,
             grid style=dashed,
             legend style={at={(0.98,0.98)}, anchor=north east, font=\footnotesize},
@@ -1244,58 +1189,55 @@ The embodied phrase analysis quantifies the frequency and type of physical actio
                 (Sensory Desc, 0.79)
                 (Procedural, 1.92)
             };
-            \addplot+[fill=gray!90, draw=black]
-            coordinates {
-                (Visual Ref, 0.42)
-                (Action Narr, 0.58)
-                (Sensory Desc, 0.04)
-                (Procedural, 0.31)
-            };
-            \legend{Conventional, Verb.\ Embodied, Vis.\ Embodied}
+            \legend{Conventional, Verb.\ Embodied}
         \end{axis}
     \end{tikzpicture}
-    \caption{Average count of embodied phrases per video, broken down by category and subgroup. Conventional videos lead in visual references, while verbally embodied videos lead in action narration.}
+    \caption{Average count of embodied phrases per video, broken down by category. Conventional videos lead in visual references, while verbally embodied videos lead in action narration.}
     \label{fig:cat_breakdown}
 \end{figure}
 
-The embodied phrase rate is 20\% higher in verbally embodied videos than in conventional videos (7.18 vs.\ 5.98 phrases per 1{,}000 words), indicating that narrated embodied tutorials are denser in physical action language. The category breakdown reveals an instructive pattern: conventional videos use substantially more visual reference phrases (6.68 vs.\ 4.08 per video), which are anchoring expressions such as ``look at this'' or ``as you can see'' that direct attention to on-screen slides or diagrams. In contrast, verbally embodied videos use 63\% more action narration phrases (5.56 vs.\ 3.41), which describe physical manipulations in progress (e.g., ``I'm now connecting this wire to the terminal''). Sensory description and procedural instruction counts are comparable between the two subgroups.
+The embodied phrase rate is 20\% higher in verbally embodied videos than in conventional videos (7.18 vs.\ 5.98 phrases per 1{,}000 words), indicating that narrated embodied tutorials are denser in physical action language. The category breakdown reveals an instructive pattern: conventional videos use substantially more visual reference phrases (6.68 vs.\ 4.08 per video), which are anchoring expressions such as ``look at this'' or ``as you can see'' that direct attention to on-screen slides or diagrams. In contrast, verbally embodied videos use 63\% more action narration phrases (5.56 vs.\ 3.41), which describe physical manipulations in progress (e.g., ``I'm now connecting this wire to the terminal''). Sensory description and procedural instruction counts are comparable between the two groups.
 
-This pattern suggests that the two modalities employ different verbal strategies: conventional instructors anchor their language to visual aids, while verbally embodied instructors narrate their physical actions in real time. The higher visual reference count in conventional videos may partially explain their higher correlation scores, as students viewing slides are more likely to echo the same terminology in their comments. Verbally embodied instructors, who describe physical manipulations, produce language that is less likely to be mirrored verbatim in student comments, even when the teaching is equally effective.
+This pattern suggests that the two modalities employ different verbal strategies: conventional instructors anchor their language to visual aids, while verbally embodied instructors narrate their physical actions in real time. The higher visual reference count in conventional videos may partially explain the modest remaining correlation gap, as students viewing slides are more likely to echo the same terminology in their comments. Verbally embodied instructors, who describe physical manipulations, produce language that is less likely to be mirrored verbatim in student comments, even when the teaching is equally effective.
 
 
-\subsection{Summary of Subgroup Findings}
+\subsection{Summary of Findings}
 
-Table~\ref{tab:full_comparison} consolidates all metrics across the three subgroups, providing a comprehensive comparison.
+Table~\ref{tab:full_comparison} consolidates all metrics, providing a comprehensive comparison of conventional and verbally embodied videos.
 
 \begin{table*}[h!]
     \centering
-    \caption{Comprehensive comparison of all metrics across the three subgroups. Values are mean $\pm$ SEM.}
+    \caption{Comprehensive comparison of all metrics between conventional and verbally embodied videos. Values are mean $\pm$ SEM.}
     \rowcolors{2}{gray!15}{white}
-    \begin{tabular}{l r r r}
+    \begin{tabular}{l r r}
         \toprule
-        \textbf{Metric} & \textbf{Conventional} & \textbf{Verbally Embodied} & \textbf{Visually Embodied} \\
-        & ($n = 56$) & ($n = 48$) & ($n = 26$) \\
+        \textbf{Metric} & \textbf{Conventional} & \textbf{Verbally Embodied} \\
+        & ($n = 56$) & ($n = 48$) \\
         \midrule
-        Correlation score ($S_{corr}$) & 61.2 $\pm$ 2.5 & 51.3 $\pm$ 3.6 & 11.2 $\pm$ 3.3 \\
-        Transcript words ($W_{trans}$) & 2{,}637 $\pm$ 355 & 2{,}267 $\pm$ 207 & 96 $\pm$ 24 \\
-        Speech rate ($R_{wpm}$) & 167 $\pm$ 4.5 & 174 $\pm$ 6.0 & 13.6 $\pm$ 2.5 \\
-        Keypoint count & 3.36 $\pm$ 0.15 & 2.94 $\pm$ 0.12 & 0.35 $\pm$ 0.18 \\
-        Keypoint strength (1--5) & 3.58 $\pm$ 0.07 & 3.67 $\pm$ 0.06 & 0.40 $\pm$ 0.19 \\
-        Embodied phrase count & 12.6 $\pm$ 1.3 & 12.3 $\pm$ 1.0 & 1.3 $\pm$ 1.2 \\
-        Phrase rate (per 1{,}000 words) & 5.98 $\pm$ 0.54 & 7.18 $\pm$ 0.69 & 1.14 $\pm$ 0.79 \\
-        Visual reference & 6.68 $\pm$ 0.79 & 4.08 $\pm$ 0.43 & 0.42 $\pm$ 0.39 \\
-        Action narration & 3.41 $\pm$ 0.43 & 5.56 $\pm$ 0.66 & 0.58 $\pm$ 0.47 \\
-        Sensory description & 0.71 $\pm$ 0.17 & 0.79 $\pm$ 0.18 & 0.04 $\pm$ 0.04 \\
-        Procedural instruction & 1.59 $\pm$ 0.32 & 1.92 $\pm$ 0.34 & 0.31 $\pm$ 0.31 \\
-        YouTube $P_{corr}$ (\%) & 20.0 $\pm$ 2.0 & 21.0 $\pm$ 2.0 & 7.0 $\pm$ 4.0 \\
-        YouTube $E_{yt}$ & 22.8 $\pm$ 5.9 & 38.2 $\pm$ 9.9 & 23.9 $\pm$ 5.2 \\
-        YouTube $P_{top}$ (\%) & 16.6 $\pm$ 1.7 & 16.1 $\pm$ 1.7 & 7.5 $\pm$ 4.0 \\
+        Correlation score ($S_{corr}$) & 61.2 $\pm$ 2.5 & 51.3 $\pm$ 3.6 \\
+        Transcript words ($W_{trans}$) & 2{,}637 $\pm$ 355 & 2{,}267 $\pm$ 207 \\
+        Transcript density (words/min) & 159.9 $\pm$ 4.4 & 163.1 $\pm$ 5.6 \\
+        Speech rate ($R_{wpm}$) & 167 $\pm$ 4.5 & 174 $\pm$ 6.0 \\
+        Topic count & 4.38 $\pm$ 0.34 & 4.65 $\pm$ 0.35 \\
+        Keypoint count & 3.36 $\pm$ 0.15 & 2.94 $\pm$ 0.12 \\
+        Keypoint strength (1--5) & 3.58 $\pm$ 0.07 & 3.67 $\pm$ 0.06 \\
+        Embodied phrase count & 12.6 $\pm$ 1.3 & 12.3 $\pm$ 1.0 \\
+        Phrase rate (per 1{,}000 words) & 5.98 $\pm$ 0.54 & 7.18 $\pm$ 0.69 \\
+        Visual reference & 6.68 $\pm$ 0.79 & 4.08 $\pm$ 0.43 \\
+        Action narration & 3.41 $\pm$ 0.43 & 5.56 $\pm$ 0.66 \\
+        Sensory description & 0.71 $\pm$ 0.17 & 0.79 $\pm$ 0.18 \\
+        Procedural instruction & 1.59 $\pm$ 0.32 & 1.92 $\pm$ 0.34 \\
+        Engagement rate (comments/min) & 0.17 $\pm$ 0.03 & 0.19 $\pm$ 0.05 \\
+        Correlation efficiency & 0.47 $\pm$ 0.05 & 0.46 $\pm$ 0.05 \\
+        YouTube $P_{corr}$ (\%) & 20.5 $\pm$ 2.0 & 21.1 $\pm$ 2.0 \\
+        YouTube $E_{yt}$ (comments/min) & 22.8 $\pm$ 5.9 & 38.2 $\pm$ 9.9 \\
+        YouTube $P_{top}$ (\%) & 16.6 $\pm$ 1.7 & 16.1 $\pm$ 1.7 \\
         \bottomrule
     \end{tabular}
     \label{tab:full_comparison}
 \end{table*}
 
-The consolidated view reveals a consistent pattern: verbally embodied videos match or exceed conventional videos on nearly every metric once the visually embodied subgroup is separated. Verbally embodied instructors speak at equivalent rates, reinforce keypoints more strongly, use more embodied action language per word, and generate higher YouTube engagement. The remaining correlation gap (9.9 points in student data, eliminated entirely in YouTube data) is associated with the higher frequency of visual reference phrases in conventional videos, which anchor student responses to specific transcript terminology.
+The consolidated view reveals a consistent pattern: verbally embodied videos match or exceed conventional videos on nearly every metric. Verbally embodied instructors speak at equivalent rates, reinforce keypoints more strongly, use more embodied action language per word, and generate higher YouTube engagement. The remaining student correlation gap of 9.9 points (eliminated entirely in YouTube data) is associated with the higher frequency of visual reference phrases in conventional videos, which anchor student responses to specific transcript terminology rather than reflecting a substantive difference in instructional effectiveness.
 
 
 
@@ -1451,11 +1393,11 @@ The consolidated view reveals a consistent pattern: verbally embodied videos mat
 
 \section{Conclusion}
 
-This study investigated the effectiveness of embodied versus conventional instructional videos for robotics education through transcript-based correlation analysis of student and YouTube comments. Initial two-way comparisons revealed that conventional videos consistently outperformed embodied videos in correlation scores, transcript density, and correlation efficiency, suggesting a substantial advantage for lecture-oriented instruction.
+This study investigated the effectiveness of embodied versus conventional instructional videos for robotics education through transcript-based correlation analysis of student and YouTube comments. Preliminary comparison of the full conventional and embodied categories revealed confounding results, with embodied videos appearing to consistently underperform on transcript-based metrics. However, examination of the speech rate distribution uncovered a critical structural issue: the embodied category comprises two fundamentally distinct instructional modalities---verbally narrated tutorials and silent visual demonstrations. A clear bimodal pattern in the speech rate distribution, with no videos falling between 58.3 and 96.3~WPM, justified separating these groups. The silent demonstrations ($n = 26$) produce negligible transcripts, making transcript-based analysis unreliable for those videos. Accordingly, all comparative analyses were conducted between conventional videos ($n = 56$) and verbally embodied videos ($n = 48$).
 
-However, deeper analysis of the speech rate distribution uncovered a critical confound: the embodied video category comprises two fundamentally distinct instructional modalities. Approximately one-third of the embodied videos ($n = 26$) are silent visual demonstrations with minimal or no narration, while the remaining two-thirds ($n = 48$) feature active verbal narration at speech rates comparable to conventional lectures. Including the silent demonstrations in the embodied average substantially depressed all transcript-based metrics.
+The results demonstrate that verbally embodied videos are comparable to conventional videos across nearly all transcript-based metrics. Verbally embodied instructors achieved equivalent speech rates (174 vs.\ 167~WPM), comparable transcript density (163 vs.\ 160 words/min), and similar topic coverage (4.65 vs.\ 4.38 topics). The student correlation gap was modest (61.2 vs.\ 51.3), and the YouTube correlation gap was eliminated entirely (21.1\% vs.\ 20.5\%). Correlation efficiency was virtually identical (0.46 vs.\ 0.47), indicating that both modalities are equally effective at eliciting topic-relevant student responses.
 
-When the analysis was restricted to verbally embodied videos, the results changed markedly. The student correlation gap narrowed by 58\%, and the YouTube correlation gap was eliminated entirely. Verbally embodied instructors achieved equivalent speech rates (174 vs.\ 167~WPM), higher keypoint reinforcement scores (3.67 vs.\ 3.58), and 20\% greater embodied phrase density (7.18 vs.\ 5.98 per 1{,}000 words) compared to conventional instructors. The category-level phrase analysis revealed distinct verbal strategies: conventional instructors rely on visual reference phrases that anchor attention to on-screen materials, while embodied instructors employ action narration to describe physical manipulations in real time.
+The keypoint and embodied phrase analyses provided further insight into the instructional characteristics of each modality. Verbally embodied instructors achieved higher keypoint reinforcement scores (3.67 vs.\ 3.58) and 20\% greater embodied phrase density (7.18 vs.\ 5.98 per 1{,}000 words) compared to conventional instructors. The category-level phrase analysis revealed distinct verbal strategies: conventional instructors rely on visual reference phrases that anchor attention to on-screen materials, while embodied instructors employ action narration to describe physical manipulations in real time.
 
 These findings support the thesis that audio and transcript alone can effectively convey embodied instructional content when the instructor actively narrates the physical procedures. The effectiveness of this verbal embodied teaching parallels pre-digital pedagogical traditions in which skilled instructors conveyed hands-on knowledge through vivid verbal description without visual aids. The bimodal split within embodied videos further suggests that the field of educational video analysis should distinguish between narrated and silent demonstration formats, as aggregating them obscures meaningful differences in instructional design.
 
