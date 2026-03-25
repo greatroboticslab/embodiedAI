@@ -473,7 +473,7 @@ where $W_{trans}$ is the transcript word count. Videos with high speech-to-durat
 
 \subsection{Transcript Content Analysis}
 
-To analyze the instructional structure and embodied language within each video's transcript, we employed Google's Gemini-2.0-Flash model~\cite{geminiteam2024gemini2} as an automated content analysis tool. Each transcript was submitted with a structured prompt requesting two analyses:
+To analyze the instructional structure and embodied language within each video's transcript, we employed Google's Gemini-2.0-Flash model~\cite{gemini2024} as an automated content analysis tool. Each transcript was submitted with a structured prompt requesting two analyses:
 
 \subsubsection{Keypoint Extraction}
 The model identified the primary instructional keypoints in each transcript, providing for each: a name and description, the number of times mentioned, position distribution across the transcript (early, middle, late, or throughout), whether the keypoint was reinforced at the end, a strength score from 1 to 5, and representative quotes. The strength score captures how effectively a keypoint is communicated, considering both repetition frequency and structural reinforcement.
@@ -962,6 +962,7 @@ The preceding results consistently show conventional videos outperforming embodi
             xtick={0,50,100,150,200,250},
             ymajorgrids=true,
             grid style=dashed,
+            title style={yshift=6pt},
             title={Speech Rate Distribution of Embodied Videos},
             extra x ticks={60},
             extra x tick labels={},
@@ -1110,6 +1111,7 @@ To investigate whether the remaining correlation gap between conventional and ve
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
+            xticklabel style={font=\footnotesize, rotate=15, anchor=north east},
             bar width=20pt,
             width=0.7\linewidth,
             height=6cm,
@@ -1141,6 +1143,7 @@ To investigate whether the remaining correlation gap between conventional and ve
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
+            xticklabel style={font=\footnotesize, rotate=15, anchor=north east},
             bar width=20pt,
             width=0.7\linewidth,
             height=6cm,
@@ -1179,6 +1182,7 @@ The embodied phrase analysis quantifies the frequency and type of physical actio
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
+            xticklabel style={font=\footnotesize, rotate=15, anchor=north east},
             bar width=20pt,
             width=0.7\linewidth,
             height=6cm,
@@ -1210,15 +1214,15 @@ The embodied phrase analysis quantifies the frequency and type of physical actio
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
-            bar width=12pt,
-            width=0.85\linewidth,
+            bar width=8pt,
+            width=\linewidth,
             height=7cm,
             symbolic x coords={Visual Ref, Action Narr, Sensory Desc, Procedural},
             xtick=data,
-            xticklabel style={font=\footnotesize, align=center},
+            xticklabel style={font=\footnotesize, rotate=15, anchor=north east},
             ylabel={Avg. Count per Video},
             ymin=0, ymax=8,
-            enlarge x limits=0.15,
+            enlarge x limits=0.2,
             nodes near coords,
             nodes near coords style={font=\scriptsize, yshift=6pt, /pgf/number format/fixed, /pgf/number format/precision=1},
             title={Embodied Phrase Categories by Subgroup},
