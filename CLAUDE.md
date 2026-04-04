@@ -254,6 +254,54 @@ Note: `.gitignore` excludes `*.png`, so plots are local only (not pushed to GitH
 
 ---
 
+## Session 4 Progress (2026-03-20) — Paper Updated
+
+### Journal_paper.tex Updates
+Paper (`Journal_paper.tex`) updated with all three-way subgroup analysis results:
+
+**Abstract:** Lightly updated to mention bimodal finding and verbal embodied results as a key contribution.
+
+**Methodology — 3 new subsections:**
+- `Speech Rate Analysis` — WPM computation formula, hallucination detection methodology
+- `Transcript Content Analysis` — two sub-subsections:
+  - `Keypoint Extraction` — Gemini-based keypoint identification with strength rating 1–5
+  - `Embodied Phrase Identification` — 4 categories (visual_reference, action_narration, sensory_description, procedural_instruction)
+- `Subgroup Classification` — bimodal distribution discovery, 60 WPM threshold justification, 3 subgroups defined, conventional unimodal confirmed
+
+**Results — 7 new subsections (after original 2-way results, kept intact):**
+1. `Speech Rate Distribution and Subgroup Identification` — bimodal histogram (pgfplots `ybar interval` with all 73 raw WPM data points, red dashed threshold at 60 WPM)
+2. `Three-Way Student Correlation Analysis` — table with $S_{corr}$, $W_{trans}$, $R_{wpm}$
+3. `Three-Way YouTube Correlation Analysis` — table with $P_{corr}$, $E_{yt}$, $P_{top}$
+4. `Keypoint Analysis by Subgroup` — two grouped bar charts (count + strength)
+5. `Embodied Phrase Analysis by Subgroup` — phrase rate bar chart + 4-category breakdown
+6. `Summary of Subgroup Findings` — full-width `table*` with 14 metrics × 3 subgroups
+
+**Conclusion:** New section with 5 paragraphs — initial findings, confound discovery, filtered results, thesis support, future work directions.
+
+**All new plots** use pgfplots/tikzpicture matching existing paper style (gray fills, error bars, dashed grids).
+
+### Bibliography.bib
+Gemini 2.0 reference added:
+```bibtex
+@article{geminiteam2024gemini2,
+  title={Gemini 2.0: A Family of Highly Capable Multimodal Models},
+  author={{Gemini Team, Google}},
+  journal={arXiv preprint arXiv:2412.04948},
+  year={2024}
+}
+```
+
+### YouTube 3-Way Results
+YouTube per-video data from `TranscriptAnalysis/results_youtube/metrics/` analyzed with same 3-way split:
+- pct_correlated: 20% (conv) vs 21% (verb emb) vs 7% (vis emb) — gap eliminated for verbal embodied
+- Engagement higher for verbally embodied: 38.2 vs 22.8 (conventional)
+- top_correlated_pct similar: 56% vs 52% vs 27%
+
+### Status
+All changes pushed to `greatroboticslab/embodiedAI` on `main`. Paper has not been compiled — IEEEtran.cls not available on HPC. Structure verified programmatically (environment balance, label uniqueness).
+
+---
+
 ## New File Locations (Sessions 2–3)
 
 | What | Path |
@@ -265,6 +313,108 @@ Note: `.gitignore` excludes `*.png`, so plots are local only (not pushed to GitH
 | Per-video Gemini JSON | `TranscriptAnalysis/results/gemini_analysis/conventional/` and `embodied/` |
 | Master analysis CSV | `TranscriptAnalysis/results/gemini_analysis/master_analysis.csv` (includes `subgroup` column) |
 | Plots | `TranscriptAnalysis/results/gemini_analysis/plots/` (15 plots, local only — .gitignore excludes *.png) |
+
+---
+
+## Session 5 Progress (2026-04-03) — Fusion Paper & Video Classification
+
+### Second Paper: Fusion Analysis
+- Target journal: Scientific Reports (Nature)
+- Template: `Journal_of_Scientific_Reports_Ben_Second_paper/main.tex` (wlscirep class)
+- Structure: Introduction, Results, Discussion, Methods (per journal template)
+- Same 130 videos, same 3-way subgroup split (conventional / verbally embodied / visually embodied)
+
+### Fusion Analysis Key Findings (from existing metrics)
+
+| Metric | Conventional | Verbally Embodied | Visually Embodied |
+|---|---|---|---|
+| Visual corr % | 52.3 | 54.3 | **68.2** |
+| Transcript corr % | 23.6 | 24.2 | 3.6 |
+| Union corr % | 59.0 | 62.1 | **68.9** |
+| Visual avg score | 48.2 | 50.2 | **62.2** |
+| Transcript avg score | 20.5 | 21.1 | 3.4 |
+
+**Key insight:** Transcript-only analysis (Paper 1) underestimates embodied learning because it ignores the visual channel where embodied content excels. Embodied videos outperform conventional on visual correlation — the opposite of transcript-only findings.
+
+### New Analysis: Gemini Video Classification
+To go deeper than group-level comparison, we classify each 10-second segment by content type and engagement features using Gemini's direct video understanding.
+
+**Script:** `FusionAnalysis/scripts/gemini_video_classify.py`
+**SLURM:** `FusionAnalysis/scripts/classify_videos.sbatch`
+
+**Per-segment metrics collected from Gemini:**
+1. **Content type** (9 mutually exclusive categories):
+   - `hands_on_demonstration`, `equipment_closeup`, `presenter_talking`, `slide_or_powerpoint`, `diagram_or_whiteboard`, `screen_or_software`, `animation_or_graphic`, `device_in_operation`, `other`
+2. **Audio-visual alignment score** (0-100): how well narration matches visuals
+3. **Narration present** (true/false)
+4. **Hands visible** (true/false)
+5. **Instructional density** (1-5)
+
+**Design decisions:**
+- Videos uploaded to Gemini File API — Gemini watches actual video (not summaries or frames)
+- Processed in 5-minute chunks (~30 segments per call) to keep output reliable
+- Prompt tells Gemini exact number of segments expected per chunk
+- ~427 API calls total for 130 videos, ~30-45 min runtime
+- Resume support: saves after each chunk, skips completed videos on re-run
+- Video durations pre-computed in `FusionAnalysis/results/video_durations.json` (ffprobe not available on HPC)
+
+**Output:** `FusionAnalysis/results/video_classification/conventional/<video_id>.json` and `embodied/<video_id>.json`
+
+**Planned analysis (next session):**
+- Aggregate engagement by content type across all videos → "physical demonstration segments have X% higher visual correlation than slide segments"
+- Content type distribution by subgroup → embodied videos have more hands-on segments
+- Alignment score vs engagement correlation → does audio-visual synchrony predict engagement?
+- Temporal engagement patterns by content type
+- Statistical tests (ANOVA / t-test across content types)
+
+**Goal:** Move from "embodied videos are more engaging" (group-level claim) to "physical demonstration content drives higher visual engagement, and embodied videos contain proportionally more of it" (mechanistic explanation).
+
+### SLURM Notes
+- `RM-shared` partition requires `--qos=low` for this account
+- No GPU needed — script only makes Gemini API calls
+
+---
+
+## New File Locations (Session 5)
+
+| What | Path |
+|---|---|
+| Fusion paper template | `Journal_of_Scientific_Reports_Ben_Second_paper/main.tex` |
+| Video classification script | `FusionAnalysis/scripts/gemini_video_classify.py` |
+| Video classification SLURM | `FusionAnalysis/scripts/classify_videos.sbatch` |
+| Video durations JSON | `FusionAnalysis/results/video_durations.json` |
+| Classification output (conv) | `FusionAnalysis/results/video_classification/conventional/` |
+| Classification output (emb) | `FusionAnalysis/results/video_classification/embodied/` |
+
+---
+
+## Session 6 Progress (2026-04-04) — Fusion Paper Written
+
+### Paper Content Written
+Wrote the full fusion analysis paper in `Journal_of_Scientific_Reports_Ben_Second_paper/main.tex` using the Scientific Reports (wlscirep) template format.
+
+**Sections written:**
+- **Abstract**: Summarizes multimodal fusion approach, key findings (hands-on at 64.1% visual corr, content distribution differences, hand visibility effect), mechanistic conclusion
+- **Introduction**: Motivates study from Paper 1's transcript-only limitation, introduces dual-channel framework, central hypothesis
+- **Results** (7 subsections with pgfplots figures + tables):
+  1. Engagement by content type — horizontal bar chart, ANOVA F=49.4, pairwise t-tests
+  2. Content distribution by subgroup — bar chart (6.4% vs 27.0% vs 70.0% hands-on), full distribution table
+  3. Subgroup visual engagement — bar chart of hands-on engagement, ANOVA F=99.4
+  4. Hand visibility effect — bar chart (56.3% vs 44.3%), p<10^-40
+  5. Narration effect — table showing dual-channel tradeoff
+  6. Instructional density — bar chart across 5 levels
+  7. Top vs bottom quartile — table (40.4% vs 12.9% hands-on in verbally embodied)
+- **Discussion**: Three principal findings, practical implications, limitations
+- **Methods**: Dataset, fusion framework, Gemini classification pipeline, statistical methods
+- **Statistical tests summary table**: All 9 tests with F/t statistics and p-values
+
+**Style:** All plots use pgfplots/tikzpicture with gray!60 fills, dashed grids, nodes near coords — matching Paper 1 conventions. All data embedded inline via filecontents (no external data files needed).
+
+### Bibliography Updated
+`sample.bib` updated with 7 references: wilson2002six, barsalou2008grounded, johnson2014embodied, zhang2025transcript, liu2023visual, radford2023robust, geminiteam2024gemini2.
+
+### Compilation
+No external images needed — all figures are pgfplots. Compile with: `pdflatex → bibtex → pdflatex → pdflatex`.
 
 ---
 

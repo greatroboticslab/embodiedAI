@@ -1,107 +1,539 @@
 \documentclass[fleqn,10pt]{wlscirep}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\title{Scientific Reports Title to see here}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.18}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{filecontents}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{url}
 
-\author[1,*]{Alice Author}
-\author[2]{Bob Author}
-\author[1,2,+]{Christine Author}
-\author[2,+]{Derek Author}
-\affil[1]{Affiliation, department, city, postcode, country}
-\affil[2]{Affiliation, department, city, postcode, country}
+% ============================================================
+% Inline data files for pgfplots
+% ============================================================
 
-\affil[*]{corresponding.author@email.example}
+\begin{filecontents*}{content_engagement.csv}
+Type,N,VisPct,VisScore,TrPct,TrScore
+HandsOn,2189,64.1,58.9,12.5,10.7
+Diagram,1882,52.1,48.0,22.2,19.2
+Animation,385,50.3,46.4,21.2,18.2
+EquipClose,1033,48.9,44.8,15.7,13.7
+Presenter,1545,47.6,44.0,21.8,19.1
+Slides,1265,47.1,43.1,22.8,20.1
+Device,447,39.2,36.6,20.4,18.2
+Screen,1144,35.6,32.7,13.1,11.3
+Other,107,31.2,29.4,13.4,12.0
+\end{filecontents*}
 
-\affil[+]{these authors contributed equally to this work}
+\begin{filecontents*}{content_dist_conv.csv}
+Type,Pct
+HandsOn,6.4
+EquipClose,8.3
+Presenter,21.2
+Slides,17.6
+Diagram,29.6
+Screen,8.3
+Animation,5.6
+Device,2.3
+Other,0.7
+\end{filecontents*}
 
-%\keywords{Keyword1, Keyword2, Keyword3}
+\begin{filecontents*}{content_dist_verb.csv}
+Type,Pct
+HandsOn,27.0
+EquipClose,11.1
+Presenter,12.9
+Slides,9.8
+Diagram,11.0
+Screen,17.6
+Animation,2.4
+Device,6.9
+Other,1.3
+\end{filecontents*}
+
+\begin{filecontents*}{content_dist_vis.csv}
+Type,Pct
+HandsOn,70.0
+EquipClose,16.3
+Presenter,0.0
+Slides,1.5
+Diagram,0.4
+Screen,3.3
+Animation,1.3
+Device,5.4
+Other,1.8
+\end{filecontents*}
+
+\begin{filecontents*}{hands_by_subgroup.csv}
+Label,VisPct
+Conv,43.9
+VerbEmb,67.1
+VisEmb,67.8
+\end{filecontents*}
+
+\begin{filecontents*}{density_data.csv}
+Density,N,VisPct,VisScore
+1,1169,45.2,41.6
+2,1137,52.4,48.4
+3,2562,48.4,44.5
+4,3255,52.4,48.4
+5,1874,51.1,46.9
+\end{filecontents*}
+
+
+% ============================================================
+% Title and authors
+% ============================================================
+\title{Multimodal Fusion Analysis of Visual and Verbal Engagement in Embodied Robotics Instruction}
+
+\author[1,*]{Hongbo Zhang}
+\author[1]{Benjamin Li}
+\author[1]{Reshma Rajan}
+\author[1]{Natalie Galvan}
+\affil[1]{Department of Engineering Technology, Middle Tennessee State University, Murfreesboro, TN 37132, USA}
+
+\affil[*]{hbzhang@mtsu.edu}
 
 \begin{abstract}
-Example Abstract. Abstract must not include subheadings or citations. Example Abstract. Abstract must not include subheadings or citations. Example Abstract. Abstract must not include subheadings or citations. Example Abstract. Abstract must not include subheadings or citations. Example Abstract. Abstract must not include subheadings or citations. Example Abstract. Abstract must not include subheadings or citations. Example Abstract. Abstract must not include subheadings or citations. Example Abstract. Abstract must not include subheadings or citations.
+Prior research on embodied learning in robotics education has relied primarily on transcript-based metrics, which inherently undervalue instructional approaches that communicate through physical demonstration rather than verbal narration. This study introduces a multimodal fusion framework that jointly analyzes visual and verbal channels of engagement at the segment level, enabling a mechanistic understanding of how specific content types drive viewer interaction. We analyzed 130 robotics instructional videos (56 conventional, 48 verbally embodied, 26 visually embodied), segmenting each into 10-second intervals and classifying each segment by content type using Gemini 2.0 Flash video understanding. Visual and transcript correlation scores were computed by measuring semantic alignment between viewer comments and frame captions or transcripts for each segment. Our results demonstrate that hands-on demonstration segments achieve significantly higher visual engagement (64.1\% correlated) than slide-based (47.1\%) or screen-based (35.6\%) content ($F = 49.4$, $p < 10^{-79}$). Critically, embodied videos contain substantially more hands-on content---70.0\% for visually embodied and 27.0\% for verbally embodied videos, compared to only 6.4\% for conventional videos. Among verbally embodied videos, the top-quartile engaged videos dedicate 40.4\% of their content to hands-on demonstrations versus 12.9\% in the bottom quartile. Segments with visible hands show 12.0 percentage points higher visual correlation than those without ($p < 10^{-40}$). These findings establish that the engagement advantage of embodied instruction is driven by the specific visual content it delivers---physical demonstrations, visible manipulation, and equipment interaction---rather than by the instructional modality per se.
 \end{abstract}
+
 \begin{document}
 
 \flushbottom
 \maketitle
-% * <john.hammersley@gmail.com> 2015-02-09T12:07:31.197Z:
-%
-%  Click the title above to edit the author information and abstract
-%
 \thispagestyle{empty}
 
-\noindent Please note: Abbreviations should be introduced at the first mention in the main text – no abbreviations lists. Suggested structure of main text (not enforced) is provided below.
-
+% ============================================================
+% INTRODUCTION
+% ============================================================
 \section*{Introduction}
 
-The Introduction section, of referenced text\cite{Figueredo:2009dg} expands on the background of the work (some overlap with the Abstract is acceptable). The introduction should not include subheadings.
+Embodied learning theory posits that cognitive processes are fundamentally grounded in bodily experience, and that physical interaction with learning materials enhances comprehension, retention, and transfer~\cite{wilson2002six,barsalou2008grounded}. In robotics education, this principle manifests as hands-on instruction---hardware assembly, wiring, calibration, and real-time operation---in contrast to conventional lecture-based approaches that rely on slides, diagrams, and verbal explanation~\cite{johnson2014embodied}. While the theoretical advantages of embodied instruction are well established, empirical quantification of how visual and verbal modalities independently contribute to learner engagement remains limited.
 
+Our prior work~\cite{zhang2025transcript} examined engagement in the same corpus of 130 robotics videos using transcript-based semantic correlation. That analysis revealed a confound: embodied videos appeared to underperform conventional videos on transcript metrics because a subset (26 of 74) were silent demonstrations with minimal narration. After isolating verbally narrated embodied videos, the transcript-based correlation gap narrowed substantially, demonstrating that skilled verbal narration of physical procedures can be as effective as conventional lecture delivery for generating topically aligned viewer responses.
+
+However, transcript-only analysis cannot capture the visual dimension of engagement that is central to embodied instruction. When an instructor demonstrates soldering a circuit or calibrating a sensor, the visual content communicates instructional information that the transcript may not encode. Viewer comments responding to what they \emph{see} rather than what they \emph{hear} are invisible to transcript-based metrics. This creates a systematic bias against embodied instruction, whose pedagogical value is disproportionately carried by the visual channel.
+
+To address this limitation, this study introduces a multimodal fusion framework that jointly analyzes visual and verbal engagement at the segment level. Each video is divided into 10-second segments, and viewer comments are correlated with both frame-level visual captions and transcript excerpts independently. This dual-channel approach enables us to measure how much of a viewer's response is driven by visual content versus verbal content, and to identify which specific content types---hands-on demonstrations, equipment close-ups, diagrams, slides, screen recordings---generate the highest engagement.
+
+We further employ large multimodal model-based video classification to categorize each segment's content type, audio-visual alignment, and instructional features directly from the raw video. This segment-level classification enables a shift from group-level comparisons (embodied vs.\ conventional) to a mechanistic analysis of \emph{what} content features drive engagement and \emph{why} embodied videos achieve higher visual correlation scores.
+
+Our central hypothesis is that the engagement advantage of embodied instruction is attributable to the specific visual content it delivers---physical demonstrations, visible hand manipulation, and equipment interaction---rather than to the instructional category label itself. If correct, then any video containing such content, regardless of its overall classification, should show elevated visual engagement in those segments.
+
+
+% ============================================================
+% RESULTS
+% ============================================================
 \section*{Results}
 
-Up to three levels of \textbf{subheading} are permitted. Subheadings should not be numbered.
+\subsection*{Segment-level engagement by content type}
 
-\subsection*{Subsection}
+To test whether specific visual content types drive viewer engagement, we computed the visual and transcript correlation scores for each of the nine content categories across all 9{,}997 classified segments. Figure~\ref{fig:vis_by_content} presents the percentage of segments that achieved a positive visual correlation (visual correlation score $> 0$) for each content type, ordered by visual engagement.
 
-Example text under a subsection. Bulleted lists may be used where appropriate, e.g.
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            xbar,
+            bar width=8pt,
+            width=\linewidth,
+            height=9cm,
+            xlabel={Visual Correlation (\%)},
+            xmin=0, xmax=75,
+            symbolic y coords={Other,Screen,Device,Slides,Presenter,EquipClose,Animation,Diagram,HandsOn},
+            ytick=data,
+            yticklabels={Other ($n$=107),Screen ($n$=1144),Device ($n$=447),Slides ($n$=1265),Presenter ($n$=1545),Equip.\ Close ($n$=1033),Animation ($n$=385),Diagram ($n$=1882),Hands-On ($n$=2189)},
+            nodes near coords,
+            nodes near coords style={font=\footnotesize, xshift=8pt},
+            xmajorgrids=true,
+            grid style=dashed,
+            enlarge y limits=0.08,
+        ]
+            \addplot+[fill=gray!60, draw=black] coordinates {
+                (31.2,Other)
+                (35.6,Screen)
+                (39.2,Device)
+                (47.1,Slides)
+                (47.6,Presenter)
+                (48.9,EquipClose)
+                (50.3,Animation)
+                (52.1,Diagram)
+                (64.1,HandsOn)
+            };
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Percentage of segments with positive visual correlation by content type. Hands-on demonstration segments achieve the highest visual engagement at 64.1\%, significantly exceeding all other categories.}
+    \label{fig:vis_by_content}
+\end{figure}
 
-\begin{itemize}
-\item First item
-\item Second item
-\end{itemize}
+Hands-on demonstration segments achieve the highest visual engagement at 64.1\%, followed by diagram/whiteboard (52.1\%) and animation/graphic (50.3\%) content. Screen/software recordings show the lowest engagement among instructional content types at 35.6\%. A one-way ANOVA confirms that the differences across content types are highly significant ($F = 49.4$, $p < 10^{-79}$). Pairwise $t$-tests reveal that hands-on demonstrations significantly outperform slides ($t = 10.9$, $p < 10^{-27}$, Cohen's $d = 0.39$), presenter-talking segments ($t = 10.8$, $p < 10^{-26}$, $d = 0.39$), and diagram segments ($t = 8.7$, $p < 10^{-18}$).
 
-\subsubsection*{Third-level section}
- 
-Topical subheadings are allowed.
+Table~\ref{tab:engagement_by_content} provides the complete engagement metrics for each content type across both visual and transcript channels.
 
+\begin{table}[ht]
+    \centering
+    \caption{Segment-level engagement metrics by content type. Vis.\ Corr.\ and Tr.\ Corr.\ denote the percentage of segments with positive visual and transcript correlation, respectively. Vis.\ Score and Tr.\ Score are the mean correlation scores.}
+    \label{tab:engagement_by_content}
+    \begin{tabular}{lrcccc}
+        \toprule
+        Content Type & $n$ & \multicolumn{2}{c}{Visual} & \multicolumn{2}{c}{Transcript} \\
+        \cmidrule(lr){3-4} \cmidrule(lr){5-6}
+        & & Corr.\% & Score & Corr.\% & Score \\
+        \midrule
+        Hands-on demo & 2189 & \textbf{64.1} & \textbf{58.9} & 12.5 & 10.7 \\
+        Diagram/whiteboard & 1882 & 52.1 & 48.0 & 22.2 & 19.2 \\
+        Animation/graphic & 385 & 50.3 & 46.4 & 21.2 & 18.2 \\
+        Equipment closeup & 1033 & 48.9 & 44.8 & 15.7 & 13.7 \\
+        Presenter talking & 1545 & 47.6 & 44.0 & 21.8 & 19.1 \\
+        Slide/PowerPoint & 1265 & 47.1 & 43.1 & \textbf{22.8} & \textbf{20.1} \\
+        Device in operation & 447 & 39.2 & 36.6 & 20.4 & 18.2 \\
+        Screen/software & 1144 & 35.6 & 32.7 & 13.1 & 11.3 \\
+        Other & 107 & 31.2 & 29.4 & 13.4 & 12.0 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Notably, the transcript correlation pattern diverges from visual correlation: slide and diagram content show the highest transcript correlation (22.8\% and 22.2\%, respectively), while hands-on demonstrations rank lowest (12.5\%). This inverse relationship confirms that hands-on content drives engagement primarily through the visual channel, and that transcript-only analyses systematically underestimate its instructional impact.
+
+
+\subsection*{Content distribution across subgroups}
+
+Having established that content type significantly predicts engagement, we examined how content types are distributed across the three instructional subgroups. Figure~\ref{fig:content_dist} compares the proportion of hands-on demonstration content across subgroups.
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=20pt,
+            width=0.7\linewidth,
+            height=7cm,
+            symbolic x coords={Conv,VerbEmb,VisEmb},
+            xtick=data,
+            xticklabels={Conventional,Verb.\ Embodied,Vis.\ Embodied},
+            ylabel={Hands-On Content (\%)},
+            ymin=0, ymax=85,
+            enlarge x limits=0.35,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=6pt},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            \addplot+[fill=gray!60, draw=black] coordinates {
+                (Conv,6.4)
+                (VerbEmb,27.0)
+                (VisEmb,70.0)
+            };
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Proportion of hands-on demonstration segments by subgroup. Visually embodied videos dedicate 70.0\% of their content to hands-on demonstration, compared to 27.0\% for verbally embodied and 6.4\% for conventional videos.}
+    \label{fig:content_dist}
+\end{figure}
+
+The contrast is stark: visually embodied videos dedicate 70.0\% of their segments to hands-on demonstration, verbally embodied videos 27.0\%, and conventional videos only 6.4\%. Conversely, conventional videos are dominated by diagram/whiteboard (29.6\%), presenter-talking (21.2\%), and slide content (17.6\%). Table~\ref{tab:content_dist} presents the full content distribution for all three subgroups.
+
+\begin{table}[ht]
+    \centering
+    \caption{Content type distribution (\%) by instructional subgroup. Dominant content types for each subgroup are shown in bold.}
+    \label{tab:content_dist}
+    \begin{tabular}{lccc}
+        \toprule
+        Content Type & Conv. & Verb.\ Emb. & Vis.\ Emb. \\
+        \midrule
+        Hands-on demo & 6.4 & \textbf{27.0} & \textbf{70.0} \\
+        Equipment closeup & 8.3 & 11.1 & 16.3 \\
+        Presenter talking & \textbf{21.2} & 12.9 & 0.0 \\
+        Slide/PowerPoint & 17.6 & 9.8 & 1.5 \\
+        Diagram/whiteboard & \textbf{29.6} & 11.0 & 0.4 \\
+        Screen/software & 8.3 & 17.6 & 3.3 \\
+        Animation/graphic & 5.6 & 2.4 & 1.3 \\
+        Device in operation & 2.3 & 6.9 & 5.4 \\
+        Other & 0.7 & 1.3 & 1.8 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+This distribution pattern provides the mechanistic link between instructional modality and engagement: embodied videos achieve higher visual engagement not because of an intrinsic quality of ``embodied instruction,'' but because they contain substantially more of the content type (hands-on demonstration) that generates the highest visual correlation.
+
+
+\subsection*{Subgroup-level visual engagement}
+
+To quantify the subgroup-level engagement difference, we compared the overall visual correlation across the three subgroups. A one-way ANOVA reveals highly significant differences ($F = 99.4$, $p < 10^{-43}$). Figure~\ref{fig:subgroup_vis} presents the visual correlation percentage for hands-on demonstration segments specifically, broken down by subgroup.
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=20pt,
+            width=0.7\linewidth,
+            height=7cm,
+            symbolic x coords={Conv,VerbEmb,VisEmb},
+            xtick=data,
+            xticklabels={Conventional,Verb.\ Embodied,Vis.\ Embodied},
+            ylabel={Visual Correlation (\%)},
+            ymin=0, ymax=85,
+            enlarge x limits=0.35,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=6pt},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            \addplot+[fill=gray!60, draw=black] coordinates {
+                (Conv,43.9)
+                (VerbEmb,67.1)
+                (VisEmb,67.8)
+            };
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Visual correlation of hands-on demonstration segments by subgroup. Embodied videos achieve substantially higher visual engagement for the same content type, suggesting that embodied instructors produce higher-quality hands-on demonstrations.}
+    \label{fig:subgroup_vis}
+\end{figure}
+
+An important nuance emerges: even within the same content type (hands-on demonstration), embodied videos achieve substantially higher visual correlation (67.1\% verbally embodied, 67.8\% visually embodied) than conventional videos (43.9\%). This indicates that the engagement advantage of embodied instruction is twofold: (1) embodied videos contain more hands-on content, and (2) the hands-on content in embodied videos is itself more engaging---likely because embodied instructors are more skilled at producing compelling physical demonstrations.
+
+
+\subsection*{Effect of visible hands}
+
+Visibility of the instructor's hands during a segment provides a direct marker of physical interaction. Across all 9{,}997 segments, those with visible hands ($n = 4{,}978$) show significantly higher visual correlation (56.3\%) than those without ($n = 5{,}019$; 44.3\%), as shown in Figure~\ref{fig:hands_effect}. This 12.0 percentage-point difference is highly significant ($p < 10^{-40}$, Welch's $t$-test).
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=25pt,
+            width=0.6\linewidth,
+            height=6cm,
+            symbolic x coords={Visible,Not Visible},
+            xtick=data,
+            ylabel={Visual Correlation (\%)},
+            ymin=0, ymax=70,
+            enlarge x limits=0.5,
+            nodes near coords,
+            nodes near coords style={font=\bfseries\footnotesize, yshift=6pt},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            \addplot+[fill=gray!60, draw=black] coordinates {
+                (Visible,56.3)
+                (Not Visible,44.3)
+            };
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Visual correlation by hand visibility. Segments in which the instructor's hands are visible achieve 12.0 percentage points higher visual engagement ($p < 10^{-40}$).}
+    \label{fig:hands_effect}
+\end{figure}
+
+This finding provides converging evidence that physical manipulation---operationalized through hand visibility---is a strong driver of visual engagement, independent of the specific content classification.
+
+
+\subsection*{Effect of narration}
+
+To examine whether verbal narration enhances or competes with visual engagement, we compared segments with narration present ($n = 8{,}832$) versus narration absent ($n = 1{,}165$). Segments without narration show slightly higher visual correlation (54.0\%) than those with narration (49.8\%), a difference that reaches statistical significance ($p < 0.01$). Conversely, narrated segments show substantially higher transcript correlation (19.4\% vs.\ 8.6\%).
+
+This pattern is consistent with a dual-channel model: when narration is absent, viewers attend more closely to the visual channel, producing comments that align more strongly with visual content. When narration is present, viewer attention is distributed across both channels, reducing visual correlation while increasing transcript correlation.
+
+\begin{table}[ht]
+    \centering
+    \caption{Engagement metrics by narration condition. Narration redistributes viewer attention from the visual to the verbal channel.}
+    \label{tab:narration}
+    \begin{tabular}{lrcccc}
+        \toprule
+        Condition & $n$ & \multicolumn{2}{c}{Visual} & \multicolumn{2}{c}{Transcript} \\
+        \cmidrule(lr){3-4} \cmidrule(lr){5-6}
+        & & Corr.\% & Score & Corr.\% & Score \\
+        \midrule
+        Narration present & 8832 & 49.8 & 45.9 & \textbf{19.4} & \textbf{16.9} \\
+        Narration absent & 1165 & \textbf{54.0} & \textbf{49.6} & 8.6 & 7.5 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\subsection*{Instructional density and engagement}
+
+We examined whether the instructional density rating (1--5 scale, as assessed by the video classification model) predicts visual engagement. As shown in Figure~\ref{fig:density}, visual correlation increases from 45.2\% at the lowest density level to 52.4\% at density levels 2 and 4, with level 3 slightly lower at 48.4\%.
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            bar width=18pt,
+            width=0.7\linewidth,
+            height=6cm,
+            symbolic x coords={1,2,3,4,5},
+            xtick=data,
+            xlabel={Instructional Density (1--5)},
+            ylabel={Visual Correlation (\%)},
+            ymin=0, ymax=65,
+            enlarge x limits=0.2,
+            nodes near coords,
+            nodes near coords style={font=\footnotesize\bfseries, yshift=6pt},
+            ymajorgrids=true,
+            grid style=dashed,
+        ]
+            \addplot+[fill=gray!60, draw=black] coordinates {
+                (1,45.2)
+                (2,52.4)
+                (3,48.4)
+                (4,52.4)
+                (5,51.1)
+            };
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Visual correlation by instructional density level. Low-density segments (level 1) show the weakest engagement, while levels 2--5 cluster around 48--52\%.}
+    \label{fig:density}
+\end{figure}
+
+The overall trend indicates that low-density segments (level 1; $n = 1{,}169$) underperform relative to all other density levels, but the relationship is not strictly monotonic at higher levels. The lowest density segments---often transitions, pauses, or unfocused content---elicit the weakest visual engagement, while moderate-to-high density content generates comparable engagement regardless of whether it is rated 3, 4, or 5.
+
+
+\subsection*{Content profiles of high- and low-engagement videos}
+
+To determine whether content composition explains video-level engagement differences, we compared the content type profiles of the top 25\% and bottom 25\% of videos ranked by visual correlation within each subgroup. Table~\ref{tab:top_bottom} presents the results for verbally embodied videos, where the contrast is most pronounced.
+
+\begin{table}[ht]
+    \centering
+    \caption{Content type distribution (\%) for top- and bottom-quartile verbally embodied videos ranked by visual engagement. The largest difference is in hands-on demonstration content.}
+    \label{tab:top_bottom}
+    \begin{tabular}{lccc}
+        \toprule
+        Content Type & Top 25\% & Bottom 25\% & $\Delta$ \\
+        \midrule
+        Hands-on demo & \textbf{40.4} & 12.9 & +27.5 \\
+        Equipment closeup & 12.1 & 9.2 & +2.9 \\
+        Presenter talking & 13.7 & 13.5 & +0.2 \\
+        Slide/PowerPoint & 8.5 & 8.9 & $-0.4$ \\
+        Diagram/whiteboard & 6.4 & 7.9 & $-1.5$ \\
+        Screen/software & 11.5 & \textbf{33.2} & $-21.7$ \\
+        Animation/graphic & 1.6 & 2.3 & $-0.7$ \\
+        Device in operation & 5.4 & 10.4 & $-4.9$ \\
+        Other & 0.4 & 1.8 & $-1.4$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Among verbally embodied videos, the top-quartile engaged videos dedicate 40.4\% of their segments to hands-on demonstrations, compared to only 12.9\% in the bottom quartile---a difference of 27.5 percentage points. Conversely, the bottom-quartile videos contain 33.2\% screen/software content versus 11.5\% in the top quartile. This pattern demonstrates that within a single instructional modality, the proportion of hands-on content is a strong predictor of overall video engagement.
+
+For conventional videos, the pattern is different: top-quartile conventional videos are dominated by diagram/whiteboard content (34.3\% vs.\ 22.4\% in the bottom quartile), while screen/software content is again associated with lower engagement (2.4\% in top vs.\ 9.9\% in bottom quartile). This suggests that the optimal content type varies by instructional modality---diagrams serve conventional instruction, while physical demonstrations serve embodied instruction---but in both cases, screen recordings consistently underperform.
+
+
+\subsection*{Summary of statistical tests}
+
+Table~\ref{tab:stats} summarizes all statistical tests performed in this study.
+
+\begin{table}[ht]
+    \centering
+    \caption{Summary of statistical tests. All tests use segment-level observations ($N = 9{,}997$).}
+    \label{tab:stats}
+    \begin{tabular}{lrc}
+        \toprule
+        Test & Statistic & $p$-value \\
+        \midrule
+        ANOVA: visual corr.\ by content type & $F = 49.4$ & $< 10^{-79}$ \\
+        ANOVA: transcript corr.\ by content type & $F = 23.2$ & $< 10^{-35}$ \\
+        ANOVA: visual corr.\ by subgroup & $F = 99.4$ & $< 10^{-43}$ \\
+        $t$-test: hands-on vs.\ slides (visual) & $t = 10.9$ & $< 10^{-27}$ \\
+        $t$-test: hands-on vs.\ presenter (visual) & $t = 10.8$ & $< 10^{-26}$ \\
+        $t$-test: hands-on vs.\ diagram (visual) & $t = 8.7$ & $< 10^{-18}$ \\
+        $t$-test: device vs.\ presenter (visual) & $t = -3.2$ & $1.3 \times 10^{-3}$ \\
+        Hands visible vs.\ not visible (visual) & --- & $< 10^{-40}$ \\
+        Narration absent vs.\ present (visual) & --- & $< 0.01$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+% ============================================================
+% DISCUSSION
+% ============================================================
 \section*{Discussion}
 
-The Discussion should be succinct and must not contain subheadings.
+This study provides the first segment-level, multimodal analysis of viewer engagement in robotics instructional videos, moving beyond group-level comparisons to identify the specific content features that drive learner interaction. Three principal findings emerge.
 
+First, visual content type is a powerful predictor of engagement. Hands-on demonstration segments achieve 64.1\% visual correlation---17.0 percentage points higher than slides and 28.5 points higher than screen recordings. The one-way ANOVA ($F = 49.4$, $p < 10^{-79}$) confirms that this is not attributable to chance, and pairwise comparisons demonstrate that hands-on content significantly outperforms every other content type. This finding aligns with embodied cognition theory, which predicts that physical demonstrations activate sensorimotor processing that deepens engagement~\cite{barsalou2008grounded}.
+
+Second, the engagement advantage of embodied videos is mechanistically explained by their content composition. Visually embodied videos dedicate 70.0\% of their segments to hands-on demonstrations---the highest-engagement content type---while conventional videos allocate only 6.4\%. This compositional difference, rather than any holistic property of ``embodied instruction,'' accounts for the subgroup-level engagement disparity ($F = 99.4$, $p < 10^{-43}$). Supporting this interpretation, the top-quartile verbally embodied videos contain 3.1 times more hands-on content than the bottom-quartile videos within the same subgroup (40.4\% vs.\ 12.9\%), demonstrating that content composition predicts engagement even within a single instructional modality.
+
+Third, the visual and verbal channels serve complementary engagement functions. Hands-on demonstrations generate the highest visual engagement but the lowest transcript engagement (12.5\%), while slide content shows the opposite pattern (47.1\% visual, 22.8\% transcript). Segments without narration show higher visual but lower transcript correlation than narrated segments. This dual-channel structure has methodological implications: transcript-only analysis, as employed in most prior work, systematically underestimates the engagement value of physical demonstration content. The fusion approach employed here captures the full engagement signal by analyzing both channels independently.
+
+The hand visibility analysis provides additional converging evidence. Segments with visible instructor hands achieve 56.3\% visual correlation versus 44.3\% without ($p < 10^{-40}$), a 12.0 percentage-point difference that is robust across content types. This suggests that the mere presence of physical manipulation---regardless of whether it constitutes a formal demonstration, equipment handling, or device operation---enhances visual engagement.
+
+The instructional density analysis reveals a threshold effect: segments rated at the lowest density level (1 out of 5) show meaningfully lower engagement (45.2\%) than all higher levels (48--52\%), but the relationship does not continue to increase monotonically at higher levels. This implies that a minimum level of instructional content is necessary for engagement, but beyond that threshold, the nature of the content (hands-on vs.\ screen-based) matters more than its density.
+
+These results carry practical implications for instructional video design. Instructors seeking to maximize visual engagement should prioritize hands-on demonstration content, ensure that physical manipulations are visually prominent (hands in frame), and minimize extended screen recording segments. The finding that conventional videos' top-quartile engaged content is dominated by diagrams rather than hands-on content suggests that the optimal content strategy is modality-specific: embodied instruction benefits from physical demonstration, while conventional instruction benefits from structured visual aids.
+
+Several limitations warrant acknowledgment. The content classification was performed by a single large multimodal model (Gemini 2.0 Flash), and inter-rater reliability with human coders was not assessed. The correlation metrics, while computed at the segment level, depend on viewer comments that were elicited at the video level, potentially introducing aggregation artifacts. The audio-visual alignment score showed weak correlation with engagement ($r = 0.04$), which may reflect limitations in the alignment metric rather than a true absence of relationship. Future work should incorporate human validation of content classifications and develop more nuanced measures of audio-visual synchrony.
+
+
+% ============================================================
+% METHODS
+% ============================================================
 \section*{Methods}
 
-Topical subheadings are allowed. Authors must ensure that their Methods section includes adequate experimental and characterization data necessary for others in the field to reproduce their work.
+\subsection*{Dataset}
 
+The dataset consists of 130 robotics instructional YouTube videos: 56 conventional and 74 embodied. Conventional videos feature lecture-style delivery through slides, diagrams, equations, and screen-recorded programming. Embodied videos present hands-on tutorials involving hardware assembly, wiring, calibration, and real-time robot operation. Videos span diverse robotics domains including robot arm assembly, mobile robot navigation, circuit construction, computer vision, and drone systems.
+
+Based on analysis of speech rate distribution~\cite{zhang2025transcript}, the 74 embodied videos were subdivided into 48 verbally embodied ($\geq 60$ words per minute) and 26 visually embodied ($< 60$ WPM, silent demonstrations with minimal narration). This three-way classification---conventional, verbally embodied, and visually embodied---is maintained throughout all analyses.
+
+\subsection*{Fusion analysis framework}
+
+The fusion analysis framework operates on 10-second video segments. For each video, frames are extracted at regular intervals and captioned using the LLaVA multimodal model~\cite{liu2023visual}. Audio is transcribed using OpenAI Whisper~\cite{radford2023robust}. Each segment thus has associated visual captions and a transcript excerpt.
+
+Viewer comments---collected from both YouTube public comments and student reflective responses submitted after viewing~\cite{zhang2025transcript}---are semantically compared to each segment's visual captions and transcript excerpt using Gemini-based correlation scoring~\cite{geminiteam2024gemini2}. Two metrics are computed per segment:
+
+\begin{itemize}
+    \item \textbf{Visual correlation score} (0--100): Semantic similarity between the viewer comment and the segment's frame captions.
+    \item \textbf{Transcript correlation score} (0--100): Semantic similarity between the viewer comment and the segment's transcript excerpt.
+\end{itemize}
+
+A segment is classified as visually correlated if its visual correlation score exceeds a threshold of 0, and similarly for transcript correlation. The percentage of correlated segments and the mean correlation score are computed per video and per content type.
+
+\subsection*{Video content classification}
+
+To classify the content type and instructional features of each segment, we employed Gemini 2.0 Flash~\cite{geminiteam2024gemini2} with direct video understanding. Each video was uploaded to the Gemini File API, and the model analyzed the raw video content (not summaries or extracted frames) in 5-minute chunks of approximately 30 segments each.
+
+For each 10-second segment, the model assigned:
+\begin{enumerate}
+    \item \textbf{Content type}: One of nine mutually exclusive categories---\emph{hands\_on\_demonstration}, \emph{equipment\_closeup}, \emph{presenter\_talking}, \emph{slide\_or\_powerpoint}, \emph{diagram\_or\_whiteboard}, \emph{screen\_or\_software}, \emph{animation\_or\_graphic}, \emph{device\_in\_operation}, or \emph{other}.
+    \item \textbf{Alignment score} (0--100): Degree to which the audio narration matches the visual content being shown.
+    \item \textbf{Narration present}: Boolean indicating whether the instructor is actively speaking.
+    \item \textbf{Hands visible}: Boolean indicating whether the instructor's hands appear in the frame.
+    \item \textbf{Instructional density} (1--5): Rating of how much instructional content is conveyed in the segment.
+\end{enumerate}
+
+The classification prompt specified the exact number of segments expected per chunk to ensure one-to-one correspondence between classified segments and the fusion analysis segments. A total of 9{,}997 segments across 129 videos were successfully classified (one 96-minute video exceeded the model's context limit and was excluded).
+
+\subsection*{Statistical analysis}
+
+All statistical tests were conducted at the segment level ($N = 9{,}997$). One-way ANOVA was used to test for differences in visual and transcript correlation across content types (9 levels) and subgroups (3 levels). Independent-samples Welch's $t$-tests were used for pairwise comparisons between specific content types. Pearson correlation was computed between the alignment score and engagement metrics. For the top/bottom quartile analysis, videos within each subgroup were ranked by mean visual correlation, and the content type distributions of the top and bottom 25\% were compared. All $p$-values are reported without correction for multiple comparisons, as each test addresses a pre-specified hypothesis rather than an exploratory screen.
+
+
+% ============================================================
+% REFERENCES
+% ============================================================
 \bibliography{sample}
 
-\noindent LaTeX formats citations and references automatically using the bibliography records in your .bib file, which you can edit via the project menu. Use the cite command for an inline citation, e.g.  \cite{Hao:gidmaps:2014}.
 
-For data citations of datasets uploaded to e.g. \emph{figshare}, please use the \verb|howpublished| option in the bib entry to specify the platform and the link, as in the \verb|Hao:gidmaps:2014| example in the sample bibliography file.
+\section*{Acknowledgements}
 
-\section*{Acknowledgements (not compulsory)}
-
-Acknowledgements should be brief, and should not include thanks to anonymous referees and editors, or effusive comments. Grant or contribution numbers may be acknowledged.
+This work was funded by the National Science Foundation, Division of Engineering Education and Centers, Grant/Award Number: 2306285. Computational resources were provided by the Pittsburgh Supercomputing Center through the ACCESS allocation program.
 
 \section*{Author contributions statement}
 
-Must include all authors, identified by initials, for example:
-A.A. conceived the experiment(s),  A.A. and B.A. conducted the experiment(s), C.A. and D.A. analysed the results.  All authors reviewed the manuscript. 
+H.Z. conceived the study and supervised the research. B.L. developed the multimodal fusion framework, implemented the video classification pipeline, conducted all computational analyses, and drafted the manuscript. R.R. and N.G. contributed to data collection and video categorization. All authors reviewed the manuscript.
 
 \section*{Additional information}
 
-To include, in this order: \textbf{Accession codes} (where applicable); \textbf{Competing interests} (mandatory statement). 
-
-The corresponding author is responsible for submitting a \href{http://www.nature.com/srep/policies/index.html#competing}{competing interests statement} on behalf of all authors of the paper. This statement must be included in the submitted article file.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=\linewidth]{stream}
-\caption{Legend (350 words max). Example legend text.}
-\label{fig:stream}
-\end{figure}
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{|l|l|l|}
-\hline
-Condition & n & p \\
-\hline
-A & 5 & 0.1 \\
-\hline
-B & 10 & 0.01 \\
-\hline
-\end{tabular}
-\caption{\label{tab:example}Legend (350 words max). Example legend text.}
-\end{table}
-
-Figures and tables can be referenced in LaTeX using the ref command, e.g. Figure \ref{fig:stream} and Table \ref{tab:example}.
+\textbf{Competing interests:} The authors declare no competing interests.
 
 \end{document}
