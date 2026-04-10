@@ -418,6 +418,84 @@ No external images needed — all figures are pgfplots. Compile with: `pdflatex 
 
 ---
 
+## Session 7 Progress (2026-04-10) — Paper Expanded with New Analyses
+
+### Problem
+Paper was only 8 pages. Professor asked to enrich Methods and add more Results.
+
+### Methods Expansion (~1 page → ~3.5 pages)
+- **Pipeline figure** (tikz flowchart) showing all 6 stages of the fusion pipeline
+- **Detailed stage descriptions:**
+  1. Frame extraction (OpenCV, every 100 frames, ~1 frame per 3.3s at 30fps)
+  2. Audio transcription (Whisper turbo)
+  3. Dual captioning (LLaVA + MiniCPM → LLaMA 3 integration via Ollama)
+  4. Temporal alignment and 10-second segmentation
+  5. Dual-channel correlation scoring (LLaMA 3 via Ollama — **corrected from "Gemini-based"**)
+  6. Metric aggregation
+- **Expanded classification methodology**: 5-min chunking, prompt design, SLURM processing, retry logic
+- **Data integration** subsection explaining the join (9,997 segments, 128 videos)
+- **Expanded statistical analysis**: two-way ANOVA, regression, temporal bins, channel independence
+
+**Important correction:** The correlation scoring (Stage 5) uses LLaMA 3 via Ollama, NOT Gemini. Gemini is only used for the separate video content classification pipeline. This was incorrect in the Session 6 draft.
+
+### New Results (5 new subsections + updated stats table)
+
+1. **Content type mediates subgroup effect** (Two-way ANOVA)
+   - Content type: F=39.5, p<10^-54, η²=3.03%
+   - Subgroup main effect: F=1.7, **p=0.191** (non-significant after controlling for content type!)
+   - Interaction: F=8.4, p<10^-19, η²=1.29%
+   - **Key finding:** The "embodied" label carries NO independent explanatory power — engagement is entirely explained by content composition
+
+2. **Multiple regression** (OLS, R²=0.050, F=40.2, p<10^-100)
+   - Significant positive: hands_on_demonstration (β=+6.2), diagram (β=+3.9), hands_visible (β=+3.6)
+   - Significant negative: screen_software (β=-13.2, strongest), device_in_operation (β=-10.1), other (β=-13.7)
+   - Subgroup effects remain significant (β=+6.0 verb emb, β=+16.4 vis emb) — reflects quality advantage within content types
+   - Narration (p=0.069) and instructional density (p=0.106) NOT significant
+
+3. **Video-level scatter plot** (verbally embodied, n=48)
+   - Pearson r=0.53, p=1.2×10^-4 between %hands-on and mean visual score
+   - Conventional: r=-0.03 (too little hands-on content for variance)
+   - Visually embodied: r=0.04 (ceiling effect, already ~70% hands-on)
+   - Scatter plot uses all 48 verified data points with OLS regression line (y=33.8+0.547x)
+
+4. **Temporal dynamics** (early/middle/late bins)
+   - ANOVA: F=9.5, p<10^-4
+   - Conventional declines monotonically: 46.6 → 41.2 → 38.6 (viewer fatigue)
+   - Verbally embodied stable: 47.5 → 48.2 → 45.8
+   - Visually embodied peaks mid-video: 58.3 → **65.4** → 59.3
+   - Grouped bar chart by subgroup × temporal bin
+
+5. **Channel independence** (visual-transcript correlation)
+   - Overall: r=0.14 (weak positive, largely independent channels)
+   - Conventional: r=0.20 (tightest coupling — diagrams described while pointing)
+   - Verbally embodied: r=0.14
+   - Visually embodied: r=0.06, p=0.052 (borderline non-significant — nearly zero coupling)
+
+6. **Paper 1 comparison table** (ranking reversal)
+   - Paper 1 transcript-only ranking: Conv (61.2%) > VerbEmb (51.3%) >> VisEmb (11.2%)
+   - Paper 2 visual-channel ranking: VisEmb (68.2%) > VerbEmb (54.3%) > Conv (52.3%)
+   - Complete ranking reversal verified from actual data files
+   - Note: metrics are not directly comparable (whole-video topic corr vs segment-level visual corr) — framed as ranking comparison
+
+### Discussion Updated
+- Expanded from 3 to 4 principal findings (added content type mediation)
+- Added temporal dynamics discussion
+- Practical implications section expanded (screen content warning)
+
+### Bibliography Updated
+Added 2 new entries: yao2024minicpm (MiniCPM-V), touvron2023llama (LLaMA). Total: 9 references.
+
+### New Files
+| What | Path |
+|---|---|
+| Additional analysis script | `FusionAnalysis/scripts/additional_analysis.py` |
+| Regression summary | `FusionAnalysis/results/classification_analysis/regression_summary.txt` |
+| Video-level metrics | `FusionAnalysis/results/classification_analysis/video_level_metrics.csv` |
+| Temporal analysis | `FusionAnalysis/results/classification_analysis/temporal_analysis.csv` |
+| Channel correlations | `FusionAnalysis/results/classification_analysis/visual_transcript_correlation.csv` |
+
+---
+
 ## Conda Environments
 - `llava` — training
 - `llava_infer` — inference with Qwen
