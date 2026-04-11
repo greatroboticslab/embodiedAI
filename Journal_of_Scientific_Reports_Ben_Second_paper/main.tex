@@ -184,7 +184,7 @@ The transcript correlation pattern reveals a strikingly different ranking (Figur
         \begin{axis}[
             xbar,
             bar width=8pt,
-            width=\linewidth,
+            width=0.85 \columnwidth,
             height=9cm,
             xlabel={Transcript Correlation (\%)},
             xmin=0, xmax=30,
@@ -827,57 +827,73 @@ Based on analysis of speech rate distribution~\cite{zhang2025transcript}, the 74
 
 The fusion analysis framework processes each video through a six-stage pipeline to produce segment-level engagement metrics for both visual and verbal channels. Figure~\ref{fig:pipeline} illustrates the complete data flow.
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \centering
 \begin{tikzpicture}[
-    node distance=0.6cm and 0.8cm,
-    block/.style={rectangle, draw, fill=gray!15, text width=2.8cm, minimum height=0.9cm, align=center, font=\footnotesize},
-    smallblock/.style={rectangle, draw, fill=gray!15, text width=2.2cm, minimum height=0.7cm, align=center, font=\scriptsize},
-    data/.style={rectangle, rounded corners, draw, fill=white, text width=2.2cm, minimum height=0.7cm, align=center, font=\scriptsize},
-    arrow/.style={-{Stealth[length=2mm]}, thick},
+    node distance=0.9cm and 1.6cm,
+    block/.style={
+        rectangle, draw, fill=gray!15,
+        text width=3.1cm, minimum height=1.0cm,
+        align=center, font=\footnotesize
+    },
+    smallblock/.style={
+        rectangle, draw, fill=gray!15,
+        text width=3.0cm, minimum height=0.9cm,
+        align=center, font=\scriptsize
+    },
+    data/.style={
+        rectangle, rounded corners, draw, fill=white,
+        text width=3.0cm, minimum height=0.9cm,
+        align=center, font=\scriptsize
+    },
+    arrow/.style={-{Stealth[length=2mm]}, thick}
 ]
-    % Row 1: Input
-    \node[block] (video) {Raw Video\\(130 videos)};
 
-    % Row 2: Three parallel branches
-    \node[smallblock, below left=0.8cm and 0.5cm of video] (frames) {Frame Extraction\\(OpenCV)};
-    \node[smallblock, below=0.8cm of video] (whisper) {Transcription\\(Whisper)};
-    \node[smallblock, below right=0.8cm and 0.5cm of video] (gemini) {Classification\\(Gemini 2.0)};
+% Top node
+\node[block] (video) {Raw Video\\(130 videos)};
 
-    % Row 3: Caption models
-    \node[smallblock, below=0.6cm of frames] (caption) {Dual Captioning\\(LLaVA + MiniCPM)};
+% Three branches
+\node[smallblock, below left=1.2cm and 2.2cm of video] (frames) {Frame Extraction\\(OpenCV)};
+\node[smallblock, below=1.2cm of video] (whisper) {Transcription\\(Whisper)};
+\node[smallblock, below right=1.2cm and 2.2cm of video] (gemini) {Classification\\(Gemini 2.0)};
 
-    % Row 3.5: Integration
-    \node[smallblock, below=0.6cm of caption] (integrate) {Caption Integration\\(LLaMA 3)};
+% Left branch
+\node[smallblock, below=0.9cm of frames] (caption) {Dual Captioning\\(LLaVA + MiniCPM)};
+\node[smallblock, below=0.9cm of caption] (integrate) {Caption Integration\\(LLaMA 3)};
+\node[data, below=0.9cm of integrate] (captions) {Frame captions\\per segment};
 
-    % Row 4: Data outputs
-    \node[data, below=0.6cm of integrate] (captions) {Frame captions\\per segment};
-    \node[data, below=1.8cm of whisper] (transcript) {Transcript\\per segment};
-    \node[data, below=1.8cm of gemini] (classify) {Content type,\\hands, narration};
+% Middle branch
+\node[data, below=3.6cm of whisper] (transcript) {Transcript\\per segment};
 
-    % Row 5: Correlation
-    \node[block, below=0.8cm of transcript] (corr) {Correlation Scoring\\(LLaMA 3)};
+% Right branch
+\node[data, below=3.6cm of gemini] (classify) {Content type,\\hands, narration};
 
-    % Row 5 side: Comments
-    \node[data, left=0.5cm of corr] (comments) {Viewer\\comments};
+% Correlation and comments
+\node[block, below=1.1cm of transcript] (corr) {Correlation Scoring\\(LLaMA 3)};
+\node[data, left=2.2cm of corr] (comments) {Viewer\\comments};
 
-    % Row 6: Output
-    \node[block, below=0.7cm of corr] (output) {Segment-Level\\Engagement Metrics};
+% Output
+\node[block, below=1.0cm of corr] (output) {Segment-Level\\Engagement Metrics};
 
-    % Arrows
-    \draw[arrow] (video) -- (frames);
-    \draw[arrow] (video) -- (whisper);
-    \draw[arrow] (video) -- (gemini);
-    \draw[arrow] (frames) -- (caption);
-    \draw[arrow] (caption) -- (integrate);
-    \draw[arrow] (integrate) -- (captions);
-    \draw[arrow] (whisper) -- (transcript);
-    \draw[arrow] (gemini) -- (classify);
-    \draw[arrow] (captions) -- (corr);
-    \draw[arrow] (transcript) -- (corr);
-    \draw[arrow] (comments) -- (corr);
-    \draw[arrow] (corr) -- (output);
-    \draw[arrow] (classify) -- (output);
+% Arrows
+\draw[arrow] (video) -- (frames);
+\draw[arrow] (video) -- (whisper);
+\draw[arrow] (video) -- (gemini);
+
+\draw[arrow] (frames) -- (caption);
+\draw[arrow] (caption) -- (integrate);
+\draw[arrow] (integrate) -- (captions);
+
+\draw[arrow] (whisper) -- (transcript);
+\draw[arrow] (gemini) -- (classify);
+
+\draw[arrow] (captions.east) -- ++(0.6,0) |- (corr.west);
+\draw[arrow] (transcript) -- (corr);
+\draw[arrow] (classify.west) -- ++(-0.6,0) |- (corr.east);
+\draw[arrow] (comments.east) -- (corr.west);
+
+\draw[arrow] (corr) -- (output);
+
 \end{tikzpicture}
 \caption{Multimodal fusion analysis pipeline. Raw videos are processed through three parallel branches: (1) frame extraction and dual-model captioning, (2) speech transcription, and (3) content classification. Visual captions and transcripts are independently correlated with viewer comments to produce dual-channel engagement metrics. Content classifications are joined with engagement scores for analysis.}
 \label{fig:pipeline}
