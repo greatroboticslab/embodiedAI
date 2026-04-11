@@ -496,6 +496,89 @@ Added 2 new entries: yao2024minicpm (MiniCPM-V), touvron2023llama (LLaMA). Total
 
 ---
 
+## Session 8 Progress (2026-04-10) — Dual-Channel Rebalance
+
+### Problem
+Session 7 draft focused too heavily on visual correlation. Transcript channel was underused, and no union/intersection analysis existed — the paper did not fully exploit the dual-channel framework it claimed to establish.
+
+### Fix 1 — Figure 1 Caption Accuracy
+Original caption said visual correlation values showed "fraction of segments classified as visually correlated" but the metric is actually mean of per-segment `visual_pct_correlated` (a per-pair rate averaged across segments, not a segment-level binary). Caption clarified: "mean per-segment visual correlation rate" to avoid conflating per-pair and segment-level binary metrics.
+
+### Fix 2 — New Dual-Channel Analysis Script
+Created `FusionAnalysis/scripts/dual_channel_analysis.py` which computes:
+- `vis_corr` / `tr_corr` binary flags (segment has any correlated comment on that channel)
+- `union_corr = vis_corr OR tr_corr` (segment-level binary)
+- `both_corr = vis_corr AND tr_corr` (segment-level binary)
+- `union_score = max(visual_avg_score, transcript_avg_score)` (0–100)
+
+Run with `conda run -n llava python3 dual_channel_analysis.py`. Outputs three CSVs:
+- `engagement_by_content_type_all_channels.csv`
+- `engagement_by_subgroup_all_channels.csv`
+- `temporal_analysis_all_channels.csv`
+
+### Key Stats Added
+
+**Transcript per-pair rates by content type** (new — mirror of Figure 1):
+- Slide/PowerPoint: 22.8%  |  Diagram: 22.2%  |  Presenter: 21.8%  |  Animation: 21.2%
+- Device in op: 20.4%  |  Equipment closeup: 15.7%  |  Screen/SW: 13.4%  |  Other: 13.1%
+- Hands-on: **12.5%** (lowest — inverted ranking from visual channel)
+
+**Transcript ANOVA:** F=23.2 by content type, **F=141.4 by subgroup** (vs. visual F=1.7 after controlling for content type — the two channels are driven by opposing factors)
+
+**Two-way ANOVA transcript:** content F=11.8 (η²=0.91%), **subgroup F=130.0 (η²=2.50%)**, interaction F=4.6
+
+**Subgroup per-pair rates:**
+| Subgroup | Vis% | Tr% | Union% (seg-lvl) | Both% (seg-lvl) |
+|---|---|---|---|---|
+| Conventional | 45.8 | 20.4 | 64.6 | 22.3 |
+| Verbally embodied | 51.0 | 19.9 | 66.7 | 21.3 |
+| Visually embodied | 67.0 | 2.8 | 79.1 | 4.5 |
+
+**Hand visibility transcript tradeoff:** 15.8% (hands visible) vs. 20.6% (not visible), t=-7.6, p<10^-13. Hands boost visual (+12.0 pp) but reduce transcript (-4.8 pp) — resource-competition model.
+
+**Narration conservation:** Union engagement nearly identical with vs. without narration (67.0% vs. 67.9%). Narration redistributes attention between channels rather than adding to total engagement.
+
+### Paper Updates (main.tex)
+- **Abstract**: Rewritten to reflect dual-channel framework. Includes both visual and transcript rankings, ANOVA asymmetry, union/intersection findings.
+- **Figure 1 caption**: Corrected to "mean per-segment visual correlation rate".
+- **New Figure fig:tr_by_content**: Mirror of Figure 1 for transcript channel (horizontal bar chart, 9 content types).
+- **Table 1 (tab:content_dual)**: Expanded from 5 to 8 columns — added `Union Seg.%` and `Both Seg.%` columns (segment-level binary). Caption clarifies metric definitions.
+- **New section "Dual-channel engagement by subgroup"** with tab:subgroup_dual.
+- **New transcript two-way ANOVA table (tab:twoway_tr)** showing subgroup F=130.0 contrast with visual F=1.7.
+- **Narration table (tab:narration)**: Updated with dual-channel metrics including union conservation.
+- **New dual-channel temporal table (tab:temporal_all)**.
+- **Statistical tests summary table (tab:stats)**: Added transcript ANOVAs.
+- **Discussion**: Rewritten from 4 findings to **5 principal findings**:
+  1. Inverted rankings of content effectiveness between channels
+  2. Content type drives visual / subgroup drives transcript (asymmetric ANOVAs)
+  3. Union/intersection reveal hands-on and diagrams are effective for different reasons
+  4. Engagement advantage scales from segments to videos
+  5. Channel tradeoffs govern narration and hand visibility effects
+
+### Critical Metric Consistency Fix
+**Bug:** Two different metrics were mixed early in drafting:
+- Per-pair rate: mean of `visual_pct_correlated` across segments (e.g., hands-on = 64.1)
+- Segment-level binary: fraction of segments with `pct_correlated > 0` (e.g., hands-on visual = 74.9)
+
+**Resolution:** Per-pair rates used for per-channel columns (Vis%, Tr%) throughout the paper, consistent with original Figure 1. Segment-level binary reserved for Union%/Both% where it is definitionally correct, with explicit `Seg.%` labeling. All Discussion and Abstract values updated for consistency:
+- Hands-on transcript: 19.2 → **12.5** (per-pair)
+- Slide transcript: 33.5 → **22.8** (per-pair)
+- Conv vs. VerbEmb transcript: 30.4/28.9 → **20.4/19.9** (per-pair)
+- Visually embodied transcript: 5.1 → **2.8** (per-pair)
+- Hand visibility transcript delta: 7.1 → **4.8** (per-pair difference)
+
+Union/intersection values (78.5%, 26.9%, 79.1%, 67.0%/67.9%) correctly kept as segment-level binary.
+
+### New Files (Session 8)
+| What | Path |
+|---|---|
+| Dual-channel analysis script | `FusionAnalysis/scripts/dual_channel_analysis.py` |
+| Content type all channels | `FusionAnalysis/results/classification_analysis/engagement_by_content_type_all_channels.csv` |
+| Subgroup all channels | `FusionAnalysis/results/classification_analysis/engagement_by_subgroup_all_channels.csv` |
+| Temporal all channels | `FusionAnalysis/results/classification_analysis/temporal_analysis_all_channels.csv` |
+
+---
+
 ## Conda Environments
 - `llava` — training
 - `llava_infer` — inference with Qwen
