@@ -579,6 +579,82 @@ Union/intersection values (78.5%, 26.9%, 79.1%, 67.0%/67.9%) correctly kept as s
 
 ---
 
+## Session 9 Progress (2026-04-11) — Full Dual-Channel Rebalance of Results Sections
+
+### Problem
+After Session 8, the paper claimed a dual-channel framework but the Results sections were still dominated by visual-only analyses. Six of twelve Results subsections used visual engagement as their primary or sole metric: Subgroup-level visual engagement, Multiple regression, Video-level scatter, Effect of visible hands, Temporal dynamics, Instructional density, and Content profiles (top/bottom quartile). The regression and video-level analyses — the paper's quantitative anchors — only modeled the visual channel. The abstract also led with the 64.1% visual headline number rather than a dual-channel finding.
+
+### Seven subsections rebalanced
+
+**1. Abstract** — Rewritten to lead with the dual-channel framing. Now features the asymmetric-ANOVA contrast, three-model OLS findings (channel-flipping predictors, uniformly negative screen/software, density+narration only emerging in transcript/union), video-level opposite-sign correlations (+0.333 visual / −0.353 transcript), and the four-way ranking reversal argument.
+
+**2. §Multiple regression analysis: dual-channel predictors** — Replaced visual-only regression with three parallel OLS models fit to visual, transcript, and union scores. Table expanded to full-width `table*` with side-by-side β and p-values. Narrative reorganized around four cross-channel patterns: (a) channel-flipping predictors (hands-on +6.2/−2.9, hand visibility +3.6/−2.7, visually embodied +16.4/−10.9), (b) uniformly negative predictors (screen/software negative on all channels), (c) predictors only visible in transcript/union (instructional density p=0.106 vis → p=0.006 tr; narration p=0.069 vis → p=0.023 union), (d) subgroup robustness. Fit stats: visual R²=0.050, F=40.2; transcript R²=0.038, F=30.5; union R²=0.042, F=34.0.
+
+**3. §Video-level dual-channel analysis** — Added Table `tab:video_corr` with Pearson r for pct_hands_on × (visual, transcript, union) overall and per subgroup. Key new finding: overall transcript r = −0.353 (p<10⁻⁴), visual r = +0.333, union r = +0.252. Verbally embodied: visual r = +0.526, union r = +0.508, transcript r = +0.057 (null). Prose reframed to explain the overall negative transcript r as a compositional artifact (verbally embodied transcript-neutral + visually embodied near-zero transcript by construction), not an intrinsic deficiency of hands-on content. Scatter figure caption updated to cite all three r values.
+
+**4. §Within-content-type quality differences across subgroups** (renamed from "Subgroup-level visual engagement") — Figure converted to grouped bars showing visual/transcript/union for hands-on content by subgroup. Key new finding: verbally embodied hands-on leads on *every* channel (vis 67.1, tr 20.1, union 81.0), narrowly beating visually embodied (79.9) despite visual-only tie. This is direct evidence that the visual-only ranking obscured a real quality difference between the two embodied subgroups.
+
+**5. §Effect of visible hands: dual-channel tradeoff** — Figure converted to grouped bars (visual/transcript/union). Visual gain 56.3 vs 44.3, transcript loss 15.8 vs 20.6, union net gain 72.4 vs 61.9 (+10.4 points). Prose now explicitly frames hand visibility as "the clearest example of the channel-flip pattern."
+
+**6. §Effect of narration** — Added `\ref{tab:narration}` citation that was missing (orphan label) and explicit union-conservation sentence (67.0 vs 67.9 across narration conditions).
+
+**7. §Temporal dynamics of engagement** — Figure converted to two-panel `figure*` with (a) visual channel and (b) transcript channel. Visual panel shows subgroup-specific patterns (conv monotonic decline, verb emb flat, vis emb mid-peak). Transcript panel shows the uniform front-loaded pattern for both narrated subgroups (conv 22.6→15.4, verb emb 21.3→14.1) and flat near-zero for visually embodied. The two channels produce fundamentally different temporal profiles.
+
+**8. §Instructional density and dual-channel engagement** — Figure added transcript bars alongside visual. Key new finding: transcript ANOVA (F=12.3, p<10⁻⁹) is stronger than visual ANOVA (F=7.8, p<10⁻⁵). Explains why the visual-only regression missed the density effect (p=0.106) while transcript (p=0.006) and union (p=0.034) models caught it. Density is a transcript-channel phenomenon.
+
+**9. §Content profiles of high- and low-engagement videos** — Quartile ranking switched from visual-score to union-score. For verbally embodied (n=12 per quartile), hands-on delta sharpens dramatically from +27.5 to **+44.9** (top 53.9% vs bottom 9.1%) because union ranking credits both visual and transcript engagement. Screen/software Δ = −25.5 (top 7.7% vs bottom 33.2%). Conventional quartile profile driven by diagrams (+15.5) and presenter talking (+8.0). Visually embodied shows smaller differentiation due to ceiling effect.
+
+**10. §Comparison with transcript-only analysis (tab:paper_compare)** — Table expanded from 2-row to 4-row. New rows: Paper 2 transcript channel (20.4 / 19.9 / 2.8, same ranking as Paper 1), Paper 2 union channel (64.6 / 66.7 / 79.1). Narrative rewritten: the two single-channel rankings are **exact inversions** (1/2/3 under transcript, 3/2/1 under visual), and the union channel is the only measurement that does not reverse when the evaluation channel changes. Conventional and verbally embodied nearly tie on union (64.6 vs 66.7) while visually embodied leads (79.1) because its near-zero transcript is more than compensated for by its dominant visual channel.
+
+### New Scripts
+- `FusionAnalysis/scripts/dual_channel_regression_video.py` — Fits three parallel OLS models (visual/transcript/union) with identical 13-predictor design matrix. Extends video-level aggregation with mean transcript and union scores. Computes per-channel Pearson r (pct_hands_on vs each channel) overall and per subgroup. Outputs `regression_dual_channel.csv`, `regression_dual_channel_summary.txt`, `video_level_metrics_dual.csv`, `video_level_channel_correlations.csv`.
+- `FusionAnalysis/scripts/dual_channel_supplemental.py` — Three supplemental breakdowns: (a) instructional density × channel means and ANOVAs, (b) hand visibility × channel means with union percentages, (c) top/bottom quartile content distribution when videos are ranked by mean union score within each subgroup. Outputs `density_dual_channel.csv`, `hand_visibility_dual_channel.csv`, `top_bottom_quartile_by_union.csv`.
+
+### Key Regression Results (N=9,997, all models)
+| Predictor | Visual β (p) | Transcript β (p) | Union β (p) |
+|---|---|---|---|
+| Hands-on demo | +6.2 (<.001) | **−2.9** (.027) | +3.7 (.038) |
+| Diagram/whiteboard | +3.9 (.010) | −0.4 (.73) | +2.8 (.058) |
+| Screen/software | **−13.2** (<10⁻¹⁴) | **−8.6** (<10⁻¹²) | **−16.1** (<10⁻²²) |
+| Hands visible | +3.6 (<.001) | **−2.7** (<.001) | +2.7 (.011) |
+| Narration present | +3.1 (.069) | +1.5 (.21) | **+3.8** (.023) |
+| Instr. density | +0.7 (.11) | **+0.8** (.006) | +0.8 (.034) |
+| Verb. embodied (sg) | +6.0 (<10⁻⁹) | +1.8 (.008) | +6.6 (<10⁻¹²) |
+| Vis. embodied (sg) | **+16.4** (<10⁻¹⁹) | **−10.9** (<10⁻¹⁷) | +13.2 (<10⁻¹³) |
+
+Fit: visual R²=0.050, F=40.2 | transcript R²=0.038, F=30.5 | union R²=0.042, F=34.0 (all p<10⁻⁷⁴).
+
+### Key Video-Level Correlations (pct_hands_on × channel, N=128)
+| Subset | N | Visual r | Transcript r | Union r |
+|---|---|---|---|---|
+| Overall | 128 | +0.333** | **−0.353** | +0.252* |
+| Conventional | 55 | −0.03 (ns) | −0.21 (ns) | −0.08 (ns) |
+| Verbally embodied | 48 | **+0.526** | +0.06 (ns) | **+0.508** |
+| Visually embodied | 25 | +0.04 (ns) | −0.37 (.07) | +0.02 (ns) |
+
+The overall transcript r = −0.353 with visual r = +0.333 (same magnitude, opposite sign) is a headline dual-channel finding: single-channel analyses produce opposing conclusions about the same 128 videos; only union measurement recovers the true net-positive effect.
+
+### LaTeX Structural Status
+All environments balanced (11 table, 2 table*, 8 figure, 1 figure*, 9 tikzpicture, 9 axis, 13 tabular). All `\ref{...}` resolve to existing `\label{...}`. No orphan labels after adding the missing `tab:narration` citation. Paper length: 1066 lines (up from 981).
+
+### Status
+Every Results subsection now has dual-channel treatment. Visual-only analyses only appear where paired with transcript and union counterparts. The abstract, regression, video-level, within-content-type, hand visibility, temporal, density, quartile profile, and Paper-1 comparison sections all either lead with or prominently feature the union/dual-channel view.
+
+### New Files (Session 9)
+| What | Path |
+|---|---|
+| Dual-channel regression + video-level script | `FusionAnalysis/scripts/dual_channel_regression_video.py` |
+| Dual-channel supplemental script | `FusionAnalysis/scripts/dual_channel_supplemental.py` |
+| Parallel regression table (visual/tr/union) | `FusionAnalysis/results/classification_analysis/regression_dual_channel.csv` |
+| Full regression text summary | `FusionAnalysis/results/classification_analysis/regression_dual_channel_summary.txt` |
+| Video-level dual metrics | `FusionAnalysis/results/classification_analysis/video_level_metrics_dual.csv` |
+| Video-level per-channel correlations | `FusionAnalysis/results/classification_analysis/video_level_channel_correlations.csv` |
+| Density × channel | `FusionAnalysis/results/classification_analysis/density_dual_channel.csv` |
+| Hand visibility × channel | `FusionAnalysis/results/classification_analysis/hand_visibility_dual_channel.csv` |
+| Top/bottom quartile ranked by union | `FusionAnalysis/results/classification_analysis/top_bottom_quartile_by_union.csv` |
+
+---
+
 ## Conda Environments
 - `llava` — training
 - `llava_infer` — inference with Qwen

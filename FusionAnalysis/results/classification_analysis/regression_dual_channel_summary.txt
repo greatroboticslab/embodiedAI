@@ -1,0 +1,120 @@
+Dual-Channel Regressions: visual / transcript / union score
+Reference: content_type = slide_or_powerpoint, subgroup = conventional
+
+
+========== visual ==========
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:       visual_avg_score   R-squared:                       0.050
+Model:                            OLS   Adj. R-squared:                  0.049
+Method:                 Least Squares   F-statistic:                     40.20
+Date:                Sat, 11 Apr 2026   Prob (F-statistic):          1.27e-100
+Time:                        09:03:26   Log-Likelihood:                -51217.
+No. Observations:                9997   AIC:                         1.025e+05
+Df Residuals:                    9983   BIC:                         1.026e+05
+Df Model:                          13                                         
+Covariance Type:            nonrobust                                         
+=============================================================================================
+                                coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------
+const                        35.5486      2.084     17.057      0.000      31.463      39.634
+ct_animation_or_graphic       3.5998      2.368      1.520      0.128      -1.042       8.241
+ct_device_in_operation      -10.1409      2.356     -4.303      0.000     -14.760      -5.522
+ct_diagram_or_whiteboard      3.9095      1.527      2.560      0.010       0.916       6.903
+ct_equipment_closeup         -2.4534      1.855     -1.323      0.186      -6.090       1.183
+ct_hands_on_demonstration     6.1940      1.841      3.364      0.001       2.585       9.803
+ct_other                    -13.6632      4.264     -3.205      0.001     -22.021      -5.306
+ct_presenter_talking         -0.9303      1.705     -0.546      0.585      -4.273       2.412
+ct_screen_or_software       -13.2008      1.695     -7.788      0.000     -16.523      -9.878
+hands_visible                 3.6379      1.094      3.324      0.001       1.493       5.783
+narration                     3.1236      1.719      1.817      0.069      -0.246       6.493
+instructional_density         0.6583      0.407      1.617      0.106      -0.140       1.456
+sg_verbally_embodied          5.9682      0.958      6.231      0.000       4.091       7.846
+sg_visually_embodied         16.3832      1.786      9.174      0.000      12.883      19.884
+==============================================================================
+Omnibus:                    48744.321   Durbin-Watson:                   1.172
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1082.998
+Skew:                           0.028   Prob(JB):                    6.76e-236
+Kurtosis:                       1.389   Cond. No.                         44.6
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+========== transcript ==========
+                             OLS Regression Results                             
+================================================================================
+Dep. Variable:     transcript_avg_score   R-squared:                       0.038
+Model:                              OLS   Adj. R-squared:                  0.037
+Method:                   Least Squares   F-statistic:                     30.50
+Date:                  Sat, 11 Apr 2026   Prob (F-statistic):           4.73e-75
+Time:                          09:03:26   Log-Likelihood:                -47673.
+No. Observations:                  9997   AIC:                         9.537e+04
+Df Residuals:                      9983   BIC:                         9.548e+04
+Df Model:                            13                                         
+Covariance Type:              nonrobust                                         
+=============================================================================================
+                                coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------
+const                        15.5625      1.462     10.643      0.000      12.696      18.429
+ct_animation_or_graphic      -1.5454      1.661     -0.930      0.352      -4.802       1.711
+ct_device_in_operation        1.2985      1.653      0.785      0.432      -1.942       4.539
+ct_diagram_or_whiteboard     -0.3689      1.071     -0.344      0.731      -2.469       1.731
+ct_equipment_closeup         -2.4014      1.301     -1.845      0.065      -4.952       0.150
+ct_hands_on_demonstration    -2.8607      1.292     -2.215      0.027      -5.393      -0.329
+ct_other                     -3.4504      2.991     -1.154      0.249      -9.314       2.413
+ct_presenter_talking          0.7970      1.196      0.666      0.505      -1.548       3.142
+ct_screen_or_software        -8.5999      1.189     -7.232      0.000     -10.931      -6.269
+hands_visible                -2.7015      0.768     -3.519      0.000      -4.206      -1.197
+narration                     1.5026      1.206      1.246      0.213      -0.861       3.866
+instructional_density         0.7893      0.286      2.763      0.006       0.229       1.349
+sg_verbally_embodied          1.7902      0.672      2.664      0.008       0.473       3.107
+sg_visually_embodied        -10.9256      1.253     -8.721      0.000     -13.382      -8.470
+==============================================================================
+Omnibus:                     2568.956   Durbin-Watson:                   1.304
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             5070.188
+Skew:                           1.611   Prob(JB):                         0.00
+Kurtosis:                       4.338   Cond. No.                         44.6
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+========== union ==========
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            union_score   R-squared:                       0.042
+Model:                            OLS   Adj. R-squared:                  0.041
+Method:                 Least Squares   F-statistic:                     34.00
+Date:                Sat, 11 Apr 2026   Prob (F-statistic):           2.68e-84
+Time:                        09:03:27   Log-Likelihood:                -50946.
+No. Observations:                9997   AIC:                         1.019e+05
+Df Residuals:                    9983   BIC:                         1.020e+05
+Df Model:                          13                                         
+Covariance Type:            nonrobust                                         
+=============================================================================================
+                                coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------------
+const                        41.2460      2.029     20.333      0.000      37.270      45.222
+ct_animation_or_graphic       1.3542      2.305      0.588      0.557      -3.163       5.872
+ct_device_in_operation       -9.0226      2.294     -3.934      0.000     -13.519      -4.527
+ct_diagram_or_whiteboard      2.8217      1.487      1.898      0.058      -0.092       5.736
+ct_equipment_closeup         -3.9450      1.806     -2.185      0.029      -7.484      -0.406
+ct_hands_on_demonstration     3.7278      1.792      2.080      0.038       0.215       7.241
+ct_other                    -13.2491      4.150     -3.193      0.001     -21.384      -5.115
+ct_presenter_talking         -0.4598      1.660     -0.277      0.782      -3.713       2.794
+ct_screen_or_software       -16.1232      1.650     -9.773      0.000     -19.357     -12.889
+hands_visible                 2.7053      1.065      2.540      0.011       0.617       4.793
+narration                     3.8079      1.673      2.276      0.023       0.528       7.087
+instructional_density         0.8388      0.396      2.116      0.034       0.062       1.616
+sg_verbally_embodied          6.5930      0.932      7.072      0.000       4.766       8.420
+sg_visually_embodied         13.1581      1.738      7.570      0.000       9.751      16.565
+==============================================================================
+Omnibus:                    54707.724   Durbin-Watson:                   1.194
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1059.192
+Skew:                          -0.194   Prob(JB):                    9.98e-231
+Kurtosis:                       1.453   Cond. No.                         44.6
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

@@ -102,7 +102,7 @@ Density,N,VisPct,VisScore
 \affil[*]{hbzhang@mtsu.edu}
 
 \begin{abstract}
-Prior research on embodied learning in robotics education has relied primarily on transcript-based metrics, which inherently undervalue instructional approaches that communicate through physical demonstration rather than verbal narration. This study introduces a multimodal fusion framework that jointly analyzes visual and verbal channels of engagement at the segment level, enabling a mechanistic understanding of how specific content types drive viewer interaction. We analyzed 130 robotics instructional videos (56 conventional, 48 verbally embodied, 26 visually embodied), segmenting each into 10-second intervals and classifying each segment by content type using Gemini 2.0 Flash video understanding. Visual and transcript correlation scores were computed independently for each segment, along with combined union (either channel correlated) and intersection (both channels correlated) metrics. Our results reveal an inverted ranking of content effectiveness between channels: hands-on demonstrations rank first in visual correlation (64.1\%) but last in transcript correlation (12.5\%), while slide-based content shows the opposite pattern (47.1\% visual, 22.8\% transcript). Parallel two-way ANOVAs reveal asymmetric determinants: content type is the dominant predictor of visual engagement ($F = 39.5$, $p < 10^{-54}$, with the subgroup main effect becoming non-significant at $p = 0.191$), while subgroup is the dominant predictor of transcript engagement ($F = 130.0$, $p < 10^{-29}$). The intersection metric identifies diagram/whiteboard content as uniquely effective at dual-channel engagement (26.9\% correlated on both channels), while the union metric ranks hands-on demonstrations highest overall (78.5\%). Hand visibility boosts visual engagement by 12.0 percentage points but reduces transcript engagement by 4.8 points, revealing a systematic attention tradeoff between channels; union engagement is conserved across narration conditions, suggesting that verbal and visual channels redistribute rather than augment total viewer engagement. At the video level, the proportion of hands-on content correlates strongly with visual engagement among verbally embodied videos ($r = 0.53$, $p < 10^{-4}$). These findings establish that the engagement advantage of embodied instruction is driven by the specific visual content it delivers, and that a complete evaluation of instructional video effectiveness requires dual-channel measurement: any single-channel metric will systematically favor the modality it measures.
+Prior research on embodied learning in robotics education has relied primarily on transcript-based metrics, which inherently undervalue instructional approaches that communicate through physical demonstration rather than verbal narration. This study introduces a multimodal fusion framework that jointly analyzes visual and verbal channels of engagement at the segment level, and shows that any single-channel metric---transcript or visual---systematically mis-ranks instructional modalities. We analyzed 130 robotics instructional videos (56 conventional, 48 verbally embodied, 26 visually embodied), segmenting each into 10-second intervals and classifying each segment by content type using Gemini 2.0 Flash video understanding. For every segment we computed four engagement metrics: an independent visual correlation, an independent transcript correlation, their union (at least one channel correlated), and their intersection (both channels correlated). The two single-channel metrics produce nearly inverted rankings of content effectiveness: hands-on demonstrations rank first visually (64.1\%) but last verbally (12.5\%), while slide/PowerPoint content ranks first verbally (22.8\%) but sixth visually (47.1\%). Three parallel OLS regressions fit to visual, transcript, and union scores reveal that hand visibility and the visually embodied subgroup have opposite signs on the two channels (hand visibility: $+3.6$ visual, $-2.7$ transcript; visually embodied: $+16.4$ visual, $-10.9$ transcript), while screen/software content is the only content type that is significantly negative on every channel. Two predictors---instructional density and narration---are non-significant in the visual-only regression but emerge as significant in the transcript and union models, demonstrating that a visual-only analysis actively hides effects that dual-channel measurement detects. At the video level, hands-on content proportion correlates positively with visual engagement ($r = +0.333$, $p < 10^{-4}$) but negatively with transcript engagement ($r = -0.353$, $p < 10^{-4}$); only the union metric recovers a net-positive effect ($r = +0.252$). The union metric ranks hands-on demonstrations highest overall (78.5\% of segments correlated), while the intersection metric identifies diagram/whiteboard content as uniquely effective at dual-channel engagement (26.9\%). When the three subgroups are ranked under transcript-only analysis, conventional videos appear first and visually embodied videos last; under visual-only analysis the ranking reverses completely; only union engagement, where visually embodied videos lead at 79.1\% of segments correlated, yields a stable and interpretable comparison. These findings establish that dual-channel measurement is not a refinement of single-channel analysis but a correction: a complete evaluation of instructional video effectiveness requires both channels, because each channel alone reverses the conclusions of the other.
 \end{abstract}
 
 \begin{document}
@@ -369,89 +369,123 @@ Three patterns emerge. First, conventional and verbally embodied videos achieve 
 Conversely, the transcript channel provides meaningful incremental value for conventional videos: their union segment percentage (64.6\%) substantially exceeds what would be obtained from the visual channel alone, reflecting segments that receive transcript-aligned comments even when not matching the visual frames. A one-way ANOVA on the union score (maximum of visual and transcript scores per segment) confirms significant subgroup differences ($F = 56.7$, $p < 10^{-24}$), with visually embodied videos scoring highest (61.5), followed by verbally embodied (52.8) and conventional (47.9).
 
 
-\subsection*{Subgroup-level visual engagement}
+\subsection*{Within-content-type quality differences across subgroups}
 
-To quantify the subgroup-level engagement difference, we compared the overall visual correlation across the three subgroups. A one-way ANOVA reveals highly significant differences ($F = 99.4$, $p < 10^{-43}$). Figure~\ref{fig:subgroup_vis} presents the visual correlation percentage for hands-on demonstration segments specifically, broken down by subgroup.
+The two-way ANOVAs reported above show significant content type $\times$ subgroup interactions for both the visual ($F = 8.4$) and transcript ($F = 4.6$) channels, indicating that the same content type is received differently depending on which subgroup produces it. To unpack this interaction, we compared hands-on demonstration segments specifically---the content type where the subgroups differ most in both prevalence and engagement---across all three channels. Figure~\ref{fig:subgroup_vis} presents the visual, transcript, and union percentages for hands-on segments by subgroup.
 
 \begin{figure}[ht]
     \centering
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
-            bar width=20pt,
-            width=0.7\linewidth,
+            bar width=11pt,
+            width=0.85\linewidth,
             height=7cm,
             symbolic x coords={Conv,VerbEmb,VisEmb},
             xtick=data,
             xticklabels={Conventional,Verb.\ Embodied,Vis.\ Embodied},
-            ylabel={Visual Correlation (\%)},
-            ymin=0, ymax=85,
+            ylabel={Correlation (\%)},
+            ymin=0, ymax=95,
             enlarge x limits=0.35,
-            nodes near coords,
-            nodes near coords style={font=\bfseries\footnotesize, yshift=6pt},
+            legend style={at={(0.5,1.06)}, anchor=south, legend columns=3, font=\footnotesize, draw=none},
             ymajorgrids=true,
             grid style=dashed,
+            nodes near coords,
+            nodes near coords style={font=\tiny\bfseries, yshift=4pt},
         ]
-            \addplot+[fill=gray!60, draw=black] coordinates {
-                (Conv,43.9)
-                (VerbEmb,67.1)
-                (VisEmb,67.8)
+            \addplot+[fill=gray!30, draw=black] coordinates {
+                (Conv,43.9) (VerbEmb,67.1) (VisEmb,67.8)
             };
+            \addplot+[fill=gray!60, draw=black] coordinates {
+                (Conv,13.7) (VerbEmb,20.1) (VisEmb,1.7)
+            };
+            \addplot+[fill=gray!90, draw=black] coordinates {
+                (Conv,66.3) (VerbEmb,81.0) (VisEmb,79.9)
+            };
+            \legend{Visual, Transcript, Union}
         \end{axis}
     \end{tikzpicture}
-    \caption{Visual correlation of hands-on demonstration segments by subgroup. Embodied videos achieve substantially higher visual engagement for the same content type, suggesting that embodied instructors produce higher-quality hands-on demonstrations.}
+    \caption{Dual-channel engagement for hands-on demonstration segments by subgroup ($n = 312$ conventional, $1{,}075$ verbally embodied, $802$ visually embodied). Verbally embodied instructors achieve the highest engagement on \emph{every} channel for the same content type, including transcript (20.1\% vs.\ 13.7\% for conventional instructors producing hands-on content). Visually embodied videos match verbally embodied on visual correlation but drop to 1.7\% on transcript.}
     \label{fig:subgroup_vis}
 \end{figure}
 
-An important nuance emerges: even within the same content type (hands-on demonstration), embodied videos achieve substantially higher visual correlation (67.1\% verbally embodied, 67.8\% visually embodied) than conventional videos (43.9\%). This indicates that the engagement advantage of embodied instruction is twofold: (1) embodied videos contain more hands-on content, and (2) the hands-on content in embodied videos is itself more engaging---likely because embodied instructors are more skilled at producing compelling physical demonstrations. This within-content-type subgroup difference accounts for the significant interaction term in the two-way ANOVA.
+Three within-content-type patterns emerge. First, on the visual channel, both embodied subgroups achieve substantially higher correlation for hands-on content (67.1\% verbally embodied, 67.8\% visually embodied) than conventional videos (43.9\%), a 23-point gap that corresponds to the significant content $\times$ subgroup interaction in the visual two-way ANOVA. Conventional instructors who attempt hands-on content do not produce segments as engaging as those made by instructors whose primary modality is hands-on demonstration. Second, on the transcript channel, the subgroup ordering is different: verbally embodied hands-on segments achieve the highest transcript correlation (20.1\%), conventional hands-on segments are intermediate (13.7\%), and visually embodied hands-on segments are near zero (1.7\%). This ordering reflects the defining characteristic of each subgroup's narration pattern: verbally embodied instructors describe their physical actions actively, conventional instructors narrate their occasional hands-on moments more formally, and visually embodied instructors typically do not narrate at all.
+
+Third, and most importantly for the main finding of this study, the union metric resolves the ambiguity between the two single-channel stories. Verbally embodied videos achieve the highest union engagement for hands-on content (81.0\%), with visually embodied videos close behind (79.9\%) and conventional videos notably lower (66.3\%). The union metric shows that the visual-only ranking's apparent tie between verbally and visually embodied (67.1\% vs.\ 67.8\%) obscures a real 1.1-point advantage in total engagement for verbally embodied instruction, driven by the transcript channel's 18.4-point gap. This is direct evidence that within-content-type quality differences between subgroups can only be fully characterized with dual-channel measurement: the visual channel ranks two subgroups as equivalent, the transcript channel ranks them very differently, and only the union channel integrates the two views into a coherent ordering.
 
 
-\subsection*{Multiple regression analysis}
+\subsection*{Multiple regression analysis: dual-channel predictors}
 
-To estimate the relative contribution of each predictor while controlling for all others, we fit an ordinary least squares (OLS) regression model predicting visual engagement score from content type, hand visibility, narration, instructional density, and subgroup. Table~\ref{tab:regression} presents the model coefficients.
+To estimate the relative contribution of each predictor while controlling for all others, we fit three parallel ordinary least squares (OLS) regression models predicting (i) visual engagement score, (ii) transcript engagement score, and (iii) union engagement score (the per-segment maximum of visual and transcript scores) from content type, hand visibility, narration, instructional density, and subgroup. Fitting the same predictors against all three dependent variables reveals how each factor contributes to each channel, rather than biasing interpretation toward a single modality. Table~\ref{tab:regression_dual} presents the three parallel models side by side.
+
+\begin{table*}[ht]
+    \centering
+    \caption{Parallel OLS regressions predicting visual, transcript, and union engagement scores from the same set of predictors. Reference categories: slide/PowerPoint (content type), conventional (subgroup). Coefficients ($\beta$) reported with $p$-values. Bold indicates $p < 0.05$. Visual: $R^2 = 0.050$, $F = 40.2$, $p < 10^{-100}$. Transcript: $R^2 = 0.038$, $F = 30.5$, $p < 10^{-74}$. Union: $R^2 = 0.042$, $F = 34.0$, $p < 10^{-83}$. $N = 9{,}997$ for all models.}
+    \label{tab:regression_dual}
+    \begin{tabular}{lrlrlrl}
+        \toprule
+        & \multicolumn{2}{c}{Visual} & \multicolumn{2}{c}{Transcript} & \multicolumn{2}{c}{Union} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+        Predictor & $\beta$ & $p$ & $\beta$ & $p$ & $\beta$ & $p$ \\
+        \midrule
+        Intercept & \textbf{35.5} & $<0.001$ & \textbf{15.6} & $<0.001$ & \textbf{41.2} & $<0.001$ \\
+        \addlinespace
+        \multicolumn{7}{l}{\textit{Content type (vs.\ slide/PowerPoint)}} \\
+        \quad Hands-on demo & \textbf{+6.2} & $<0.001$ & \textbf{$-2.9$} & 0.027 & \textbf{+3.7} & 0.038 \\
+        \quad Diagram/whiteboard & \textbf{+3.9} & 0.010 & $-0.4$ & 0.731 & +2.8 & 0.058 \\
+        \quad Animation/graphic & +3.6 & 0.128 & $-1.5$ & 0.352 & +1.4 & 0.557 \\
+        \quad Equipment closeup & $-2.5$ & 0.186 & $-2.4$ & 0.065 & \textbf{$-3.9$} & 0.029 \\
+        \quad Presenter talking & $-0.9$ & 0.585 & +0.8 & 0.505 & $-0.5$ & 0.782 \\
+        \quad Device in operation & \textbf{$-10.1$} & $<0.001$ & +1.3 & 0.432 & \textbf{$-9.0$} & $<0.001$ \\
+        \quad Screen/software & \textbf{$-13.2$} & $<10^{-14}$ & \textbf{$-8.6$} & $<10^{-12}$ & \textbf{$-16.1$} & $<10^{-22}$ \\
+        \quad Other & \textbf{$-13.7$} & 0.001 & $-3.5$ & 0.249 & \textbf{$-13.2$} & 0.001 \\
+        \addlinespace
+        \multicolumn{7}{l}{\textit{Segment features}} \\
+        \quad Hands visible & \textbf{+3.6} & $<0.001$ & \textbf{$-2.7$} & $<0.001$ & \textbf{+2.7} & 0.011 \\
+        \quad Narration present & +3.1 & 0.069 & +1.5 & 0.213 & \textbf{+3.8} & 0.023 \\
+        \quad Instructional density & +0.7 & 0.106 & \textbf{+0.8} & 0.006 & \textbf{+0.8} & 0.034 \\
+        \addlinespace
+        \multicolumn{7}{l}{\textit{Subgroup (vs.\ conventional)}} \\
+        \quad Verbally embodied & \textbf{+6.0} & $<10^{-9}$ & \textbf{+1.8} & 0.008 & \textbf{+6.6} & $<10^{-12}$ \\
+        \quad Visually embodied & \textbf{+16.4} & $<10^{-19}$ & \textbf{$-10.9$} & $<10^{-17}$ & \textbf{+13.2} & $<10^{-13}$ \\
+        \bottomrule
+    \end{tabular}
+\end{table*}
+
+All three models are highly significant (all $p < 10^{-74}$), with modest $R^2$ values (visual 0.050, transcript 0.038, union 0.042) reflecting the high variance inherent in segment-level engagement data. The side-by-side structure reveals several patterns that a single-channel regression would obscure.
+
+\textbf{Channel-flipping predictors.} Four predictors produce opposite-sign effects across channels. Hands-on demonstration is the strongest positive predictor of visual engagement ($\beta = +6.2$, $p < 0.001$) but a significant \emph{negative} predictor of transcript engagement ($\beta = -2.9$, $p = 0.027$). Hand visibility shows the same flip ($+3.6$ visual, $-2.7$ transcript; both $p < 0.001$), confirming the resource-competition model of attention: when a segment shows physical manipulation, viewers respond to the visual channel at the expense of the verbal. The visually embodied subgroup coefficient flips most dramatically ($+16.4$ visual, $-10.9$ transcript), reflecting that silent-demonstration videos sacrifice transcript engagement in exchange for substantial visual gains. Despite these cross-channel tradeoffs, the union model shows that hands-on ($+3.7$), hand visibility ($+2.7$), and visually embodied subgroup ($+13.2$) all remain net-positive: the visual gains outweigh the transcript losses when total engagement is measured.
+
+\textbf{Uniformly negative predictors.} Screen/software content is the only content type that significantly reduces engagement on \emph{every} channel ($\beta = -13.2$ visual, $-8.6$ transcript, $-16.1$ union; all $p < 10^{-12}$). This identifies it as an unambiguous liability: unlike hands-on or diagram content, which trade engagement between channels, screen recordings fail to engage viewers through either pathway. Device-in-operation content is a weaker version of the same pattern, negative on visual and union but neutral on transcript.
+
+\textbf{Predictors that appear only when transcript is modeled.} Two predictors are statistically non-significant in the visual-only model but emerge as significant when the transcript and union channels are included. Instructional density is non-significant for visual engagement ($p = 0.106$) but significant for both transcript ($\beta = +0.8$, $p = 0.006$) and union ($p = 0.034$): denser instructional content produces measurable transcript-channel engagement gains that a visual-only analysis misses. Narration shows the same pattern: non-significant for visual alone ($p = 0.069$) but significant on the union model ($\beta = +3.8$, $p = 0.023$). Notably, narration does \emph{not} reach significance on the transcript channel alone ($p = 0.213$) after controlling for the other predictors---its contribution to total engagement emerges only through the combined union metric.
+
+\textbf{Subgroup effects remain robust across channels.} The verbally embodied coefficient is significantly positive on all three channels ($+6.0$, $+1.8$, $+6.6$), indicating that even after controlling for content composition, verbally embodied instructors produce higher engagement on every channel. The visually embodied coefficient is the only coefficient with genuinely inverted signs (positive on visual and union, strongly negative on transcript), mirroring the defining feature of this subgroup: physical demonstration without narration.
+
+Taken together, the three-model comparison establishes that the dual-channel framework is not merely a descriptive convenience. It produces conclusions that single-channel regression would miss entirely: (1) the resource-competition tradeoff for hands-on content and hand visibility is only visible with both channels modeled; (2) screen/software content is the only unambiguous negative predictor---a conclusion that strengthens when the union channel is added; and (3) instructional density and narration have measurable engagement effects that the visual channel alone does not detect.
+
+
+\subsection*{Video-level dual-channel analysis}
+
+To complement the segment-level analyses, we aggregated engagement metrics to the video level ($N = 128$ videos with complete data) and examined whether the proportion of hands-on content in a video predicts its overall engagement on each of the three channels (visual, transcript, and union). Table~\ref{tab:video_corr} reports the Pearson correlation between hands-on content proportion and each mean engagement score, overall and within each subgroup. Figure~\ref{fig:video_scatter} presents the underlying relationship for verbally embodied videos, where the cross-channel pattern is most informative.
 
 \begin{table}[ht]
     \centering
-    \caption{OLS regression predicting visual engagement score. Reference categories: slide/PowerPoint (content type), conventional (subgroup). $R^2 = 0.050$, $F = 40.2$, $p < 10^{-100}$.}
-    \label{tab:regression}
-    \begin{tabular}{lrrrl}
+    \caption{Pearson correlations between video-level percentage of hands-on content and mean engagement score on each channel. Bold indicates $p < 0.05$. The overall transcript correlation is significantly \emph{negative}, while the visual and union correlations are positive---a reversal that is only apparent with dual-channel measurement.}
+    \label{tab:video_corr}
+    \begin{tabular}{lrccc}
         \toprule
-        Predictor & $\beta$ & SE & $t$ & $p$ \\
+        Subset & $N$ & Visual $r$ & Transcript $r$ & Union $r$ \\
         \midrule
-        Intercept & 35.5 & 2.08 & 17.1 & $< 0.001$ \\
-        \addlinespace
-        \multicolumn{5}{l}{\textit{Content type (vs.\ slide/PowerPoint)}} \\
-        \quad Hands-on demo & +6.2 & 1.84 & 3.4 & $< 0.001$ \\
-        \quad Diagram/whiteboard & +3.9 & 1.53 & 2.6 & 0.010 \\
-        \quad Animation/graphic & +3.6 & 2.37 & 1.5 & 0.128 \\
-        \quad Equipment closeup & $-2.5$ & 1.86 & $-1.3$ & 0.186 \\
-        \quad Presenter talking & $-0.9$ & 1.71 & $-0.5$ & 0.585 \\
-        \quad Device in operation & $-10.1$ & 2.36 & $-4.3$ & $< 0.001$ \\
-        \quad Screen/software & $-13.2$ & 1.70 & $-7.8$ & $< 10^{-14}$ \\
-        \quad Other & $-13.7$ & 4.26 & $-3.2$ & 0.001 \\
-        \addlinespace
-        \multicolumn{5}{l}{\textit{Segment features}} \\
-        \quad Hands visible & +3.6 & 1.09 & 3.3 & $< 0.001$ \\
-        \quad Narration present & +3.1 & 1.72 & 1.8 & 0.069 \\
-        \quad Instructional density & +0.7 & 0.41 & 1.6 & 0.106 \\
-        \addlinespace
-        \multicolumn{5}{l}{\textit{Subgroup (vs.\ conventional)}} \\
-        \quad Verbally embodied & +6.0 & 0.96 & 6.2 & $< 10^{-9}$ \\
-        \quad Visually embodied & +16.4 & 1.79 & 9.2 & $< 10^{-19}$ \\
+        Overall & 128 & \textbf{+0.333} & \textbf{$-0.353$} & \textbf{+0.252} \\
+        Conventional & 55 & $-0.034$ & $-0.207$ & $-0.084$ \\
+        Verbally embodied & 48 & \textbf{+0.526} & +0.057 & \textbf{+0.508} \\
+        Visually embodied & 25 & +0.041 & $-0.365$ & +0.024 \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-The model is highly significant ($F = 40.2$, $p < 10^{-100}$) with $R^2 = 0.050$. Among content types, hands-on demonstration ($\beta = +6.2$) and diagram/whiteboard ($\beta = +3.9$) are the only significant positive predictors relative to slides. Screen/software content is the strongest negative predictor ($\beta = -13.2$, $p < 10^{-14}$), followed by device-in-operation ($\beta = -10.1$). Hand visibility provides a significant independent contribution ($\beta = +3.6$, $p < 0.001$) after controlling for content type, confirming that the physical presence of hands adds engagement value beyond the content classification itself. Narration and instructional density do not reach significance ($p = 0.069$ and $p = 0.106$, respectively).
-
-The subgroup coefficients remain significant in the regression ($\beta = +6.0$ for verbally embodied, $\beta = +16.4$ for visually embodied), consistent with the significant interaction in the two-way ANOVA: even after accounting for content type and segment features, embodied videos generate higher visual engagement, reflecting the quality advantage identified in the within-content-type analysis.
-
-The modest $R^2$ of 0.050 reflects the high variance inherent in segment-level engagement data, where individual viewer comment--segment pairs introduce substantial noise. The model's significance and consistent coefficient signs indicate reliable directional effects despite this variance.
-
-
-\subsection*{Video-level analysis}
-
-To complement the segment-level analyses, we aggregated engagement metrics to the video level ($N = 128$ videos with complete data) and examined whether the proportion of hands-on content in a video predicts its overall visual engagement. Figure~\ref{fig:video_scatter} presents this relationship for verbally embodied videos, where the correlation is strongest.
+The overall correlations reveal an effect that cannot be seen from either channel alone: across all 128 videos, the proportion of hands-on content is a \emph{positive} predictor of visual engagement ($r = +0.333$, $p = 1.2 \times 10^{-4}$) but a \emph{negative} predictor of transcript engagement ($r = -0.353$, $p = 4.3 \times 10^{-5}$). These correlations are of nearly identical magnitude but opposite sign, illustrating at the video level the same channel-tradeoff effect observed at the segment level in the regression analysis. The union correlation is intermediate and positive ($r = +0.252$, $p = 4.0 \times 10^{-3}$): total engagement increases modestly with hands-on content because the visual gain is slightly larger than the transcript loss. A transcript-only analysis of the same videos would incorrectly conclude that hands-on content reduces engagement; a visual-only analysis would exaggerate its benefits. Only the dual-channel view captures the true net effect.
 
 \begin{figure}[ht]
     \centering
@@ -486,53 +520,56 @@ To complement the segment-level analyses, we aggregated engagement metrics to th
             \addplot[black, thick, domain=0:90, samples=2] {33.8 + 0.547*x};
         \end{axis}
     \end{tikzpicture}
-    \caption{Video-level relationship between hands-on content proportion and mean visual engagement for verbally embodied videos ($n = 48$). Pearson $r = 0.53$, $p < 10^{-4}$. The fitted line illustrates the positive trend.}
+    \caption{Video-level relationship between hands-on content proportion and mean visual engagement for verbally embodied videos ($n = 48$). Pearson $r = +0.526$, $p = 1.2 \times 10^{-4}$. The union-channel correlation for this subgroup is nearly identical ($r = +0.508$, $p = 2.3 \times 10^{-4}$), while the transcript-channel correlation is null ($r = +0.057$, $p = 0.70$); see Table~\ref{tab:video_corr} for all channels and subgroups.}
     \label{fig:video_scatter}
 \end{figure}
 
-Among verbally embodied videos, the proportion of hands-on content shows a strong positive correlation with mean visual engagement ($r = 0.53$, $p = 1.2 \times 10^{-4}$, $n = 48$). This video-level result confirms that the segment-level content type effect scales up: videos that dedicate more time to physical demonstrations receive higher overall visual engagement from viewers.
+Within verbally embodied videos, the proportion of hands-on content shows a strong positive correlation with mean visual engagement ($r = +0.526$, $p = 1.2 \times 10^{-4}$, $n = 48$) and a nearly identical correlation with mean union engagement ($r = +0.508$, $p = 2.3 \times 10^{-4}$). The transcript-channel correlation for this same subgroup is essentially zero ($r = +0.057$, $p = 0.70$), indicating that hands-on content neither helps nor hurts transcript engagement when instructors are verbally active. In other words, when a verbally embodied instructor adds more physical demonstration to their video, the visual channel gains substantially while the transcript channel is unaffected---yielding a net positive union effect. This pattern is consistent with the segment-level regression, where hands-on content was a positive visual predictor and a weakly negative transcript predictor, and confirms that the visual-channel gains scale up to the video level without a transcript cost in the presence of active narration.
 
-The overall correlation across all 128 videos is $r = 0.33$ ($p = 1.2 \times 10^{-4}$). Within conventional videos, the correlation is negligible ($r = -0.03$, $p = 0.81$, $n = 55$), reflecting the fact that conventional videos contain very little hands-on content (mean 6.4\%), leaving insufficient variance to detect a relationship. Among visually embodied videos, the correlation is also weak ($r = 0.04$, $p = 0.85$, $n = 25$) because these videos are already saturated with hands-on content (mean 70.0\%), creating a ceiling effect.
+The conventional subgroup shows null correlations on every channel ($r = -0.034$ visual, $-0.207$ transcript, $-0.084$ union; all n.s.), reflecting a floor effect: conventional videos contain very little hands-on content (mean 6.4\%), leaving insufficient variance to detect a relationship. The visually embodied subgroup shows the opposite problem---a ceiling effect for hands-on proportion (mean 70.0\%), yielding null visual and union correlations ($r = 0.04$ and $0.02$) but a borderline-negative transcript correlation ($r = -0.365$, $p = 0.07$) as more hands-on content displaces the sparse remaining narration.
+
+The overall $r = -0.353$ on the transcript channel is therefore driven by two compositional factors that only become visible with the dual-channel framework: (1) within verbally embodied videos, hands-on content is transcript-neutral; (2) across subgroups, the videos with the most hands-on content are visually embodied, which have near-zero transcript scores by construction. A single-channel transcript analysis would attribute the negative slope to an intrinsic deficiency of hands-on content, whereas the dual-channel analysis shows it is a compositional artifact masking a positive union effect.
 
 
-\subsection*{Effect of visible hands}
+\subsection*{Effect of visible hands: dual-channel tradeoff}
 
-Visibility of the instructor's hands during a segment provides a direct marker of physical interaction. Across all 9{,}997 segments, those with visible hands ($n = 4{,}978$) show significantly higher visual correlation (56.3\%) than those without ($n = 5{,}019$; 44.3\%), as shown in Figure~\ref{fig:hands_effect}. This 12.0 percentage-point difference is highly significant ($p < 10^{-40}$, Welch's $t$-test).
+Visibility of the instructor's hands during a segment provides a direct marker of physical interaction. Across all 9{,}997 segments, the dual-channel engagement metrics produce opposite-direction effects on the two channels, as shown in Figure~\ref{fig:hands_effect}. Segments with visible hands ($n = 4{,}978$) show significantly higher visual correlation (56.3\% vs.\ 44.3\%, $p < 10^{-40}$, Welch's $t$-test) but lower transcript correlation (15.8\% vs.\ 20.6\%, $t = -7.6$, $p < 10^{-13}$). The union segment percentage, which captures whether a segment engages viewers on either channel, remains higher for visible-hand segments (72.4\% vs.\ 61.9\%): the visual gain is larger in absolute terms than the transcript loss, so total engagement rises by 10.4 percentage points.
 
 \begin{figure}[ht]
     \centering
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
-            bar width=25pt,
-            width=0.6\linewidth,
-            height=6cm,
+            bar width=11pt,
+            width=0.85\linewidth,
+            height=6.5cm,
             symbolic x coords={Visible,Not Visible},
             xtick=data,
-            ylabel={Visual Correlation (\%)},
-            ymin=0, ymax=70,
+            ylabel={Correlation (\%)},
+            ymin=0, ymax=85,
             enlarge x limits=0.5,
-            nodes near coords,
-            nodes near coords style={font=\bfseries\footnotesize, yshift=6pt},
+            legend style={at={(0.98,0.98)}, anchor=north east, font=\footnotesize},
             ymajorgrids=true,
             grid style=dashed,
+            nodes near coords,
+            nodes near coords style={font=\tiny\bfseries, yshift=4pt},
         ]
-            \addplot+[fill=gray!60, draw=black] coordinates {
-                (Visible,56.3)
-                (Not Visible,44.3)
-            };
+            \addplot+[fill=gray!30, draw=black] coordinates {(Visible,56.3) (Not Visible,44.3)};
+            \addplot+[fill=gray!60, draw=black] coordinates {(Visible,15.8) (Not Visible,20.6)};
+            \addplot+[fill=gray!90, draw=black] coordinates {(Visible,72.4) (Not Visible,61.9)};
+            \legend{Visual, Transcript, Union}
         \end{axis}
     \end{tikzpicture}
-    \caption{Visual correlation by hand visibility. Segments in which the instructor's hands are visible achieve 12.0 percentage points higher visual engagement ($p < 10^{-40}$).}
+    \caption{Dual-channel engagement by hand visibility. Segments in which the instructor's hands are visible achieve 12.0 percentage points higher visual correlation ($p < 10^{-40}$) but 4.8 points lower transcript correlation ($p < 10^{-13}$). The union metric (any channel correlated) increases by 10.4 points, showing that total engagement is dominated by the visual gain.}
     \label{fig:hands_effect}
 \end{figure}
 
-The regression analysis confirms that hand visibility contributes independently ($\beta = +3.6$, $p < 0.001$) even after controlling for content type and subgroup. Interestingly, hand visibility shows the \emph{opposite} effect on transcript correlation: segments with visible hands achieve lower transcript engagement (15.8\%) than those without (20.6\%, $t = -7.6$, $p < 10^{-13}$). This dual-channel tradeoff---hands boost visual engagement but reduce transcript engagement---is consistent with a resource-competition model where physical demonstrations draw viewer attention toward the visual channel and away from verbal content.
+The regression analysis in Table~\ref{tab:regression_dual} confirms that hand visibility is the clearest example of the channel-flip pattern: after controlling for content type and all other predictors, it independently adds $+3.6$ points of visual engagement and subtracts $2.7$ points of transcript engagement, with the union coefficient landing in between ($+2.7$). This is consistent with a resource-competition model of attention: when a segment shows physical manipulation, viewers respond to the visual channel at the expense of the verbal channel, but the visual gain is large enough to produce a net positive effect on total engagement. The fact that hand visibility remains significant in the dual-channel regression---despite being strongly correlated with the hands-on demonstration content type---indicates that the physical presence of hands adds engagement value beyond the content classification itself.
 
 
 \subsection*{Effect of narration and channel independence}
 
-To examine whether verbal narration enhances or competes with visual engagement, we compared segments with narration present ($n = 8{,}832$) versus narration absent ($n = 1{,}165$). Segments without narration show slightly higher visual correlation (54.0\%) than those with narration (49.8\%), a difference that reaches statistical significance ($p < 0.01$). Conversely, narrated segments show substantially higher transcript correlation (19.4\% vs.\ 8.6\%).
+To examine whether verbal narration enhances or competes with visual engagement, we compared segments with narration present ($n = 8{,}832$) versus narration absent ($n = 1{,}165$) across all four engagement metrics (Table~\ref{tab:narration}). Segments without narration show slightly higher visual correlation (54.0\%) than those with narration (49.8\%), a difference that reaches statistical significance ($p < 0.01$). Conversely, narrated segments show substantially higher transcript correlation (19.4\% vs.\ 8.6\%). Crucially, the union segment percentage is nearly identical in both conditions (67.0\% vs.\ 67.9\%), a 0.9-point difference that is not statistically meaningful: total engagement is conserved, with narration redistributing viewer attention between the two channels rather than adding to or subtracting from it.
 
 \begin{table}[ht]
     \centering
@@ -574,34 +611,59 @@ This pattern is consistent with a dual-channel model of engagement: when narrati
 
 We examined whether engagement varies across the temporal structure of a video by dividing each video into three equal-length bins---early (0--33\%), middle (33--67\%), and late (67--100\%)---based on normalized segment position. A one-way ANOVA confirms significant temporal differences in visual engagement ($F = 9.5$, $p < 10^{-4}$).
 
-\begin{figure}[ht]
+\begin{figure*}[ht]
     \centering
     \begin{tikzpicture}
         \begin{axis}[
+            name=visaxis,
             ybar,
-            bar width=12pt,
-            width=\linewidth,
-            height=7cm,
+            bar width=10pt,
+            width=0.52\textwidth,
+            height=6.5cm,
             symbolic x coords={Early,Middle,Late},
             xtick=data,
             ylabel={Mean Visual Score},
             ymin=0, ymax=80,
             enlarge x limits=0.25,
-            legend style={at={(0.98,0.98)}, anchor=north east, font=\footnotesize},
+            legend style={at={(0.5,1.08)}, anchor=south, legend columns=3, font=\footnotesize, draw=none},
             ymajorgrids=true,
             grid style=dashed,
             nodes near coords,
-            nodes near coords style={font=\tiny\bfseries, yshift=5pt},
+            nodes near coords style={font=\tiny\bfseries, yshift=4pt},
+            title={(a) Visual channel},
+            title style={font=\small},
         ]
             \addplot+[fill=gray!30, draw=black] coordinates {(Early,46.6) (Middle,41.2) (Late,38.6)};
             \addplot+[fill=gray!60, draw=black] coordinates {(Early,47.5) (Middle,48.2) (Late,45.8)};
             \addplot+[fill=gray!90, draw=black] coordinates {(Early,58.3) (Middle,65.4) (Late,59.3)};
             \legend{Conventional, Verb.\ Embodied, Vis.\ Embodied}
         \end{axis}
+        \begin{axis}[
+            at={($(visaxis.east)+(1.5cm,0)$)}, anchor=west,
+            ybar,
+            bar width=10pt,
+            width=0.52\textwidth,
+            height=6.5cm,
+            symbolic x coords={Early,Middle,Late},
+            xtick=data,
+            ylabel={Mean Transcript Score},
+            ymin=0, ymax=30,
+            enlarge x limits=0.25,
+            ymajorgrids=true,
+            grid style=dashed,
+            nodes near coords,
+            nodes near coords style={font=\tiny\bfseries, yshift=4pt},
+            title={(b) Transcript channel},
+            title style={font=\small},
+        ]
+            \addplot+[fill=gray!30, draw=black] coordinates {(Early,22.6) (Middle,15.4) (Late,15.4)};
+            \addplot+[fill=gray!60, draw=black] coordinates {(Early,21.3) (Middle,16.6) (Late,14.1)};
+            \addplot+[fill=gray!90, draw=black] coordinates {(Early,2.1) (Middle,2.4) (Late,2.8)};
+        \end{axis}
     \end{tikzpicture}
-    \caption{Mean visual engagement score by temporal position and subgroup. Conventional videos show a monotonic decline ($46.6 \to 38.6$), while visually embodied videos peak in the middle ($65.4$) and remain elevated throughout.}
+    \caption{Mean engagement scores by temporal position and subgroup on each channel. (a) Visual engagement: conventional videos show a monotonic decline ($46.6 \to 38.6$), verbally embodied videos are stable, and visually embodied videos peak in the middle ($65.4$) and remain elevated throughout. (b) Transcript engagement: both narrated subgroups show a monotonic early-to-late decline ($22.6 \to 15.4$ conventional, $21.3 \to 14.1$ verbally embodied), while visually embodied videos show negligible transcript engagement at all time points. The two channels produce fundamentally different temporal profiles.}
     \label{fig:temporal}
-\end{figure}
+\end{figure*}
 
 Figure~\ref{fig:temporal} reveals contrasting temporal patterns across subgroups. Conventional videos exhibit a monotonic decline in visual engagement from early (46.6) to late (38.6) segments, a drop of 8.0 points. Verbally embodied videos show a relatively flat trajectory (47.5, 48.2, 45.8), with a slight decline only in the final third. Visually embodied videos display an inverted-U pattern, peaking at 65.4 in the middle portion before returning to 59.3---still substantially higher than either other subgroup at any time point.
 
@@ -635,103 +697,116 @@ The transcript channel exhibits a notably different temporal pattern (Table~\ref
 The union metric follows the visual pattern for visually embodied videos (peaking mid-video at 83.6\%) but tracks the front-loaded transcript pattern for conventional and verbally embodied videos (declining from 71.8\%/68.6\% in early segments to 59.3\%/64.1\% in late segments). The intersection metric declines across all three subgroups over time, showing that the narrow set of segments that engage viewers through \emph{both} channels simultaneously is strongly front-loaded---an effect most pronounced for conventional videos (27.7\% early, 19.4\% late).
 
 
-\subsection*{Instructional density and engagement}
+\subsection*{Instructional density and dual-channel engagement}
 
-We examined whether the instructional density rating (1--5 scale, as assessed by the video classification model) predicts visual engagement. As shown in Figure~\ref{fig:density}, visual correlation increases from 45.2\% at the lowest density level to 52.4\% at density levels 2 and 4, with level 3 slightly lower at 48.4\%.
+We examined whether the instructional density rating (1--5 scale, as assessed by the video classification model) predicts engagement on each channel. Figure~\ref{fig:density} presents the per-pair correlation percentages for visual and transcript channels side by side across the five density levels.
 
 \begin{figure}[ht]
     \centering
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
-            bar width=18pt,
-            width=0.7\linewidth,
-            height=6cm,
+            bar width=10pt,
+            width=0.85\linewidth,
+            height=6.5cm,
             symbolic x coords={1,2,3,4,5},
             xtick=data,
             xlabel={Instructional Density (1--5)},
-            ylabel={Visual Correlation (\%)},
+            ylabel={Correlation (\%)},
             ymin=0, ymax=65,
-            enlarge x limits=0.2,
-            nodes near coords,
-            nodes near coords style={font=\footnotesize\bfseries, yshift=6pt},
+            enlarge x limits=0.18,
+            legend style={at={(0.98,0.98)}, anchor=north east, font=\footnotesize},
             ymajorgrids=true,
             grid style=dashed,
+            nodes near coords,
+            nodes near coords style={font=\tiny\bfseries, yshift=4pt},
         ]
-            \addplot+[fill=gray!60, draw=black] coordinates {
-                (1,45.2)
-                (2,52.4)
-                (3,48.4)
-                (4,52.4)
-                (5,51.1)
+            \addplot+[fill=gray!30, draw=black] coordinates {
+                (1,45.2) (2,52.4) (3,48.4) (4,52.4) (5,51.1)
             };
+            \addplot+[fill=gray!80, draw=black] coordinates {
+                (1,12.2) (2,16.2) (3,19.7) (4,19.1) (5,19.4)
+            };
+            \legend{Visual, Transcript}
         \end{axis}
     \end{tikzpicture}
-    \caption{Visual correlation by instructional density level. Low-density segments (level 1) show the weakest engagement, while levels 2--5 cluster around 48--52\%.}
+    \caption{Per-pair correlation by instructional density level and channel. Low-density segments (level 1) underperform on both channels, but the transcript channel shows a more distinct step: transcript correlation climbs from 12.2\% at level 1 to 16.2\% at level 2 and plateaus at 19\% for levels 3--5, while visual correlation is roughly flat for levels 2--5. Transcript engagement is a more sensitive index of instructional density than visual engagement.}
     \label{fig:density}
 \end{figure}
 
-The overall trend indicates that low-density segments (level 1; $n = 1{,}169$) underperform relative to all other density levels, but the relationship is not strictly monotonic at higher levels. The lowest density segments---often transitions, pauses, or unfocused content---elicit the weakest visual engagement, while moderate-to-high density content generates comparable engagement regardless of whether it is rated 3, 4, or 5. The regression analysis confirms that instructional density does not significantly predict engagement after controlling for content type and hand visibility ($p = 0.106$).
+Both channels show the same low-density floor effect: level-1 segments ($n = 1{,}169$), which are dominated by transitions, pauses, and unfocused content, elicit the weakest engagement on both the visual channel (45.2\%) and the transcript channel (12.2\%). Above level 1, however, the two channels diverge. Visual correlation is nearly flat across levels 2--5 (48.4--52.4\%), while transcript correlation climbs from 16.2\% at level 2 to 19.4\% at level 5, reflecting the fact that denser instructional content---more concept introductions, explanations, and worked examples per unit time---produces more verbally aligned viewer comments. A one-way ANOVA confirms that the density effect is stronger on the transcript channel ($F = 12.3$, $p < 10^{-9}$) than on the visual channel ($F = 7.8$, $p < 10^{-5}$); the union channel falls in between ($F = 10.0$, $p < 10^{-7}$).
+
+This channel asymmetry explains why instructional density appears as a non-significant predictor in the visual-only regression ($p = 0.106$ for visual) but becomes significant in the transcript ($\beta = +0.8$, $p = 0.006$) and union ($\beta = +0.8$, $p = 0.034$) regressions after controlling for content type and hand visibility. Instructional density is a transcript-channel phenomenon: a single-channel visual analysis obscures an effect that a dual-channel analysis detects.
 
 
 \subsection*{Content profiles of high- and low-engagement videos}
 
-To determine whether content composition explains video-level engagement differences, we compared the content type profiles of the top 25\% and bottom 25\% of videos ranked by visual correlation within each subgroup. Table~\ref{tab:top_bottom} presents the results for verbally embodied videos, where the contrast is most pronounced.
+To determine whether content composition explains video-level engagement differences, we compared the content type profiles of the top 25\% and bottom 25\% of videos ranked by \emph{union} engagement score within each subgroup. Ranking by union score---the segment-level maximum of visual and transcript correlation---avoids the single-channel bias that would otherwise favor videos with the content types most aligned with the chosen channel. Table~\ref{tab:top_bottom} presents the verbally embodied results, where the contrast between high- and low-engagement videos is most pronounced.
 
 \begin{table}[ht]
     \centering
-    \caption{Content type distribution (\%) for top- and bottom-quartile verbally embodied videos ranked by visual engagement. The largest difference is in hands-on demonstration content.}
+    \caption{Content type distribution (\%) for top- and bottom-quartile verbally embodied videos ranked by \emph{union} engagement score ($n = 12$ per quartile). The top quartile's mean union score is 82.5, compared to 23.1 for the bottom quartile. The largest positive difference is hands-on demonstration content; the largest negative difference is screen/software content.}
     \label{tab:top_bottom}
     \begin{tabular}{lccc}
         \toprule
         Content Type & Top 25\% & Bottom 25\% & $\Delta$ \\
         \midrule
-        Hands-on demo & \textbf{40.4} & 12.9 & +27.5 \\
-        Equipment closeup & 12.1 & 9.2 & +2.9 \\
-        Presenter talking & 13.7 & 13.5 & +0.2 \\
-        Slide/PowerPoint & 8.5 & 8.9 & $-0.4$ \\
-        Diagram/whiteboard & 6.4 & 7.9 & $-1.5$ \\
-        Screen/software & 11.5 & \textbf{33.2} & $-21.7$ \\
-        Animation/graphic & 1.6 & 2.3 & $-0.7$ \\
-        Device in operation & 5.4 & 10.4 & $-4.9$ \\
-        Other & 0.4 & 1.8 & $-1.4$ \\
+        Hands-on demo & \textbf{53.9} & 9.1 & \textbf{+44.9} \\
+        Equipment closeup & 12.0 & 7.6 & +4.4 \\
+        Presenter talking & 14.7 & 15.2 & $-0.5$ \\
+        Other & 1.0 & 2.2 & $-1.2$ \\
+        Animation/graphic & 0.3 & 3.7 & $-3.4$ \\
+        Diagram/whiteboard & 1.9 & 5.8 & $-3.9$ \\
+        Slide/PowerPoint & 4.3 & 11.0 & $-6.8$ \\
+        Device in operation & 4.2 & 12.2 & $-8.1$ \\
+        Screen/software & 7.7 & \textbf{33.2} & \textbf{$-25.5$} \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-Among verbally embodied videos, the top-quartile engaged videos dedicate 40.4\% of their segments to hands-on demonstrations, compared to only 12.9\% in the bottom quartile---a difference of 27.5 percentage points. Conversely, the bottom-quartile videos contain 33.2\% screen/software content versus 11.5\% in the top quartile. This pattern demonstrates that within a single instructional modality, the proportion of hands-on content is a strong predictor of overall video engagement.
+Among verbally embodied videos, top-quartile videos dedicate 53.9\% of their segments to hands-on demonstrations, compared to only 9.1\% in the bottom quartile---a difference of 44.9 percentage points, substantially larger than the 27.5-point difference found when videos are ranked by visual engagement alone. This sharpening occurs because the union ranking correctly credits both the visual engagement gain from hands-on content and the transcript engagement that narrated hands-on instructors produce, jointly pushing the best-performing videos toward hands-on-heavy profiles. Conversely, bottom-quartile videos contain 33.2\% screen/software content versus only 7.7\% in the top quartile---a 25.5-point gap that reproduces, on the union metric, the strongly negative regression coefficient for screen/software content.
 
-For conventional videos, the pattern is different: top-quartile conventional videos are dominated by diagram/whiteboard content (34.3\% vs.\ 22.4\% in the bottom quartile), while screen/software content is again associated with lower engagement (2.4\% in top vs.\ 9.9\% in bottom quartile). This suggests that the optimal content type varies by instructional modality---diagrams serve conventional instruction, while physical demonstrations serve embodied instruction---but in both cases, screen recordings consistently underperform.
+For conventional videos, ranking by union score yields a different content profile. Top-quartile conventional videos are dominated by diagram/whiteboard content (39.2\% vs.\ 23.8\% in the bottom quartile; $\Delta = +15.5$) and presenter-talking segments (28.9\% vs.\ 20.9\%; $\Delta = +8.0$). This pattern is consistent with the segment-level finding that diagrams are uniquely effective at dual-channel engagement: they produce simultaneous visual and verbal response as instructors describe the visible structure. Screen/software content is again associated with lower engagement in conventional videos (1.3\% in top vs.\ 8.1\% in bottom quartile; $\Delta = -6.7$), as is equipment closeup (2.6\% vs.\ 9.6\%; $\Delta = -7.0$). For visually embodied videos, the content-profile contrast is more muted---top-quartile videos contain 77.6\% hands-on content versus 67.1\% in the bottom quartile ($\Delta = +10.5$)---because these videos are already near the ceiling on hands-on proportion.
+
+Across all three subgroups, the top/bottom quartile contrast produces two consistent signals under union-channel ranking: (1) the optimal primary content type differs by modality---hands-on for embodied, diagrams for conventional---and (2) screen/software content is a universal liability, ranking among the top negative predictors in every subgroup where it has meaningful variance.
 
 
 \subsection*{Comparison with transcript-only analysis}
 
-A key motivation for this study was the hypothesis that transcript-only analysis systematically underestimates the engagement of embodied instruction. Table~\ref{tab:paper_compare} presents the subgroup engagement rankings produced by the transcript-only analysis~\cite{zhang2025transcript} alongside the visual-channel rankings from the present study.
+A key motivation for this study was the hypothesis that transcript-only analysis systematically underestimates the engagement of embodied instruction. Table~\ref{tab:paper_compare} presents the subgroup engagement rankings produced by the transcript-only analysis~\cite{zhang2025transcript} alongside the three dual-channel rankings from the present study.
 
 \begin{table}[ht]
     \centering
-    \caption{Engagement ranking by subgroup under transcript-only versus visual-channel analysis. The metrics are not directly comparable (whole-video topic correlation vs.\ segment-level visual correlation), but the ranking reversal demonstrates the systematic bias of transcript-only approaches.}
+    \caption{Engagement ranking by subgroup under four different measurement approaches: transcript-only from Paper~1~\cite{zhang2025transcript}, and visual-channel, transcript-channel, and union-channel from the present study. The two single-channel rankings are complete inversions of each other; the union-channel ranking is the only measurement that does not reverse when the evaluation channel is changed. Metrics are not directly comparable across rows (Paper~1 is whole-video topic correlation; present-study rows use segment-level rates), but rankings are.}
     \label{tab:paper_compare}
     \begin{tabular}{lccc}
         \toprule
         & Conv. & Verb.\ Emb. & Vis.\ Emb. \\
         \midrule
-        \multicolumn{4}{l}{\textit{Transcript-only analysis~\cite{zhang2025transcript}}} \\
+        \multicolumn{4}{l}{\textit{Transcript-only analysis~\cite{zhang2025transcript}} (Paper~1)} \\
         \quad Topic correlation (\%) & \textbf{61.2} & 51.3 & 11.2 \\
         \quad Ranking & 1st & 2nd & 3rd \\
         \addlinespace
-        \multicolumn{4}{l}{\textit{Visual-channel analysis (this study)}} \\
-        \quad Visual correlation (\%) & 52.3 & 54.3 & \textbf{68.2} \\
+        \multicolumn{4}{l}{\textit{Visual channel (this study)}} \\
+        \quad Visual corr.\ (\%, per-pair) & 45.8 & 51.0 & \textbf{67.0} \\
+        \quad Ranking & 3rd & 2nd & 1st \\
+        \addlinespace
+        \multicolumn{4}{l}{\textit{Transcript channel (this study)}} \\
+        \quad Transcript corr.\ (\%, per-pair) & \textbf{20.4} & 19.9 & 2.8 \\
+        \quad Ranking & 1st & 2nd & 3rd \\
+        \addlinespace
+        \multicolumn{4}{l}{\textit{Union channel (this study)}} \\
+        \quad Union seg.\ (\%, any channel) & 64.6 & 66.7 & \textbf{79.1} \\
         \quad Ranking & 3rd & 2nd & 1st \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-The ranking reversal is complete: visually embodied videos---which scored lowest under transcript-only analysis (11.2\%)---achieve the highest visual engagement (68.2\%). Conventional videos shift from first (61.2\%) to last (52.3\%). This reversal is not merely a reweighting; it reflects a fundamental change in which engagement channel is measured.
+The table shows that the ranking reversal is not a curiosity of the visual channel alone: the two single-channel rankings are exact inversions. Under transcript-only measurement---both Paper~1's whole-video approach and the present study's segment-level transcript rate---conventional videos lead and visually embodied videos trail. Under visual-channel measurement, the ranking flips completely: visually embodied videos lead and conventional videos trail. Neither single-channel view can be endorsed without implicitly committing to a methodological bias against one modality.
 
-The transcript-only metric~\cite{zhang2025transcript} measures semantic correlation between viewer comments and video topics extracted from the full transcript at the whole-video level. For visually embodied videos (mean 13.6 WPM, 96 words per video), the transcripts contain negligible content, yielding near-zero correlation regardless of the videos' actual instructional quality. The visual-channel metric in the present study measures alignment between comments and frame-level captions, capturing the visual engagement that transcript analysis misses entirely.
+The union channel produces the only internally consistent comparison. Visually embodied videos achieve the highest union engagement (79.1\% of segments correlated on at least one channel) precisely because their near-zero transcript engagement (2.8\%) is more than compensated for by their dominant visual channel. Conventional and verbally embodied videos are very close on the union metric (64.6\% vs.\ 66.7\%), consistent with the finding that they have similar transcript engagement and differ modestly on visual engagement. In other words, the union channel resolves the contradiction that single-channel analyses create: under either single-channel view, one subgroup appears to dominate and another appears to fail, whereas the union view shows that all three subgroups produce engaged viewers via whichever channel their modality favors.
 
-These complementary analyses suggest that embodied and conventional videos achieve engagement through different channels: conventional instruction is strongest when measured through verbal content, while embodied instruction is strongest when measured through visual content. A complete evaluation of instructional video effectiveness requires both channels.
+The transcript-only metric from Paper~1~\cite{zhang2025transcript} measures semantic correlation between viewer comments and video topics extracted from the full transcript at the whole-video level. For visually embodied videos (mean 13.6 WPM, 96 words per video), the transcripts contain negligible content, yielding near-zero correlation regardless of the videos' actual instructional quality. The dual-channel framework introduced here is therefore not an alternative to Paper~1's findings but a correction of their scope: conventional and verbally embodied videos engage viewers through both channels at similar rates, while visually embodied videos engage viewers predominantly through the visual channel. A complete evaluation of instructional video effectiveness requires both channels; reporting only one will systematically favor the modality it measures.
 
 
 \subsection*{Summary of statistical tests}
@@ -776,12 +851,22 @@ Table~\ref{tab:stats} summarizes all statistical tests performed in this study.
         \quad Slides vs.\ hands-on & $t = 9.1$ & $< 10^{-19}$ \\
         \quad Diagram vs.\ hands-on & $t = 9.7$ & $< 10^{-22}$ \\
         \addlinespace
+        \multicolumn{3}{l}{\textit{Multiple regression (dual-channel)}} \\
+        \quad Visual ($R^2 = 0.050$) & $F = 40.2$ & $< 10^{-100}$ \\
+        \quad Transcript ($R^2 = 0.038$) & $F = 30.5$ & $< 10^{-74}$ \\
+        \quad Union ($R^2 = 0.042$) & $F = 34.0$ & $< 10^{-83}$ \\
+        \addlinespace
         \multicolumn{3}{l}{\textit{Other tests}} \\
-        \quad Multiple regression ($R^2 = 0.050$) & $F = 40.2$ & $< 10^{-100}$ \\
         \quad Hands visible vs.\ not (visual) & --- & $< 10^{-40}$ \\
         \quad Hands visible vs.\ not (transcript) & $t = -7.6$ & $< 10^{-13}$ \\
         \quad Narration absent vs.\ present & --- & $< 0.01$ \\
-        \quad Video-level $r$ (verb.\ emb., $n=48$) & $r = 0.53$ & $1.2 \times 10^{-4}$ \\
+        \addlinespace
+        \multicolumn{3}{l}{\textit{Video-level correlations ($N = 128$): pct hands-on vs.\ channel}} \\
+        \quad Visual (overall) & $r = +0.333$ & $1.2 \times 10^{-4}$ \\
+        \quad Transcript (overall) & $r = -0.353$ & $4.3 \times 10^{-5}$ \\
+        \quad Union (overall) & $r = +0.252$ & $4.0 \times 10^{-3}$ \\
+        \quad Visual (verb.\ emb., $n=48$) & $r = +0.526$ & $1.2 \times 10^{-4}$ \\
+        \quad Union (verb.\ emb., $n=48$) & $r = +0.508$ & $2.3 \times 10^{-4}$ \\
         \quad Channel independence (overall) & $r = 0.14$ & $< 10^{-45}$ \\
         \bottomrule
     \end{tabular}
