@@ -13,6 +13,9 @@
 \usepackage{array}
 \usepackage{url}
 \usepackage{tikz}
+\usepackage{color}
+\usepackage{soul}
+
 \usetikzlibrary{shapes.geometric, arrows.meta, positioning, fit, calc}
 
 % ============================================================
@@ -250,6 +253,7 @@ Having established that content type significantly predicts engagement, we exami
 
 \begin{figure}[ht]
     \centering
+    \includegraphics[width=0.5\linewidth]{stream.jpg}
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
@@ -274,7 +278,7 @@ Having established that content type significantly predicts engagement, we exami
             };
         \end{axis}
     \end{tikzpicture}
-    \caption{Proportion of hands-on demonstration segments by subgroup. Visually embodied videos dedicate 70.0\% of their content to hands-on demonstration, compared to 27.0\% for verbally embodied and 6.4\% for conventional videos.}
+    \caption{Proportion of hands-on demonstration segments by subgroup. Visually embodied videos dedicate 70.0\% of their content to hands-on demonstration, compared to 27.0\% for verbally embodied and 6.4\% for conventional videos. \hl{need to show screenshot to demonstrate differences of the verb emb vs vis emb}}
     \label{fig:content_dist}
 \end{figure}
 
@@ -388,6 +392,9 @@ The two-way ANOVAs reported above show significant content type $\times$ subgrou
             ymin=0, ymax=95,
             enlarge x limits=0.35,
             legend style={at={(0.5,1.06)}, anchor=south, legend columns=3, font=\footnotesize, draw=none},
+            legend image code/.code={
+            \draw[#1, fill=#1] (0cm,-0.1cm) rectangle (0.3cm,0.1cm);
+            },
             ymajorgrids=true,
             grid style=dashed,
             nodes near coords,
@@ -487,8 +494,12 @@ To complement the segment-level analyses, we aggregated engagement metrics to th
 
 The overall correlations reveal an effect that cannot be seen from either channel alone: across all 128 videos, the proportion of hands-on content is a \emph{positive} predictor of visual engagement ($r = +0.333$, $p = 1.2 \times 10^{-4}$) but a \emph{negative} predictor of transcript engagement ($r = -0.353$, $p = 4.3 \times 10^{-5}$). These correlations are of nearly identical magnitude but opposite sign, illustrating at the video level the same channel-tradeoff effect observed at the segment level in the regression analysis. The union correlation is intermediate and positive ($r = +0.252$, $p = 4.0 \times 10^{-3}$): total engagement increases modestly with hands-on content because the visual gain is slightly larger than the transcript loss. A transcript-only analysis of the same videos would incorrectly conclude that hands-on content reduces engagement; a visual-only analysis would exaggerate its benefits. Only the dual-channel view captures the true net effect.
 
+
 \begin{figure}[ht]
-    \centering
+
+ \centering
+    \includegraphics[width=0.5\linewidth]{stream.jpg}
+
     \begin{tikzpicture}
         \begin{axis}[
             width=0.8\linewidth,
@@ -520,7 +531,7 @@ The overall correlations reveal an effect that cannot be seen from either channe
             \addplot[black, thick, domain=0:90, samples=2] {33.8 + 0.547*x};
         \end{axis}
     \end{tikzpicture}
-    \caption{Video-level relationship between hands-on content proportion and mean visual engagement for verbally embodied videos ($n = 48$). Pearson $r = +0.526$, $p = 1.2 \times 10^{-4}$. The union-channel correlation for this subgroup is nearly identical ($r = +0.508$, $p = 2.3 \times 10^{-4}$), while the transcript-channel correlation is null ($r = +0.057$, $p = 0.70$); see Table~\ref{tab:video_corr} for all channels and subgroups.}
+    \caption{Video-level relationship between hands-on content proportion and mean visual engagement for verbally embodied videos ($n = 48$). Pearson $r = +0.526$, $p = 1.2 \times 10^{-4}$. The union-channel correlation for this subgroup is nearly identical ($r = +0.508$, $p = 2.3 \times 10^{-4}$), while the transcript-channel correlation is null ($r = +0.057$, $p = 0.70$); see Table~\ref{tab:video_corr} for all channels and subgroups. \hl{need to show screenshot to demonstrate handson for what it is meant}}
     \label{fig:video_scatter}
 \end{figure}
 
@@ -537,6 +548,7 @@ Visibility of the instructor's hands during a segment provides a direct marker o
 
 \begin{figure}[ht]
     \centering
+    \includegraphics[width=0.5\linewidth]{stream.jpg}
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
@@ -549,6 +561,9 @@ Visibility of the instructor's hands during a segment provides a direct marker o
             ymin=0, ymax=85,
             enlarge x limits=0.5,
             legend style={at={(0.98,0.98)}, anchor=north east, font=\footnotesize},
+            legend image code/.code={
+            \draw[#1, fill=#1] (0cm,-0.1cm) rectangle (0.3cm,0.1cm);
+            },
             ymajorgrids=true,
             grid style=dashed,
             nodes near coords,
@@ -560,7 +575,7 @@ Visibility of the instructor's hands during a segment provides a direct marker o
             \legend{Visual, Transcript, Union}
         \end{axis}
     \end{tikzpicture}
-    \caption{Dual-channel engagement by hand visibility. Segments in which the instructor's hands are visible achieve 12.0 percentage points higher visual correlation ($p < 10^{-40}$) but 4.8 points lower transcript correlation ($p < 10^{-13}$). The union metric (any channel correlated) increases by 10.4 points, showing that total engagement is dominated by the visual gain.}
+    \caption{Dual-channel engagement by hand visibility. Segments in which the instructor's hands are visible achieve 12.0 percentage points higher visual correlation ($p < 10^{-40}$) but 4.8 points lower transcript correlation ($p < 10^{-13}$). The union metric (any channel correlated) increases by 10.4 points, showing that total engagement is dominated by the visual gain. \hl{need to show screenshot to demonstrate hands vis vs invis}}
     \label{fig:hands_effect}
 \end{figure}
 
@@ -573,7 +588,8 @@ To examine whether verbal narration enhances or competes with visual engagement,
 
 \begin{table}[ht]
     \centering
-    \caption{Engagement metrics by narration condition. Vis.\ and Tr.\ Corr.\% are mean per-segment correlation rates; Union Seg.\% and Both Seg.\% are segment-level fractions. Narration redistributes viewer attention between channels, but the union segment metric remains nearly identical, indicating that total engagement is preserved.}
+
+    \caption{Engagement metrics by narration condition. Vis.\ and Tr.\ Corr.\% are mean per-segment correlation rates; Union Seg.\% and Both Seg.\% are segment-level fractions. Narration redistributes viewer attention between channels, but the union segment metric remains nearly identical, indicating that total engagement is preserved. \hl{needs to show narration present vs not present}}
     \label{tab:narration}
     \begin{tabular}{lrcccccc}
         \toprule
@@ -583,6 +599,7 @@ To examine whether verbal narration enhances or competes with visual engagement,
         Narration absent & 1165 & \textbf{54.0} & 8.6 & \textbf{67.9} & 11.2 & \textbf{49.6} & 7.5 \\
         \bottomrule
     \end{tabular}
+        \includegraphics[width=0.5\linewidth]{stream.jpg}
 \end{table}
 
 To quantify the degree of channel independence, we computed the Pearson correlation between visual and transcript engagement scores at the segment level (Table~\ref{tab:channel_corr}). The overall correlation is weak ($r = 0.14$, $p < 10^{-45}$), indicating that the two channels are largely independent: a segment that scores high on visual engagement does not necessarily score high on transcript engagement. This independence is strongest for visually embodied videos ($r = 0.06$, $p = 0.052$), where the visual channel dominates almost entirely, and weakest for conventional videos ($r = 0.20$, $p < 10^{-46}$), where visual and verbal content are more tightly coupled (e.g., an instructor describing a diagram while pointing to it).
@@ -613,6 +630,7 @@ We examined whether engagement varies across the temporal structure of a video b
 
 \begin{figure*}[ht]
     \centering
+    \includegraphics[width=0.5\linewidth]{stream.jpg}
     \begin{tikzpicture}
         \begin{axis}[
             name=visaxis,
@@ -625,7 +643,10 @@ We examined whether engagement varies across the temporal structure of a video b
             ylabel={Mean Visual Score},
             ymin=0, ymax=80,
             enlarge x limits=0.25,
-            legend style={at={(0.5,1.08)}, anchor=south, legend columns=3, font=\footnotesize, draw=none},
+            legend style={at={(0.5,1.25)}, anchor=south, legend columns=3, font=\footnotesize, draw=none},
+            legend image code/.code={
+            \draw[#1, fill=#1] (0cm,-0.1cm) rectangle (0.3cm,0.1cm);
+            },
             ymajorgrids=true,
             grid style=dashed,
             nodes near coords,
@@ -661,7 +682,7 @@ We examined whether engagement varies across the temporal structure of a video b
             \addplot+[fill=gray!90, draw=black] coordinates {(Early,2.1) (Middle,2.4) (Late,2.8)};
         \end{axis}
     \end{tikzpicture}
-    \caption{Mean engagement scores by temporal position and subgroup on each channel. (a) Visual engagement: conventional videos show a monotonic decline ($46.6 \to 38.6$), verbally embodied videos are stable, and visually embodied videos peak in the middle ($65.4$) and remain elevated throughout. (b) Transcript engagement: both narrated subgroups show a monotonic early-to-late decline ($22.6 \to 15.4$ conventional, $21.3 \to 14.1$ verbally embodied), while visually embodied videos show negligible transcript engagement at all time points. The two channels produce fundamentally different temporal profiles.}
+    \caption{Mean engagement scores by temporal position and subgroup on each channel. (a) Visual engagement: conventional videos show a monotonic decline ($46.6 \to 38.6$), verbally embodied videos are stable, and visually embodied videos peak in the middle ($65.4$) and remain elevated throughout. (b) Transcript engagement: both narrated subgroups show a monotonic early-to-late decline ($22.6 \to 15.4$ conventional, $21.3 \to 14.1$ verbally embodied), while visually embodied videos show negligible transcript engagement at all time points. The two channels produce fundamentally different temporal profiles. \hl{needs to show visual vs transcript}}
     \label{fig:temporal}
 \end{figure*}
 
@@ -679,12 +700,12 @@ The transcript channel exhibits a notably different temporal pattern (Table~\ref
         \toprule
         Subgroup & Bin & Vis.\ Score & Tr.\ Score & Union\% & Both\% \\
         \midrule
-        Conventional & Early & 46.6 & \textbf{22.6} & \textbf{71.8} & \textbf{27.7} \\
+        Conventional & Early & \textbf{46.6} & \textbf{22.6} & \textbf{71.8} & \textbf{27.7} \\
         Conventional & Middle & 41.2 & 15.4 & 63.0 & 20.1 \\
         Conventional & Late & 38.5 & 15.4 & 59.3 & 19.4 \\
         \addlinespace
         Verb.\ embodied & Early & 47.4 & \textbf{21.3} & \textbf{68.6} & \textbf{25.3} \\
-        Verb.\ embodied & Middle & 48.3 & 16.6 & 67.6 & 21.5 \\
+        Verb.\ embodied & Middle & \textbf{48.3} & 16.6 & 67.6 & 21.5 \\
         Verb.\ embodied & Late & 45.8 & 14.1 & 64.1 & 17.1 \\
         \addlinespace
         Vis.\ embodied & Early & 58.3 & 2.1 & 78.2 & 3.3 \\
@@ -715,7 +736,10 @@ We examined whether the instructional density rating (1--5 scale, as assessed by
             ylabel={Correlation (\%)},
             ymin=0, ymax=65,
             enlarge x limits=0.18,
-            legend style={at={(0.98,0.98)}, anchor=north east, font=\footnotesize},
+            legend style={at={(1.02,0.98)}, anchor=north east, font=\footnotesize},
+            legend image code/.code={
+            \draw[#1, fill=#1] (0cm,-0.1cm) rectangle (0.3cm,0.1cm);
+            },
             ymajorgrids=true,
             grid style=dashed,
             nodes near coords,
@@ -787,16 +811,16 @@ A key motivation for this study was the hypothesis that transcript-only analysis
         \quad Topic correlation (\%) & \textbf{61.2} & 51.3 & 11.2 \\
         \quad Ranking & 1st & 2nd & 3rd \\
         \addlinespace
-        \multicolumn{4}{l}{\textit{Visual channel (this study)}} \\
+        \multicolumn{4}{l}{\textit{Visual representation (this study)}} \\
         \quad Visual corr.\ (\%, per-pair) & 45.8 & 51.0 & \textbf{67.0} \\
         \quad Ranking & 3rd & 2nd & 1st \\
         \addlinespace
-        \multicolumn{4}{l}{\textit{Transcript channel (this study)}} \\
+        \multicolumn{4}{l}{\textit{Transcript representation (this study)}} \\
         \quad Transcript corr.\ (\%, per-pair) & \textbf{20.4} & 19.9 & 2.8 \\
         \quad Ranking & 1st & 2nd & 3rd \\
         \addlinespace
-        \multicolumn{4}{l}{\textit{Union channel (this study)}} \\
-        \quad Union seg.\ (\%, any channel) & 64.6 & 66.7 & \textbf{79.1} \\
+        \multicolumn{4}{l}{\textit{Union representation (this study)}} \\
+        \quad Either transcript or visual (\%, per-pair)  & 64.6 & 66.7 & \textbf{79.1} \\
         \quad Ranking & 3rd & 2nd & 1st \\
         \bottomrule
     \end{tabular}
@@ -904,6 +928,13 @@ The temporal analysis adds further nuance: conventional video visual engagement 
 
 \subsection*{Dataset}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{stream.jpg}
+    \caption{\hl{Screenshots and description}}
+    \label{fig:placeholder}
+\end{figure}
+
 The dataset consists of 130 robotics instructional YouTube videos: 56 conventional and 74 embodied. Conventional videos feature lecture-style delivery through slides, diagrams, equations, and screen-recorded programming. Embodied videos present hands-on tutorials involving hardware assembly, wiring, calibration, and real-time robot operation. Videos span diverse robotics domains including robot arm assembly, mobile robot navigation, electronic circuit construction, computer vision, deep learning for robotics, combat robots, and drone systems. Video durations range from 92 to 5{,}760 seconds (median: 635 seconds), totaling approximately 26.5 hours of instructional content.
 
 Based on analysis of speech rate distribution~\cite{zhang2025transcript}, the 74 embodied videos were subdivided into 48 verbally embodied ($\geq 60$ words per minute) and 26 visually embodied ($< 60$ WPM, silent demonstrations with minimal narration). This three-way classification---conventional ($n = 56$), verbally embodied ($n = 48$), and visually embodied ($n = 26$)---is maintained throughout all analyses.
@@ -951,7 +982,7 @@ The fusion analysis framework processes each video through a six-stage pipeline 
 \node[data, below=3.6cm of whisper] (transcript) {Transcript\\per segment};
 
 % Right branch
-\node[data, below=3.6cm of gemini] (classify) {Content type,\\hands, narration};
+\node[data, below=3.6cm of gemini] (classify) {Content type,\\hands visible, alignment score, narration,instructional density} ;
 
 % Correlation and comments
 \node[block, below=1.1cm of transcript] (corr) {Correlation Scoring\\(LLaMA 3)};
@@ -980,23 +1011,21 @@ The fusion analysis framework processes each video through a six-stage pipeline 
 \draw[arrow] (corr) -- (output);
 
 \end{tikzpicture}
-\caption{Multimodal fusion analysis pipeline. Raw videos are processed through three parallel branches: (1) frame extraction and dual-model captioning, (2) speech transcription, and (3) content classification. Visual captions and transcripts are independently correlated with viewer comments to produce dual-channel engagement metrics. Content classifications are joined with engagement scores for analysis.}
+\caption{Multimodal fusion analysis pipeline. Raw videos are processed through three parallel branches: (1) frame extraction and dual-model captioning, (2) speech transcription, and (3) content classification. Visual captions and transcripts are independently correlated with viewer comments to produce dual-channel engagement metrics. Content classifications are joined with engagement scores for analysis. Content type includes the following categories: hands\_on\_demonstration, equipment\_closeup, presenter\_talking, slide\_or\_powerpoint, diagram\_or\_whiteboard, screen\_or\_software, animation\_or\_graphic, device\_in\_operation. }
 \label{fig:pipeline}
 \end{figure}
 
 \subsubsection*{Stage 1: Frame extraction.}
 Frames are extracted from each video using OpenCV at a rate of one frame per 100 video frames (approximately one frame every 3.3 seconds at 30~fps). Videos encoded in AV1 codec are automatically transcoded to H.264 prior to extraction. The extracted frames serve as input to the visual captioning pipeline.
 
-\subsubsection*{Stage 2: Audio transcription.}
-Audio is transcribed using OpenAI Whisper~\cite{radford2023robust} with the \texttt{turbo} model, producing timestamped segments with start and end times in seconds. The timestamped output enables precise alignment between transcript segments and 10-second video intervals.
+\textbf{Stage 2: Audio transcription.} Audio is transcribed using OpenAI Whisper~\cite{radford2023robust} with the \texttt{turbo} model, producing timestamped segments with start and end times in seconds. The timestamped output enables precise alignment between transcript segments and 10-second video intervals.
 
-\subsubsection*{Stage 3: Visual captioning.}
-Each extracted frame is independently captioned by two vision-language models: LLaVA~\cite{liu2023visual} and MiniCPM~\cite{yao2024minicpm}, both served locally via Ollama. The captioning prompt instructs the model to describe visual content objectively, focusing on visible elements (devices, slides, diagrams, text, hand positions) without inferring topics or intentions. The two captions per frame are then integrated into a single comprehensive caption using LLaMA~3~\cite{touvron2023llama}, which resolves contradictions and removes redundancy while preserving all factual observations from both sources. This dual-captioning approach improves coverage: LLaVA tends to capture spatial relationships and scene composition, while MiniCPM provides finer detail on text and small objects.
+\textbf{Stage 3: Visual captioning.} Each extracted frame is independently captioned by two vision-language models: LLaVA~\cite{liu2023visual} and MiniCPM~\cite{yao2024minicpm}, both served locally via Ollama. The captioning prompt instructs the model to describe visual content objectively, focusing on visible elements (devices, slides, diagrams, text, hand positions) without inferring topics or intentions. The two captions per frame are then integrated into a single comprehensive caption using LLaMA~3~\cite{touvron2023llama}, which resolves contradictions and removes redundancy while preserving all factual observations from both sources. This dual-captioning approach improves coverage: LLaVA tends to capture spatial relationships and scene composition, while MiniCPM provides finer detail on text and small objects.
 
-\subsubsection*{Stage 4: Temporal alignment and segmentation.}
+\textbf{Stage 4: Temporal alignment and segmentation.}
 Integrated captions and transcript segments are aligned on a shared timeline. Each caption is assigned a timestamp based on its frame index and the video's framerate. The aligned stream is then divided into fixed 10-second intervals, with each interval receiving all captions and transcript segments whose timestamps fall within its time window. This produces a uniform segmentation across all videos, with each segment containing both a visual summary (concatenated frame captions) and a verbal summary (concatenated transcript text).
 
-\subsubsection*{Stage 5: Dual-channel correlation scoring.}
+\textbf{Stage 5: Dual-channel correlation scoring.}
 For each segment, viewer comments are independently compared against the visual captions and the transcript excerpt using LLaMA~3 via Ollama. Two separate prompts are used:
 
 \begin{itemize}
@@ -1006,7 +1035,7 @@ For each segment, viewer comments are independently compared against the visual 
 
 Viewer comments were collected from two sources: (1) YouTube public comments retrieved via the YouTube Data API, and (2) student reflective responses submitted after viewing the videos during scheduled lecture sessions~\cite{zhang2025transcript}. To manage computational cost, a pre-filtering step using sentence-transformer embeddings (\texttt{all-mpnet-base-v2}) selects the top 200 most semantically relevant comments per video before correlation scoring. Each selected comment is scored against every segment, producing a matrix of visual and transcript correlation scores per video.
 
-\subsubsection*{Stage 6: Metric aggregation.}
+\textbf{Stage 6: Metric aggregation.}
 Per-segment metrics are computed by aggregating across all comment--segment pairs: visual correlation percentage (fraction of pairs where the LLM classified the comment as related to the visual content), mean visual score, transcript correlation percentage (fraction classified as related to the spoken content), and mean transcript score. These segment-level metrics form the basis for all statistical analyses.
 
 
@@ -1030,6 +1059,11 @@ The classification was run on the Pittsburgh Supercomputing Center's Bridges-2 s
 \subsection*{Data integration}
 
 The fusion pipeline (Stages 1--6) and the classification pipeline produce independent per-segment data that are joined on video identifier and segment index. The joined dataset contains 9{,}997 observations, each with visual and transcript engagement metrics from the fusion pipeline and content type, narration, hand visibility, alignment, and density ratings from the classification pipeline. Video-level metrics are computed by averaging segment-level scores within each video ($N = 128$ videos with complete data from both pipelines).
+
+
+\subsection*{\hl{Integrated Methods Description}}
+
+
 
 
 \subsection*{Statistical analysis}
