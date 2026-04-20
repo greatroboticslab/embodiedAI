@@ -498,7 +498,7 @@ The overall correlations reveal an effect that cannot be seen from either channe
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\linewidth]{figures/hands_visible.jpg}
+    \includegraphics[width=0.7\linewidth]{figures/verb_emb_handson.jpg}
 
     \begin{tikzpicture}
         \begin{axis}[
@@ -531,7 +531,7 @@ The overall correlations reveal an effect that cannot be seen from either channe
             \addplot[black, thick, domain=0:90, samples=2] {33.8 + 0.547*x};
         \end{axis}
     \end{tikzpicture}
-    \caption{Video-level relationship between hands-on content proportion and mean visual engagement for verbally embodied videos ($n = 48$). Top: representative hands-on demonstration frame showing an instructor drawing a circuit diagram. Pearson $r = +0.526$, $p = 1.2 \times 10^{-4}$. The union-channel correlation for this subgroup is nearly identical ($r = +0.508$, $p = 2.3 \times 10^{-4}$), while the transcript-channel correlation is null ($r = +0.057$, $p = 0.70$); see Table~\ref{tab:video_corr} for all channels and subgroups.}
+    \caption{Video-level relationship between hands-on content proportion and mean visual engagement for verbally embodied videos ($n = 48$). Top: representative hands-on demonstration frame from a verbally embodied video showing stepper motor driver components. Pearson $r = +0.526$, $p = 1.2 \times 10^{-4}$. The union-channel correlation for this subgroup is nearly identical ($r = +0.508$, $p = 2.3 \times 10^{-4}$), while the transcript-channel correlation is null ($r = +0.057$, $p = 0.70$); see Table~\ref{tab:video_corr} for all channels and subgroups.}
     \label{fig:video_scatter}
 \end{figure}
 
@@ -590,10 +590,10 @@ To examine whether verbal narration enhances or competes with visual engagement,
 \begin{table}[ht]
     \centering
 
-    \caption{Engagement metrics by narration condition. Top: representative frames with narration present (left, verbally embodied instructor narrating hands-on work) and narration absent (right, visually embodied silent demonstration). Vis.\ and Tr.\ Corr.\% are mean per-segment correlation rates; Union Seg.\% and Both Seg.\% are segment-level fractions. Narration redistributes viewer attention between channels, but the union segment metric remains nearly identical, indicating that total engagement is preserved.}
+    \caption{Engagement metrics by narration condition. Top: representative frames with narration present (left, conventional instructor explaining a circuit at a whiteboard) and narration absent (right, silent hands-on demonstration of a speaker assembly). Vis.\ and Tr.\ Corr.\% are mean per-segment correlation rates; Union Seg.\% and Both Seg.\% are segment-level fractions. Narration redistributes viewer attention between channels, but the union segment metric remains nearly identical, indicating that total engagement is preserved.}
     \label{tab:narration}
-    \includegraphics[width=0.48\linewidth]{figures/verb_emb_handson.jpg}\hfill
-    \includegraphics[width=0.48\linewidth]{figures/vis_emb_handson.jpg}
+    \includegraphics[width=0.48\linewidth]{figures/dataset_conv.jpg}\hfill
+    \includegraphics[width=0.48\linewidth]{figures/dataset_vis_emb.jpg}
     \begin{tabular}{lrcccccc}
         \toprule
         Condition & $n$ & Vis.\ Corr.\% & Tr.\ Corr.\% & Union Seg.\% & Both Seg.\% & Vis.\ Score & Tr.\ Score \\
@@ -632,7 +632,7 @@ We examined whether engagement varies across the temporal structure of a video b
 
 \begin{figure*}[ht]
     \centering
-    \includegraphics[width=0.32\linewidth]{figures/hands_visible.jpg}\hfill
+    \includegraphics[width=0.32\linewidth]{figures/vis_emb_handson.jpg}\hfill
     \includegraphics[width=0.32\linewidth]{figures/hands_not_visible.jpg}\hfill
     \includegraphics[width=0.32\linewidth]{figures/transcript_heavy.jpg}
     \begin{tikzpicture}
@@ -686,7 +686,7 @@ We examined whether engagement varies across the temporal structure of a video b
             \addplot+[fill=gray!90, draw=black] coordinates {(Early,2.1) (Middle,2.4) (Late,2.8)};
         \end{axis}
     \end{tikzpicture}
-    \caption{Mean engagement scores by temporal position and subgroup on each channel. Top: representative frames illustrating the visual--transcript contrast: hands-on demonstration (left, visually engaging), animated slide (center, balanced), and lecture slide (right, transcript-dominant). (a) Visual engagement: conventional videos show a monotonic decline ($46.6 \to 38.6$), verbally embodied videos are stable, and visually embodied videos peak in the middle ($65.4$) and remain elevated throughout. (b) Transcript engagement: both narrated subgroups show a monotonic early-to-late decline ($22.6 \to 15.4$ conventional, $21.3 \to 14.1$ verbally embodied), while visually embodied videos show negligible transcript engagement at all time points. The two channels produce fundamentally different temporal profiles.}
+    \caption{Mean engagement scores by temporal position and subgroup on each channel. Top: representative frames illustrating the visual--transcript contrast: silent hands-on demonstration of electronic components (left, visually engaging), animated slide (center, balanced), and lecture slide (right, transcript-dominant). (a) Visual engagement: conventional videos show a monotonic decline ($46.6 \to 38.6$), verbally embodied videos are stable, and visually embodied videos peak in the middle ($65.4$) and remain elevated throughout. (b) Transcript engagement: both narrated subgroups show a monotonic early-to-late decline ($22.6 \to 15.4$ conventional, $21.3 \to 14.1$ verbally embodied), while visually embodied videos show negligible transcript engagement at all time points. The two channels produce fundamentally different temporal profiles.}
     \label{fig:temporal}
 \end{figure*}
 
