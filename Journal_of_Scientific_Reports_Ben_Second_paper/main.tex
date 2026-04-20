@@ -841,8 +841,9 @@ The transcript-only metric from Paper~1~\cite{zhang2025transcript} measures sema
 
 Table~\ref{tab:stats} summarizes all statistical tests performed in this study.
 
-\begin{table}[ht]
+\begin{table*}[p]
     \centering
+    \small
     \caption{Summary of statistical tests. All tests use segment-level observations ($N = 9{,}997$) unless otherwise noted.}
     \label{tab:stats}
     \begin{tabular}{lrc}
@@ -917,7 +918,7 @@ Table~\ref{tab:stats} summarizes all statistical tests performed in this study.
         \quad Channel independence (overall) & $r = 0.14$ & $< 10^{-45}$ \\
         \bottomrule
     \end{tabular}
-\end{table}
+\end{table*}
 
 
 % ============================================================
@@ -1090,7 +1091,22 @@ The fusion pipeline (Stages 1--6) and the classification pipeline produce indepe
 
 For each video, the correlation scoring stage (Stage~5) produces a matrix of judgments: every selected comment is evaluated against every 10-second segment on both channels independently. We define the following per-segment engagement metrics used throughout the Results.
 
-\textbf{Per-pair correlation rate.} For a given segment $s$ with $C$ scored comments, the visual correlation rate is $V_s = C^{-1}\sum_{c=1}^{C} \mathbf{1}[\text{comment } c \text{ is visually correlated with } s]$, and the transcript correlation rate is $T_s = C^{-1}\sum_{c=1}^{C} \mathbf{1}[\text{comment } c \text{ is transcript-correlated with } s]$, where $\mathbf{1}[\cdot]$ is the indicator function derived from the LLM's binary judgment. These per-pair rates range from 0 to 100\% and represent the fraction of comments that engage with each channel of that segment. When averaged across segments (e.g., by content type or subgroup), they yield the ``Vis.\ Corr.\%'' and ``Tr.\ Corr.\%'' columns reported in all tables.
+\textbf{Per-pair correlation rate.}
+For a given segment $s$ with $C$ scored comments, the visual correlation rate and
+transcript correlation rate are
+
+\[
+V_s = C^{-1}\sum_{c=1}^{C} \mathbf{1}[\text{comment } c \text{ is visually correlated with } s],
+\]
+
+\[
+T_s = C^{-1}\sum_{c=1}^{C} \mathbf{1}[\text{comment } c \text{ is transcript-correlated with } s],
+\]
+
+where $\mathbf{1}[\cdot]$ is the indicator function derived from the LLM's binary judgment.
+These per-pair rates range from 0 to 100\% and represent the fraction of comments that
+engage with each channel of that segment. When averaged across segments (e.g., by content
+type or subgroup), they yield the “Vis.\ Corr.\%” and “Tr.\ Corr.\%” columns reported in all tables.
 
 \textbf{Engagement scores.} Alongside each binary judgment, the LLM provides a confidence score $\in [0, 100]$. The visual engagement score for segment $s$ is $\bar{v}_s = C^{-1}\sum_{c=1}^{C} v_{c,s}$ and the transcript engagement score is $\bar{t}_s = C^{-1}\sum_{c=1}^{C} t_{c,s}$, where $v_{c,s}$ and $t_{c,s}$ are the per-pair confidence values. These continuous scores are used as the dependent variable in ANOVA and regression analyses, as they provide finer discrimination than binary rates.
 
