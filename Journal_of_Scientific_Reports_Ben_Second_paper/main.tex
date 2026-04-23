@@ -632,9 +632,12 @@ We examined whether engagement varies across the temporal structure of a video b
 
 \begin{figure*}[ht]
     \centering
-    \includegraphics[width=0.32\linewidth]{figures/fig7_temporal_early.jpg}\hfill
-    \includegraphics[width=0.32\linewidth]{figures/fig7_temporal_middle.jpg}\hfill
-    \includegraphics[width=0.32\linewidth]{figures/fig7_temporal_late.jpg}
+    \makebox[0.32\linewidth][c]{\includegraphics[width=0.32\linewidth]{figures/fig7_temporal_early.jpg}}\hfill
+    \makebox[0.32\linewidth][c]{\includegraphics[width=0.32\linewidth]{figures/fig7_temporal_middle.jpg}}\hfill
+    \makebox[0.32\linewidth][c]{\includegraphics[width=0.32\linewidth]{figures/fig7_temporal_late.jpg}}\\[2pt]
+    \makebox[0.32\linewidth][c]{\footnotesize\textbf{Early} ($t = 1$:35 / 11:11)}\hfill
+    \makebox[0.32\linewidth][c]{\footnotesize\textbf{Middle} ($t = 5$:55 / 11:11)}\hfill
+    \makebox[0.32\linewidth][c]{\footnotesize\textbf{Late} ($t = 8$:15 / 11:11)}
     \begin{tikzpicture}
         \begin{axis}[
             name=visaxis,
@@ -686,7 +689,7 @@ We examined whether engagement varies across the temporal structure of a video b
             \addplot+[fill=gray!90, draw=black] coordinates {(Early,2.1) (Middle,2.4) (Late,2.8)};
         \end{axis}
     \end{tikzpicture}
-    \caption{Mean engagement scores by temporal position and subgroup on each channel. Top: three frames from the same verbally embodied amplifier-build video illustrating how instructional content evolves over time---reviewing the TDA2050 datasheet during the early segment (left), inspecting the soldered PCB during the middle segment (center), and connecting transformer wiring during the late segment (right). (a) Visual engagement: conventional videos show a monotonic decline ($46.6 \to 38.6$), verbally embodied videos are stable, and visually embodied videos peak in the middle ($65.4$) and remain elevated throughout. (b) Transcript engagement: both narrated subgroups show a monotonic early-to-late decline ($22.6 \to 15.4$ conventional, $21.3 \to 14.1$ verbally embodied), while visually embodied videos show negligible transcript engagement at all time points. The two channels produce fundamentally different temporal profiles.}
+    \caption{Mean engagement scores by temporal position and subgroup on each channel. Top: three frames from the same verbally embodied amplifier-build video (duration 11:11) showing how instructional content evolves over time---reviewing the TDA2050 datasheet at $t = 1$:35 (left), inspecting the soldered PCB at $t = 5$:55 (center), and connecting transformer wiring at $t = 8$:15 (right). The progression from theory to construction to integration illustrates the shift from transcript-dominant to visually-dominant engagement. (a) Visual engagement: conventional videos show a monotonic decline ($46.6 \to 38.6$), verbally embodied videos are stable, and visually embodied videos peak in the middle ($65.4$) and remain elevated throughout. (b) Transcript engagement: both narrated subgroups show a monotonic early-to-late decline ($22.6 \to 15.4$ conventional, $21.3 \to 14.1$ verbally embodied), while visually embodied videos show negligible transcript engagement at all time points. The two channels produce fundamentally different temporal profiles.}
     \label{fig:temporal}
 \end{figure*}
 
