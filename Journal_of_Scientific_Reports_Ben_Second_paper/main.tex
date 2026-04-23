@@ -253,8 +253,8 @@ Having established that content type significantly predicts engagement, we exami
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.48\linewidth]{figures/verb_emb_handson.jpg}\hfill
-    \includegraphics[width=0.48\linewidth]{figures/vis_emb_handson.jpg}
+    \includegraphics[width=0.48\linewidth]{figures/fig1_verb_emb_handson.jpg}\hfill
+    \includegraphics[width=0.48\linewidth]{figures/fig1_vis_emb_handson.jpg}
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
@@ -279,7 +279,7 @@ Having established that content type significantly predicts engagement, we exami
             };
         \end{axis}
     \end{tikzpicture}
-    \caption{Proportion of hands-on demonstration segments by subgroup. Top: representative frames from a verbally embodied video (left, narrated hands-on demonstration of stepper motor drivers) and a visually embodied video (right, silent hands-on demonstration of electronic components). Visually embodied videos dedicate 70.0\% of their content to hands-on demonstration, compared to 27.0\% for verbally embodied and 6.4\% for conventional videos.}
+    \caption{Proportion of hands-on demonstration segments by subgroup. Top: representative frames contrasting the two embodied modalities---a verbally embodied instructor narrating while assembling a small circuit board (left) versus a visually embodied video silently demonstrating potentiometer wiring (right). Visually embodied videos dedicate 70.0\% of their content to hands-on demonstration, compared to 27.0\% for verbally embodied and 6.4\% for conventional videos.}
     \label{fig:content_dist}
 \end{figure}
 
@@ -498,7 +498,7 @@ The overall correlations reveal an effect that cannot be seen from either channe
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\linewidth]{figures/verb_emb_handson.jpg}
+    \includegraphics[width=0.7\linewidth]{figures/fig4_verb_emb_scatter.jpg}
 
     \begin{tikzpicture}
         \begin{axis}[
@@ -531,7 +531,7 @@ The overall correlations reveal an effect that cannot be seen from either channe
             \addplot[black, thick, domain=0:90, samples=2] {33.8 + 0.547*x};
         \end{axis}
     \end{tikzpicture}
-    \caption{Video-level relationship between hands-on content proportion and mean visual engagement for verbally embodied videos ($n = 48$). Top: representative hands-on demonstration frame from a verbally embodied video showing stepper motor driver components. Pearson $r = +0.526$, $p = 1.2 \times 10^{-4}$. The union-channel correlation for this subgroup is nearly identical ($r = +0.508$, $p = 2.3 \times 10^{-4}$), while the transcript-channel correlation is null ($r = +0.057$, $p = 0.70$); see Table~\ref{tab:video_corr} for all channels and subgroups.}
+    \caption{Video-level relationship between hands-on content proportion and mean visual engagement for verbally embodied videos ($n = 48$). Top: a verbally embodied instructor narrating while connecting a flight controller board during a drone build---an example of high hands-on content driving high visual engagement. Pearson $r = +0.526$, $p = 1.2 \times 10^{-4}$. The union-channel correlation for this subgroup is nearly identical ($r = +0.508$, $p = 2.3 \times 10^{-4}$), while the transcript-channel correlation is null ($r = +0.057$, $p = 0.70$); see Table~\ref{tab:video_corr} for all channels and subgroups.}
     \label{fig:video_scatter}
 \end{figure}
 
@@ -548,8 +548,8 @@ Visibility of the instructor's hands during a segment provides a direct marker o
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.48\linewidth]{figures/hands_visible.jpg}\hfill
-    \includegraphics[width=0.48\linewidth]{figures/hands_not_visible.jpg}
+    \includegraphics[width=0.48\linewidth]{figures/fig5_hands_visible.jpg}\hfill
+    \includegraphics[width=0.48\linewidth]{figures/fig5_hands_not_visible.jpg}
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
@@ -576,7 +576,7 @@ Visibility of the instructor's hands during a segment provides a direct marker o
             \legend{Visual, Transcript, Union}
         \end{axis}
     \end{tikzpicture}
-    \caption{Dual-channel engagement by hand visibility. Top: representative frames with hands visible (left, instructor drawing a circuit diagram) and hands not visible (right, animated slide on rectifier circuits). Segments in which the instructor's hands are visible achieve 12.0 percentage points higher visual correlation ($p < 10^{-40}$) but 4.8 points lower transcript correlation ($p < 10^{-13}$). The union metric (any channel correlated) increases by 10.4 points, showing that total engagement is dominated by the visual gain.}
+    \caption{Dual-channel engagement by hand visibility. Top: representative frames contrasting the two conditions---hands visible while manipulating a prototyping board (left) versus an instructor explaining concepts verbally without physical interaction (right). Segments in which the instructor's hands are visible achieve 12.0 percentage points higher visual correlation ($p < 10^{-40}$) but 4.8 points lower transcript correlation ($p < 10^{-13}$). The union metric (any channel correlated) increases by 10.4 points, showing that total engagement is dominated by the visual gain.}
     \label{fig:hands_effect}
 \end{figure}
 
@@ -590,10 +590,10 @@ To examine whether verbal narration enhances or competes with visual engagement,
 \begin{table}[ht]
     \centering
 
-    \caption{Engagement metrics by narration condition. Top: representative frames with narration present (left, conventional instructor explaining a circuit at a whiteboard) and narration absent (right, silent hands-on demonstration of a speaker assembly). Vis.\ and Tr.\ Corr.\% are mean per-segment correlation rates; Union Seg.\% and Both Seg.\% are segment-level fractions. Narration redistributes viewer attention between channels, but the union segment metric remains nearly identical, indicating that total engagement is preserved.}
+    \caption{Engagement metrics by narration condition. Top: representative frames with narration present (left, instructor explaining bandpass filter circuits on paper while narrating) and narration absent (right, silent demonstration of an LED and buzzer circuit with on-screen labels only). Vis.\ and Tr.\ Corr.\% are mean per-segment correlation rates; Union Seg.\% and Both Seg.\% are segment-level fractions. Narration redistributes viewer attention between channels, but the union segment metric remains nearly identical, indicating that total engagement is preserved.}
     \label{tab:narration}
-    \includegraphics[width=0.48\linewidth]{figures/dataset_conv.jpg}\hfill
-    \includegraphics[width=0.48\linewidth]{figures/dataset_vis_emb.jpg}
+    \includegraphics[width=0.48\linewidth]{figures/fig6_narration_present.jpg}\hfill
+    \includegraphics[width=0.48\linewidth]{figures/fig6_narration_absent.jpg}
     \begin{tabular}{lrcccccc}
         \toprule
         Condition & $n$ & Vis.\ Corr.\% & Tr.\ Corr.\% & Union Seg.\% & Both Seg.\% & Vis.\ Score & Tr.\ Score \\
@@ -632,9 +632,9 @@ We examined whether engagement varies across the temporal structure of a video b
 
 \begin{figure*}[ht]
     \centering
-    \includegraphics[width=0.32\linewidth]{figures/vis_emb_handson.jpg}\hfill
-    \includegraphics[width=0.32\linewidth]{figures/hands_not_visible.jpg}\hfill
-    \includegraphics[width=0.32\linewidth]{figures/transcript_heavy.jpg}
+    \includegraphics[width=0.32\linewidth]{figures/fig7_temporal_early.jpg}\hfill
+    \includegraphics[width=0.32\linewidth]{figures/fig7_temporal_middle.jpg}\hfill
+    \includegraphics[width=0.32\linewidth]{figures/fig7_temporal_late.jpg}
     \begin{tikzpicture}
         \begin{axis}[
             name=visaxis,
@@ -686,7 +686,7 @@ We examined whether engagement varies across the temporal structure of a video b
             \addplot+[fill=gray!90, draw=black] coordinates {(Early,2.1) (Middle,2.4) (Late,2.8)};
         \end{axis}
     \end{tikzpicture}
-    \caption{Mean engagement scores by temporal position and subgroup on each channel. Top: representative frames illustrating the visual--transcript contrast: silent hands-on demonstration of electronic components (left, visually engaging), animated slide (center, balanced), and lecture slide (right, transcript-dominant). (a) Visual engagement: conventional videos show a monotonic decline ($46.6 \to 38.6$), verbally embodied videos are stable, and visually embodied videos peak in the middle ($65.4$) and remain elevated throughout. (b) Transcript engagement: both narrated subgroups show a monotonic early-to-late decline ($22.6 \to 15.4$ conventional, $21.3 \to 14.1$ verbally embodied), while visually embodied videos show negligible transcript engagement at all time points. The two channels produce fundamentally different temporal profiles.}
+    \caption{Mean engagement scores by temporal position and subgroup on each channel. Top: three frames from the same verbally embodied amplifier-build video illustrating how instructional content evolves over time---reviewing the TDA2050 datasheet during the early segment (left), inspecting the soldered PCB during the middle segment (center), and connecting transformer wiring during the late segment (right). (a) Visual engagement: conventional videos show a monotonic decline ($46.6 \to 38.6$), verbally embodied videos are stable, and visually embodied videos peak in the middle ($65.4$) and remain elevated throughout. (b) Transcript engagement: both narrated subgroups show a monotonic early-to-late decline ($22.6 \to 15.4$ conventional, $21.3 \to 14.1$ verbally embodied), while visually embodied videos show negligible transcript engagement at all time points. The two channels produce fundamentally different temporal profiles.}
     \label{fig:temporal}
 \end{figure*}
 
@@ -954,10 +954,10 @@ The temporal analysis adds further nuance: conventional video visual engagement 
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.32\linewidth]{figures/dataset_conv.jpg}\hfill
-    \includegraphics[width=0.32\linewidth]{figures/dataset_verb_emb.jpg}\hfill
-    \includegraphics[width=0.32\linewidth]{figures/dataset_vis_emb.jpg}
-    \caption{Representative frames from the three instructional subgroups. Left: conventional video (presenter explaining a non-inverting amplifier circuit on a whiteboard). Center: verbally embodied video (instructor narrating while demonstrating stepper motor driver components). Right: visually embodied video (silent hands-on demonstration of a speaker assembly without narration).}
+    \includegraphics[width=0.32\linewidth]{figures/fig9_dataset_conv.jpg}\hfill
+    \includegraphics[width=0.32\linewidth]{figures/fig9_dataset_verb_emb.jpg}\hfill
+    \includegraphics[width=0.32\linewidth]{figures/fig9_dataset_vis_emb.jpg}
+    \caption{Representative frames from the three instructional subgroups. Left: conventional video (instructor explaining PID control theory at a whiteboard with block diagrams and equations). Center: verbally embodied video (instructor narrating while wiring a drone flight controller). Right: visually embodied video (silent demonstration of a motor speed controller circuit without narration).}
     \label{fig:dataset_examples}
 \end{figure}
 
