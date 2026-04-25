@@ -253,8 +253,9 @@ Having established that content type significantly predicts engagement, we exami
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.48\linewidth]{figures/fig1_verb_emb_handson.jpg}\hfill
-    \includegraphics[width=0.48\linewidth]{figures/fig1_vis_emb_handson.jpg}
+    \includegraphics[width=0.32\linewidth]{figures/fig1_conv_handson.jpg}\hfill
+    \includegraphics[width=0.32\linewidth]{figures/fig1_verb_emb_handson.jpg}\hfill
+    \includegraphics[width=0.32\linewidth]{figures/fig1_vis_emb_handson.jpg}
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
@@ -279,7 +280,7 @@ Having established that content type significantly predicts engagement, we exami
             };
         \end{axis}
     \end{tikzpicture}
-    \caption{Proportion of hands-on demonstration segments by subgroup. Top: representative frames contrasting the two embodied modalities---a verbally embodied instructor narrating while assembling a small circuit board (left) versus a visually embodied video silently demonstrating potentiometer wiring (right). Visually embodied videos dedicate 70.0\% of their content to hands-on demonstration, compared to 27.0\% for verbally embodied and 6.4\% for conventional videos.}
+    \caption{Proportion of hands-on demonstration segments by subgroup. Top: representative frames from each subgroup---a conventional instructor placing a GPS module on a drone frame (left), a verbally embodied instructor narrating while assembling a small circuit board (center), and a visually embodied video silently demonstrating potentiometer wiring (right). Visually embodied videos dedicate 70.0\% of their content to hands-on demonstration, compared to 27.0\% for verbally embodied and 6.4\% for conventional videos.}
     \label{fig:content_dist}
 \end{figure}
 
@@ -576,7 +577,7 @@ Visibility of the instructor's hands during a segment provides a direct marker o
             \legend{Visual, Transcript, Union}
         \end{axis}
     \end{tikzpicture}
-    \caption{Dual-channel engagement by hand visibility. Top: representative frames contrasting the two conditions---hands visible while manipulating a prototyping board (left) versus an instructor explaining concepts verbally without physical interaction (right). Segments in which the instructor's hands are visible achieve 12.0 percentage points higher visual correlation ($p < 10^{-40}$) but 4.8 points lower transcript correlation ($p < 10^{-13}$). The union metric (any channel correlated) increases by 10.4 points, showing that total engagement is dominated by the visual gain.}
+    \caption{Dual-channel engagement by hand visibility. Top: representative frames contrasting the two conditions---hands visible while manipulating a prototyping board (left) versus a logic gate circuit schematic displayed without physical interaction (right). Segments in which the instructor's hands are visible achieve 12.0 percentage points higher visual correlation ($p < 10^{-40}$) but 4.8 points lower transcript correlation ($p < 10^{-13}$). The union metric (any channel correlated) increases by 10.4 points, showing that total engagement is dominated by the visual gain.}
     \label{fig:hands_effect}
 \end{figure}
 
@@ -743,7 +744,7 @@ We examined whether the instructional density rating (1--5 scale, as assessed by
             ylabel={Correlation (\%)},
             ymin=0, ymax=65,
             enlarge x limits=0.18,
-            legend style={at={(1.02,0.98)}, anchor=north east, font=\footnotesize},
+            legend style={at={(0.5,1.06)}, anchor=south, legend columns=2, font=\footnotesize, draw=none},
             legend image code/.code={
             \draw[#1, fill=#1] (0cm,-0.1cm) rectangle (0.3cm,0.1cm);
             },
